@@ -36,3 +36,15 @@ class(total_goal)
 is.vector(total_goal)
 data <- cbind(data,total_goal)
 head(data)
+data[2,]
+data[c(TRUE,FALSE),]
+data[data$Div == "E0",]
+subset(data, FTHG == min(FTHG))
+install.packages('lubridate')
+library('lubridate')
+data$Date
+as.Date(data$Date)
+data$Date <- dmy(data$Date)
+data$Date
+m <- subset(data, Date =='2021-12-01')
+write.csv(m,'data.csv')

@@ -25,5 +25,14 @@ summary(myoddsdata)
 install.packages('dplyr')
 library('dplyr')
 a <- data.frame(a = 1:2, b = 2:3, c = 4:5)
-b <- data.frame(a = 5:6, b = 6:7 , c = 7:8)
+b <- data.frame(a = 5:6, b = 6:7 , c = 7:8,d = 8:9)
+a
+b
 rbind(a,b)
+bind_rows(a,b)
+total_goal <- data$FTHG + data$FTAG
+as.vector(total_goal)
+class(total_goal)
+is.vector(total_goal)
+data <- cbind(data,total_goal)
+head(data)

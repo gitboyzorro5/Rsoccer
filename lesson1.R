@@ -19,6 +19,7 @@ data[,1]
 epl[epl$FTHG > 3,]
 transform(data,FTHG = FTHG + 1)
 install.packages('xlsx')
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 myoddsdata <- read.xlsx("myodds.xlsx",sheetIndex = 1)
 summary(myoddsdata)
@@ -44,7 +45,7 @@ install.packages('lubridate')
 library('lubridate')
 data$Date
 as.Date(data$Date)
-data$Date <- dmy(data$Date)
+data$Date <- mdy(data$Date)
 data$Date
-m <- subset(data, Date =='2021-12-01')
+m <- subset(data, Date>=as.Date("2021-12-01"))
 write.csv(m,'data.csv')

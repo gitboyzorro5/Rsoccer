@@ -49,3 +49,13 @@ data$Date <- mdy(data$Date)
 data$Date
 m <- subset(data, Date>=as.Date("2021-12-01"))
 write.csv(m,'data.csv')
+head(data)
+index <- order(data$FTHG,decreasing = TRUE)
+head(data[index,])
+library('plyr')
+install.packages('plyr')
+library('plyr')
+df <- ddply(data,.(Date,HomeTeam),numcolwise(sum))
+df
+
+

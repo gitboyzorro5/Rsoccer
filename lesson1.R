@@ -56,6 +56,4 @@ library('plyr')
 install.packages('plyr')
 library('plyr')
 df <- ddply(data,.(Date,HomeTeam),numcolwise(sum))
-df
-
 

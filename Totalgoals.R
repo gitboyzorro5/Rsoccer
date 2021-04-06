@@ -32,7 +32,3 @@ hgscored <- aggregate(current_season$FTHG,by = list(HomeTeam = current_season$Ho
 agscored <- aggregate(current_season$FTAG,by = list(AwayTeam = current_season$AwayTeam),FUN=sum)
 hgconceded <- aggregate(current_season$FTAG,by = list(HomeTeam = current_season$HomeTeam),FUN=sum)
 agconceded <- aggregate(current_season$FTHG,by = list(AwayTeam = current_season$AwayTeam),FUN=sum)
-head(current_season)
-sp2 <- subset(current_season, Div == "SP2")
-SP2OV25 <-  sp2[sp2$OV25 == 'Y',]
-SP2OV25

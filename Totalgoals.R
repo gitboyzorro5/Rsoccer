@@ -15,7 +15,7 @@ write.csv(summary_mean,"meansummary.csv")
 write.csv(summary_div,"2010psumall.csv")
 divisions <- unique(newdata$Div)
 index <- seq(1,22)
-install.packages('janitor')
+#install.packages('janitor')
 library('janitor')
 ov25dist <- tabyl(data,Div,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ov25dist
@@ -32,6 +32,7 @@ hgscored <- aggregate(current_season$FTHG,by = list(HomeTeam = current_season$Ho
 agscored <- aggregate(current_season$FTAG,by = list(AwayTeam = current_season$AwayTeam),FUN=sum)
 hgconceded <- aggregate(current_season$FTAG,by = list(HomeTeam = current_season$HomeTeam),FUN=sum)
 agconceded <- aggregate(current_season$FTHG,by = list(AwayTeam = current_season$AwayTeam),FUN=sum)
-eredivisie <- subset(current_season, Div == "N1")
-transposed <- as.data.frame(t(eredivisie))
-teams <- unique(eredivisie['HomeTeam'])
+head(current_season)
+sp2 <- subset(current_season, Div == "SP2")
+SP2OV25 <-  sp2[sp2$OV25 == 'Y',]
+SP2OV25

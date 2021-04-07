@@ -9,11 +9,6 @@ testdata_h <- tapply(B1$TG, B1[c("HomeTeam", "Date")],mean)
 testdata_a <- tapply(B1$TG, B1[c("AwayTeam", "Date")],mean)
 testdata_h[is.na(testdata_h)] <- ""
 testdata_a[is.na(testdata_a)] <- ""
-tgmatrix <- as.matrix(rbind(testdata_h,testdata_a))
-write.csv(testdata_h, 'hometg.csv')
-write(testdata_a, file = 'hometg.csv', append = TRUE)
-newlist <- list(testdata_h,testdata_a)
-write.csv(newlist,'list.csv')
-str(newlist)
-?list
-?pairlist
+merge(testdata_h,testdata_a,)
+testdata_h[[2,2]]
+

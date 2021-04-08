@@ -2,11 +2,18 @@ data_2021 <- read.csv('allteams20202021SOT.csv')
 total_goals <- data_2021$FTHG + data_2021$FTAG
 data_2021$TG <- total_goals
 cbind(data_2021, total_goals)
-B1 <- subset(data_2021, Div == "B1")
-#library('lubridate')
+
+library('lubridate')
 library('dplyr')
- hometeam_tg <- with(B1, tapply(TG, list(HomeTeam, Date), FUN = mean))
- awayteam_tg <- with(B1, tapply(TG, list(AwayTeam, Date), FUN = mean))
+data_2021$Date <- dmy(data_2021$Date)
+B1 <- subset(data_2021, Div == "B1")
+sorted_B1 <- B1[order(as.Date(B1$Date, format = "%d/%m/%Y"),decreasing = FALSE),]
+
+#tgv2 <- with(B1, tapply(TG, list(HomeTeam, AwayTeam), FUN = mean))
+
+write.csv(tgv2,'biv2.csv')
+with(sorted_B1, tapply(TG, list(HomeTeam, Date), FUN = mean))
+awayteam_tg <- with(sorted_B1, tapply(TG, list(AwayTeam, Date), FUN = mean))
 
 testdata_h <- tapply(B1$TG, B1[c("HomeTeam", "Date")],mean)
 testdata_a <- tapply(B1$TG, B1[c("AwayTeam", "Date")],mean)

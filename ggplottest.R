@@ -15,6 +15,7 @@ latest <- subset(data, Date == max(Date)-3)
 latest <- latest[order(latest$Confirmed, decreasing = TRUE),]
 top10 <- latest[1:10,]
 rownames(top10) <- 1:10
+options(rep.plot.width - 14)
 ggp <- ggplot(top10, aes(x=reorder(Country, -Confirmed), y=Confirmed))
 ggp + geom_col(color = 'red', fill = 'orange') +
       labs(title = 'Top 10 Worst Hit countries',
@@ -25,3 +26,6 @@ ggp + geom_col(color = 'red', fill = 'orange') +
               plot.subtitle = element_text(color = 'grey',size = 24)
               )
 
+ggps <- ggplot(us, aes(x=Date, y=Confirmed))
+  ggps + geom_point()
+top10

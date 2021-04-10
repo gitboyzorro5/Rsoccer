@@ -31,3 +31,10 @@ Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 write.xlsx(hometeam_tg,'hometg.xlsx',sheetName = "B1h")
 write.xlsx(awayteam_tg,'hometg.xlsx',sheetName = "B1h", append = TRUE)
+
+library('ggplot2')
+ggb1 <- ggplot(sorted_B1, aes(x=Date,y=TG))
+ggb1 + geom_point()
+
+
+#create Teams dataset

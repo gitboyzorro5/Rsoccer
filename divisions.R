@@ -1,63 +1,14 @@
-E0 <- url('http://www.football-data.co.uk/mmz4281/2021/E0.csv')
-E1 <- url('http://www.football-data.co.uk/mmz4281/2021/E1.csv')
-E2 <- url('http://www.football-data.co.uk/mmz4281/2021/E2.csv')
-E3 <- url('http://www.football-data.co.uk/mmz4281/2021/E3.csv')
-EC <- url('http://www.football-data.co.uk/mmz4281/2021/EC.csv')
-D1 <- url('http://www.football-data.co.uk/mmz4281/2021/D1.csv')
-D2 <- url('http://www.football-data.co.uk/mmz4281/2021/D2.csv')
-SP1 <- url('http://www.football-data.co.uk/mmz4281/2021/SP1.csv')
-SP2 <- url('http://www.football-data.co.uk/mmz4281/2021/SP2.csv')
-B1 <- url('http://www.football-data.co.uk/mmz4281/2021/B1.csv')
-I1 <- url('http://www.football-data.co.uk/mmz4281/2021/I1.csv')
-I2 <- url('http://www.football-data.co.uk/mmz4281/2021/I2.csv')
-N1 <- url('http://www.football-data.co.uk/mmz4281/2021/N1.csv')
-P1 <- url('http://www.football-data.co.uk/mmz4281/2021/P1.csv')
-SC0 <- url('http://www.football-data.co.uk/mmz4281/2021/SC0.csv')
-SC1 <- url('http://www.football-data.co.uk/mmz4281/2021/SC1.csv')
-SC2 <- url('http://www.football-data.co.uk/mmz4281/2021/SC2.csv')
-SC3 <- url('http://www.football-data.co.uk/mmz4281/2021/SC3.csv')
-F1 <- url('http://www.football-data.co.uk/mmz4281/2021/F1.csv')
-F2 <- url('http://www.football-data.co.uk/mmz4281/2021/F2.csv')
-G1 <- url('http://www.football-data.co.uk/mmz4281/2021/G1.csv')
-T1 <- url('http://www.football-data.co.uk/mmz4281/2021/T1.csv')
-
-e0 <- read.csv(E0)
-e1 <- read.csv(E1)
-e2 <- read.csv(E2)
-e3 <- read.csv(E3)
-ec <- read.csv(EC)
-d1 <- read.csv(D1)
-d2 <- read.csv(D2)
-sp1 <- read.csv(SP1)
-sp2 <- read.csv(SP2)
-i1 <- read.csv(I1)
-i2 <- read.csv(I2)
-f1 <- read.csv(F1)
-f2 <- read.csv(F2)
-n1 <- read.csv(N1)
-p1 <- read.csv(P1)
-b1 <- read.csv(B1)
-g1 <- read.csv(G1)
-sc0 <- read.csv(SC0)
-sc1 <- read.csv(SC1)
-sc2 <- read.csv(SC2)
-sc3 <- read.csv(SC3)
-t1 <- read.csv(T1)
-
-allteams2021 <- rbind(e0,e1,e2,e3,ec,d1,d2,sp1,sp2,i1,i2,f1,f2,b1,n1,p1,sc0,sc1,sc2,sc3,t1,g1)
-
-
-england <- rbind(e0,e1,e2,e3)
-
-ls()
-rm(eupen)
-
-
-View(data)
-str(data)
+#by gitboyzorro5
+allteams20202021 <- read.csv('allteams20202021SOT.csv')
 library('lubridate')
-data$Date <- dmy(data$Date)
-allteams21 <- data[order(as.Date(data$Date, format = "%d/%m/%Y"), decreasing = FALSE),]
+#change date strings to Date objects
+allteams20202021$Date <- dmy(allteams20202021$Date)
+allteams20202021 <- allteams20202021[order(as.Date(allteams20202021$Date, format = "%d/%m/%Y"), decreasing = FALSE),]
+#calculate total goals
+allteams20202021$TG <- allteams20202021$FTHG + allteams20202021$FTAG
+allteams20202021$OV15 <- ifelse(allteams20202021$TG >= 2,"Y","N")
+allteams20202021$OV25 <- ifelse(allteams20202021$TG >= 3,"Y","N")
+allteams20202021$OV35 <- ifelse(allteams20202021$TG >= 4,"Y","N")
+
+
 latest_10 <- subset(allteams21, Date <= max(Date))
-nrow(latest_10)
-View(latest_10)

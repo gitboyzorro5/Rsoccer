@@ -1,16 +1,4 @@
-data <- read.csv("allteams20202021SOT.csv")
-summary(data)
-epl <- subset(data,Div == "E0")
-laliga <- subset(data,Div == "SP1")
-summary(laliga)
-is.data.frame(data)
-head(data)
-tail(data)
-str(data)
-nrow(data)
-ncol(data)
-colnames(data)
-rownames(data)
+
 first_20 <- head(data[['HomeTeam']],20)
 first_20
 data$FTR

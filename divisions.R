@@ -34,6 +34,7 @@ SP1 <- subset(allteams20202021, Div == "SP1")
 SP2 <- subset(allteams20202021, Div == "SP2")
 T1 <- subset(allteams20202021, Div == "T1")
 
+attributes(allteams20202021)
 
 
 latest_10 <- subset(allteams21, Date <= max(Date))

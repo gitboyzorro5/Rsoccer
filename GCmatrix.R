@@ -16,22 +16,22 @@ sorted_B1
 #with(sorted_B1, tapply(TG, list(HomeTeam, Date), FUN = mean))
 #awayteam_tg <- with(sorted_B1, tapply(TG, list(AwayTeam, Date), FUN = mean))
 
-testdata_h <- tapply(B1$TG, B1[c("HomeTeam", "Date")],mean)
-testdata_a <- tapply(B1$TG, B1[c("AwayTeam", "Date")],mean)
+gcmatrix_h <- tapply(B1$FTAG, B1[c("HomeTeam", "Date")],mean)
+gcmatrix_a <- tapply(B1$FTHG, B1[c("AwayTeam", "Date")],mean)
 
-testdata_h[is.na(testdata_h)] <- ""
-testdata_a[is.na(testdata_a)] <- ""
+gcmatrix_h[is.na(gcmatrix_h)] <- ""
+gcmatrix_a[is.na(gcmatrix_a)] <- ""
 
 rowcount <- nrow(testdata_h)
 colcount <- ncol(testdata_h)
 
-for(rowh in 1:nrow(testdata_h)) {
-  for(colh in 1:ncol(testdata_h)) {
+for(rowh in 1:nrow(gcmatrix_h)) {
+  for(colh in 1:ncol(gcmatrix_h)) {
 
-   # print(my_matrix[row, col])
-    for(rowa in 1:nrow(testdata_a)) {
-      for(cola in 1:ncol(testdata_a)) {
-        ifelse(!testdata_a[rowa,cola]=="",testdata_h[rowa,cola] <- testdata_a[rowa,cola],next)
+    # print(my_matrix[row, col])
+    for(rowa in 1:nrow(gcmatrix_a)) {
+      for(cola in 1:ncol(gcmatrix_a)) {
+        ifelse(!gcmatrix_a[rowa,cola]=="",gcmatrix_h[rowa,cola] <- gcmatrix_a[rowa,cola],next)
 
         #print(my_matrix[row, col])
       }
@@ -45,7 +45,7 @@ for(rowh in 1:nrow(testdata_h)) {
 #write.csv(hometeam_tg, 'hometg.csv')
 #write.csv(awayteam_tg, 'awaytg.csv')
 
-write.csv(testdata_h,'testdata_1test.csv')
+write.csv(gcmatrix_h,'gcmatrix.csv')
 write.csv(testdata_a,'testdata_a.csv')
 
 testdata_h[1,] <- testdata_a[1,]

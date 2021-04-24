@@ -16,18 +16,25 @@ sorted_D1
 #with(sorted_B1, tapply(TG, list(HomeTeam, Date), FUN = mean))
 #awayteam_tg <- with(sorted_B1, tapply(TG, list(AwayTeam, Date), FUN = mean))
 
-testdata_h <- tapply(D1$TG, D1[c("HomeTeam", "Date")],mean)
-testdata_a <- tapply(D1$TG, D1[c("AwayTeam", "Date")],mean)
+testdata_h <- tapply(D1$FTR, D1[c("HomeTeam", "Date")],median)
+testdata_a <- tapply(D1$FTR, D1[c("AwayTeam", "Date")],median)
+
 
 testdata_h[is.na(testdata_h)] <- ""
 testdata_a[is.na(testdata_a)] <- ""
+
+testdata_h <- sub("A","L",testdata_h)
+testdata_h <- sub("H","W",testdata_h)
+
+testdata_a <- sub("A","W",testdata_a)
+testdata_a <- sub("H","L",testdata_a)
 
 
 
 for(rowh in 1:nrow(testdata_h)) {
   for(colh in 1:ncol(testdata_h)) {
 
-   # print(my_matrix[row, col])
+    # print(my_matrix[row, col])
     for(rowa in 1:nrow(testdata_a)) {
       for(cola in 1:ncol(testdata_a)) {
         ifelse(!testdata_a[rowa,cola]=="",testdata_h[rowa,cola] <- testdata_a[rowa,cola],next)
@@ -44,7 +51,7 @@ for(rowh in 1:nrow(testdata_h)) {
 #write.csv(hometeam_tg, 'hometg.csv')
 #write.csv(awayteam_tg, 'awaytg.csv')
 
-write.csv(testdata_h,'testdata_1test.csv')
+write.csv(testdata_h,'teamformdiv.csv')
 write.csv(testdata_a,'testdata_a.csv')
 
 testdata_h[1,] <- testdata_a[1,]

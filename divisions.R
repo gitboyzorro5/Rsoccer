@@ -1,6 +1,8 @@
 #by gitboyzorro5
-allteams20202021 <- read.csv('allteams20202021SOT.csv')
+#create divisions and order by date
 library('lubridate')
+allteams20202021 <- read.csv('allteams20202021SOT.csv')
+
 #change date strings to Date objects
 allteams20202021$Date <- dmy(allteams20202021$Date)
 allteams20202021 <- allteams20202021[order(as.Date(allteams20202021$Date, format = "%d/%m/%Y"), decreasing = FALSE),]
@@ -34,7 +36,3 @@ SP1 <- subset(allteams20202021, Div == "SP1")
 SP2 <- subset(allteams20202021, Div == "SP2")
 T1 <- subset(allteams20202021, Div == "T1")
 
-attributes(allteams20202021)
-
-
-latest_10 <- subset(allteams21, Date <= max(Date))

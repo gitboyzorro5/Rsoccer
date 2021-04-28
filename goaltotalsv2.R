@@ -186,6 +186,73 @@ sc3_teams <- sort(unique(SC3$HomeTeam))
 sp1_teams <- sort(unique(SP1$HomeTeam))
 sp2_teams <- sort(unique(SP2$HomeTeam))
 t1_teams <- sort(unique(T1$HomeTeam))
+#initialize home and away game vectors
+#B1
+b1_home_games <- c()
+b1_away_games <-c()
+#D1
+d1_home_games <- c()
+d1_away_games <-c()
+#D2
+d2_home_games <- c()
+d2_away_games <-c()
+#E0
+e0_home_games <- c()
+e0_away_games <-c()
+#E1
+e1_home_games <- c()
+e1_away_games <-c()
+#E2
+e2_home_games <- c()
+e2_away_games <-c()
+#E3
+e3_home_games <- c()
+e3_away_games <-c()
+#EC
+ec_home_games <- c()
+ec_away_games <-c()
+#F1
+f1_home_games <- c()
+f1_away_games <-c()
+#F2
+f2_home_games <- c()
+f2_away_games <-c()
+#G1
+g1_home_games <- c()
+g1_away_games <-c()
+#I1
+i1_home_games <- c()
+i1_away_games <-c()
+#I2
+i2_home_games <- c()
+i2_away_games <-c()
+#N1
+n1_home_games <- c()
+n1_away_games <-c()
+#P1
+p1_home_games <- c()
+p1_away_games <-c()
+#SC0
+sc0_home_games <- c()
+sc0_away_games <-c()
+#SC1
+sc1_home_games <- c()
+sc1_away_games <-c()
+#SC2
+sc2_home_games <- c()
+sc2_away_games <-c()
+#SC3
+sc3_home_games <- c()
+sc3_away_games <-c()
+#SP1
+sp1_home_games <- c()
+sp1_away_games <-c()
+#SP2
+sp2_home_games <- c()
+sp2_away_games <-c()
+#T1
+t1_home_games <- c()
+t1_away_games <-c()
 #Get number of home and away games played
 #B1
 for (i_b1 in 1:length(b1_teams))
@@ -231,8 +298,8 @@ for (i_e1 in 1:length(e1_teams))
 for (i_e2 in 1:length(e2_teams))
 {
 
-  e2_home_games[i_e2] <- nrow(E2[e2$HomeTeam == E2_teams[i_e2],])
-  e2_away_games[i_e2]  <- nrow(E2[e2$AwayTeam == E2_teams[i_e2],])
+  e2_home_games[i_e2] <- nrow(E2[E2$HomeTeam == e2_teams[i_e2],])
+  e2_away_games[i_e2]  <- nrow(E2[E2$AwayTeam == e2_teams[i_e2],])
 
 }
 #E3
@@ -283,67 +350,219 @@ for (i_i1 in 1:length(i1_teams))
   i1_away_games[i_i1]  <- nrow(I1[I1$AwayTeam == i1_teams[i_i1],])
 
 }
+#I2
+for (i_i2 in 1:length(i2_teams))
+{
 
-games_played <- home_games + away_games
-gtotalsv2 <- cbind(gtotalsv2,games_played)
+  i2_home_games[i_i2] <- nrow(I2[I2$HomeTeam == i2_teams[i_i2],])
+  i2_away_games[i_i2]  <- nrow(I2[I2$AwayTeam == i2_teams[i_i2],])
 
-avg_totalgoals <- round((TotalGoals / games_played), digits = 4)
-
-gtotalsv2 <- cbind(gtotalsv2,avg_totalgoals)
-gtotalsv2[is.na(gtotalsv2)] <- ""
-
-
-
-
-write.csv(gtotalsv2,'gtotals.csv')
-
-gtotalsv2_h[is.na(gtotalsv2_h)] <- ""
-gsmatrix_a[is.na(gsmatrix_a)] <- ""
-
-rowcount <- nrow(testdata_h)
-colcount <- ncol(testdata_h)
-
-for(rowh in 1:nrow(gtotalsv2_h)) {
-  for(colh in 1:ncol(gtotalsv2_h)) {
-
-    # print(my_matrix[row, col])
-    for(rowa in 1:nrow(gsmatrix_a)) {
-      for(cola in 1:ncol(gsmatrix_a)) {
-        ifelse(!gsmatrix_a[rowa,cola]=="",gtotalsv2_h[rowa,cola] <- gsmatrix_a[rowa,cola],next)
-
-        #print(my_matrix[row, col])
-      }
-    }
-
-  }
 }
+#N1
+for (i_n1 in 1:length(n1_teams))
+{
+
+  n1_home_games[i_n1] <- nrow(N1[N1$HomeTeam == n1_teams[i_n1],])
+  n1_away_games[i_n1]  <- nrow(N1[N1$AwayTeam == n1_teams[i_n1],])
+
+}
+#P1
+for (i_p1 in 1:length(p1_teams))
+{
+
+  p1_home_games[i_p1] <- nrow(P1[P1$HomeTeam == p1_teams[i_p1],])
+  p1_away_games[i_p1]  <- nrow(P1[P1$AwayTeam == p1_teams[i_p1],])
+
+}
+#SC0
+for (i_sc0 in 1:length(sc0_teams))
+{
+
+  sc0_home_games[i_sc0] <- nrow(SC0[SC0$HomeTeam == sc0_teams[i_sc0],])
+  sc0_away_games[i_sc0]  <- nrow(SC0[SC0$AwayTeam == sc0_teams[i_sc0],])
+
+}
+#SC1
+for (i_sc1 in 1:length(sc1_teams))
+{
+
+  sc1_home_games[i_sc1] <- nrow(SC1[SC1$HomeTeam == sc1_teams[i_sc1],])
+  sc1_away_games[i_sc1]  <- nrow(SC1[SC1$AwayTeam == sc1_teams[i_sc1],])
+
+}
+#SC3
+for (i_sc3 in 1:length(sc3_teams))
+{
+
+  sc3_home_games[i_sc3] <- nrow(SC3[SC3$HomeTeam == sc3_teams[i_sc3],])
+  sc3_away_games[i_sc3]  <- nrow(SC3[SC3$AwayTeam == sc3_teams[i_sc3],])
+
+}
+#SP1
+for (i_sp1 in 1:length(sp1_teams))
+{
+
+  sp1_home_games[i_sp1] <- nrow(SP1[SP1$HomeTeam == sp1_teams[i_sp1],])
+  sp1_away_games[i_sp1]  <- nrow(SP1[SP1$AwayTeam == sp1_teams[i_sp1],])
+
+}
+#SP2
+for (i_sp2 in 1:length(sp2_teams))
+{
+
+  sp2_home_games[i_sp2] <- nrow(SP2[SP2$HomeTeam == sp2_teams[i_sp2],])
+  sp2_away_games[i_sp2]  <- nrow(SP2[SP2$AwayTeam == sp2_teams[i_sp2],])
+
+}
+#T1
+for (i_t1 in 1:length(t1_teams))
+{
+
+  t1_home_games[i_t1] <- nrow(T1[T1$HomeTeam == t1_teams[i_t1],])
+  t1_away_games[i_t1]  <- nrow(T1[T1$AwayTeam == t1_teams[i_t1],])
+
+}
+#Add home games and away games to get total games played
+b1_games_played <- b1_home_games + b1_away_games
+d1_games_played <- d1_home_games + d1_away_games
+d2_games_played <- d2_home_games + d2_away_games
+e0_games_played <- e0_home_games + e0_away_games
+e1_games_played <- e1_home_games + e1_away_games
+e2_games_played <- e2_home_games + e2_away_games
+e3_games_played <- e3_home_games + e3_away_games
+ec_games_played <- ec_home_games + ec_away_games
+f1_games_played <- f1_home_games + f1_away_games
+f2_games_played <- f2_home_games + f2_away_games
+g1_games_played <- g1_home_games + g1_away_games
+i1_games_played <- i1_home_games + i1_away_games
+i2_games_played <- i2_home_games + i2_away_games
+n1_games_played <- n1_home_games + n1_away_games
+p1_games_played <- p1_home_games + p1_away_games
+sc0_games_played <- sc0_home_games + sc0_away_games
+sc1_games_played <- sc1_home_games + sc1_away_games
+sc2_games_played <- sc2_home_games + sc2_away_games
+sc3_games_played <- sc3_home_games + sc3_away_games
+sp1_games_played <- sp1_home_games + sp1_away_games
+sp2_games_played <- sp2_home_games + sp2_away_games
+t1_games_played <- t1_home_games + t1_away_games
+#Bind total games played
+
+b1_goaltotalsv2 <- cbind(b1_goaltotalsv2,b1_games_played)
+d1_goaltotalsv2 <- cbind(d1_goaltotalsv2,d1_games_played)
+d2_goaltotalsv2 <- cbind(d2_goaltotalsv2,d2_games_played)
+e0_goaltotalsv2 <- cbind(e0_goaltotalsv2,e0_games_played)
+e1_goaltotalsv2 <- cbind(e1_goaltotalsv2,e1_games_played)
+e2_goaltotalsv2 <- cbind(e2_goaltotalsv2,e2_games_played)
+e3_goaltotalsv2 <- cbind(e3_goaltotalsv2,e3_games_played)
+ec_goaltotalsv2 <- cbind(ec_goaltotalsv2,ec_games_played)
+f1_goaltotalsv2 <- cbind(f1_goaltotalsv2,f1_games_played)
+f2_goaltotalsv2 <- cbind(f2_goaltotalsv2,f2_games_played)
+g1_goaltotalsv2 <- cbind(g1_goaltotalsv2,g1_games_played)
+i1_goaltotalsv2 <- cbind(i1_goaltotalsv2,i1_games_played)
+i2_goaltotalsv2 <- cbind(i2_goaltotalsv2,i2_games_played)
+n1_goaltotalsv2 <- cbind(n1_goaltotalsv2,n1_games_played)
+p1_goaltotalsv2 <- cbind(p1_goaltotalsv2,p1_games_played)
+sc0_goaltotalsv2 <- cbind(sc0_goaltotalsv2,sc0_games_played)
+sc1_goaltotalsv2 <- cbind(sc1_goaltotalsv2,sc1_games_played)
+sc2_goaltotalsv2 <- cbind(sc2_goaltotalsv2,sc2_games_played)
+sc3_goaltotalsv2 <- cbind(sc3_goaltotalsv2,sc3_games_played)
+sp1_goaltotalsv2 <- cbind(sp1_goaltotalsv2,sp1_games_played)
+sp2_goaltotalsv2 <- cbind(sp2_goaltotalsv2,sp2_games_played)
+t1_goaltotalsv2 <- cbind(t1_goaltotalsv2,t1_games_played)
+#Calculate average total goals
+b1_avg_totalgoals <- round((b1_totalgoals/ b1_games_played), digits = 4)
+d1_avg_totalgoals <- round((d1_totalgoals/ d1_games_played), digits = 4)
+d2_avg_totalgoals <- round((d2_totalgoals/ d2_games_played), digits = 4)
+e0_avg_totalgoals <- round((e0_totalgoals/ e0_games_played), digits = 4)
+e1_avg_totalgoals <- round((e1_totalgoals/ e1_games_played), digits = 4)
+e2_avg_totalgoals <- round((e2_totalgoals/ e2_games_played), digits = 4)
+e3_avg_totalgoals <- round((e3_totalgoals/ e3_games_played), digits = 4)
+ec_avg_totalgoals <- round((ec_totalgoals/ ec_games_played), digits = 4)
+f1_avg_totalgoals <- round((f1_totalgoals/ f1_games_played), digits = 4)
+f2_avg_totalgoals <- round((f2_totalgoals/ f2_games_played), digits = 4)
+g1_avg_totalgoals <- round((g1_totalgoals/ g1_games_played), digits = 4)
+i1_avg_totalgoals <- round((i1_totalgoals/ i1_games_played), digits = 4)
+i2_avg_totalgoals <- round((i2_totalgoals/ i2_games_played), digits = 4)
+n1_avg_totalgoals <- round((n1_totalgoals/ n1_games_played), digits = 4)
+p1_avg_totalgoals <- round((p1_totalgoals/ p1_games_played), digits = 4)
+sc0_avg_totalgoals <- round((sc0_totalgoals/ sc0_games_played), digits = 4)
+sc1_avg_totalgoals <- round((sc1_totalgoals/ sc1_games_played), digits = 4)
+sc2_avg_totalgoals <- round((sc2_totalgoals/ sc2_games_played), digits = 4)
+sc3_avg_totalgoals <- round((sc3_totalgoals/ sc3_games_played), digits = 4)
+sp1_avg_totalgoals <- round((sp1_totalgoals/ sp1_games_played), digits = 4)
+sp2_avg_totalgoals <- round((sp2_totalgoals/ sp2_games_played), digits = 4)
+t1_avg_totalgoals <- round((t1_totalgoals/ t1_games_played), digits = 4)
+#Remove NA values
+b1_goaltotalsv2[is.na(b1_goaltotalsv2)] <- ""
+d1_goaltotalsv2[is.na(d1_goaltotalsv2)] <- ""
+d2_goaltotalsv2[is.na(d2_goaltotalsv2)] <- ""
+e0_goaltotalsv2[is.na(e0_goaltotalsv2)] <- ""
+e1_goaltotalsv2[is.na(e1_goaltotalsv2)] <- ""
+e2_goaltotalsv2[is.na(e2_goaltotalsv2)] <- ""
+e3_goaltotalsv2[is.na(e3_goaltotalsv2)] <- ""
+ec_goaltotalsv2[is.na(ec_goaltotalsv2)] <- ""
+f1_goaltotalsv2[is.na(f1_goaltotalsv2)] <- ""
+f2_goaltotalsv2[is.na(f2_goaltotalsv2)] <- ""
+g1_goaltotalsv2[is.na(g1_goaltotalsv2)] <- ""
+i1_goaltotalsv2[is.na(i1_goaltotalsv2)] <- ""
+i2_goaltotalsv2[is.na(i2_goaltotalsv2)] <- ""
+n1_goaltotalsv2[is.na(n1_goaltotalsv2)] <- ""
+p1_goaltotalsv2[is.na(p1_goaltotalsv2)] <- ""
+sc0_goaltotalsv2[is.na(sc0_goaltotalsv2)] <- ""
+sc1_goaltotalsv2[is.na(sc1_goaltotalsv2)] <- ""
+sc2_goaltotalsv2[is.na(sc2_goaltotalsv2)] <- ""
+sc3_goaltotalsv2[is.na(sc3_goaltotalsv2)] <- ""
+sp1_goaltotalsv2[is.na(sp1_goaltotalsv2)] <- ""
+sp2_goaltotalsv2[is.na(sp2_goaltotalsv2)] <- ""
+t1_goaltotalsv2[is.na(t1_goaltotalsv2)] <- ""
+#Bind average total goals
+
+b1_goaltotalsv2 <- cbind(b1_goaltotalsv2,b1_avg_totalgoals)
+d1_goaltotalsv2 <- cbind(d1_goaltotalsv2,d1_avg_totalgoals)
+d2_goaltotalsv2 <- cbind(d2_goaltotalsv2,d2_avg_totalgoals)
+e0_goaltotalsv2 <- cbind(e0_goaltotalsv2,e0_avg_totalgoals)
+e1_goaltotalsv2 <- cbind(e1_goaltotalsv2,e1_avg_totalgoals)
+e2_goaltotalsv2 <- cbind(e2_goaltotalsv2,e2_avg_totalgoals)
+e3_goaltotalsv2 <- cbind(e3_goaltotalsv2,e3_avg_totalgoals)
+ec_goaltotalsv2 <- cbind(ec_goaltotalsv2,ec_avg_totalgoals)
+f1_goaltotalsv2 <- cbind(f1_goaltotalsv2,f1_avg_totalgoals)
+f2_goaltotalsv2 <- cbind(f2_goaltotalsv2,f2_avg_totalgoals)
+g1_goaltotalsv2 <- cbind(g1_goaltotalsv2,g1_avg_totalgoals)
+i1_goaltotalsv2 <- cbind(i1_goaltotalsv2,i1_avg_totalgoals)
+i2_goaltotalsv2 <- cbind(i2_goaltotalsv2,i2_avg_totalgoals)
+n1_goaltotalsv2 <- cbind(n1_goaltotalsv2,n1_avg_totalgoals)
+p1_goaltotalsv2 <- cbind(p1_goaltotalsv2,p1_avg_totalgoals)
+sc0_goaltotalsv2 <- cbind(sc0_goaltotalsv2,sc0_avg_totalgoals)
+sc1_goaltotalsv2 <- cbind(sc1_goaltotalsv2,sc1_avg_totalgoals)
+sc2_goaltotalsv2 <- cbind(sc2_goaltotalsv2,sc2_avg_totalgoals)
+sc3_goaltotalsv2 <- cbind(sc3_goaltotalsv2,sc3_avg_totalgoals)
+sp1_goaltotalsv2 <- cbind(sp1_goaltotalsv2,sp1_avg_totalgoals)
+sp2_goaltotalsv2 <- cbind(sp2_goaltotalsv2,sp2_avg_totalgoals)
+t1_goaltotalsv2 <- cbind(t1_goaltotalsv2,t1_avg_totalgoals)
+
+#Write out to excel files
+write.xlsx(b1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "B1")
+write.xlsx(d1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "D1", append = TRUE)
+write.xlsx(d2_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "D2", append = TRUE)
+write.xlsx(e0_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "E0", append = TRUE)
+write.xlsx(e1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "E1", append = TRUE)
+write.xlsx(e2_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "E2", append = TRUE)
+write.xlsx(e3_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "E3", append = TRUE)
+write.xlsx(ec_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "EC", append = TRUE)
+write.xlsx(f1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "F1", append = TRUE)
+write.xlsx(f2_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "F2", append = TRUE)
+write.xlsx(g1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "G1", append = TRUE)
+write.xlsx(i1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "I1", append = TRUE)
+write.xlsx(i2_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "I2", append = TRUE)
+write.xlsx(n1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "N1", append = TRUE)
+write.xlsx(p1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "P1", append = TRUE)
+write.xlsx(sc0_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "SC0", append = TRUE)
+write.xlsx(sc1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "SC1", append = TRUE)
+write.xlsx(sc2_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "SC2", append = TRUE)
+write.xlsx(sc3_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "SC3", append = TRUE)
+write.xlsx(sp1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "SP1", append = TRUE)
+write.xlsx(sp2_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "SP2", append = TRUE)
+write.xlsx(t1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "T1", append = TRUE)
 
 
 
-#write.csv(hometeam_tg, 'hometg.csv')
-#write.csv(awayteam_tg, 'awaytg.csv')
-
-write.csv(gtotalsv2_h,'gsmatrix.csv')
-write.csv(testdata_a,'testdata_a.csv')
-
-testdata_h[1,] <- testdata_a[1,]
-testdata_a[10,5]
-
-dim(testdata_h)
-dim(testdata_a)
-
-
-mergedtest <- merge(hometeam_tg, awayteam_tg,by = 'row.names',all.hometeam_tg = awayteam_tgl,no.dups = T)
-write.csv(mergedtest,'merged.csv')
-?merge
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
-library('xlsx')
-write.xlsx(hometeam_tg,'hometg.xlsx',sheetName = "D1h")
-write.xlsx(awayteam_tg,'hometg.xlsx',sheetName = "D1h", append = TRUE)
-
-library('ggplot2')
-ggD1 <- ggplot(sorted_D1, aes(x=Date,y=TG))
-ggD1 + geom_point()
-
-
-#create Teams dataset

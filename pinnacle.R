@@ -17,5 +17,5 @@ PFH <- round(fairodds[,1], digits = 2)
 PFD <- round(fairodds[,2], digits = 2)
 PFA <- round(fairodds[,3], digits = 2)
 data_2021 <- cbind(data_2021,PFH,PFD,PFA)
-head(data_2021)
+
 

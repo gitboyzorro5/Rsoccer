@@ -408,7 +408,6 @@ for(t1_rowh in 1:nrow(t1_totalgoals_h)) {
 }
 
 
-
 #write out the data to excel
 write.xlsx(b1_totalgoals_h,'TGform.xlsx',sheetName = "B1")
 write.xlsx(d1_totalgoals_h,'TGform.xlsx',sheetName = "D1", append = TRUE)

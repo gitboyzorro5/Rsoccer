@@ -284,7 +284,6 @@ for (i_e0 in 1:length(e0_teams))
 
   e0_home_games[i_e0] <- nrow(E0[E0$HomeTeam == e0_teams[i_e0],])
   e0_away_games[i_e0]  <- nrow(E0[E0$AwayTeam == e0_teams[i_e0],])
-
 }
 #E1
 for (i_e1 in 1:length(e1_teams))

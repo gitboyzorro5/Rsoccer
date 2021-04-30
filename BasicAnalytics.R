@@ -8,11 +8,20 @@ ftr_summary <- ftr_summary[,c(1,4,3,2)]
 #Half time results percentages
 htr_summary <- tabyl(allteams20202021,Div,HTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 htr_summary <- htr_summary[,c(1,4,3,2)]
-#Total Home goals scored
-for (i_b1_hgs in 1:length(b1_teams))
-{
-  b1_home_gs <- c()
-  b1_home_gs[i_b1_hgs] <- sum(B1$FTHG,B1$HomeTeam == b1_teams[i_b1_hgs])
-  #e0_away_games[i_e0]  <- nrow(E0[E0$AwayTeam == e0_teams[i_e0],])
-}
+#Total goals scored
+#B1
 b1_home_gs <- aggregate(B1$FTHG, by = list(B1$HomeTeam), FUN = sum)
+b1_home_gs_avg <- aggregate(B1$FTHG, by = list(B1$HomeTeam),mean)
+b1_home_scoring <- merge(b1_home_gs,b1_home_gs_avg, by='Group.1',all = T)
+names(b1_home_scoring)[names(b1_home_scoring) == "x.x"] <- "TFthg"
+names(b1_home_scoring)[names(b1_home_scoring) == "x.y"] <- "Avg_Fthg"
+
+b1_away_gs <- aggregate(B1$FTAG, by = list(B1$AwayTeam), FUN = sum)
+b1_away_gs_avg <- aggregate(B1$FTAG, by = list(B1$AwayTeam),mean)
+b1_away_scoring <- merge(b1_away_gs,b1_away_gs_avg, by='Group.1',all = T)
+names(b1_away_scoring)[names(b1_away_scoring) == "x.x"] <- "TFtag"
+names(b1_away_scoring)[names(b1_away_scoring) == "x.y"] <- "Avg_Ftag"
+
+merge(b1_home_scoring,b1_away_scoring, by='Group.1',all = T)
+
+

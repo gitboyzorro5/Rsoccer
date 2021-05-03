@@ -22,6 +22,8 @@ b1_away_scoring <- merge(b1_away_gs,b1_away_gs_avg, by='Group.1',all = T)
 names(b1_away_scoring)[names(b1_away_scoring) == "x.x"] <- "TFtag"
 names(b1_away_scoring)[names(b1_away_scoring) == "x.y"] <- "Avg_Ftag"
 
-merge(b1_home_scoring,b1_away_scoring, by='Group.1',all = T)
+
+
+
 
 

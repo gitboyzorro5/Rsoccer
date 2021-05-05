@@ -389,6 +389,14 @@ for (i_sc1 in 1:length(sc1_teams))
   sc1_away_games[i_sc1]  <- nrow(SC1[SC1$AwayTeam == sc1_teams[i_sc1],])
 
 }
+#SC2
+for (i_sc2 in 1:length(sc2_teams))
+{
+
+  sc2_home_games[i_sc2] <- nrow(SC2[SC2$HomeTeam == sc2_teams[i_sc2],])
+  sc2_away_games[i_sc2]  <- nrow(SC2[SC2$AwayTeam == sc2_teams[i_sc2],])
+
+}
 #SC3
 for (i_sc3 in 1:length(sc3_teams))
 {

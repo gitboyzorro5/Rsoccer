@@ -70,7 +70,7 @@ b1_conceding_conversion$TSCC <- percent(b1_conceding_conversion$TGC/b1_conceding
 
 #merge the two parts
 b1_shots_analysis <- merge(b1_scoring_conversion,b1_conceding_conversion,by='Group.1',all = T)
-View(b1_shots_analysis)
+
 
 #D2
 #home goals scored
@@ -2098,6 +2098,7 @@ sc2_scoring_conversion$ASTC <- percent(sc2_scoring_conversion$TFtag/sc2_scoring_
 sc2_scoring_conversion$TSTC <- percent(sc2_scoring_conversion$TGS/sc2_scoring_conversion$TST, accuracy = 0.01)
 #merge games played
 sc2_scoring_conversion <- cbind(sc2_scoring_conversion,sc2_games_played)
+
 #create the second part
 #home goals conceded
 sc2_home_gc <- aggregate(SC2$FTAG, by = list(SC2$HomeTeam), FUN = sum)

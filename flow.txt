@@ -1,0 +1,8 @@
+write  out
+league table,
+teamform
+Gs
+Gc
+TG matrix
+Goaltotalsv2
+

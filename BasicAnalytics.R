@@ -10,8 +10,11 @@ ftr_summary <- ftr_summary[,c(1,4,3,2)]
 htr_summary <- tabyl(allteams20202021,Div,HTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 htr_summary <- htr_summary[,c(1,4,3,2)]
 
-
-
+index <- row.names(p1_form_h) == "Guimaraes"
+form <- p1_totalgoals_h[index]
+form <- form[!form == ""]
+length(form)
+tail(form,6)
 
 
 

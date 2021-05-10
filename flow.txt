@@ -5,4 +5,22 @@ Gs
 Gc
 TG matrix
 Goaltotalsv2
+#####
+Execution sequence
+1.divisions.R
+2.GoalTotalsV2.R
+3.GSmatrix.R
+4.GCmatrix.R
+5.Teamform.R
+6.TGmatrix.R
+7.ShotsAnalysis.R
+8.LeagueTables.R
+9.LastSix.R
+10.MasterWrite.R
 
+
+
+Totalgoals.R
+ggplottest.R
+lesson1.R
+pinnacle.R

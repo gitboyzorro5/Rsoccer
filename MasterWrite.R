@@ -10,6 +10,7 @@ write.xlsx(b1_goalscored_h,'Divisions/B1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(b1_goalconceded_h,'Divisions/B1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(b1_totalgoals_h,'Divisions/B1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(b1_goaltotalsv2,'Divisions/B1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(b1_shots_analysis,'Divisions/B1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #D1
 write.xlsx(points_d1,'Divisions/D1.xlsx', sheetName = "Table")
 write.xlsx(d1_form_h,'Divisions/D1.xlsx', sheetName = "Form", append = TRUE)
@@ -17,6 +18,7 @@ write.xlsx(d1_goalscored_h,'Divisions/D1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(d1_goalconceded_h,'Divisions/D1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(d1_totalgoals_h,'Divisions/D1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(d1_goaltotalsv2,'Divisions/D1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(d1_shots_analysis,'Divisions/D1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #D2
 write.xlsx(points_d2,'Divisions/D2.xlsx', sheetName = "Table")
 write.xlsx(d2_form_h,'Divisions/D2.xlsx', sheetName = "Form", append = TRUE)
@@ -24,6 +26,7 @@ write.xlsx(d2_goalscored_h,'Divisions/D2.xlsx', sheetName = "Goals scored", appe
 write.xlsx(d2_goalconceded_h,'Divisions/D2.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(d2_totalgoals_h,'Divisions/D2.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(d2_goaltotalsv2,'Divisions/D2.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(d2_shots_analysis,'Divisions/D2.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #E0
 write.xlsx(points_e0,'Divisions/E0.xlsx', sheetName = "Table")
 write.xlsx(e0_form_h,'Divisions/E0.xlsx', sheetName = "Form", append = TRUE)
@@ -31,6 +34,7 @@ write.xlsx(e0_goalscored_h,'Divisions/E0.xlsx', sheetName = "Goals scored", appe
 write.xlsx(e0_goalconceded_h,'Divisions/E0.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(e0_totalgoals_h,'Divisions/E0.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(e0_goaltotalsv2,'Divisions/E0.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(e0_shots_analysis,'Divisions/E0.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #E1
 write.xlsx(points_e1,'Divisions/E1.xlsx', sheetName = "Table")
 write.xlsx(e1_form_h,'Divisions/E1.xlsx', sheetName = "Form", append = TRUE)
@@ -38,6 +42,7 @@ write.xlsx(e1_goalscored_h,'Divisions/E1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(e1_goalconceded_h,'Divisions/E1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(e1_totalgoals_h,'Divisions/E1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(e1_goaltotalsv2,'Divisions/E1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(e1_shots_analysis,'Divisions/E1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #E2
 write.xlsx(points_e2,'Divisions/E2.xlsx', sheetName = "Table")
 write.xlsx(e2_form_h,'Divisions/E2.xlsx', sheetName = "Form", append = TRUE)
@@ -45,6 +50,7 @@ write.xlsx(e2_goalscored_h,'Divisions/E2.xlsx', sheetName = "Goals scored", appe
 write.xlsx(e2_goalconceded_h,'Divisions/E2.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(e2_totalgoals_h,'Divisions/E2.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(e2_goaltotalsv2,'Divisions/E2.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(e2_shots_analysis,'Divisions/E2.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #E3
 write.xlsx(points_e3,'Divisions/E3.xlsx', sheetName = "Table")
 write.xlsx(e3_form_h,'Divisions/E3.xlsx', sheetName = "Form", append = TRUE)
@@ -52,6 +58,7 @@ write.xlsx(e3_goalscored_h,'Divisions/E3.xlsx', sheetName = "Goals scored", appe
 write.xlsx(e3_goalconceded_h,'Divisions/E3.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(e3_totalgoals_h,'Divisions/E3.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(e3_goaltotalsv2,'Divisions/E3.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(e3_shots_analysis,'Divisions/E3.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #EC
 write.xlsx(points_ec,'Divisions/EC.xlsx', sheetName = "Table")
 write.xlsx(ec_form_h,'Divisions/EC.xlsx', sheetName = "Form", append = TRUE)
@@ -59,6 +66,7 @@ write.xlsx(ec_goalscored_h,'Divisions/EC.xlsx', sheetName = "Goals scored", appe
 write.xlsx(ec_goalconceded_h,'Divisions/EC.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(ec_totalgoals_h,'Divisions/EC.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(ec_goaltotalsv2,'Divisions/EC.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(ec_shots_analysis,'Divisions/EC.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #F1
 write.xlsx(points_f1,'Divisions/F1.xlsx', sheetName = "Table")
 write.xlsx(f1_form_h,'Divisions/F1.xlsx', sheetName = "Form", append = TRUE)
@@ -66,6 +74,7 @@ write.xlsx(f1_goalscored_h,'Divisions/F1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(f1_goalconceded_h,'Divisions/F1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(f1_totalgoals_h,'Divisions/F1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(f1_goaltotalsv2,'Divisions/F1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(f1_shots_analysis,'Divisions/F1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #F2
 write.xlsx(points_f2,'Divisions/F2.xlsx', sheetName = "Table")
 write.xlsx(f2_form_h,'Divisions/F2.xlsx', sheetName = "Form", append = TRUE)
@@ -73,6 +82,7 @@ write.xlsx(f2_goalscored_h,'Divisions/F2.xlsx', sheetName = "Goals scored", appe
 write.xlsx(f2_goalconceded_h,'Divisions/F2.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(f2_totalgoals_h,'Divisions/F2.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(f2_goaltotalsv2,'Divisions/F2.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(f2_shots_analysis,'Divisions/F2.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #G1
 write.xlsx(points_g1,'Divisions/G1.xlsx', sheetName = "Table")
 write.xlsx(g1_form_h,'Divisions/G1.xlsx', sheetName = "Form", append = TRUE)
@@ -80,6 +90,7 @@ write.xlsx(g1_goalscored_h,'Divisions/G1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(g1_goalconceded_h,'Divisions/G1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(g1_totalgoals_h,'Divisions/G1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(g1_goaltotalsv2,'Divisions/G1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(g1_shots_analysis,'Divisions/G1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #I1
 write.xlsx(points_i1,'Divisions/I1.xlsx', sheetName = "Table")
 write.xlsx(i1_form_h,'Divisions/I1.xlsx', sheetName = "Form", append = TRUE)
@@ -87,6 +98,7 @@ write.xlsx(i1_goalscored_h,'Divisions/I1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(i1_goalconceded_h,'Divisions/I1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(i1_totalgoals_h,'Divisions/I1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(i1_goaltotalsv2,'Divisions/I1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(i1_shots_analysis,'Divisions/I1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #I2
 write.xlsx(points_i2,'Divisions/I2.xlsx', sheetName = "Table")
 write.xlsx(i2_form_h,'Divisions/I2.xlsx', sheetName = "Form", append = TRUE)
@@ -94,6 +106,7 @@ write.xlsx(i2_goalscored_h,'Divisions/I2.xlsx', sheetName = "Goals scored", appe
 write.xlsx(i2_goalconceded_h,'Divisions/I2.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(i2_totalgoals_h,'Divisions/I2.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(i2_goaltotalsv2,'Divisions/I2.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(i2_shots_analysis,'Divisions/I2.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #N1
 write.xlsx(points_n1,'Divisions/N1.xlsx', sheetName = "Table")
 write.xlsx(n1_form_h,'Divisions/N1.xlsx', sheetName = "Form", append = TRUE)
@@ -101,6 +114,7 @@ write.xlsx(n1_goalscored_h,'Divisions/N1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(n1_goalconceded_h,'Divisions/N1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(n1_totalgoals_h,'Divisions/N1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(n1_goaltotalsv2,'Divisions/N1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(n1_shots_analysis,'Divisions/N1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #P1
 write.xlsx(points_p1,'Divisions/P1.xlsx', sheetName = "Table")
 write.xlsx(p1_form_h,'Divisions/P1.xlsx', sheetName = "Form", append = TRUE)
@@ -108,6 +122,7 @@ write.xlsx(p1_goalscored_h,'Divisions/P1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(p1_goalconceded_h,'Divisions/P1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(p1_totalgoals_h,'Divisions/P1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(p1_goaltotalsv2,'Divisions/P1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(p1_shots_analysis,'Divisions/P1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #SC0
 write.xlsx(points_sc0,'Divisions/SC0.xlsx', sheetName = "Table")
 write.xlsx(sc0_form_h,'Divisions/SC0.xlsx', sheetName = "Form", append = TRUE)
@@ -115,6 +130,7 @@ write.xlsx(sc0_goalscored_h,'Divisions/SC0.xlsx', sheetName = "Goals scored", ap
 write.xlsx(sc0_goalconceded_h,'Divisions/SC0.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(sc0_totalgoals_h,'Divisions/SC0.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(sc0_goaltotalsv2,'Divisions/SC0.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(sc0_shots_analysis,'Divisions/SC0.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #SC1
 write.xlsx(points_sc1,'Divisions/SC1.xlsx', sheetName = "Table")
 write.xlsx(sc1_form_h,'Divisions/SC1.xlsx', sheetName = "Form", append = TRUE)
@@ -122,6 +138,7 @@ write.xlsx(sc1_goalscored_h,'Divisions/SC1.xlsx', sheetName = "Goals scored", ap
 write.xlsx(sc1_goalconceded_h,'Divisions/SC1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(sc1_totalgoals_h,'Divisions/SC1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(sc1_goaltotalsv2,'Divisions/SC1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(sc1_shots_analysis,'Divisions/SC1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #SC2
 write.xlsx(points_sc2,'Divisions/SC2.xlsx', sheetName = "Table")
 write.xlsx(sc2_form_h,'Divisions/SC2.xlsx', sheetName = "Form", append = TRUE)
@@ -129,6 +146,7 @@ write.xlsx(sc2_goalscored_h,'Divisions/SC2.xlsx', sheetName = "Goals scored", ap
 write.xlsx(sc2_goalconceded_h,'Divisions/SC2.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(sc2_totalgoals_h,'Divisions/SC2.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(sc2_goaltotalsv2,'Divisions/SC2.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(sc2_shots_analysis,'Divisions/SC2.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #SC3
 write.xlsx(points_sc3,'Divisions/SC3.xlsx', sheetName = "Table")
 write.xlsx(sc3_form_h,'Divisions/SC3.xlsx', sheetName = "Form", append = TRUE)
@@ -136,6 +154,7 @@ write.xlsx(sc3_goalscored_h,'Divisions/SC3.xlsx', sheetName = "Goals scored", ap
 write.xlsx(sc3_goalconceded_h,'Divisions/SC3.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(sc3_totalgoals_h,'Divisions/SC3.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(sc3_goaltotalsv2,'Divisions/SC3.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(sc3_shots_analysis,'Divisions/SC3.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #SP1
 write.xlsx(points_sp1,'Divisions/SP1.xlsx', sheetName = "Table")
 write.xlsx(sp1_form_h,'Divisions/SP1.xlsx', sheetName = "Form", append = TRUE)
@@ -143,6 +162,7 @@ write.xlsx(sp1_goalscored_h,'Divisions/SP1.xlsx', sheetName = "Goals scored", ap
 write.xlsx(sp1_goalconceded_h,'Divisions/SP1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(sp1_totalgoals_h,'Divisions/SP1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(sp1_goaltotalsv2,'Divisions/SP1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(sp1_shots_analysis,'Divisions/SP1.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #SP2
 write.xlsx(points_sp2,'Divisions/SP2.xlsx', sheetName = "Table")
 write.xlsx(sp2_form_h,'Divisions/SP2.xlsx', sheetName = "Form", append = TRUE)
@@ -150,6 +170,7 @@ write.xlsx(sp2_goalscored_h,'Divisions/SP2.xlsx', sheetName = "Goals scored", ap
 write.xlsx(sp2_goalconceded_h,'Divisions/SP2.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(sp2_totalgoals_h,'Divisions/SP2.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(sp2_goaltotalsv2,'Divisions/SP2.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(sp2_shots_analysis,'Divisions/SP2.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #T1
 write.xlsx(points_t1,'Divisions/T1.xlsx', sheetName = "Table")
 write.xlsx(t1_form_h,'Divisions/T1.xlsx', sheetName = "Form", append = TRUE)
@@ -157,3 +178,4 @@ write.xlsx(t1_goalscored_h,'Divisions/T1.xlsx', sheetName = "Goals scored", appe
 write.xlsx(t1_goalconceded_h,'Divisions/T1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(t1_totalgoals_h,'Divisions/T1.xlsx', sheetName = "Total Goals form", append = TRUE)
 write.xlsx(t1_goaltotalsv2,'Divisions/T1.xlsx', sheetName = "Goal totals v2", append = TRUE)
+write.xlsx(t1_shots_analysis,'Divisions/T1.xlsx', sheetName = "Shots Analysis", append = TRUE)

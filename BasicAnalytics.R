@@ -17,6 +17,6 @@ B1_fixtures <- cbind(HomeTeam_b1,AwayTeam_b1)
 B1_fixtures <- as.data.frame(B1_fixtures)
 B1_fixtures <- B1_fixtures[!B1_fixtures$HomeTeam_b1 == B1_fixtures$AwayTeam_b1,]
 rownames(B1_fixtures) <- NULL
-B1_fixtures$Div_b1 <- "B1"
+B1_fixtures$Div <- "B1"
 B1_fixtures <- B1_fixtures[,c(3,1,2)]
-
+merge(B1_fixtures,allteams20202021,by.x='Div',by.y="Div")

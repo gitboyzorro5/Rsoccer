@@ -19,6 +19,7 @@ for(index_b1_hf in 1:length(b1_teams))
   #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
 
 }
+
 #change column names
 final_b1_hf <- as.data.frame(final_b1_hf)
 colnames(final_b1_hf) <- "Form"
@@ -36,6 +37,7 @@ for(index_b1_gs in 1:length(b1_teams))
   #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
 
 }
+
 #change column names
 final_b1_gs <- as.data.frame(final_b1_gs)
 colnames(final_b1_gs) <- "Goals scored"

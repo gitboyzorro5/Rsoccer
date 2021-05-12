@@ -20,3 +20,5 @@ rownames(B1_fixtures) <- NULL
 B1_fixtures$Div <- "B1"
 B1_fixtures <- B1_fixtures[,c(3,1,2)]
 merge(B1_fixtures,allteams20202021,by.x='Div',by.y="Div")
+
+

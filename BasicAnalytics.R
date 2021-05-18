@@ -3,6 +3,7 @@ library('janitor')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 library('scales')
+library('lubridate')
 #Full time results percentages
 ftr_summary <- tabyl(allteams20202021,Div,FTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,4,3,2)]
@@ -63,3 +64,38 @@ final_b1_hf_against
 final_b1_all <- cbind(final_b1_hf,final_b1_gs,final_b1_gc,final_b1_tg,final_b1_hf_against)
 write.xlsx(final_b1_all,'Divisions/B1.xlsx',sheetName = "L6_2", append = TRUE)
 ################################################################################################
+
+
+fixtures <- read.csv('../FDAS/fixtures.csv')
+fixtures$Date <- dmy(fixtures$Date)
+fixtures <- fixtures[order(as.Date(fixtures$Date, format = "%d/%m/%Y"), decreasing = FALSE),]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

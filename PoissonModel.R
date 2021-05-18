@@ -288,7 +288,7 @@ e1_home_poisson <- cbind(e1_division,e1_teams,e1_avg_HG,e1_home_as,e1_home_ds)
 #e2
 e2_division <- c()
 e2_division[1:length(e2_teams)] <- "E2"
-e2_home_poisson <- cbind(e2_division,e2_avg_HG,e2_teams,e2_home_as,e2_home_ds)
+e2_home_poisson <- cbind(e2_division,e2_teams,e2_avg_HG,e2_home_as,e2_home_ds)
 #e3
 e3_division <- c()
 e3_division[1:length(e3_teams)] <- "E3"
@@ -378,7 +378,7 @@ e1_away_poisson <- cbind(e1_division,e1_teams,e1_avg_AG,e1_away_as,e1_away_ds)
 #e2
 e2_division <- c()
 e2_division[1:length(e2_teams)] <- "E2"
-e2_away_poisson <- cbind(e2_division,e2_avg_AG,e2_teams,e2_away_as,e2_away_ds)
+e2_away_poisson <- cbind(e2_division,e2_teams,e2_avg_AG,e2_away_as,e2_away_ds)
 #e3
 e3_division <- c()
 e3_division[1:length(e3_teams)] <- "E3"

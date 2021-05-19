@@ -45,7 +45,26 @@ true_odds_calc_2way$AT <- fixtures$AwayTeam
 true_odds_calc_2way$Div <- fixtures$Div
 true_odds_calc_2way$Date <- fixtures$Date
 true_odds_calc_2way <- as.data.frame(true_odds_calc_2way)
-true_odds_calc_2way
+#create true odds 3 way
+true_odds_calc_3way <- c()
+#true_odds_calc_3way <- c('B_ov25','B_und25','Margin','F_ov25','F_un25','T_ov25prob','T_un25prob','HT','AT','Div','Date')
+true_odds_calc_3way$B_H <- fixtures$PSH
+true_odds_calc_3way$B_D <- fixtures$PSD
+true_odds_calc_3way$B_A <- fixtures$PSA
+
+true_odds_calc_3way$Margin <- percent(((1/true_odds_calc_3way$B_H) + (1/true_odds_calc_3way$B_D) + (1/true_odds_calc_3way$B_A) -1), accuracy = 0.01)
+true_odds_calc_3way$F_H <- round(true_odds_calc_3way$B_H * (1 + ((1/true_odds_calc_3way$B_D) + (1/true_odds_calc_3way$B_A)-1)), digits = 2)
+true_odds_calc_3way$F_D <- round(true_odds_calc_3way$B_H * (1 + ((1/true_odds_calc_3way$B_D) + (1/true_odds_calc_3way$B_A)-1)), digits = 2)
+true_odds_calc_3way$F_A <- round(true_odds_calc_3way$B_H * (1 + ((1/true_odds_calc_3way$B_D) + (1/true_odds_calc_3way$B_A)-1)), digits = 2)
+
+true_odds_calc_3way$T_ov25prob <- percent(odds.dec2prob(true_odds_calc_3way$F_ov25), accuracy = 0.01)
+true_odds_calc_3way$T_un25prob <- percent(odds.dec2prob(true_odds_calc_3way$F_un25), accuracy = 0.01)
+true_odds_calc_3way$HT <- fixtures$HomeTeam
+true_odds_calc_3way$AT <- fixtures$AwayTeam
+true_odds_calc_3way$Div <- fixtures$Div
+true_odds_calc_3way$Date <- fixtures$Date
+true_odds_calc_3way <- as.data.frame(true_odds_calc_3way)
+
 
 
 

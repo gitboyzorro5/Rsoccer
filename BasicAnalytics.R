@@ -23,7 +23,7 @@ rownames(B1_fixtures) <- NULL
 B1_fixtures$Div <- "B1"
 B1_fixtures <- B1_fixtures[,c(3,1,2)]
 merge(B1_fixtures,allteams20202021,by.x='Div',by.y="Div")
-
+B1_fixtures
 myodds <- readxl::read_excel('../FDAS/myodds.xlsx', sheet = '2way')
 
 
@@ -68,13 +68,30 @@ true_odds_calc_3way$Div <- fixtures$Div
 true_odds_calc_3way$Date <- fixtures$Date
 true_odds_calc_3way <- as.data.frame(true_odds_calc_3way)
 
+x <- stats::dpois(0,1.1812)
+y <- stats::dpois(0,1.4660)
 
+x * y
 
+B1_fixtures$b1_homeas <- rep(b1_home_as,each = length(b1_teams)-1)
+b1_awayas_lookup <- cbind(b1_teams,b1_away_as)
+as.data.frame(b1_awayas_lookup)
+colnames(b1_awayas_lookup)
 
+names(b1_awayas_lookup)[names(b1_awayas_lookup) == "b1_teams"] <- "AwayTeam_b1"
+names(b1_awayas_lookup)[names(b1_awayas_lookup) == "b1_away_as"] <- "away_as"
 
+colnames(b1_awayas_lookup) <- c("AwayTeam_b1","b1_awayas")
 
+b1_awayas_lookup
 
+B1_fixtures$b1_awayas
 
+B1_fixtures$b1_awayas <- with(b1_awayas_lookup,b1_awayas[match(B1_fixtures$AwayTeam_b1,AwayTeam_b1)])
+
+merge(b1_awayas_lookup,B1_fixtures,by.x="AwayTeam_b1",by.y="AwayTeam_b1", all = T)
+B1_fixtures$avg_HG <- b1_avg_HG
+B1_fixtures
 
 
 

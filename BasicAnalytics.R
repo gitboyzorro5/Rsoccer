@@ -1,4 +1,5 @@
 library('dplyr')
+library('plyr')
 library('janitor')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
@@ -6,6 +7,11 @@ library('scales')
 library('lubridate')
 library('pinnacle.data')
 library('odds.converter')
+install.packages('sqldf')
+library('sqldf')
+remove.packages('RSQlite')
+
+
 #Full time results percentages
 ftr_summary <- tabyl(allteams20202021,Div,FTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,4,3,2)]
@@ -14,19 +20,10 @@ htr_summary <- tabyl(allteams20202021,Div,HTR) %>% adorn_percentages("row") %>% 
 htr_summary <- htr_summary[,c(1,4,3,2)]
 
 
-HomeTeam_b1 <- rep(b1_teams, each = length(b1_teams))
-AwayTeam_b1 <- rep(b1_teams, length(b1_teams))
-B1_fixtures <- cbind(HomeTeam_b1,AwayTeam_b1)
-B1_fixtures <- as.data.frame(B1_fixtures)
-B1_fixtures <- B1_fixtures[!B1_fixtures$HomeTeam_b1 == B1_fixtures$AwayTeam_b1,]
-rownames(B1_fixtures) <- NULL
-B1_fixtures$Div <- "B1"
-B1_fixtures <- B1_fixtures[,c(3,1,2)]
-merge(B1_fixtures,allteams20202021,by.x='Div',by.y="Div")
-B1_fixtures
+
 myodds <- readxl::read_excel('../FDAS/myodds.xlsx', sheet = '2way')
 
-
+##################################################
 fixtures <- read.csv('../FDAS/fixtures.csv')
 fixtures$Date <- dmy(fixtures$Date)
 fixtures <- fixtures[order(as.Date(fixtures$Date, format = "%d/%m/%Y"), decreasing = FALSE),]
@@ -73,25 +70,59 @@ y <- stats::dpois(0,1.4660)
 
 x * y
 
-B1_fixtures$b1_homeas <- rep(b1_home_as,each = length(b1_teams)-1)
-b1_awayas_lookup <- cbind(b1_teams,b1_away_as)
-as.data.frame(b1_awayas_lookup)
-colnames(b1_awayas_lookup)
+#####################################################################
+HomeTeam_b1 <- rep(b1_teams, each = length(b1_teams))
+AwayTeam_b1 <- rep(b1_teams, length(b1_teams))
+B1_fixtures <- cbind(HomeTeam_b1,AwayTeam_b1)
+B1_fixtures <- as.data.frame(B1_fixtures)
+B1_fixtures <- B1_fixtures[!B1_fixtures$HomeTeam_b1 == B1_fixtures$AwayTeam_b1,]
+rownames(B1_fixtures) <- NULL
+B1_fixtures$Div <- "B1"
+B1_fixtures <- B1_fixtures[,c(3,1,2)]
 
-names(b1_awayas_lookup)[names(b1_awayas_lookup) == "b1_teams"] <- "AwayTeam_b1"
-names(b1_awayas_lookup)[names(b1_awayas_lookup) == "b1_away_as"] <- "away_as"
+B1_fixtures$avg_HG <- b1_avg_HG
+
+B1_fixtures$b1_homeas <- rep(b1_home_as,each = length(b1_teams)-1)
+
+b1_awayds_lookup <- cbind(b1_teams,b1_away_ds)
+
+b1_awayds_lookup <- as.data.frame(b1_awayds_lookup)
+
+colnames(b1_awayds_lookup) <- c("AwayTeam_b1","b1_awayds")
+
+
+
+B1_fixtures$b1_awayds
+
+require('RH2')
+B1_fixtures$b1_awayds <- sqldf("SELECT b1_awayds_lookup.b1_awayds FROM b1_awayds_lookup INNER JOIN B1_fixtures ON b1_awayds_lookup.AwayTeam_b1 = B1_fixtures.AwayTeam_b1")
+
+B1_fixtures$avg_AG <- b1_avg_AG
+
+b1_awayas_lookup <- cbind(b1_teams,b1_away_as)
+
+b1_awayas_lookup <- as.data.frame(b1_awayas_lookup)
 
 colnames(b1_awayas_lookup) <- c("AwayTeam_b1","b1_awayas")
 
-b1_awayas_lookup
-
 B1_fixtures$b1_awayas
 
-B1_fixtures$b1_awayas <- with(b1_awayas_lookup,b1_awayas[match(B1_fixtures$AwayTeam_b1,AwayTeam_b1)])
+B1_fixtures$b1_awayas <- sqldf("SELECT b1_awayas_lookup.b1_awayas FROM b1_awayas_lookup INNER JOIN B1_fixtures ON b1_awayas_lookup.AwayTeam_b1 = B1_fixtures.AwayTeam_b1")
 
-merge(b1_awayas_lookup,B1_fixtures,by.x="AwayTeam_b1",by.y="AwayTeam_b1", all = T)
-B1_fixtures$avg_HG <- b1_avg_HG
-B1_fixtures
+B1_fixtures$b1_homeds <- rep(b1_home_ds,each = length(b1_teams)-1)
+
+as.numeric(B1_fixtures$b1_awayds)
+
+
+
+B1_fixtures$b1_xGH
+
+B1_fixtures$temp_b1_xGH <- B1_fixtures$avg_HG * B1_fixtures$b1_homeas
+
+B1_fixtures$b1_xGH <- B1_fixtures$temp_b1_xGH * B1_fixtures$b1_awayds
+
+
+
 
 
 

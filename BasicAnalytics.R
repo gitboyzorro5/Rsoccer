@@ -219,6 +219,8 @@ B1_fixtures$b1_un25 <- (
 )
 
 B1_fixtures$b1_un25 <- percent(B1_fixtures$b1_un25, accuracy = 0.1)
+B1_fixtures$b1_pscore <- paste(round(B1_fixtures$b1_xGH,digits = 0),round(B1_fixtures$b1_xGA,digits = 0),sep = "-")
+
 #######################################################################################################################
 #D1
 HomeTeam_d1 <- rep(d1_teams, each = length(d1_teams))
@@ -230,9 +232,11 @@ rownames(D1_fixtures) <- NULL
 D1_fixtures$Div <- "D1"
 D1_fixtures <- D1_fixtures[,c(3,1,2)]
 
-D1_fixtures$Date
 
-D1_fixtures$Date <- sqldf("SELECT D1.Date from D1 LEFT OUTER JOIN D1_fixtures ON D1.Hometeam = D1_fixtures.HomeTeam_d1 AND D1.AwayTeam = D1_fixtures.AwayTeam_d1")
+d1_sqlquery <- sqldf("SELECT D1.Date from D1 LEFT JOIN D1_fixtures ON D1.Hometeam = D1_fixtures.HomeTeam_d1 AND D1.AwayTeam = D1_fixtures.AwayTeam_d1")
+
+d1_sqlquery <- sqldf("SELECT D1.Date from D1 LEFT OUTER JOIN D1_fixtures ON D1.Hometeam = D1_fixtures.HomeTeam_d1 AND D1.AwayTeam = D1_fixtures.AwayTeam_d1")
+merge(D1_fixtures,d1_sqlquery,)
 
 D1_fixtures$avg_HG_d1 <- d1_avg_HG
 
@@ -372,9 +376,6 @@ D1_fixtures$d1_un25 <- (
 )
 
 D1_fixtures$d1_un25 <- percent(D1_fixtures$d1_un25, accuracy = 0.1)
-
-D1_fixtures
-
 
 
 

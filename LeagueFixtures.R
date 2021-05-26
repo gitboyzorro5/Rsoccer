@@ -166,7 +166,7 @@ B1_fixtures$b1_ov25 <- percent(B1_fixtures$b1_ov25, accuracy = 0.1)
 B1_fixtures$b1_un25 <- percent(B1_fixtures$b1_un25, accuracy = 0.1)
 B1_fixtures$b1_pscore <- paste(round(B1_fixtures$b1_xGH,digits = 0),round(B1_fixtures$b1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(B1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "B1")
+write.xlsx(B1_fixtures,'Divisions/B1.xlsx',sheetName = "B1", append = TRUE)
 #################################################################################################################
 #D1
 HomeTeam_d1 <- rep(d1_teams, each = length(d1_teams))
@@ -324,7 +324,7 @@ D1_fixtures$d1_ov25 <- percent(D1_fixtures$d1_ov25, accuracy = 0.1)
 D1_fixtures$d1_un25 <- percent(D1_fixtures$d1_un25, accuracy = 0.1)
 D1_fixtures$d1_pscore <- paste(round(D1_fixtures$d1_xGH,digits = 0),round(D1_fixtures$d1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(D1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "D1", append = TRUE)
+write.xlsx(D1_fixtures,'Divisions/D1.xlsx',sheetName = "D1", append = TRUE)
 ####################################################################################################################
 #D2
 HomeTeam_d2 <- rep(d2_teams, each = length(d2_teams))
@@ -482,7 +482,7 @@ D2_fixtures$d2_ov25 <- percent(D2_fixtures$d2_ov25, accuracy = 0.1)
 D2_fixtures$d2_un25 <- percent(D2_fixtures$d2_un25, accuracy = 0.1)
 D2_fixtures$d2_pscore <- paste(round(D2_fixtures$d2_xGH,digits = 0),round(D2_fixtures$d2_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(D2_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "D2", append = TRUE)
+write.xlsx(D2_fixtures,'Divisions/D2.xlsx',sheetName = "D2", append = TRUE)
 #######################################################################################################################
 #E0
 HomeTeam_e0 <- rep(e0_teams, each = length(e0_teams))
@@ -640,7 +640,7 @@ E0_fixtures$e0_ov25 <- percent(E0_fixtures$e0_ov25, accuracy = 0.1)
 E0_fixtures$e0_un25 <- percent(E0_fixtures$e0_un25, accuracy = 0.1)
 E0_fixtures$e0_pscore <- paste(round(E0_fixtures$e0_xGH,digits = 0),round(E0_fixtures$e0_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(E0_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "E0", append = TRUE)
+write.xlsx(E0_fixtures,'Divisions/E0.xlsx',sheetName = "E0", append = TRUE)
 #########################################################################################################################
 #E1
 HomeTeam_e1 <- rep(e1_teams, each = length(e1_teams))
@@ -798,7 +798,7 @@ E1_fixtures$e1_ov25 <- percent(E1_fixtures$e1_ov25, accuracy = 0.1)
 E1_fixtures$e1_un25 <- percent(E1_fixtures$e1_un25, accuracy = 0.1)
 E1_fixtures$e1_pscore <- paste(round(E1_fixtures$e1_xGH,digits = 0),round(E1_fixtures$e1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(E1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "E1", append = TRUE)
+write.xlsx(E1_fixtures,'Divisions/E1.xlsx',sheetName = "E1", append = TRUE)
 ######################################################################################################################
 #E2
 HomeTeam_e2 <- rep(e2_teams, each = length(e2_teams))
@@ -956,7 +956,7 @@ E2_fixtures$e2_ov25 <- percent(E2_fixtures$e2_ov25, accuracy = 0.1)
 E2_fixtures$e2_un25 <- percent(E2_fixtures$e2_un25, accuracy = 0.1)
 E2_fixtures$e2_pscore <- paste(round(E2_fixtures$e2_xGH,digits = 0),round(E2_fixtures$e2_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(E2_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "E2", append = TRUE)
+write.xlsx(E2_fixtures,'Divisions/E2.xlsx',sheetName = "E2", append = TRUE)
 ###########################################################################################################################
 #E3
 HomeTeam_e3 <- rep(e3_teams, each = length(e3_teams))
@@ -1114,7 +1114,7 @@ E3_fixtures$e3_ov25 <- percent(E3_fixtures$e3_ov25, accuracy = 0.1)
 E3_fixtures$e3_un25 <- percent(E3_fixtures$e3_un25, accuracy = 0.1)
 E3_fixtures$e3_pscore <- paste(round(E3_fixtures$e3_xGH,digits = 0),round(E3_fixtures$e3_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(E3_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "E3", append = TRUE)
+write.xlsx(E3_fixtures,'Divisions/E3.xlsx',sheetName = "E3", append = TRUE)
 ##########################################################################################################################
 #EC
 HomeTeam_ec <- rep(ec_teams, each = length(ec_teams))
@@ -1272,7 +1272,7 @@ EC_fixtures$ec_ov25 <- percent(EC_fixtures$ec_ov25, accuracy = 0.1)
 EC_fixtures$ec_un25 <- percent(EC_fixtures$ec_un25, accuracy = 0.1)
 EC_fixtures$ec_pscore <- paste(round(EC_fixtures$ec_xGH,digits = 0),round(EC_fixtures$ec_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(EC_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "EC", append = TRUE)
+write.xlsx(EC_fixtures,'Divisions/EC.xlsx',sheetName = "EC", append = TRUE)
 ##########################################################################################################################
 #F1
 HomeTeam_f1 <- rep(f1_teams, each = length(f1_teams))
@@ -1430,7 +1430,7 @@ F1_fixtures$f1_ov25 <- percent(F1_fixtures$f1_ov25, accuracy = 0.1)
 F1_fixtures$f1_un25 <- percent(F1_fixtures$f1_un25, accuracy = 0.1)
 F1_fixtures$f1_pscore <- paste(round(F1_fixtures$f1_xGH,digits = 0),round(F1_fixtures$f1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(F1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "F1", append = TRUE)
+write.xlsx(F1_fixtures,'Divisions/F1.xlsx',sheetName = "F1", append = TRUE)
 ########################################################################################################################
 #F2
 HomeTeam_f2 <- rep(f2_teams, each = length(f2_teams))
@@ -1588,7 +1588,7 @@ F2_fixtures$f2_ov25 <- percent(F2_fixtures$f2_ov25, accuracy = 0.1)
 F2_fixtures$f2_un25 <- percent(F2_fixtures$f2_un25, accuracy = 0.1)
 F2_fixtures$f2_pscore <- paste(round(F2_fixtures$f2_xGH,digits = 0),round(F2_fixtures$f2_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(F2_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "F2", append = TRUE)
+write.xlsx(F2_fixtures,'Divisions/F2.xlsx',sheetName = "F2", append = TRUE)
 ############################################################################################################################
 #G1
 HomeTeam_g1 <- rep(g1_teams, each = length(g1_teams))
@@ -1746,7 +1746,7 @@ G1_fixtures$g1_ov25 <- percent(G1_fixtures$g1_ov25, accuracy = 0.1)
 G1_fixtures$g1_un25 <- percent(G1_fixtures$g1_un25, accuracy = 0.1)
 G1_fixtures$g1_pscore <- paste(round(G1_fixtures$g1_xGH,digits = 0),round(G1_fixtures$g1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(G1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "G1", append = TRUE)
+write.xlsx(G1_fixtures,'Divisions/G1.xlsx',sheetName = "G1", append = TRUE)
 ###############################################################################################################
 #I1
 HomeTeam_i1 <- rep(i1_teams, each = length(i1_teams))
@@ -1904,7 +1904,7 @@ I1_fixtures$i1_ov25 <- percent(I1_fixtures$i1_ov25, accuracy = 0.1)
 I1_fixtures$i1_un25 <- percent(I1_fixtures$i1_un25, accuracy = 0.1)
 I1_fixtures$i1_pscore <- paste(round(I1_fixtures$i1_xGH,digits = 0),round(I1_fixtures$i1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(I1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "I1", append = TRUE)
+write.xlsx(I1_fixtures,'Divisions/I1.xlsx',sheetName = "I1", append = TRUE)
 #####################################################################################################
 #I2
 HomeTeam_i2 <- rep(i2_teams, each = length(i2_teams))
@@ -2062,7 +2062,7 @@ I2_fixtures$i2_ov25 <- percent(I2_fixtures$i2_ov25, accuracy = 0.1)
 I2_fixtures$i2_un25 <- percent(I2_fixtures$i2_un25, accuracy = 0.1)
 I2_fixtures$i2_pscore <- paste(round(I2_fixtures$i2_xGH,digits = 0),round(I2_fixtures$i2_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(I2_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "I2", append = TRUE)
+write.xlsx(I2_fixtures,'Divisions/I2.xlsx',sheetName = "I2", append = TRUE)
 ##########################################################################################################
 #N1
 HomeTeam_n1 <- rep(n1_teams, each = length(n1_teams))
@@ -2220,7 +2220,7 @@ N1_fixtures$n1_ov25 <- percent(N1_fixtures$n1_ov25, accuracy = 0.1)
 N1_fixtures$n1_un25 <- percent(N1_fixtures$n1_un25, accuracy = 0.1)
 N1_fixtures$n1_pscore <- paste(round(N1_fixtures$n1_xGH,digits = 0),round(N1_fixtures$n1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(N1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "N1", append = TRUE)
+write.xlsx(N1_fixtures,'Divisions/N1.xlsx',sheetName = "N1", append = TRUE)
 ############################################################################################################
 #P1
 HomeTeam_p1 <- rep(p1_teams, each = length(p1_teams))
@@ -2378,7 +2378,7 @@ P1_fixtures$p1_ov25 <- percent(P1_fixtures$p1_ov25, accuracy = 0.1)
 P1_fixtures$p1_un25 <- percent(P1_fixtures$p1_un25, accuracy = 0.1)
 P1_fixtures$p1_pscore <- paste(round(P1_fixtures$p1_xGH,digits = 0),round(P1_fixtures$p1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(P1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "P1", append = TRUE)
+write.xlsx(P1_fixtures,'Divisions/P1.xlsx',sheetName = "P1", append = TRUE)
 ##################################################################################################################
 #SP1
 HomeTeam_sp1 <- rep(sp1_teams, each = length(sp1_teams))
@@ -2536,7 +2536,7 @@ SP1_fixtures$sp1_ov25 <- percent(SP1_fixtures$sp1_ov25, accuracy = 0.1)
 SP1_fixtures$sp1_un25 <- percent(SP1_fixtures$sp1_un25, accuracy = 0.1)
 SP1_fixtures$sp1_pscore <- paste(round(SP1_fixtures$sp1_xGH,digits = 0),round(SP1_fixtures$sp1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(SP1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "SP1", append = TRUE)
+write.xlsx(SP1_fixtures,'Divisions/SP1.xlsx',sheetName = "SP1", append = TRUE)
 ##################################################################################################################
 #SP2
 HomeTeam_sp2 <- rep(sp2_teams, each = length(sp2_teams))
@@ -2694,7 +2694,7 @@ SP2_fixtures$sp2_ov25 <- percent(SP2_fixtures$sp2_ov25, accuracy = 0.1)
 SP2_fixtures$sp2_un25 <- percent(SP2_fixtures$sp2_un25, accuracy = 0.1)
 SP2_fixtures$sp2_pscore <- paste(round(SP2_fixtures$sp2_xGH,digits = 0),round(SP2_fixtures$sp2_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(SP2_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "SP2", append = TRUE)
+write.xlsx(SP2_fixtures,'Divisions/SP2.xlsx',sheetName = "SP2", append = TRUE)
 ###################################################################################################################
 #SC0
 HomeTeam_sc0 <- rep(sc0_teams, each = length(sc0_teams))
@@ -2852,7 +2852,7 @@ SC0_fixtures$sc0_ov25 <- percent(SC0_fixtures$sc0_ov25, accuracy = 0.1)
 SC0_fixtures$sc0_un25 <- percent(SC0_fixtures$sc0_un25, accuracy = 0.1)
 SC0_fixtures$sc0_pscore <- paste(round(SC0_fixtures$sc0_xGH,digits = 0),round(SC0_fixtures$sc0_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(SC0_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "SC0", append = TRUE)
+write.xlsx(SC0_fixtures,'Divisions/SC0.xlsx',sheetName = "SC0", append = TRUE)
 #####################################################################################################################
 #SC1
 HomeTeam_sc1 <- rep(sc1_teams, each = length(sc1_teams))
@@ -3010,7 +3010,7 @@ SC1_fixtures$sc1_ov25 <- percent(SC1_fixtures$sc1_ov25, accuracy = 0.1)
 SC1_fixtures$sc1_un25 <- percent(SC1_fixtures$sc1_un25, accuracy = 0.1)
 SC1_fixtures$sc1_pscore <- paste(round(SC1_fixtures$sc1_xGH,digits = 0),round(SC1_fixtures$sc1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(SC1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "SC1", append = TRUE)
+write.xlsx(SC1_fixtures,'Divisions/SC1.xlsx',sheetName = "SC1", append = TRUE)
 #######################################################################################################################
 #SC2
 HomeTeam_sc2 <- rep(sc2_teams, each = length(sc2_teams))
@@ -3168,7 +3168,7 @@ SC2_fixtures$sc2_ov25 <- percent(SC2_fixtures$sc2_ov25, accuracy = 0.1)
 SC2_fixtures$sc2_un25 <- percent(SC2_fixtures$sc2_un25, accuracy = 0.1)
 SC2_fixtures$sc2_pscore <- paste(round(SC2_fixtures$sc2_xGH,digits = 0),round(SC2_fixtures$sc2_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(SC2_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "SC2", append = TRUE)
+write.xlsx(SC2_fixtures,'Divisions/SC2.xlsx',sheetName = "SC2", append = TRUE)
 ##########################################################################################################################################
 #SC3
 HomeTeam_sc3 <- rep(sc3_teams, each = length(sc3_teams))
@@ -3326,7 +3326,7 @@ SC3_fixtures$sc3_ov25 <- percent(SC3_fixtures$sc3_ov25, accuracy = 0.1)
 SC3_fixtures$sc3_un25 <- percent(SC3_fixtures$sc3_un25, accuracy = 0.1)
 SC3_fixtures$sc3_pscore <- paste(round(SC3_fixtures$sc3_xGH,digits = 0),round(SC3_fixtures$sc3_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(SC3_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "SC3", append = TRUE)
+write.xlsx(SC3_fixtures,'Divisions/SC3.xlsx',sheetName = "SC3", append = TRUE)
 ######################################################################################################################################
 #T1
 HomeTeam_t1 <- rep(t1_teams, each = length(t1_teams))
@@ -3484,4 +3484,4 @@ T1_fixtures$t1_ov25 <- percent(T1_fixtures$t1_ov25, accuracy = 0.1)
 T1_fixtures$t1_un25 <- percent(T1_fixtures$t1_un25, accuracy = 0.1)
 T1_fixtures$t1_pscore <- paste(round(T1_fixtures$t1_xGH,digits = 0),round(T1_fixtures$t1_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(T1_fixtures,'Divisions/LeagueFixtures.xlsx',sheetName = "T1", append = TRUE)
+write.xlsx(T1_fixtures,'Divisions/T1.xlsx',sheetName = "T1", append = TRUE)

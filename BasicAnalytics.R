@@ -78,6 +78,32 @@ EURO <- EURO[order(as.Date(EURO$date, format = "%Y/%m%d"), decreasing = FALSE),]
 sort(unique(EURO$tournament))
 EURO_qualificaton <- subset(EURO,tournament == "UEFA Euro qualification")
 EURO <- subset(EURO,tournament == "UEFA Euro")
+EURO <- EURO[EURO$date > '2008-01-01',]
+EURO$TG <- EURO$home_score + EURO$away_score
+EURO$OV25 <- ifelse(EURO$TG >= 3,"Y","N")
+euro_totalgoalsv2 <- tapply(EURO$TG, EURO[c("home_team", "away_team")],mean)
+euro_hgtotals <- rowSums(euro_totalgoalsv2, na.rm = T)
+euro_agtotals <- colSums(euro_totalgoalsv2, na.rm = T)
+euro_totalgoals <- euro_hgtotals + euro_agtotals
+euro_totalgoalsv2 <- cbind(euro_totalgoalsv2,euro_totalgoals)
+euro_teams <- sort(unique(EURO$home_team))
+euro_home_games <- c()
+euro_away_games <-c()
+for (i_euro in 1:length(euro_teams))
+{
+
+  euro_home_games[i_euro] <- nrow(EURO[EURO$home_team == euro_teams[i_euro],])
+  euro_away_games[i_euro]  <- nrow(EURO[EURO$AwayTeam == euro_teams[i_euro],])
+
+}
+euro_games_played <- euro_home_games + euro_away_games
+euro_goaltotalsv2 <- cbind(euro_t,euro_games_played)
+euro_avg_totalgoals <- round((euro_totalgoals/ euro_games_played), digits = 4)
+euro_goaltotalsv2[is.na(euro_goaltotalsv2)] <- ""
+euro_goaltotalsv2 <- cbind(euro_goaltotalsv2,euro_avg_totalgoals)
+write.xlsx(euro_goaltotalsv2,'EURO.xlsx',sheetName = "B1")
+
+
 
 
 

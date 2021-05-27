@@ -70,8 +70,74 @@ b1_conceding_conversion$TSCC <- percent(b1_conceding_conversion$TGC/b1_conceding
 
 #merge the two parts
 b1_shots_analysis <- merge(b1_scoring_conversion,b1_conceding_conversion,by='Group.1',all = T)
+################################################################################################
+#D1
+#home goals scored
+d1_home_gs <- aggregate(D1$FTHG, by = list(D1$HomeTeam), FUN = sum)
+d1_home_gs_avg <- aggregate(D1$FTHG, by = list(D1$HomeTeam),mean)
+d1_home_scoring <- merge(d1_home_gs,d1_home_gs_avg, by='Group.1',all = T)
+names(d1_home_scoring)[names(d1_home_scoring) == "x.x"] <- "TFthg"
+names(d1_home_scoring)[names(d1_home_scoring) == "x.y"] <- "Avg_Fthg"
+#away goals scored
+d1_away_gs <- aggregate(D1$FTAG, by = list(D1$AwayTeam), FUN = sum)
+d1_away_gs_avg <- aggregate(D1$FTAG, by = list(D1$AwayTeam),mean)
+d1_away_scoring <- merge(d1_away_gs,d1_away_gs_avg, by='Group.1',all = T)
+names(d1_away_scoring)[names(d1_away_scoring) == "x.x"] <- "TFtag"
+names(d1_away_scoring)[names(d1_away_scoring) == "x.y"] <- "Avg_Ftag"
+#total goals scored
+d1_scoring <- merge(d1_home_scoring,d1_away_scoring,by='Group.1',all = T)
+d1_scoring$TGS <- d1_scoring$TFthg + d1_scoring$TFtag
 
+#Home shots on target
+d1_home_hst <- aggregate(D1$HST, by = list(D1$HomeTeam), FUN = sum)
+d1_away_ast <- aggregate(D1$AST, by = list(D1$AwayTeam), FUN = sum)
+d1_tst <- merge(d1_home_hst,d1_away_ast, by='Group.1',all = T)
+names(d1_tst)[names(d1_tst) == "x.x"] <- "hst"
+names(d1_tst)[names(d1_tst) == "x.y"] <- "ast"
+d1_tst$TST <- d1_tst$hst + d1_tst$ast
+#merge goals scored and shots on target
+d1_scoring_conversion <- merge(d1_tst,d1_scoring,by='Group.1',all = T)
+#add HSC ASC TSC
+d1_scoring_conversion$HSTC <- percent(d1_scoring_conversion$TFthg/d1_scoring_conversion$hst, accuracy = 0.01)
+d1_scoring_conversion$ASTC <- percent(d1_scoring_conversion$TFtag/d1_scoring_conversion$ast, accuracy = 0.01)
+d1_scoring_conversion$TSTC <- percent(d1_scoring_conversion$TGS/d1_scoring_conversion$TST, accuracy = 0.01)
+#merge games played
+d1_scoring_conversion <- cbind(d1_scoring_conversion,d1_games_played)
+#create the second part
+#home goals conceded
+d1_home_gc <- aggregate(D1$FTAG, by = list(D1$HomeTeam), FUN = sum)
+d1_home_gc_avg <- aggregate(D1$FTAG, by = list(D1$HomeTeam),mean)
+d1_home_conceding <- merge(d1_home_gc,d1_home_gc_avg, by='Group.1',all = T)
+names(d1_home_conceding)[names(d1_home_conceding) == "x.x"] <- "TFthc"
+names(d1_home_conceding)[names(d1_home_conceding) == "x.y"] <- "Avg_Fthc"
+#away goals conceded
+d1_away_gc <- aggregate(D1$FTHG, by = list(D1$AwayTeam), FUN = sum)
+d1_away_gc_avg <- aggregate(D1$FTHG, by = list(D1$AwayTeam),mean)
+d1_away_conceding <- merge(d1_away_gc,d1_away_gc_avg, by='Group.1',all = T)
+names(d1_away_conceding)[names(d1_away_conceding) == "x.x"] <- "TFtac"
+names(d1_away_conceding)[names(d1_away_conceding) == "x.y"] <- "Avg_Ftac"
+#total goals conceded
+d1_conceding <- merge(d1_home_conceding,d1_away_conceding,by='Group.1',all = T)
+d1_conceding$TGC <- d1_conceding$TFthc + d1_conceding$TFtac
 
+#Home shots conceded
+d1_home_hsc <- aggregate(D1$AST, by = list(D1$HomeTeam), FUN = sum)
+d1_away_asc <- aggregate(D1$HST, by = list(D1$AwayTeam), FUN = sum)
+d1_tsc <- merge(d1_home_hsc,d1_away_asc, by='Group.1',all = T)
+names(d1_tsc)[names(d1_tsc) == "x.x"] <- "hsc"
+names(d1_tsc)[names(d1_tsc) == "x.y"] <- "asc"
+d1_tsc$TSC <- d1_tsc$hsc + d1_tsc$asc
+#merge goals conceded and shots conceded
+d1_conceding_conversion <- merge(d1_tsc,d1_conceding,by='Group.1',all = T)
+
+#add HSC ASC TSC
+d1_conceding_conversion$HSCC <- percent(d1_conceding_conversion$TFthc/d1_conceding_conversion$hsc, accuracy = 0.01)
+d1_conceding_conversion$ASCC <- percent(d1_conceding_conversion$TFtac/d1_conceding_conversion$asc, accuracy = 0.01)
+d1_conceding_conversion$TSCC <- percent(d1_conceding_conversion$TGC/d1_conceding_conversion$TSC, accuracy = 0.01)
+
+#merge the two parts
+d1_shots_analysis <- merge(d1_scoring_conversion,d1_conceding_conversion,by='Group.1',all = T)
+#####################################################################################################
 #D2
 #home goals scored
 d2_home_gs <- aggregate(D2$FTHG, by = list(D2$HomeTeam), FUN = sum)

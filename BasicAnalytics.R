@@ -68,10 +68,9 @@ x <- stats::dpois(0,1.1812)
 y <- stats::dpois(0,1.4660)
 
 x * y
-
+######################EURO START#######################################
 #####################################################################
-
-EURO <- read.csv('../../../Leonard/Downloads/results.csv')
+EURO <- read.csv('../../../Leonard.000/Downloads/IFootball/results.csv')
 library('lubridate')
 EURO$date <- ymd(EURO$date)
 EURO <- EURO[order(as.Date(EURO$date, format = "%Y/%m%d"), decreasing = FALSE),]
@@ -136,13 +135,13 @@ euro_goalconceded_a <- tapply(EURO$home_score, EURO[c("away_team", "date")],mean
 euro_goalconceded_h[is.na(euro_goalconceded_h)] <- ""
 euro_goalconceded_a[is.na(euro_goalconceded_a)] <- ""
 
-for(euro_rowhgs in 1:nrow(euro_goalconceded_h)) {
-  for(euro_colhgs in 1:ncol(euro_goalconceded_h)) {
+for(euro_rowhgc in 1:nrow(euro_goalconceded_h)) {
+  for(euro_colhgc in 1:ncol(euro_goalconceded_h)) {
 
     # print(my_matrix[row, col])
-    for(euro_rowags in 1:nrow(euro_goalconceded_a)) {
-      for(euro_colags in 1:ncol(euro_goalconceded_a)) {
-        ifelse(!euro_goalconceded_a[euro_rowags,euro_colags]=="",euro_goalconceded_h[euro_rowags,euro_colags] <- euro_goalconceded_a[euro_rowags,euro_colags],next)
+    for(euro_rowagc in 1:nrow(euro_goalconceded_a)) {
+      for(euro_colagc in 1:ncol(euro_goalconceded_a)) {
+        ifelse(!euro_goalconceded_a[euro_rowagc,euro_colagc]=="",euro_goalconceded_h[euro_rowagc,euro_colagc] <- euro_goalconceded_a[euro_rowagc,euro_colagc],next)
         #print(my_matrix[row, col])
       }
     }
@@ -232,22 +231,6 @@ names(euro_away_scoring)[names(euro_away_scoring) == "x.y"] <- "Avg_Ftag"
 euro_scoring <- merge(euro_home_scoring,euro_away_scoring,by='Group.1',all = T)
 euro_scoring$TGS <- euro_scoring$TFthg + euro_scoring$TFtag
 
-#Home shots on target
-euro_home_hst <- aggregate(EURO$HST, by = list(EURO$home_team), FUN = sum)
-euro_away_ast <- aggregate(EURO$AST, by = list(EURO$away_team), FUN = sum)
-euro_tst <- merge(euro_home_hst,euro_away_ast, by='Group.1',all = T)
-names(euro_tst)[names(euro_tst) == "x.x"] <- "hst"
-names(euro_tst)[names(euro_tst) == "x.y"] <- "ast"
-euro_tst$TST <- euro_tst$hst + euro_tst$ast
-#merge goals scored and shots on target
-euro_scoring_conversion <- merge(euro_tst,euro_scoring,by='Group.1',all = T)
-#add HSC ASC TSC
-euro_scoring_conversion$HSTC <- percent(euro_scoring_conversion$TFthg/euro_scoring_conversion$hst, accuracy = 0.01)
-euro_scoring_conversion$ASTC <- percent(euro_scoring_conversion$TFtag/euro_scoring_conversion$ast, accuracy = 0.01)
-euro_scoring_conversion$TSTC <- percent(euro_scoring_conversion$TGS/euro_scoring_conversion$TST, accuracy = 0.01)
-#merge games played
-euro_scoring_conversion <- cbind(euro_scoring_conversion,euro_games_played)
-#create the second part
 #home goals conceded
 euro_home_gc <- aggregate(EURO$away_score, by = list(EURO$home_team), FUN = sum)
 euro_home_gc_avg <- aggregate(EURO$away_score, by = list(EURO$home_team),mean)
@@ -264,22 +247,6 @@ names(euro_away_conceding)[names(euro_away_conceding) == "x.y"] <- "Avg_Ftac"
 euro_conceding <- merge(euro_home_conceding,euro_away_conceding,by='Group.1',all = T)
 euro_conceding$TGC <- euro_conceding$TFthc + euro_conceding$TFtac
 
-#Home shots conceded
-euro_home_hsc <- aggregate(EURO$AST, by = list(EURO$home_team), FUN = sum)
-euro_away_asc <- aggregate(EURO$HST, by = list(EURO$away_team), FUN = sum)
-euro_tsc <- merge(euro_home_hsc,euro_away_asc, by='Group.1',all = T)
-names(euro_tsc)[names(euro_tsc) == "x.x"] <- "hsc"
-names(euro_tsc)[names(euro_tsc) == "x.y"] <- "asc"
-euro_tsc$TSC <- euro_tsc$hsc + euro_tsc$asc
-#merge goals conceded and shots conceded
-euro_conceding_conversion <- merge(euro_tsc,euro_conceding,by='Group.1',all = T)
-
-#add HSC ASC TSC
-euro_conceding_conversion$HSCC <- percent(euro_conceding_conversion$TFthc/euro_conceding_conversion$hsc, accuracy = 0.01)
-euro_conceding_conversion$ASCC <- percent(euro_conceding_conversion$TFtac/euro_conceding_conversion$asc, accuracy = 0.01)
-euro_conceding_conversion$TSCC <- percent(euro_conceding_conversion$TGC/euro_conceding_conversion$TSC, accuracy = 0.01)
-
-#merge the two parts
 euro_shots_analysis <- merge(euro_scoring_conversion,euro_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
@@ -327,12 +294,217 @@ names(euro_league_table)[names(euro_league_table) == "euro_total_loss"] <- "L"
 names(euro_league_table)[names(euro_league_table) == "euro_GS"] <- "F"
 names(euro_league_table)[names(euro_league_table) == "euro_GC"] <- "A"
 points_euro <- euro_league_table[order(euro_league_table$euro_PTS, decreasing = TRUE),]
-row.names(points_euro) <- 1:length(euro_teams)
+#############################################################################################################
+##########################poisson model######################################################################
+#poisson model
+#get total games played
+euro_GP <- nrow(EURO)
+#Calculate total home goals for each division
+euro_T_HG <- sum(euro_home_gs$x)
+#calculate average home goal
+euro_avg_HG <- round(euro_T_HG /euro_GP, digits = 4)
+############################################################
+#Calculate total away goals for each division
+euro_T_AG <- sum(euro_away_gs$x)
+#calculate average away goal
+euro_avg_AG <- round(euro_T_AG /euro_GP, digits = 4)
+#get total home goals and total home games played for each division
+#calculate home attack strength
+euro_home_as <- round(((euro_home_gs$x/euro_home_games))/euro_avg_HG, digits = 4)
+#calculate away attack strength
+euro_away_as <- round(((euro_away_gs$x/euro_away_games))/euro_avg_AG, digits = 4)
+################################################################################
+#get average home concede and away concede
+euro_avg_HC <- round(euro_T_AG /euro_GP, digits = 4)
+#avg away concede
+euro_avg_AC <- round(euro_T_HG /euro_GP, digits = 4)
+#calculate home and away defense strength
+#home defense strength
+euro_home_ds <- round(((euro_home_gc$x/euro_home_games))/euro_avg_HC, digits = 4)
+#away defense strength
+euro_away_ds <- round(((euro_away_gc$x/euro_away_games))/euro_avg_AC, digits = 4)
+#############################################################################
+#home poisson data
+#euro
+euro_division <- c()
+euro_division[1:length(euro_teams)] <- "EURO"
+euro_home_poisson <- cbind(euro_division,euro_teams,euro_avg_HG,euro_home_as,euro_home_ds)
+#################################################################################
+#away poisson data
+#euro
+euro_division <- c()
+euro_division[1:length(euro_teams)] <- "EURO"
+euro_away_poisson <- cbind(euro_division,euro_teams,euro_avg_AG,euro_away_as,euro_away_ds)
+
+#create home and away csv
+#euro_home_poisson <- rbind(euro_home_poisson,d1_home_poisson,d2_home_poisson,e0_home_poisson,e1_home_poisson,e2_home_poisson,e3_home_poisson,ec_home_poisson,f1_home_poisson,f2_home_poisson,g1_home_poisson,i1_home_poisson,i2_home_poisson,n1_home_poisson,p1_home_poisson,sc0_home_poisson,sc1_home_poisson,sc2_home_poisson,sc3_home_poisson,sp1_home_poisson,sp2_home_poisson,t1_home_poisson)
+#euro_away_poisson <- rbind(euro_away_poisson,d1_away_poisson,d2_away_poisson,e0_away_poisson,e1_away_poisson,e2_away_poisson,e3_away_poisson,ec_away_poisson,f1_away_poisson,f2_away_poisson,g1_away_poisson,i1_away_poisson,i2_away_poisson,n1_away_poisson,p1_away_poisson,sc0_away_poisson,sc1_away_poisson,sc2_away_poisson,sc3_away_poisson,sp1_away_poisson,sp2_away_poisson,t1_away_poisson)
+#write another one
+#write.csv(home_poisson,'R_home.csv')
+#write.csv(away_poisson,'R_away.csv')
+write.xlsx(euro_home_poisson,'EURO.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(euro_away_poisson,'EURO.xlsx',sheetName = "awaypoisson", append = TRUE)
+##########################################################################################################
+###################EURO FIXTURES##########################################################################
+#EURO
+HomeTeam_euro <- rep(euro_teams, each = length(euro_teams))
+AwayTeam_euro <- rep(euro_teams, length(euro_teams))
+EURO_fixtures <- cbind(HomeTeam_euro,AwayTeam_euro)
+EURO_fixtures <- as.data.frame(EURO_fixtures)
+EURO_fixtures <- EURO_fixtures[!EURO_fixtures$HomeTeam_euro == EURO_fixtures$AwayTeam_euro,]
+rownames(EURO_fixtures) <- NULL
+EURO_fixtures$Div <- "EURO"
+EURO_fixtures <- EURO_fixtures[,c(3,1,2)]
+
+EURO_fixtures$avg_HG_euro <- euro_avg_HG
+
+EURO_fixtures$euro_homeas <- rep(euro_home_as,each = length(euro_teams)-1)
+
+euro_awayds_lookup <- cbind(euro_teams,euro_away_ds)
+
+euro_awayds_lookup <- as.data.frame(euro_awayds_lookup)
+
+colnames(euro_awayds_lookup) <- c("AwayTeam_euro","euro_awayds")
 
 
+require('RH2')
+EURO_fixtures$euro_awayds <- sqldf("SELECT euro_awayds_lookup.euro_awayds FROM euro_awayds_lookup INNER JOIN EURO_fixtures ON euro_awayds_lookup.AwayTeam_euro = EURO_fixtures.AwayTeam_euro")
+
+EURO_fixtures$avg_AG_euro <- euro_avg_AG
+
+euro_awayas_lookup <- cbind(euro_teams,euro_away_as)
+
+euro_awayas_lookup <- as.data.frame(euro_awayas_lookup)
+
+colnames(euro_awayas_lookup) <- c("AwayTeam_euro","euro_awayas")
 
 
+EURO_fixtures$euro_awayas <- sqldf("SELECT euro_awayas_lookup.euro_awayas FROM euro_awayas_lookup INNER JOIN EURO_fixtures ON euro_awayas_lookup.AwayTeam_euro = EURO_fixtures.AwayTeam_euro")
 
+EURO_fixtures$euro_homeds <- rep(euro_home_ds,each = length(euro_teams)-1)
+
+EURO_fixtures$euro_awayds <- as.numeric(unlist(EURO_fixtures$euro_awayds))
+#xGH
+EURO_fixtures$euro_xGH <- EURO_fixtures$avg_HG_euro * EURO_fixtures$euro_homeas * EURO_fixtures$euro_awayds
+
+#xGA
+
+EURO_fixtures$euro_awayas <- as.numeric(unlist(EURO_fixtures$euro_awayas))
+
+EURO_fixtures$euro_xGA <- EURO_fixtures$avg_AG_euro * EURO_fixtures$euro_awayas * EURO_fixtures$euro_homeds
+
+EURO_fixtures$euro_0_0 <- round(stats::dpois(0,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_1_0 <- round(stats::dpois(1,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_0_1 <- round(stats::dpois(0,EURO_fixtures$euro_xGH) * stats::dpois(1,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_1_1 <- round(stats::dpois(1,EURO_fixtures$euro_xGH) * stats::dpois(1,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_2_0 <- round(stats::dpois(2,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_0_2 <- round(stats::dpois(0,EURO_fixtures$euro_xGH) * stats::dpois(2,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_2_2 <- round(stats::dpois(2,EURO_fixtures$euro_xGH) * stats::dpois(2,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_2_1 <- round(stats::dpois(2,EURO_fixtures$euro_xGH) * stats::dpois(1,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_1_2 <- round(stats::dpois(1,EURO_fixtures$euro_xGH) * stats::dpois(2,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_3_3 <- round(stats::dpois(3,EURO_fixtures$euro_xGH) * stats::dpois(3,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_3_0 <- round(stats::dpois(3,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_3_1 <- round(stats::dpois(3,EURO_fixtures$euro_xGH) * stats::dpois(1,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_3_2 <- round(stats::dpois(3,EURO_fixtures$euro_xGH) * stats::dpois(2,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_0_3 <- round(stats::dpois(0,EURO_fixtures$euro_xGH) * stats::dpois(3,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_1_3 <- round(stats::dpois(1,EURO_fixtures$euro_xGH) * stats::dpois(3,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_2_3 <- round(stats::dpois(2,EURO_fixtures$euro_xGH) * stats::dpois(3,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_4_4 <- round(stats::dpois(4,EURO_fixtures$euro_xGH) * stats::dpois(4,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_4_0 <- round(stats::dpois(4,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_4_1 <- round(stats::dpois(4,EURO_fixtures$euro_xGH) * stats::dpois(1,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_4_2 <- round(stats::dpois(4,EURO_fixtures$euro_xGH) * stats::dpois(2,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_4_3 <- round(stats::dpois(4,EURO_fixtures$euro_xGH) * stats::dpois(3,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_0_4 <- round(stats::dpois(0,EURO_fixtures$euro_xGH) * stats::dpois(4,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_1_4 <- round(stats::dpois(1,EURO_fixtures$euro_xGH) * stats::dpois(4,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_2_4 <- round(stats::dpois(2,EURO_fixtures$euro_xGH) * stats::dpois(4,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_3_4 <- round(stats::dpois(3,EURO_fixtures$euro_xGH) * stats::dpois(4,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_5_5 <- round(stats::dpois(5,EURO_fixtures$euro_xGH) * stats::dpois(5,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_5_0 <- round(stats::dpois(5,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_5_1 <- round(stats::dpois(5,EURO_fixtures$euro_xGH) * stats::dpois(1,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_5_2 <- round(stats::dpois(5,EURO_fixtures$euro_xGH) * stats::dpois(2,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_5_3 <- round(stats::dpois(5,EURO_fixtures$euro_xGH) * stats::dpois(3,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_5_4 <- round(stats::dpois(5,EURO_fixtures$euro_xGH) * stats::dpois(4,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_0_5 <- round(stats::dpois(0,EURO_fixtures$euro_xGH) * stats::dpois(5,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_1_5 <- round(stats::dpois(1,EURO_fixtures$euro_xGH) * stats::dpois(5,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_2_5 <- round(stats::dpois(2,EURO_fixtures$euro_xGH) * stats::dpois(5,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_3_5 <- round(stats::dpois(3,EURO_fixtures$euro_xGH) * stats::dpois(5,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_4_5 <- round(stats::dpois(4,EURO_fixtures$euro_xGH) * stats::dpois(5,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_6_6 <- round(stats::dpois(6,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_6_0 <- round(stats::dpois(6,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_6_1 <- round(stats::dpois(6,EURO_fixtures$euro_xGH) * stats::dpois(1,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_6_2 <- round(stats::dpois(6,EURO_fixtures$euro_xGH) * stats::dpois(2,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_6_3 <- round(stats::dpois(6,EURO_fixtures$euro_xGH) * stats::dpois(3,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_6_4 <- round(stats::dpois(6,EURO_fixtures$euro_xGH) * stats::dpois(4,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_6_5 <- round(stats::dpois(6,EURO_fixtures$euro_xGH) * stats::dpois(5,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_0_6 <- round(stats::dpois(0,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_1_6 <- round(stats::dpois(1,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_2_6 <- round(stats::dpois(2,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_3_6 <- round(stats::dpois(3,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_4_6 <- round(stats::dpois(4,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
+EURO_fixtures$euro_5_6 <- round(stats::dpois(5,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
+#Home win
+EURO_fixtures$euro_H <- (
+  EURO_fixtures$euro_1_0 + EURO_fixtures$euro_2_0 + EURO_fixtures$euro_2_1 + EURO_fixtures$euro_3_0 + EURO_fixtures$euro_3_1 +
+    EURO_fixtures$euro_3_2 + EURO_fixtures$euro_4_0 + EURO_fixtures$euro_4_1 + EURO_fixtures$euro_4_2 + EURO_fixtures$euro_4_3 +
+    EURO_fixtures$euro_5_0 + EURO_fixtures$euro_5_1 + EURO_fixtures$euro_5_2 + EURO_fixtures$euro_5_3 + EURO_fixtures$euro_5_4 +
+    EURO_fixtures$euro_6_0 + EURO_fixtures$euro_6_1 + EURO_fixtures$euro_6_2 + EURO_fixtures$euro_6_3 + EURO_fixtures$euro_6_4 +
+    EURO_fixtures$euro_6_5
+)
+
+EURO_fixtures$euro_H <- percent(EURO_fixtures$euro_H, accuracy = 0.1)
+
+#Draw
+EURO_fixtures$euro_D <- (
+
+  EURO_fixtures$euro_0_0 + EURO_fixtures$euro_1_1 + EURO_fixtures$euro_2_2 + EURO_fixtures$euro_3_3 + EURO_fixtures$euro_4_4 +
+    EURO_fixtures$euro_5_5 + EURO_fixtures$euro_6_6
+)
+
+EURO_fixtures$euro_D <- percent(EURO_fixtures$euro_D, accuracy = 0.1)
+
+#Away
+
+EURO_fixtures$euro_A <- (
+  EURO_fixtures$euro_0_1 + EURO_fixtures$euro_0_2 + EURO_fixtures$euro_1_2 + EURO_fixtures$euro_0_3 + EURO_fixtures$euro_1_3 +
+    EURO_fixtures$euro_2_3 + EURO_fixtures$euro_0_4 + EURO_fixtures$euro_1_4 + EURO_fixtures$euro_2_4 + EURO_fixtures$euro_3_4 +
+    EURO_fixtures$euro_0_5 + EURO_fixtures$euro_1_5 + EURO_fixtures$euro_2_5 + EURO_fixtures$euro_3_5 + EURO_fixtures$euro_4_5 +
+    EURO_fixtures$euro_0_6 + EURO_fixtures$euro_1_6 + EURO_fixtures$euro_2_6 + EURO_fixtures$euro_3_6 + EURO_fixtures$euro_4_6 +
+    EURO_fixtures$euro_5_6
+)
+
+EURO_fixtures$euro_A <- percent(EURO_fixtures$euro_A, accuracy = 0.1)
+
+#ov25
+EURO_fixtures$euro_ov25 <- (
+  EURO_fixtures$euro_2_1 + EURO_fixtures$euro_1_2 + EURO_fixtures$euro_2_2 + EURO_fixtures$euro_3_0 + EURO_fixtures$euro_3_1 +
+    EURO_fixtures$euro_3_2 + EURO_fixtures$euro_0_3 + EURO_fixtures$euro_1_3 + EURO_fixtures$euro_2_3 + EURO_fixtures$euro_3_3 +
+    EURO_fixtures$euro_4_0 + EURO_fixtures$euro_4_1 + EURO_fixtures$euro_4_2 + EURO_fixtures$euro_4_3 + EURO_fixtures$euro_0_4 +
+    EURO_fixtures$euro_1_4 + EURO_fixtures$euro_2_4 + EURO_fixtures$euro_3_4 + EURO_fixtures$euro_4_4 + EURO_fixtures$euro_5_0 +
+    EURO_fixtures$euro_5_1 + EURO_fixtures$euro_5_2 + EURO_fixtures$euro_5_3 + EURO_fixtures$euro_5_4 + EURO_fixtures$euro_0_5 +
+    EURO_fixtures$euro_1_5 + EURO_fixtures$euro_2_5 + EURO_fixtures$euro_3_5 + EURO_fixtures$euro_4_5 + EURO_fixtures$euro_5_5 +
+    EURO_fixtures$euro_6_0 + EURO_fixtures$euro_6_1 + EURO_fixtures$euro_6_2 + EURO_fixtures$euro_6_3 + EURO_fixtures$euro_6_4 +
+    EURO_fixtures$euro_6_5 + EURO_fixtures$euro_0_6 + EURO_fixtures$euro_1_6 + EURO_fixtures$euro_2_6 + EURO_fixtures$euro_3_6 +
+    EURO_fixtures$euro_4_6 + EURO_fixtures$euro_5_6 + EURO_fixtures$euro_6_6
+)
+#un25
+EURO_fixtures$euro_un25 <- (
+  EURO_fixtures$euro_0_0 + EURO_fixtures$euro_1_0 + EURO_fixtures$euro_0_1 + EURO_fixtures$euro_1_1 + EURO_fixtures$euro_2_0 + EURO_fixtures$euro_0_2
+)
+#odds
+EURO_fixtures$euro_ov25_odds <- round((1/EURO_fixtures$euro_ov25),digits = 2)
+EURO_fixtures$euro_un25_odds <- round((1/EURO_fixtures$euro_un25),digits = 2)
+
+EURO_fixtures$euro_ov25_odds
+EURO_fixtures$euro_un25_odds
+#percentages
+EURO_fixtures$euro_ov25 <- percent(EURO_fixtures$euro_ov25, accuracy = 0.1)
+
+EURO_fixtures$euro_un25 <- percent(EURO_fixtures$euro_un25, accuracy = 0.1)
+EURO_fixtures$euro_pscore <- paste(round(EURO_fixtures$euro_xGH,digits = 0),round(EURO_fixtures$euro_xGA,digits = 0),sep = "-")
+#write out
+write.xlsx(EURO_fixtures,'EURO.xlsx',sheetName = "EURO", append = TRUE)
+###########################################################################################################
+########################EURO END###########################################################################
 
 
 

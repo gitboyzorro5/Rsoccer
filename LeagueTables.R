@@ -54,6 +54,7 @@ points_b1 <- b1_league_table[order(b1_league_table$b1_PTS, decreasing = TRUE),]
 row.names(points_b1) <- 1:length(b1_teams)
 
 
+
 #D1
 d1_teams
 d1_games_played

@@ -9,8 +9,6 @@ library('pinnacle.data')
 library('odds.converter')
 library('sqldf')
 
-
-
 #Full time results percentages
 ftr_summary <- tabyl(allteams20202021,Div,FTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,4,3,2)]
@@ -212,7 +210,7 @@ for(euro_rowh_f_against in 1:nrow(euro_form_team_against_h)) {
 
   }
 }
-write.xlsx(euro_totalgoals_h,'EURO.xlsx',sheetName = "teamagainst", append = TRUE)
+
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -294,6 +292,112 @@ names(euro_league_table)[names(euro_league_table) == "euro_total_loss"] <- "L"
 names(euro_league_table)[names(euro_league_table) == "euro_GS"] <- "F"
 names(euro_league_table)[names(euro_league_table) == "euro_GC"] <- "A"
 points_euro <- euro_league_table[order(euro_league_table$euro_PTS, decreasing = TRUE),]
+write.xlsx(points_euro,'EURO.xlsx',sheetName = "table", append = TRUE)
+##########################################################################################################
+#########################################last six euro###################################################
+#EURO
+#form
+#create final_euro_hf object
+final_euro_hf <- c()
+for(index_euro_hf in 1:length(euro_teams))
+{
+  index_euro_hf <- row.names(euro_form_h) == euro_teams[index_euro_hf]
+  form_euro_hf <- euro_form_h[index_euro_hf]
+  deleted_form_euro_hf <- form_euro_hf[!form_euro_hf[] == ""]
+  l6_form_euro_hf <- tail(deleted_form_euro_hf,6)
+  l6_form_euro_hf <- paste(l6_form_euro_hf,collapse = " ")
+  final_euro_hf[index_euro_hf] <- rbind(paste(euro_teams[index_euro_hf],l6_form_euro_hf, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",euro_teams[index],l6_form)
+
+}
+
+#change column names
+final_euro_hf <- as.data.frame(final_euro_hf)
+colnames(final_euro_hf) <- "Form"
+#goals scored
+#create final_euro_gs object
+final_euro_gs <- c()
+suml6_euro_gs <- c()
+for(index_euro_gs in 1:length(euro_teams))
+{
+  index_euro_gs <- row.names(euro_goalscored_h) == euro_teams[index_euro_gs]
+  form_euro_gs <- euro_goalscored_h[index_euro_gs]
+  deleted_form_euro_gs <- form_euro_gs[!form_euro_gs[] == ""]
+  l6_form_euro_gs <- tail(deleted_form_euro_gs,6)
+  l6_form_euro_gs <- as.numeric(l6_form_euro_gs)
+  suml6_euro_gs[index_euro_gs] <- sum(l6_form_euro_gs)
+  suml6_euro_gs[index_euro_gs] <- paste("(",suml6_euro_gs[index_euro_gs],")",sep = "")
+  l6_form_euro_gs <- paste(l6_form_euro_gs,collapse = " ")
+  final_euro_gs[index_euro_gs] <- rbind(paste(euro_teams[index_euro_gs],l6_form_euro_gs,suml6_euro_gs[index_euro_gs], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",euro_teams[index],l6_form)
+
+}
+final_euro_gs
+#change column names
+final_euro_gs <- as.data.frame(final_euro_gs)
+colnames(final_euro_gs) <- "Goals scored"
+#goal conceded
+#create final_euro_gc object
+final_euro_gc <- c()
+suml6_euro_gc <- c()
+for(index_euro_gc in 1:length(euro_teams))
+{
+  index_euro_gc <- row.names(euro_goalconceded_h) == euro_teams[index_euro_gc]
+  form_euro_gc <- euro_goalconceded_h[index_euro_gc]
+  deleted_form_euro_gc <- form_euro_gc[!form_euro_gc[] == ""]
+  l6_form_euro_gc <- tail(deleted_form_euro_gc,6)
+  l6_form_euro_gc <- as.numeric(l6_form_euro_gc)
+  suml6_euro_gc[index_euro_gc] <- sum(l6_form_euro_gc)
+  suml6_euro_gc[index_euro_gc] <- paste("(",suml6_euro_gc[index_euro_gc],")",sep = "")
+  l6_form_euro_gc <- paste(l6_form_euro_gc,collapse = " ")
+  final_euro_gc[index_euro_gc] <- rbind(paste(euro_teams[index_euro_gc],l6_form_euro_gc,suml6_euro_gc[index_euro_gc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",euro_teams[index],l6_form)
+
+}
+
+#change column names
+final_euro_gc <- as.data.frame(final_euro_gc)
+colnames(final_euro_gc) <- "Goals conceded"
+#total goals
+#create final_euro_tg object
+final_euro_tg <- c()
+suml6_euro_tg <- c()
+for(index_euro_tg in 1:length(euro_teams))
+{
+  index_euro_tg <- row.names(euro_totalgoals_h) == euro_teams[index_euro_tg]
+  form_euro_tg <- euro_totalgoals_h[index_euro_tg]
+  deleted_form_euro_tg <- form_euro_tg[!form_euro_tg[] == ""]
+  l6_form_euro_tg <- tail(deleted_form_euro_tg,6)
+  l6_form_euro_tg <- as.numeric(l6_form_euro_tg)
+  suml6_euro_tg[index_euro_tg] <- sum(l6_form_euro_tg)
+  suml6_euro_tg[index_euro_tg] <- paste("(",suml6_euro_tg[index_euro_tg],")",sep = "")
+  l6_form_euro_tg <- paste(l6_form_euro_tg,collapse = " ")
+  final_euro_tg[index_euro_tg] <- rbind(paste(euro_teams[index_euro_tg],l6_form_euro_tg,suml6_euro_tg[index_euro_tg], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",euro_teams[index],l6_form)
+
+}
+#change column names
+final_euro_tg <- as.data.frame(final_euro_tg)
+colnames(final_euro_tg) <- "Total Goals"
+#Team against
+#create final_euro_hf_against
+final_euro_hf_against <- c()
+for(index_euro_hf_against in 1:length(euro_teams))
+{
+  index_euro_hf_against <- row.names(euro_form_team_against_h) == euro_teams[index_euro_hf_against]
+  form_euro_hf_against <- euro_form_team_against_h[index_euro_hf_against]
+  deleted_form_euro_hf_against <- form_euro_hf_against[!form_euro_hf_against[] == ""]
+  l6_form_euro_hf_against <- tail(deleted_form_euro_hf_against,6)
+  l6_form_euro_hf_against <- paste(l6_form_euro_hf_against,collapse = " ")
+  final_euro_hf_against[index_euro_hf_against] <- rbind(paste(euro_teams[index_euro_hf_against],l6_form_euro_hf_against, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",euro_teams[index],l6_form)
+
+}
+final_euro_hf_against <- as.data.frame(final_euro_hf_against)
+colnames(final_euro_hf_against) <- "Team against"
+#combine the columns
+final_euro_all <- cbind(final_euro_hf,final_euro_gs,final_euro_gc,final_euro_tg,final_euro_hf_against)
+write.xlsx(final_euro_all,'EURO.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model

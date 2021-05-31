@@ -132,7 +132,7 @@ for(euro_rowh in 1:nrow(euro_totalgoals_h)) {
 
   }
 }
-write.xlsx(d1_totalgoals_h,'EURO.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(euro_totalgoals_h,'EURO.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 euro_form_team_against_h <- tapply(EURO$away_team, EURO[c("home_team", "date")],median)

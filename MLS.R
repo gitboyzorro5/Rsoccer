@@ -10,11 +10,12 @@ library('sqldf')
 unlink('MLS.xlsx')
 ######################MLS START#######################################
 #####################################################################
-MLS <- read.csv('../../../Leonard/Downloads/USA.csv')
+MLS <- read.csv('../FDAS/USA.csv')
+MLS<- within(MLS,rm(Res))
 MLS$Date <- dmy(MLS$Date)
 MLS <- MLS[order(as.Date(MLS$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 #MLS_qualificaton <- subset(MLS,tournament == "UEFA Euro qualification")
-MLS <- subset(MLS,Season == "2020")
+MLS <- subset(MLS,Season == "2021")
 #MLS <- MLS[MLS$Date > '2008-01-01',]
 MLS$TG <- MLS$HG + MLS$AG
 MLS$OV25 <- ifelse(MLS$TG >= 3,"Y","N")
@@ -549,5 +550,14 @@ MLS_fixtures$mls_un25 <- percent(MLS_fixtures$mls_un25, accuracy = 0.1)
 MLS_fixtures$mls_pscore <- paste(round(MLS_fixtures$mls_xGH,digits = 0),round(MLS_fixtures$mls_xGA,digits = 0),sep = "-")
 #write out
 write.xlsx(MLS_fixtures,'MLS.xlsx',sheetName = "MLS", append = TRUE)
+
+MLS <- read.csv('../FDAS/USA.csv')
+MLS$TG <- MLS$HG + MLS$AG
+MLS$OV25 <- ifelse(MLS$TG >= 3,"Y","N")
+mls_ftr_summary <- tabyl(MLS,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
+mls_ftr_summary
+write.xlsx(mls_ftr_summary,'MLS_20202021.xlsx', sheetName = "FTR", append = TRUE)
+mls_ftr_summary <- mls_ftr_summary[,c(1,4,3,2)]
+mls_ftr_summary
 ###########################################################################################################
 ########################MLS END###########################################################################

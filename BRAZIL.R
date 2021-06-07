@@ -10,12 +10,12 @@ library('sqldf')
 unlink('BRA.xlsx')
 ######################BRA START#######################################
 #####################################################################
-BRA <- read.csv('../../../Leonard.000/Downloads/BRA.csv')
+BRA <- read.csv('../FDAS/BRA.csv')
 BRA <- within(BRA,rm(Res))
 BRA$Date <- dmy(BRA$Date)
 BRA <- BRA[order(as.Date(BRA$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 #BRA_qualificaton <- subset(BRA,tournament == "UEFA Euro qualification")
-BRA <- subset(BRA,Season == "2020")
+BRA <- subset(BRA,Season == "2021")
 #BRA <- BRA[BRA$Date > '2008-01-01',]
 BRA$TG <- BRA$HG + BRA$AG
 BRA$OV25 <- ifelse(BRA$TG >= 3,"Y","N")
@@ -552,3 +552,14 @@ BRA_fixtures$bra_pscore <- paste(round(BRA_fixtures$bra_xGH,digits = 0),round(BR
 write.xlsx(BRA_fixtures,'BRA.xlsx',sheetName = "BRA", append = TRUE)
 ###########################################################################################################
 ########################BRA END###########################################################################
+BRA <- read.csv('../FDAS/BRA.csv')
+BRA$TG <- BRA$HG + BRA$AG
+BRA$OV25 <- ifelse(BRA$TG >= 3,"Y","N")
+bra_ftr_summary <- tabyl(BRA,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
+bra_ov25_summary <- tabyl(BRA,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
+ftr_summary <- ftr_summary[,c(1,3,2)]
+write.xlsx(bra_ftr_summary,'BRA.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(bra_ov25_summary,'BRA.xlsx',sheetName = "OVUN", append = TRUE)
+
+
+

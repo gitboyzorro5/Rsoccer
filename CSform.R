@@ -403,29 +403,3 @@ for(t1_rowh_f_cs in 1:nrow(t1_csform_h)) {
 
   }
 }
-b1_csform_h
-#Write out to excel
-
-write.xlsx(b1_csform_h,'Teamcsform.xlsx',sheetName = "B1")
-write.xlsx(d1_csform_h,'Teamcsform.xlsx',sheetName = "D1", append = TRUE)
-write.xlsx(d2_csform_h,'Teamcsform.xlsx',sheetName = "D2", append = TRUE)
-write.xlsx(e0_csform_h,'Teamcsform.xlsx',sheetName = "E0", append = TRUE)
-write.xlsx(e1_csform_h,'Teamcsform.xlsx',sheetName = "E1", append = TRUE)
-write.xlsx(e2_csform_h,'Teamcsform.xlsx',sheetName = "E2", append = TRUE)
-write.xlsx(e3_csform_h,'Teamcsform.xlsx',sheetName = "E3", append = TRUE)
-write.xlsx(ec_csform_h,'Teamcsform.xlsx',sheetName = "EC", append = TRUE)
-write.xlsx(f1_csform_h,'Teamcsform.xlsx',sheetName = "F1", append = TRUE)
-write.xlsx(f2_csform_h,'Teamcsform.xlsx',sheetName = "F2", append = TRUE)
-write.xlsx(g1_csform_h,'Teamcsform.xlsx',sheetName = "G1", append = TRUE)
-write.xlsx(i1_csform_h,'Teamcsform.xlsx',sheetName = "I1", append = TRUE)
-write.xlsx(i2_csform_h,'Teamcsform.xlsx',sheetName = "I2", append = TRUE)
-write.xlsx(n1_csform_h,'Teamcsform.xlsx',sheetName = "N1", append = TRUE)
-write.xlsx(p1_csform_h,'Teamcsform.xlsx',sheetName = "P1", append = TRUE)
-write.xlsx(sc0_csform_h,'Teamcsform.xlsx',sheetName = "SC0", append = TRUE)
-write.xlsx(sc1_csform_h,'Teamcsform.xlsx',sheetName = "SC1", append = TRUE)
-write.xlsx(sc2_csform_h,'Teamcsform.xlsx',sheetName = "SC2", append = TRUE)
-write.xlsx(sc3_csform_h,'Teamcsform.xlsx',sheetName = "SC3", append = TRUE)
-write.xlsx(sp1_csform_h,'Teamcsform.xlsx',sheetName = "SP1", append = TRUE)
-write.xlsx(sp2_csform_h,'Teamcsform.xlsx',sheetName = "SP2", append = TRUE)
-write.xlsx(t1_csform_h,'Teamcsform.xlsx',sheetName = "T1", append = TRUE)
-

@@ -11,7 +11,7 @@ library('sqldf')
 unlink('FRIENDLIES.xlsx')
 ######################FRIENDLIES START#######################################
 #####################################################################
-FRIENDLIES <- read.csv('../../../Leonard.000/Downloads/IFootball/results.csv')
+FRIENDLIES <- read.csv('../../../Leonard/Downloads/results.csv')
 library('lubridate')
 FRIENDLIES$date <- ymd(FRIENDLIES$date)
 FRIENDLIES <- FRIENDLIES[order(as.Date(FRIENDLIES$date, format = "%Y/%m%d"), decreasing = FALSE),]
@@ -552,3 +552,8 @@ FRIENDLIES_fixtures$friendlies_pscore <- paste(round(FRIENDLIES_fixtures$friendl
 write.xlsx(FRIENDLIES_fixtures,'FRIENDLIES.xlsx',sheetName = "FRIENDLIES", append = TRUE)
 ###########################################################################################################
 ########################FRIENDLIES END###########################################################################
+
+
+
+
+

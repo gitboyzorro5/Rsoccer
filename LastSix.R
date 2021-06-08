@@ -88,6 +88,26 @@ for(index_b1_tg in 1:length(b1_teams))
 #change column names
 final_b1_tg <- as.data.frame(final_b1_tg)
 colnames(final_b1_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_b1_hf object
+final_b1_cs <- c()
+for(index_b1_cs in 1:length(b1_teams))
+{
+  index_b1_cs <- row.names(b1_csform_h) == b1_teams[index_b1_cs]
+  csform_b1_cs <- b1_csform_h[index_b1_cs]
+  deleted_csform_b1_cs <- csform_b1_cs[!csform_b1_cs[] == ""]
+  l6_csform_b1_cs <- tail(deleted_csform_b1_cs,6)
+  l6_csform_b1_cs <- paste(l6_csform_b1_cs,collapse = " ")
+  final_b1_cs[index_b1_cs] <- rbind(paste(b1_teams[index_b1_cs],l6_csform_b1_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",b1_teams[index],l6_csform)
+
+}
+
+#change column names
+final_b1_cs <- as.data.frame(final_b1_cs)
+colnames(final_b1_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_b1_hf_against
 final_b1_hf_against <- c()
@@ -105,7 +125,7 @@ for(index_b1_hf_against in 1:length(b1_teams))
 final_b1_hf_against <- as.data.frame(final_b1_hf_against)
 colnames(final_b1_hf_against) <- "Team against"
 #combine the columns
-final_b1_all <- cbind(final_b1_hf,final_b1_gs,final_b1_gc,final_b1_tg,final_b1_hf_against)
+final_b1_all <- cbind(final_b1_hf,final_b1_gs,final_b1_gc,final_b1_tg,final_b1_cs,final_b1_hf_against)
 write.xlsx(final_b1_all,'Divisions/B1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #D1

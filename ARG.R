@@ -11,12 +11,17 @@ unlink('ARG.xlsx')
 ######################ARG START#######################################
 #####################################################################
 ARG <- read.csv('../FDAS/ARG.csv')
+
 ARG <- within(ARG,rm(Res))
+
 ARG$Date <- dmy(ARG$Date)
 ARG <- ARG[order(as.Date(ARG$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+ARG$CS <- paste(ARG$HG,ARG$AG, sep = "-")
+tail(ARG)
 #ARG_qualificaton <- subset(ARG,tournament == "UEFA Euro qualification")
-ARG <- subset(ARG,Season == "2021" & League == "Superliga")
-#ARG <- ARG[ARG$Date > '2008-01-01',]
+ARG <- subset(ARG,Season == "2021")
+ARG <- subset(ARG,League == "Copa de la Liga Profesional")
+#ARG <- ARG[ARG$Date > '2008-01-01',])
 ARG$TG <- ARG$HG + ARG$AG
 ARG$OV25 <- ifelse(ARG$TG >= 3,"Y","N")
 ARG$FTR <- with(ARG,
@@ -25,9 +30,10 @@ ARG$FTR <- with(ARG,
 ###################################################
 ####GoalTotalsv2##################################
 arg_totalgoalsv2 <- tapply(ARG$TG, ARG[c("Home", "Away")],mean)
-arg_goaltotalsv2
+arg_totalgoalsv2
 arg_hgtotals <- rowSums(arg_totalgoalsv2,na.rm = T)
 arg_agtotals <- colSums(arg_totalgoalsv2,na.rm = T)
+
 arg_totalgoals <- arg_hgtotals + arg_agtotals
 arg_totalgoalsv2 <- cbind(arg_totalgoalsv2,arg_totalgoals)
 arg_teams <- sort(unique(ARG$Home))
@@ -153,7 +159,125 @@ for(arg_rowh_f_against in 1:nrow(arg_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#ARG
+arg_un05_home <- c()
+arg_un05_away <- c()
+arg_ov05_home <- c()
+arg_ov05_away <- c()
 
+arg_un15_home <- c()
+arg_un15_away <- c()
+arg_ov15_home <- c()
+arg_ov15_away <- c()
+
+arg_un25_home <- c()
+arg_un25_away <- c()
+arg_ov25_home <- c()
+arg_ov25_away <- c()
+
+arg_un35_home <- c()
+arg_un35_away <- c()
+arg_ov35_home <- c()
+arg_ov35_away <- c()
+
+arg_un45_home <- c()
+arg_un45_away <- c()
+arg_ov45_home <- c()
+arg_ov45_away <- c()
+
+arg_un55_home <- c()
+arg_un55_away <- c()
+arg_ov55_home <- c()
+arg_ov55_away <- c()
+
+for (i_arg_tg in 1:length(arg_teams))
+{
+
+  arg_un05_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG == 0,])
+  arg_un05_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG == 0,])
+
+  arg_ov05_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG > 0,])
+  arg_ov05_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG > 0,])
+
+  arg_un15_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG <= 1,])
+  arg_un15_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG <= 1,])
+
+  arg_ov15_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG >= 2,])
+  arg_ov15_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG >= 2,])
+
+  arg_un25_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG <= 2,])
+  arg_un25_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG <= 2,])
+
+  arg_ov25_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG >=3,])
+  arg_ov25_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG >=3,])
+
+  arg_un35_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG <= 3,])
+  arg_un35_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG <= 3,])
+
+  arg_ov35_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG >= 4,])
+  arg_ov35_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG >= 4,])
+
+  arg_un45_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG <= 4,])
+  arg_un45_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG <= 4,])
+
+  arg_ov45_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG >= 5,])
+  arg_ov45_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG >= 5,])
+
+  arg_un55_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG <= 5,])
+  arg_un55_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG <= 5,])
+
+  arg_ov55_home[i_arg_tg] <- nrow(ARG[ARG$Home == arg_teams[i_arg_tg] & ARG$TG >= 6,])
+  arg_ov55_away[i_arg_tg] <- nrow(ARG[ARG$Away == arg_teams[i_arg_tg] & ARG$TG >= 6,])
+
+
+}
+
+arg_un05 <- arg_un05_home + arg_un05_away
+arg_ov05 <- arg_ov05_home + arg_ov05_away
+
+arg_un15 <- arg_un15_home + arg_un15_away
+arg_ov15 <- arg_ov15_home + arg_ov15_away
+
+arg_un25 <- arg_un25_home + arg_un25_away
+arg_ov25 <- arg_ov25_home + arg_ov25_away
+
+arg_un35 <- arg_un35_home + arg_un35_away
+arg_ov35 <- arg_ov35_home + arg_ov35_away
+
+arg_un45 <- arg_un45_home + arg_un45_away
+arg_ov45 <- arg_ov45_home + arg_ov45_away
+
+arg_un55 <- arg_un55_home + arg_un55_away
+arg_ov55 <- arg_ov55_home + arg_ov55_away
+
+arg_ovundata <- cbind(arg_teams,arg_un05,arg_ov05,arg_un15,arg_ov15,arg_un25,arg_ov25,arg_un35,arg_ov35,arg_un45,arg_ov45,arg_un55,arg_ov55)
+write.xlsx(arg_ovundata,'ARG.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+arg_csform_h <- tapply(ARG$CS, ARG[c("Home", "Date")],median)
+arg_csform_a <- tapply(ARG$CS, ARG[c("Away", "Date")],median)
+
+arg_csform_h[is.na(arg_csform_h)] <- ""
+arg_csform_a[is.na(arg_csform_a)] <- ""
+
+for(arg_rowh_f_cs in 1:nrow(arg_csform_h)) {
+  for(arg_colh_f_cs in 1:ncol(arg_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(arg_rowa_f_cs in 1:nrow(arg_csform_a)) {
+      for(arg_cola_f_cs in 1:ncol(arg_csform_a)) {
+        ifelse(!arg_csform_a[arg_rowa_f_cs,arg_cola_f_cs]=="",arg_csform_h[arg_rowa_f_cs,arg_cola_f_cs] <- arg_csform_a[arg_rowa_f_cs,arg_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -322,6 +446,26 @@ for(index_arg_tg in 1:length(arg_teams))
 #change column names
 final_arg_tg <- as.data.frame(final_arg_tg)
 colnames(final_arg_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_arg_hf object
+final_arg_cs <- c()
+for(index_arg_cs in 1:length(arg_teams))
+{
+  index_arg_cs <- row.names(arg_csform_h) == arg_teams[index_arg_cs]
+  csform_arg_cs <- arg_csform_h[index_arg_cs]
+  deleted_csform_arg_cs <- csform_arg_cs[!csform_arg_cs[] == ""]
+  l6_csform_arg_cs <- tail(deleted_csform_arg_cs,arg_last_n_games)
+  l6_csform_arg_cs <- paste(l6_csform_arg_cs,collapse = " ")
+  final_arg_cs[index_arg_cs] <- rbind(paste(arg_teams[index_arg_cs],l6_csform_arg_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",arg_teams[index],l6_csform)
+
+}
+
+#change column names
+final_arg_cs <- as.data.frame(final_arg_cs)
+colnames(final_arg_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_arg_hf_against
 final_arg_hf_against <- c()
@@ -339,7 +483,7 @@ for(index_arg_hf_against in 1:length(arg_teams))
 final_arg_hf_against <- as.data.frame(final_arg_hf_against)
 colnames(final_arg_hf_against) <- "Team against"
 #combine the columns
-final_arg_all <- cbind(final_arg_hf,final_arg_gs,final_arg_gc,final_arg_tg,final_arg_hf_against)
+final_arg_all <- cbind(final_arg_hf,final_arg_gs,final_arg_gc,final_arg_tg,final_arg_cs,final_arg_hf_against)
 write.xlsx(final_arg_all,'ARG.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +703,7 @@ arg_ftr_summary <- tabyl(ARG,Season,Res) %>% adorn_percentages("row") %>% adorn_
 arg_ov25_summary <- tabyl(ARG,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(arg_ftr_summary,'ARG.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(arg_ov25_summary,'ARG.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(arg_ov25_summary,'ARG.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

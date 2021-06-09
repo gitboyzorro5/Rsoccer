@@ -11,13 +11,10 @@ unlink('ARG.xlsx')
 ######################ARG START#######################################
 #####################################################################
 ARG <- read.csv('../FDAS/ARG.csv')
-
 ARG <- within(ARG,rm(Res))
-
 ARG$Date <- dmy(ARG$Date)
 ARG <- ARG[order(as.Date(ARG$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 ARG$CS <- paste(ARG$HG,ARG$AG, sep = "-")
-tail(ARG)
 #ARG_qualificaton <- subset(ARG,tournament == "UEFA Euro qualification")
 ARG <- subset(ARG,Season == "2021")
 ARG <- subset(ARG,League == "Copa de la Liga Profesional")
@@ -312,7 +309,6 @@ names(arg_away_conceding)[names(arg_away_conceding) == "x.y"] <- "Avg_Ftac"
 arg_conceding <- merge(arg_home_conceding,arg_away_conceding,by='Group.1',all = T)
 arg_conceding$TGC <- arg_conceding$TFthc + arg_conceding$TFtac
 
-arg_shots_analysis <- merge(arg_scoring_conversion,arg_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -365,13 +361,14 @@ write.xlsx(points_arg,'ARG.xlsx',sheetName = "table", append = TRUE)
 #ARG
 #form
 #create final_arg_hf object
+arg_last_n_games <- 6
 final_arg_hf <- c()
 for(index_arg_hf in 1:length(arg_teams))
 {
   index_arg_hf <- row.names(arg_form_h) == arg_teams[index_arg_hf]
   form_arg_hf <- arg_form_h[index_arg_hf]
   deleted_form_arg_hf <- form_arg_hf[!form_arg_hf[] == ""]
-  l6_form_arg_hf <- tail(deleted_form_arg_hf,6)
+  l6_form_arg_hf <- tail(deleted_form_arg_hf,arg_last_n_games)
   l6_form_arg_hf <- paste(l6_form_arg_hf,collapse = " ")
   final_arg_hf[index_arg_hf] <- rbind(paste(arg_teams[index_arg_hf],l6_form_arg_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",arg_teams[index],l6_form)
@@ -390,7 +387,7 @@ for(index_arg_gs in 1:length(arg_teams))
   index_arg_gs <- row.names(arg_goalscored_h) == arg_teams[index_arg_gs]
   form_arg_gs <- arg_goalscored_h[index_arg_gs]
   deleted_form_arg_gs <- form_arg_gs[!form_arg_gs[] == ""]
-  l6_form_arg_gs <- tail(deleted_form_arg_gs,6)
+  l6_form_arg_gs <- tail(deleted_form_arg_gs,arg_last_n_games)
   l6_form_arg_gs <- as.numeric(l6_form_arg_gs)
   suml6_arg_gs[index_arg_gs] <- sum(l6_form_arg_gs)
   suml6_arg_gs[index_arg_gs] <- paste("(",suml6_arg_gs[index_arg_gs],")",sep = "")
@@ -412,7 +409,7 @@ for(index_arg_gc in 1:length(arg_teams))
   index_arg_gc <- row.names(arg_goalconceded_h) == arg_teams[index_arg_gc]
   form_arg_gc <- arg_goalconceded_h[index_arg_gc]
   deleted_form_arg_gc <- form_arg_gc[!form_arg_gc[] == ""]
-  l6_form_arg_gc <- tail(deleted_form_arg_gc,6)
+  l6_form_arg_gc <- tail(deleted_form_arg_gc,arg_last_n_games)
   l6_form_arg_gc <- as.numeric(l6_form_arg_gc)
   suml6_arg_gc[index_arg_gc] <- sum(l6_form_arg_gc)
   suml6_arg_gc[index_arg_gc] <- paste("(",suml6_arg_gc[index_arg_gc],")",sep = "")
@@ -434,7 +431,7 @@ for(index_arg_tg in 1:length(arg_teams))
   index_arg_tg <- row.names(arg_totalgoals_h) == arg_teams[index_arg_tg]
   form_arg_tg <- arg_totalgoals_h[index_arg_tg]
   deleted_form_arg_tg <- form_arg_tg[!form_arg_tg[] == ""]
-  l6_form_arg_tg <- tail(deleted_form_arg_tg,6)
+  l6_form_arg_tg <- tail(deleted_form_arg_tg,arg_last_n_games)
   l6_form_arg_tg <- as.numeric(l6_form_arg_tg)
   suml6_arg_tg[index_arg_tg] <- sum(l6_form_arg_tg)
   suml6_arg_tg[index_arg_tg] <- paste("(",suml6_arg_tg[index_arg_tg],")",sep = "")
@@ -474,7 +471,7 @@ for(index_arg_hf_against in 1:length(arg_teams))
   index_arg_hf_against <- row.names(arg_form_team_against_h) == arg_teams[index_arg_hf_against]
   form_arg_hf_against <- arg_form_team_against_h[index_arg_hf_against]
   deleted_form_arg_hf_against <- form_arg_hf_against[!form_arg_hf_against[] == ""]
-  l6_form_arg_hf_against <- tail(deleted_form_arg_hf_against,6)
+  l6_form_arg_hf_against <- tail(deleted_form_arg_hf_against,arg_last_n_games)
   l6_form_arg_hf_against <- paste(l6_form_arg_hf_against,collapse = " ")
   final_arg_hf_against[index_arg_hf_against] <- rbind(paste(arg_teams[index_arg_hf_against],l6_form_arg_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",arg_teams[index],l6_form)

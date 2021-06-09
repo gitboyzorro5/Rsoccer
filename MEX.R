@@ -14,9 +14,10 @@ MEX <- read.csv('../FDAS/MEX.csv')
 MEX <- within(MEX,rm(Res))
 MEX$Date <- dmy(MEX$Date)
 MEX <- MEX[order(as.Date(MEX$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+MEX$CS <- paste(MEX$HG,MEX$AG, sep = "-")
 #MEX_qualificaton <- subset(MEX,tournament == "UEFA Euro qualification")
 MEX <- subset(MEX,Season == "2020/2021")
-#MEX <- MEX[MEX$Date > '2008-01-01',]
+#MEX <- MEX[MEX$Date > '2008-01-01',])
 MEX$TG <- MEX$HG + MEX$AG
 MEX$OV25 <- ifelse(MEX$TG >= 3,"Y","N")
 MEX$FTR <- with(MEX,
@@ -25,9 +26,10 @@ MEX$FTR <- with(MEX,
 ###################################################
 ####GoalTotalsv2##################################
 mex_totalgoalsv2 <- tapply(MEX$TG, MEX[c("Home", "Away")],mean)
-mex_goaltotalsv2
+mex_totalgoalsv2
 mex_hgtotals <- rowSums(mex_totalgoalsv2,na.rm = T)
 mex_agtotals <- colSums(mex_totalgoalsv2,na.rm = T)
+
 mex_totalgoals <- mex_hgtotals + mex_agtotals
 mex_totalgoalsv2 <- cbind(mex_totalgoalsv2,mex_totalgoals)
 mex_teams <- sort(unique(MEX$Home))
@@ -153,7 +155,125 @@ for(mex_rowh_f_against in 1:nrow(mex_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#MEX
+mex_un05_home <- c()
+mex_un05_away <- c()
+mex_ov05_home <- c()
+mex_ov05_away <- c()
 
+mex_un15_home <- c()
+mex_un15_away <- c()
+mex_ov15_home <- c()
+mex_ov15_away <- c()
+
+mex_un25_home <- c()
+mex_un25_away <- c()
+mex_ov25_home <- c()
+mex_ov25_away <- c()
+
+mex_un35_home <- c()
+mex_un35_away <- c()
+mex_ov35_home <- c()
+mex_ov35_away <- c()
+
+mex_un45_home <- c()
+mex_un45_away <- c()
+mex_ov45_home <- c()
+mex_ov45_away <- c()
+
+mex_un55_home <- c()
+mex_un55_away <- c()
+mex_ov55_home <- c()
+mex_ov55_away <- c()
+
+for (i_mex_tg in 1:length(mex_teams))
+{
+
+  mex_un05_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG == 0,])
+  mex_un05_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG == 0,])
+
+  mex_ov05_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG > 0,])
+  mex_ov05_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG > 0,])
+
+  mex_un15_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG <= 1,])
+  mex_un15_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG <= 1,])
+
+  mex_ov15_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG >= 2,])
+  mex_ov15_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG >= 2,])
+
+  mex_un25_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG <= 2,])
+  mex_un25_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG <= 2,])
+
+  mex_ov25_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG >=3,])
+  mex_ov25_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG >=3,])
+
+  mex_un35_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG <= 3,])
+  mex_un35_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG <= 3,])
+
+  mex_ov35_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG >= 4,])
+  mex_ov35_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG >= 4,])
+
+  mex_un45_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG <= 4,])
+  mex_un45_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG <= 4,])
+
+  mex_ov45_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG >= 5,])
+  mex_ov45_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG >= 5,])
+
+  mex_un55_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG <= 5,])
+  mex_un55_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG <= 5,])
+
+  mex_ov55_home[i_mex_tg] <- nrow(MEX[MEX$Home == mex_teams[i_mex_tg] & MEX$TG >= 6,])
+  mex_ov55_away[i_mex_tg] <- nrow(MEX[MEX$Away == mex_teams[i_mex_tg] & MEX$TG >= 6,])
+
+
+}
+
+mex_un05 <- mex_un05_home + mex_un05_away
+mex_ov05 <- mex_ov05_home + mex_ov05_away
+
+mex_un15 <- mex_un15_home + mex_un15_away
+mex_ov15 <- mex_ov15_home + mex_ov15_away
+
+mex_un25 <- mex_un25_home + mex_un25_away
+mex_ov25 <- mex_ov25_home + mex_ov25_away
+
+mex_un35 <- mex_un35_home + mex_un35_away
+mex_ov35 <- mex_ov35_home + mex_ov35_away
+
+mex_un45 <- mex_un45_home + mex_un45_away
+mex_ov45 <- mex_ov45_home + mex_ov45_away
+
+mex_un55 <- mex_un55_home + mex_un55_away
+mex_ov55 <- mex_ov55_home + mex_ov55_away
+
+mex_ovundata <- cbind(mex_teams,mex_un05,mex_ov05,mex_un15,mex_ov15,mex_un25,mex_ov25,mex_un35,mex_ov35,mex_un45,mex_ov45,mex_un55,mex_ov55)
+write.xlsx(mex_ovundata,'MEX.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+mex_csform_h <- tapply(MEX$CS, MEX[c("Home", "Date")],median)
+mex_csform_a <- tapply(MEX$CS, MEX[c("Away", "Date")],median)
+
+mex_csform_h[is.na(mex_csform_h)] <- ""
+mex_csform_a[is.na(mex_csform_a)] <- ""
+
+for(mex_rowh_f_cs in 1:nrow(mex_csform_h)) {
+  for(mex_colh_f_cs in 1:ncol(mex_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(mex_rowa_f_cs in 1:nrow(mex_csform_a)) {
+      for(mex_cola_f_cs in 1:ncol(mex_csform_a)) {
+        ifelse(!mex_csform_a[mex_rowa_f_cs,mex_cola_f_cs]=="",mex_csform_h[mex_rowa_f_cs,mex_cola_f_cs] <- mex_csform_a[mex_rowa_f_cs,mex_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(mex_away_conceding)[names(mex_away_conceding) == "x.y"] <- "Avg_Ftac"
 mex_conceding <- merge(mex_home_conceding,mex_away_conceding,by='Group.1',all = T)
 mex_conceding$TGC <- mex_conceding$TFthc + mex_conceding$TFtac
 
-mex_shots_analysis <- merge(mex_scoring_conversion,mex_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_mex,'MEX.xlsx',sheetName = "table", append = TRUE)
 #MEX
 #form
 #create final_mex_hf object
+mex_last_n_games <- 6
 final_mex_hf <- c()
 for(index_mex_hf in 1:length(mex_teams))
 {
   index_mex_hf <- row.names(mex_form_h) == mex_teams[index_mex_hf]
   form_mex_hf <- mex_form_h[index_mex_hf]
   deleted_form_mex_hf <- form_mex_hf[!form_mex_hf[] == ""]
-  l6_form_mex_hf <- tail(deleted_form_mex_hf,6)
+  l6_form_mex_hf <- tail(deleted_form_mex_hf,mex_last_n_games)
   l6_form_mex_hf <- paste(l6_form_mex_hf,collapse = " ")
   final_mex_hf[index_mex_hf] <- rbind(paste(mex_teams[index_mex_hf],l6_form_mex_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",mex_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_mex_gs in 1:length(mex_teams))
   index_mex_gs <- row.names(mex_goalscored_h) == mex_teams[index_mex_gs]
   form_mex_gs <- mex_goalscored_h[index_mex_gs]
   deleted_form_mex_gs <- form_mex_gs[!form_mex_gs[] == ""]
-  l6_form_mex_gs <- tail(deleted_form_mex_gs,6)
+  l6_form_mex_gs <- tail(deleted_form_mex_gs,mex_last_n_games)
   l6_form_mex_gs <- as.numeric(l6_form_mex_gs)
   suml6_mex_gs[index_mex_gs] <- sum(l6_form_mex_gs)
   suml6_mex_gs[index_mex_gs] <- paste("(",suml6_mex_gs[index_mex_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_mex_gc in 1:length(mex_teams))
   index_mex_gc <- row.names(mex_goalconceded_h) == mex_teams[index_mex_gc]
   form_mex_gc <- mex_goalconceded_h[index_mex_gc]
   deleted_form_mex_gc <- form_mex_gc[!form_mex_gc[] == ""]
-  l6_form_mex_gc <- tail(deleted_form_mex_gc,6)
+  l6_form_mex_gc <- tail(deleted_form_mex_gc,mex_last_n_games)
   l6_form_mex_gc <- as.numeric(l6_form_mex_gc)
   suml6_mex_gc[index_mex_gc] <- sum(l6_form_mex_gc)
   suml6_mex_gc[index_mex_gc] <- paste("(",suml6_mex_gc[index_mex_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_mex_tg in 1:length(mex_teams))
   index_mex_tg <- row.names(mex_totalgoals_h) == mex_teams[index_mex_tg]
   form_mex_tg <- mex_totalgoals_h[index_mex_tg]
   deleted_form_mex_tg <- form_mex_tg[!form_mex_tg[] == ""]
-  l6_form_mex_tg <- tail(deleted_form_mex_tg,6)
+  l6_form_mex_tg <- tail(deleted_form_mex_tg,mex_last_n_games)
   l6_form_mex_tg <- as.numeric(l6_form_mex_tg)
   suml6_mex_tg[index_mex_tg] <- sum(l6_form_mex_tg)
   suml6_mex_tg[index_mex_tg] <- paste("(",suml6_mex_tg[index_mex_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_mex_tg in 1:length(mex_teams))
 #change column names
 final_mex_tg <- as.data.frame(final_mex_tg)
 colnames(final_mex_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_mex_hf object
+final_mex_cs <- c()
+for(index_mex_cs in 1:length(mex_teams))
+{
+  index_mex_cs <- row.names(mex_csform_h) == mex_teams[index_mex_cs]
+  csform_mex_cs <- mex_csform_h[index_mex_cs]
+  deleted_csform_mex_cs <- csform_mex_cs[!csform_mex_cs[] == ""]
+  l6_csform_mex_cs <- tail(deleted_csform_mex_cs,mex_last_n_games)
+  l6_csform_mex_cs <- paste(l6_csform_mex_cs,collapse = " ")
+  final_mex_cs[index_mex_cs] <- rbind(paste(mex_teams[index_mex_cs],l6_csform_mex_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",mex_teams[index],l6_csform)
+
+}
+
+#change column names
+final_mex_cs <- as.data.frame(final_mex_cs)
+colnames(final_mex_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_mex_hf_against
 final_mex_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_mex_hf_against in 1:length(mex_teams))
   index_mex_hf_against <- row.names(mex_form_team_against_h) == mex_teams[index_mex_hf_against]
   form_mex_hf_against <- mex_form_team_against_h[index_mex_hf_against]
   deleted_form_mex_hf_against <- form_mex_hf_against[!form_mex_hf_against[] == ""]
-  l6_form_mex_hf_against <- tail(deleted_form_mex_hf_against,6)
+  l6_form_mex_hf_against <- tail(deleted_form_mex_hf_against,mex_last_n_games)
   l6_form_mex_hf_against <- paste(l6_form_mex_hf_against,collapse = " ")
   final_mex_hf_against[index_mex_hf_against] <- rbind(paste(mex_teams[index_mex_hf_against],l6_form_mex_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",mex_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_mex_hf_against in 1:length(mex_teams))
 final_mex_hf_against <- as.data.frame(final_mex_hf_against)
 colnames(final_mex_hf_against) <- "Team against"
 #combine the columns
-final_mex_all <- cbind(final_mex_hf,final_mex_gs,final_mex_gc,final_mex_tg,final_mex_hf_against)
+final_mex_all <- cbind(final_mex_hf,final_mex_gs,final_mex_gc,final_mex_tg,final_mex_cs,final_mex_hf_against)
 write.xlsx(final_mex_all,'MEX.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ mex_ftr_summary <- tabyl(MEX,Season,Res) %>% adorn_percentages("row") %>% adorn_
 mex_ov25_summary <- tabyl(MEX,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(mex_ftr_summary,'MEX.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(mex_ov25_summary,'MEX.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(mex_ov25_summary,'MEX.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

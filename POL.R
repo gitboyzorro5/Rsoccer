@@ -11,12 +11,13 @@ unlink('POL.xlsx')
 ######################POL START#######################################
 #####################################################################
 POL <- read.csv('../FDAS/POL.csv')
-POL<- within(POL,rm(Res))
+POL <- within(POL,rm(Res))
 POL$Date <- dmy(POL$Date)
 POL <- POL[order(as.Date(POL$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+POL$CS <- paste(POL$HG,POL$AG, sep = "-")
 #POL_qualificaton <- subset(POL,tournament == "UEFA Euro qualification")
 POL <- subset(POL,Season == "2020/2021")
-#POL <- POL[POL$Date > '2008-01-01',]
+#POL <- POL[POL$Date > '2008-01-01',])
 POL$TG <- POL$HG + POL$AG
 POL$OV25 <- ifelse(POL$TG >= 3,"Y","N")
 POL$FTR <- with(POL,
@@ -25,9 +26,10 @@ POL$FTR <- with(POL,
 ###################################################
 ####GoalTotalsv2##################################
 pol_totalgoalsv2 <- tapply(POL$TG, POL[c("Home", "Away")],mean)
-pol_goaltotalsv2
+pol_totalgoalsv2
 pol_hgtotals <- rowSums(pol_totalgoalsv2,na.rm = T)
 pol_agtotals <- colSums(pol_totalgoalsv2,na.rm = T)
+
 pol_totalgoals <- pol_hgtotals + pol_agtotals
 pol_totalgoalsv2 <- cbind(pol_totalgoalsv2,pol_totalgoals)
 pol_teams <- sort(unique(POL$Home))
@@ -153,7 +155,125 @@ for(pol_rowh_f_against in 1:nrow(pol_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#POL
+pol_un05_home <- c()
+pol_un05_away <- c()
+pol_ov05_home <- c()
+pol_ov05_away <- c()
 
+pol_un15_home <- c()
+pol_un15_away <- c()
+pol_ov15_home <- c()
+pol_ov15_away <- c()
+
+pol_un25_home <- c()
+pol_un25_away <- c()
+pol_ov25_home <- c()
+pol_ov25_away <- c()
+
+pol_un35_home <- c()
+pol_un35_away <- c()
+pol_ov35_home <- c()
+pol_ov35_away <- c()
+
+pol_un45_home <- c()
+pol_un45_away <- c()
+pol_ov45_home <- c()
+pol_ov45_away <- c()
+
+pol_un55_home <- c()
+pol_un55_away <- c()
+pol_ov55_home <- c()
+pol_ov55_away <- c()
+
+for (i_pol_tg in 1:length(pol_teams))
+{
+
+  pol_un05_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG == 0,])
+  pol_un05_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG == 0,])
+
+  pol_ov05_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG > 0,])
+  pol_ov05_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG > 0,])
+
+  pol_un15_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG <= 1,])
+  pol_un15_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG <= 1,])
+
+  pol_ov15_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG >= 2,])
+  pol_ov15_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG >= 2,])
+
+  pol_un25_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG <= 2,])
+  pol_un25_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG <= 2,])
+
+  pol_ov25_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG >=3,])
+  pol_ov25_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG >=3,])
+
+  pol_un35_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG <= 3,])
+  pol_un35_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG <= 3,])
+
+  pol_ov35_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG >= 4,])
+  pol_ov35_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG >= 4,])
+
+  pol_un45_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG <= 4,])
+  pol_un45_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG <= 4,])
+
+  pol_ov45_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG >= 5,])
+  pol_ov45_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG >= 5,])
+
+  pol_un55_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG <= 5,])
+  pol_un55_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG <= 5,])
+
+  pol_ov55_home[i_pol_tg] <- nrow(POL[POL$Home == pol_teams[i_pol_tg] & POL$TG >= 6,])
+  pol_ov55_away[i_pol_tg] <- nrow(POL[POL$Away == pol_teams[i_pol_tg] & POL$TG >= 6,])
+
+
+}
+
+pol_un05 <- pol_un05_home + pol_un05_away
+pol_ov05 <- pol_ov05_home + pol_ov05_away
+
+pol_un15 <- pol_un15_home + pol_un15_away
+pol_ov15 <- pol_ov15_home + pol_ov15_away
+
+pol_un25 <- pol_un25_home + pol_un25_away
+pol_ov25 <- pol_ov25_home + pol_ov25_away
+
+pol_un35 <- pol_un35_home + pol_un35_away
+pol_ov35 <- pol_ov35_home + pol_ov35_away
+
+pol_un45 <- pol_un45_home + pol_un45_away
+pol_ov45 <- pol_ov45_home + pol_ov45_away
+
+pol_un55 <- pol_un55_home + pol_un55_away
+pol_ov55 <- pol_ov55_home + pol_ov55_away
+
+pol_ovundata <- cbind(pol_teams,pol_un05,pol_ov05,pol_un15,pol_ov15,pol_un25,pol_ov25,pol_un35,pol_ov35,pol_un45,pol_ov45,pol_un55,pol_ov55)
+write.xlsx(pol_ovundata,'POL.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+pol_csform_h <- tapply(POL$CS, POL[c("Home", "Date")],median)
+pol_csform_a <- tapply(POL$CS, POL[c("Away", "Date")],median)
+
+pol_csform_h[is.na(pol_csform_h)] <- ""
+pol_csform_a[is.na(pol_csform_a)] <- ""
+
+for(pol_rowh_f_cs in 1:nrow(pol_csform_h)) {
+  for(pol_colh_f_cs in 1:ncol(pol_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(pol_rowa_f_cs in 1:nrow(pol_csform_a)) {
+      for(pol_cola_f_cs in 1:ncol(pol_csform_a)) {
+        ifelse(!pol_csform_a[pol_rowa_f_cs,pol_cola_f_cs]=="",pol_csform_h[pol_rowa_f_cs,pol_cola_f_cs] <- pol_csform_a[pol_rowa_f_cs,pol_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(pol_away_conceding)[names(pol_away_conceding) == "x.y"] <- "Avg_Ftac"
 pol_conceding <- merge(pol_home_conceding,pol_away_conceding,by='Group.1',all = T)
 pol_conceding$TGC <- pol_conceding$TFthc + pol_conceding$TFtac
 
-pol_shots_analysis <- merge(pol_scoring_conversion,pol_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_pol,'POL.xlsx',sheetName = "table", append = TRUE)
 #POL
 #form
 #create final_pol_hf object
+pol_last_n_games <- 6
 final_pol_hf <- c()
 for(index_pol_hf in 1:length(pol_teams))
 {
   index_pol_hf <- row.names(pol_form_h) == pol_teams[index_pol_hf]
   form_pol_hf <- pol_form_h[index_pol_hf]
   deleted_form_pol_hf <- form_pol_hf[!form_pol_hf[] == ""]
-  l6_form_pol_hf <- tail(deleted_form_pol_hf,6)
+  l6_form_pol_hf <- tail(deleted_form_pol_hf,pol_last_n_games)
   l6_form_pol_hf <- paste(l6_form_pol_hf,collapse = " ")
   final_pol_hf[index_pol_hf] <- rbind(paste(pol_teams[index_pol_hf],l6_form_pol_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",pol_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_pol_gs in 1:length(pol_teams))
   index_pol_gs <- row.names(pol_goalscored_h) == pol_teams[index_pol_gs]
   form_pol_gs <- pol_goalscored_h[index_pol_gs]
   deleted_form_pol_gs <- form_pol_gs[!form_pol_gs[] == ""]
-  l6_form_pol_gs <- tail(deleted_form_pol_gs,6)
+  l6_form_pol_gs <- tail(deleted_form_pol_gs,pol_last_n_games)
   l6_form_pol_gs <- as.numeric(l6_form_pol_gs)
   suml6_pol_gs[index_pol_gs] <- sum(l6_form_pol_gs)
   suml6_pol_gs[index_pol_gs] <- paste("(",suml6_pol_gs[index_pol_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_pol_gc in 1:length(pol_teams))
   index_pol_gc <- row.names(pol_goalconceded_h) == pol_teams[index_pol_gc]
   form_pol_gc <- pol_goalconceded_h[index_pol_gc]
   deleted_form_pol_gc <- form_pol_gc[!form_pol_gc[] == ""]
-  l6_form_pol_gc <- tail(deleted_form_pol_gc,6)
+  l6_form_pol_gc <- tail(deleted_form_pol_gc,pol_last_n_games)
   l6_form_pol_gc <- as.numeric(l6_form_pol_gc)
   suml6_pol_gc[index_pol_gc] <- sum(l6_form_pol_gc)
   suml6_pol_gc[index_pol_gc] <- paste("(",suml6_pol_gc[index_pol_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_pol_tg in 1:length(pol_teams))
   index_pol_tg <- row.names(pol_totalgoals_h) == pol_teams[index_pol_tg]
   form_pol_tg <- pol_totalgoals_h[index_pol_tg]
   deleted_form_pol_tg <- form_pol_tg[!form_pol_tg[] == ""]
-  l6_form_pol_tg <- tail(deleted_form_pol_tg,6)
+  l6_form_pol_tg <- tail(deleted_form_pol_tg,pol_last_n_games)
   l6_form_pol_tg <- as.numeric(l6_form_pol_tg)
   suml6_pol_tg[index_pol_tg] <- sum(l6_form_pol_tg)
   suml6_pol_tg[index_pol_tg] <- paste("(",suml6_pol_tg[index_pol_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_pol_tg in 1:length(pol_teams))
 #change column names
 final_pol_tg <- as.data.frame(final_pol_tg)
 colnames(final_pol_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_pol_hf object
+final_pol_cs <- c()
+for(index_pol_cs in 1:length(pol_teams))
+{
+  index_pol_cs <- row.names(pol_csform_h) == pol_teams[index_pol_cs]
+  csform_pol_cs <- pol_csform_h[index_pol_cs]
+  deleted_csform_pol_cs <- csform_pol_cs[!csform_pol_cs[] == ""]
+  l6_csform_pol_cs <- tail(deleted_csform_pol_cs,pol_last_n_games)
+  l6_csform_pol_cs <- paste(l6_csform_pol_cs,collapse = " ")
+  final_pol_cs[index_pol_cs] <- rbind(paste(pol_teams[index_pol_cs],l6_csform_pol_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",pol_teams[index],l6_csform)
+
+}
+
+#change column names
+final_pol_cs <- as.data.frame(final_pol_cs)
+colnames(final_pol_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_pol_hf_against
 final_pol_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_pol_hf_against in 1:length(pol_teams))
   index_pol_hf_against <- row.names(pol_form_team_against_h) == pol_teams[index_pol_hf_against]
   form_pol_hf_against <- pol_form_team_against_h[index_pol_hf_against]
   deleted_form_pol_hf_against <- form_pol_hf_against[!form_pol_hf_against[] == ""]
-  l6_form_pol_hf_against <- tail(deleted_form_pol_hf_against,6)
+  l6_form_pol_hf_against <- tail(deleted_form_pol_hf_against,pol_last_n_games)
   l6_form_pol_hf_against <- paste(l6_form_pol_hf_against,collapse = " ")
   final_pol_hf_against[index_pol_hf_against] <- rbind(paste(pol_teams[index_pol_hf_against],l6_form_pol_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",pol_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_pol_hf_against in 1:length(pol_teams))
 final_pol_hf_against <- as.data.frame(final_pol_hf_against)
 colnames(final_pol_hf_against) <- "Team against"
 #combine the columns
-final_pol_all <- cbind(final_pol_hf,final_pol_gs,final_pol_gc,final_pol_tg,final_pol_hf_against)
+final_pol_all <- cbind(final_pol_hf,final_pol_gs,final_pol_gc,final_pol_tg,final_pol_cs,final_pol_hf_against)
 write.xlsx(final_pol_all,'POL.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -550,7 +690,7 @@ POL_fixtures$pol_un25 <- percent(POL_fixtures$pol_un25, accuracy = 0.1)
 POL_fixtures$pol_pscore <- paste(round(POL_fixtures$pol_xGH,digits = 0),round(POL_fixtures$pol_xGA,digits = 0),sep = "-")
 #write out
 write.xlsx(POL_fixtures,'POL.xlsx',sheetName = "POL", append = TRUE)
-##########################################################################################################
+###########################################################################################################
 ########################POL END###########################################################################
 POL <- read.csv('../FDAS/POL.csv')
 POL$TG <- POL$HG + POL$AG
@@ -559,4 +699,7 @@ pol_ftr_summary <- tabyl(POL,Season,Res) %>% adorn_percentages("row") %>% adorn_
 pol_ov25_summary <- tabyl(POL,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(pol_ftr_summary,'POL.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(pol_ov25_summary,'POL.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(pol_ov25_summary,'POL.xlsx',sheetName = "OVUN25", append = TRUE)
+
+
+

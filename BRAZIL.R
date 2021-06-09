@@ -14,9 +14,10 @@ BRA <- read.csv('../FDAS/BRA.csv')
 BRA <- within(BRA,rm(Res))
 BRA$Date <- dmy(BRA$Date)
 BRA <- BRA[order(as.Date(BRA$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+BRA$CS <- paste(BRA$HG,BRA$AG, sep = "-")
 #BRA_qualificaton <- subset(BRA,tournament == "UEFA Euro qualification")
 BRA <- subset(BRA,Season == "2021")
-#BRA <- BRA[BRA$Date > '2008-01-01',]
+#BRA <- BRA[BRA$Date > '2008-01-01',])
 BRA$TG <- BRA$HG + BRA$AG
 BRA$OV25 <- ifelse(BRA$TG >= 3,"Y","N")
 BRA$FTR <- with(BRA,
@@ -25,9 +26,10 @@ BRA$FTR <- with(BRA,
 ###################################################
 ####GoalTotalsv2##################################
 bra_totalgoalsv2 <- tapply(BRA$TG, BRA[c("Home", "Away")],mean)
-bra_goaltotalsv2
+bra_totalgoalsv2
 bra_hgtotals <- rowSums(bra_totalgoalsv2,na.rm = T)
 bra_agtotals <- colSums(bra_totalgoalsv2,na.rm = T)
+
 bra_totalgoals <- bra_hgtotals + bra_agtotals
 bra_totalgoalsv2 <- cbind(bra_totalgoalsv2,bra_totalgoals)
 bra_teams <- sort(unique(BRA$Home))
@@ -153,7 +155,125 @@ for(bra_rowh_f_against in 1:nrow(bra_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#BRA
+bra_un05_home <- c()
+bra_un05_away <- c()
+bra_ov05_home <- c()
+bra_ov05_away <- c()
 
+bra_un15_home <- c()
+bra_un15_away <- c()
+bra_ov15_home <- c()
+bra_ov15_away <- c()
+
+bra_un25_home <- c()
+bra_un25_away <- c()
+bra_ov25_home <- c()
+bra_ov25_away <- c()
+
+bra_un35_home <- c()
+bra_un35_away <- c()
+bra_ov35_home <- c()
+bra_ov35_away <- c()
+
+bra_un45_home <- c()
+bra_un45_away <- c()
+bra_ov45_home <- c()
+bra_ov45_away <- c()
+
+bra_un55_home <- c()
+bra_un55_away <- c()
+bra_ov55_home <- c()
+bra_ov55_away <- c()
+
+for (i_bra_tg in 1:length(bra_teams))
+{
+
+  bra_un05_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG == 0,])
+  bra_un05_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG == 0,])
+
+  bra_ov05_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG > 0,])
+  bra_ov05_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG > 0,])
+
+  bra_un15_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG <= 1,])
+  bra_un15_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG <= 1,])
+
+  bra_ov15_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG >= 2,])
+  bra_ov15_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG >= 2,])
+
+  bra_un25_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG <= 2,])
+  bra_un25_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG <= 2,])
+
+  bra_ov25_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG >=3,])
+  bra_ov25_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG >=3,])
+
+  bra_un35_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG <= 3,])
+  bra_un35_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG <= 3,])
+
+  bra_ov35_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG >= 4,])
+  bra_ov35_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG >= 4,])
+
+  bra_un45_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG <= 4,])
+  bra_un45_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG <= 4,])
+
+  bra_ov45_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG >= 5,])
+  bra_ov45_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG >= 5,])
+
+  bra_un55_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG <= 5,])
+  bra_un55_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG <= 5,])
+
+  bra_ov55_home[i_bra_tg] <- nrow(BRA[BRA$Home == bra_teams[i_bra_tg] & BRA$TG >= 6,])
+  bra_ov55_away[i_bra_tg] <- nrow(BRA[BRA$Away == bra_teams[i_bra_tg] & BRA$TG >= 6,])
+
+
+}
+
+bra_un05 <- bra_un05_home + bra_un05_away
+bra_ov05 <- bra_ov05_home + bra_ov05_away
+
+bra_un15 <- bra_un15_home + bra_un15_away
+bra_ov15 <- bra_ov15_home + bra_ov15_away
+
+bra_un25 <- bra_un25_home + bra_un25_away
+bra_ov25 <- bra_ov25_home + bra_ov25_away
+
+bra_un35 <- bra_un35_home + bra_un35_away
+bra_ov35 <- bra_ov35_home + bra_ov35_away
+
+bra_un45 <- bra_un45_home + bra_un45_away
+bra_ov45 <- bra_ov45_home + bra_ov45_away
+
+bra_un55 <- bra_un55_home + bra_un55_away
+bra_ov55 <- bra_ov55_home + bra_ov55_away
+
+bra_ovundata <- cbind(bra_teams,bra_un05,bra_ov05,bra_un15,bra_ov15,bra_un25,bra_ov25,bra_un35,bra_ov35,bra_un45,bra_ov45,bra_un55,bra_ov55)
+write.xlsx(bra_ovundata,'BRA.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+bra_csform_h <- tapply(BRA$CS, BRA[c("Home", "Date")],median)
+bra_csform_a <- tapply(BRA$CS, BRA[c("Away", "Date")],median)
+
+bra_csform_h[is.na(bra_csform_h)] <- ""
+bra_csform_a[is.na(bra_csform_a)] <- ""
+
+for(bra_rowh_f_cs in 1:nrow(bra_csform_h)) {
+  for(bra_colh_f_cs in 1:ncol(bra_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(bra_rowa_f_cs in 1:nrow(bra_csform_a)) {
+      for(bra_cola_f_cs in 1:ncol(bra_csform_a)) {
+        ifelse(!bra_csform_a[bra_rowa_f_cs,bra_cola_f_cs]=="",bra_csform_h[bra_rowa_f_cs,bra_cola_f_cs] <- bra_csform_a[bra_rowa_f_cs,bra_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(bra_away_conceding)[names(bra_away_conceding) == "x.y"] <- "Avg_Ftac"
 bra_conceding <- merge(bra_home_conceding,bra_away_conceding,by='Group.1',all = T)
 bra_conceding$TGC <- bra_conceding$TFthc + bra_conceding$TFtac
 
-bra_shots_analysis <- merge(bra_scoring_conversion,bra_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_bra,'BRA.xlsx',sheetName = "table", append = TRUE)
 #BRA
 #form
 #create final_bra_hf object
+bra_last_n_games <- 6
 final_bra_hf <- c()
 for(index_bra_hf in 1:length(bra_teams))
 {
   index_bra_hf <- row.names(bra_form_h) == bra_teams[index_bra_hf]
   form_bra_hf <- bra_form_h[index_bra_hf]
   deleted_form_bra_hf <- form_bra_hf[!form_bra_hf[] == ""]
-  l6_form_bra_hf <- tail(deleted_form_bra_hf,6)
+  l6_form_bra_hf <- tail(deleted_form_bra_hf,bra_last_n_games)
   l6_form_bra_hf <- paste(l6_form_bra_hf,collapse = " ")
   final_bra_hf[index_bra_hf] <- rbind(paste(bra_teams[index_bra_hf],l6_form_bra_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",bra_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_bra_gs in 1:length(bra_teams))
   index_bra_gs <- row.names(bra_goalscored_h) == bra_teams[index_bra_gs]
   form_bra_gs <- bra_goalscored_h[index_bra_gs]
   deleted_form_bra_gs <- form_bra_gs[!form_bra_gs[] == ""]
-  l6_form_bra_gs <- tail(deleted_form_bra_gs,6)
+  l6_form_bra_gs <- tail(deleted_form_bra_gs,bra_last_n_games)
   l6_form_bra_gs <- as.numeric(l6_form_bra_gs)
   suml6_bra_gs[index_bra_gs] <- sum(l6_form_bra_gs)
   suml6_bra_gs[index_bra_gs] <- paste("(",suml6_bra_gs[index_bra_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_bra_gc in 1:length(bra_teams))
   index_bra_gc <- row.names(bra_goalconceded_h) == bra_teams[index_bra_gc]
   form_bra_gc <- bra_goalconceded_h[index_bra_gc]
   deleted_form_bra_gc <- form_bra_gc[!form_bra_gc[] == ""]
-  l6_form_bra_gc <- tail(deleted_form_bra_gc,6)
+  l6_form_bra_gc <- tail(deleted_form_bra_gc,bra_last_n_games)
   l6_form_bra_gc <- as.numeric(l6_form_bra_gc)
   suml6_bra_gc[index_bra_gc] <- sum(l6_form_bra_gc)
   suml6_bra_gc[index_bra_gc] <- paste("(",suml6_bra_gc[index_bra_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_bra_tg in 1:length(bra_teams))
   index_bra_tg <- row.names(bra_totalgoals_h) == bra_teams[index_bra_tg]
   form_bra_tg <- bra_totalgoals_h[index_bra_tg]
   deleted_form_bra_tg <- form_bra_tg[!form_bra_tg[] == ""]
-  l6_form_bra_tg <- tail(deleted_form_bra_tg,6)
+  l6_form_bra_tg <- tail(deleted_form_bra_tg,bra_last_n_games)
   l6_form_bra_tg <- as.numeric(l6_form_bra_tg)
   suml6_bra_tg[index_bra_tg] <- sum(l6_form_bra_tg)
   suml6_bra_tg[index_bra_tg] <- paste("(",suml6_bra_tg[index_bra_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_bra_tg in 1:length(bra_teams))
 #change column names
 final_bra_tg <- as.data.frame(final_bra_tg)
 colnames(final_bra_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_bra_hf object
+final_bra_cs <- c()
+for(index_bra_cs in 1:length(bra_teams))
+{
+  index_bra_cs <- row.names(bra_csform_h) == bra_teams[index_bra_cs]
+  csform_bra_cs <- bra_csform_h[index_bra_cs]
+  deleted_csform_bra_cs <- csform_bra_cs[!csform_bra_cs[] == ""]
+  l6_csform_bra_cs <- tail(deleted_csform_bra_cs,bra_last_n_games)
+  l6_csform_bra_cs <- paste(l6_csform_bra_cs,collapse = " ")
+  final_bra_cs[index_bra_cs] <- rbind(paste(bra_teams[index_bra_cs],l6_csform_bra_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",bra_teams[index],l6_csform)
+
+}
+
+#change column names
+final_bra_cs <- as.data.frame(final_bra_cs)
+colnames(final_bra_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_bra_hf_against
 final_bra_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_bra_hf_against in 1:length(bra_teams))
   index_bra_hf_against <- row.names(bra_form_team_against_h) == bra_teams[index_bra_hf_against]
   form_bra_hf_against <- bra_form_team_against_h[index_bra_hf_against]
   deleted_form_bra_hf_against <- form_bra_hf_against[!form_bra_hf_against[] == ""]
-  l6_form_bra_hf_against <- tail(deleted_form_bra_hf_against,6)
+  l6_form_bra_hf_against <- tail(deleted_form_bra_hf_against,bra_last_n_games)
   l6_form_bra_hf_against <- paste(l6_form_bra_hf_against,collapse = " ")
   final_bra_hf_against[index_bra_hf_against] <- rbind(paste(bra_teams[index_bra_hf_against],l6_form_bra_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",bra_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_bra_hf_against in 1:length(bra_teams))
 final_bra_hf_against <- as.data.frame(final_bra_hf_against)
 colnames(final_bra_hf_against) <- "Team against"
 #combine the columns
-final_bra_all <- cbind(final_bra_hf,final_bra_gs,final_bra_gc,final_bra_tg,final_bra_hf_against)
+final_bra_all <- cbind(final_bra_hf,final_bra_gs,final_bra_gc,final_bra_tg,final_bra_cs,final_bra_hf_against)
 write.xlsx(final_bra_all,'BRA.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ bra_ftr_summary <- tabyl(BRA,Season,Res) %>% adorn_percentages("row") %>% adorn_
 bra_ov25_summary <- tabyl(BRA,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(bra_ftr_summary,'BRA.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(bra_ov25_summary,'BRA.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(bra_ov25_summary,'BRA.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

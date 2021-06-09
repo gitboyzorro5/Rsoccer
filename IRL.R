@@ -14,9 +14,10 @@ IRL <- read.csv('../FDAS/IRL.csv')
 IRL <- within(IRL,rm(Res))
 IRL$Date <- dmy(IRL$Date)
 IRL <- IRL[order(as.Date(IRL$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+IRL$CS <- paste(IRL$HG,IRL$AG, sep = "-")
 #IRL_qualificaton <- subset(IRL,tournament == "UEFA Euro qualification")
 IRL <- subset(IRL,Season == "2021")
-#IRL <- IRL[IRL$Date > '2008-01-01',]
+#IRL <- IRL[IRL$Date > '2008-01-01',])
 IRL$TG <- IRL$HG + IRL$AG
 IRL$OV25 <- ifelse(IRL$TG >= 3,"Y","N")
 IRL$FTR <- with(IRL,
@@ -25,9 +26,10 @@ IRL$FTR <- with(IRL,
 ###################################################
 ####GoalTotalsv2##################################
 irl_totalgoalsv2 <- tapply(IRL$TG, IRL[c("Home", "Away")],mean)
-irl_goaltotalsv2
+irl_totalgoalsv2
 irl_hgtotals <- rowSums(irl_totalgoalsv2,na.rm = T)
 irl_agtotals <- colSums(irl_totalgoalsv2,na.rm = T)
+
 irl_totalgoals <- irl_hgtotals + irl_agtotals
 irl_totalgoalsv2 <- cbind(irl_totalgoalsv2,irl_totalgoals)
 irl_teams <- sort(unique(IRL$Home))
@@ -153,7 +155,125 @@ for(irl_rowh_f_against in 1:nrow(irl_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#IRL
+irl_un05_home <- c()
+irl_un05_away <- c()
+irl_ov05_home <- c()
+irl_ov05_away <- c()
 
+irl_un15_home <- c()
+irl_un15_away <- c()
+irl_ov15_home <- c()
+irl_ov15_away <- c()
+
+irl_un25_home <- c()
+irl_un25_away <- c()
+irl_ov25_home <- c()
+irl_ov25_away <- c()
+
+irl_un35_home <- c()
+irl_un35_away <- c()
+irl_ov35_home <- c()
+irl_ov35_away <- c()
+
+irl_un45_home <- c()
+irl_un45_away <- c()
+irl_ov45_home <- c()
+irl_ov45_away <- c()
+
+irl_un55_home <- c()
+irl_un55_away <- c()
+irl_ov55_home <- c()
+irl_ov55_away <- c()
+
+for (i_irl_tg in 1:length(irl_teams))
+{
+
+  irl_un05_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG == 0,])
+  irl_un05_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG == 0,])
+
+  irl_ov05_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG > 0,])
+  irl_ov05_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG > 0,])
+
+  irl_un15_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG <= 1,])
+  irl_un15_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG <= 1,])
+
+  irl_ov15_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG >= 2,])
+  irl_ov15_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG >= 2,])
+
+  irl_un25_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG <= 2,])
+  irl_un25_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG <= 2,])
+
+  irl_ov25_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG >=3,])
+  irl_ov25_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG >=3,])
+
+  irl_un35_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG <= 3,])
+  irl_un35_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG <= 3,])
+
+  irl_ov35_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG >= 4,])
+  irl_ov35_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG >= 4,])
+
+  irl_un45_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG <= 4,])
+  irl_un45_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG <= 4,])
+
+  irl_ov45_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG >= 5,])
+  irl_ov45_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG >= 5,])
+
+  irl_un55_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG <= 5,])
+  irl_un55_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG <= 5,])
+
+  irl_ov55_home[i_irl_tg] <- nrow(IRL[IRL$Home == irl_teams[i_irl_tg] & IRL$TG >= 6,])
+  irl_ov55_away[i_irl_tg] <- nrow(IRL[IRL$Away == irl_teams[i_irl_tg] & IRL$TG >= 6,])
+
+
+}
+
+irl_un05 <- irl_un05_home + irl_un05_away
+irl_ov05 <- irl_ov05_home + irl_ov05_away
+
+irl_un15 <- irl_un15_home + irl_un15_away
+irl_ov15 <- irl_ov15_home + irl_ov15_away
+
+irl_un25 <- irl_un25_home + irl_un25_away
+irl_ov25 <- irl_ov25_home + irl_ov25_away
+
+irl_un35 <- irl_un35_home + irl_un35_away
+irl_ov35 <- irl_ov35_home + irl_ov35_away
+
+irl_un45 <- irl_un45_home + irl_un45_away
+irl_ov45 <- irl_ov45_home + irl_ov45_away
+
+irl_un55 <- irl_un55_home + irl_un55_away
+irl_ov55 <- irl_ov55_home + irl_ov55_away
+
+irl_ovundata <- cbind(irl_teams,irl_un05,irl_ov05,irl_un15,irl_ov15,irl_un25,irl_ov25,irl_un35,irl_ov35,irl_un45,irl_ov45,irl_un55,irl_ov55)
+write.xlsx(irl_ovundata,'IRL.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+irl_csform_h <- tapply(IRL$CS, IRL[c("Home", "Date")],median)
+irl_csform_a <- tapply(IRL$CS, IRL[c("Away", "Date")],median)
+
+irl_csform_h[is.na(irl_csform_h)] <- ""
+irl_csform_a[is.na(irl_csform_a)] <- ""
+
+for(irl_rowh_f_cs in 1:nrow(irl_csform_h)) {
+  for(irl_colh_f_cs in 1:ncol(irl_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(irl_rowa_f_cs in 1:nrow(irl_csform_a)) {
+      for(irl_cola_f_cs in 1:ncol(irl_csform_a)) {
+        ifelse(!irl_csform_a[irl_rowa_f_cs,irl_cola_f_cs]=="",irl_csform_h[irl_rowa_f_cs,irl_cola_f_cs] <- irl_csform_a[irl_rowa_f_cs,irl_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(irl_away_conceding)[names(irl_away_conceding) == "x.y"] <- "Avg_Ftac"
 irl_conceding <- merge(irl_home_conceding,irl_away_conceding,by='Group.1',all = T)
 irl_conceding$TGC <- irl_conceding$TFthc + irl_conceding$TFtac
 
-irl_shots_analysis <- merge(irl_scoring_conversion,irl_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_irl,'IRL.xlsx',sheetName = "table", append = TRUE)
 #IRL
 #form
 #create final_irl_hf object
+irl_last_n_games <- 6
 final_irl_hf <- c()
 for(index_irl_hf in 1:length(irl_teams))
 {
   index_irl_hf <- row.names(irl_form_h) == irl_teams[index_irl_hf]
   form_irl_hf <- irl_form_h[index_irl_hf]
   deleted_form_irl_hf <- form_irl_hf[!form_irl_hf[] == ""]
-  l6_form_irl_hf <- tail(deleted_form_irl_hf,6)
+  l6_form_irl_hf <- tail(deleted_form_irl_hf,irl_last_n_games)
   l6_form_irl_hf <- paste(l6_form_irl_hf,collapse = " ")
   final_irl_hf[index_irl_hf] <- rbind(paste(irl_teams[index_irl_hf],l6_form_irl_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",irl_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_irl_gs in 1:length(irl_teams))
   index_irl_gs <- row.names(irl_goalscored_h) == irl_teams[index_irl_gs]
   form_irl_gs <- irl_goalscored_h[index_irl_gs]
   deleted_form_irl_gs <- form_irl_gs[!form_irl_gs[] == ""]
-  l6_form_irl_gs <- tail(deleted_form_irl_gs,6)
+  l6_form_irl_gs <- tail(deleted_form_irl_gs,irl_last_n_games)
   l6_form_irl_gs <- as.numeric(l6_form_irl_gs)
   suml6_irl_gs[index_irl_gs] <- sum(l6_form_irl_gs)
   suml6_irl_gs[index_irl_gs] <- paste("(",suml6_irl_gs[index_irl_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_irl_gc in 1:length(irl_teams))
   index_irl_gc <- row.names(irl_goalconceded_h) == irl_teams[index_irl_gc]
   form_irl_gc <- irl_goalconceded_h[index_irl_gc]
   deleted_form_irl_gc <- form_irl_gc[!form_irl_gc[] == ""]
-  l6_form_irl_gc <- tail(deleted_form_irl_gc,6)
+  l6_form_irl_gc <- tail(deleted_form_irl_gc,irl_last_n_games)
   l6_form_irl_gc <- as.numeric(l6_form_irl_gc)
   suml6_irl_gc[index_irl_gc] <- sum(l6_form_irl_gc)
   suml6_irl_gc[index_irl_gc] <- paste("(",suml6_irl_gc[index_irl_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_irl_tg in 1:length(irl_teams))
   index_irl_tg <- row.names(irl_totalgoals_h) == irl_teams[index_irl_tg]
   form_irl_tg <- irl_totalgoals_h[index_irl_tg]
   deleted_form_irl_tg <- form_irl_tg[!form_irl_tg[] == ""]
-  l6_form_irl_tg <- tail(deleted_form_irl_tg,6)
+  l6_form_irl_tg <- tail(deleted_form_irl_tg,irl_last_n_games)
   l6_form_irl_tg <- as.numeric(l6_form_irl_tg)
   suml6_irl_tg[index_irl_tg] <- sum(l6_form_irl_tg)
   suml6_irl_tg[index_irl_tg] <- paste("(",suml6_irl_tg[index_irl_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_irl_tg in 1:length(irl_teams))
 #change column names
 final_irl_tg <- as.data.frame(final_irl_tg)
 colnames(final_irl_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_irl_hf object
+final_irl_cs <- c()
+for(index_irl_cs in 1:length(irl_teams))
+{
+  index_irl_cs <- row.names(irl_csform_h) == irl_teams[index_irl_cs]
+  csform_irl_cs <- irl_csform_h[index_irl_cs]
+  deleted_csform_irl_cs <- csform_irl_cs[!csform_irl_cs[] == ""]
+  l6_csform_irl_cs <- tail(deleted_csform_irl_cs,irl_last_n_games)
+  l6_csform_irl_cs <- paste(l6_csform_irl_cs,collapse = " ")
+  final_irl_cs[index_irl_cs] <- rbind(paste(irl_teams[index_irl_cs],l6_csform_irl_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",irl_teams[index],l6_csform)
+
+}
+
+#change column names
+final_irl_cs <- as.data.frame(final_irl_cs)
+colnames(final_irl_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_irl_hf_against
 final_irl_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_irl_hf_against in 1:length(irl_teams))
   index_irl_hf_against <- row.names(irl_form_team_against_h) == irl_teams[index_irl_hf_against]
   form_irl_hf_against <- irl_form_team_against_h[index_irl_hf_against]
   deleted_form_irl_hf_against <- form_irl_hf_against[!form_irl_hf_against[] == ""]
-  l6_form_irl_hf_against <- tail(deleted_form_irl_hf_against,6)
+  l6_form_irl_hf_against <- tail(deleted_form_irl_hf_against,irl_last_n_games)
   l6_form_irl_hf_against <- paste(l6_form_irl_hf_against,collapse = " ")
   final_irl_hf_against[index_irl_hf_against] <- rbind(paste(irl_teams[index_irl_hf_against],l6_form_irl_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",irl_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_irl_hf_against in 1:length(irl_teams))
 final_irl_hf_against <- as.data.frame(final_irl_hf_against)
 colnames(final_irl_hf_against) <- "Team against"
 #combine the columns
-final_irl_all <- cbind(final_irl_hf,final_irl_gs,final_irl_gc,final_irl_tg,final_irl_hf_against)
+final_irl_all <- cbind(final_irl_hf,final_irl_gs,final_irl_gc,final_irl_tg,final_irl_cs,final_irl_hf_against)
 write.xlsx(final_irl_all,'IRL.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ irl_ftr_summary <- tabyl(IRL,Season,Res) %>% adorn_percentages("row") %>% adorn_
 irl_ov25_summary <- tabyl(IRL,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(irl_ftr_summary,'IRL.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(irl_ov25_summary,'IRL.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(irl_ov25_summary,'IRL.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

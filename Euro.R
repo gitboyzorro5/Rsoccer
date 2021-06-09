@@ -11,22 +11,23 @@ unlink('EURO.xlsx')
 ######################EURO START#######################################
 #####################################################################
 EURO <- read.csv('../../../Leonard/Downloads/results.csv')
-library('lubridate')
 EURO$date <- ymd(EURO$date)
-EURO <- EURO[order(as.Date(EURO$date, format = "%Y/%m%d"), decreasing = FALSE),]
-EURO_qualificaton <- subset(EURO,tournament == "UEFA Euro qualification")
+EURO <- EURO[order(as.Date(EURO$date, format = "%d/%m%Y"), decreasing = FALSE),]
+EURO$CS <- paste(EURO$home_score,EURO$away_score, sep = "-")
 EURO <- subset(EURO,tournament == "UEFA Euro")
 EURO <- EURO[EURO$date > '2008-01-01',]
 EURO$TG <- EURO$home_score + EURO$away_score
 EURO$OV25 <- ifelse(EURO$TG >= 3,"Y","N")
 EURO$FTR <- with(EURO,
-                 ifelse(home_score > away_score ,FTR <- "H" , ifelse(away_score > home_score,FTR <- "A", FTR <- "D"))
+                ifelse(home_score > away_score ,FTR <- "H" , ifelse(away_score > home_score,FTR <- "A", FTR <- "D"))
 )
 ###################################################
 ####GoalTotalsv2##################################
 euro_totalgoalsv2 <- tapply(EURO$TG, EURO[c("home_team", "away_team")],mean)
-euro_hgtotals <- rowSums(euro_totalgoalsv2, na.rm = T)
-euro_agtotals <- colSums(euro_totalgoalsv2, na.rm = T)
+euro_totalgoalsv2
+euro_hgtotals <- rowSums(euro_totalgoalsv2,na.rm = T)
+euro_agtotals <- colSums(euro_totalgoalsv2,na.rm = T)
+
 euro_totalgoals <- euro_hgtotals + euro_agtotals
 euro_totalgoalsv2 <- cbind(euro_totalgoalsv2,euro_totalgoals)
 euro_teams <- sort(unique(EURO$home_team))
@@ -152,7 +153,125 @@ for(euro_rowh_f_against in 1:nrow(euro_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#EURO
+euro_un05_home <- c()
+euro_un05_away <- c()
+euro_ov05_home <- c()
+euro_ov05_away <- c()
 
+euro_un15_home <- c()
+euro_un15_away <- c()
+euro_ov15_home <- c()
+euro_ov15_away <- c()
+
+euro_un25_home <- c()
+euro_un25_away <- c()
+euro_ov25_home <- c()
+euro_ov25_away <- c()
+
+euro_un35_home <- c()
+euro_un35_away <- c()
+euro_ov35_home <- c()
+euro_ov35_away <- c()
+
+euro_un45_home <- c()
+euro_un45_away <- c()
+euro_ov45_home <- c()
+euro_ov45_away <- c()
+
+euro_un55_home <- c()
+euro_un55_away <- c()
+euro_ov55_home <- c()
+euro_ov55_away <- c()
+
+for (i_euro_tg in 1:length(euro_teams))
+{
+
+  euro_un05_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG == 0,])
+  euro_un05_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG == 0,])
+
+  euro_ov05_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG > 0,])
+  euro_ov05_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG > 0,])
+
+  euro_un15_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG <= 1,])
+  euro_un15_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG <= 1,])
+
+  euro_ov15_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG >= 2,])
+  euro_ov15_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG >= 2,])
+
+  euro_un25_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG <= 2,])
+  euro_un25_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG <= 2,])
+
+  euro_ov25_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG >=3,])
+  euro_ov25_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG >=3,])
+
+  euro_un35_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG <= 3,])
+  euro_un35_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG <= 3,])
+
+  euro_ov35_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG >= 4,])
+  euro_ov35_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG >= 4,])
+
+  euro_un45_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG <= 4,])
+  euro_un45_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG <= 4,])
+
+  euro_ov45_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG >= 5,])
+  euro_ov45_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG >= 5,])
+
+  euro_un55_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG <= 5,])
+  euro_un55_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG <= 5,])
+
+  euro_ov55_home[i_euro_tg] <- nrow(EURO[EURO$home_team == euro_teams[i_euro_tg] & EURO$TG >= 6,])
+  euro_ov55_away[i_euro_tg] <- nrow(EURO[EURO$away_team == euro_teams[i_euro_tg] & EURO$TG >= 6,])
+
+
+}
+
+euro_un05 <- euro_un05_home + euro_un05_away
+euro_ov05 <- euro_ov05_home + euro_ov05_away
+
+euro_un15 <- euro_un15_home + euro_un15_away
+euro_ov15 <- euro_ov15_home + euro_ov15_away
+
+euro_un25 <- euro_un25_home + euro_un25_away
+euro_ov25 <- euro_ov25_home + euro_ov25_away
+
+euro_un35 <- euro_un35_home + euro_un35_away
+euro_ov35 <- euro_ov35_home + euro_ov35_away
+
+euro_un45 <- euro_un45_home + euro_un45_away
+euro_ov45 <- euro_ov45_home + euro_ov45_away
+
+euro_un55 <- euro_un55_home + euro_un55_away
+euro_ov55 <- euro_ov55_home + euro_ov55_away
+
+euro_ovundata <- cbind(euro_teams,euro_un05,euro_ov05,euro_un15,euro_ov15,euro_un25,euro_ov25,euro_un35,euro_ov35,euro_un45,euro_ov45,euro_un55,euro_ov55)
+write.xlsx(euro_ovundata,'EURO.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+euro_csform_h <- tapply(EURO$CS, EURO[c("home_team", "date")],median)
+euro_csform_a <- tapply(EURO$CS, EURO[c("away_team", "date")],median)
+
+euro_csform_h[is.na(euro_csform_h)] <- ""
+euro_csform_a[is.na(euro_csform_a)] <- ""
+
+for(euro_rowh_f_cs in 1:nrow(euro_csform_h)) {
+  for(euro_colh_f_cs in 1:ncol(euro_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(euro_rowa_f_cs in 1:nrow(euro_csform_a)) {
+      for(euro_cola_f_cs in 1:ncol(euro_csform_a)) {
+        ifelse(!euro_csform_a[euro_rowa_f_cs,euro_cola_f_cs]=="",euro_csform_h[euro_rowa_f_cs,euro_cola_f_cs] <- euro_csform_a[euro_rowa_f_cs,euro_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -187,7 +306,6 @@ names(euro_away_conceding)[names(euro_away_conceding) == "x.y"] <- "Avg_Ftac"
 euro_conceding <- merge(euro_home_conceding,euro_away_conceding,by='Group.1',all = T)
 euro_conceding$TGC <- euro_conceding$TFthc + euro_conceding$TFtac
 
-euro_shots_analysis <- merge(euro_scoring_conversion,euro_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -240,13 +358,14 @@ write.xlsx(points_euro,'EURO.xlsx',sheetName = "table", append = TRUE)
 #EURO
 #form
 #create final_euro_hf object
+euro_last_n_games <- 6
 final_euro_hf <- c()
 for(index_euro_hf in 1:length(euro_teams))
 {
   index_euro_hf <- row.names(euro_form_h) == euro_teams[index_euro_hf]
   form_euro_hf <- euro_form_h[index_euro_hf]
   deleted_form_euro_hf <- form_euro_hf[!form_euro_hf[] == ""]
-  l6_form_euro_hf <- tail(deleted_form_euro_hf,6)
+  l6_form_euro_hf <- tail(deleted_form_euro_hf,euro_last_n_games)
   l6_form_euro_hf <- paste(l6_form_euro_hf,collapse = " ")
   final_euro_hf[index_euro_hf] <- rbind(paste(euro_teams[index_euro_hf],l6_form_euro_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",euro_teams[index],l6_form)
@@ -265,7 +384,7 @@ for(index_euro_gs in 1:length(euro_teams))
   index_euro_gs <- row.names(euro_goalscored_h) == euro_teams[index_euro_gs]
   form_euro_gs <- euro_goalscored_h[index_euro_gs]
   deleted_form_euro_gs <- form_euro_gs[!form_euro_gs[] == ""]
-  l6_form_euro_gs <- tail(deleted_form_euro_gs,6)
+  l6_form_euro_gs <- tail(deleted_form_euro_gs,euro_last_n_games)
   l6_form_euro_gs <- as.numeric(l6_form_euro_gs)
   suml6_euro_gs[index_euro_gs] <- sum(l6_form_euro_gs)
   suml6_euro_gs[index_euro_gs] <- paste("(",suml6_euro_gs[index_euro_gs],")",sep = "")
@@ -287,7 +406,7 @@ for(index_euro_gc in 1:length(euro_teams))
   index_euro_gc <- row.names(euro_goalconceded_h) == euro_teams[index_euro_gc]
   form_euro_gc <- euro_goalconceded_h[index_euro_gc]
   deleted_form_euro_gc <- form_euro_gc[!form_euro_gc[] == ""]
-  l6_form_euro_gc <- tail(deleted_form_euro_gc,6)
+  l6_form_euro_gc <- tail(deleted_form_euro_gc,euro_last_n_games)
   l6_form_euro_gc <- as.numeric(l6_form_euro_gc)
   suml6_euro_gc[index_euro_gc] <- sum(l6_form_euro_gc)
   suml6_euro_gc[index_euro_gc] <- paste("(",suml6_euro_gc[index_euro_gc],")",sep = "")
@@ -309,7 +428,7 @@ for(index_euro_tg in 1:length(euro_teams))
   index_euro_tg <- row.names(euro_totalgoals_h) == euro_teams[index_euro_tg]
   form_euro_tg <- euro_totalgoals_h[index_euro_tg]
   deleted_form_euro_tg <- form_euro_tg[!form_euro_tg[] == ""]
-  l6_form_euro_tg <- tail(deleted_form_euro_tg,6)
+  l6_form_euro_tg <- tail(deleted_form_euro_tg,euro_last_n_games)
   l6_form_euro_tg <- as.numeric(l6_form_euro_tg)
   suml6_euro_tg[index_euro_tg] <- sum(l6_form_euro_tg)
   suml6_euro_tg[index_euro_tg] <- paste("(",suml6_euro_tg[index_euro_tg],")",sep = "")
@@ -321,6 +440,26 @@ for(index_euro_tg in 1:length(euro_teams))
 #change column names
 final_euro_tg <- as.data.frame(final_euro_tg)
 colnames(final_euro_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_euro_hf object
+final_euro_cs <- c()
+for(index_euro_cs in 1:length(euro_teams))
+{
+  index_euro_cs <- row.names(euro_csform_h) == euro_teams[index_euro_cs]
+  csform_euro_cs <- euro_csform_h[index_euro_cs]
+  deleted_csform_euro_cs <- csform_euro_cs[!csform_euro_cs[] == ""]
+  l6_csform_euro_cs <- tail(deleted_csform_euro_cs,euro_last_n_games)
+  l6_csform_euro_cs <- paste(l6_csform_euro_cs,collapse = " ")
+  final_euro_cs[index_euro_cs] <- rbind(paste(euro_teams[index_euro_cs],l6_csform_euro_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",euro_teams[index],l6_csform)
+
+}
+
+#change column names
+final_euro_cs <- as.data.frame(final_euro_cs)
+colnames(final_euro_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_euro_hf_against
 final_euro_hf_against <- c()
@@ -329,7 +468,7 @@ for(index_euro_hf_against in 1:length(euro_teams))
   index_euro_hf_against <- row.names(euro_form_team_against_h) == euro_teams[index_euro_hf_against]
   form_euro_hf_against <- euro_form_team_against_h[index_euro_hf_against]
   deleted_form_euro_hf_against <- form_euro_hf_against[!form_euro_hf_against[] == ""]
-  l6_form_euro_hf_against <- tail(deleted_form_euro_hf_against,6)
+  l6_form_euro_hf_against <- tail(deleted_form_euro_hf_against,euro_last_n_games)
   l6_form_euro_hf_against <- paste(l6_form_euro_hf_against,collapse = " ")
   final_euro_hf_against[index_euro_hf_against] <- rbind(paste(euro_teams[index_euro_hf_against],l6_form_euro_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",euro_teams[index],l6_form)
@@ -338,7 +477,7 @@ for(index_euro_hf_against in 1:length(euro_teams))
 final_euro_hf_against <- as.data.frame(final_euro_hf_against)
 colnames(final_euro_hf_against) <- "Team against"
 #combine the columns
-final_euro_all <- cbind(final_euro_hf,final_euro_gs,final_euro_gc,final_euro_tg,final_euro_hf_against)
+final_euro_all <- cbind(final_euro_hf,final_euro_gs,final_euro_gc,final_euro_tg,final_euro_cs,final_euro_hf_against)
 write.xlsx(final_euro_all,'EURO.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -346,24 +485,24 @@ write.xlsx(final_euro_all,'EURO.xlsx',sheetName = "L6", append = TRUE)
 #get total games played
 euro_GP <- nrow(EURO)
 #Calculate total home goals for each division
-euro_T_HG <- sum(euro_home_gs$x)
+euro_T_home_score <- sum(euro_home_gs$x)
 #calculate average home goal
-euro_avg_HG <- round(euro_T_HG /euro_GP, digits = 4)
+euro_avg_home_score <- round(euro_T_home_score /euro_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-euro_T_AG <- sum(euro_away_gs$x)
+euro_T_away_score <- sum(euro_away_gs$x)
 #calculate average away goal
-euro_avg_AG <- round(euro_T_AG /euro_GP, digits = 4)
+euro_avg_away_score <- round(euro_T_away_score /euro_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-euro_home_as <- round(((euro_home_gs$x/euro_home_games))/euro_avg_HG, digits = 4)
+euro_home_as <- round(((euro_home_gs$x/euro_home_games))/euro_avg_home_score, digits = 4)
 #calculate away attack strength
-euro_away_as <- round(((euro_away_gs$x/euro_away_games))/euro_avg_AG, digits = 4)
+euro_away_as <- round(((euro_away_gs$x/euro_away_games))/euro_avg_away_score, digits = 4)
 ################################################################################
 #get average home concede and away concede
-euro_avg_HC <- round(euro_T_AG /euro_GP, digits = 4)
+euro_avg_HC <- round(euro_T_away_score /euro_GP, digits = 4)
 #avg away concede
-euro_avg_AC <- round(euro_T_HG /euro_GP, digits = 4)
+euro_avg_AC <- round(euro_T_home_score /euro_GP, digits = 4)
 #calculate home and away defense strength
 #home defense strength
 euro_home_ds <- round(((euro_home_gc$x/euro_home_games))/euro_avg_HC, digits = 4)
@@ -374,13 +513,13 @@ euro_away_ds <- round(((euro_away_gc$x/euro_away_games))/euro_avg_AC, digits = 4
 #euro
 euro_division <- c()
 euro_division[1:length(euro_teams)] <- "EURO"
-euro_home_poisson <- cbind(euro_division,euro_teams,euro_avg_HG,euro_home_as,euro_home_ds)
+euro_home_poisson <- cbind(euro_division,euro_teams,euro_avg_home_score,euro_home_as,euro_home_ds)
 #################################################################################
 #away poisson data
 #euro
 euro_division <- c()
 euro_division[1:length(euro_teams)] <- "EURO"
-euro_away_poisson <- cbind(euro_division,euro_teams,euro_avg_AG,euro_away_as,euro_away_ds)
+euro_away_poisson <- cbind(euro_division,euro_teams,euro_avg_away_score,euro_away_as,euro_away_ds)
 
 #create home and away csv
 #euro_home_poisson <- rbind(euro_home_poisson,d1_home_poisson,d2_home_poisson,e0_home_poisson,e1_home_poisson,e2_home_poisson,e3_home_poisson,ec_home_poisson,f1_home_poisson,f2_home_poisson,g1_home_poisson,i1_home_poisson,i2_home_poisson,n1_home_poisson,p1_home_poisson,sc0_home_poisson,sc1_home_poisson,sc2_home_poisson,sc3_home_poisson,sp1_home_poisson,sp2_home_poisson,t1_home_poisson)
@@ -393,16 +532,16 @@ write.xlsx(euro_away_poisson,'EURO.xlsx',sheetName = "awaypoisson", append = TRU
 ##########################################################################################################
 ###################EURO FIXTURES##########################################################################
 #EURO
-HomeTeam_euro <- rep(euro_teams, each = length(euro_teams))
-AwayTeam_euro <- rep(euro_teams, length(euro_teams))
-EURO_fixtures <- cbind(HomeTeam_euro,AwayTeam_euro)
+home_teamTeam_euro <- rep(euro_teams, each = length(euro_teams))
+away_teamTeam_euro <- rep(euro_teams, length(euro_teams))
+EURO_fixtures <- cbind(home_teamTeam_euro,away_teamTeam_euro)
 EURO_fixtures <- as.data.frame(EURO_fixtures)
-EURO_fixtures <- EURO_fixtures[!EURO_fixtures$HomeTeam_euro == EURO_fixtures$AwayTeam_euro,]
+EURO_fixtures <- EURO_fixtures[!EURO_fixtures$home_teamTeam_euro == EURO_fixtures$away_teamTeam_euro,]
 rownames(EURO_fixtures) <- NULL
 EURO_fixtures$Div <- "EURO"
 EURO_fixtures <- EURO_fixtures[,c(3,1,2)]
 
-EURO_fixtures$avg_HG_euro <- euro_avg_HG
+EURO_fixtures$avg_home_score_euro <- euro_avg_home_score
 
 EURO_fixtures$euro_homeas <- rep(euro_home_as,each = length(euro_teams)-1)
 
@@ -410,34 +549,34 @@ euro_awayds_lookup <- cbind(euro_teams,euro_away_ds)
 
 euro_awayds_lookup <- as.data.frame(euro_awayds_lookup)
 
-colnames(euro_awayds_lookup) <- c("AwayTeam_euro","euro_awayds")
+colnames(euro_awayds_lookup) <- c("away_teamTeam_euro","euro_awayds")
 
 
 require('RH2')
-EURO_fixtures$euro_awayds <- sqldf("SELECT euro_awayds_lookup.euro_awayds FROM euro_awayds_lookup INNER JOIN EURO_fixtures ON euro_awayds_lookup.AwayTeam_euro = EURO_fixtures.AwayTeam_euro")
+EURO_fixtures$euro_awayds <- sqldf("SELECT euro_awayds_lookup.euro_awayds FROM euro_awayds_lookup INNER JOIN EURO_fixtures ON euro_awayds_lookup.away_teamTeam_euro = EURO_fixtures.away_teamTeam_euro")
 
-EURO_fixtures$avg_AG_euro <- euro_avg_AG
+EURO_fixtures$avg_away_score_euro <- euro_avg_away_score
 
 euro_awayas_lookup <- cbind(euro_teams,euro_away_as)
 
 euro_awayas_lookup <- as.data.frame(euro_awayas_lookup)
 
-colnames(euro_awayas_lookup) <- c("AwayTeam_euro","euro_awayas")
+colnames(euro_awayas_lookup) <- c("away_teamTeam_euro","euro_awayas")
 
 
-EURO_fixtures$euro_awayas <- sqldf("SELECT euro_awayas_lookup.euro_awayas FROM euro_awayas_lookup INNER JOIN EURO_fixtures ON euro_awayas_lookup.AwayTeam_euro = EURO_fixtures.AwayTeam_euro")
+EURO_fixtures$euro_awayas <- sqldf("SELECT euro_awayas_lookup.euro_awayas FROM euro_awayas_lookup INNER JOIN EURO_fixtures ON euro_awayas_lookup.away_teamTeam_euro = EURO_fixtures.away_teamTeam_euro")
 
 EURO_fixtures$euro_homeds <- rep(euro_home_ds,each = length(euro_teams)-1)
 
 EURO_fixtures$euro_awayds <- as.numeric(unlist(EURO_fixtures$euro_awayds))
 #xGH
-EURO_fixtures$euro_xGH <- EURO_fixtures$avg_HG_euro * EURO_fixtures$euro_homeas * EURO_fixtures$euro_awayds
+EURO_fixtures$euro_xGH <- EURO_fixtures$avg_home_score_euro * EURO_fixtures$euro_homeas * EURO_fixtures$euro_awayds
 
 #xGA
 
 EURO_fixtures$euro_awayas <- as.numeric(unlist(EURO_fixtures$euro_awayas))
 
-EURO_fixtures$euro_xGA <- EURO_fixtures$avg_AG_euro * EURO_fixtures$euro_awayas * EURO_fixtures$euro_homeds
+EURO_fixtures$euro_xGA <- EURO_fixtures$avg_away_score_euro * EURO_fixtures$euro_awayas * EURO_fixtures$euro_homeds
 
 EURO_fixtures$euro_0_0 <- round(stats::dpois(0,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
 EURO_fixtures$euro_1_0 <- round(stats::dpois(1,EURO_fixtures$euro_xGH) * stats::dpois(0,EURO_fixtures$euro_xGA), digits = 4)
@@ -488,7 +627,7 @@ EURO_fixtures$euro_2_6 <- round(stats::dpois(2,EURO_fixtures$euro_xGH) * stats::
 EURO_fixtures$euro_3_6 <- round(stats::dpois(3,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
 EURO_fixtures$euro_4_6 <- round(stats::dpois(4,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
 EURO_fixtures$euro_5_6 <- round(stats::dpois(5,EURO_fixtures$euro_xGH) * stats::dpois(6,EURO_fixtures$euro_xGA), digits = 4)
-#Home win
+#home_team win
 EURO_fixtures$euro_H <- (
   EURO_fixtures$euro_1_0 + EURO_fixtures$euro_2_0 + EURO_fixtures$euro_2_1 + EURO_fixtures$euro_3_0 + EURO_fixtures$euro_3_1 +
     EURO_fixtures$euro_3_2 + EURO_fixtures$euro_4_0 + EURO_fixtures$euro_4_1 + EURO_fixtures$euro_4_2 + EURO_fixtures$euro_4_3 +
@@ -508,7 +647,7 @@ EURO_fixtures$euro_D <- (
 
 EURO_fixtures$euro_D <- percent(EURO_fixtures$euro_D, accuracy = 0.1)
 
-#Away
+#away_team
 
 EURO_fixtures$euro_A <- (
   EURO_fixtures$euro_0_1 + EURO_fixtures$euro_0_2 + EURO_fixtures$euro_1_2 + EURO_fixtures$euro_0_3 + EURO_fixtures$euro_1_3 +
@@ -551,3 +690,16 @@ EURO_fixtures$euro_pscore <- paste(round(EURO_fixtures$euro_xGH,digits = 0),roun
 write.xlsx(EURO_fixtures,'EURO.xlsx',sheetName = "EURO", append = TRUE)
 ###########################################################################################################
 ########################EURO END###########################################################################
+EURO <- read.csv('../../../Leonard/Downloads/results.csv')
+EURO$FTR <- with(EURO,
+                 ifelse(home_score > away_score ,FTR <- "H" , ifelse(away_score > home_score,FTR <- "A", FTR <- "D"))
+)
+EURO$TG <- EURO$home_score + EURO$away_score
+EURO$OV25 <- ifelse(EURO$TG >= 3,"Y","N")
+euro_ftr_summary <- tabyl(EURO,tournament,FTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
+euro_ov25_summary <- tabyl(EURO,tournament,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
+ftr_summary <- ftr_summary[,c(1,3,2)]
+write.xlsx(euro_ftr_summary,'EURO.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(euro_ov25_summary,'EURO.xlsx',sheetName = "OVUN25", append = TRUE)
+
+

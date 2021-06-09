@@ -14,9 +14,10 @@ SWE <- read.csv('../FDAS/SWE.csv')
 SWE <- within(SWE,rm(Res))
 SWE$Date <- dmy(SWE$Date)
 SWE <- SWE[order(as.Date(SWE$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+SWE$CS <- paste(SWE$HG,SWE$AG, sep = "-")
 #SWE_qualificaton <- subset(SWE,tournament == "UEFA Euro qualification")
 SWE <- subset(SWE,Season == "2021")
-#SWE <- SWE[SWE$Date > '2008-01-01',]
+#SWE <- SWE[SWE$Date > '2008-01-01',])
 SWE$TG <- SWE$HG + SWE$AG
 SWE$OV25 <- ifelse(SWE$TG >= 3,"Y","N")
 SWE$FTR <- with(SWE,
@@ -25,9 +26,10 @@ SWE$FTR <- with(SWE,
 ###################################################
 ####GoalTotalsv2##################################
 swe_totalgoalsv2 <- tapply(SWE$TG, SWE[c("Home", "Away")],mean)
-swe_goaltotalsv2
+swe_totalgoalsv2
 swe_hgtotals <- rowSums(swe_totalgoalsv2,na.rm = T)
 swe_agtotals <- colSums(swe_totalgoalsv2,na.rm = T)
+
 swe_totalgoals <- swe_hgtotals + swe_agtotals
 swe_totalgoalsv2 <- cbind(swe_totalgoalsv2,swe_totalgoals)
 swe_teams <- sort(unique(SWE$Home))
@@ -153,7 +155,125 @@ for(swe_rowh_f_against in 1:nrow(swe_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#SWE
+swe_un05_home <- c()
+swe_un05_away <- c()
+swe_ov05_home <- c()
+swe_ov05_away <- c()
 
+swe_un15_home <- c()
+swe_un15_away <- c()
+swe_ov15_home <- c()
+swe_ov15_away <- c()
+
+swe_un25_home <- c()
+swe_un25_away <- c()
+swe_ov25_home <- c()
+swe_ov25_away <- c()
+
+swe_un35_home <- c()
+swe_un35_away <- c()
+swe_ov35_home <- c()
+swe_ov35_away <- c()
+
+swe_un45_home <- c()
+swe_un45_away <- c()
+swe_ov45_home <- c()
+swe_ov45_away <- c()
+
+swe_un55_home <- c()
+swe_un55_away <- c()
+swe_ov55_home <- c()
+swe_ov55_away <- c()
+
+for (i_swe_tg in 1:length(swe_teams))
+{
+
+  swe_un05_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG == 0,])
+  swe_un05_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG == 0,])
+
+  swe_ov05_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG > 0,])
+  swe_ov05_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG > 0,])
+
+  swe_un15_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG <= 1,])
+  swe_un15_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG <= 1,])
+
+  swe_ov15_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG >= 2,])
+  swe_ov15_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG >= 2,])
+
+  swe_un25_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG <= 2,])
+  swe_un25_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG <= 2,])
+
+  swe_ov25_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG >=3,])
+  swe_ov25_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG >=3,])
+
+  swe_un35_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG <= 3,])
+  swe_un35_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG <= 3,])
+
+  swe_ov35_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG >= 4,])
+  swe_ov35_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG >= 4,])
+
+  swe_un45_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG <= 4,])
+  swe_un45_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG <= 4,])
+
+  swe_ov45_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG >= 5,])
+  swe_ov45_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG >= 5,])
+
+  swe_un55_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG <= 5,])
+  swe_un55_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG <= 5,])
+
+  swe_ov55_home[i_swe_tg] <- nrow(SWE[SWE$Home == swe_teams[i_swe_tg] & SWE$TG >= 6,])
+  swe_ov55_away[i_swe_tg] <- nrow(SWE[SWE$Away == swe_teams[i_swe_tg] & SWE$TG >= 6,])
+
+
+}
+
+swe_un05 <- swe_un05_home + swe_un05_away
+swe_ov05 <- swe_ov05_home + swe_ov05_away
+
+swe_un15 <- swe_un15_home + swe_un15_away
+swe_ov15 <- swe_ov15_home + swe_ov15_away
+
+swe_un25 <- swe_un25_home + swe_un25_away
+swe_ov25 <- swe_ov25_home + swe_ov25_away
+
+swe_un35 <- swe_un35_home + swe_un35_away
+swe_ov35 <- swe_ov35_home + swe_ov35_away
+
+swe_un45 <- swe_un45_home + swe_un45_away
+swe_ov45 <- swe_ov45_home + swe_ov45_away
+
+swe_un55 <- swe_un55_home + swe_un55_away
+swe_ov55 <- swe_ov55_home + swe_ov55_away
+
+swe_ovundata <- cbind(swe_teams,swe_un05,swe_ov05,swe_un15,swe_ov15,swe_un25,swe_ov25,swe_un35,swe_ov35,swe_un45,swe_ov45,swe_un55,swe_ov55)
+write.xlsx(swe_ovundata,'SWE.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+swe_csform_h <- tapply(SWE$CS, SWE[c("Home", "Date")],median)
+swe_csform_a <- tapply(SWE$CS, SWE[c("Away", "Date")],median)
+
+swe_csform_h[is.na(swe_csform_h)] <- ""
+swe_csform_a[is.na(swe_csform_a)] <- ""
+
+for(swe_rowh_f_cs in 1:nrow(swe_csform_h)) {
+  for(swe_colh_f_cs in 1:ncol(swe_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(swe_rowa_f_cs in 1:nrow(swe_csform_a)) {
+      for(swe_cola_f_cs in 1:ncol(swe_csform_a)) {
+        ifelse(!swe_csform_a[swe_rowa_f_cs,swe_cola_f_cs]=="",swe_csform_h[swe_rowa_f_cs,swe_cola_f_cs] <- swe_csform_a[swe_rowa_f_cs,swe_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(swe_away_conceding)[names(swe_away_conceding) == "x.y"] <- "Avg_Ftac"
 swe_conceding <- merge(swe_home_conceding,swe_away_conceding,by='Group.1',all = T)
 swe_conceding$TGC <- swe_conceding$TFthc + swe_conceding$TFtac
 
-swe_shots_analysis <- merge(swe_scoring_conversion,swe_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_swe,'SWE.xlsx',sheetName = "table", append = TRUE)
 #SWE
 #form
 #create final_swe_hf object
+swe_last_n_games <- 6
 final_swe_hf <- c()
 for(index_swe_hf in 1:length(swe_teams))
 {
   index_swe_hf <- row.names(swe_form_h) == swe_teams[index_swe_hf]
   form_swe_hf <- swe_form_h[index_swe_hf]
   deleted_form_swe_hf <- form_swe_hf[!form_swe_hf[] == ""]
-  l6_form_swe_hf <- tail(deleted_form_swe_hf,6)
+  l6_form_swe_hf <- tail(deleted_form_swe_hf,swe_last_n_games)
   l6_form_swe_hf <- paste(l6_form_swe_hf,collapse = " ")
   final_swe_hf[index_swe_hf] <- rbind(paste(swe_teams[index_swe_hf],l6_form_swe_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",swe_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_swe_gs in 1:length(swe_teams))
   index_swe_gs <- row.names(swe_goalscored_h) == swe_teams[index_swe_gs]
   form_swe_gs <- swe_goalscored_h[index_swe_gs]
   deleted_form_swe_gs <- form_swe_gs[!form_swe_gs[] == ""]
-  l6_form_swe_gs <- tail(deleted_form_swe_gs,6)
+  l6_form_swe_gs <- tail(deleted_form_swe_gs,swe_last_n_games)
   l6_form_swe_gs <- as.numeric(l6_form_swe_gs)
   suml6_swe_gs[index_swe_gs] <- sum(l6_form_swe_gs)
   suml6_swe_gs[index_swe_gs] <- paste("(",suml6_swe_gs[index_swe_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_swe_gc in 1:length(swe_teams))
   index_swe_gc <- row.names(swe_goalconceded_h) == swe_teams[index_swe_gc]
   form_swe_gc <- swe_goalconceded_h[index_swe_gc]
   deleted_form_swe_gc <- form_swe_gc[!form_swe_gc[] == ""]
-  l6_form_swe_gc <- tail(deleted_form_swe_gc,6)
+  l6_form_swe_gc <- tail(deleted_form_swe_gc,swe_last_n_games)
   l6_form_swe_gc <- as.numeric(l6_form_swe_gc)
   suml6_swe_gc[index_swe_gc] <- sum(l6_form_swe_gc)
   suml6_swe_gc[index_swe_gc] <- paste("(",suml6_swe_gc[index_swe_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_swe_tg in 1:length(swe_teams))
   index_swe_tg <- row.names(swe_totalgoals_h) == swe_teams[index_swe_tg]
   form_swe_tg <- swe_totalgoals_h[index_swe_tg]
   deleted_form_swe_tg <- form_swe_tg[!form_swe_tg[] == ""]
-  l6_form_swe_tg <- tail(deleted_form_swe_tg,6)
+  l6_form_swe_tg <- tail(deleted_form_swe_tg,swe_last_n_games)
   l6_form_swe_tg <- as.numeric(l6_form_swe_tg)
   suml6_swe_tg[index_swe_tg] <- sum(l6_form_swe_tg)
   suml6_swe_tg[index_swe_tg] <- paste("(",suml6_swe_tg[index_swe_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_swe_tg in 1:length(swe_teams))
 #change column names
 final_swe_tg <- as.data.frame(final_swe_tg)
 colnames(final_swe_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_swe_hf object
+final_swe_cs <- c()
+for(index_swe_cs in 1:length(swe_teams))
+{
+  index_swe_cs <- row.names(swe_csform_h) == swe_teams[index_swe_cs]
+  csform_swe_cs <- swe_csform_h[index_swe_cs]
+  deleted_csform_swe_cs <- csform_swe_cs[!csform_swe_cs[] == ""]
+  l6_csform_swe_cs <- tail(deleted_csform_swe_cs,swe_last_n_games)
+  l6_csform_swe_cs <- paste(l6_csform_swe_cs,collapse = " ")
+  final_swe_cs[index_swe_cs] <- rbind(paste(swe_teams[index_swe_cs],l6_csform_swe_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",swe_teams[index],l6_csform)
+
+}
+
+#change column names
+final_swe_cs <- as.data.frame(final_swe_cs)
+colnames(final_swe_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_swe_hf_against
 final_swe_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_swe_hf_against in 1:length(swe_teams))
   index_swe_hf_against <- row.names(swe_form_team_against_h) == swe_teams[index_swe_hf_against]
   form_swe_hf_against <- swe_form_team_against_h[index_swe_hf_against]
   deleted_form_swe_hf_against <- form_swe_hf_against[!form_swe_hf_against[] == ""]
-  l6_form_swe_hf_against <- tail(deleted_form_swe_hf_against,6)
+  l6_form_swe_hf_against <- tail(deleted_form_swe_hf_against,swe_last_n_games)
   l6_form_swe_hf_against <- paste(l6_form_swe_hf_against,collapse = " ")
   final_swe_hf_against[index_swe_hf_against] <- rbind(paste(swe_teams[index_swe_hf_against],l6_form_swe_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",swe_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_swe_hf_against in 1:length(swe_teams))
 final_swe_hf_against <- as.data.frame(final_swe_hf_against)
 colnames(final_swe_hf_against) <- "Team against"
 #combine the columns
-final_swe_all <- cbind(final_swe_hf,final_swe_gs,final_swe_gc,final_swe_tg,final_swe_hf_against)
+final_swe_all <- cbind(final_swe_hf,final_swe_gs,final_swe_gc,final_swe_tg,final_swe_cs,final_swe_hf_against)
 write.xlsx(final_swe_all,'SWE.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ swe_ftr_summary <- tabyl(SWE,Season,Res) %>% adorn_percentages("row") %>% adorn_
 swe_ov25_summary <- tabyl(SWE,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(swe_ftr_summary,'SWE.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(swe_ov25_summary,'SWE.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(swe_ov25_summary,'SWE.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

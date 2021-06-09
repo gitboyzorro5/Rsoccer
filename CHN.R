@@ -14,9 +14,10 @@ CHN <- read.csv('../FDAS/CHN.csv')
 CHN <- within(CHN,rm(Res))
 CHN$Date <- dmy(CHN$Date)
 CHN <- CHN[order(as.Date(CHN$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+CHN$CS <- paste(CHN$HG,CHN$AG, sep = "-")
 #CHN_qualificaton <- subset(CHN,tournament == "UEFA Euro qualification")
-CHN <- subset(CHN,Season == "2020")
-#CHN <- CHN[CHN$Date > '2008-01-01',]
+CHN <- subset(CHN,Season == "2021")
+#CHN <- CHN[CHN$Date > '2008-01-01',])
 CHN$TG <- CHN$HG + CHN$AG
 CHN$OV25 <- ifelse(CHN$TG >= 3,"Y","N")
 CHN$FTR <- with(CHN,
@@ -25,9 +26,10 @@ CHN$FTR <- with(CHN,
 ###################################################
 ####GoalTotalsv2##################################
 chn_totalgoalsv2 <- tapply(CHN$TG, CHN[c("Home", "Away")],mean)
-chn_goaltotalsv2
+chn_totalgoalsv2
 chn_hgtotals <- rowSums(chn_totalgoalsv2,na.rm = T)
 chn_agtotals <- colSums(chn_totalgoalsv2,na.rm = T)
+
 chn_totalgoals <- chn_hgtotals + chn_agtotals
 chn_totalgoalsv2 <- cbind(chn_totalgoalsv2,chn_totalgoals)
 chn_teams <- sort(unique(CHN$Home))
@@ -153,7 +155,125 @@ for(chn_rowh_f_against in 1:nrow(chn_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#CHN
+chn_un05_home <- c()
+chn_un05_away <- c()
+chn_ov05_home <- c()
+chn_ov05_away <- c()
 
+chn_un15_home <- c()
+chn_un15_away <- c()
+chn_ov15_home <- c()
+chn_ov15_away <- c()
+
+chn_un25_home <- c()
+chn_un25_away <- c()
+chn_ov25_home <- c()
+chn_ov25_away <- c()
+
+chn_un35_home <- c()
+chn_un35_away <- c()
+chn_ov35_home <- c()
+chn_ov35_away <- c()
+
+chn_un45_home <- c()
+chn_un45_away <- c()
+chn_ov45_home <- c()
+chn_ov45_away <- c()
+
+chn_un55_home <- c()
+chn_un55_away <- c()
+chn_ov55_home <- c()
+chn_ov55_away <- c()
+
+for (i_chn_tg in 1:length(chn_teams))
+{
+
+  chn_un05_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG == 0,])
+  chn_un05_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG == 0,])
+
+  chn_ov05_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG > 0,])
+  chn_ov05_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG > 0,])
+
+  chn_un15_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG <= 1,])
+  chn_un15_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG <= 1,])
+
+  chn_ov15_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG >= 2,])
+  chn_ov15_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG >= 2,])
+
+  chn_un25_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG <= 2,])
+  chn_un25_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG <= 2,])
+
+  chn_ov25_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG >=3,])
+  chn_ov25_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG >=3,])
+
+  chn_un35_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG <= 3,])
+  chn_un35_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG <= 3,])
+
+  chn_ov35_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG >= 4,])
+  chn_ov35_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG >= 4,])
+
+  chn_un45_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG <= 4,])
+  chn_un45_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG <= 4,])
+
+  chn_ov45_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG >= 5,])
+  chn_ov45_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG >= 5,])
+
+  chn_un55_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG <= 5,])
+  chn_un55_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG <= 5,])
+
+  chn_ov55_home[i_chn_tg] <- nrow(CHN[CHN$Home == chn_teams[i_chn_tg] & CHN$TG >= 6,])
+  chn_ov55_away[i_chn_tg] <- nrow(CHN[CHN$Away == chn_teams[i_chn_tg] & CHN$TG >= 6,])
+
+
+}
+
+chn_un05 <- chn_un05_home + chn_un05_away
+chn_ov05 <- chn_ov05_home + chn_ov05_away
+
+chn_un15 <- chn_un15_home + chn_un15_away
+chn_ov15 <- chn_ov15_home + chn_ov15_away
+
+chn_un25 <- chn_un25_home + chn_un25_away
+chn_ov25 <- chn_ov25_home + chn_ov25_away
+
+chn_un35 <- chn_un35_home + chn_un35_away
+chn_ov35 <- chn_ov35_home + chn_ov35_away
+
+chn_un45 <- chn_un45_home + chn_un45_away
+chn_ov45 <- chn_ov45_home + chn_ov45_away
+
+chn_un55 <- chn_un55_home + chn_un55_away
+chn_ov55 <- chn_ov55_home + chn_ov55_away
+
+chn_ovundata <- cbind(chn_teams,chn_un05,chn_ov05,chn_un15,chn_ov15,chn_un25,chn_ov25,chn_un35,chn_ov35,chn_un45,chn_ov45,chn_un55,chn_ov55)
+write.xlsx(chn_ovundata,'CHN.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+chn_csform_h <- tapply(CHN$CS, CHN[c("Home", "Date")],median)
+chn_csform_a <- tapply(CHN$CS, CHN[c("Away", "Date")],median)
+
+chn_csform_h[is.na(chn_csform_h)] <- ""
+chn_csform_a[is.na(chn_csform_a)] <- ""
+
+for(chn_rowh_f_cs in 1:nrow(chn_csform_h)) {
+  for(chn_colh_f_cs in 1:ncol(chn_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(chn_rowa_f_cs in 1:nrow(chn_csform_a)) {
+      for(chn_cola_f_cs in 1:ncol(chn_csform_a)) {
+        ifelse(!chn_csform_a[chn_rowa_f_cs,chn_cola_f_cs]=="",chn_csform_h[chn_rowa_f_cs,chn_cola_f_cs] <- chn_csform_a[chn_rowa_f_cs,chn_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(chn_away_conceding)[names(chn_away_conceding) == "x.y"] <- "Avg_Ftac"
 chn_conceding <- merge(chn_home_conceding,chn_away_conceding,by='Group.1',all = T)
 chn_conceding$TGC <- chn_conceding$TFthc + chn_conceding$TFtac
 
-chn_shots_analysis <- merge(chn_scoring_conversion,chn_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_chn,'CHN.xlsx',sheetName = "table", append = TRUE)
 #CHN
 #form
 #create final_chn_hf object
+chn_last_n_games <- 6
 final_chn_hf <- c()
 for(index_chn_hf in 1:length(chn_teams))
 {
   index_chn_hf <- row.names(chn_form_h) == chn_teams[index_chn_hf]
   form_chn_hf <- chn_form_h[index_chn_hf]
   deleted_form_chn_hf <- form_chn_hf[!form_chn_hf[] == ""]
-  l6_form_chn_hf <- tail(deleted_form_chn_hf,6)
+  l6_form_chn_hf <- tail(deleted_form_chn_hf,chn_last_n_games)
   l6_form_chn_hf <- paste(l6_form_chn_hf,collapse = " ")
   final_chn_hf[index_chn_hf] <- rbind(paste(chn_teams[index_chn_hf],l6_form_chn_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",chn_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_chn_gs in 1:length(chn_teams))
   index_chn_gs <- row.names(chn_goalscored_h) == chn_teams[index_chn_gs]
   form_chn_gs <- chn_goalscored_h[index_chn_gs]
   deleted_form_chn_gs <- form_chn_gs[!form_chn_gs[] == ""]
-  l6_form_chn_gs <- tail(deleted_form_chn_gs,6)
+  l6_form_chn_gs <- tail(deleted_form_chn_gs,chn_last_n_games)
   l6_form_chn_gs <- as.numeric(l6_form_chn_gs)
   suml6_chn_gs[index_chn_gs] <- sum(l6_form_chn_gs)
   suml6_chn_gs[index_chn_gs] <- paste("(",suml6_chn_gs[index_chn_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_chn_gc in 1:length(chn_teams))
   index_chn_gc <- row.names(chn_goalconceded_h) == chn_teams[index_chn_gc]
   form_chn_gc <- chn_goalconceded_h[index_chn_gc]
   deleted_form_chn_gc <- form_chn_gc[!form_chn_gc[] == ""]
-  l6_form_chn_gc <- tail(deleted_form_chn_gc,6)
+  l6_form_chn_gc <- tail(deleted_form_chn_gc,chn_last_n_games)
   l6_form_chn_gc <- as.numeric(l6_form_chn_gc)
   suml6_chn_gc[index_chn_gc] <- sum(l6_form_chn_gc)
   suml6_chn_gc[index_chn_gc] <- paste("(",suml6_chn_gc[index_chn_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_chn_tg in 1:length(chn_teams))
   index_chn_tg <- row.names(chn_totalgoals_h) == chn_teams[index_chn_tg]
   form_chn_tg <- chn_totalgoals_h[index_chn_tg]
   deleted_form_chn_tg <- form_chn_tg[!form_chn_tg[] == ""]
-  l6_form_chn_tg <- tail(deleted_form_chn_tg,6)
+  l6_form_chn_tg <- tail(deleted_form_chn_tg,chn_last_n_games)
   l6_form_chn_tg <- as.numeric(l6_form_chn_tg)
   suml6_chn_tg[index_chn_tg] <- sum(l6_form_chn_tg)
   suml6_chn_tg[index_chn_tg] <- paste("(",suml6_chn_tg[index_chn_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_chn_tg in 1:length(chn_teams))
 #change column names
 final_chn_tg <- as.data.frame(final_chn_tg)
 colnames(final_chn_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_chn_hf object
+final_chn_cs <- c()
+for(index_chn_cs in 1:length(chn_teams))
+{
+  index_chn_cs <- row.names(chn_csform_h) == chn_teams[index_chn_cs]
+  csform_chn_cs <- chn_csform_h[index_chn_cs]
+  deleted_csform_chn_cs <- csform_chn_cs[!csform_chn_cs[] == ""]
+  l6_csform_chn_cs <- tail(deleted_csform_chn_cs,chn_last_n_games)
+  l6_csform_chn_cs <- paste(l6_csform_chn_cs,collapse = " ")
+  final_chn_cs[index_chn_cs] <- rbind(paste(chn_teams[index_chn_cs],l6_csform_chn_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",chn_teams[index],l6_csform)
+
+}
+
+#change column names
+final_chn_cs <- as.data.frame(final_chn_cs)
+colnames(final_chn_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_chn_hf_against
 final_chn_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_chn_hf_against in 1:length(chn_teams))
   index_chn_hf_against <- row.names(chn_form_team_against_h) == chn_teams[index_chn_hf_against]
   form_chn_hf_against <- chn_form_team_against_h[index_chn_hf_against]
   deleted_form_chn_hf_against <- form_chn_hf_against[!form_chn_hf_against[] == ""]
-  l6_form_chn_hf_against <- tail(deleted_form_chn_hf_against,6)
+  l6_form_chn_hf_against <- tail(deleted_form_chn_hf_against,chn_last_n_games)
   l6_form_chn_hf_against <- paste(l6_form_chn_hf_against,collapse = " ")
   final_chn_hf_against[index_chn_hf_against] <- rbind(paste(chn_teams[index_chn_hf_against],l6_form_chn_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",chn_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_chn_hf_against in 1:length(chn_teams))
 final_chn_hf_against <- as.data.frame(final_chn_hf_against)
 colnames(final_chn_hf_against) <- "Team against"
 #combine the columns
-final_chn_all <- cbind(final_chn_hf,final_chn_gs,final_chn_gc,final_chn_tg,final_chn_hf_against)
+final_chn_all <- cbind(final_chn_hf,final_chn_gs,final_chn_gc,final_chn_tg,final_chn_cs,final_chn_hf_against)
 write.xlsx(final_chn_all,'CHN.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ chn_ftr_summary <- tabyl(CHN,Season,Res) %>% adorn_percentages("row") %>% adorn_
 chn_ov25_summary <- tabyl(CHN,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(chn_ftr_summary,'CHN.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(chn_ov25_summary,'CHN.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(chn_ov25_summary,'CHN.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

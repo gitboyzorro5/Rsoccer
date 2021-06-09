@@ -68,3 +68,15 @@ y <- stats::dpois(0,1.4660)
 x * y
 ##########################################
 hist(sample(c(0,1),100,replace = F))
+
+
+
+COPA <- read.csv('../../../Leonard/Downloads/results.csv')
+COPA$date <- ymd(COPA$date)
+COPA <- COPA[order(as.Date(COPA$date, format = "%Y/%m%d"), decreasing = FALSE),]
+sort(unique(COPA$tournament))
+
+COPA_qualificaton <- subset(COPA,tournament == "Copa AmÃ©rica")
+tail(COPA_qualificaton)
+COPA <- subset(COPA,tournament == "UEFA Euro")
+COPA <- COPA[COPA$date > '2008-01-01',]

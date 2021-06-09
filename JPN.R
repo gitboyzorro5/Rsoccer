@@ -14,9 +14,10 @@ JPN <- read.csv('../FDAS/JPN.csv')
 JPN <- within(JPN,rm(Res))
 JPN$Date <- dmy(JPN$Date)
 JPN <- JPN[order(as.Date(JPN$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+JPN$CS <- paste(JPN$HG,JPN$AG, sep = "-")
 #JPN_qualificaton <- subset(JPN,tournament == "UEFA Euro qualification")
 JPN <- subset(JPN,Season == "2021")
-#JPN <- JPN[JPN$Date > '2008-01-01',]
+#JPN <- JPN[JPN$Date > '2008-01-01',])
 JPN$TG <- JPN$HG + JPN$AG
 JPN$OV25 <- ifelse(JPN$TG >= 3,"Y","N")
 JPN$FTR <- with(JPN,
@@ -25,9 +26,10 @@ JPN$FTR <- with(JPN,
 ###################################################
 ####GoalTotalsv2##################################
 jpn_totalgoalsv2 <- tapply(JPN$TG, JPN[c("Home", "Away")],mean)
-jpn_goaltotalsv2
+jpn_totalgoalsv2
 jpn_hgtotals <- rowSums(jpn_totalgoalsv2,na.rm = T)
 jpn_agtotals <- colSums(jpn_totalgoalsv2,na.rm = T)
+
 jpn_totalgoals <- jpn_hgtotals + jpn_agtotals
 jpn_totalgoalsv2 <- cbind(jpn_totalgoalsv2,jpn_totalgoals)
 jpn_teams <- sort(unique(JPN$Home))
@@ -153,7 +155,125 @@ for(jpn_rowh_f_against in 1:nrow(jpn_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#JPN
+jpn_un05_home <- c()
+jpn_un05_away <- c()
+jpn_ov05_home <- c()
+jpn_ov05_away <- c()
 
+jpn_un15_home <- c()
+jpn_un15_away <- c()
+jpn_ov15_home <- c()
+jpn_ov15_away <- c()
+
+jpn_un25_home <- c()
+jpn_un25_away <- c()
+jpn_ov25_home <- c()
+jpn_ov25_away <- c()
+
+jpn_un35_home <- c()
+jpn_un35_away <- c()
+jpn_ov35_home <- c()
+jpn_ov35_away <- c()
+
+jpn_un45_home <- c()
+jpn_un45_away <- c()
+jpn_ov45_home <- c()
+jpn_ov45_away <- c()
+
+jpn_un55_home <- c()
+jpn_un55_away <- c()
+jpn_ov55_home <- c()
+jpn_ov55_away <- c()
+
+for (i_jpn_tg in 1:length(jpn_teams))
+{
+
+  jpn_un05_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG == 0,])
+  jpn_un05_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG == 0,])
+
+  jpn_ov05_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG > 0,])
+  jpn_ov05_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG > 0,])
+
+  jpn_un15_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG <= 1,])
+  jpn_un15_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG <= 1,])
+
+  jpn_ov15_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG >= 2,])
+  jpn_ov15_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG >= 2,])
+
+  jpn_un25_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG <= 2,])
+  jpn_un25_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG <= 2,])
+
+  jpn_ov25_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG >=3,])
+  jpn_ov25_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG >=3,])
+
+  jpn_un35_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG <= 3,])
+  jpn_un35_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG <= 3,])
+
+  jpn_ov35_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG >= 4,])
+  jpn_ov35_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG >= 4,])
+
+  jpn_un45_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG <= 4,])
+  jpn_un45_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG <= 4,])
+
+  jpn_ov45_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG >= 5,])
+  jpn_ov45_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG >= 5,])
+
+  jpn_un55_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG <= 5,])
+  jpn_un55_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG <= 5,])
+
+  jpn_ov55_home[i_jpn_tg] <- nrow(JPN[JPN$Home == jpn_teams[i_jpn_tg] & JPN$TG >= 6,])
+  jpn_ov55_away[i_jpn_tg] <- nrow(JPN[JPN$Away == jpn_teams[i_jpn_tg] & JPN$TG >= 6,])
+
+
+}
+
+jpn_un05 <- jpn_un05_home + jpn_un05_away
+jpn_ov05 <- jpn_ov05_home + jpn_ov05_away
+
+jpn_un15 <- jpn_un15_home + jpn_un15_away
+jpn_ov15 <- jpn_ov15_home + jpn_ov15_away
+
+jpn_un25 <- jpn_un25_home + jpn_un25_away
+jpn_ov25 <- jpn_ov25_home + jpn_ov25_away
+
+jpn_un35 <- jpn_un35_home + jpn_un35_away
+jpn_ov35 <- jpn_ov35_home + jpn_ov35_away
+
+jpn_un45 <- jpn_un45_home + jpn_un45_away
+jpn_ov45 <- jpn_ov45_home + jpn_ov45_away
+
+jpn_un55 <- jpn_un55_home + jpn_un55_away
+jpn_ov55 <- jpn_ov55_home + jpn_ov55_away
+
+jpn_ovundata <- cbind(jpn_teams,jpn_un05,jpn_ov05,jpn_un15,jpn_ov15,jpn_un25,jpn_ov25,jpn_un35,jpn_ov35,jpn_un45,jpn_ov45,jpn_un55,jpn_ov55)
+write.xlsx(jpn_ovundata,'JPN.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+jpn_csform_h <- tapply(JPN$CS, JPN[c("Home", "Date")],median)
+jpn_csform_a <- tapply(JPN$CS, JPN[c("Away", "Date")],median)
+
+jpn_csform_h[is.na(jpn_csform_h)] <- ""
+jpn_csform_a[is.na(jpn_csform_a)] <- ""
+
+for(jpn_rowh_f_cs in 1:nrow(jpn_csform_h)) {
+  for(jpn_colh_f_cs in 1:ncol(jpn_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(jpn_rowa_f_cs in 1:nrow(jpn_csform_a)) {
+      for(jpn_cola_f_cs in 1:ncol(jpn_csform_a)) {
+        ifelse(!jpn_csform_a[jpn_rowa_f_cs,jpn_cola_f_cs]=="",jpn_csform_h[jpn_rowa_f_cs,jpn_cola_f_cs] <- jpn_csform_a[jpn_rowa_f_cs,jpn_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(jpn_away_conceding)[names(jpn_away_conceding) == "x.y"] <- "Avg_Ftac"
 jpn_conceding <- merge(jpn_home_conceding,jpn_away_conceding,by='Group.1',all = T)
 jpn_conceding$TGC <- jpn_conceding$TFthc + jpn_conceding$TFtac
 
-jpn_shots_analysis <- merge(jpn_scoring_conversion,jpn_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_jpn,'JPN.xlsx',sheetName = "table", append = TRUE)
 #JPN
 #form
 #create final_jpn_hf object
+jpn_last_n_games <- 6
 final_jpn_hf <- c()
 for(index_jpn_hf in 1:length(jpn_teams))
 {
   index_jpn_hf <- row.names(jpn_form_h) == jpn_teams[index_jpn_hf]
   form_jpn_hf <- jpn_form_h[index_jpn_hf]
   deleted_form_jpn_hf <- form_jpn_hf[!form_jpn_hf[] == ""]
-  l6_form_jpn_hf <- tail(deleted_form_jpn_hf,6)
+  l6_form_jpn_hf <- tail(deleted_form_jpn_hf,jpn_last_n_games)
   l6_form_jpn_hf <- paste(l6_form_jpn_hf,collapse = " ")
   final_jpn_hf[index_jpn_hf] <- rbind(paste(jpn_teams[index_jpn_hf],l6_form_jpn_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",jpn_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_jpn_gs in 1:length(jpn_teams))
   index_jpn_gs <- row.names(jpn_goalscored_h) == jpn_teams[index_jpn_gs]
   form_jpn_gs <- jpn_goalscored_h[index_jpn_gs]
   deleted_form_jpn_gs <- form_jpn_gs[!form_jpn_gs[] == ""]
-  l6_form_jpn_gs <- tail(deleted_form_jpn_gs,6)
+  l6_form_jpn_gs <- tail(deleted_form_jpn_gs,jpn_last_n_games)
   l6_form_jpn_gs <- as.numeric(l6_form_jpn_gs)
   suml6_jpn_gs[index_jpn_gs] <- sum(l6_form_jpn_gs)
   suml6_jpn_gs[index_jpn_gs] <- paste("(",suml6_jpn_gs[index_jpn_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_jpn_gc in 1:length(jpn_teams))
   index_jpn_gc <- row.names(jpn_goalconceded_h) == jpn_teams[index_jpn_gc]
   form_jpn_gc <- jpn_goalconceded_h[index_jpn_gc]
   deleted_form_jpn_gc <- form_jpn_gc[!form_jpn_gc[] == ""]
-  l6_form_jpn_gc <- tail(deleted_form_jpn_gc,6)
+  l6_form_jpn_gc <- tail(deleted_form_jpn_gc,jpn_last_n_games)
   l6_form_jpn_gc <- as.numeric(l6_form_jpn_gc)
   suml6_jpn_gc[index_jpn_gc] <- sum(l6_form_jpn_gc)
   suml6_jpn_gc[index_jpn_gc] <- paste("(",suml6_jpn_gc[index_jpn_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_jpn_tg in 1:length(jpn_teams))
   index_jpn_tg <- row.names(jpn_totalgoals_h) == jpn_teams[index_jpn_tg]
   form_jpn_tg <- jpn_totalgoals_h[index_jpn_tg]
   deleted_form_jpn_tg <- form_jpn_tg[!form_jpn_tg[] == ""]
-  l6_form_jpn_tg <- tail(deleted_form_jpn_tg,6)
+  l6_form_jpn_tg <- tail(deleted_form_jpn_tg,jpn_last_n_games)
   l6_form_jpn_tg <- as.numeric(l6_form_jpn_tg)
   suml6_jpn_tg[index_jpn_tg] <- sum(l6_form_jpn_tg)
   suml6_jpn_tg[index_jpn_tg] <- paste("(",suml6_jpn_tg[index_jpn_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_jpn_tg in 1:length(jpn_teams))
 #change column names
 final_jpn_tg <- as.data.frame(final_jpn_tg)
 colnames(final_jpn_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_jpn_hf object
+final_jpn_cs <- c()
+for(index_jpn_cs in 1:length(jpn_teams))
+{
+  index_jpn_cs <- row.names(jpn_csform_h) == jpn_teams[index_jpn_cs]
+  csform_jpn_cs <- jpn_csform_h[index_jpn_cs]
+  deleted_csform_jpn_cs <- csform_jpn_cs[!csform_jpn_cs[] == ""]
+  l6_csform_jpn_cs <- tail(deleted_csform_jpn_cs,jpn_last_n_games)
+  l6_csform_jpn_cs <- paste(l6_csform_jpn_cs,collapse = " ")
+  final_jpn_cs[index_jpn_cs] <- rbind(paste(jpn_teams[index_jpn_cs],l6_csform_jpn_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",jpn_teams[index],l6_csform)
+
+}
+
+#change column names
+final_jpn_cs <- as.data.frame(final_jpn_cs)
+colnames(final_jpn_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_jpn_hf_against
 final_jpn_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_jpn_hf_against in 1:length(jpn_teams))
   index_jpn_hf_against <- row.names(jpn_form_team_against_h) == jpn_teams[index_jpn_hf_against]
   form_jpn_hf_against <- jpn_form_team_against_h[index_jpn_hf_against]
   deleted_form_jpn_hf_against <- form_jpn_hf_against[!form_jpn_hf_against[] == ""]
-  l6_form_jpn_hf_against <- tail(deleted_form_jpn_hf_against,6)
+  l6_form_jpn_hf_against <- tail(deleted_form_jpn_hf_against,jpn_last_n_games)
   l6_form_jpn_hf_against <- paste(l6_form_jpn_hf_against,collapse = " ")
   final_jpn_hf_against[index_jpn_hf_against] <- rbind(paste(jpn_teams[index_jpn_hf_against],l6_form_jpn_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",jpn_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_jpn_hf_against in 1:length(jpn_teams))
 final_jpn_hf_against <- as.data.frame(final_jpn_hf_against)
 colnames(final_jpn_hf_against) <- "Team against"
 #combine the columns
-final_jpn_all <- cbind(final_jpn_hf,final_jpn_gs,final_jpn_gc,final_jpn_tg,final_jpn_hf_against)
+final_jpn_all <- cbind(final_jpn_hf,final_jpn_gs,final_jpn_gc,final_jpn_tg,final_jpn_cs,final_jpn_hf_against)
 write.xlsx(final_jpn_all,'JPN.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ jpn_ftr_summary <- tabyl(JPN,Season,Res) %>% adorn_percentages("row") %>% adorn_
 jpn_ov25_summary <- tabyl(JPN,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(jpn_ftr_summary,'JPN.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(jpn_ov25_summary,'JPN.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(jpn_ov25_summary,'JPN.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

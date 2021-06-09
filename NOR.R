@@ -14,9 +14,10 @@ NOR <- read.csv('../FDAS/NOR.csv')
 NOR <- within(NOR,rm(Res))
 NOR$Date <- dmy(NOR$Date)
 NOR <- NOR[order(as.Date(NOR$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+NOR$CS <- paste(NOR$HG,NOR$AG, sep = "-")
 #NOR_qualificaton <- subset(NOR,tournament == "UEFA Euro qualification")
 NOR <- subset(NOR,Season == "2021")
-#NOR <- NOR[NOR$Date > '2008-01-01',]
+#NOR <- NOR[NOR$Date > '2008-01-01',])
 NOR$TG <- NOR$HG + NOR$AG
 NOR$OV25 <- ifelse(NOR$TG >= 3,"Y","N")
 NOR$FTR <- with(NOR,
@@ -25,9 +26,10 @@ NOR$FTR <- with(NOR,
 ###################################################
 ####GoalTotalsv2##################################
 nor_totalgoalsv2 <- tapply(NOR$TG, NOR[c("Home", "Away")],mean)
-nor_goaltotalsv2
+nor_totalgoalsv2
 nor_hgtotals <- rowSums(nor_totalgoalsv2,na.rm = T)
 nor_agtotals <- colSums(nor_totalgoalsv2,na.rm = T)
+
 nor_totalgoals <- nor_hgtotals + nor_agtotals
 nor_totalgoalsv2 <- cbind(nor_totalgoalsv2,nor_totalgoals)
 nor_teams <- sort(unique(NOR$Home))
@@ -153,7 +155,125 @@ for(nor_rowh_f_against in 1:nrow(nor_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#NOR
+nor_un05_home <- c()
+nor_un05_away <- c()
+nor_ov05_home <- c()
+nor_ov05_away <- c()
 
+nor_un15_home <- c()
+nor_un15_away <- c()
+nor_ov15_home <- c()
+nor_ov15_away <- c()
+
+nor_un25_home <- c()
+nor_un25_away <- c()
+nor_ov25_home <- c()
+nor_ov25_away <- c()
+
+nor_un35_home <- c()
+nor_un35_away <- c()
+nor_ov35_home <- c()
+nor_ov35_away <- c()
+
+nor_un45_home <- c()
+nor_un45_away <- c()
+nor_ov45_home <- c()
+nor_ov45_away <- c()
+
+nor_un55_home <- c()
+nor_un55_away <- c()
+nor_ov55_home <- c()
+nor_ov55_away <- c()
+
+for (i_nor_tg in 1:length(nor_teams))
+{
+
+  nor_un05_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG == 0,])
+  nor_un05_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG == 0,])
+
+  nor_ov05_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG > 0,])
+  nor_ov05_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG > 0,])
+
+  nor_un15_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG <= 1,])
+  nor_un15_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG <= 1,])
+
+  nor_ov15_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG >= 2,])
+  nor_ov15_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG >= 2,])
+
+  nor_un25_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG <= 2,])
+  nor_un25_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG <= 2,])
+
+  nor_ov25_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG >=3,])
+  nor_ov25_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG >=3,])
+
+  nor_un35_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG <= 3,])
+  nor_un35_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG <= 3,])
+
+  nor_ov35_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG >= 4,])
+  nor_ov35_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG >= 4,])
+
+  nor_un45_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG <= 4,])
+  nor_un45_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG <= 4,])
+
+  nor_ov45_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG >= 5,])
+  nor_ov45_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG >= 5,])
+
+  nor_un55_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG <= 5,])
+  nor_un55_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG <= 5,])
+
+  nor_ov55_home[i_nor_tg] <- nrow(NOR[NOR$Home == nor_teams[i_nor_tg] & NOR$TG >= 6,])
+  nor_ov55_away[i_nor_tg] <- nrow(NOR[NOR$Away == nor_teams[i_nor_tg] & NOR$TG >= 6,])
+
+
+}
+
+nor_un05 <- nor_un05_home + nor_un05_away
+nor_ov05 <- nor_ov05_home + nor_ov05_away
+
+nor_un15 <- nor_un15_home + nor_un15_away
+nor_ov15 <- nor_ov15_home + nor_ov15_away
+
+nor_un25 <- nor_un25_home + nor_un25_away
+nor_ov25 <- nor_ov25_home + nor_ov25_away
+
+nor_un35 <- nor_un35_home + nor_un35_away
+nor_ov35 <- nor_ov35_home + nor_ov35_away
+
+nor_un45 <- nor_un45_home + nor_un45_away
+nor_ov45 <- nor_ov45_home + nor_ov45_away
+
+nor_un55 <- nor_un55_home + nor_un55_away
+nor_ov55 <- nor_ov55_home + nor_ov55_away
+
+nor_ovundata <- cbind(nor_teams,nor_un05,nor_ov05,nor_un15,nor_ov15,nor_un25,nor_ov25,nor_un35,nor_ov35,nor_un45,nor_ov45,nor_un55,nor_ov55)
+write.xlsx(nor_ovundata,'NOR.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+nor_csform_h <- tapply(NOR$CS, NOR[c("Home", "Date")],median)
+nor_csform_a <- tapply(NOR$CS, NOR[c("Away", "Date")],median)
+
+nor_csform_h[is.na(nor_csform_h)] <- ""
+nor_csform_a[is.na(nor_csform_a)] <- ""
+
+for(nor_rowh_f_cs in 1:nrow(nor_csform_h)) {
+  for(nor_colh_f_cs in 1:ncol(nor_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(nor_rowa_f_cs in 1:nrow(nor_csform_a)) {
+      for(nor_cola_f_cs in 1:ncol(nor_csform_a)) {
+        ifelse(!nor_csform_a[nor_rowa_f_cs,nor_cola_f_cs]=="",nor_csform_h[nor_rowa_f_cs,nor_cola_f_cs] <- nor_csform_a[nor_rowa_f_cs,nor_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(nor_away_conceding)[names(nor_away_conceding) == "x.y"] <- "Avg_Ftac"
 nor_conceding <- merge(nor_home_conceding,nor_away_conceding,by='Group.1',all = T)
 nor_conceding$TGC <- nor_conceding$TFthc + nor_conceding$TFtac
 
-nor_shots_analysis <- merge(nor_scoring_conversion,nor_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_nor,'NOR.xlsx',sheetName = "table", append = TRUE)
 #NOR
 #form
 #create final_nor_hf object
+nor_last_n_games <- 6
 final_nor_hf <- c()
 for(index_nor_hf in 1:length(nor_teams))
 {
   index_nor_hf <- row.names(nor_form_h) == nor_teams[index_nor_hf]
   form_nor_hf <- nor_form_h[index_nor_hf]
   deleted_form_nor_hf <- form_nor_hf[!form_nor_hf[] == ""]
-  l6_form_nor_hf <- tail(deleted_form_nor_hf,6)
+  l6_form_nor_hf <- tail(deleted_form_nor_hf,nor_last_n_games)
   l6_form_nor_hf <- paste(l6_form_nor_hf,collapse = " ")
   final_nor_hf[index_nor_hf] <- rbind(paste(nor_teams[index_nor_hf],l6_form_nor_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",nor_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_nor_gs in 1:length(nor_teams))
   index_nor_gs <- row.names(nor_goalscored_h) == nor_teams[index_nor_gs]
   form_nor_gs <- nor_goalscored_h[index_nor_gs]
   deleted_form_nor_gs <- form_nor_gs[!form_nor_gs[] == ""]
-  l6_form_nor_gs <- tail(deleted_form_nor_gs,6)
+  l6_form_nor_gs <- tail(deleted_form_nor_gs,nor_last_n_games)
   l6_form_nor_gs <- as.numeric(l6_form_nor_gs)
   suml6_nor_gs[index_nor_gs] <- sum(l6_form_nor_gs)
   suml6_nor_gs[index_nor_gs] <- paste("(",suml6_nor_gs[index_nor_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_nor_gc in 1:length(nor_teams))
   index_nor_gc <- row.names(nor_goalconceded_h) == nor_teams[index_nor_gc]
   form_nor_gc <- nor_goalconceded_h[index_nor_gc]
   deleted_form_nor_gc <- form_nor_gc[!form_nor_gc[] == ""]
-  l6_form_nor_gc <- tail(deleted_form_nor_gc,6)
+  l6_form_nor_gc <- tail(deleted_form_nor_gc,nor_last_n_games)
   l6_form_nor_gc <- as.numeric(l6_form_nor_gc)
   suml6_nor_gc[index_nor_gc] <- sum(l6_form_nor_gc)
   suml6_nor_gc[index_nor_gc] <- paste("(",suml6_nor_gc[index_nor_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_nor_tg in 1:length(nor_teams))
   index_nor_tg <- row.names(nor_totalgoals_h) == nor_teams[index_nor_tg]
   form_nor_tg <- nor_totalgoals_h[index_nor_tg]
   deleted_form_nor_tg <- form_nor_tg[!form_nor_tg[] == ""]
-  l6_form_nor_tg <- tail(deleted_form_nor_tg,6)
+  l6_form_nor_tg <- tail(deleted_form_nor_tg,nor_last_n_games)
   l6_form_nor_tg <- as.numeric(l6_form_nor_tg)
   suml6_nor_tg[index_nor_tg] <- sum(l6_form_nor_tg)
   suml6_nor_tg[index_nor_tg] <- paste("(",suml6_nor_tg[index_nor_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_nor_tg in 1:length(nor_teams))
 #change column names
 final_nor_tg <- as.data.frame(final_nor_tg)
 colnames(final_nor_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_nor_hf object
+final_nor_cs <- c()
+for(index_nor_cs in 1:length(nor_teams))
+{
+  index_nor_cs <- row.names(nor_csform_h) == nor_teams[index_nor_cs]
+  csform_nor_cs <- nor_csform_h[index_nor_cs]
+  deleted_csform_nor_cs <- csform_nor_cs[!csform_nor_cs[] == ""]
+  l6_csform_nor_cs <- tail(deleted_csform_nor_cs,nor_last_n_games)
+  l6_csform_nor_cs <- paste(l6_csform_nor_cs,collapse = " ")
+  final_nor_cs[index_nor_cs] <- rbind(paste(nor_teams[index_nor_cs],l6_csform_nor_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",nor_teams[index],l6_csform)
+
+}
+
+#change column names
+final_nor_cs <- as.data.frame(final_nor_cs)
+colnames(final_nor_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_nor_hf_against
 final_nor_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_nor_hf_against in 1:length(nor_teams))
   index_nor_hf_against <- row.names(nor_form_team_against_h) == nor_teams[index_nor_hf_against]
   form_nor_hf_against <- nor_form_team_against_h[index_nor_hf_against]
   deleted_form_nor_hf_against <- form_nor_hf_against[!form_nor_hf_against[] == ""]
-  l6_form_nor_hf_against <- tail(deleted_form_nor_hf_against,6)
+  l6_form_nor_hf_against <- tail(deleted_form_nor_hf_against,nor_last_n_games)
   l6_form_nor_hf_against <- paste(l6_form_nor_hf_against,collapse = " ")
   final_nor_hf_against[index_nor_hf_against] <- rbind(paste(nor_teams[index_nor_hf_against],l6_form_nor_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",nor_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_nor_hf_against in 1:length(nor_teams))
 final_nor_hf_against <- as.data.frame(final_nor_hf_against)
 colnames(final_nor_hf_against) <- "Team against"
 #combine the columns
-final_nor_all <- cbind(final_nor_hf,final_nor_gs,final_nor_gc,final_nor_tg,final_nor_hf_against)
+final_nor_all <- cbind(final_nor_hf,final_nor_gs,final_nor_gc,final_nor_tg,final_nor_cs,final_nor_hf_against)
 write.xlsx(final_nor_all,'NOR.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ nor_ftr_summary <- tabyl(NOR,Season,Res) %>% adorn_percentages("row") %>% adorn_
 nor_ov25_summary <- tabyl(NOR,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(nor_ftr_summary,'NOR.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(nor_ov25_summary,'NOR.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(nor_ov25_summary,'NOR.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

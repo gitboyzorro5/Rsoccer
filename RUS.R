@@ -14,9 +14,10 @@ RUS <- read.csv('../FDAS/RUS.csv')
 RUS <- within(RUS,rm(Res))
 RUS$Date <- dmy(RUS$Date)
 RUS <- RUS[order(as.Date(RUS$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+RUS$CS <- paste(RUS$HG,RUS$AG, sep = "-")
 #RUS_qualificaton <- subset(RUS,tournament == "UEFA Euro qualification")
 RUS <- subset(RUS,Season == "2020/2021")
-#RUS <- RUS[RUS$Date > '2008-01-01',]
+#RUS <- RUS[RUS$Date > '2008-01-01',])
 RUS$TG <- RUS$HG + RUS$AG
 RUS$OV25 <- ifelse(RUS$TG >= 3,"Y","N")
 RUS$FTR <- with(RUS,
@@ -25,9 +26,10 @@ RUS$FTR <- with(RUS,
 ###################################################
 ####GoalTotalsv2##################################
 rus_totalgoalsv2 <- tapply(RUS$TG, RUS[c("Home", "Away")],mean)
-rus_goaltotalsv2
+rus_totalgoalsv2
 rus_hgtotals <- rowSums(rus_totalgoalsv2,na.rm = T)
 rus_agtotals <- colSums(rus_totalgoalsv2,na.rm = T)
+
 rus_totalgoals <- rus_hgtotals + rus_agtotals
 rus_totalgoalsv2 <- cbind(rus_totalgoalsv2,rus_totalgoals)
 rus_teams <- sort(unique(RUS$Home))
@@ -153,7 +155,125 @@ for(rus_rowh_f_against in 1:nrow(rus_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#RUS
+rus_un05_home <- c()
+rus_un05_away <- c()
+rus_ov05_home <- c()
+rus_ov05_away <- c()
 
+rus_un15_home <- c()
+rus_un15_away <- c()
+rus_ov15_home <- c()
+rus_ov15_away <- c()
+
+rus_un25_home <- c()
+rus_un25_away <- c()
+rus_ov25_home <- c()
+rus_ov25_away <- c()
+
+rus_un35_home <- c()
+rus_un35_away <- c()
+rus_ov35_home <- c()
+rus_ov35_away <- c()
+
+rus_un45_home <- c()
+rus_un45_away <- c()
+rus_ov45_home <- c()
+rus_ov45_away <- c()
+
+rus_un55_home <- c()
+rus_un55_away <- c()
+rus_ov55_home <- c()
+rus_ov55_away <- c()
+
+for (i_rus_tg in 1:length(rus_teams))
+{
+
+  rus_un05_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG == 0,])
+  rus_un05_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG == 0,])
+
+  rus_ov05_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG > 0,])
+  rus_ov05_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG > 0,])
+
+  rus_un15_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG <= 1,])
+  rus_un15_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG <= 1,])
+
+  rus_ov15_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG >= 2,])
+  rus_ov15_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG >= 2,])
+
+  rus_un25_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG <= 2,])
+  rus_un25_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG <= 2,])
+
+  rus_ov25_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG >=3,])
+  rus_ov25_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG >=3,])
+
+  rus_un35_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG <= 3,])
+  rus_un35_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG <= 3,])
+
+  rus_ov35_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG >= 4,])
+  rus_ov35_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG >= 4,])
+
+  rus_un45_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG <= 4,])
+  rus_un45_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG <= 4,])
+
+  rus_ov45_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG >= 5,])
+  rus_ov45_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG >= 5,])
+
+  rus_un55_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG <= 5,])
+  rus_un55_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG <= 5,])
+
+  rus_ov55_home[i_rus_tg] <- nrow(RUS[RUS$Home == rus_teams[i_rus_tg] & RUS$TG >= 6,])
+  rus_ov55_away[i_rus_tg] <- nrow(RUS[RUS$Away == rus_teams[i_rus_tg] & RUS$TG >= 6,])
+
+
+}
+
+rus_un05 <- rus_un05_home + rus_un05_away
+rus_ov05 <- rus_ov05_home + rus_ov05_away
+
+rus_un15 <- rus_un15_home + rus_un15_away
+rus_ov15 <- rus_ov15_home + rus_ov15_away
+
+rus_un25 <- rus_un25_home + rus_un25_away
+rus_ov25 <- rus_ov25_home + rus_ov25_away
+
+rus_un35 <- rus_un35_home + rus_un35_away
+rus_ov35 <- rus_ov35_home + rus_ov35_away
+
+rus_un45 <- rus_un45_home + rus_un45_away
+rus_ov45 <- rus_ov45_home + rus_ov45_away
+
+rus_un55 <- rus_un55_home + rus_un55_away
+rus_ov55 <- rus_ov55_home + rus_ov55_away
+
+rus_ovundata <- cbind(rus_teams,rus_un05,rus_ov05,rus_un15,rus_ov15,rus_un25,rus_ov25,rus_un35,rus_ov35,rus_un45,rus_ov45,rus_un55,rus_ov55)
+write.xlsx(rus_ovundata,'RUS.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+rus_csform_h <- tapply(RUS$CS, RUS[c("Home", "Date")],median)
+rus_csform_a <- tapply(RUS$CS, RUS[c("Away", "Date")],median)
+
+rus_csform_h[is.na(rus_csform_h)] <- ""
+rus_csform_a[is.na(rus_csform_a)] <- ""
+
+for(rus_rowh_f_cs in 1:nrow(rus_csform_h)) {
+  for(rus_colh_f_cs in 1:ncol(rus_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(rus_rowa_f_cs in 1:nrow(rus_csform_a)) {
+      for(rus_cola_f_cs in 1:ncol(rus_csform_a)) {
+        ifelse(!rus_csform_a[rus_rowa_f_cs,rus_cola_f_cs]=="",rus_csform_h[rus_rowa_f_cs,rus_cola_f_cs] <- rus_csform_a[rus_rowa_f_cs,rus_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(rus_away_conceding)[names(rus_away_conceding) == "x.y"] <- "Avg_Ftac"
 rus_conceding <- merge(rus_home_conceding,rus_away_conceding,by='Group.1',all = T)
 rus_conceding$TGC <- rus_conceding$TFthc + rus_conceding$TFtac
 
-rus_shots_analysis <- merge(rus_scoring_conversion,rus_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_rus,'RUS.xlsx',sheetName = "table", append = TRUE)
 #RUS
 #form
 #create final_rus_hf object
+rus_last_n_games <- 6
 final_rus_hf <- c()
 for(index_rus_hf in 1:length(rus_teams))
 {
   index_rus_hf <- row.names(rus_form_h) == rus_teams[index_rus_hf]
   form_rus_hf <- rus_form_h[index_rus_hf]
   deleted_form_rus_hf <- form_rus_hf[!form_rus_hf[] == ""]
-  l6_form_rus_hf <- tail(deleted_form_rus_hf,6)
+  l6_form_rus_hf <- tail(deleted_form_rus_hf,rus_last_n_games)
   l6_form_rus_hf <- paste(l6_form_rus_hf,collapse = " ")
   final_rus_hf[index_rus_hf] <- rbind(paste(rus_teams[index_rus_hf],l6_form_rus_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",rus_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_rus_gs in 1:length(rus_teams))
   index_rus_gs <- row.names(rus_goalscored_h) == rus_teams[index_rus_gs]
   form_rus_gs <- rus_goalscored_h[index_rus_gs]
   deleted_form_rus_gs <- form_rus_gs[!form_rus_gs[] == ""]
-  l6_form_rus_gs <- tail(deleted_form_rus_gs,6)
+  l6_form_rus_gs <- tail(deleted_form_rus_gs,rus_last_n_games)
   l6_form_rus_gs <- as.numeric(l6_form_rus_gs)
   suml6_rus_gs[index_rus_gs] <- sum(l6_form_rus_gs)
   suml6_rus_gs[index_rus_gs] <- paste("(",suml6_rus_gs[index_rus_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_rus_gc in 1:length(rus_teams))
   index_rus_gc <- row.names(rus_goalconceded_h) == rus_teams[index_rus_gc]
   form_rus_gc <- rus_goalconceded_h[index_rus_gc]
   deleted_form_rus_gc <- form_rus_gc[!form_rus_gc[] == ""]
-  l6_form_rus_gc <- tail(deleted_form_rus_gc,6)
+  l6_form_rus_gc <- tail(deleted_form_rus_gc,rus_last_n_games)
   l6_form_rus_gc <- as.numeric(l6_form_rus_gc)
   suml6_rus_gc[index_rus_gc] <- sum(l6_form_rus_gc)
   suml6_rus_gc[index_rus_gc] <- paste("(",suml6_rus_gc[index_rus_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_rus_tg in 1:length(rus_teams))
   index_rus_tg <- row.names(rus_totalgoals_h) == rus_teams[index_rus_tg]
   form_rus_tg <- rus_totalgoals_h[index_rus_tg]
   deleted_form_rus_tg <- form_rus_tg[!form_rus_tg[] == ""]
-  l6_form_rus_tg <- tail(deleted_form_rus_tg,6)
+  l6_form_rus_tg <- tail(deleted_form_rus_tg,rus_last_n_games)
   l6_form_rus_tg <- as.numeric(l6_form_rus_tg)
   suml6_rus_tg[index_rus_tg] <- sum(l6_form_rus_tg)
   suml6_rus_tg[index_rus_tg] <- paste("(",suml6_rus_tg[index_rus_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_rus_tg in 1:length(rus_teams))
 #change column names
 final_rus_tg <- as.data.frame(final_rus_tg)
 colnames(final_rus_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_rus_hf object
+final_rus_cs <- c()
+for(index_rus_cs in 1:length(rus_teams))
+{
+  index_rus_cs <- row.names(rus_csform_h) == rus_teams[index_rus_cs]
+  csform_rus_cs <- rus_csform_h[index_rus_cs]
+  deleted_csform_rus_cs <- csform_rus_cs[!csform_rus_cs[] == ""]
+  l6_csform_rus_cs <- tail(deleted_csform_rus_cs,rus_last_n_games)
+  l6_csform_rus_cs <- paste(l6_csform_rus_cs,collapse = " ")
+  final_rus_cs[index_rus_cs] <- rbind(paste(rus_teams[index_rus_cs],l6_csform_rus_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",rus_teams[index],l6_csform)
+
+}
+
+#change column names
+final_rus_cs <- as.data.frame(final_rus_cs)
+colnames(final_rus_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_rus_hf_against
 final_rus_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_rus_hf_against in 1:length(rus_teams))
   index_rus_hf_against <- row.names(rus_form_team_against_h) == rus_teams[index_rus_hf_against]
   form_rus_hf_against <- rus_form_team_against_h[index_rus_hf_against]
   deleted_form_rus_hf_against <- form_rus_hf_against[!form_rus_hf_against[] == ""]
-  l6_form_rus_hf_against <- tail(deleted_form_rus_hf_against,6)
+  l6_form_rus_hf_against <- tail(deleted_form_rus_hf_against,rus_last_n_games)
   l6_form_rus_hf_against <- paste(l6_form_rus_hf_against,collapse = " ")
   final_rus_hf_against[index_rus_hf_against] <- rbind(paste(rus_teams[index_rus_hf_against],l6_form_rus_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",rus_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_rus_hf_against in 1:length(rus_teams))
 final_rus_hf_against <- as.data.frame(final_rus_hf_against)
 colnames(final_rus_hf_against) <- "Team against"
 #combine the columns
-final_rus_all <- cbind(final_rus_hf,final_rus_gs,final_rus_gc,final_rus_tg,final_rus_hf_against)
+final_rus_all <- cbind(final_rus_hf,final_rus_gs,final_rus_gc,final_rus_tg,final_rus_cs,final_rus_hf_against)
 write.xlsx(final_rus_all,'RUS.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ rus_ftr_summary <- tabyl(RUS,Season,Res) %>% adorn_percentages("row") %>% adorn_
 rus_ov25_summary <- tabyl(RUS,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(rus_ftr_summary,'RUS.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(rus_ov25_summary,'RUS.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(rus_ov25_summary,'RUS.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

@@ -14,9 +14,10 @@ ROU <- read.csv('../FDAS/ROU.csv')
 ROU <- within(ROU,rm(Res))
 ROU$Date <- dmy(ROU$Date)
 ROU <- ROU[order(as.Date(ROU$Date, format = "%d/%m%Y"), decreasing = FALSE),]
+ROU$CS <- paste(ROU$HG,ROU$AG, sep = "-")
 #ROU_qualificaton <- subset(ROU,tournament == "UEFA Euro qualification")
 ROU <- subset(ROU,Season == "2020/2021")
-#ROU <- ROU[ROU$Date > '2008-01-01',]
+#ROU <- ROU[ROU$Date > '2008-01-01',])
 ROU$TG <- ROU$HG + ROU$AG
 ROU$OV25 <- ifelse(ROU$TG >= 3,"Y","N")
 ROU$FTR <- with(ROU,
@@ -25,9 +26,10 @@ ROU$FTR <- with(ROU,
 ###################################################
 ####GoalTotalsv2##################################
 rou_totalgoalsv2 <- tapply(ROU$TG, ROU[c("Home", "Away")],mean)
-rou_goaltotalsv2
+rou_totalgoalsv2
 rou_hgtotals <- rowSums(rou_totalgoalsv2,na.rm = T)
 rou_agtotals <- colSums(rou_totalgoalsv2,na.rm = T)
+
 rou_totalgoals <- rou_hgtotals + rou_agtotals
 rou_totalgoalsv2 <- cbind(rou_totalgoalsv2,rou_totalgoals)
 rou_teams <- sort(unique(ROU$Home))
@@ -153,7 +155,125 @@ for(rou_rowh_f_against in 1:nrow(rou_form_team_against_h)) {
 
   }
 }
+####################################################################################################################
+##########Goals over under############
+#ROU
+rou_un05_home <- c()
+rou_un05_away <- c()
+rou_ov05_home <- c()
+rou_ov05_away <- c()
 
+rou_un15_home <- c()
+rou_un15_away <- c()
+rou_ov15_home <- c()
+rou_ov15_away <- c()
+
+rou_un25_home <- c()
+rou_un25_away <- c()
+rou_ov25_home <- c()
+rou_ov25_away <- c()
+
+rou_un35_home <- c()
+rou_un35_away <- c()
+rou_ov35_home <- c()
+rou_ov35_away <- c()
+
+rou_un45_home <- c()
+rou_un45_away <- c()
+rou_ov45_home <- c()
+rou_ov45_away <- c()
+
+rou_un55_home <- c()
+rou_un55_away <- c()
+rou_ov55_home <- c()
+rou_ov55_away <- c()
+
+for (i_rou_tg in 1:length(rou_teams))
+{
+
+  rou_un05_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG == 0,])
+  rou_un05_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG == 0,])
+
+  rou_ov05_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG > 0,])
+  rou_ov05_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG > 0,])
+
+  rou_un15_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG <= 1,])
+  rou_un15_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG <= 1,])
+
+  rou_ov15_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG >= 2,])
+  rou_ov15_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG >= 2,])
+
+  rou_un25_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG <= 2,])
+  rou_un25_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG <= 2,])
+
+  rou_ov25_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG >=3,])
+  rou_ov25_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG >=3,])
+
+  rou_un35_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG <= 3,])
+  rou_un35_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG <= 3,])
+
+  rou_ov35_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG >= 4,])
+  rou_ov35_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG >= 4,])
+
+  rou_un45_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG <= 4,])
+  rou_un45_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG <= 4,])
+
+  rou_ov45_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG >= 5,])
+  rou_ov45_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG >= 5,])
+
+  rou_un55_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG <= 5,])
+  rou_un55_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG <= 5,])
+
+  rou_ov55_home[i_rou_tg] <- nrow(ROU[ROU$Home == rou_teams[i_rou_tg] & ROU$TG >= 6,])
+  rou_ov55_away[i_rou_tg] <- nrow(ROU[ROU$Away == rou_teams[i_rou_tg] & ROU$TG >= 6,])
+
+
+}
+
+rou_un05 <- rou_un05_home + rou_un05_away
+rou_ov05 <- rou_ov05_home + rou_ov05_away
+
+rou_un15 <- rou_un15_home + rou_un15_away
+rou_ov15 <- rou_ov15_home + rou_ov15_away
+
+rou_un25 <- rou_un25_home + rou_un25_away
+rou_ov25 <- rou_ov25_home + rou_ov25_away
+
+rou_un35 <- rou_un35_home + rou_un35_away
+rou_ov35 <- rou_ov35_home + rou_ov35_away
+
+rou_un45 <- rou_un45_home + rou_un45_away
+rou_ov45 <- rou_ov45_home + rou_ov45_away
+
+rou_un55 <- rou_un55_home + rou_un55_away
+rou_ov55 <- rou_ov55_home + rou_ov55_away
+
+rou_ovundata <- cbind(rou_teams,rou_un05,rou_ov05,rou_un15,rou_ov15,rou_un25,rou_ov25,rou_un35,rou_ov35,rou_un45,rou_ov45,rou_un55,rou_ov55)
+write.xlsx(rou_ovundata,'ROU.xlsx',sheetName = "OVUN", append = TRUE)
+###############################################################################################################################
+
+##########################################################################################
+#csform
+rou_csform_h <- tapply(ROU$CS, ROU[c("Home", "Date")],median)
+rou_csform_a <- tapply(ROU$CS, ROU[c("Away", "Date")],median)
+
+rou_csform_h[is.na(rou_csform_h)] <- ""
+rou_csform_a[is.na(rou_csform_a)] <- ""
+
+for(rou_rowh_f_cs in 1:nrow(rou_csform_h)) {
+  for(rou_colh_f_cs in 1:ncol(rou_csform_h)) {
+
+    # print(my_matrix[row, col])
+    for(rou_rowa_f_cs in 1:nrow(rou_csform_a)) {
+      for(rou_cola_f_cs in 1:ncol(rou_csform_a)) {
+        ifelse(!rou_csform_a[rou_rowa_f_cs,rou_cola_f_cs]=="",rou_csform_h[rou_rowa_f_cs,rou_cola_f_cs] <- rou_csform_a[rou_rowa_f_cs,rou_cola_f_cs],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis
 #home goals scored
@@ -188,7 +308,6 @@ names(rou_away_conceding)[names(rou_away_conceding) == "x.y"] <- "Avg_Ftac"
 rou_conceding <- merge(rou_home_conceding,rou_away_conceding,by='Group.1',all = T)
 rou_conceding$TGC <- rou_conceding$TFthc + rou_conceding$TFtac
 
-rou_shots_analysis <- merge(rou_scoring_conversion,rou_conceding_conversion,by='Group.1',all = T)
 
 ######################################################################################
 ###########League Table###############################################################
@@ -241,13 +360,14 @@ write.xlsx(points_rou,'ROU.xlsx',sheetName = "table", append = TRUE)
 #ROU
 #form
 #create final_rou_hf object
+rou_last_n_games <- 6
 final_rou_hf <- c()
 for(index_rou_hf in 1:length(rou_teams))
 {
   index_rou_hf <- row.names(rou_form_h) == rou_teams[index_rou_hf]
   form_rou_hf <- rou_form_h[index_rou_hf]
   deleted_form_rou_hf <- form_rou_hf[!form_rou_hf[] == ""]
-  l6_form_rou_hf <- tail(deleted_form_rou_hf,6)
+  l6_form_rou_hf <- tail(deleted_form_rou_hf,rou_last_n_games)
   l6_form_rou_hf <- paste(l6_form_rou_hf,collapse = " ")
   final_rou_hf[index_rou_hf] <- rbind(paste(rou_teams[index_rou_hf],l6_form_rou_hf, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",rou_teams[index],l6_form)
@@ -266,7 +386,7 @@ for(index_rou_gs in 1:length(rou_teams))
   index_rou_gs <- row.names(rou_goalscored_h) == rou_teams[index_rou_gs]
   form_rou_gs <- rou_goalscored_h[index_rou_gs]
   deleted_form_rou_gs <- form_rou_gs[!form_rou_gs[] == ""]
-  l6_form_rou_gs <- tail(deleted_form_rou_gs,6)
+  l6_form_rou_gs <- tail(deleted_form_rou_gs,rou_last_n_games)
   l6_form_rou_gs <- as.numeric(l6_form_rou_gs)
   suml6_rou_gs[index_rou_gs] <- sum(l6_form_rou_gs)
   suml6_rou_gs[index_rou_gs] <- paste("(",suml6_rou_gs[index_rou_gs],")",sep = "")
@@ -288,7 +408,7 @@ for(index_rou_gc in 1:length(rou_teams))
   index_rou_gc <- row.names(rou_goalconceded_h) == rou_teams[index_rou_gc]
   form_rou_gc <- rou_goalconceded_h[index_rou_gc]
   deleted_form_rou_gc <- form_rou_gc[!form_rou_gc[] == ""]
-  l6_form_rou_gc <- tail(deleted_form_rou_gc,6)
+  l6_form_rou_gc <- tail(deleted_form_rou_gc,rou_last_n_games)
   l6_form_rou_gc <- as.numeric(l6_form_rou_gc)
   suml6_rou_gc[index_rou_gc] <- sum(l6_form_rou_gc)
   suml6_rou_gc[index_rou_gc] <- paste("(",suml6_rou_gc[index_rou_gc],")",sep = "")
@@ -310,7 +430,7 @@ for(index_rou_tg in 1:length(rou_teams))
   index_rou_tg <- row.names(rou_totalgoals_h) == rou_teams[index_rou_tg]
   form_rou_tg <- rou_totalgoals_h[index_rou_tg]
   deleted_form_rou_tg <- form_rou_tg[!form_rou_tg[] == ""]
-  l6_form_rou_tg <- tail(deleted_form_rou_tg,6)
+  l6_form_rou_tg <- tail(deleted_form_rou_tg,rou_last_n_games)
   l6_form_rou_tg <- as.numeric(l6_form_rou_tg)
   suml6_rou_tg[index_rou_tg] <- sum(l6_form_rou_tg)
   suml6_rou_tg[index_rou_tg] <- paste("(",suml6_rou_tg[index_rou_tg],")",sep = "")
@@ -322,6 +442,26 @@ for(index_rou_tg in 1:length(rou_teams))
 #change column names
 final_rou_tg <- as.data.frame(final_rou_tg)
 colnames(final_rou_tg) <- "Total Goals"
+###############################################
+#Csfrom
+#create final_rou_hf object
+final_rou_cs <- c()
+for(index_rou_cs in 1:length(rou_teams))
+{
+  index_rou_cs <- row.names(rou_csform_h) == rou_teams[index_rou_cs]
+  csform_rou_cs <- rou_csform_h[index_rou_cs]
+  deleted_csform_rou_cs <- csform_rou_cs[!csform_rou_cs[] == ""]
+  l6_csform_rou_cs <- tail(deleted_csform_rou_cs,rou_last_n_games)
+  l6_csform_rou_cs <- paste(l6_csform_rou_cs,collapse = " ")
+  final_rou_cs[index_rou_cs] <- rbind(paste(rou_teams[index_rou_cs],l6_csform_rou_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",rou_teams[index],l6_csform)
+
+}
+
+#change column names
+final_rou_cs <- as.data.frame(final_rou_cs)
+colnames(final_rou_cs) <- "CSForm"
+#################################################
 #Team against
 #create final_rou_hf_against
 final_rou_hf_against <- c()
@@ -330,7 +470,7 @@ for(index_rou_hf_against in 1:length(rou_teams))
   index_rou_hf_against <- row.names(rou_form_team_against_h) == rou_teams[index_rou_hf_against]
   form_rou_hf_against <- rou_form_team_against_h[index_rou_hf_against]
   deleted_form_rou_hf_against <- form_rou_hf_against[!form_rou_hf_against[] == ""]
-  l6_form_rou_hf_against <- tail(deleted_form_rou_hf_against,6)
+  l6_form_rou_hf_against <- tail(deleted_form_rou_hf_against,rou_last_n_games)
   l6_form_rou_hf_against <- paste(l6_form_rou_hf_against,collapse = " ")
   final_rou_hf_against[index_rou_hf_against] <- rbind(paste(rou_teams[index_rou_hf_against],l6_form_rou_hf_against, sep = ",",collapse = ""))
   #bundesform[] <- printf("%s\t%s\n",rou_teams[index],l6_form)
@@ -339,7 +479,7 @@ for(index_rou_hf_against in 1:length(rou_teams))
 final_rou_hf_against <- as.data.frame(final_rou_hf_against)
 colnames(final_rou_hf_against) <- "Team against"
 #combine the columns
-final_rou_all <- cbind(final_rou_hf,final_rou_gs,final_rou_gc,final_rou_tg,final_rou_hf_against)
+final_rou_all <- cbind(final_rou_hf,final_rou_gs,final_rou_gc,final_rou_tg,final_rou_cs,final_rou_hf_against)
 write.xlsx(final_rou_all,'ROU.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
@@ -559,7 +699,7 @@ rou_ftr_summary <- tabyl(ROU,Season,Res) %>% adorn_percentages("row") %>% adorn_
 rou_ov25_summary <- tabyl(ROU,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(rou_ftr_summary,'ROU.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(rou_ov25_summary,'ROU.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(rou_ov25_summary,'ROU.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

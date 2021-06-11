@@ -690,16 +690,16 @@ EURO_fixtures$euro_pscore <- paste(round(EURO_fixtures$euro_xGH,digits = 0),roun
 write.xlsx(EURO_fixtures,'EURO.xlsx',sheetName = "EURO", append = TRUE)
 ###########################################################################################################
 ########################EURO END###########################################################################
-EURO <- read.csv('../../../Leonard/Downloads/results.csv')
-EURO$FTR <- with(EURO,
-                 ifelse(home_score > away_score ,FTR <- "H" , ifelse(away_score > home_score,FTR <- "A", FTR <- "D"))
-)
-EURO$TG <- EURO$home_score + EURO$away_score
-EURO$OV25 <- ifelse(EURO$TG >= 3,"Y","N")
-euro_ftr_summary <- tabyl(EURO,tournament,FTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
-euro_ov25_summary <- tabyl(EURO,tournament,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
-ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(euro_ftr_summary,'EURO.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(euro_ov25_summary,'EURO.xlsx',sheetName = "OVUN25", append = TRUE)
+# EURO <- read.csv('../../../Leonard/Downloads/results.csv')
+# EURO$FTR <- with(EURO,
+#                  ifelse(home_score > away_score ,FTR <- "H" , ifelse(away_score > home_score,FTR <- "A", FTR <- "D"))
+# )
+# EURO$TG <- EURO$home_score + EURO$away_score
+# EURO$OV25 <- ifelse(EURO$TG >= 3,"Y","N")
+# euro_ftr_summary <- tabyl(EURO,tournament,FTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
+# euro_ov25_summary <- tabyl(EURO,tournament,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
+# ftr_summary <- ftr_summary[,c(1,3,2)]
+# write.xlsx(euro_ftr_summary,'EURO.xlsx',sheetName = "FTR", append = TRUE)
+# write.xlsx(euro_ov25_summary,'EURO.xlsx',sheetName = "OVUN25", append = TRUE)
 
 

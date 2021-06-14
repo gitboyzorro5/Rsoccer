@@ -10,7 +10,7 @@ library('sqldf')
 unlink('EURO.xlsx')
 ######################EURO START#######################################
 #####################################################################
-EURO <- read.csv('../../../Leonard/Downloads/results.csv')
+EURO <- read.csv('../../../Leonard.000/Downloads/IFootball/results.csv')
 EURO$date <- ymd(EURO$date)
 EURO <- EURO[order(as.Date(EURO$date, format = "%d/%m%Y"), decreasing = FALSE),]
 EURO$CS <- paste(EURO$home_score,EURO$away_score, sep = "-")

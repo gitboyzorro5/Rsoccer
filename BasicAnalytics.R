@@ -17,7 +17,6 @@ htr_summary <- tabyl(allteams20202021,Div,HTR) %>% adorn_percentages("row") %>% 
 htr_summary <- htr_summary[,c(1,4,3,2)]
 
 
-
 myodds <- readxl::read_excel('../FDAS/myodds.xlsx', sheet = '2way')
 
 ##################################################
@@ -80,3 +79,44 @@ COPA_qualificaton <- subset(COPA,tournament == "Copa AmÃ©rica")
 tail(COPA_qualificaton)
 COPA <- subset(COPA,tournament == "UEFA Euro")
 COPA <- COPA[COPA$date > '2008-01-01',]
+
+AFCON <- read.csv('../../../Leonard.000/Downloads/IFootball/results.csv')
+AFCON$date <- ymd(AFCON$date)
+AFCON <- AFCON[order(as.Date(AFCON$date, format = "%d/%m%Y"), decreasing = FALSE),]
+AFCON$CS <- paste(AFCON$home_score,AFCON$away_score, sep = "-")
+AFCON <- subset(AFCON,tournament == "African Cup of Nations")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

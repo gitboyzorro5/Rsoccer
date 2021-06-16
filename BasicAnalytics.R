@@ -85,12 +85,44 @@ AFCON$date <- ymd(AFCON$date)
 AFCON <- AFCON[order(as.Date(AFCON$date, format = "%d/%m%Y"), decreasing = FALSE),]
 AFCON$CS <- paste(AFCON$home_score,AFCON$away_score, sep = "-")
 AFCON <- subset(AFCON,tournament == "African Cup of Nations")
+###################################################################
+nor_league_table
+points_nor <- nor_league_table[order(as.numeric(nor_league_table$nor_PTS), decreasing = TRUE),]
+points_nor$nor_rank <- 1:length(nor_teams)
+row.names(points_nor) <- points_nor$nor_rank
+points_nor$nor_rank[points_nor$Team =="Viking"]
+
+#create final_nor_hf_against
+final_nor_hf_against <- c()
+for(nor_rowhrank in 1:nrow(nor_form_team_against_h)) {
+  for(nor_colhrank in 1:ncol(nor_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+        ifelse(nor_form_team_against_h[nor_rowarank,nor_colarank]==nor_teams[nor_rank],nor_form_team_against_h[nor_rowarank,nor_colarank] <- paste(nor_form_team_against_h[nor_rowarank,nor_colarank],points_nor$nor_rank[points_nor$Team ==nor_teams[nor_rank]]),next)
+        #print(my_matrix[row, col])
 
 
+  }
+}
+nor_form_team_against_h
+for(index_nor_hf_against in 1:length(nor_teams))
+{
 
+  class(nor_form_team_against_h)
+  l6_form_nor_hf_against
+  index_nor_hf_against <- row.names(nor_form_team_against_h) == nor_teams[index_nor_hf_against]
+  form_nor_hf_against <- nor_form_team_against_h[index_nor_hf_against]
+  deleted_form_nor_hf_against <- form_nor_hf_against[!form_nor_hf_against[] == ""]
+  l6_form_nor_hf_against <- tail(deleted_form_nor_hf_against,nor_last_n_games)
+  l6_form_nor_hf_against <- paste(l6_form_nor_hf_against,collapse = " ")
+  final_nor_hf_against[index_nor_hf_against] <- rbind(paste(nor_teams[index_nor_hf_against],l6_form_nor_hf_against, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",nor_teams[index],l6_form)
 
-
-
+}
+final_nor_hf_against <- as.data.frame(final_nor_hf_against)
+colnames(final_nor_hf_against) <- "Team against"
+########################################################################################################
 
 
 

@@ -353,7 +353,21 @@ names(mex_league_table)[names(mex_league_table) == "mex_total_draws"] <- "D"
 names(mex_league_table)[names(mex_league_table) == "mex_total_loss"] <- "L"
 names(mex_league_table)[names(mex_league_table) == "mex_GS"] <- "F"
 names(mex_league_table)[names(mex_league_table) == "mex_GC"] <- "A"
-points_mex <- mex_league_table[order(mex_league_table$mex_PTS, decreasing = TRUE),]
+points_mex <- mex_league_table[order(as.numeric(mex_league_table$mex_PTS), decreasing = TRUE),]
+points_mex$mex_rank <- 1:length(mex_teams)
+row.names(points_mex) <- points_mex$mex_rank
+#create final_mex_hf_against with team ranks in brackets
+for(mex_rowhrank in 1:nrow(mex_form_team_against_h)) {
+  for(mex_colhrank in 1:ncol(mex_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!mex_form_team_against_h[mex_rowhrank,mex_colhrank]=="",mex_form_team_against_h[mex_rowhrank,mex_colhrank] <- paste(mex_form_team_against_h[mex_rowhrank,mex_colhrank],"(",points_mex$mex_rank[points_mex$Team ==mex_form_team_against_h[mex_rowhrank,mex_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_mex,'MEX.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six mex###################################################

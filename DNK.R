@@ -353,7 +353,21 @@ names(dnk_league_table)[names(dnk_league_table) == "dnk_total_draws"] <- "D"
 names(dnk_league_table)[names(dnk_league_table) == "dnk_total_loss"] <- "L"
 names(dnk_league_table)[names(dnk_league_table) == "dnk_GS"] <- "F"
 names(dnk_league_table)[names(dnk_league_table) == "dnk_GC"] <- "A"
-points_dnk <- dnk_league_table[order(dnk_league_table$dnk_PTS, decreasing = TRUE),]
+points_dnk <- dnk_league_table[order(as.numeric(dnk_league_table$dnk_PTS), decreasing = TRUE),]
+points_dnk$dnk_rank <- 1:length(dnk_teams)
+row.names(points_dnk) <- points_dnk$dnk_rank
+#create final_dnk_hf_against with team ranks in brackets
+for(dnk_rowhrank in 1:nrow(dnk_form_team_against_h)) {
+  for(dnk_colhrank in 1:ncol(dnk_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!dnk_form_team_against_h[dnk_rowhrank,dnk_colhrank]=="",dnk_form_team_against_h[dnk_rowhrank,dnk_colhrank] <- paste(dnk_form_team_against_h[dnk_rowhrank,dnk_colhrank],"(",points_dnk$dnk_rank[points_dnk$Team ==dnk_form_team_against_h[dnk_rowhrank,dnk_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_dnk,'DNK.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six dnk###################################################

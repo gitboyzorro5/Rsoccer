@@ -354,7 +354,21 @@ names(arg_league_table)[names(arg_league_table) == "arg_total_draws"] <- "D"
 names(arg_league_table)[names(arg_league_table) == "arg_total_loss"] <- "L"
 names(arg_league_table)[names(arg_league_table) == "arg_GS"] <- "F"
 names(arg_league_table)[names(arg_league_table) == "arg_GC"] <- "A"
-points_arg <- arg_league_table[order(arg_league_table$arg_PTS, decreasing = TRUE),]
+points_arg <- arg_league_table[order(as.numeric(arg_league_table$arg_PTS), decreasing = TRUE),]
+points_arg$arg_rank <- 1:length(arg_teams)
+row.names(points_arg) <- points_arg$arg_rank
+#create final_arg_hf_against with team ranks in brackets
+for(arg_rowhrank in 1:nrow(arg_form_team_against_h)) {
+  for(arg_colhrank in 1:ncol(arg_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!arg_form_team_against_h[arg_rowhrank,arg_colhrank]=="",arg_form_team_against_h[arg_rowhrank,arg_colhrank] <- paste(arg_form_team_against_h[arg_rowhrank,arg_colhrank],"(",points_arg$arg_rank[points_arg$Team ==arg_form_team_against_h[arg_rowhrank,arg_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_arg,'ARG.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six arg###################################################

@@ -353,7 +353,21 @@ names(fin_league_table)[names(fin_league_table) == "fin_total_draws"] <- "D"
 names(fin_league_table)[names(fin_league_table) == "fin_total_loss"] <- "L"
 names(fin_league_table)[names(fin_league_table) == "fin_GS"] <- "F"
 names(fin_league_table)[names(fin_league_table) == "fin_GC"] <- "A"
-points_fin <- fin_league_table[order(fin_league_table$fin_PTS, decreasing = TRUE),]
+points_fin <- fin_league_table[order(as.numeric(fin_league_table$fin_PTS), decreasing = TRUE),]
+points_fin$fin_rank <- 1:length(fin_teams)
+row.names(points_fin) <- points_fin$fin_rank
+#create final_fin_hf_against with team ranks in brackets
+for(fin_rowhrank in 1:nrow(fin_form_team_against_h)) {
+  for(fin_colhrank in 1:ncol(fin_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!fin_form_team_against_h[fin_rowhrank,fin_colhrank]=="",fin_form_team_against_h[fin_rowhrank,fin_colhrank] <- paste(fin_form_team_against_h[fin_rowhrank,fin_colhrank],"(",points_fin$fin_rank[points_fin$Team ==fin_form_team_against_h[fin_rowhrank,fin_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_fin,'FIN.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six fin###################################################

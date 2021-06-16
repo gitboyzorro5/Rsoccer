@@ -50,10 +50,21 @@ names(b1_league_table)[names(b1_league_table) == "b1_total_draws"] <- "D"
 names(b1_league_table)[names(b1_league_table) == "b1_total_loss"] <- "L"
 names(b1_league_table)[names(b1_league_table) == "b1_GS"] <- "F"
 names(b1_league_table)[names(b1_league_table) == "b1_GC"] <- "A"
-points_b1 <- b1_league_table[order(b1_league_table$b1_PTS, decreasing = TRUE),]
-row.names(points_b1) <- 1:length(b1_teams)
+points_b1 <- b1_league_table[order(as.numeric(b1_league_table$b1_PTS), decreasing = TRUE),]
+points_b1$b1_rank <- 1:length(b1_teams)
+row.names(points_b1) <- points_b1$b1_rank
+#create final_b1_hf_against with team ranks in brackets
+for(b1_rowhrank in 1:nrow(b1_form_team_against_h)) {
+  for(b1_colhrank in 1:ncol(b1_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!b1_form_team_against_h[b1_rowhrank,b1_colhrank]=="",b1_form_team_against_h[b1_rowhrank,b1_colhrank] <- paste(b1_form_team_against_h[b1_rowhrank,b1_colhrank],"(",points_b1$b1_rank[points_b1$Team ==b1_form_team_against_h[b1_rowhrank,b1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
 
 
+  }
+}
 
 #D1
 d1_teams
@@ -99,8 +110,21 @@ names(d1_league_table)[names(d1_league_table) == "d1_total_draws"] <- "D"
 names(d1_league_table)[names(d1_league_table) == "d1_total_loss"] <- "L"
 names(d1_league_table)[names(d1_league_table) == "d1_GS"] <- "F"
 names(d1_league_table)[names(d1_league_table) == "d1_GC"] <- "A"
-points_d1 <- d1_league_table[order(d1_league_table$d1_PTS, decreasing = TRUE),]
-row.names(points_d1) <- 1:length(d1_teams)
+points_d1 <- d1_league_table[order(as.numeric(d1_league_table$d1_PTS), decreasing = TRUE),]
+points_d1$d1_rank <- 1:length(d1_teams)
+row.names(points_d1) <- points_d1$d1_rank
+#create final_d1_hf_against with team ranks in brackets
+for(d1_rowhrank in 1:nrow(d1_form_team_against_h)) {
+  for(d1_colhrank in 1:ncol(d1_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!d1_form_team_against_h[d1_rowhrank,d1_colhrank]=="",d1_form_team_against_h[d1_rowhrank,d1_colhrank] <- paste(d1_form_team_against_h[d1_rowhrank,d1_colhrank],"(",points_d1$d1_rank[points_d1$Team ==d1_form_team_against_h[d1_rowhrank,d1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #D2
 d2_teams
@@ -146,8 +170,21 @@ names(d2_league_table)[names(d2_league_table) == "d2_total_draws"] <- "D"
 names(d2_league_table)[names(d2_league_table) == "d2_total_loss"] <- "L"
 names(d2_league_table)[names(d2_league_table) == "d2_GS"] <- "F"
 names(d2_league_table)[names(d2_league_table) == "d2_GC"] <- "A"
-points_d2 <- d2_league_table[order(d2_league_table$d2_PTS, decreasing = TRUE),]
-row.names(points_d2) <- 1:length(d2_teams)
+points_d2 <- d2_league_table[order(as.numeric(d2_league_table$d2_PTS), decreasing = TRUE),]
+points_d2$d2_rank <- 1:length(d2_teams)
+row.names(points_d2) <- points_d2$d2_rank
+#create final_d2_hf_against with team ranks in brackets
+for(d2_rowhrank in 1:nrow(d2_form_team_against_h)) {
+  for(d2_colhrank in 1:ncol(d2_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!d2_form_team_against_h[d2_rowhrank,d2_colhrank]=="",d2_form_team_against_h[d2_rowhrank,d2_colhrank] <- paste(d2_form_team_against_h[d2_rowhrank,d2_colhrank],"(",points_d2$d2_rank[points_d2$Team ==d2_form_team_against_h[d2_rowhrank,d2_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #E0
 e0_teams
@@ -193,9 +230,21 @@ names(e0_league_table)[names(e0_league_table) == "e0_total_draws"] <- "D"
 names(e0_league_table)[names(e0_league_table) == "e0_total_loss"] <- "L"
 names(e0_league_table)[names(e0_league_table) == "e0_GS"] <- "F"
 names(e0_league_table)[names(e0_league_table) == "e0_GC"] <- "A"
-points_e0 <- e0_league_table[order(e0_league_table$e0_PTS, decreasing = TRUE),]
-row.names(points_e0) <- 1:length(e0_teams)
+points_e0 <- e0_league_table[order(as.numeric(e0_league_table$e0_PTS), decreasing = TRUE),]
+points_e0$e0_rank <- 1:length(e0_teams)
+row.names(points_e0) <- points_e0$e0_rank
+#create final_e0_hf_against with team ranks in brackets
+for(e0_rowhrank in 1:nrow(e0_form_team_against_h)) {
+  for(e0_colhrank in 1:ncol(e0_form_team_against_h)) {
 
+    # print(my_matrix[row, col])
+
+    ifelse(!e0_form_team_against_h[e0_rowhrank,e0_colhrank]=="",e0_form_team_against_h[e0_rowhrank,e0_colhrank] <- paste(e0_form_team_against_h[e0_rowhrank,e0_colhrank],"(",points_e0$e0_rank[points_e0$Team ==e0_form_team_against_h[e0_rowhrank,e0_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 #E1
 e1_teams
 e1_games_played
@@ -240,10 +289,21 @@ names(e1_league_table)[names(e1_league_table) == "e1_total_draws"] <- "D"
 names(e1_league_table)[names(e1_league_table) == "e1_total_loss"] <- "L"
 names(e1_league_table)[names(e1_league_table) == "e1_GS"] <- "F"
 names(e1_league_table)[names(e1_league_table) == "e1_GC"] <- "A"
-points_e1 <- e1_league_table[order(e1_league_table$e1_PTS, decreasing = TRUE),]
-row.names(points_e1) <- 1:length(e1_teams)
+points_e1 <- e1_league_table[order(as.numeric(e1_league_table$e1_PTS), decreasing = TRUE),]
+points_e1$e1_rank <- 1:length(e1_teams)
+row.names(points_e1) <- points_e1$e1_rank
+#create final_e1_hf_against with team ranks in brackets
+for(e1_rowhrank in 1:nrow(e1_form_team_against_h)) {
+  for(e1_colhrank in 1:ncol(e1_form_team_against_h)) {
 
-#E2
+    # print(my_matrix[row, col])
+
+    ifelse(!e1_form_team_against_h[e1_rowhrank,e1_colhrank]=="",e1_form_team_against_h[e1_rowhrank,e1_colhrank] <- paste(e1_form_team_against_h[e1_rowhrank,e1_colhrank],"(",points_e1$e1_rank[points_e1$Team ==e1_form_team_against_h[e1_rowhrank,e1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 e2_teams
 e2_games_played
 #hwins and away wins
@@ -287,8 +347,21 @@ names(e2_league_table)[names(e2_league_table) == "e2_total_draws"] <- "D"
 names(e2_league_table)[names(e2_league_table) == "e2_total_loss"] <- "L"
 names(e2_league_table)[names(e2_league_table) == "e2_GS"] <- "F"
 names(e2_league_table)[names(e2_league_table) == "e2_GC"] <- "A"
-points_e2 <- e2_league_table[order(e2_league_table$e2_PTS, decreasing = TRUE),]
-row.names(points_e2) <- 1:length(e2_teams)
+points_e2 <- e2_league_table[order(as.numeric(e2_league_table$e2_PTS), decreasing = TRUE),]
+points_e2$e2_rank <- 1:length(e2_teams)
+row.names(points_e2) <- points_e2$e2_rank
+#create final_e2_hf_against with team ranks in brackets
+for(e2_rowhrank in 1:nrow(e2_form_team_against_h)) {
+  for(e2_colhrank in 1:ncol(e2_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!e2_form_team_against_h[e2_rowhrank,e2_colhrank]=="",e2_form_team_against_h[e2_rowhrank,e2_colhrank] <- paste(e2_form_team_against_h[e2_rowhrank,e2_colhrank],"(",points_e2$e2_rank[points_e2$Team ==e2_form_team_against_h[e2_rowhrank,e2_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #E3
 e3_teams
@@ -334,9 +407,21 @@ names(e3_league_table)[names(e3_league_table) == "e3_total_draws"] <- "D"
 names(e3_league_table)[names(e3_league_table) == "e3_total_loss"] <- "L"
 names(e3_league_table)[names(e3_league_table) == "e3_GS"] <- "F"
 names(e3_league_table)[names(e3_league_table) == "e3_GC"] <- "A"
-points_e3 <- e3_league_table[order(e3_league_table$e3_PTS, decreasing = TRUE),]
-row.names(points_e3) <- 1:length(e3_teams)
+points_e3 <- e3_league_table[order(as.numeric(e3_league_table$e3_PTS), decreasing = TRUE),]
+points_e3$e3_rank <- 1:length(e3_teams)
+row.names(points_e3) <- points_e3$e3_rank
+#create final_e3_hf_against with team ranks in brackets
+for(e3_rowhrank in 1:nrow(e3_form_team_against_h)) {
+  for(e3_colhrank in 1:ncol(e3_form_team_against_h)) {
 
+    # print(my_matrix[row, col])
+
+    ifelse(!e3_form_team_against_h[e3_rowhrank,e3_colhrank]=="",e3_form_team_against_h[e3_rowhrank,e3_colhrank] <- paste(e3_form_team_against_h[e3_rowhrank,e3_colhrank],"(",points_e3$e3_rank[points_e3$Team ==e3_form_team_against_h[e3_rowhrank,e3_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 #EC
 ec_teams
 ec_games_played
@@ -381,9 +466,21 @@ names(ec_league_table)[names(ec_league_table) == "ec_total_draws"] <- "D"
 names(ec_league_table)[names(ec_league_table) == "ec_total_loss"] <- "L"
 names(ec_league_table)[names(ec_league_table) == "ec_GS"] <- "F"
 names(ec_league_table)[names(ec_league_table) == "ec_GC"] <- "A"
-points_ec <- ec_league_table[order(ec_league_table$ec_PTS, decreasing = TRUE),]
-row.names(points_ec) <- 1:length(ec_teams)
+points_ec <- ec_league_table[order(as.numeric(ec_league_table$ec_PTS), decreasing = TRUE),]
+points_ec$ec_rank <- 1:length(ec_teams)
+row.names(points_ec) <- points_ec$ec_rank
+#create final_ec_hf_against with team ranks in brackets
+for(ec_rowhrank in 1:nrow(ec_form_team_against_h)) {
+  for(ec_colhrank in 1:ncol(ec_form_team_against_h)) {
 
+    # print(my_matrix[row, col])
+
+    ifelse(!ec_form_team_against_h[ec_rowhrank,ec_colhrank]=="",ec_form_team_against_h[ec_rowhrank,ec_colhrank] <- paste(ec_form_team_against_h[ec_rowhrank,ec_colhrank],"(",points_ec$ec_rank[points_ec$Team ==ec_form_team_against_h[ec_rowhrank,ec_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 #F1
 f1_teams
 f1_games_played
@@ -428,8 +525,21 @@ names(f1_league_table)[names(f1_league_table) == "f1_total_draws"] <- "D"
 names(f1_league_table)[names(f1_league_table) == "f1_total_loss"] <- "L"
 names(f1_league_table)[names(f1_league_table) == "f1_GS"] <- "F"
 names(f1_league_table)[names(f1_league_table) == "f1_GC"] <- "A"
-points_f1 <- f1_league_table[order(f1_league_table$f1_PTS, decreasing = TRUE),]
-row.names(points_f1) <- 1:length(f1_teams)
+points_f1 <- f1_league_table[order(as.numeric(f1_league_table$f1_PTS), decreasing = TRUE),]
+points_f1$f1_rank <- 1:length(f1_teams)
+row.names(points_f1) <- points_f1$f1_rank
+#create final_f1_hf_against with team ranks in brackets
+for(f1_rowhrank in 1:nrow(f1_form_team_against_h)) {
+  for(f1_colhrank in 1:ncol(f1_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!f1_form_team_against_h[f1_rowhrank,f1_colhrank]=="",f1_form_team_against_h[f1_rowhrank,f1_colhrank] <- paste(f1_form_team_against_h[f1_rowhrank,f1_colhrank],"(",points_f1$f1_rank[points_f1$Team ==f1_form_team_against_h[f1_rowhrank,f1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #F2
 f2_teams
@@ -475,8 +585,21 @@ names(f2_league_table)[names(f2_league_table) == "f2_total_draws"] <- "D"
 names(f2_league_table)[names(f2_league_table) == "f2_total_loss"] <- "L"
 names(f2_league_table)[names(f2_league_table) == "f2_GS"] <- "F"
 names(f2_league_table)[names(f2_league_table) == "f2_GC"] <- "A"
-points_f2 <- f2_league_table[order(f2_league_table$f2_PTS, decreasing = TRUE),]
-row.names(points_f2) <- 1:length(f2_teams)
+points_f2 <- f2_league_table[order(as.numeric(f2_league_table$f2_PTS), decreasing = TRUE),]
+points_f2$f2_rank <- 1:length(f2_teams)
+row.names(points_f2) <- points_f2$f2_rank
+#create final_f2_hf_against with team ranks in brackets
+for(f2_rowhrank in 1:nrow(f2_form_team_against_h)) {
+  for(f2_colhrank in 1:ncol(f2_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!f2_form_team_against_h[f2_rowhrank,f2_colhrank]=="",f2_form_team_against_h[f2_rowhrank,f2_colhrank] <- paste(f2_form_team_against_h[f2_rowhrank,f2_colhrank],"(",points_f2$f2_rank[points_f2$Team ==f2_form_team_against_h[f2_rowhrank,f2_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #G1
 g1_teams
@@ -522,9 +645,21 @@ names(g1_league_table)[names(g1_league_table) == "g1_total_draws"] <- "D"
 names(g1_league_table)[names(g1_league_table) == "g1_total_loss"] <- "L"
 names(g1_league_table)[names(g1_league_table) == "g1_GS"] <- "F"
 names(g1_league_table)[names(g1_league_table) == "g1_GC"] <- "A"
-points_g1 <- g1_league_table[order(g1_league_table$g1_PTS, decreasing = TRUE),]
-row.names(points_g1) <- 1:length(g1_teams)
+points_g1 <- g1_league_table[order(as.numeric(g1_league_table$g1_PTS), decreasing = TRUE),]
+points_g1$g1_rank <- 1:length(g1_teams)
+row.names(points_g1) <- points_g1$g1_rank
+#create final_g1_hf_against with team ranks in brackets
+for(g1_rowhrank in 1:nrow(g1_form_team_against_h)) {
+  for(g1_colhrank in 1:ncol(g1_form_team_against_h)) {
 
+    # print(my_matrix[row, col])
+
+    ifelse(!g1_form_team_against_h[g1_rowhrank,g1_colhrank]=="",g1_form_team_against_h[g1_rowhrank,g1_colhrank] <- paste(g1_form_team_against_h[g1_rowhrank,g1_colhrank],"(",points_g1$g1_rank[points_g1$Team ==g1_form_team_against_h[g1_rowhrank,g1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 #I1
 i1_teams
 i1_games_played
@@ -569,8 +704,21 @@ names(i1_league_table)[names(i1_league_table) == "i1_total_draws"] <- "D"
 names(i1_league_table)[names(i1_league_table) == "i1_total_loss"] <- "L"
 names(i1_league_table)[names(i1_league_table) == "i1_GS"] <- "F"
 names(i1_league_table)[names(i1_league_table) == "i1_GC"] <- "A"
-points_i1 <- i1_league_table[order(i1_league_table$i1_PTS, decreasing = TRUE),]
-row.names(points_i1) <- 1:length(i1_teams)
+points_i1 <- i1_league_table[order(as.numeric(i1_league_table$i1_PTS), decreasing = TRUE),]
+points_i1$i1_rank <- 1:length(i1_teams)
+row.names(points_i1) <- points_i1$i1_rank
+#create final_i1_hf_against with team ranks in brackets
+for(i1_rowhrank in 1:nrow(i1_form_team_against_h)) {
+  for(i1_colhrank in 1:ncol(i1_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!i1_form_team_against_h[i1_rowhrank,i1_colhrank]=="",i1_form_team_against_h[i1_rowhrank,i1_colhrank] <- paste(i1_form_team_against_h[i1_rowhrank,i1_colhrank],"(",points_i1$i1_rank[points_i1$Team ==i1_form_team_against_h[i1_rowhrank,i1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #I2
 i2_teams
@@ -616,8 +764,21 @@ names(i2_league_table)[names(i2_league_table) == "i2_total_draws"] <- "D"
 names(i2_league_table)[names(i2_league_table) == "i2_total_loss"] <- "L"
 names(i2_league_table)[names(i2_league_table) == "i2_GS"] <- "F"
 names(i2_league_table)[names(i2_league_table) == "i2_GC"] <- "A"
-points_i2 <- i2_league_table[order(i2_league_table$i2_PTS, decreasing = TRUE),]
-row.names(points_i2) <- 1:length(i2_teams)
+points_i2 <- i2_league_table[order(as.numeric(i2_league_table$i2_PTS), decreasing = TRUE),]
+points_i2$i2_rank <- 1:length(i2_teams)
+row.names(points_i2) <- points_i2$i2_rank
+#create final_i2_hf_against with team ranks in brackets
+for(i2_rowhrank in 1:nrow(i2_form_team_against_h)) {
+  for(i2_colhrank in 1:ncol(i2_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!i2_form_team_against_h[i2_rowhrank,i2_colhrank]=="",i2_form_team_against_h[i2_rowhrank,i2_colhrank] <- paste(i2_form_team_against_h[i2_rowhrank,i2_colhrank],"(",points_i2$i2_rank[points_i2$Team ==i2_form_team_against_h[i2_rowhrank,i2_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #N1
 n1_teams
@@ -663,8 +824,21 @@ names(n1_league_table)[names(n1_league_table) == "n1_total_draws"] <- "D"
 names(n1_league_table)[names(n1_league_table) == "n1_total_loss"] <- "L"
 names(n1_league_table)[names(n1_league_table) == "n1_GS"] <- "F"
 names(n1_league_table)[names(n1_league_table) == "n1_GC"] <- "A"
-points_n1 <- n1_league_table[order(n1_league_table$n1_PTS, decreasing = TRUE),]
-row.names(points_n1) <- 1:length(n1_teams)
+points_n1 <- n1_league_table[order(as.numeric(n1_league_table$n1_PTS), decreasing = TRUE),]
+points_n1$n1_rank <- 1:length(n1_teams)
+row.names(points_n1) <- points_n1$n1_rank
+#create final_n1_hf_against with team ranks in brackets
+for(n1_rowhrank in 1:nrow(n1_form_team_against_h)) {
+  for(n1_colhrank in 1:ncol(n1_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!n1_form_team_against_h[n1_rowhrank,n1_colhrank]=="",n1_form_team_against_h[n1_rowhrank,n1_colhrank] <- paste(n1_form_team_against_h[n1_rowhrank,n1_colhrank],"(",points_n1$n1_rank[points_n1$Team ==n1_form_team_against_h[n1_rowhrank,n1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #P1
 p1_teams
@@ -710,8 +884,21 @@ names(p1_league_table)[names(p1_league_table) == "p1_total_draws"] <- "D"
 names(p1_league_table)[names(p1_league_table) == "p1_total_loss"] <- "L"
 names(p1_league_table)[names(p1_league_table) == "p1_GS"] <- "F"
 names(p1_league_table)[names(p1_league_table) == "p1_GC"] <- "A"
-points_p1 <- p1_league_table[order(p1_league_table$p1_PTS, decreasing = TRUE),]
-row.names(points_p1) <- 1:length(p1_teams)
+points_p1 <- p1_league_table[order(as.numeric(p1_league_table$p1_PTS), decreasing = TRUE),]
+points_p1$p1_rank <- 1:length(p1_teams)
+row.names(points_p1) <- points_p1$p1_rank
+#create final_p1_hf_against with team ranks in brackets
+for(p1_rowhrank in 1:nrow(p1_form_team_against_h)) {
+  for(p1_colhrank in 1:ncol(p1_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!p1_form_team_against_h[p1_rowhrank,p1_colhrank]=="",p1_form_team_against_h[p1_rowhrank,p1_colhrank] <- paste(p1_form_team_against_h[p1_rowhrank,p1_colhrank],"(",points_p1$p1_rank[points_p1$Team ==p1_form_team_against_h[p1_rowhrank,p1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #SC0
 sc0_teams
@@ -757,8 +944,21 @@ names(sc0_league_table)[names(sc0_league_table) == "sc0_total_draws"] <- "D"
 names(sc0_league_table)[names(sc0_league_table) == "sc0_total_loss"] <- "L"
 names(sc0_league_table)[names(sc0_league_table) == "sc0_GS"] <- "F"
 names(sc0_league_table)[names(sc0_league_table) == "sc0_GC"] <- "A"
-points_sc0 <- sc0_league_table[order(sc0_league_table$sc0_PTS, decreasing = TRUE),]
-row.names(points_sc0) <- 1:length(sc0_teams)
+points_sc0 <- sc0_league_table[order(as.numeric(sc0_league_table$sc0_PTS), decreasing = TRUE),]
+points_sc0$sc0_rank <- 1:length(sc0_teams)
+row.names(points_sc0) <- points_sc0$sc0_rank
+#create final_sc0_hf_against with team ranks in brackets
+for(sc0_rowhrank in 1:nrow(sc0_form_team_against_h)) {
+  for(sc0_colhrank in 1:ncol(sc0_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!sc0_form_team_against_h[sc0_rowhrank,sc0_colhrank]=="",sc0_form_team_against_h[sc0_rowhrank,sc0_colhrank] <- paste(sc0_form_team_against_h[sc0_rowhrank,sc0_colhrank],"(",points_sc0$sc0_rank[points_sc0$Team ==sc0_form_team_against_h[sc0_rowhrank,sc0_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #SC1
 sc1_teams
@@ -804,8 +1004,21 @@ names(sc1_league_table)[names(sc1_league_table) == "sc1_total_draws"] <- "D"
 names(sc1_league_table)[names(sc1_league_table) == "sc1_total_loss"] <- "L"
 names(sc1_league_table)[names(sc1_league_table) == "sc1_GS"] <- "F"
 names(sc1_league_table)[names(sc1_league_table) == "sc1_GC"] <- "A"
-points_sc1 <- sc1_league_table[order(sc1_league_table$sc1_PTS, decreasing = TRUE),]
-row.names(points_sc1) <- 1:length(sc1_teams)
+points_sc1 <- sc1_league_table[order(as.numeric(sc1_league_table$sc1_PTS), decreasing = TRUE),]
+points_sc1$sc1_rank <- 1:length(sc1_teams)
+row.names(points_sc1) <- points_sc1$sc1_rank
+#create final_sc1_hf_against with team ranks in brackets
+for(sc1_rowhrank in 1:nrow(sc1_form_team_against_h)) {
+  for(sc1_colhrank in 1:ncol(sc1_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!sc1_form_team_against_h[sc1_rowhrank,sc1_colhrank]=="",sc1_form_team_against_h[sc1_rowhrank,sc1_colhrank] <- paste(sc1_form_team_against_h[sc1_rowhrank,sc1_colhrank],"(",points_sc1$sc1_rank[points_sc1$Team ==sc1_form_team_against_h[sc1_rowhrank,sc1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #SC2
 sc2_teams
@@ -851,9 +1064,21 @@ names(sc2_league_table)[names(sc2_league_table) == "sc2_total_draws"] <- "D"
 names(sc2_league_table)[names(sc2_league_table) == "sc2_total_loss"] <- "L"
 names(sc2_league_table)[names(sc2_league_table) == "sc2_GS"] <- "F"
 names(sc2_league_table)[names(sc2_league_table) == "sc2_GC"] <- "A"
-points_sc2 <- sc2_league_table[order(sc2_league_table$sc2_PTS, decreasing = TRUE),]
-row.names(points_sc2) <- 1:length(sc2_teams)
+points_sc2 <- sc2_league_table[order(as.numeric(sc2_league_table$sc2_PTS), decreasing = TRUE),]
+points_sc2$sc2_rank <- 1:length(sc2_teams)
+row.names(points_sc2) <- points_sc2$sc2_rank
+#create final_sc2_hf_against with team ranks in brackets
+for(sc2_rowhrank in 1:nrow(sc2_form_team_against_h)) {
+  for(sc2_colhrank in 1:ncol(sc2_form_team_against_h)) {
 
+    # print(my_matrix[row, col])
+
+    ifelse(!sc2_form_team_against_h[sc2_rowhrank,sc2_colhrank]=="",sc2_form_team_against_h[sc2_rowhrank,sc2_colhrank] <- paste(sc2_form_team_against_h[sc2_rowhrank,sc2_colhrank],"(",points_sc2$sc2_rank[points_sc2$Team ==sc2_form_team_against_h[sc2_rowhrank,sc2_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 #SC3
 sc3_teams
 sc3_games_played
@@ -898,8 +1123,21 @@ names(sc3_league_table)[names(sc3_league_table) == "sc3_total_draws"] <- "D"
 names(sc3_league_table)[names(sc3_league_table) == "sc3_total_loss"] <- "L"
 names(sc3_league_table)[names(sc3_league_table) == "sc3_GS"] <- "F"
 names(sc3_league_table)[names(sc3_league_table) == "sc3_GC"] <- "A"
-points_sc3 <- sc3_league_table[order(sc3_league_table$sc3_PTS, decreasing = TRUE),]
-row.names(points_sc3) <- 1:length(sc3_teams)
+points_sc3 <- sc3_league_table[order(as.numeric(sc3_league_table$sc3_PTS), decreasing = TRUE),]
+points_sc3$sc3_rank <- 1:length(sc3_teams)
+row.names(points_sc3) <- points_sc3$sc3_rank
+#create final_sc3_hf_against with team ranks in brackets
+for(sc3_rowhrank in 1:nrow(sc3_form_team_against_h)) {
+  for(sc3_colhrank in 1:ncol(sc3_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!sc3_form_team_against_h[sc3_rowhrank,sc3_colhrank]=="",sc3_form_team_against_h[sc3_rowhrank,sc3_colhrank] <- paste(sc3_form_team_against_h[sc3_rowhrank,sc3_colhrank],"(",points_sc3$sc3_rank[points_sc3$Team ==sc3_form_team_against_h[sc3_rowhrank,sc3_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #SP1
 sp1_teams
@@ -945,9 +1183,21 @@ names(sp1_league_table)[names(sp1_league_table) == "sp1_total_draws"] <- "D"
 names(sp1_league_table)[names(sp1_league_table) == "sp1_total_loss"] <- "L"
 names(sp1_league_table)[names(sp1_league_table) == "sp1_GS"] <- "F"
 names(sp1_league_table)[names(sp1_league_table) == "sp1_GC"] <- "A"
-points_sp1 <- sp1_league_table[order(sp1_league_table$sp1_PTS, decreasing = TRUE),]
-row.names(points_sp1) <- 1:length(sp1_teams)
+points_sp1 <- sp1_league_table[order(as.numeric(sp1_league_table$sp1_PTS), decreasing = TRUE),]
+points_sp1$sp1_rank <- 1:length(sp1_teams)
+row.names(points_sp1) <- points_sp1$sp1_rank
+#create final_sp1_hf_against with team ranks in brackets
+for(sp1_rowhrank in 1:nrow(sp1_form_team_against_h)) {
+  for(sp1_colhrank in 1:ncol(sp1_form_team_against_h)) {
 
+    # print(my_matrix[row, col])
+
+    ifelse(!sp1_form_team_against_h[sp1_rowhrank,sp1_colhrank]=="",sp1_form_team_against_h[sp1_rowhrank,sp1_colhrank] <- paste(sp1_form_team_against_h[sp1_rowhrank,sp1_colhrank],"(",points_sp1$sp1_rank[points_sp1$Team ==sp1_form_team_against_h[sp1_rowhrank,sp1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 #SP2
 sp2_teams
 sp2_games_played
@@ -992,8 +1242,21 @@ names(sp2_league_table)[names(sp2_league_table) == "sp2_total_draws"] <- "D"
 names(sp2_league_table)[names(sp2_league_table) == "sp2_total_loss"] <- "L"
 names(sp2_league_table)[names(sp2_league_table) == "sp2_GS"] <- "F"
 names(sp2_league_table)[names(sp2_league_table) == "sp2_GC"] <- "A"
-points_sp2 <- sp2_league_table[order(sp2_league_table$sp2_PTS, decreasing = TRUE),]
-row.names(points_sp2) <- 1:length(sp2_teams)
+points_sp2 <- sp2_league_table[order(as.numeric(sp2_league_table$sp2_PTS), decreasing = TRUE),]
+points_sp2$sp2_rank <- 1:length(sp2_teams)
+row.names(points_sp2) <- points_sp2$sp2_rank
+#create final_sp2_hf_against with team ranks in brackets
+for(sp2_rowhrank in 1:nrow(sp2_form_team_against_h)) {
+  for(sp2_colhrank in 1:ncol(sp2_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!sp2_form_team_against_h[sp2_rowhrank,sp2_colhrank]=="",sp2_form_team_against_h[sp2_rowhrank,sp2_colhrank] <- paste(sp2_form_team_against_h[sp2_rowhrank,sp2_colhrank],"(",points_sp2$sp2_rank[points_sp2$Team ==sp2_form_team_against_h[sp2_rowhrank,sp2_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #T1
 t1_teams
@@ -1039,8 +1302,21 @@ names(t1_league_table)[names(t1_league_table) == "t1_total_draws"] <- "D"
 names(t1_league_table)[names(t1_league_table) == "t1_total_loss"] <- "L"
 names(t1_league_table)[names(t1_league_table) == "t1_GS"] <- "F"
 names(t1_league_table)[names(t1_league_table) == "t1_GC"] <- "A"
-points_t1 <- t1_league_table[order(t1_league_table$t1_PTS, decreasing = TRUE),]
-row.names(points_t1) <- 1:length(t1_teams)
+points_t1 <- t1_league_table[order(as.numeric(t1_league_table$t1_PTS), decreasing = TRUE),]
+points_t1$t1_rank <- 1:length(t1_teams)
+row.names(points_t1) <- points_t1$t1_rank
+#create final_t1_hf_against with team ranks in brackets
+for(t1_rowhrank in 1:nrow(t1_form_team_against_h)) {
+  for(t1_colhrank in 1:ncol(t1_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!t1_form_team_against_h[t1_rowhrank,t1_colhrank]=="",t1_form_team_against_h[t1_rowhrank,t1_colhrank] <- paste(t1_form_team_against_h[t1_rowhrank,t1_colhrank],"(",points_t1$t1_rank[points_t1$Team ==t1_form_team_against_h[t1_rowhrank,t1_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 
 #write out the data to excel
 write.xlsx(points_b1,'LeagueTable.xlsx',sheetName = "B1")

@@ -353,7 +353,21 @@ names(irl_league_table)[names(irl_league_table) == "irl_total_draws"] <- "D"
 names(irl_league_table)[names(irl_league_table) == "irl_total_loss"] <- "L"
 names(irl_league_table)[names(irl_league_table) == "irl_GS"] <- "F"
 names(irl_league_table)[names(irl_league_table) == "irl_GC"] <- "A"
-points_irl <- irl_league_table[order(irl_league_table$irl_PTS, decreasing = TRUE),]
+points_irl <- irl_league_table[order(as.numeric(irl_league_table$irl_PTS), decreasing = TRUE),]
+points_irl$irl_rank <- 1:length(irl_teams)
+row.names(points_irl) <- points_irl$irl_rank
+#create final_irl_hf_against with team ranks in brackets
+for(irl_rowhrank in 1:nrow(irl_form_team_against_h)) {
+  for(irl_colhrank in 1:ncol(irl_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!irl_form_team_against_h[irl_rowhrank,irl_colhrank]=="",irl_form_team_against_h[irl_rowhrank,irl_colhrank] <- paste(irl_form_team_against_h[irl_rowhrank,irl_colhrank],"(",points_irl$irl_rank[points_irl$Team ==irl_form_team_against_h[irl_rowhrank,irl_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_irl,'IRL.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six irl###################################################

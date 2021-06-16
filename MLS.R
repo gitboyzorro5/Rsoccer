@@ -353,7 +353,21 @@ names(mls_league_table)[names(mls_league_table) == "mls_total_draws"] <- "D"
 names(mls_league_table)[names(mls_league_table) == "mls_total_loss"] <- "L"
 names(mls_league_table)[names(mls_league_table) == "mls_GS"] <- "F"
 names(mls_league_table)[names(mls_league_table) == "mls_GC"] <- "A"
-points_mls <- mls_league_table[order(mls_league_table$mls_PTS, decreasing = TRUE),]
+points_mls <- mls_league_table[order(as.numeric(mls_league_table$mls_PTS), decreasing = TRUE),]
+points_mls$mls_rank <- 1:length(mls_teams)
+row.names(points_mls) <- points_mls$mls_rank
+#create final_mls_hf_against with team ranks in brackets
+for(mls_rowhrank in 1:nrow(mls_form_team_against_h)) {
+  for(mls_colhrank in 1:ncol(mls_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!mls_form_team_against_h[mls_rowhrank,mls_colhrank]=="",mls_form_team_against_h[mls_rowhrank,mls_colhrank] <- paste(mls_form_team_against_h[mls_rowhrank,mls_colhrank],"(",points_mls$mls_rank[points_mls$Team ==mls_form_team_against_h[mls_rowhrank,mls_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_mls,'MLS.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six mls###################################################

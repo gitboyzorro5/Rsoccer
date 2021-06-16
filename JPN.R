@@ -353,7 +353,21 @@ names(jpn_league_table)[names(jpn_league_table) == "jpn_total_draws"] <- "D"
 names(jpn_league_table)[names(jpn_league_table) == "jpn_total_loss"] <- "L"
 names(jpn_league_table)[names(jpn_league_table) == "jpn_GS"] <- "F"
 names(jpn_league_table)[names(jpn_league_table) == "jpn_GC"] <- "A"
-points_jpn <- jpn_league_table[order(jpn_league_table$jpn_PTS, decreasing = TRUE),]
+points_jpn <- jpn_league_table[order(as.numeric(jpn_league_table$jpn_PTS), decreasing = TRUE),]
+points_jpn$jpn_rank <- 1:length(jpn_teams)
+row.names(points_jpn) <- points_jpn$jpn_rank
+#create final_jpn_hf_against with team ranks in brackets
+for(jpn_rowhrank in 1:nrow(jpn_form_team_against_h)) {
+  for(jpn_colhrank in 1:ncol(jpn_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!jpn_form_team_against_h[jpn_rowhrank,jpn_colhrank]=="",jpn_form_team_against_h[jpn_rowhrank,jpn_colhrank] <- paste(jpn_form_team_against_h[jpn_rowhrank,jpn_colhrank],"(",points_jpn$jpn_rank[points_jpn$Team ==jpn_form_team_against_h[jpn_rowhrank,jpn_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_jpn,'JPN.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six jpn###################################################

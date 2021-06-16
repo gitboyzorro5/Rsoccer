@@ -352,7 +352,21 @@ names(aut_league_table)[names(aut_league_table) == "aut_total_draws"] <- "D"
 names(aut_league_table)[names(aut_league_table) == "aut_total_loss"] <- "L"
 names(aut_league_table)[names(aut_league_table) == "aut_GS"] <- "F"
 names(aut_league_table)[names(aut_league_table) == "aut_GC"] <- "A"
-points_aut <- aut_league_table[order(aut_league_table$aut_PTS, decreasing = TRUE),]
+points_aut <- aut_league_table[order(as.numeric(aut_league_table$aut_PTS), decreasing = TRUE),]
+points_aut$aut_rank <- 1:length(aut_teams)
+row.names(points_aut) <- points_aut$aut_rank
+#create final_aut_hf_against with team ranks in brackets
+for(aut_rowhrank in 1:nrow(aut_form_team_against_h)) {
+  for(aut_colhrank in 1:ncol(aut_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!aut_form_team_against_h[aut_rowhrank,aut_colhrank]=="",aut_form_team_against_h[aut_rowhrank,aut_colhrank] <- paste(aut_form_team_against_h[aut_rowhrank,aut_colhrank],"(",points_aut$aut_rank[points_aut$Team ==aut_form_team_against_h[aut_rowhrank,aut_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_aut,'AUT.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six aut###################################################

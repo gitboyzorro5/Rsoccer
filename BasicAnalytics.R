@@ -86,26 +86,27 @@ AFCON <- AFCON[order(as.Date(AFCON$date, format = "%d/%m%Y"), decreasing = FALSE
 AFCON$CS <- paste(AFCON$home_score,AFCON$away_score, sep = "-")
 AFCON <- subset(AFCON,tournament == "African Cup of Nations")
 ###################################################################
-nor_league_table
+################################################################################################
+##############add team ranks in bracket code####################################################
 points_nor <- nor_league_table[order(as.numeric(nor_league_table$nor_PTS), decreasing = TRUE),]
 points_nor$nor_rank <- 1:length(nor_teams)
 row.names(points_nor) <- points_nor$nor_rank
-points_nor$nor_rank[points_nor$Team =="Viking"]
-
-#create final_nor_hf_against
-final_nor_hf_against <- c()
+#create final_nor_hf_against with team ranks in brackets
 for(nor_rowhrank in 1:nrow(nor_form_team_against_h)) {
   for(nor_colhrank in 1:ncol(nor_form_team_against_h)) {
 
     # print(my_matrix[row, col])
 
-        ifelse(nor_form_team_against_h[nor_rowarank,nor_colarank]==nor_teams[nor_rank],nor_form_team_against_h[nor_rowarank,nor_colarank] <- paste(nor_form_team_against_h[nor_rowarank,nor_colarank],points_nor$nor_rank[points_nor$Team ==nor_teams[nor_rank]]),next)
+        ifelse(!nor_form_team_against_h[nor_rowhrank,nor_colhrank]=="",nor_form_team_against_h[nor_rowhrank,nor_colhrank] <- paste(nor_form_team_against_h[nor_rowhrank,nor_colhrank],"(",points_nor$nor_rank[points_nor$Team ==nor_form_team_against_h[nor_rowhrank,nor_colhrank]],")",sep = ""),next)
         #print(my_matrix[row, col])
 
 
   }
 }
-nor_form_team_against_h
+############################################################################################
+###########end of team ranks matrix########################################################
+
+final_nor_hf_against <- c()
 for(index_nor_hf_against in 1:length(nor_teams))
 {
 

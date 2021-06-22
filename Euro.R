@@ -10,12 +10,13 @@ library('sqldf')
 unlink('EURO.xlsx')
 ######################EURO START#######################################
 #####################################################################
-EURO <- read.csv('../../../Leonard.000/Downloads/IFootball/results.csv')
+EURO <- read.csv('../../../Leonard/Downloads/results.csv')
 EURO$date <- ymd(EURO$date)
 EURO <- EURO[order(as.Date(EURO$date, format = "%d/%m%Y"), decreasing = FALSE),]
 EURO$CS <- paste(EURO$home_score,EURO$away_score, sep = "-")
 EURO <- subset(EURO,tournament == "UEFA Euro")
-EURO <- EURO[EURO$date > '2008-01-01',]
+EURO <- EURO[EURO$date > '2021-06-11' & EURO$date < '2021-06-18' ,]
+EURO
 EURO$TG <- EURO$home_score + EURO$away_score
 EURO$OV25 <- ifelse(EURO$TG >= 3,"Y","N")
 EURO$FTR <- with(EURO,
@@ -351,7 +352,21 @@ names(euro_league_table)[names(euro_league_table) == "euro_total_draws"] <- "D"
 names(euro_league_table)[names(euro_league_table) == "euro_total_loss"] <- "L"
 names(euro_league_table)[names(euro_league_table) == "euro_GS"] <- "F"
 names(euro_league_table)[names(euro_league_table) == "euro_GC"] <- "A"
-points_euro <- euro_league_table[order(euro_league_table$euro_PTS, decreasing = TRUE),]
+points_euro <- euro_league_table[order(as.numeric(euro_league_table$euro_PTS), decreasing = TRUE),]
+points_euro$euro_rank <- 1:length(euro_teams)
+row.names(points_euro) <- points_euro$euro_rank
+#create final_euro_hf_against with team ranks in brackets
+for(euro_rowhrank in 1:nrow(euro_form_team_against_h)) {
+  for(euro_colhrank in 1:ncol(euro_form_team_against_h)) {
+
+    # print(my_matrix[row, col])
+
+    ifelse(!euro_form_team_against_h[euro_rowhrank,euro_colhrank]=="",euro_form_team_against_h[euro_rowhrank,euro_colhrank] <- paste(euro_form_team_against_h[euro_rowhrank,euro_colhrank],"(",points_euro$euro_rank[points_euro$Team ==euro_form_team_against_h[euro_rowhrank,euro_colhrank]],")",sep = ""),next)
+    #print(my_matrix[row, col])
+
+
+  }
+}
 write.xlsx(points_euro,'EURO.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six euro###################################################

@@ -10,13 +10,13 @@ library('sqldf')
 unlink('COPA.xlsx')
 ######################COPA START#######################################
 #####################################################################
-COPA <- read.csv('../../../Leonard.000/Downloads/IFootball/results.csv')
+COPA <- read.csv('../../../Leonard.000/Downloads/results.csv')
 sort(unique(COPA$tournament))
 COPA$date <- ymd(COPA$date)
 COPA <- COPA[order(as.Date(COPA$date, format = "%d/%m%Y"), decreasing = FALSE),]
 COPA$CS <- paste(COPA$home_score,COPA$away_score, sep = "-")
 COPA <- subset(COPA,tournament == "Copa AmÃ©rica")
-COPA <- COPA[COPA$date > '2019-01-01',]
+COPA <- COPA[COPA$date > '2021-06-11' & COPA$date < '2021-06-23',]
 COPA$TG <- COPA$home_score + COPA$away_score
 COPA$OV25 <- ifelse(COPA$TG >= 3,"Y","N")
 COPA$FTR <- with(COPA,

@@ -10,13 +10,12 @@ library('sqldf')
 unlink('EURO.xlsx')
 ######################EURO START#######################################
 #####################################################################
-EURO <- read.csv('../../../Leonard/Downloads/results.csv')
+EURO <- read.csv('../../../Leonard.000/Downloads/results.csv')
 EURO$date <- ymd(EURO$date)
 EURO <- EURO[order(as.Date(EURO$date, format = "%d/%m%Y"), decreasing = FALSE),]
 EURO$CS <- paste(EURO$home_score,EURO$away_score, sep = "-")
 EURO <- subset(EURO,tournament == "UEFA Euro")
-EURO <- EURO[EURO$date > '2021-06-11' & EURO$date < '2021-06-18' ,]
-EURO
+EURO <- EURO[EURO$date > '2021-06-11' & EURO$date < '2021-06-23',]
 EURO$TG <- EURO$home_score + EURO$away_score
 EURO$OV25 <- ifelse(EURO$TG >= 3,"Y","N")
 EURO$FTR <- with(EURO,
@@ -31,7 +30,9 @@ euro_agtotals <- colSums(euro_totalgoalsv2,na.rm = T)
 
 euro_totalgoals <- euro_hgtotals + euro_agtotals
 euro_totalgoalsv2 <- cbind(euro_totalgoalsv2,euro_totalgoals)
-euro_teams <- sort(unique(EURO$home_team))
+euro_temp_home_teams <- sort(unique(EURO$home_team))
+euro_temp_away_teams <- sort(unique(EURO$away_team))
+euro_temp_away_teams
 euro_home_games <- c()
 euro_away_games <-c()
 for (i_euro in 1:length(euro_teams))
@@ -705,7 +706,7 @@ EURO_fixtures$euro_pscore <- paste(round(EURO_fixtures$euro_xGH,digits = 0),roun
 write.xlsx(EURO_fixtures,'EURO.xlsx',sheetName = "EURO", append = TRUE)
 ###########################################################################################################
 ########################EURO END###########################################################################
-# EURO <- read.csv('../../../Leonard/Downloads/results.csv')
+# EURO <- read.csv('../../../Leonard.000/Downloads/results.csv')
 # EURO$FTR <- with(EURO,
 #                  ifelse(home_score > away_score ,FTR <- "H" , ifelse(away_score > home_score,FTR <- "A", FTR <- "D"))
 # )

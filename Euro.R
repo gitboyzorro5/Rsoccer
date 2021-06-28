@@ -27,7 +27,7 @@ euro_totalgoalsv2 <- tapply(EURO$TG, EURO[c("home_team", "away_team")],mean)
 euro_totalgoalsv2
 euro_hgtotals <- rowSums(euro_totalgoalsv2,na.rm = T)
 euro_agtotals <- colSums(euro_totalgoalsv2,na.rm = T)
-
+length(euro_agtotals)
 euro_totalgoals <- euro_hgtotals + euro_agtotals
 euro_totalgoalsv2 <- cbind(euro_totalgoalsv2,euro_totalgoals)
 euro_temp_home_teams <- sort(unique(EURO$home_team))

@@ -68,8 +68,6 @@ x * y
 ##########################################
 hist(sample(c(0,1),100,replace = F))
 
-
-
 COPA <- read.csv('../../../Leonard/Downloads/results.csv')
 COPA$date <- ymd(COPA$date)
 COPA <- COPA[order(as.Date(COPA$date, format = "%Y/%m%d"), decreasing = FALSE),]
@@ -124,6 +122,15 @@ for(index_nor_hf_against in 1:length(nor_teams))
 final_nor_hf_against <- as.data.frame(final_nor_hf_against)
 colnames(final_nor_hf_against) <- "Team against"
 ########################################################################################################
+########
+###nba#####
+library(rvest)
+url <- 'https://www.basketball-reference.com/boxscores/'
+webpage <- read_html(url)
+data <- webpage %>% html_nodes(css ='table') %>% html_table()
+class(data)
+length(data)
+
 
 
 

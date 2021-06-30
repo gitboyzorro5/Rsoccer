@@ -17,5 +17,5 @@ PFH <- round(fairodds[,1], digits = 2)
 PFD <- round(fairodds[,2], digits = 2)
 PFA <- round(fairodds[,3], digits = 2)
 data_2021 <- cbind(data_2021,PFH,PFD,PFA)
-
-
+percent(odds.dec2prob(c(5.41,4.36,1.621)), accuracy = 0.01)
+odds.parlay(1.5,1.5,input = 'dec',output = 'dec')

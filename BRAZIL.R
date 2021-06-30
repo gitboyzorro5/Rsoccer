@@ -32,7 +32,8 @@ bra_agtotals <- colSums(bra_totalgoalsv2,na.rm = T)
 
 bra_totalgoals <- bra_hgtotals + bra_agtotals
 bra_totalgoalsv2 <- cbind(bra_totalgoalsv2,bra_totalgoals)
-bra_teams <- sort(unique(BRA$Home))
+bra_teams <- sort(unique(BRA$Away))
+bra_teams
 bra_home_games <- c()
 bra_away_games <-c()
 for (i_bra in 1:length(bra_teams))

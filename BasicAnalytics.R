@@ -130,12 +130,10 @@ webpage <- read_html(url)
 data <- webpage %>% html_nodes(css ='table') %>% html_table()
 class(data)
 length(data)
+nor_CS_summary <- tabyl(allteams20202021,Div,CS) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 
-
-
-
-
-
+write.xlsx(nor_CS_summary,'cs.xlsx')
+sample_n(F2,5)
 
 
 

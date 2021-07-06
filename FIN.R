@@ -701,6 +701,39 @@ FIN_fixtures$fin_un25_odds
 FIN_fixtures$fin_ov25 <- percent(FIN_fixtures$fin_ov25, accuracy = 0.1)
 
 FIN_fixtures$fin_un25 <- percent(FIN_fixtures$fin_un25, accuracy = 0.1)
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+FIN_fixtures$fin_AH_0_H <- (
+  FIN_fixtures$fin_1_0 + FIN_fixtures$fin_2_0 + FIN_fixtures$fin_2_1 + FIN_fixtures$fin_3_0 + FIN_fixtures$fin_3_1 +
+    FIN_fixtures$fin_3_2 + FIN_fixtures$fin_4_0 + FIN_fixtures$fin_4_1 + FIN_fixtures$fin_4_2 + FIN_fixtures$fin_4_3 +
+    FIN_fixtures$fin_5_0 +FIN_fixtures$fin_5_1 + FIN_fixtures$fin_5_2 + FIN_fixtures$fin_5_3 + FIN_fixtures$fin_5_4 +
+    FIN_fixtures$fin_6_0 + FIN_fixtures$fin_6_1 + FIN_fixtures$fin_6_2 + FIN_fixtures$fin_6_3 + FIN_fixtures$fin_6_4 +
+    FIN_fixtures$fin_6_5 + FIN_fixtures$fin_0_0 + FIN_fixtures$fin_1_1 + FIN_fixtures$fin_2_2 + FIN_fixtures$fin_3_3 +
+    FIN_fixtures$fin_4_4 + FIN_fixtures$fin_5_5 + FIN_fixtures$fin_6_6
+)
+#AH_0_A
+FIN_fixtures$fin_AH_0_A <- (
+    FIN_fixtures$fin_0_1 + FIN_fixtures$fin_0_2 + FIN_fixtures$fin_1_2 + FIN_fixtures$fin_0_3 + FIN_fixtures$fin_1_3 +
+    FIN_fixtures$fin_2_3 + FIN_fixtures$fin_0_4 + FIN_fixtures$fin_1_4 + FIN_fixtures$fin_2_4 + FIN_fixtures$fin_3_4 +
+    FIN_fixtures$fin_0_5 +FIN_fixtures$fin_1_5 + FIN_fixtures$fin_2_5 + FIN_fixtures$fin_3_5 + FIN_fixtures$fin_4_5 +
+    FIN_fixtures$fin_0_6 + FIN_fixtures$fin_1_6 + FIN_fixtures$fin_2_6 + FIN_fixtures$fin_3_6 + FIN_fixtures$fin_4_6 +
+    FIN_fixtures$fin_5_6 + FIN_fixtures$fin_0_0 + FIN_fixtures$fin_1_1 + FIN_fixtures$fin_2_2 + FIN_fixtures$fin_3_3 +
+    FIN_fixtures$fin_4_4 + FIN_fixtures$fin_5_5 + FIN_fixtures$fin_6_6
+)
+
+#odds
+FIN_fixtures$fin_AH_0_H_odds <- round((1/FIN_fixtures$fin_AH_0_H),digits = 2)
+FIN_fixtures$fin_AH_0_A_odds <- round((1/FIN_fixtures$fin_AH_0_A),digits = 2)
+
+FIN_fixtures$fin_AH_0_H_odds
+FIN_fixtures$fin_AH_0_A_odds
+#percentages
+FIN_fixtures$fin_AH_0_H <- percent(FIN_fixtures$fin_AH_0_H, accuracy = 0.1)
+FIN_fixtures$fin_AH_0_A <- percent(FIN_fixtures$fin_AH_0_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 FIN_fixtures$fin_pscore <- paste(round(FIN_fixtures$fin_xGH,digits = 0),round(FIN_fixtures$fin_xGA,digits = 0),sep = "-")
 #write out
 write.xlsx(FIN_fixtures,'FIN.xlsx',sheetName = "FIN", append = TRUE)

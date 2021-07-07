@@ -697,6 +697,162 @@ IRL_fixtures$irl_un25_odds <- round((1/IRL_fixtures$irl_un25),digits = 2)
 
 IRL_fixtures$irl_ov25_odds
 IRL_fixtures$irl_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+IRL_fixtures$irl_AH_0_H <- (
+  IRL_fixtures$irl_1_0 + IRL_fixtures$irl_2_0 + IRL_fixtures$irl_2_1 + IRL_fixtures$irl_3_0 + IRL_fixtures$irl_3_1 +
+    IRL_fixtures$irl_3_2 + IRL_fixtures$irl_4_0 + IRL_fixtures$irl_4_1 + IRL_fixtures$irl_4_2 + IRL_fixtures$irl_4_3 +
+    IRL_fixtures$irl_5_0 +IRL_fixtures$irl_5_1 + IRL_fixtures$irl_5_2 + IRL_fixtures$irl_5_3 + IRL_fixtures$irl_5_4 +
+    IRL_fixtures$irl_6_0 + IRL_fixtures$irl_6_1 + IRL_fixtures$irl_6_2 + IRL_fixtures$irl_6_3 + IRL_fixtures$irl_6_4 +
+    IRL_fixtures$irl_6_5 + IRL_fixtures$irl_0_0 + IRL_fixtures$irl_1_1 + IRL_fixtures$irl_2_2 + IRL_fixtures$irl_3_3 +
+    IRL_fixtures$irl_4_4 + IRL_fixtures$irl_5_5 + IRL_fixtures$irl_6_6
+)
+#AH_0_A
+IRL_fixtures$irl_AH_0_A <- (
+  IRL_fixtures$irl_0_1 + IRL_fixtures$irl_0_2 + IRL_fixtures$irl_1_2 + IRL_fixtures$irl_0_3 + IRL_fixtures$irl_1_3 +
+    IRL_fixtures$irl_2_3 + IRL_fixtures$irl_0_4 + IRL_fixtures$irl_1_4 + IRL_fixtures$irl_2_4 + IRL_fixtures$irl_3_4 +
+    IRL_fixtures$irl_0_5 +IRL_fixtures$irl_1_5 + IRL_fixtures$irl_2_5 + IRL_fixtures$irl_3_5 + IRL_fixtures$irl_4_5 +
+    IRL_fixtures$irl_0_6 + IRL_fixtures$irl_1_6 + IRL_fixtures$irl_2_6 + IRL_fixtures$irl_3_6 + IRL_fixtures$irl_4_6 +
+    IRL_fixtures$irl_5_6 + IRL_fixtures$irl_0_0 + IRL_fixtures$irl_1_1 + IRL_fixtures$irl_2_2 + IRL_fixtures$irl_3_3 +
+    IRL_fixtures$irl_4_4 + IRL_fixtures$irl_5_5 + IRL_fixtures$irl_6_6
+)
+
+#odds
+IRL_fixtures$irl_AH_0_H_odds <- round((1/IRL_fixtures$irl_AH_0_H),digits = 2)
+IRL_fixtures$irl_AH_0_A_odds <- round((1/IRL_fixtures$irl_AH_0_A),digits = 2)
+
+IRL_fixtures$irl_AH_0_H_odds
+IRL_fixtures$irl_AH_0_A_odds
+#percentages
+IRL_fixtures$irl_AH_0_H <- percent(IRL_fixtures$irl_AH_0_H, accuracy = 0.1)
+IRL_fixtures$irl_AH_0_A <- percent(IRL_fixtures$irl_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+IRL_fixtures$irl_AH_n075_H <- (
+  IRL_fixtures$irl_1_0 + IRL_fixtures$irl_2_0 + IRL_fixtures$irl_2_1 + IRL_fixtures$irl_3_0 + IRL_fixtures$irl_3_1 +
+    IRL_fixtures$irl_3_2 + IRL_fixtures$irl_4_0 + IRL_fixtures$irl_4_1 + IRL_fixtures$irl_4_2 + IRL_fixtures$irl_4_3 +
+    IRL_fixtures$irl_5_0 +IRL_fixtures$irl_5_1 + IRL_fixtures$irl_5_2 + IRL_fixtures$irl_5_3 + IRL_fixtures$irl_5_4 +
+    IRL_fixtures$irl_6_0 + IRL_fixtures$irl_6_1 + IRL_fixtures$irl_6_2 + IRL_fixtures$irl_6_3 + IRL_fixtures$irl_6_4 +
+    IRL_fixtures$irl_6_5
+)
+#AH_n075_A
+IRL_fixtures$irl_AH_n075_A <- (
+  IRL_fixtures$irl_0_1 + IRL_fixtures$irl_0_2 + IRL_fixtures$irl_1_2 + IRL_fixtures$irl_0_3 + IRL_fixtures$irl_1_3 +
+    IRL_fixtures$irl_2_3 + IRL_fixtures$irl_0_4 + IRL_fixtures$irl_1_4 + IRL_fixtures$irl_2_4 + IRL_fixtures$irl_3_4 +
+    IRL_fixtures$irl_0_5 +IRL_fixtures$irl_1_5 + IRL_fixtures$irl_2_5 + IRL_fixtures$irl_3_5 + IRL_fixtures$irl_4_5 +
+    IRL_fixtures$irl_0_6 + IRL_fixtures$irl_1_6 + IRL_fixtures$irl_2_6 + IRL_fixtures$irl_3_6 + IRL_fixtures$irl_4_6 +
+    IRL_fixtures$irl_5_6
+)
+
+#odds
+IRL_fixtures$irl_AH_n075_H_odds <- round((1/IRL_fixtures$irl_AH_n075_H),digits = 2)
+IRL_fixtures$irl_AH_n075_A_odds <- round((1/IRL_fixtures$irl_AH_n075_A),digits = 2)
+
+IRL_fixtures$irl_AH_n075_H_odds
+IRL_fixtures$irl_AH_n075_A_odds
+#percentages
+IRL_fixtures$irl_AH_n075_H <- percent(IRL_fixtures$irl_AH_n075_H, accuracy = 0.1)
+IRL_fixtures$irl_AH_n075_A <- percent(IRL_fixtures$irl_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+IRL_fixtures$irl_AH_075_H <- (
+  IRL_fixtures$irl_1_0 + IRL_fixtures$irl_2_0 + IRL_fixtures$irl_2_1 + IRL_fixtures$irl_3_0 + IRL_fixtures$irl_3_1 +
+    IRL_fixtures$irl_3_2 + IRL_fixtures$irl_4_0 + IRL_fixtures$irl_4_1 + IRL_fixtures$irl_4_2 + IRL_fixtures$irl_4_3 +
+    IRL_fixtures$irl_5_0 +IRL_fixtures$irl_5_1 + IRL_fixtures$irl_5_2 + IRL_fixtures$irl_5_3 + IRL_fixtures$irl_5_4 +
+    IRL_fixtures$irl_6_0 + IRL_fixtures$irl_6_1 + IRL_fixtures$irl_6_2 + IRL_fixtures$irl_6_3 + IRL_fixtures$irl_6_4 +
+    IRL_fixtures$irl_6_5 + IRL_fixtures$irl_0_0 + IRL_fixtures$irl_1_1 + IRL_fixtures$irl_2_2 + IRL_fixtures$irl_3_3 +
+    IRL_fixtures$irl_4_4 + IRL_fixtures$irl_5_5 + IRL_fixtures$irl_6_6 + IRL_fixtures$irl_0_1 + IRL_fixtures$irl_1_2 +
+    IRL_fixtures$irl_2_3 + IRL_fixtures$irl_3_4 + IRL_fixtures$irl_4_5 + IRL_fixtures$irl_5_6
+)
+#AH_075_A
+IRL_fixtures$irl_AH_075_A <- (
+  IRL_fixtures$irl_0_1 + IRL_fixtures$irl_0_2 + IRL_fixtures$irl_1_2 + IRL_fixtures$irl_0_3 + IRL_fixtures$irl_1_3 +
+    IRL_fixtures$irl_2_3 + IRL_fixtures$irl_0_4 + IRL_fixtures$irl_1_4 + IRL_fixtures$irl_2_4 + IRL_fixtures$irl_3_4 +
+    IRL_fixtures$irl_0_5 +IRL_fixtures$irl_1_5 + IRL_fixtures$irl_2_5 + IRL_fixtures$irl_3_5 + IRL_fixtures$irl_4_5 +
+    IRL_fixtures$irl_0_6 + IRL_fixtures$irl_1_6 + IRL_fixtures$irl_2_6 + IRL_fixtures$irl_3_6 + IRL_fixtures$irl_4_6 +
+    IRL_fixtures$irl_5_6 + IRL_fixtures$irl_0_0 + IRL_fixtures$irl_1_1 + IRL_fixtures$irl_2_2 + IRL_fixtures$irl_3_3 +
+    IRL_fixtures$irl_4_4 + IRL_fixtures$irl_5_5 + IRL_fixtures$irl_6_6 + IRL_fixtures$irl_1_0 + IRL_fixtures$irl_2_1 +
+    IRL_fixtures$irl_3_2 + IRL_fixtures$irl_4_3 + IRL_fixtures$irl_5_4 + IRL_fixtures$irl_6_5
+)
+
+#odds
+IRL_fixtures$irl_AH_075_H_odds <- round((1/IRL_fixtures$irl_AH_075_H),digits = 2)
+IRL_fixtures$irl_AH_075_A_odds <- round((1/IRL_fixtures$irl_AH_075_A),digits = 2)
+
+IRL_fixtures$irl_AH_075_H_odds
+IRL_fixtures$irl_AH_075_A_odds
+#percentages
+IRL_fixtures$irl_AH_075_H <- percent(IRL_fixtures$irl_AH_075_H, accuracy = 0.1)
+IRL_fixtures$irl_AH_075_A <- percent(IRL_fixtures$irl_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+IRL_fixtures$irl_AH_n125_H <- (
+  IRL_fixtures$irl_1_0 + IRL_fixtures$irl_2_0 + IRL_fixtures$irl_2_1 + IRL_fixtures$irl_3_0 + IRL_fixtures$irl_3_1 +
+    IRL_fixtures$irl_3_2 + IRL_fixtures$irl_4_0 + IRL_fixtures$irl_4_1 + IRL_fixtures$irl_4_2 + IRL_fixtures$irl_4_3 +
+    IRL_fixtures$irl_5_0 +IRL_fixtures$irl_5_1 + IRL_fixtures$irl_5_2 + IRL_fixtures$irl_5_3 + IRL_fixtures$irl_5_4 +
+    IRL_fixtures$irl_6_0 + IRL_fixtures$irl_6_1 + IRL_fixtures$irl_6_2 + IRL_fixtures$irl_6_3 + IRL_fixtures$irl_6_4 +
+    IRL_fixtures$irl_6_5
+)
+#AH_n125_A
+IRL_fixtures$irl_AH_n125_A <- (
+  IRL_fixtures$irl_0_1 + IRL_fixtures$irl_0_2 + IRL_fixtures$irl_1_2 + IRL_fixtures$irl_0_3 + IRL_fixtures$irl_1_3 +
+    IRL_fixtures$irl_2_3 + IRL_fixtures$irl_0_4 + IRL_fixtures$irl_1_4 + IRL_fixtures$irl_2_4 + IRL_fixtures$irl_3_4 +
+    IRL_fixtures$irl_0_5 +IRL_fixtures$irl_1_5 + IRL_fixtures$irl_2_5 + IRL_fixtures$irl_3_5 + IRL_fixtures$irl_4_5 +
+    IRL_fixtures$irl_0_6 + IRL_fixtures$irl_1_6 + IRL_fixtures$irl_2_6 + IRL_fixtures$irl_3_6 + IRL_fixtures$irl_4_6 +
+    IRL_fixtures$irl_5_6
+)
+
+#odds
+IRL_fixtures$irl_AH_n125_H_odds <- round((1/IRL_fixtures$irl_AH_n125_H),digits = 2)
+IRL_fixtures$irl_AH_n125_A_odds <- round((1/IRL_fixtures$irl_AH_n125_A),digits = 2)
+
+IRL_fixtures$irl_AH_n125_H_odds
+IRL_fixtures$irl_AH_n125_A_odds
+#percentages
+IRL_fixtures$irl_AH_n125_H <- percent(IRL_fixtures$irl_AH_n125_H, accuracy = 0.1)
+IRL_fixtures$irl_AH_n125_A <- percent(IRL_fixtures$irl_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+IRL_fixtures$irl_AH_125_H <- (
+  IRL_fixtures$irl_1_0 + IRL_fixtures$irl_2_0 + IRL_fixtures$irl_2_1 + IRL_fixtures$irl_3_0 + IRL_fixtures$irl_3_1 +
+    IRL_fixtures$irl_3_2 + IRL_fixtures$irl_4_0 + IRL_fixtures$irl_4_1 + IRL_fixtures$irl_4_2 + IRL_fixtures$irl_4_3 +
+    IRL_fixtures$irl_5_0 +IRL_fixtures$irl_5_1 + IRL_fixtures$irl_5_2 + IRL_fixtures$irl_5_3 + IRL_fixtures$irl_5_4 +
+    IRL_fixtures$irl_6_0 + IRL_fixtures$irl_6_1 + IRL_fixtures$irl_6_2 + IRL_fixtures$irl_6_3 + IRL_fixtures$irl_6_4 +
+    IRL_fixtures$irl_6_5 + IRL_fixtures$irl_0_0 + IRL_fixtures$irl_1_1 + IRL_fixtures$irl_2_2 + IRL_fixtures$irl_3_3 +
+    IRL_fixtures$irl_4_4 + IRL_fixtures$irl_5_5 + IRL_fixtures$irl_6_6 + IRL_fixtures$irl_0_1 + IRL_fixtures$irl_1_2 +
+    IRL_fixtures$irl_2_3 + IRL_fixtures$irl_3_4 + IRL_fixtures$irl_4_5 + IRL_fixtures$irl_5_6
+)
+#AH_125_A
+IRL_fixtures$irl_AH_125_A <- (
+  IRL_fixtures$irl_0_1 + IRL_fixtures$irl_0_2 + IRL_fixtures$irl_1_2 + IRL_fixtures$irl_0_3 + IRL_fixtures$irl_1_3 +
+    IRL_fixtures$irl_2_3 + IRL_fixtures$irl_0_4 + IRL_fixtures$irl_1_4 + IRL_fixtures$irl_2_4 + IRL_fixtures$irl_3_4 +
+    IRL_fixtures$irl_0_5 +IRL_fixtures$irl_1_5 + IRL_fixtures$irl_2_5 + IRL_fixtures$irl_3_5 + IRL_fixtures$irl_4_5 +
+    IRL_fixtures$irl_0_6 + IRL_fixtures$irl_1_6 + IRL_fixtures$irl_2_6 + IRL_fixtures$irl_3_6 + IRL_fixtures$irl_4_6 +
+    IRL_fixtures$irl_5_6 + IRL_fixtures$irl_0_0 + IRL_fixtures$irl_1_1 + IRL_fixtures$irl_2_2 + IRL_fixtures$irl_3_3 +
+    IRL_fixtures$irl_4_4 + IRL_fixtures$irl_5_5 + IRL_fixtures$irl_6_6 + IRL_fixtures$irl_1_0 + IRL_fixtures$irl_2_1 +
+    IRL_fixtures$irl_3_2 + IRL_fixtures$irl_4_3 + IRL_fixtures$irl_5_4 + IRL_fixtures$irl_6_5
+)
+
+#odds
+IRL_fixtures$irl_AH_125_H_odds <- round((1/IRL_fixtures$irl_AH_125_H),digits = 2)
+IRL_fixtures$irl_AH_125_A_odds <- round((1/IRL_fixtures$irl_AH_125_A),digits = 2)
+
+IRL_fixtures$irl_AH_125_H_odds
+IRL_fixtures$irl_AH_125_A_odds
+#percentages
+IRL_fixtures$irl_AH_125_H <- percent(IRL_fixtures$irl_AH_125_H, accuracy = 0.1)
+IRL_fixtures$irl_AH_125_A <- percent(IRL_fixtures$irl_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 IRL_fixtures$irl_ov25 <- percent(IRL_fixtures$irl_ov25, accuracy = 0.1)
 

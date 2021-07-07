@@ -160,6 +160,162 @@ B1_fixtures$b1_un25_odds <- round((1/B1_fixtures$b1_un25),digits = 2)
 
 B1_fixtures$b1_ov25_odds
 B1_fixtures$b1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+B1_fixtures$b1_AH_0_H <- (
+  B1_fixtures$b1_1_0 + B1_fixtures$b1_2_0 + B1_fixtures$b1_2_1 + B1_fixtures$b1_3_0 + B1_fixtures$b1_3_1 +
+    B1_fixtures$b1_3_2 + B1_fixtures$b1_4_0 + B1_fixtures$b1_4_1 + B1_fixtures$b1_4_2 + B1_fixtures$b1_4_3 +
+    B1_fixtures$b1_5_0 +B1_fixtures$b1_5_1 + B1_fixtures$b1_5_2 + B1_fixtures$b1_5_3 + B1_fixtures$b1_5_4 +
+    B1_fixtures$b1_6_0 + B1_fixtures$b1_6_1 + B1_fixtures$b1_6_2 + B1_fixtures$b1_6_3 + B1_fixtures$b1_6_4 +
+    B1_fixtures$b1_6_5 + B1_fixtures$b1_0_0 + B1_fixtures$b1_1_1 + B1_fixtures$b1_2_2 + B1_fixtures$b1_3_3 +
+    B1_fixtures$b1_4_4 + B1_fixtures$b1_5_5 + B1_fixtures$b1_6_6
+)
+#AH_0_A
+B1_fixtures$b1_AH_0_A <- (
+  B1_fixtures$b1_0_1 + B1_fixtures$b1_0_2 + B1_fixtures$b1_1_2 + B1_fixtures$b1_0_3 + B1_fixtures$b1_1_3 +
+    B1_fixtures$b1_2_3 + B1_fixtures$b1_0_4 + B1_fixtures$b1_1_4 + B1_fixtures$b1_2_4 + B1_fixtures$b1_3_4 +
+    B1_fixtures$b1_0_5 +B1_fixtures$b1_1_5 + B1_fixtures$b1_2_5 + B1_fixtures$b1_3_5 + B1_fixtures$b1_4_5 +
+    B1_fixtures$b1_0_6 + B1_fixtures$b1_1_6 + B1_fixtures$b1_2_6 + B1_fixtures$b1_3_6 + B1_fixtures$b1_4_6 +
+    B1_fixtures$b1_5_6 + B1_fixtures$b1_0_0 + B1_fixtures$b1_1_1 + B1_fixtures$b1_2_2 + B1_fixtures$b1_3_3 +
+    B1_fixtures$b1_4_4 + B1_fixtures$b1_5_5 + B1_fixtures$b1_6_6
+)
+
+#odds
+B1_fixtures$b1_AH_0_H_odds <- round((1/B1_fixtures$b1_AH_0_H),digits = 2)
+B1_fixtures$b1_AH_0_A_odds <- round((1/B1_fixtures$b1_AH_0_A),digits = 2)
+
+B1_fixtures$b1_AH_0_H_odds
+B1_fixtures$b1_AH_0_A_odds
+#percentages
+B1_fixtures$b1_AH_0_H <- percent(B1_fixtures$b1_AH_0_H, accuracy = 0.1)
+B1_fixtures$b1_AH_0_A <- percent(B1_fixtures$b1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+B1_fixtures$b1_AH_n075_H <- (
+  B1_fixtures$b1_1_0 + B1_fixtures$b1_2_0 + B1_fixtures$b1_2_1 + B1_fixtures$b1_3_0 + B1_fixtures$b1_3_1 +
+    B1_fixtures$b1_3_2 + B1_fixtures$b1_4_0 + B1_fixtures$b1_4_1 + B1_fixtures$b1_4_2 + B1_fixtures$b1_4_3 +
+    B1_fixtures$b1_5_0 +B1_fixtures$b1_5_1 + B1_fixtures$b1_5_2 + B1_fixtures$b1_5_3 + B1_fixtures$b1_5_4 +
+    B1_fixtures$b1_6_0 + B1_fixtures$b1_6_1 + B1_fixtures$b1_6_2 + B1_fixtures$b1_6_3 + B1_fixtures$b1_6_4 +
+    B1_fixtures$b1_6_5
+)
+#AH_n075_A
+B1_fixtures$b1_AH_n075_A <- (
+  B1_fixtures$b1_0_1 + B1_fixtures$b1_0_2 + B1_fixtures$b1_1_2 + B1_fixtures$b1_0_3 + B1_fixtures$b1_1_3 +
+    B1_fixtures$b1_2_3 + B1_fixtures$b1_0_4 + B1_fixtures$b1_1_4 + B1_fixtures$b1_2_4 + B1_fixtures$b1_3_4 +
+    B1_fixtures$b1_0_5 +B1_fixtures$b1_1_5 + B1_fixtures$b1_2_5 + B1_fixtures$b1_3_5 + B1_fixtures$b1_4_5 +
+    B1_fixtures$b1_0_6 + B1_fixtures$b1_1_6 + B1_fixtures$b1_2_6 + B1_fixtures$b1_3_6 + B1_fixtures$b1_4_6 +
+    B1_fixtures$b1_5_6
+)
+
+#odds
+B1_fixtures$b1_AH_n075_H_odds <- round((1/B1_fixtures$b1_AH_n075_H),digits = 2)
+B1_fixtures$b1_AH_n075_A_odds <- round((1/B1_fixtures$b1_AH_n075_A),digits = 2)
+
+B1_fixtures$b1_AH_n075_H_odds
+B1_fixtures$b1_AH_n075_A_odds
+#percentages
+B1_fixtures$b1_AH_n075_H <- percent(B1_fixtures$b1_AH_n075_H, accuracy = 0.1)
+B1_fixtures$b1_AH_n075_A <- percent(B1_fixtures$b1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+B1_fixtures$b1_AH_075_H <- (
+  B1_fixtures$b1_1_0 + B1_fixtures$b1_2_0 + B1_fixtures$b1_2_1 + B1_fixtures$b1_3_0 + B1_fixtures$b1_3_1 +
+    B1_fixtures$b1_3_2 + B1_fixtures$b1_4_0 + B1_fixtures$b1_4_1 + B1_fixtures$b1_4_2 + B1_fixtures$b1_4_3 +
+    B1_fixtures$b1_5_0 +B1_fixtures$b1_5_1 + B1_fixtures$b1_5_2 + B1_fixtures$b1_5_3 + B1_fixtures$b1_5_4 +
+    B1_fixtures$b1_6_0 + B1_fixtures$b1_6_1 + B1_fixtures$b1_6_2 + B1_fixtures$b1_6_3 + B1_fixtures$b1_6_4 +
+    B1_fixtures$b1_6_5 + B1_fixtures$b1_0_0 + B1_fixtures$b1_1_1 + B1_fixtures$b1_2_2 + B1_fixtures$b1_3_3 +
+    B1_fixtures$b1_4_4 + B1_fixtures$b1_5_5 + B1_fixtures$b1_6_6 + B1_fixtures$b1_0_1 + B1_fixtures$b1_1_2 +
+    B1_fixtures$b1_2_3 + B1_fixtures$b1_3_4 + B1_fixtures$b1_4_5 + B1_fixtures$b1_5_6
+)
+#AH_075_A
+B1_fixtures$b1_AH_075_A <- (
+  B1_fixtures$b1_0_1 + B1_fixtures$b1_0_2 + B1_fixtures$b1_1_2 + B1_fixtures$b1_0_3 + B1_fixtures$b1_1_3 +
+    B1_fixtures$b1_2_3 + B1_fixtures$b1_0_4 + B1_fixtures$b1_1_4 + B1_fixtures$b1_2_4 + B1_fixtures$b1_3_4 +
+    B1_fixtures$b1_0_5 +B1_fixtures$b1_1_5 + B1_fixtures$b1_2_5 + B1_fixtures$b1_3_5 + B1_fixtures$b1_4_5 +
+    B1_fixtures$b1_0_6 + B1_fixtures$b1_1_6 + B1_fixtures$b1_2_6 + B1_fixtures$b1_3_6 + B1_fixtures$b1_4_6 +
+    B1_fixtures$b1_5_6 + B1_fixtures$b1_0_0 + B1_fixtures$b1_1_1 + B1_fixtures$b1_2_2 + B1_fixtures$b1_3_3 +
+    B1_fixtures$b1_4_4 + B1_fixtures$b1_5_5 + B1_fixtures$b1_6_6 + B1_fixtures$b1_1_0 + B1_fixtures$b1_2_1 +
+    B1_fixtures$b1_3_2 + B1_fixtures$b1_4_3 + B1_fixtures$b1_5_4 + B1_fixtures$b1_6_5
+)
+
+#odds
+B1_fixtures$b1_AH_075_H_odds <- round((1/B1_fixtures$b1_AH_075_H),digits = 2)
+B1_fixtures$b1_AH_075_A_odds <- round((1/B1_fixtures$b1_AH_075_A),digits = 2)
+
+B1_fixtures$b1_AH_075_H_odds
+B1_fixtures$b1_AH_075_A_odds
+#percentages
+B1_fixtures$b1_AH_075_H <- percent(B1_fixtures$b1_AH_075_H, accuracy = 0.1)
+B1_fixtures$b1_AH_075_A <- percent(B1_fixtures$b1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+B1_fixtures$b1_AH_n125_H <- (
+  B1_fixtures$b1_1_0 + B1_fixtures$b1_2_0 + B1_fixtures$b1_2_1 + B1_fixtures$b1_3_0 + B1_fixtures$b1_3_1 +
+    B1_fixtures$b1_3_2 + B1_fixtures$b1_4_0 + B1_fixtures$b1_4_1 + B1_fixtures$b1_4_2 + B1_fixtures$b1_4_3 +
+    B1_fixtures$b1_5_0 +B1_fixtures$b1_5_1 + B1_fixtures$b1_5_2 + B1_fixtures$b1_5_3 + B1_fixtures$b1_5_4 +
+    B1_fixtures$b1_6_0 + B1_fixtures$b1_6_1 + B1_fixtures$b1_6_2 + B1_fixtures$b1_6_3 + B1_fixtures$b1_6_4 +
+    B1_fixtures$b1_6_5
+)
+#AH_n125_A
+B1_fixtures$b1_AH_n125_A <- (
+  B1_fixtures$b1_0_1 + B1_fixtures$b1_0_2 + B1_fixtures$b1_1_2 + B1_fixtures$b1_0_3 + B1_fixtures$b1_1_3 +
+    B1_fixtures$b1_2_3 + B1_fixtures$b1_0_4 + B1_fixtures$b1_1_4 + B1_fixtures$b1_2_4 + B1_fixtures$b1_3_4 +
+    B1_fixtures$b1_0_5 +B1_fixtures$b1_1_5 + B1_fixtures$b1_2_5 + B1_fixtures$b1_3_5 + B1_fixtures$b1_4_5 +
+    B1_fixtures$b1_0_6 + B1_fixtures$b1_1_6 + B1_fixtures$b1_2_6 + B1_fixtures$b1_3_6 + B1_fixtures$b1_4_6 +
+    B1_fixtures$b1_5_6
+)
+
+#odds
+B1_fixtures$b1_AH_n125_H_odds <- round((1/B1_fixtures$b1_AH_n125_H),digits = 2)
+B1_fixtures$b1_AH_n125_A_odds <- round((1/B1_fixtures$b1_AH_n125_A),digits = 2)
+
+B1_fixtures$b1_AH_n125_H_odds
+B1_fixtures$b1_AH_n125_A_odds
+#percentages
+B1_fixtures$b1_AH_n125_H <- percent(B1_fixtures$b1_AH_n125_H, accuracy = 0.1)
+B1_fixtures$b1_AH_n125_A <- percent(B1_fixtures$b1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+B1_fixtures$b1_AH_125_H <- (
+  B1_fixtures$b1_1_0 + B1_fixtures$b1_2_0 + B1_fixtures$b1_2_1 + B1_fixtures$b1_3_0 + B1_fixtures$b1_3_1 +
+    B1_fixtures$b1_3_2 + B1_fixtures$b1_4_0 + B1_fixtures$b1_4_1 + B1_fixtures$b1_4_2 + B1_fixtures$b1_4_3 +
+    B1_fixtures$b1_5_0 +B1_fixtures$b1_5_1 + B1_fixtures$b1_5_2 + B1_fixtures$b1_5_3 + B1_fixtures$b1_5_4 +
+    B1_fixtures$b1_6_0 + B1_fixtures$b1_6_1 + B1_fixtures$b1_6_2 + B1_fixtures$b1_6_3 + B1_fixtures$b1_6_4 +
+    B1_fixtures$b1_6_5 + B1_fixtures$b1_0_0 + B1_fixtures$b1_1_1 + B1_fixtures$b1_2_2 + B1_fixtures$b1_3_3 +
+    B1_fixtures$b1_4_4 + B1_fixtures$b1_5_5 + B1_fixtures$b1_6_6 + B1_fixtures$b1_0_1 + B1_fixtures$b1_1_2 +
+    B1_fixtures$b1_2_3 + B1_fixtures$b1_3_4 + B1_fixtures$b1_4_5 + B1_fixtures$b1_5_6
+)
+#AH_125_A
+B1_fixtures$b1_AH_125_A <- (
+  B1_fixtures$b1_0_1 + B1_fixtures$b1_0_2 + B1_fixtures$b1_1_2 + B1_fixtures$b1_0_3 + B1_fixtures$b1_1_3 +
+    B1_fixtures$b1_2_3 + B1_fixtures$b1_0_4 + B1_fixtures$b1_1_4 + B1_fixtures$b1_2_4 + B1_fixtures$b1_3_4 +
+    B1_fixtures$b1_0_5 +B1_fixtures$b1_1_5 + B1_fixtures$b1_2_5 + B1_fixtures$b1_3_5 + B1_fixtures$b1_4_5 +
+    B1_fixtures$b1_0_6 + B1_fixtures$b1_1_6 + B1_fixtures$b1_2_6 + B1_fixtures$b1_3_6 + B1_fixtures$b1_4_6 +
+    B1_fixtures$b1_5_6 + B1_fixtures$b1_0_0 + B1_fixtures$b1_1_1 + B1_fixtures$b1_2_2 + B1_fixtures$b1_3_3 +
+    B1_fixtures$b1_4_4 + B1_fixtures$b1_5_5 + B1_fixtures$b1_6_6 + B1_fixtures$b1_1_0 + B1_fixtures$b1_2_1 +
+    B1_fixtures$b1_3_2 + B1_fixtures$b1_4_3 + B1_fixtures$b1_5_4 + B1_fixtures$b1_6_5
+)
+
+#odds
+B1_fixtures$b1_AH_125_H_odds <- round((1/B1_fixtures$b1_AH_125_H),digits = 2)
+B1_fixtures$b1_AH_125_A_odds <- round((1/B1_fixtures$b1_AH_125_A),digits = 2)
+
+B1_fixtures$b1_AH_125_H_odds
+B1_fixtures$b1_AH_125_A_odds
+#percentages
+B1_fixtures$b1_AH_125_H <- percent(B1_fixtures$b1_AH_125_H, accuracy = 0.1)
+B1_fixtures$b1_AH_125_A <- percent(B1_fixtures$b1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 B1_fixtures$b1_ov25 <- percent(B1_fixtures$b1_ov25, accuracy = 0.1)
 
@@ -318,6 +474,162 @@ D1_fixtures$d1_un25_odds <- round((1/D1_fixtures$d1_un25),digits = 2)
 
 D1_fixtures$d1_ov25_odds
 D1_fixtures$d1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+D1_fixtures$d1_AH_0_H <- (
+  D1_fixtures$d1_1_0 + D1_fixtures$d1_2_0 + D1_fixtures$d1_2_1 + D1_fixtures$d1_3_0 + D1_fixtures$d1_3_1 +
+    D1_fixtures$d1_3_2 + D1_fixtures$d1_4_0 + D1_fixtures$d1_4_1 + D1_fixtures$d1_4_2 + D1_fixtures$d1_4_3 +
+    D1_fixtures$d1_5_0 +D1_fixtures$d1_5_1 + D1_fixtures$d1_5_2 + D1_fixtures$d1_5_3 + D1_fixtures$d1_5_4 +
+    D1_fixtures$d1_6_0 + D1_fixtures$d1_6_1 + D1_fixtures$d1_6_2 + D1_fixtures$d1_6_3 + D1_fixtures$d1_6_4 +
+    D1_fixtures$d1_6_5 + D1_fixtures$d1_0_0 + D1_fixtures$d1_1_1 + D1_fixtures$d1_2_2 + D1_fixtures$d1_3_3 +
+    D1_fixtures$d1_4_4 + D1_fixtures$d1_5_5 + D1_fixtures$d1_6_6
+)
+#AH_0_A
+D1_fixtures$d1_AH_0_A <- (
+  D1_fixtures$d1_0_1 + D1_fixtures$d1_0_2 + D1_fixtures$d1_1_2 + D1_fixtures$d1_0_3 + D1_fixtures$d1_1_3 +
+    D1_fixtures$d1_2_3 + D1_fixtures$d1_0_4 + D1_fixtures$d1_1_4 + D1_fixtures$d1_2_4 + D1_fixtures$d1_3_4 +
+    D1_fixtures$d1_0_5 +D1_fixtures$d1_1_5 + D1_fixtures$d1_2_5 + D1_fixtures$d1_3_5 + D1_fixtures$d1_4_5 +
+    D1_fixtures$d1_0_6 + D1_fixtures$d1_1_6 + D1_fixtures$d1_2_6 + D1_fixtures$d1_3_6 + D1_fixtures$d1_4_6 +
+    D1_fixtures$d1_5_6 + D1_fixtures$d1_0_0 + D1_fixtures$d1_1_1 + D1_fixtures$d1_2_2 + D1_fixtures$d1_3_3 +
+    D1_fixtures$d1_4_4 + D1_fixtures$d1_5_5 + D1_fixtures$d1_6_6
+)
+
+#odds
+D1_fixtures$d1_AH_0_H_odds <- round((1/D1_fixtures$d1_AH_0_H),digits = 2)
+D1_fixtures$d1_AH_0_A_odds <- round((1/D1_fixtures$d1_AH_0_A),digits = 2)
+
+D1_fixtures$d1_AH_0_H_odds
+D1_fixtures$d1_AH_0_A_odds
+#percentages
+D1_fixtures$d1_AH_0_H <- percent(D1_fixtures$d1_AH_0_H, accuracy = 0.1)
+D1_fixtures$d1_AH_0_A <- percent(D1_fixtures$d1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+D1_fixtures$d1_AH_n075_H <- (
+  D1_fixtures$d1_1_0 + D1_fixtures$d1_2_0 + D1_fixtures$d1_2_1 + D1_fixtures$d1_3_0 + D1_fixtures$d1_3_1 +
+    D1_fixtures$d1_3_2 + D1_fixtures$d1_4_0 + D1_fixtures$d1_4_1 + D1_fixtures$d1_4_2 + D1_fixtures$d1_4_3 +
+    D1_fixtures$d1_5_0 +D1_fixtures$d1_5_1 + D1_fixtures$d1_5_2 + D1_fixtures$d1_5_3 + D1_fixtures$d1_5_4 +
+    D1_fixtures$d1_6_0 + D1_fixtures$d1_6_1 + D1_fixtures$d1_6_2 + D1_fixtures$d1_6_3 + D1_fixtures$d1_6_4 +
+    D1_fixtures$d1_6_5
+)
+#AH_n075_A
+D1_fixtures$d1_AH_n075_A <- (
+  D1_fixtures$d1_0_1 + D1_fixtures$d1_0_2 + D1_fixtures$d1_1_2 + D1_fixtures$d1_0_3 + D1_fixtures$d1_1_3 +
+    D1_fixtures$d1_2_3 + D1_fixtures$d1_0_4 + D1_fixtures$d1_1_4 + D1_fixtures$d1_2_4 + D1_fixtures$d1_3_4 +
+    D1_fixtures$d1_0_5 +D1_fixtures$d1_1_5 + D1_fixtures$d1_2_5 + D1_fixtures$d1_3_5 + D1_fixtures$d1_4_5 +
+    D1_fixtures$d1_0_6 + D1_fixtures$d1_1_6 + D1_fixtures$d1_2_6 + D1_fixtures$d1_3_6 + D1_fixtures$d1_4_6 +
+    D1_fixtures$d1_5_6
+)
+
+#odds
+D1_fixtures$d1_AH_n075_H_odds <- round((1/D1_fixtures$d1_AH_n075_H),digits = 2)
+D1_fixtures$d1_AH_n075_A_odds <- round((1/D1_fixtures$d1_AH_n075_A),digits = 2)
+
+D1_fixtures$d1_AH_n075_H_odds
+D1_fixtures$d1_AH_n075_A_odds
+#percentages
+D1_fixtures$d1_AH_n075_H <- percent(D1_fixtures$d1_AH_n075_H, accuracy = 0.1)
+D1_fixtures$d1_AH_n075_A <- percent(D1_fixtures$d1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+D1_fixtures$d1_AH_075_H <- (
+  D1_fixtures$d1_1_0 + D1_fixtures$d1_2_0 + D1_fixtures$d1_2_1 + D1_fixtures$d1_3_0 + D1_fixtures$d1_3_1 +
+    D1_fixtures$d1_3_2 + D1_fixtures$d1_4_0 + D1_fixtures$d1_4_1 + D1_fixtures$d1_4_2 + D1_fixtures$d1_4_3 +
+    D1_fixtures$d1_5_0 +D1_fixtures$d1_5_1 + D1_fixtures$d1_5_2 + D1_fixtures$d1_5_3 + D1_fixtures$d1_5_4 +
+    D1_fixtures$d1_6_0 + D1_fixtures$d1_6_1 + D1_fixtures$d1_6_2 + D1_fixtures$d1_6_3 + D1_fixtures$d1_6_4 +
+    D1_fixtures$d1_6_5 + D1_fixtures$d1_0_0 + D1_fixtures$d1_1_1 + D1_fixtures$d1_2_2 + D1_fixtures$d1_3_3 +
+    D1_fixtures$d1_4_4 + D1_fixtures$d1_5_5 + D1_fixtures$d1_6_6 + D1_fixtures$d1_0_1 + D1_fixtures$d1_1_2 +
+    D1_fixtures$d1_2_3 + D1_fixtures$d1_3_4 + D1_fixtures$d1_4_5 + D1_fixtures$d1_5_6
+)
+#AH_075_A
+D1_fixtures$d1_AH_075_A <- (
+  D1_fixtures$d1_0_1 + D1_fixtures$d1_0_2 + D1_fixtures$d1_1_2 + D1_fixtures$d1_0_3 + D1_fixtures$d1_1_3 +
+    D1_fixtures$d1_2_3 + D1_fixtures$d1_0_4 + D1_fixtures$d1_1_4 + D1_fixtures$d1_2_4 + D1_fixtures$d1_3_4 +
+    D1_fixtures$d1_0_5 +D1_fixtures$d1_1_5 + D1_fixtures$d1_2_5 + D1_fixtures$d1_3_5 + D1_fixtures$d1_4_5 +
+    D1_fixtures$d1_0_6 + D1_fixtures$d1_1_6 + D1_fixtures$d1_2_6 + D1_fixtures$d1_3_6 + D1_fixtures$d1_4_6 +
+    D1_fixtures$d1_5_6 + D1_fixtures$d1_0_0 + D1_fixtures$d1_1_1 + D1_fixtures$d1_2_2 + D1_fixtures$d1_3_3 +
+    D1_fixtures$d1_4_4 + D1_fixtures$d1_5_5 + D1_fixtures$d1_6_6 + D1_fixtures$d1_1_0 + D1_fixtures$d1_2_1 +
+    D1_fixtures$d1_3_2 + D1_fixtures$d1_4_3 + D1_fixtures$d1_5_4 + D1_fixtures$d1_6_5
+)
+
+#odds
+D1_fixtures$d1_AH_075_H_odds <- round((1/D1_fixtures$d1_AH_075_H),digits = 2)
+D1_fixtures$d1_AH_075_A_odds <- round((1/D1_fixtures$d1_AH_075_A),digits = 2)
+
+D1_fixtures$d1_AH_075_H_odds
+D1_fixtures$d1_AH_075_A_odds
+#percentages
+D1_fixtures$d1_AH_075_H <- percent(D1_fixtures$d1_AH_075_H, accuracy = 0.1)
+D1_fixtures$d1_AH_075_A <- percent(D1_fixtures$d1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+D1_fixtures$d1_AH_n125_H <- (
+  D1_fixtures$d1_1_0 + D1_fixtures$d1_2_0 + D1_fixtures$d1_2_1 + D1_fixtures$d1_3_0 + D1_fixtures$d1_3_1 +
+    D1_fixtures$d1_3_2 + D1_fixtures$d1_4_0 + D1_fixtures$d1_4_1 + D1_fixtures$d1_4_2 + D1_fixtures$d1_4_3 +
+    D1_fixtures$d1_5_0 +D1_fixtures$d1_5_1 + D1_fixtures$d1_5_2 + D1_fixtures$d1_5_3 + D1_fixtures$d1_5_4 +
+    D1_fixtures$d1_6_0 + D1_fixtures$d1_6_1 + D1_fixtures$d1_6_2 + D1_fixtures$d1_6_3 + D1_fixtures$d1_6_4 +
+    D1_fixtures$d1_6_5
+)
+#AH_n125_A
+D1_fixtures$d1_AH_n125_A <- (
+  D1_fixtures$d1_0_1 + D1_fixtures$d1_0_2 + D1_fixtures$d1_1_2 + D1_fixtures$d1_0_3 + D1_fixtures$d1_1_3 +
+    D1_fixtures$d1_2_3 + D1_fixtures$d1_0_4 + D1_fixtures$d1_1_4 + D1_fixtures$d1_2_4 + D1_fixtures$d1_3_4 +
+    D1_fixtures$d1_0_5 +D1_fixtures$d1_1_5 + D1_fixtures$d1_2_5 + D1_fixtures$d1_3_5 + D1_fixtures$d1_4_5 +
+    D1_fixtures$d1_0_6 + D1_fixtures$d1_1_6 + D1_fixtures$d1_2_6 + D1_fixtures$d1_3_6 + D1_fixtures$d1_4_6 +
+    D1_fixtures$d1_5_6
+)
+
+#odds
+D1_fixtures$d1_AH_n125_H_odds <- round((1/D1_fixtures$d1_AH_n125_H),digits = 2)
+D1_fixtures$d1_AH_n125_A_odds <- round((1/D1_fixtures$d1_AH_n125_A),digits = 2)
+
+D1_fixtures$d1_AH_n125_H_odds
+D1_fixtures$d1_AH_n125_A_odds
+#percentages
+D1_fixtures$d1_AH_n125_H <- percent(D1_fixtures$d1_AH_n125_H, accuracy = 0.1)
+D1_fixtures$d1_AH_n125_A <- percent(D1_fixtures$d1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+D1_fixtures$d1_AH_125_H <- (
+  D1_fixtures$d1_1_0 + D1_fixtures$d1_2_0 + D1_fixtures$d1_2_1 + D1_fixtures$d1_3_0 + D1_fixtures$d1_3_1 +
+    D1_fixtures$d1_3_2 + D1_fixtures$d1_4_0 + D1_fixtures$d1_4_1 + D1_fixtures$d1_4_2 + D1_fixtures$d1_4_3 +
+    D1_fixtures$d1_5_0 +D1_fixtures$d1_5_1 + D1_fixtures$d1_5_2 + D1_fixtures$d1_5_3 + D1_fixtures$d1_5_4 +
+    D1_fixtures$d1_6_0 + D1_fixtures$d1_6_1 + D1_fixtures$d1_6_2 + D1_fixtures$d1_6_3 + D1_fixtures$d1_6_4 +
+    D1_fixtures$d1_6_5 + D1_fixtures$d1_0_0 + D1_fixtures$d1_1_1 + D1_fixtures$d1_2_2 + D1_fixtures$d1_3_3 +
+    D1_fixtures$d1_4_4 + D1_fixtures$d1_5_5 + D1_fixtures$d1_6_6 + D1_fixtures$d1_0_1 + D1_fixtures$d1_1_2 +
+    D1_fixtures$d1_2_3 + D1_fixtures$d1_3_4 + D1_fixtures$d1_4_5 + D1_fixtures$d1_5_6
+)
+#AH_125_A
+D1_fixtures$d1_AH_125_A <- (
+  D1_fixtures$d1_0_1 + D1_fixtures$d1_0_2 + D1_fixtures$d1_1_2 + D1_fixtures$d1_0_3 + D1_fixtures$d1_1_3 +
+    D1_fixtures$d1_2_3 + D1_fixtures$d1_0_4 + D1_fixtures$d1_1_4 + D1_fixtures$d1_2_4 + D1_fixtures$d1_3_4 +
+    D1_fixtures$d1_0_5 +D1_fixtures$d1_1_5 + D1_fixtures$d1_2_5 + D1_fixtures$d1_3_5 + D1_fixtures$d1_4_5 +
+    D1_fixtures$d1_0_6 + D1_fixtures$d1_1_6 + D1_fixtures$d1_2_6 + D1_fixtures$d1_3_6 + D1_fixtures$d1_4_6 +
+    D1_fixtures$d1_5_6 + D1_fixtures$d1_0_0 + D1_fixtures$d1_1_1 + D1_fixtures$d1_2_2 + D1_fixtures$d1_3_3 +
+    D1_fixtures$d1_4_4 + D1_fixtures$d1_5_5 + D1_fixtures$d1_6_6 + D1_fixtures$d1_1_0 + D1_fixtures$d1_2_1 +
+    D1_fixtures$d1_3_2 + D1_fixtures$d1_4_3 + D1_fixtures$d1_5_4 + D1_fixtures$d1_6_5
+)
+
+#odds
+D1_fixtures$d1_AH_125_H_odds <- round((1/D1_fixtures$d1_AH_125_H),digits = 2)
+D1_fixtures$d1_AH_125_A_odds <- round((1/D1_fixtures$d1_AH_125_A),digits = 2)
+
+D1_fixtures$d1_AH_125_H_odds
+D1_fixtures$d1_AH_125_A_odds
+#percentages
+D1_fixtures$d1_AH_125_H <- percent(D1_fixtures$d1_AH_125_H, accuracy = 0.1)
+D1_fixtures$d1_AH_125_A <- percent(D1_fixtures$d1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 D1_fixtures$d1_ov25 <- percent(D1_fixtures$d1_ov25, accuracy = 0.1)
 
@@ -476,6 +788,162 @@ D2_fixtures$d2_un25_odds <- round((1/D2_fixtures$d2_un25),digits = 2)
 
 D2_fixtures$d2_ov25_odds
 D2_fixtures$d2_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+D2_fixtures$d2_AH_0_H <- (
+  D2_fixtures$d2_1_0 + D2_fixtures$d2_2_0 + D2_fixtures$d2_2_1 + D2_fixtures$d2_3_0 + D2_fixtures$d2_3_1 +
+    D2_fixtures$d2_3_2 + D2_fixtures$d2_4_0 + D2_fixtures$d2_4_1 + D2_fixtures$d2_4_2 + D2_fixtures$d2_4_3 +
+    D2_fixtures$d2_5_0 +D2_fixtures$d2_5_1 + D2_fixtures$d2_5_2 + D2_fixtures$d2_5_3 + D2_fixtures$d2_5_4 +
+    D2_fixtures$d2_6_0 + D2_fixtures$d2_6_1 + D2_fixtures$d2_6_2 + D2_fixtures$d2_6_3 + D2_fixtures$d2_6_4 +
+    D2_fixtures$d2_6_5 + D2_fixtures$d2_0_0 + D2_fixtures$d2_1_1 + D2_fixtures$d2_2_2 + D2_fixtures$d2_3_3 +
+    D2_fixtures$d2_4_4 + D2_fixtures$d2_5_5 + D2_fixtures$d2_6_6
+)
+#AH_0_A
+D2_fixtures$d2_AH_0_A <- (
+  D2_fixtures$d2_0_1 + D2_fixtures$d2_0_2 + D2_fixtures$d2_1_2 + D2_fixtures$d2_0_3 + D2_fixtures$d2_1_3 +
+    D2_fixtures$d2_2_3 + D2_fixtures$d2_0_4 + D2_fixtures$d2_1_4 + D2_fixtures$d2_2_4 + D2_fixtures$d2_3_4 +
+    D2_fixtures$d2_0_5 +D2_fixtures$d2_1_5 + D2_fixtures$d2_2_5 + D2_fixtures$d2_3_5 + D2_fixtures$d2_4_5 +
+    D2_fixtures$d2_0_6 + D2_fixtures$d2_1_6 + D2_fixtures$d2_2_6 + D2_fixtures$d2_3_6 + D2_fixtures$d2_4_6 +
+    D2_fixtures$d2_5_6 + D2_fixtures$d2_0_0 + D2_fixtures$d2_1_1 + D2_fixtures$d2_2_2 + D2_fixtures$d2_3_3 +
+    D2_fixtures$d2_4_4 + D2_fixtures$d2_5_5 + D2_fixtures$d2_6_6
+)
+
+#odds
+D2_fixtures$d2_AH_0_H_odds <- round((1/D2_fixtures$d2_AH_0_H),digits = 2)
+D2_fixtures$d2_AH_0_A_odds <- round((1/D2_fixtures$d2_AH_0_A),digits = 2)
+
+D2_fixtures$d2_AH_0_H_odds
+D2_fixtures$d2_AH_0_A_odds
+#percentages
+D2_fixtures$d2_AH_0_H <- percent(D2_fixtures$d2_AH_0_H, accuracy = 0.1)
+D2_fixtures$d2_AH_0_A <- percent(D2_fixtures$d2_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+D2_fixtures$d2_AH_n075_H <- (
+  D2_fixtures$d2_1_0 + D2_fixtures$d2_2_0 + D2_fixtures$d2_2_1 + D2_fixtures$d2_3_0 + D2_fixtures$d2_3_1 +
+    D2_fixtures$d2_3_2 + D2_fixtures$d2_4_0 + D2_fixtures$d2_4_1 + D2_fixtures$d2_4_2 + D2_fixtures$d2_4_3 +
+    D2_fixtures$d2_5_0 +D2_fixtures$d2_5_1 + D2_fixtures$d2_5_2 + D2_fixtures$d2_5_3 + D2_fixtures$d2_5_4 +
+    D2_fixtures$d2_6_0 + D2_fixtures$d2_6_1 + D2_fixtures$d2_6_2 + D2_fixtures$d2_6_3 + D2_fixtures$d2_6_4 +
+    D2_fixtures$d2_6_5
+)
+#AH_n075_A
+D2_fixtures$d2_AH_n075_A <- (
+  D2_fixtures$d2_0_1 + D2_fixtures$d2_0_2 + D2_fixtures$d2_1_2 + D2_fixtures$d2_0_3 + D2_fixtures$d2_1_3 +
+    D2_fixtures$d2_2_3 + D2_fixtures$d2_0_4 + D2_fixtures$d2_1_4 + D2_fixtures$d2_2_4 + D2_fixtures$d2_3_4 +
+    D2_fixtures$d2_0_5 +D2_fixtures$d2_1_5 + D2_fixtures$d2_2_5 + D2_fixtures$d2_3_5 + D2_fixtures$d2_4_5 +
+    D2_fixtures$d2_0_6 + D2_fixtures$d2_1_6 + D2_fixtures$d2_2_6 + D2_fixtures$d2_3_6 + D2_fixtures$d2_4_6 +
+    D2_fixtures$d2_5_6
+)
+
+#odds
+D2_fixtures$d2_AH_n075_H_odds <- round((1/D2_fixtures$d2_AH_n075_H),digits = 2)
+D2_fixtures$d2_AH_n075_A_odds <- round((1/D2_fixtures$d2_AH_n075_A),digits = 2)
+
+D2_fixtures$d2_AH_n075_H_odds
+D2_fixtures$d2_AH_n075_A_odds
+#percentages
+D2_fixtures$d2_AH_n075_H <- percent(D2_fixtures$d2_AH_n075_H, accuracy = 0.1)
+D2_fixtures$d2_AH_n075_A <- percent(D2_fixtures$d2_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+D2_fixtures$d2_AH_075_H <- (
+  D2_fixtures$d2_1_0 + D2_fixtures$d2_2_0 + D2_fixtures$d2_2_1 + D2_fixtures$d2_3_0 + D2_fixtures$d2_3_1 +
+    D2_fixtures$d2_3_2 + D2_fixtures$d2_4_0 + D2_fixtures$d2_4_1 + D2_fixtures$d2_4_2 + D2_fixtures$d2_4_3 +
+    D2_fixtures$d2_5_0 +D2_fixtures$d2_5_1 + D2_fixtures$d2_5_2 + D2_fixtures$d2_5_3 + D2_fixtures$d2_5_4 +
+    D2_fixtures$d2_6_0 + D2_fixtures$d2_6_1 + D2_fixtures$d2_6_2 + D2_fixtures$d2_6_3 + D2_fixtures$d2_6_4 +
+    D2_fixtures$d2_6_5 + D2_fixtures$d2_0_0 + D2_fixtures$d2_1_1 + D2_fixtures$d2_2_2 + D2_fixtures$d2_3_3 +
+    D2_fixtures$d2_4_4 + D2_fixtures$d2_5_5 + D2_fixtures$d2_6_6 + D2_fixtures$d2_0_1 + D2_fixtures$d2_1_2 +
+    D2_fixtures$d2_2_3 + D2_fixtures$d2_3_4 + D2_fixtures$d2_4_5 + D2_fixtures$d2_5_6
+)
+#AH_075_A
+D2_fixtures$d2_AH_075_A <- (
+  D2_fixtures$d2_0_1 + D2_fixtures$d2_0_2 + D2_fixtures$d2_1_2 + D2_fixtures$d2_0_3 + D2_fixtures$d2_1_3 +
+    D2_fixtures$d2_2_3 + D2_fixtures$d2_0_4 + D2_fixtures$d2_1_4 + D2_fixtures$d2_2_4 + D2_fixtures$d2_3_4 +
+    D2_fixtures$d2_0_5 +D2_fixtures$d2_1_5 + D2_fixtures$d2_2_5 + D2_fixtures$d2_3_5 + D2_fixtures$d2_4_5 +
+    D2_fixtures$d2_0_6 + D2_fixtures$d2_1_6 + D2_fixtures$d2_2_6 + D2_fixtures$d2_3_6 + D2_fixtures$d2_4_6 +
+    D2_fixtures$d2_5_6 + D2_fixtures$d2_0_0 + D2_fixtures$d2_1_1 + D2_fixtures$d2_2_2 + D2_fixtures$d2_3_3 +
+    D2_fixtures$d2_4_4 + D2_fixtures$d2_5_5 + D2_fixtures$d2_6_6 + D2_fixtures$d2_1_0 + D2_fixtures$d2_2_1 +
+    D2_fixtures$d2_3_2 + D2_fixtures$d2_4_3 + D2_fixtures$d2_5_4 + D2_fixtures$d2_6_5
+)
+
+#odds
+D2_fixtures$d2_AH_075_H_odds <- round((1/D2_fixtures$d2_AH_075_H),digits = 2)
+D2_fixtures$d2_AH_075_A_odds <- round((1/D2_fixtures$d2_AH_075_A),digits = 2)
+
+D2_fixtures$d2_AH_075_H_odds
+D2_fixtures$d2_AH_075_A_odds
+#percentages
+D2_fixtures$d2_AH_075_H <- percent(D2_fixtures$d2_AH_075_H, accuracy = 0.1)
+D2_fixtures$d2_AH_075_A <- percent(D2_fixtures$d2_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+D2_fixtures$d2_AH_n125_H <- (
+  D2_fixtures$d2_1_0 + D2_fixtures$d2_2_0 + D2_fixtures$d2_2_1 + D2_fixtures$d2_3_0 + D2_fixtures$d2_3_1 +
+    D2_fixtures$d2_3_2 + D2_fixtures$d2_4_0 + D2_fixtures$d2_4_1 + D2_fixtures$d2_4_2 + D2_fixtures$d2_4_3 +
+    D2_fixtures$d2_5_0 +D2_fixtures$d2_5_1 + D2_fixtures$d2_5_2 + D2_fixtures$d2_5_3 + D2_fixtures$d2_5_4 +
+    D2_fixtures$d2_6_0 + D2_fixtures$d2_6_1 + D2_fixtures$d2_6_2 + D2_fixtures$d2_6_3 + D2_fixtures$d2_6_4 +
+    D2_fixtures$d2_6_5
+)
+#AH_n125_A
+D2_fixtures$d2_AH_n125_A <- (
+  D2_fixtures$d2_0_1 + D2_fixtures$d2_0_2 + D2_fixtures$d2_1_2 + D2_fixtures$d2_0_3 + D2_fixtures$d2_1_3 +
+    D2_fixtures$d2_2_3 + D2_fixtures$d2_0_4 + D2_fixtures$d2_1_4 + D2_fixtures$d2_2_4 + D2_fixtures$d2_3_4 +
+    D2_fixtures$d2_0_5 +D2_fixtures$d2_1_5 + D2_fixtures$d2_2_5 + D2_fixtures$d2_3_5 + D2_fixtures$d2_4_5 +
+    D2_fixtures$d2_0_6 + D2_fixtures$d2_1_6 + D2_fixtures$d2_2_6 + D2_fixtures$d2_3_6 + D2_fixtures$d2_4_6 +
+    D2_fixtures$d2_5_6
+)
+
+#odds
+D2_fixtures$d2_AH_n125_H_odds <- round((1/D2_fixtures$d2_AH_n125_H),digits = 2)
+D2_fixtures$d2_AH_n125_A_odds <- round((1/D2_fixtures$d2_AH_n125_A),digits = 2)
+
+D2_fixtures$d2_AH_n125_H_odds
+D2_fixtures$d2_AH_n125_A_odds
+#percentages
+D2_fixtures$d2_AH_n125_H <- percent(D2_fixtures$d2_AH_n125_H, accuracy = 0.1)
+D2_fixtures$d2_AH_n125_A <- percent(D2_fixtures$d2_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+D2_fixtures$d2_AH_125_H <- (
+  D2_fixtures$d2_1_0 + D2_fixtures$d2_2_0 + D2_fixtures$d2_2_1 + D2_fixtures$d2_3_0 + D2_fixtures$d2_3_1 +
+    D2_fixtures$d2_3_2 + D2_fixtures$d2_4_0 + D2_fixtures$d2_4_1 + D2_fixtures$d2_4_2 + D2_fixtures$d2_4_3 +
+    D2_fixtures$d2_5_0 +D2_fixtures$d2_5_1 + D2_fixtures$d2_5_2 + D2_fixtures$d2_5_3 + D2_fixtures$d2_5_4 +
+    D2_fixtures$d2_6_0 + D2_fixtures$d2_6_1 + D2_fixtures$d2_6_2 + D2_fixtures$d2_6_3 + D2_fixtures$d2_6_4 +
+    D2_fixtures$d2_6_5 + D2_fixtures$d2_0_0 + D2_fixtures$d2_1_1 + D2_fixtures$d2_2_2 + D2_fixtures$d2_3_3 +
+    D2_fixtures$d2_4_4 + D2_fixtures$d2_5_5 + D2_fixtures$d2_6_6 + D2_fixtures$d2_0_1 + D2_fixtures$d2_1_2 +
+    D2_fixtures$d2_2_3 + D2_fixtures$d2_3_4 + D2_fixtures$d2_4_5 + D2_fixtures$d2_5_6
+)
+#AH_125_A
+D2_fixtures$d2_AH_125_A <- (
+  D2_fixtures$d2_0_1 + D2_fixtures$d2_0_2 + D2_fixtures$d2_1_2 + D2_fixtures$d2_0_3 + D2_fixtures$d2_1_3 +
+    D2_fixtures$d2_2_3 + D2_fixtures$d2_0_4 + D2_fixtures$d2_1_4 + D2_fixtures$d2_2_4 + D2_fixtures$d2_3_4 +
+    D2_fixtures$d2_0_5 +D2_fixtures$d2_1_5 + D2_fixtures$d2_2_5 + D2_fixtures$d2_3_5 + D2_fixtures$d2_4_5 +
+    D2_fixtures$d2_0_6 + D2_fixtures$d2_1_6 + D2_fixtures$d2_2_6 + D2_fixtures$d2_3_6 + D2_fixtures$d2_4_6 +
+    D2_fixtures$d2_5_6 + D2_fixtures$d2_0_0 + D2_fixtures$d2_1_1 + D2_fixtures$d2_2_2 + D2_fixtures$d2_3_3 +
+    D2_fixtures$d2_4_4 + D2_fixtures$d2_5_5 + D2_fixtures$d2_6_6 + D2_fixtures$d2_1_0 + D2_fixtures$d2_2_1 +
+    D2_fixtures$d2_3_2 + D2_fixtures$d2_4_3 + D2_fixtures$d2_5_4 + D2_fixtures$d2_6_5
+)
+
+#odds
+D2_fixtures$d2_AH_125_H_odds <- round((1/D2_fixtures$d2_AH_125_H),digits = 2)
+D2_fixtures$d2_AH_125_A_odds <- round((1/D2_fixtures$d2_AH_125_A),digits = 2)
+
+D2_fixtures$d2_AH_125_H_odds
+D2_fixtures$d2_AH_125_A_odds
+#percentages
+D2_fixtures$d2_AH_125_H <- percent(D2_fixtures$d2_AH_125_H, accuracy = 0.1)
+D2_fixtures$d2_AH_125_A <- percent(D2_fixtures$d2_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 D2_fixtures$d2_ov25 <- percent(D2_fixtures$d2_ov25, accuracy = 0.1)
 
@@ -634,6 +1102,162 @@ E0_fixtures$e0_un25_odds <- round((1/E0_fixtures$e0_un25),digits = 2)
 
 E0_fixtures$e0_ov25_odds
 E0_fixtures$e0_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+E0_fixtures$e0_AH_0_H <- (
+  E0_fixtures$e0_1_0 + E0_fixtures$e0_2_0 + E0_fixtures$e0_2_1 + E0_fixtures$e0_3_0 + E0_fixtures$e0_3_1 +
+    E0_fixtures$e0_3_2 + E0_fixtures$e0_4_0 + E0_fixtures$e0_4_1 + E0_fixtures$e0_4_2 + E0_fixtures$e0_4_3 +
+    E0_fixtures$e0_5_0 +E0_fixtures$e0_5_1 + E0_fixtures$e0_5_2 + E0_fixtures$e0_5_3 + E0_fixtures$e0_5_4 +
+    E0_fixtures$e0_6_0 + E0_fixtures$e0_6_1 + E0_fixtures$e0_6_2 + E0_fixtures$e0_6_3 + E0_fixtures$e0_6_4 +
+    E0_fixtures$e0_6_5 + E0_fixtures$e0_0_0 + E0_fixtures$e0_1_1 + E0_fixtures$e0_2_2 + E0_fixtures$e0_3_3 +
+    E0_fixtures$e0_4_4 + E0_fixtures$e0_5_5 + E0_fixtures$e0_6_6
+)
+#AH_0_A
+E0_fixtures$e0_AH_0_A <- (
+  E0_fixtures$e0_0_1 + E0_fixtures$e0_0_2 + E0_fixtures$e0_1_2 + E0_fixtures$e0_0_3 + E0_fixtures$e0_1_3 +
+    E0_fixtures$e0_2_3 + E0_fixtures$e0_0_4 + E0_fixtures$e0_1_4 + E0_fixtures$e0_2_4 + E0_fixtures$e0_3_4 +
+    E0_fixtures$e0_0_5 +E0_fixtures$e0_1_5 + E0_fixtures$e0_2_5 + E0_fixtures$e0_3_5 + E0_fixtures$e0_4_5 +
+    E0_fixtures$e0_0_6 + E0_fixtures$e0_1_6 + E0_fixtures$e0_2_6 + E0_fixtures$e0_3_6 + E0_fixtures$e0_4_6 +
+    E0_fixtures$e0_5_6 + E0_fixtures$e0_0_0 + E0_fixtures$e0_1_1 + E0_fixtures$e0_2_2 + E0_fixtures$e0_3_3 +
+    E0_fixtures$e0_4_4 + E0_fixtures$e0_5_5 + E0_fixtures$e0_6_6
+)
+
+#odds
+E0_fixtures$e0_AH_0_H_odds <- round((1/E0_fixtures$e0_AH_0_H),digits = 2)
+E0_fixtures$e0_AH_0_A_odds <- round((1/E0_fixtures$e0_AH_0_A),digits = 2)
+
+E0_fixtures$e0_AH_0_H_odds
+E0_fixtures$e0_AH_0_A_odds
+#percentages
+E0_fixtures$e0_AH_0_H <- percent(E0_fixtures$e0_AH_0_H, accuracy = 0.1)
+E0_fixtures$e0_AH_0_A <- percent(E0_fixtures$e0_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+E0_fixtures$e0_AH_n075_H <- (
+  E0_fixtures$e0_1_0 + E0_fixtures$e0_2_0 + E0_fixtures$e0_2_1 + E0_fixtures$e0_3_0 + E0_fixtures$e0_3_1 +
+    E0_fixtures$e0_3_2 + E0_fixtures$e0_4_0 + E0_fixtures$e0_4_1 + E0_fixtures$e0_4_2 + E0_fixtures$e0_4_3 +
+    E0_fixtures$e0_5_0 +E0_fixtures$e0_5_1 + E0_fixtures$e0_5_2 + E0_fixtures$e0_5_3 + E0_fixtures$e0_5_4 +
+    E0_fixtures$e0_6_0 + E0_fixtures$e0_6_1 + E0_fixtures$e0_6_2 + E0_fixtures$e0_6_3 + E0_fixtures$e0_6_4 +
+    E0_fixtures$e0_6_5
+)
+#AH_n075_A
+E0_fixtures$e0_AH_n075_A <- (
+  E0_fixtures$e0_0_1 + E0_fixtures$e0_0_2 + E0_fixtures$e0_1_2 + E0_fixtures$e0_0_3 + E0_fixtures$e0_1_3 +
+    E0_fixtures$e0_2_3 + E0_fixtures$e0_0_4 + E0_fixtures$e0_1_4 + E0_fixtures$e0_2_4 + E0_fixtures$e0_3_4 +
+    E0_fixtures$e0_0_5 +E0_fixtures$e0_1_5 + E0_fixtures$e0_2_5 + E0_fixtures$e0_3_5 + E0_fixtures$e0_4_5 +
+    E0_fixtures$e0_0_6 + E0_fixtures$e0_1_6 + E0_fixtures$e0_2_6 + E0_fixtures$e0_3_6 + E0_fixtures$e0_4_6 +
+    E0_fixtures$e0_5_6
+)
+
+#odds
+E0_fixtures$e0_AH_n075_H_odds <- round((1/E0_fixtures$e0_AH_n075_H),digits = 2)
+E0_fixtures$e0_AH_n075_A_odds <- round((1/E0_fixtures$e0_AH_n075_A),digits = 2)
+
+E0_fixtures$e0_AH_n075_H_odds
+E0_fixtures$e0_AH_n075_A_odds
+#percentages
+E0_fixtures$e0_AH_n075_H <- percent(E0_fixtures$e0_AH_n075_H, accuracy = 0.1)
+E0_fixtures$e0_AH_n075_A <- percent(E0_fixtures$e0_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+E0_fixtures$e0_AH_075_H <- (
+  E0_fixtures$e0_1_0 + E0_fixtures$e0_2_0 + E0_fixtures$e0_2_1 + E0_fixtures$e0_3_0 + E0_fixtures$e0_3_1 +
+    E0_fixtures$e0_3_2 + E0_fixtures$e0_4_0 + E0_fixtures$e0_4_1 + E0_fixtures$e0_4_2 + E0_fixtures$e0_4_3 +
+    E0_fixtures$e0_5_0 +E0_fixtures$e0_5_1 + E0_fixtures$e0_5_2 + E0_fixtures$e0_5_3 + E0_fixtures$e0_5_4 +
+    E0_fixtures$e0_6_0 + E0_fixtures$e0_6_1 + E0_fixtures$e0_6_2 + E0_fixtures$e0_6_3 + E0_fixtures$e0_6_4 +
+    E0_fixtures$e0_6_5 + E0_fixtures$e0_0_0 + E0_fixtures$e0_1_1 + E0_fixtures$e0_2_2 + E0_fixtures$e0_3_3 +
+    E0_fixtures$e0_4_4 + E0_fixtures$e0_5_5 + E0_fixtures$e0_6_6 + E0_fixtures$e0_0_1 + E0_fixtures$e0_1_2 +
+    E0_fixtures$e0_2_3 + E0_fixtures$e0_3_4 + E0_fixtures$e0_4_5 + E0_fixtures$e0_5_6
+)
+#AH_075_A
+E0_fixtures$e0_AH_075_A <- (
+  E0_fixtures$e0_0_1 + E0_fixtures$e0_0_2 + E0_fixtures$e0_1_2 + E0_fixtures$e0_0_3 + E0_fixtures$e0_1_3 +
+    E0_fixtures$e0_2_3 + E0_fixtures$e0_0_4 + E0_fixtures$e0_1_4 + E0_fixtures$e0_2_4 + E0_fixtures$e0_3_4 +
+    E0_fixtures$e0_0_5 +E0_fixtures$e0_1_5 + E0_fixtures$e0_2_5 + E0_fixtures$e0_3_5 + E0_fixtures$e0_4_5 +
+    E0_fixtures$e0_0_6 + E0_fixtures$e0_1_6 + E0_fixtures$e0_2_6 + E0_fixtures$e0_3_6 + E0_fixtures$e0_4_6 +
+    E0_fixtures$e0_5_6 + E0_fixtures$e0_0_0 + E0_fixtures$e0_1_1 + E0_fixtures$e0_2_2 + E0_fixtures$e0_3_3 +
+    E0_fixtures$e0_4_4 + E0_fixtures$e0_5_5 + E0_fixtures$e0_6_6 + E0_fixtures$e0_1_0 + E0_fixtures$e0_2_1 +
+    E0_fixtures$e0_3_2 + E0_fixtures$e0_4_3 + E0_fixtures$e0_5_4 + E0_fixtures$e0_6_5
+)
+
+#odds
+E0_fixtures$e0_AH_075_H_odds <- round((1/E0_fixtures$e0_AH_075_H),digits = 2)
+E0_fixtures$e0_AH_075_A_odds <- round((1/E0_fixtures$e0_AH_075_A),digits = 2)
+
+E0_fixtures$e0_AH_075_H_odds
+E0_fixtures$e0_AH_075_A_odds
+#percentages
+E0_fixtures$e0_AH_075_H <- percent(E0_fixtures$e0_AH_075_H, accuracy = 0.1)
+E0_fixtures$e0_AH_075_A <- percent(E0_fixtures$e0_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+E0_fixtures$e0_AH_n125_H <- (
+  E0_fixtures$e0_1_0 + E0_fixtures$e0_2_0 + E0_fixtures$e0_2_1 + E0_fixtures$e0_3_0 + E0_fixtures$e0_3_1 +
+    E0_fixtures$e0_3_2 + E0_fixtures$e0_4_0 + E0_fixtures$e0_4_1 + E0_fixtures$e0_4_2 + E0_fixtures$e0_4_3 +
+    E0_fixtures$e0_5_0 +E0_fixtures$e0_5_1 + E0_fixtures$e0_5_2 + E0_fixtures$e0_5_3 + E0_fixtures$e0_5_4 +
+    E0_fixtures$e0_6_0 + E0_fixtures$e0_6_1 + E0_fixtures$e0_6_2 + E0_fixtures$e0_6_3 + E0_fixtures$e0_6_4 +
+    E0_fixtures$e0_6_5
+)
+#AH_n125_A
+E0_fixtures$e0_AH_n125_A <- (
+  E0_fixtures$e0_0_1 + E0_fixtures$e0_0_2 + E0_fixtures$e0_1_2 + E0_fixtures$e0_0_3 + E0_fixtures$e0_1_3 +
+    E0_fixtures$e0_2_3 + E0_fixtures$e0_0_4 + E0_fixtures$e0_1_4 + E0_fixtures$e0_2_4 + E0_fixtures$e0_3_4 +
+    E0_fixtures$e0_0_5 +E0_fixtures$e0_1_5 + E0_fixtures$e0_2_5 + E0_fixtures$e0_3_5 + E0_fixtures$e0_4_5 +
+    E0_fixtures$e0_0_6 + E0_fixtures$e0_1_6 + E0_fixtures$e0_2_6 + E0_fixtures$e0_3_6 + E0_fixtures$e0_4_6 +
+    E0_fixtures$e0_5_6
+)
+
+#odds
+E0_fixtures$e0_AH_n125_H_odds <- round((1/E0_fixtures$e0_AH_n125_H),digits = 2)
+E0_fixtures$e0_AH_n125_A_odds <- round((1/E0_fixtures$e0_AH_n125_A),digits = 2)
+
+E0_fixtures$e0_AH_n125_H_odds
+E0_fixtures$e0_AH_n125_A_odds
+#percentages
+E0_fixtures$e0_AH_n125_H <- percent(E0_fixtures$e0_AH_n125_H, accuracy = 0.1)
+E0_fixtures$e0_AH_n125_A <- percent(E0_fixtures$e0_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+E0_fixtures$e0_AH_125_H <- (
+  E0_fixtures$e0_1_0 + E0_fixtures$e0_2_0 + E0_fixtures$e0_2_1 + E0_fixtures$e0_3_0 + E0_fixtures$e0_3_1 +
+    E0_fixtures$e0_3_2 + E0_fixtures$e0_4_0 + E0_fixtures$e0_4_1 + E0_fixtures$e0_4_2 + E0_fixtures$e0_4_3 +
+    E0_fixtures$e0_5_0 +E0_fixtures$e0_5_1 + E0_fixtures$e0_5_2 + E0_fixtures$e0_5_3 + E0_fixtures$e0_5_4 +
+    E0_fixtures$e0_6_0 + E0_fixtures$e0_6_1 + E0_fixtures$e0_6_2 + E0_fixtures$e0_6_3 + E0_fixtures$e0_6_4 +
+    E0_fixtures$e0_6_5 + E0_fixtures$e0_0_0 + E0_fixtures$e0_1_1 + E0_fixtures$e0_2_2 + E0_fixtures$e0_3_3 +
+    E0_fixtures$e0_4_4 + E0_fixtures$e0_5_5 + E0_fixtures$e0_6_6 + E0_fixtures$e0_0_1 + E0_fixtures$e0_1_2 +
+    E0_fixtures$e0_2_3 + E0_fixtures$e0_3_4 + E0_fixtures$e0_4_5 + E0_fixtures$e0_5_6
+)
+#AH_125_A
+E0_fixtures$e0_AH_125_A <- (
+  E0_fixtures$e0_0_1 + E0_fixtures$e0_0_2 + E0_fixtures$e0_1_2 + E0_fixtures$e0_0_3 + E0_fixtures$e0_1_3 +
+    E0_fixtures$e0_2_3 + E0_fixtures$e0_0_4 + E0_fixtures$e0_1_4 + E0_fixtures$e0_2_4 + E0_fixtures$e0_3_4 +
+    E0_fixtures$e0_0_5 +E0_fixtures$e0_1_5 + E0_fixtures$e0_2_5 + E0_fixtures$e0_3_5 + E0_fixtures$e0_4_5 +
+    E0_fixtures$e0_0_6 + E0_fixtures$e0_1_6 + E0_fixtures$e0_2_6 + E0_fixtures$e0_3_6 + E0_fixtures$e0_4_6 +
+    E0_fixtures$e0_5_6 + E0_fixtures$e0_0_0 + E0_fixtures$e0_1_1 + E0_fixtures$e0_2_2 + E0_fixtures$e0_3_3 +
+    E0_fixtures$e0_4_4 + E0_fixtures$e0_5_5 + E0_fixtures$e0_6_6 + E0_fixtures$e0_1_0 + E0_fixtures$e0_2_1 +
+    E0_fixtures$e0_3_2 + E0_fixtures$e0_4_3 + E0_fixtures$e0_5_4 + E0_fixtures$e0_6_5
+)
+
+#odds
+E0_fixtures$e0_AH_125_H_odds <- round((1/E0_fixtures$e0_AH_125_H),digits = 2)
+E0_fixtures$e0_AH_125_A_odds <- round((1/E0_fixtures$e0_AH_125_A),digits = 2)
+
+E0_fixtures$e0_AH_125_H_odds
+E0_fixtures$e0_AH_125_A_odds
+#percentages
+E0_fixtures$e0_AH_125_H <- percent(E0_fixtures$e0_AH_125_H, accuracy = 0.1)
+E0_fixtures$e0_AH_125_A <- percent(E0_fixtures$e0_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 E0_fixtures$e0_ov25 <- percent(E0_fixtures$e0_ov25, accuracy = 0.1)
 
@@ -792,6 +1416,162 @@ E1_fixtures$e1_un25_odds <- round((1/E1_fixtures$e1_un25),digits = 2)
 
 E1_fixtures$e1_ov25_odds
 E1_fixtures$e1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+E1_fixtures$e1_AH_0_H <- (
+  E1_fixtures$e1_1_0 + E1_fixtures$e1_2_0 + E1_fixtures$e1_2_1 + E1_fixtures$e1_3_0 + E1_fixtures$e1_3_1 +
+    E1_fixtures$e1_3_2 + E1_fixtures$e1_4_0 + E1_fixtures$e1_4_1 + E1_fixtures$e1_4_2 + E1_fixtures$e1_4_3 +
+    E1_fixtures$e1_5_0 +E1_fixtures$e1_5_1 + E1_fixtures$e1_5_2 + E1_fixtures$e1_5_3 + E1_fixtures$e1_5_4 +
+    E1_fixtures$e1_6_0 + E1_fixtures$e1_6_1 + E1_fixtures$e1_6_2 + E1_fixtures$e1_6_3 + E1_fixtures$e1_6_4 +
+    E1_fixtures$e1_6_5 + E1_fixtures$e1_0_0 + E1_fixtures$e1_1_1 + E1_fixtures$e1_2_2 + E1_fixtures$e1_3_3 +
+    E1_fixtures$e1_4_4 + E1_fixtures$e1_5_5 + E1_fixtures$e1_6_6
+)
+#AH_0_A
+E1_fixtures$e1_AH_0_A <- (
+  E1_fixtures$e1_0_1 + E1_fixtures$e1_0_2 + E1_fixtures$e1_1_2 + E1_fixtures$e1_0_3 + E1_fixtures$e1_1_3 +
+    E1_fixtures$e1_2_3 + E1_fixtures$e1_0_4 + E1_fixtures$e1_1_4 + E1_fixtures$e1_2_4 + E1_fixtures$e1_3_4 +
+    E1_fixtures$e1_0_5 +E1_fixtures$e1_1_5 + E1_fixtures$e1_2_5 + E1_fixtures$e1_3_5 + E1_fixtures$e1_4_5 +
+    E1_fixtures$e1_0_6 + E1_fixtures$e1_1_6 + E1_fixtures$e1_2_6 + E1_fixtures$e1_3_6 + E1_fixtures$e1_4_6 +
+    E1_fixtures$e1_5_6 + E1_fixtures$e1_0_0 + E1_fixtures$e1_1_1 + E1_fixtures$e1_2_2 + E1_fixtures$e1_3_3 +
+    E1_fixtures$e1_4_4 + E1_fixtures$e1_5_5 + E1_fixtures$e1_6_6
+)
+
+#odds
+E1_fixtures$e1_AH_0_H_odds <- round((1/E1_fixtures$e1_AH_0_H),digits = 2)
+E1_fixtures$e1_AH_0_A_odds <- round((1/E1_fixtures$e1_AH_0_A),digits = 2)
+
+E1_fixtures$e1_AH_0_H_odds
+E1_fixtures$e1_AH_0_A_odds
+#percentages
+E1_fixtures$e1_AH_0_H <- percent(E1_fixtures$e1_AH_0_H, accuracy = 0.1)
+E1_fixtures$e1_AH_0_A <- percent(E1_fixtures$e1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+E1_fixtures$e1_AH_n075_H <- (
+  E1_fixtures$e1_1_0 + E1_fixtures$e1_2_0 + E1_fixtures$e1_2_1 + E1_fixtures$e1_3_0 + E1_fixtures$e1_3_1 +
+    E1_fixtures$e1_3_2 + E1_fixtures$e1_4_0 + E1_fixtures$e1_4_1 + E1_fixtures$e1_4_2 + E1_fixtures$e1_4_3 +
+    E1_fixtures$e1_5_0 +E1_fixtures$e1_5_1 + E1_fixtures$e1_5_2 + E1_fixtures$e1_5_3 + E1_fixtures$e1_5_4 +
+    E1_fixtures$e1_6_0 + E1_fixtures$e1_6_1 + E1_fixtures$e1_6_2 + E1_fixtures$e1_6_3 + E1_fixtures$e1_6_4 +
+    E1_fixtures$e1_6_5
+)
+#AH_n075_A
+E1_fixtures$e1_AH_n075_A <- (
+  E1_fixtures$e1_0_1 + E1_fixtures$e1_0_2 + E1_fixtures$e1_1_2 + E1_fixtures$e1_0_3 + E1_fixtures$e1_1_3 +
+    E1_fixtures$e1_2_3 + E1_fixtures$e1_0_4 + E1_fixtures$e1_1_4 + E1_fixtures$e1_2_4 + E1_fixtures$e1_3_4 +
+    E1_fixtures$e1_0_5 +E1_fixtures$e1_1_5 + E1_fixtures$e1_2_5 + E1_fixtures$e1_3_5 + E1_fixtures$e1_4_5 +
+    E1_fixtures$e1_0_6 + E1_fixtures$e1_1_6 + E1_fixtures$e1_2_6 + E1_fixtures$e1_3_6 + E1_fixtures$e1_4_6 +
+    E1_fixtures$e1_5_6
+)
+
+#odds
+E1_fixtures$e1_AH_n075_H_odds <- round((1/E1_fixtures$e1_AH_n075_H),digits = 2)
+E1_fixtures$e1_AH_n075_A_odds <- round((1/E1_fixtures$e1_AH_n075_A),digits = 2)
+
+E1_fixtures$e1_AH_n075_H_odds
+E1_fixtures$e1_AH_n075_A_odds
+#percentages
+E1_fixtures$e1_AH_n075_H <- percent(E1_fixtures$e1_AH_n075_H, accuracy = 0.1)
+E1_fixtures$e1_AH_n075_A <- percent(E1_fixtures$e1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+E1_fixtures$e1_AH_075_H <- (
+  E1_fixtures$e1_1_0 + E1_fixtures$e1_2_0 + E1_fixtures$e1_2_1 + E1_fixtures$e1_3_0 + E1_fixtures$e1_3_1 +
+    E1_fixtures$e1_3_2 + E1_fixtures$e1_4_0 + E1_fixtures$e1_4_1 + E1_fixtures$e1_4_2 + E1_fixtures$e1_4_3 +
+    E1_fixtures$e1_5_0 +E1_fixtures$e1_5_1 + E1_fixtures$e1_5_2 + E1_fixtures$e1_5_3 + E1_fixtures$e1_5_4 +
+    E1_fixtures$e1_6_0 + E1_fixtures$e1_6_1 + E1_fixtures$e1_6_2 + E1_fixtures$e1_6_3 + E1_fixtures$e1_6_4 +
+    E1_fixtures$e1_6_5 + E1_fixtures$e1_0_0 + E1_fixtures$e1_1_1 + E1_fixtures$e1_2_2 + E1_fixtures$e1_3_3 +
+    E1_fixtures$e1_4_4 + E1_fixtures$e1_5_5 + E1_fixtures$e1_6_6 + E1_fixtures$e1_0_1 + E1_fixtures$e1_1_2 +
+    E1_fixtures$e1_2_3 + E1_fixtures$e1_3_4 + E1_fixtures$e1_4_5 + E1_fixtures$e1_5_6
+)
+#AH_075_A
+E1_fixtures$e1_AH_075_A <- (
+  E1_fixtures$e1_0_1 + E1_fixtures$e1_0_2 + E1_fixtures$e1_1_2 + E1_fixtures$e1_0_3 + E1_fixtures$e1_1_3 +
+    E1_fixtures$e1_2_3 + E1_fixtures$e1_0_4 + E1_fixtures$e1_1_4 + E1_fixtures$e1_2_4 + E1_fixtures$e1_3_4 +
+    E1_fixtures$e1_0_5 +E1_fixtures$e1_1_5 + E1_fixtures$e1_2_5 + E1_fixtures$e1_3_5 + E1_fixtures$e1_4_5 +
+    E1_fixtures$e1_0_6 + E1_fixtures$e1_1_6 + E1_fixtures$e1_2_6 + E1_fixtures$e1_3_6 + E1_fixtures$e1_4_6 +
+    E1_fixtures$e1_5_6 + E1_fixtures$e1_0_0 + E1_fixtures$e1_1_1 + E1_fixtures$e1_2_2 + E1_fixtures$e1_3_3 +
+    E1_fixtures$e1_4_4 + E1_fixtures$e1_5_5 + E1_fixtures$e1_6_6 + E1_fixtures$e1_1_0 + E1_fixtures$e1_2_1 +
+    E1_fixtures$e1_3_2 + E1_fixtures$e1_4_3 + E1_fixtures$e1_5_4 + E1_fixtures$e1_6_5
+)
+
+#odds
+E1_fixtures$e1_AH_075_H_odds <- round((1/E1_fixtures$e1_AH_075_H),digits = 2)
+E1_fixtures$e1_AH_075_A_odds <- round((1/E1_fixtures$e1_AH_075_A),digits = 2)
+
+E1_fixtures$e1_AH_075_H_odds
+E1_fixtures$e1_AH_075_A_odds
+#percentages
+E1_fixtures$e1_AH_075_H <- percent(E1_fixtures$e1_AH_075_H, accuracy = 0.1)
+E1_fixtures$e1_AH_075_A <- percent(E1_fixtures$e1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+E1_fixtures$e1_AH_n125_H <- (
+  E1_fixtures$e1_1_0 + E1_fixtures$e1_2_0 + E1_fixtures$e1_2_1 + E1_fixtures$e1_3_0 + E1_fixtures$e1_3_1 +
+    E1_fixtures$e1_3_2 + E1_fixtures$e1_4_0 + E1_fixtures$e1_4_1 + E1_fixtures$e1_4_2 + E1_fixtures$e1_4_3 +
+    E1_fixtures$e1_5_0 +E1_fixtures$e1_5_1 + E1_fixtures$e1_5_2 + E1_fixtures$e1_5_3 + E1_fixtures$e1_5_4 +
+    E1_fixtures$e1_6_0 + E1_fixtures$e1_6_1 + E1_fixtures$e1_6_2 + E1_fixtures$e1_6_3 + E1_fixtures$e1_6_4 +
+    E1_fixtures$e1_6_5
+)
+#AH_n125_A
+E1_fixtures$e1_AH_n125_A <- (
+  E1_fixtures$e1_0_1 + E1_fixtures$e1_0_2 + E1_fixtures$e1_1_2 + E1_fixtures$e1_0_3 + E1_fixtures$e1_1_3 +
+    E1_fixtures$e1_2_3 + E1_fixtures$e1_0_4 + E1_fixtures$e1_1_4 + E1_fixtures$e1_2_4 + E1_fixtures$e1_3_4 +
+    E1_fixtures$e1_0_5 +E1_fixtures$e1_1_5 + E1_fixtures$e1_2_5 + E1_fixtures$e1_3_5 + E1_fixtures$e1_4_5 +
+    E1_fixtures$e1_0_6 + E1_fixtures$e1_1_6 + E1_fixtures$e1_2_6 + E1_fixtures$e1_3_6 + E1_fixtures$e1_4_6 +
+    E1_fixtures$e1_5_6
+)
+
+#odds
+E1_fixtures$e1_AH_n125_H_odds <- round((1/E1_fixtures$e1_AH_n125_H),digits = 2)
+E1_fixtures$e1_AH_n125_A_odds <- round((1/E1_fixtures$e1_AH_n125_A),digits = 2)
+
+E1_fixtures$e1_AH_n125_H_odds
+E1_fixtures$e1_AH_n125_A_odds
+#percentages
+E1_fixtures$e1_AH_n125_H <- percent(E1_fixtures$e1_AH_n125_H, accuracy = 0.1)
+E1_fixtures$e1_AH_n125_A <- percent(E1_fixtures$e1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+E1_fixtures$e1_AH_125_H <- (
+  E1_fixtures$e1_1_0 + E1_fixtures$e1_2_0 + E1_fixtures$e1_2_1 + E1_fixtures$e1_3_0 + E1_fixtures$e1_3_1 +
+    E1_fixtures$e1_3_2 + E1_fixtures$e1_4_0 + E1_fixtures$e1_4_1 + E1_fixtures$e1_4_2 + E1_fixtures$e1_4_3 +
+    E1_fixtures$e1_5_0 +E1_fixtures$e1_5_1 + E1_fixtures$e1_5_2 + E1_fixtures$e1_5_3 + E1_fixtures$e1_5_4 +
+    E1_fixtures$e1_6_0 + E1_fixtures$e1_6_1 + E1_fixtures$e1_6_2 + E1_fixtures$e1_6_3 + E1_fixtures$e1_6_4 +
+    E1_fixtures$e1_6_5 + E1_fixtures$e1_0_0 + E1_fixtures$e1_1_1 + E1_fixtures$e1_2_2 + E1_fixtures$e1_3_3 +
+    E1_fixtures$e1_4_4 + E1_fixtures$e1_5_5 + E1_fixtures$e1_6_6 + E1_fixtures$e1_0_1 + E1_fixtures$e1_1_2 +
+    E1_fixtures$e1_2_3 + E1_fixtures$e1_3_4 + E1_fixtures$e1_4_5 + E1_fixtures$e1_5_6
+)
+#AH_125_A
+E1_fixtures$e1_AH_125_A <- (
+  E1_fixtures$e1_0_1 + E1_fixtures$e1_0_2 + E1_fixtures$e1_1_2 + E1_fixtures$e1_0_3 + E1_fixtures$e1_1_3 +
+    E1_fixtures$e1_2_3 + E1_fixtures$e1_0_4 + E1_fixtures$e1_1_4 + E1_fixtures$e1_2_4 + E1_fixtures$e1_3_4 +
+    E1_fixtures$e1_0_5 +E1_fixtures$e1_1_5 + E1_fixtures$e1_2_5 + E1_fixtures$e1_3_5 + E1_fixtures$e1_4_5 +
+    E1_fixtures$e1_0_6 + E1_fixtures$e1_1_6 + E1_fixtures$e1_2_6 + E1_fixtures$e1_3_6 + E1_fixtures$e1_4_6 +
+    E1_fixtures$e1_5_6 + E1_fixtures$e1_0_0 + E1_fixtures$e1_1_1 + E1_fixtures$e1_2_2 + E1_fixtures$e1_3_3 +
+    E1_fixtures$e1_4_4 + E1_fixtures$e1_5_5 + E1_fixtures$e1_6_6 + E1_fixtures$e1_1_0 + E1_fixtures$e1_2_1 +
+    E1_fixtures$e1_3_2 + E1_fixtures$e1_4_3 + E1_fixtures$e1_5_4 + E1_fixtures$e1_6_5
+)
+
+#odds
+E1_fixtures$e1_AH_125_H_odds <- round((1/E1_fixtures$e1_AH_125_H),digits = 2)
+E1_fixtures$e1_AH_125_A_odds <- round((1/E1_fixtures$e1_AH_125_A),digits = 2)
+
+E1_fixtures$e1_AH_125_H_odds
+E1_fixtures$e1_AH_125_A_odds
+#percentages
+E1_fixtures$e1_AH_125_H <- percent(E1_fixtures$e1_AH_125_H, accuracy = 0.1)
+E1_fixtures$e1_AH_125_A <- percent(E1_fixtures$e1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 E1_fixtures$e1_ov25 <- percent(E1_fixtures$e1_ov25, accuracy = 0.1)
 
@@ -950,6 +1730,162 @@ E2_fixtures$e2_un25_odds <- round((1/E2_fixtures$e2_un25),digits = 2)
 
 E2_fixtures$e2_ov25_odds
 E2_fixtures$e2_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+E2_fixtures$e2_AH_0_H <- (
+  E2_fixtures$e2_1_0 + E2_fixtures$e2_2_0 + E2_fixtures$e2_2_1 + E2_fixtures$e2_3_0 + E2_fixtures$e2_3_1 +
+    E2_fixtures$e2_3_2 + E2_fixtures$e2_4_0 + E2_fixtures$e2_4_1 + E2_fixtures$e2_4_2 + E2_fixtures$e2_4_3 +
+    E2_fixtures$e2_5_0 +E2_fixtures$e2_5_1 + E2_fixtures$e2_5_2 + E2_fixtures$e2_5_3 + E2_fixtures$e2_5_4 +
+    E2_fixtures$e2_6_0 + E2_fixtures$e2_6_1 + E2_fixtures$e2_6_2 + E2_fixtures$e2_6_3 + E2_fixtures$e2_6_4 +
+    E2_fixtures$e2_6_5 + E2_fixtures$e2_0_0 + E2_fixtures$e2_1_1 + E2_fixtures$e2_2_2 + E2_fixtures$e2_3_3 +
+    E2_fixtures$e2_4_4 + E2_fixtures$e2_5_5 + E2_fixtures$e2_6_6
+)
+#AH_0_A
+E2_fixtures$e2_AH_0_A <- (
+  E2_fixtures$e2_0_1 + E2_fixtures$e2_0_2 + E2_fixtures$e2_1_2 + E2_fixtures$e2_0_3 + E2_fixtures$e2_1_3 +
+    E2_fixtures$e2_2_3 + E2_fixtures$e2_0_4 + E2_fixtures$e2_1_4 + E2_fixtures$e2_2_4 + E2_fixtures$e2_3_4 +
+    E2_fixtures$e2_0_5 +E2_fixtures$e2_1_5 + E2_fixtures$e2_2_5 + E2_fixtures$e2_3_5 + E2_fixtures$e2_4_5 +
+    E2_fixtures$e2_0_6 + E2_fixtures$e2_1_6 + E2_fixtures$e2_2_6 + E2_fixtures$e2_3_6 + E2_fixtures$e2_4_6 +
+    E2_fixtures$e2_5_6 + E2_fixtures$e2_0_0 + E2_fixtures$e2_1_1 + E2_fixtures$e2_2_2 + E2_fixtures$e2_3_3 +
+    E2_fixtures$e2_4_4 + E2_fixtures$e2_5_5 + E2_fixtures$e2_6_6
+)
+
+#odds
+E2_fixtures$e2_AH_0_H_odds <- round((1/E2_fixtures$e2_AH_0_H),digits = 2)
+E2_fixtures$e2_AH_0_A_odds <- round((1/E2_fixtures$e2_AH_0_A),digits = 2)
+
+E2_fixtures$e2_AH_0_H_odds
+E2_fixtures$e2_AH_0_A_odds
+#percentages
+E2_fixtures$e2_AH_0_H <- percent(E2_fixtures$e2_AH_0_H, accuracy = 0.1)
+E2_fixtures$e2_AH_0_A <- percent(E2_fixtures$e2_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+E2_fixtures$e2_AH_n075_H <- (
+  E2_fixtures$e2_1_0 + E2_fixtures$e2_2_0 + E2_fixtures$e2_2_1 + E2_fixtures$e2_3_0 + E2_fixtures$e2_3_1 +
+    E2_fixtures$e2_3_2 + E2_fixtures$e2_4_0 + E2_fixtures$e2_4_1 + E2_fixtures$e2_4_2 + E2_fixtures$e2_4_3 +
+    E2_fixtures$e2_5_0 +E2_fixtures$e2_5_1 + E2_fixtures$e2_5_2 + E2_fixtures$e2_5_3 + E2_fixtures$e2_5_4 +
+    E2_fixtures$e2_6_0 + E2_fixtures$e2_6_1 + E2_fixtures$e2_6_2 + E2_fixtures$e2_6_3 + E2_fixtures$e2_6_4 +
+    E2_fixtures$e2_6_5
+)
+#AH_n075_A
+E2_fixtures$e2_AH_n075_A <- (
+  E2_fixtures$e2_0_1 + E2_fixtures$e2_0_2 + E2_fixtures$e2_1_2 + E2_fixtures$e2_0_3 + E2_fixtures$e2_1_3 +
+    E2_fixtures$e2_2_3 + E2_fixtures$e2_0_4 + E2_fixtures$e2_1_4 + E2_fixtures$e2_2_4 + E2_fixtures$e2_3_4 +
+    E2_fixtures$e2_0_5 +E2_fixtures$e2_1_5 + E2_fixtures$e2_2_5 + E2_fixtures$e2_3_5 + E2_fixtures$e2_4_5 +
+    E2_fixtures$e2_0_6 + E2_fixtures$e2_1_6 + E2_fixtures$e2_2_6 + E2_fixtures$e2_3_6 + E2_fixtures$e2_4_6 +
+    E2_fixtures$e2_5_6
+)
+
+#odds
+E2_fixtures$e2_AH_n075_H_odds <- round((1/E2_fixtures$e2_AH_n075_H),digits = 2)
+E2_fixtures$e2_AH_n075_A_odds <- round((1/E2_fixtures$e2_AH_n075_A),digits = 2)
+
+E2_fixtures$e2_AH_n075_H_odds
+E2_fixtures$e2_AH_n075_A_odds
+#percentages
+E2_fixtures$e2_AH_n075_H <- percent(E2_fixtures$e2_AH_n075_H, accuracy = 0.1)
+E2_fixtures$e2_AH_n075_A <- percent(E2_fixtures$e2_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+E2_fixtures$e2_AH_075_H <- (
+  E2_fixtures$e2_1_0 + E2_fixtures$e2_2_0 + E2_fixtures$e2_2_1 + E2_fixtures$e2_3_0 + E2_fixtures$e2_3_1 +
+    E2_fixtures$e2_3_2 + E2_fixtures$e2_4_0 + E2_fixtures$e2_4_1 + E2_fixtures$e2_4_2 + E2_fixtures$e2_4_3 +
+    E2_fixtures$e2_5_0 +E2_fixtures$e2_5_1 + E2_fixtures$e2_5_2 + E2_fixtures$e2_5_3 + E2_fixtures$e2_5_4 +
+    E2_fixtures$e2_6_0 + E2_fixtures$e2_6_1 + E2_fixtures$e2_6_2 + E2_fixtures$e2_6_3 + E2_fixtures$e2_6_4 +
+    E2_fixtures$e2_6_5 + E2_fixtures$e2_0_0 + E2_fixtures$e2_1_1 + E2_fixtures$e2_2_2 + E2_fixtures$e2_3_3 +
+    E2_fixtures$e2_4_4 + E2_fixtures$e2_5_5 + E2_fixtures$e2_6_6 + E2_fixtures$e2_0_1 + E2_fixtures$e2_1_2 +
+    E2_fixtures$e2_2_3 + E2_fixtures$e2_3_4 + E2_fixtures$e2_4_5 + E2_fixtures$e2_5_6
+)
+#AH_075_A
+E2_fixtures$e2_AH_075_A <- (
+  E2_fixtures$e2_0_1 + E2_fixtures$e2_0_2 + E2_fixtures$e2_1_2 + E2_fixtures$e2_0_3 + E2_fixtures$e2_1_3 +
+    E2_fixtures$e2_2_3 + E2_fixtures$e2_0_4 + E2_fixtures$e2_1_4 + E2_fixtures$e2_2_4 + E2_fixtures$e2_3_4 +
+    E2_fixtures$e2_0_5 +E2_fixtures$e2_1_5 + E2_fixtures$e2_2_5 + E2_fixtures$e2_3_5 + E2_fixtures$e2_4_5 +
+    E2_fixtures$e2_0_6 + E2_fixtures$e2_1_6 + E2_fixtures$e2_2_6 + E2_fixtures$e2_3_6 + E2_fixtures$e2_4_6 +
+    E2_fixtures$e2_5_6 + E2_fixtures$e2_0_0 + E2_fixtures$e2_1_1 + E2_fixtures$e2_2_2 + E2_fixtures$e2_3_3 +
+    E2_fixtures$e2_4_4 + E2_fixtures$e2_5_5 + E2_fixtures$e2_6_6 + E2_fixtures$e2_1_0 + E2_fixtures$e2_2_1 +
+    E2_fixtures$e2_3_2 + E2_fixtures$e2_4_3 + E2_fixtures$e2_5_4 + E2_fixtures$e2_6_5
+)
+
+#odds
+E2_fixtures$e2_AH_075_H_odds <- round((1/E2_fixtures$e2_AH_075_H),digits = 2)
+E2_fixtures$e2_AH_075_A_odds <- round((1/E2_fixtures$e2_AH_075_A),digits = 2)
+
+E2_fixtures$e2_AH_075_H_odds
+E2_fixtures$e2_AH_075_A_odds
+#percentages
+E2_fixtures$e2_AH_075_H <- percent(E2_fixtures$e2_AH_075_H, accuracy = 0.1)
+E2_fixtures$e2_AH_075_A <- percent(E2_fixtures$e2_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+E2_fixtures$e2_AH_n125_H <- (
+  E2_fixtures$e2_1_0 + E2_fixtures$e2_2_0 + E2_fixtures$e2_2_1 + E2_fixtures$e2_3_0 + E2_fixtures$e2_3_1 +
+    E2_fixtures$e2_3_2 + E2_fixtures$e2_4_0 + E2_fixtures$e2_4_1 + E2_fixtures$e2_4_2 + E2_fixtures$e2_4_3 +
+    E2_fixtures$e2_5_0 +E2_fixtures$e2_5_1 + E2_fixtures$e2_5_2 + E2_fixtures$e2_5_3 + E2_fixtures$e2_5_4 +
+    E2_fixtures$e2_6_0 + E2_fixtures$e2_6_1 + E2_fixtures$e2_6_2 + E2_fixtures$e2_6_3 + E2_fixtures$e2_6_4 +
+    E2_fixtures$e2_6_5
+)
+#AH_n125_A
+E2_fixtures$e2_AH_n125_A <- (
+  E2_fixtures$e2_0_1 + E2_fixtures$e2_0_2 + E2_fixtures$e2_1_2 + E2_fixtures$e2_0_3 + E2_fixtures$e2_1_3 +
+    E2_fixtures$e2_2_3 + E2_fixtures$e2_0_4 + E2_fixtures$e2_1_4 + E2_fixtures$e2_2_4 + E2_fixtures$e2_3_4 +
+    E2_fixtures$e2_0_5 +E2_fixtures$e2_1_5 + E2_fixtures$e2_2_5 + E2_fixtures$e2_3_5 + E2_fixtures$e2_4_5 +
+    E2_fixtures$e2_0_6 + E2_fixtures$e2_1_6 + E2_fixtures$e2_2_6 + E2_fixtures$e2_3_6 + E2_fixtures$e2_4_6 +
+    E2_fixtures$e2_5_6
+)
+
+#odds
+E2_fixtures$e2_AH_n125_H_odds <- round((1/E2_fixtures$e2_AH_n125_H),digits = 2)
+E2_fixtures$e2_AH_n125_A_odds <- round((1/E2_fixtures$e2_AH_n125_A),digits = 2)
+
+E2_fixtures$e2_AH_n125_H_odds
+E2_fixtures$e2_AH_n125_A_odds
+#percentages
+E2_fixtures$e2_AH_n125_H <- percent(E2_fixtures$e2_AH_n125_H, accuracy = 0.1)
+E2_fixtures$e2_AH_n125_A <- percent(E2_fixtures$e2_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+E2_fixtures$e2_AH_125_H <- (
+  E2_fixtures$e2_1_0 + E2_fixtures$e2_2_0 + E2_fixtures$e2_2_1 + E2_fixtures$e2_3_0 + E2_fixtures$e2_3_1 +
+    E2_fixtures$e2_3_2 + E2_fixtures$e2_4_0 + E2_fixtures$e2_4_1 + E2_fixtures$e2_4_2 + E2_fixtures$e2_4_3 +
+    E2_fixtures$e2_5_0 +E2_fixtures$e2_5_1 + E2_fixtures$e2_5_2 + E2_fixtures$e2_5_3 + E2_fixtures$e2_5_4 +
+    E2_fixtures$e2_6_0 + E2_fixtures$e2_6_1 + E2_fixtures$e2_6_2 + E2_fixtures$e2_6_3 + E2_fixtures$e2_6_4 +
+    E2_fixtures$e2_6_5 + E2_fixtures$e2_0_0 + E2_fixtures$e2_1_1 + E2_fixtures$e2_2_2 + E2_fixtures$e2_3_3 +
+    E2_fixtures$e2_4_4 + E2_fixtures$e2_5_5 + E2_fixtures$e2_6_6 + E2_fixtures$e2_0_1 + E2_fixtures$e2_1_2 +
+    E2_fixtures$e2_2_3 + E2_fixtures$e2_3_4 + E2_fixtures$e2_4_5 + E2_fixtures$e2_5_6
+)
+#AH_125_A
+E2_fixtures$e2_AH_125_A <- (
+  E2_fixtures$e2_0_1 + E2_fixtures$e2_0_2 + E2_fixtures$e2_1_2 + E2_fixtures$e2_0_3 + E2_fixtures$e2_1_3 +
+    E2_fixtures$e2_2_3 + E2_fixtures$e2_0_4 + E2_fixtures$e2_1_4 + E2_fixtures$e2_2_4 + E2_fixtures$e2_3_4 +
+    E2_fixtures$e2_0_5 +E2_fixtures$e2_1_5 + E2_fixtures$e2_2_5 + E2_fixtures$e2_3_5 + E2_fixtures$e2_4_5 +
+    E2_fixtures$e2_0_6 + E2_fixtures$e2_1_6 + E2_fixtures$e2_2_6 + E2_fixtures$e2_3_6 + E2_fixtures$e2_4_6 +
+    E2_fixtures$e2_5_6 + E2_fixtures$e2_0_0 + E2_fixtures$e2_1_1 + E2_fixtures$e2_2_2 + E2_fixtures$e2_3_3 +
+    E2_fixtures$e2_4_4 + E2_fixtures$e2_5_5 + E2_fixtures$e2_6_6 + E2_fixtures$e2_1_0 + E2_fixtures$e2_2_1 +
+    E2_fixtures$e2_3_2 + E2_fixtures$e2_4_3 + E2_fixtures$e2_5_4 + E2_fixtures$e2_6_5
+)
+
+#odds
+E2_fixtures$e2_AH_125_H_odds <- round((1/E2_fixtures$e2_AH_125_H),digits = 2)
+E2_fixtures$e2_AH_125_A_odds <- round((1/E2_fixtures$e2_AH_125_A),digits = 2)
+
+E2_fixtures$e2_AH_125_H_odds
+E2_fixtures$e2_AH_125_A_odds
+#percentages
+E2_fixtures$e2_AH_125_H <- percent(E2_fixtures$e2_AH_125_H, accuracy = 0.1)
+E2_fixtures$e2_AH_125_A <- percent(E2_fixtures$e2_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 E2_fixtures$e2_ov25 <- percent(E2_fixtures$e2_ov25, accuracy = 0.1)
 
@@ -1108,6 +2044,162 @@ E3_fixtures$e3_un25_odds <- round((1/E3_fixtures$e3_un25),digits = 2)
 
 E3_fixtures$e3_ov25_odds
 E3_fixtures$e3_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+E3_fixtures$e3_AH_0_H <- (
+  E3_fixtures$e3_1_0 + E3_fixtures$e3_2_0 + E3_fixtures$e3_2_1 + E3_fixtures$e3_3_0 + E3_fixtures$e3_3_1 +
+    E3_fixtures$e3_3_2 + E3_fixtures$e3_4_0 + E3_fixtures$e3_4_1 + E3_fixtures$e3_4_2 + E3_fixtures$e3_4_3 +
+    E3_fixtures$e3_5_0 +E3_fixtures$e3_5_1 + E3_fixtures$e3_5_2 + E3_fixtures$e3_5_3 + E3_fixtures$e3_5_4 +
+    E3_fixtures$e3_6_0 + E3_fixtures$e3_6_1 + E3_fixtures$e3_6_2 + E3_fixtures$e3_6_3 + E3_fixtures$e3_6_4 +
+    E3_fixtures$e3_6_5 + E3_fixtures$e3_0_0 + E3_fixtures$e3_1_1 + E3_fixtures$e3_2_2 + E3_fixtures$e3_3_3 +
+    E3_fixtures$e3_4_4 + E3_fixtures$e3_5_5 + E3_fixtures$e3_6_6
+)
+#AH_0_A
+E3_fixtures$e3_AH_0_A <- (
+  E3_fixtures$e3_0_1 + E3_fixtures$e3_0_2 + E3_fixtures$e3_1_2 + E3_fixtures$e3_0_3 + E3_fixtures$e3_1_3 +
+    E3_fixtures$e3_2_3 + E3_fixtures$e3_0_4 + E3_fixtures$e3_1_4 + E3_fixtures$e3_2_4 + E3_fixtures$e3_3_4 +
+    E3_fixtures$e3_0_5 +E3_fixtures$e3_1_5 + E3_fixtures$e3_2_5 + E3_fixtures$e3_3_5 + E3_fixtures$e3_4_5 +
+    E3_fixtures$e3_0_6 + E3_fixtures$e3_1_6 + E3_fixtures$e3_2_6 + E3_fixtures$e3_3_6 + E3_fixtures$e3_4_6 +
+    E3_fixtures$e3_5_6 + E3_fixtures$e3_0_0 + E3_fixtures$e3_1_1 + E3_fixtures$e3_2_2 + E3_fixtures$e3_3_3 +
+    E3_fixtures$e3_4_4 + E3_fixtures$e3_5_5 + E3_fixtures$e3_6_6
+)
+
+#odds
+E3_fixtures$e3_AH_0_H_odds <- round((1/E3_fixtures$e3_AH_0_H),digits = 2)
+E3_fixtures$e3_AH_0_A_odds <- round((1/E3_fixtures$e3_AH_0_A),digits = 2)
+
+E3_fixtures$e3_AH_0_H_odds
+E3_fixtures$e3_AH_0_A_odds
+#percentages
+E3_fixtures$e3_AH_0_H <- percent(E3_fixtures$e3_AH_0_H, accuracy = 0.1)
+E3_fixtures$e3_AH_0_A <- percent(E3_fixtures$e3_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+E3_fixtures$e3_AH_n075_H <- (
+  E3_fixtures$e3_1_0 + E3_fixtures$e3_2_0 + E3_fixtures$e3_2_1 + E3_fixtures$e3_3_0 + E3_fixtures$e3_3_1 +
+    E3_fixtures$e3_3_2 + E3_fixtures$e3_4_0 + E3_fixtures$e3_4_1 + E3_fixtures$e3_4_2 + E3_fixtures$e3_4_3 +
+    E3_fixtures$e3_5_0 +E3_fixtures$e3_5_1 + E3_fixtures$e3_5_2 + E3_fixtures$e3_5_3 + E3_fixtures$e3_5_4 +
+    E3_fixtures$e3_6_0 + E3_fixtures$e3_6_1 + E3_fixtures$e3_6_2 + E3_fixtures$e3_6_3 + E3_fixtures$e3_6_4 +
+    E3_fixtures$e3_6_5
+)
+#AH_n075_A
+E3_fixtures$e3_AH_n075_A <- (
+  E3_fixtures$e3_0_1 + E3_fixtures$e3_0_2 + E3_fixtures$e3_1_2 + E3_fixtures$e3_0_3 + E3_fixtures$e3_1_3 +
+    E3_fixtures$e3_2_3 + E3_fixtures$e3_0_4 + E3_fixtures$e3_1_4 + E3_fixtures$e3_2_4 + E3_fixtures$e3_3_4 +
+    E3_fixtures$e3_0_5 +E3_fixtures$e3_1_5 + E3_fixtures$e3_2_5 + E3_fixtures$e3_3_5 + E3_fixtures$e3_4_5 +
+    E3_fixtures$e3_0_6 + E3_fixtures$e3_1_6 + E3_fixtures$e3_2_6 + E3_fixtures$e3_3_6 + E3_fixtures$e3_4_6 +
+    E3_fixtures$e3_5_6
+)
+
+#odds
+E3_fixtures$e3_AH_n075_H_odds <- round((1/E3_fixtures$e3_AH_n075_H),digits = 2)
+E3_fixtures$e3_AH_n075_A_odds <- round((1/E3_fixtures$e3_AH_n075_A),digits = 2)
+
+E3_fixtures$e3_AH_n075_H_odds
+E3_fixtures$e3_AH_n075_A_odds
+#percentages
+E3_fixtures$e3_AH_n075_H <- percent(E3_fixtures$e3_AH_n075_H, accuracy = 0.1)
+E3_fixtures$e3_AH_n075_A <- percent(E3_fixtures$e3_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+E3_fixtures$e3_AH_075_H <- (
+  E3_fixtures$e3_1_0 + E3_fixtures$e3_2_0 + E3_fixtures$e3_2_1 + E3_fixtures$e3_3_0 + E3_fixtures$e3_3_1 +
+    E3_fixtures$e3_3_2 + E3_fixtures$e3_4_0 + E3_fixtures$e3_4_1 + E3_fixtures$e3_4_2 + E3_fixtures$e3_4_3 +
+    E3_fixtures$e3_5_0 +E3_fixtures$e3_5_1 + E3_fixtures$e3_5_2 + E3_fixtures$e3_5_3 + E3_fixtures$e3_5_4 +
+    E3_fixtures$e3_6_0 + E3_fixtures$e3_6_1 + E3_fixtures$e3_6_2 + E3_fixtures$e3_6_3 + E3_fixtures$e3_6_4 +
+    E3_fixtures$e3_6_5 + E3_fixtures$e3_0_0 + E3_fixtures$e3_1_1 + E3_fixtures$e3_2_2 + E3_fixtures$e3_3_3 +
+    E3_fixtures$e3_4_4 + E3_fixtures$e3_5_5 + E3_fixtures$e3_6_6 + E3_fixtures$e3_0_1 + E3_fixtures$e3_1_2 +
+    E3_fixtures$e3_2_3 + E3_fixtures$e3_3_4 + E3_fixtures$e3_4_5 + E3_fixtures$e3_5_6
+)
+#AH_075_A
+E3_fixtures$e3_AH_075_A <- (
+  E3_fixtures$e3_0_1 + E3_fixtures$e3_0_2 + E3_fixtures$e3_1_2 + E3_fixtures$e3_0_3 + E3_fixtures$e3_1_3 +
+    E3_fixtures$e3_2_3 + E3_fixtures$e3_0_4 + E3_fixtures$e3_1_4 + E3_fixtures$e3_2_4 + E3_fixtures$e3_3_4 +
+    E3_fixtures$e3_0_5 +E3_fixtures$e3_1_5 + E3_fixtures$e3_2_5 + E3_fixtures$e3_3_5 + E3_fixtures$e3_4_5 +
+    E3_fixtures$e3_0_6 + E3_fixtures$e3_1_6 + E3_fixtures$e3_2_6 + E3_fixtures$e3_3_6 + E3_fixtures$e3_4_6 +
+    E3_fixtures$e3_5_6 + E3_fixtures$e3_0_0 + E3_fixtures$e3_1_1 + E3_fixtures$e3_2_2 + E3_fixtures$e3_3_3 +
+    E3_fixtures$e3_4_4 + E3_fixtures$e3_5_5 + E3_fixtures$e3_6_6 + E3_fixtures$e3_1_0 + E3_fixtures$e3_2_1 +
+    E3_fixtures$e3_3_2 + E3_fixtures$e3_4_3 + E3_fixtures$e3_5_4 + E3_fixtures$e3_6_5
+)
+
+#odds
+E3_fixtures$e3_AH_075_H_odds <- round((1/E3_fixtures$e3_AH_075_H),digits = 2)
+E3_fixtures$e3_AH_075_A_odds <- round((1/E3_fixtures$e3_AH_075_A),digits = 2)
+
+E3_fixtures$e3_AH_075_H_odds
+E3_fixtures$e3_AH_075_A_odds
+#percentages
+E3_fixtures$e3_AH_075_H <- percent(E3_fixtures$e3_AH_075_H, accuracy = 0.1)
+E3_fixtures$e3_AH_075_A <- percent(E3_fixtures$e3_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+E3_fixtures$e3_AH_n125_H <- (
+  E3_fixtures$e3_1_0 + E3_fixtures$e3_2_0 + E3_fixtures$e3_2_1 + E3_fixtures$e3_3_0 + E3_fixtures$e3_3_1 +
+    E3_fixtures$e3_3_2 + E3_fixtures$e3_4_0 + E3_fixtures$e3_4_1 + E3_fixtures$e3_4_2 + E3_fixtures$e3_4_3 +
+    E3_fixtures$e3_5_0 +E3_fixtures$e3_5_1 + E3_fixtures$e3_5_2 + E3_fixtures$e3_5_3 + E3_fixtures$e3_5_4 +
+    E3_fixtures$e3_6_0 + E3_fixtures$e3_6_1 + E3_fixtures$e3_6_2 + E3_fixtures$e3_6_3 + E3_fixtures$e3_6_4 +
+    E3_fixtures$e3_6_5
+)
+#AH_n125_A
+E3_fixtures$e3_AH_n125_A <- (
+  E3_fixtures$e3_0_1 + E3_fixtures$e3_0_2 + E3_fixtures$e3_1_2 + E3_fixtures$e3_0_3 + E3_fixtures$e3_1_3 +
+    E3_fixtures$e3_2_3 + E3_fixtures$e3_0_4 + E3_fixtures$e3_1_4 + E3_fixtures$e3_2_4 + E3_fixtures$e3_3_4 +
+    E3_fixtures$e3_0_5 +E3_fixtures$e3_1_5 + E3_fixtures$e3_2_5 + E3_fixtures$e3_3_5 + E3_fixtures$e3_4_5 +
+    E3_fixtures$e3_0_6 + E3_fixtures$e3_1_6 + E3_fixtures$e3_2_6 + E3_fixtures$e3_3_6 + E3_fixtures$e3_4_6 +
+    E3_fixtures$e3_5_6
+)
+
+#odds
+E3_fixtures$e3_AH_n125_H_odds <- round((1/E3_fixtures$e3_AH_n125_H),digits = 2)
+E3_fixtures$e3_AH_n125_A_odds <- round((1/E3_fixtures$e3_AH_n125_A),digits = 2)
+
+E3_fixtures$e3_AH_n125_H_odds
+E3_fixtures$e3_AH_n125_A_odds
+#percentages
+E3_fixtures$e3_AH_n125_H <- percent(E3_fixtures$e3_AH_n125_H, accuracy = 0.1)
+E3_fixtures$e3_AH_n125_A <- percent(E3_fixtures$e3_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+E3_fixtures$e3_AH_125_H <- (
+  E3_fixtures$e3_1_0 + E3_fixtures$e3_2_0 + E3_fixtures$e3_2_1 + E3_fixtures$e3_3_0 + E3_fixtures$e3_3_1 +
+    E3_fixtures$e3_3_2 + E3_fixtures$e3_4_0 + E3_fixtures$e3_4_1 + E3_fixtures$e3_4_2 + E3_fixtures$e3_4_3 +
+    E3_fixtures$e3_5_0 +E3_fixtures$e3_5_1 + E3_fixtures$e3_5_2 + E3_fixtures$e3_5_3 + E3_fixtures$e3_5_4 +
+    E3_fixtures$e3_6_0 + E3_fixtures$e3_6_1 + E3_fixtures$e3_6_2 + E3_fixtures$e3_6_3 + E3_fixtures$e3_6_4 +
+    E3_fixtures$e3_6_5 + E3_fixtures$e3_0_0 + E3_fixtures$e3_1_1 + E3_fixtures$e3_2_2 + E3_fixtures$e3_3_3 +
+    E3_fixtures$e3_4_4 + E3_fixtures$e3_5_5 + E3_fixtures$e3_6_6 + E3_fixtures$e3_0_1 + E3_fixtures$e3_1_2 +
+    E3_fixtures$e3_2_3 + E3_fixtures$e3_3_4 + E3_fixtures$e3_4_5 + E3_fixtures$e3_5_6
+)
+#AH_125_A
+E3_fixtures$e3_AH_125_A <- (
+  E3_fixtures$e3_0_1 + E3_fixtures$e3_0_2 + E3_fixtures$e3_1_2 + E3_fixtures$e3_0_3 + E3_fixtures$e3_1_3 +
+    E3_fixtures$e3_2_3 + E3_fixtures$e3_0_4 + E3_fixtures$e3_1_4 + E3_fixtures$e3_2_4 + E3_fixtures$e3_3_4 +
+    E3_fixtures$e3_0_5 +E3_fixtures$e3_1_5 + E3_fixtures$e3_2_5 + E3_fixtures$e3_3_5 + E3_fixtures$e3_4_5 +
+    E3_fixtures$e3_0_6 + E3_fixtures$e3_1_6 + E3_fixtures$e3_2_6 + E3_fixtures$e3_3_6 + E3_fixtures$e3_4_6 +
+    E3_fixtures$e3_5_6 + E3_fixtures$e3_0_0 + E3_fixtures$e3_1_1 + E3_fixtures$e3_2_2 + E3_fixtures$e3_3_3 +
+    E3_fixtures$e3_4_4 + E3_fixtures$e3_5_5 + E3_fixtures$e3_6_6 + E3_fixtures$e3_1_0 + E3_fixtures$e3_2_1 +
+    E3_fixtures$e3_3_2 + E3_fixtures$e3_4_3 + E3_fixtures$e3_5_4 + E3_fixtures$e3_6_5
+)
+
+#odds
+E3_fixtures$e3_AH_125_H_odds <- round((1/E3_fixtures$e3_AH_125_H),digits = 2)
+E3_fixtures$e3_AH_125_A_odds <- round((1/E3_fixtures$e3_AH_125_A),digits = 2)
+
+E3_fixtures$e3_AH_125_H_odds
+E3_fixtures$e3_AH_125_A_odds
+#percentages
+E3_fixtures$e3_AH_125_H <- percent(E3_fixtures$e3_AH_125_H, accuracy = 0.1)
+E3_fixtures$e3_AH_125_A <- percent(E3_fixtures$e3_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 E3_fixtures$e3_ov25 <- percent(E3_fixtures$e3_ov25, accuracy = 0.1)
 
@@ -1266,6 +2358,162 @@ EC_fixtures$ec_un25_odds <- round((1/EC_fixtures$ec_un25),digits = 2)
 
 EC_fixtures$ec_ov25_odds
 EC_fixtures$ec_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+EC_fixtures$ec_AH_0_H <- (
+  EC_fixtures$ec_1_0 + EC_fixtures$ec_2_0 + EC_fixtures$ec_2_1 + EC_fixtures$ec_3_0 + EC_fixtures$ec_3_1 +
+    EC_fixtures$ec_3_2 + EC_fixtures$ec_4_0 + EC_fixtures$ec_4_1 + EC_fixtures$ec_4_2 + EC_fixtures$ec_4_3 +
+    EC_fixtures$ec_5_0 +EC_fixtures$ec_5_1 + EC_fixtures$ec_5_2 + EC_fixtures$ec_5_3 + EC_fixtures$ec_5_4 +
+    EC_fixtures$ec_6_0 + EC_fixtures$ec_6_1 + EC_fixtures$ec_6_2 + EC_fixtures$ec_6_3 + EC_fixtures$ec_6_4 +
+    EC_fixtures$ec_6_5 + EC_fixtures$ec_0_0 + EC_fixtures$ec_1_1 + EC_fixtures$ec_2_2 + EC_fixtures$ec_3_3 +
+    EC_fixtures$ec_4_4 + EC_fixtures$ec_5_5 + EC_fixtures$ec_6_6
+)
+#AH_0_A
+EC_fixtures$ec_AH_0_A <- (
+  EC_fixtures$ec_0_1 + EC_fixtures$ec_0_2 + EC_fixtures$ec_1_2 + EC_fixtures$ec_0_3 + EC_fixtures$ec_1_3 +
+    EC_fixtures$ec_2_3 + EC_fixtures$ec_0_4 + EC_fixtures$ec_1_4 + EC_fixtures$ec_2_4 + EC_fixtures$ec_3_4 +
+    EC_fixtures$ec_0_5 +EC_fixtures$ec_1_5 + EC_fixtures$ec_2_5 + EC_fixtures$ec_3_5 + EC_fixtures$ec_4_5 +
+    EC_fixtures$ec_0_6 + EC_fixtures$ec_1_6 + EC_fixtures$ec_2_6 + EC_fixtures$ec_3_6 + EC_fixtures$ec_4_6 +
+    EC_fixtures$ec_5_6 + EC_fixtures$ec_0_0 + EC_fixtures$ec_1_1 + EC_fixtures$ec_2_2 + EC_fixtures$ec_3_3 +
+    EC_fixtures$ec_4_4 + EC_fixtures$ec_5_5 + EC_fixtures$ec_6_6
+)
+
+#odds
+EC_fixtures$ec_AH_0_H_odds <- round((1/EC_fixtures$ec_AH_0_H),digits = 2)
+EC_fixtures$ec_AH_0_A_odds <- round((1/EC_fixtures$ec_AH_0_A),digits = 2)
+
+EC_fixtures$ec_AH_0_H_odds
+EC_fixtures$ec_AH_0_A_odds
+#percentages
+EC_fixtures$ec_AH_0_H <- percent(EC_fixtures$ec_AH_0_H, accuracy = 0.1)
+EC_fixtures$ec_AH_0_A <- percent(EC_fixtures$ec_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+EC_fixtures$ec_AH_n075_H <- (
+  EC_fixtures$ec_1_0 + EC_fixtures$ec_2_0 + EC_fixtures$ec_2_1 + EC_fixtures$ec_3_0 + EC_fixtures$ec_3_1 +
+    EC_fixtures$ec_3_2 + EC_fixtures$ec_4_0 + EC_fixtures$ec_4_1 + EC_fixtures$ec_4_2 + EC_fixtures$ec_4_3 +
+    EC_fixtures$ec_5_0 +EC_fixtures$ec_5_1 + EC_fixtures$ec_5_2 + EC_fixtures$ec_5_3 + EC_fixtures$ec_5_4 +
+    EC_fixtures$ec_6_0 + EC_fixtures$ec_6_1 + EC_fixtures$ec_6_2 + EC_fixtures$ec_6_3 + EC_fixtures$ec_6_4 +
+    EC_fixtures$ec_6_5
+)
+#AH_n075_A
+EC_fixtures$ec_AH_n075_A <- (
+  EC_fixtures$ec_0_1 + EC_fixtures$ec_0_2 + EC_fixtures$ec_1_2 + EC_fixtures$ec_0_3 + EC_fixtures$ec_1_3 +
+    EC_fixtures$ec_2_3 + EC_fixtures$ec_0_4 + EC_fixtures$ec_1_4 + EC_fixtures$ec_2_4 + EC_fixtures$ec_3_4 +
+    EC_fixtures$ec_0_5 +EC_fixtures$ec_1_5 + EC_fixtures$ec_2_5 + EC_fixtures$ec_3_5 + EC_fixtures$ec_4_5 +
+    EC_fixtures$ec_0_6 + EC_fixtures$ec_1_6 + EC_fixtures$ec_2_6 + EC_fixtures$ec_3_6 + EC_fixtures$ec_4_6 +
+    EC_fixtures$ec_5_6
+)
+
+#odds
+EC_fixtures$ec_AH_n075_H_odds <- round((1/EC_fixtures$ec_AH_n075_H),digits = 2)
+EC_fixtures$ec_AH_n075_A_odds <- round((1/EC_fixtures$ec_AH_n075_A),digits = 2)
+
+EC_fixtures$ec_AH_n075_H_odds
+EC_fixtures$ec_AH_n075_A_odds
+#percentages
+EC_fixtures$ec_AH_n075_H <- percent(EC_fixtures$ec_AH_n075_H, accuracy = 0.1)
+EC_fixtures$ec_AH_n075_A <- percent(EC_fixtures$ec_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+EC_fixtures$ec_AH_075_H <- (
+  EC_fixtures$ec_1_0 + EC_fixtures$ec_2_0 + EC_fixtures$ec_2_1 + EC_fixtures$ec_3_0 + EC_fixtures$ec_3_1 +
+    EC_fixtures$ec_3_2 + EC_fixtures$ec_4_0 + EC_fixtures$ec_4_1 + EC_fixtures$ec_4_2 + EC_fixtures$ec_4_3 +
+    EC_fixtures$ec_5_0 +EC_fixtures$ec_5_1 + EC_fixtures$ec_5_2 + EC_fixtures$ec_5_3 + EC_fixtures$ec_5_4 +
+    EC_fixtures$ec_6_0 + EC_fixtures$ec_6_1 + EC_fixtures$ec_6_2 + EC_fixtures$ec_6_3 + EC_fixtures$ec_6_4 +
+    EC_fixtures$ec_6_5 + EC_fixtures$ec_0_0 + EC_fixtures$ec_1_1 + EC_fixtures$ec_2_2 + EC_fixtures$ec_3_3 +
+    EC_fixtures$ec_4_4 + EC_fixtures$ec_5_5 + EC_fixtures$ec_6_6 + EC_fixtures$ec_0_1 + EC_fixtures$ec_1_2 +
+    EC_fixtures$ec_2_3 + EC_fixtures$ec_3_4 + EC_fixtures$ec_4_5 + EC_fixtures$ec_5_6
+)
+#AH_075_A
+EC_fixtures$ec_AH_075_A <- (
+  EC_fixtures$ec_0_1 + EC_fixtures$ec_0_2 + EC_fixtures$ec_1_2 + EC_fixtures$ec_0_3 + EC_fixtures$ec_1_3 +
+    EC_fixtures$ec_2_3 + EC_fixtures$ec_0_4 + EC_fixtures$ec_1_4 + EC_fixtures$ec_2_4 + EC_fixtures$ec_3_4 +
+    EC_fixtures$ec_0_5 +EC_fixtures$ec_1_5 + EC_fixtures$ec_2_5 + EC_fixtures$ec_3_5 + EC_fixtures$ec_4_5 +
+    EC_fixtures$ec_0_6 + EC_fixtures$ec_1_6 + EC_fixtures$ec_2_6 + EC_fixtures$ec_3_6 + EC_fixtures$ec_4_6 +
+    EC_fixtures$ec_5_6 + EC_fixtures$ec_0_0 + EC_fixtures$ec_1_1 + EC_fixtures$ec_2_2 + EC_fixtures$ec_3_3 +
+    EC_fixtures$ec_4_4 + EC_fixtures$ec_5_5 + EC_fixtures$ec_6_6 + EC_fixtures$ec_1_0 + EC_fixtures$ec_2_1 +
+    EC_fixtures$ec_3_2 + EC_fixtures$ec_4_3 + EC_fixtures$ec_5_4 + EC_fixtures$ec_6_5
+)
+
+#odds
+EC_fixtures$ec_AH_075_H_odds <- round((1/EC_fixtures$ec_AH_075_H),digits = 2)
+EC_fixtures$ec_AH_075_A_odds <- round((1/EC_fixtures$ec_AH_075_A),digits = 2)
+
+EC_fixtures$ec_AH_075_H_odds
+EC_fixtures$ec_AH_075_A_odds
+#percentages
+EC_fixtures$ec_AH_075_H <- percent(EC_fixtures$ec_AH_075_H, accuracy = 0.1)
+EC_fixtures$ec_AH_075_A <- percent(EC_fixtures$ec_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+EC_fixtures$ec_AH_n125_H <- (
+  EC_fixtures$ec_1_0 + EC_fixtures$ec_2_0 + EC_fixtures$ec_2_1 + EC_fixtures$ec_3_0 + EC_fixtures$ec_3_1 +
+    EC_fixtures$ec_3_2 + EC_fixtures$ec_4_0 + EC_fixtures$ec_4_1 + EC_fixtures$ec_4_2 + EC_fixtures$ec_4_3 +
+    EC_fixtures$ec_5_0 +EC_fixtures$ec_5_1 + EC_fixtures$ec_5_2 + EC_fixtures$ec_5_3 + EC_fixtures$ec_5_4 +
+    EC_fixtures$ec_6_0 + EC_fixtures$ec_6_1 + EC_fixtures$ec_6_2 + EC_fixtures$ec_6_3 + EC_fixtures$ec_6_4 +
+    EC_fixtures$ec_6_5
+)
+#AH_n125_A
+EC_fixtures$ec_AH_n125_A <- (
+  EC_fixtures$ec_0_1 + EC_fixtures$ec_0_2 + EC_fixtures$ec_1_2 + EC_fixtures$ec_0_3 + EC_fixtures$ec_1_3 +
+    EC_fixtures$ec_2_3 + EC_fixtures$ec_0_4 + EC_fixtures$ec_1_4 + EC_fixtures$ec_2_4 + EC_fixtures$ec_3_4 +
+    EC_fixtures$ec_0_5 +EC_fixtures$ec_1_5 + EC_fixtures$ec_2_5 + EC_fixtures$ec_3_5 + EC_fixtures$ec_4_5 +
+    EC_fixtures$ec_0_6 + EC_fixtures$ec_1_6 + EC_fixtures$ec_2_6 + EC_fixtures$ec_3_6 + EC_fixtures$ec_4_6 +
+    EC_fixtures$ec_5_6
+)
+
+#odds
+EC_fixtures$ec_AH_n125_H_odds <- round((1/EC_fixtures$ec_AH_n125_H),digits = 2)
+EC_fixtures$ec_AH_n125_A_odds <- round((1/EC_fixtures$ec_AH_n125_A),digits = 2)
+
+EC_fixtures$ec_AH_n125_H_odds
+EC_fixtures$ec_AH_n125_A_odds
+#percentages
+EC_fixtures$ec_AH_n125_H <- percent(EC_fixtures$ec_AH_n125_H, accuracy = 0.1)
+EC_fixtures$ec_AH_n125_A <- percent(EC_fixtures$ec_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+EC_fixtures$ec_AH_125_H <- (
+  EC_fixtures$ec_1_0 + EC_fixtures$ec_2_0 + EC_fixtures$ec_2_1 + EC_fixtures$ec_3_0 + EC_fixtures$ec_3_1 +
+    EC_fixtures$ec_3_2 + EC_fixtures$ec_4_0 + EC_fixtures$ec_4_1 + EC_fixtures$ec_4_2 + EC_fixtures$ec_4_3 +
+    EC_fixtures$ec_5_0 +EC_fixtures$ec_5_1 + EC_fixtures$ec_5_2 + EC_fixtures$ec_5_3 + EC_fixtures$ec_5_4 +
+    EC_fixtures$ec_6_0 + EC_fixtures$ec_6_1 + EC_fixtures$ec_6_2 + EC_fixtures$ec_6_3 + EC_fixtures$ec_6_4 +
+    EC_fixtures$ec_6_5 + EC_fixtures$ec_0_0 + EC_fixtures$ec_1_1 + EC_fixtures$ec_2_2 + EC_fixtures$ec_3_3 +
+    EC_fixtures$ec_4_4 + EC_fixtures$ec_5_5 + EC_fixtures$ec_6_6 + EC_fixtures$ec_0_1 + EC_fixtures$ec_1_2 +
+    EC_fixtures$ec_2_3 + EC_fixtures$ec_3_4 + EC_fixtures$ec_4_5 + EC_fixtures$ec_5_6
+)
+#AH_125_A
+EC_fixtures$ec_AH_125_A <- (
+  EC_fixtures$ec_0_1 + EC_fixtures$ec_0_2 + EC_fixtures$ec_1_2 + EC_fixtures$ec_0_3 + EC_fixtures$ec_1_3 +
+    EC_fixtures$ec_2_3 + EC_fixtures$ec_0_4 + EC_fixtures$ec_1_4 + EC_fixtures$ec_2_4 + EC_fixtures$ec_3_4 +
+    EC_fixtures$ec_0_5 +EC_fixtures$ec_1_5 + EC_fixtures$ec_2_5 + EC_fixtures$ec_3_5 + EC_fixtures$ec_4_5 +
+    EC_fixtures$ec_0_6 + EC_fixtures$ec_1_6 + EC_fixtures$ec_2_6 + EC_fixtures$ec_3_6 + EC_fixtures$ec_4_6 +
+    EC_fixtures$ec_5_6 + EC_fixtures$ec_0_0 + EC_fixtures$ec_1_1 + EC_fixtures$ec_2_2 + EC_fixtures$ec_3_3 +
+    EC_fixtures$ec_4_4 + EC_fixtures$ec_5_5 + EC_fixtures$ec_6_6 + EC_fixtures$ec_1_0 + EC_fixtures$ec_2_1 +
+    EC_fixtures$ec_3_2 + EC_fixtures$ec_4_3 + EC_fixtures$ec_5_4 + EC_fixtures$ec_6_5
+)
+
+#odds
+EC_fixtures$ec_AH_125_H_odds <- round((1/EC_fixtures$ec_AH_125_H),digits = 2)
+EC_fixtures$ec_AH_125_A_odds <- round((1/EC_fixtures$ec_AH_125_A),digits = 2)
+
+EC_fixtures$ec_AH_125_H_odds
+EC_fixtures$ec_AH_125_A_odds
+#percentages
+EC_fixtures$ec_AH_125_H <- percent(EC_fixtures$ec_AH_125_H, accuracy = 0.1)
+EC_fixtures$ec_AH_125_A <- percent(EC_fixtures$ec_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 EC_fixtures$ec_ov25 <- percent(EC_fixtures$ec_ov25, accuracy = 0.1)
 
@@ -1424,6 +2672,162 @@ F1_fixtures$f1_un25_odds <- round((1/F1_fixtures$f1_un25),digits = 2)
 
 F1_fixtures$f1_ov25_odds
 F1_fixtures$f1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+F1_fixtures$f1_AH_0_H <- (
+  F1_fixtures$f1_1_0 + F1_fixtures$f1_2_0 + F1_fixtures$f1_2_1 + F1_fixtures$f1_3_0 + F1_fixtures$f1_3_1 +
+    F1_fixtures$f1_3_2 + F1_fixtures$f1_4_0 + F1_fixtures$f1_4_1 + F1_fixtures$f1_4_2 + F1_fixtures$f1_4_3 +
+    F1_fixtures$f1_5_0 +F1_fixtures$f1_5_1 + F1_fixtures$f1_5_2 + F1_fixtures$f1_5_3 + F1_fixtures$f1_5_4 +
+    F1_fixtures$f1_6_0 + F1_fixtures$f1_6_1 + F1_fixtures$f1_6_2 + F1_fixtures$f1_6_3 + F1_fixtures$f1_6_4 +
+    F1_fixtures$f1_6_5 + F1_fixtures$f1_0_0 + F1_fixtures$f1_1_1 + F1_fixtures$f1_2_2 + F1_fixtures$f1_3_3 +
+    F1_fixtures$f1_4_4 + F1_fixtures$f1_5_5 + F1_fixtures$f1_6_6
+)
+#AH_0_A
+F1_fixtures$f1_AH_0_A <- (
+  F1_fixtures$f1_0_1 + F1_fixtures$f1_0_2 + F1_fixtures$f1_1_2 + F1_fixtures$f1_0_3 + F1_fixtures$f1_1_3 +
+    F1_fixtures$f1_2_3 + F1_fixtures$f1_0_4 + F1_fixtures$f1_1_4 + F1_fixtures$f1_2_4 + F1_fixtures$f1_3_4 +
+    F1_fixtures$f1_0_5 +F1_fixtures$f1_1_5 + F1_fixtures$f1_2_5 + F1_fixtures$f1_3_5 + F1_fixtures$f1_4_5 +
+    F1_fixtures$f1_0_6 + F1_fixtures$f1_1_6 + F1_fixtures$f1_2_6 + F1_fixtures$f1_3_6 + F1_fixtures$f1_4_6 +
+    F1_fixtures$f1_5_6 + F1_fixtures$f1_0_0 + F1_fixtures$f1_1_1 + F1_fixtures$f1_2_2 + F1_fixtures$f1_3_3 +
+    F1_fixtures$f1_4_4 + F1_fixtures$f1_5_5 + F1_fixtures$f1_6_6
+)
+
+#odds
+F1_fixtures$f1_AH_0_H_odds <- round((1/F1_fixtures$f1_AH_0_H),digits = 2)
+F1_fixtures$f1_AH_0_A_odds <- round((1/F1_fixtures$f1_AH_0_A),digits = 2)
+
+F1_fixtures$f1_AH_0_H_odds
+F1_fixtures$f1_AH_0_A_odds
+#percentages
+F1_fixtures$f1_AH_0_H <- percent(F1_fixtures$f1_AH_0_H, accuracy = 0.1)
+F1_fixtures$f1_AH_0_A <- percent(F1_fixtures$f1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+F1_fixtures$f1_AH_n075_H <- (
+  F1_fixtures$f1_1_0 + F1_fixtures$f1_2_0 + F1_fixtures$f1_2_1 + F1_fixtures$f1_3_0 + F1_fixtures$f1_3_1 +
+    F1_fixtures$f1_3_2 + F1_fixtures$f1_4_0 + F1_fixtures$f1_4_1 + F1_fixtures$f1_4_2 + F1_fixtures$f1_4_3 +
+    F1_fixtures$f1_5_0 +F1_fixtures$f1_5_1 + F1_fixtures$f1_5_2 + F1_fixtures$f1_5_3 + F1_fixtures$f1_5_4 +
+    F1_fixtures$f1_6_0 + F1_fixtures$f1_6_1 + F1_fixtures$f1_6_2 + F1_fixtures$f1_6_3 + F1_fixtures$f1_6_4 +
+    F1_fixtures$f1_6_5
+)
+#AH_n075_A
+F1_fixtures$f1_AH_n075_A <- (
+  F1_fixtures$f1_0_1 + F1_fixtures$f1_0_2 + F1_fixtures$f1_1_2 + F1_fixtures$f1_0_3 + F1_fixtures$f1_1_3 +
+    F1_fixtures$f1_2_3 + F1_fixtures$f1_0_4 + F1_fixtures$f1_1_4 + F1_fixtures$f1_2_4 + F1_fixtures$f1_3_4 +
+    F1_fixtures$f1_0_5 +F1_fixtures$f1_1_5 + F1_fixtures$f1_2_5 + F1_fixtures$f1_3_5 + F1_fixtures$f1_4_5 +
+    F1_fixtures$f1_0_6 + F1_fixtures$f1_1_6 + F1_fixtures$f1_2_6 + F1_fixtures$f1_3_6 + F1_fixtures$f1_4_6 +
+    F1_fixtures$f1_5_6
+)
+
+#odds
+F1_fixtures$f1_AH_n075_H_odds <- round((1/F1_fixtures$f1_AH_n075_H),digits = 2)
+F1_fixtures$f1_AH_n075_A_odds <- round((1/F1_fixtures$f1_AH_n075_A),digits = 2)
+
+F1_fixtures$f1_AH_n075_H_odds
+F1_fixtures$f1_AH_n075_A_odds
+#percentages
+F1_fixtures$f1_AH_n075_H <- percent(F1_fixtures$f1_AH_n075_H, accuracy = 0.1)
+F1_fixtures$f1_AH_n075_A <- percent(F1_fixtures$f1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+F1_fixtures$f1_AH_075_H <- (
+  F1_fixtures$f1_1_0 + F1_fixtures$f1_2_0 + F1_fixtures$f1_2_1 + F1_fixtures$f1_3_0 + F1_fixtures$f1_3_1 +
+    F1_fixtures$f1_3_2 + F1_fixtures$f1_4_0 + F1_fixtures$f1_4_1 + F1_fixtures$f1_4_2 + F1_fixtures$f1_4_3 +
+    F1_fixtures$f1_5_0 +F1_fixtures$f1_5_1 + F1_fixtures$f1_5_2 + F1_fixtures$f1_5_3 + F1_fixtures$f1_5_4 +
+    F1_fixtures$f1_6_0 + F1_fixtures$f1_6_1 + F1_fixtures$f1_6_2 + F1_fixtures$f1_6_3 + F1_fixtures$f1_6_4 +
+    F1_fixtures$f1_6_5 + F1_fixtures$f1_0_0 + F1_fixtures$f1_1_1 + F1_fixtures$f1_2_2 + F1_fixtures$f1_3_3 +
+    F1_fixtures$f1_4_4 + F1_fixtures$f1_5_5 + F1_fixtures$f1_6_6 + F1_fixtures$f1_0_1 + F1_fixtures$f1_1_2 +
+    F1_fixtures$f1_2_3 + F1_fixtures$f1_3_4 + F1_fixtures$f1_4_5 + F1_fixtures$f1_5_6
+)
+#AH_075_A
+F1_fixtures$f1_AH_075_A <- (
+  F1_fixtures$f1_0_1 + F1_fixtures$f1_0_2 + F1_fixtures$f1_1_2 + F1_fixtures$f1_0_3 + F1_fixtures$f1_1_3 +
+    F1_fixtures$f1_2_3 + F1_fixtures$f1_0_4 + F1_fixtures$f1_1_4 + F1_fixtures$f1_2_4 + F1_fixtures$f1_3_4 +
+    F1_fixtures$f1_0_5 +F1_fixtures$f1_1_5 + F1_fixtures$f1_2_5 + F1_fixtures$f1_3_5 + F1_fixtures$f1_4_5 +
+    F1_fixtures$f1_0_6 + F1_fixtures$f1_1_6 + F1_fixtures$f1_2_6 + F1_fixtures$f1_3_6 + F1_fixtures$f1_4_6 +
+    F1_fixtures$f1_5_6 + F1_fixtures$f1_0_0 + F1_fixtures$f1_1_1 + F1_fixtures$f1_2_2 + F1_fixtures$f1_3_3 +
+    F1_fixtures$f1_4_4 + F1_fixtures$f1_5_5 + F1_fixtures$f1_6_6 + F1_fixtures$f1_1_0 + F1_fixtures$f1_2_1 +
+    F1_fixtures$f1_3_2 + F1_fixtures$f1_4_3 + F1_fixtures$f1_5_4 + F1_fixtures$f1_6_5
+)
+
+#odds
+F1_fixtures$f1_AH_075_H_odds <- round((1/F1_fixtures$f1_AH_075_H),digits = 2)
+F1_fixtures$f1_AH_075_A_odds <- round((1/F1_fixtures$f1_AH_075_A),digits = 2)
+
+F1_fixtures$f1_AH_075_H_odds
+F1_fixtures$f1_AH_075_A_odds
+#percentages
+F1_fixtures$f1_AH_075_H <- percent(F1_fixtures$f1_AH_075_H, accuracy = 0.1)
+F1_fixtures$f1_AH_075_A <- percent(F1_fixtures$f1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+F1_fixtures$f1_AH_n125_H <- (
+  F1_fixtures$f1_1_0 + F1_fixtures$f1_2_0 + F1_fixtures$f1_2_1 + F1_fixtures$f1_3_0 + F1_fixtures$f1_3_1 +
+    F1_fixtures$f1_3_2 + F1_fixtures$f1_4_0 + F1_fixtures$f1_4_1 + F1_fixtures$f1_4_2 + F1_fixtures$f1_4_3 +
+    F1_fixtures$f1_5_0 +F1_fixtures$f1_5_1 + F1_fixtures$f1_5_2 + F1_fixtures$f1_5_3 + F1_fixtures$f1_5_4 +
+    F1_fixtures$f1_6_0 + F1_fixtures$f1_6_1 + F1_fixtures$f1_6_2 + F1_fixtures$f1_6_3 + F1_fixtures$f1_6_4 +
+    F1_fixtures$f1_6_5
+)
+#AH_n125_A
+F1_fixtures$f1_AH_n125_A <- (
+  F1_fixtures$f1_0_1 + F1_fixtures$f1_0_2 + F1_fixtures$f1_1_2 + F1_fixtures$f1_0_3 + F1_fixtures$f1_1_3 +
+    F1_fixtures$f1_2_3 + F1_fixtures$f1_0_4 + F1_fixtures$f1_1_4 + F1_fixtures$f1_2_4 + F1_fixtures$f1_3_4 +
+    F1_fixtures$f1_0_5 +F1_fixtures$f1_1_5 + F1_fixtures$f1_2_5 + F1_fixtures$f1_3_5 + F1_fixtures$f1_4_5 +
+    F1_fixtures$f1_0_6 + F1_fixtures$f1_1_6 + F1_fixtures$f1_2_6 + F1_fixtures$f1_3_6 + F1_fixtures$f1_4_6 +
+    F1_fixtures$f1_5_6
+)
+
+#odds
+F1_fixtures$f1_AH_n125_H_odds <- round((1/F1_fixtures$f1_AH_n125_H),digits = 2)
+F1_fixtures$f1_AH_n125_A_odds <- round((1/F1_fixtures$f1_AH_n125_A),digits = 2)
+
+F1_fixtures$f1_AH_n125_H_odds
+F1_fixtures$f1_AH_n125_A_odds
+#percentages
+F1_fixtures$f1_AH_n125_H <- percent(F1_fixtures$f1_AH_n125_H, accuracy = 0.1)
+F1_fixtures$f1_AH_n125_A <- percent(F1_fixtures$f1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+F1_fixtures$f1_AH_125_H <- (
+  F1_fixtures$f1_1_0 + F1_fixtures$f1_2_0 + F1_fixtures$f1_2_1 + F1_fixtures$f1_3_0 + F1_fixtures$f1_3_1 +
+    F1_fixtures$f1_3_2 + F1_fixtures$f1_4_0 + F1_fixtures$f1_4_1 + F1_fixtures$f1_4_2 + F1_fixtures$f1_4_3 +
+    F1_fixtures$f1_5_0 +F1_fixtures$f1_5_1 + F1_fixtures$f1_5_2 + F1_fixtures$f1_5_3 + F1_fixtures$f1_5_4 +
+    F1_fixtures$f1_6_0 + F1_fixtures$f1_6_1 + F1_fixtures$f1_6_2 + F1_fixtures$f1_6_3 + F1_fixtures$f1_6_4 +
+    F1_fixtures$f1_6_5 + F1_fixtures$f1_0_0 + F1_fixtures$f1_1_1 + F1_fixtures$f1_2_2 + F1_fixtures$f1_3_3 +
+    F1_fixtures$f1_4_4 + F1_fixtures$f1_5_5 + F1_fixtures$f1_6_6 + F1_fixtures$f1_0_1 + F1_fixtures$f1_1_2 +
+    F1_fixtures$f1_2_3 + F1_fixtures$f1_3_4 + F1_fixtures$f1_4_5 + F1_fixtures$f1_5_6
+)
+#AH_125_A
+F1_fixtures$f1_AH_125_A <- (
+  F1_fixtures$f1_0_1 + F1_fixtures$f1_0_2 + F1_fixtures$f1_1_2 + F1_fixtures$f1_0_3 + F1_fixtures$f1_1_3 +
+    F1_fixtures$f1_2_3 + F1_fixtures$f1_0_4 + F1_fixtures$f1_1_4 + F1_fixtures$f1_2_4 + F1_fixtures$f1_3_4 +
+    F1_fixtures$f1_0_5 +F1_fixtures$f1_1_5 + F1_fixtures$f1_2_5 + F1_fixtures$f1_3_5 + F1_fixtures$f1_4_5 +
+    F1_fixtures$f1_0_6 + F1_fixtures$f1_1_6 + F1_fixtures$f1_2_6 + F1_fixtures$f1_3_6 + F1_fixtures$f1_4_6 +
+    F1_fixtures$f1_5_6 + F1_fixtures$f1_0_0 + F1_fixtures$f1_1_1 + F1_fixtures$f1_2_2 + F1_fixtures$f1_3_3 +
+    F1_fixtures$f1_4_4 + F1_fixtures$f1_5_5 + F1_fixtures$f1_6_6 + F1_fixtures$f1_1_0 + F1_fixtures$f1_2_1 +
+    F1_fixtures$f1_3_2 + F1_fixtures$f1_4_3 + F1_fixtures$f1_5_4 + F1_fixtures$f1_6_5
+)
+
+#odds
+F1_fixtures$f1_AH_125_H_odds <- round((1/F1_fixtures$f1_AH_125_H),digits = 2)
+F1_fixtures$f1_AH_125_A_odds <- round((1/F1_fixtures$f1_AH_125_A),digits = 2)
+
+F1_fixtures$f1_AH_125_H_odds
+F1_fixtures$f1_AH_125_A_odds
+#percentages
+F1_fixtures$f1_AH_125_H <- percent(F1_fixtures$f1_AH_125_H, accuracy = 0.1)
+F1_fixtures$f1_AH_125_A <- percent(F1_fixtures$f1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 F1_fixtures$f1_ov25 <- percent(F1_fixtures$f1_ov25, accuracy = 0.1)
 
@@ -1582,6 +2986,162 @@ F2_fixtures$f2_un25_odds <- round((1/F2_fixtures$f2_un25),digits = 2)
 
 F2_fixtures$f2_ov25_odds
 F2_fixtures$f2_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+F2_fixtures$f2_AH_0_H <- (
+  F2_fixtures$f2_1_0 + F2_fixtures$f2_2_0 + F2_fixtures$f2_2_1 + F2_fixtures$f2_3_0 + F2_fixtures$f2_3_1 +
+    F2_fixtures$f2_3_2 + F2_fixtures$f2_4_0 + F2_fixtures$f2_4_1 + F2_fixtures$f2_4_2 + F2_fixtures$f2_4_3 +
+    F2_fixtures$f2_5_0 +F2_fixtures$f2_5_1 + F2_fixtures$f2_5_2 + F2_fixtures$f2_5_3 + F2_fixtures$f2_5_4 +
+    F2_fixtures$f2_6_0 + F2_fixtures$f2_6_1 + F2_fixtures$f2_6_2 + F2_fixtures$f2_6_3 + F2_fixtures$f2_6_4 +
+    F2_fixtures$f2_6_5 + F2_fixtures$f2_0_0 + F2_fixtures$f2_1_1 + F2_fixtures$f2_2_2 + F2_fixtures$f2_3_3 +
+    F2_fixtures$f2_4_4 + F2_fixtures$f2_5_5 + F2_fixtures$f2_6_6
+)
+#AH_0_A
+F2_fixtures$f2_AH_0_A <- (
+  F2_fixtures$f2_0_1 + F2_fixtures$f2_0_2 + F2_fixtures$f2_1_2 + F2_fixtures$f2_0_3 + F2_fixtures$f2_1_3 +
+    F2_fixtures$f2_2_3 + F2_fixtures$f2_0_4 + F2_fixtures$f2_1_4 + F2_fixtures$f2_2_4 + F2_fixtures$f2_3_4 +
+    F2_fixtures$f2_0_5 +F2_fixtures$f2_1_5 + F2_fixtures$f2_2_5 + F2_fixtures$f2_3_5 + F2_fixtures$f2_4_5 +
+    F2_fixtures$f2_0_6 + F2_fixtures$f2_1_6 + F2_fixtures$f2_2_6 + F2_fixtures$f2_3_6 + F2_fixtures$f2_4_6 +
+    F2_fixtures$f2_5_6 + F2_fixtures$f2_0_0 + F2_fixtures$f2_1_1 + F2_fixtures$f2_2_2 + F2_fixtures$f2_3_3 +
+    F2_fixtures$f2_4_4 + F2_fixtures$f2_5_5 + F2_fixtures$f2_6_6
+)
+
+#odds
+F2_fixtures$f2_AH_0_H_odds <- round((1/F2_fixtures$f2_AH_0_H),digits = 2)
+F2_fixtures$f2_AH_0_A_odds <- round((1/F2_fixtures$f2_AH_0_A),digits = 2)
+
+F2_fixtures$f2_AH_0_H_odds
+F2_fixtures$f2_AH_0_A_odds
+#percentages
+F2_fixtures$f2_AH_0_H <- percent(F2_fixtures$f2_AH_0_H, accuracy = 0.1)
+F2_fixtures$f2_AH_0_A <- percent(F2_fixtures$f2_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+F2_fixtures$f2_AH_n075_H <- (
+  F2_fixtures$f2_1_0 + F2_fixtures$f2_2_0 + F2_fixtures$f2_2_1 + F2_fixtures$f2_3_0 + F2_fixtures$f2_3_1 +
+    F2_fixtures$f2_3_2 + F2_fixtures$f2_4_0 + F2_fixtures$f2_4_1 + F2_fixtures$f2_4_2 + F2_fixtures$f2_4_3 +
+    F2_fixtures$f2_5_0 +F2_fixtures$f2_5_1 + F2_fixtures$f2_5_2 + F2_fixtures$f2_5_3 + F2_fixtures$f2_5_4 +
+    F2_fixtures$f2_6_0 + F2_fixtures$f2_6_1 + F2_fixtures$f2_6_2 + F2_fixtures$f2_6_3 + F2_fixtures$f2_6_4 +
+    F2_fixtures$f2_6_5
+)
+#AH_n075_A
+F2_fixtures$f2_AH_n075_A <- (
+  F2_fixtures$f2_0_1 + F2_fixtures$f2_0_2 + F2_fixtures$f2_1_2 + F2_fixtures$f2_0_3 + F2_fixtures$f2_1_3 +
+    F2_fixtures$f2_2_3 + F2_fixtures$f2_0_4 + F2_fixtures$f2_1_4 + F2_fixtures$f2_2_4 + F2_fixtures$f2_3_4 +
+    F2_fixtures$f2_0_5 +F2_fixtures$f2_1_5 + F2_fixtures$f2_2_5 + F2_fixtures$f2_3_5 + F2_fixtures$f2_4_5 +
+    F2_fixtures$f2_0_6 + F2_fixtures$f2_1_6 + F2_fixtures$f2_2_6 + F2_fixtures$f2_3_6 + F2_fixtures$f2_4_6 +
+    F2_fixtures$f2_5_6
+)
+
+#odds
+F2_fixtures$f2_AH_n075_H_odds <- round((1/F2_fixtures$f2_AH_n075_H),digits = 2)
+F2_fixtures$f2_AH_n075_A_odds <- round((1/F2_fixtures$f2_AH_n075_A),digits = 2)
+
+F2_fixtures$f2_AH_n075_H_odds
+F2_fixtures$f2_AH_n075_A_odds
+#percentages
+F2_fixtures$f2_AH_n075_H <- percent(F2_fixtures$f2_AH_n075_H, accuracy = 0.1)
+F2_fixtures$f2_AH_n075_A <- percent(F2_fixtures$f2_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+F2_fixtures$f2_AH_075_H <- (
+  F2_fixtures$f2_1_0 + F2_fixtures$f2_2_0 + F2_fixtures$f2_2_1 + F2_fixtures$f2_3_0 + F2_fixtures$f2_3_1 +
+    F2_fixtures$f2_3_2 + F2_fixtures$f2_4_0 + F2_fixtures$f2_4_1 + F2_fixtures$f2_4_2 + F2_fixtures$f2_4_3 +
+    F2_fixtures$f2_5_0 +F2_fixtures$f2_5_1 + F2_fixtures$f2_5_2 + F2_fixtures$f2_5_3 + F2_fixtures$f2_5_4 +
+    F2_fixtures$f2_6_0 + F2_fixtures$f2_6_1 + F2_fixtures$f2_6_2 + F2_fixtures$f2_6_3 + F2_fixtures$f2_6_4 +
+    F2_fixtures$f2_6_5 + F2_fixtures$f2_0_0 + F2_fixtures$f2_1_1 + F2_fixtures$f2_2_2 + F2_fixtures$f2_3_3 +
+    F2_fixtures$f2_4_4 + F2_fixtures$f2_5_5 + F2_fixtures$f2_6_6 + F2_fixtures$f2_0_1 + F2_fixtures$f2_1_2 +
+    F2_fixtures$f2_2_3 + F2_fixtures$f2_3_4 + F2_fixtures$f2_4_5 + F2_fixtures$f2_5_6
+)
+#AH_075_A
+F2_fixtures$f2_AH_075_A <- (
+  F2_fixtures$f2_0_1 + F2_fixtures$f2_0_2 + F2_fixtures$f2_1_2 + F2_fixtures$f2_0_3 + F2_fixtures$f2_1_3 +
+    F2_fixtures$f2_2_3 + F2_fixtures$f2_0_4 + F2_fixtures$f2_1_4 + F2_fixtures$f2_2_4 + F2_fixtures$f2_3_4 +
+    F2_fixtures$f2_0_5 +F2_fixtures$f2_1_5 + F2_fixtures$f2_2_5 + F2_fixtures$f2_3_5 + F2_fixtures$f2_4_5 +
+    F2_fixtures$f2_0_6 + F2_fixtures$f2_1_6 + F2_fixtures$f2_2_6 + F2_fixtures$f2_3_6 + F2_fixtures$f2_4_6 +
+    F2_fixtures$f2_5_6 + F2_fixtures$f2_0_0 + F2_fixtures$f2_1_1 + F2_fixtures$f2_2_2 + F2_fixtures$f2_3_3 +
+    F2_fixtures$f2_4_4 + F2_fixtures$f2_5_5 + F2_fixtures$f2_6_6 + F2_fixtures$f2_1_0 + F2_fixtures$f2_2_1 +
+    F2_fixtures$f2_3_2 + F2_fixtures$f2_4_3 + F2_fixtures$f2_5_4 + F2_fixtures$f2_6_5
+)
+
+#odds
+F2_fixtures$f2_AH_075_H_odds <- round((1/F2_fixtures$f2_AH_075_H),digits = 2)
+F2_fixtures$f2_AH_075_A_odds <- round((1/F2_fixtures$f2_AH_075_A),digits = 2)
+
+F2_fixtures$f2_AH_075_H_odds
+F2_fixtures$f2_AH_075_A_odds
+#percentages
+F2_fixtures$f2_AH_075_H <- percent(F2_fixtures$f2_AH_075_H, accuracy = 0.1)
+F2_fixtures$f2_AH_075_A <- percent(F2_fixtures$f2_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+F2_fixtures$f2_AH_n125_H <- (
+  F2_fixtures$f2_1_0 + F2_fixtures$f2_2_0 + F2_fixtures$f2_2_1 + F2_fixtures$f2_3_0 + F2_fixtures$f2_3_1 +
+    F2_fixtures$f2_3_2 + F2_fixtures$f2_4_0 + F2_fixtures$f2_4_1 + F2_fixtures$f2_4_2 + F2_fixtures$f2_4_3 +
+    F2_fixtures$f2_5_0 +F2_fixtures$f2_5_1 + F2_fixtures$f2_5_2 + F2_fixtures$f2_5_3 + F2_fixtures$f2_5_4 +
+    F2_fixtures$f2_6_0 + F2_fixtures$f2_6_1 + F2_fixtures$f2_6_2 + F2_fixtures$f2_6_3 + F2_fixtures$f2_6_4 +
+    F2_fixtures$f2_6_5
+)
+#AH_n125_A
+F2_fixtures$f2_AH_n125_A <- (
+  F2_fixtures$f2_0_1 + F2_fixtures$f2_0_2 + F2_fixtures$f2_1_2 + F2_fixtures$f2_0_3 + F2_fixtures$f2_1_3 +
+    F2_fixtures$f2_2_3 + F2_fixtures$f2_0_4 + F2_fixtures$f2_1_4 + F2_fixtures$f2_2_4 + F2_fixtures$f2_3_4 +
+    F2_fixtures$f2_0_5 +F2_fixtures$f2_1_5 + F2_fixtures$f2_2_5 + F2_fixtures$f2_3_5 + F2_fixtures$f2_4_5 +
+    F2_fixtures$f2_0_6 + F2_fixtures$f2_1_6 + F2_fixtures$f2_2_6 + F2_fixtures$f2_3_6 + F2_fixtures$f2_4_6 +
+    F2_fixtures$f2_5_6
+)
+
+#odds
+F2_fixtures$f2_AH_n125_H_odds <- round((1/F2_fixtures$f2_AH_n125_H),digits = 2)
+F2_fixtures$f2_AH_n125_A_odds <- round((1/F2_fixtures$f2_AH_n125_A),digits = 2)
+
+F2_fixtures$f2_AH_n125_H_odds
+F2_fixtures$f2_AH_n125_A_odds
+#percentages
+F2_fixtures$f2_AH_n125_H <- percent(F2_fixtures$f2_AH_n125_H, accuracy = 0.1)
+F2_fixtures$f2_AH_n125_A <- percent(F2_fixtures$f2_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+F2_fixtures$f2_AH_125_H <- (
+  F2_fixtures$f2_1_0 + F2_fixtures$f2_2_0 + F2_fixtures$f2_2_1 + F2_fixtures$f2_3_0 + F2_fixtures$f2_3_1 +
+    F2_fixtures$f2_3_2 + F2_fixtures$f2_4_0 + F2_fixtures$f2_4_1 + F2_fixtures$f2_4_2 + F2_fixtures$f2_4_3 +
+    F2_fixtures$f2_5_0 +F2_fixtures$f2_5_1 + F2_fixtures$f2_5_2 + F2_fixtures$f2_5_3 + F2_fixtures$f2_5_4 +
+    F2_fixtures$f2_6_0 + F2_fixtures$f2_6_1 + F2_fixtures$f2_6_2 + F2_fixtures$f2_6_3 + F2_fixtures$f2_6_4 +
+    F2_fixtures$f2_6_5 + F2_fixtures$f2_0_0 + F2_fixtures$f2_1_1 + F2_fixtures$f2_2_2 + F2_fixtures$f2_3_3 +
+    F2_fixtures$f2_4_4 + F2_fixtures$f2_5_5 + F2_fixtures$f2_6_6 + F2_fixtures$f2_0_1 + F2_fixtures$f2_1_2 +
+    F2_fixtures$f2_2_3 + F2_fixtures$f2_3_4 + F2_fixtures$f2_4_5 + F2_fixtures$f2_5_6
+)
+#AH_125_A
+F2_fixtures$f2_AH_125_A <- (
+  F2_fixtures$f2_0_1 + F2_fixtures$f2_0_2 + F2_fixtures$f2_1_2 + F2_fixtures$f2_0_3 + F2_fixtures$f2_1_3 +
+    F2_fixtures$f2_2_3 + F2_fixtures$f2_0_4 + F2_fixtures$f2_1_4 + F2_fixtures$f2_2_4 + F2_fixtures$f2_3_4 +
+    F2_fixtures$f2_0_5 +F2_fixtures$f2_1_5 + F2_fixtures$f2_2_5 + F2_fixtures$f2_3_5 + F2_fixtures$f2_4_5 +
+    F2_fixtures$f2_0_6 + F2_fixtures$f2_1_6 + F2_fixtures$f2_2_6 + F2_fixtures$f2_3_6 + F2_fixtures$f2_4_6 +
+    F2_fixtures$f2_5_6 + F2_fixtures$f2_0_0 + F2_fixtures$f2_1_1 + F2_fixtures$f2_2_2 + F2_fixtures$f2_3_3 +
+    F2_fixtures$f2_4_4 + F2_fixtures$f2_5_5 + F2_fixtures$f2_6_6 + F2_fixtures$f2_1_0 + F2_fixtures$f2_2_1 +
+    F2_fixtures$f2_3_2 + F2_fixtures$f2_4_3 + F2_fixtures$f2_5_4 + F2_fixtures$f2_6_5
+)
+
+#odds
+F2_fixtures$f2_AH_125_H_odds <- round((1/F2_fixtures$f2_AH_125_H),digits = 2)
+F2_fixtures$f2_AH_125_A_odds <- round((1/F2_fixtures$f2_AH_125_A),digits = 2)
+
+F2_fixtures$f2_AH_125_H_odds
+F2_fixtures$f2_AH_125_A_odds
+#percentages
+F2_fixtures$f2_AH_125_H <- percent(F2_fixtures$f2_AH_125_H, accuracy = 0.1)
+F2_fixtures$f2_AH_125_A <- percent(F2_fixtures$f2_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 F2_fixtures$f2_ov25 <- percent(F2_fixtures$f2_ov25, accuracy = 0.1)
 
@@ -1740,6 +3300,162 @@ G1_fixtures$g1_un25_odds <- round((1/G1_fixtures$g1_un25),digits = 2)
 
 G1_fixtures$g1_ov25_odds
 G1_fixtures$g1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+G1_fixtures$g1_AH_0_H <- (
+  G1_fixtures$g1_1_0 + G1_fixtures$g1_2_0 + G1_fixtures$g1_2_1 + G1_fixtures$g1_3_0 + G1_fixtures$g1_3_1 +
+    G1_fixtures$g1_3_2 + G1_fixtures$g1_4_0 + G1_fixtures$g1_4_1 + G1_fixtures$g1_4_2 + G1_fixtures$g1_4_3 +
+    G1_fixtures$g1_5_0 +G1_fixtures$g1_5_1 + G1_fixtures$g1_5_2 + G1_fixtures$g1_5_3 + G1_fixtures$g1_5_4 +
+    G1_fixtures$g1_6_0 + G1_fixtures$g1_6_1 + G1_fixtures$g1_6_2 + G1_fixtures$g1_6_3 + G1_fixtures$g1_6_4 +
+    G1_fixtures$g1_6_5 + G1_fixtures$g1_0_0 + G1_fixtures$g1_1_1 + G1_fixtures$g1_2_2 + G1_fixtures$g1_3_3 +
+    G1_fixtures$g1_4_4 + G1_fixtures$g1_5_5 + G1_fixtures$g1_6_6
+)
+#AH_0_A
+G1_fixtures$g1_AH_0_A <- (
+  G1_fixtures$g1_0_1 + G1_fixtures$g1_0_2 + G1_fixtures$g1_1_2 + G1_fixtures$g1_0_3 + G1_fixtures$g1_1_3 +
+    G1_fixtures$g1_2_3 + G1_fixtures$g1_0_4 + G1_fixtures$g1_1_4 + G1_fixtures$g1_2_4 + G1_fixtures$g1_3_4 +
+    G1_fixtures$g1_0_5 +G1_fixtures$g1_1_5 + G1_fixtures$g1_2_5 + G1_fixtures$g1_3_5 + G1_fixtures$g1_4_5 +
+    G1_fixtures$g1_0_6 + G1_fixtures$g1_1_6 + G1_fixtures$g1_2_6 + G1_fixtures$g1_3_6 + G1_fixtures$g1_4_6 +
+    G1_fixtures$g1_5_6 + G1_fixtures$g1_0_0 + G1_fixtures$g1_1_1 + G1_fixtures$g1_2_2 + G1_fixtures$g1_3_3 +
+    G1_fixtures$g1_4_4 + G1_fixtures$g1_5_5 + G1_fixtures$g1_6_6
+)
+
+#odds
+G1_fixtures$g1_AH_0_H_odds <- round((1/G1_fixtures$g1_AH_0_H),digits = 2)
+G1_fixtures$g1_AH_0_A_odds <- round((1/G1_fixtures$g1_AH_0_A),digits = 2)
+
+G1_fixtures$g1_AH_0_H_odds
+G1_fixtures$g1_AH_0_A_odds
+#percentages
+G1_fixtures$g1_AH_0_H <- percent(G1_fixtures$g1_AH_0_H, accuracy = 0.1)
+G1_fixtures$g1_AH_0_A <- percent(G1_fixtures$g1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+G1_fixtures$g1_AH_n075_H <- (
+  G1_fixtures$g1_1_0 + G1_fixtures$g1_2_0 + G1_fixtures$g1_2_1 + G1_fixtures$g1_3_0 + G1_fixtures$g1_3_1 +
+    G1_fixtures$g1_3_2 + G1_fixtures$g1_4_0 + G1_fixtures$g1_4_1 + G1_fixtures$g1_4_2 + G1_fixtures$g1_4_3 +
+    G1_fixtures$g1_5_0 +G1_fixtures$g1_5_1 + G1_fixtures$g1_5_2 + G1_fixtures$g1_5_3 + G1_fixtures$g1_5_4 +
+    G1_fixtures$g1_6_0 + G1_fixtures$g1_6_1 + G1_fixtures$g1_6_2 + G1_fixtures$g1_6_3 + G1_fixtures$g1_6_4 +
+    G1_fixtures$g1_6_5
+)
+#AH_n075_A
+G1_fixtures$g1_AH_n075_A <- (
+  G1_fixtures$g1_0_1 + G1_fixtures$g1_0_2 + G1_fixtures$g1_1_2 + G1_fixtures$g1_0_3 + G1_fixtures$g1_1_3 +
+    G1_fixtures$g1_2_3 + G1_fixtures$g1_0_4 + G1_fixtures$g1_1_4 + G1_fixtures$g1_2_4 + G1_fixtures$g1_3_4 +
+    G1_fixtures$g1_0_5 +G1_fixtures$g1_1_5 + G1_fixtures$g1_2_5 + G1_fixtures$g1_3_5 + G1_fixtures$g1_4_5 +
+    G1_fixtures$g1_0_6 + G1_fixtures$g1_1_6 + G1_fixtures$g1_2_6 + G1_fixtures$g1_3_6 + G1_fixtures$g1_4_6 +
+    G1_fixtures$g1_5_6
+)
+
+#odds
+G1_fixtures$g1_AH_n075_H_odds <- round((1/G1_fixtures$g1_AH_n075_H),digits = 2)
+G1_fixtures$g1_AH_n075_A_odds <- round((1/G1_fixtures$g1_AH_n075_A),digits = 2)
+
+G1_fixtures$g1_AH_n075_H_odds
+G1_fixtures$g1_AH_n075_A_odds
+#percentages
+G1_fixtures$g1_AH_n075_H <- percent(G1_fixtures$g1_AH_n075_H, accuracy = 0.1)
+G1_fixtures$g1_AH_n075_A <- percent(G1_fixtures$g1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+G1_fixtures$g1_AH_075_H <- (
+  G1_fixtures$g1_1_0 + G1_fixtures$g1_2_0 + G1_fixtures$g1_2_1 + G1_fixtures$g1_3_0 + G1_fixtures$g1_3_1 +
+    G1_fixtures$g1_3_2 + G1_fixtures$g1_4_0 + G1_fixtures$g1_4_1 + G1_fixtures$g1_4_2 + G1_fixtures$g1_4_3 +
+    G1_fixtures$g1_5_0 +G1_fixtures$g1_5_1 + G1_fixtures$g1_5_2 + G1_fixtures$g1_5_3 + G1_fixtures$g1_5_4 +
+    G1_fixtures$g1_6_0 + G1_fixtures$g1_6_1 + G1_fixtures$g1_6_2 + G1_fixtures$g1_6_3 + G1_fixtures$g1_6_4 +
+    G1_fixtures$g1_6_5 + G1_fixtures$g1_0_0 + G1_fixtures$g1_1_1 + G1_fixtures$g1_2_2 + G1_fixtures$g1_3_3 +
+    G1_fixtures$g1_4_4 + G1_fixtures$g1_5_5 + G1_fixtures$g1_6_6 + G1_fixtures$g1_0_1 + G1_fixtures$g1_1_2 +
+    G1_fixtures$g1_2_3 + G1_fixtures$g1_3_4 + G1_fixtures$g1_4_5 + G1_fixtures$g1_5_6
+)
+#AH_075_A
+G1_fixtures$g1_AH_075_A <- (
+  G1_fixtures$g1_0_1 + G1_fixtures$g1_0_2 + G1_fixtures$g1_1_2 + G1_fixtures$g1_0_3 + G1_fixtures$g1_1_3 +
+    G1_fixtures$g1_2_3 + G1_fixtures$g1_0_4 + G1_fixtures$g1_1_4 + G1_fixtures$g1_2_4 + G1_fixtures$g1_3_4 +
+    G1_fixtures$g1_0_5 +G1_fixtures$g1_1_5 + G1_fixtures$g1_2_5 + G1_fixtures$g1_3_5 + G1_fixtures$g1_4_5 +
+    G1_fixtures$g1_0_6 + G1_fixtures$g1_1_6 + G1_fixtures$g1_2_6 + G1_fixtures$g1_3_6 + G1_fixtures$g1_4_6 +
+    G1_fixtures$g1_5_6 + G1_fixtures$g1_0_0 + G1_fixtures$g1_1_1 + G1_fixtures$g1_2_2 + G1_fixtures$g1_3_3 +
+    G1_fixtures$g1_4_4 + G1_fixtures$g1_5_5 + G1_fixtures$g1_6_6 + G1_fixtures$g1_1_0 + G1_fixtures$g1_2_1 +
+    G1_fixtures$g1_3_2 + G1_fixtures$g1_4_3 + G1_fixtures$g1_5_4 + G1_fixtures$g1_6_5
+)
+
+#odds
+G1_fixtures$g1_AH_075_H_odds <- round((1/G1_fixtures$g1_AH_075_H),digits = 2)
+G1_fixtures$g1_AH_075_A_odds <- round((1/G1_fixtures$g1_AH_075_A),digits = 2)
+
+G1_fixtures$g1_AH_075_H_odds
+G1_fixtures$g1_AH_075_A_odds
+#percentages
+G1_fixtures$g1_AH_075_H <- percent(G1_fixtures$g1_AH_075_H, accuracy = 0.1)
+G1_fixtures$g1_AH_075_A <- percent(G1_fixtures$g1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+G1_fixtures$g1_AH_n125_H <- (
+  G1_fixtures$g1_1_0 + G1_fixtures$g1_2_0 + G1_fixtures$g1_2_1 + G1_fixtures$g1_3_0 + G1_fixtures$g1_3_1 +
+    G1_fixtures$g1_3_2 + G1_fixtures$g1_4_0 + G1_fixtures$g1_4_1 + G1_fixtures$g1_4_2 + G1_fixtures$g1_4_3 +
+    G1_fixtures$g1_5_0 +G1_fixtures$g1_5_1 + G1_fixtures$g1_5_2 + G1_fixtures$g1_5_3 + G1_fixtures$g1_5_4 +
+    G1_fixtures$g1_6_0 + G1_fixtures$g1_6_1 + G1_fixtures$g1_6_2 + G1_fixtures$g1_6_3 + G1_fixtures$g1_6_4 +
+    G1_fixtures$g1_6_5
+)
+#AH_n125_A
+G1_fixtures$g1_AH_n125_A <- (
+  G1_fixtures$g1_0_1 + G1_fixtures$g1_0_2 + G1_fixtures$g1_1_2 + G1_fixtures$g1_0_3 + G1_fixtures$g1_1_3 +
+    G1_fixtures$g1_2_3 + G1_fixtures$g1_0_4 + G1_fixtures$g1_1_4 + G1_fixtures$g1_2_4 + G1_fixtures$g1_3_4 +
+    G1_fixtures$g1_0_5 +G1_fixtures$g1_1_5 + G1_fixtures$g1_2_5 + G1_fixtures$g1_3_5 + G1_fixtures$g1_4_5 +
+    G1_fixtures$g1_0_6 + G1_fixtures$g1_1_6 + G1_fixtures$g1_2_6 + G1_fixtures$g1_3_6 + G1_fixtures$g1_4_6 +
+    G1_fixtures$g1_5_6
+)
+
+#odds
+G1_fixtures$g1_AH_n125_H_odds <- round((1/G1_fixtures$g1_AH_n125_H),digits = 2)
+G1_fixtures$g1_AH_n125_A_odds <- round((1/G1_fixtures$g1_AH_n125_A),digits = 2)
+
+G1_fixtures$g1_AH_n125_H_odds
+G1_fixtures$g1_AH_n125_A_odds
+#percentages
+G1_fixtures$g1_AH_n125_H <- percent(G1_fixtures$g1_AH_n125_H, accuracy = 0.1)
+G1_fixtures$g1_AH_n125_A <- percent(G1_fixtures$g1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+G1_fixtures$g1_AH_125_H <- (
+  G1_fixtures$g1_1_0 + G1_fixtures$g1_2_0 + G1_fixtures$g1_2_1 + G1_fixtures$g1_3_0 + G1_fixtures$g1_3_1 +
+    G1_fixtures$g1_3_2 + G1_fixtures$g1_4_0 + G1_fixtures$g1_4_1 + G1_fixtures$g1_4_2 + G1_fixtures$g1_4_3 +
+    G1_fixtures$g1_5_0 +G1_fixtures$g1_5_1 + G1_fixtures$g1_5_2 + G1_fixtures$g1_5_3 + G1_fixtures$g1_5_4 +
+    G1_fixtures$g1_6_0 + G1_fixtures$g1_6_1 + G1_fixtures$g1_6_2 + G1_fixtures$g1_6_3 + G1_fixtures$g1_6_4 +
+    G1_fixtures$g1_6_5 + G1_fixtures$g1_0_0 + G1_fixtures$g1_1_1 + G1_fixtures$g1_2_2 + G1_fixtures$g1_3_3 +
+    G1_fixtures$g1_4_4 + G1_fixtures$g1_5_5 + G1_fixtures$g1_6_6 + G1_fixtures$g1_0_1 + G1_fixtures$g1_1_2 +
+    G1_fixtures$g1_2_3 + G1_fixtures$g1_3_4 + G1_fixtures$g1_4_5 + G1_fixtures$g1_5_6
+)
+#AH_125_A
+G1_fixtures$g1_AH_125_A <- (
+  G1_fixtures$g1_0_1 + G1_fixtures$g1_0_2 + G1_fixtures$g1_1_2 + G1_fixtures$g1_0_3 + G1_fixtures$g1_1_3 +
+    G1_fixtures$g1_2_3 + G1_fixtures$g1_0_4 + G1_fixtures$g1_1_4 + G1_fixtures$g1_2_4 + G1_fixtures$g1_3_4 +
+    G1_fixtures$g1_0_5 +G1_fixtures$g1_1_5 + G1_fixtures$g1_2_5 + G1_fixtures$g1_3_5 + G1_fixtures$g1_4_5 +
+    G1_fixtures$g1_0_6 + G1_fixtures$g1_1_6 + G1_fixtures$g1_2_6 + G1_fixtures$g1_3_6 + G1_fixtures$g1_4_6 +
+    G1_fixtures$g1_5_6 + G1_fixtures$g1_0_0 + G1_fixtures$g1_1_1 + G1_fixtures$g1_2_2 + G1_fixtures$g1_3_3 +
+    G1_fixtures$g1_4_4 + G1_fixtures$g1_5_5 + G1_fixtures$g1_6_6 + G1_fixtures$g1_1_0 + G1_fixtures$g1_2_1 +
+    G1_fixtures$g1_3_2 + G1_fixtures$g1_4_3 + G1_fixtures$g1_5_4 + G1_fixtures$g1_6_5
+)
+
+#odds
+G1_fixtures$g1_AH_125_H_odds <- round((1/G1_fixtures$g1_AH_125_H),digits = 2)
+G1_fixtures$g1_AH_125_A_odds <- round((1/G1_fixtures$g1_AH_125_A),digits = 2)
+
+G1_fixtures$g1_AH_125_H_odds
+G1_fixtures$g1_AH_125_A_odds
+#percentages
+G1_fixtures$g1_AH_125_H <- percent(G1_fixtures$g1_AH_125_H, accuracy = 0.1)
+G1_fixtures$g1_AH_125_A <- percent(G1_fixtures$g1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 G1_fixtures$g1_ov25 <- percent(G1_fixtures$g1_ov25, accuracy = 0.1)
 
@@ -1898,6 +3614,162 @@ I1_fixtures$i1_un25_odds <- round((1/I1_fixtures$i1_un25),digits = 2)
 
 I1_fixtures$i1_ov25_odds
 I1_fixtures$i1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+I1_fixtures$i1_AH_0_H <- (
+  I1_fixtures$i1_1_0 + I1_fixtures$i1_2_0 + I1_fixtures$i1_2_1 + I1_fixtures$i1_3_0 + I1_fixtures$i1_3_1 +
+    I1_fixtures$i1_3_2 + I1_fixtures$i1_4_0 + I1_fixtures$i1_4_1 + I1_fixtures$i1_4_2 + I1_fixtures$i1_4_3 +
+    I1_fixtures$i1_5_0 +I1_fixtures$i1_5_1 + I1_fixtures$i1_5_2 + I1_fixtures$i1_5_3 + I1_fixtures$i1_5_4 +
+    I1_fixtures$i1_6_0 + I1_fixtures$i1_6_1 + I1_fixtures$i1_6_2 + I1_fixtures$i1_6_3 + I1_fixtures$i1_6_4 +
+    I1_fixtures$i1_6_5 + I1_fixtures$i1_0_0 + I1_fixtures$i1_1_1 + I1_fixtures$i1_2_2 + I1_fixtures$i1_3_3 +
+    I1_fixtures$i1_4_4 + I1_fixtures$i1_5_5 + I1_fixtures$i1_6_6
+)
+#AH_0_A
+I1_fixtures$i1_AH_0_A <- (
+  I1_fixtures$i1_0_1 + I1_fixtures$i1_0_2 + I1_fixtures$i1_1_2 + I1_fixtures$i1_0_3 + I1_fixtures$i1_1_3 +
+    I1_fixtures$i1_2_3 + I1_fixtures$i1_0_4 + I1_fixtures$i1_1_4 + I1_fixtures$i1_2_4 + I1_fixtures$i1_3_4 +
+    I1_fixtures$i1_0_5 +I1_fixtures$i1_1_5 + I1_fixtures$i1_2_5 + I1_fixtures$i1_3_5 + I1_fixtures$i1_4_5 +
+    I1_fixtures$i1_0_6 + I1_fixtures$i1_1_6 + I1_fixtures$i1_2_6 + I1_fixtures$i1_3_6 + I1_fixtures$i1_4_6 +
+    I1_fixtures$i1_5_6 + I1_fixtures$i1_0_0 + I1_fixtures$i1_1_1 + I1_fixtures$i1_2_2 + I1_fixtures$i1_3_3 +
+    I1_fixtures$i1_4_4 + I1_fixtures$i1_5_5 + I1_fixtures$i1_6_6
+)
+
+#odds
+I1_fixtures$i1_AH_0_H_odds <- round((1/I1_fixtures$i1_AH_0_H),digits = 2)
+I1_fixtures$i1_AH_0_A_odds <- round((1/I1_fixtures$i1_AH_0_A),digits = 2)
+
+I1_fixtures$i1_AH_0_H_odds
+I1_fixtures$i1_AH_0_A_odds
+#percentages
+I1_fixtures$i1_AH_0_H <- percent(I1_fixtures$i1_AH_0_H, accuracy = 0.1)
+I1_fixtures$i1_AH_0_A <- percent(I1_fixtures$i1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+I1_fixtures$i1_AH_n075_H <- (
+  I1_fixtures$i1_1_0 + I1_fixtures$i1_2_0 + I1_fixtures$i1_2_1 + I1_fixtures$i1_3_0 + I1_fixtures$i1_3_1 +
+    I1_fixtures$i1_3_2 + I1_fixtures$i1_4_0 + I1_fixtures$i1_4_1 + I1_fixtures$i1_4_2 + I1_fixtures$i1_4_3 +
+    I1_fixtures$i1_5_0 +I1_fixtures$i1_5_1 + I1_fixtures$i1_5_2 + I1_fixtures$i1_5_3 + I1_fixtures$i1_5_4 +
+    I1_fixtures$i1_6_0 + I1_fixtures$i1_6_1 + I1_fixtures$i1_6_2 + I1_fixtures$i1_6_3 + I1_fixtures$i1_6_4 +
+    I1_fixtures$i1_6_5
+)
+#AH_n075_A
+I1_fixtures$i1_AH_n075_A <- (
+  I1_fixtures$i1_0_1 + I1_fixtures$i1_0_2 + I1_fixtures$i1_1_2 + I1_fixtures$i1_0_3 + I1_fixtures$i1_1_3 +
+    I1_fixtures$i1_2_3 + I1_fixtures$i1_0_4 + I1_fixtures$i1_1_4 + I1_fixtures$i1_2_4 + I1_fixtures$i1_3_4 +
+    I1_fixtures$i1_0_5 +I1_fixtures$i1_1_5 + I1_fixtures$i1_2_5 + I1_fixtures$i1_3_5 + I1_fixtures$i1_4_5 +
+    I1_fixtures$i1_0_6 + I1_fixtures$i1_1_6 + I1_fixtures$i1_2_6 + I1_fixtures$i1_3_6 + I1_fixtures$i1_4_6 +
+    I1_fixtures$i1_5_6
+)
+
+#odds
+I1_fixtures$i1_AH_n075_H_odds <- round((1/I1_fixtures$i1_AH_n075_H),digits = 2)
+I1_fixtures$i1_AH_n075_A_odds <- round((1/I1_fixtures$i1_AH_n075_A),digits = 2)
+
+I1_fixtures$i1_AH_n075_H_odds
+I1_fixtures$i1_AH_n075_A_odds
+#percentages
+I1_fixtures$i1_AH_n075_H <- percent(I1_fixtures$i1_AH_n075_H, accuracy = 0.1)
+I1_fixtures$i1_AH_n075_A <- percent(I1_fixtures$i1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+I1_fixtures$i1_AH_075_H <- (
+  I1_fixtures$i1_1_0 + I1_fixtures$i1_2_0 + I1_fixtures$i1_2_1 + I1_fixtures$i1_3_0 + I1_fixtures$i1_3_1 +
+    I1_fixtures$i1_3_2 + I1_fixtures$i1_4_0 + I1_fixtures$i1_4_1 + I1_fixtures$i1_4_2 + I1_fixtures$i1_4_3 +
+    I1_fixtures$i1_5_0 +I1_fixtures$i1_5_1 + I1_fixtures$i1_5_2 + I1_fixtures$i1_5_3 + I1_fixtures$i1_5_4 +
+    I1_fixtures$i1_6_0 + I1_fixtures$i1_6_1 + I1_fixtures$i1_6_2 + I1_fixtures$i1_6_3 + I1_fixtures$i1_6_4 +
+    I1_fixtures$i1_6_5 + I1_fixtures$i1_0_0 + I1_fixtures$i1_1_1 + I1_fixtures$i1_2_2 + I1_fixtures$i1_3_3 +
+    I1_fixtures$i1_4_4 + I1_fixtures$i1_5_5 + I1_fixtures$i1_6_6 + I1_fixtures$i1_0_1 + I1_fixtures$i1_1_2 +
+    I1_fixtures$i1_2_3 + I1_fixtures$i1_3_4 + I1_fixtures$i1_4_5 + I1_fixtures$i1_5_6
+)
+#AH_075_A
+I1_fixtures$i1_AH_075_A <- (
+  I1_fixtures$i1_0_1 + I1_fixtures$i1_0_2 + I1_fixtures$i1_1_2 + I1_fixtures$i1_0_3 + I1_fixtures$i1_1_3 +
+    I1_fixtures$i1_2_3 + I1_fixtures$i1_0_4 + I1_fixtures$i1_1_4 + I1_fixtures$i1_2_4 + I1_fixtures$i1_3_4 +
+    I1_fixtures$i1_0_5 +I1_fixtures$i1_1_5 + I1_fixtures$i1_2_5 + I1_fixtures$i1_3_5 + I1_fixtures$i1_4_5 +
+    I1_fixtures$i1_0_6 + I1_fixtures$i1_1_6 + I1_fixtures$i1_2_6 + I1_fixtures$i1_3_6 + I1_fixtures$i1_4_6 +
+    I1_fixtures$i1_5_6 + I1_fixtures$i1_0_0 + I1_fixtures$i1_1_1 + I1_fixtures$i1_2_2 + I1_fixtures$i1_3_3 +
+    I1_fixtures$i1_4_4 + I1_fixtures$i1_5_5 + I1_fixtures$i1_6_6 + I1_fixtures$i1_1_0 + I1_fixtures$i1_2_1 +
+    I1_fixtures$i1_3_2 + I1_fixtures$i1_4_3 + I1_fixtures$i1_5_4 + I1_fixtures$i1_6_5
+)
+
+#odds
+I1_fixtures$i1_AH_075_H_odds <- round((1/I1_fixtures$i1_AH_075_H),digits = 2)
+I1_fixtures$i1_AH_075_A_odds <- round((1/I1_fixtures$i1_AH_075_A),digits = 2)
+
+I1_fixtures$i1_AH_075_H_odds
+I1_fixtures$i1_AH_075_A_odds
+#percentages
+I1_fixtures$i1_AH_075_H <- percent(I1_fixtures$i1_AH_075_H, accuracy = 0.1)
+I1_fixtures$i1_AH_075_A <- percent(I1_fixtures$i1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+I1_fixtures$i1_AH_n125_H <- (
+  I1_fixtures$i1_1_0 + I1_fixtures$i1_2_0 + I1_fixtures$i1_2_1 + I1_fixtures$i1_3_0 + I1_fixtures$i1_3_1 +
+    I1_fixtures$i1_3_2 + I1_fixtures$i1_4_0 + I1_fixtures$i1_4_1 + I1_fixtures$i1_4_2 + I1_fixtures$i1_4_3 +
+    I1_fixtures$i1_5_0 +I1_fixtures$i1_5_1 + I1_fixtures$i1_5_2 + I1_fixtures$i1_5_3 + I1_fixtures$i1_5_4 +
+    I1_fixtures$i1_6_0 + I1_fixtures$i1_6_1 + I1_fixtures$i1_6_2 + I1_fixtures$i1_6_3 + I1_fixtures$i1_6_4 +
+    I1_fixtures$i1_6_5
+)
+#AH_n125_A
+I1_fixtures$i1_AH_n125_A <- (
+  I1_fixtures$i1_0_1 + I1_fixtures$i1_0_2 + I1_fixtures$i1_1_2 + I1_fixtures$i1_0_3 + I1_fixtures$i1_1_3 +
+    I1_fixtures$i1_2_3 + I1_fixtures$i1_0_4 + I1_fixtures$i1_1_4 + I1_fixtures$i1_2_4 + I1_fixtures$i1_3_4 +
+    I1_fixtures$i1_0_5 +I1_fixtures$i1_1_5 + I1_fixtures$i1_2_5 + I1_fixtures$i1_3_5 + I1_fixtures$i1_4_5 +
+    I1_fixtures$i1_0_6 + I1_fixtures$i1_1_6 + I1_fixtures$i1_2_6 + I1_fixtures$i1_3_6 + I1_fixtures$i1_4_6 +
+    I1_fixtures$i1_5_6
+)
+
+#odds
+I1_fixtures$i1_AH_n125_H_odds <- round((1/I1_fixtures$i1_AH_n125_H),digits = 2)
+I1_fixtures$i1_AH_n125_A_odds <- round((1/I1_fixtures$i1_AH_n125_A),digits = 2)
+
+I1_fixtures$i1_AH_n125_H_odds
+I1_fixtures$i1_AH_n125_A_odds
+#percentages
+I1_fixtures$i1_AH_n125_H <- percent(I1_fixtures$i1_AH_n125_H, accuracy = 0.1)
+I1_fixtures$i1_AH_n125_A <- percent(I1_fixtures$i1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+I1_fixtures$i1_AH_125_H <- (
+  I1_fixtures$i1_1_0 + I1_fixtures$i1_2_0 + I1_fixtures$i1_2_1 + I1_fixtures$i1_3_0 + I1_fixtures$i1_3_1 +
+    I1_fixtures$i1_3_2 + I1_fixtures$i1_4_0 + I1_fixtures$i1_4_1 + I1_fixtures$i1_4_2 + I1_fixtures$i1_4_3 +
+    I1_fixtures$i1_5_0 +I1_fixtures$i1_5_1 + I1_fixtures$i1_5_2 + I1_fixtures$i1_5_3 + I1_fixtures$i1_5_4 +
+    I1_fixtures$i1_6_0 + I1_fixtures$i1_6_1 + I1_fixtures$i1_6_2 + I1_fixtures$i1_6_3 + I1_fixtures$i1_6_4 +
+    I1_fixtures$i1_6_5 + I1_fixtures$i1_0_0 + I1_fixtures$i1_1_1 + I1_fixtures$i1_2_2 + I1_fixtures$i1_3_3 +
+    I1_fixtures$i1_4_4 + I1_fixtures$i1_5_5 + I1_fixtures$i1_6_6 + I1_fixtures$i1_0_1 + I1_fixtures$i1_1_2 +
+    I1_fixtures$i1_2_3 + I1_fixtures$i1_3_4 + I1_fixtures$i1_4_5 + I1_fixtures$i1_5_6
+)
+#AH_125_A
+I1_fixtures$i1_AH_125_A <- (
+  I1_fixtures$i1_0_1 + I1_fixtures$i1_0_2 + I1_fixtures$i1_1_2 + I1_fixtures$i1_0_3 + I1_fixtures$i1_1_3 +
+    I1_fixtures$i1_2_3 + I1_fixtures$i1_0_4 + I1_fixtures$i1_1_4 + I1_fixtures$i1_2_4 + I1_fixtures$i1_3_4 +
+    I1_fixtures$i1_0_5 +I1_fixtures$i1_1_5 + I1_fixtures$i1_2_5 + I1_fixtures$i1_3_5 + I1_fixtures$i1_4_5 +
+    I1_fixtures$i1_0_6 + I1_fixtures$i1_1_6 + I1_fixtures$i1_2_6 + I1_fixtures$i1_3_6 + I1_fixtures$i1_4_6 +
+    I1_fixtures$i1_5_6 + I1_fixtures$i1_0_0 + I1_fixtures$i1_1_1 + I1_fixtures$i1_2_2 + I1_fixtures$i1_3_3 +
+    I1_fixtures$i1_4_4 + I1_fixtures$i1_5_5 + I1_fixtures$i1_6_6 + I1_fixtures$i1_1_0 + I1_fixtures$i1_2_1 +
+    I1_fixtures$i1_3_2 + I1_fixtures$i1_4_3 + I1_fixtures$i1_5_4 + I1_fixtures$i1_6_5
+)
+
+#odds
+I1_fixtures$i1_AH_125_H_odds <- round((1/I1_fixtures$i1_AH_125_H),digits = 2)
+I1_fixtures$i1_AH_125_A_odds <- round((1/I1_fixtures$i1_AH_125_A),digits = 2)
+
+I1_fixtures$i1_AH_125_H_odds
+I1_fixtures$i1_AH_125_A_odds
+#percentages
+I1_fixtures$i1_AH_125_H <- percent(I1_fixtures$i1_AH_125_H, accuracy = 0.1)
+I1_fixtures$i1_AH_125_A <- percent(I1_fixtures$i1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 I1_fixtures$i1_ov25 <- percent(I1_fixtures$i1_ov25, accuracy = 0.1)
 
@@ -2056,6 +3928,162 @@ I2_fixtures$i2_un25_odds <- round((1/I2_fixtures$i2_un25),digits = 2)
 
 I2_fixtures$i2_ov25_odds
 I2_fixtures$i2_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+I2_fixtures$i2_AH_0_H <- (
+  I2_fixtures$i2_1_0 + I2_fixtures$i2_2_0 + I2_fixtures$i2_2_1 + I2_fixtures$i2_3_0 + I2_fixtures$i2_3_1 +
+    I2_fixtures$i2_3_2 + I2_fixtures$i2_4_0 + I2_fixtures$i2_4_1 + I2_fixtures$i2_4_2 + I2_fixtures$i2_4_3 +
+    I2_fixtures$i2_5_0 +I2_fixtures$i2_5_1 + I2_fixtures$i2_5_2 + I2_fixtures$i2_5_3 + I2_fixtures$i2_5_4 +
+    I2_fixtures$i2_6_0 + I2_fixtures$i2_6_1 + I2_fixtures$i2_6_2 + I2_fixtures$i2_6_3 + I2_fixtures$i2_6_4 +
+    I2_fixtures$i2_6_5 + I2_fixtures$i2_0_0 + I2_fixtures$i2_1_1 + I2_fixtures$i2_2_2 + I2_fixtures$i2_3_3 +
+    I2_fixtures$i2_4_4 + I2_fixtures$i2_5_5 + I2_fixtures$i2_6_6
+)
+#AH_0_A
+I2_fixtures$i2_AH_0_A <- (
+  I2_fixtures$i2_0_1 + I2_fixtures$i2_0_2 + I2_fixtures$i2_1_2 + I2_fixtures$i2_0_3 + I2_fixtures$i2_1_3 +
+    I2_fixtures$i2_2_3 + I2_fixtures$i2_0_4 + I2_fixtures$i2_1_4 + I2_fixtures$i2_2_4 + I2_fixtures$i2_3_4 +
+    I2_fixtures$i2_0_5 +I2_fixtures$i2_1_5 + I2_fixtures$i2_2_5 + I2_fixtures$i2_3_5 + I2_fixtures$i2_4_5 +
+    I2_fixtures$i2_0_6 + I2_fixtures$i2_1_6 + I2_fixtures$i2_2_6 + I2_fixtures$i2_3_6 + I2_fixtures$i2_4_6 +
+    I2_fixtures$i2_5_6 + I2_fixtures$i2_0_0 + I2_fixtures$i2_1_1 + I2_fixtures$i2_2_2 + I2_fixtures$i2_3_3 +
+    I2_fixtures$i2_4_4 + I2_fixtures$i2_5_5 + I2_fixtures$i2_6_6
+)
+
+#odds
+I2_fixtures$i2_AH_0_H_odds <- round((1/I2_fixtures$i2_AH_0_H),digits = 2)
+I2_fixtures$i2_AH_0_A_odds <- round((1/I2_fixtures$i2_AH_0_A),digits = 2)
+
+I2_fixtures$i2_AH_0_H_odds
+I2_fixtures$i2_AH_0_A_odds
+#percentages
+I2_fixtures$i2_AH_0_H <- percent(I2_fixtures$i2_AH_0_H, accuracy = 0.1)
+I2_fixtures$i2_AH_0_A <- percent(I2_fixtures$i2_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+I2_fixtures$i2_AH_n075_H <- (
+  I2_fixtures$i2_1_0 + I2_fixtures$i2_2_0 + I2_fixtures$i2_2_1 + I2_fixtures$i2_3_0 + I2_fixtures$i2_3_1 +
+    I2_fixtures$i2_3_2 + I2_fixtures$i2_4_0 + I2_fixtures$i2_4_1 + I2_fixtures$i2_4_2 + I2_fixtures$i2_4_3 +
+    I2_fixtures$i2_5_0 +I2_fixtures$i2_5_1 + I2_fixtures$i2_5_2 + I2_fixtures$i2_5_3 + I2_fixtures$i2_5_4 +
+    I2_fixtures$i2_6_0 + I2_fixtures$i2_6_1 + I2_fixtures$i2_6_2 + I2_fixtures$i2_6_3 + I2_fixtures$i2_6_4 +
+    I2_fixtures$i2_6_5
+)
+#AH_n075_A
+I2_fixtures$i2_AH_n075_A <- (
+  I2_fixtures$i2_0_1 + I2_fixtures$i2_0_2 + I2_fixtures$i2_1_2 + I2_fixtures$i2_0_3 + I2_fixtures$i2_1_3 +
+    I2_fixtures$i2_2_3 + I2_fixtures$i2_0_4 + I2_fixtures$i2_1_4 + I2_fixtures$i2_2_4 + I2_fixtures$i2_3_4 +
+    I2_fixtures$i2_0_5 +I2_fixtures$i2_1_5 + I2_fixtures$i2_2_5 + I2_fixtures$i2_3_5 + I2_fixtures$i2_4_5 +
+    I2_fixtures$i2_0_6 + I2_fixtures$i2_1_6 + I2_fixtures$i2_2_6 + I2_fixtures$i2_3_6 + I2_fixtures$i2_4_6 +
+    I2_fixtures$i2_5_6
+)
+
+#odds
+I2_fixtures$i2_AH_n075_H_odds <- round((1/I2_fixtures$i2_AH_n075_H),digits = 2)
+I2_fixtures$i2_AH_n075_A_odds <- round((1/I2_fixtures$i2_AH_n075_A),digits = 2)
+
+I2_fixtures$i2_AH_n075_H_odds
+I2_fixtures$i2_AH_n075_A_odds
+#percentages
+I2_fixtures$i2_AH_n075_H <- percent(I2_fixtures$i2_AH_n075_H, accuracy = 0.1)
+I2_fixtures$i2_AH_n075_A <- percent(I2_fixtures$i2_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+I2_fixtures$i2_AH_075_H <- (
+  I2_fixtures$i2_1_0 + I2_fixtures$i2_2_0 + I2_fixtures$i2_2_1 + I2_fixtures$i2_3_0 + I2_fixtures$i2_3_1 +
+    I2_fixtures$i2_3_2 + I2_fixtures$i2_4_0 + I2_fixtures$i2_4_1 + I2_fixtures$i2_4_2 + I2_fixtures$i2_4_3 +
+    I2_fixtures$i2_5_0 +I2_fixtures$i2_5_1 + I2_fixtures$i2_5_2 + I2_fixtures$i2_5_3 + I2_fixtures$i2_5_4 +
+    I2_fixtures$i2_6_0 + I2_fixtures$i2_6_1 + I2_fixtures$i2_6_2 + I2_fixtures$i2_6_3 + I2_fixtures$i2_6_4 +
+    I2_fixtures$i2_6_5 + I2_fixtures$i2_0_0 + I2_fixtures$i2_1_1 + I2_fixtures$i2_2_2 + I2_fixtures$i2_3_3 +
+    I2_fixtures$i2_4_4 + I2_fixtures$i2_5_5 + I2_fixtures$i2_6_6 + I2_fixtures$i2_0_1 + I2_fixtures$i2_1_2 +
+    I2_fixtures$i2_2_3 + I2_fixtures$i2_3_4 + I2_fixtures$i2_4_5 + I2_fixtures$i2_5_6
+)
+#AH_075_A
+I2_fixtures$i2_AH_075_A <- (
+  I2_fixtures$i2_0_1 + I2_fixtures$i2_0_2 + I2_fixtures$i2_1_2 + I2_fixtures$i2_0_3 + I2_fixtures$i2_1_3 +
+    I2_fixtures$i2_2_3 + I2_fixtures$i2_0_4 + I2_fixtures$i2_1_4 + I2_fixtures$i2_2_4 + I2_fixtures$i2_3_4 +
+    I2_fixtures$i2_0_5 +I2_fixtures$i2_1_5 + I2_fixtures$i2_2_5 + I2_fixtures$i2_3_5 + I2_fixtures$i2_4_5 +
+    I2_fixtures$i2_0_6 + I2_fixtures$i2_1_6 + I2_fixtures$i2_2_6 + I2_fixtures$i2_3_6 + I2_fixtures$i2_4_6 +
+    I2_fixtures$i2_5_6 + I2_fixtures$i2_0_0 + I2_fixtures$i2_1_1 + I2_fixtures$i2_2_2 + I2_fixtures$i2_3_3 +
+    I2_fixtures$i2_4_4 + I2_fixtures$i2_5_5 + I2_fixtures$i2_6_6 + I2_fixtures$i2_1_0 + I2_fixtures$i2_2_1 +
+    I2_fixtures$i2_3_2 + I2_fixtures$i2_4_3 + I2_fixtures$i2_5_4 + I2_fixtures$i2_6_5
+)
+
+#odds
+I2_fixtures$i2_AH_075_H_odds <- round((1/I2_fixtures$i2_AH_075_H),digits = 2)
+I2_fixtures$i2_AH_075_A_odds <- round((1/I2_fixtures$i2_AH_075_A),digits = 2)
+
+I2_fixtures$i2_AH_075_H_odds
+I2_fixtures$i2_AH_075_A_odds
+#percentages
+I2_fixtures$i2_AH_075_H <- percent(I2_fixtures$i2_AH_075_H, accuracy = 0.1)
+I2_fixtures$i2_AH_075_A <- percent(I2_fixtures$i2_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+I2_fixtures$i2_AH_n125_H <- (
+  I2_fixtures$i2_1_0 + I2_fixtures$i2_2_0 + I2_fixtures$i2_2_1 + I2_fixtures$i2_3_0 + I2_fixtures$i2_3_1 +
+    I2_fixtures$i2_3_2 + I2_fixtures$i2_4_0 + I2_fixtures$i2_4_1 + I2_fixtures$i2_4_2 + I2_fixtures$i2_4_3 +
+    I2_fixtures$i2_5_0 +I2_fixtures$i2_5_1 + I2_fixtures$i2_5_2 + I2_fixtures$i2_5_3 + I2_fixtures$i2_5_4 +
+    I2_fixtures$i2_6_0 + I2_fixtures$i2_6_1 + I2_fixtures$i2_6_2 + I2_fixtures$i2_6_3 + I2_fixtures$i2_6_4 +
+    I2_fixtures$i2_6_5
+)
+#AH_n125_A
+I2_fixtures$i2_AH_n125_A <- (
+  I2_fixtures$i2_0_1 + I2_fixtures$i2_0_2 + I2_fixtures$i2_1_2 + I2_fixtures$i2_0_3 + I2_fixtures$i2_1_3 +
+    I2_fixtures$i2_2_3 + I2_fixtures$i2_0_4 + I2_fixtures$i2_1_4 + I2_fixtures$i2_2_4 + I2_fixtures$i2_3_4 +
+    I2_fixtures$i2_0_5 +I2_fixtures$i2_1_5 + I2_fixtures$i2_2_5 + I2_fixtures$i2_3_5 + I2_fixtures$i2_4_5 +
+    I2_fixtures$i2_0_6 + I2_fixtures$i2_1_6 + I2_fixtures$i2_2_6 + I2_fixtures$i2_3_6 + I2_fixtures$i2_4_6 +
+    I2_fixtures$i2_5_6
+)
+
+#odds
+I2_fixtures$i2_AH_n125_H_odds <- round((1/I2_fixtures$i2_AH_n125_H),digits = 2)
+I2_fixtures$i2_AH_n125_A_odds <- round((1/I2_fixtures$i2_AH_n125_A),digits = 2)
+
+I2_fixtures$i2_AH_n125_H_odds
+I2_fixtures$i2_AH_n125_A_odds
+#percentages
+I2_fixtures$i2_AH_n125_H <- percent(I2_fixtures$i2_AH_n125_H, accuracy = 0.1)
+I2_fixtures$i2_AH_n125_A <- percent(I2_fixtures$i2_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+I2_fixtures$i2_AH_125_H <- (
+  I2_fixtures$i2_1_0 + I2_fixtures$i2_2_0 + I2_fixtures$i2_2_1 + I2_fixtures$i2_3_0 + I2_fixtures$i2_3_1 +
+    I2_fixtures$i2_3_2 + I2_fixtures$i2_4_0 + I2_fixtures$i2_4_1 + I2_fixtures$i2_4_2 + I2_fixtures$i2_4_3 +
+    I2_fixtures$i2_5_0 +I2_fixtures$i2_5_1 + I2_fixtures$i2_5_2 + I2_fixtures$i2_5_3 + I2_fixtures$i2_5_4 +
+    I2_fixtures$i2_6_0 + I2_fixtures$i2_6_1 + I2_fixtures$i2_6_2 + I2_fixtures$i2_6_3 + I2_fixtures$i2_6_4 +
+    I2_fixtures$i2_6_5 + I2_fixtures$i2_0_0 + I2_fixtures$i2_1_1 + I2_fixtures$i2_2_2 + I2_fixtures$i2_3_3 +
+    I2_fixtures$i2_4_4 + I2_fixtures$i2_5_5 + I2_fixtures$i2_6_6 + I2_fixtures$i2_0_1 + I2_fixtures$i2_1_2 +
+    I2_fixtures$i2_2_3 + I2_fixtures$i2_3_4 + I2_fixtures$i2_4_5 + I2_fixtures$i2_5_6
+)
+#AH_125_A
+I2_fixtures$i2_AH_125_A <- (
+  I2_fixtures$i2_0_1 + I2_fixtures$i2_0_2 + I2_fixtures$i2_1_2 + I2_fixtures$i2_0_3 + I2_fixtures$i2_1_3 +
+    I2_fixtures$i2_2_3 + I2_fixtures$i2_0_4 + I2_fixtures$i2_1_4 + I2_fixtures$i2_2_4 + I2_fixtures$i2_3_4 +
+    I2_fixtures$i2_0_5 +I2_fixtures$i2_1_5 + I2_fixtures$i2_2_5 + I2_fixtures$i2_3_5 + I2_fixtures$i2_4_5 +
+    I2_fixtures$i2_0_6 + I2_fixtures$i2_1_6 + I2_fixtures$i2_2_6 + I2_fixtures$i2_3_6 + I2_fixtures$i2_4_6 +
+    I2_fixtures$i2_5_6 + I2_fixtures$i2_0_0 + I2_fixtures$i2_1_1 + I2_fixtures$i2_2_2 + I2_fixtures$i2_3_3 +
+    I2_fixtures$i2_4_4 + I2_fixtures$i2_5_5 + I2_fixtures$i2_6_6 + I2_fixtures$i2_1_0 + I2_fixtures$i2_2_1 +
+    I2_fixtures$i2_3_2 + I2_fixtures$i2_4_3 + I2_fixtures$i2_5_4 + I2_fixtures$i2_6_5
+)
+
+#odds
+I2_fixtures$i2_AH_125_H_odds <- round((1/I2_fixtures$i2_AH_125_H),digits = 2)
+I2_fixtures$i2_AH_125_A_odds <- round((1/I2_fixtures$i2_AH_125_A),digits = 2)
+
+I2_fixtures$i2_AH_125_H_odds
+I2_fixtures$i2_AH_125_A_odds
+#percentages
+I2_fixtures$i2_AH_125_H <- percent(I2_fixtures$i2_AH_125_H, accuracy = 0.1)
+I2_fixtures$i2_AH_125_A <- percent(I2_fixtures$i2_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 I2_fixtures$i2_ov25 <- percent(I2_fixtures$i2_ov25, accuracy = 0.1)
 
@@ -2214,6 +4242,162 @@ N1_fixtures$n1_un25_odds <- round((1/N1_fixtures$n1_un25),digits = 2)
 
 N1_fixtures$n1_ov25_odds
 N1_fixtures$n1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+N1_fixtures$n1_AH_0_H <- (
+  N1_fixtures$n1_1_0 + N1_fixtures$n1_2_0 + N1_fixtures$n1_2_1 + N1_fixtures$n1_3_0 + N1_fixtures$n1_3_1 +
+    N1_fixtures$n1_3_2 + N1_fixtures$n1_4_0 + N1_fixtures$n1_4_1 + N1_fixtures$n1_4_2 + N1_fixtures$n1_4_3 +
+    N1_fixtures$n1_5_0 +N1_fixtures$n1_5_1 + N1_fixtures$n1_5_2 + N1_fixtures$n1_5_3 + N1_fixtures$n1_5_4 +
+    N1_fixtures$n1_6_0 + N1_fixtures$n1_6_1 + N1_fixtures$n1_6_2 + N1_fixtures$n1_6_3 + N1_fixtures$n1_6_4 +
+    N1_fixtures$n1_6_5 + N1_fixtures$n1_0_0 + N1_fixtures$n1_1_1 + N1_fixtures$n1_2_2 + N1_fixtures$n1_3_3 +
+    N1_fixtures$n1_4_4 + N1_fixtures$n1_5_5 + N1_fixtures$n1_6_6
+)
+#AH_0_A
+N1_fixtures$n1_AH_0_A <- (
+  N1_fixtures$n1_0_1 + N1_fixtures$n1_0_2 + N1_fixtures$n1_1_2 + N1_fixtures$n1_0_3 + N1_fixtures$n1_1_3 +
+    N1_fixtures$n1_2_3 + N1_fixtures$n1_0_4 + N1_fixtures$n1_1_4 + N1_fixtures$n1_2_4 + N1_fixtures$n1_3_4 +
+    N1_fixtures$n1_0_5 +N1_fixtures$n1_1_5 + N1_fixtures$n1_2_5 + N1_fixtures$n1_3_5 + N1_fixtures$n1_4_5 +
+    N1_fixtures$n1_0_6 + N1_fixtures$n1_1_6 + N1_fixtures$n1_2_6 + N1_fixtures$n1_3_6 + N1_fixtures$n1_4_6 +
+    N1_fixtures$n1_5_6 + N1_fixtures$n1_0_0 + N1_fixtures$n1_1_1 + N1_fixtures$n1_2_2 + N1_fixtures$n1_3_3 +
+    N1_fixtures$n1_4_4 + N1_fixtures$n1_5_5 + N1_fixtures$n1_6_6
+)
+
+#odds
+N1_fixtures$n1_AH_0_H_odds <- round((1/N1_fixtures$n1_AH_0_H),digits = 2)
+N1_fixtures$n1_AH_0_A_odds <- round((1/N1_fixtures$n1_AH_0_A),digits = 2)
+
+N1_fixtures$n1_AH_0_H_odds
+N1_fixtures$n1_AH_0_A_odds
+#percentages
+N1_fixtures$n1_AH_0_H <- percent(N1_fixtures$n1_AH_0_H, accuracy = 0.1)
+N1_fixtures$n1_AH_0_A <- percent(N1_fixtures$n1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+N1_fixtures$n1_AH_n075_H <- (
+  N1_fixtures$n1_1_0 + N1_fixtures$n1_2_0 + N1_fixtures$n1_2_1 + N1_fixtures$n1_3_0 + N1_fixtures$n1_3_1 +
+    N1_fixtures$n1_3_2 + N1_fixtures$n1_4_0 + N1_fixtures$n1_4_1 + N1_fixtures$n1_4_2 + N1_fixtures$n1_4_3 +
+    N1_fixtures$n1_5_0 +N1_fixtures$n1_5_1 + N1_fixtures$n1_5_2 + N1_fixtures$n1_5_3 + N1_fixtures$n1_5_4 +
+    N1_fixtures$n1_6_0 + N1_fixtures$n1_6_1 + N1_fixtures$n1_6_2 + N1_fixtures$n1_6_3 + N1_fixtures$n1_6_4 +
+    N1_fixtures$n1_6_5
+)
+#AH_n075_A
+N1_fixtures$n1_AH_n075_A <- (
+  N1_fixtures$n1_0_1 + N1_fixtures$n1_0_2 + N1_fixtures$n1_1_2 + N1_fixtures$n1_0_3 + N1_fixtures$n1_1_3 +
+    N1_fixtures$n1_2_3 + N1_fixtures$n1_0_4 + N1_fixtures$n1_1_4 + N1_fixtures$n1_2_4 + N1_fixtures$n1_3_4 +
+    N1_fixtures$n1_0_5 +N1_fixtures$n1_1_5 + N1_fixtures$n1_2_5 + N1_fixtures$n1_3_5 + N1_fixtures$n1_4_5 +
+    N1_fixtures$n1_0_6 + N1_fixtures$n1_1_6 + N1_fixtures$n1_2_6 + N1_fixtures$n1_3_6 + N1_fixtures$n1_4_6 +
+    N1_fixtures$n1_5_6
+)
+
+#odds
+N1_fixtures$n1_AH_n075_H_odds <- round((1/N1_fixtures$n1_AH_n075_H),digits = 2)
+N1_fixtures$n1_AH_n075_A_odds <- round((1/N1_fixtures$n1_AH_n075_A),digits = 2)
+
+N1_fixtures$n1_AH_n075_H_odds
+N1_fixtures$n1_AH_n075_A_odds
+#percentages
+N1_fixtures$n1_AH_n075_H <- percent(N1_fixtures$n1_AH_n075_H, accuracy = 0.1)
+N1_fixtures$n1_AH_n075_A <- percent(N1_fixtures$n1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+N1_fixtures$n1_AH_075_H <- (
+  N1_fixtures$n1_1_0 + N1_fixtures$n1_2_0 + N1_fixtures$n1_2_1 + N1_fixtures$n1_3_0 + N1_fixtures$n1_3_1 +
+    N1_fixtures$n1_3_2 + N1_fixtures$n1_4_0 + N1_fixtures$n1_4_1 + N1_fixtures$n1_4_2 + N1_fixtures$n1_4_3 +
+    N1_fixtures$n1_5_0 +N1_fixtures$n1_5_1 + N1_fixtures$n1_5_2 + N1_fixtures$n1_5_3 + N1_fixtures$n1_5_4 +
+    N1_fixtures$n1_6_0 + N1_fixtures$n1_6_1 + N1_fixtures$n1_6_2 + N1_fixtures$n1_6_3 + N1_fixtures$n1_6_4 +
+    N1_fixtures$n1_6_5 + N1_fixtures$n1_0_0 + N1_fixtures$n1_1_1 + N1_fixtures$n1_2_2 + N1_fixtures$n1_3_3 +
+    N1_fixtures$n1_4_4 + N1_fixtures$n1_5_5 + N1_fixtures$n1_6_6 + N1_fixtures$n1_0_1 + N1_fixtures$n1_1_2 +
+    N1_fixtures$n1_2_3 + N1_fixtures$n1_3_4 + N1_fixtures$n1_4_5 + N1_fixtures$n1_5_6
+)
+#AH_075_A
+N1_fixtures$n1_AH_075_A <- (
+  N1_fixtures$n1_0_1 + N1_fixtures$n1_0_2 + N1_fixtures$n1_1_2 + N1_fixtures$n1_0_3 + N1_fixtures$n1_1_3 +
+    N1_fixtures$n1_2_3 + N1_fixtures$n1_0_4 + N1_fixtures$n1_1_4 + N1_fixtures$n1_2_4 + N1_fixtures$n1_3_4 +
+    N1_fixtures$n1_0_5 +N1_fixtures$n1_1_5 + N1_fixtures$n1_2_5 + N1_fixtures$n1_3_5 + N1_fixtures$n1_4_5 +
+    N1_fixtures$n1_0_6 + N1_fixtures$n1_1_6 + N1_fixtures$n1_2_6 + N1_fixtures$n1_3_6 + N1_fixtures$n1_4_6 +
+    N1_fixtures$n1_5_6 + N1_fixtures$n1_0_0 + N1_fixtures$n1_1_1 + N1_fixtures$n1_2_2 + N1_fixtures$n1_3_3 +
+    N1_fixtures$n1_4_4 + N1_fixtures$n1_5_5 + N1_fixtures$n1_6_6 + N1_fixtures$n1_1_0 + N1_fixtures$n1_2_1 +
+    N1_fixtures$n1_3_2 + N1_fixtures$n1_4_3 + N1_fixtures$n1_5_4 + N1_fixtures$n1_6_5
+)
+
+#odds
+N1_fixtures$n1_AH_075_H_odds <- round((1/N1_fixtures$n1_AH_075_H),digits = 2)
+N1_fixtures$n1_AH_075_A_odds <- round((1/N1_fixtures$n1_AH_075_A),digits = 2)
+
+N1_fixtures$n1_AH_075_H_odds
+N1_fixtures$n1_AH_075_A_odds
+#percentages
+N1_fixtures$n1_AH_075_H <- percent(N1_fixtures$n1_AH_075_H, accuracy = 0.1)
+N1_fixtures$n1_AH_075_A <- percent(N1_fixtures$n1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+N1_fixtures$n1_AH_n125_H <- (
+  N1_fixtures$n1_1_0 + N1_fixtures$n1_2_0 + N1_fixtures$n1_2_1 + N1_fixtures$n1_3_0 + N1_fixtures$n1_3_1 +
+    N1_fixtures$n1_3_2 + N1_fixtures$n1_4_0 + N1_fixtures$n1_4_1 + N1_fixtures$n1_4_2 + N1_fixtures$n1_4_3 +
+    N1_fixtures$n1_5_0 +N1_fixtures$n1_5_1 + N1_fixtures$n1_5_2 + N1_fixtures$n1_5_3 + N1_fixtures$n1_5_4 +
+    N1_fixtures$n1_6_0 + N1_fixtures$n1_6_1 + N1_fixtures$n1_6_2 + N1_fixtures$n1_6_3 + N1_fixtures$n1_6_4 +
+    N1_fixtures$n1_6_5
+)
+#AH_n125_A
+N1_fixtures$n1_AH_n125_A <- (
+  N1_fixtures$n1_0_1 + N1_fixtures$n1_0_2 + N1_fixtures$n1_1_2 + N1_fixtures$n1_0_3 + N1_fixtures$n1_1_3 +
+    N1_fixtures$n1_2_3 + N1_fixtures$n1_0_4 + N1_fixtures$n1_1_4 + N1_fixtures$n1_2_4 + N1_fixtures$n1_3_4 +
+    N1_fixtures$n1_0_5 +N1_fixtures$n1_1_5 + N1_fixtures$n1_2_5 + N1_fixtures$n1_3_5 + N1_fixtures$n1_4_5 +
+    N1_fixtures$n1_0_6 + N1_fixtures$n1_1_6 + N1_fixtures$n1_2_6 + N1_fixtures$n1_3_6 + N1_fixtures$n1_4_6 +
+    N1_fixtures$n1_5_6
+)
+
+#odds
+N1_fixtures$n1_AH_n125_H_odds <- round((1/N1_fixtures$n1_AH_n125_H),digits = 2)
+N1_fixtures$n1_AH_n125_A_odds <- round((1/N1_fixtures$n1_AH_n125_A),digits = 2)
+
+N1_fixtures$n1_AH_n125_H_odds
+N1_fixtures$n1_AH_n125_A_odds
+#percentages
+N1_fixtures$n1_AH_n125_H <- percent(N1_fixtures$n1_AH_n125_H, accuracy = 0.1)
+N1_fixtures$n1_AH_n125_A <- percent(N1_fixtures$n1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+N1_fixtures$n1_AH_125_H <- (
+  N1_fixtures$n1_1_0 + N1_fixtures$n1_2_0 + N1_fixtures$n1_2_1 + N1_fixtures$n1_3_0 + N1_fixtures$n1_3_1 +
+    N1_fixtures$n1_3_2 + N1_fixtures$n1_4_0 + N1_fixtures$n1_4_1 + N1_fixtures$n1_4_2 + N1_fixtures$n1_4_3 +
+    N1_fixtures$n1_5_0 +N1_fixtures$n1_5_1 + N1_fixtures$n1_5_2 + N1_fixtures$n1_5_3 + N1_fixtures$n1_5_4 +
+    N1_fixtures$n1_6_0 + N1_fixtures$n1_6_1 + N1_fixtures$n1_6_2 + N1_fixtures$n1_6_3 + N1_fixtures$n1_6_4 +
+    N1_fixtures$n1_6_5 + N1_fixtures$n1_0_0 + N1_fixtures$n1_1_1 + N1_fixtures$n1_2_2 + N1_fixtures$n1_3_3 +
+    N1_fixtures$n1_4_4 + N1_fixtures$n1_5_5 + N1_fixtures$n1_6_6 + N1_fixtures$n1_0_1 + N1_fixtures$n1_1_2 +
+    N1_fixtures$n1_2_3 + N1_fixtures$n1_3_4 + N1_fixtures$n1_4_5 + N1_fixtures$n1_5_6
+)
+#AH_125_A
+N1_fixtures$n1_AH_125_A <- (
+  N1_fixtures$n1_0_1 + N1_fixtures$n1_0_2 + N1_fixtures$n1_1_2 + N1_fixtures$n1_0_3 + N1_fixtures$n1_1_3 +
+    N1_fixtures$n1_2_3 + N1_fixtures$n1_0_4 + N1_fixtures$n1_1_4 + N1_fixtures$n1_2_4 + N1_fixtures$n1_3_4 +
+    N1_fixtures$n1_0_5 +N1_fixtures$n1_1_5 + N1_fixtures$n1_2_5 + N1_fixtures$n1_3_5 + N1_fixtures$n1_4_5 +
+    N1_fixtures$n1_0_6 + N1_fixtures$n1_1_6 + N1_fixtures$n1_2_6 + N1_fixtures$n1_3_6 + N1_fixtures$n1_4_6 +
+    N1_fixtures$n1_5_6 + N1_fixtures$n1_0_0 + N1_fixtures$n1_1_1 + N1_fixtures$n1_2_2 + N1_fixtures$n1_3_3 +
+    N1_fixtures$n1_4_4 + N1_fixtures$n1_5_5 + N1_fixtures$n1_6_6 + N1_fixtures$n1_1_0 + N1_fixtures$n1_2_1 +
+    N1_fixtures$n1_3_2 + N1_fixtures$n1_4_3 + N1_fixtures$n1_5_4 + N1_fixtures$n1_6_5
+)
+
+#odds
+N1_fixtures$n1_AH_125_H_odds <- round((1/N1_fixtures$n1_AH_125_H),digits = 2)
+N1_fixtures$n1_AH_125_A_odds <- round((1/N1_fixtures$n1_AH_125_A),digits = 2)
+
+N1_fixtures$n1_AH_125_H_odds
+N1_fixtures$n1_AH_125_A_odds
+#percentages
+N1_fixtures$n1_AH_125_H <- percent(N1_fixtures$n1_AH_125_H, accuracy = 0.1)
+N1_fixtures$n1_AH_125_A <- percent(N1_fixtures$n1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 N1_fixtures$n1_ov25 <- percent(N1_fixtures$n1_ov25, accuracy = 0.1)
 
@@ -2372,6 +4556,162 @@ P1_fixtures$p1_un25_odds <- round((1/P1_fixtures$p1_un25),digits = 2)
 
 P1_fixtures$p1_ov25_odds
 P1_fixtures$p1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+P1_fixtures$p1_AH_0_H <- (
+  P1_fixtures$p1_1_0 + P1_fixtures$p1_2_0 + P1_fixtures$p1_2_1 + P1_fixtures$p1_3_0 + P1_fixtures$p1_3_1 +
+    P1_fixtures$p1_3_2 + P1_fixtures$p1_4_0 + P1_fixtures$p1_4_1 + P1_fixtures$p1_4_2 + P1_fixtures$p1_4_3 +
+    P1_fixtures$p1_5_0 +P1_fixtures$p1_5_1 + P1_fixtures$p1_5_2 + P1_fixtures$p1_5_3 + P1_fixtures$p1_5_4 +
+    P1_fixtures$p1_6_0 + P1_fixtures$p1_6_1 + P1_fixtures$p1_6_2 + P1_fixtures$p1_6_3 + P1_fixtures$p1_6_4 +
+    P1_fixtures$p1_6_5 + P1_fixtures$p1_0_0 + P1_fixtures$p1_1_1 + P1_fixtures$p1_2_2 + P1_fixtures$p1_3_3 +
+    P1_fixtures$p1_4_4 + P1_fixtures$p1_5_5 + P1_fixtures$p1_6_6
+)
+#AH_0_A
+P1_fixtures$p1_AH_0_A <- (
+  P1_fixtures$p1_0_1 + P1_fixtures$p1_0_2 + P1_fixtures$p1_1_2 + P1_fixtures$p1_0_3 + P1_fixtures$p1_1_3 +
+    P1_fixtures$p1_2_3 + P1_fixtures$p1_0_4 + P1_fixtures$p1_1_4 + P1_fixtures$p1_2_4 + P1_fixtures$p1_3_4 +
+    P1_fixtures$p1_0_5 +P1_fixtures$p1_1_5 + P1_fixtures$p1_2_5 + P1_fixtures$p1_3_5 + P1_fixtures$p1_4_5 +
+    P1_fixtures$p1_0_6 + P1_fixtures$p1_1_6 + P1_fixtures$p1_2_6 + P1_fixtures$p1_3_6 + P1_fixtures$p1_4_6 +
+    P1_fixtures$p1_5_6 + P1_fixtures$p1_0_0 + P1_fixtures$p1_1_1 + P1_fixtures$p1_2_2 + P1_fixtures$p1_3_3 +
+    P1_fixtures$p1_4_4 + P1_fixtures$p1_5_5 + P1_fixtures$p1_6_6
+)
+
+#odds
+P1_fixtures$p1_AH_0_H_odds <- round((1/P1_fixtures$p1_AH_0_H),digits = 2)
+P1_fixtures$p1_AH_0_A_odds <- round((1/P1_fixtures$p1_AH_0_A),digits = 2)
+
+P1_fixtures$p1_AH_0_H_odds
+P1_fixtures$p1_AH_0_A_odds
+#percentages
+P1_fixtures$p1_AH_0_H <- percent(P1_fixtures$p1_AH_0_H, accuracy = 0.1)
+P1_fixtures$p1_AH_0_A <- percent(P1_fixtures$p1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+P1_fixtures$p1_AH_n075_H <- (
+  P1_fixtures$p1_1_0 + P1_fixtures$p1_2_0 + P1_fixtures$p1_2_1 + P1_fixtures$p1_3_0 + P1_fixtures$p1_3_1 +
+    P1_fixtures$p1_3_2 + P1_fixtures$p1_4_0 + P1_fixtures$p1_4_1 + P1_fixtures$p1_4_2 + P1_fixtures$p1_4_3 +
+    P1_fixtures$p1_5_0 +P1_fixtures$p1_5_1 + P1_fixtures$p1_5_2 + P1_fixtures$p1_5_3 + P1_fixtures$p1_5_4 +
+    P1_fixtures$p1_6_0 + P1_fixtures$p1_6_1 + P1_fixtures$p1_6_2 + P1_fixtures$p1_6_3 + P1_fixtures$p1_6_4 +
+    P1_fixtures$p1_6_5
+)
+#AH_n075_A
+P1_fixtures$p1_AH_n075_A <- (
+  P1_fixtures$p1_0_1 + P1_fixtures$p1_0_2 + P1_fixtures$p1_1_2 + P1_fixtures$p1_0_3 + P1_fixtures$p1_1_3 +
+    P1_fixtures$p1_2_3 + P1_fixtures$p1_0_4 + P1_fixtures$p1_1_4 + P1_fixtures$p1_2_4 + P1_fixtures$p1_3_4 +
+    P1_fixtures$p1_0_5 +P1_fixtures$p1_1_5 + P1_fixtures$p1_2_5 + P1_fixtures$p1_3_5 + P1_fixtures$p1_4_5 +
+    P1_fixtures$p1_0_6 + P1_fixtures$p1_1_6 + P1_fixtures$p1_2_6 + P1_fixtures$p1_3_6 + P1_fixtures$p1_4_6 +
+    P1_fixtures$p1_5_6
+)
+
+#odds
+P1_fixtures$p1_AH_n075_H_odds <- round((1/P1_fixtures$p1_AH_n075_H),digits = 2)
+P1_fixtures$p1_AH_n075_A_odds <- round((1/P1_fixtures$p1_AH_n075_A),digits = 2)
+
+P1_fixtures$p1_AH_n075_H_odds
+P1_fixtures$p1_AH_n075_A_odds
+#percentages
+P1_fixtures$p1_AH_n075_H <- percent(P1_fixtures$p1_AH_n075_H, accuracy = 0.1)
+P1_fixtures$p1_AH_n075_A <- percent(P1_fixtures$p1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+P1_fixtures$p1_AH_075_H <- (
+  P1_fixtures$p1_1_0 + P1_fixtures$p1_2_0 + P1_fixtures$p1_2_1 + P1_fixtures$p1_3_0 + P1_fixtures$p1_3_1 +
+    P1_fixtures$p1_3_2 + P1_fixtures$p1_4_0 + P1_fixtures$p1_4_1 + P1_fixtures$p1_4_2 + P1_fixtures$p1_4_3 +
+    P1_fixtures$p1_5_0 +P1_fixtures$p1_5_1 + P1_fixtures$p1_5_2 + P1_fixtures$p1_5_3 + P1_fixtures$p1_5_4 +
+    P1_fixtures$p1_6_0 + P1_fixtures$p1_6_1 + P1_fixtures$p1_6_2 + P1_fixtures$p1_6_3 + P1_fixtures$p1_6_4 +
+    P1_fixtures$p1_6_5 + P1_fixtures$p1_0_0 + P1_fixtures$p1_1_1 + P1_fixtures$p1_2_2 + P1_fixtures$p1_3_3 +
+    P1_fixtures$p1_4_4 + P1_fixtures$p1_5_5 + P1_fixtures$p1_6_6 + P1_fixtures$p1_0_1 + P1_fixtures$p1_1_2 +
+    P1_fixtures$p1_2_3 + P1_fixtures$p1_3_4 + P1_fixtures$p1_4_5 + P1_fixtures$p1_5_6
+)
+#AH_075_A
+P1_fixtures$p1_AH_075_A <- (
+  P1_fixtures$p1_0_1 + P1_fixtures$p1_0_2 + P1_fixtures$p1_1_2 + P1_fixtures$p1_0_3 + P1_fixtures$p1_1_3 +
+    P1_fixtures$p1_2_3 + P1_fixtures$p1_0_4 + P1_fixtures$p1_1_4 + P1_fixtures$p1_2_4 + P1_fixtures$p1_3_4 +
+    P1_fixtures$p1_0_5 +P1_fixtures$p1_1_5 + P1_fixtures$p1_2_5 + P1_fixtures$p1_3_5 + P1_fixtures$p1_4_5 +
+    P1_fixtures$p1_0_6 + P1_fixtures$p1_1_6 + P1_fixtures$p1_2_6 + P1_fixtures$p1_3_6 + P1_fixtures$p1_4_6 +
+    P1_fixtures$p1_5_6 + P1_fixtures$p1_0_0 + P1_fixtures$p1_1_1 + P1_fixtures$p1_2_2 + P1_fixtures$p1_3_3 +
+    P1_fixtures$p1_4_4 + P1_fixtures$p1_5_5 + P1_fixtures$p1_6_6 + P1_fixtures$p1_1_0 + P1_fixtures$p1_2_1 +
+    P1_fixtures$p1_3_2 + P1_fixtures$p1_4_3 + P1_fixtures$p1_5_4 + P1_fixtures$p1_6_5
+)
+
+#odds
+P1_fixtures$p1_AH_075_H_odds <- round((1/P1_fixtures$p1_AH_075_H),digits = 2)
+P1_fixtures$p1_AH_075_A_odds <- round((1/P1_fixtures$p1_AH_075_A),digits = 2)
+
+P1_fixtures$p1_AH_075_H_odds
+P1_fixtures$p1_AH_075_A_odds
+#percentages
+P1_fixtures$p1_AH_075_H <- percent(P1_fixtures$p1_AH_075_H, accuracy = 0.1)
+P1_fixtures$p1_AH_075_A <- percent(P1_fixtures$p1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+P1_fixtures$p1_AH_n125_H <- (
+  P1_fixtures$p1_1_0 + P1_fixtures$p1_2_0 + P1_fixtures$p1_2_1 + P1_fixtures$p1_3_0 + P1_fixtures$p1_3_1 +
+    P1_fixtures$p1_3_2 + P1_fixtures$p1_4_0 + P1_fixtures$p1_4_1 + P1_fixtures$p1_4_2 + P1_fixtures$p1_4_3 +
+    P1_fixtures$p1_5_0 +P1_fixtures$p1_5_1 + P1_fixtures$p1_5_2 + P1_fixtures$p1_5_3 + P1_fixtures$p1_5_4 +
+    P1_fixtures$p1_6_0 + P1_fixtures$p1_6_1 + P1_fixtures$p1_6_2 + P1_fixtures$p1_6_3 + P1_fixtures$p1_6_4 +
+    P1_fixtures$p1_6_5
+)
+#AH_n125_A
+P1_fixtures$p1_AH_n125_A <- (
+  P1_fixtures$p1_0_1 + P1_fixtures$p1_0_2 + P1_fixtures$p1_1_2 + P1_fixtures$p1_0_3 + P1_fixtures$p1_1_3 +
+    P1_fixtures$p1_2_3 + P1_fixtures$p1_0_4 + P1_fixtures$p1_1_4 + P1_fixtures$p1_2_4 + P1_fixtures$p1_3_4 +
+    P1_fixtures$p1_0_5 +P1_fixtures$p1_1_5 + P1_fixtures$p1_2_5 + P1_fixtures$p1_3_5 + P1_fixtures$p1_4_5 +
+    P1_fixtures$p1_0_6 + P1_fixtures$p1_1_6 + P1_fixtures$p1_2_6 + P1_fixtures$p1_3_6 + P1_fixtures$p1_4_6 +
+    P1_fixtures$p1_5_6
+)
+
+#odds
+P1_fixtures$p1_AH_n125_H_odds <- round((1/P1_fixtures$p1_AH_n125_H),digits = 2)
+P1_fixtures$p1_AH_n125_A_odds <- round((1/P1_fixtures$p1_AH_n125_A),digits = 2)
+
+P1_fixtures$p1_AH_n125_H_odds
+P1_fixtures$p1_AH_n125_A_odds
+#percentages
+P1_fixtures$p1_AH_n125_H <- percent(P1_fixtures$p1_AH_n125_H, accuracy = 0.1)
+P1_fixtures$p1_AH_n125_A <- percent(P1_fixtures$p1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+P1_fixtures$p1_AH_125_H <- (
+  P1_fixtures$p1_1_0 + P1_fixtures$p1_2_0 + P1_fixtures$p1_2_1 + P1_fixtures$p1_3_0 + P1_fixtures$p1_3_1 +
+    P1_fixtures$p1_3_2 + P1_fixtures$p1_4_0 + P1_fixtures$p1_4_1 + P1_fixtures$p1_4_2 + P1_fixtures$p1_4_3 +
+    P1_fixtures$p1_5_0 +P1_fixtures$p1_5_1 + P1_fixtures$p1_5_2 + P1_fixtures$p1_5_3 + P1_fixtures$p1_5_4 +
+    P1_fixtures$p1_6_0 + P1_fixtures$p1_6_1 + P1_fixtures$p1_6_2 + P1_fixtures$p1_6_3 + P1_fixtures$p1_6_4 +
+    P1_fixtures$p1_6_5 + P1_fixtures$p1_0_0 + P1_fixtures$p1_1_1 + P1_fixtures$p1_2_2 + P1_fixtures$p1_3_3 +
+    P1_fixtures$p1_4_4 + P1_fixtures$p1_5_5 + P1_fixtures$p1_6_6 + P1_fixtures$p1_0_1 + P1_fixtures$p1_1_2 +
+    P1_fixtures$p1_2_3 + P1_fixtures$p1_3_4 + P1_fixtures$p1_4_5 + P1_fixtures$p1_5_6
+)
+#AH_125_A
+P1_fixtures$p1_AH_125_A <- (
+  P1_fixtures$p1_0_1 + P1_fixtures$p1_0_2 + P1_fixtures$p1_1_2 + P1_fixtures$p1_0_3 + P1_fixtures$p1_1_3 +
+    P1_fixtures$p1_2_3 + P1_fixtures$p1_0_4 + P1_fixtures$p1_1_4 + P1_fixtures$p1_2_4 + P1_fixtures$p1_3_4 +
+    P1_fixtures$p1_0_5 +P1_fixtures$p1_1_5 + P1_fixtures$p1_2_5 + P1_fixtures$p1_3_5 + P1_fixtures$p1_4_5 +
+    P1_fixtures$p1_0_6 + P1_fixtures$p1_1_6 + P1_fixtures$p1_2_6 + P1_fixtures$p1_3_6 + P1_fixtures$p1_4_6 +
+    P1_fixtures$p1_5_6 + P1_fixtures$p1_0_0 + P1_fixtures$p1_1_1 + P1_fixtures$p1_2_2 + P1_fixtures$p1_3_3 +
+    P1_fixtures$p1_4_4 + P1_fixtures$p1_5_5 + P1_fixtures$p1_6_6 + P1_fixtures$p1_1_0 + P1_fixtures$p1_2_1 +
+    P1_fixtures$p1_3_2 + P1_fixtures$p1_4_3 + P1_fixtures$p1_5_4 + P1_fixtures$p1_6_5
+)
+
+#odds
+P1_fixtures$p1_AH_125_H_odds <- round((1/P1_fixtures$p1_AH_125_H),digits = 2)
+P1_fixtures$p1_AH_125_A_odds <- round((1/P1_fixtures$p1_AH_125_A),digits = 2)
+
+P1_fixtures$p1_AH_125_H_odds
+P1_fixtures$p1_AH_125_A_odds
+#percentages
+P1_fixtures$p1_AH_125_H <- percent(P1_fixtures$p1_AH_125_H, accuracy = 0.1)
+P1_fixtures$p1_AH_125_A <- percent(P1_fixtures$p1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 P1_fixtures$p1_ov25 <- percent(P1_fixtures$p1_ov25, accuracy = 0.1)
 
@@ -2530,6 +4870,162 @@ SP1_fixtures$sp1_un25_odds <- round((1/SP1_fixtures$sp1_un25),digits = 2)
 
 SP1_fixtures$sp1_ov25_odds
 SP1_fixtures$sp1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+SP1_fixtures$sp1_AH_0_H <- (
+  SP1_fixtures$sp1_1_0 + SP1_fixtures$sp1_2_0 + SP1_fixtures$sp1_2_1 + SP1_fixtures$sp1_3_0 + SP1_fixtures$sp1_3_1 +
+    SP1_fixtures$sp1_3_2 + SP1_fixtures$sp1_4_0 + SP1_fixtures$sp1_4_1 + SP1_fixtures$sp1_4_2 + SP1_fixtures$sp1_4_3 +
+    SP1_fixtures$sp1_5_0 +SP1_fixtures$sp1_5_1 + SP1_fixtures$sp1_5_2 + SP1_fixtures$sp1_5_3 + SP1_fixtures$sp1_5_4 +
+    SP1_fixtures$sp1_6_0 + SP1_fixtures$sp1_6_1 + SP1_fixtures$sp1_6_2 + SP1_fixtures$sp1_6_3 + SP1_fixtures$sp1_6_4 +
+    SP1_fixtures$sp1_6_5 + SP1_fixtures$sp1_0_0 + SP1_fixtures$sp1_1_1 + SP1_fixtures$sp1_2_2 + SP1_fixtures$sp1_3_3 +
+    SP1_fixtures$sp1_4_4 + SP1_fixtures$sp1_5_5 + SP1_fixtures$sp1_6_6
+)
+#AH_0_A
+SP1_fixtures$sp1_AH_0_A <- (
+  SP1_fixtures$sp1_0_1 + SP1_fixtures$sp1_0_2 + SP1_fixtures$sp1_1_2 + SP1_fixtures$sp1_0_3 + SP1_fixtures$sp1_1_3 +
+    SP1_fixtures$sp1_2_3 + SP1_fixtures$sp1_0_4 + SP1_fixtures$sp1_1_4 + SP1_fixtures$sp1_2_4 + SP1_fixtures$sp1_3_4 +
+    SP1_fixtures$sp1_0_5 +SP1_fixtures$sp1_1_5 + SP1_fixtures$sp1_2_5 + SP1_fixtures$sp1_3_5 + SP1_fixtures$sp1_4_5 +
+    SP1_fixtures$sp1_0_6 + SP1_fixtures$sp1_1_6 + SP1_fixtures$sp1_2_6 + SP1_fixtures$sp1_3_6 + SP1_fixtures$sp1_4_6 +
+    SP1_fixtures$sp1_5_6 + SP1_fixtures$sp1_0_0 + SP1_fixtures$sp1_1_1 + SP1_fixtures$sp1_2_2 + SP1_fixtures$sp1_3_3 +
+    SP1_fixtures$sp1_4_4 + SP1_fixtures$sp1_5_5 + SP1_fixtures$sp1_6_6
+)
+
+#odds
+SP1_fixtures$sp1_AH_0_H_odds <- round((1/SP1_fixtures$sp1_AH_0_H),digits = 2)
+SP1_fixtures$sp1_AH_0_A_odds <- round((1/SP1_fixtures$sp1_AH_0_A),digits = 2)
+
+SP1_fixtures$sp1_AH_0_H_odds
+SP1_fixtures$sp1_AH_0_A_odds
+#percentages
+SP1_fixtures$sp1_AH_0_H <- percent(SP1_fixtures$sp1_AH_0_H, accuracy = 0.1)
+SP1_fixtures$sp1_AH_0_A <- percent(SP1_fixtures$sp1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+SP1_fixtures$sp1_AH_n075_H <- (
+  SP1_fixtures$sp1_1_0 + SP1_fixtures$sp1_2_0 + SP1_fixtures$sp1_2_1 + SP1_fixtures$sp1_3_0 + SP1_fixtures$sp1_3_1 +
+    SP1_fixtures$sp1_3_2 + SP1_fixtures$sp1_4_0 + SP1_fixtures$sp1_4_1 + SP1_fixtures$sp1_4_2 + SP1_fixtures$sp1_4_3 +
+    SP1_fixtures$sp1_5_0 +SP1_fixtures$sp1_5_1 + SP1_fixtures$sp1_5_2 + SP1_fixtures$sp1_5_3 + SP1_fixtures$sp1_5_4 +
+    SP1_fixtures$sp1_6_0 + SP1_fixtures$sp1_6_1 + SP1_fixtures$sp1_6_2 + SP1_fixtures$sp1_6_3 + SP1_fixtures$sp1_6_4 +
+    SP1_fixtures$sp1_6_5
+)
+#AH_n075_A
+SP1_fixtures$sp1_AH_n075_A <- (
+  SP1_fixtures$sp1_0_1 + SP1_fixtures$sp1_0_2 + SP1_fixtures$sp1_1_2 + SP1_fixtures$sp1_0_3 + SP1_fixtures$sp1_1_3 +
+    SP1_fixtures$sp1_2_3 + SP1_fixtures$sp1_0_4 + SP1_fixtures$sp1_1_4 + SP1_fixtures$sp1_2_4 + SP1_fixtures$sp1_3_4 +
+    SP1_fixtures$sp1_0_5 +SP1_fixtures$sp1_1_5 + SP1_fixtures$sp1_2_5 + SP1_fixtures$sp1_3_5 + SP1_fixtures$sp1_4_5 +
+    SP1_fixtures$sp1_0_6 + SP1_fixtures$sp1_1_6 + SP1_fixtures$sp1_2_6 + SP1_fixtures$sp1_3_6 + SP1_fixtures$sp1_4_6 +
+    SP1_fixtures$sp1_5_6
+)
+
+#odds
+SP1_fixtures$sp1_AH_n075_H_odds <- round((1/SP1_fixtures$sp1_AH_n075_H),digits = 2)
+SP1_fixtures$sp1_AH_n075_A_odds <- round((1/SP1_fixtures$sp1_AH_n075_A),digits = 2)
+
+SP1_fixtures$sp1_AH_n075_H_odds
+SP1_fixtures$sp1_AH_n075_A_odds
+#percentages
+SP1_fixtures$sp1_AH_n075_H <- percent(SP1_fixtures$sp1_AH_n075_H, accuracy = 0.1)
+SP1_fixtures$sp1_AH_n075_A <- percent(SP1_fixtures$sp1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+SP1_fixtures$sp1_AH_075_H <- (
+  SP1_fixtures$sp1_1_0 + SP1_fixtures$sp1_2_0 + SP1_fixtures$sp1_2_1 + SP1_fixtures$sp1_3_0 + SP1_fixtures$sp1_3_1 +
+    SP1_fixtures$sp1_3_2 + SP1_fixtures$sp1_4_0 + SP1_fixtures$sp1_4_1 + SP1_fixtures$sp1_4_2 + SP1_fixtures$sp1_4_3 +
+    SP1_fixtures$sp1_5_0 +SP1_fixtures$sp1_5_1 + SP1_fixtures$sp1_5_2 + SP1_fixtures$sp1_5_3 + SP1_fixtures$sp1_5_4 +
+    SP1_fixtures$sp1_6_0 + SP1_fixtures$sp1_6_1 + SP1_fixtures$sp1_6_2 + SP1_fixtures$sp1_6_3 + SP1_fixtures$sp1_6_4 +
+    SP1_fixtures$sp1_6_5 + SP1_fixtures$sp1_0_0 + SP1_fixtures$sp1_1_1 + SP1_fixtures$sp1_2_2 + SP1_fixtures$sp1_3_3 +
+    SP1_fixtures$sp1_4_4 + SP1_fixtures$sp1_5_5 + SP1_fixtures$sp1_6_6 + SP1_fixtures$sp1_0_1 + SP1_fixtures$sp1_1_2 +
+    SP1_fixtures$sp1_2_3 + SP1_fixtures$sp1_3_4 + SP1_fixtures$sp1_4_5 + SP1_fixtures$sp1_5_6
+)
+#AH_075_A
+SP1_fixtures$sp1_AH_075_A <- (
+  SP1_fixtures$sp1_0_1 + SP1_fixtures$sp1_0_2 + SP1_fixtures$sp1_1_2 + SP1_fixtures$sp1_0_3 + SP1_fixtures$sp1_1_3 +
+    SP1_fixtures$sp1_2_3 + SP1_fixtures$sp1_0_4 + SP1_fixtures$sp1_1_4 + SP1_fixtures$sp1_2_4 + SP1_fixtures$sp1_3_4 +
+    SP1_fixtures$sp1_0_5 +SP1_fixtures$sp1_1_5 + SP1_fixtures$sp1_2_5 + SP1_fixtures$sp1_3_5 + SP1_fixtures$sp1_4_5 +
+    SP1_fixtures$sp1_0_6 + SP1_fixtures$sp1_1_6 + SP1_fixtures$sp1_2_6 + SP1_fixtures$sp1_3_6 + SP1_fixtures$sp1_4_6 +
+    SP1_fixtures$sp1_5_6 + SP1_fixtures$sp1_0_0 + SP1_fixtures$sp1_1_1 + SP1_fixtures$sp1_2_2 + SP1_fixtures$sp1_3_3 +
+    SP1_fixtures$sp1_4_4 + SP1_fixtures$sp1_5_5 + SP1_fixtures$sp1_6_6 + SP1_fixtures$sp1_1_0 + SP1_fixtures$sp1_2_1 +
+    SP1_fixtures$sp1_3_2 + SP1_fixtures$sp1_4_3 + SP1_fixtures$sp1_5_4 + SP1_fixtures$sp1_6_5
+)
+
+#odds
+SP1_fixtures$sp1_AH_075_H_odds <- round((1/SP1_fixtures$sp1_AH_075_H),digits = 2)
+SP1_fixtures$sp1_AH_075_A_odds <- round((1/SP1_fixtures$sp1_AH_075_A),digits = 2)
+
+SP1_fixtures$sp1_AH_075_H_odds
+SP1_fixtures$sp1_AH_075_A_odds
+#percentages
+SP1_fixtures$sp1_AH_075_H <- percent(SP1_fixtures$sp1_AH_075_H, accuracy = 0.1)
+SP1_fixtures$sp1_AH_075_A <- percent(SP1_fixtures$sp1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+SP1_fixtures$sp1_AH_n125_H <- (
+  SP1_fixtures$sp1_1_0 + SP1_fixtures$sp1_2_0 + SP1_fixtures$sp1_2_1 + SP1_fixtures$sp1_3_0 + SP1_fixtures$sp1_3_1 +
+    SP1_fixtures$sp1_3_2 + SP1_fixtures$sp1_4_0 + SP1_fixtures$sp1_4_1 + SP1_fixtures$sp1_4_2 + SP1_fixtures$sp1_4_3 +
+    SP1_fixtures$sp1_5_0 +SP1_fixtures$sp1_5_1 + SP1_fixtures$sp1_5_2 + SP1_fixtures$sp1_5_3 + SP1_fixtures$sp1_5_4 +
+    SP1_fixtures$sp1_6_0 + SP1_fixtures$sp1_6_1 + SP1_fixtures$sp1_6_2 + SP1_fixtures$sp1_6_3 + SP1_fixtures$sp1_6_4 +
+    SP1_fixtures$sp1_6_5
+)
+#AH_n125_A
+SP1_fixtures$sp1_AH_n125_A <- (
+  SP1_fixtures$sp1_0_1 + SP1_fixtures$sp1_0_2 + SP1_fixtures$sp1_1_2 + SP1_fixtures$sp1_0_3 + SP1_fixtures$sp1_1_3 +
+    SP1_fixtures$sp1_2_3 + SP1_fixtures$sp1_0_4 + SP1_fixtures$sp1_1_4 + SP1_fixtures$sp1_2_4 + SP1_fixtures$sp1_3_4 +
+    SP1_fixtures$sp1_0_5 +SP1_fixtures$sp1_1_5 + SP1_fixtures$sp1_2_5 + SP1_fixtures$sp1_3_5 + SP1_fixtures$sp1_4_5 +
+    SP1_fixtures$sp1_0_6 + SP1_fixtures$sp1_1_6 + SP1_fixtures$sp1_2_6 + SP1_fixtures$sp1_3_6 + SP1_fixtures$sp1_4_6 +
+    SP1_fixtures$sp1_5_6
+)
+
+#odds
+SP1_fixtures$sp1_AH_n125_H_odds <- round((1/SP1_fixtures$sp1_AH_n125_H),digits = 2)
+SP1_fixtures$sp1_AH_n125_A_odds <- round((1/SP1_fixtures$sp1_AH_n125_A),digits = 2)
+
+SP1_fixtures$sp1_AH_n125_H_odds
+SP1_fixtures$sp1_AH_n125_A_odds
+#percentages
+SP1_fixtures$sp1_AH_n125_H <- percent(SP1_fixtures$sp1_AH_n125_H, accuracy = 0.1)
+SP1_fixtures$sp1_AH_n125_A <- percent(SP1_fixtures$sp1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+SP1_fixtures$sp1_AH_125_H <- (
+  SP1_fixtures$sp1_1_0 + SP1_fixtures$sp1_2_0 + SP1_fixtures$sp1_2_1 + SP1_fixtures$sp1_3_0 + SP1_fixtures$sp1_3_1 +
+    SP1_fixtures$sp1_3_2 + SP1_fixtures$sp1_4_0 + SP1_fixtures$sp1_4_1 + SP1_fixtures$sp1_4_2 + SP1_fixtures$sp1_4_3 +
+    SP1_fixtures$sp1_5_0 +SP1_fixtures$sp1_5_1 + SP1_fixtures$sp1_5_2 + SP1_fixtures$sp1_5_3 + SP1_fixtures$sp1_5_4 +
+    SP1_fixtures$sp1_6_0 + SP1_fixtures$sp1_6_1 + SP1_fixtures$sp1_6_2 + SP1_fixtures$sp1_6_3 + SP1_fixtures$sp1_6_4 +
+    SP1_fixtures$sp1_6_5 + SP1_fixtures$sp1_0_0 + SP1_fixtures$sp1_1_1 + SP1_fixtures$sp1_2_2 + SP1_fixtures$sp1_3_3 +
+    SP1_fixtures$sp1_4_4 + SP1_fixtures$sp1_5_5 + SP1_fixtures$sp1_6_6 + SP1_fixtures$sp1_0_1 + SP1_fixtures$sp1_1_2 +
+    SP1_fixtures$sp1_2_3 + SP1_fixtures$sp1_3_4 + SP1_fixtures$sp1_4_5 + SP1_fixtures$sp1_5_6
+)
+#AH_125_A
+SP1_fixtures$sp1_AH_125_A <- (
+  SP1_fixtures$sp1_0_1 + SP1_fixtures$sp1_0_2 + SP1_fixtures$sp1_1_2 + SP1_fixtures$sp1_0_3 + SP1_fixtures$sp1_1_3 +
+    SP1_fixtures$sp1_2_3 + SP1_fixtures$sp1_0_4 + SP1_fixtures$sp1_1_4 + SP1_fixtures$sp1_2_4 + SP1_fixtures$sp1_3_4 +
+    SP1_fixtures$sp1_0_5 +SP1_fixtures$sp1_1_5 + SP1_fixtures$sp1_2_5 + SP1_fixtures$sp1_3_5 + SP1_fixtures$sp1_4_5 +
+    SP1_fixtures$sp1_0_6 + SP1_fixtures$sp1_1_6 + SP1_fixtures$sp1_2_6 + SP1_fixtures$sp1_3_6 + SP1_fixtures$sp1_4_6 +
+    SP1_fixtures$sp1_5_6 + SP1_fixtures$sp1_0_0 + SP1_fixtures$sp1_1_1 + SP1_fixtures$sp1_2_2 + SP1_fixtures$sp1_3_3 +
+    SP1_fixtures$sp1_4_4 + SP1_fixtures$sp1_5_5 + SP1_fixtures$sp1_6_6 + SP1_fixtures$sp1_1_0 + SP1_fixtures$sp1_2_1 +
+    SP1_fixtures$sp1_3_2 + SP1_fixtures$sp1_4_3 + SP1_fixtures$sp1_5_4 + SP1_fixtures$sp1_6_5
+)
+
+#odds
+SP1_fixtures$sp1_AH_125_H_odds <- round((1/SP1_fixtures$sp1_AH_125_H),digits = 2)
+SP1_fixtures$sp1_AH_125_A_odds <- round((1/SP1_fixtures$sp1_AH_125_A),digits = 2)
+
+SP1_fixtures$sp1_AH_125_H_odds
+SP1_fixtures$sp1_AH_125_A_odds
+#percentages
+SP1_fixtures$sp1_AH_125_H <- percent(SP1_fixtures$sp1_AH_125_H, accuracy = 0.1)
+SP1_fixtures$sp1_AH_125_A <- percent(SP1_fixtures$sp1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 SP1_fixtures$sp1_ov25 <- percent(SP1_fixtures$sp1_ov25, accuracy = 0.1)
 
@@ -2688,6 +5184,162 @@ SP2_fixtures$sp2_un25_odds <- round((1/SP2_fixtures$sp2_un25),digits = 2)
 
 SP2_fixtures$sp2_ov25_odds
 SP2_fixtures$sp2_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+SP2_fixtures$sp2_AH_0_H <- (
+  SP2_fixtures$sp2_1_0 + SP2_fixtures$sp2_2_0 + SP2_fixtures$sp2_2_1 + SP2_fixtures$sp2_3_0 + SP2_fixtures$sp2_3_1 +
+    SP2_fixtures$sp2_3_2 + SP2_fixtures$sp2_4_0 + SP2_fixtures$sp2_4_1 + SP2_fixtures$sp2_4_2 + SP2_fixtures$sp2_4_3 +
+    SP2_fixtures$sp2_5_0 +SP2_fixtures$sp2_5_1 + SP2_fixtures$sp2_5_2 + SP2_fixtures$sp2_5_3 + SP2_fixtures$sp2_5_4 +
+    SP2_fixtures$sp2_6_0 + SP2_fixtures$sp2_6_1 + SP2_fixtures$sp2_6_2 + SP2_fixtures$sp2_6_3 + SP2_fixtures$sp2_6_4 +
+    SP2_fixtures$sp2_6_5 + SP2_fixtures$sp2_0_0 + SP2_fixtures$sp2_1_1 + SP2_fixtures$sp2_2_2 + SP2_fixtures$sp2_3_3 +
+    SP2_fixtures$sp2_4_4 + SP2_fixtures$sp2_5_5 + SP2_fixtures$sp2_6_6
+)
+#AH_0_A
+SP2_fixtures$sp2_AH_0_A <- (
+  SP2_fixtures$sp2_0_1 + SP2_fixtures$sp2_0_2 + SP2_fixtures$sp2_1_2 + SP2_fixtures$sp2_0_3 + SP2_fixtures$sp2_1_3 +
+    SP2_fixtures$sp2_2_3 + SP2_fixtures$sp2_0_4 + SP2_fixtures$sp2_1_4 + SP2_fixtures$sp2_2_4 + SP2_fixtures$sp2_3_4 +
+    SP2_fixtures$sp2_0_5 +SP2_fixtures$sp2_1_5 + SP2_fixtures$sp2_2_5 + SP2_fixtures$sp2_3_5 + SP2_fixtures$sp2_4_5 +
+    SP2_fixtures$sp2_0_6 + SP2_fixtures$sp2_1_6 + SP2_fixtures$sp2_2_6 + SP2_fixtures$sp2_3_6 + SP2_fixtures$sp2_4_6 +
+    SP2_fixtures$sp2_5_6 + SP2_fixtures$sp2_0_0 + SP2_fixtures$sp2_1_1 + SP2_fixtures$sp2_2_2 + SP2_fixtures$sp2_3_3 +
+    SP2_fixtures$sp2_4_4 + SP2_fixtures$sp2_5_5 + SP2_fixtures$sp2_6_6
+)
+
+#odds
+SP2_fixtures$sp2_AH_0_H_odds <- round((1/SP2_fixtures$sp2_AH_0_H),digits = 2)
+SP2_fixtures$sp2_AH_0_A_odds <- round((1/SP2_fixtures$sp2_AH_0_A),digits = 2)
+
+SP2_fixtures$sp2_AH_0_H_odds
+SP2_fixtures$sp2_AH_0_A_odds
+#percentages
+SP2_fixtures$sp2_AH_0_H <- percent(SP2_fixtures$sp2_AH_0_H, accuracy = 0.1)
+SP2_fixtures$sp2_AH_0_A <- percent(SP2_fixtures$sp2_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+SP2_fixtures$sp2_AH_n075_H <- (
+  SP2_fixtures$sp2_1_0 + SP2_fixtures$sp2_2_0 + SP2_fixtures$sp2_2_1 + SP2_fixtures$sp2_3_0 + SP2_fixtures$sp2_3_1 +
+    SP2_fixtures$sp2_3_2 + SP2_fixtures$sp2_4_0 + SP2_fixtures$sp2_4_1 + SP2_fixtures$sp2_4_2 + SP2_fixtures$sp2_4_3 +
+    SP2_fixtures$sp2_5_0 +SP2_fixtures$sp2_5_1 + SP2_fixtures$sp2_5_2 + SP2_fixtures$sp2_5_3 + SP2_fixtures$sp2_5_4 +
+    SP2_fixtures$sp2_6_0 + SP2_fixtures$sp2_6_1 + SP2_fixtures$sp2_6_2 + SP2_fixtures$sp2_6_3 + SP2_fixtures$sp2_6_4 +
+    SP2_fixtures$sp2_6_5
+)
+#AH_n075_A
+SP2_fixtures$sp2_AH_n075_A <- (
+  SP2_fixtures$sp2_0_1 + SP2_fixtures$sp2_0_2 + SP2_fixtures$sp2_1_2 + SP2_fixtures$sp2_0_3 + SP2_fixtures$sp2_1_3 +
+    SP2_fixtures$sp2_2_3 + SP2_fixtures$sp2_0_4 + SP2_fixtures$sp2_1_4 + SP2_fixtures$sp2_2_4 + SP2_fixtures$sp2_3_4 +
+    SP2_fixtures$sp2_0_5 +SP2_fixtures$sp2_1_5 + SP2_fixtures$sp2_2_5 + SP2_fixtures$sp2_3_5 + SP2_fixtures$sp2_4_5 +
+    SP2_fixtures$sp2_0_6 + SP2_fixtures$sp2_1_6 + SP2_fixtures$sp2_2_6 + SP2_fixtures$sp2_3_6 + SP2_fixtures$sp2_4_6 +
+    SP2_fixtures$sp2_5_6
+)
+
+#odds
+SP2_fixtures$sp2_AH_n075_H_odds <- round((1/SP2_fixtures$sp2_AH_n075_H),digits = 2)
+SP2_fixtures$sp2_AH_n075_A_odds <- round((1/SP2_fixtures$sp2_AH_n075_A),digits = 2)
+
+SP2_fixtures$sp2_AH_n075_H_odds
+SP2_fixtures$sp2_AH_n075_A_odds
+#percentages
+SP2_fixtures$sp2_AH_n075_H <- percent(SP2_fixtures$sp2_AH_n075_H, accuracy = 0.1)
+SP2_fixtures$sp2_AH_n075_A <- percent(SP2_fixtures$sp2_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+SP2_fixtures$sp2_AH_075_H <- (
+  SP2_fixtures$sp2_1_0 + SP2_fixtures$sp2_2_0 + SP2_fixtures$sp2_2_1 + SP2_fixtures$sp2_3_0 + SP2_fixtures$sp2_3_1 +
+    SP2_fixtures$sp2_3_2 + SP2_fixtures$sp2_4_0 + SP2_fixtures$sp2_4_1 + SP2_fixtures$sp2_4_2 + SP2_fixtures$sp2_4_3 +
+    SP2_fixtures$sp2_5_0 +SP2_fixtures$sp2_5_1 + SP2_fixtures$sp2_5_2 + SP2_fixtures$sp2_5_3 + SP2_fixtures$sp2_5_4 +
+    SP2_fixtures$sp2_6_0 + SP2_fixtures$sp2_6_1 + SP2_fixtures$sp2_6_2 + SP2_fixtures$sp2_6_3 + SP2_fixtures$sp2_6_4 +
+    SP2_fixtures$sp2_6_5 + SP2_fixtures$sp2_0_0 + SP2_fixtures$sp2_1_1 + SP2_fixtures$sp2_2_2 + SP2_fixtures$sp2_3_3 +
+    SP2_fixtures$sp2_4_4 + SP2_fixtures$sp2_5_5 + SP2_fixtures$sp2_6_6 + SP2_fixtures$sp2_0_1 + SP2_fixtures$sp2_1_2 +
+    SP2_fixtures$sp2_2_3 + SP2_fixtures$sp2_3_4 + SP2_fixtures$sp2_4_5 + SP2_fixtures$sp2_5_6
+)
+#AH_075_A
+SP2_fixtures$sp2_AH_075_A <- (
+  SP2_fixtures$sp2_0_1 + SP2_fixtures$sp2_0_2 + SP2_fixtures$sp2_1_2 + SP2_fixtures$sp2_0_3 + SP2_fixtures$sp2_1_3 +
+    SP2_fixtures$sp2_2_3 + SP2_fixtures$sp2_0_4 + SP2_fixtures$sp2_1_4 + SP2_fixtures$sp2_2_4 + SP2_fixtures$sp2_3_4 +
+    SP2_fixtures$sp2_0_5 +SP2_fixtures$sp2_1_5 + SP2_fixtures$sp2_2_5 + SP2_fixtures$sp2_3_5 + SP2_fixtures$sp2_4_5 +
+    SP2_fixtures$sp2_0_6 + SP2_fixtures$sp2_1_6 + SP2_fixtures$sp2_2_6 + SP2_fixtures$sp2_3_6 + SP2_fixtures$sp2_4_6 +
+    SP2_fixtures$sp2_5_6 + SP2_fixtures$sp2_0_0 + SP2_fixtures$sp2_1_1 + SP2_fixtures$sp2_2_2 + SP2_fixtures$sp2_3_3 +
+    SP2_fixtures$sp2_4_4 + SP2_fixtures$sp2_5_5 + SP2_fixtures$sp2_6_6 + SP2_fixtures$sp2_1_0 + SP2_fixtures$sp2_2_1 +
+    SP2_fixtures$sp2_3_2 + SP2_fixtures$sp2_4_3 + SP2_fixtures$sp2_5_4 + SP2_fixtures$sp2_6_5
+)
+
+#odds
+SP2_fixtures$sp2_AH_075_H_odds <- round((1/SP2_fixtures$sp2_AH_075_H),digits = 2)
+SP2_fixtures$sp2_AH_075_A_odds <- round((1/SP2_fixtures$sp2_AH_075_A),digits = 2)
+
+SP2_fixtures$sp2_AH_075_H_odds
+SP2_fixtures$sp2_AH_075_A_odds
+#percentages
+SP2_fixtures$sp2_AH_075_H <- percent(SP2_fixtures$sp2_AH_075_H, accuracy = 0.1)
+SP2_fixtures$sp2_AH_075_A <- percent(SP2_fixtures$sp2_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+SP2_fixtures$sp2_AH_n125_H <- (
+  SP2_fixtures$sp2_1_0 + SP2_fixtures$sp2_2_0 + SP2_fixtures$sp2_2_1 + SP2_fixtures$sp2_3_0 + SP2_fixtures$sp2_3_1 +
+    SP2_fixtures$sp2_3_2 + SP2_fixtures$sp2_4_0 + SP2_fixtures$sp2_4_1 + SP2_fixtures$sp2_4_2 + SP2_fixtures$sp2_4_3 +
+    SP2_fixtures$sp2_5_0 +SP2_fixtures$sp2_5_1 + SP2_fixtures$sp2_5_2 + SP2_fixtures$sp2_5_3 + SP2_fixtures$sp2_5_4 +
+    SP2_fixtures$sp2_6_0 + SP2_fixtures$sp2_6_1 + SP2_fixtures$sp2_6_2 + SP2_fixtures$sp2_6_3 + SP2_fixtures$sp2_6_4 +
+    SP2_fixtures$sp2_6_5
+)
+#AH_n125_A
+SP2_fixtures$sp2_AH_n125_A <- (
+  SP2_fixtures$sp2_0_1 + SP2_fixtures$sp2_0_2 + SP2_fixtures$sp2_1_2 + SP2_fixtures$sp2_0_3 + SP2_fixtures$sp2_1_3 +
+    SP2_fixtures$sp2_2_3 + SP2_fixtures$sp2_0_4 + SP2_fixtures$sp2_1_4 + SP2_fixtures$sp2_2_4 + SP2_fixtures$sp2_3_4 +
+    SP2_fixtures$sp2_0_5 +SP2_fixtures$sp2_1_5 + SP2_fixtures$sp2_2_5 + SP2_fixtures$sp2_3_5 + SP2_fixtures$sp2_4_5 +
+    SP2_fixtures$sp2_0_6 + SP2_fixtures$sp2_1_6 + SP2_fixtures$sp2_2_6 + SP2_fixtures$sp2_3_6 + SP2_fixtures$sp2_4_6 +
+    SP2_fixtures$sp2_5_6
+)
+
+#odds
+SP2_fixtures$sp2_AH_n125_H_odds <- round((1/SP2_fixtures$sp2_AH_n125_H),digits = 2)
+SP2_fixtures$sp2_AH_n125_A_odds <- round((1/SP2_fixtures$sp2_AH_n125_A),digits = 2)
+
+SP2_fixtures$sp2_AH_n125_H_odds
+SP2_fixtures$sp2_AH_n125_A_odds
+#percentages
+SP2_fixtures$sp2_AH_n125_H <- percent(SP2_fixtures$sp2_AH_n125_H, accuracy = 0.1)
+SP2_fixtures$sp2_AH_n125_A <- percent(SP2_fixtures$sp2_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+SP2_fixtures$sp2_AH_125_H <- (
+  SP2_fixtures$sp2_1_0 + SP2_fixtures$sp2_2_0 + SP2_fixtures$sp2_2_1 + SP2_fixtures$sp2_3_0 + SP2_fixtures$sp2_3_1 +
+    SP2_fixtures$sp2_3_2 + SP2_fixtures$sp2_4_0 + SP2_fixtures$sp2_4_1 + SP2_fixtures$sp2_4_2 + SP2_fixtures$sp2_4_3 +
+    SP2_fixtures$sp2_5_0 +SP2_fixtures$sp2_5_1 + SP2_fixtures$sp2_5_2 + SP2_fixtures$sp2_5_3 + SP2_fixtures$sp2_5_4 +
+    SP2_fixtures$sp2_6_0 + SP2_fixtures$sp2_6_1 + SP2_fixtures$sp2_6_2 + SP2_fixtures$sp2_6_3 + SP2_fixtures$sp2_6_4 +
+    SP2_fixtures$sp2_6_5 + SP2_fixtures$sp2_0_0 + SP2_fixtures$sp2_1_1 + SP2_fixtures$sp2_2_2 + SP2_fixtures$sp2_3_3 +
+    SP2_fixtures$sp2_4_4 + SP2_fixtures$sp2_5_5 + SP2_fixtures$sp2_6_6 + SP2_fixtures$sp2_0_1 + SP2_fixtures$sp2_1_2 +
+    SP2_fixtures$sp2_2_3 + SP2_fixtures$sp2_3_4 + SP2_fixtures$sp2_4_5 + SP2_fixtures$sp2_5_6
+)
+#AH_125_A
+SP2_fixtures$sp2_AH_125_A <- (
+  SP2_fixtures$sp2_0_1 + SP2_fixtures$sp2_0_2 + SP2_fixtures$sp2_1_2 + SP2_fixtures$sp2_0_3 + SP2_fixtures$sp2_1_3 +
+    SP2_fixtures$sp2_2_3 + SP2_fixtures$sp2_0_4 + SP2_fixtures$sp2_1_4 + SP2_fixtures$sp2_2_4 + SP2_fixtures$sp2_3_4 +
+    SP2_fixtures$sp2_0_5 +SP2_fixtures$sp2_1_5 + SP2_fixtures$sp2_2_5 + SP2_fixtures$sp2_3_5 + SP2_fixtures$sp2_4_5 +
+    SP2_fixtures$sp2_0_6 + SP2_fixtures$sp2_1_6 + SP2_fixtures$sp2_2_6 + SP2_fixtures$sp2_3_6 + SP2_fixtures$sp2_4_6 +
+    SP2_fixtures$sp2_5_6 + SP2_fixtures$sp2_0_0 + SP2_fixtures$sp2_1_1 + SP2_fixtures$sp2_2_2 + SP2_fixtures$sp2_3_3 +
+    SP2_fixtures$sp2_4_4 + SP2_fixtures$sp2_5_5 + SP2_fixtures$sp2_6_6 + SP2_fixtures$sp2_1_0 + SP2_fixtures$sp2_2_1 +
+    SP2_fixtures$sp2_3_2 + SP2_fixtures$sp2_4_3 + SP2_fixtures$sp2_5_4 + SP2_fixtures$sp2_6_5
+)
+
+#odds
+SP2_fixtures$sp2_AH_125_H_odds <- round((1/SP2_fixtures$sp2_AH_125_H),digits = 2)
+SP2_fixtures$sp2_AH_125_A_odds <- round((1/SP2_fixtures$sp2_AH_125_A),digits = 2)
+
+SP2_fixtures$sp2_AH_125_H_odds
+SP2_fixtures$sp2_AH_125_A_odds
+#percentages
+SP2_fixtures$sp2_AH_125_H <- percent(SP2_fixtures$sp2_AH_125_H, accuracy = 0.1)
+SP2_fixtures$sp2_AH_125_A <- percent(SP2_fixtures$sp2_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 SP2_fixtures$sp2_ov25 <- percent(SP2_fixtures$sp2_ov25, accuracy = 0.1)
 
@@ -2846,6 +5498,162 @@ SC0_fixtures$sc0_un25_odds <- round((1/SC0_fixtures$sc0_un25),digits = 2)
 
 SC0_fixtures$sc0_ov25_odds
 SC0_fixtures$sc0_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+SC0_fixtures$sc0_AH_0_H <- (
+  SC0_fixtures$sc0_1_0 + SC0_fixtures$sc0_2_0 + SC0_fixtures$sc0_2_1 + SC0_fixtures$sc0_3_0 + SC0_fixtures$sc0_3_1 +
+    SC0_fixtures$sc0_3_2 + SC0_fixtures$sc0_4_0 + SC0_fixtures$sc0_4_1 + SC0_fixtures$sc0_4_2 + SC0_fixtures$sc0_4_3 +
+    SC0_fixtures$sc0_5_0 +SC0_fixtures$sc0_5_1 + SC0_fixtures$sc0_5_2 + SC0_fixtures$sc0_5_3 + SC0_fixtures$sc0_5_4 +
+    SC0_fixtures$sc0_6_0 + SC0_fixtures$sc0_6_1 + SC0_fixtures$sc0_6_2 + SC0_fixtures$sc0_6_3 + SC0_fixtures$sc0_6_4 +
+    SC0_fixtures$sc0_6_5 + SC0_fixtures$sc0_0_0 + SC0_fixtures$sc0_1_1 + SC0_fixtures$sc0_2_2 + SC0_fixtures$sc0_3_3 +
+    SC0_fixtures$sc0_4_4 + SC0_fixtures$sc0_5_5 + SC0_fixtures$sc0_6_6
+)
+#AH_0_A
+SC0_fixtures$sc0_AH_0_A <- (
+  SC0_fixtures$sc0_0_1 + SC0_fixtures$sc0_0_2 + SC0_fixtures$sc0_1_2 + SC0_fixtures$sc0_0_3 + SC0_fixtures$sc0_1_3 +
+    SC0_fixtures$sc0_2_3 + SC0_fixtures$sc0_0_4 + SC0_fixtures$sc0_1_4 + SC0_fixtures$sc0_2_4 + SC0_fixtures$sc0_3_4 +
+    SC0_fixtures$sc0_0_5 +SC0_fixtures$sc0_1_5 + SC0_fixtures$sc0_2_5 + SC0_fixtures$sc0_3_5 + SC0_fixtures$sc0_4_5 +
+    SC0_fixtures$sc0_0_6 + SC0_fixtures$sc0_1_6 + SC0_fixtures$sc0_2_6 + SC0_fixtures$sc0_3_6 + SC0_fixtures$sc0_4_6 +
+    SC0_fixtures$sc0_5_6 + SC0_fixtures$sc0_0_0 + SC0_fixtures$sc0_1_1 + SC0_fixtures$sc0_2_2 + SC0_fixtures$sc0_3_3 +
+    SC0_fixtures$sc0_4_4 + SC0_fixtures$sc0_5_5 + SC0_fixtures$sc0_6_6
+)
+
+#odds
+SC0_fixtures$sc0_AH_0_H_odds <- round((1/SC0_fixtures$sc0_AH_0_H),digits = 2)
+SC0_fixtures$sc0_AH_0_A_odds <- round((1/SC0_fixtures$sc0_AH_0_A),digits = 2)
+
+SC0_fixtures$sc0_AH_0_H_odds
+SC0_fixtures$sc0_AH_0_A_odds
+#percentages
+SC0_fixtures$sc0_AH_0_H <- percent(SC0_fixtures$sc0_AH_0_H, accuracy = 0.1)
+SC0_fixtures$sc0_AH_0_A <- percent(SC0_fixtures$sc0_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+SC0_fixtures$sc0_AH_n075_H <- (
+  SC0_fixtures$sc0_1_0 + SC0_fixtures$sc0_2_0 + SC0_fixtures$sc0_2_1 + SC0_fixtures$sc0_3_0 + SC0_fixtures$sc0_3_1 +
+    SC0_fixtures$sc0_3_2 + SC0_fixtures$sc0_4_0 + SC0_fixtures$sc0_4_1 + SC0_fixtures$sc0_4_2 + SC0_fixtures$sc0_4_3 +
+    SC0_fixtures$sc0_5_0 +SC0_fixtures$sc0_5_1 + SC0_fixtures$sc0_5_2 + SC0_fixtures$sc0_5_3 + SC0_fixtures$sc0_5_4 +
+    SC0_fixtures$sc0_6_0 + SC0_fixtures$sc0_6_1 + SC0_fixtures$sc0_6_2 + SC0_fixtures$sc0_6_3 + SC0_fixtures$sc0_6_4 +
+    SC0_fixtures$sc0_6_5
+)
+#AH_n075_A
+SC0_fixtures$sc0_AH_n075_A <- (
+  SC0_fixtures$sc0_0_1 + SC0_fixtures$sc0_0_2 + SC0_fixtures$sc0_1_2 + SC0_fixtures$sc0_0_3 + SC0_fixtures$sc0_1_3 +
+    SC0_fixtures$sc0_2_3 + SC0_fixtures$sc0_0_4 + SC0_fixtures$sc0_1_4 + SC0_fixtures$sc0_2_4 + SC0_fixtures$sc0_3_4 +
+    SC0_fixtures$sc0_0_5 +SC0_fixtures$sc0_1_5 + SC0_fixtures$sc0_2_5 + SC0_fixtures$sc0_3_5 + SC0_fixtures$sc0_4_5 +
+    SC0_fixtures$sc0_0_6 + SC0_fixtures$sc0_1_6 + SC0_fixtures$sc0_2_6 + SC0_fixtures$sc0_3_6 + SC0_fixtures$sc0_4_6 +
+    SC0_fixtures$sc0_5_6
+)
+
+#odds
+SC0_fixtures$sc0_AH_n075_H_odds <- round((1/SC0_fixtures$sc0_AH_n075_H),digits = 2)
+SC0_fixtures$sc0_AH_n075_A_odds <- round((1/SC0_fixtures$sc0_AH_n075_A),digits = 2)
+
+SC0_fixtures$sc0_AH_n075_H_odds
+SC0_fixtures$sc0_AH_n075_A_odds
+#percentages
+SC0_fixtures$sc0_AH_n075_H <- percent(SC0_fixtures$sc0_AH_n075_H, accuracy = 0.1)
+SC0_fixtures$sc0_AH_n075_A <- percent(SC0_fixtures$sc0_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+SC0_fixtures$sc0_AH_075_H <- (
+  SC0_fixtures$sc0_1_0 + SC0_fixtures$sc0_2_0 + SC0_fixtures$sc0_2_1 + SC0_fixtures$sc0_3_0 + SC0_fixtures$sc0_3_1 +
+    SC0_fixtures$sc0_3_2 + SC0_fixtures$sc0_4_0 + SC0_fixtures$sc0_4_1 + SC0_fixtures$sc0_4_2 + SC0_fixtures$sc0_4_3 +
+    SC0_fixtures$sc0_5_0 +SC0_fixtures$sc0_5_1 + SC0_fixtures$sc0_5_2 + SC0_fixtures$sc0_5_3 + SC0_fixtures$sc0_5_4 +
+    SC0_fixtures$sc0_6_0 + SC0_fixtures$sc0_6_1 + SC0_fixtures$sc0_6_2 + SC0_fixtures$sc0_6_3 + SC0_fixtures$sc0_6_4 +
+    SC0_fixtures$sc0_6_5 + SC0_fixtures$sc0_0_0 + SC0_fixtures$sc0_1_1 + SC0_fixtures$sc0_2_2 + SC0_fixtures$sc0_3_3 +
+    SC0_fixtures$sc0_4_4 + SC0_fixtures$sc0_5_5 + SC0_fixtures$sc0_6_6 + SC0_fixtures$sc0_0_1 + SC0_fixtures$sc0_1_2 +
+    SC0_fixtures$sc0_2_3 + SC0_fixtures$sc0_3_4 + SC0_fixtures$sc0_4_5 + SC0_fixtures$sc0_5_6
+)
+#AH_075_A
+SC0_fixtures$sc0_AH_075_A <- (
+  SC0_fixtures$sc0_0_1 + SC0_fixtures$sc0_0_2 + SC0_fixtures$sc0_1_2 + SC0_fixtures$sc0_0_3 + SC0_fixtures$sc0_1_3 +
+    SC0_fixtures$sc0_2_3 + SC0_fixtures$sc0_0_4 + SC0_fixtures$sc0_1_4 + SC0_fixtures$sc0_2_4 + SC0_fixtures$sc0_3_4 +
+    SC0_fixtures$sc0_0_5 +SC0_fixtures$sc0_1_5 + SC0_fixtures$sc0_2_5 + SC0_fixtures$sc0_3_5 + SC0_fixtures$sc0_4_5 +
+    SC0_fixtures$sc0_0_6 + SC0_fixtures$sc0_1_6 + SC0_fixtures$sc0_2_6 + SC0_fixtures$sc0_3_6 + SC0_fixtures$sc0_4_6 +
+    SC0_fixtures$sc0_5_6 + SC0_fixtures$sc0_0_0 + SC0_fixtures$sc0_1_1 + SC0_fixtures$sc0_2_2 + SC0_fixtures$sc0_3_3 +
+    SC0_fixtures$sc0_4_4 + SC0_fixtures$sc0_5_5 + SC0_fixtures$sc0_6_6 + SC0_fixtures$sc0_1_0 + SC0_fixtures$sc0_2_1 +
+    SC0_fixtures$sc0_3_2 + SC0_fixtures$sc0_4_3 + SC0_fixtures$sc0_5_4 + SC0_fixtures$sc0_6_5
+)
+
+#odds
+SC0_fixtures$sc0_AH_075_H_odds <- round((1/SC0_fixtures$sc0_AH_075_H),digits = 2)
+SC0_fixtures$sc0_AH_075_A_odds <- round((1/SC0_fixtures$sc0_AH_075_A),digits = 2)
+
+SC0_fixtures$sc0_AH_075_H_odds
+SC0_fixtures$sc0_AH_075_A_odds
+#percentages
+SC0_fixtures$sc0_AH_075_H <- percent(SC0_fixtures$sc0_AH_075_H, accuracy = 0.1)
+SC0_fixtures$sc0_AH_075_A <- percent(SC0_fixtures$sc0_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+SC0_fixtures$sc0_AH_n125_H <- (
+  SC0_fixtures$sc0_1_0 + SC0_fixtures$sc0_2_0 + SC0_fixtures$sc0_2_1 + SC0_fixtures$sc0_3_0 + SC0_fixtures$sc0_3_1 +
+    SC0_fixtures$sc0_3_2 + SC0_fixtures$sc0_4_0 + SC0_fixtures$sc0_4_1 + SC0_fixtures$sc0_4_2 + SC0_fixtures$sc0_4_3 +
+    SC0_fixtures$sc0_5_0 +SC0_fixtures$sc0_5_1 + SC0_fixtures$sc0_5_2 + SC0_fixtures$sc0_5_3 + SC0_fixtures$sc0_5_4 +
+    SC0_fixtures$sc0_6_0 + SC0_fixtures$sc0_6_1 + SC0_fixtures$sc0_6_2 + SC0_fixtures$sc0_6_3 + SC0_fixtures$sc0_6_4 +
+    SC0_fixtures$sc0_6_5
+)
+#AH_n125_A
+SC0_fixtures$sc0_AH_n125_A <- (
+  SC0_fixtures$sc0_0_1 + SC0_fixtures$sc0_0_2 + SC0_fixtures$sc0_1_2 + SC0_fixtures$sc0_0_3 + SC0_fixtures$sc0_1_3 +
+    SC0_fixtures$sc0_2_3 + SC0_fixtures$sc0_0_4 + SC0_fixtures$sc0_1_4 + SC0_fixtures$sc0_2_4 + SC0_fixtures$sc0_3_4 +
+    SC0_fixtures$sc0_0_5 +SC0_fixtures$sc0_1_5 + SC0_fixtures$sc0_2_5 + SC0_fixtures$sc0_3_5 + SC0_fixtures$sc0_4_5 +
+    SC0_fixtures$sc0_0_6 + SC0_fixtures$sc0_1_6 + SC0_fixtures$sc0_2_6 + SC0_fixtures$sc0_3_6 + SC0_fixtures$sc0_4_6 +
+    SC0_fixtures$sc0_5_6
+)
+
+#odds
+SC0_fixtures$sc0_AH_n125_H_odds <- round((1/SC0_fixtures$sc0_AH_n125_H),digits = 2)
+SC0_fixtures$sc0_AH_n125_A_odds <- round((1/SC0_fixtures$sc0_AH_n125_A),digits = 2)
+
+SC0_fixtures$sc0_AH_n125_H_odds
+SC0_fixtures$sc0_AH_n125_A_odds
+#percentages
+SC0_fixtures$sc0_AH_n125_H <- percent(SC0_fixtures$sc0_AH_n125_H, accuracy = 0.1)
+SC0_fixtures$sc0_AH_n125_A <- percent(SC0_fixtures$sc0_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+SC0_fixtures$sc0_AH_125_H <- (
+  SC0_fixtures$sc0_1_0 + SC0_fixtures$sc0_2_0 + SC0_fixtures$sc0_2_1 + SC0_fixtures$sc0_3_0 + SC0_fixtures$sc0_3_1 +
+    SC0_fixtures$sc0_3_2 + SC0_fixtures$sc0_4_0 + SC0_fixtures$sc0_4_1 + SC0_fixtures$sc0_4_2 + SC0_fixtures$sc0_4_3 +
+    SC0_fixtures$sc0_5_0 +SC0_fixtures$sc0_5_1 + SC0_fixtures$sc0_5_2 + SC0_fixtures$sc0_5_3 + SC0_fixtures$sc0_5_4 +
+    SC0_fixtures$sc0_6_0 + SC0_fixtures$sc0_6_1 + SC0_fixtures$sc0_6_2 + SC0_fixtures$sc0_6_3 + SC0_fixtures$sc0_6_4 +
+    SC0_fixtures$sc0_6_5 + SC0_fixtures$sc0_0_0 + SC0_fixtures$sc0_1_1 + SC0_fixtures$sc0_2_2 + SC0_fixtures$sc0_3_3 +
+    SC0_fixtures$sc0_4_4 + SC0_fixtures$sc0_5_5 + SC0_fixtures$sc0_6_6 + SC0_fixtures$sc0_0_1 + SC0_fixtures$sc0_1_2 +
+    SC0_fixtures$sc0_2_3 + SC0_fixtures$sc0_3_4 + SC0_fixtures$sc0_4_5 + SC0_fixtures$sc0_5_6
+)
+#AH_125_A
+SC0_fixtures$sc0_AH_125_A <- (
+  SC0_fixtures$sc0_0_1 + SC0_fixtures$sc0_0_2 + SC0_fixtures$sc0_1_2 + SC0_fixtures$sc0_0_3 + SC0_fixtures$sc0_1_3 +
+    SC0_fixtures$sc0_2_3 + SC0_fixtures$sc0_0_4 + SC0_fixtures$sc0_1_4 + SC0_fixtures$sc0_2_4 + SC0_fixtures$sc0_3_4 +
+    SC0_fixtures$sc0_0_5 +SC0_fixtures$sc0_1_5 + SC0_fixtures$sc0_2_5 + SC0_fixtures$sc0_3_5 + SC0_fixtures$sc0_4_5 +
+    SC0_fixtures$sc0_0_6 + SC0_fixtures$sc0_1_6 + SC0_fixtures$sc0_2_6 + SC0_fixtures$sc0_3_6 + SC0_fixtures$sc0_4_6 +
+    SC0_fixtures$sc0_5_6 + SC0_fixtures$sc0_0_0 + SC0_fixtures$sc0_1_1 + SC0_fixtures$sc0_2_2 + SC0_fixtures$sc0_3_3 +
+    SC0_fixtures$sc0_4_4 + SC0_fixtures$sc0_5_5 + SC0_fixtures$sc0_6_6 + SC0_fixtures$sc0_1_0 + SC0_fixtures$sc0_2_1 +
+    SC0_fixtures$sc0_3_2 + SC0_fixtures$sc0_4_3 + SC0_fixtures$sc0_5_4 + SC0_fixtures$sc0_6_5
+)
+
+#odds
+SC0_fixtures$sc0_AH_125_H_odds <- round((1/SC0_fixtures$sc0_AH_125_H),digits = 2)
+SC0_fixtures$sc0_AH_125_A_odds <- round((1/SC0_fixtures$sc0_AH_125_A),digits = 2)
+
+SC0_fixtures$sc0_AH_125_H_odds
+SC0_fixtures$sc0_AH_125_A_odds
+#percentages
+SC0_fixtures$sc0_AH_125_H <- percent(SC0_fixtures$sc0_AH_125_H, accuracy = 0.1)
+SC0_fixtures$sc0_AH_125_A <- percent(SC0_fixtures$sc0_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 SC0_fixtures$sc0_ov25 <- percent(SC0_fixtures$sc0_ov25, accuracy = 0.1)
 
@@ -3004,6 +5812,162 @@ SC1_fixtures$sc1_un25_odds <- round((1/SC1_fixtures$sc1_un25),digits = 2)
 
 SC1_fixtures$sc1_ov25_odds
 SC1_fixtures$sc1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+SC1_fixtures$sc1_AH_0_H <- (
+  SC1_fixtures$sc1_1_0 + SC1_fixtures$sc1_2_0 + SC1_fixtures$sc1_2_1 + SC1_fixtures$sc1_3_0 + SC1_fixtures$sc1_3_1 +
+    SC1_fixtures$sc1_3_2 + SC1_fixtures$sc1_4_0 + SC1_fixtures$sc1_4_1 + SC1_fixtures$sc1_4_2 + SC1_fixtures$sc1_4_3 +
+    SC1_fixtures$sc1_5_0 +SC1_fixtures$sc1_5_1 + SC1_fixtures$sc1_5_2 + SC1_fixtures$sc1_5_3 + SC1_fixtures$sc1_5_4 +
+    SC1_fixtures$sc1_6_0 + SC1_fixtures$sc1_6_1 + SC1_fixtures$sc1_6_2 + SC1_fixtures$sc1_6_3 + SC1_fixtures$sc1_6_4 +
+    SC1_fixtures$sc1_6_5 + SC1_fixtures$sc1_0_0 + SC1_fixtures$sc1_1_1 + SC1_fixtures$sc1_2_2 + SC1_fixtures$sc1_3_3 +
+    SC1_fixtures$sc1_4_4 + SC1_fixtures$sc1_5_5 + SC1_fixtures$sc1_6_6
+)
+#AH_0_A
+SC1_fixtures$sc1_AH_0_A <- (
+  SC1_fixtures$sc1_0_1 + SC1_fixtures$sc1_0_2 + SC1_fixtures$sc1_1_2 + SC1_fixtures$sc1_0_3 + SC1_fixtures$sc1_1_3 +
+    SC1_fixtures$sc1_2_3 + SC1_fixtures$sc1_0_4 + SC1_fixtures$sc1_1_4 + SC1_fixtures$sc1_2_4 + SC1_fixtures$sc1_3_4 +
+    SC1_fixtures$sc1_0_5 +SC1_fixtures$sc1_1_5 + SC1_fixtures$sc1_2_5 + SC1_fixtures$sc1_3_5 + SC1_fixtures$sc1_4_5 +
+    SC1_fixtures$sc1_0_6 + SC1_fixtures$sc1_1_6 + SC1_fixtures$sc1_2_6 + SC1_fixtures$sc1_3_6 + SC1_fixtures$sc1_4_6 +
+    SC1_fixtures$sc1_5_6 + SC1_fixtures$sc1_0_0 + SC1_fixtures$sc1_1_1 + SC1_fixtures$sc1_2_2 + SC1_fixtures$sc1_3_3 +
+    SC1_fixtures$sc1_4_4 + SC1_fixtures$sc1_5_5 + SC1_fixtures$sc1_6_6
+)
+
+#odds
+SC1_fixtures$sc1_AH_0_H_odds <- round((1/SC1_fixtures$sc1_AH_0_H),digits = 2)
+SC1_fixtures$sc1_AH_0_A_odds <- round((1/SC1_fixtures$sc1_AH_0_A),digits = 2)
+
+SC1_fixtures$sc1_AH_0_H_odds
+SC1_fixtures$sc1_AH_0_A_odds
+#percentages
+SC1_fixtures$sc1_AH_0_H <- percent(SC1_fixtures$sc1_AH_0_H, accuracy = 0.1)
+SC1_fixtures$sc1_AH_0_A <- percent(SC1_fixtures$sc1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+SC1_fixtures$sc1_AH_n075_H <- (
+  SC1_fixtures$sc1_1_0 + SC1_fixtures$sc1_2_0 + SC1_fixtures$sc1_2_1 + SC1_fixtures$sc1_3_0 + SC1_fixtures$sc1_3_1 +
+    SC1_fixtures$sc1_3_2 + SC1_fixtures$sc1_4_0 + SC1_fixtures$sc1_4_1 + SC1_fixtures$sc1_4_2 + SC1_fixtures$sc1_4_3 +
+    SC1_fixtures$sc1_5_0 +SC1_fixtures$sc1_5_1 + SC1_fixtures$sc1_5_2 + SC1_fixtures$sc1_5_3 + SC1_fixtures$sc1_5_4 +
+    SC1_fixtures$sc1_6_0 + SC1_fixtures$sc1_6_1 + SC1_fixtures$sc1_6_2 + SC1_fixtures$sc1_6_3 + SC1_fixtures$sc1_6_4 +
+    SC1_fixtures$sc1_6_5
+)
+#AH_n075_A
+SC1_fixtures$sc1_AH_n075_A <- (
+  SC1_fixtures$sc1_0_1 + SC1_fixtures$sc1_0_2 + SC1_fixtures$sc1_1_2 + SC1_fixtures$sc1_0_3 + SC1_fixtures$sc1_1_3 +
+    SC1_fixtures$sc1_2_3 + SC1_fixtures$sc1_0_4 + SC1_fixtures$sc1_1_4 + SC1_fixtures$sc1_2_4 + SC1_fixtures$sc1_3_4 +
+    SC1_fixtures$sc1_0_5 +SC1_fixtures$sc1_1_5 + SC1_fixtures$sc1_2_5 + SC1_fixtures$sc1_3_5 + SC1_fixtures$sc1_4_5 +
+    SC1_fixtures$sc1_0_6 + SC1_fixtures$sc1_1_6 + SC1_fixtures$sc1_2_6 + SC1_fixtures$sc1_3_6 + SC1_fixtures$sc1_4_6 +
+    SC1_fixtures$sc1_5_6
+)
+
+#odds
+SC1_fixtures$sc1_AH_n075_H_odds <- round((1/SC1_fixtures$sc1_AH_n075_H),digits = 2)
+SC1_fixtures$sc1_AH_n075_A_odds <- round((1/SC1_fixtures$sc1_AH_n075_A),digits = 2)
+
+SC1_fixtures$sc1_AH_n075_H_odds
+SC1_fixtures$sc1_AH_n075_A_odds
+#percentages
+SC1_fixtures$sc1_AH_n075_H <- percent(SC1_fixtures$sc1_AH_n075_H, accuracy = 0.1)
+SC1_fixtures$sc1_AH_n075_A <- percent(SC1_fixtures$sc1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+SC1_fixtures$sc1_AH_075_H <- (
+  SC1_fixtures$sc1_1_0 + SC1_fixtures$sc1_2_0 + SC1_fixtures$sc1_2_1 + SC1_fixtures$sc1_3_0 + SC1_fixtures$sc1_3_1 +
+    SC1_fixtures$sc1_3_2 + SC1_fixtures$sc1_4_0 + SC1_fixtures$sc1_4_1 + SC1_fixtures$sc1_4_2 + SC1_fixtures$sc1_4_3 +
+    SC1_fixtures$sc1_5_0 +SC1_fixtures$sc1_5_1 + SC1_fixtures$sc1_5_2 + SC1_fixtures$sc1_5_3 + SC1_fixtures$sc1_5_4 +
+    SC1_fixtures$sc1_6_0 + SC1_fixtures$sc1_6_1 + SC1_fixtures$sc1_6_2 + SC1_fixtures$sc1_6_3 + SC1_fixtures$sc1_6_4 +
+    SC1_fixtures$sc1_6_5 + SC1_fixtures$sc1_0_0 + SC1_fixtures$sc1_1_1 + SC1_fixtures$sc1_2_2 + SC1_fixtures$sc1_3_3 +
+    SC1_fixtures$sc1_4_4 + SC1_fixtures$sc1_5_5 + SC1_fixtures$sc1_6_6 + SC1_fixtures$sc1_0_1 + SC1_fixtures$sc1_1_2 +
+    SC1_fixtures$sc1_2_3 + SC1_fixtures$sc1_3_4 + SC1_fixtures$sc1_4_5 + SC1_fixtures$sc1_5_6
+)
+#AH_075_A
+SC1_fixtures$sc1_AH_075_A <- (
+  SC1_fixtures$sc1_0_1 + SC1_fixtures$sc1_0_2 + SC1_fixtures$sc1_1_2 + SC1_fixtures$sc1_0_3 + SC1_fixtures$sc1_1_3 +
+    SC1_fixtures$sc1_2_3 + SC1_fixtures$sc1_0_4 + SC1_fixtures$sc1_1_4 + SC1_fixtures$sc1_2_4 + SC1_fixtures$sc1_3_4 +
+    SC1_fixtures$sc1_0_5 +SC1_fixtures$sc1_1_5 + SC1_fixtures$sc1_2_5 + SC1_fixtures$sc1_3_5 + SC1_fixtures$sc1_4_5 +
+    SC1_fixtures$sc1_0_6 + SC1_fixtures$sc1_1_6 + SC1_fixtures$sc1_2_6 + SC1_fixtures$sc1_3_6 + SC1_fixtures$sc1_4_6 +
+    SC1_fixtures$sc1_5_6 + SC1_fixtures$sc1_0_0 + SC1_fixtures$sc1_1_1 + SC1_fixtures$sc1_2_2 + SC1_fixtures$sc1_3_3 +
+    SC1_fixtures$sc1_4_4 + SC1_fixtures$sc1_5_5 + SC1_fixtures$sc1_6_6 + SC1_fixtures$sc1_1_0 + SC1_fixtures$sc1_2_1 +
+    SC1_fixtures$sc1_3_2 + SC1_fixtures$sc1_4_3 + SC1_fixtures$sc1_5_4 + SC1_fixtures$sc1_6_5
+)
+
+#odds
+SC1_fixtures$sc1_AH_075_H_odds <- round((1/SC1_fixtures$sc1_AH_075_H),digits = 2)
+SC1_fixtures$sc1_AH_075_A_odds <- round((1/SC1_fixtures$sc1_AH_075_A),digits = 2)
+
+SC1_fixtures$sc1_AH_075_H_odds
+SC1_fixtures$sc1_AH_075_A_odds
+#percentages
+SC1_fixtures$sc1_AH_075_H <- percent(SC1_fixtures$sc1_AH_075_H, accuracy = 0.1)
+SC1_fixtures$sc1_AH_075_A <- percent(SC1_fixtures$sc1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+SC1_fixtures$sc1_AH_n125_H <- (
+  SC1_fixtures$sc1_1_0 + SC1_fixtures$sc1_2_0 + SC1_fixtures$sc1_2_1 + SC1_fixtures$sc1_3_0 + SC1_fixtures$sc1_3_1 +
+    SC1_fixtures$sc1_3_2 + SC1_fixtures$sc1_4_0 + SC1_fixtures$sc1_4_1 + SC1_fixtures$sc1_4_2 + SC1_fixtures$sc1_4_3 +
+    SC1_fixtures$sc1_5_0 +SC1_fixtures$sc1_5_1 + SC1_fixtures$sc1_5_2 + SC1_fixtures$sc1_5_3 + SC1_fixtures$sc1_5_4 +
+    SC1_fixtures$sc1_6_0 + SC1_fixtures$sc1_6_1 + SC1_fixtures$sc1_6_2 + SC1_fixtures$sc1_6_3 + SC1_fixtures$sc1_6_4 +
+    SC1_fixtures$sc1_6_5
+)
+#AH_n125_A
+SC1_fixtures$sc1_AH_n125_A <- (
+  SC1_fixtures$sc1_0_1 + SC1_fixtures$sc1_0_2 + SC1_fixtures$sc1_1_2 + SC1_fixtures$sc1_0_3 + SC1_fixtures$sc1_1_3 +
+    SC1_fixtures$sc1_2_3 + SC1_fixtures$sc1_0_4 + SC1_fixtures$sc1_1_4 + SC1_fixtures$sc1_2_4 + SC1_fixtures$sc1_3_4 +
+    SC1_fixtures$sc1_0_5 +SC1_fixtures$sc1_1_5 + SC1_fixtures$sc1_2_5 + SC1_fixtures$sc1_3_5 + SC1_fixtures$sc1_4_5 +
+    SC1_fixtures$sc1_0_6 + SC1_fixtures$sc1_1_6 + SC1_fixtures$sc1_2_6 + SC1_fixtures$sc1_3_6 + SC1_fixtures$sc1_4_6 +
+    SC1_fixtures$sc1_5_6
+)
+
+#odds
+SC1_fixtures$sc1_AH_n125_H_odds <- round((1/SC1_fixtures$sc1_AH_n125_H),digits = 2)
+SC1_fixtures$sc1_AH_n125_A_odds <- round((1/SC1_fixtures$sc1_AH_n125_A),digits = 2)
+
+SC1_fixtures$sc1_AH_n125_H_odds
+SC1_fixtures$sc1_AH_n125_A_odds
+#percentages
+SC1_fixtures$sc1_AH_n125_H <- percent(SC1_fixtures$sc1_AH_n125_H, accuracy = 0.1)
+SC1_fixtures$sc1_AH_n125_A <- percent(SC1_fixtures$sc1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+SC1_fixtures$sc1_AH_125_H <- (
+  SC1_fixtures$sc1_1_0 + SC1_fixtures$sc1_2_0 + SC1_fixtures$sc1_2_1 + SC1_fixtures$sc1_3_0 + SC1_fixtures$sc1_3_1 +
+    SC1_fixtures$sc1_3_2 + SC1_fixtures$sc1_4_0 + SC1_fixtures$sc1_4_1 + SC1_fixtures$sc1_4_2 + SC1_fixtures$sc1_4_3 +
+    SC1_fixtures$sc1_5_0 +SC1_fixtures$sc1_5_1 + SC1_fixtures$sc1_5_2 + SC1_fixtures$sc1_5_3 + SC1_fixtures$sc1_5_4 +
+    SC1_fixtures$sc1_6_0 + SC1_fixtures$sc1_6_1 + SC1_fixtures$sc1_6_2 + SC1_fixtures$sc1_6_3 + SC1_fixtures$sc1_6_4 +
+    SC1_fixtures$sc1_6_5 + SC1_fixtures$sc1_0_0 + SC1_fixtures$sc1_1_1 + SC1_fixtures$sc1_2_2 + SC1_fixtures$sc1_3_3 +
+    SC1_fixtures$sc1_4_4 + SC1_fixtures$sc1_5_5 + SC1_fixtures$sc1_6_6 + SC1_fixtures$sc1_0_1 + SC1_fixtures$sc1_1_2 +
+    SC1_fixtures$sc1_2_3 + SC1_fixtures$sc1_3_4 + SC1_fixtures$sc1_4_5 + SC1_fixtures$sc1_5_6
+)
+#AH_125_A
+SC1_fixtures$sc1_AH_125_A <- (
+  SC1_fixtures$sc1_0_1 + SC1_fixtures$sc1_0_2 + SC1_fixtures$sc1_1_2 + SC1_fixtures$sc1_0_3 + SC1_fixtures$sc1_1_3 +
+    SC1_fixtures$sc1_2_3 + SC1_fixtures$sc1_0_4 + SC1_fixtures$sc1_1_4 + SC1_fixtures$sc1_2_4 + SC1_fixtures$sc1_3_4 +
+    SC1_fixtures$sc1_0_5 +SC1_fixtures$sc1_1_5 + SC1_fixtures$sc1_2_5 + SC1_fixtures$sc1_3_5 + SC1_fixtures$sc1_4_5 +
+    SC1_fixtures$sc1_0_6 + SC1_fixtures$sc1_1_6 + SC1_fixtures$sc1_2_6 + SC1_fixtures$sc1_3_6 + SC1_fixtures$sc1_4_6 +
+    SC1_fixtures$sc1_5_6 + SC1_fixtures$sc1_0_0 + SC1_fixtures$sc1_1_1 + SC1_fixtures$sc1_2_2 + SC1_fixtures$sc1_3_3 +
+    SC1_fixtures$sc1_4_4 + SC1_fixtures$sc1_5_5 + SC1_fixtures$sc1_6_6 + SC1_fixtures$sc1_1_0 + SC1_fixtures$sc1_2_1 +
+    SC1_fixtures$sc1_3_2 + SC1_fixtures$sc1_4_3 + SC1_fixtures$sc1_5_4 + SC1_fixtures$sc1_6_5
+)
+
+#odds
+SC1_fixtures$sc1_AH_125_H_odds <- round((1/SC1_fixtures$sc1_AH_125_H),digits = 2)
+SC1_fixtures$sc1_AH_125_A_odds <- round((1/SC1_fixtures$sc1_AH_125_A),digits = 2)
+
+SC1_fixtures$sc1_AH_125_H_odds
+SC1_fixtures$sc1_AH_125_A_odds
+#percentages
+SC1_fixtures$sc1_AH_125_H <- percent(SC1_fixtures$sc1_AH_125_H, accuracy = 0.1)
+SC1_fixtures$sc1_AH_125_A <- percent(SC1_fixtures$sc1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 SC1_fixtures$sc1_ov25 <- percent(SC1_fixtures$sc1_ov25, accuracy = 0.1)
 
@@ -3162,6 +6126,162 @@ SC2_fixtures$sc2_un25_odds <- round((1/SC2_fixtures$sc2_un25),digits = 2)
 
 SC2_fixtures$sc2_ov25_odds
 SC2_fixtures$sc2_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+SC2_fixtures$sc2_AH_0_H <- (
+  SC2_fixtures$sc2_1_0 + SC2_fixtures$sc2_2_0 + SC2_fixtures$sc2_2_1 + SC2_fixtures$sc2_3_0 + SC2_fixtures$sc2_3_1 +
+    SC2_fixtures$sc2_3_2 + SC2_fixtures$sc2_4_0 + SC2_fixtures$sc2_4_1 + SC2_fixtures$sc2_4_2 + SC2_fixtures$sc2_4_3 +
+    SC2_fixtures$sc2_5_0 +SC2_fixtures$sc2_5_1 + SC2_fixtures$sc2_5_2 + SC2_fixtures$sc2_5_3 + SC2_fixtures$sc2_5_4 +
+    SC2_fixtures$sc2_6_0 + SC2_fixtures$sc2_6_1 + SC2_fixtures$sc2_6_2 + SC2_fixtures$sc2_6_3 + SC2_fixtures$sc2_6_4 +
+    SC2_fixtures$sc2_6_5 + SC2_fixtures$sc2_0_0 + SC2_fixtures$sc2_1_1 + SC2_fixtures$sc2_2_2 + SC2_fixtures$sc2_3_3 +
+    SC2_fixtures$sc2_4_4 + SC2_fixtures$sc2_5_5 + SC2_fixtures$sc2_6_6
+)
+#AH_0_A
+SC2_fixtures$sc2_AH_0_A <- (
+  SC2_fixtures$sc2_0_1 + SC2_fixtures$sc2_0_2 + SC2_fixtures$sc2_1_2 + SC2_fixtures$sc2_0_3 + SC2_fixtures$sc2_1_3 +
+    SC2_fixtures$sc2_2_3 + SC2_fixtures$sc2_0_4 + SC2_fixtures$sc2_1_4 + SC2_fixtures$sc2_2_4 + SC2_fixtures$sc2_3_4 +
+    SC2_fixtures$sc2_0_5 +SC2_fixtures$sc2_1_5 + SC2_fixtures$sc2_2_5 + SC2_fixtures$sc2_3_5 + SC2_fixtures$sc2_4_5 +
+    SC2_fixtures$sc2_0_6 + SC2_fixtures$sc2_1_6 + SC2_fixtures$sc2_2_6 + SC2_fixtures$sc2_3_6 + SC2_fixtures$sc2_4_6 +
+    SC2_fixtures$sc2_5_6 + SC2_fixtures$sc2_0_0 + SC2_fixtures$sc2_1_1 + SC2_fixtures$sc2_2_2 + SC2_fixtures$sc2_3_3 +
+    SC2_fixtures$sc2_4_4 + SC2_fixtures$sc2_5_5 + SC2_fixtures$sc2_6_6
+)
+
+#odds
+SC2_fixtures$sc2_AH_0_H_odds <- round((1/SC2_fixtures$sc2_AH_0_H),digits = 2)
+SC2_fixtures$sc2_AH_0_A_odds <- round((1/SC2_fixtures$sc2_AH_0_A),digits = 2)
+
+SC2_fixtures$sc2_AH_0_H_odds
+SC2_fixtures$sc2_AH_0_A_odds
+#percentages
+SC2_fixtures$sc2_AH_0_H <- percent(SC2_fixtures$sc2_AH_0_H, accuracy = 0.1)
+SC2_fixtures$sc2_AH_0_A <- percent(SC2_fixtures$sc2_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+SC2_fixtures$sc2_AH_n075_H <- (
+  SC2_fixtures$sc2_1_0 + SC2_fixtures$sc2_2_0 + SC2_fixtures$sc2_2_1 + SC2_fixtures$sc2_3_0 + SC2_fixtures$sc2_3_1 +
+    SC2_fixtures$sc2_3_2 + SC2_fixtures$sc2_4_0 + SC2_fixtures$sc2_4_1 + SC2_fixtures$sc2_4_2 + SC2_fixtures$sc2_4_3 +
+    SC2_fixtures$sc2_5_0 +SC2_fixtures$sc2_5_1 + SC2_fixtures$sc2_5_2 + SC2_fixtures$sc2_5_3 + SC2_fixtures$sc2_5_4 +
+    SC2_fixtures$sc2_6_0 + SC2_fixtures$sc2_6_1 + SC2_fixtures$sc2_6_2 + SC2_fixtures$sc2_6_3 + SC2_fixtures$sc2_6_4 +
+    SC2_fixtures$sc2_6_5
+)
+#AH_n075_A
+SC2_fixtures$sc2_AH_n075_A <- (
+  SC2_fixtures$sc2_0_1 + SC2_fixtures$sc2_0_2 + SC2_fixtures$sc2_1_2 + SC2_fixtures$sc2_0_3 + SC2_fixtures$sc2_1_3 +
+    SC2_fixtures$sc2_2_3 + SC2_fixtures$sc2_0_4 + SC2_fixtures$sc2_1_4 + SC2_fixtures$sc2_2_4 + SC2_fixtures$sc2_3_4 +
+    SC2_fixtures$sc2_0_5 +SC2_fixtures$sc2_1_5 + SC2_fixtures$sc2_2_5 + SC2_fixtures$sc2_3_5 + SC2_fixtures$sc2_4_5 +
+    SC2_fixtures$sc2_0_6 + SC2_fixtures$sc2_1_6 + SC2_fixtures$sc2_2_6 + SC2_fixtures$sc2_3_6 + SC2_fixtures$sc2_4_6 +
+    SC2_fixtures$sc2_5_6
+)
+
+#odds
+SC2_fixtures$sc2_AH_n075_H_odds <- round((1/SC2_fixtures$sc2_AH_n075_H),digits = 2)
+SC2_fixtures$sc2_AH_n075_A_odds <- round((1/SC2_fixtures$sc2_AH_n075_A),digits = 2)
+
+SC2_fixtures$sc2_AH_n075_H_odds
+SC2_fixtures$sc2_AH_n075_A_odds
+#percentages
+SC2_fixtures$sc2_AH_n075_H <- percent(SC2_fixtures$sc2_AH_n075_H, accuracy = 0.1)
+SC2_fixtures$sc2_AH_n075_A <- percent(SC2_fixtures$sc2_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+SC2_fixtures$sc2_AH_075_H <- (
+  SC2_fixtures$sc2_1_0 + SC2_fixtures$sc2_2_0 + SC2_fixtures$sc2_2_1 + SC2_fixtures$sc2_3_0 + SC2_fixtures$sc2_3_1 +
+    SC2_fixtures$sc2_3_2 + SC2_fixtures$sc2_4_0 + SC2_fixtures$sc2_4_1 + SC2_fixtures$sc2_4_2 + SC2_fixtures$sc2_4_3 +
+    SC2_fixtures$sc2_5_0 +SC2_fixtures$sc2_5_1 + SC2_fixtures$sc2_5_2 + SC2_fixtures$sc2_5_3 + SC2_fixtures$sc2_5_4 +
+    SC2_fixtures$sc2_6_0 + SC2_fixtures$sc2_6_1 + SC2_fixtures$sc2_6_2 + SC2_fixtures$sc2_6_3 + SC2_fixtures$sc2_6_4 +
+    SC2_fixtures$sc2_6_5 + SC2_fixtures$sc2_0_0 + SC2_fixtures$sc2_1_1 + SC2_fixtures$sc2_2_2 + SC2_fixtures$sc2_3_3 +
+    SC2_fixtures$sc2_4_4 + SC2_fixtures$sc2_5_5 + SC2_fixtures$sc2_6_6 + SC2_fixtures$sc2_0_1 + SC2_fixtures$sc2_1_2 +
+    SC2_fixtures$sc2_2_3 + SC2_fixtures$sc2_3_4 + SC2_fixtures$sc2_4_5 + SC2_fixtures$sc2_5_6
+)
+#AH_075_A
+SC2_fixtures$sc2_AH_075_A <- (
+  SC2_fixtures$sc2_0_1 + SC2_fixtures$sc2_0_2 + SC2_fixtures$sc2_1_2 + SC2_fixtures$sc2_0_3 + SC2_fixtures$sc2_1_3 +
+    SC2_fixtures$sc2_2_3 + SC2_fixtures$sc2_0_4 + SC2_fixtures$sc2_1_4 + SC2_fixtures$sc2_2_4 + SC2_fixtures$sc2_3_4 +
+    SC2_fixtures$sc2_0_5 +SC2_fixtures$sc2_1_5 + SC2_fixtures$sc2_2_5 + SC2_fixtures$sc2_3_5 + SC2_fixtures$sc2_4_5 +
+    SC2_fixtures$sc2_0_6 + SC2_fixtures$sc2_1_6 + SC2_fixtures$sc2_2_6 + SC2_fixtures$sc2_3_6 + SC2_fixtures$sc2_4_6 +
+    SC2_fixtures$sc2_5_6 + SC2_fixtures$sc2_0_0 + SC2_fixtures$sc2_1_1 + SC2_fixtures$sc2_2_2 + SC2_fixtures$sc2_3_3 +
+    SC2_fixtures$sc2_4_4 + SC2_fixtures$sc2_5_5 + SC2_fixtures$sc2_6_6 + SC2_fixtures$sc2_1_0 + SC2_fixtures$sc2_2_1 +
+    SC2_fixtures$sc2_3_2 + SC2_fixtures$sc2_4_3 + SC2_fixtures$sc2_5_4 + SC2_fixtures$sc2_6_5
+)
+
+#odds
+SC2_fixtures$sc2_AH_075_H_odds <- round((1/SC2_fixtures$sc2_AH_075_H),digits = 2)
+SC2_fixtures$sc2_AH_075_A_odds <- round((1/SC2_fixtures$sc2_AH_075_A),digits = 2)
+
+SC2_fixtures$sc2_AH_075_H_odds
+SC2_fixtures$sc2_AH_075_A_odds
+#percentages
+SC2_fixtures$sc2_AH_075_H <- percent(SC2_fixtures$sc2_AH_075_H, accuracy = 0.1)
+SC2_fixtures$sc2_AH_075_A <- percent(SC2_fixtures$sc2_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+SC2_fixtures$sc2_AH_n125_H <- (
+  SC2_fixtures$sc2_1_0 + SC2_fixtures$sc2_2_0 + SC2_fixtures$sc2_2_1 + SC2_fixtures$sc2_3_0 + SC2_fixtures$sc2_3_1 +
+    SC2_fixtures$sc2_3_2 + SC2_fixtures$sc2_4_0 + SC2_fixtures$sc2_4_1 + SC2_fixtures$sc2_4_2 + SC2_fixtures$sc2_4_3 +
+    SC2_fixtures$sc2_5_0 +SC2_fixtures$sc2_5_1 + SC2_fixtures$sc2_5_2 + SC2_fixtures$sc2_5_3 + SC2_fixtures$sc2_5_4 +
+    SC2_fixtures$sc2_6_0 + SC2_fixtures$sc2_6_1 + SC2_fixtures$sc2_6_2 + SC2_fixtures$sc2_6_3 + SC2_fixtures$sc2_6_4 +
+    SC2_fixtures$sc2_6_5
+)
+#AH_n125_A
+SC2_fixtures$sc2_AH_n125_A <- (
+  SC2_fixtures$sc2_0_1 + SC2_fixtures$sc2_0_2 + SC2_fixtures$sc2_1_2 + SC2_fixtures$sc2_0_3 + SC2_fixtures$sc2_1_3 +
+    SC2_fixtures$sc2_2_3 + SC2_fixtures$sc2_0_4 + SC2_fixtures$sc2_1_4 + SC2_fixtures$sc2_2_4 + SC2_fixtures$sc2_3_4 +
+    SC2_fixtures$sc2_0_5 +SC2_fixtures$sc2_1_5 + SC2_fixtures$sc2_2_5 + SC2_fixtures$sc2_3_5 + SC2_fixtures$sc2_4_5 +
+    SC2_fixtures$sc2_0_6 + SC2_fixtures$sc2_1_6 + SC2_fixtures$sc2_2_6 + SC2_fixtures$sc2_3_6 + SC2_fixtures$sc2_4_6 +
+    SC2_fixtures$sc2_5_6
+)
+
+#odds
+SC2_fixtures$sc2_AH_n125_H_odds <- round((1/SC2_fixtures$sc2_AH_n125_H),digits = 2)
+SC2_fixtures$sc2_AH_n125_A_odds <- round((1/SC2_fixtures$sc2_AH_n125_A),digits = 2)
+
+SC2_fixtures$sc2_AH_n125_H_odds
+SC2_fixtures$sc2_AH_n125_A_odds
+#percentages
+SC2_fixtures$sc2_AH_n125_H <- percent(SC2_fixtures$sc2_AH_n125_H, accuracy = 0.1)
+SC2_fixtures$sc2_AH_n125_A <- percent(SC2_fixtures$sc2_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+SC2_fixtures$sc2_AH_125_H <- (
+  SC2_fixtures$sc2_1_0 + SC2_fixtures$sc2_2_0 + SC2_fixtures$sc2_2_1 + SC2_fixtures$sc2_3_0 + SC2_fixtures$sc2_3_1 +
+    SC2_fixtures$sc2_3_2 + SC2_fixtures$sc2_4_0 + SC2_fixtures$sc2_4_1 + SC2_fixtures$sc2_4_2 + SC2_fixtures$sc2_4_3 +
+    SC2_fixtures$sc2_5_0 +SC2_fixtures$sc2_5_1 + SC2_fixtures$sc2_5_2 + SC2_fixtures$sc2_5_3 + SC2_fixtures$sc2_5_4 +
+    SC2_fixtures$sc2_6_0 + SC2_fixtures$sc2_6_1 + SC2_fixtures$sc2_6_2 + SC2_fixtures$sc2_6_3 + SC2_fixtures$sc2_6_4 +
+    SC2_fixtures$sc2_6_5 + SC2_fixtures$sc2_0_0 + SC2_fixtures$sc2_1_1 + SC2_fixtures$sc2_2_2 + SC2_fixtures$sc2_3_3 +
+    SC2_fixtures$sc2_4_4 + SC2_fixtures$sc2_5_5 + SC2_fixtures$sc2_6_6 + SC2_fixtures$sc2_0_1 + SC2_fixtures$sc2_1_2 +
+    SC2_fixtures$sc2_2_3 + SC2_fixtures$sc2_3_4 + SC2_fixtures$sc2_4_5 + SC2_fixtures$sc2_5_6
+)
+#AH_125_A
+SC2_fixtures$sc2_AH_125_A <- (
+  SC2_fixtures$sc2_0_1 + SC2_fixtures$sc2_0_2 + SC2_fixtures$sc2_1_2 + SC2_fixtures$sc2_0_3 + SC2_fixtures$sc2_1_3 +
+    SC2_fixtures$sc2_2_3 + SC2_fixtures$sc2_0_4 + SC2_fixtures$sc2_1_4 + SC2_fixtures$sc2_2_4 + SC2_fixtures$sc2_3_4 +
+    SC2_fixtures$sc2_0_5 +SC2_fixtures$sc2_1_5 + SC2_fixtures$sc2_2_5 + SC2_fixtures$sc2_3_5 + SC2_fixtures$sc2_4_5 +
+    SC2_fixtures$sc2_0_6 + SC2_fixtures$sc2_1_6 + SC2_fixtures$sc2_2_6 + SC2_fixtures$sc2_3_6 + SC2_fixtures$sc2_4_6 +
+    SC2_fixtures$sc2_5_6 + SC2_fixtures$sc2_0_0 + SC2_fixtures$sc2_1_1 + SC2_fixtures$sc2_2_2 + SC2_fixtures$sc2_3_3 +
+    SC2_fixtures$sc2_4_4 + SC2_fixtures$sc2_5_5 + SC2_fixtures$sc2_6_6 + SC2_fixtures$sc2_1_0 + SC2_fixtures$sc2_2_1 +
+    SC2_fixtures$sc2_3_2 + SC2_fixtures$sc2_4_3 + SC2_fixtures$sc2_5_4 + SC2_fixtures$sc2_6_5
+)
+
+#odds
+SC2_fixtures$sc2_AH_125_H_odds <- round((1/SC2_fixtures$sc2_AH_125_H),digits = 2)
+SC2_fixtures$sc2_AH_125_A_odds <- round((1/SC2_fixtures$sc2_AH_125_A),digits = 2)
+
+SC2_fixtures$sc2_AH_125_H_odds
+SC2_fixtures$sc2_AH_125_A_odds
+#percentages
+SC2_fixtures$sc2_AH_125_H <- percent(SC2_fixtures$sc2_AH_125_H, accuracy = 0.1)
+SC2_fixtures$sc2_AH_125_A <- percent(SC2_fixtures$sc2_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 SC2_fixtures$sc2_ov25 <- percent(SC2_fixtures$sc2_ov25, accuracy = 0.1)
 
@@ -3320,6 +6440,162 @@ SC3_fixtures$sc3_un25_odds <- round((1/SC3_fixtures$sc3_un25),digits = 2)
 
 SC3_fixtures$sc3_ov25_odds
 SC3_fixtures$sc3_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+SC3_fixtures$sc3_AH_0_H <- (
+  SC3_fixtures$sc3_1_0 + SC3_fixtures$sc3_2_0 + SC3_fixtures$sc3_2_1 + SC3_fixtures$sc3_3_0 + SC3_fixtures$sc3_3_1 +
+    SC3_fixtures$sc3_3_2 + SC3_fixtures$sc3_4_0 + SC3_fixtures$sc3_4_1 + SC3_fixtures$sc3_4_2 + SC3_fixtures$sc3_4_3 +
+    SC3_fixtures$sc3_5_0 +SC3_fixtures$sc3_5_1 + SC3_fixtures$sc3_5_2 + SC3_fixtures$sc3_5_3 + SC3_fixtures$sc3_5_4 +
+    SC3_fixtures$sc3_6_0 + SC3_fixtures$sc3_6_1 + SC3_fixtures$sc3_6_2 + SC3_fixtures$sc3_6_3 + SC3_fixtures$sc3_6_4 +
+    SC3_fixtures$sc3_6_5 + SC3_fixtures$sc3_0_0 + SC3_fixtures$sc3_1_1 + SC3_fixtures$sc3_2_2 + SC3_fixtures$sc3_3_3 +
+    SC3_fixtures$sc3_4_4 + SC3_fixtures$sc3_5_5 + SC3_fixtures$sc3_6_6
+)
+#AH_0_A
+SC3_fixtures$sc3_AH_0_A <- (
+  SC3_fixtures$sc3_0_1 + SC3_fixtures$sc3_0_2 + SC3_fixtures$sc3_1_2 + SC3_fixtures$sc3_0_3 + SC3_fixtures$sc3_1_3 +
+    SC3_fixtures$sc3_2_3 + SC3_fixtures$sc3_0_4 + SC3_fixtures$sc3_1_4 + SC3_fixtures$sc3_2_4 + SC3_fixtures$sc3_3_4 +
+    SC3_fixtures$sc3_0_5 +SC3_fixtures$sc3_1_5 + SC3_fixtures$sc3_2_5 + SC3_fixtures$sc3_3_5 + SC3_fixtures$sc3_4_5 +
+    SC3_fixtures$sc3_0_6 + SC3_fixtures$sc3_1_6 + SC3_fixtures$sc3_2_6 + SC3_fixtures$sc3_3_6 + SC3_fixtures$sc3_4_6 +
+    SC3_fixtures$sc3_5_6 + SC3_fixtures$sc3_0_0 + SC3_fixtures$sc3_1_1 + SC3_fixtures$sc3_2_2 + SC3_fixtures$sc3_3_3 +
+    SC3_fixtures$sc3_4_4 + SC3_fixtures$sc3_5_5 + SC3_fixtures$sc3_6_6
+)
+
+#odds
+SC3_fixtures$sc3_AH_0_H_odds <- round((1/SC3_fixtures$sc3_AH_0_H),digits = 2)
+SC3_fixtures$sc3_AH_0_A_odds <- round((1/SC3_fixtures$sc3_AH_0_A),digits = 2)
+
+SC3_fixtures$sc3_AH_0_H_odds
+SC3_fixtures$sc3_AH_0_A_odds
+#percentages
+SC3_fixtures$sc3_AH_0_H <- percent(SC3_fixtures$sc3_AH_0_H, accuracy = 0.1)
+SC3_fixtures$sc3_AH_0_A <- percent(SC3_fixtures$sc3_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+SC3_fixtures$sc3_AH_n075_H <- (
+  SC3_fixtures$sc3_1_0 + SC3_fixtures$sc3_2_0 + SC3_fixtures$sc3_2_1 + SC3_fixtures$sc3_3_0 + SC3_fixtures$sc3_3_1 +
+    SC3_fixtures$sc3_3_2 + SC3_fixtures$sc3_4_0 + SC3_fixtures$sc3_4_1 + SC3_fixtures$sc3_4_2 + SC3_fixtures$sc3_4_3 +
+    SC3_fixtures$sc3_5_0 +SC3_fixtures$sc3_5_1 + SC3_fixtures$sc3_5_2 + SC3_fixtures$sc3_5_3 + SC3_fixtures$sc3_5_4 +
+    SC3_fixtures$sc3_6_0 + SC3_fixtures$sc3_6_1 + SC3_fixtures$sc3_6_2 + SC3_fixtures$sc3_6_3 + SC3_fixtures$sc3_6_4 +
+    SC3_fixtures$sc3_6_5
+)
+#AH_n075_A
+SC3_fixtures$sc3_AH_n075_A <- (
+  SC3_fixtures$sc3_0_1 + SC3_fixtures$sc3_0_2 + SC3_fixtures$sc3_1_2 + SC3_fixtures$sc3_0_3 + SC3_fixtures$sc3_1_3 +
+    SC3_fixtures$sc3_2_3 + SC3_fixtures$sc3_0_4 + SC3_fixtures$sc3_1_4 + SC3_fixtures$sc3_2_4 + SC3_fixtures$sc3_3_4 +
+    SC3_fixtures$sc3_0_5 +SC3_fixtures$sc3_1_5 + SC3_fixtures$sc3_2_5 + SC3_fixtures$sc3_3_5 + SC3_fixtures$sc3_4_5 +
+    SC3_fixtures$sc3_0_6 + SC3_fixtures$sc3_1_6 + SC3_fixtures$sc3_2_6 + SC3_fixtures$sc3_3_6 + SC3_fixtures$sc3_4_6 +
+    SC3_fixtures$sc3_5_6
+)
+
+#odds
+SC3_fixtures$sc3_AH_n075_H_odds <- round((1/SC3_fixtures$sc3_AH_n075_H),digits = 2)
+SC3_fixtures$sc3_AH_n075_A_odds <- round((1/SC3_fixtures$sc3_AH_n075_A),digits = 2)
+
+SC3_fixtures$sc3_AH_n075_H_odds
+SC3_fixtures$sc3_AH_n075_A_odds
+#percentages
+SC3_fixtures$sc3_AH_n075_H <- percent(SC3_fixtures$sc3_AH_n075_H, accuracy = 0.1)
+SC3_fixtures$sc3_AH_n075_A <- percent(SC3_fixtures$sc3_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+SC3_fixtures$sc3_AH_075_H <- (
+  SC3_fixtures$sc3_1_0 + SC3_fixtures$sc3_2_0 + SC3_fixtures$sc3_2_1 + SC3_fixtures$sc3_3_0 + SC3_fixtures$sc3_3_1 +
+    SC3_fixtures$sc3_3_2 + SC3_fixtures$sc3_4_0 + SC3_fixtures$sc3_4_1 + SC3_fixtures$sc3_4_2 + SC3_fixtures$sc3_4_3 +
+    SC3_fixtures$sc3_5_0 +SC3_fixtures$sc3_5_1 + SC3_fixtures$sc3_5_2 + SC3_fixtures$sc3_5_3 + SC3_fixtures$sc3_5_4 +
+    SC3_fixtures$sc3_6_0 + SC3_fixtures$sc3_6_1 + SC3_fixtures$sc3_6_2 + SC3_fixtures$sc3_6_3 + SC3_fixtures$sc3_6_4 +
+    SC3_fixtures$sc3_6_5 + SC3_fixtures$sc3_0_0 + SC3_fixtures$sc3_1_1 + SC3_fixtures$sc3_2_2 + SC3_fixtures$sc3_3_3 +
+    SC3_fixtures$sc3_4_4 + SC3_fixtures$sc3_5_5 + SC3_fixtures$sc3_6_6 + SC3_fixtures$sc3_0_1 + SC3_fixtures$sc3_1_2 +
+    SC3_fixtures$sc3_2_3 + SC3_fixtures$sc3_3_4 + SC3_fixtures$sc3_4_5 + SC3_fixtures$sc3_5_6
+)
+#AH_075_A
+SC3_fixtures$sc3_AH_075_A <- (
+  SC3_fixtures$sc3_0_1 + SC3_fixtures$sc3_0_2 + SC3_fixtures$sc3_1_2 + SC3_fixtures$sc3_0_3 + SC3_fixtures$sc3_1_3 +
+    SC3_fixtures$sc3_2_3 + SC3_fixtures$sc3_0_4 + SC3_fixtures$sc3_1_4 + SC3_fixtures$sc3_2_4 + SC3_fixtures$sc3_3_4 +
+    SC3_fixtures$sc3_0_5 +SC3_fixtures$sc3_1_5 + SC3_fixtures$sc3_2_5 + SC3_fixtures$sc3_3_5 + SC3_fixtures$sc3_4_5 +
+    SC3_fixtures$sc3_0_6 + SC3_fixtures$sc3_1_6 + SC3_fixtures$sc3_2_6 + SC3_fixtures$sc3_3_6 + SC3_fixtures$sc3_4_6 +
+    SC3_fixtures$sc3_5_6 + SC3_fixtures$sc3_0_0 + SC3_fixtures$sc3_1_1 + SC3_fixtures$sc3_2_2 + SC3_fixtures$sc3_3_3 +
+    SC3_fixtures$sc3_4_4 + SC3_fixtures$sc3_5_5 + SC3_fixtures$sc3_6_6 + SC3_fixtures$sc3_1_0 + SC3_fixtures$sc3_2_1 +
+    SC3_fixtures$sc3_3_2 + SC3_fixtures$sc3_4_3 + SC3_fixtures$sc3_5_4 + SC3_fixtures$sc3_6_5
+)
+
+#odds
+SC3_fixtures$sc3_AH_075_H_odds <- round((1/SC3_fixtures$sc3_AH_075_H),digits = 2)
+SC3_fixtures$sc3_AH_075_A_odds <- round((1/SC3_fixtures$sc3_AH_075_A),digits = 2)
+
+SC3_fixtures$sc3_AH_075_H_odds
+SC3_fixtures$sc3_AH_075_A_odds
+#percentages
+SC3_fixtures$sc3_AH_075_H <- percent(SC3_fixtures$sc3_AH_075_H, accuracy = 0.1)
+SC3_fixtures$sc3_AH_075_A <- percent(SC3_fixtures$sc3_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+SC3_fixtures$sc3_AH_n125_H <- (
+  SC3_fixtures$sc3_1_0 + SC3_fixtures$sc3_2_0 + SC3_fixtures$sc3_2_1 + SC3_fixtures$sc3_3_0 + SC3_fixtures$sc3_3_1 +
+    SC3_fixtures$sc3_3_2 + SC3_fixtures$sc3_4_0 + SC3_fixtures$sc3_4_1 + SC3_fixtures$sc3_4_2 + SC3_fixtures$sc3_4_3 +
+    SC3_fixtures$sc3_5_0 +SC3_fixtures$sc3_5_1 + SC3_fixtures$sc3_5_2 + SC3_fixtures$sc3_5_3 + SC3_fixtures$sc3_5_4 +
+    SC3_fixtures$sc3_6_0 + SC3_fixtures$sc3_6_1 + SC3_fixtures$sc3_6_2 + SC3_fixtures$sc3_6_3 + SC3_fixtures$sc3_6_4 +
+    SC3_fixtures$sc3_6_5
+)
+#AH_n125_A
+SC3_fixtures$sc3_AH_n125_A <- (
+  SC3_fixtures$sc3_0_1 + SC3_fixtures$sc3_0_2 + SC3_fixtures$sc3_1_2 + SC3_fixtures$sc3_0_3 + SC3_fixtures$sc3_1_3 +
+    SC3_fixtures$sc3_2_3 + SC3_fixtures$sc3_0_4 + SC3_fixtures$sc3_1_4 + SC3_fixtures$sc3_2_4 + SC3_fixtures$sc3_3_4 +
+    SC3_fixtures$sc3_0_5 +SC3_fixtures$sc3_1_5 + SC3_fixtures$sc3_2_5 + SC3_fixtures$sc3_3_5 + SC3_fixtures$sc3_4_5 +
+    SC3_fixtures$sc3_0_6 + SC3_fixtures$sc3_1_6 + SC3_fixtures$sc3_2_6 + SC3_fixtures$sc3_3_6 + SC3_fixtures$sc3_4_6 +
+    SC3_fixtures$sc3_5_6
+)
+
+#odds
+SC3_fixtures$sc3_AH_n125_H_odds <- round((1/SC3_fixtures$sc3_AH_n125_H),digits = 2)
+SC3_fixtures$sc3_AH_n125_A_odds <- round((1/SC3_fixtures$sc3_AH_n125_A),digits = 2)
+
+SC3_fixtures$sc3_AH_n125_H_odds
+SC3_fixtures$sc3_AH_n125_A_odds
+#percentages
+SC3_fixtures$sc3_AH_n125_H <- percent(SC3_fixtures$sc3_AH_n125_H, accuracy = 0.1)
+SC3_fixtures$sc3_AH_n125_A <- percent(SC3_fixtures$sc3_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+SC3_fixtures$sc3_AH_125_H <- (
+  SC3_fixtures$sc3_1_0 + SC3_fixtures$sc3_2_0 + SC3_fixtures$sc3_2_1 + SC3_fixtures$sc3_3_0 + SC3_fixtures$sc3_3_1 +
+    SC3_fixtures$sc3_3_2 + SC3_fixtures$sc3_4_0 + SC3_fixtures$sc3_4_1 + SC3_fixtures$sc3_4_2 + SC3_fixtures$sc3_4_3 +
+    SC3_fixtures$sc3_5_0 +SC3_fixtures$sc3_5_1 + SC3_fixtures$sc3_5_2 + SC3_fixtures$sc3_5_3 + SC3_fixtures$sc3_5_4 +
+    SC3_fixtures$sc3_6_0 + SC3_fixtures$sc3_6_1 + SC3_fixtures$sc3_6_2 + SC3_fixtures$sc3_6_3 + SC3_fixtures$sc3_6_4 +
+    SC3_fixtures$sc3_6_5 + SC3_fixtures$sc3_0_0 + SC3_fixtures$sc3_1_1 + SC3_fixtures$sc3_2_2 + SC3_fixtures$sc3_3_3 +
+    SC3_fixtures$sc3_4_4 + SC3_fixtures$sc3_5_5 + SC3_fixtures$sc3_6_6 + SC3_fixtures$sc3_0_1 + SC3_fixtures$sc3_1_2 +
+    SC3_fixtures$sc3_2_3 + SC3_fixtures$sc3_3_4 + SC3_fixtures$sc3_4_5 + SC3_fixtures$sc3_5_6
+)
+#AH_125_A
+SC3_fixtures$sc3_AH_125_A <- (
+  SC3_fixtures$sc3_0_1 + SC3_fixtures$sc3_0_2 + SC3_fixtures$sc3_1_2 + SC3_fixtures$sc3_0_3 + SC3_fixtures$sc3_1_3 +
+    SC3_fixtures$sc3_2_3 + SC3_fixtures$sc3_0_4 + SC3_fixtures$sc3_1_4 + SC3_fixtures$sc3_2_4 + SC3_fixtures$sc3_3_4 +
+    SC3_fixtures$sc3_0_5 +SC3_fixtures$sc3_1_5 + SC3_fixtures$sc3_2_5 + SC3_fixtures$sc3_3_5 + SC3_fixtures$sc3_4_5 +
+    SC3_fixtures$sc3_0_6 + SC3_fixtures$sc3_1_6 + SC3_fixtures$sc3_2_6 + SC3_fixtures$sc3_3_6 + SC3_fixtures$sc3_4_6 +
+    SC3_fixtures$sc3_5_6 + SC3_fixtures$sc3_0_0 + SC3_fixtures$sc3_1_1 + SC3_fixtures$sc3_2_2 + SC3_fixtures$sc3_3_3 +
+    SC3_fixtures$sc3_4_4 + SC3_fixtures$sc3_5_5 + SC3_fixtures$sc3_6_6 + SC3_fixtures$sc3_1_0 + SC3_fixtures$sc3_2_1 +
+    SC3_fixtures$sc3_3_2 + SC3_fixtures$sc3_4_3 + SC3_fixtures$sc3_5_4 + SC3_fixtures$sc3_6_5
+)
+
+#odds
+SC3_fixtures$sc3_AH_125_H_odds <- round((1/SC3_fixtures$sc3_AH_125_H),digits = 2)
+SC3_fixtures$sc3_AH_125_A_odds <- round((1/SC3_fixtures$sc3_AH_125_A),digits = 2)
+
+SC3_fixtures$sc3_AH_125_H_odds
+SC3_fixtures$sc3_AH_125_A_odds
+#percentages
+SC3_fixtures$sc3_AH_125_H <- percent(SC3_fixtures$sc3_AH_125_H, accuracy = 0.1)
+SC3_fixtures$sc3_AH_125_A <- percent(SC3_fixtures$sc3_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 SC3_fixtures$sc3_ov25 <- percent(SC3_fixtures$sc3_ov25, accuracy = 0.1)
 
@@ -3478,6 +6754,162 @@ T1_fixtures$t1_un25_odds <- round((1/T1_fixtures$t1_un25),digits = 2)
 
 T1_fixtures$t1_ov25_odds
 T1_fixtures$t1_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+T1_fixtures$t1_AH_0_H <- (
+  T1_fixtures$t1_1_0 + T1_fixtures$t1_2_0 + T1_fixtures$t1_2_1 + T1_fixtures$t1_3_0 + T1_fixtures$t1_3_1 +
+    T1_fixtures$t1_3_2 + T1_fixtures$t1_4_0 + T1_fixtures$t1_4_1 + T1_fixtures$t1_4_2 + T1_fixtures$t1_4_3 +
+    T1_fixtures$t1_5_0 +T1_fixtures$t1_5_1 + T1_fixtures$t1_5_2 + T1_fixtures$t1_5_3 + T1_fixtures$t1_5_4 +
+    T1_fixtures$t1_6_0 + T1_fixtures$t1_6_1 + T1_fixtures$t1_6_2 + T1_fixtures$t1_6_3 + T1_fixtures$t1_6_4 +
+    T1_fixtures$t1_6_5 + T1_fixtures$t1_0_0 + T1_fixtures$t1_1_1 + T1_fixtures$t1_2_2 + T1_fixtures$t1_3_3 +
+    T1_fixtures$t1_4_4 + T1_fixtures$t1_5_5 + T1_fixtures$t1_6_6
+)
+#AH_0_A
+T1_fixtures$t1_AH_0_A <- (
+  T1_fixtures$t1_0_1 + T1_fixtures$t1_0_2 + T1_fixtures$t1_1_2 + T1_fixtures$t1_0_3 + T1_fixtures$t1_1_3 +
+    T1_fixtures$t1_2_3 + T1_fixtures$t1_0_4 + T1_fixtures$t1_1_4 + T1_fixtures$t1_2_4 + T1_fixtures$t1_3_4 +
+    T1_fixtures$t1_0_5 +T1_fixtures$t1_1_5 + T1_fixtures$t1_2_5 + T1_fixtures$t1_3_5 + T1_fixtures$t1_4_5 +
+    T1_fixtures$t1_0_6 + T1_fixtures$t1_1_6 + T1_fixtures$t1_2_6 + T1_fixtures$t1_3_6 + T1_fixtures$t1_4_6 +
+    T1_fixtures$t1_5_6 + T1_fixtures$t1_0_0 + T1_fixtures$t1_1_1 + T1_fixtures$t1_2_2 + T1_fixtures$t1_3_3 +
+    T1_fixtures$t1_4_4 + T1_fixtures$t1_5_5 + T1_fixtures$t1_6_6
+)
+
+#odds
+T1_fixtures$t1_AH_0_H_odds <- round((1/T1_fixtures$t1_AH_0_H),digits = 2)
+T1_fixtures$t1_AH_0_A_odds <- round((1/T1_fixtures$t1_AH_0_A),digits = 2)
+
+T1_fixtures$t1_AH_0_H_odds
+T1_fixtures$t1_AH_0_A_odds
+#percentages
+T1_fixtures$t1_AH_0_H <- percent(T1_fixtures$t1_AH_0_H, accuracy = 0.1)
+T1_fixtures$t1_AH_0_A <- percent(T1_fixtures$t1_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+T1_fixtures$t1_AH_n075_H <- (
+  T1_fixtures$t1_1_0 + T1_fixtures$t1_2_0 + T1_fixtures$t1_2_1 + T1_fixtures$t1_3_0 + T1_fixtures$t1_3_1 +
+    T1_fixtures$t1_3_2 + T1_fixtures$t1_4_0 + T1_fixtures$t1_4_1 + T1_fixtures$t1_4_2 + T1_fixtures$t1_4_3 +
+    T1_fixtures$t1_5_0 +T1_fixtures$t1_5_1 + T1_fixtures$t1_5_2 + T1_fixtures$t1_5_3 + T1_fixtures$t1_5_4 +
+    T1_fixtures$t1_6_0 + T1_fixtures$t1_6_1 + T1_fixtures$t1_6_2 + T1_fixtures$t1_6_3 + T1_fixtures$t1_6_4 +
+    T1_fixtures$t1_6_5
+)
+#AH_n075_A
+T1_fixtures$t1_AH_n075_A <- (
+  T1_fixtures$t1_0_1 + T1_fixtures$t1_0_2 + T1_fixtures$t1_1_2 + T1_fixtures$t1_0_3 + T1_fixtures$t1_1_3 +
+    T1_fixtures$t1_2_3 + T1_fixtures$t1_0_4 + T1_fixtures$t1_1_4 + T1_fixtures$t1_2_4 + T1_fixtures$t1_3_4 +
+    T1_fixtures$t1_0_5 +T1_fixtures$t1_1_5 + T1_fixtures$t1_2_5 + T1_fixtures$t1_3_5 + T1_fixtures$t1_4_5 +
+    T1_fixtures$t1_0_6 + T1_fixtures$t1_1_6 + T1_fixtures$t1_2_6 + T1_fixtures$t1_3_6 + T1_fixtures$t1_4_6 +
+    T1_fixtures$t1_5_6
+)
+
+#odds
+T1_fixtures$t1_AH_n075_H_odds <- round((1/T1_fixtures$t1_AH_n075_H),digits = 2)
+T1_fixtures$t1_AH_n075_A_odds <- round((1/T1_fixtures$t1_AH_n075_A),digits = 2)
+
+T1_fixtures$t1_AH_n075_H_odds
+T1_fixtures$t1_AH_n075_A_odds
+#percentages
+T1_fixtures$t1_AH_n075_H <- percent(T1_fixtures$t1_AH_n075_H, accuracy = 0.1)
+T1_fixtures$t1_AH_n075_A <- percent(T1_fixtures$t1_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+T1_fixtures$t1_AH_075_H <- (
+  T1_fixtures$t1_1_0 + T1_fixtures$t1_2_0 + T1_fixtures$t1_2_1 + T1_fixtures$t1_3_0 + T1_fixtures$t1_3_1 +
+    T1_fixtures$t1_3_2 + T1_fixtures$t1_4_0 + T1_fixtures$t1_4_1 + T1_fixtures$t1_4_2 + T1_fixtures$t1_4_3 +
+    T1_fixtures$t1_5_0 +T1_fixtures$t1_5_1 + T1_fixtures$t1_5_2 + T1_fixtures$t1_5_3 + T1_fixtures$t1_5_4 +
+    T1_fixtures$t1_6_0 + T1_fixtures$t1_6_1 + T1_fixtures$t1_6_2 + T1_fixtures$t1_6_3 + T1_fixtures$t1_6_4 +
+    T1_fixtures$t1_6_5 + T1_fixtures$t1_0_0 + T1_fixtures$t1_1_1 + T1_fixtures$t1_2_2 + T1_fixtures$t1_3_3 +
+    T1_fixtures$t1_4_4 + T1_fixtures$t1_5_5 + T1_fixtures$t1_6_6 + T1_fixtures$t1_0_1 + T1_fixtures$t1_1_2 +
+    T1_fixtures$t1_2_3 + T1_fixtures$t1_3_4 + T1_fixtures$t1_4_5 + T1_fixtures$t1_5_6
+)
+#AH_075_A
+T1_fixtures$t1_AH_075_A <- (
+  T1_fixtures$t1_0_1 + T1_fixtures$t1_0_2 + T1_fixtures$t1_1_2 + T1_fixtures$t1_0_3 + T1_fixtures$t1_1_3 +
+    T1_fixtures$t1_2_3 + T1_fixtures$t1_0_4 + T1_fixtures$t1_1_4 + T1_fixtures$t1_2_4 + T1_fixtures$t1_3_4 +
+    T1_fixtures$t1_0_5 +T1_fixtures$t1_1_5 + T1_fixtures$t1_2_5 + T1_fixtures$t1_3_5 + T1_fixtures$t1_4_5 +
+    T1_fixtures$t1_0_6 + T1_fixtures$t1_1_6 + T1_fixtures$t1_2_6 + T1_fixtures$t1_3_6 + T1_fixtures$t1_4_6 +
+    T1_fixtures$t1_5_6 + T1_fixtures$t1_0_0 + T1_fixtures$t1_1_1 + T1_fixtures$t1_2_2 + T1_fixtures$t1_3_3 +
+    T1_fixtures$t1_4_4 + T1_fixtures$t1_5_5 + T1_fixtures$t1_6_6 + T1_fixtures$t1_1_0 + T1_fixtures$t1_2_1 +
+    T1_fixtures$t1_3_2 + T1_fixtures$t1_4_3 + T1_fixtures$t1_5_4 + T1_fixtures$t1_6_5
+)
+
+#odds
+T1_fixtures$t1_AH_075_H_odds <- round((1/T1_fixtures$t1_AH_075_H),digits = 2)
+T1_fixtures$t1_AH_075_A_odds <- round((1/T1_fixtures$t1_AH_075_A),digits = 2)
+
+T1_fixtures$t1_AH_075_H_odds
+T1_fixtures$t1_AH_075_A_odds
+#percentages
+T1_fixtures$t1_AH_075_H <- percent(T1_fixtures$t1_AH_075_H, accuracy = 0.1)
+T1_fixtures$t1_AH_075_A <- percent(T1_fixtures$t1_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+T1_fixtures$t1_AH_n125_H <- (
+  T1_fixtures$t1_1_0 + T1_fixtures$t1_2_0 + T1_fixtures$t1_2_1 + T1_fixtures$t1_3_0 + T1_fixtures$t1_3_1 +
+    T1_fixtures$t1_3_2 + T1_fixtures$t1_4_0 + T1_fixtures$t1_4_1 + T1_fixtures$t1_4_2 + T1_fixtures$t1_4_3 +
+    T1_fixtures$t1_5_0 +T1_fixtures$t1_5_1 + T1_fixtures$t1_5_2 + T1_fixtures$t1_5_3 + T1_fixtures$t1_5_4 +
+    T1_fixtures$t1_6_0 + T1_fixtures$t1_6_1 + T1_fixtures$t1_6_2 + T1_fixtures$t1_6_3 + T1_fixtures$t1_6_4 +
+    T1_fixtures$t1_6_5
+)
+#AH_n125_A
+T1_fixtures$t1_AH_n125_A <- (
+  T1_fixtures$t1_0_1 + T1_fixtures$t1_0_2 + T1_fixtures$t1_1_2 + T1_fixtures$t1_0_3 + T1_fixtures$t1_1_3 +
+    T1_fixtures$t1_2_3 + T1_fixtures$t1_0_4 + T1_fixtures$t1_1_4 + T1_fixtures$t1_2_4 + T1_fixtures$t1_3_4 +
+    T1_fixtures$t1_0_5 +T1_fixtures$t1_1_5 + T1_fixtures$t1_2_5 + T1_fixtures$t1_3_5 + T1_fixtures$t1_4_5 +
+    T1_fixtures$t1_0_6 + T1_fixtures$t1_1_6 + T1_fixtures$t1_2_6 + T1_fixtures$t1_3_6 + T1_fixtures$t1_4_6 +
+    T1_fixtures$t1_5_6
+)
+
+#odds
+T1_fixtures$t1_AH_n125_H_odds <- round((1/T1_fixtures$t1_AH_n125_H),digits = 2)
+T1_fixtures$t1_AH_n125_A_odds <- round((1/T1_fixtures$t1_AH_n125_A),digits = 2)
+
+T1_fixtures$t1_AH_n125_H_odds
+T1_fixtures$t1_AH_n125_A_odds
+#percentages
+T1_fixtures$t1_AH_n125_H <- percent(T1_fixtures$t1_AH_n125_H, accuracy = 0.1)
+T1_fixtures$t1_AH_n125_A <- percent(T1_fixtures$t1_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+T1_fixtures$t1_AH_125_H <- (
+  T1_fixtures$t1_1_0 + T1_fixtures$t1_2_0 + T1_fixtures$t1_2_1 + T1_fixtures$t1_3_0 + T1_fixtures$t1_3_1 +
+    T1_fixtures$t1_3_2 + T1_fixtures$t1_4_0 + T1_fixtures$t1_4_1 + T1_fixtures$t1_4_2 + T1_fixtures$t1_4_3 +
+    T1_fixtures$t1_5_0 +T1_fixtures$t1_5_1 + T1_fixtures$t1_5_2 + T1_fixtures$t1_5_3 + T1_fixtures$t1_5_4 +
+    T1_fixtures$t1_6_0 + T1_fixtures$t1_6_1 + T1_fixtures$t1_6_2 + T1_fixtures$t1_6_3 + T1_fixtures$t1_6_4 +
+    T1_fixtures$t1_6_5 + T1_fixtures$t1_0_0 + T1_fixtures$t1_1_1 + T1_fixtures$t1_2_2 + T1_fixtures$t1_3_3 +
+    T1_fixtures$t1_4_4 + T1_fixtures$t1_5_5 + T1_fixtures$t1_6_6 + T1_fixtures$t1_0_1 + T1_fixtures$t1_1_2 +
+    T1_fixtures$t1_2_3 + T1_fixtures$t1_3_4 + T1_fixtures$t1_4_5 + T1_fixtures$t1_5_6
+)
+#AH_125_A
+T1_fixtures$t1_AH_125_A <- (
+  T1_fixtures$t1_0_1 + T1_fixtures$t1_0_2 + T1_fixtures$t1_1_2 + T1_fixtures$t1_0_3 + T1_fixtures$t1_1_3 +
+    T1_fixtures$t1_2_3 + T1_fixtures$t1_0_4 + T1_fixtures$t1_1_4 + T1_fixtures$t1_2_4 + T1_fixtures$t1_3_4 +
+    T1_fixtures$t1_0_5 +T1_fixtures$t1_1_5 + T1_fixtures$t1_2_5 + T1_fixtures$t1_3_5 + T1_fixtures$t1_4_5 +
+    T1_fixtures$t1_0_6 + T1_fixtures$t1_1_6 + T1_fixtures$t1_2_6 + T1_fixtures$t1_3_6 + T1_fixtures$t1_4_6 +
+    T1_fixtures$t1_5_6 + T1_fixtures$t1_0_0 + T1_fixtures$t1_1_1 + T1_fixtures$t1_2_2 + T1_fixtures$t1_3_3 +
+    T1_fixtures$t1_4_4 + T1_fixtures$t1_5_5 + T1_fixtures$t1_6_6 + T1_fixtures$t1_1_0 + T1_fixtures$t1_2_1 +
+    T1_fixtures$t1_3_2 + T1_fixtures$t1_4_3 + T1_fixtures$t1_5_4 + T1_fixtures$t1_6_5
+)
+
+#odds
+T1_fixtures$t1_AH_125_H_odds <- round((1/T1_fixtures$t1_AH_125_H),digits = 2)
+T1_fixtures$t1_AH_125_A_odds <- round((1/T1_fixtures$t1_AH_125_A),digits = 2)
+
+T1_fixtures$t1_AH_125_H_odds
+T1_fixtures$t1_AH_125_A_odds
+#percentages
+T1_fixtures$t1_AH_125_H <- percent(T1_fixtures$t1_AH_125_H, accuracy = 0.1)
+T1_fixtures$t1_AH_125_A <- percent(T1_fixtures$t1_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 T1_fixtures$t1_ov25 <- percent(T1_fixtures$t1_ov25, accuracy = 0.1)
 

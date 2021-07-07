@@ -702,6 +702,162 @@ NOR_fixtures$nor_un25_odds
 NOR_fixtures$nor_ov25 <- percent(NOR_fixtures$nor_ov25, accuracy = 0.1)
 
 NOR_fixtures$nor_un25 <- percent(NOR_fixtures$nor_un25, accuracy = 0.1)
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+NOR_fixtures$nor_AH_0_H <- (
+  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
+    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
+    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
+    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
+    NOR_fixtures$nor_6_5 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
+    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6
+)
+#AH_0_A
+NOR_fixtures$nor_AH_0_A <- (
+  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
+    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
+    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
+    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
+    NOR_fixtures$nor_5_6 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
+    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6
+)
+
+#odds
+NOR_fixtures$nor_AH_0_H_odds <- round((1/NOR_fixtures$nor_AH_0_H),digits = 2)
+NOR_fixtures$nor_AH_0_A_odds <- round((1/NOR_fixtures$nor_AH_0_A),digits = 2)
+
+NOR_fixtures$nor_AH_0_H_odds
+NOR_fixtures$nor_AH_0_A_odds
+#percentages
+NOR_fixtures$nor_AH_0_H <- percent(NOR_fixtures$nor_AH_0_H, accuracy = 0.1)
+NOR_fixtures$nor_AH_0_A <- percent(NOR_fixtures$nor_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+NOR_fixtures$nor_AH_n075_H <- (
+  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
+    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
+    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
+    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
+    NOR_fixtures$nor_6_5
+)
+#AH_n075_A
+NOR_fixtures$nor_AH_n075_A <- (
+  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
+    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
+    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
+    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
+    NOR_fixtures$nor_5_6
+)
+
+#odds
+NOR_fixtures$nor_AH_n075_H_odds <- round((1/NOR_fixtures$nor_AH_n075_H),digits = 2)
+NOR_fixtures$nor_AH_n075_A_odds <- round((1/NOR_fixtures$nor_AH_n075_A),digits = 2)
+
+NOR_fixtures$nor_AH_n075_H_odds
+NOR_fixtures$nor_AH_n075_A_odds
+#percentages
+NOR_fixtures$nor_AH_n075_H <- percent(NOR_fixtures$nor_AH_n075_H, accuracy = 0.1)
+NOR_fixtures$nor_AH_n075_A <- percent(NOR_fixtures$nor_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+NOR_fixtures$nor_AH_075_H <- (
+  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
+    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
+    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
+    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
+    NOR_fixtures$nor_6_5 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
+    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6 + NOR_fixtures$nor_0_1 + NOR_fixtures$nor_1_2 +
+    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_3_4 + NOR_fixtures$nor_4_5 + NOR_fixtures$nor_5_6
+)
+#AH_075_A
+NOR_fixtures$nor_AH_075_A <- (
+  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
+    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
+    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
+    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
+    NOR_fixtures$nor_5_6 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
+    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6 + NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_1 +
+    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_3 + NOR_fixtures$nor_5_4 + NOR_fixtures$nor_6_5
+)
+
+#odds
+NOR_fixtures$nor_AH_075_H_odds <- round((1/NOR_fixtures$nor_AH_075_H),digits = 2)
+NOR_fixtures$nor_AH_075_A_odds <- round((1/NOR_fixtures$nor_AH_075_A),digits = 2)
+
+NOR_fixtures$nor_AH_075_H_odds
+NOR_fixtures$nor_AH_075_A_odds
+#percentages
+NOR_fixtures$nor_AH_075_H <- percent(NOR_fixtures$nor_AH_075_H, accuracy = 0.1)
+NOR_fixtures$nor_AH_075_A <- percent(NOR_fixtures$nor_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+NOR_fixtures$nor_AH_n125_H <- (
+  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
+    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
+    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
+    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
+    NOR_fixtures$nor_6_5
+)
+#AH_n125_A
+NOR_fixtures$nor_AH_n125_A <- (
+  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
+    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
+    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
+    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
+    NOR_fixtures$nor_5_6
+)
+
+#odds
+NOR_fixtures$nor_AH_n125_H_odds <- round((1/NOR_fixtures$nor_AH_n125_H),digits = 2)
+NOR_fixtures$nor_AH_n125_A_odds <- round((1/NOR_fixtures$nor_AH_n125_A),digits = 2)
+
+NOR_fixtures$nor_AH_n125_H_odds
+NOR_fixtures$nor_AH_n125_A_odds
+#percentages
+NOR_fixtures$nor_AH_n125_H <- percent(NOR_fixtures$nor_AH_n125_H, accuracy = 0.1)
+NOR_fixtures$nor_AH_n125_A <- percent(NOR_fixtures$nor_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+NOR_fixtures$nor_AH_125_H <- (
+  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
+    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
+    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
+    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
+    NOR_fixtures$nor_6_5 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
+    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6 + NOR_fixtures$nor_0_1 + NOR_fixtures$nor_1_2 +
+    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_3_4 + NOR_fixtures$nor_4_5 + NOR_fixtures$nor_5_6
+)
+#AH_125_A
+NOR_fixtures$nor_AH_125_A <- (
+  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
+    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
+    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
+    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
+    NOR_fixtures$nor_5_6 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
+    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6 + NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_1 +
+    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_3 + NOR_fixtures$nor_5_4 + NOR_fixtures$nor_6_5
+)
+
+#odds
+NOR_fixtures$nor_AH_125_H_odds <- round((1/NOR_fixtures$nor_AH_125_H),digits = 2)
+NOR_fixtures$nor_AH_125_A_odds <- round((1/NOR_fixtures$nor_AH_125_A),digits = 2)
+
+NOR_fixtures$nor_AH_125_H_odds
+NOR_fixtures$nor_AH_125_A_odds
+#percentages
+NOR_fixtures$nor_AH_125_H <- percent(NOR_fixtures$nor_AH_125_H, accuracy = 0.1)
+NOR_fixtures$nor_AH_125_A <- percent(NOR_fixtures$nor_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 NOR_fixtures$nor_pscore <- paste(round(NOR_fixtures$nor_xGH,digits = 0),round(NOR_fixtures$nor_xGA,digits = 0),sep = "-")
 #write out
 write.xlsx(NOR_fixtures,'NOR.xlsx',sheetName = "NOR", append = TRUE)

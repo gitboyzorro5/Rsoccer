@@ -733,6 +733,129 @@ FIN_fixtures$fin_AH_0_A_odds
 FIN_fixtures$fin_AH_0_H <- percent(FIN_fixtures$fin_AH_0_H, accuracy = 0.1)
 FIN_fixtures$fin_AH_0_A <- percent(FIN_fixtures$fin_AH_0_A, accuracy = 0.1)
 ####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+FIN_fixtures$fin_AH_n075_H <- (
+  FIN_fixtures$fin_1_0 + FIN_fixtures$fin_2_0 + FIN_fixtures$fin_2_1 + FIN_fixtures$fin_3_0 + FIN_fixtures$fin_3_1 +
+    FIN_fixtures$fin_3_2 + FIN_fixtures$fin_4_0 + FIN_fixtures$fin_4_1 + FIN_fixtures$fin_4_2 + FIN_fixtures$fin_4_3 +
+    FIN_fixtures$fin_5_0 +FIN_fixtures$fin_5_1 + FIN_fixtures$fin_5_2 + FIN_fixtures$fin_5_3 + FIN_fixtures$fin_5_4 +
+    FIN_fixtures$fin_6_0 + FIN_fixtures$fin_6_1 + FIN_fixtures$fin_6_2 + FIN_fixtures$fin_6_3 + FIN_fixtures$fin_6_4 +
+    FIN_fixtures$fin_6_5
+)
+#AH_n075_A
+FIN_fixtures$fin_AH_n075_A <- (
+  FIN_fixtures$fin_0_1 + FIN_fixtures$fin_0_2 + FIN_fixtures$fin_1_2 + FIN_fixtures$fin_0_3 + FIN_fixtures$fin_1_3 +
+    FIN_fixtures$fin_2_3 + FIN_fixtures$fin_0_4 + FIN_fixtures$fin_1_4 + FIN_fixtures$fin_2_4 + FIN_fixtures$fin_3_4 +
+    FIN_fixtures$fin_0_5 +FIN_fixtures$fin_1_5 + FIN_fixtures$fin_2_5 + FIN_fixtures$fin_3_5 + FIN_fixtures$fin_4_5 +
+    FIN_fixtures$fin_0_6 + FIN_fixtures$fin_1_6 + FIN_fixtures$fin_2_6 + FIN_fixtures$fin_3_6 + FIN_fixtures$fin_4_6 +
+    FIN_fixtures$fin_5_6
+)
+
+#odds
+FIN_fixtures$fin_AH_n075_H_odds <- round((1/FIN_fixtures$fin_AH_n075_H),digits = 2)
+FIN_fixtures$fin_AH_n075_A_odds <- round((1/FIN_fixtures$fin_AH_n075_A),digits = 2)
+
+FIN_fixtures$fin_AH_n075_H_odds
+FIN_fixtures$fin_AH_n075_A_odds
+#percentages
+FIN_fixtures$fin_AH_n075_H <- percent(FIN_fixtures$fin_AH_n075_H, accuracy = 0.1)
+FIN_fixtures$fin_AH_n075_A <- percent(FIN_fixtures$fin_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+FIN_fixtures$fin_AH_075_H <- (
+  FIN_fixtures$fin_1_0 + FIN_fixtures$fin_2_0 + FIN_fixtures$fin_2_1 + FIN_fixtures$fin_3_0 + FIN_fixtures$fin_3_1 +
+    FIN_fixtures$fin_3_2 + FIN_fixtures$fin_4_0 + FIN_fixtures$fin_4_1 + FIN_fixtures$fin_4_2 + FIN_fixtures$fin_4_3 +
+    FIN_fixtures$fin_5_0 +FIN_fixtures$fin_5_1 + FIN_fixtures$fin_5_2 + FIN_fixtures$fin_5_3 + FIN_fixtures$fin_5_4 +
+    FIN_fixtures$fin_6_0 + FIN_fixtures$fin_6_1 + FIN_fixtures$fin_6_2 + FIN_fixtures$fin_6_3 + FIN_fixtures$fin_6_4 +
+    FIN_fixtures$fin_6_5 + FIN_fixtures$fin_0_0 + FIN_fixtures$fin_1_1 + FIN_fixtures$fin_2_2 + FIN_fixtures$fin_3_3 +
+    FIN_fixtures$fin_4_4 + FIN_fixtures$fin_5_5 + FIN_fixtures$fin_6_6 + FIN_fixtures$fin_0_1 + FIN_fixtures$fin_1_2 +
+    FIN_fixtures$fin_2_3 + FIN_fixtures$fin_3_4 + FIN_fixtures$fin_4_5 + FIN_fixtures$fin_5_6
+)
+#AH_075_A
+FIN_fixtures$fin_AH_075_A <- (
+  FIN_fixtures$fin_0_1 + FIN_fixtures$fin_0_2 + FIN_fixtures$fin_1_2 + FIN_fixtures$fin_0_3 + FIN_fixtures$fin_1_3 +
+    FIN_fixtures$fin_2_3 + FIN_fixtures$fin_0_4 + FIN_fixtures$fin_1_4 + FIN_fixtures$fin_2_4 + FIN_fixtures$fin_3_4 +
+    FIN_fixtures$fin_0_5 +FIN_fixtures$fin_1_5 + FIN_fixtures$fin_2_5 + FIN_fixtures$fin_3_5 + FIN_fixtures$fin_4_5 +
+    FIN_fixtures$fin_0_6 + FIN_fixtures$fin_1_6 + FIN_fixtures$fin_2_6 + FIN_fixtures$fin_3_6 + FIN_fixtures$fin_4_6 +
+    FIN_fixtures$fin_5_6 + FIN_fixtures$fin_0_0 + FIN_fixtures$fin_1_1 + FIN_fixtures$fin_2_2 + FIN_fixtures$fin_3_3 +
+    FIN_fixtures$fin_4_4 + FIN_fixtures$fin_5_5 + FIN_fixtures$fin_6_6 + FIN_fixtures$fin_1_0 + FIN_fixtures$fin_2_1 +
+    FIN_fixtures$fin_3_2 + FIN_fixtures$fin_4_3 + FIN_fixtures$fin_5_4 + FIN_fixtures$fin_6_5
+)
+
+#odds
+FIN_fixtures$fin_AH_075_H_odds <- round((1/FIN_fixtures$fin_AH_075_H),digits = 2)
+FIN_fixtures$fin_AH_075_A_odds <- round((1/FIN_fixtures$fin_AH_075_A),digits = 2)
+
+FIN_fixtures$fin_AH_075_H_odds
+FIN_fixtures$fin_AH_075_A_odds
+#percentages
+FIN_fixtures$fin_AH_075_H <- percent(FIN_fixtures$fin_AH_075_H, accuracy = 0.1)
+FIN_fixtures$fin_AH_075_A <- percent(FIN_fixtures$fin_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+FIN_fixtures$fin_AH_n125_H <- (
+  FIN_fixtures$fin_1_0 + FIN_fixtures$fin_2_0 + FIN_fixtures$fin_2_1 + FIN_fixtures$fin_3_0 + FIN_fixtures$fin_3_1 +
+    FIN_fixtures$fin_3_2 + FIN_fixtures$fin_4_0 + FIN_fixtures$fin_4_1 + FIN_fixtures$fin_4_2 + FIN_fixtures$fin_4_3 +
+    FIN_fixtures$fin_5_0 +FIN_fixtures$fin_5_1 + FIN_fixtures$fin_5_2 + FIN_fixtures$fin_5_3 + FIN_fixtures$fin_5_4 +
+    FIN_fixtures$fin_6_0 + FIN_fixtures$fin_6_1 + FIN_fixtures$fin_6_2 + FIN_fixtures$fin_6_3 + FIN_fixtures$fin_6_4 +
+    FIN_fixtures$fin_6_5
+)
+#AH_n125_A
+FIN_fixtures$fin_AH_n125_A <- (
+  FIN_fixtures$fin_0_1 + FIN_fixtures$fin_0_2 + FIN_fixtures$fin_1_2 + FIN_fixtures$fin_0_3 + FIN_fixtures$fin_1_3 +
+    FIN_fixtures$fin_2_3 + FIN_fixtures$fin_0_4 + FIN_fixtures$fin_1_4 + FIN_fixtures$fin_2_4 + FIN_fixtures$fin_3_4 +
+    FIN_fixtures$fin_0_5 +FIN_fixtures$fin_1_5 + FIN_fixtures$fin_2_5 + FIN_fixtures$fin_3_5 + FIN_fixtures$fin_4_5 +
+    FIN_fixtures$fin_0_6 + FIN_fixtures$fin_1_6 + FIN_fixtures$fin_2_6 + FIN_fixtures$fin_3_6 + FIN_fixtures$fin_4_6 +
+    FIN_fixtures$fin_5_6
+)
+
+#odds
+FIN_fixtures$fin_AH_n125_H_odds <- round((1/FIN_fixtures$fin_AH_n125_H),digits = 2)
+FIN_fixtures$fin_AH_n125_A_odds <- round((1/FIN_fixtures$fin_AH_n125_A),digits = 2)
+
+FIN_fixtures$fin_AH_n125_H_odds
+FIN_fixtures$fin_AH_n125_A_odds
+#percentages
+FIN_fixtures$fin_AH_n125_H <- percent(FIN_fixtures$fin_AH_n125_H, accuracy = 0.1)
+FIN_fixtures$fin_AH_n125_A <- percent(FIN_fixtures$fin_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+FIN_fixtures$fin_AH_125_H <- (
+  FIN_fixtures$fin_1_0 + FIN_fixtures$fin_2_0 + FIN_fixtures$fin_2_1 + FIN_fixtures$fin_3_0 + FIN_fixtures$fin_3_1 +
+    FIN_fixtures$fin_3_2 + FIN_fixtures$fin_4_0 + FIN_fixtures$fin_4_1 + FIN_fixtures$fin_4_2 + FIN_fixtures$fin_4_3 +
+    FIN_fixtures$fin_5_0 +FIN_fixtures$fin_5_1 + FIN_fixtures$fin_5_2 + FIN_fixtures$fin_5_3 + FIN_fixtures$fin_5_4 +
+    FIN_fixtures$fin_6_0 + FIN_fixtures$fin_6_1 + FIN_fixtures$fin_6_2 + FIN_fixtures$fin_6_3 + FIN_fixtures$fin_6_4 +
+    FIN_fixtures$fin_6_5 + FIN_fixtures$fin_0_0 + FIN_fixtures$fin_1_1 + FIN_fixtures$fin_2_2 + FIN_fixtures$fin_3_3 +
+    FIN_fixtures$fin_4_4 + FIN_fixtures$fin_5_5 + FIN_fixtures$fin_6_6 + FIN_fixtures$fin_0_1 + FIN_fixtures$fin_1_2 +
+    FIN_fixtures$fin_2_3 + FIN_fixtures$fin_3_4 + FIN_fixtures$fin_4_5 + FIN_fixtures$fin_5_6
+)
+#AH_125_A
+FIN_fixtures$fin_AH_125_A <- (
+  FIN_fixtures$fin_0_1 + FIN_fixtures$fin_0_2 + FIN_fixtures$fin_1_2 + FIN_fixtures$fin_0_3 + FIN_fixtures$fin_1_3 +
+    FIN_fixtures$fin_2_3 + FIN_fixtures$fin_0_4 + FIN_fixtures$fin_1_4 + FIN_fixtures$fin_2_4 + FIN_fixtures$fin_3_4 +
+    FIN_fixtures$fin_0_5 +FIN_fixtures$fin_1_5 + FIN_fixtures$fin_2_5 + FIN_fixtures$fin_3_5 + FIN_fixtures$fin_4_5 +
+    FIN_fixtures$fin_0_6 + FIN_fixtures$fin_1_6 + FIN_fixtures$fin_2_6 + FIN_fixtures$fin_3_6 + FIN_fixtures$fin_4_6 +
+    FIN_fixtures$fin_5_6 + FIN_fixtures$fin_0_0 + FIN_fixtures$fin_1_1 + FIN_fixtures$fin_2_2 + FIN_fixtures$fin_3_3 +
+    FIN_fixtures$fin_4_4 + FIN_fixtures$fin_5_5 + FIN_fixtures$fin_6_6 + FIN_fixtures$fin_1_0 + FIN_fixtures$fin_2_1 +
+    FIN_fixtures$fin_3_2 + FIN_fixtures$fin_4_3 + FIN_fixtures$fin_5_4 + FIN_fixtures$fin_6_5
+)
+
+#odds
+FIN_fixtures$fin_AH_125_H_odds <- round((1/FIN_fixtures$fin_AH_125_H),digits = 2)
+FIN_fixtures$fin_AH_125_A_odds <- round((1/FIN_fixtures$fin_AH_125_A),digits = 2)
+
+FIN_fixtures$fin_AH_125_H_odds
+FIN_fixtures$fin_AH_125_A_odds
+#percentages
+FIN_fixtures$fin_AH_125_H <- percent(FIN_fixtures$fin_AH_125_H, accuracy = 0.1)
+FIN_fixtures$fin_AH_125_A <- percent(FIN_fixtures$fin_AH_125_A, accuracy = 0.1)
+####################################################################################
 ########Asian Handicaps######################################################################################################
 FIN_fixtures$fin_pscore <- paste(round(FIN_fixtures$fin_xGH,digits = 0),round(FIN_fixtures$fin_xGA,digits = 0),sep = "-")
 #write out

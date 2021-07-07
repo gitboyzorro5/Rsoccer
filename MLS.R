@@ -697,6 +697,162 @@ MLS_fixtures$mls_un25_odds <- round((1/MLS_fixtures$mls_un25),digits = 2)
 
 MLS_fixtures$mls_ov25_odds
 MLS_fixtures$mls_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+MLS_fixtures$mls_AH_0_H <- (
+  MLS_fixtures$mls_1_0 + MLS_fixtures$mls_2_0 + MLS_fixtures$mls_2_1 + MLS_fixtures$mls_3_0 + MLS_fixtures$mls_3_1 +
+    MLS_fixtures$mls_3_2 + MLS_fixtures$mls_4_0 + MLS_fixtures$mls_4_1 + MLS_fixtures$mls_4_2 + MLS_fixtures$mls_4_3 +
+    MLS_fixtures$mls_5_0 +MLS_fixtures$mls_5_1 + MLS_fixtures$mls_5_2 + MLS_fixtures$mls_5_3 + MLS_fixtures$mls_5_4 +
+    MLS_fixtures$mls_6_0 + MLS_fixtures$mls_6_1 + MLS_fixtures$mls_6_2 + MLS_fixtures$mls_6_3 + MLS_fixtures$mls_6_4 +
+    MLS_fixtures$mls_6_5 + MLS_fixtures$mls_0_0 + MLS_fixtures$mls_1_1 + MLS_fixtures$mls_2_2 + MLS_fixtures$mls_3_3 +
+    MLS_fixtures$mls_4_4 + MLS_fixtures$mls_5_5 + MLS_fixtures$mls_6_6
+)
+#AH_0_A
+MLS_fixtures$mls_AH_0_A <- (
+  MLS_fixtures$mls_0_1 + MLS_fixtures$mls_0_2 + MLS_fixtures$mls_1_2 + MLS_fixtures$mls_0_3 + MLS_fixtures$mls_1_3 +
+    MLS_fixtures$mls_2_3 + MLS_fixtures$mls_0_4 + MLS_fixtures$mls_1_4 + MLS_fixtures$mls_2_4 + MLS_fixtures$mls_3_4 +
+    MLS_fixtures$mls_0_5 +MLS_fixtures$mls_1_5 + MLS_fixtures$mls_2_5 + MLS_fixtures$mls_3_5 + MLS_fixtures$mls_4_5 +
+    MLS_fixtures$mls_0_6 + MLS_fixtures$mls_1_6 + MLS_fixtures$mls_2_6 + MLS_fixtures$mls_3_6 + MLS_fixtures$mls_4_6 +
+    MLS_fixtures$mls_5_6 + MLS_fixtures$mls_0_0 + MLS_fixtures$mls_1_1 + MLS_fixtures$mls_2_2 + MLS_fixtures$mls_3_3 +
+    MLS_fixtures$mls_4_4 + MLS_fixtures$mls_5_5 + MLS_fixtures$mls_6_6
+)
+
+#odds
+MLS_fixtures$mls_AH_0_H_odds <- round((1/MLS_fixtures$mls_AH_0_H),digits = 2)
+MLS_fixtures$mls_AH_0_A_odds <- round((1/MLS_fixtures$mls_AH_0_A),digits = 2)
+
+MLS_fixtures$mls_AH_0_H_odds
+MLS_fixtures$mls_AH_0_A_odds
+#percentages
+MLS_fixtures$mls_AH_0_H <- percent(MLS_fixtures$mls_AH_0_H, accuracy = 0.1)
+MLS_fixtures$mls_AH_0_A <- percent(MLS_fixtures$mls_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+MLS_fixtures$mls_AH_n075_H <- (
+  MLS_fixtures$mls_1_0 + MLS_fixtures$mls_2_0 + MLS_fixtures$mls_2_1 + MLS_fixtures$mls_3_0 + MLS_fixtures$mls_3_1 +
+    MLS_fixtures$mls_3_2 + MLS_fixtures$mls_4_0 + MLS_fixtures$mls_4_1 + MLS_fixtures$mls_4_2 + MLS_fixtures$mls_4_3 +
+    MLS_fixtures$mls_5_0 +MLS_fixtures$mls_5_1 + MLS_fixtures$mls_5_2 + MLS_fixtures$mls_5_3 + MLS_fixtures$mls_5_4 +
+    MLS_fixtures$mls_6_0 + MLS_fixtures$mls_6_1 + MLS_fixtures$mls_6_2 + MLS_fixtures$mls_6_3 + MLS_fixtures$mls_6_4 +
+    MLS_fixtures$mls_6_5
+)
+#AH_n075_A
+MLS_fixtures$mls_AH_n075_A <- (
+  MLS_fixtures$mls_0_1 + MLS_fixtures$mls_0_2 + MLS_fixtures$mls_1_2 + MLS_fixtures$mls_0_3 + MLS_fixtures$mls_1_3 +
+    MLS_fixtures$mls_2_3 + MLS_fixtures$mls_0_4 + MLS_fixtures$mls_1_4 + MLS_fixtures$mls_2_4 + MLS_fixtures$mls_3_4 +
+    MLS_fixtures$mls_0_5 +MLS_fixtures$mls_1_5 + MLS_fixtures$mls_2_5 + MLS_fixtures$mls_3_5 + MLS_fixtures$mls_4_5 +
+    MLS_fixtures$mls_0_6 + MLS_fixtures$mls_1_6 + MLS_fixtures$mls_2_6 + MLS_fixtures$mls_3_6 + MLS_fixtures$mls_4_6 +
+    MLS_fixtures$mls_5_6
+)
+
+#odds
+MLS_fixtures$mls_AH_n075_H_odds <- round((1/MLS_fixtures$mls_AH_n075_H),digits = 2)
+MLS_fixtures$mls_AH_n075_A_odds <- round((1/MLS_fixtures$mls_AH_n075_A),digits = 2)
+
+MLS_fixtures$mls_AH_n075_H_odds
+MLS_fixtures$mls_AH_n075_A_odds
+#percentages
+MLS_fixtures$mls_AH_n075_H <- percent(MLS_fixtures$mls_AH_n075_H, accuracy = 0.1)
+MLS_fixtures$mls_AH_n075_A <- percent(MLS_fixtures$mls_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+MLS_fixtures$mls_AH_075_H <- (
+  MLS_fixtures$mls_1_0 + MLS_fixtures$mls_2_0 + MLS_fixtures$mls_2_1 + MLS_fixtures$mls_3_0 + MLS_fixtures$mls_3_1 +
+    MLS_fixtures$mls_3_2 + MLS_fixtures$mls_4_0 + MLS_fixtures$mls_4_1 + MLS_fixtures$mls_4_2 + MLS_fixtures$mls_4_3 +
+    MLS_fixtures$mls_5_0 +MLS_fixtures$mls_5_1 + MLS_fixtures$mls_5_2 + MLS_fixtures$mls_5_3 + MLS_fixtures$mls_5_4 +
+    MLS_fixtures$mls_6_0 + MLS_fixtures$mls_6_1 + MLS_fixtures$mls_6_2 + MLS_fixtures$mls_6_3 + MLS_fixtures$mls_6_4 +
+    MLS_fixtures$mls_6_5 + MLS_fixtures$mls_0_0 + MLS_fixtures$mls_1_1 + MLS_fixtures$mls_2_2 + MLS_fixtures$mls_3_3 +
+    MLS_fixtures$mls_4_4 + MLS_fixtures$mls_5_5 + MLS_fixtures$mls_6_6 + MLS_fixtures$mls_0_1 + MLS_fixtures$mls_1_2 +
+    MLS_fixtures$mls_2_3 + MLS_fixtures$mls_3_4 + MLS_fixtures$mls_4_5 + MLS_fixtures$mls_5_6
+)
+#AH_075_A
+MLS_fixtures$mls_AH_075_A <- (
+  MLS_fixtures$mls_0_1 + MLS_fixtures$mls_0_2 + MLS_fixtures$mls_1_2 + MLS_fixtures$mls_0_3 + MLS_fixtures$mls_1_3 +
+    MLS_fixtures$mls_2_3 + MLS_fixtures$mls_0_4 + MLS_fixtures$mls_1_4 + MLS_fixtures$mls_2_4 + MLS_fixtures$mls_3_4 +
+    MLS_fixtures$mls_0_5 +MLS_fixtures$mls_1_5 + MLS_fixtures$mls_2_5 + MLS_fixtures$mls_3_5 + MLS_fixtures$mls_4_5 +
+    MLS_fixtures$mls_0_6 + MLS_fixtures$mls_1_6 + MLS_fixtures$mls_2_6 + MLS_fixtures$mls_3_6 + MLS_fixtures$mls_4_6 +
+    MLS_fixtures$mls_5_6 + MLS_fixtures$mls_0_0 + MLS_fixtures$mls_1_1 + MLS_fixtures$mls_2_2 + MLS_fixtures$mls_3_3 +
+    MLS_fixtures$mls_4_4 + MLS_fixtures$mls_5_5 + MLS_fixtures$mls_6_6 + MLS_fixtures$mls_1_0 + MLS_fixtures$mls_2_1 +
+    MLS_fixtures$mls_3_2 + MLS_fixtures$mls_4_3 + MLS_fixtures$mls_5_4 + MLS_fixtures$mls_6_5
+)
+
+#odds
+MLS_fixtures$mls_AH_075_H_odds <- round((1/MLS_fixtures$mls_AH_075_H),digits = 2)
+MLS_fixtures$mls_AH_075_A_odds <- round((1/MLS_fixtures$mls_AH_075_A),digits = 2)
+
+MLS_fixtures$mls_AH_075_H_odds
+MLS_fixtures$mls_AH_075_A_odds
+#percentages
+MLS_fixtures$mls_AH_075_H <- percent(MLS_fixtures$mls_AH_075_H, accuracy = 0.1)
+MLS_fixtures$mls_AH_075_A <- percent(MLS_fixtures$mls_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+MLS_fixtures$mls_AH_n125_H <- (
+  MLS_fixtures$mls_1_0 + MLS_fixtures$mls_2_0 + MLS_fixtures$mls_2_1 + MLS_fixtures$mls_3_0 + MLS_fixtures$mls_3_1 +
+    MLS_fixtures$mls_3_2 + MLS_fixtures$mls_4_0 + MLS_fixtures$mls_4_1 + MLS_fixtures$mls_4_2 + MLS_fixtures$mls_4_3 +
+    MLS_fixtures$mls_5_0 +MLS_fixtures$mls_5_1 + MLS_fixtures$mls_5_2 + MLS_fixtures$mls_5_3 + MLS_fixtures$mls_5_4 +
+    MLS_fixtures$mls_6_0 + MLS_fixtures$mls_6_1 + MLS_fixtures$mls_6_2 + MLS_fixtures$mls_6_3 + MLS_fixtures$mls_6_4 +
+    MLS_fixtures$mls_6_5
+)
+#AH_n125_A
+MLS_fixtures$mls_AH_n125_A <- (
+  MLS_fixtures$mls_0_1 + MLS_fixtures$mls_0_2 + MLS_fixtures$mls_1_2 + MLS_fixtures$mls_0_3 + MLS_fixtures$mls_1_3 +
+    MLS_fixtures$mls_2_3 + MLS_fixtures$mls_0_4 + MLS_fixtures$mls_1_4 + MLS_fixtures$mls_2_4 + MLS_fixtures$mls_3_4 +
+    MLS_fixtures$mls_0_5 +MLS_fixtures$mls_1_5 + MLS_fixtures$mls_2_5 + MLS_fixtures$mls_3_5 + MLS_fixtures$mls_4_5 +
+    MLS_fixtures$mls_0_6 + MLS_fixtures$mls_1_6 + MLS_fixtures$mls_2_6 + MLS_fixtures$mls_3_6 + MLS_fixtures$mls_4_6 +
+    MLS_fixtures$mls_5_6
+)
+
+#odds
+MLS_fixtures$mls_AH_n125_H_odds <- round((1/MLS_fixtures$mls_AH_n125_H),digits = 2)
+MLS_fixtures$mls_AH_n125_A_odds <- round((1/MLS_fixtures$mls_AH_n125_A),digits = 2)
+
+MLS_fixtures$mls_AH_n125_H_odds
+MLS_fixtures$mls_AH_n125_A_odds
+#percentages
+MLS_fixtures$mls_AH_n125_H <- percent(MLS_fixtures$mls_AH_n125_H, accuracy = 0.1)
+MLS_fixtures$mls_AH_n125_A <- percent(MLS_fixtures$mls_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+MLS_fixtures$mls_AH_125_H <- (
+  MLS_fixtures$mls_1_0 + MLS_fixtures$mls_2_0 + MLS_fixtures$mls_2_1 + MLS_fixtures$mls_3_0 + MLS_fixtures$mls_3_1 +
+    MLS_fixtures$mls_3_2 + MLS_fixtures$mls_4_0 + MLS_fixtures$mls_4_1 + MLS_fixtures$mls_4_2 + MLS_fixtures$mls_4_3 +
+    MLS_fixtures$mls_5_0 +MLS_fixtures$mls_5_1 + MLS_fixtures$mls_5_2 + MLS_fixtures$mls_5_3 + MLS_fixtures$mls_5_4 +
+    MLS_fixtures$mls_6_0 + MLS_fixtures$mls_6_1 + MLS_fixtures$mls_6_2 + MLS_fixtures$mls_6_3 + MLS_fixtures$mls_6_4 +
+    MLS_fixtures$mls_6_5 + MLS_fixtures$mls_0_0 + MLS_fixtures$mls_1_1 + MLS_fixtures$mls_2_2 + MLS_fixtures$mls_3_3 +
+    MLS_fixtures$mls_4_4 + MLS_fixtures$mls_5_5 + MLS_fixtures$mls_6_6 + MLS_fixtures$mls_0_1 + MLS_fixtures$mls_1_2 +
+    MLS_fixtures$mls_2_3 + MLS_fixtures$mls_3_4 + MLS_fixtures$mls_4_5 + MLS_fixtures$mls_5_6
+)
+#AH_125_A
+MLS_fixtures$mls_AH_125_A <- (
+  MLS_fixtures$mls_0_1 + MLS_fixtures$mls_0_2 + MLS_fixtures$mls_1_2 + MLS_fixtures$mls_0_3 + MLS_fixtures$mls_1_3 +
+    MLS_fixtures$mls_2_3 + MLS_fixtures$mls_0_4 + MLS_fixtures$mls_1_4 + MLS_fixtures$mls_2_4 + MLS_fixtures$mls_3_4 +
+    MLS_fixtures$mls_0_5 +MLS_fixtures$mls_1_5 + MLS_fixtures$mls_2_5 + MLS_fixtures$mls_3_5 + MLS_fixtures$mls_4_5 +
+    MLS_fixtures$mls_0_6 + MLS_fixtures$mls_1_6 + MLS_fixtures$mls_2_6 + MLS_fixtures$mls_3_6 + MLS_fixtures$mls_4_6 +
+    MLS_fixtures$mls_5_6 + MLS_fixtures$mls_0_0 + MLS_fixtures$mls_1_1 + MLS_fixtures$mls_2_2 + MLS_fixtures$mls_3_3 +
+    MLS_fixtures$mls_4_4 + MLS_fixtures$mls_5_5 + MLS_fixtures$mls_6_6 + MLS_fixtures$mls_1_0 + MLS_fixtures$mls_2_1 +
+    MLS_fixtures$mls_3_2 + MLS_fixtures$mls_4_3 + MLS_fixtures$mls_5_4 + MLS_fixtures$mls_6_5
+)
+
+#odds
+MLS_fixtures$mls_AH_125_H_odds <- round((1/MLS_fixtures$mls_AH_125_H),digits = 2)
+MLS_fixtures$mls_AH_125_A_odds <- round((1/MLS_fixtures$mls_AH_125_A),digits = 2)
+
+MLS_fixtures$mls_AH_125_H_odds
+MLS_fixtures$mls_AH_125_A_odds
+#percentages
+MLS_fixtures$mls_AH_125_H <- percent(MLS_fixtures$mls_AH_125_H, accuracy = 0.1)
+MLS_fixtures$mls_AH_125_A <- percent(MLS_fixtures$mls_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 MLS_fixtures$mls_ov25 <- percent(MLS_fixtures$mls_ov25, accuracy = 0.1)
 

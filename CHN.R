@@ -697,6 +697,162 @@ CHN_fixtures$chn_un25_odds <- round((1/CHN_fixtures$chn_un25),digits = 2)
 
 CHN_fixtures$chn_ov25_odds
 CHN_fixtures$chn_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+CHN_fixtures$chn_AH_0_H <- (
+  CHN_fixtures$chn_1_0 + CHN_fixtures$chn_2_0 + CHN_fixtures$chn_2_1 + CHN_fixtures$chn_3_0 + CHN_fixtures$chn_3_1 +
+    CHN_fixtures$chn_3_2 + CHN_fixtures$chn_4_0 + CHN_fixtures$chn_4_1 + CHN_fixtures$chn_4_2 + CHN_fixtures$chn_4_3 +
+    CHN_fixtures$chn_5_0 +CHN_fixtures$chn_5_1 + CHN_fixtures$chn_5_2 + CHN_fixtures$chn_5_3 + CHN_fixtures$chn_5_4 +
+    CHN_fixtures$chn_6_0 + CHN_fixtures$chn_6_1 + CHN_fixtures$chn_6_2 + CHN_fixtures$chn_6_3 + CHN_fixtures$chn_6_4 +
+    CHN_fixtures$chn_6_5 + CHN_fixtures$chn_0_0 + CHN_fixtures$chn_1_1 + CHN_fixtures$chn_2_2 + CHN_fixtures$chn_3_3 +
+    CHN_fixtures$chn_4_4 + CHN_fixtures$chn_5_5 + CHN_fixtures$chn_6_6
+)
+#AH_0_A
+CHN_fixtures$chn_AH_0_A <- (
+  CHN_fixtures$chn_0_1 + CHN_fixtures$chn_0_2 + CHN_fixtures$chn_1_2 + CHN_fixtures$chn_0_3 + CHN_fixtures$chn_1_3 +
+    CHN_fixtures$chn_2_3 + CHN_fixtures$chn_0_4 + CHN_fixtures$chn_1_4 + CHN_fixtures$chn_2_4 + CHN_fixtures$chn_3_4 +
+    CHN_fixtures$chn_0_5 +CHN_fixtures$chn_1_5 + CHN_fixtures$chn_2_5 + CHN_fixtures$chn_3_5 + CHN_fixtures$chn_4_5 +
+    CHN_fixtures$chn_0_6 + CHN_fixtures$chn_1_6 + CHN_fixtures$chn_2_6 + CHN_fixtures$chn_3_6 + CHN_fixtures$chn_4_6 +
+    CHN_fixtures$chn_5_6 + CHN_fixtures$chn_0_0 + CHN_fixtures$chn_1_1 + CHN_fixtures$chn_2_2 + CHN_fixtures$chn_3_3 +
+    CHN_fixtures$chn_4_4 + CHN_fixtures$chn_5_5 + CHN_fixtures$chn_6_6
+)
+
+#odds
+CHN_fixtures$chn_AH_0_H_odds <- round((1/CHN_fixtures$chn_AH_0_H),digits = 2)
+CHN_fixtures$chn_AH_0_A_odds <- round((1/CHN_fixtures$chn_AH_0_A),digits = 2)
+
+CHN_fixtures$chn_AH_0_H_odds
+CHN_fixtures$chn_AH_0_A_odds
+#percentages
+CHN_fixtures$chn_AH_0_H <- percent(CHN_fixtures$chn_AH_0_H, accuracy = 0.1)
+CHN_fixtures$chn_AH_0_A <- percent(CHN_fixtures$chn_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+CHN_fixtures$chn_AH_n075_H <- (
+  CHN_fixtures$chn_1_0 + CHN_fixtures$chn_2_0 + CHN_fixtures$chn_2_1 + CHN_fixtures$chn_3_0 + CHN_fixtures$chn_3_1 +
+    CHN_fixtures$chn_3_2 + CHN_fixtures$chn_4_0 + CHN_fixtures$chn_4_1 + CHN_fixtures$chn_4_2 + CHN_fixtures$chn_4_3 +
+    CHN_fixtures$chn_5_0 +CHN_fixtures$chn_5_1 + CHN_fixtures$chn_5_2 + CHN_fixtures$chn_5_3 + CHN_fixtures$chn_5_4 +
+    CHN_fixtures$chn_6_0 + CHN_fixtures$chn_6_1 + CHN_fixtures$chn_6_2 + CHN_fixtures$chn_6_3 + CHN_fixtures$chn_6_4 +
+    CHN_fixtures$chn_6_5
+)
+#AH_n075_A
+CHN_fixtures$chn_AH_n075_A <- (
+  CHN_fixtures$chn_0_1 + CHN_fixtures$chn_0_2 + CHN_fixtures$chn_1_2 + CHN_fixtures$chn_0_3 + CHN_fixtures$chn_1_3 +
+    CHN_fixtures$chn_2_3 + CHN_fixtures$chn_0_4 + CHN_fixtures$chn_1_4 + CHN_fixtures$chn_2_4 + CHN_fixtures$chn_3_4 +
+    CHN_fixtures$chn_0_5 +CHN_fixtures$chn_1_5 + CHN_fixtures$chn_2_5 + CHN_fixtures$chn_3_5 + CHN_fixtures$chn_4_5 +
+    CHN_fixtures$chn_0_6 + CHN_fixtures$chn_1_6 + CHN_fixtures$chn_2_6 + CHN_fixtures$chn_3_6 + CHN_fixtures$chn_4_6 +
+    CHN_fixtures$chn_5_6
+)
+
+#odds
+CHN_fixtures$chn_AH_n075_H_odds <- round((1/CHN_fixtures$chn_AH_n075_H),digits = 2)
+CHN_fixtures$chn_AH_n075_A_odds <- round((1/CHN_fixtures$chn_AH_n075_A),digits = 2)
+
+CHN_fixtures$chn_AH_n075_H_odds
+CHN_fixtures$chn_AH_n075_A_odds
+#percentages
+CHN_fixtures$chn_AH_n075_H <- percent(CHN_fixtures$chn_AH_n075_H, accuracy = 0.1)
+CHN_fixtures$chn_AH_n075_A <- percent(CHN_fixtures$chn_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+CHN_fixtures$chn_AH_075_H <- (
+  CHN_fixtures$chn_1_0 + CHN_fixtures$chn_2_0 + CHN_fixtures$chn_2_1 + CHN_fixtures$chn_3_0 + CHN_fixtures$chn_3_1 +
+    CHN_fixtures$chn_3_2 + CHN_fixtures$chn_4_0 + CHN_fixtures$chn_4_1 + CHN_fixtures$chn_4_2 + CHN_fixtures$chn_4_3 +
+    CHN_fixtures$chn_5_0 +CHN_fixtures$chn_5_1 + CHN_fixtures$chn_5_2 + CHN_fixtures$chn_5_3 + CHN_fixtures$chn_5_4 +
+    CHN_fixtures$chn_6_0 + CHN_fixtures$chn_6_1 + CHN_fixtures$chn_6_2 + CHN_fixtures$chn_6_3 + CHN_fixtures$chn_6_4 +
+    CHN_fixtures$chn_6_5 + CHN_fixtures$chn_0_0 + CHN_fixtures$chn_1_1 + CHN_fixtures$chn_2_2 + CHN_fixtures$chn_3_3 +
+    CHN_fixtures$chn_4_4 + CHN_fixtures$chn_5_5 + CHN_fixtures$chn_6_6 + CHN_fixtures$chn_0_1 + CHN_fixtures$chn_1_2 +
+    CHN_fixtures$chn_2_3 + CHN_fixtures$chn_3_4 + CHN_fixtures$chn_4_5 + CHN_fixtures$chn_5_6
+)
+#AH_075_A
+CHN_fixtures$chn_AH_075_A <- (
+  CHN_fixtures$chn_0_1 + CHN_fixtures$chn_0_2 + CHN_fixtures$chn_1_2 + CHN_fixtures$chn_0_3 + CHN_fixtures$chn_1_3 +
+    CHN_fixtures$chn_2_3 + CHN_fixtures$chn_0_4 + CHN_fixtures$chn_1_4 + CHN_fixtures$chn_2_4 + CHN_fixtures$chn_3_4 +
+    CHN_fixtures$chn_0_5 +CHN_fixtures$chn_1_5 + CHN_fixtures$chn_2_5 + CHN_fixtures$chn_3_5 + CHN_fixtures$chn_4_5 +
+    CHN_fixtures$chn_0_6 + CHN_fixtures$chn_1_6 + CHN_fixtures$chn_2_6 + CHN_fixtures$chn_3_6 + CHN_fixtures$chn_4_6 +
+    CHN_fixtures$chn_5_6 + CHN_fixtures$chn_0_0 + CHN_fixtures$chn_1_1 + CHN_fixtures$chn_2_2 + CHN_fixtures$chn_3_3 +
+    CHN_fixtures$chn_4_4 + CHN_fixtures$chn_5_5 + CHN_fixtures$chn_6_6 + CHN_fixtures$chn_1_0 + CHN_fixtures$chn_2_1 +
+    CHN_fixtures$chn_3_2 + CHN_fixtures$chn_4_3 + CHN_fixtures$chn_5_4 + CHN_fixtures$chn_6_5
+)
+
+#odds
+CHN_fixtures$chn_AH_075_H_odds <- round((1/CHN_fixtures$chn_AH_075_H),digits = 2)
+CHN_fixtures$chn_AH_075_A_odds <- round((1/CHN_fixtures$chn_AH_075_A),digits = 2)
+
+CHN_fixtures$chn_AH_075_H_odds
+CHN_fixtures$chn_AH_075_A_odds
+#percentages
+CHN_fixtures$chn_AH_075_H <- percent(CHN_fixtures$chn_AH_075_H, accuracy = 0.1)
+CHN_fixtures$chn_AH_075_A <- percent(CHN_fixtures$chn_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+CHN_fixtures$chn_AH_n125_H <- (
+  CHN_fixtures$chn_1_0 + CHN_fixtures$chn_2_0 + CHN_fixtures$chn_2_1 + CHN_fixtures$chn_3_0 + CHN_fixtures$chn_3_1 +
+    CHN_fixtures$chn_3_2 + CHN_fixtures$chn_4_0 + CHN_fixtures$chn_4_1 + CHN_fixtures$chn_4_2 + CHN_fixtures$chn_4_3 +
+    CHN_fixtures$chn_5_0 +CHN_fixtures$chn_5_1 + CHN_fixtures$chn_5_2 + CHN_fixtures$chn_5_3 + CHN_fixtures$chn_5_4 +
+    CHN_fixtures$chn_6_0 + CHN_fixtures$chn_6_1 + CHN_fixtures$chn_6_2 + CHN_fixtures$chn_6_3 + CHN_fixtures$chn_6_4 +
+    CHN_fixtures$chn_6_5
+)
+#AH_n125_A
+CHN_fixtures$chn_AH_n125_A <- (
+  CHN_fixtures$chn_0_1 + CHN_fixtures$chn_0_2 + CHN_fixtures$chn_1_2 + CHN_fixtures$chn_0_3 + CHN_fixtures$chn_1_3 +
+    CHN_fixtures$chn_2_3 + CHN_fixtures$chn_0_4 + CHN_fixtures$chn_1_4 + CHN_fixtures$chn_2_4 + CHN_fixtures$chn_3_4 +
+    CHN_fixtures$chn_0_5 +CHN_fixtures$chn_1_5 + CHN_fixtures$chn_2_5 + CHN_fixtures$chn_3_5 + CHN_fixtures$chn_4_5 +
+    CHN_fixtures$chn_0_6 + CHN_fixtures$chn_1_6 + CHN_fixtures$chn_2_6 + CHN_fixtures$chn_3_6 + CHN_fixtures$chn_4_6 +
+    CHN_fixtures$chn_5_6
+)
+
+#odds
+CHN_fixtures$chn_AH_n125_H_odds <- round((1/CHN_fixtures$chn_AH_n125_H),digits = 2)
+CHN_fixtures$chn_AH_n125_A_odds <- round((1/CHN_fixtures$chn_AH_n125_A),digits = 2)
+
+CHN_fixtures$chn_AH_n125_H_odds
+CHN_fixtures$chn_AH_n125_A_odds
+#percentages
+CHN_fixtures$chn_AH_n125_H <- percent(CHN_fixtures$chn_AH_n125_H, accuracy = 0.1)
+CHN_fixtures$chn_AH_n125_A <- percent(CHN_fixtures$chn_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+CHN_fixtures$chn_AH_125_H <- (
+  CHN_fixtures$chn_1_0 + CHN_fixtures$chn_2_0 + CHN_fixtures$chn_2_1 + CHN_fixtures$chn_3_0 + CHN_fixtures$chn_3_1 +
+    CHN_fixtures$chn_3_2 + CHN_fixtures$chn_4_0 + CHN_fixtures$chn_4_1 + CHN_fixtures$chn_4_2 + CHN_fixtures$chn_4_3 +
+    CHN_fixtures$chn_5_0 +CHN_fixtures$chn_5_1 + CHN_fixtures$chn_5_2 + CHN_fixtures$chn_5_3 + CHN_fixtures$chn_5_4 +
+    CHN_fixtures$chn_6_0 + CHN_fixtures$chn_6_1 + CHN_fixtures$chn_6_2 + CHN_fixtures$chn_6_3 + CHN_fixtures$chn_6_4 +
+    CHN_fixtures$chn_6_5 + CHN_fixtures$chn_0_0 + CHN_fixtures$chn_1_1 + CHN_fixtures$chn_2_2 + CHN_fixtures$chn_3_3 +
+    CHN_fixtures$chn_4_4 + CHN_fixtures$chn_5_5 + CHN_fixtures$chn_6_6 + CHN_fixtures$chn_0_1 + CHN_fixtures$chn_1_2 +
+    CHN_fixtures$chn_2_3 + CHN_fixtures$chn_3_4 + CHN_fixtures$chn_4_5 + CHN_fixtures$chn_5_6
+)
+#AH_125_A
+CHN_fixtures$chn_AH_125_A <- (
+  CHN_fixtures$chn_0_1 + CHN_fixtures$chn_0_2 + CHN_fixtures$chn_1_2 + CHN_fixtures$chn_0_3 + CHN_fixtures$chn_1_3 +
+    CHN_fixtures$chn_2_3 + CHN_fixtures$chn_0_4 + CHN_fixtures$chn_1_4 + CHN_fixtures$chn_2_4 + CHN_fixtures$chn_3_4 +
+    CHN_fixtures$chn_0_5 +CHN_fixtures$chn_1_5 + CHN_fixtures$chn_2_5 + CHN_fixtures$chn_3_5 + CHN_fixtures$chn_4_5 +
+    CHN_fixtures$chn_0_6 + CHN_fixtures$chn_1_6 + CHN_fixtures$chn_2_6 + CHN_fixtures$chn_3_6 + CHN_fixtures$chn_4_6 +
+    CHN_fixtures$chn_5_6 + CHN_fixtures$chn_0_0 + CHN_fixtures$chn_1_1 + CHN_fixtures$chn_2_2 + CHN_fixtures$chn_3_3 +
+    CHN_fixtures$chn_4_4 + CHN_fixtures$chn_5_5 + CHN_fixtures$chn_6_6 + CHN_fixtures$chn_1_0 + CHN_fixtures$chn_2_1 +
+    CHN_fixtures$chn_3_2 + CHN_fixtures$chn_4_3 + CHN_fixtures$chn_5_4 + CHN_fixtures$chn_6_5
+)
+
+#odds
+CHN_fixtures$chn_AH_125_H_odds <- round((1/CHN_fixtures$chn_AH_125_H),digits = 2)
+CHN_fixtures$chn_AH_125_A_odds <- round((1/CHN_fixtures$chn_AH_125_A),digits = 2)
+
+CHN_fixtures$chn_AH_125_H_odds
+CHN_fixtures$chn_AH_125_A_odds
+#percentages
+CHN_fixtures$chn_AH_125_H <- percent(CHN_fixtures$chn_AH_125_H, accuracy = 0.1)
+CHN_fixtures$chn_AH_125_A <- percent(CHN_fixtures$chn_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 CHN_fixtures$chn_ov25 <- percent(CHN_fixtures$chn_ov25, accuracy = 0.1)
 

@@ -697,6 +697,162 @@ POL_fixtures$pol_un25_odds <- round((1/POL_fixtures$pol_un25),digits = 2)
 
 POL_fixtures$pol_ov25_odds
 POL_fixtures$pol_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+POL_fixtures$pol_AH_0_H <- (
+  POL_fixtures$pol_1_0 + POL_fixtures$pol_2_0 + POL_fixtures$pol_2_1 + POL_fixtures$pol_3_0 + POL_fixtures$pol_3_1 +
+    POL_fixtures$pol_3_2 + POL_fixtures$pol_4_0 + POL_fixtures$pol_4_1 + POL_fixtures$pol_4_2 + POL_fixtures$pol_4_3 +
+    POL_fixtures$pol_5_0 +POL_fixtures$pol_5_1 + POL_fixtures$pol_5_2 + POL_fixtures$pol_5_3 + POL_fixtures$pol_5_4 +
+    POL_fixtures$pol_6_0 + POL_fixtures$pol_6_1 + POL_fixtures$pol_6_2 + POL_fixtures$pol_6_3 + POL_fixtures$pol_6_4 +
+    POL_fixtures$pol_6_5 + POL_fixtures$pol_0_0 + POL_fixtures$pol_1_1 + POL_fixtures$pol_2_2 + POL_fixtures$pol_3_3 +
+    POL_fixtures$pol_4_4 + POL_fixtures$pol_5_5 + POL_fixtures$pol_6_6
+)
+#AH_0_A
+POL_fixtures$pol_AH_0_A <- (
+  POL_fixtures$pol_0_1 + POL_fixtures$pol_0_2 + POL_fixtures$pol_1_2 + POL_fixtures$pol_0_3 + POL_fixtures$pol_1_3 +
+    POL_fixtures$pol_2_3 + POL_fixtures$pol_0_4 + POL_fixtures$pol_1_4 + POL_fixtures$pol_2_4 + POL_fixtures$pol_3_4 +
+    POL_fixtures$pol_0_5 +POL_fixtures$pol_1_5 + POL_fixtures$pol_2_5 + POL_fixtures$pol_3_5 + POL_fixtures$pol_4_5 +
+    POL_fixtures$pol_0_6 + POL_fixtures$pol_1_6 + POL_fixtures$pol_2_6 + POL_fixtures$pol_3_6 + POL_fixtures$pol_4_6 +
+    POL_fixtures$pol_5_6 + POL_fixtures$pol_0_0 + POL_fixtures$pol_1_1 + POL_fixtures$pol_2_2 + POL_fixtures$pol_3_3 +
+    POL_fixtures$pol_4_4 + POL_fixtures$pol_5_5 + POL_fixtures$pol_6_6
+)
+
+#odds
+POL_fixtures$pol_AH_0_H_odds <- round((1/POL_fixtures$pol_AH_0_H),digits = 2)
+POL_fixtures$pol_AH_0_A_odds <- round((1/POL_fixtures$pol_AH_0_A),digits = 2)
+
+POL_fixtures$pol_AH_0_H_odds
+POL_fixtures$pol_AH_0_A_odds
+#percentages
+POL_fixtures$pol_AH_0_H <- percent(POL_fixtures$pol_AH_0_H, accuracy = 0.1)
+POL_fixtures$pol_AH_0_A <- percent(POL_fixtures$pol_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+POL_fixtures$pol_AH_n075_H <- (
+  POL_fixtures$pol_1_0 + POL_fixtures$pol_2_0 + POL_fixtures$pol_2_1 + POL_fixtures$pol_3_0 + POL_fixtures$pol_3_1 +
+    POL_fixtures$pol_3_2 + POL_fixtures$pol_4_0 + POL_fixtures$pol_4_1 + POL_fixtures$pol_4_2 + POL_fixtures$pol_4_3 +
+    POL_fixtures$pol_5_0 +POL_fixtures$pol_5_1 + POL_fixtures$pol_5_2 + POL_fixtures$pol_5_3 + POL_fixtures$pol_5_4 +
+    POL_fixtures$pol_6_0 + POL_fixtures$pol_6_1 + POL_fixtures$pol_6_2 + POL_fixtures$pol_6_3 + POL_fixtures$pol_6_4 +
+    POL_fixtures$pol_6_5
+)
+#AH_n075_A
+POL_fixtures$pol_AH_n075_A <- (
+  POL_fixtures$pol_0_1 + POL_fixtures$pol_0_2 + POL_fixtures$pol_1_2 + POL_fixtures$pol_0_3 + POL_fixtures$pol_1_3 +
+    POL_fixtures$pol_2_3 + POL_fixtures$pol_0_4 + POL_fixtures$pol_1_4 + POL_fixtures$pol_2_4 + POL_fixtures$pol_3_4 +
+    POL_fixtures$pol_0_5 +POL_fixtures$pol_1_5 + POL_fixtures$pol_2_5 + POL_fixtures$pol_3_5 + POL_fixtures$pol_4_5 +
+    POL_fixtures$pol_0_6 + POL_fixtures$pol_1_6 + POL_fixtures$pol_2_6 + POL_fixtures$pol_3_6 + POL_fixtures$pol_4_6 +
+    POL_fixtures$pol_5_6
+)
+
+#odds
+POL_fixtures$pol_AH_n075_H_odds <- round((1/POL_fixtures$pol_AH_n075_H),digits = 2)
+POL_fixtures$pol_AH_n075_A_odds <- round((1/POL_fixtures$pol_AH_n075_A),digits = 2)
+
+POL_fixtures$pol_AH_n075_H_odds
+POL_fixtures$pol_AH_n075_A_odds
+#percentages
+POL_fixtures$pol_AH_n075_H <- percent(POL_fixtures$pol_AH_n075_H, accuracy = 0.1)
+POL_fixtures$pol_AH_n075_A <- percent(POL_fixtures$pol_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+POL_fixtures$pol_AH_075_H <- (
+  POL_fixtures$pol_1_0 + POL_fixtures$pol_2_0 + POL_fixtures$pol_2_1 + POL_fixtures$pol_3_0 + POL_fixtures$pol_3_1 +
+    POL_fixtures$pol_3_2 + POL_fixtures$pol_4_0 + POL_fixtures$pol_4_1 + POL_fixtures$pol_4_2 + POL_fixtures$pol_4_3 +
+    POL_fixtures$pol_5_0 +POL_fixtures$pol_5_1 + POL_fixtures$pol_5_2 + POL_fixtures$pol_5_3 + POL_fixtures$pol_5_4 +
+    POL_fixtures$pol_6_0 + POL_fixtures$pol_6_1 + POL_fixtures$pol_6_2 + POL_fixtures$pol_6_3 + POL_fixtures$pol_6_4 +
+    POL_fixtures$pol_6_5 + POL_fixtures$pol_0_0 + POL_fixtures$pol_1_1 + POL_fixtures$pol_2_2 + POL_fixtures$pol_3_3 +
+    POL_fixtures$pol_4_4 + POL_fixtures$pol_5_5 + POL_fixtures$pol_6_6 + POL_fixtures$pol_0_1 + POL_fixtures$pol_1_2 +
+    POL_fixtures$pol_2_3 + POL_fixtures$pol_3_4 + POL_fixtures$pol_4_5 + POL_fixtures$pol_5_6
+)
+#AH_075_A
+POL_fixtures$pol_AH_075_A <- (
+  POL_fixtures$pol_0_1 + POL_fixtures$pol_0_2 + POL_fixtures$pol_1_2 + POL_fixtures$pol_0_3 + POL_fixtures$pol_1_3 +
+    POL_fixtures$pol_2_3 + POL_fixtures$pol_0_4 + POL_fixtures$pol_1_4 + POL_fixtures$pol_2_4 + POL_fixtures$pol_3_4 +
+    POL_fixtures$pol_0_5 +POL_fixtures$pol_1_5 + POL_fixtures$pol_2_5 + POL_fixtures$pol_3_5 + POL_fixtures$pol_4_5 +
+    POL_fixtures$pol_0_6 + POL_fixtures$pol_1_6 + POL_fixtures$pol_2_6 + POL_fixtures$pol_3_6 + POL_fixtures$pol_4_6 +
+    POL_fixtures$pol_5_6 + POL_fixtures$pol_0_0 + POL_fixtures$pol_1_1 + POL_fixtures$pol_2_2 + POL_fixtures$pol_3_3 +
+    POL_fixtures$pol_4_4 + POL_fixtures$pol_5_5 + POL_fixtures$pol_6_6 + POL_fixtures$pol_1_0 + POL_fixtures$pol_2_1 +
+    POL_fixtures$pol_3_2 + POL_fixtures$pol_4_3 + POL_fixtures$pol_5_4 + POL_fixtures$pol_6_5
+)
+
+#odds
+POL_fixtures$pol_AH_075_H_odds <- round((1/POL_fixtures$pol_AH_075_H),digits = 2)
+POL_fixtures$pol_AH_075_A_odds <- round((1/POL_fixtures$pol_AH_075_A),digits = 2)
+
+POL_fixtures$pol_AH_075_H_odds
+POL_fixtures$pol_AH_075_A_odds
+#percentages
+POL_fixtures$pol_AH_075_H <- percent(POL_fixtures$pol_AH_075_H, accuracy = 0.1)
+POL_fixtures$pol_AH_075_A <- percent(POL_fixtures$pol_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+POL_fixtures$pol_AH_n125_H <- (
+  POL_fixtures$pol_1_0 + POL_fixtures$pol_2_0 + POL_fixtures$pol_2_1 + POL_fixtures$pol_3_0 + POL_fixtures$pol_3_1 +
+    POL_fixtures$pol_3_2 + POL_fixtures$pol_4_0 + POL_fixtures$pol_4_1 + POL_fixtures$pol_4_2 + POL_fixtures$pol_4_3 +
+    POL_fixtures$pol_5_0 +POL_fixtures$pol_5_1 + POL_fixtures$pol_5_2 + POL_fixtures$pol_5_3 + POL_fixtures$pol_5_4 +
+    POL_fixtures$pol_6_0 + POL_fixtures$pol_6_1 + POL_fixtures$pol_6_2 + POL_fixtures$pol_6_3 + POL_fixtures$pol_6_4 +
+    POL_fixtures$pol_6_5
+)
+#AH_n125_A
+POL_fixtures$pol_AH_n125_A <- (
+  POL_fixtures$pol_0_1 + POL_fixtures$pol_0_2 + POL_fixtures$pol_1_2 + POL_fixtures$pol_0_3 + POL_fixtures$pol_1_3 +
+    POL_fixtures$pol_2_3 + POL_fixtures$pol_0_4 + POL_fixtures$pol_1_4 + POL_fixtures$pol_2_4 + POL_fixtures$pol_3_4 +
+    POL_fixtures$pol_0_5 +POL_fixtures$pol_1_5 + POL_fixtures$pol_2_5 + POL_fixtures$pol_3_5 + POL_fixtures$pol_4_5 +
+    POL_fixtures$pol_0_6 + POL_fixtures$pol_1_6 + POL_fixtures$pol_2_6 + POL_fixtures$pol_3_6 + POL_fixtures$pol_4_6 +
+    POL_fixtures$pol_5_6
+)
+
+#odds
+POL_fixtures$pol_AH_n125_H_odds <- round((1/POL_fixtures$pol_AH_n125_H),digits = 2)
+POL_fixtures$pol_AH_n125_A_odds <- round((1/POL_fixtures$pol_AH_n125_A),digits = 2)
+
+POL_fixtures$pol_AH_n125_H_odds
+POL_fixtures$pol_AH_n125_A_odds
+#percentages
+POL_fixtures$pol_AH_n125_H <- percent(POL_fixtures$pol_AH_n125_H, accuracy = 0.1)
+POL_fixtures$pol_AH_n125_A <- percent(POL_fixtures$pol_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+POL_fixtures$pol_AH_125_H <- (
+  POL_fixtures$pol_1_0 + POL_fixtures$pol_2_0 + POL_fixtures$pol_2_1 + POL_fixtures$pol_3_0 + POL_fixtures$pol_3_1 +
+    POL_fixtures$pol_3_2 + POL_fixtures$pol_4_0 + POL_fixtures$pol_4_1 + POL_fixtures$pol_4_2 + POL_fixtures$pol_4_3 +
+    POL_fixtures$pol_5_0 +POL_fixtures$pol_5_1 + POL_fixtures$pol_5_2 + POL_fixtures$pol_5_3 + POL_fixtures$pol_5_4 +
+    POL_fixtures$pol_6_0 + POL_fixtures$pol_6_1 + POL_fixtures$pol_6_2 + POL_fixtures$pol_6_3 + POL_fixtures$pol_6_4 +
+    POL_fixtures$pol_6_5 + POL_fixtures$pol_0_0 + POL_fixtures$pol_1_1 + POL_fixtures$pol_2_2 + POL_fixtures$pol_3_3 +
+    POL_fixtures$pol_4_4 + POL_fixtures$pol_5_5 + POL_fixtures$pol_6_6 + POL_fixtures$pol_0_1 + POL_fixtures$pol_1_2 +
+    POL_fixtures$pol_2_3 + POL_fixtures$pol_3_4 + POL_fixtures$pol_4_5 + POL_fixtures$pol_5_6
+)
+#AH_125_A
+POL_fixtures$pol_AH_125_A <- (
+  POL_fixtures$pol_0_1 + POL_fixtures$pol_0_2 + POL_fixtures$pol_1_2 + POL_fixtures$pol_0_3 + POL_fixtures$pol_1_3 +
+    POL_fixtures$pol_2_3 + POL_fixtures$pol_0_4 + POL_fixtures$pol_1_4 + POL_fixtures$pol_2_4 + POL_fixtures$pol_3_4 +
+    POL_fixtures$pol_0_5 +POL_fixtures$pol_1_5 + POL_fixtures$pol_2_5 + POL_fixtures$pol_3_5 + POL_fixtures$pol_4_5 +
+    POL_fixtures$pol_0_6 + POL_fixtures$pol_1_6 + POL_fixtures$pol_2_6 + POL_fixtures$pol_3_6 + POL_fixtures$pol_4_6 +
+    POL_fixtures$pol_5_6 + POL_fixtures$pol_0_0 + POL_fixtures$pol_1_1 + POL_fixtures$pol_2_2 + POL_fixtures$pol_3_3 +
+    POL_fixtures$pol_4_4 + POL_fixtures$pol_5_5 + POL_fixtures$pol_6_6 + POL_fixtures$pol_1_0 + POL_fixtures$pol_2_1 +
+    POL_fixtures$pol_3_2 + POL_fixtures$pol_4_3 + POL_fixtures$pol_5_4 + POL_fixtures$pol_6_5
+)
+
+#odds
+POL_fixtures$pol_AH_125_H_odds <- round((1/POL_fixtures$pol_AH_125_H),digits = 2)
+POL_fixtures$pol_AH_125_A_odds <- round((1/POL_fixtures$pol_AH_125_A),digits = 2)
+
+POL_fixtures$pol_AH_125_H_odds
+POL_fixtures$pol_AH_125_A_odds
+#percentages
+POL_fixtures$pol_AH_125_H <- percent(POL_fixtures$pol_AH_125_H, accuracy = 0.1)
+POL_fixtures$pol_AH_125_A <- percent(POL_fixtures$pol_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 POL_fixtures$pol_ov25 <- percent(POL_fixtures$pol_ov25, accuracy = 0.1)
 

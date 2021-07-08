@@ -697,6 +697,162 @@ SWE_fixtures$swe_un25_odds <- round((1/SWE_fixtures$swe_un25),digits = 2)
 
 SWE_fixtures$swe_ov25_odds
 SWE_fixtures$swe_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+SWE_fixtures$swe_AH_0_H <- (
+  SWE_fixtures$swe_1_0 + SWE_fixtures$swe_2_0 + SWE_fixtures$swe_2_1 + SWE_fixtures$swe_3_0 + SWE_fixtures$swe_3_1 +
+    SWE_fixtures$swe_3_2 + SWE_fixtures$swe_4_0 + SWE_fixtures$swe_4_1 + SWE_fixtures$swe_4_2 + SWE_fixtures$swe_4_3 +
+    SWE_fixtures$swe_5_0 +SWE_fixtures$swe_5_1 + SWE_fixtures$swe_5_2 + SWE_fixtures$swe_5_3 + SWE_fixtures$swe_5_4 +
+    SWE_fixtures$swe_6_0 + SWE_fixtures$swe_6_1 + SWE_fixtures$swe_6_2 + SWE_fixtures$swe_6_3 + SWE_fixtures$swe_6_4 +
+    SWE_fixtures$swe_6_5 + SWE_fixtures$swe_0_0 + SWE_fixtures$swe_1_1 + SWE_fixtures$swe_2_2 + SWE_fixtures$swe_3_3 +
+    SWE_fixtures$swe_4_4 + SWE_fixtures$swe_5_5 + SWE_fixtures$swe_6_6
+)
+#AH_0_A
+SWE_fixtures$swe_AH_0_A <- (
+  SWE_fixtures$swe_0_1 + SWE_fixtures$swe_0_2 + SWE_fixtures$swe_1_2 + SWE_fixtures$swe_0_3 + SWE_fixtures$swe_1_3 +
+    SWE_fixtures$swe_2_3 + SWE_fixtures$swe_0_4 + SWE_fixtures$swe_1_4 + SWE_fixtures$swe_2_4 + SWE_fixtures$swe_3_4 +
+    SWE_fixtures$swe_0_5 +SWE_fixtures$swe_1_5 + SWE_fixtures$swe_2_5 + SWE_fixtures$swe_3_5 + SWE_fixtures$swe_4_5 +
+    SWE_fixtures$swe_0_6 + SWE_fixtures$swe_1_6 + SWE_fixtures$swe_2_6 + SWE_fixtures$swe_3_6 + SWE_fixtures$swe_4_6 +
+    SWE_fixtures$swe_5_6 + SWE_fixtures$swe_0_0 + SWE_fixtures$swe_1_1 + SWE_fixtures$swe_2_2 + SWE_fixtures$swe_3_3 +
+    SWE_fixtures$swe_4_4 + SWE_fixtures$swe_5_5 + SWE_fixtures$swe_6_6
+)
+
+#odds
+SWE_fixtures$swe_AH_0_H_odds <- round((1/SWE_fixtures$swe_AH_0_H),digits = 2)
+SWE_fixtures$swe_AH_0_A_odds <- round((1/SWE_fixtures$swe_AH_0_A),digits = 2)
+
+SWE_fixtures$swe_AH_0_H_odds
+SWE_fixtures$swe_AH_0_A_odds
+#percentages
+SWE_fixtures$swe_AH_0_H <- percent(SWE_fixtures$swe_AH_0_H, accuracy = 0.1)
+SWE_fixtures$swe_AH_0_A <- percent(SWE_fixtures$swe_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+SWE_fixtures$swe_AH_n075_H <- (
+  SWE_fixtures$swe_1_0 + SWE_fixtures$swe_2_0 + SWE_fixtures$swe_2_1 + SWE_fixtures$swe_3_0 + SWE_fixtures$swe_3_1 +
+    SWE_fixtures$swe_3_2 + SWE_fixtures$swe_4_0 + SWE_fixtures$swe_4_1 + SWE_fixtures$swe_4_2 + SWE_fixtures$swe_4_3 +
+    SWE_fixtures$swe_5_0 +SWE_fixtures$swe_5_1 + SWE_fixtures$swe_5_2 + SWE_fixtures$swe_5_3 + SWE_fixtures$swe_5_4 +
+    SWE_fixtures$swe_6_0 + SWE_fixtures$swe_6_1 + SWE_fixtures$swe_6_2 + SWE_fixtures$swe_6_3 + SWE_fixtures$swe_6_4 +
+    SWE_fixtures$swe_6_5
+)
+#AH_n075_A
+SWE_fixtures$swe_AH_n075_A <- (
+  SWE_fixtures$swe_0_1 + SWE_fixtures$swe_0_2 + SWE_fixtures$swe_1_2 + SWE_fixtures$swe_0_3 + SWE_fixtures$swe_1_3 +
+    SWE_fixtures$swe_2_3 + SWE_fixtures$swe_0_4 + SWE_fixtures$swe_1_4 + SWE_fixtures$swe_2_4 + SWE_fixtures$swe_3_4 +
+    SWE_fixtures$swe_0_5 +SWE_fixtures$swe_1_5 + SWE_fixtures$swe_2_5 + SWE_fixtures$swe_3_5 + SWE_fixtures$swe_4_5 +
+    SWE_fixtures$swe_0_6 + SWE_fixtures$swe_1_6 + SWE_fixtures$swe_2_6 + SWE_fixtures$swe_3_6 + SWE_fixtures$swe_4_6 +
+    SWE_fixtures$swe_5_6
+)
+
+#odds
+SWE_fixtures$swe_AH_n075_H_odds <- round((1/SWE_fixtures$swe_AH_n075_H),digits = 2)
+SWE_fixtures$swe_AH_n075_A_odds <- round((1/SWE_fixtures$swe_AH_n075_A),digits = 2)
+
+SWE_fixtures$swe_AH_n075_H_odds
+SWE_fixtures$swe_AH_n075_A_odds
+#percentages
+SWE_fixtures$swe_AH_n075_H <- percent(SWE_fixtures$swe_AH_n075_H, accuracy = 0.1)
+SWE_fixtures$swe_AH_n075_A <- percent(SWE_fixtures$swe_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+SWE_fixtures$swe_AH_075_H <- (
+  SWE_fixtures$swe_1_0 + SWE_fixtures$swe_2_0 + SWE_fixtures$swe_2_1 + SWE_fixtures$swe_3_0 + SWE_fixtures$swe_3_1 +
+    SWE_fixtures$swe_3_2 + SWE_fixtures$swe_4_0 + SWE_fixtures$swe_4_1 + SWE_fixtures$swe_4_2 + SWE_fixtures$swe_4_3 +
+    SWE_fixtures$swe_5_0 +SWE_fixtures$swe_5_1 + SWE_fixtures$swe_5_2 + SWE_fixtures$swe_5_3 + SWE_fixtures$swe_5_4 +
+    SWE_fixtures$swe_6_0 + SWE_fixtures$swe_6_1 + SWE_fixtures$swe_6_2 + SWE_fixtures$swe_6_3 + SWE_fixtures$swe_6_4 +
+    SWE_fixtures$swe_6_5 + SWE_fixtures$swe_0_0 + SWE_fixtures$swe_1_1 + SWE_fixtures$swe_2_2 + SWE_fixtures$swe_3_3 +
+    SWE_fixtures$swe_4_4 + SWE_fixtures$swe_5_5 + SWE_fixtures$swe_6_6 + SWE_fixtures$swe_0_1 + SWE_fixtures$swe_1_2 +
+    SWE_fixtures$swe_2_3 + SWE_fixtures$swe_3_4 + SWE_fixtures$swe_4_5 + SWE_fixtures$swe_5_6
+)
+#AH_075_A
+SWE_fixtures$swe_AH_075_A <- (
+  SWE_fixtures$swe_0_1 + SWE_fixtures$swe_0_2 + SWE_fixtures$swe_1_2 + SWE_fixtures$swe_0_3 + SWE_fixtures$swe_1_3 +
+    SWE_fixtures$swe_2_3 + SWE_fixtures$swe_0_4 + SWE_fixtures$swe_1_4 + SWE_fixtures$swe_2_4 + SWE_fixtures$swe_3_4 +
+    SWE_fixtures$swe_0_5 +SWE_fixtures$swe_1_5 + SWE_fixtures$swe_2_5 + SWE_fixtures$swe_3_5 + SWE_fixtures$swe_4_5 +
+    SWE_fixtures$swe_0_6 + SWE_fixtures$swe_1_6 + SWE_fixtures$swe_2_6 + SWE_fixtures$swe_3_6 + SWE_fixtures$swe_4_6 +
+    SWE_fixtures$swe_5_6 + SWE_fixtures$swe_0_0 + SWE_fixtures$swe_1_1 + SWE_fixtures$swe_2_2 + SWE_fixtures$swe_3_3 +
+    SWE_fixtures$swe_4_4 + SWE_fixtures$swe_5_5 + SWE_fixtures$swe_6_6 + SWE_fixtures$swe_1_0 + SWE_fixtures$swe_2_1 +
+    SWE_fixtures$swe_3_2 + SWE_fixtures$swe_4_3 + SWE_fixtures$swe_5_4 + SWE_fixtures$swe_6_5
+)
+
+#odds
+SWE_fixtures$swe_AH_075_H_odds <- round((1/SWE_fixtures$swe_AH_075_H),digits = 2)
+SWE_fixtures$swe_AH_075_A_odds <- round((1/SWE_fixtures$swe_AH_075_A),digits = 2)
+
+SWE_fixtures$swe_AH_075_H_odds
+SWE_fixtures$swe_AH_075_A_odds
+#percentages
+SWE_fixtures$swe_AH_075_H <- percent(SWE_fixtures$swe_AH_075_H, accuracy = 0.1)
+SWE_fixtures$swe_AH_075_A <- percent(SWE_fixtures$swe_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+SWE_fixtures$swe_AH_n125_H <- (
+  SWE_fixtures$swe_1_0 + SWE_fixtures$swe_2_0 + SWE_fixtures$swe_2_1 + SWE_fixtures$swe_3_0 + SWE_fixtures$swe_3_1 +
+    SWE_fixtures$swe_3_2 + SWE_fixtures$swe_4_0 + SWE_fixtures$swe_4_1 + SWE_fixtures$swe_4_2 + SWE_fixtures$swe_4_3 +
+    SWE_fixtures$swe_5_0 +SWE_fixtures$swe_5_1 + SWE_fixtures$swe_5_2 + SWE_fixtures$swe_5_3 + SWE_fixtures$swe_5_4 +
+    SWE_fixtures$swe_6_0 + SWE_fixtures$swe_6_1 + SWE_fixtures$swe_6_2 + SWE_fixtures$swe_6_3 + SWE_fixtures$swe_6_4 +
+    SWE_fixtures$swe_6_5
+)
+#AH_n125_A
+SWE_fixtures$swe_AH_n125_A <- (
+  SWE_fixtures$swe_0_1 + SWE_fixtures$swe_0_2 + SWE_fixtures$swe_1_2 + SWE_fixtures$swe_0_3 + SWE_fixtures$swe_1_3 +
+    SWE_fixtures$swe_2_3 + SWE_fixtures$swe_0_4 + SWE_fixtures$swe_1_4 + SWE_fixtures$swe_2_4 + SWE_fixtures$swe_3_4 +
+    SWE_fixtures$swe_0_5 +SWE_fixtures$swe_1_5 + SWE_fixtures$swe_2_5 + SWE_fixtures$swe_3_5 + SWE_fixtures$swe_4_5 +
+    SWE_fixtures$swe_0_6 + SWE_fixtures$swe_1_6 + SWE_fixtures$swe_2_6 + SWE_fixtures$swe_3_6 + SWE_fixtures$swe_4_6 +
+    SWE_fixtures$swe_5_6
+)
+
+#odds
+SWE_fixtures$swe_AH_n125_H_odds <- round((1/SWE_fixtures$swe_AH_n125_H),digits = 2)
+SWE_fixtures$swe_AH_n125_A_odds <- round((1/SWE_fixtures$swe_AH_n125_A),digits = 2)
+
+SWE_fixtures$swe_AH_n125_H_odds
+SWE_fixtures$swe_AH_n125_A_odds
+#percentages
+SWE_fixtures$swe_AH_n125_H <- percent(SWE_fixtures$swe_AH_n125_H, accuracy = 0.1)
+SWE_fixtures$swe_AH_n125_A <- percent(SWE_fixtures$swe_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+SWE_fixtures$swe_AH_125_H <- (
+  SWE_fixtures$swe_1_0 + SWE_fixtures$swe_2_0 + SWE_fixtures$swe_2_1 + SWE_fixtures$swe_3_0 + SWE_fixtures$swe_3_1 +
+    SWE_fixtures$swe_3_2 + SWE_fixtures$swe_4_0 + SWE_fixtures$swe_4_1 + SWE_fixtures$swe_4_2 + SWE_fixtures$swe_4_3 +
+    SWE_fixtures$swe_5_0 +SWE_fixtures$swe_5_1 + SWE_fixtures$swe_5_2 + SWE_fixtures$swe_5_3 + SWE_fixtures$swe_5_4 +
+    SWE_fixtures$swe_6_0 + SWE_fixtures$swe_6_1 + SWE_fixtures$swe_6_2 + SWE_fixtures$swe_6_3 + SWE_fixtures$swe_6_4 +
+    SWE_fixtures$swe_6_5 + SWE_fixtures$swe_0_0 + SWE_fixtures$swe_1_1 + SWE_fixtures$swe_2_2 + SWE_fixtures$swe_3_3 +
+    SWE_fixtures$swe_4_4 + SWE_fixtures$swe_5_5 + SWE_fixtures$swe_6_6 + SWE_fixtures$swe_0_1 + SWE_fixtures$swe_1_2 +
+    SWE_fixtures$swe_2_3 + SWE_fixtures$swe_3_4 + SWE_fixtures$swe_4_5 + SWE_fixtures$swe_5_6
+)
+#AH_125_A
+SWE_fixtures$swe_AH_125_A <- (
+  SWE_fixtures$swe_0_1 + SWE_fixtures$swe_0_2 + SWE_fixtures$swe_1_2 + SWE_fixtures$swe_0_3 + SWE_fixtures$swe_1_3 +
+    SWE_fixtures$swe_2_3 + SWE_fixtures$swe_0_4 + SWE_fixtures$swe_1_4 + SWE_fixtures$swe_2_4 + SWE_fixtures$swe_3_4 +
+    SWE_fixtures$swe_0_5 +SWE_fixtures$swe_1_5 + SWE_fixtures$swe_2_5 + SWE_fixtures$swe_3_5 + SWE_fixtures$swe_4_5 +
+    SWE_fixtures$swe_0_6 + SWE_fixtures$swe_1_6 + SWE_fixtures$swe_2_6 + SWE_fixtures$swe_3_6 + SWE_fixtures$swe_4_6 +
+    SWE_fixtures$swe_5_6 + SWE_fixtures$swe_0_0 + SWE_fixtures$swe_1_1 + SWE_fixtures$swe_2_2 + SWE_fixtures$swe_3_3 +
+    SWE_fixtures$swe_4_4 + SWE_fixtures$swe_5_5 + SWE_fixtures$swe_6_6 + SWE_fixtures$swe_1_0 + SWE_fixtures$swe_2_1 +
+    SWE_fixtures$swe_3_2 + SWE_fixtures$swe_4_3 + SWE_fixtures$swe_5_4 + SWE_fixtures$swe_6_5
+)
+
+#odds
+SWE_fixtures$swe_AH_125_H_odds <- round((1/SWE_fixtures$swe_AH_125_H),digits = 2)
+SWE_fixtures$swe_AH_125_A_odds <- round((1/SWE_fixtures$swe_AH_125_A),digits = 2)
+
+SWE_fixtures$swe_AH_125_H_odds
+SWE_fixtures$swe_AH_125_A_odds
+#percentages
+SWE_fixtures$swe_AH_125_H <- percent(SWE_fixtures$swe_AH_125_H, accuracy = 0.1)
+SWE_fixtures$swe_AH_125_A <- percent(SWE_fixtures$swe_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 SWE_fixtures$swe_ov25 <- percent(SWE_fixtures$swe_ov25, accuracy = 0.1)
 

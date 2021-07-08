@@ -697,6 +697,162 @@ MEX_fixtures$mex_un25_odds <- round((1/MEX_fixtures$mex_un25),digits = 2)
 
 MEX_fixtures$mex_ov25_odds
 MEX_fixtures$mex_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+MEX_fixtures$mex_AH_0_H <- (
+  MEX_fixtures$mex_1_0 + MEX_fixtures$mex_2_0 + MEX_fixtures$mex_2_1 + MEX_fixtures$mex_3_0 + MEX_fixtures$mex_3_1 +
+    MEX_fixtures$mex_3_2 + MEX_fixtures$mex_4_0 + MEX_fixtures$mex_4_1 + MEX_fixtures$mex_4_2 + MEX_fixtures$mex_4_3 +
+    MEX_fixtures$mex_5_0 +MEX_fixtures$mex_5_1 + MEX_fixtures$mex_5_2 + MEX_fixtures$mex_5_3 + MEX_fixtures$mex_5_4 +
+    MEX_fixtures$mex_6_0 + MEX_fixtures$mex_6_1 + MEX_fixtures$mex_6_2 + MEX_fixtures$mex_6_3 + MEX_fixtures$mex_6_4 +
+    MEX_fixtures$mex_6_5 + MEX_fixtures$mex_0_0 + MEX_fixtures$mex_1_1 + MEX_fixtures$mex_2_2 + MEX_fixtures$mex_3_3 +
+    MEX_fixtures$mex_4_4 + MEX_fixtures$mex_5_5 + MEX_fixtures$mex_6_6
+)
+#AH_0_A
+MEX_fixtures$mex_AH_0_A <- (
+  MEX_fixtures$mex_0_1 + MEX_fixtures$mex_0_2 + MEX_fixtures$mex_1_2 + MEX_fixtures$mex_0_3 + MEX_fixtures$mex_1_3 +
+    MEX_fixtures$mex_2_3 + MEX_fixtures$mex_0_4 + MEX_fixtures$mex_1_4 + MEX_fixtures$mex_2_4 + MEX_fixtures$mex_3_4 +
+    MEX_fixtures$mex_0_5 +MEX_fixtures$mex_1_5 + MEX_fixtures$mex_2_5 + MEX_fixtures$mex_3_5 + MEX_fixtures$mex_4_5 +
+    MEX_fixtures$mex_0_6 + MEX_fixtures$mex_1_6 + MEX_fixtures$mex_2_6 + MEX_fixtures$mex_3_6 + MEX_fixtures$mex_4_6 +
+    MEX_fixtures$mex_5_6 + MEX_fixtures$mex_0_0 + MEX_fixtures$mex_1_1 + MEX_fixtures$mex_2_2 + MEX_fixtures$mex_3_3 +
+    MEX_fixtures$mex_4_4 + MEX_fixtures$mex_5_5 + MEX_fixtures$mex_6_6
+)
+
+#odds
+MEX_fixtures$mex_AH_0_H_odds <- round((1/MEX_fixtures$mex_AH_0_H),digits = 2)
+MEX_fixtures$mex_AH_0_A_odds <- round((1/MEX_fixtures$mex_AH_0_A),digits = 2)
+
+MEX_fixtures$mex_AH_0_H_odds
+MEX_fixtures$mex_AH_0_A_odds
+#percentages
+MEX_fixtures$mex_AH_0_H <- percent(MEX_fixtures$mex_AH_0_H, accuracy = 0.1)
+MEX_fixtures$mex_AH_0_A <- percent(MEX_fixtures$mex_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+MEX_fixtures$mex_AH_n075_H <- (
+  MEX_fixtures$mex_1_0 + MEX_fixtures$mex_2_0 + MEX_fixtures$mex_2_1 + MEX_fixtures$mex_3_0 + MEX_fixtures$mex_3_1 +
+    MEX_fixtures$mex_3_2 + MEX_fixtures$mex_4_0 + MEX_fixtures$mex_4_1 + MEX_fixtures$mex_4_2 + MEX_fixtures$mex_4_3 +
+    MEX_fixtures$mex_5_0 +MEX_fixtures$mex_5_1 + MEX_fixtures$mex_5_2 + MEX_fixtures$mex_5_3 + MEX_fixtures$mex_5_4 +
+    MEX_fixtures$mex_6_0 + MEX_fixtures$mex_6_1 + MEX_fixtures$mex_6_2 + MEX_fixtures$mex_6_3 + MEX_fixtures$mex_6_4 +
+    MEX_fixtures$mex_6_5
+)
+#AH_n075_A
+MEX_fixtures$mex_AH_n075_A <- (
+  MEX_fixtures$mex_0_1 + MEX_fixtures$mex_0_2 + MEX_fixtures$mex_1_2 + MEX_fixtures$mex_0_3 + MEX_fixtures$mex_1_3 +
+    MEX_fixtures$mex_2_3 + MEX_fixtures$mex_0_4 + MEX_fixtures$mex_1_4 + MEX_fixtures$mex_2_4 + MEX_fixtures$mex_3_4 +
+    MEX_fixtures$mex_0_5 +MEX_fixtures$mex_1_5 + MEX_fixtures$mex_2_5 + MEX_fixtures$mex_3_5 + MEX_fixtures$mex_4_5 +
+    MEX_fixtures$mex_0_6 + MEX_fixtures$mex_1_6 + MEX_fixtures$mex_2_6 + MEX_fixtures$mex_3_6 + MEX_fixtures$mex_4_6 +
+    MEX_fixtures$mex_5_6
+)
+
+#odds
+MEX_fixtures$mex_AH_n075_H_odds <- round((1/MEX_fixtures$mex_AH_n075_H),digits = 2)
+MEX_fixtures$mex_AH_n075_A_odds <- round((1/MEX_fixtures$mex_AH_n075_A),digits = 2)
+
+MEX_fixtures$mex_AH_n075_H_odds
+MEX_fixtures$mex_AH_n075_A_odds
+#percentages
+MEX_fixtures$mex_AH_n075_H <- percent(MEX_fixtures$mex_AH_n075_H, accuracy = 0.1)
+MEX_fixtures$mex_AH_n075_A <- percent(MEX_fixtures$mex_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+MEX_fixtures$mex_AH_075_H <- (
+  MEX_fixtures$mex_1_0 + MEX_fixtures$mex_2_0 + MEX_fixtures$mex_2_1 + MEX_fixtures$mex_3_0 + MEX_fixtures$mex_3_1 +
+    MEX_fixtures$mex_3_2 + MEX_fixtures$mex_4_0 + MEX_fixtures$mex_4_1 + MEX_fixtures$mex_4_2 + MEX_fixtures$mex_4_3 +
+    MEX_fixtures$mex_5_0 +MEX_fixtures$mex_5_1 + MEX_fixtures$mex_5_2 + MEX_fixtures$mex_5_3 + MEX_fixtures$mex_5_4 +
+    MEX_fixtures$mex_6_0 + MEX_fixtures$mex_6_1 + MEX_fixtures$mex_6_2 + MEX_fixtures$mex_6_3 + MEX_fixtures$mex_6_4 +
+    MEX_fixtures$mex_6_5 + MEX_fixtures$mex_0_0 + MEX_fixtures$mex_1_1 + MEX_fixtures$mex_2_2 + MEX_fixtures$mex_3_3 +
+    MEX_fixtures$mex_4_4 + MEX_fixtures$mex_5_5 + MEX_fixtures$mex_6_6 + MEX_fixtures$mex_0_1 + MEX_fixtures$mex_1_2 +
+    MEX_fixtures$mex_2_3 + MEX_fixtures$mex_3_4 + MEX_fixtures$mex_4_5 + MEX_fixtures$mex_5_6
+)
+#AH_075_A
+MEX_fixtures$mex_AH_075_A <- (
+  MEX_fixtures$mex_0_1 + MEX_fixtures$mex_0_2 + MEX_fixtures$mex_1_2 + MEX_fixtures$mex_0_3 + MEX_fixtures$mex_1_3 +
+    MEX_fixtures$mex_2_3 + MEX_fixtures$mex_0_4 + MEX_fixtures$mex_1_4 + MEX_fixtures$mex_2_4 + MEX_fixtures$mex_3_4 +
+    MEX_fixtures$mex_0_5 +MEX_fixtures$mex_1_5 + MEX_fixtures$mex_2_5 + MEX_fixtures$mex_3_5 + MEX_fixtures$mex_4_5 +
+    MEX_fixtures$mex_0_6 + MEX_fixtures$mex_1_6 + MEX_fixtures$mex_2_6 + MEX_fixtures$mex_3_6 + MEX_fixtures$mex_4_6 +
+    MEX_fixtures$mex_5_6 + MEX_fixtures$mex_0_0 + MEX_fixtures$mex_1_1 + MEX_fixtures$mex_2_2 + MEX_fixtures$mex_3_3 +
+    MEX_fixtures$mex_4_4 + MEX_fixtures$mex_5_5 + MEX_fixtures$mex_6_6 + MEX_fixtures$mex_1_0 + MEX_fixtures$mex_2_1 +
+    MEX_fixtures$mex_3_2 + MEX_fixtures$mex_4_3 + MEX_fixtures$mex_5_4 + MEX_fixtures$mex_6_5
+)
+
+#odds
+MEX_fixtures$mex_AH_075_H_odds <- round((1/MEX_fixtures$mex_AH_075_H),digits = 2)
+MEX_fixtures$mex_AH_075_A_odds <- round((1/MEX_fixtures$mex_AH_075_A),digits = 2)
+
+MEX_fixtures$mex_AH_075_H_odds
+MEX_fixtures$mex_AH_075_A_odds
+#percentages
+MEX_fixtures$mex_AH_075_H <- percent(MEX_fixtures$mex_AH_075_H, accuracy = 0.1)
+MEX_fixtures$mex_AH_075_A <- percent(MEX_fixtures$mex_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+MEX_fixtures$mex_AH_n125_H <- (
+  MEX_fixtures$mex_1_0 + MEX_fixtures$mex_2_0 + MEX_fixtures$mex_2_1 + MEX_fixtures$mex_3_0 + MEX_fixtures$mex_3_1 +
+    MEX_fixtures$mex_3_2 + MEX_fixtures$mex_4_0 + MEX_fixtures$mex_4_1 + MEX_fixtures$mex_4_2 + MEX_fixtures$mex_4_3 +
+    MEX_fixtures$mex_5_0 +MEX_fixtures$mex_5_1 + MEX_fixtures$mex_5_2 + MEX_fixtures$mex_5_3 + MEX_fixtures$mex_5_4 +
+    MEX_fixtures$mex_6_0 + MEX_fixtures$mex_6_1 + MEX_fixtures$mex_6_2 + MEX_fixtures$mex_6_3 + MEX_fixtures$mex_6_4 +
+    MEX_fixtures$mex_6_5
+)
+#AH_n125_A
+MEX_fixtures$mex_AH_n125_A <- (
+  MEX_fixtures$mex_0_1 + MEX_fixtures$mex_0_2 + MEX_fixtures$mex_1_2 + MEX_fixtures$mex_0_3 + MEX_fixtures$mex_1_3 +
+    MEX_fixtures$mex_2_3 + MEX_fixtures$mex_0_4 + MEX_fixtures$mex_1_4 + MEX_fixtures$mex_2_4 + MEX_fixtures$mex_3_4 +
+    MEX_fixtures$mex_0_5 +MEX_fixtures$mex_1_5 + MEX_fixtures$mex_2_5 + MEX_fixtures$mex_3_5 + MEX_fixtures$mex_4_5 +
+    MEX_fixtures$mex_0_6 + MEX_fixtures$mex_1_6 + MEX_fixtures$mex_2_6 + MEX_fixtures$mex_3_6 + MEX_fixtures$mex_4_6 +
+    MEX_fixtures$mex_5_6
+)
+
+#odds
+MEX_fixtures$mex_AH_n125_H_odds <- round((1/MEX_fixtures$mex_AH_n125_H),digits = 2)
+MEX_fixtures$mex_AH_n125_A_odds <- round((1/MEX_fixtures$mex_AH_n125_A),digits = 2)
+
+MEX_fixtures$mex_AH_n125_H_odds
+MEX_fixtures$mex_AH_n125_A_odds
+#percentages
+MEX_fixtures$mex_AH_n125_H <- percent(MEX_fixtures$mex_AH_n125_H, accuracy = 0.1)
+MEX_fixtures$mex_AH_n125_A <- percent(MEX_fixtures$mex_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+MEX_fixtures$mex_AH_125_H <- (
+  MEX_fixtures$mex_1_0 + MEX_fixtures$mex_2_0 + MEX_fixtures$mex_2_1 + MEX_fixtures$mex_3_0 + MEX_fixtures$mex_3_1 +
+    MEX_fixtures$mex_3_2 + MEX_fixtures$mex_4_0 + MEX_fixtures$mex_4_1 + MEX_fixtures$mex_4_2 + MEX_fixtures$mex_4_3 +
+    MEX_fixtures$mex_5_0 +MEX_fixtures$mex_5_1 + MEX_fixtures$mex_5_2 + MEX_fixtures$mex_5_3 + MEX_fixtures$mex_5_4 +
+    MEX_fixtures$mex_6_0 + MEX_fixtures$mex_6_1 + MEX_fixtures$mex_6_2 + MEX_fixtures$mex_6_3 + MEX_fixtures$mex_6_4 +
+    MEX_fixtures$mex_6_5 + MEX_fixtures$mex_0_0 + MEX_fixtures$mex_1_1 + MEX_fixtures$mex_2_2 + MEX_fixtures$mex_3_3 +
+    MEX_fixtures$mex_4_4 + MEX_fixtures$mex_5_5 + MEX_fixtures$mex_6_6 + MEX_fixtures$mex_0_1 + MEX_fixtures$mex_1_2 +
+    MEX_fixtures$mex_2_3 + MEX_fixtures$mex_3_4 + MEX_fixtures$mex_4_5 + MEX_fixtures$mex_5_6
+)
+#AH_125_A
+MEX_fixtures$mex_AH_125_A <- (
+  MEX_fixtures$mex_0_1 + MEX_fixtures$mex_0_2 + MEX_fixtures$mex_1_2 + MEX_fixtures$mex_0_3 + MEX_fixtures$mex_1_3 +
+    MEX_fixtures$mex_2_3 + MEX_fixtures$mex_0_4 + MEX_fixtures$mex_1_4 + MEX_fixtures$mex_2_4 + MEX_fixtures$mex_3_4 +
+    MEX_fixtures$mex_0_5 +MEX_fixtures$mex_1_5 + MEX_fixtures$mex_2_5 + MEX_fixtures$mex_3_5 + MEX_fixtures$mex_4_5 +
+    MEX_fixtures$mex_0_6 + MEX_fixtures$mex_1_6 + MEX_fixtures$mex_2_6 + MEX_fixtures$mex_3_6 + MEX_fixtures$mex_4_6 +
+    MEX_fixtures$mex_5_6 + MEX_fixtures$mex_0_0 + MEX_fixtures$mex_1_1 + MEX_fixtures$mex_2_2 + MEX_fixtures$mex_3_3 +
+    MEX_fixtures$mex_4_4 + MEX_fixtures$mex_5_5 + MEX_fixtures$mex_6_6 + MEX_fixtures$mex_1_0 + MEX_fixtures$mex_2_1 +
+    MEX_fixtures$mex_3_2 + MEX_fixtures$mex_4_3 + MEX_fixtures$mex_5_4 + MEX_fixtures$mex_6_5
+)
+
+#odds
+MEX_fixtures$mex_AH_125_H_odds <- round((1/MEX_fixtures$mex_AH_125_H),digits = 2)
+MEX_fixtures$mex_AH_125_A_odds <- round((1/MEX_fixtures$mex_AH_125_A),digits = 2)
+
+MEX_fixtures$mex_AH_125_H_odds
+MEX_fixtures$mex_AH_125_A_odds
+#percentages
+MEX_fixtures$mex_AH_125_H <- percent(MEX_fixtures$mex_AH_125_H, accuracy = 0.1)
+MEX_fixtures$mex_AH_125_A <- percent(MEX_fixtures$mex_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 MEX_fixtures$mex_ov25 <- percent(MEX_fixtures$mex_ov25, accuracy = 0.1)
 

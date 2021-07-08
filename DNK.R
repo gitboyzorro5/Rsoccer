@@ -697,6 +697,162 @@ DNK_fixtures$dnk_un25_odds <- round((1/DNK_fixtures$dnk_un25),digits = 2)
 
 DNK_fixtures$dnk_ov25_odds
 DNK_fixtures$dnk_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+DNK_fixtures$dnk_AH_0_H <- (
+  DNK_fixtures$dnk_1_0 + DNK_fixtures$dnk_2_0 + DNK_fixtures$dnk_2_1 + DNK_fixtures$dnk_3_0 + DNK_fixtures$dnk_3_1 +
+    DNK_fixtures$dnk_3_2 + DNK_fixtures$dnk_4_0 + DNK_fixtures$dnk_4_1 + DNK_fixtures$dnk_4_2 + DNK_fixtures$dnk_4_3 +
+    DNK_fixtures$dnk_5_0 +DNK_fixtures$dnk_5_1 + DNK_fixtures$dnk_5_2 + DNK_fixtures$dnk_5_3 + DNK_fixtures$dnk_5_4 +
+    DNK_fixtures$dnk_6_0 + DNK_fixtures$dnk_6_1 + DNK_fixtures$dnk_6_2 + DNK_fixtures$dnk_6_3 + DNK_fixtures$dnk_6_4 +
+    DNK_fixtures$dnk_6_5 + DNK_fixtures$dnk_0_0 + DNK_fixtures$dnk_1_1 + DNK_fixtures$dnk_2_2 + DNK_fixtures$dnk_3_3 +
+    DNK_fixtures$dnk_4_4 + DNK_fixtures$dnk_5_5 + DNK_fixtures$dnk_6_6
+)
+#AH_0_A
+DNK_fixtures$dnk_AH_0_A <- (
+  DNK_fixtures$dnk_0_1 + DNK_fixtures$dnk_0_2 + DNK_fixtures$dnk_1_2 + DNK_fixtures$dnk_0_3 + DNK_fixtures$dnk_1_3 +
+    DNK_fixtures$dnk_2_3 + DNK_fixtures$dnk_0_4 + DNK_fixtures$dnk_1_4 + DNK_fixtures$dnk_2_4 + DNK_fixtures$dnk_3_4 +
+    DNK_fixtures$dnk_0_5 +DNK_fixtures$dnk_1_5 + DNK_fixtures$dnk_2_5 + DNK_fixtures$dnk_3_5 + DNK_fixtures$dnk_4_5 +
+    DNK_fixtures$dnk_0_6 + DNK_fixtures$dnk_1_6 + DNK_fixtures$dnk_2_6 + DNK_fixtures$dnk_3_6 + DNK_fixtures$dnk_4_6 +
+    DNK_fixtures$dnk_5_6 + DNK_fixtures$dnk_0_0 + DNK_fixtures$dnk_1_1 + DNK_fixtures$dnk_2_2 + DNK_fixtures$dnk_3_3 +
+    DNK_fixtures$dnk_4_4 + DNK_fixtures$dnk_5_5 + DNK_fixtures$dnk_6_6
+)
+
+#odds
+DNK_fixtures$dnk_AH_0_H_odds <- round((1/DNK_fixtures$dnk_AH_0_H),digits = 2)
+DNK_fixtures$dnk_AH_0_A_odds <- round((1/DNK_fixtures$dnk_AH_0_A),digits = 2)
+
+DNK_fixtures$dnk_AH_0_H_odds
+DNK_fixtures$dnk_AH_0_A_odds
+#percentages
+DNK_fixtures$dnk_AH_0_H <- percent(DNK_fixtures$dnk_AH_0_H, accuracy = 0.1)
+DNK_fixtures$dnk_AH_0_A <- percent(DNK_fixtures$dnk_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+DNK_fixtures$dnk_AH_n075_H <- (
+  DNK_fixtures$dnk_1_0 + DNK_fixtures$dnk_2_0 + DNK_fixtures$dnk_2_1 + DNK_fixtures$dnk_3_0 + DNK_fixtures$dnk_3_1 +
+    DNK_fixtures$dnk_3_2 + DNK_fixtures$dnk_4_0 + DNK_fixtures$dnk_4_1 + DNK_fixtures$dnk_4_2 + DNK_fixtures$dnk_4_3 +
+    DNK_fixtures$dnk_5_0 +DNK_fixtures$dnk_5_1 + DNK_fixtures$dnk_5_2 + DNK_fixtures$dnk_5_3 + DNK_fixtures$dnk_5_4 +
+    DNK_fixtures$dnk_6_0 + DNK_fixtures$dnk_6_1 + DNK_fixtures$dnk_6_2 + DNK_fixtures$dnk_6_3 + DNK_fixtures$dnk_6_4 +
+    DNK_fixtures$dnk_6_5
+)
+#AH_n075_A
+DNK_fixtures$dnk_AH_n075_A <- (
+  DNK_fixtures$dnk_0_1 + DNK_fixtures$dnk_0_2 + DNK_fixtures$dnk_1_2 + DNK_fixtures$dnk_0_3 + DNK_fixtures$dnk_1_3 +
+    DNK_fixtures$dnk_2_3 + DNK_fixtures$dnk_0_4 + DNK_fixtures$dnk_1_4 + DNK_fixtures$dnk_2_4 + DNK_fixtures$dnk_3_4 +
+    DNK_fixtures$dnk_0_5 +DNK_fixtures$dnk_1_5 + DNK_fixtures$dnk_2_5 + DNK_fixtures$dnk_3_5 + DNK_fixtures$dnk_4_5 +
+    DNK_fixtures$dnk_0_6 + DNK_fixtures$dnk_1_6 + DNK_fixtures$dnk_2_6 + DNK_fixtures$dnk_3_6 + DNK_fixtures$dnk_4_6 +
+    DNK_fixtures$dnk_5_6
+)
+
+#odds
+DNK_fixtures$dnk_AH_n075_H_odds <- round((1/DNK_fixtures$dnk_AH_n075_H),digits = 2)
+DNK_fixtures$dnk_AH_n075_A_odds <- round((1/DNK_fixtures$dnk_AH_n075_A),digits = 2)
+
+DNK_fixtures$dnk_AH_n075_H_odds
+DNK_fixtures$dnk_AH_n075_A_odds
+#percentages
+DNK_fixtures$dnk_AH_n075_H <- percent(DNK_fixtures$dnk_AH_n075_H, accuracy = 0.1)
+DNK_fixtures$dnk_AH_n075_A <- percent(DNK_fixtures$dnk_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+DNK_fixtures$dnk_AH_075_H <- (
+  DNK_fixtures$dnk_1_0 + DNK_fixtures$dnk_2_0 + DNK_fixtures$dnk_2_1 + DNK_fixtures$dnk_3_0 + DNK_fixtures$dnk_3_1 +
+    DNK_fixtures$dnk_3_2 + DNK_fixtures$dnk_4_0 + DNK_fixtures$dnk_4_1 + DNK_fixtures$dnk_4_2 + DNK_fixtures$dnk_4_3 +
+    DNK_fixtures$dnk_5_0 +DNK_fixtures$dnk_5_1 + DNK_fixtures$dnk_5_2 + DNK_fixtures$dnk_5_3 + DNK_fixtures$dnk_5_4 +
+    DNK_fixtures$dnk_6_0 + DNK_fixtures$dnk_6_1 + DNK_fixtures$dnk_6_2 + DNK_fixtures$dnk_6_3 + DNK_fixtures$dnk_6_4 +
+    DNK_fixtures$dnk_6_5 + DNK_fixtures$dnk_0_0 + DNK_fixtures$dnk_1_1 + DNK_fixtures$dnk_2_2 + DNK_fixtures$dnk_3_3 +
+    DNK_fixtures$dnk_4_4 + DNK_fixtures$dnk_5_5 + DNK_fixtures$dnk_6_6 + DNK_fixtures$dnk_0_1 + DNK_fixtures$dnk_1_2 +
+    DNK_fixtures$dnk_2_3 + DNK_fixtures$dnk_3_4 + DNK_fixtures$dnk_4_5 + DNK_fixtures$dnk_5_6
+)
+#AH_075_A
+DNK_fixtures$dnk_AH_075_A <- (
+  DNK_fixtures$dnk_0_1 + DNK_fixtures$dnk_0_2 + DNK_fixtures$dnk_1_2 + DNK_fixtures$dnk_0_3 + DNK_fixtures$dnk_1_3 +
+    DNK_fixtures$dnk_2_3 + DNK_fixtures$dnk_0_4 + DNK_fixtures$dnk_1_4 + DNK_fixtures$dnk_2_4 + DNK_fixtures$dnk_3_4 +
+    DNK_fixtures$dnk_0_5 +DNK_fixtures$dnk_1_5 + DNK_fixtures$dnk_2_5 + DNK_fixtures$dnk_3_5 + DNK_fixtures$dnk_4_5 +
+    DNK_fixtures$dnk_0_6 + DNK_fixtures$dnk_1_6 + DNK_fixtures$dnk_2_6 + DNK_fixtures$dnk_3_6 + DNK_fixtures$dnk_4_6 +
+    DNK_fixtures$dnk_5_6 + DNK_fixtures$dnk_0_0 + DNK_fixtures$dnk_1_1 + DNK_fixtures$dnk_2_2 + DNK_fixtures$dnk_3_3 +
+    DNK_fixtures$dnk_4_4 + DNK_fixtures$dnk_5_5 + DNK_fixtures$dnk_6_6 + DNK_fixtures$dnk_1_0 + DNK_fixtures$dnk_2_1 +
+    DNK_fixtures$dnk_3_2 + DNK_fixtures$dnk_4_3 + DNK_fixtures$dnk_5_4 + DNK_fixtures$dnk_6_5
+)
+
+#odds
+DNK_fixtures$dnk_AH_075_H_odds <- round((1/DNK_fixtures$dnk_AH_075_H),digits = 2)
+DNK_fixtures$dnk_AH_075_A_odds <- round((1/DNK_fixtures$dnk_AH_075_A),digits = 2)
+
+DNK_fixtures$dnk_AH_075_H_odds
+DNK_fixtures$dnk_AH_075_A_odds
+#percentages
+DNK_fixtures$dnk_AH_075_H <- percent(DNK_fixtures$dnk_AH_075_H, accuracy = 0.1)
+DNK_fixtures$dnk_AH_075_A <- percent(DNK_fixtures$dnk_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+DNK_fixtures$dnk_AH_n125_H <- (
+  DNK_fixtures$dnk_1_0 + DNK_fixtures$dnk_2_0 + DNK_fixtures$dnk_2_1 + DNK_fixtures$dnk_3_0 + DNK_fixtures$dnk_3_1 +
+    DNK_fixtures$dnk_3_2 + DNK_fixtures$dnk_4_0 + DNK_fixtures$dnk_4_1 + DNK_fixtures$dnk_4_2 + DNK_fixtures$dnk_4_3 +
+    DNK_fixtures$dnk_5_0 +DNK_fixtures$dnk_5_1 + DNK_fixtures$dnk_5_2 + DNK_fixtures$dnk_5_3 + DNK_fixtures$dnk_5_4 +
+    DNK_fixtures$dnk_6_0 + DNK_fixtures$dnk_6_1 + DNK_fixtures$dnk_6_2 + DNK_fixtures$dnk_6_3 + DNK_fixtures$dnk_6_4 +
+    DNK_fixtures$dnk_6_5
+)
+#AH_n125_A
+DNK_fixtures$dnk_AH_n125_A <- (
+  DNK_fixtures$dnk_0_1 + DNK_fixtures$dnk_0_2 + DNK_fixtures$dnk_1_2 + DNK_fixtures$dnk_0_3 + DNK_fixtures$dnk_1_3 +
+    DNK_fixtures$dnk_2_3 + DNK_fixtures$dnk_0_4 + DNK_fixtures$dnk_1_4 + DNK_fixtures$dnk_2_4 + DNK_fixtures$dnk_3_4 +
+    DNK_fixtures$dnk_0_5 +DNK_fixtures$dnk_1_5 + DNK_fixtures$dnk_2_5 + DNK_fixtures$dnk_3_5 + DNK_fixtures$dnk_4_5 +
+    DNK_fixtures$dnk_0_6 + DNK_fixtures$dnk_1_6 + DNK_fixtures$dnk_2_6 + DNK_fixtures$dnk_3_6 + DNK_fixtures$dnk_4_6 +
+    DNK_fixtures$dnk_5_6
+)
+
+#odds
+DNK_fixtures$dnk_AH_n125_H_odds <- round((1/DNK_fixtures$dnk_AH_n125_H),digits = 2)
+DNK_fixtures$dnk_AH_n125_A_odds <- round((1/DNK_fixtures$dnk_AH_n125_A),digits = 2)
+
+DNK_fixtures$dnk_AH_n125_H_odds
+DNK_fixtures$dnk_AH_n125_A_odds
+#percentages
+DNK_fixtures$dnk_AH_n125_H <- percent(DNK_fixtures$dnk_AH_n125_H, accuracy = 0.1)
+DNK_fixtures$dnk_AH_n125_A <- percent(DNK_fixtures$dnk_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+DNK_fixtures$dnk_AH_125_H <- (
+  DNK_fixtures$dnk_1_0 + DNK_fixtures$dnk_2_0 + DNK_fixtures$dnk_2_1 + DNK_fixtures$dnk_3_0 + DNK_fixtures$dnk_3_1 +
+    DNK_fixtures$dnk_3_2 + DNK_fixtures$dnk_4_0 + DNK_fixtures$dnk_4_1 + DNK_fixtures$dnk_4_2 + DNK_fixtures$dnk_4_3 +
+    DNK_fixtures$dnk_5_0 +DNK_fixtures$dnk_5_1 + DNK_fixtures$dnk_5_2 + DNK_fixtures$dnk_5_3 + DNK_fixtures$dnk_5_4 +
+    DNK_fixtures$dnk_6_0 + DNK_fixtures$dnk_6_1 + DNK_fixtures$dnk_6_2 + DNK_fixtures$dnk_6_3 + DNK_fixtures$dnk_6_4 +
+    DNK_fixtures$dnk_6_5 + DNK_fixtures$dnk_0_0 + DNK_fixtures$dnk_1_1 + DNK_fixtures$dnk_2_2 + DNK_fixtures$dnk_3_3 +
+    DNK_fixtures$dnk_4_4 + DNK_fixtures$dnk_5_5 + DNK_fixtures$dnk_6_6 + DNK_fixtures$dnk_0_1 + DNK_fixtures$dnk_1_2 +
+    DNK_fixtures$dnk_2_3 + DNK_fixtures$dnk_3_4 + DNK_fixtures$dnk_4_5 + DNK_fixtures$dnk_5_6
+)
+#AH_125_A
+DNK_fixtures$dnk_AH_125_A <- (
+  DNK_fixtures$dnk_0_1 + DNK_fixtures$dnk_0_2 + DNK_fixtures$dnk_1_2 + DNK_fixtures$dnk_0_3 + DNK_fixtures$dnk_1_3 +
+    DNK_fixtures$dnk_2_3 + DNK_fixtures$dnk_0_4 + DNK_fixtures$dnk_1_4 + DNK_fixtures$dnk_2_4 + DNK_fixtures$dnk_3_4 +
+    DNK_fixtures$dnk_0_5 +DNK_fixtures$dnk_1_5 + DNK_fixtures$dnk_2_5 + DNK_fixtures$dnk_3_5 + DNK_fixtures$dnk_4_5 +
+    DNK_fixtures$dnk_0_6 + DNK_fixtures$dnk_1_6 + DNK_fixtures$dnk_2_6 + DNK_fixtures$dnk_3_6 + DNK_fixtures$dnk_4_6 +
+    DNK_fixtures$dnk_5_6 + DNK_fixtures$dnk_0_0 + DNK_fixtures$dnk_1_1 + DNK_fixtures$dnk_2_2 + DNK_fixtures$dnk_3_3 +
+    DNK_fixtures$dnk_4_4 + DNK_fixtures$dnk_5_5 + DNK_fixtures$dnk_6_6 + DNK_fixtures$dnk_1_0 + DNK_fixtures$dnk_2_1 +
+    DNK_fixtures$dnk_3_2 + DNK_fixtures$dnk_4_3 + DNK_fixtures$dnk_5_4 + DNK_fixtures$dnk_6_5
+)
+
+#odds
+DNK_fixtures$dnk_AH_125_H_odds <- round((1/DNK_fixtures$dnk_AH_125_H),digits = 2)
+DNK_fixtures$dnk_AH_125_A_odds <- round((1/DNK_fixtures$dnk_AH_125_A),digits = 2)
+
+DNK_fixtures$dnk_AH_125_H_odds
+DNK_fixtures$dnk_AH_125_A_odds
+#percentages
+DNK_fixtures$dnk_AH_125_H <- percent(DNK_fixtures$dnk_AH_125_H, accuracy = 0.1)
+DNK_fixtures$dnk_AH_125_A <- percent(DNK_fixtures$dnk_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 DNK_fixtures$dnk_ov25 <- percent(DNK_fixtures$dnk_ov25, accuracy = 0.1)
 

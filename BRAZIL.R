@@ -698,6 +698,162 @@ BRA_fixtures$bra_un25_odds <- round((1/BRA_fixtures$bra_un25),digits = 2)
 
 BRA_fixtures$bra_ov25_odds
 BRA_fixtures$bra_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+BRA_fixtures$bra_AH_0_H <- (
+  BRA_fixtures$bra_1_0 + BRA_fixtures$bra_2_0 + BRA_fixtures$bra_2_1 + BRA_fixtures$bra_3_0 + BRA_fixtures$bra_3_1 +
+    BRA_fixtures$bra_3_2 + BRA_fixtures$bra_4_0 + BRA_fixtures$bra_4_1 + BRA_fixtures$bra_4_2 + BRA_fixtures$bra_4_3 +
+    BRA_fixtures$bra_5_0 +BRA_fixtures$bra_5_1 + BRA_fixtures$bra_5_2 + BRA_fixtures$bra_5_3 + BRA_fixtures$bra_5_4 +
+    BRA_fixtures$bra_6_0 + BRA_fixtures$bra_6_1 + BRA_fixtures$bra_6_2 + BRA_fixtures$bra_6_3 + BRA_fixtures$bra_6_4 +
+    BRA_fixtures$bra_6_5 + BRA_fixtures$bra_0_0 + BRA_fixtures$bra_1_1 + BRA_fixtures$bra_2_2 + BRA_fixtures$bra_3_3 +
+    BRA_fixtures$bra_4_4 + BRA_fixtures$bra_5_5 + BRA_fixtures$bra_6_6
+)
+#AH_0_A
+BRA_fixtures$bra_AH_0_A <- (
+  BRA_fixtures$bra_0_1 + BRA_fixtures$bra_0_2 + BRA_fixtures$bra_1_2 + BRA_fixtures$bra_0_3 + BRA_fixtures$bra_1_3 +
+    BRA_fixtures$bra_2_3 + BRA_fixtures$bra_0_4 + BRA_fixtures$bra_1_4 + BRA_fixtures$bra_2_4 + BRA_fixtures$bra_3_4 +
+    BRA_fixtures$bra_0_5 +BRA_fixtures$bra_1_5 + BRA_fixtures$bra_2_5 + BRA_fixtures$bra_3_5 + BRA_fixtures$bra_4_5 +
+    BRA_fixtures$bra_0_6 + BRA_fixtures$bra_1_6 + BRA_fixtures$bra_2_6 + BRA_fixtures$bra_3_6 + BRA_fixtures$bra_4_6 +
+    BRA_fixtures$bra_5_6 + BRA_fixtures$bra_0_0 + BRA_fixtures$bra_1_1 + BRA_fixtures$bra_2_2 + BRA_fixtures$bra_3_3 +
+    BRA_fixtures$bra_4_4 + BRA_fixtures$bra_5_5 + BRA_fixtures$bra_6_6
+)
+
+#odds
+BRA_fixtures$bra_AH_0_H_odds <- round((1/BRA_fixtures$bra_AH_0_H),digits = 2)
+BRA_fixtures$bra_AH_0_A_odds <- round((1/BRA_fixtures$bra_AH_0_A),digits = 2)
+
+BRA_fixtures$bra_AH_0_H_odds
+BRA_fixtures$bra_AH_0_A_odds
+#percentages
+BRA_fixtures$bra_AH_0_H <- percent(BRA_fixtures$bra_AH_0_H, accuracy = 0.1)
+BRA_fixtures$bra_AH_0_A <- percent(BRA_fixtures$bra_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+BRA_fixtures$bra_AH_n075_H <- (
+  BRA_fixtures$bra_1_0 + BRA_fixtures$bra_2_0 + BRA_fixtures$bra_2_1 + BRA_fixtures$bra_3_0 + BRA_fixtures$bra_3_1 +
+    BRA_fixtures$bra_3_2 + BRA_fixtures$bra_4_0 + BRA_fixtures$bra_4_1 + BRA_fixtures$bra_4_2 + BRA_fixtures$bra_4_3 +
+    BRA_fixtures$bra_5_0 +BRA_fixtures$bra_5_1 + BRA_fixtures$bra_5_2 + BRA_fixtures$bra_5_3 + BRA_fixtures$bra_5_4 +
+    BRA_fixtures$bra_6_0 + BRA_fixtures$bra_6_1 + BRA_fixtures$bra_6_2 + BRA_fixtures$bra_6_3 + BRA_fixtures$bra_6_4 +
+    BRA_fixtures$bra_6_5
+)
+#AH_n075_A
+BRA_fixtures$bra_AH_n075_A <- (
+  BRA_fixtures$bra_0_1 + BRA_fixtures$bra_0_2 + BRA_fixtures$bra_1_2 + BRA_fixtures$bra_0_3 + BRA_fixtures$bra_1_3 +
+    BRA_fixtures$bra_2_3 + BRA_fixtures$bra_0_4 + BRA_fixtures$bra_1_4 + BRA_fixtures$bra_2_4 + BRA_fixtures$bra_3_4 +
+    BRA_fixtures$bra_0_5 +BRA_fixtures$bra_1_5 + BRA_fixtures$bra_2_5 + BRA_fixtures$bra_3_5 + BRA_fixtures$bra_4_5 +
+    BRA_fixtures$bra_0_6 + BRA_fixtures$bra_1_6 + BRA_fixtures$bra_2_6 + BRA_fixtures$bra_3_6 + BRA_fixtures$bra_4_6 +
+    BRA_fixtures$bra_5_6
+)
+
+#odds
+BRA_fixtures$bra_AH_n075_H_odds <- round((1/BRA_fixtures$bra_AH_n075_H),digits = 2)
+BRA_fixtures$bra_AH_n075_A_odds <- round((1/BRA_fixtures$bra_AH_n075_A),digits = 2)
+
+BRA_fixtures$bra_AH_n075_H_odds
+BRA_fixtures$bra_AH_n075_A_odds
+#percentages
+BRA_fixtures$bra_AH_n075_H <- percent(BRA_fixtures$bra_AH_n075_H, accuracy = 0.1)
+BRA_fixtures$bra_AH_n075_A <- percent(BRA_fixtures$bra_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+BRA_fixtures$bra_AH_075_H <- (
+  BRA_fixtures$bra_1_0 + BRA_fixtures$bra_2_0 + BRA_fixtures$bra_2_1 + BRA_fixtures$bra_3_0 + BRA_fixtures$bra_3_1 +
+    BRA_fixtures$bra_3_2 + BRA_fixtures$bra_4_0 + BRA_fixtures$bra_4_1 + BRA_fixtures$bra_4_2 + BRA_fixtures$bra_4_3 +
+    BRA_fixtures$bra_5_0 +BRA_fixtures$bra_5_1 + BRA_fixtures$bra_5_2 + BRA_fixtures$bra_5_3 + BRA_fixtures$bra_5_4 +
+    BRA_fixtures$bra_6_0 + BRA_fixtures$bra_6_1 + BRA_fixtures$bra_6_2 + BRA_fixtures$bra_6_3 + BRA_fixtures$bra_6_4 +
+    BRA_fixtures$bra_6_5 + BRA_fixtures$bra_0_0 + BRA_fixtures$bra_1_1 + BRA_fixtures$bra_2_2 + BRA_fixtures$bra_3_3 +
+    BRA_fixtures$bra_4_4 + BRA_fixtures$bra_5_5 + BRA_fixtures$bra_6_6 + BRA_fixtures$bra_0_1 + BRA_fixtures$bra_1_2 +
+    BRA_fixtures$bra_2_3 + BRA_fixtures$bra_3_4 + BRA_fixtures$bra_4_5 + BRA_fixtures$bra_5_6
+)
+#AH_075_A
+BRA_fixtures$bra_AH_075_A <- (
+  BRA_fixtures$bra_0_1 + BRA_fixtures$bra_0_2 + BRA_fixtures$bra_1_2 + BRA_fixtures$bra_0_3 + BRA_fixtures$bra_1_3 +
+    BRA_fixtures$bra_2_3 + BRA_fixtures$bra_0_4 + BRA_fixtures$bra_1_4 + BRA_fixtures$bra_2_4 + BRA_fixtures$bra_3_4 +
+    BRA_fixtures$bra_0_5 +BRA_fixtures$bra_1_5 + BRA_fixtures$bra_2_5 + BRA_fixtures$bra_3_5 + BRA_fixtures$bra_4_5 +
+    BRA_fixtures$bra_0_6 + BRA_fixtures$bra_1_6 + BRA_fixtures$bra_2_6 + BRA_fixtures$bra_3_6 + BRA_fixtures$bra_4_6 +
+    BRA_fixtures$bra_5_6 + BRA_fixtures$bra_0_0 + BRA_fixtures$bra_1_1 + BRA_fixtures$bra_2_2 + BRA_fixtures$bra_3_3 +
+    BRA_fixtures$bra_4_4 + BRA_fixtures$bra_5_5 + BRA_fixtures$bra_6_6 + BRA_fixtures$bra_1_0 + BRA_fixtures$bra_2_1 +
+    BRA_fixtures$bra_3_2 + BRA_fixtures$bra_4_3 + BRA_fixtures$bra_5_4 + BRA_fixtures$bra_6_5
+)
+
+#odds
+BRA_fixtures$bra_AH_075_H_odds <- round((1/BRA_fixtures$bra_AH_075_H),digits = 2)
+BRA_fixtures$bra_AH_075_A_odds <- round((1/BRA_fixtures$bra_AH_075_A),digits = 2)
+
+BRA_fixtures$bra_AH_075_H_odds
+BRA_fixtures$bra_AH_075_A_odds
+#percentages
+BRA_fixtures$bra_AH_075_H <- percent(BRA_fixtures$bra_AH_075_H, accuracy = 0.1)
+BRA_fixtures$bra_AH_075_A <- percent(BRA_fixtures$bra_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+BRA_fixtures$bra_AH_n125_H <- (
+  BRA_fixtures$bra_1_0 + BRA_fixtures$bra_2_0 + BRA_fixtures$bra_2_1 + BRA_fixtures$bra_3_0 + BRA_fixtures$bra_3_1 +
+    BRA_fixtures$bra_3_2 + BRA_fixtures$bra_4_0 + BRA_fixtures$bra_4_1 + BRA_fixtures$bra_4_2 + BRA_fixtures$bra_4_3 +
+    BRA_fixtures$bra_5_0 +BRA_fixtures$bra_5_1 + BRA_fixtures$bra_5_2 + BRA_fixtures$bra_5_3 + BRA_fixtures$bra_5_4 +
+    BRA_fixtures$bra_6_0 + BRA_fixtures$bra_6_1 + BRA_fixtures$bra_6_2 + BRA_fixtures$bra_6_3 + BRA_fixtures$bra_6_4 +
+    BRA_fixtures$bra_6_5
+)
+#AH_n125_A
+BRA_fixtures$bra_AH_n125_A <- (
+  BRA_fixtures$bra_0_1 + BRA_fixtures$bra_0_2 + BRA_fixtures$bra_1_2 + BRA_fixtures$bra_0_3 + BRA_fixtures$bra_1_3 +
+    BRA_fixtures$bra_2_3 + BRA_fixtures$bra_0_4 + BRA_fixtures$bra_1_4 + BRA_fixtures$bra_2_4 + BRA_fixtures$bra_3_4 +
+    BRA_fixtures$bra_0_5 +BRA_fixtures$bra_1_5 + BRA_fixtures$bra_2_5 + BRA_fixtures$bra_3_5 + BRA_fixtures$bra_4_5 +
+    BRA_fixtures$bra_0_6 + BRA_fixtures$bra_1_6 + BRA_fixtures$bra_2_6 + BRA_fixtures$bra_3_6 + BRA_fixtures$bra_4_6 +
+    BRA_fixtures$bra_5_6
+)
+
+#odds
+BRA_fixtures$bra_AH_n125_H_odds <- round((1/BRA_fixtures$bra_AH_n125_H),digits = 2)
+BRA_fixtures$bra_AH_n125_A_odds <- round((1/BRA_fixtures$bra_AH_n125_A),digits = 2)
+
+BRA_fixtures$bra_AH_n125_H_odds
+BRA_fixtures$bra_AH_n125_A_odds
+#percentages
+BRA_fixtures$bra_AH_n125_H <- percent(BRA_fixtures$bra_AH_n125_H, accuracy = 0.1)
+BRA_fixtures$bra_AH_n125_A <- percent(BRA_fixtures$bra_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+BRA_fixtures$bra_AH_125_H <- (
+  BRA_fixtures$bra_1_0 + BRA_fixtures$bra_2_0 + BRA_fixtures$bra_2_1 + BRA_fixtures$bra_3_0 + BRA_fixtures$bra_3_1 +
+    BRA_fixtures$bra_3_2 + BRA_fixtures$bra_4_0 + BRA_fixtures$bra_4_1 + BRA_fixtures$bra_4_2 + BRA_fixtures$bra_4_3 +
+    BRA_fixtures$bra_5_0 +BRA_fixtures$bra_5_1 + BRA_fixtures$bra_5_2 + BRA_fixtures$bra_5_3 + BRA_fixtures$bra_5_4 +
+    BRA_fixtures$bra_6_0 + BRA_fixtures$bra_6_1 + BRA_fixtures$bra_6_2 + BRA_fixtures$bra_6_3 + BRA_fixtures$bra_6_4 +
+    BRA_fixtures$bra_6_5 + BRA_fixtures$bra_0_0 + BRA_fixtures$bra_1_1 + BRA_fixtures$bra_2_2 + BRA_fixtures$bra_3_3 +
+    BRA_fixtures$bra_4_4 + BRA_fixtures$bra_5_5 + BRA_fixtures$bra_6_6 + BRA_fixtures$bra_0_1 + BRA_fixtures$bra_1_2 +
+    BRA_fixtures$bra_2_3 + BRA_fixtures$bra_3_4 + BRA_fixtures$bra_4_5 + BRA_fixtures$bra_5_6
+)
+#AH_125_A
+BRA_fixtures$bra_AH_125_A <- (
+  BRA_fixtures$bra_0_1 + BRA_fixtures$bra_0_2 + BRA_fixtures$bra_1_2 + BRA_fixtures$bra_0_3 + BRA_fixtures$bra_1_3 +
+    BRA_fixtures$bra_2_3 + BRA_fixtures$bra_0_4 + BRA_fixtures$bra_1_4 + BRA_fixtures$bra_2_4 + BRA_fixtures$bra_3_4 +
+    BRA_fixtures$bra_0_5 +BRA_fixtures$bra_1_5 + BRA_fixtures$bra_2_5 + BRA_fixtures$bra_3_5 + BRA_fixtures$bra_4_5 +
+    BRA_fixtures$bra_0_6 + BRA_fixtures$bra_1_6 + BRA_fixtures$bra_2_6 + BRA_fixtures$bra_3_6 + BRA_fixtures$bra_4_6 +
+    BRA_fixtures$bra_5_6 + BRA_fixtures$bra_0_0 + BRA_fixtures$bra_1_1 + BRA_fixtures$bra_2_2 + BRA_fixtures$bra_3_3 +
+    BRA_fixtures$bra_4_4 + BRA_fixtures$bra_5_5 + BRA_fixtures$bra_6_6 + BRA_fixtures$bra_1_0 + BRA_fixtures$bra_2_1 +
+    BRA_fixtures$bra_3_2 + BRA_fixtures$bra_4_3 + BRA_fixtures$bra_5_4 + BRA_fixtures$bra_6_5
+)
+
+#odds
+BRA_fixtures$bra_AH_125_H_odds <- round((1/BRA_fixtures$bra_AH_125_H),digits = 2)
+BRA_fixtures$bra_AH_125_A_odds <- round((1/BRA_fixtures$bra_AH_125_A),digits = 2)
+
+BRA_fixtures$bra_AH_125_H_odds
+BRA_fixtures$bra_AH_125_A_odds
+#percentages
+BRA_fixtures$bra_AH_125_H <- percent(BRA_fixtures$bra_AH_125_H, accuracy = 0.1)
+BRA_fixtures$bra_AH_125_A <- percent(BRA_fixtures$bra_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 BRA_fixtures$bra_ov25 <- percent(BRA_fixtures$bra_ov25, accuracy = 0.1)
 

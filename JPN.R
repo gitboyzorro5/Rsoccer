@@ -697,6 +697,162 @@ JPN_fixtures$jpn_un25_odds <- round((1/JPN_fixtures$jpn_un25),digits = 2)
 
 JPN_fixtures$jpn_ov25_odds
 JPN_fixtures$jpn_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+JPN_fixtures$jpn_AH_0_H <- (
+  JPN_fixtures$jpn_1_0 + JPN_fixtures$jpn_2_0 + JPN_fixtures$jpn_2_1 + JPN_fixtures$jpn_3_0 + JPN_fixtures$jpn_3_1 +
+    JPN_fixtures$jpn_3_2 + JPN_fixtures$jpn_4_0 + JPN_fixtures$jpn_4_1 + JPN_fixtures$jpn_4_2 + JPN_fixtures$jpn_4_3 +
+    JPN_fixtures$jpn_5_0 +JPN_fixtures$jpn_5_1 + JPN_fixtures$jpn_5_2 + JPN_fixtures$jpn_5_3 + JPN_fixtures$jpn_5_4 +
+    JPN_fixtures$jpn_6_0 + JPN_fixtures$jpn_6_1 + JPN_fixtures$jpn_6_2 + JPN_fixtures$jpn_6_3 + JPN_fixtures$jpn_6_4 +
+    JPN_fixtures$jpn_6_5 + JPN_fixtures$jpn_0_0 + JPN_fixtures$jpn_1_1 + JPN_fixtures$jpn_2_2 + JPN_fixtures$jpn_3_3 +
+    JPN_fixtures$jpn_4_4 + JPN_fixtures$jpn_5_5 + JPN_fixtures$jpn_6_6
+)
+#AH_0_A
+JPN_fixtures$jpn_AH_0_A <- (
+  JPN_fixtures$jpn_0_1 + JPN_fixtures$jpn_0_2 + JPN_fixtures$jpn_1_2 + JPN_fixtures$jpn_0_3 + JPN_fixtures$jpn_1_3 +
+    JPN_fixtures$jpn_2_3 + JPN_fixtures$jpn_0_4 + JPN_fixtures$jpn_1_4 + JPN_fixtures$jpn_2_4 + JPN_fixtures$jpn_3_4 +
+    JPN_fixtures$jpn_0_5 +JPN_fixtures$jpn_1_5 + JPN_fixtures$jpn_2_5 + JPN_fixtures$jpn_3_5 + JPN_fixtures$jpn_4_5 +
+    JPN_fixtures$jpn_0_6 + JPN_fixtures$jpn_1_6 + JPN_fixtures$jpn_2_6 + JPN_fixtures$jpn_3_6 + JPN_fixtures$jpn_4_6 +
+    JPN_fixtures$jpn_5_6 + JPN_fixtures$jpn_0_0 + JPN_fixtures$jpn_1_1 + JPN_fixtures$jpn_2_2 + JPN_fixtures$jpn_3_3 +
+    JPN_fixtures$jpn_4_4 + JPN_fixtures$jpn_5_5 + JPN_fixtures$jpn_6_6
+)
+
+#odds
+JPN_fixtures$jpn_AH_0_H_odds <- round((1/JPN_fixtures$jpn_AH_0_H),digits = 2)
+JPN_fixtures$jpn_AH_0_A_odds <- round((1/JPN_fixtures$jpn_AH_0_A),digits = 2)
+
+JPN_fixtures$jpn_AH_0_H_odds
+JPN_fixtures$jpn_AH_0_A_odds
+#percentages
+JPN_fixtures$jpn_AH_0_H <- percent(JPN_fixtures$jpn_AH_0_H, accuracy = 0.1)
+JPN_fixtures$jpn_AH_0_A <- percent(JPN_fixtures$jpn_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+JPN_fixtures$jpn_AH_n075_H <- (
+  JPN_fixtures$jpn_1_0 + JPN_fixtures$jpn_2_0 + JPN_fixtures$jpn_2_1 + JPN_fixtures$jpn_3_0 + JPN_fixtures$jpn_3_1 +
+    JPN_fixtures$jpn_3_2 + JPN_fixtures$jpn_4_0 + JPN_fixtures$jpn_4_1 + JPN_fixtures$jpn_4_2 + JPN_fixtures$jpn_4_3 +
+    JPN_fixtures$jpn_5_0 +JPN_fixtures$jpn_5_1 + JPN_fixtures$jpn_5_2 + JPN_fixtures$jpn_5_3 + JPN_fixtures$jpn_5_4 +
+    JPN_fixtures$jpn_6_0 + JPN_fixtures$jpn_6_1 + JPN_fixtures$jpn_6_2 + JPN_fixtures$jpn_6_3 + JPN_fixtures$jpn_6_4 +
+    JPN_fixtures$jpn_6_5
+)
+#AH_n075_A
+JPN_fixtures$jpn_AH_n075_A <- (
+  JPN_fixtures$jpn_0_1 + JPN_fixtures$jpn_0_2 + JPN_fixtures$jpn_1_2 + JPN_fixtures$jpn_0_3 + JPN_fixtures$jpn_1_3 +
+    JPN_fixtures$jpn_2_3 + JPN_fixtures$jpn_0_4 + JPN_fixtures$jpn_1_4 + JPN_fixtures$jpn_2_4 + JPN_fixtures$jpn_3_4 +
+    JPN_fixtures$jpn_0_5 +JPN_fixtures$jpn_1_5 + JPN_fixtures$jpn_2_5 + JPN_fixtures$jpn_3_5 + JPN_fixtures$jpn_4_5 +
+    JPN_fixtures$jpn_0_6 + JPN_fixtures$jpn_1_6 + JPN_fixtures$jpn_2_6 + JPN_fixtures$jpn_3_6 + JPN_fixtures$jpn_4_6 +
+    JPN_fixtures$jpn_5_6
+)
+
+#odds
+JPN_fixtures$jpn_AH_n075_H_odds <- round((1/JPN_fixtures$jpn_AH_n075_H),digits = 2)
+JPN_fixtures$jpn_AH_n075_A_odds <- round((1/JPN_fixtures$jpn_AH_n075_A),digits = 2)
+
+JPN_fixtures$jpn_AH_n075_H_odds
+JPN_fixtures$jpn_AH_n075_A_odds
+#percentages
+JPN_fixtures$jpn_AH_n075_H <- percent(JPN_fixtures$jpn_AH_n075_H, accuracy = 0.1)
+JPN_fixtures$jpn_AH_n075_A <- percent(JPN_fixtures$jpn_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+JPN_fixtures$jpn_AH_075_H <- (
+  JPN_fixtures$jpn_1_0 + JPN_fixtures$jpn_2_0 + JPN_fixtures$jpn_2_1 + JPN_fixtures$jpn_3_0 + JPN_fixtures$jpn_3_1 +
+    JPN_fixtures$jpn_3_2 + JPN_fixtures$jpn_4_0 + JPN_fixtures$jpn_4_1 + JPN_fixtures$jpn_4_2 + JPN_fixtures$jpn_4_3 +
+    JPN_fixtures$jpn_5_0 +JPN_fixtures$jpn_5_1 + JPN_fixtures$jpn_5_2 + JPN_fixtures$jpn_5_3 + JPN_fixtures$jpn_5_4 +
+    JPN_fixtures$jpn_6_0 + JPN_fixtures$jpn_6_1 + JPN_fixtures$jpn_6_2 + JPN_fixtures$jpn_6_3 + JPN_fixtures$jpn_6_4 +
+    JPN_fixtures$jpn_6_5 + JPN_fixtures$jpn_0_0 + JPN_fixtures$jpn_1_1 + JPN_fixtures$jpn_2_2 + JPN_fixtures$jpn_3_3 +
+    JPN_fixtures$jpn_4_4 + JPN_fixtures$jpn_5_5 + JPN_fixtures$jpn_6_6 + JPN_fixtures$jpn_0_1 + JPN_fixtures$jpn_1_2 +
+    JPN_fixtures$jpn_2_3 + JPN_fixtures$jpn_3_4 + JPN_fixtures$jpn_4_5 + JPN_fixtures$jpn_5_6
+)
+#AH_075_A
+JPN_fixtures$jpn_AH_075_A <- (
+  JPN_fixtures$jpn_0_1 + JPN_fixtures$jpn_0_2 + JPN_fixtures$jpn_1_2 + JPN_fixtures$jpn_0_3 + JPN_fixtures$jpn_1_3 +
+    JPN_fixtures$jpn_2_3 + JPN_fixtures$jpn_0_4 + JPN_fixtures$jpn_1_4 + JPN_fixtures$jpn_2_4 + JPN_fixtures$jpn_3_4 +
+    JPN_fixtures$jpn_0_5 +JPN_fixtures$jpn_1_5 + JPN_fixtures$jpn_2_5 + JPN_fixtures$jpn_3_5 + JPN_fixtures$jpn_4_5 +
+    JPN_fixtures$jpn_0_6 + JPN_fixtures$jpn_1_6 + JPN_fixtures$jpn_2_6 + JPN_fixtures$jpn_3_6 + JPN_fixtures$jpn_4_6 +
+    JPN_fixtures$jpn_5_6 + JPN_fixtures$jpn_0_0 + JPN_fixtures$jpn_1_1 + JPN_fixtures$jpn_2_2 + JPN_fixtures$jpn_3_3 +
+    JPN_fixtures$jpn_4_4 + JPN_fixtures$jpn_5_5 + JPN_fixtures$jpn_6_6 + JPN_fixtures$jpn_1_0 + JPN_fixtures$jpn_2_1 +
+    JPN_fixtures$jpn_3_2 + JPN_fixtures$jpn_4_3 + JPN_fixtures$jpn_5_4 + JPN_fixtures$jpn_6_5
+)
+
+#odds
+JPN_fixtures$jpn_AH_075_H_odds <- round((1/JPN_fixtures$jpn_AH_075_H),digits = 2)
+JPN_fixtures$jpn_AH_075_A_odds <- round((1/JPN_fixtures$jpn_AH_075_A),digits = 2)
+
+JPN_fixtures$jpn_AH_075_H_odds
+JPN_fixtures$jpn_AH_075_A_odds
+#percentages
+JPN_fixtures$jpn_AH_075_H <- percent(JPN_fixtures$jpn_AH_075_H, accuracy = 0.1)
+JPN_fixtures$jpn_AH_075_A <- percent(JPN_fixtures$jpn_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+JPN_fixtures$jpn_AH_n125_H <- (
+  JPN_fixtures$jpn_1_0 + JPN_fixtures$jpn_2_0 + JPN_fixtures$jpn_2_1 + JPN_fixtures$jpn_3_0 + JPN_fixtures$jpn_3_1 +
+    JPN_fixtures$jpn_3_2 + JPN_fixtures$jpn_4_0 + JPN_fixtures$jpn_4_1 + JPN_fixtures$jpn_4_2 + JPN_fixtures$jpn_4_3 +
+    JPN_fixtures$jpn_5_0 +JPN_fixtures$jpn_5_1 + JPN_fixtures$jpn_5_2 + JPN_fixtures$jpn_5_3 + JPN_fixtures$jpn_5_4 +
+    JPN_fixtures$jpn_6_0 + JPN_fixtures$jpn_6_1 + JPN_fixtures$jpn_6_2 + JPN_fixtures$jpn_6_3 + JPN_fixtures$jpn_6_4 +
+    JPN_fixtures$jpn_6_5
+)
+#AH_n125_A
+JPN_fixtures$jpn_AH_n125_A <- (
+  JPN_fixtures$jpn_0_1 + JPN_fixtures$jpn_0_2 + JPN_fixtures$jpn_1_2 + JPN_fixtures$jpn_0_3 + JPN_fixtures$jpn_1_3 +
+    JPN_fixtures$jpn_2_3 + JPN_fixtures$jpn_0_4 + JPN_fixtures$jpn_1_4 + JPN_fixtures$jpn_2_4 + JPN_fixtures$jpn_3_4 +
+    JPN_fixtures$jpn_0_5 +JPN_fixtures$jpn_1_5 + JPN_fixtures$jpn_2_5 + JPN_fixtures$jpn_3_5 + JPN_fixtures$jpn_4_5 +
+    JPN_fixtures$jpn_0_6 + JPN_fixtures$jpn_1_6 + JPN_fixtures$jpn_2_6 + JPN_fixtures$jpn_3_6 + JPN_fixtures$jpn_4_6 +
+    JPN_fixtures$jpn_5_6
+)
+
+#odds
+JPN_fixtures$jpn_AH_n125_H_odds <- round((1/JPN_fixtures$jpn_AH_n125_H),digits = 2)
+JPN_fixtures$jpn_AH_n125_A_odds <- round((1/JPN_fixtures$jpn_AH_n125_A),digits = 2)
+
+JPN_fixtures$jpn_AH_n125_H_odds
+JPN_fixtures$jpn_AH_n125_A_odds
+#percentages
+JPN_fixtures$jpn_AH_n125_H <- percent(JPN_fixtures$jpn_AH_n125_H, accuracy = 0.1)
+JPN_fixtures$jpn_AH_n125_A <- percent(JPN_fixtures$jpn_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+JPN_fixtures$jpn_AH_125_H <- (
+  JPN_fixtures$jpn_1_0 + JPN_fixtures$jpn_2_0 + JPN_fixtures$jpn_2_1 + JPN_fixtures$jpn_3_0 + JPN_fixtures$jpn_3_1 +
+    JPN_fixtures$jpn_3_2 + JPN_fixtures$jpn_4_0 + JPN_fixtures$jpn_4_1 + JPN_fixtures$jpn_4_2 + JPN_fixtures$jpn_4_3 +
+    JPN_fixtures$jpn_5_0 +JPN_fixtures$jpn_5_1 + JPN_fixtures$jpn_5_2 + JPN_fixtures$jpn_5_3 + JPN_fixtures$jpn_5_4 +
+    JPN_fixtures$jpn_6_0 + JPN_fixtures$jpn_6_1 + JPN_fixtures$jpn_6_2 + JPN_fixtures$jpn_6_3 + JPN_fixtures$jpn_6_4 +
+    JPN_fixtures$jpn_6_5 + JPN_fixtures$jpn_0_0 + JPN_fixtures$jpn_1_1 + JPN_fixtures$jpn_2_2 + JPN_fixtures$jpn_3_3 +
+    JPN_fixtures$jpn_4_4 + JPN_fixtures$jpn_5_5 + JPN_fixtures$jpn_6_6 + JPN_fixtures$jpn_0_1 + JPN_fixtures$jpn_1_2 +
+    JPN_fixtures$jpn_2_3 + JPN_fixtures$jpn_3_4 + JPN_fixtures$jpn_4_5 + JPN_fixtures$jpn_5_6
+)
+#AH_125_A
+JPN_fixtures$jpn_AH_125_A <- (
+  JPN_fixtures$jpn_0_1 + JPN_fixtures$jpn_0_2 + JPN_fixtures$jpn_1_2 + JPN_fixtures$jpn_0_3 + JPN_fixtures$jpn_1_3 +
+    JPN_fixtures$jpn_2_3 + JPN_fixtures$jpn_0_4 + JPN_fixtures$jpn_1_4 + JPN_fixtures$jpn_2_4 + JPN_fixtures$jpn_3_4 +
+    JPN_fixtures$jpn_0_5 +JPN_fixtures$jpn_1_5 + JPN_fixtures$jpn_2_5 + JPN_fixtures$jpn_3_5 + JPN_fixtures$jpn_4_5 +
+    JPN_fixtures$jpn_0_6 + JPN_fixtures$jpn_1_6 + JPN_fixtures$jpn_2_6 + JPN_fixtures$jpn_3_6 + JPN_fixtures$jpn_4_6 +
+    JPN_fixtures$jpn_5_6 + JPN_fixtures$jpn_0_0 + JPN_fixtures$jpn_1_1 + JPN_fixtures$jpn_2_2 + JPN_fixtures$jpn_3_3 +
+    JPN_fixtures$jpn_4_4 + JPN_fixtures$jpn_5_5 + JPN_fixtures$jpn_6_6 + JPN_fixtures$jpn_1_0 + JPN_fixtures$jpn_2_1 +
+    JPN_fixtures$jpn_3_2 + JPN_fixtures$jpn_4_3 + JPN_fixtures$jpn_5_4 + JPN_fixtures$jpn_6_5
+)
+
+#odds
+JPN_fixtures$jpn_AH_125_H_odds <- round((1/JPN_fixtures$jpn_AH_125_H),digits = 2)
+JPN_fixtures$jpn_AH_125_A_odds <- round((1/JPN_fixtures$jpn_AH_125_A),digits = 2)
+
+JPN_fixtures$jpn_AH_125_H_odds
+JPN_fixtures$jpn_AH_125_A_odds
+#percentages
+JPN_fixtures$jpn_AH_125_H <- percent(JPN_fixtures$jpn_AH_125_H, accuracy = 0.1)
+JPN_fixtures$jpn_AH_125_A <- percent(JPN_fixtures$jpn_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 JPN_fixtures$jpn_ov25 <- percent(JPN_fixtures$jpn_ov25, accuracy = 0.1)
 

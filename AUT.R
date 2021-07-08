@@ -696,6 +696,162 @@ AUT_fixtures$aut_un25_odds <- round((1/AUT_fixtures$aut_un25),digits = 2)
 
 AUT_fixtures$aut_ov25_odds
 AUT_fixtures$aut_un25_odds
+########Asian Handicaps##########################################################################################################
+##########################################################################
+#AH(0)
+#AH_0_H
+AUT_fixtures$aut_AH_0_H <- (
+  AUT_fixtures$aut_1_0 + AUT_fixtures$aut_2_0 + AUT_fixtures$aut_2_1 + AUT_fixtures$aut_3_0 + AUT_fixtures$aut_3_1 +
+    AUT_fixtures$aut_3_2 + AUT_fixtures$aut_4_0 + AUT_fixtures$aut_4_1 + AUT_fixtures$aut_4_2 + AUT_fixtures$aut_4_3 +
+    AUT_fixtures$aut_5_0 +AUT_fixtures$aut_5_1 + AUT_fixtures$aut_5_2 + AUT_fixtures$aut_5_3 + AUT_fixtures$aut_5_4 +
+    AUT_fixtures$aut_6_0 + AUT_fixtures$aut_6_1 + AUT_fixtures$aut_6_2 + AUT_fixtures$aut_6_3 + AUT_fixtures$aut_6_4 +
+    AUT_fixtures$aut_6_5 + AUT_fixtures$aut_0_0 + AUT_fixtures$aut_1_1 + AUT_fixtures$aut_2_2 + AUT_fixtures$aut_3_3 +
+    AUT_fixtures$aut_4_4 + AUT_fixtures$aut_5_5 + AUT_fixtures$aut_6_6
+)
+#AH_0_A
+AUT_fixtures$aut_AH_0_A <- (
+  AUT_fixtures$aut_0_1 + AUT_fixtures$aut_0_2 + AUT_fixtures$aut_1_2 + AUT_fixtures$aut_0_3 + AUT_fixtures$aut_1_3 +
+    AUT_fixtures$aut_2_3 + AUT_fixtures$aut_0_4 + AUT_fixtures$aut_1_4 + AUT_fixtures$aut_2_4 + AUT_fixtures$aut_3_4 +
+    AUT_fixtures$aut_0_5 +AUT_fixtures$aut_1_5 + AUT_fixtures$aut_2_5 + AUT_fixtures$aut_3_5 + AUT_fixtures$aut_4_5 +
+    AUT_fixtures$aut_0_6 + AUT_fixtures$aut_1_6 + AUT_fixtures$aut_2_6 + AUT_fixtures$aut_3_6 + AUT_fixtures$aut_4_6 +
+    AUT_fixtures$aut_5_6 + AUT_fixtures$aut_0_0 + AUT_fixtures$aut_1_1 + AUT_fixtures$aut_2_2 + AUT_fixtures$aut_3_3 +
+    AUT_fixtures$aut_4_4 + AUT_fixtures$aut_5_5 + AUT_fixtures$aut_6_6
+)
+
+#odds
+AUT_fixtures$aut_AH_0_H_odds <- round((1/AUT_fixtures$aut_AH_0_H),digits = 2)
+AUT_fixtures$aut_AH_0_A_odds <- round((1/AUT_fixtures$aut_AH_0_A),digits = 2)
+
+AUT_fixtures$aut_AH_0_H_odds
+AUT_fixtures$aut_AH_0_A_odds
+#percentages
+AUT_fixtures$aut_AH_0_H <- percent(AUT_fixtures$aut_AH_0_H, accuracy = 0.1)
+AUT_fixtures$aut_AH_0_A <- percent(AUT_fixtures$aut_AH_0_A, accuracy = 0.1)
+####################################################################################
+##########################################################################
+#AH(-0.75)
+#AH_n075_H
+AUT_fixtures$aut_AH_n075_H <- (
+  AUT_fixtures$aut_1_0 + AUT_fixtures$aut_2_0 + AUT_fixtures$aut_2_1 + AUT_fixtures$aut_3_0 + AUT_fixtures$aut_3_1 +
+    AUT_fixtures$aut_3_2 + AUT_fixtures$aut_4_0 + AUT_fixtures$aut_4_1 + AUT_fixtures$aut_4_2 + AUT_fixtures$aut_4_3 +
+    AUT_fixtures$aut_5_0 +AUT_fixtures$aut_5_1 + AUT_fixtures$aut_5_2 + AUT_fixtures$aut_5_3 + AUT_fixtures$aut_5_4 +
+    AUT_fixtures$aut_6_0 + AUT_fixtures$aut_6_1 + AUT_fixtures$aut_6_2 + AUT_fixtures$aut_6_3 + AUT_fixtures$aut_6_4 +
+    AUT_fixtures$aut_6_5
+)
+#AH_n075_A
+AUT_fixtures$aut_AH_n075_A <- (
+  AUT_fixtures$aut_0_1 + AUT_fixtures$aut_0_2 + AUT_fixtures$aut_1_2 + AUT_fixtures$aut_0_3 + AUT_fixtures$aut_1_3 +
+    AUT_fixtures$aut_2_3 + AUT_fixtures$aut_0_4 + AUT_fixtures$aut_1_4 + AUT_fixtures$aut_2_4 + AUT_fixtures$aut_3_4 +
+    AUT_fixtures$aut_0_5 +AUT_fixtures$aut_1_5 + AUT_fixtures$aut_2_5 + AUT_fixtures$aut_3_5 + AUT_fixtures$aut_4_5 +
+    AUT_fixtures$aut_0_6 + AUT_fixtures$aut_1_6 + AUT_fixtures$aut_2_6 + AUT_fixtures$aut_3_6 + AUT_fixtures$aut_4_6 +
+    AUT_fixtures$aut_5_6
+)
+
+#odds
+AUT_fixtures$aut_AH_n075_H_odds <- round((1/AUT_fixtures$aut_AH_n075_H),digits = 2)
+AUT_fixtures$aut_AH_n075_A_odds <- round((1/AUT_fixtures$aut_AH_n075_A),digits = 2)
+
+AUT_fixtures$aut_AH_n075_H_odds
+AUT_fixtures$aut_AH_n075_A_odds
+#percentages
+AUT_fixtures$aut_AH_n075_H <- percent(AUT_fixtures$aut_AH_n075_H, accuracy = 0.1)
+AUT_fixtures$aut_AH_n075_A <- percent(AUT_fixtures$aut_AH_n075_A, accuracy = 0.1)
+##########################################################################
+#AH(0.75)
+#AH_075_H
+AUT_fixtures$aut_AH_075_H <- (
+  AUT_fixtures$aut_1_0 + AUT_fixtures$aut_2_0 + AUT_fixtures$aut_2_1 + AUT_fixtures$aut_3_0 + AUT_fixtures$aut_3_1 +
+    AUT_fixtures$aut_3_2 + AUT_fixtures$aut_4_0 + AUT_fixtures$aut_4_1 + AUT_fixtures$aut_4_2 + AUT_fixtures$aut_4_3 +
+    AUT_fixtures$aut_5_0 +AUT_fixtures$aut_5_1 + AUT_fixtures$aut_5_2 + AUT_fixtures$aut_5_3 + AUT_fixtures$aut_5_4 +
+    AUT_fixtures$aut_6_0 + AUT_fixtures$aut_6_1 + AUT_fixtures$aut_6_2 + AUT_fixtures$aut_6_3 + AUT_fixtures$aut_6_4 +
+    AUT_fixtures$aut_6_5 + AUT_fixtures$aut_0_0 + AUT_fixtures$aut_1_1 + AUT_fixtures$aut_2_2 + AUT_fixtures$aut_3_3 +
+    AUT_fixtures$aut_4_4 + AUT_fixtures$aut_5_5 + AUT_fixtures$aut_6_6 + AUT_fixtures$aut_0_1 + AUT_fixtures$aut_1_2 +
+    AUT_fixtures$aut_2_3 + AUT_fixtures$aut_3_4 + AUT_fixtures$aut_4_5 + AUT_fixtures$aut_5_6
+)
+#AH_075_A
+AUT_fixtures$aut_AH_075_A <- (
+  AUT_fixtures$aut_0_1 + AUT_fixtures$aut_0_2 + AUT_fixtures$aut_1_2 + AUT_fixtures$aut_0_3 + AUT_fixtures$aut_1_3 +
+    AUT_fixtures$aut_2_3 + AUT_fixtures$aut_0_4 + AUT_fixtures$aut_1_4 + AUT_fixtures$aut_2_4 + AUT_fixtures$aut_3_4 +
+    AUT_fixtures$aut_0_5 +AUT_fixtures$aut_1_5 + AUT_fixtures$aut_2_5 + AUT_fixtures$aut_3_5 + AUT_fixtures$aut_4_5 +
+    AUT_fixtures$aut_0_6 + AUT_fixtures$aut_1_6 + AUT_fixtures$aut_2_6 + AUT_fixtures$aut_3_6 + AUT_fixtures$aut_4_6 +
+    AUT_fixtures$aut_5_6 + AUT_fixtures$aut_0_0 + AUT_fixtures$aut_1_1 + AUT_fixtures$aut_2_2 + AUT_fixtures$aut_3_3 +
+    AUT_fixtures$aut_4_4 + AUT_fixtures$aut_5_5 + AUT_fixtures$aut_6_6 + AUT_fixtures$aut_1_0 + AUT_fixtures$aut_2_1 +
+    AUT_fixtures$aut_3_2 + AUT_fixtures$aut_4_3 + AUT_fixtures$aut_5_4 + AUT_fixtures$aut_6_5
+)
+
+#odds
+AUT_fixtures$aut_AH_075_H_odds <- round((1/AUT_fixtures$aut_AH_075_H),digits = 2)
+AUT_fixtures$aut_AH_075_A_odds <- round((1/AUT_fixtures$aut_AH_075_A),digits = 2)
+
+AUT_fixtures$aut_AH_075_H_odds
+AUT_fixtures$aut_AH_075_A_odds
+#percentages
+AUT_fixtures$aut_AH_075_H <- percent(AUT_fixtures$aut_AH_075_H, accuracy = 0.1)
+AUT_fixtures$aut_AH_075_A <- percent(AUT_fixtures$aut_AH_075_A, accuracy = 0.1)
+####################################################################################
+#AH(-1.25)
+#AH_n125_H
+AUT_fixtures$aut_AH_n125_H <- (
+  AUT_fixtures$aut_1_0 + AUT_fixtures$aut_2_0 + AUT_fixtures$aut_2_1 + AUT_fixtures$aut_3_0 + AUT_fixtures$aut_3_1 +
+    AUT_fixtures$aut_3_2 + AUT_fixtures$aut_4_0 + AUT_fixtures$aut_4_1 + AUT_fixtures$aut_4_2 + AUT_fixtures$aut_4_3 +
+    AUT_fixtures$aut_5_0 +AUT_fixtures$aut_5_1 + AUT_fixtures$aut_5_2 + AUT_fixtures$aut_5_3 + AUT_fixtures$aut_5_4 +
+    AUT_fixtures$aut_6_0 + AUT_fixtures$aut_6_1 + AUT_fixtures$aut_6_2 + AUT_fixtures$aut_6_3 + AUT_fixtures$aut_6_4 +
+    AUT_fixtures$aut_6_5
+)
+#AH_n125_A
+AUT_fixtures$aut_AH_n125_A <- (
+  AUT_fixtures$aut_0_1 + AUT_fixtures$aut_0_2 + AUT_fixtures$aut_1_2 + AUT_fixtures$aut_0_3 + AUT_fixtures$aut_1_3 +
+    AUT_fixtures$aut_2_3 + AUT_fixtures$aut_0_4 + AUT_fixtures$aut_1_4 + AUT_fixtures$aut_2_4 + AUT_fixtures$aut_3_4 +
+    AUT_fixtures$aut_0_5 +AUT_fixtures$aut_1_5 + AUT_fixtures$aut_2_5 + AUT_fixtures$aut_3_5 + AUT_fixtures$aut_4_5 +
+    AUT_fixtures$aut_0_6 + AUT_fixtures$aut_1_6 + AUT_fixtures$aut_2_6 + AUT_fixtures$aut_3_6 + AUT_fixtures$aut_4_6 +
+    AUT_fixtures$aut_5_6
+)
+
+#odds
+AUT_fixtures$aut_AH_n125_H_odds <- round((1/AUT_fixtures$aut_AH_n125_H),digits = 2)
+AUT_fixtures$aut_AH_n125_A_odds <- round((1/AUT_fixtures$aut_AH_n125_A),digits = 2)
+
+AUT_fixtures$aut_AH_n125_H_odds
+AUT_fixtures$aut_AH_n125_A_odds
+#percentages
+AUT_fixtures$aut_AH_n125_H <- percent(AUT_fixtures$aut_AH_n125_H, accuracy = 0.1)
+AUT_fixtures$aut_AH_n125_A <- percent(AUT_fixtures$aut_AH_n125_A, accuracy = 0.1)
+
+####################################################################################
+##########################################################################
+#AH(1.25)
+#AH_125_H
+AUT_fixtures$aut_AH_125_H <- (
+  AUT_fixtures$aut_1_0 + AUT_fixtures$aut_2_0 + AUT_fixtures$aut_2_1 + AUT_fixtures$aut_3_0 + AUT_fixtures$aut_3_1 +
+    AUT_fixtures$aut_3_2 + AUT_fixtures$aut_4_0 + AUT_fixtures$aut_4_1 + AUT_fixtures$aut_4_2 + AUT_fixtures$aut_4_3 +
+    AUT_fixtures$aut_5_0 +AUT_fixtures$aut_5_1 + AUT_fixtures$aut_5_2 + AUT_fixtures$aut_5_3 + AUT_fixtures$aut_5_4 +
+    AUT_fixtures$aut_6_0 + AUT_fixtures$aut_6_1 + AUT_fixtures$aut_6_2 + AUT_fixtures$aut_6_3 + AUT_fixtures$aut_6_4 +
+    AUT_fixtures$aut_6_5 + AUT_fixtures$aut_0_0 + AUT_fixtures$aut_1_1 + AUT_fixtures$aut_2_2 + AUT_fixtures$aut_3_3 +
+    AUT_fixtures$aut_4_4 + AUT_fixtures$aut_5_5 + AUT_fixtures$aut_6_6 + AUT_fixtures$aut_0_1 + AUT_fixtures$aut_1_2 +
+    AUT_fixtures$aut_2_3 + AUT_fixtures$aut_3_4 + AUT_fixtures$aut_4_5 + AUT_fixtures$aut_5_6
+)
+#AH_125_A
+AUT_fixtures$aut_AH_125_A <- (
+  AUT_fixtures$aut_0_1 + AUT_fixtures$aut_0_2 + AUT_fixtures$aut_1_2 + AUT_fixtures$aut_0_3 + AUT_fixtures$aut_1_3 +
+    AUT_fixtures$aut_2_3 + AUT_fixtures$aut_0_4 + AUT_fixtures$aut_1_4 + AUT_fixtures$aut_2_4 + AUT_fixtures$aut_3_4 +
+    AUT_fixtures$aut_0_5 +AUT_fixtures$aut_1_5 + AUT_fixtures$aut_2_5 + AUT_fixtures$aut_3_5 + AUT_fixtures$aut_4_5 +
+    AUT_fixtures$aut_0_6 + AUT_fixtures$aut_1_6 + AUT_fixtures$aut_2_6 + AUT_fixtures$aut_3_6 + AUT_fixtures$aut_4_6 +
+    AUT_fixtures$aut_5_6 + AUT_fixtures$aut_0_0 + AUT_fixtures$aut_1_1 + AUT_fixtures$aut_2_2 + AUT_fixtures$aut_3_3 +
+    AUT_fixtures$aut_4_4 + AUT_fixtures$aut_5_5 + AUT_fixtures$aut_6_6 + AUT_fixtures$aut_1_0 + AUT_fixtures$aut_2_1 +
+    AUT_fixtures$aut_3_2 + AUT_fixtures$aut_4_3 + AUT_fixtures$aut_5_4 + AUT_fixtures$aut_6_5
+)
+
+#odds
+AUT_fixtures$aut_AH_125_H_odds <- round((1/AUT_fixtures$aut_AH_125_H),digits = 2)
+AUT_fixtures$aut_AH_125_A_odds <- round((1/AUT_fixtures$aut_AH_125_A),digits = 2)
+
+AUT_fixtures$aut_AH_125_H_odds
+AUT_fixtures$aut_AH_125_A_odds
+#percentages
+AUT_fixtures$aut_AH_125_H <- percent(AUT_fixtures$aut_AH_125_H, accuracy = 0.1)
+AUT_fixtures$aut_AH_125_A <- percent(AUT_fixtures$aut_AH_125_A, accuracy = 0.1)
+####################################################################################
+########Asian Handicaps######################################################################################################
 #percentages
 AUT_fixtures$aut_ov25 <- percent(AUT_fixtures$aut_ov25, accuracy = 0.1)
 

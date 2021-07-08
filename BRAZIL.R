@@ -26,7 +26,7 @@ BRA$FTR <- with(BRA,
 ###################################################
 ####GoalTotalsv2##################################
 bra_totalgoalsv2 <- tapply(BRA$TG, BRA[c("Home", "Away")],mean)
-bra_totalgoalsv2
+dim(bra_totalgoalsv2)
 bra_hgtotals <- rowSums(bra_totalgoalsv2,na.rm = T)
 bra_agtotals <- colSums(bra_totalgoalsv2,na.rm = T)
 

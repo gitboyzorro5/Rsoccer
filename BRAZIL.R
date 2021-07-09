@@ -17,6 +17,14 @@ BRA <- BRA[order(as.Date(BRA$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 BRA$CS <- paste(BRA$HG,BRA$AG, sep = "-")
 #BRA_qualificaton <- subset(BRA,tournament == "UEFA Euro qualification")
 BRA <- subset(BRA,Season == "2021")
+BRA <- BRA[!BRA$Home =="Coritiba",]
+BRA <- BRA[!BRA$Away == "Coritiba",]
+BRA <- BRA[!BRA$Home =="Vasco",]
+BRA <- BRA[!BRA$Away == "Vasco",]
+BRA <- BRA[!BRA$Home =="Goias",]
+BRA <- BRA[!BRA$Away == "Goias",]
+BRA <- BRA[!BRA$Home =="Cuiaba Esporte",]
+BRA <- BRA[!BRA$Away == "Cuiaba Esporte",]
 #BRA <- BRA[BRA$Date > '2008-01-01',])
 BRA$TG <- BRA$HG + BRA$AG
 BRA$OV25 <- ifelse(BRA$TG >= 3,"Y","N")
@@ -26,14 +34,12 @@ BRA$FTR <- with(BRA,
 ###################################################
 ####GoalTotalsv2##################################
 bra_totalgoalsv2 <- tapply(BRA$TG, BRA[c("Home", "Away")],mean)
-dim(bra_totalgoalsv2)
 bra_hgtotals <- rowSums(bra_totalgoalsv2,na.rm = T)
 bra_agtotals <- colSums(bra_totalgoalsv2,na.rm = T)
-
+dim(bra_totalgoalsv2)
 bra_totalgoals <- bra_hgtotals + bra_agtotals
 bra_totalgoalsv2 <- cbind(bra_totalgoalsv2,bra_totalgoals)
-bra_teams <- sort(unique(BRA$Away))
-bra_teams
+bra_teams <- sort(unique(BRA$Home))
 bra_home_games <- c()
 bra_away_games <-c()
 for (i_bra in 1:length(bra_teams))

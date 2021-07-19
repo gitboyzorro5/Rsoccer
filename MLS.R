@@ -697,6 +697,35 @@ MLS_fixtures$mls_un25_odds <- round((1/MLS_fixtures$mls_un25),digits = 2)
 
 MLS_fixtures$mls_ov25_odds
 MLS_fixtures$mls_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+MLS_fixtures$mls_BTTSY <- (
+  MLS_fixtures$mls_1_1 + MLS_fixtures$mls_2_1 + MLS_fixtures$mls_1_2 + MLS_fixtures$mls_3_1 + MLS_fixtures$mls_3_2 +
+    MLS_fixtures$mls_2_2 + MLS_fixtures$mls_1_3 + MLS_fixtures$mls_2_3 + MLS_fixtures$mls_3_3 + MLS_fixtures$mls_4_4 +
+    MLS_fixtures$mls_4_1 + MLS_fixtures$mls_4_3 + MLS_fixtures$mls_4_2 + MLS_fixtures$mls_1_4 + MLS_fixtures$mls_2_4 +
+    MLS_fixtures$mls_3_4 + MLS_fixtures$mls_5_5 + MLS_fixtures$mls_5_1 + MLS_fixtures$mls_5_2 + MLS_fixtures$mls_5_3 +
+    MLS_fixtures$mls_5_4 + MLS_fixtures$mls_1_5 + MLS_fixtures$mls_2_5 + MLS_fixtures$mls_3_5 + MLS_fixtures$mls_4_5 +
+    MLS_fixtures$mls_6_6 + MLS_fixtures$mls_6_1 + MLS_fixtures$mls_6_2 + MLS_fixtures$mls_6_3 + MLS_fixtures$mls_6_4 +
+    MLS_fixtures$mls_6_5 + MLS_fixtures$mls_1_6 + MLS_fixtures$mls_2_6 + MLS_fixtures$mls_3_6 + MLS_fixtures$mls_4_6 +
+    MLS_fixtures$mls_5_6
+)
+#BTTSN
+MLS_fixtures$mls_BTTSN <- (
+  MLS_fixtures$mls_0_0 + MLS_fixtures$mls_1_0 + MLS_fixtures$mls_0_1 + MLS_fixtures$mls_2_0 + MLS_fixtures$mls_0_2 +
+  MLS_fixtures$mls_3_0 + MLS_fixtures$mls_0_3 + MLS_fixtures$mls_4_0 + MLS_fixtures$mls_0_4 + MLS_fixtures$mls_5_0 +
+  MLS_fixtures$mls_0_5 + MLS_fixtures$mls_6_0 + MLS_fixtures$mls_0_6
+)
+
+MLS_fixtures$mls_BTTSY_odds <- round((1/MLS_fixtures$mls_BTTSY),digits = 2)
+MLS_fixtures$mls_BTTSN_odds <- round((1/MLS_fixtures$mls_BTTSN),digits = 2)
+
+MLS_fixtures$mls_BTTSY <- percent(MLS_fixtures$mls_BTTSY, accuracy = 0.1)
+MLS_fixtures$mls_BTTSN <- percent(MLS_fixtures$mls_BTTSN, accuracy = 0.1)
+#odds
+MLS_fixtures$mls_BTTSY_odds
+MLS_fixtures$mls_BTTSN_odds
+
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)

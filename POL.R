@@ -697,6 +697,34 @@ POL_fixtures$pol_un25_odds <- round((1/POL_fixtures$pol_un25),digits = 2)
 
 POL_fixtures$pol_ov25_odds
 POL_fixtures$pol_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+POL_fixtures$pol_BTTSY <- (
+  POL_fixtures$pol_1_1 + POL_fixtures$pol_2_1 + POL_fixtures$pol_1_2 + POL_fixtures$pol_3_1 + POL_fixtures$pol_3_2 +
+    POL_fixtures$pol_2_2 + POL_fixtures$pol_1_3 + POL_fixtures$pol_2_3 + POL_fixtures$pol_3_3 + POL_fixtures$pol_4_4 +
+    POL_fixtures$pol_4_1 + POL_fixtures$pol_4_3 + POL_fixtures$pol_4_2 + POL_fixtures$pol_1_4 + POL_fixtures$pol_2_4 +
+    POL_fixtures$pol_3_4 + POL_fixtures$pol_5_5 + POL_fixtures$pol_5_1 + POL_fixtures$pol_5_2 + POL_fixtures$pol_5_3 +
+    POL_fixtures$pol_5_4 + POL_fixtures$pol_1_5 + POL_fixtures$pol_2_5 + POL_fixtures$pol_3_5 + POL_fixtures$pol_4_5 +
+    POL_fixtures$pol_6_6 + POL_fixtures$pol_6_1 + POL_fixtures$pol_6_2 + POL_fixtures$pol_6_3 + POL_fixtures$pol_6_4 +
+    POL_fixtures$pol_6_5 + POL_fixtures$pol_1_6 + POL_fixtures$pol_2_6 + POL_fixtures$pol_3_6 + POL_fixtures$pol_4_6 +
+    POL_fixtures$pol_5_6
+)
+#BTTSN
+POL_fixtures$pol_BTTSN <- (
+  POL_fixtures$pol_0_0 + POL_fixtures$pol_1_0 + POL_fixtures$pol_0_1 + POL_fixtures$pol_2_0 + POL_fixtures$pol_0_2 +
+    POL_fixtures$pol_3_0 + POL_fixtures$pol_0_3 + POL_fixtures$pol_4_0 + POL_fixtures$pol_0_4 + POL_fixtures$pol_5_0 +
+    POL_fixtures$pol_0_5 + POL_fixtures$pol_6_0 + POL_fixtures$pol_0_6
+)
+
+POL_fixtures$pol_BTTSY_odds <- round((1/POL_fixtures$pol_BTTSY),digits = 2)
+POL_fixtures$pol_BTTSN_odds <- round((1/POL_fixtures$pol_BTTSN),digits = 2)
+
+POL_fixtures$pol_BTTSY <- percent(POL_fixtures$pol_BTTSY, accuracy = 0.1)
+POL_fixtures$pol_BTTSN <- percent(POL_fixtures$pol_BTTSN, accuracy = 0.1)
+#odds
+POL_fixtures$pol_BTTSY_odds
+POL_fixtures$pol_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)

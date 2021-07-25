@@ -704,6 +704,34 @@ BRA_fixtures$bra_un25_odds <- round((1/BRA_fixtures$bra_un25),digits = 2)
 
 BRA_fixtures$bra_ov25_odds
 BRA_fixtures$bra_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+BRA_fixtures$bra_BTTSY <- (
+  BRA_fixtures$bra_1_1 + BRA_fixtures$bra_2_1 + BRA_fixtures$bra_1_2 + BRA_fixtures$bra_3_1 + BRA_fixtures$bra_3_2 +
+    BRA_fixtures$bra_2_2 + BRA_fixtures$bra_1_3 + BRA_fixtures$bra_2_3 + BRA_fixtures$bra_3_3 + BRA_fixtures$bra_4_4 +
+    BRA_fixtures$bra_4_1 + BRA_fixtures$bra_4_3 + BRA_fixtures$bra_4_2 + BRA_fixtures$bra_1_4 + BRA_fixtures$bra_2_4 +
+    BRA_fixtures$bra_3_4 + BRA_fixtures$bra_5_5 + BRA_fixtures$bra_5_1 + BRA_fixtures$bra_5_2 + BRA_fixtures$bra_5_3 +
+    BRA_fixtures$bra_5_4 + BRA_fixtures$bra_1_5 + BRA_fixtures$bra_2_5 + BRA_fixtures$bra_3_5 + BRA_fixtures$bra_4_5 +
+    BRA_fixtures$bra_6_6 + BRA_fixtures$bra_6_1 + BRA_fixtures$bra_6_2 + BRA_fixtures$bra_6_3 + BRA_fixtures$bra_6_4 +
+    BRA_fixtures$bra_6_5 + BRA_fixtures$bra_1_6 + BRA_fixtures$bra_2_6 + BRA_fixtures$bra_3_6 + BRA_fixtures$bra_4_6 +
+    BRA_fixtures$bra_5_6
+)
+#BTTSN
+BRA_fixtures$bra_BTTSN <- (
+  BRA_fixtures$bra_0_0 + BRA_fixtures$bra_1_0 + BRA_fixtures$bra_0_1 + BRA_fixtures$bra_2_0 + BRA_fixtures$bra_0_2 +
+    BRA_fixtures$bra_3_0 + BRA_fixtures$bra_0_3 + BRA_fixtures$bra_4_0 + BRA_fixtures$bra_0_4 + BRA_fixtures$bra_5_0 +
+    BRA_fixtures$bra_0_5 + BRA_fixtures$bra_6_0 + BRA_fixtures$bra_0_6
+)
+
+BRA_fixtures$bra_BTTSY_odds <- round((1/BRA_fixtures$bra_BTTSY),digits = 2)
+BRA_fixtures$bra_BTTSN_odds <- round((1/BRA_fixtures$bra_BTTSN),digits = 2)
+
+BRA_fixtures$bra_BTTSY <- percent(BRA_fixtures$bra_BTTSY, accuracy = 0.1)
+BRA_fixtures$bra_BTTSN <- percent(BRA_fixtures$bra_BTTSN, accuracy = 0.1)
+#odds
+BRA_fixtures$bra_BTTSY_odds
+BRA_fixtures$bra_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)

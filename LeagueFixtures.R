@@ -160,6 +160,34 @@ B1_fixtures$b1_un25_odds <- round((1/B1_fixtures$b1_un25),digits = 2)
 
 B1_fixtures$b1_ov25_odds
 B1_fixtures$b1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+B1_fixtures$b1_BTTSY <- (
+  B1_fixtures$b1_1_1 + B1_fixtures$b1_2_1 + B1_fixtures$b1_1_2 + B1_fixtures$b1_3_1 + B1_fixtures$b1_3_2 +
+    B1_fixtures$b1_2_2 + B1_fixtures$b1_1_3 + B1_fixtures$b1_2_3 + B1_fixtures$b1_3_3 + B1_fixtures$b1_4_4 +
+    B1_fixtures$b1_4_1 + B1_fixtures$b1_4_3 + B1_fixtures$b1_4_2 + B1_fixtures$b1_1_4 + B1_fixtures$b1_2_4 +
+    B1_fixtures$b1_3_4 + B1_fixtures$b1_5_5 + B1_fixtures$b1_5_1 + B1_fixtures$b1_5_2 + B1_fixtures$b1_5_3 +
+    B1_fixtures$b1_5_4 + B1_fixtures$b1_1_5 + B1_fixtures$b1_2_5 + B1_fixtures$b1_3_5 + B1_fixtures$b1_4_5 +
+    B1_fixtures$b1_6_6 + B1_fixtures$b1_6_1 + B1_fixtures$b1_6_2 + B1_fixtures$b1_6_3 + B1_fixtures$b1_6_4 +
+    B1_fixtures$b1_6_5 + B1_fixtures$b1_1_6 + B1_fixtures$b1_2_6 + B1_fixtures$b1_3_6 + B1_fixtures$b1_4_6 +
+    B1_fixtures$b1_5_6
+)
+#BTTSN
+B1_fixtures$b1_BTTSN <- (
+  B1_fixtures$b1_0_0 + B1_fixtures$b1_1_0 + B1_fixtures$b1_0_1 + B1_fixtures$b1_2_0 + B1_fixtures$b1_0_2 +
+    B1_fixtures$b1_3_0 + B1_fixtures$b1_0_3 + B1_fixtures$b1_4_0 + B1_fixtures$b1_0_4 + B1_fixtures$b1_5_0 +
+    B1_fixtures$b1_0_5 + B1_fixtures$b1_6_0 + B1_fixtures$b1_0_6
+)
+
+B1_fixtures$b1_BTTSY_odds <- round((1/B1_fixtures$b1_BTTSY),digits = 2)
+B1_fixtures$b1_BTTSN_odds <- round((1/B1_fixtures$b1_BTTSN),digits = 2)
+
+B1_fixtures$b1_BTTSY <- percent(B1_fixtures$b1_BTTSY, accuracy = 0.1)
+B1_fixtures$b1_BTTSN <- percent(B1_fixtures$b1_BTTSN, accuracy = 0.1)
+#odds
+B1_fixtures$b1_BTTSY_odds
+B1_fixtures$b1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -474,6 +502,34 @@ D1_fixtures$d1_un25_odds <- round((1/D1_fixtures$d1_un25),digits = 2)
 
 D1_fixtures$d1_ov25_odds
 D1_fixtures$d1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+D1_fixtures$d1_BTTSY <- (
+  D1_fixtures$d1_1_1 + D1_fixtures$d1_2_1 + D1_fixtures$d1_1_2 + D1_fixtures$d1_3_1 + D1_fixtures$d1_3_2 +
+    D1_fixtures$d1_2_2 + D1_fixtures$d1_1_3 + D1_fixtures$d1_2_3 + D1_fixtures$d1_3_3 + D1_fixtures$d1_4_4 +
+    D1_fixtures$d1_4_1 + D1_fixtures$d1_4_3 + D1_fixtures$d1_4_2 + D1_fixtures$d1_1_4 + D1_fixtures$d1_2_4 +
+    D1_fixtures$d1_3_4 + D1_fixtures$d1_5_5 + D1_fixtures$d1_5_1 + D1_fixtures$d1_5_2 + D1_fixtures$d1_5_3 +
+    D1_fixtures$d1_5_4 + D1_fixtures$d1_1_5 + D1_fixtures$d1_2_5 + D1_fixtures$d1_3_5 + D1_fixtures$d1_4_5 +
+    D1_fixtures$d1_6_6 + D1_fixtures$d1_6_1 + D1_fixtures$d1_6_2 + D1_fixtures$d1_6_3 + D1_fixtures$d1_6_4 +
+    D1_fixtures$d1_6_5 + D1_fixtures$d1_1_6 + D1_fixtures$d1_2_6 + D1_fixtures$d1_3_6 + D1_fixtures$d1_4_6 +
+    D1_fixtures$d1_5_6
+)
+#BTTSN
+D1_fixtures$d1_BTTSN <- (
+  D1_fixtures$d1_0_0 + D1_fixtures$d1_1_0 + D1_fixtures$d1_0_1 + D1_fixtures$d1_2_0 + D1_fixtures$d1_0_2 +
+    D1_fixtures$d1_3_0 + D1_fixtures$d1_0_3 + D1_fixtures$d1_4_0 + D1_fixtures$d1_0_4 + D1_fixtures$d1_5_0 +
+    D1_fixtures$d1_0_5 + D1_fixtures$d1_6_0 + D1_fixtures$d1_0_6
+)
+
+D1_fixtures$d1_BTTSY_odds <- round((1/D1_fixtures$d1_BTTSY),digits = 2)
+D1_fixtures$d1_BTTSN_odds <- round((1/D1_fixtures$d1_BTTSN),digits = 2)
+
+D1_fixtures$d1_BTTSY <- percent(D1_fixtures$d1_BTTSY, accuracy = 0.1)
+D1_fixtures$d1_BTTSN <- percent(D1_fixtures$d1_BTTSN, accuracy = 0.1)
+#odds
+D1_fixtures$d1_BTTSY_odds
+D1_fixtures$d1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -788,6 +844,34 @@ D2_fixtures$d2_un25_odds <- round((1/D2_fixtures$d2_un25),digits = 2)
 
 D2_fixtures$d2_ov25_odds
 D2_fixtures$d2_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+D2_fixtures$d2_BTTSY <- (
+  D2_fixtures$d2_1_1 + D2_fixtures$d2_2_1 + D2_fixtures$d2_1_2 + D2_fixtures$d2_3_1 + D2_fixtures$d2_3_2 +
+    D2_fixtures$d2_2_2 + D2_fixtures$d2_1_3 + D2_fixtures$d2_2_3 + D2_fixtures$d2_3_3 + D2_fixtures$d2_4_4 +
+    D2_fixtures$d2_4_1 + D2_fixtures$d2_4_3 + D2_fixtures$d2_4_2 + D2_fixtures$d2_1_4 + D2_fixtures$d2_2_4 +
+    D2_fixtures$d2_3_4 + D2_fixtures$d2_5_5 + D2_fixtures$d2_5_1 + D2_fixtures$d2_5_2 + D2_fixtures$d2_5_3 +
+    D2_fixtures$d2_5_4 + D2_fixtures$d2_1_5 + D2_fixtures$d2_2_5 + D2_fixtures$d2_3_5 + D2_fixtures$d2_4_5 +
+    D2_fixtures$d2_6_6 + D2_fixtures$d2_6_1 + D2_fixtures$d2_6_2 + D2_fixtures$d2_6_3 + D2_fixtures$d2_6_4 +
+    D2_fixtures$d2_6_5 + D2_fixtures$d2_1_6 + D2_fixtures$d2_2_6 + D2_fixtures$d2_3_6 + D2_fixtures$d2_4_6 +
+    D2_fixtures$d2_5_6
+)
+#BTTSN
+D2_fixtures$d2_BTTSN <- (
+  D2_fixtures$d2_0_0 + D2_fixtures$d2_1_0 + D2_fixtures$d2_0_1 + D2_fixtures$d2_2_0 + D2_fixtures$d2_0_2 +
+    D2_fixtures$d2_3_0 + D2_fixtures$d2_0_3 + D2_fixtures$d2_4_0 + D2_fixtures$d2_0_4 + D2_fixtures$d2_5_0 +
+    D2_fixtures$d2_0_5 + D2_fixtures$d2_6_0 + D2_fixtures$d2_0_6
+)
+
+D2_fixtures$d2_BTTSY_odds <- round((1/D2_fixtures$d2_BTTSY),digits = 2)
+D2_fixtures$d2_BTTSN_odds <- round((1/D2_fixtures$d2_BTTSN),digits = 2)
+
+D2_fixtures$d2_BTTSY <- percent(D2_fixtures$d2_BTTSY, accuracy = 0.1)
+D2_fixtures$d2_BTTSN <- percent(D2_fixtures$d2_BTTSN, accuracy = 0.1)
+#odds
+D2_fixtures$d2_BTTSY_odds
+D2_fixtures$d2_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -1102,6 +1186,34 @@ E0_fixtures$e0_un25_odds <- round((1/E0_fixtures$e0_un25),digits = 2)
 
 E0_fixtures$e0_ov25_odds
 E0_fixtures$e0_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+E0_fixtures$e0_BTTSY <- (
+  E0_fixtures$e0_1_1 + E0_fixtures$e0_2_1 + E0_fixtures$e0_1_2 + E0_fixtures$e0_3_1 + E0_fixtures$e0_3_2 +
+    E0_fixtures$e0_2_2 + E0_fixtures$e0_1_3 + E0_fixtures$e0_2_3 + E0_fixtures$e0_3_3 + E0_fixtures$e0_4_4 +
+    E0_fixtures$e0_4_1 + E0_fixtures$e0_4_3 + E0_fixtures$e0_4_2 + E0_fixtures$e0_1_4 + E0_fixtures$e0_2_4 +
+    E0_fixtures$e0_3_4 + E0_fixtures$e0_5_5 + E0_fixtures$e0_5_1 + E0_fixtures$e0_5_2 + E0_fixtures$e0_5_3 +
+    E0_fixtures$e0_5_4 + E0_fixtures$e0_1_5 + E0_fixtures$e0_2_5 + E0_fixtures$e0_3_5 + E0_fixtures$e0_4_5 +
+    E0_fixtures$e0_6_6 + E0_fixtures$e0_6_1 + E0_fixtures$e0_6_2 + E0_fixtures$e0_6_3 + E0_fixtures$e0_6_4 +
+    E0_fixtures$e0_6_5 + E0_fixtures$e0_1_6 + E0_fixtures$e0_2_6 + E0_fixtures$e0_3_6 + E0_fixtures$e0_4_6 +
+    E0_fixtures$e0_5_6
+)
+#BTTSN
+E0_fixtures$e0_BTTSN <- (
+  E0_fixtures$e0_0_0 + E0_fixtures$e0_1_0 + E0_fixtures$e0_0_1 + E0_fixtures$e0_2_0 + E0_fixtures$e0_0_2 +
+    E0_fixtures$e0_3_0 + E0_fixtures$e0_0_3 + E0_fixtures$e0_4_0 + E0_fixtures$e0_0_4 + E0_fixtures$e0_5_0 +
+    E0_fixtures$e0_0_5 + E0_fixtures$e0_6_0 + E0_fixtures$e0_0_6
+)
+
+E0_fixtures$e0_BTTSY_odds <- round((1/E0_fixtures$e0_BTTSY),digits = 2)
+E0_fixtures$e0_BTTSN_odds <- round((1/E0_fixtures$e0_BTTSN),digits = 2)
+
+E0_fixtures$e0_BTTSY <- percent(E0_fixtures$e0_BTTSY, accuracy = 0.1)
+E0_fixtures$e0_BTTSN <- percent(E0_fixtures$e0_BTTSN, accuracy = 0.1)
+#odds
+E0_fixtures$e0_BTTSY_odds
+E0_fixtures$e0_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -1416,6 +1528,34 @@ E1_fixtures$e1_un25_odds <- round((1/E1_fixtures$e1_un25),digits = 2)
 
 E1_fixtures$e1_ov25_odds
 E1_fixtures$e1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+E1_fixtures$e1_BTTSY <- (
+  E1_fixtures$e1_1_1 + E1_fixtures$e1_2_1 + E1_fixtures$e1_1_2 + E1_fixtures$e1_3_1 + E1_fixtures$e1_3_2 +
+    E1_fixtures$e1_2_2 + E1_fixtures$e1_1_3 + E1_fixtures$e1_2_3 + E1_fixtures$e1_3_3 + E1_fixtures$e1_4_4 +
+    E1_fixtures$e1_4_1 + E1_fixtures$e1_4_3 + E1_fixtures$e1_4_2 + E1_fixtures$e1_1_4 + E1_fixtures$e1_2_4 +
+    E1_fixtures$e1_3_4 + E1_fixtures$e1_5_5 + E1_fixtures$e1_5_1 + E1_fixtures$e1_5_2 + E1_fixtures$e1_5_3 +
+    E1_fixtures$e1_5_4 + E1_fixtures$e1_1_5 + E1_fixtures$e1_2_5 + E1_fixtures$e1_3_5 + E1_fixtures$e1_4_5 +
+    E1_fixtures$e1_6_6 + E1_fixtures$e1_6_1 + E1_fixtures$e1_6_2 + E1_fixtures$e1_6_3 + E1_fixtures$e1_6_4 +
+    E1_fixtures$e1_6_5 + E1_fixtures$e1_1_6 + E1_fixtures$e1_2_6 + E1_fixtures$e1_3_6 + E1_fixtures$e1_4_6 +
+    E1_fixtures$e1_5_6
+)
+#BTTSN
+E1_fixtures$e1_BTTSN <- (
+  E1_fixtures$e1_0_0 + E1_fixtures$e1_1_0 + E1_fixtures$e1_0_1 + E1_fixtures$e1_2_0 + E1_fixtures$e1_0_2 +
+    E1_fixtures$e1_3_0 + E1_fixtures$e1_0_3 + E1_fixtures$e1_4_0 + E1_fixtures$e1_0_4 + E1_fixtures$e1_5_0 +
+    E1_fixtures$e1_0_5 + E1_fixtures$e1_6_0 + E1_fixtures$e1_0_6
+)
+
+E1_fixtures$e1_BTTSY_odds <- round((1/E1_fixtures$e1_BTTSY),digits = 2)
+E1_fixtures$e1_BTTSN_odds <- round((1/E1_fixtures$e1_BTTSN),digits = 2)
+
+E1_fixtures$e1_BTTSY <- percent(E1_fixtures$e1_BTTSY, accuracy = 0.1)
+E1_fixtures$e1_BTTSN <- percent(E1_fixtures$e1_BTTSN, accuracy = 0.1)
+#odds
+E1_fixtures$e1_BTTSY_odds
+E1_fixtures$e1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -1730,6 +1870,34 @@ E2_fixtures$e2_un25_odds <- round((1/E2_fixtures$e2_un25),digits = 2)
 
 E2_fixtures$e2_ov25_odds
 E2_fixtures$e2_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+E2_fixtures$e2_BTTSY <- (
+  E2_fixtures$e2_1_1 + E2_fixtures$e2_2_1 + E2_fixtures$e2_1_2 + E2_fixtures$e2_3_1 + E2_fixtures$e2_3_2 +
+    E2_fixtures$e2_2_2 + E2_fixtures$e2_1_3 + E2_fixtures$e2_2_3 + E2_fixtures$e2_3_3 + E2_fixtures$e2_4_4 +
+    E2_fixtures$e2_4_1 + E2_fixtures$e2_4_3 + E2_fixtures$e2_4_2 + E2_fixtures$e2_1_4 + E2_fixtures$e2_2_4 +
+    E2_fixtures$e2_3_4 + E2_fixtures$e2_5_5 + E2_fixtures$e2_5_1 + E2_fixtures$e2_5_2 + E2_fixtures$e2_5_3 +
+    E2_fixtures$e2_5_4 + E2_fixtures$e2_1_5 + E2_fixtures$e2_2_5 + E2_fixtures$e2_3_5 + E2_fixtures$e2_4_5 +
+    E2_fixtures$e2_6_6 + E2_fixtures$e2_6_1 + E2_fixtures$e2_6_2 + E2_fixtures$e2_6_3 + E2_fixtures$e2_6_4 +
+    E2_fixtures$e2_6_5 + E2_fixtures$e2_1_6 + E2_fixtures$e2_2_6 + E2_fixtures$e2_3_6 + E2_fixtures$e2_4_6 +
+    E2_fixtures$e2_5_6
+)
+#BTTSN
+E2_fixtures$e2_BTTSN <- (
+  E2_fixtures$e2_0_0 + E2_fixtures$e2_1_0 + E2_fixtures$e2_0_1 + E2_fixtures$e2_2_0 + E2_fixtures$e2_0_2 +
+    E2_fixtures$e2_3_0 + E2_fixtures$e2_0_3 + E2_fixtures$e2_4_0 + E2_fixtures$e2_0_4 + E2_fixtures$e2_5_0 +
+    E2_fixtures$e2_0_5 + E2_fixtures$e2_6_0 + E2_fixtures$e2_0_6
+)
+
+E2_fixtures$e2_BTTSY_odds <- round((1/E2_fixtures$e2_BTTSY),digits = 2)
+E2_fixtures$e2_BTTSN_odds <- round((1/E2_fixtures$e2_BTTSN),digits = 2)
+
+E2_fixtures$e2_BTTSY <- percent(E2_fixtures$e2_BTTSY, accuracy = 0.1)
+E2_fixtures$e2_BTTSN <- percent(E2_fixtures$e2_BTTSN, accuracy = 0.1)
+#odds
+E2_fixtures$e2_BTTSY_odds
+E2_fixtures$e2_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -2044,6 +2212,34 @@ E3_fixtures$e3_un25_odds <- round((1/E3_fixtures$e3_un25),digits = 2)
 
 E3_fixtures$e3_ov25_odds
 E3_fixtures$e3_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+E3_fixtures$e3_BTTSY <- (
+  E3_fixtures$e3_1_1 + E3_fixtures$e3_2_1 + E3_fixtures$e3_1_2 + E3_fixtures$e3_3_1 + E3_fixtures$e3_3_2 +
+    E3_fixtures$e3_2_2 + E3_fixtures$e3_1_3 + E3_fixtures$e3_2_3 + E3_fixtures$e3_3_3 + E3_fixtures$e3_4_4 +
+    E3_fixtures$e3_4_1 + E3_fixtures$e3_4_3 + E3_fixtures$e3_4_2 + E3_fixtures$e3_1_4 + E3_fixtures$e3_2_4 +
+    E3_fixtures$e3_3_4 + E3_fixtures$e3_5_5 + E3_fixtures$e3_5_1 + E3_fixtures$e3_5_2 + E3_fixtures$e3_5_3 +
+    E3_fixtures$e3_5_4 + E3_fixtures$e3_1_5 + E3_fixtures$e3_2_5 + E3_fixtures$e3_3_5 + E3_fixtures$e3_4_5 +
+    E3_fixtures$e3_6_6 + E3_fixtures$e3_6_1 + E3_fixtures$e3_6_2 + E3_fixtures$e3_6_3 + E3_fixtures$e3_6_4 +
+    E3_fixtures$e3_6_5 + E3_fixtures$e3_1_6 + E3_fixtures$e3_2_6 + E3_fixtures$e3_3_6 + E3_fixtures$e3_4_6 +
+    E3_fixtures$e3_5_6
+)
+#BTTSN
+E3_fixtures$e3_BTTSN <- (
+  E3_fixtures$e3_0_0 + E3_fixtures$e3_1_0 + E3_fixtures$e3_0_1 + E3_fixtures$e3_2_0 + E3_fixtures$e3_0_2 +
+    E3_fixtures$e3_3_0 + E3_fixtures$e3_0_3 + E3_fixtures$e3_4_0 + E3_fixtures$e3_0_4 + E3_fixtures$e3_5_0 +
+    E3_fixtures$e3_0_5 + E3_fixtures$e3_6_0 + E3_fixtures$e3_0_6
+)
+
+E3_fixtures$e3_BTTSY_odds <- round((1/E3_fixtures$e3_BTTSY),digits = 2)
+E3_fixtures$e3_BTTSN_odds <- round((1/E3_fixtures$e3_BTTSN),digits = 2)
+
+E3_fixtures$e3_BTTSY <- percent(E3_fixtures$e3_BTTSY, accuracy = 0.1)
+E3_fixtures$e3_BTTSN <- percent(E3_fixtures$e3_BTTSN, accuracy = 0.1)
+#odds
+E3_fixtures$e3_BTTSY_odds
+E3_fixtures$e3_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -2358,6 +2554,34 @@ EC_fixtures$ec_un25_odds <- round((1/EC_fixtures$ec_un25),digits = 2)
 
 EC_fixtures$ec_ov25_odds
 EC_fixtures$ec_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+EC_fixtures$ec_BTTSY <- (
+  EC_fixtures$ec_1_1 + EC_fixtures$ec_2_1 + EC_fixtures$ec_1_2 + EC_fixtures$ec_3_1 + EC_fixtures$ec_3_2 +
+    EC_fixtures$ec_2_2 + EC_fixtures$ec_1_3 + EC_fixtures$ec_2_3 + EC_fixtures$ec_3_3 + EC_fixtures$ec_4_4 +
+    EC_fixtures$ec_4_1 + EC_fixtures$ec_4_3 + EC_fixtures$ec_4_2 + EC_fixtures$ec_1_4 + EC_fixtures$ec_2_4 +
+    EC_fixtures$ec_3_4 + EC_fixtures$ec_5_5 + EC_fixtures$ec_5_1 + EC_fixtures$ec_5_2 + EC_fixtures$ec_5_3 +
+    EC_fixtures$ec_5_4 + EC_fixtures$ec_1_5 + EC_fixtures$ec_2_5 + EC_fixtures$ec_3_5 + EC_fixtures$ec_4_5 +
+    EC_fixtures$ec_6_6 + EC_fixtures$ec_6_1 + EC_fixtures$ec_6_2 + EC_fixtures$ec_6_3 + EC_fixtures$ec_6_4 +
+    EC_fixtures$ec_6_5 + EC_fixtures$ec_1_6 + EC_fixtures$ec_2_6 + EC_fixtures$ec_3_6 + EC_fixtures$ec_4_6 +
+    EC_fixtures$ec_5_6
+)
+#BTTSN
+EC_fixtures$ec_BTTSN <- (
+  EC_fixtures$ec_0_0 + EC_fixtures$ec_1_0 + EC_fixtures$ec_0_1 + EC_fixtures$ec_2_0 + EC_fixtures$ec_0_2 +
+    EC_fixtures$ec_3_0 + EC_fixtures$ec_0_3 + EC_fixtures$ec_4_0 + EC_fixtures$ec_0_4 + EC_fixtures$ec_5_0 +
+    EC_fixtures$ec_0_5 + EC_fixtures$ec_6_0 + EC_fixtures$ec_0_6
+)
+
+EC_fixtures$ec_BTTSY_odds <- round((1/EC_fixtures$ec_BTTSY),digits = 2)
+EC_fixtures$ec_BTTSN_odds <- round((1/EC_fixtures$ec_BTTSN),digits = 2)
+
+EC_fixtures$ec_BTTSY <- percent(EC_fixtures$ec_BTTSY, accuracy = 0.1)
+EC_fixtures$ec_BTTSN <- percent(EC_fixtures$ec_BTTSN, accuracy = 0.1)
+#odds
+EC_fixtures$ec_BTTSY_odds
+EC_fixtures$ec_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -2672,6 +2896,34 @@ F1_fixtures$f1_un25_odds <- round((1/F1_fixtures$f1_un25),digits = 2)
 
 F1_fixtures$f1_ov25_odds
 F1_fixtures$f1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+F1_fixtures$f1_BTTSY <- (
+  F1_fixtures$f1_1_1 + F1_fixtures$f1_2_1 + F1_fixtures$f1_1_2 + F1_fixtures$f1_3_1 + F1_fixtures$f1_3_2 +
+    F1_fixtures$f1_2_2 + F1_fixtures$f1_1_3 + F1_fixtures$f1_2_3 + F1_fixtures$f1_3_3 + F1_fixtures$f1_4_4 +
+    F1_fixtures$f1_4_1 + F1_fixtures$f1_4_3 + F1_fixtures$f1_4_2 + F1_fixtures$f1_1_4 + F1_fixtures$f1_2_4 +
+    F1_fixtures$f1_3_4 + F1_fixtures$f1_5_5 + F1_fixtures$f1_5_1 + F1_fixtures$f1_5_2 + F1_fixtures$f1_5_3 +
+    F1_fixtures$f1_5_4 + F1_fixtures$f1_1_5 + F1_fixtures$f1_2_5 + F1_fixtures$f1_3_5 + F1_fixtures$f1_4_5 +
+    F1_fixtures$f1_6_6 + F1_fixtures$f1_6_1 + F1_fixtures$f1_6_2 + F1_fixtures$f1_6_3 + F1_fixtures$f1_6_4 +
+    F1_fixtures$f1_6_5 + F1_fixtures$f1_1_6 + F1_fixtures$f1_2_6 + F1_fixtures$f1_3_6 + F1_fixtures$f1_4_6 +
+    F1_fixtures$f1_5_6
+)
+#BTTSN
+F1_fixtures$f1_BTTSN <- (
+  F1_fixtures$f1_0_0 + F1_fixtures$f1_1_0 + F1_fixtures$f1_0_1 + F1_fixtures$f1_2_0 + F1_fixtures$f1_0_2 +
+    F1_fixtures$f1_3_0 + F1_fixtures$f1_0_3 + F1_fixtures$f1_4_0 + F1_fixtures$f1_0_4 + F1_fixtures$f1_5_0 +
+    F1_fixtures$f1_0_5 + F1_fixtures$f1_6_0 + F1_fixtures$f1_0_6
+)
+
+F1_fixtures$f1_BTTSY_odds <- round((1/F1_fixtures$f1_BTTSY),digits = 2)
+F1_fixtures$f1_BTTSN_odds <- round((1/F1_fixtures$f1_BTTSN),digits = 2)
+
+F1_fixtures$f1_BTTSY <- percent(F1_fixtures$f1_BTTSY, accuracy = 0.1)
+F1_fixtures$f1_BTTSN <- percent(F1_fixtures$f1_BTTSN, accuracy = 0.1)
+#odds
+F1_fixtures$f1_BTTSY_odds
+F1_fixtures$f1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -2986,6 +3238,34 @@ F2_fixtures$f2_un25_odds <- round((1/F2_fixtures$f2_un25),digits = 2)
 
 F2_fixtures$f2_ov25_odds
 F2_fixtures$f2_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+F2_fixtures$f2_BTTSY <- (
+  F2_fixtures$f2_1_1 + F2_fixtures$f2_2_1 + F2_fixtures$f2_1_2 + F2_fixtures$f2_3_1 + F2_fixtures$f2_3_2 +
+    F2_fixtures$f2_2_2 + F2_fixtures$f2_1_3 + F2_fixtures$f2_2_3 + F2_fixtures$f2_3_3 + F2_fixtures$f2_4_4 +
+    F2_fixtures$f2_4_1 + F2_fixtures$f2_4_3 + F2_fixtures$f2_4_2 + F2_fixtures$f2_1_4 + F2_fixtures$f2_2_4 +
+    F2_fixtures$f2_3_4 + F2_fixtures$f2_5_5 + F2_fixtures$f2_5_1 + F2_fixtures$f2_5_2 + F2_fixtures$f2_5_3 +
+    F2_fixtures$f2_5_4 + F2_fixtures$f2_1_5 + F2_fixtures$f2_2_5 + F2_fixtures$f2_3_5 + F2_fixtures$f2_4_5 +
+    F2_fixtures$f2_6_6 + F2_fixtures$f2_6_1 + F2_fixtures$f2_6_2 + F2_fixtures$f2_6_3 + F2_fixtures$f2_6_4 +
+    F2_fixtures$f2_6_5 + F2_fixtures$f2_1_6 + F2_fixtures$f2_2_6 + F2_fixtures$f2_3_6 + F2_fixtures$f2_4_6 +
+    F2_fixtures$f2_5_6
+)
+#BTTSN
+F2_fixtures$f2_BTTSN <- (
+  F2_fixtures$f2_0_0 + F2_fixtures$f2_1_0 + F2_fixtures$f2_0_1 + F2_fixtures$f2_2_0 + F2_fixtures$f2_0_2 +
+    F2_fixtures$f2_3_0 + F2_fixtures$f2_0_3 + F2_fixtures$f2_4_0 + F2_fixtures$f2_0_4 + F2_fixtures$f2_5_0 +
+    F2_fixtures$f2_0_5 + F2_fixtures$f2_6_0 + F2_fixtures$f2_0_6
+)
+
+F2_fixtures$f2_BTTSY_odds <- round((1/F2_fixtures$f2_BTTSY),digits = 2)
+F2_fixtures$f2_BTTSN_odds <- round((1/F2_fixtures$f2_BTTSN),digits = 2)
+
+F2_fixtures$f2_BTTSY <- percent(F2_fixtures$f2_BTTSY, accuracy = 0.1)
+F2_fixtures$f2_BTTSN <- percent(F2_fixtures$f2_BTTSN, accuracy = 0.1)
+#odds
+F2_fixtures$f2_BTTSY_odds
+F2_fixtures$f2_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -3300,6 +3580,34 @@ G1_fixtures$g1_un25_odds <- round((1/G1_fixtures$g1_un25),digits = 2)
 
 G1_fixtures$g1_ov25_odds
 G1_fixtures$g1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+G1_fixtures$g1_BTTSY <- (
+  G1_fixtures$g1_1_1 + G1_fixtures$g1_2_1 + G1_fixtures$g1_1_2 + G1_fixtures$g1_3_1 + G1_fixtures$g1_3_2 +
+    G1_fixtures$g1_2_2 + G1_fixtures$g1_1_3 + G1_fixtures$g1_2_3 + G1_fixtures$g1_3_3 + G1_fixtures$g1_4_4 +
+    G1_fixtures$g1_4_1 + G1_fixtures$g1_4_3 + G1_fixtures$g1_4_2 + G1_fixtures$g1_1_4 + G1_fixtures$g1_2_4 +
+    G1_fixtures$g1_3_4 + G1_fixtures$g1_5_5 + G1_fixtures$g1_5_1 + G1_fixtures$g1_5_2 + G1_fixtures$g1_5_3 +
+    G1_fixtures$g1_5_4 + G1_fixtures$g1_1_5 + G1_fixtures$g1_2_5 + G1_fixtures$g1_3_5 + G1_fixtures$g1_4_5 +
+    G1_fixtures$g1_6_6 + G1_fixtures$g1_6_1 + G1_fixtures$g1_6_2 + G1_fixtures$g1_6_3 + G1_fixtures$g1_6_4 +
+    G1_fixtures$g1_6_5 + G1_fixtures$g1_1_6 + G1_fixtures$g1_2_6 + G1_fixtures$g1_3_6 + G1_fixtures$g1_4_6 +
+    G1_fixtures$g1_5_6
+)
+#BTTSN
+G1_fixtures$g1_BTTSN <- (
+  G1_fixtures$g1_0_0 + G1_fixtures$g1_1_0 + G1_fixtures$g1_0_1 + G1_fixtures$g1_2_0 + G1_fixtures$g1_0_2 +
+    G1_fixtures$g1_3_0 + G1_fixtures$g1_0_3 + G1_fixtures$g1_4_0 + G1_fixtures$g1_0_4 + G1_fixtures$g1_5_0 +
+    G1_fixtures$g1_0_5 + G1_fixtures$g1_6_0 + G1_fixtures$g1_0_6
+)
+
+G1_fixtures$g1_BTTSY_odds <- round((1/G1_fixtures$g1_BTTSY),digits = 2)
+G1_fixtures$g1_BTTSN_odds <- round((1/G1_fixtures$g1_BTTSN),digits = 2)
+
+G1_fixtures$g1_BTTSY <- percent(G1_fixtures$g1_BTTSY, accuracy = 0.1)
+G1_fixtures$g1_BTTSN <- percent(G1_fixtures$g1_BTTSN, accuracy = 0.1)
+#odds
+G1_fixtures$g1_BTTSY_odds
+G1_fixtures$g1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -3614,6 +3922,34 @@ I1_fixtures$i1_un25_odds <- round((1/I1_fixtures$i1_un25),digits = 2)
 
 I1_fixtures$i1_ov25_odds
 I1_fixtures$i1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+I1_fixtures$i1_BTTSY <- (
+  I1_fixtures$i1_1_1 + I1_fixtures$i1_2_1 + I1_fixtures$i1_1_2 + I1_fixtures$i1_3_1 + I1_fixtures$i1_3_2 +
+    I1_fixtures$i1_2_2 + I1_fixtures$i1_1_3 + I1_fixtures$i1_2_3 + I1_fixtures$i1_3_3 + I1_fixtures$i1_4_4 +
+    I1_fixtures$i1_4_1 + I1_fixtures$i1_4_3 + I1_fixtures$i1_4_2 + I1_fixtures$i1_1_4 + I1_fixtures$i1_2_4 +
+    I1_fixtures$i1_3_4 + I1_fixtures$i1_5_5 + I1_fixtures$i1_5_1 + I1_fixtures$i1_5_2 + I1_fixtures$i1_5_3 +
+    I1_fixtures$i1_5_4 + I1_fixtures$i1_1_5 + I1_fixtures$i1_2_5 + I1_fixtures$i1_3_5 + I1_fixtures$i1_4_5 +
+    I1_fixtures$i1_6_6 + I1_fixtures$i1_6_1 + I1_fixtures$i1_6_2 + I1_fixtures$i1_6_3 + I1_fixtures$i1_6_4 +
+    I1_fixtures$i1_6_5 + I1_fixtures$i1_1_6 + I1_fixtures$i1_2_6 + I1_fixtures$i1_3_6 + I1_fixtures$i1_4_6 +
+    I1_fixtures$i1_5_6
+)
+#BTTSN
+I1_fixtures$i1_BTTSN <- (
+  I1_fixtures$i1_0_0 + I1_fixtures$i1_1_0 + I1_fixtures$i1_0_1 + I1_fixtures$i1_2_0 + I1_fixtures$i1_0_2 +
+    I1_fixtures$i1_3_0 + I1_fixtures$i1_0_3 + I1_fixtures$i1_4_0 + I1_fixtures$i1_0_4 + I1_fixtures$i1_5_0 +
+    I1_fixtures$i1_0_5 + I1_fixtures$i1_6_0 + I1_fixtures$i1_0_6
+)
+
+I1_fixtures$i1_BTTSY_odds <- round((1/I1_fixtures$i1_BTTSY),digits = 2)
+I1_fixtures$i1_BTTSN_odds <- round((1/I1_fixtures$i1_BTTSN),digits = 2)
+
+I1_fixtures$i1_BTTSY <- percent(I1_fixtures$i1_BTTSY, accuracy = 0.1)
+I1_fixtures$i1_BTTSN <- percent(I1_fixtures$i1_BTTSN, accuracy = 0.1)
+#odds
+I1_fixtures$i1_BTTSY_odds
+I1_fixtures$i1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -3928,6 +4264,34 @@ I2_fixtures$i2_un25_odds <- round((1/I2_fixtures$i2_un25),digits = 2)
 
 I2_fixtures$i2_ov25_odds
 I2_fixtures$i2_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+I2_fixtures$i2_BTTSY <- (
+  I2_fixtures$i2_1_1 + I2_fixtures$i2_2_1 + I2_fixtures$i2_1_2 + I2_fixtures$i2_3_1 + I2_fixtures$i2_3_2 +
+    I2_fixtures$i2_2_2 + I2_fixtures$i2_1_3 + I2_fixtures$i2_2_3 + I2_fixtures$i2_3_3 + I2_fixtures$i2_4_4 +
+    I2_fixtures$i2_4_1 + I2_fixtures$i2_4_3 + I2_fixtures$i2_4_2 + I2_fixtures$i2_1_4 + I2_fixtures$i2_2_4 +
+    I2_fixtures$i2_3_4 + I2_fixtures$i2_5_5 + I2_fixtures$i2_5_1 + I2_fixtures$i2_5_2 + I2_fixtures$i2_5_3 +
+    I2_fixtures$i2_5_4 + I2_fixtures$i2_1_5 + I2_fixtures$i2_2_5 + I2_fixtures$i2_3_5 + I2_fixtures$i2_4_5 +
+    I2_fixtures$i2_6_6 + I2_fixtures$i2_6_1 + I2_fixtures$i2_6_2 + I2_fixtures$i2_6_3 + I2_fixtures$i2_6_4 +
+    I2_fixtures$i2_6_5 + I2_fixtures$i2_1_6 + I2_fixtures$i2_2_6 + I2_fixtures$i2_3_6 + I2_fixtures$i2_4_6 +
+    I2_fixtures$i2_5_6
+)
+#BTTSN
+I2_fixtures$i2_BTTSN <- (
+  I2_fixtures$i2_0_0 + I2_fixtures$i2_1_0 + I2_fixtures$i2_0_1 + I2_fixtures$i2_2_0 + I2_fixtures$i2_0_2 +
+    I2_fixtures$i2_3_0 + I2_fixtures$i2_0_3 + I2_fixtures$i2_4_0 + I2_fixtures$i2_0_4 + I2_fixtures$i2_5_0 +
+    I2_fixtures$i2_0_5 + I2_fixtures$i2_6_0 + I2_fixtures$i2_0_6
+)
+
+I2_fixtures$i2_BTTSY_odds <- round((1/I2_fixtures$i2_BTTSY),digits = 2)
+I2_fixtures$i2_BTTSN_odds <- round((1/I2_fixtures$i2_BTTSN),digits = 2)
+
+I2_fixtures$i2_BTTSY <- percent(I2_fixtures$i2_BTTSY, accuracy = 0.1)
+I2_fixtures$i2_BTTSN <- percent(I2_fixtures$i2_BTTSN, accuracy = 0.1)
+#odds
+I2_fixtures$i2_BTTSY_odds
+I2_fixtures$i2_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -4242,6 +4606,34 @@ N1_fixtures$n1_un25_odds <- round((1/N1_fixtures$n1_un25),digits = 2)
 
 N1_fixtures$n1_ov25_odds
 N1_fixtures$n1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+N1_fixtures$n1_BTTSY <- (
+  N1_fixtures$n1_1_1 + N1_fixtures$n1_2_1 + N1_fixtures$n1_1_2 + N1_fixtures$n1_3_1 + N1_fixtures$n1_3_2 +
+    N1_fixtures$n1_2_2 + N1_fixtures$n1_1_3 + N1_fixtures$n1_2_3 + N1_fixtures$n1_3_3 + N1_fixtures$n1_4_4 +
+    N1_fixtures$n1_4_1 + N1_fixtures$n1_4_3 + N1_fixtures$n1_4_2 + N1_fixtures$n1_1_4 + N1_fixtures$n1_2_4 +
+    N1_fixtures$n1_3_4 + N1_fixtures$n1_5_5 + N1_fixtures$n1_5_1 + N1_fixtures$n1_5_2 + N1_fixtures$n1_5_3 +
+    N1_fixtures$n1_5_4 + N1_fixtures$n1_1_5 + N1_fixtures$n1_2_5 + N1_fixtures$n1_3_5 + N1_fixtures$n1_4_5 +
+    N1_fixtures$n1_6_6 + N1_fixtures$n1_6_1 + N1_fixtures$n1_6_2 + N1_fixtures$n1_6_3 + N1_fixtures$n1_6_4 +
+    N1_fixtures$n1_6_5 + N1_fixtures$n1_1_6 + N1_fixtures$n1_2_6 + N1_fixtures$n1_3_6 + N1_fixtures$n1_4_6 +
+    N1_fixtures$n1_5_6
+)
+#BTTSN
+N1_fixtures$n1_BTTSN <- (
+  N1_fixtures$n1_0_0 + N1_fixtures$n1_1_0 + N1_fixtures$n1_0_1 + N1_fixtures$n1_2_0 + N1_fixtures$n1_0_2 +
+    N1_fixtures$n1_3_0 + N1_fixtures$n1_0_3 + N1_fixtures$n1_4_0 + N1_fixtures$n1_0_4 + N1_fixtures$n1_5_0 +
+    N1_fixtures$n1_0_5 + N1_fixtures$n1_6_0 + N1_fixtures$n1_0_6
+)
+
+N1_fixtures$n1_BTTSY_odds <- round((1/N1_fixtures$n1_BTTSY),digits = 2)
+N1_fixtures$n1_BTTSN_odds <- round((1/N1_fixtures$n1_BTTSN),digits = 2)
+
+N1_fixtures$n1_BTTSY <- percent(N1_fixtures$n1_BTTSY, accuracy = 0.1)
+N1_fixtures$n1_BTTSN <- percent(N1_fixtures$n1_BTTSN, accuracy = 0.1)
+#odds
+N1_fixtures$n1_BTTSY_odds
+N1_fixtures$n1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -4556,6 +4948,34 @@ P1_fixtures$p1_un25_odds <- round((1/P1_fixtures$p1_un25),digits = 2)
 
 P1_fixtures$p1_ov25_odds
 P1_fixtures$p1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+P1_fixtures$p1_BTTSY <- (
+  P1_fixtures$p1_1_1 + P1_fixtures$p1_2_1 + P1_fixtures$p1_1_2 + P1_fixtures$p1_3_1 + P1_fixtures$p1_3_2 +
+    P1_fixtures$p1_2_2 + P1_fixtures$p1_1_3 + P1_fixtures$p1_2_3 + P1_fixtures$p1_3_3 + P1_fixtures$p1_4_4 +
+    P1_fixtures$p1_4_1 + P1_fixtures$p1_4_3 + P1_fixtures$p1_4_2 + P1_fixtures$p1_1_4 + P1_fixtures$p1_2_4 +
+    P1_fixtures$p1_3_4 + P1_fixtures$p1_5_5 + P1_fixtures$p1_5_1 + P1_fixtures$p1_5_2 + P1_fixtures$p1_5_3 +
+    P1_fixtures$p1_5_4 + P1_fixtures$p1_1_5 + P1_fixtures$p1_2_5 + P1_fixtures$p1_3_5 + P1_fixtures$p1_4_5 +
+    P1_fixtures$p1_6_6 + P1_fixtures$p1_6_1 + P1_fixtures$p1_6_2 + P1_fixtures$p1_6_3 + P1_fixtures$p1_6_4 +
+    P1_fixtures$p1_6_5 + P1_fixtures$p1_1_6 + P1_fixtures$p1_2_6 + P1_fixtures$p1_3_6 + P1_fixtures$p1_4_6 +
+    P1_fixtures$p1_5_6
+)
+#BTTSN
+P1_fixtures$p1_BTTSN <- (
+  P1_fixtures$p1_0_0 + P1_fixtures$p1_1_0 + P1_fixtures$p1_0_1 + P1_fixtures$p1_2_0 + P1_fixtures$p1_0_2 +
+    P1_fixtures$p1_3_0 + P1_fixtures$p1_0_3 + P1_fixtures$p1_4_0 + P1_fixtures$p1_0_4 + P1_fixtures$p1_5_0 +
+    P1_fixtures$p1_0_5 + P1_fixtures$p1_6_0 + P1_fixtures$p1_0_6
+)
+
+P1_fixtures$p1_BTTSY_odds <- round((1/P1_fixtures$p1_BTTSY),digits = 2)
+P1_fixtures$p1_BTTSN_odds <- round((1/P1_fixtures$p1_BTTSN),digits = 2)
+
+P1_fixtures$p1_BTTSY <- percent(P1_fixtures$p1_BTTSY, accuracy = 0.1)
+P1_fixtures$p1_BTTSN <- percent(P1_fixtures$p1_BTTSN, accuracy = 0.1)
+#odds
+P1_fixtures$p1_BTTSY_odds
+P1_fixtures$p1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -4870,6 +5290,34 @@ SP1_fixtures$sp1_un25_odds <- round((1/SP1_fixtures$sp1_un25),digits = 2)
 
 SP1_fixtures$sp1_ov25_odds
 SP1_fixtures$sp1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+SP1_fixtures$sp1_BTTSY <- (
+  SP1_fixtures$sp1_1_1 + SP1_fixtures$sp1_2_1 + SP1_fixtures$sp1_1_2 + SP1_fixtures$sp1_3_1 + SP1_fixtures$sp1_3_2 +
+    SP1_fixtures$sp1_2_2 + SP1_fixtures$sp1_1_3 + SP1_fixtures$sp1_2_3 + SP1_fixtures$sp1_3_3 + SP1_fixtures$sp1_4_4 +
+    SP1_fixtures$sp1_4_1 + SP1_fixtures$sp1_4_3 + SP1_fixtures$sp1_4_2 + SP1_fixtures$sp1_1_4 + SP1_fixtures$sp1_2_4 +
+    SP1_fixtures$sp1_3_4 + SP1_fixtures$sp1_5_5 + SP1_fixtures$sp1_5_1 + SP1_fixtures$sp1_5_2 + SP1_fixtures$sp1_5_3 +
+    SP1_fixtures$sp1_5_4 + SP1_fixtures$sp1_1_5 + SP1_fixtures$sp1_2_5 + SP1_fixtures$sp1_3_5 + SP1_fixtures$sp1_4_5 +
+    SP1_fixtures$sp1_6_6 + SP1_fixtures$sp1_6_1 + SP1_fixtures$sp1_6_2 + SP1_fixtures$sp1_6_3 + SP1_fixtures$sp1_6_4 +
+    SP1_fixtures$sp1_6_5 + SP1_fixtures$sp1_1_6 + SP1_fixtures$sp1_2_6 + SP1_fixtures$sp1_3_6 + SP1_fixtures$sp1_4_6 +
+    SP1_fixtures$sp1_5_6
+)
+#BTTSN
+SP1_fixtures$sp1_BTTSN <- (
+  SP1_fixtures$sp1_0_0 + SP1_fixtures$sp1_1_0 + SP1_fixtures$sp1_0_1 + SP1_fixtures$sp1_2_0 + SP1_fixtures$sp1_0_2 +
+    SP1_fixtures$sp1_3_0 + SP1_fixtures$sp1_0_3 + SP1_fixtures$sp1_4_0 + SP1_fixtures$sp1_0_4 + SP1_fixtures$sp1_5_0 +
+    SP1_fixtures$sp1_0_5 + SP1_fixtures$sp1_6_0 + SP1_fixtures$sp1_0_6
+)
+
+SP1_fixtures$sp1_BTTSY_odds <- round((1/SP1_fixtures$sp1_BTTSY),digits = 2)
+SP1_fixtures$sp1_BTTSN_odds <- round((1/SP1_fixtures$sp1_BTTSN),digits = 2)
+
+SP1_fixtures$sp1_BTTSY <- percent(SP1_fixtures$sp1_BTTSY, accuracy = 0.1)
+SP1_fixtures$sp1_BTTSN <- percent(SP1_fixtures$sp1_BTTSN, accuracy = 0.1)
+#odds
+SP1_fixtures$sp1_BTTSY_odds
+SP1_fixtures$sp1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -5184,6 +5632,34 @@ SP2_fixtures$sp2_un25_odds <- round((1/SP2_fixtures$sp2_un25),digits = 2)
 
 SP2_fixtures$sp2_ov25_odds
 SP2_fixtures$sp2_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+SP2_fixtures$sp2_BTTSY <- (
+  SP2_fixtures$sp2_1_1 + SP2_fixtures$sp2_2_1 + SP2_fixtures$sp2_1_2 + SP2_fixtures$sp2_3_1 + SP2_fixtures$sp2_3_2 +
+    SP2_fixtures$sp2_2_2 + SP2_fixtures$sp2_1_3 + SP2_fixtures$sp2_2_3 + SP2_fixtures$sp2_3_3 + SP2_fixtures$sp2_4_4 +
+    SP2_fixtures$sp2_4_1 + SP2_fixtures$sp2_4_3 + SP2_fixtures$sp2_4_2 + SP2_fixtures$sp2_1_4 + SP2_fixtures$sp2_2_4 +
+    SP2_fixtures$sp2_3_4 + SP2_fixtures$sp2_5_5 + SP2_fixtures$sp2_5_1 + SP2_fixtures$sp2_5_2 + SP2_fixtures$sp2_5_3 +
+    SP2_fixtures$sp2_5_4 + SP2_fixtures$sp2_1_5 + SP2_fixtures$sp2_2_5 + SP2_fixtures$sp2_3_5 + SP2_fixtures$sp2_4_5 +
+    SP2_fixtures$sp2_6_6 + SP2_fixtures$sp2_6_1 + SP2_fixtures$sp2_6_2 + SP2_fixtures$sp2_6_3 + SP2_fixtures$sp2_6_4 +
+    SP2_fixtures$sp2_6_5 + SP2_fixtures$sp2_1_6 + SP2_fixtures$sp2_2_6 + SP2_fixtures$sp2_3_6 + SP2_fixtures$sp2_4_6 +
+    SP2_fixtures$sp2_5_6
+)
+#BTTSN
+SP2_fixtures$sp2_BTTSN <- (
+  SP2_fixtures$sp2_0_0 + SP2_fixtures$sp2_1_0 + SP2_fixtures$sp2_0_1 + SP2_fixtures$sp2_2_0 + SP2_fixtures$sp2_0_2 +
+    SP2_fixtures$sp2_3_0 + SP2_fixtures$sp2_0_3 + SP2_fixtures$sp2_4_0 + SP2_fixtures$sp2_0_4 + SP2_fixtures$sp2_5_0 +
+    SP2_fixtures$sp2_0_5 + SP2_fixtures$sp2_6_0 + SP2_fixtures$sp2_0_6
+)
+
+SP2_fixtures$sp2_BTTSY_odds <- round((1/SP2_fixtures$sp2_BTTSY),digits = 2)
+SP2_fixtures$sp2_BTTSN_odds <- round((1/SP2_fixtures$sp2_BTTSN),digits = 2)
+
+SP2_fixtures$sp2_BTTSY <- percent(SP2_fixtures$sp2_BTTSY, accuracy = 0.1)
+SP2_fixtures$sp2_BTTSN <- percent(SP2_fixtures$sp2_BTTSN, accuracy = 0.1)
+#odds
+SP2_fixtures$sp2_BTTSY_odds
+SP2_fixtures$sp2_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -5498,6 +5974,34 @@ SC0_fixtures$sc0_un25_odds <- round((1/SC0_fixtures$sc0_un25),digits = 2)
 
 SC0_fixtures$sc0_ov25_odds
 SC0_fixtures$sc0_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+SC0_fixtures$sc0_BTTSY <- (
+  SC0_fixtures$sc0_1_1 + SC0_fixtures$sc0_2_1 + SC0_fixtures$sc0_1_2 + SC0_fixtures$sc0_3_1 + SC0_fixtures$sc0_3_2 +
+    SC0_fixtures$sc0_2_2 + SC0_fixtures$sc0_1_3 + SC0_fixtures$sc0_2_3 + SC0_fixtures$sc0_3_3 + SC0_fixtures$sc0_4_4 +
+    SC0_fixtures$sc0_4_1 + SC0_fixtures$sc0_4_3 + SC0_fixtures$sc0_4_2 + SC0_fixtures$sc0_1_4 + SC0_fixtures$sc0_2_4 +
+    SC0_fixtures$sc0_3_4 + SC0_fixtures$sc0_5_5 + SC0_fixtures$sc0_5_1 + SC0_fixtures$sc0_5_2 + SC0_fixtures$sc0_5_3 +
+    SC0_fixtures$sc0_5_4 + SC0_fixtures$sc0_1_5 + SC0_fixtures$sc0_2_5 + SC0_fixtures$sc0_3_5 + SC0_fixtures$sc0_4_5 +
+    SC0_fixtures$sc0_6_6 + SC0_fixtures$sc0_6_1 + SC0_fixtures$sc0_6_2 + SC0_fixtures$sc0_6_3 + SC0_fixtures$sc0_6_4 +
+    SC0_fixtures$sc0_6_5 + SC0_fixtures$sc0_1_6 + SC0_fixtures$sc0_2_6 + SC0_fixtures$sc0_3_6 + SC0_fixtures$sc0_4_6 +
+    SC0_fixtures$sc0_5_6
+)
+#BTTSN
+SC0_fixtures$sc0_BTTSN <- (
+  SC0_fixtures$sc0_0_0 + SC0_fixtures$sc0_1_0 + SC0_fixtures$sc0_0_1 + SC0_fixtures$sc0_2_0 + SC0_fixtures$sc0_0_2 +
+    SC0_fixtures$sc0_3_0 + SC0_fixtures$sc0_0_3 + SC0_fixtures$sc0_4_0 + SC0_fixtures$sc0_0_4 + SC0_fixtures$sc0_5_0 +
+    SC0_fixtures$sc0_0_5 + SC0_fixtures$sc0_6_0 + SC0_fixtures$sc0_0_6
+)
+
+SC0_fixtures$sc0_BTTSY_odds <- round((1/SC0_fixtures$sc0_BTTSY),digits = 2)
+SC0_fixtures$sc0_BTTSN_odds <- round((1/SC0_fixtures$sc0_BTTSN),digits = 2)
+
+SC0_fixtures$sc0_BTTSY <- percent(SC0_fixtures$sc0_BTTSY, accuracy = 0.1)
+SC0_fixtures$sc0_BTTSN <- percent(SC0_fixtures$sc0_BTTSN, accuracy = 0.1)
+#odds
+SC0_fixtures$sc0_BTTSY_odds
+SC0_fixtures$sc0_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -5812,6 +6316,34 @@ SC1_fixtures$sc1_un25_odds <- round((1/SC1_fixtures$sc1_un25),digits = 2)
 
 SC1_fixtures$sc1_ov25_odds
 SC1_fixtures$sc1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+SC1_fixtures$sc1_BTTSY <- (
+  SC1_fixtures$sc1_1_1 + SC1_fixtures$sc1_2_1 + SC1_fixtures$sc1_1_2 + SC1_fixtures$sc1_3_1 + SC1_fixtures$sc1_3_2 +
+    SC1_fixtures$sc1_2_2 + SC1_fixtures$sc1_1_3 + SC1_fixtures$sc1_2_3 + SC1_fixtures$sc1_3_3 + SC1_fixtures$sc1_4_4 +
+    SC1_fixtures$sc1_4_1 + SC1_fixtures$sc1_4_3 + SC1_fixtures$sc1_4_2 + SC1_fixtures$sc1_1_4 + SC1_fixtures$sc1_2_4 +
+    SC1_fixtures$sc1_3_4 + SC1_fixtures$sc1_5_5 + SC1_fixtures$sc1_5_1 + SC1_fixtures$sc1_5_2 + SC1_fixtures$sc1_5_3 +
+    SC1_fixtures$sc1_5_4 + SC1_fixtures$sc1_1_5 + SC1_fixtures$sc1_2_5 + SC1_fixtures$sc1_3_5 + SC1_fixtures$sc1_4_5 +
+    SC1_fixtures$sc1_6_6 + SC1_fixtures$sc1_6_1 + SC1_fixtures$sc1_6_2 + SC1_fixtures$sc1_6_3 + SC1_fixtures$sc1_6_4 +
+    SC1_fixtures$sc1_6_5 + SC1_fixtures$sc1_1_6 + SC1_fixtures$sc1_2_6 + SC1_fixtures$sc1_3_6 + SC1_fixtures$sc1_4_6 +
+    SC1_fixtures$sc1_5_6
+)
+#BTTSN
+SC1_fixtures$sc1_BTTSN <- (
+  SC1_fixtures$sc1_0_0 + SC1_fixtures$sc1_1_0 + SC1_fixtures$sc1_0_1 + SC1_fixtures$sc1_2_0 + SC1_fixtures$sc1_0_2 +
+    SC1_fixtures$sc1_3_0 + SC1_fixtures$sc1_0_3 + SC1_fixtures$sc1_4_0 + SC1_fixtures$sc1_0_4 + SC1_fixtures$sc1_5_0 +
+    SC1_fixtures$sc1_0_5 + SC1_fixtures$sc1_6_0 + SC1_fixtures$sc1_0_6
+)
+
+SC1_fixtures$sc1_BTTSY_odds <- round((1/SC1_fixtures$sc1_BTTSY),digits = 2)
+SC1_fixtures$sc1_BTTSN_odds <- round((1/SC1_fixtures$sc1_BTTSN),digits = 2)
+
+SC1_fixtures$sc1_BTTSY <- percent(SC1_fixtures$sc1_BTTSY, accuracy = 0.1)
+SC1_fixtures$sc1_BTTSN <- percent(SC1_fixtures$sc1_BTTSN, accuracy = 0.1)
+#odds
+SC1_fixtures$sc1_BTTSY_odds
+SC1_fixtures$sc1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -6126,6 +6658,34 @@ SC2_fixtures$sc2_un25_odds <- round((1/SC2_fixtures$sc2_un25),digits = 2)
 
 SC2_fixtures$sc2_ov25_odds
 SC2_fixtures$sc2_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+SC2_fixtures$sc2_BTTSY <- (
+  SC2_fixtures$sc2_1_1 + SC2_fixtures$sc2_2_1 + SC2_fixtures$sc2_1_2 + SC2_fixtures$sc2_3_1 + SC2_fixtures$sc2_3_2 +
+    SC2_fixtures$sc2_2_2 + SC2_fixtures$sc2_1_3 + SC2_fixtures$sc2_2_3 + SC2_fixtures$sc2_3_3 + SC2_fixtures$sc2_4_4 +
+    SC2_fixtures$sc2_4_1 + SC2_fixtures$sc2_4_3 + SC2_fixtures$sc2_4_2 + SC2_fixtures$sc2_1_4 + SC2_fixtures$sc2_2_4 +
+    SC2_fixtures$sc2_3_4 + SC2_fixtures$sc2_5_5 + SC2_fixtures$sc2_5_1 + SC2_fixtures$sc2_5_2 + SC2_fixtures$sc2_5_3 +
+    SC2_fixtures$sc2_5_4 + SC2_fixtures$sc2_1_5 + SC2_fixtures$sc2_2_5 + SC2_fixtures$sc2_3_5 + SC2_fixtures$sc2_4_5 +
+    SC2_fixtures$sc2_6_6 + SC2_fixtures$sc2_6_1 + SC2_fixtures$sc2_6_2 + SC2_fixtures$sc2_6_3 + SC2_fixtures$sc2_6_4 +
+    SC2_fixtures$sc2_6_5 + SC2_fixtures$sc2_1_6 + SC2_fixtures$sc2_2_6 + SC2_fixtures$sc2_3_6 + SC2_fixtures$sc2_4_6 +
+    SC2_fixtures$sc2_5_6
+)
+#BTTSN
+SC2_fixtures$sc2_BTTSN <- (
+  SC2_fixtures$sc2_0_0 + SC2_fixtures$sc2_1_0 + SC2_fixtures$sc2_0_1 + SC2_fixtures$sc2_2_0 + SC2_fixtures$sc2_0_2 +
+    SC2_fixtures$sc2_3_0 + SC2_fixtures$sc2_0_3 + SC2_fixtures$sc2_4_0 + SC2_fixtures$sc2_0_4 + SC2_fixtures$sc2_5_0 +
+    SC2_fixtures$sc2_0_5 + SC2_fixtures$sc2_6_0 + SC2_fixtures$sc2_0_6
+)
+
+SC2_fixtures$sc2_BTTSY_odds <- round((1/SC2_fixtures$sc2_BTTSY),digits = 2)
+SC2_fixtures$sc2_BTTSN_odds <- round((1/SC2_fixtures$sc2_BTTSN),digits = 2)
+
+SC2_fixtures$sc2_BTTSY <- percent(SC2_fixtures$sc2_BTTSY, accuracy = 0.1)
+SC2_fixtures$sc2_BTTSN <- percent(SC2_fixtures$sc2_BTTSN, accuracy = 0.1)
+#odds
+SC2_fixtures$sc2_BTTSY_odds
+SC2_fixtures$sc2_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -6440,6 +7000,34 @@ SC3_fixtures$sc3_un25_odds <- round((1/SC3_fixtures$sc3_un25),digits = 2)
 
 SC3_fixtures$sc3_ov25_odds
 SC3_fixtures$sc3_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+SC3_fixtures$sc3_BTTSY <- (
+  SC3_fixtures$sc3_1_1 + SC3_fixtures$sc3_2_1 + SC3_fixtures$sc3_1_2 + SC3_fixtures$sc3_3_1 + SC3_fixtures$sc3_3_2 +
+    SC3_fixtures$sc3_2_2 + SC3_fixtures$sc3_1_3 + SC3_fixtures$sc3_2_3 + SC3_fixtures$sc3_3_3 + SC3_fixtures$sc3_4_4 +
+    SC3_fixtures$sc3_4_1 + SC3_fixtures$sc3_4_3 + SC3_fixtures$sc3_4_2 + SC3_fixtures$sc3_1_4 + SC3_fixtures$sc3_2_4 +
+    SC3_fixtures$sc3_3_4 + SC3_fixtures$sc3_5_5 + SC3_fixtures$sc3_5_1 + SC3_fixtures$sc3_5_2 + SC3_fixtures$sc3_5_3 +
+    SC3_fixtures$sc3_5_4 + SC3_fixtures$sc3_1_5 + SC3_fixtures$sc3_2_5 + SC3_fixtures$sc3_3_5 + SC3_fixtures$sc3_4_5 +
+    SC3_fixtures$sc3_6_6 + SC3_fixtures$sc3_6_1 + SC3_fixtures$sc3_6_2 + SC3_fixtures$sc3_6_3 + SC3_fixtures$sc3_6_4 +
+    SC3_fixtures$sc3_6_5 + SC3_fixtures$sc3_1_6 + SC3_fixtures$sc3_2_6 + SC3_fixtures$sc3_3_6 + SC3_fixtures$sc3_4_6 +
+    SC3_fixtures$sc3_5_6
+)
+#BTTSN
+SC3_fixtures$sc3_BTTSN <- (
+  SC3_fixtures$sc3_0_0 + SC3_fixtures$sc3_1_0 + SC3_fixtures$sc3_0_1 + SC3_fixtures$sc3_2_0 + SC3_fixtures$sc3_0_2 +
+    SC3_fixtures$sc3_3_0 + SC3_fixtures$sc3_0_3 + SC3_fixtures$sc3_4_0 + SC3_fixtures$sc3_0_4 + SC3_fixtures$sc3_5_0 +
+    SC3_fixtures$sc3_0_5 + SC3_fixtures$sc3_6_0 + SC3_fixtures$sc3_0_6
+)
+
+SC3_fixtures$sc3_BTTSY_odds <- round((1/SC3_fixtures$sc3_BTTSY),digits = 2)
+SC3_fixtures$sc3_BTTSN_odds <- round((1/SC3_fixtures$sc3_BTTSN),digits = 2)
+
+SC3_fixtures$sc3_BTTSY <- percent(SC3_fixtures$sc3_BTTSY, accuracy = 0.1)
+SC3_fixtures$sc3_BTTSN <- percent(SC3_fixtures$sc3_BTTSN, accuracy = 0.1)
+#odds
+SC3_fixtures$sc3_BTTSY_odds
+SC3_fixtures$sc3_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
@@ -6754,6 +7342,34 @@ T1_fixtures$t1_un25_odds <- round((1/T1_fixtures$t1_un25),digits = 2)
 
 T1_fixtures$t1_ov25_odds
 T1_fixtures$t1_un25_odds
+###############################################################################
+###BTTS########################################################################
+#BTTSY
+T1_fixtures$t1_BTTSY <- (
+  T1_fixtures$t1_1_1 + T1_fixtures$t1_2_1 + T1_fixtures$t1_1_2 + T1_fixtures$t1_3_1 + T1_fixtures$t1_3_2 +
+    T1_fixtures$t1_2_2 + T1_fixtures$t1_1_3 + T1_fixtures$t1_2_3 + T1_fixtures$t1_3_3 + T1_fixtures$t1_4_4 +
+    T1_fixtures$t1_4_1 + T1_fixtures$t1_4_3 + T1_fixtures$t1_4_2 + T1_fixtures$t1_1_4 + T1_fixtures$t1_2_4 +
+    T1_fixtures$t1_3_4 + T1_fixtures$t1_5_5 + T1_fixtures$t1_5_1 + T1_fixtures$t1_5_2 + T1_fixtures$t1_5_3 +
+    T1_fixtures$t1_5_4 + T1_fixtures$t1_1_5 + T1_fixtures$t1_2_5 + T1_fixtures$t1_3_5 + T1_fixtures$t1_4_5 +
+    T1_fixtures$t1_6_6 + T1_fixtures$t1_6_1 + T1_fixtures$t1_6_2 + T1_fixtures$t1_6_3 + T1_fixtures$t1_6_4 +
+    T1_fixtures$t1_6_5 + T1_fixtures$t1_1_6 + T1_fixtures$t1_2_6 + T1_fixtures$t1_3_6 + T1_fixtures$t1_4_6 +
+    T1_fixtures$t1_5_6
+)
+#BTTSN
+T1_fixtures$t1_BTTSN <- (
+  T1_fixtures$t1_0_0 + T1_fixtures$t1_1_0 + T1_fixtures$t1_0_1 + T1_fixtures$t1_2_0 + T1_fixtures$t1_0_2 +
+    T1_fixtures$t1_3_0 + T1_fixtures$t1_0_3 + T1_fixtures$t1_4_0 + T1_fixtures$t1_0_4 + T1_fixtures$t1_5_0 +
+    T1_fixtures$t1_0_5 + T1_fixtures$t1_6_0 + T1_fixtures$t1_0_6
+)
+
+T1_fixtures$t1_BTTSY_odds <- round((1/T1_fixtures$t1_BTTSY),digits = 2)
+T1_fixtures$t1_BTTSN_odds <- round((1/T1_fixtures$t1_BTTSN),digits = 2)
+
+T1_fixtures$t1_BTTSY <- percent(T1_fixtures$t1_BTTSY, accuracy = 0.1)
+T1_fixtures$t1_BTTSN <- percent(T1_fixtures$t1_BTTSN, accuracy = 0.1)
+#odds
+T1_fixtures$t1_BTTSY_odds
+T1_fixtures$t1_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)

@@ -544,6 +544,8 @@ aut_away_poisson <- cbind(aut_division,aut_teams,aut_avg_AG,aut_away_as,aut_away
 #write.csv(away_poisson,'R_away.csv')
 write.xlsx(aut_home_poisson,'AUT.xlsx',sheetName = "homepoisson", append = TRUE)
 write.xlsx(aut_away_poisson,'AUT.xlsx',sheetName = "awaypoisson", append = TRUE)
+aut_home_poisson
+aut_away_poisson
 ##########################################################################################################
 ###################AUT FIXTURES##########################################################################
 #AUT

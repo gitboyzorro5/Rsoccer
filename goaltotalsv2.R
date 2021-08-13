@@ -2,29 +2,29 @@
 library('dplyr')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
-#Create the home and away team matrix
-b1_goaltotalsv2 <- tapply(B1$TG, B1[c("HomeTeam", "AwayTeam")],mean)
-d1_goaltotalsv2 <- tapply(D1$TG, D1[c("HomeTeam", "AwayTeam")],mean)
-d2_goaltotalsv2 <- tapply(D2$TG, D2[c("HomeTeam", "AwayTeam")],mean)
-e0_goaltotalsv2 <- tapply(E0$TG, E0[c("HomeTeam", "AwayTeam")],mean)
-e1_goaltotalsv2 <- tapply(E1$TG, E1[c("HomeTeam", "AwayTeam")],mean)
-e2_goaltotalsv2 <- tapply(E2$TG, E2[c("HomeTeam", "AwayTeam")],mean)
-e3_goaltotalsv2 <- tapply(E3$TG, E3[c("HomeTeam", "AwayTeam")],mean)
-ec_goaltotalsv2 <- tapply(EC$TG, EC[c("HomeTeam", "AwayTeam")],mean)
-f1_goaltotalsv2 <- tapply(F1$TG, F1[c("HomeTeam", "AwayTeam")],mean)
-f2_goaltotalsv2 <- tapply(F2$TG, F2[c("HomeTeam", "AwayTeam")],mean)
-g1_goaltotalsv2 <- tapply(G1$TG, G1[c("HomeTeam", "AwayTeam")],mean)
-i1_goaltotalsv2 <- tapply(I1$TG, I1[c("HomeTeam", "AwayTeam")],mean)
-i2_goaltotalsv2 <- tapply(I2$TG, I2[c("HomeTeam", "AwayTeam")],mean)
-n1_goaltotalsv2 <- tapply(N1$TG, N1[c("HomeTeam", "AwayTeam")],mean)
-p1_goaltotalsv2 <- tapply(P1$TG, P1[c("HomeTeam", "AwayTeam")],mean)
-sc0_goaltotalsv2 <- tapply(SC0$TG, SC0[c("HomeTeam", "AwayTeam")],mean)
-sc1_goaltotalsv2 <- tapply(SC1$TG, SC1[c("HomeTeam", "AwayTeam")],mean)
-sc2_goaltotalsv2 <- tapply(SC2$TG, SC2[c("HomeTeam", "AwayTeam")],mean)
-sc3_goaltotalsv2 <- tapply(SC3$TG, SC3[c("HomeTeam", "AwayTeam")],mean)
-sp1_goaltotalsv2 <- tapply(SP1$TG, SP1[c("HomeTeam", "AwayTeam")],mean)
-sp2_goaltotalsv2 <- tapply(SP2$TG, SP2[c("HomeTeam", "AwayTeam")],mean)
-t1_goaltotalsv2 <- tapply(T1$TG, T1[c("HomeTeam", "AwayTeam")],mean)
+#Create the home and awag team matrix
+b1_goaltotalsv2 <- tapply(B1$TG, B1[c("HomeTeam", "AwagTeam")],mean)
+d1_goaltotalsv2 <- tapply(D1$TG, D1[c("HomeTeam", "AwagTeam")],mean)
+d2_goaltotalsv2 <- tapply(D2$TG, D2[c("HomeTeam", "AwagTeam")],mean)
+e0_goaltotalsv2 <- tapply(E0$TG, E0[c("HomeTeam", "AwagTeam")],mean)
+e1_goaltotalsv2 <- tapply(E1$TG, E1[c("HomeTeam", "AwagTeam")],mean)
+e2_goaltotalsv2 <- tapply(E2$TG, E2[c("HomeTeam", "AwagTeam")],mean)
+e3_goaltotalsv2 <- tapply(E3$TG, E3[c("HomeTeam", "AwagTeam")],mean)
+ec_goaltotalsv2 <- tapply(EC$TG, EC[c("HomeTeam", "AwagTeam")],mean)
+f1_goaltotalsv2 <- tapply(F1$TG, F1[c("HomeTeam", "AwagTeam")],mean)
+f2_goaltotalsv2 <- tapply(F2$TG, F2[c("HomeTeam", "AwagTeam")],mean)
+g1_goaltotalsv2 <- tapply(G1$TG, G1[c("HomeTeam", "AwagTeam")],mean)
+i1_goaltotalsv2 <- tapply(I1$TG, I1[c("HomeTeam", "AwagTeam")],mean)
+i2_goaltotalsv2 <- tapply(I2$TG, I2[c("HomeTeam", "AwagTeam")],mean)
+n1_goaltotalsv2 <- tapply(N1$TG, N1[c("HomeTeam", "AwagTeam")],mean)
+p1_goaltotalsv2 <- tapply(P1$TG, P1[c("HomeTeam", "AwagTeam")],mean)
+sc0_goaltotalsv2 <- tapply(SC0$TG, SC0[c("HomeTeam", "AwagTeam")],mean)
+sc1_goaltotalsv2 <- tapply(SC1$TG, SC1[c("HomeTeam", "AwagTeam")],mean)
+sc2_goaltotalsv2 <- tapply(SC2$TG, SC2[c("HomeTeam", "AwagTeam")],mean)
+sc3_goaltotalsv2 <- tapply(SC3$TG, SC3[c("HomeTeam", "AwagTeam")],mean)
+sp1_goaltotalsv2 <- tapply(SP1$TG, SP1[c("HomeTeam", "AwagTeam")],mean)
+sp2_goaltotalsv2 <- tapply(SP2$TG, SP2[c("HomeTeam", "AwagTeam")],mean)
+t1_goaltotalsv2 <- tapply(T1$TG, T1[c("HomeTeam", "AwagTeam")],mean)
 #Create the row and column sums
 #B1
 b1_hgtotals <- rowSums(b1_goaltotalsv2, na.rm = T)
@@ -186,7 +186,7 @@ sc3_teams <- sort(unique(SC3$HomeTeam))
 sp1_teams <- sort(unique(SP1$HomeTeam))
 sp2_teams <- sort(unique(SP2$HomeTeam))
 t1_teams <- sort(unique(T1$HomeTeam))
-#initialize home and away game vectors
+#initialize home and awag game vectors
 #B1
 b1_home_games <- c()
 b1_away_games <-c()
@@ -452,7 +452,7 @@ sc3_games_played <- sc3_home_games + sc3_away_games
 sp1_games_played <- sp1_home_games + sp1_away_games
 sp2_games_played <- sp2_home_games + sp2_away_games
 t1_games_played <- t1_home_games + t1_away_games
-#Bind total games played
+#Bind total games plaged
 
 b1_goaltotalsv2 <- cbind(b1_goaltotalsv2,b1_games_played)
 d1_goaltotalsv2 <- cbind(d1_goaltotalsv2,d1_games_played)
@@ -476,7 +476,7 @@ sc3_goaltotalsv2 <- cbind(sc3_goaltotalsv2,sc3_games_played)
 sp1_goaltotalsv2 <- cbind(sp1_goaltotalsv2,sp1_games_played)
 sp2_goaltotalsv2 <- cbind(sp2_goaltotalsv2,sp2_games_played)
 t1_goaltotalsv2 <- cbind(t1_goaltotalsv2,t1_games_played)
-#Calculate average total goals
+#Calculate averaye total goals
 b1_avg_totalgoals <- round((b1_totalgoals/ b1_games_played), digits = 4)
 d1_avg_totalgoals <- round((d1_totalgoals/ d1_games_played), digits = 4)
 d2_avg_totalgoals <- round((d2_totalgoals/ d2_games_played), digits = 4)
@@ -522,7 +522,7 @@ sc3_goaltotalsv2[is.na(sc3_goaltotalsv2)] <- ""
 sp1_goaltotalsv2[is.na(sp1_goaltotalsv2)] <- ""
 sp2_goaltotalsv2[is.na(sp2_goaltotalsv2)] <- ""
 t1_goaltotalsv2[is.na(t1_goaltotalsv2)] <- ""
-#Bind average total goals
+#Bind averaye total goals
 
 b1_goaltotalsv2 <- cbind(b1_goaltotalsv2,b1_avg_totalgoals)
 d1_goaltotalsv2 <- cbind(d1_goaltotalsv2,d1_avg_totalgoals)

@@ -16,7 +16,7 @@ POL$Date <- dmy(POL$Date)
 POL <- POL[order(as.Date(POL$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 POL$CS <- paste(POL$HG,POL$AG, sep = "-")
 #POL_qualificaton <- subset(POL,tournament == "UEFA Euro qualification")
-POL <- subset(POL,Season == "2020/2021")
+POL <- subset(POL,Season == "2021/2022")
 #POL <- POL[POL$Date > '2008-01-01',])
 POL$TG <- POL$HG + POL$AG
 POL$OV25 <- ifelse(POL$TG >= 3,"Y","N")

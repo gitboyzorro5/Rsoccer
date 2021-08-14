@@ -16,7 +16,7 @@ ROU$Date <- dmy(ROU$Date)
 ROU <- ROU[order(as.Date(ROU$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 ROU$CS <- paste(ROU$HG,ROU$AG, sep = "-")
 #ROU_qualificaton <- subset(ROU,tournament == "UEFA Euro qualification")
-ROU <- subset(ROU,Season == "2020/2021")
+ROU <- subset(ROU,Season == "2021/2022")
 #ROU <- ROU[ROU$Date > '2008-01-01',])
 ROU$TG <- ROU$HG + ROU$AG
 ROU$OV25 <- ifelse(ROU$TG >= 3,"Y","N")

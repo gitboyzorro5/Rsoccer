@@ -1,7 +1,7 @@
 #by gitboyzorro5
 #create divisions and order by date
 library('lubridate')
-allteams20202021 <- read.csv('allteams20202021SOT.csv')
+allteams20202021 <- read.csv('allteams20212022SOT.csv')
 
 #change date strings to Date objects
 allteams20202021$Date <- dmy(allteams20202021$Date)
@@ -11,6 +11,8 @@ allteams20202021$TG <- allteams20202021$FTHG + allteams20202021$FTAG
 allteams20202021$OV15 <- ifelse(allteams20202021$TG >= 2,"Y","N")
 allteams20202021$OV25 <- ifelse(allteams20202021$TG >= 3,"Y","N")
 allteams20202021$OV35 <- ifelse(allteams20202021$TG >= 4,"Y","N")
+allteams20202021$TY <- allteams20202021$HY + allteams20202021$AY
+allteams20202021$TR <- allteams20202021$HR + allteams20202021$AR
 
 #create divisions subsets
 B1 <- subset(allteams20202021, Div == "B1")

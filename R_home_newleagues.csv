@@ -1,269 +1,266 @@
-,arg_division,arg_teams,arg_avg_HG,arg_home_as,arg_home_ds
-1,Liga Profesional,Aldosivi,1.3068,0.8928,1.3135
-2,Liga Profesional,Argentinos Jrs,1.3068,0.8745,0.7506
-3,Liga Profesional,Arsenal Sarandi,1.3068,0.3826,1.3135
-4,Liga Profesional,Atl. Tucuman,1.3068,1.8584,1.2509
-5,Liga Profesional,Banfield,1.3068,0.7652,0.7506
-6,Liga Profesional,Boca Juniors,1.3068,1.1478,0.9851
-7,Liga Profesional,Central Cordoba,1.3068,0.3826,1.6054
-8,Liga Profesional,Colon Santa FE,1.3068,1.1053,0.4865
-9,Liga Profesional,Defensa y Justicia,1.3068,1.2025,0.8757
-10,Liga Profesional,Estudiantes L.P.,1.3068,0.4783,0.5473
-11,Liga Profesional,Gimnasia L.P.,1.3068,1.2754,1.6054
-12,Liga Profesional,Godoy Cruz,1.3068,0.8928,1.8973
-13,Liga Profesional,Huracan,1.3068,0.7652,1.0216
-14,Liga Profesional,Independiente,1.3068,0.9839,0.6255
-15,Liga Profesional,Lanus,1.3068,1.4029,1.3135
-16,Liga Profesional,Newells Old Boys,1.3068,0.7652,0.8757
-17,Liga Profesional,Patronato,1.3068,0.8745,0.5004
-18,Liga Profesional,Platense,1.3068,0.8745,1.7513
-19,Liga Profesional,Racing Club,1.3068,1.0522,0.7662
-20,Liga Profesional,River Plate,1.3068,1.4029,0.8757
-21,Liga Profesional,Rosario Central,1.3068,1.5305,1.0008
-22,Liga Profesional,San Lorenzo,1.3068,0.8745,1.1258
-23,Liga Profesional,Sarmiento Junin,1.3068,0.8928,0.8757
-24,Liga Profesional,Talleres Cordoba,1.3068,1.2025,0.7506
-25,Liga Profesional,Union de Santa Fe,1.3068,0.8928,0.7297
-26,Liga Profesional,Velez Sarsfield,1.3068,1.0932,1.0008
-27,Admiral Bundesliga,A. Klagenfurt,1.599,2.5016,0
-28,Admiral Bundesliga,Admira,1.599,0.5863,1.1583
-29,Admiral Bundesliga,Altach,1.599,0.6645,0.858
-30,Admiral Bundesliga,Austria Vienna,1.599,1.0301,0.969
-31,Admiral Bundesliga,Hartberg,1.599,0.699,0.8479
-32,Admiral Bundesliga,LASK,1.599,1.2508,0.858
-33,Admiral Bundesliga,Rapid Vienna,1.599,1.2508,0.6006
-34,Admiral Bundesliga,Ried,1.599,0.7817,1.2012
-35,Admiral Bundesliga,Salzburg,1.599,1.9934,0.6864
-36,Admiral Bundesliga,St. Polten,1.599,0.5886,1.2517
-37,Admiral Bundesliga,Sturm Graz,1.599,1.2508,0.7293
-38,Admiral Bundesliga,Tirol,1.599,1.0944,1.1154
-39,Admiral Bundesliga,Wolfsberger AC,1.599,0.7725,1.7362
-40,Serie A,America MG,1.1722,0.5332,0.5898
-41,Serie A,Athletico-PR,1.1722,1.4625,1.2134
-42,Serie A,Atletico-MG,1.1722,1.7062,0.5898
-43,Serie A,Atletico GO,1.1722,0.7465,0.8258
-44,Serie A,Bahia,1.1722,0.9597,1.4156
-45,Serie A,Bragantino,1.1722,1.4625,1.2134
-46,Serie A,Ceara,1.1722,1.2323,0.9438
-47,Serie A,Chapecoense-SC,1.1722,0.3656,1.6179
-48,Serie A,Corinthians,1.1722,0.7312,1.3482
-49,Serie A,Cuiaba,1.1722,0.975,1.483
-50,Serie A,Flamengo RJ,1.1722,1.4929,1.2977
-51,Serie A,Fluminense,1.1722,0.5687,0.9438
-52,Serie A,Fortaleza,1.1722,1.9499,0.5393
-53,Serie A,Gremio,1.1722,0.6094,0.8089
-54,Serie A,Internacional,1.1722,0.7465,1.0617
-55,Serie A,Juventude,1.1722,0.7465,1.0617
-56,Serie A,Palmeiras,1.1722,1.8128,1.1797
-57,Serie A,Santos,1.1722,0.9597,0.3539
-58,Serie A,Sao Paulo,1.1722,0.6094,0.8089
-59,Serie A,Sport Recife,1.1722,0.2133,0.8258
-60,Super League,Beijing Guoan,1.34,1.0448,0.4651
-61,Super League,Cangzhou,1.34,0.533,0.8859
-62,Super League,Changchun Yatai,1.34,0.995,0.1292
-63,Super League,Chongqing Liangjiang Athletic,1.34,1.1727,1.5504
-64,Super League,Dalian Pro,1.34,0.533,1.5504
-65,Super League,Guangzhou City,1.34,1.4925,1.5504
-66,Super League,Guangzhou FC,1.34,1.99,0.7752
-67,Super League,Hebei,1.34,0.8706,0.5168
-68,Super League,Henan Songshan Longmen,1.34,0.995,0.646
-69,Super League,Qingdao FC,1.34,0.4264,1.9934
-70,Super League,Shandong Taishan,1.34,1.4925,0.3876
-71,Super League,Shanghai Port,1.34,1.3682,0.1292
-72,Super League,Shanghai Shenhua,1.34,0.8706,0.7752
-73,Super League,Shenzhen,1.34,0.7463,0.646
-74,Super League,Tianjin Jinmen Tiger,1.34,0.9595,2.1041
-75,Super League,Wuhan FC,1.34,0.597,1.2403
-76,Superliga,Aalborg,1.5907,0.9823,1.0133
-77,Superliga,Aarhus,1.5907,1.1464,0.9083
-78,Superliga,Brondby,1.5907,1.2573,0.9168
-79,Superliga,FC Copenhagen,1.5907,1.3359,1.2063
-80,Superliga,Horsens,1.5907,0.7072,1.351
-81,Superliga,Lyngby,1.5907,0.5501,1.3993
-82,Superliga,Midtjylland,1.5907,1.2966,0.3378
-83,Superliga,Nordsjaelland,1.5907,1.1001,1.0133
-84,Superliga,Odense,1.5907,0.7465,0.6755
-85,Superliga,Randers FC,1.5907,1.0216,1.1098
-86,Superliga,Sonderjyske,1.5907,0.8644,0.965
-87,Superliga,Vejle,1.5907,0.9823,1.1098
-88,Veikkausliiga,AC Oulu,1.1839,0.5279,1.3317
-89,Veikkausliiga,Haka,1.1839,0.5631,1.1837
-90,Veikkausliiga,HIFK,1.1839,0.8447,1.1414
-91,Veikkausliiga,HJK,1.1839,1.81,0.5073
-92,Veikkausliiga,Honka,1.1839,1.086,1.0146
-93,Veikkausliiga,Ilves,1.1839,1.086,0.8878
-94,Veikkausliiga,Inter Turku,1.1839,1.3726,0.6658
-95,Veikkausliiga,KTP,1.1839,0.4827,1.6487
-96,Veikkausliiga,KuPS,1.1839,1.1614,0.5549
-97,Veikkausliiga,Lahti,1.1839,1.4782,0.8878
-98,Veikkausliiga,Mariehamn,1.1839,0.362,1.3951
-99,Veikkausliiga,SJK,1.1839,1.086,0.8878
-100,Premier Division,Bohemians,1.3063,1.8094,0.9037
-101,Premier Division,Derry City,1.3063,1.0207,1.1735
-102,Premier Division,Drogheda,1.3063,1.1135,0.9037
-103,Premier Division,Dundalk,1.3063,0.8351,1.2049
-104,Premier Division,Finn Harps,1.3063,0.5359,1.0769
-105,Premier Division,Longford,1.3063,0.4466,1.3116
-106,Premier Division,Shamrock Rovers,1.3063,1.2759,0.6903
-107,Premier Division,Sligo Rovers,1.3063,1.0717,0.5799
-108,Premier Division,St. Patricks,1.3063,1.3919,0.5271
-109,Premier Division,Waterford,1.3063,0.4871,1.5814
-110,J1 League,Avispa Fukuoka,1.2982,0.8403,0.9949
-111,J1 League,Cerezo Osaka,1.2982,1.0271,0.912
-112,J1 League,FC Tokyo,1.2982,1.3305,1.4924
-113,J1 League,Gamba Osaka,1.2982,0.7003,1.2436
-114,J1 League,Hokkaido Consadole Sapporo,1.2982,1.4005,1.1607
-115,J1 League,Kashima Antlers,1.2982,1.5406,0.9949
-116,J1 League,Kashiwa Reysol,1.2982,0.9804,1.4924
-117,J1 League,Kawasaki Frontale,1.2982,1.5998,0.7015
-118,J1 League,Nagoya Grampus,1.2982,0.6933,0.8208
-119,J1 League,Oita Trinita,1.2982,0.5135,1.064
-120,J1 League,Sagan Tosu,1.2982,1.4764,0.456
-121,J1 League,Sanfrecce Hiroshima,1.2982,0.6302,0.8291
-122,J1 League,Shimizu S-Pulse,1.2982,0.7003,1.3265
-123,J1 League,Shonan Bellmare,1.2982,0.5777,0.76
-124,J1 League,Tokushima,1.2982,0.7061,0.988
-125,J1 League,Urawa Reds,1.2982,1.0913,0.912
-126,J1 League,Vegalta Sendai,1.2982,0.5602,1.2436
-127,J1 League,Vissel Kobe,1.2982,1.2605,0.6633
-128,J1 League,Yokohama F. Marinos,1.2982,1.6106,0.4975
-129,J1 League,Yokohama FC,1.2982,0.7061,1.52
-130,Liga MX,Atl. San Luis,1.3977,0.7996,1.8339
-131,Liga MX,Atlas,1.3977,0.5648,0.9945
-132,Liga MX,Club America,1.3977,1.4309,0.895
-133,Liga MX,Club Leon,1.3977,1.2265,0.8548
-134,Liga MX,Club Tijuana,1.3977,0.8417,1.0003
-135,Liga MX,Cruz Azul,1.3977,1.2358,0.773
-136,Liga MX,Guadalajara Chivas,1.3977,0.8228,0.9447
-137,Liga MX,Juarez,1.3977,0.5892,1.0003
-138,Liga MX,Mazatlan FC,1.3977,0.968,1.2782
-139,Liga MX,Monterrey,1.3977,0.9791,0.895
-140,Liga MX,Necaxa,1.3977,0.6734,1.2782
-141,Liga MX,Pachuca,1.3977,0.8517,0.9897
-142,Liga MX,Puebla,1.3977,0.9301,0.8975
-143,Liga MX,Queretaro,1.3977,1.1784,0.9447
-144,Liga MX,Santos Laguna,1.3977,1.2683,0.73
-145,Liga MX,Toluca,1.3977,1.3514,1.1022
-146,Liga MX,U.A.N.L.- Tigres,1.3977,1.0544,1.1933
-147,Liga MX,U.N.A.M.- Pumas,1.3977,1.0732,0.6613
-148,Eliteserien,Bodo/Glimt,1.8142,1.5158,0.9417
-149,Eliteserien,Brann,1.8142,0.63,1.3153
-150,Eliteserien,Haugesund,1.8142,1.2599,0.4783
-151,Eliteserien,Kristiansund,1.8142,0.7874,0.5979
-152,Eliteserien,Lillestrom,1.8142,0.8662,0.7175
-153,Eliteserien,Mjondalen,1.8142,0.7087,1.0762
-154,Eliteserien,Molde,1.8142,1.8603,0.9417
-155,Eliteserien,Odd,1.8142,1.1024,1.116
-156,Eliteserien,Rosenborg,1.8142,1.1812,0.9566
-157,Eliteserien,Sandefjord,1.8142,0.689,1.0463
-158,Eliteserien,Sarpsborg 08,1.8142,0.3937,0.7175
-159,Eliteserien,Stabaek,1.8142,0.7087,1.5545
-160,Eliteserien,Stromsgodset,1.8142,1.2599,0.5979
-161,Eliteserien,Tromso,1.8142,0.5512,1.8136
-162,Eliteserien,Valerenga,1.8142,1.0237,1.0762
-163,Eliteserien,Viking,1.8142,1.2599,1.1958
-164,Ekstraklasa,Cracovia,1.3042,0.9201,1.0435
-165,Ekstraklasa,Gornik Z.,1.3042,1.1246,1.1594
-166,Ekstraklasa,Jagiellonia,1.3042,1.1757,1.1014
-167,Ekstraklasa,Lech Poznan,1.3042,0.9712,0.9855
-168,Ekstraklasa,Lechia Gdansk,1.3042,1.1757,1.0435
-169,Ekstraklasa,Legia,1.3042,1.4824,1.1014
-170,Ekstraklasa,Piast Gliwice,1.3042,0.9201,0.8696
-171,Ekstraklasa,Podbeskidzie,1.3042,0.869,1.3333
-172,Ekstraklasa,Pogon Szczecin,1.3042,0.869,0.4638
-173,Ekstraklasa,Rakow,1.3042,0.9712,0.5217
-174,Ekstraklasa,Slask Wroclaw,1.3042,1.0735,0.7536
-175,Ekstraklasa,Stal Mielec,1.3042,0.6134,1.1594
-176,Ekstraklasa,Warta Poznan,1.3042,0.7156,0.8696
-177,Ekstraklasa,Wisla,1.3042,0.9712,1.3913
-178,Ekstraklasa,Wisla Plock,1.3042,0.9201,1.1014
-179,Ekstraklasa,Zaglebie,1.3042,1.2268,1.1014
-180,Liga 1,Academica Clinceni,1.1584,0.8633,0.8816
-181,Liga 1,Astra,1.1584,0.8633,1.2064
-182,Liga 1,Calarasi,1.1584,0.8633,1.856
-183,Liga 1,CFR Cluj,1.1584,1.2949,0.464
-184,Liga 1,Chindia Targoviste,1.1584,0.9044,1.0606
-185,Liga 1,Din. Bucuresti,1.1584,0.8178,1.0745
-186,Liga 1,FC Arges,1.1584,1.1222,0.9744
-187,Liga 1,FC Botosani,1.1584,1.0791,0.9744
-188,Liga 1,FC Hermannstadt,1.1584,0.9064,1.2064
-189,Liga 1,FC Steaua Bucuresti,1.1584,1.7697,0.6496
-190,Liga 1,FC Voluntari,1.1584,0.9496,0.9744
-191,Liga 1,FCSB,1.1584,0,0
-192,Liga 1,Gaz Metan Medias,1.1584,1.1654,1.16
-193,Liga 1,Mioveni,1.1584,0,0
-194,Liga 1,Poli Iasi,1.1584,0.6815,1.6606
-195,Liga 1,Sepsi Sf. Gheorghe,1.1584,1.151,0.7954
-196,Liga 1,U Craiova,1.1584,0.8633,0.6749
-197,Liga 1,Univ. Craiova,1.1584,0.8633,0.6187
-198,Liga 1,UTA Arad,1.1584,0.518,1.1136
-199,Liga 1,Viitorul Constanta,1.1584,1.1359,1.2699
-200,Premier League,Akhmat Grozny,1.5583,0.984,0.9126
-201,Premier League,Arsenal Tula,1.5583,0.9412,1.2168
-202,Premier League,CSKA Moscow,1.5583,1.3262,1.0343
-203,Premier League,Dynamo Moscow,1.5583,1.1551,0.6084
-204,Premier League,FK Rostov,1.5583,0.7701,0.9734
-205,Premier League,Khimki,1.5583,0.7273,0.7909
-206,Premier League,Krasnodar,1.5583,1.4546,1.3993
-207,Premier League,Lokomotiv Moscow,1.5583,1.0268,0.5475
-208,Premier League,R. Volgograd,1.5583,0.2139,1.3993
-209,Premier League,Rubin Kazan,1.5583,0.7701,1.0343
-210,Premier League,Sochi,1.5583,1.3262,0.7301
-211,Premier League,Spartak Moscow,1.5583,1.3262,0.9734
-212,Premier League,Tambov,1.5583,0.4706,1.7643
-213,Premier League,Ufa,1.5583,0.6417,1.1559
-214,Premier League,Ural,1.5583,0.5989,0.6692
-215,Premier League,Zenit,1.5583,2.2674,0.7909
-216,Allsvenskan,AIK,1.4911,1.0898,0.4706
-217,Allsvenskan,Degerfors,1.4911,1.006,1.2549
-218,Allsvenskan,Djurgarden,1.4911,1.4251,0.8235
-219,Allsvenskan,Elfsborg,1.4911,1.1736,0.9412
-220,Allsvenskan,Goteborg,1.4911,0.9221,1.2941
-221,Allsvenskan,Hacken,1.4911,1.4371,1.3445
-222,Allsvenskan,Halmstad,1.4911,0.3832,0.4034
-223,Allsvenskan,Hammarby,1.4911,1.5329,1.0756
-224,Allsvenskan,Kalmar,1.4911,0.5748,0.6723
-225,Allsvenskan,Malmo FF,1.4911,1.7884,1.098
-226,Allsvenskan,Mjallby,1.4911,0.3353,0.6275
-227,Allsvenskan,Norrkoping,1.4911,0.9581,1.0756
-228,Allsvenskan,Orebro,1.4911,0.479,1.3445
-229,Allsvenskan,Ostersunds,1.4911,1.2455,1.2101
-230,Allsvenskan,Sirius,1.4911,0.7824,0.9412
-231,Allsvenskan,Varbergs,1.4911,0.7665,1.479
-232,MLS,Atlanta Utd,1.584,0.7215,0.9225
-233,MLS,Austin FC,1.584,0.6313,0.9225
-234,MLS,Chicago Fire,1.584,0.8944,1.1531
-235,MLS,Club de Foot Montreal,1.584,1.1837,1.2685
-236,MLS,Colorado Rapids,1.584,1.1223,0.82
-237,MLS,Columbus Crew,1.584,1.0522,1.23
-238,MLS,DC United,1.584,1.1048,0.5766
-239,MLS,FC Cincinnati,1.584,0.5411,1.3179
-240,MLS,FC Dallas,1.584,1.2626,0.82
-241,MLS,Houston Dynamo,1.584,0.8117,0.7907
-242,MLS,Inter Miami,1.584,0.6313,1.9475
-243,MLS,Los Angeles FC,1.584,1.0101,1.2915
-244,MLS,Los Angeles Galaxy,1.584,1.1364,0.9225
-245,MLS,Minnesota United,1.584,0.8418,0.615
-246,MLS,Nashville SC,1.584,1.2626,0.8386
-247,MLS,New England Revolution,1.584,1.1223,0.9225
-248,MLS,New York City,1.584,1.5432,0.82
-249,MLS,New York Red Bulls,1.584,0.947,0.8072
-250,MLS,Orlando City,1.584,1.1925,0.7175
-251,MLS,Philadelphia Union,1.584,0.9119,0.7175
-252,MLS,Portland Timbers,1.584,1.0522,0.9225
-253,MLS,Real Salt Lake,1.584,0.982,0.9225
-254,MLS,San Jose Earthquakes,1.584,0.947,1.4991
-255,MLS,Seattle Sounders,1.584,1.0331,0.7548
-256,MLS,Sporting Kansas City,1.584,1.1925,1.025
-257,MLS,Toronto FC,1.584,0.8681,1.3838
-258,MLS,Vancouver Whitecaps,1.584,0.6313,1.1531
-259,Swiss,Basel,1.8667,2.9464,0.625
-260,Swiss,Grasshoppers,1.8667,0.8036,0.9375
-261,Swiss,Lausanne,1.8667,0.5357,1.25
-262,Swiss,Lugano,1.8667,0.5357,0.9375
-263,Swiss,Luzern,1.8667,1.0714,2.1875
-264,Swiss,Servette,1.8667,0,1.25
-265,Swiss,Sion,1.8667,0.5357,0.625
-266,Swiss,St. Gallen,1.8667,1.0714,1.25
-267,Swiss,Young Boys,1.8667,0,0
-268,Swiss,Zurich,1.8667,1.6071,0.625
+"","arg_division","arg_teams","arg_avg_HG","arg_home_as","arg_home_ds"
+"1","Liga Profesional","Aldosivi","1.3068","0.8928","1.3135"
+"2","Liga Profesional","Argentinos Jrs","1.3068","0.8745","0.7506"
+"3","Liga Profesional","Arsenal Sarandi","1.3068","0.3826","1.3135"
+"4","Liga Profesional","Atl. Tucuman","1.3068","1.8584","1.2509"
+"5","Liga Profesional","Banfield","1.3068","0.7652","0.7506"
+"6","Liga Profesional","Boca Juniors","1.3068","1.1478","0.9851"
+"7","Liga Profesional","Central Cordoba","1.3068","0.3826","1.6054"
+"8","Liga Profesional","Colon Santa FE","1.3068","1.1053","0.4865"
+"9","Liga Profesional","Defensa y Justicia","1.3068","1.2025","0.8757"
+"10","Liga Profesional","Estudiantes L.P.","1.3068","0.4783","0.5473"
+"11","Liga Profesional","Gimnasia L.P.","1.3068","1.2754","1.6054"
+"12","Liga Profesional","Godoy Cruz","1.3068","0.8928","1.8973"
+"13","Liga Profesional","Huracan","1.3068","0.7652","1.0216"
+"14","Liga Profesional","Independiente","1.3068","0.9839","0.6255"
+"15","Liga Profesional","Lanus","1.3068","1.4029","1.3135"
+"16","Liga Profesional","Newells Old Boys","1.3068","0.7652","0.8757"
+"17","Liga Profesional","Patronato","1.3068","0.8745","0.5004"
+"18","Liga Profesional","Platense","1.3068","0.8745","1.7513"
+"19","Liga Profesional","Racing Club","1.3068","1.0522","0.7662"
+"20","Liga Profesional","River Plate","1.3068","1.4029","0.8757"
+"21","Liga Profesional","Rosario Central","1.3068","1.5305","1.0008"
+"22","Liga Profesional","San Lorenzo","1.3068","0.8745","1.1258"
+"23","Liga Profesional","Sarmiento Junin","1.3068","0.8928","0.8757"
+"24","Liga Profesional","Talleres Cordoba","1.3068","1.2025","0.7506"
+"25","Liga Profesional","Union de Santa Fe","1.3068","0.8928","0.7297"
+"26","Liga Profesional","Velez Sarsfield","1.3068","1.0932","1.0008"
+"27","Admiral Bundesliga","A. Klagenfurt","1.599","2.5016","0"
+"28","Admiral Bundesliga","Admira","1.599","0.5863","1.1583"
+"29","Admiral Bundesliga","Altach","1.599","0.6645","0.858"
+"30","Admiral Bundesliga","Austria Vienna","1.599","1.0301","0.969"
+"31","Admiral Bundesliga","Hartberg","1.599","0.699","0.8479"
+"32","Admiral Bundesliga","LASK","1.599","1.2508","0.858"
+"33","Admiral Bundesliga","Rapid Vienna","1.599","1.2508","0.6006"
+"34","Admiral Bundesliga","Ried","1.599","0.7817","1.2012"
+"35","Admiral Bundesliga","Salzburg","1.599","1.9934","0.6864"
+"36","Admiral Bundesliga","St. Polten","1.599","0.5886","1.2517"
+"37","Admiral Bundesliga","Sturm Graz","1.599","1.2508","0.7293"
+"38","Admiral Bundesliga","Tirol","1.599","1.0944","1.1154"
+"39","Admiral Bundesliga","Wolfsberger AC","1.599","0.7725","1.7362"
+"40","Serie A","America MG","1.1722","0.5332","0.5898"
+"41","Serie A","Athletico-PR","1.1722","1.4625","1.2134"
+"42","Serie A","Atletico-MG","1.1722","1.7062","0.5898"
+"43","Serie A","Atletico GO","1.1722","0.7465","0.8258"
+"44","Serie A","Bahia","1.1722","0.9597","1.4156"
+"45","Serie A","Bragantino","1.1722","1.4625","1.2134"
+"46","Serie A","Ceara","1.1722","1.2323","0.9438"
+"47","Serie A","Chapecoense-SC","1.1722","0.3656","1.6179"
+"48","Serie A","Corinthians","1.1722","0.7312","1.3482"
+"49","Serie A","Cuiaba","1.1722","0.975","1.483"
+"50","Serie A","Flamengo RJ","1.1722","1.4929","1.2977"
+"51","Serie A","Fluminense","1.1722","0.5687","0.9438"
+"52","Serie A","Fortaleza","1.1722","1.9499","0.5393"
+"53","Serie A","Gremio","1.1722","0.6094","0.8089"
+"54","Serie A","Internacional","1.1722","0.7465","1.0617"
+"55","Serie A","Juventude","1.1722","0.7465","1.0617"
+"56","Serie A","Palmeiras","1.1722","1.8128","1.1797"
+"57","Serie A","Santos","1.1722","0.9597","0.3539"
+"58","Serie A","Sao Paulo","1.1722","0.6094","0.8089"
+"59","Serie A","Sport Recife","1.1722","0.2133","0.8258"
+"60","Super League","Beijing Guoan","1.3889","1.08","0.5373"
+"61","Super League","Cangzhou","1.3889","0.5143","0.9211"
+"62","Super League","Changchun Yatai","1.3889","0.96","0.1343"
+"63","Super League","Chongqing Liangjiang Athletic","1.3889","1.1314","1.612"
+"64","Super League","Dalian Pro","1.3889","0.5143","1.612"
+"65","Super League","Guangzhou City","1.3889","1.44","1.612"
+"66","Super League","Guangzhou FC","1.3889","2.16","0.6909"
+"67","Super League","Hebei","1.3889","0.8229","0.4606"
+"68","Super League","Henan Songshan Longmen","1.3889","0.9257","0.6909"
+"69","Super League","Qingdao FC","1.3889","0.4114","2.0726"
+"70","Super League","Shandong Taishan","1.3889","1.44","0.4606"
+"71","Super League","Shanghai Port","1.3889","1.32","0.1343"
+"72","Super League","Shanghai Shenhua","1.3889","0.8229","0.6909"
+"73","Super League","Shenzhen","1.3889","0.8229","0.6909"
+"74","Super League","Tianjin Jinmen Tiger","1.3889","0.9257","2.1877"
+"75","Super League","Wuhan FC","1.3889","0.72","1.209"
+"76","Superliga","Aalborg","1.2083","0.8276","0.4444"
+"77","Superliga","Aarhus","1.2083","0.8276","1.3333"
+"78","Superliga","Brondby","1.2083","0.8276","0.8889"
+"79","Superliga","FC Copenhagen","1.2083","1.6552","1.1852"
+"80","Superliga","Midtjylland","1.2083","2.069","1.3333"
+"81","Superliga","Nordsjaelland","1.2083","1.1035","0.8889"
+"82","Superliga","Odense","1.2083","0","1.7778"
+"83","Superliga","Randers FC","1.2083","0.8276","0.4444"
+"84","Superliga","Silkeborg","1.2083","1.1035","0.2963"
+"85","Superliga","Sonderjyske","1.2083","0.4138","0.8889"
+"86","Superliga","Vejle","1.2083","0.8276","1.7778"
+"87","Superliga","Viborg","1.2083","0","1.7778"
+"88","Veikkausliiga","AC Oulu","1.1839","0.5279","1.3317"
+"89","Veikkausliiga","Haka","1.1839","0.5631","1.1837"
+"90","Veikkausliiga","HIFK","1.1839","0.8447","1.1414"
+"91","Veikkausliiga","HJK","1.1839","1.81","0.5073"
+"92","Veikkausliiga","Honka","1.1839","1.086","1.0146"
+"93","Veikkausliiga","Ilves","1.1839","1.086","0.8878"
+"94","Veikkausliiga","Inter Turku","1.1839","1.3726","0.6658"
+"95","Veikkausliiga","KTP","1.1839","0.4827","1.6487"
+"96","Veikkausliiga","KuPS","1.1839","1.1614","0.5549"
+"97","Veikkausliiga","Lahti","1.1839","1.4782","0.8878"
+"98","Veikkausliiga","Mariehamn","1.1839","0.362","1.3951"
+"99","Veikkausliiga","SJK","1.1839","1.086","0.8878"
+"100","Premier Division","Bohemians","1.3063","1.8094","0.9037"
+"101","Premier Division","Derry City","1.3063","1.0207","1.1735"
+"102","Premier Division","Drogheda","1.3063","1.1135","0.9037"
+"103","Premier Division","Dundalk","1.3063","0.8351","1.2049"
+"104","Premier Division","Finn Harps","1.3063","0.5359","1.0769"
+"105","Premier Division","Longford","1.3063","0.4466","1.3116"
+"106","Premier Division","Shamrock Rovers","1.3063","1.2759","0.6903"
+"107","Premier Division","Sligo Rovers","1.3063","1.0717","0.5799"
+"108","Premier Division","St. Patricks","1.3063","1.3919","0.5271"
+"109","Premier Division","Waterford","1.3063","0.4871","1.5814"
+"110","J1 League","Avispa Fukuoka","1.3013","0.8383","0.9993"
+"111","J1 League","Cerezo Osaka","1.3013","1.0246","0.916"
+"112","J1 League","FC Tokyo","1.3013","1.3273","1.4989"
+"113","J1 League","Gamba Osaka","1.3013","0.6986","1.2491"
+"114","J1 League","Hokkaido Consadole Sapporo","1.3013","1.3972","1.1658"
+"115","J1 League","Kashima Antlers","1.3013","1.5369","0.9993"
+"116","J1 League","Kashiwa Reysol","1.3013","0.978","1.4989"
+"117","J1 League","Kawasaki Frontale","1.3013","1.596","0.7046"
+"118","J1 League","Nagoya Grampus","1.3013","0.6916","0.8244"
+"119","J1 League","Oita Trinita","1.3013","0.5123","1.0687"
+"120","J1 League","Sagan Tosu","1.3013","1.4729","0.458"
+"121","J1 League","Sanfrecce Hiroshima","1.3013","0.6287","0.8327"
+"122","J1 League","Shimizu S-Pulse","1.3013","0.6986","1.3324"
+"123","J1 League","Shonan Bellmare","1.3013","0.5763","0.7633"
+"124","J1 League","Tokushima","1.3013","0.7044","0.9923"
+"125","J1 League","Urawa Reds","1.3013","1.0887","0.916"
+"126","J1 League","Vegalta Sendai","1.3013","0.5589","1.2491"
+"127","J1 League","Vissel Kobe","1.3013","1.2575","0.6662"
+"128","J1 League","Yokohama F. Marinos","1.3013","1.601","0.458"
+"129","J1 League","Yokohama FC","1.3013","0.7044","1.5267"
+"130","Liga MX","Atl. San Luis","1.3977","0.7996","1.8339"
+"131","Liga MX","Atlas","1.3977","0.5648","0.9945"
+"132","Liga MX","Club America","1.3977","1.4309","0.895"
+"133","Liga MX","Club Leon","1.3977","1.2265","0.8548"
+"134","Liga MX","Club Tijuana","1.3977","0.8417","1.0003"
+"135","Liga MX","Cruz Azul","1.3977","1.2358","0.773"
+"136","Liga MX","Guadalajara Chivas","1.3977","0.8228","0.9447"
+"137","Liga MX","Juarez","1.3977","0.5892","1.0003"
+"138","Liga MX","Mazatlan FC","1.3977","0.968","1.2782"
+"139","Liga MX","Monterrey","1.3977","0.9791","0.895"
+"140","Liga MX","Necaxa","1.3977","0.6734","1.2782"
+"141","Liga MX","Pachuca","1.3977","0.8517","0.9897"
+"142","Liga MX","Puebla","1.3977","0.9301","0.8975"
+"143","Liga MX","Queretaro","1.3977","1.1784","0.9447"
+"144","Liga MX","Santos Laguna","1.3977","1.2683","0.73"
+"145","Liga MX","Toluca","1.3977","1.3514","1.1022"
+"146","Liga MX","U.A.N.L.- Tigres","1.3977","1.0544","1.1933"
+"147","Liga MX","U.N.A.M.- Pumas","1.3977","1.0732","0.6613"
+"148","Eliteserien","Bodo/Glimt","1.8142","1.5158","0.9417"
+"149","Eliteserien","Brann","1.8142","0.63","1.3153"
+"150","Eliteserien","Haugesund","1.8142","1.2599","0.4783"
+"151","Eliteserien","Kristiansund","1.8142","0.7874","0.5979"
+"152","Eliteserien","Lillestrom","1.8142","0.8662","0.7175"
+"153","Eliteserien","Mjondalen","1.8142","0.7087","1.0762"
+"154","Eliteserien","Molde","1.8142","1.8603","0.9417"
+"155","Eliteserien","Odd","1.8142","1.1024","1.116"
+"156","Eliteserien","Rosenborg","1.8142","1.1812","0.9566"
+"157","Eliteserien","Sandefjord","1.8142","0.689","1.0463"
+"158","Eliteserien","Sarpsborg 08","1.8142","0.3937","0.7175"
+"159","Eliteserien","Stabaek","1.8142","0.7087","1.5545"
+"160","Eliteserien","Stromsgodset","1.8142","1.2599","0.5979"
+"161","Eliteserien","Tromso","1.8142","0.5512","1.8136"
+"162","Eliteserien","Valerenga","1.8142","1.0237","1.0762"
+"163","Eliteserien","Viking","1.8142","1.2599","1.1958"
+"164","Ekstraklasa","Cracovia","1.3846","0.7222","1.9259"
+"165","Ekstraklasa","Gornik Z.","1.3846","0.7222","1.4444"
+"166","Ekstraklasa","Jagiellonia","1.3846","1.2037","0.321"
+"167","Ekstraklasa","Lech Poznan","1.3846","0.7222","0"
+"168","Ekstraklasa","Lechia Gdansk","1.3846","0.7222","0"
+"169","Ekstraklasa","Leczna","1.3846","0.3611","2.4073"
+"170","Ekstraklasa","Legia","1.3846","0.7222","0"
+"171","Ekstraklasa","Piast Gliwice","1.3846","1.4445","2.8888"
+"172","Ekstraklasa","Pogon Szczecin","1.3846","1.0833","0"
+"173","Ekstraklasa","Radomiak Radom","1.3846","2.1667","0.9629"
+"174","Ekstraklasa","Slask Wroclaw","1.3846","1.0833","1.4444"
+"175","Ekstraklasa","Stal Mielec","1.3846","0","1.9259"
+"176","Ekstraklasa","Termalica B-B.","1.3846","1.0833","1.4444"
+"177","Ekstraklasa","Warta Poznan","1.3846","0.7222","0.9629"
+"178","Ekstraklasa","Wisla","1.3846","1.4445","0.9629"
+"179","Ekstraklasa","Wisla Plock","1.3846","0.7222","0"
+"180","Ekstraklasa","Zaglebie","1.3846","2.1667","0.9629"
+"181","Liga 1","Academica Clinceni","1.2812","0.7805","2.3702"
+"182","Liga 1","CFR Cluj","1.2812","1.561","1.1851"
+"183","Liga 1","Chindia Targoviste","1.2812","0.7805","0.5926"
+"184","Liga 1","Din. Bucuresti","1.2812","2.3416","1.7777"
+"185","Liga 1","Farul Constanta","1.2812","1.1708","0"
+"186","Liga 1","FC Arges","1.2812","0","1.1851"
+"187","Liga 1","FC Botosani","1.2812","0.7805","0.5926"
+"188","Liga 1","FC Rapid Bucuresti","1.2812","0.3903","0"
+"189","Liga 1","FC Steaua Bucuresti","1.2812","2.3416","1.1851"
+"190","Liga 1","FC Voluntari","1.2812","0.7805","1.1851"
+"191","Liga 1","Gaz Metan Medias","1.2812","1.1708","1.1851"
+"192","Liga 1","Mioveni","1.2812","0","1.7777"
+"193","Liga 1","Sepsi Sf. Gheorghe","1.2812","1.1708","1.1851"
+"194","Liga 1","U Craiova 1948","1.2812","0.7805","0"
+"195","Liga 1","Univ. Craiova","1.2812","1.3009","0.7901"
+"196","Liga 1","UTA Arad","1.2812","0.3903","0.5926"
+"197","Premier League","Akhmat Grozny","1.2083","0.8276","1.2973"
+"198","Premier League","Arsenal Tula","1.2083","0.8276","1.2973"
+"199","Premier League","CSKA Moscow","1.2083","0.8276","0.6486"
+"200","Premier League","Dynamo Moscow","1.2083","1.6552","0.6486"
+"201","Premier League","FK Krylya Sovetov Samara","1.2083","0.4138","0.973"
+"202","Premier League","FK Rostov","1.2083","0.8276","1.9459"
+"203","Premier League","Khimki","1.2083","0.8276","1.2973"
+"204","Premier League","Krasnodar","1.2083","0","0.6486"
+"205","Premier League","Lokomotiv Moscow","1.2083","2.4828","0.6486"
+"206","Premier League","Nizhny Novgorod","1.2083","0.8276","0"
+"207","Premier League","Rubin Kazan","1.2083","1.2414","0.3243"
+"208","Premier League","Sochi","1.2083","1.6552","0"
+"209","Premier League","Spartak Moscow","1.2083","0.8276","1.2973"
+"210","Premier League","Ufa","1.2083","1.2414","1.2973"
+"211","Premier League","Ural","1.2083","0.4138","1.2973"
+"212","Premier League","Zenit","1.2083","2.4828","1.2973"
+"213","Allsvenskan","AIK","1.4911","1.0898","0.4706"
+"214","Allsvenskan","Degerfors","1.4911","1.006","1.2549"
+"215","Allsvenskan","Djurgarden","1.4911","1.4251","0.8235"
+"216","Allsvenskan","Elfsborg","1.4911","1.1736","0.9412"
+"217","Allsvenskan","Goteborg","1.4911","0.9221","1.2941"
+"218","Allsvenskan","Hacken","1.4911","1.4371","1.3445"
+"219","Allsvenskan","Halmstad","1.4911","0.3832","0.4034"
+"220","Allsvenskan","Hammarby","1.4911","1.5329","1.0756"
+"221","Allsvenskan","Kalmar","1.4911","0.5748","0.6723"
+"222","Allsvenskan","Malmo FF","1.4911","1.7884","1.098"
+"223","Allsvenskan","Mjallby","1.4911","0.3353","0.6275"
+"224","Allsvenskan","Norrkoping","1.4911","0.9581","1.0756"
+"225","Allsvenskan","Orebro","1.4911","0.479","1.3445"
+"226","Allsvenskan","Ostersunds","1.4911","1.2455","1.2101"
+"227","Allsvenskan","Sirius","1.4911","0.7824","0.9412"
+"228","Allsvenskan","Varbergs","1.4911","0.7665","1.479"
+"229","MLS","Atlanta Utd","1.584","0.7215","0.9225"
+"230","MLS","Austin FC","1.584","0.6313","0.9225"
+"231","MLS","Chicago Fire","1.584","0.8944","1.1531"
+"232","MLS","Club de Foot Montreal","1.584","1.1837","1.2685"
+"233","MLS","Colorado Rapids","1.584","1.1223","0.82"
+"234","MLS","Columbus Crew","1.584","1.0522","1.23"
+"235","MLS","DC United","1.584","1.1048","0.5766"
+"236","MLS","FC Cincinnati","1.584","0.5411","1.3179"
+"237","MLS","FC Dallas","1.584","1.2626","0.82"
+"238","MLS","Houston Dynamo","1.584","0.8117","0.7907"
+"239","MLS","Inter Miami","1.584","0.6313","1.9475"
+"240","MLS","Los Angeles FC","1.584","1.0101","1.2915"
+"241","MLS","Los Angeles Galaxy","1.584","1.1364","0.9225"
+"242","MLS","Minnesota United","1.584","0.8418","0.615"
+"243","MLS","Nashville SC","1.584","1.2626","0.8386"
+"244","MLS","New England Revolution","1.584","1.1223","0.9225"
+"245","MLS","New York City","1.584","1.5432","0.82"
+"246","MLS","New York Red Bulls","1.584","0.947","0.8072"
+"247","MLS","Orlando City","1.584","1.1925","0.7175"
+"248","MLS","Philadelphia Union","1.584","0.9119","0.7175"
+"249","MLS","Portland Timbers","1.584","1.0522","0.9225"
+"250","MLS","Real Salt Lake","1.584","0.982","0.9225"
+"251","MLS","San Jose Earthquakes","1.584","0.947","1.4991"
+"252","MLS","Seattle Sounders","1.584","1.0331","0.7548"
+"253","MLS","Sporting Kansas City","1.584","1.1925","1.025"
+"254","MLS","Toronto FC","1.584","0.8681","1.3838"
+"255","MLS","Vancouver Whitecaps","1.584","0.6313","1.1531"
+"256","Swiss","Basel","1.8667","2.9464","0.625"
+"257","Swiss","Grasshoppers","1.8667","0.8036","0.9375"
+"258","Swiss","Lausanne","1.8667","0.5357","1.25"
+"259","Swiss","Lugano","1.8667","0.5357","0.9375"
+"260","Swiss","Luzern","1.8667","1.0714","2.1875"
+"261","Swiss","Servette","1.8667","0","1.25"
+"262","Swiss","Sion","1.8667","0.5357","0.625"
+"263","Swiss","St. Gallen","1.8667","1.0714","1.25"
+"264","Swiss","Young Boys","1.8667","0","0"
+"265","Swiss","Zurich","1.8667","1.6071","0.625"

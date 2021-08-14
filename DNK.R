@@ -16,7 +16,7 @@ DNK$Date <- dmy(DNK$Date)
 DNK <- DNK[order(as.Date(DNK$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 DNK$CS <- paste(DNK$HG,DNK$AG, sep = "-")
 #DNK_qualificaton <- subset(DNK,tournament == "UEFA Euro qualification")
-DNK <- subset(DNK,Season == "2020/2021")
+DNK <- subset(DNK,Season == "2021/2022")
 #DNK <- DNK[DNK$Date > '2008-01-01',])
 DNK$TG <- DNK$HG + DNK$AG
 DNK$OV25 <- ifelse(DNK$TG >= 3,"Y","N")

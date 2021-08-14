@@ -16,7 +16,7 @@ RUS$Date <- dmy(RUS$Date)
 RUS <- RUS[order(as.Date(RUS$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 RUS$CS <- paste(RUS$HG,RUS$AG, sep = "-")
 #RUS_qualificaton <- subset(RUS,tournament == "UEFA Euro qualification")
-RUS <- subset(RUS,Season == "2020/2021")
+RUS <- subset(RUS,Season == "2021/2022")
 #RUS <- RUS[RUS$Date > '2008-01-01',])
 RUS$TG <- RUS$HG + RUS$AG
 RUS$OV25 <- ifelse(RUS$TG >= 3,"Y","N")

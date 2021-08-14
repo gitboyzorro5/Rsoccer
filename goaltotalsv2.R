@@ -522,7 +522,7 @@ sc3_goaltotalsv2[is.na(sc3_goaltotalsv2)] <- ""
 sp1_goaltotalsv2[is.na(sp1_goaltotalsv2)] <- ""
 sp2_goaltotalsv2[is.na(sp2_goaltotalsv2)] <- ""
 t1_goaltotalsv2[is.na(t1_goaltotalsv2)] <- ""
-#Bind averaye total goals
+#Bind average total goals
 
 b1_goaltotalsv2 <- cbind(b1_goaltotalsv2,b1_avg_totalgoals)
 d1_goaltotalsv2 <- cbind(d1_goaltotalsv2,d1_avg_totalgoals)

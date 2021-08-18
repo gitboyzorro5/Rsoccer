@@ -234,7 +234,7 @@ write.xlsx(sc2_goaltotalsv2,'Divisions/SC2.xlsx', sheetName = "Goal totals v2", 
 write.xlsx(sc2_yellowscored_h,'Divisions/SC2.xlsx', sheetName = "Yellow Cards", append = TRUE)
 write.xlsx(sc2_yellowtotalsv2,'Divisions/SC2.xlsx', sheetName = "Yellow Totals", append = TRUE)
 write.xlsx(sc2_redscored_h,'Divisions/SC2.xlsx', sheetName = "Red Cards", append = TRUE)
-write.xlsx(sc2_redtotalsv2,'DivisionsSC21.xlsx', sheetName = "Red Totals", append = TRUE)
+write.xlsx(sc2_redtotalsv2,'Divisions/SC2.xlsx', sheetName = "Red Totals", append = TRUE)
 write.xlsx(sc2_ovundata,'Divisions/SC2.xlsx', sheetName = "OVUN", append = TRUE)
 write.xlsx(sc2_shots_analysis,'Divisions/SC2.xlsx', sheetName = "Shots Analysis", append = TRUE)
 #SC3

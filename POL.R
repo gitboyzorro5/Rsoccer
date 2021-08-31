@@ -26,7 +26,6 @@ POL$FTR <- with(POL,
 ###################################################
 ####GoalTotalsv2##################################
 pol_totalgoalsv2 <- tapply(POL$TG, POL[c("Home", "Away")],mean)
-pol_totalgoalsv2
 pol_hgtotals <- rowSums(pol_totalgoalsv2,na.rm = T)
 pol_agtotals <- colSums(pol_totalgoalsv2,na.rm = T)
 

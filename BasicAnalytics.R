@@ -134,16 +134,26 @@ nor_CS_summary <- tabyl(allteams20202021,Div,CS) %>% adorn_percentages("row") %>
 
 write.xlsx(nor_CS_summary,'cs.xlsx')
 sample_n(F2,5)
+################################################################
+
+allteams20212022scores <- allteams20212022
+myoddscores <- readxl::read_excel('../FDAS/myodds_20212022.xlsx', sheet = '3way')
+
+myoddscores$matchid <- paste(myoddscores$HT,myoddscores$AT, sep = "-")
+allteams20212022scores$matchid <- paste(allteams20212022scores$HomeTeam,allteams20212022scores$AwayTeam, sep = "-")
+
+#allteams20212022scores$Date <- ymd(allteams20212022scores$Date)
+#myoddscores$Date <- ymd(myoddscores$Date)
 
 
+#allteams20212022scores <- allteams20212022scores[allteams20212022scores$Date >= '2021-08-28',]
+#myoddscores <- myoddscores[myoddscores$Date >= '2021-08-28',]
 
+myoddscores <- myoddscores[,c(24,25,31)]
+allteams20212022scores <- allteams20212022scores[,c(3,4,30,15,24)]
 
-
-
-
-
-
-
+finalscore <- dplyr::left_join(myoddscores,allteams20212022scores)
+write.xlsx(finalscore,'finalscore.xlsx')
 
 
 

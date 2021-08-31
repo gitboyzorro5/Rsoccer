@@ -1,0 +1,748 @@
+"","HT","AT","matchid","HomeTeam","AwayTeam","CS","TG"
+"1","Standard","Genk","Standard-Genk","Standard","Genk","1-1",2
+"2","Schalke 04","Hamburg","Schalke 04-Hamburg","Schalke 04","Hamburg","1-3",4
+"3","Oud-Heverlee Leuven","Waregem","Oud-Heverlee Leuven-Waregem","Oud-Heverlee Leuven","Waregem","1-1",2
+"4","Beerschot VA","Cercle Brugge","Beerschot VA-Cercle Brugge","Beerschot VA","Cercle Brugge","0-1",1
+"5","Kortrijk","Seraing","Kortrijk-Seraing","Kortrijk","Seraing","2-0",2
+"6","Oostende","Charleroi","Oostende-Charleroi","Oostende","Charleroi","0-3",3
+"7","Darmstadt","Regensburg","Darmstadt-Regensburg","Darmstadt","Regensburg","0-2",2
+"8","Dresden","Ingolstadt","Dresden-Ingolstadt","Dresden","Ingolstadt","3-0",3
+"9","Hansa Rostock","Karlsruhe","Hansa Rostock-Karlsruhe","Hansa Rostock","Karlsruhe","1-3",4
+"10","Heidenheim","Paderborn","Heidenheim-Paderborn","Heidenheim","Paderborn","0-0",0
+"11","Werder Bremen","Hannover","Werder Bremen-Hannover","Werder Bremen","Hannover","1-1",2
+"12","Bastia","Nimes","Bastia-Nimes","Bastia","Nimes","1-1",2
+"13","Amiens","Auxerre","Amiens-Auxerre","Amiens","Auxerre","1-2",3
+"14","Caen","Rodez","Caen-Rodez","Caen","Rodez","4-0",4
+"15","Dunkerque","Quevilly Rouen","Dunkerque-Quevilly Rouen","Dunkerque","Quevilly Rouen","1-1",2
+"16","Grenoble","Paris FC","Grenoble-Paris FC","Grenoble","Paris FC","0-4",4
+"17","Le Havre","Guingamp","Le Havre-Guingamp","Le Havre","Guingamp","0-0",0
+"18","Pau FC","Nancy","Pau FC-Nancy","Pau FC","Nancy","2-1",3
+"19","Toulouse","Ajaccio","Toulouse-Ajaccio","Toulouse","Ajaccio","2-2",4
+"20","Valenciennes","Niort","Valenciennes-Niort","Valenciennes","Niort","0-0",0
+"21","Mechelen","Antwerp","Mechelen-Antwerp","Mechelen","Antwerp","3-2",5
+"22","Club Brugge","Eupen","Club Brugge-Eupen","Club Brugge","Eupen","2-2",4
+"23","Anderlecht","St. Gilloise","Anderlecht-St. Gilloise","Anderlecht","St. Gilloise","1-3",4
+"24","St Truiden","Gent","St Truiden-Gent","St Truiden","Gent","2-1",3
+"25","Nurnberg","Erzgebirge Aue","Nurnberg-Erzgebirge Aue","Nurnberg","Erzgebirge Aue","0-0",0
+"26","Sandhausen","Fortuna Dusseldorf","Sandhausen-Fortuna Dusseldorf","Sandhausen","Fortuna Dusseldorf","0-2",2
+"27","St Pauli","Holstein Kiel","St Pauli-Holstein Kiel","St Pauli","Holstein Kiel","3-0",3
+"28","Dijon","Sochaux","Dijon-Sochaux","Dijon","Sochaux","1-3",4
+"29","St. Gilloise","Club Brugge","St. Gilloise-Club Brugge","St. Gilloise","Club Brugge","0-1",1
+"30","Waregem","Standard","Waregem-Standard","Waregem","Standard","1-2",3
+"31","Gent","Beerschot VA","Gent-Beerschot VA","Gent","Beerschot VA","2-2",4
+"32","Antwerp","Kortrijk","Antwerp-Kortrijk","Antwerp","Kortrijk","0-1",1
+"33","Erzgebirge Aue","St Pauli","Erzgebirge Aue-St Pauli","Erzgebirge Aue","St Pauli","0-0",0
+"34","Hamburg","Dresden","Hamburg-Dresden","Hamburg","Dresden","1-1",2
+"35","Holstein Kiel","Schalke 04","Holstein Kiel-Schalke 04","Holstein Kiel","Schalke 04","0-3",3
+"36","Aberdeen","Dundee United","Aberdeen-Dundee United","Aberdeen","Dundee United","2-0",2
+"37","Motherwell","Hibernian","Motherwell-Hibernian","Motherwell","Hibernian","2-3",5
+"38","Auxerre","Grenoble","Auxerre-Grenoble","Auxerre","Grenoble","3-0",3
+"39","Kilmarnock","Ayr","Kilmarnock-Ayr","Kilmarnock","Ayr","2-0",2
+"40","Genk","Oostende","Genk-Oostende","Genk","Oostende","3-4",7
+"41","Karlsruhe","Darmstadt","Karlsruhe-Darmstadt","Karlsruhe","Darmstadt","3-0",3
+"42","Paderborn","Nurnberg","Paderborn-Nurnberg","Paderborn","Nurnberg","2-2",4
+"43","Charleroi","St Truiden","Charleroi-St Truiden","Charleroi","St Truiden","0-0",0
+"44","Cercle Brugge","Oud-Heverlee Leuven","Cercle Brugge-Oud-Heverlee Leuven","Cercle Brugge","Oud-Heverlee Leuven","1-1",2
+"45","Seraing","Mechelen","Seraing-Mechelen","Seraing","Mechelen","1-0",1
+"46","Eupen","Anderlecht","Eupen-Anderlecht","Eupen","Anderlecht","1-1",2
+"47","Hannover","Hansa Rostock","Hannover-Hansa Rostock","Hannover","Hansa Rostock","0-3",3
+"48","Ingolstadt","Heidenheim","Ingolstadt-Heidenheim","Ingolstadt","Heidenheim","1-2",3
+"49","Regensburg","Sandhausen","Regensburg-Sandhausen","Regensburg","Sandhausen","3-0",3
+"50","Fortuna Dusseldorf","Werder Bremen","Fortuna Dusseldorf-Werder Bremen","Fortuna Dusseldorf","Werder Bremen","2-3",5
+"51","Nimes","Dijon","Nimes-Dijon","Nimes","Dijon","2-1",3
+"52","Ajaccio","Amiens","Ajaccio-Amiens","Ajaccio","Amiens","3-1",4
+"53","Guingamp","Valenciennes","Guingamp-Valenciennes","Guingamp","Valenciennes","1-1",2
+"54","Nancy","Toulouse","Nancy-Toulouse","Nancy","Toulouse","0-4",4
+"55","Niort","Caen","Niort-Caen","Niort","Caen","0-1",1
+"56","Paris FC","Dunkerque","Paris FC-Dunkerque","Paris FC","Dunkerque","2-1",3
+"57","Rodez","Pau FC","Rodez-Pau FC","Rodez","Pau FC","1-0",1
+"58","Sochaux","Le Havre","Sochaux-Le Havre","Sochaux","Le Havre","0-2",2
+"59","Rangers","Livingston","Rangers-Livingston","Rangers","Livingston","3-0",3
+"60","Dundee","St Mirren","Dundee-St Mirren","Dundee","St Mirren","2-2",4
+"61","Ross County","St Johnstone","Ross County-St Johnstone","Ross County","St Johnstone","0-0",0
+"62","Hearts","Celtic","Hearts-Celtic","Hearts","Celtic","2-1",3
+"63","Arbroath","Inverness C","Arbroath-Inverness C","Arbroath","Inverness C","0-1",1
+"64","Morton","Dunfermline","Morton-Dunfermline","Morton","Dunfermline","2-2",4
+"65","Partick","Queen of Sth","Partick-Queen of Sth","Partick","Queen of Sth","3-2",5
+"66","Raith Rvs","Hamilton","Raith Rvs-Hamilton","Raith Rvs","Hamilton","4-4",8
+"67","Airdrie Utd","Montrose","Airdrie Utd-Montrose","Airdrie Utd","Montrose","0-3",3
+"68","Clyde","Dumbarton","Clyde-Dumbarton","Clyde","Dumbarton","0-3",3
+"69","Cove Rangers","Falkirk","Cove Rangers-Falkirk","Cove Rangers","Falkirk","1-1",2
+"70","East Fife","Queens Park","East Fife-Queens Park","East Fife","Queens Park","1-1",2
+"71","Peterhead","Alloa","Peterhead-Alloa","Peterhead","Alloa","2-0",2
+"72","Albion Rvs","Edinburgh City","Albion Rvs-Edinburgh City","Albion Rvs","Edinburgh City","2-0",2
+"73","Annan Athletic","Forfar","Annan Athletic-Forfar","Annan Athletic","Forfar","0-2",2
+"74","Elgin","Stranraer","Elgin-Stranraer","Elgin","Stranraer","1-1",2
+"75","Kelty Hearts","Cowdenbeath","Kelty Hearts-Cowdenbeath","Kelty Hearts","Cowdenbeath","2-0",2
+"76","Stenhousemuir","Stirling","Stenhousemuir-Stirling","Stenhousemuir","Stirling","0-1",1
+"77","Club Brugge","Cercle Brugge","Club Brugge-Cercle Brugge","Club Brugge","Cercle Brugge","1-1",2
+"78","Bournemouth","West Brom","Bournemouth-West Brom","Bournemouth","West Brom","2-2",4
+"79","Monaco","Nantes","Monaco-Nantes","Monaco","Nantes","1-1",2
+"80","Sp Lisbon","Vizela","Sp Lisbon-Vizela","Sp Lisbon","Vizela","3-0",3
+"81","Beerschot VA","St. Gilloise","Beerschot VA-St. Gilloise","Beerschot VA","St. Gilloise","0-3",3
+"82","Mechelen","Eupen","Mechelen-Eupen","Mechelen","Eupen","1-3",4
+"83","St Truiden","Waregem","St Truiden-Waregem","St Truiden","Waregem","1-3",4
+"84","Kortrijk","Genk","Kortrijk-Genk","Kortrijk","Genk","1-2",3
+"85","Blackburn","Swansea","Blackburn-Swansea","Blackburn","Swansea","2-1",3
+"86","Bristol City","Blackpool","Bristol City-Blackpool","Bristol City","Blackpool","1-1",2
+"87","Cardiff","Barnsley","Cardiff-Barnsley","Cardiff","Barnsley","1-1",2
+"88","Derby","Huddersfield","Derby-Huddersfield","Derby","Huddersfield","1-1",2
+"89","Luton","Peterboro","Luton-Peterboro","Luton","Peterboro","3-0",3
+"90","Preston","Hull","Preston-Hull","Preston","Hull","1-4",5
+"91","QPR","Millwall","QPR-Millwall","QPR","Millwall","1-1",2
+"92","Stoke","Reading","Stoke-Reading","Stoke","Reading","3-2",5
+"93","Sheffield United","Birmingham","Sheffield United-Birmingham","Sheffield United","Birmingham","0-1",1
+"94","Bolton","Milton Keynes Dons","Bolton-Milton Keynes Dons","Bolton","Milton Keynes Dons","3-3",6
+"95","Cambridge","Oxford","Cambridge-Oxford","Cambridge","Oxford","1-1",2
+"96","Crewe","Cheltenham","Crewe-Cheltenham","Crewe","Cheltenham","1-1",2
+"97","Doncaster","AFC Wimbledon","Doncaster-AFC Wimbledon","Doncaster","AFC Wimbledon","1-2",3
+"98","Fleetwood Town","Portsmouth","Fleetwood Town-Portsmouth","Fleetwood Town","Portsmouth","0-1",1
+"99","Gillingham","Lincoln","Gillingham-Lincoln","Gillingham","Lincoln","1-1",2
+"100","Ipswich","Morecambe","Ipswich-Morecambe","Ipswich","Morecambe","2-2",4
+"101","Rotherham","Plymouth","Rotherham-Plymouth","Rotherham","Plymouth","2-0",2
+"102","Shrewsbury","Burton","Shrewsbury-Burton","Shrewsbury","Burton","0-1",1
+"103","Sunderland","Wigan","Sunderland-Wigan","Sunderland","Wigan","2-1",3
+"104","Wycombe","Accrington","Wycombe-Accrington","Wycombe","Accrington","2-1",3
+"105","Charlton","Sheffield Weds","Charlton-Sheffield Weds","Charlton","Sheffield Weds","0-0",0
+"106","Carlisle","Colchester","Carlisle-Colchester","Carlisle","Colchester","0-0",0
+"107","Exeter","Bradford","Exeter-Bradford","Exeter","Bradford","0-0",0
+"108","Forest Green","Sutton","Forest Green-Sutton","Forest Green","Sutton","2-1",3
+"109","Harrogate","Rochdale","Harrogate-Rochdale","Harrogate","Rochdale","3-2",5
+"110","Hartlepool","Crawley Town","Hartlepool-Crawley Town","Hartlepool","Crawley Town","1-0",1
+"111","Mansfield","Bristol Rvs","Mansfield-Bristol Rvs","Mansfield","Bristol Rvs","2-1",3
+"112","Northampton","Port Vale","Northampton-Port Vale","Northampton","Port Vale","1-0",1
+"113","Oldham","Newport County","Oldham-Newport County","Oldham","Newport County","0-1",1
+"114","Salford","Leyton Orient","Salford-Leyton Orient","Salford","Leyton Orient","1-1",2
+"115","Scunthorpe","Swindon","Scunthorpe-Swindon","Scunthorpe","Swindon","1-3",4
+"116","Stevenage","Barrow","Stevenage-Barrow","Stevenage","Barrow","1-0",1
+"117","Tranmere","Walsall","Tranmere-Walsall","Tranmere","Walsall","1-0",1
+"118","Lyon","Brest","Lyon-Brest","Lyon","Brest","1-1",2
+"119","Troyes","Paris SG","Troyes-Paris SG","Troyes","Paris SG","1-2",3
+"120","Caen","Sochaux","Caen-Sochaux","Caen","Sochaux","1-2",3
+"121","Amiens","Quevilly Rouen","Amiens-Quevilly Rouen","Amiens","Quevilly Rouen","1-3",4
+"122","Auxerre","Ajaccio","Auxerre-Ajaccio","Auxerre","Ajaccio","0-0",0
+"123","Dijon","Rodez","Dijon-Rodez","Dijon","Rodez","1-1",2
+"124","Dunkerque","Niort","Dunkerque-Niort","Dunkerque","Niort","1-2",3
+"125","Grenoble","Guingamp","Grenoble-Guingamp","Grenoble","Guingamp","0-0",0
+"126","Le Havre","Paris FC","Le Havre-Paris FC","Le Havre","Paris FC","1-2",3
+"127","Pau FC","Toulouse","Pau FC-Toulouse","Pau FC","Toulouse","0-1",1
+"128","Valenciennes","Nimes","Valenciennes-Nimes","Valenciennes","Nimes","0-3",3
+"129","Arouca","Estoril","Arouca-Estoril","Arouca","Estoril","0-2",2
+"130","Moreirense","Benfica","Moreirense-Benfica","Moreirense","Benfica","1-2",3
+"131","Maritimo","Sp Braga","Maritimo-Sp Braga","Maritimo","Sp Braga","0-2",2
+"132","Dundee United","Rangers","Dundee United-Rangers","Dundee United","Rangers","1-0",1
+"133","St Mirren","Hearts","St Mirren-Hearts","St Mirren","Hearts","1-2",3
+"134","Ayr","Arbroath","Ayr-Arbroath","Ayr","Arbroath","2-2",4
+"135","Dunfermline","Partick","Dunfermline-Partick","Dunfermline","Partick","0-3",3
+"136","Hamilton","Morton","Hamilton-Morton","Hamilton","Morton","0-1",1
+"137","Inverness C","Raith Rvs","Inverness C-Raith Rvs","Inverness C","Raith Rvs","1-0",1
+"138","Queen of Sth","Kilmarnock","Queen of Sth-Kilmarnock","Queen of Sth","Kilmarnock","0-1",1
+"139","Alloa","East Fife","Alloa-East Fife","Alloa","East Fife","3-1",4
+"140","Dumbarton","Airdrie Utd","Dumbarton-Airdrie Utd","Dumbarton","Airdrie Utd","2-2",4
+"141","Falkirk","Peterhead","Falkirk-Peterhead","Falkirk","Peterhead","2-1",3
+"142","Montrose","Clyde","Montrose-Clyde","Montrose","Clyde","2-2",4
+"143","Queens Park","Cove Rangers","Queens Park-Cove Rangers","Queens Park","Cove Rangers","2-0",2
+"144","Albion Rvs","Stenhousemuir","Albion Rvs-Stenhousemuir","Albion Rvs","Stenhousemuir","2-2",4
+"145","Cowdenbeath","Elgin","Cowdenbeath-Elgin","Cowdenbeath","Elgin","3-1",4
+"146","Forfar","Edinburgh City","Forfar-Edinburgh City","Forfar","Edinburgh City","2-0",2
+"147","Stirling","Kelty Hearts","Stirling-Kelty Hearts","Stirling","Kelty Hearts","1-3",4
+"148","Stranraer","Annan Athletic","Stranraer-Annan Athletic","Stranraer","Annan Athletic","0-3",3
+"149","Standard","Antwerp","Standard-Antwerp","Standard","Antwerp","2-5",7
+"150","Oud-Heverlee Leuven","Charleroi","Oud-Heverlee Leuven-Charleroi","Oud-Heverlee Leuven","Charleroi","1-1",2
+"151","Anderlecht","Seraing","Anderlecht-Seraing","Anderlecht","Seraing","3-0",3
+"152","Oostende","Gent","Oostende-Gent","Oostende","Gent","1-0",1
+"153","Fulham","Middlesbrough","Fulham-Middlesbrough","Fulham","Middlesbrough","1-1",2
+"154","Coventry","Nottm Forest","Coventry-Nottm Forest","Coventry","Nottm Forest","2-1",3
+"155","Rennes","Lens","Rennes-Lens","Rennes","Lens","1-1",2
+"156","Bordeaux","Clermont","Bordeaux-Clermont","Bordeaux","Clermont","0-2",2
+"157","Nice","Reims","Nice-Reims","Nice","Reims","0-0",0
+"158","St Etienne","Lorient","St Etienne-Lorient","St Etienne","Lorient","1-1",2
+"159","Strasbourg","Angers","Strasbourg-Angers","Strasbourg","Angers","0-2",2
+"160","Metz","Lille","Metz-Lille","Metz","Lille","3-3",6
+"161","Montpellier","Marseille","Montpellier-Marseille","Montpellier","Marseille","2-3",5
+"162","Guimaraes","Portimonense","Guimaraes-Portimonense","Guimaraes","Portimonense","0-1",1
+"163","Tondela","Santa Clara","Tondela-Santa Clara","Tondela","Santa Clara","3-0",3
+"164","Porto","Belenenses","Porto-Belenenses","Porto","Belenenses","2-0",2
+"165","Pacos Ferreira","Famalicao","Pacos Ferreira-Famalicao","Pacos Ferreira","Famalicao","2-0",2
+"166","Celtic","Dundee","Celtic-Dundee","Celtic","Dundee","6-0",6
+"167","Hibernian","Ross County","Hibernian-Ross County","Hibernian","Ross County","3-0",3
+"168","Livingston","Aberdeen","Livingston-Aberdeen","Livingston","Aberdeen","1-2",3
+"169","St Johnstone","Motherwell","St Johnstone-Motherwell","St Johnstone","Motherwell","1-1",2
+"170","Gil Vicente","Boavista","Gil Vicente-Boavista","Gil Vicente","Boavista","3-0",3
+"171","Bastia","Nancy","Bastia-Nancy","Bastia","Nancy","1-1",2
+"172","Charleroi","Antwerp","Charleroi-Antwerp","Charleroi","Antwerp","1-1",2
+"173","Mgladbach","Bayern Munich","Mgladbach-Bayern Munich","Mgladbach","Bayern Munich","1-1",2
+"174","Schalke 04","Erzgebirge Aue","Schalke 04-Erzgebirge Aue","Schalke 04","Erzgebirge Aue","1-1",2
+"175","St Pauli","Hamburg","St Pauli-Hamburg","St Pauli","Hamburg","3-2",5
+"176","Brentford","Arsenal","Brentford-Arsenal","Brentford","Arsenal","2-0",2
+"177","Lorient","Monaco","Lorient-Monaco","Lorient","Monaco","1-0",1
+"178","Go Ahead Eagles","Heerenveen","Go Ahead Eagles-Heerenveen","Go Ahead Eagles","Heerenveen","0-1",1
+"179","Estoril","Guimaraes","Estoril-Guimaraes","Estoril","Guimaraes","0-0",0
+"180","Edinburgh City","Stenhousemuir","Edinburgh City-Stenhousemuir","Edinburgh City","Stenhousemuir","1-0",1
+"181","Valencia","Getafe","Valencia-Getafe","Valencia","Getafe","1-0",1
+"182","Huesca","Eibar","Huesca-Eibar","Huesca","Eibar","2-0",2
+"183","Zaragoza","Ibiza","Zaragoza-Ibiza","Zaragoza","Ibiza","0-0",0
+"184","Besiktas","Rizespor","Besiktas-Rizespor","Besiktas","Rizespor","3-0",3
+"185","St. Gilloise","Kortrijk","St. Gilloise-Kortrijk","St. Gilloise","Kortrijk","2-0",2
+"186","Eupen","St Truiden","Eupen-St Truiden","Eupen","St Truiden","2-1",3
+"187","Seraing","Oostende","Seraing-Oostende","Seraing","Oostende","2-3",5
+"188","Genk","Oud-Heverlee Leuven","Genk-Oud-Heverlee Leuven","Genk","Oud-Heverlee Leuven","4-0",4
+"189","Augsburg","Hoffenheim","Augsburg-Hoffenheim","Augsburg","Hoffenheim","0-4",4
+"190","Bielefeld","Freiburg","Bielefeld-Freiburg","Bielefeld","Freiburg","0-0",0
+"191","Stuttgart","Greuther Furth","Stuttgart-Greuther Furth","Stuttgart","Greuther Furth","5-1",6
+"192","Union Berlin","Leverkusen","Union Berlin-Leverkusen","Union Berlin","Leverkusen","1-1",2
+"193","Wolfsburg","Bochum","Wolfsburg-Bochum","Wolfsburg","Bochum","1-0",1
+"194","Dortmund","Ein Frankfurt","Dortmund-Ein Frankfurt","Dortmund","Ein Frankfurt","5-2",7
+"195","Holstein Kiel","Regensburg","Holstein Kiel-Regensburg","Holstein Kiel","Regensburg","0-3",3
+"196","Nurnberg","Fortuna Dusseldorf","Nurnberg-Fortuna Dusseldorf","Nurnberg","Fortuna Dusseldorf","2-0",2
+"197","Sandhausen","Karlsruhe SC","Sandhausen-Karlsruhe SC","Sandhausen","Karlsruhe SC","0-0",0
+"198","Dresden","Hannover","Dresden-Hannover","Dresden","Hannover","2-0",2
+"199","Man United","Leeds","Man United-Leeds","Man United","Leeds","5-1",6
+"200","Burnley","Brighton","Burnley-Brighton","Burnley","Brighton","1-2",3
+"201","Chelsea","Crystal Palace","Chelsea-Crystal Palace","Chelsea","Crystal Palace","3-0",3
+"202","Everton","Southampton","Everton-Southampton","Everton","Southampton","3-1",4
+"203","Leicester","Wolves","Leicester-Wolves","Leicester","Wolves","1-0",1
+"204","Watford","Aston Villa","Watford-Aston Villa","Watford","Aston Villa","3-2",5
+"205","Norwich","Liverpool","Norwich-Liverpool","Norwich","Liverpool","0-3",3
+"206","Peterboro","Derby","Peterboro-Derby","Peterboro","Derby","2-1",3
+"207","Barnsley","Coventry","Barnsley-Coventry","Barnsley","Coventry","1-0",1
+"208","Birmingham","Stoke","Birmingham-Stoke","Birmingham","Stoke","0-0",0
+"209","Blackpool","Cardiff","Blackpool-Cardiff","Blackpool","Cardiff","0-2",2
+"210","Huddersfield","Fulham","Huddersfield-Fulham","Huddersfield","Fulham","1-5",6
+"211","Hull","QPR","Hull-QPR","Hull","QPR","0-3",3
+"212","Middlesbrough","Bristol City","Middlesbrough-Bristol City","Middlesbrough","Bristol City","2-1",3
+"213","Millwall","Blackburn","Millwall-Blackburn","Millwall","Blackburn","1-1",2
+"214","Nottm Forest","Bournemouth","Nottm Forest-Bournemouth","Nottm Forest","Bournemouth","1-2",3
+"215","Reading","Preston","Reading-Preston","Reading","Preston","2-1",3
+"216","West Brom","Luton","West Brom-Luton","West Brom","Luton","3-2",5
+"217","Swansea","Sheffield United","Swansea-Sheffield United","Swansea","Sheffield United","0-0",0
+"218","Accrington","Cambridge","Accrington-Cambridge","Accrington","Cambridge","2-1",3
+"219","AFC Wimbledon","Bolton","AFC Wimbledon-Bolton","AFC Wimbledon","Bolton","3-3",6
+"220","Burton","Ipswich","Burton-Ipswich","Burton","Ipswich","2-1",3
+"221","Cheltenham","Wycombe","Cheltenham-Wycombe","Cheltenham","Wycombe","1-3",4
+"222","Lincoln","Fleetwood Town","Lincoln-Fleetwood Town","Lincoln","Fleetwood Town","2-1",3
+"223","Milton Keynes Dons","Sunderland","Milton Keynes Dons-Sunderland","Milton Keynes Dons","Sunderland","1-2",3
+"224","Morecambe","Shrewsbury","Morecambe-Shrewsbury","Morecambe","Shrewsbury","2-0",2
+"225","Oxford","Charlton","Oxford-Charlton","Oxford","Charlton","2-1",3
+"226","Plymouth","Gillingham","Plymouth-Gillingham","Plymouth","Gillingham","1-0",1
+"227","Portsmouth","Crewe","Portsmouth-Crewe","Portsmouth","Crewe","2-0",2
+"228","Sheffield Weds","Doncaster","Sheffield Weds-Doncaster","Sheffield Weds","Doncaster","2-0",2
+"229","Wigan","Rotherham","Wigan-Rotherham","Wigan","Rotherham","1-0",1
+"230","Barrow","Hartlepool","Barrow-Hartlepool","Barrow","Hartlepool","3-2",5
+"231","Bradford","Oldham","Bradford-Oldham","Bradford","Oldham","2-1",3
+"232","Bristol Rvs","Stevenage","Bristol Rvs-Stevenage","Bristol Rvs","Stevenage","0-2",2
+"233","Colchester","Northampton","Colchester-Northampton","Colchester","Northampton","0-1",1
+"234","Leyton Orient","Exeter","Leyton Orient-Exeter","Leyton Orient","Exeter","3-0",3
+"235","Mansfield","Newport County","Mansfield-Newport County","Mansfield","Newport County","2-1",3
+"236","Port Vale","Tranmere","Port Vale-Tranmere","Port Vale","Tranmere","0-0",0
+"237","Rochdale","Scunthorpe","Rochdale-Scunthorpe","Rochdale","Scunthorpe","0-0",0
+"238","Salford","Sutton","Salford-Sutton","Salford","Sutton","0-0",0
+"239","Swindon","Carlisle","Swindon-Carlisle","Swindon","Carlisle","1-2",3
+"240","Walsall","Forest Green","Walsall-Forest Green","Walsall","Forest Green","1-3",4
+"241","Lille","Nice","Lille-Nice","Lille","Nice","0-4",4
+"242","Paris SG","Strasbourg","Paris SG-Strasbourg","Paris SG","Strasbourg","4-2",6
+"243","Toulouse","Bastia","Toulouse-Bastia","Toulouse","Bastia","1-0",1
+"244","Ajaccio","Caen","Ajaccio-Caen","Ajaccio","Caen","2-0",2
+"245","Guingamp","Amiens","Guingamp-Amiens","Guingamp","Amiens","0-2",2
+"246","Nancy","Valenciennes","Nancy-Valenciennes","Nancy","Valenciennes","0-1",1
+"247","Nimes","Pau FC","Nimes-Pau FC","Nimes","Pau FC","0-0",0
+"248","Niort","Grenoble","Niort-Grenoble","Niort","Grenoble","1-0",1
+"249","Quevilly Rouen","Dijon","Quevilly Rouen-Dijon","Quevilly Rouen","Dijon","2-1",3
+"250","Rodez","Le Havre","Rodez-Le Havre","Rodez","Le Havre","0-0",0
+"251","Sochaux","Dunkerque","Sochaux-Dunkerque","Sochaux","Dunkerque","1-0",1
+"252","Waalwijk","AZ Alkmaar","Waalwijk-AZ Alkmaar","Waalwijk","AZ Alkmaar","1-0",1
+"253","Heracles","PSV Eindhoven","Heracles-PSV Eindhoven","Heracles","PSV Eindhoven","0-2",2
+"254","For Sittard","Twente","For Sittard-Twente","For Sittard","Twente","2-1",3
+"255","Ajax","Nijmegen","Ajax-Nijmegen","Ajax","Nijmegen","5-0",5
+"256","Vizela","Tondela","Vizela-Tondela","Vizela","Tondela","2-1",3
+"257","Benfica","Arouca","Benfica-Arouca","Benfica","Arouca","2-0",2
+"258","Sp Braga","Sp Lisbon","Sp Braga-Sp Lisbon","Sp Braga","Sp Lisbon","1-2",3
+"259","Airdrie Utd","Falkirk","Airdrie Utd-Falkirk","Airdrie Utd","Falkirk","1-2",3
+"260","Clyde","Alloa","Clyde-Alloa","Clyde","Alloa","2-1",3
+"261","Cove Rangers","East Fife","Cove Rangers-East Fife","Cove Rangers","East Fife","5-2",7
+"262","Montrose","Peterhead","Montrose-Peterhead","Montrose","Peterhead","1-0",1
+"263","Queens Park","Dumbarton","Queens Park-Dumbarton","Queens Park","Dumbarton","3-0",3
+"264","Annan Athletic","Stirling","Annan Athletic-Stirling","Annan Athletic","Stirling","3-1",4
+"265","Cowdenbeath","Stranraer","Cowdenbeath-Stranraer",NA,NA,NA,NA
+"266","Elgin","Albion Rvs","Elgin-Albion Rvs","Elgin","Albion Rvs","3-0",3
+"267","Forfar","Kelty Hearts","Forfar-Kelty Hearts","Forfar","Kelty Hearts","2-2",4
+"268","Cadiz","Levante","Cadiz-Levante","Cadiz","Levante","1-1",2
+"269","Mallorca","Betis","Mallorca-Betis","Mallorca","Betis","1-1",2
+"270","Alaves","Real Madrid","Alaves-Real Madrid","Alaves","Real Madrid","1-4",5
+"271","Osasuna","Espanol","Osasuna-Espanol","Osasuna","Espanol","0-0",0
+"272","Sociedad B","Leganes","Sociedad B-Leganes","Sociedad B","Leganes","1-0",1
+"273","Girona","Amorebieta","Girona-Amorebieta","Girona","Amorebieta","2-0",2
+"274","Ponferradina","Alcorcon","Ponferradina-Alcorcon","Ponferradina","Alcorcon","1-0",1
+"275","Karagumruk","Gaziantep","Karagumruk-Gaziantep","Karagumruk","Gaziantep","3-2",5
+"276","Altay","Kayserispor","Altay-Kayserispor","Altay","Kayserispor","3-0",3
+"277","Hatayspor","Kasimpasa","Hatayspor-Kasimpasa","Hatayspor","Kasimpasa","1-1",2
+"278","Beerschot VA","Standard","Beerschot VA-Standard","Beerschot VA","Standard","0-1",1
+"279","Gent","Mechelen","Gent-Mechelen","Gent","Mechelen","2-0",2
+"280","Cercle Brugge","Anderlecht","Cercle Brugge-Anderlecht","Cercle Brugge","Anderlecht","1-2",3
+"281","Waregem","Club Brugge","Waregem-Club Brugge","Waregem","Club Brugge","0-4",4
+"282","Mainz","RB Leipzig","Mainz-RB Leipzig","Mainz","RB Leipzig","1-0",1
+"283","FC Koln","Hertha","FC Koln-Hertha","FC Koln","Hertha","3-1",4
+"284","Darmstadt","Ingolstadt","Darmstadt-Ingolstadt","Darmstadt","Ingolstadt","6-1",7
+"285","Heidenheim","Hansa Rostock","Heidenheim-Hansa Rostock","Heidenheim","Hansa Rostock","1-1",2
+"286","Werder Bremen","Paderborn","Werder Bremen-Paderborn","Werder Bremen","Paderborn","1-4",5
+"287","Newcastle","West Ham","Newcastle-West Ham","Newcastle","West Ham","2-4",6
+"288","Tottenham","Man City","Tottenham-Man City","Tottenham","Man City","1-0",1
+"289","Angers","Lyon","Angers-Lyon","Angers","Lyon","3-0",3
+"290","Brest","Rennes","Brest-Rennes","Brest","Rennes","1-1",2
+"291","Clermont","Troyes","Clermont-Troyes","Clermont","Troyes","2-0",2
+"292","Nantes","Metz","Nantes-Metz","Nantes","Metz","2-0",2
+"293","Reims","Montpellier","Reims-Montpellier","Reims","Montpellier","3-3",6
+"294","Lens","St Etienne","Lens-St Etienne","Lens","St Etienne","2-2",4
+"295","Marseille","Bordeaux","Marseille-Bordeaux","Marseille","Bordeaux","2-2",4
+"296","Cambuur","Groningen","Cambuur-Groningen","Cambuur","Groningen","1-2",3
+"297","Utrecht","Sparta Rotterdam","Utrecht-Sparta Rotterdam","Utrecht","Sparta Rotterdam","4-0",4
+"298","Zwolle","Vitesse","Zwolle-Vitesse","Zwolle","Vitesse","0-1",1
+"299","Willem II","Feyenoord","Willem II-Feyenoord","Willem II","Feyenoord","0-4",4
+"300","Portimonense","Gil Vicente","Portimonense-Gil Vicente","Portimonense","Gil Vicente","0-1",1
+"301","Famalicao","Porto","Famalicao-Porto","Famalicao","Porto","1-2",3
+"302","Santa Clara","Moreirense","Santa Clara-Moreirense","Santa Clara","Moreirense","2-2",4
+"303","Celta","Ath Madrid","Celta-Ath Madrid","Celta","Ath Madrid","1-2",3
+"304","Barcelona","Sociedad","Barcelona-Sociedad","Barcelona","Sociedad","4-2",6
+"305","Sevilla","Vallecano","Sevilla-Vallecano","Sevilla","Vallecano","3-0",3
+"306","Sp Gijon","Burgos","Sp Gijon-Burgos","Sp Gijon","Burgos","1-0",1
+"307","Oviedo","Lugo","Oviedo-Lugo","Oviedo","Lugo","2-2",4
+"308","Fuenlabrada","Tenerife","Fuenlabrada-Tenerife","Fuenlabrada","Tenerife","1-2",3
+"309","Las Palmas","Valladolid","Las Palmas-Valladolid","Las Palmas","Valladolid","1-1",2
+"310","Buyuksehyr","Alanyaspor","Buyuksehyr-Alanyaspor","Buyuksehyr","Alanyaspor","0-1",1
+"311","Ad. Demirspor","Fenerbahce","Ad. Demirspor-Fenerbahce","Ad. Demirspor","Fenerbahce","0-1",1
+"312","Antalyaspor","Goztep","Antalyaspor-Goztep","Antalyaspor","Goztep","1-1",2
+"313","Paris FC","Auxerre","Paris FC-Auxerre","Paris FC","Auxerre","1-1",2
+"314","Boavista","Pacos Ferreira","Boavista-Pacos Ferreira","Boavista","Pacos Ferreira","3-0",3
+"315","Belenenses","Maritimo","Belenenses-Maritimo","Belenenses","Maritimo","1-2",3
+"316","Villarreal","Granada","Villarreal-Granada","Villarreal","Granada","0-0",0
+"317","Elche","Ath Bilbao","Elche-Ath Bilbao","Elche","Ath Bilbao","0-0",0
+"318","Malaga","Mirandes","Malaga-Mirandes","Malaga","Mirandes","0-0",0
+"319","Cartagena","Almeria","Cartagena-Almeria","Cartagena","Almeria","1-3",4
+"320","Sivasspor","Konyaspor","Sivasspor-Konyaspor","Sivasspor","Konyaspor","0-1",1
+"321","Yeni Malatyaspor","Trabzonspor","Yeni Malatyaspor-Trabzonspor","Yeni Malatyaspor","Trabzonspor","1-5",6
+"322","Giresunspor","Galatasaray","Giresunspor-Galatasaray","Giresunspor","Galatasaray","0-2",2
+"323","Barnsley","Luton","Barnsley-Luton","Barnsley","Luton","0-1",1
+"324","Blackpool","Coventry","Blackpool-Coventry","Blackpool","Coventry","0-1",1
+"325","Huddersfield","Preston","Huddersfield-Preston","Huddersfield","Preston","1-0",1
+"326","Millwall","Fulham","Millwall-Fulham","Millwall","Fulham","1-2",3
+"327","Peterboro","Cardiff","Peterboro-Cardiff","Peterboro","Cardiff","2-2",4
+"328","Swansea","Stoke","Swansea-Stoke","Swansea","Stoke","1-3",4
+"329","Reading","Bristol City","Reading-Bristol City","Reading","Bristol City","2-3",5
+"330","Accrington","Doncaster","Accrington-Doncaster","Accrington","Doncaster","1-0",1
+"331","AFC Wimbledon","Gillingham","AFC Wimbledon-Gillingham","AFC Wimbledon","Gillingham","1-1",2
+"332","Burton","Sunderland","Burton-Sunderland","Burton","Sunderland","1-0",1
+"333","Cheltenham","Ipswich","Cheltenham-Ipswich","Cheltenham","Ipswich","2-1",3
+"334","Lincoln","Bolton","Lincoln-Bolton","Lincoln","Bolton","0-1",1
+"335","Milton Keynes Dons","Charlton","Milton Keynes Dons-Charlton","Milton Keynes Dons","Charlton","2-1",3
+"336","Morecambe","Rotherham","Morecambe-Rotherham","Morecambe","Rotherham","0-1",1
+"337","Oxford","Crewe","Oxford-Crewe","Oxford","Crewe","1-0",1
+"338","Plymouth","Cambridge","Plymouth-Cambridge","Plymouth","Cambridge","1-1",2
+"339","Portsmouth","Shrewsbury","Portsmouth-Shrewsbury","Portsmouth","Shrewsbury","1-0",1
+"340","Sheffield Weds","Fleetwood Town","Sheffield Weds-Fleetwood Town","Sheffield Weds","Fleetwood Town","1-0",1
+"341","Wigan","Wycombe","Wigan-Wycombe","Wigan","Wycombe","1-1",2
+"342","Barrow","Exeter","Barrow-Exeter","Barrow","Exeter","0-0",0
+"343","Bradford","Stevenage","Bradford-Stevenage","Bradford","Stevenage","4-1",5
+"344","Bristol Rvs","Oldham","Bristol Rvs-Oldham","Bristol Rvs","Oldham","1-0",1
+"345","Colchester","Mansfield","Colchester-Mansfield","Colchester","Mansfield","1-1",2
+"346","Crawley Town","Salford","Crawley Town-Salford","Crawley Town","Salford","2-1",3
+"347","Port Vale","Carlisle","Port Vale-Carlisle","Port Vale","Carlisle","0-0",0
+"348","Rochdale","Forest Green","Rochdale-Forest Green","Rochdale","Forest Green","1-2",3
+"349","Swindon","Tranmere","Swindon-Tranmere","Swindon","Tranmere","0-0",0
+"350","Walsall","Scunthorpe","Walsall-Scunthorpe","Walsall","Scunthorpe","1-1",2
+"351","Birmingham","Bournemouth","Birmingham-Bournemouth","Birmingham","Bournemouth","0-2",2
+"352","Hull","Derby","Hull-Derby","Hull","Derby","0-1",1
+"353","Middlesbrough","QPR","Middlesbrough-QPR","Middlesbrough","QPR","2-3",5
+"354","Nottm Forest","Blackburn","Nottm Forest-Blackburn","Nottm Forest","Blackburn","1-2",3
+"355","West Brom","Sheffield United","West Brom-Sheffield United","West Brom","Sheffield United","4-0",4
+"356","Quevilly Rouen","Bastia","Quevilly Rouen-Bastia","Quevilly Rouen","Bastia","1-2",3
+"357","Standard","Oostende","Standard-Oostende","Standard","Oostende","1-0",1
+"358","RB Leipzig","Stuttgart","RB Leipzig-Stuttgart","RB Leipzig","Stuttgart","4-0",4
+"359","Fortuna Dusseldorf","Holstein Kiel","Fortuna Dusseldorf-Holstein Kiel","Fortuna Dusseldorf","Holstein Kiel","2-2",4
+"360","Hannover","Heidenheim","Hannover-Heidenheim","Hannover","Heidenheim","1-0",1
+"361","Bristol City","Swansea","Bristol City-Swansea","Bristol City","Swansea","0-1",1
+"362","Brest","Paris SG","Brest-Paris SG","Brest","Paris SG","2-4",6
+"363","Frosinone","Parma","Frosinone-Parma","Frosinone","Parma","2-2",4
+"364","Nijmegen","Zwolle","Nijmegen-Zwolle","Nijmegen","Zwolle","2-0",2
+"365","Arouca","Famalicao","Arouca-Famalicao","Arouca","Famalicao","2-1",3
+"366","Moreirense","Sp Braga","Moreirense-Sp Braga","Moreirense","Sp Braga","2-3",5
+"367","Raith Rvs","Dunfermline","Raith Rvs-Dunfermline",NA,NA,NA,NA
+"368","Betis","Cadiz","Betis-Cadiz","Betis","Cadiz","1-1",2
+"369","Valladolid","Zaragoza","Valladolid-Zaragoza","Valladolid","Zaragoza","2-0",2
+"370","Almeria","Oviedo","Almeria-Oviedo","Almeria","Oviedo","2-1",3
+"371","Kayserispor","Ad. Demirspor","Kayserispor-Ad. Demirspor","Kayserispor","Ad. Demirspor","1-1",2
+"372","Seraing","Cercle Brugge","Seraing-Cercle Brugge","Seraing","Cercle Brugge","2-1",3
+"373","Oud-Heverlee Leuven","Eupen","Oud-Heverlee Leuven-Eupen","Oud-Heverlee Leuven","Eupen","1-4",5
+"374","St Truiden","Kortrijk","St Truiden-Kortrijk","St Truiden","Kortrijk","0-2",2
+"375","Bochum","Mainz","Bochum-Mainz","Bochum","Mainz","2-0",2
+"376","Ein Frankfurt","Augsburg","Ein Frankfurt-Augsburg","Ein Frankfurt","Augsburg","0-0",0
+"377","Freiburg","Dortmund","Freiburg-Dortmund","Freiburg","Dortmund","2-1",3
+"378","Greuther Furth","Bielefeld","Greuther Furth-Bielefeld","Greuther Furth","Bielefeld","1-1",2
+"379","Hertha","Wolfsburg","Hertha-Wolfsburg","Hertha","Wolfsburg","1-2",3
+"380","Leverkusen","Mgladbach","Leverkusen-Mgladbach","Leverkusen","Mgladbach","4-0",4
+"381","Karlsruhe SC","Werder Bremen","Karlsruhe SC-Werder Bremen","Karlsruhe SC","Werder Bremen","0-0",0
+"382","Paderborn","St Pauli","Paderborn-St Pauli","Paderborn","St Pauli","3-1",4
+"383","Regensburg","Schalke 04","Regensburg-Schalke 04","Regensburg","Schalke 04","4-1",5
+"384","Hansa Rostock","Dresden","Hansa Rostock-Dresden","Hansa Rostock","Dresden","1-3",4
+"385","Liverpool","Burnley","Liverpool-Burnley","Liverpool","Burnley","2-0",2
+"386","Aston Villa","Newcastle","Aston Villa-Newcastle","Aston Villa","Newcastle","2-0",2
+"387","Crystal Palace","Brentford","Crystal Palace-Brentford","Crystal Palace","Brentford","0-0",0
+"388","Leeds","Everton","Leeds-Everton","Leeds","Everton","2-2",4
+"389","Man City","Norwich","Man City-Norwich","Man City","Norwich","5-0",5
+"390","Brighton","Watford","Brighton-Watford","Brighton","Watford","2-0",2
+"391","QPR","Barnsley","QPR-Barnsley","QPR","Barnsley","2-2",4
+"392","Blackburn","West Brom","Blackburn-West Brom","Blackburn","West Brom","1-2",3
+"393","Bournemouth","Blackpool","Bournemouth-Blackpool","Bournemouth","Blackpool","2-2",4
+"394","Cardiff","Millwall","Cardiff-Millwall","Cardiff","Millwall","3-1",4
+"395","Coventry","Reading","Coventry-Reading","Coventry","Reading","2-1",3
+"396","Derby","Middlesbrough","Derby-Middlesbrough","Derby","Middlesbrough","0-0",0
+"397","Fulham","Hull","Fulham-Hull","Fulham","Hull","2-0",2
+"398","Luton","Birmingham","Luton-Birmingham","Luton","Birmingham","0-5",5
+"399","Preston","Peterboro","Preston-Peterboro","Preston","Peterboro","1-0",1
+"400","Sheffield United","Huddersfield","Sheffield United-Huddersfield","Sheffield United","Huddersfield","1-2",3
+"401","Stoke","Nottm Forest","Stoke-Nottm Forest","Stoke","Nottm Forest","1-0",1
+"402","Rotherham","Sheffield Weds","Rotherham-Sheffield Weds","Rotherham","Sheffield Weds","0-2",2
+"403","Bolton","Oxford","Bolton-Oxford","Bolton","Oxford","2-1",3
+"404","Cambridge","Burton","Cambridge-Burton","Cambridge","Burton","3-0",3
+"405","Charlton","Wigan","Charlton-Wigan","Charlton","Wigan","0-2",2
+"406","Crewe","Accrington","Crewe-Accrington","Crewe","Accrington","0-1",1
+"407","Doncaster","Portsmouth","Doncaster-Portsmouth","Doncaster","Portsmouth","0-0",0
+"408","Fleetwood Town","Cheltenham","Fleetwood Town-Cheltenham","Fleetwood Town","Cheltenham","3-2",5
+"409","Gillingham","Morecambe","Gillingham-Morecambe","Gillingham","Morecambe","2-1",3
+"410","Ipswich","Milton Keynes Dons","Ipswich-Milton Keynes Dons","Ipswich","Milton Keynes Dons","2-2",4
+"411","Shrewsbury","Plymouth","Shrewsbury-Plymouth","Shrewsbury","Plymouth","0-3",3
+"412","Sunderland","AFC Wimbledon","Sunderland-AFC Wimbledon","Sunderland","AFC Wimbledon","1-0",1
+"413","Wycombe","Lincoln","Wycombe-Lincoln","Wycombe","Lincoln","1-0",1
+"414","Carlisle","Leyton Orient","Carlisle-Leyton Orient","Carlisle","Leyton Orient","1-1",2
+"415","Exeter","Bristol Rvs","Exeter-Bristol Rvs","Exeter","Bristol Rvs","4-1",5
+"416","Forest Green","Crawley Town","Forest Green-Crawley Town","Forest Green","Crawley Town","6-3",9
+"417","Harrogate","Barrow","Harrogate-Barrow","Harrogate","Barrow","2-1",3
+"418","Hartlepool","Walsall","Hartlepool-Walsall","Hartlepool","Walsall","2-0",2
+"419","Mansfield","Bradford","Mansfield-Bradford","Mansfield","Bradford","2-3",5
+"420","Northampton","Rochdale","Northampton-Rochdale","Northampton","Rochdale","1-3",4
+"421","Oldham","Colchester","Oldham-Colchester","Oldham","Colchester","1-2",3
+"422","Salford","Swindon","Salford-Swindon","Salford","Swindon","0-1",1
+"423","Scunthorpe","Sutton","Scunthorpe-Sutton","Scunthorpe","Sutton","1-1",2
+"424","Stevenage","Port Vale","Stevenage-Port Vale","Stevenage","Port Vale","1-1",2
+"425","Tranmere","Newport County","Tranmere-Newport County","Tranmere","Newport County","0-1",1
+"426","Aldershot","Chesterfield","Aldershot-Chesterfield","Aldershot","Chesterfield","0-2",2
+"427","Barnet","Notts County","Barnet-Notts County","Barnet","Notts County","0-5",5
+"428","Halifax","Maidenhead","Halifax-Maidenhead","Halifax","Maidenhead","1-2",3
+"429","Kings Lynn","Southend","Kings Lynn-Southend","Kings Lynn","Southend","0-1",1
+"430","Solihull","Wrexham","Solihull-Wrexham","Solihull","Wrexham","2-2",4
+"431","Stockport","Dag and Red","Stockport-Dag and Red","Stockport","Dag and Red","1-3",4
+"432","Torquay","Altrincham","Torquay-Altrincham","Torquay","Altrincham","1-3",4
+"433","Wealdstone","Woking","Wealdstone-Woking","Wealdstone","Woking","1-2",3
+"434","Weymouth","Boreham Wood","Weymouth-Boreham Wood","Weymouth","Boreham Wood","0-2",2
+"435","Monaco","Lens","Monaco-Lens","Monaco","Lens","0-2",2
+"436","St Etienne","Lille","St Etienne-Lille","St Etienne","Lille","1-1",2
+"437","Dijon","Toulouse","Dijon-Toulouse","Dijon","Toulouse","2-4",6
+"438","Amiens","Sochaux","Amiens-Sochaux","Amiens","Sochaux","0-0",0
+"439","Caen","Nancy","Caen-Nancy","Caen","Nancy","1-0",1
+"440","Dunkerque","Nimes","Dunkerque-Nimes","Dunkerque","Nimes","0-2",2
+"441","Grenoble","Quevilly Rouen","Grenoble-Quevilly Rouen","Grenoble","Quevilly Rouen","2-0",2
+"442","Le Havre","Niort","Le Havre-Niort","Le Havre","Niort","2-1",3
+"443","Pau FC","Bastia","Pau FC-Bastia","Pau FC","Bastia","2-0",2
+"444","Valenciennes","Rodez","Valenciennes-Rodez","Valenciennes","Rodez","1-4",5
+"445","Inter","Genoa","Inter-Genoa","Inter","Genoa","4-0",4
+"446","Verona","Sassuolo","Verona-Sassuolo","Verona","Sassuolo","2-3",5
+"447","Empoli","Lazio","Empoli-Lazio","Empoli","Lazio","1-3",4
+"448","Torino","Atalanta","Torino-Atalanta","Torino","Atalanta","1-2",3
+"449","Pordenone","Perugia","Pordenone-Perugia","Pordenone","Perugia","0-1",1
+"450","Cittadella","Vicenza","Cittadella-Vicenza","Cittadella","Vicenza","1-0",1
+"451","Heerenveen","Waalwijk","Heerenveen-Waalwijk","Heerenveen","Waalwijk","3-2",5
+"452","PSV Eindhoven","Cambuur","PSV Eindhoven-Cambuur","PSV Eindhoven","Cambuur","4-1",5
+"453","Sparta Rotterdam","Heracles","Sparta Rotterdam-Heracles","Sparta Rotterdam","Heracles","1-1",2
+"454","Groningen","Utrecht","Groningen-Utrecht","Groningen","Utrecht","0-0",0
+"455","Gil Vicente","Benfica","Gil Vicente-Benfica","Gil Vicente","Benfica","0-2",2
+"456","Sp Lisbon","Belenenses","Sp Lisbon-Belenenses","Sp Lisbon","Belenenses","2-0",2
+"457","Celtic","St Mirren","Celtic-St Mirren","Celtic","St Mirren","6-0",6
+"458","Livingston","Motherwell","Livingston-Motherwell","Livingston","Motherwell","1-2",3
+"459","Arbroath","Partick","Arbroath-Partick","Arbroath","Partick","3-1",4
+"460","Hamilton","Kilmarnock","Hamilton-Kilmarnock","Hamilton","Kilmarnock","0-2",2
+"461","Inverness C","Ayr","Inverness C-Ayr","Inverness C","Ayr","1-0",1
+"462","Morton","Queen of Sth","Morton-Queen of Sth","Morton","Queen of Sth","2-3",5
+"463","Alloa","Queens Park","Alloa-Queens Park","Alloa","Queens Park","1-1",2
+"464","Dumbarton","Cove Rangers","Dumbarton-Cove Rangers","Dumbarton","Cove Rangers","1-3",4
+"465","East Fife","Montrose","East Fife-Montrose","East Fife","Montrose","0-2",2
+"466","Falkirk","Clyde","Falkirk-Clyde","Falkirk","Clyde","3-0",3
+"467","Peterhead","Airdrie Utd","Peterhead-Airdrie Utd","Peterhead","Airdrie Utd","2-3",5
+"468","Albion Rvs","Annan Athletic","Albion Rvs-Annan Athletic","Albion Rvs","Annan Athletic","0-1",1
+"469","Elgin","Forfar","Elgin-Forfar","Elgin","Forfar","1-1",2
+"470","Kelty Hearts","Edinburgh City","Kelty Hearts-Edinburgh City","Kelty Hearts","Edinburgh City","1-0",1
+"471","Stenhousemuir","Cowdenbeath","Stenhousemuir-Cowdenbeath","Stenhousemuir","Cowdenbeath","1-1",2
+"472","Stranraer","Stirling","Stranraer-Stirling","Stranraer","Stirling","0-3",3
+"473","Alaves","Mallorca","Alaves-Mallorca","Alaves","Mallorca","0-1",1
+"474","Espanol","Villarreal","Espanol-Villarreal","Espanol","Villarreal","0-0",0
+"475","Granada","Valencia","Granada-Valencia","Granada","Valencia","1-1",2
+"476","Ath Bilbao","Barcelona","Ath Bilbao-Barcelona","Ath Bilbao","Barcelona","1-1",2
+"477","Lugo","Sociedad B","Lugo-Sociedad B","Lugo","Sociedad B","0-0",0
+"478","Tenerife","Sp Gijon","Tenerife-Sp Gijon","Tenerife","Sp Gijon","0-0",0
+"479","Alcorcon","Fuenlabrada","Alcorcon-Fuenlabrada","Alcorcon","Fuenlabrada","0-2",2
+"480","Kasimpasa","Giresunspor","Kasimpasa-Giresunspor","Kasimpasa","Giresunspor","2-0",2
+"481","Rizespor","Karagumruk","Rizespor-Karagumruk","Rizespor","Karagumruk","0-0",0
+"482","Alanyaspor","Altay","Alanyaspor-Altay","Alanyaspor","Altay","1-4",5
+"483","Gaziantep","Besiktas","Gaziantep-Besiktas","Gaziantep","Besiktas","0-0",0
+"484","Waregem","Charleroi","Waregem-Charleroi","Waregem","Charleroi","2-2",4
+"485","Club Brugge","Beerschot VA","Club Brugge-Beerschot VA","Club Brugge","Beerschot VA","3-2",5
+"486","Mechelen","St. Gilloise","Mechelen-St. Gilloise","Mechelen","St. Gilloise","3-1",4
+"487","Hoffenheim","Union Berlin","Hoffenheim-Union Berlin","Hoffenheim","Union Berlin","2-2",4
+"488","Bayern Munich","FC Koln","Bayern Munich-FC Koln","Bayern Munich","FC Koln","3-2",5
+"489","Erzgebirge Aue","Sandhausen","Erzgebirge Aue-Sandhausen","Erzgebirge Aue","Sandhausen","1-3",4
+"490","Hamburg","Darmstadt","Hamburg-Darmstadt","Hamburg","Darmstadt","2-2",4
+"491","Ingolstadt","Nurnberg","Ingolstadt-Nurnberg","Ingolstadt","Nurnberg","0-0",0
+"492","Southampton","Man United","Southampton-Man United","Southampton","Man United","1-1",2
+"493","Wolves","Tottenham","Wolves-Tottenham","Wolves","Tottenham","0-1",1
+"494","Arsenal","Chelsea","Arsenal-Chelsea","Arsenal","Chelsea","0-2",2
+"495","Lyon","Clermont","Lyon-Clermont","Lyon","Clermont","3-3",6
+"496","Bordeaux","Angers","Bordeaux-Angers","Bordeaux","Angers","1-1",2
+"497","Metz","Reims","Metz-Reims","Metz","Reims","1-1",2
+"498","Montpellier","Lorient","Montpellier-Lorient","Montpellier","Lorient","3-1",4
+"499","Strasbourg","Troyes","Strasbourg-Troyes","Strasbourg","Troyes","1-1",2
+"500","Rennes","Nantes","Rennes-Nantes","Rennes","Nantes","1-0",1
+"501","Nice","Marseille","Nice-Marseille",NA,NA,NA,NA
+"502","Bologna","Salernitana","Bologna-Salernitana","Bologna","Salernitana","3-2",5
+"503","Udinese","Juventus","Udinese-Juventus","Udinese","Juventus","2-2",4
+"504","Napoli","Venezia","Napoli-Venezia","Napoli","Venezia","2-0",2
+"505","Roma","Fiorentina","Roma-Fiorentina","Roma","Fiorentina","3-1",4
+"506","Reggina","Monza","Reggina-Monza","Reggina","Monza","0-0",0
+"507","Ternana","Brescia","Ternana-Brescia","Ternana","Brescia","0-2",2
+"508","Ascoli","Cosenza","Ascoli-Cosenza","Ascoli","Cosenza","1-0",1
+"509","Benevento","Alessandria","Benevento-Alessandria","Benevento","Alessandria","4-3",7
+"510","Cremonese","Lecce","Cremonese-Lecce","Cremonese","Lecce","3-0",3
+"511","Crotone","Como","Crotone-Como","Crotone","Como","2-2",4
+"512","Pisa","Spal","Pisa-Spal","Pisa","Spal","1-0",1
+"513","Twente","Ajax","Twente-Ajax","Twente","Ajax","1-1",2
+"514","Feyenoord","Go Ahead Eagles","Feyenoord-Go Ahead Eagles","Feyenoord","Go Ahead Eagles","2-0",2
+"515","Vitesse","Willem II","Vitesse-Willem II","Vitesse","Willem II","0-3",3
+"516","Tondela","Portimonense","Tondela-Portimonense","Tondela","Portimonense","0-3",3
+"517","Maritimo","Porto","Maritimo-Porto","Maritimo","Porto","1-1",2
+"518","Guimaraes","Vizela","Guimaraes-Vizela","Guimaraes","Vizela","4-0",4
+"519","Dundee","Hibernian","Dundee-Hibernian","Dundee","Hibernian","2-2",4
+"520","Hearts","Aberdeen","Hearts-Aberdeen","Hearts","Aberdeen","1-1",2
+"521","Ross County","Rangers","Ross County-Rangers","Ross County","Rangers","2-4",6
+"522","St Johnstone","Dundee United","St Johnstone-Dundee United","St Johnstone","Dundee United","0-1",1
+"523","Sociedad","Vallecano","Sociedad-Vallecano","Sociedad","Vallecano","1-0",1
+"524","Ath Madrid","Elche","Ath Madrid-Elche","Ath Madrid","Elche","1-0",1
+"525","Levante","Real Madrid","Levante-Real Madrid","Levante","Real Madrid","3-3",6
+"526","Ibiza","Malaga","Ibiza-Malaga","Ibiza","Malaga","2-2",4
+"527","Eibar","Ponferradina","Eibar-Ponferradina","Eibar","Ponferradina","0-1",1
+"528","Girona","Las Palmas","Girona-Las Palmas","Girona","Las Palmas","0-0",0
+"529","Huesca","Cartagena","Huesca-Cartagena","Huesca","Cartagena","2-0",2
+"530","Konyaspor","Buyuksehyr","Konyaspor-Buyuksehyr","Konyaspor","Buyuksehyr","2-1",3
+"531","Fenerbahce","Antalyaspor","Fenerbahce-Antalyaspor","Fenerbahce","Antalyaspor","2-0",2
+"532","Goztep","Yeni Malatyaspor","Goztep-Yeni Malatyaspor","Goztep","Yeni Malatyaspor","0-1",1
+"533","West Ham","Leicester","West Ham-Leicester","West Ham","Leicester","4-1",5
+"534","Auxerre","Guingamp","Auxerre-Guingamp","Auxerre","Guingamp","1-2",3
+"535","Cagliari","Spezia","Cagliari-Spezia","Cagliari","Spezia","2-2",4
+"536","Sampdoria","Milan","Sampdoria-Milan","Sampdoria","Milan","0-1",1
+"537","Pacos Ferreira","Estoril","Pacos Ferreira-Estoril","Pacos Ferreira","Estoril","1-3",4
+"538","Boavista","Santa Clara","Boavista-Santa Clara","Boavista","Santa Clara","2-0",2
+"539","Getafe","Sevilla","Getafe-Sevilla","Getafe","Sevilla","0-1",1
+"540","Osasuna","Celta","Osasuna-Celta","Osasuna","Celta","0-0",0
+"541","Mirandes","Amorebieta","Mirandes-Amorebieta","Mirandes","Amorebieta","2-0",2
+"542","Leganes","Burgos","Leganes-Burgos","Leganes","Burgos","0-0",0
+"543","Trabzonspor","Sivasspor","Trabzonspor-Sivasspor","Trabzonspor","Sivasspor","2-1",3
+"544","Galatasaray","Hatayspor","Galatasaray-Hatayspor","Galatasaray","Hatayspor","2-1",3
+"545","Kortrijk","Mechelen","Kortrijk-Mechelen","Kortrijk","Mechelen","2-2",4
+"546","Dortmund","Hoffenheim","Dortmund-Hoffenheim","Dortmund","Hoffenheim","3-2",5
+"547","Nurnberg","Karlsruhe SC","Nurnberg-Karlsruhe SC","Nurnberg","Karlsruhe SC","2-1",3
+"548","Sandhausen","Ingolstadt","Sandhausen-Ingolstadt","Sandhausen","Ingolstadt","0-2",2
+"549","Burton","Cheltenham","Burton-Cheltenham","Burton","Cheltenham","1-1",2
+"550","Rochdale","Colchester","Rochdale-Colchester","Rochdale","Colchester","1-1",2
+"551","Nantes","Lyon","Nantes-Lyon","Nantes","Lyon","0-1",1
+"552","Udinese","Venezia","Udinese-Venezia","Udinese","Venezia","3-0",3
+"553","Verona","Inter","Verona-Inter","Verona","Inter","1-3",4
+"554","Pisa","Alessandria","Pisa-Alessandria","Pisa","Alessandria","2-0",2
+"555","Brescia","Cosenza","Brescia-Cosenza","Brescia","Cosenza","5-1",6
+"556","For Sittard","Waalwijk","For Sittard-Waalwijk","For Sittard","Waalwijk","2-2",4
+"557","Belenenses","Moreirense","Belenenses-Moreirense","Belenenses","Moreirense","1-1",2
+"558","Estoril","Maritimo","Estoril-Maritimo","Estoril","Maritimo","2-1",3
+"559","Edinburgh City","Elgin","Edinburgh City-Elgin","Edinburgh City","Elgin","2-0",2
+"560","Mallorca","Espanol","Mallorca-Espanol","Mallorca","Espanol","1-0",1
+"561","Valencia","Alaves","Valencia-Alaves","Valencia","Alaves","3-0",3
+"562","Las Palmas","Huesca","Las Palmas-Huesca","Las Palmas","Huesca","2-1",3
+"563","Malaga","Alcorcon","Malaga-Alcorcon","Malaga","Alcorcon","1-0",1
+"564","Antalyaspor","Rizespor","Antalyaspor-Rizespor","Antalyaspor","Rizespor","3-2",5
+"565","Ad. Demirspor","Konyaspor","Ad. Demirspor-Konyaspor","Ad. Demirspor","Konyaspor","1-1",2
+"566","Charleroi","Beerschot VA","Charleroi-Beerschot VA","Charleroi","Beerschot VA","5-2",7
+"567","Cercle Brugge","St Truiden","Cercle Brugge-St Truiden","Cercle Brugge","St Truiden","0-1",1
+"568","Eupen","Seraing","Eupen-Seraing","Eupen","Seraing","1-2",3
+"569","St. Gilloise","Standard","St. Gilloise-Standard","St. Gilloise","Standard","4-0",4
+"570","Augsburg","Leverkusen","Augsburg-Leverkusen","Augsburg","Leverkusen","1-4",5
+"571","Bielefeld","Ein Frankfurt","Bielefeld-Ein Frankfurt","Bielefeld","Ein Frankfurt","1-1",2
+"572","FC Koln","Bochum","FC Koln-Bochum","FC Koln","Bochum","2-1",3
+"573","Mainz","Greuther Furth","Mainz-Greuther Furth","Mainz","Greuther Furth","3-0",3
+"574","Stuttgart","Freiburg","Stuttgart-Freiburg","Stuttgart","Freiburg","2-3",5
+"575","Bayern Munich","Hertha","Bayern Munich-Hertha","Bayern Munich","Hertha","5-0",5
+"576","Darmstadt","Hannover","Darmstadt-Hannover","Darmstadt","Hannover","4-0",4
+"577","Heidenheim","Hamburg","Heidenheim-Hamburg","Heidenheim","Hamburg","0-0",0
+"578","Holstein Kiel","Erzgebirge Aue","Holstein Kiel-Erzgebirge Aue","Holstein Kiel","Erzgebirge Aue","3-0",3
+"579","Schalke 04","Fortuna Dusseldorf","Schalke 04-Fortuna Dusseldorf","Schalke 04","Fortuna Dusseldorf","3-1",4
+"580","Man City","Arsenal","Man City-Arsenal","Man City","Arsenal","5-0",5
+"581","Aston Villa","Brentford","Aston Villa-Brentford","Aston Villa","Brentford","1-1",2
+"582","Brighton","Everton","Brighton-Everton","Brighton","Everton","0-2",2
+"583","Newcastle","Southampton","Newcastle-Southampton","Newcastle","Southampton","2-2",4
+"584","Norwich","Leicester","Norwich-Leicester","Norwich","Leicester","1-2",3
+"585","West Ham","Crystal Palace","West Ham-Crystal Palace","West Ham","Crystal Palace","2-2",4
+"586","Liverpool","Chelsea","Liverpool-Chelsea","Liverpool","Chelsea","1-1",2
+"587","Cardiff","Bristol City","Cardiff-Bristol City","Cardiff","Bristol City","1-2",3
+"588","Derby","Nottm Forest","Derby-Nottm Forest","Derby","Nottm Forest","1-1",2
+"589","Barnsley","Birmingham","Barnsley-Birmingham","Barnsley","Birmingham","1-1",2
+"590","Fulham","Stoke","Fulham-Stoke","Fulham","Stoke","3-0",3
+"591","Huddersfield","Reading","Huddersfield-Reading","Huddersfield","Reading","4-0",4
+"592","Hull","Bournemouth","Hull-Bournemouth","Hull","Bournemouth","0-0",0
+"593","Luton","Sheffield United","Luton-Sheffield United","Luton","Sheffield United","0-0",0
+"594","Middlesbrough","Blackburn","Middlesbrough-Blackburn","Middlesbrough","Blackburn","1-1",2
+"595","Millwall","Blackpool","Millwall-Blackpool","Millwall","Blackpool","2-1",3
+"596","Preston","Swansea","Preston-Swansea","Preston","Swansea","3-1",4
+"597","QPR","Coventry","QPR-Coventry","QPR","Coventry","2-0",2
+"598","Peterboro","West Brom","Peterboro-West Brom","Peterboro","West Brom","0-1",1
+"599","Rotherham","Doncaster","Rotherham-Doncaster","Rotherham","Doncaster","2-0",2
+"600","Cambridge","Bolton","Cambridge-Bolton","Cambridge","Bolton","1-0",1
+"601","Charlton","Crewe","Charlton-Crewe","Charlton","Crewe","2-0",2
+"602","Ipswich","AFC Wimbledon","Ipswich-AFC Wimbledon","Ipswich","AFC Wimbledon","2-2",4
+"603","Milton Keynes Dons","Accrington","Milton Keynes Dons-Accrington","Milton Keynes Dons","Accrington","2-0",2
+"604","Morecambe","Sheffield Weds","Morecambe-Sheffield Weds","Morecambe","Sheffield Weds","1-0",1
+"605","Oxford","Lincoln","Oxford-Lincoln","Oxford","Lincoln","3-1",4
+"606","Plymouth","Fleetwood Town","Plymouth-Fleetwood Town","Plymouth","Fleetwood Town","1-1",2
+"607","Shrewsbury","Gillingham","Shrewsbury-Gillingham","Shrewsbury","Gillingham","2-1",3
+"608","Sunderland","Wycombe","Sunderland-Wycombe","Sunderland","Wycombe","3-1",4
+"609","Wigan","Portsmouth","Wigan-Portsmouth","Wigan","Portsmouth","1-0",1
+"610","Barrow","Bristol Rvs","Barrow-Bristol Rvs","Barrow","Bristol Rvs","1-1",2
+"611","Crawley Town","Northampton","Crawley Town-Northampton","Crawley Town","Northampton","0-0",0
+"612","Forest Green","Port Vale","Forest Green-Port Vale","Forest Green","Port Vale","0-2",2
+"613","Harrogate","Exeter","Harrogate-Exeter","Harrogate","Exeter","1-1",2
+"614","Hartlepool","Carlisle","Hartlepool-Carlisle","Hartlepool","Carlisle","2-1",3
+"615","Leyton Orient","Bradford","Leyton Orient-Bradford","Leyton Orient","Bradford","2-0",2
+"616","Salford","Newport County","Salford-Newport County","Salford","Newport County","3-0",3
+"617","Scunthorpe","Tranmere","Scunthorpe-Tranmere","Scunthorpe","Tranmere","1-0",1
+"618","Sutton","Oldham","Sutton-Oldham","Sutton","Oldham","1-2",3
+"619","Swindon","Mansfield","Swindon-Mansfield","Swindon","Mansfield","1-0",1
+"620","Walsall","Stevenage","Walsall-Stevenage","Walsall","Stevenage","1-0",1
+"621","Boreham Wood","Aldershot","Boreham Wood-Aldershot","Boreham Wood","Aldershot","1-0",1
+"622","Chesterfield","Wealdstone","Chesterfield-Wealdstone","Chesterfield","Wealdstone","2-0",2
+"623","Dag and Red","Bromley","Dag and Red-Bromley","Dag and Red","Bromley","4-2",6
+"624","Eastleigh","Wrexham","Eastleigh-Wrexham","Eastleigh","Wrexham","0-2",2
+"625","Maidenhead","Dover Athletic","Maidenhead-Dover Athletic","Maidenhead","Dover Athletic","2-0",2
+"626","Notts County","Torquay","Notts County-Torquay","Notts County","Torquay","1-1",2
+"627","Solihull","Barnet","Solihull-Barnet","Solihull","Barnet","1-1",2
+"628","Woking","Halifax","Woking-Halifax","Woking","Halifax","2-3",5
+"629","Yeovil","Kings Lynn","Yeovil-Kings Lynn","Yeovil","Kings Lynn","1-2",3
+"630","Southend","Stockport","Southend-Stockport","Southend","Stockport","0-1",1
+"631","Nice","Bordeaux","Nice-Bordeaux","Nice","Bordeaux","4-0",4
+"632","Marseille","St Etienne","Marseille-St Etienne","Marseille","St Etienne","3-1",4
+"633","Nimes","Caen","Nimes-Caen","Nimes","Caen","0-0",0
+"634","Toulouse","Valenciennes","Toulouse-Valenciennes","Toulouse","Valenciennes","1-0",1
+"635","Bastia","Le Havre","Bastia-Le Havre","Bastia","Le Havre","0-0",0
+"636","Guingamp","Ajaccio","Guingamp-Ajaccio","Guingamp","Ajaccio","1-1",2
+"637","Nancy","Auxerre","Nancy-Auxerre","Nancy","Auxerre","1-4",5
+"638","Niort","Amiens","Niort-Amiens","Niort","Amiens","0-0",0
+"639","Pau FC","Dijon","Pau FC-Dijon","Pau FC","Dijon","2-0",2
+"640","Quevilly Rouen","Paris FC","Quevilly Rouen-Paris FC","Quevilly Rouen","Paris FC","0-1",1
+"641","Rodez","Dunkerque","Rodez-Dunkerque","Rodez","Dunkerque","2-2",4
+"642","Sochaux","Grenoble","Sochaux-Grenoble","Sochaux","Grenoble","1-0",1
+"643","Atalanta","Bologna","Atalanta-Bologna","Atalanta","Bologna","0-0",0
+"644","Lazio","Spezia","Lazio-Spezia","Lazio","Spezia","6-1",7
+"645","Fiorentina","Torino","Fiorentina-Torino","Fiorentina","Torino","2-1",3
+"646","Juventus","Empoli","Juventus-Empoli","Juventus","Empoli","0-1",1
+"647","Vicenza","Frosinone","Vicenza-Frosinone","Vicenza","Frosinone","0-2",2
+"648","Perugia","Ascoli","Perugia-Ascoli","Perugia","Ascoli","2-3",5
+"649","Cambuur","Twente","Cambuur-Twente","Cambuur","Twente","2-0",2
+"650","Go Ahead Eagles","Sparta Rotterdam","Go Ahead Eagles-Sparta Rotterdam","Go Ahead Eagles","Sparta Rotterdam","2-0",2
+"651","PSV Eindhoven","Groningen","PSV Eindhoven-Groningen","PSV Eindhoven","Groningen","5-2",7
+"652","Willem II","Zwolle","Willem II-Zwolle","Willem II","Zwolle","1-0",1
+"653","Vizela","Boavista","Vizela-Boavista","Vizela","Boavista","1-1",2
+"654","Porto","Arouca","Porto-Arouca","Porto","Arouca","3-0",3
+"655","Famalicao","Sp Lisbon","Famalicao-Sp Lisbon","Famalicao","Sp Lisbon","1-1",2
+"656","Dundee United","Hearts","Dundee United-Hearts","Dundee United","Hearts","0-2",2
+"657","Hibernian","Livingston","Hibernian-Livingston","Hibernian","Livingston","2-0",2
+"658","Motherwell","Dundee","Motherwell-Dundee","Motherwell","Dundee","1-0",1
+"659","Dunfermline","Arbroath","Dunfermline-Arbroath","Dunfermline","Arbroath","0-3",3
+"660","Kilmarnock","Inverness C","Kilmarnock-Inverness C","Kilmarnock","Inverness C","0-1",1
+"661","Partick","Morton","Partick-Morton","Partick","Morton","3-0",3
+"662","Queen of Sth","Hamilton","Queen of Sth-Hamilton","Queen of Sth","Hamilton","1-2",3
+"663","Clyde","Cove Rangers","Clyde-Cove Rangers","Clyde","Cove Rangers","2-1",3
+"664","East Fife","Peterhead","East Fife-Peterhead","East Fife","Peterhead","3-0",3
+"665","Falkirk","Queens Park","Falkirk-Queens Park","Falkirk","Queens Park","0-1",1
+"666","Montrose","Dumbarton","Montrose-Dumbarton","Montrose","Dumbarton","1-2",3
+"667","Cowdenbeath","Annan Athletic","Cowdenbeath-Annan Athletic","Cowdenbeath","Annan Athletic","1-3",4
+"668","Forfar","Stranraer","Forfar-Stranraer","Forfar","Stranraer","1-1",2
+"669","Stenhousemuir","Kelty Hearts","Stenhousemuir-Kelty Hearts","Stenhousemuir","Kelty Hearts","1-4",5
+"670","Stirling","Albion Rvs","Stirling-Albion Rvs","Stirling","Albion Rvs","2-1",3
+"671","Celta","Ath Bilbao","Celta-Ath Bilbao","Celta","Ath Bilbao","0-1",1
+"672","Elche","Sevilla","Elche-Sevilla","Elche","Sevilla","1-1",2
+"673","Sociedad","Levante","Sociedad-Levante","Sociedad","Levante","1-0",1
+"674","Betis","Real Madrid","Betis-Real Madrid","Betis","Real Madrid","0-1",1
+"675","Sp Gijon","Mirandes","Sp Gijon-Mirandes","Sp Gijon","Mirandes","2-1",3
+"676","Leganes","Ibiza","Leganes-Ibiza","Leganes","Ibiza","1-2",3
+"677","Oviedo","Tenerife","Oviedo-Tenerife","Oviedo","Tenerife","0-0",0
+"678","Ponferradina","Girona","Ponferradina-Girona","Ponferradina","Girona","2-1",3
+"679","Buyuksehyr","Kayserispor","Buyuksehyr-Kayserispor","Buyuksehyr","Kayserispor","0-1",1
+"680","Yeni Malatyaspor","Gaziantep","Yeni Malatyaspor-Gaziantep","Yeni Malatyaspor","Gaziantep","2-0",2
+"681","Besiktas","Karagumruk","Besiktas-Karagumruk","Besiktas","Karagumruk","1-0",1
+"682","Hatayspor","Alanyaspor","Hatayspor-Alanyaspor","Hatayspor","Alanyaspor","5-0",5
+"683","Gent","Club Brugge","Gent-Club Brugge","Gent","Club Brugge","6-1",7
+"684","Antwerp","Oud-Heverlee Leuven","Antwerp-Oud-Heverlee Leuven","Antwerp","Oud-Heverlee Leuven","2-2",4
+"685","Genk","Anderlecht","Genk-Anderlecht","Genk","Anderlecht","1-0",1
+"686","Oostende","Waregem","Oostende-Waregem","Oostende","Waregem","0-2",2
+"687","Union Berlin","Mgladbach","Union Berlin-Mgladbach","Union Berlin","Mgladbach","2-1",3
+"688","Wolfsburg","RB Leipzig","Wolfsburg-RB Leipzig","Wolfsburg","RB Leipzig","1-0",1
+"689","Dresden","Paderborn","Dresden-Paderborn","Dresden","Paderborn","0-3",3
+"690","St Pauli","Regensburg","St Pauli-Regensburg","St Pauli","Regensburg","2-0",2
+"691","Werder Bremen","Hansa Rostock","Werder Bremen-Hansa Rostock","Werder Bremen","Hansa Rostock","3-0",3
+"692","Burnley","Leeds","Burnley-Leeds","Burnley","Leeds","1-1",2
+"693","Tottenham","Watford","Tottenham-Watford","Tottenham","Watford","1-0",1
+"694","Wolves","Man United","Wolves-Man United","Wolves","Man United","0-1",1
+"695","Troyes","Monaco","Troyes-Monaco","Troyes","Monaco","1-2",3
+"696","Angers","Rennes","Angers-Rennes","Angers","Rennes","2-0",2
+"697","Clermont","Metz","Clermont-Metz","Clermont","Metz","2-2",4
+"698","Lens","Lorient","Lens-Lorient","Lens","Lorient","2-2",4
+"699","Strasbourg","Brest","Strasbourg-Brest","Strasbourg","Brest","3-1",4
+"700","Lille","Montpellier","Lille-Montpellier","Lille","Montpellier","2-1",3
+"701","Reims","Paris SG","Reims-Paris SG","Reims","Paris SG","0-2",2
+"702","Genoa","Napoli","Genoa-Napoli","Genoa","Napoli","1-2",3
+"703","Sassuolo","Sampdoria","Sassuolo-Sampdoria","Sassuolo","Sampdoria","0-0",0
+"704","Milan","Cagliari","Milan-Cagliari","Milan","Cagliari","4-1",5
+"705","Salernitana","Roma","Salernitana-Roma","Salernitana","Roma","0-4",4
+"706","Cittadella","Crotone","Cittadella-Crotone","Cittadella","Crotone","4-2",6
+"707","Lecce","Como","Lecce-Como","Lecce","Como","1-1",2
+"708","Monza","Cremonese","Monza-Cremonese","Monza","Cremonese","1-0",1
+"709","Parma","Benevento","Parma-Benevento","Parma","Benevento","1-0",1
+"710","Reggina","Ternana","Reggina-Ternana","Reggina","Ternana","3-2",5
+"711","Spal","Pordenone","Spal-Pordenone","Spal","Pordenone","5-0",5
+"712","Utrecht","Feyenoord","Utrecht-Feyenoord","Utrecht","Feyenoord","3-1",4
+"713","Ajax","Vitesse","Ajax-Vitesse","Ajax","Vitesse","5-0",5
+"714","Heracles","Nijmegen","Heracles-Nijmegen","Heracles","Nijmegen","0-1",1
+"715","Heerenveen","AZ Alkmaar","Heerenveen-AZ Alkmaar","Heerenveen","AZ Alkmaar","1-3",4
+"716","Benfica","Tondela","Benfica-Tondela","Benfica","Tondela","2-1",3
+"717","Sp Braga","Guimaraes","Sp Braga-Guimaraes","Sp Braga","Guimaraes","0-0",0
+"718","Portimonense","Pacos Ferreira","Portimonense-Pacos Ferreira","Portimonense","Pacos Ferreira","0-1",1
+"719","Santa Clara","Gil Vicente","Santa Clara-Gil Vicente","Santa Clara","Gil Vicente","1-0",1
+"720","Rangers","Celtic","Rangers-Celtic","Rangers","Celtic","1-0",1
+"721","Aberdeen","Ross County","Aberdeen-Ross County","Aberdeen","Ross County","1-1",2
+"722","St Mirren","St Johnstone","St Mirren-St Johnstone","St Mirren","St Johnstone","0-0",0
+"723","Barcelona","Getafe","Barcelona-Getafe","Barcelona","Getafe","2-1",3
+"724","Cadiz","Osasuna","Cadiz-Osasuna","Cadiz","Osasuna","2-3",5
+"725","Vallecano","Granada","Vallecano-Granada","Vallecano","Granada","4-0",4
+"726","Ath Madrid","Villarreal","Ath Madrid-Villarreal","Ath Madrid","Villarreal","2-2",4
+"727","Amorebieta","Almeria","Amorebieta-Almeria","Amorebieta","Almeria","2-1",3
+"728","Lugo","Valladolid","Lugo-Valladolid","Lugo","Valladolid","0-2",2
+"729","Sociedad B","Fuenlabrada","Sociedad B-Fuenlabrada","Sociedad B","Fuenlabrada","0-0",0
+"730","Burgos","Eibar","Burgos-Eibar","Burgos","Eibar","0-1",1
+"731","Kasimpasa","Galatasaray","Kasimpasa-Galatasaray","Kasimpasa","Galatasaray","2-2",4
+"732","Sivasspor","Goztep","Sivasspor-Goztep","Sivasspor","Goztep","2-2",4
+"733","Altay","Fenerbahce","Altay-Fenerbahce","Altay","Fenerbahce","0-2",2
+"734","Giresunspor","Trabzonspor","Giresunspor-Trabzonspor","Giresunspor","Trabzonspor","0-1",1
+"735","Zaragoza","Cartagena","Zaragoza-Cartagena",NA,NA,NA,NA
+"736","Aldershot","Yeovil","Aldershot-Yeovil",NA,NA,NA,NA
+"737","Barnet","Dag and Red","Barnet-Dag and Red",NA,NA,NA,NA
+"738","Bromley","Eastleigh","Bromley-Eastleigh",NA,NA,NA,NA
+"739","Dover Athletic","Boreham Wood","Dover Athletic-Boreham Wood",NA,NA,NA,NA
+"740","Halifax","Altrincham","Halifax-Altrincham",NA,NA,NA,NA
+"741","Kings Lynn","Chesterfield","Kings Lynn-Chesterfield",NA,NA,NA,NA
+"742","Torquay","Woking","Torquay-Woking",NA,NA,NA,NA
+"743","Wealdstone","Southend","Wealdstone-Southend",NA,NA,NA,NA
+"744","Weymouth","Maidenhead","Weymouth-Maidenhead",NA,NA,NA,NA
+"745","Wrexham","Notts County","Wrexham-Notts County",NA,NA,NA,NA
+"746","Zaragoza","Cartagena","Zaragoza-Cartagena",NA,NA,NA,NA
+"747","Stockport","Grimsby","Stockport-Grimsby",NA,NA,NA,NA

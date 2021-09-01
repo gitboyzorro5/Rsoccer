@@ -15,6 +15,7 @@ AUT <- within(AUT,rm(Res))
 AUT$Date <- dmy(AUT$Date)
 AUT <- AUT[order(as.Date(AUT$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 AUT$CS <- paste(AUT$HG,AUT$AG, sep = "-")
+
 #AUT_qualificaton <- subset(AUT,tournament == "UEFA Euro qualification")
 AUT <- subset(AUT,Season == "2020/2021")
 #AUT <- AUT[AUT$Date > '2008-01-01',])

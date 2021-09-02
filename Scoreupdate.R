@@ -28,11 +28,9 @@ rm(myoddscores)
 rm(allteams20212022scores)
 ####################################################################
 #########add correct scores########################################
-AUT <- subset(AUT,Season == "2020/2021")
-AUT <- subset(AUT,League == "Admiral Bundesliga")
+AUT <- subset(AUT,Season == "2021/2022")
 ARG <- subset(ARG,Season == "2021")
 BRA <- subset(BRA,Season == "2021")
-BRA <- subset(BRA,League == "Liga Profesional")
 CHN <- subset(CHN,Season == "2021")
 DNK <- subset(DNK,Season == "2021/2022")
 FIN <- subset(FIN,Season == "2021")
@@ -80,7 +78,7 @@ write.xlsx(finalscore_newleagues,'finalscore_newleagues.xlsx')
 rm(myoddscores_newleagues)
 rm(allteams20212022scores_newleagues)
 
-finalscore_newleagues
+
 
 
 

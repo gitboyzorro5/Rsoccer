@@ -19,7 +19,7 @@ allteams20212022scores$matchid <- paste(allteams20212022scores$HomeTeam,allteams
 #myoddscores$Date <- ymd(myoddscores$Date)
 #allteams20212022scores <- allteams20212022scores[allteams20212022scores$Date >= '2021-08-28',]
 #myoddscores <- myoddscores[myoddscores$Date >= '2021-08-28',]
-myoddscores <- myoddscores[,c(24,25,31)]
+myoddscores <- myoddscores[,c(24,25,31,29)]
 allteams20212022scores <- allteams20212022scores[,c(3,4,30,15,24)]
 
 finalscore <- dplyr::left_join(myoddscores,allteams20212022scores)
@@ -64,21 +64,21 @@ SWZ <- subset(SWZ,Season == "2021/2022")
 
 allteams20212022scores_newleagues <- rbind(AUT,ARG,BRA,CHN,DNK,FIN,IRL,JPN,MEX,NOR,POL,ROU,RUS,SWE,MLS,SWZ)
 allteams20212022scores_newleagues$CS <- paste(allteams20212022scores_newleagues$HG,allteams20212022scores_newleagues$AG,sep = "-")
-myoddscores_newleagues <- readxl::read_excel('../FDAS/myodds_20212022_newleagues.xlsx', sheet = '3way')
-myoddscores_newleagues$matchid <- paste(myoddscores_newleagues$HT,myoddscores_newleagues$AT, sep = "-")
-allteams20212022scores_newleagues$matchid <- paste(allteams20212022scores_newleagues$Home,allteams20212022scores_newleagues$Away, sep = "-")
+allteams20212022scores_newleagues$Date <- dmy(allteams20212022scores_newleagues$Date)
 
-myoddscores_newleagues <- myoddscores_newleagues[,c(24,25,31)]
+myoddscores_newleagues <- readxl::read_excel('../FDAS/myodds_20212022_newleagues.xlsx', sheet = '3way')
+myoddscores_newleagues$Date <- dmy(myoddscores_newleagues$Date)
+
+myoddscores_newleagues$matchid <- paste(myoddscores_newleagues$HT,myoddscores_newleagues$AT,myoddscores_newleagues$Date, sep = "-")
+allteams20212022scores_newleagues$matchid <- paste(allteams20212022scores_newleagues$Home,allteams20212022scores_newleagues$Away,allteams20212022scores_newleagues$Date, sep = "-")
+
+myoddscores_newleagues <- myoddscores_newleagues[,c(24,25,31,26,29)]
 allteams20212022scores_newleagues <- allteams20212022scores_newleagues[,c(6,7,23,22,20)]
 
-
 finalscore_newleagues <- dplyr::left_join(myoddscores_newleagues,allteams20212022scores_newleagues)
+
 write.xlsx(finalscore_newleagues,'finalscore_newleagues.xlsx')
 
 rm(myoddscores_newleagues)
 rm(allteams20212022scores_newleagues)
-
-
-
-
 

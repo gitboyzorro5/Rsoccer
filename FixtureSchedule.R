@@ -5,6 +5,7 @@ Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 library('scales')
 library('lubridate')
+unlink('myfixtures.csv')
 #read the data
 D1_schedule20212022 <- read.csv('../../../Leonard/Downloads/D1_schedule20212022.csv')
 E0_schedule20212022 <- read.csv('../../../Leonard/Downloads/E0_schedule20212022.csv')

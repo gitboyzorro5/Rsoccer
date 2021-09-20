@@ -1,0 +1,6 @@
+library(rvest)
+rawhtml <- paste(readLines("../scorer.html"), collapse="\n")
+webpage <- read_html(rawhtml)
+data <- webpage %>% html_nodes(css ='table') %>% html_table()
+as.data.frame(data)
+colnames(data)

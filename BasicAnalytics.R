@@ -125,9 +125,12 @@ colnames(final_nor_hf_against) <- "Team against"
 ########
 ###nba#####
 library(rvest)
+rawhtml <- paste(readLines("../scorer.html"), collapse="\n")
 url <- 'https://www.basketball-reference.com/boxscores/'
-webpage <- read_html(url)
+webpage <- read_html(rawhtml)
+webpage
 data <- webpage %>% html_nodes(css ='table') %>% html_table()
+data
 class(data)
 length(data)
 nor_CS_summary <- tabyl(allteams20202021,Div,CS) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)

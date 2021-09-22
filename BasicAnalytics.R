@@ -8,6 +8,7 @@ library('lubridate')
 library('pinnacle.data')
 library('odds.converter')
 library('sqldf')
+library('mgsub')
 
 #Full time results percentages
 ftr_summary <- tabyl(allteams20202021,Div,FTR) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
@@ -157,17 +158,37 @@ allteams20212022scores <- allteams20212022scores[,c(3,4,30,15,24)]
 
 finalscore <- dplyr::left_join(myoddscores,allteams20212022scores)
 write.xlsx(finalscore,'finalscore.xlsx')
+###################################################################################
+####################################################################################
+poissonteams2122 <- readxl::read_excel('../FDAS/poisson calc_20212022_sqlmodel.xlsx',sheet = 'home')
+b1teams2122 <- poissonteams2122[poissonteams2122$division == "B1",]
+sort(b1teams2122$HomeTeam)
+sort(unique(B1_schedule20212022$Home_Team))
+B1_schedule20212022 <- mgsub(B1_schedule20212022,c("Anderlecht","Antwerp","Beerschot","Cercle Brugge","Charleroi","Club Brugge","Eupen","Genk","Gent","Kortrijk","Mechelen","OH Leuven","Oostende","R.F.C. Seraing","Sint-Truiden","Standard Liege","Union SG","Zulte Waregem"),
+c("Anderlecht","Antwerp","Beerschot VA","Cercle Brugge","Charleroi","Club Brugge","Eupen","Genk","Gent","Kortrijk","Mechelen","Oud-Heverlee Leuven","Oostende","Seraing","St Truiden","Standard","St. Gilloise","Waregem"))
 
+write.csv(B1_schedule20212022,'B1_schedule20212022.csv')
+####################################################################
+e2teams2122 <- poissonteams2122[poissonteams2122$division == "E2",]
+sort(e2teams2122$HomeTeam)
+sort(unique(E2_schedule20212022$Home_Team))
 
+E2_schedule20212022 <- mgsub(E2_schedule20212022,c("Accrington Stanley","Burton Albion","Cambridge Utd","Charlton Ath","Cheltenham","Crewe Alexandra","Doncaster","Fleetwood Town","Gillingham","Ipswich Town","Lincoln City","MK Dons" ,"Morecambe","Oxford United","Plymouth Argyle","Portsmouth","Rotherham Utd","Sheffield Weds" ,"Shrewsbury","Sunderland","Wigan Athletic","Wycombe"),c("Accrington","Burton","Cambridge","Charlton", "Cheltenham","Crewe","Doncaster","Fleetwood Town","Gillingham","Ipswich","Lincoln","Milton Keynes Dons","Morecambe","Oxford","Plymouth","Portsmouth","Rotherham","Sheffield Weds","Shrewsbury","Sunderland","Wigan","Wycombe"))
+write.csv(E2_schedule20212022,'E2_schedule20212022.csv')
+####################################################################
+e3teams2122 <- poissonteams2122[poissonteams2122$division == "E3",]
+sort(e3teams2122$HomeTeam)
+sort(unique(E3_schedule20212022$Home_Team))
 
+E3_schedule20212022 <- mgsub(E3_schedule20212022,c("Barrow","Bradford City","Bristol Rovers","Carlisle United","Colchester Utd", "Crawley Town","Exeter City","FG Rovers","Harrogate","Hartlepool Utd" ,"Leyton Orient","Mansfield Town","Newport County","Northampton","Oldham Athletic","Port Vale","Rochdale", "Salford City","Scunthorpe Utd","Stevenage","Sutton United","Swindon Town","Tranmere Rovers","Walsall"),c("Barrow","Bradford","Bristol Rvs","Carlisle","Colchester","Crawley Town","Exeter","Forest Green","Harrogate","Hartlepool","Leyton Orient","Mansfield","Newport County","Northampton","Oldham","Port Vale","Rochdale","Salford","Scunthorpe","Stevenage","Sutton","Swindon","Tranmere","Walsall"))
+write.csv(E3_schedule20212022,'E3_schedule20212022.csv')
+########################################################################
+ecteams2122 <- poissonteams2122[poissonteams2122$division == "EC",]
+sort(ecteams2122$HomeTeam)
+tempecteams <- sort(unique(EC_schedule20212022$Home_Team))
 
+EC_schedule20212022 <- mgsub(EC_schedule20212022,c( "Aldershot Town","Altrincham","Barnet","Boreham Wood","Bromley","Chesterfield","Dag & Red","Dover Athletic","Eastleigh","Grimsby Town","FC Halifax Town","King's Lynn","Maidenhead Utd","Notts County","Solihull Moors","Southend United","Stockport","Torquay","Wealdstone","Weymouth","Woking","Wrexham","Yeovil Town"),c( "Aldershot","Altrincham","Barnet","Boreham Wood","Bromley","Chesterfield","Dag and Red","Dover Athletic","Eastleigh","Grimsby","Halifax","Kings Lynn","Maidenhead","Notts County","Solihull","Southend","Stockport","Torquay","Wealdstone","Weymouth","Woking","Wrexham","Yeovil"))
 
-
-
-
-
-
-
-
+write.csv(EC_schedule20212022,'EC_schedule20212022.csv')
 
 

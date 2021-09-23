@@ -1,527 +1,182 @@
-"","Div","Home_Team","Away_Team","Date"
-"73","B1","Oostende","Anderlecht",2021-09-25
-"74","B1","St. Gilloise","Antwerp",2021-09-25
-"75","B1","Gent","Cercle Brugge",2021-09-25
-"76","B1","Beerschot VA","Eupen",2021-09-25
-"77","B1","Waregem","Kortrijk",2021-09-25
-"78","B1","Charleroi","Mechelen",2021-09-25
-"79","B1","Club Brugge","Oud-Heverlee Leuven",2021-09-25
-"80","B1","Genk","Seraing",2021-09-25
-"81","B1","Standard","St Truiden",2021-09-25
-"352","D1","Greuther Furth","Bayern Munich",2021-09-24
-"353","D1","Hoffenheim","Wolfsburg",2021-09-25
-"354","D1","Union Berlin","Bielefeld",2021-09-25
-"355","D1","Leverkusen","Mainz",2021-09-25
-"356","D1","Ein Frankfurt","FC Koln",2021-09-25
-"357","D1","RB Leipzig","Hertha",2021-09-25
-"358","D1","Mgladbach","Dortmund",2021-09-25
-"359","D1","Bochum","Stuttgart",2021-09-26
-"360","D1","Freiburg","Augsburg",2021-09-26
-"676","D2","Heidenheim","Darmstadt",2021-09-24
-"677","D2","Regensburg","Erzgebirge Aue",2021-09-24
-"678","D2","Ingolstadt","Fortuna Dusseldorf",2021-09-25
-"679","D2","Paderborn","Holstein Kiel",2021-09-25
-"680","D2","Hansa Rostock","Schalke 04",2021-09-25
-"681","D2","Karlsruhe","St Pauli",2021-09-25
-"682","D2","Hamburg","Nurnberg",2021-09-26
-"683","D2","Hannover","Sandhausen",2021-09-26
-"684","D2","Dresden","Werder Bremen",2021-09-26
-"969","E0","Chelsea","Man City",2021-09-25
-"970","E0","Man United","Aston Villa",2021-09-25
-"971","E0","Everton","Norwich",2021-09-25
-"972","E0","Leeds","West Ham",2021-09-25
-"973","E0","Leicester","Burnley",2021-09-25
-"974","E0","Watford","Newcastle",2021-09-25
-"975","E0","Brentford","Liverpool",2021-09-25
-"976","E0","Southampton","Wolves",2021-09-26
-"977","E0","Arsenal","Tottenham",2021-09-26
-"978","E0","Crystal Palace","Brighton",2021-09-27
-"1395","E1","Coventry","Peterboro",2021-09-24
-"1396","E1","West Brom","QPR",2021-09-24
-"1397","E1","Reading","Middlesbrough",2021-09-25
-"1398","E1","Birmingham","Preston",2021-09-25
-"1399","E1","Blackburn","Cardiff",2021-09-25
-"1400","E1","Blackpool","Barnsley",2021-09-25
-"1401","E1","Bournemouth","Luton",2021-09-25
-"1402","E1","Bristol City","Fulham",2021-09-25
-"1403","E1","Nottm Forest","Millwall",2021-09-25
-"1404","E1","Sheffield United","Derby",2021-09-25
-"1405","E1","Stoke","Hull",2021-09-25
-"1406","E1","Swansea","Huddersfield",2021-09-25
-"1407","E1","Cardiff","West Brom",2021-09-28
-"1408","E1","Huddersfield","Blackburn",2021-09-28
-"1409","E1","Hull","Blackpool",2021-09-28
-"1410","E1","Middlesbrough","Sheffield United",2021-09-28
-"1411","E1","Preston","Stoke",2021-09-28
-"1412","E1","QPR","Birmingham",2021-09-28
-"1947","E2","Morecambe","Accrington",2021-09-25
-"1948","E2","Shrewsbury","AFC Wimbledon",2021-09-25
-"1949","E2","Sunderland","Bolton",2021-09-25
-"1950","E2","Wigan","Cheltenham",2021-09-25
-"1951","E2","Rotherham","Crewe",2021-09-25
-"1952","E2","Plymouth","Doncaster",2021-09-25
-"1953","E2","Cambridge","Fleetwood Town",2021-09-25
-"1954","E2","Oxford","Gillingham",2021-09-25
-"1955","E2","Burton","Lincoln",2021-09-25
-"1956","E2","Charlton","Portsmouth",2021-09-25
-"1957","E2","Ipswich","Sheffield Weds",2021-09-25
-"1958","E2","Milton Keynes Dons","Wycombe",2021-09-25
-"1959","E2","Oxford","Accrington",2021-09-28
-"1960","E2","Rotherham","AFC Wimbledon",2021-09-28
-"1961","E2","Charlton","Bolton",2021-09-28
-"1962","E2","Sunderland","Cheltenham",2021-09-28
-"1963","E2","Plymouth","Crewe",2021-09-28
-"1964","E2","Ipswich","Doncaster",2021-09-28
-"1965","E2","Milton Keynes Dons","Fleetwood Town",2021-09-28
-"1966","E2","Cambridge","Gillingham",2021-09-28
-"1967","E2","Morecambe","Lincoln",2021-09-28
-"1968","E2","Burton","Portsmouth",2021-09-28
-"1969","E2","Wigan","Sheffield Weds",2021-09-28
-"1970","E2","Shrewsbury","Wycombe",2021-09-28
-"2499","E3","Crawley Town","Bradford",2021-09-25
-"2500","E3","Walsall","Bristol Rvs",2021-09-25
-"2501","E3","Sutton","Carlisle",2021-09-25
-"2502","E3","Swindon","Colchester",2021-09-25
-"2503","E3","Hartlepool","Exeter",2021-09-25
-"2504","E3","Leyton Orient","Mansfield",2021-09-25
-"2505","E3","Barrow","Newport County",2021-09-25
-"2506","E3","Salford","Northampton",2021-09-25
-"2507","E3","Rochdale","Oldham",2021-09-25
-"2508","E3","Scunthorpe","Port Vale",2021-09-25
-"2509","E3","Harrogate","Stevenage",2021-09-25
-"2510","E3","Forest Green","Tranmere",2021-09-25
-"3032","EC","Aldershot","Halifax",2021-09-25
-"3033","EC","Altrincham","Notts County",2021-09-25
-"3034","EC","Barnet","Weymouth",2021-09-25
-"3035","EC","Boreham Wood","Yeovil",2021-09-25
-"3036","EC","Chesterfield","Torquay",2021-09-25
-"3037","EC","Dag and Red","Solihull",2021-09-25
-"3038","EC","Dover Athletic","Bromley",2021-09-25
-"3039","EC","Eastleigh","Woking",2021-09-25
-"3040","EC","Kings Lynn","Wealdstone",2021-09-25
-"3041","EC","Maidenhead","Grimsby",2021-09-25
-"3042","EC","Stockport","Wrexham",2021-09-25
-"3521","F1","Lille","Reims",2021-09-22
-"3522","F1","Monaco","St Etienne",2021-09-22
-"3523","F1","Montpellier","Bordeaux",2021-09-22
-"3524","F1","Nantes","Brest",2021-09-22
-"3525","F1","Rennes","Clermont",2021-09-22
-"3526","F1","Angers","Marseille",2021-09-22
-"3527","F1","Lens","Strasbourg",2021-09-22
-"3528","F1","Lorient","Nice",2021-09-22
-"3529","F1","Lyon","Troyes",2021-09-22
-"3530","F1","Metz","Paris SG",2021-09-22
-"3531","F1","St Etienne","Nice",2021-09-25
-"3532","F1","Strasbourg","Lille",2021-09-25
-"3533","F1","Lyon","Lorient",2021-09-25
-"3534","F1","Paris SG","Montpellier",2021-09-25
-"3535","F1","Bordeaux","Rennes",2021-09-26
-"3536","F1","Brest","Metz",2021-09-26
-"3537","F1","Reims","Nantes",2021-09-26
-"3538","F1","Troyes","Angers",2021-09-26
-"3539","F1","Clermont","Monaco",2021-09-26
-"3540","F1","Marseille","Lens",2021-09-26
-"3921","F2","Valenciennes","Bastia",2021-09-21
-"3922","F2","Caen","Dijon",2021-09-21
-"3923","F2","Paris FC","Nimes",2021-09-21
-"3924","F2","Grenoble","Nancy",2021-09-21
-"3925","F2","Ajaccio","Niort",2021-09-21
-"3926","F2","Amiens","Pau FC",2021-09-21
-"3927","F2","Le Havre","Quevilly Rouen",2021-09-21
-"3928","F2","Auxerre","Rodez",2021-09-21
-"3929","F2","Guingamp","Sochaux",2021-09-21
-"3930","F2","Dunkerque","Toulouse",2021-09-21
-"3931","F2","Bastia","Ajaccio",2021-09-25
-"3932","F2","Nancy","Amiens",2021-09-25
-"3933","F2","Sochaux","Auxerre",2021-09-25
-"3934","F2","Toulouse","Caen",2021-09-25
-"3935","F2","Pau FC","Dunkerque",2021-09-25
-"3936","F2","Rodez","Grenoble",2021-09-25
-"3937","F2","Quevilly Rouen","Guingamp",2021-09-25
-"3938","F2","Nimes","Le Havre",2021-09-25
-"3939","F2","Niort","Paris FC",2021-09-25
-"3940","F2","Dijon","Valenciennes",2021-09-25
-"4261","I1","Bologna","Genoa",2021-09-21
-"4262","I1","Atalanta","Sassuolo",2021-09-21
-"4263","I1","Fiorentina","Inter",2021-09-21
-"4264","I1","Salernitana","Verona",2021-09-22
-"4265","I1","Spezia","Juventus",2021-09-22
-"4266","I1","Cagliari","Empoli",2021-09-22
-"4267","I1","Milan","Venezia",2021-09-22
-"4268","I1","Sampdoria","Napoli",2021-09-23
-"4269","I1","Torino","Lazio",2021-09-23
-"4270","I1","Roma","Udinese",2021-09-23
-"4271","I1","Empoli","Bologna",2021-09-26
-"4272","I1","Genoa","Verona",2021-09-26
-"4273","I1","Inter","Atalanta",2021-09-26
-"4274","I1","Juventus","Sampdoria",2021-09-26
-"4275","I1","Lazio","Roma",2021-09-26
-"4276","I1","Napoli","Cagliari",2021-09-26
-"4277","I1","Sassuolo","Salernitana",2021-09-26
-"4278","I1","Spezia","Milan",2021-09-26
-"4279","I1","Udinese","Fiorentina",2021-09-26
-"4280","I1","Venezia","Torino",2021-09-26
-"4646","N1","For Sittard","Ajax",2021-09-21
-"4647","N1","Waalwijk","Willem II",2021-09-21
-"4648","N1","Feyenoord","Heerenveen",2021-09-22
-"4649","N1","Cambuur","Heracles",2021-09-22
-"4650","N1","Go Ahead Eagles","PSV Eindhoven",2021-09-22
-"4651","N1","Nijmegen","Utrecht",2021-09-22
-"4652","N1","Groningen","Vitesse",2021-09-22
-"4653","N1","Twente","AZ Alkmaar",2021-09-23
-"4654","N1","Zwolle","Sparta Rotterdam",2021-09-23
-"4655","N1","Vitesse","For Sittard",2021-09-25
-"4656","N1","Ajax","Groningen",2021-09-25
-"4657","N1","Feyenoord","Nijmegen",2021-09-25
-"4658","N1","Willem II","PSV Eindhoven",2021-09-25
-"4659","N1","Heracles","Waalwijk",2021-09-25
-"4660","N1","Sparta Rotterdam","Cambuur",2021-09-26
-"4661","N1","AZ Alkmaar","Go Ahead Eagles",2021-09-26
-"4662","N1","Heerenveen","Twente",2021-09-26
-"4663","N1","Utrecht","Zwolle",2021-09-26
-"4961","P1","Moreirense","Arouca",2021-09-26
-"4962","P1","Pacos Ferreira","Belenenses",2021-09-26
-"4963","P1","Guimaraes","Benfica",2021-09-26
-"4964","P1","Santa Clara","Sp Braga",2021-09-26
-"4965","P1","Boavista","Estoril",2021-09-26
-"4966","P1","Tondela","Famalicao",2021-09-26
-"4967","P1","Portimonense","Vizela",2021-09-26
-"4968","P1","Sp Lisbon","Maritimo",2021-09-26
-"4969","P1","Gil Vicente","Porto",2021-09-26
-"5249","SC0","Dundee","Rangers",2021-09-25
-"5250","SC0","Celtic","Dundee United",2021-09-25
-"5251","SC0","Motherwell","Ross County",2021-09-25
-"5252","SC0","Hibernian","St Johnstone",2021-09-25
-"5253","SC0","St Mirren","Aberdeen",2021-09-25
-"5254","SC0","Hearts","Livingston",2021-09-25
-"5441","SC1","Ayr United","Greenock Morton",2021-09-25
-"5442","SC1","Dunfermline","Hamilton",2021-09-25
-"5443","SC1","Arbroath FC","Kilmarnock",2021-09-25
-"5444","SC1","Raith Rovers","Partick Thistle",2021-09-25
-"5445","SC1","Inverness CT","Queens",2021-09-25
-"5641","SP1","Getafe","Ath Madrid",2021-09-21
-"5642","SP1","Ath Bilbao","Vallecano",2021-09-21
-"5643","SP1","Levante","Celta",2021-09-21
-"5644","SP1","Espanyol","Alaves",2021-09-22
-"5645","SP1","Sevilla","Valencia",2021-09-22
-"5646","SP1","Real Madrid","Mallorca",2021-09-22
-"5647","SP1","Villarreal","Elche",2021-09-22
-"5648","SP1","Granada","Sociedad",2021-09-23
-"5649","SP1","Osasuna","Betis",2021-09-23
-"5650","SP1","Cadiz","Barcelona",2021-09-23
-"5651","SP1","Alaves","Ath Madrid",2021-09-25
-"5652","SP1","Valencia","Ath Bilbao",2021-09-25
-"5653","SP1","Sevilla","Espanyol",2021-09-25
-"5654","SP1","Real Madrid","Villarreal",2021-09-25
-"5655","SP1","Mallorca","Osasuna",2021-09-26
-"5656","SP1","Barcelona","Levante",2021-09-26
-"5657","SP1","Sociedad","Elche",2021-09-26
-"5658","SP1","Vallecano","Cadiz",2021-09-26
-"5659","SP1","Betis","Getafe",2021-09-26
-"5660","SP1","Celta","Granada",2021-09-27
-"NA",NA,NA,NA,NA
-"NA.1",NA,NA,NA,NA
-"NA.2",NA,NA,NA,NA
-"NA.3",NA,NA,NA,NA
-"NA.4",NA,NA,NA,NA
-"NA.5",NA,NA,NA,NA
-"NA.6",NA,NA,NA,NA
-"NA.7",NA,NA,NA,NA
-"NA.8",NA,NA,NA,NA
-"NA.9",NA,NA,NA,NA
-"NA.10",NA,NA,NA,NA
-"NA.11",NA,NA,NA,NA
-"NA.12",NA,NA,NA,NA
-"NA.13",NA,NA,NA,NA
-"NA.14",NA,NA,NA,NA
-"NA.15",NA,NA,NA,NA
-"NA.16",NA,NA,NA,NA
-"NA.17",NA,NA,NA,NA
-"NA.18",NA,NA,NA,NA
-"NA.19",NA,NA,NA,NA
-"NA.20",NA,NA,NA,NA
-"NA.21",NA,NA,NA,NA
-"NA.22",NA,NA,NA,NA
-"NA.23",NA,NA,NA,NA
-"NA.24",NA,NA,NA,NA
-"NA.25",NA,NA,NA,NA
-"NA.26",NA,NA,NA,NA
-"NA.27",NA,NA,NA,NA
-"NA.28",NA,NA,NA,NA
-"NA.29",NA,NA,NA,NA
-"NA.30",NA,NA,NA,NA
-"NA.31",NA,NA,NA,NA
-"NA.32",NA,NA,NA,NA
-"NA.33",NA,NA,NA,NA
-"NA.34",NA,NA,NA,NA
-"NA.35",NA,NA,NA,NA
-"NA.36",NA,NA,NA,NA
-"NA.37",NA,NA,NA,NA
-"NA.38",NA,NA,NA,NA
-"NA.39",NA,NA,NA,NA
-"NA.40",NA,NA,NA,NA
-"NA.41",NA,NA,NA,NA
-"NA.42",NA,NA,NA,NA
-"NA.43",NA,NA,NA,NA
-"NA.44",NA,NA,NA,NA
-"NA.45",NA,NA,NA,NA
-"NA.46",NA,NA,NA,NA
-"NA.47",NA,NA,NA,NA
-"NA.48",NA,NA,NA,NA
-"NA.49",NA,NA,NA,NA
-"NA.50",NA,NA,NA,NA
-"NA.51",NA,NA,NA,NA
-"NA.52",NA,NA,NA,NA
-"NA.53",NA,NA,NA,NA
-"NA.54",NA,NA,NA,NA
-"NA.55",NA,NA,NA,NA
-"NA.56",NA,NA,NA,NA
-"NA.57",NA,NA,NA,NA
-"NA.58",NA,NA,NA,NA
-"NA.59",NA,NA,NA,NA
-"NA.60",NA,NA,NA,NA
-"NA.61",NA,NA,NA,NA
-"NA.62",NA,NA,NA,NA
-"NA.63",NA,NA,NA,NA
-"NA.64",NA,NA,NA,NA
-"NA.65",NA,NA,NA,NA
-"NA.66",NA,NA,NA,NA
-"NA.67",NA,NA,NA,NA
-"NA.68",NA,NA,NA,NA
-"NA.69",NA,NA,NA,NA
-"NA.70",NA,NA,NA,NA
-"NA.71",NA,NA,NA,NA
-"NA.72",NA,NA,NA,NA
-"NA.73",NA,NA,NA,NA
-"NA.74",NA,NA,NA,NA
-"NA.75",NA,NA,NA,NA
-"NA.76",NA,NA,NA,NA
-"NA.77",NA,NA,NA,NA
-"NA.78",NA,NA,NA,NA
-"NA.79",NA,NA,NA,NA
-"NA.80",NA,NA,NA,NA
-"NA.81",NA,NA,NA,NA
-"NA.82",NA,NA,NA,NA
-"NA.83",NA,NA,NA,NA
-"NA.84",NA,NA,NA,NA
-"NA.85",NA,NA,NA,NA
-"NA.86",NA,NA,NA,NA
-"NA.87",NA,NA,NA,NA
-"NA.88",NA,NA,NA,NA
-"NA.89",NA,NA,NA,NA
-"NA.90",NA,NA,NA,NA
-"NA.91",NA,NA,NA,NA
-"NA.92",NA,NA,NA,NA
-"NA.93",NA,NA,NA,NA
-"NA.94",NA,NA,NA,NA
-"NA.95",NA,NA,NA,NA
-"NA.96",NA,NA,NA,NA
-"NA.97",NA,NA,NA,NA
-"NA.98",NA,NA,NA,NA
-"NA.99",NA,NA,NA,NA
-"NA.100",NA,NA,NA,NA
-"NA.101",NA,NA,NA,NA
-"NA.102",NA,NA,NA,NA
-"NA.103",NA,NA,NA,NA
-"NA.104",NA,NA,NA,NA
-"NA.105",NA,NA,NA,NA
-"NA.106",NA,NA,NA,NA
-"NA.107",NA,NA,NA,NA
-"NA.108",NA,NA,NA,NA
-"NA.109",NA,NA,NA,NA
-"NA.110",NA,NA,NA,NA
-"NA.111",NA,NA,NA,NA
-"NA.112",NA,NA,NA,NA
-"NA.113",NA,NA,NA,NA
-"NA.114",NA,NA,NA,NA
-"NA.115",NA,NA,NA,NA
-"NA.116",NA,NA,NA,NA
-"NA.117",NA,NA,NA,NA
-"NA.118",NA,NA,NA,NA
-"NA.119",NA,NA,NA,NA
-"NA.120",NA,NA,NA,NA
-"NA.121",NA,NA,NA,NA
-"NA.122",NA,NA,NA,NA
-"NA.123",NA,NA,NA,NA
-"NA.124",NA,NA,NA,NA
-"NA.125",NA,NA,NA,NA
-"NA.126",NA,NA,NA,NA
-"NA.127",NA,NA,NA,NA
-"NA.128",NA,NA,NA,NA
-"NA.129",NA,NA,NA,NA
-"NA.130",NA,NA,NA,NA
-"NA.131",NA,NA,NA,NA
-"NA.132",NA,NA,NA,NA
-"NA.133",NA,NA,NA,NA
-"NA.134",NA,NA,NA,NA
-"NA.135",NA,NA,NA,NA
-"NA.136",NA,NA,NA,NA
-"NA.137",NA,NA,NA,NA
-"NA.138",NA,NA,NA,NA
-"NA.139",NA,NA,NA,NA
-"NA.140",NA,NA,NA,NA
-"NA.141",NA,NA,NA,NA
-"NA.142",NA,NA,NA,NA
-"NA.143",NA,NA,NA,NA
-"NA.144",NA,NA,NA,NA
-"NA.145",NA,NA,NA,NA
-"NA.146",NA,NA,NA,NA
-"NA.147",NA,NA,NA,NA
-"NA.148",NA,NA,NA,NA
-"NA.149",NA,NA,NA,NA
-"NA.150",NA,NA,NA,NA
-"NA.151",NA,NA,NA,NA
-"NA.152",NA,NA,NA,NA
-"NA.153",NA,NA,NA,NA
-"NA.154",NA,NA,NA,NA
-"NA.155",NA,NA,NA,NA
-"NA.156",NA,NA,NA,NA
-"NA.157",NA,NA,NA,NA
-"NA.158",NA,NA,NA,NA
-"NA.159",NA,NA,NA,NA
-"NA.160",NA,NA,NA,NA
-"NA.161",NA,NA,NA,NA
-"NA.162",NA,NA,NA,NA
-"NA.163",NA,NA,NA,NA
-"NA.164",NA,NA,NA,NA
-"NA.165",NA,NA,NA,NA
-"NA.166",NA,NA,NA,NA
-"NA.167",NA,NA,NA,NA
-"NA.168",NA,NA,NA,NA
-"NA.169",NA,NA,NA,NA
-"NA.170",NA,NA,NA,NA
-"NA.171",NA,NA,NA,NA
-"NA.172",NA,NA,NA,NA
-"NA.173",NA,NA,NA,NA
-"NA.174",NA,NA,NA,NA
-"NA.175",NA,NA,NA,NA
-"NA.176",NA,NA,NA,NA
-"NA.177",NA,NA,NA,NA
-"NA.178",NA,NA,NA,NA
-"NA.179",NA,NA,NA,NA
-"NA.180",NA,NA,NA,NA
-"NA.181",NA,NA,NA,NA
-"NA.182",NA,NA,NA,NA
-"NA.183",NA,NA,NA,NA
-"NA.184",NA,NA,NA,NA
-"NA.185",NA,NA,NA,NA
-"NA.186",NA,NA,NA,NA
-"NA.187",NA,NA,NA,NA
-"NA.188",NA,NA,NA,NA
-"NA.189",NA,NA,NA,NA
-"NA.190",NA,NA,NA,NA
-"NA.191",NA,NA,NA,NA
-"NA.192",NA,NA,NA,NA
-"NA.193",NA,NA,NA,NA
-"NA.194",NA,NA,NA,NA
-"NA.195",NA,NA,NA,NA
-"NA.196",NA,NA,NA,NA
-"NA.197",NA,NA,NA,NA
-"NA.198",NA,NA,NA,NA
-"NA.199",NA,NA,NA,NA
-"NA.200",NA,NA,NA,NA
-"NA.201",NA,NA,NA,NA
-"NA.202",NA,NA,NA,NA
-"NA.203",NA,NA,NA,NA
-"NA.204",NA,NA,NA,NA
-"NA.205",NA,NA,NA,NA
-"NA.206",NA,NA,NA,NA
-"NA.207",NA,NA,NA,NA
-"NA.208",NA,NA,NA,NA
-"NA.209",NA,NA,NA,NA
-"NA.210",NA,NA,NA,NA
-"NA.211",NA,NA,NA,NA
-"NA.212",NA,NA,NA,NA
-"NA.213",NA,NA,NA,NA
-"NA.214",NA,NA,NA,NA
-"NA.215",NA,NA,NA,NA
-"NA.216",NA,NA,NA,NA
-"NA.217",NA,NA,NA,NA
-"NA.218",NA,NA,NA,NA
-"NA.219",NA,NA,NA,NA
-"NA.220",NA,NA,NA,NA
-"NA.221",NA,NA,NA,NA
-"NA.222",NA,NA,NA,NA
-"NA.223",NA,NA,NA,NA
-"NA.224",NA,NA,NA,NA
-"NA.225",NA,NA,NA,NA
-"NA.226",NA,NA,NA,NA
-"NA.227",NA,NA,NA,NA
-"NA.228",NA,NA,NA,NA
-"NA.229",NA,NA,NA,NA
-"NA.230",NA,NA,NA,NA
-"NA.231",NA,NA,NA,NA
-"NA.232",NA,NA,NA,NA
-"NA.233",NA,NA,NA,NA
-"NA.234",NA,NA,NA,NA
-"NA.235",NA,NA,NA,NA
-"NA.236",NA,NA,NA,NA
-"NA.237",NA,NA,NA,NA
-"NA.238",NA,NA,NA,NA
-"NA.239",NA,NA,NA,NA
-"NA.240",NA,NA,NA,NA
-"NA.241",NA,NA,NA,NA
-"NA.242",NA,NA,NA,NA
-"NA.243",NA,NA,NA,NA
-"NA.244",NA,NA,NA,NA
-"NA.245",NA,NA,NA,NA
-"NA.246",NA,NA,NA,NA
-"NA.247",NA,NA,NA,NA
-"NA.248",NA,NA,NA,NA
-"NA.249",NA,NA,NA,NA
-"NA.250",NA,NA,NA,NA
-"NA.251",NA,NA,NA,NA
-"NA.252",NA,NA,NA,NA
-"NA.253",NA,NA,NA,NA
-"NA.254",NA,NA,NA,NA
-"NA.255",NA,NA,NA,NA
-"NA.256",NA,NA,NA,NA
-"NA.257",NA,NA,NA,NA
-"NA.258",NA,NA,NA,NA
-"NA.259",NA,NA,NA,NA
-"NA.260",NA,NA,NA,NA
-"NA.261",NA,NA,NA,NA
-"NA.262",NA,NA,NA,NA
-"NA.263",NA,NA,NA,NA
-"NA.264",NA,NA,NA,NA
-"NA.265",NA,NA,NA,NA
-"NA.266",NA,NA,NA,NA
-"NA.267",NA,NA,NA,NA
-"NA.268",NA,NA,NA,NA
-"NA.269",NA,NA,NA,NA
-"NA.270",NA,NA,NA,NA
-"NA.271",NA,NA,NA,NA
-"NA.272",NA,NA,NA,NA
-"NA.273",NA,NA,NA,NA
-"NA.274",NA,NA,NA,NA
-"NA.275",NA,NA,NA,NA
-"NA.276",NA,NA,NA,NA
-"NA.277",NA,NA,NA,NA
-"NA.278",NA,NA,NA,NA
-"NA.279",NA,NA,NA,NA
-"NA.280",NA,NA,NA,NA
-"NA.281",NA,NA,NA,NA
-"NA.282",NA,NA,NA,NA
-"NA.283",NA,NA,NA,NA
-"NA.284",NA,NA,NA,NA
-"NA.285",NA,NA,NA,NA
-"6483","T1","Gaziantep","Buyuksehyr",2021-09-22
-"6484","T1","Karagumruk","Antalyaspor",2021-09-22
-"6485","T1","Besiktas","Ad. Demirspor",2021-09-22
-"6486","T1","Yeni Malatyaspor","Sivasspor",2021-09-22
-"6487","T1","Alanyaspor","Kasimpasa",2021-09-22
-"6488","T1","Kayserispor","Galatasaray",2021-09-22
-"6489","T1","Konyaspor","Trabzonspor",2021-09-22
-"6490","T1","Fenerbahce","Giresunspor",2021-09-22
-"6491","T1","Goztep","Atakas Hatayspor",2021-09-22
-"6492","T1","Rizespor","Altay",2021-09-22
-"6493","T1","Atakas Hatayspor","Fenerbahce",2021-09-26
-"6494","T1","Giresunspor","Kayserispor",2021-09-26
-"6495","T1","Kasimpasa","Konyaspor",2021-09-26
-"6496","T1","Galatasaray","Goztep",2021-09-26
-"6497","T1","Trabzonspor","Alanyaspor",2021-09-26
-"6498","T1","Antalyaspor","Yeni Malatyaspor",2021-09-26
-"6499","T1","Sivasspor","Karagumruk",2021-09-26
-"6500","T1","Ad. Demirspor","Gaziantep",2021-09-26
-"6501","T1","Buyuksehyr","Rizespor",2021-09-26
-"6502","T1","Altay","Besiktas",2021-09-26
+,Div,Home_Team,Away_Team,Date,1,X,2,ov,un,,,,1,X,2,ov,un
+352,D1,Greuther Furth,Bayern Munich,24/09/2021,30%,22%,44%,67%,32%,0-2,,,4%,16%,65%,40%,60%
+676,D2,Heidenheim,Darmstadt,24/09/2021,48%,23%,27%,64%,36%,1-0,,,58%,31%,11%,20%,80%
+677,D2,Regensburg,Erzgebirge Aue,24/09/2021,45%,30%,24%,33%,67%,3-0,,,87%,10%,2%,55%,43%
+1395,E1,Coventry,Peterboro,24/09/2021,35%,31%,32%,33%,67%,4-0,,,83%,5%,1%,69%,18%
+1396,E1,West Brom,QPR,24/09/2021,16%,24%,53%,42%,58%,3-1,,,61%,19%,18%,74%,24%
+73,B1,Oostende,Anderlecht,25/09/2021,47%,24%,28%,58%,42%,0-1,,,7%,35%,53%,14%,86%
+74,B1,St. Gilloise,Antwerp,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,2-0,,,71%,20%,8%,42%,57%
+75,B1,Gent,Cercle Brugge,25/09/2021,58%,25%,17%,42%,57%,2-2,,,53%,20%,25%,75%,23%
+76,B1,Beerschot VA,Eupen,25/09/2021,47%,23%,28%,61%,38%,0-3,,,0%,6%,69%,52%,46%
+77,B1,Waregem,Kortrijk,25/09/2021,24%,23%,48%,56%,43%,1-2,,,15%,21%,56%,51%,49%
+78,B1,Charleroi,Mechelen,25/09/2021,35%,32%,32%,30%,70%,4-1,,,82%,9%,3%,73%,18%
+79,B1,Club Brugge,Oud-Heverlee Leuven,25/09/2021,70%,17%,12%,71%,27%,3-1,,,80%,12%,5%,73%,22%
+80,B1,Genk,Seraing,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,3-1,,,82%,12%,4%,63%,34%
+81,B1,Standard,St Truiden,25/09/2021,57%,23%,19%,54%,45%,0-1,,,16%,36%,44%,16%,84%
+353,D1,Hoffenheim,Wolfsburg,25/09/2021,27%,25%,43%,52%,48%,0-2,,,4%,15%,66%,44%,56%
+354,D1,Union Berlin,Bielefeld,25/09/2021,72%,19%,8%,47%,53%,1-0,,,54%,33%,12%,18%,82%
+355,D1,Leverkusen,Mainz,25/09/2021,59%,21%,19%,62%,38%,2-1,,,56%,22%,20%,58%,42%
+356,D1,Ein Frankfurt,FC Koln,25/09/2021,71%,18%,10%,56%,44%,1-0,,,31%,48%,21%,7%,93%
+357,D1,RB Leipzig,Hertha,25/09/2021,59%,28%,13%,29%,71%,4-1,,,70%,13%,8%,79%,9%
+358,D1,Mgladbach,Dortmund,25/09/2021,44%,23%,31%,65%,35%,3-1,,,64%,18%,16%,75%,23%
+678,D2,Ingolstadt,Fortuna Dusseldorf,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,0-1,,,9%,33%,52%,17%,83%
+679,D2,Paderborn,Holstein Kiel,25/09/2021,23%,24%,48%,54%,46%,3-1,,,66%,18%,15%,72%,26%
+680,D2,Hansa Rostock,Schalke 04,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,1-3,,,15%,17%,60%,72%,26%
+681,D2,Karlsruhe,St Pauli,25/09/2021,40%,28%,30%,41%,59%,2-0,,,73%,23%,3%,23%,76%
+969,E0,Chelsea,Man City,25/09/2021,24%,26%,45%,44%,56%,1-0,,,59%,41%,0%,6%,94%
+970,E0,Man United,Aston Villa,25/09/2021,37%,24%,35%,57%,43%,8-1,,,30%,4%,0%,30%,1%
+971,E0,Everton,Norwich,25/09/2021,15%,19%,58%,59%,40%,5-0,,,70%,0%,0%,61%,10%
+972,E0,Leeds,West Ham,25/09/2021,40%,26%,32%,51%,49%,1-3,,,5%,11%,69%,66%,31%
+973,E0,Leicester,Burnley,25/09/2021,55%,22%,22%,60%,40%,1-0,,,48%,45%,7%,6%,94%
+974,E0,Watford,Newcastle,25/09/2021,77%,16%,6%,53%,46%,3-1,,,79%,14%,6%,62%,36%
+975,E0,Brentford,Liverpool,25/09/2021,36%,23%,38%,63%,37%,0-1,,,0%,41%,54%,6%,94%
+1397,E1,Reading,Middlesbrough,25/09/2021,45%,25%,28%,52%,48%,1-1,,,43%,27%,28%,45%,55%
+1398,E1,Birmingham,Preston,25/09/2021,17%,22%,53%,51%,49%,1-1,,,28%,36%,34%,19%,81%
+1399,E1,Blackburn,Cardiff,25/09/2021,33%,26%,38%,51%,48%,1-1,,,35%,26%,36%,50%,50%
+1400,E1,Blackpool,Barnsley,25/09/2021,46%,31%,22%,30%,70%,0-1,,,10%,33%,51%,17%,83%
+1401,E1,Bournemouth,Luton,25/09/2021,63%,23%,14%,44%,56%,3-1,,,60%,19%,19%,73%,25%
+1402,E1,Bristol City,Fulham,25/09/2021,28%,34%,35%,24%,76%,0-2,,,9%,25%,58%,30%,70%
+1403,E1,Nottm Forest,Millwall,25/09/2021,31%,32%,34%,29%,71%,1-1,,,23%,32%,42%,27%,73%
+1404,E1,Sheffield United,Derby,25/09/2021,28%,38%,32%,16%,84%,2-1,,,62%,24%,14%,41%,59%
+1405,E1,Stoke,Hull,25/09/2021,18%,21%,54%,57%,43%,2-1,,,58%,25%,16%,42%,58%
+1406,E1,Swansea,Huddersfield,25/09/2021,68%,20%,11%,47%,52%,0-1,,,7%,37%,51%,11%,89%
+1947,E2,Morecambe,Accrington,25/09/2021,55%,24%,21%,53%,47%,2-1,,,60%,25%,15%,39%,60%
+1948,E2,Shrewsbury,AFC Wimbledon,25/09/2021,42%,24%,32%,60%,40%,1-2,,,15%,20%,57%,59%,41%
+1949,E2,Sunderland,Bolton,25/09/2021,35%,26%,36%,50%,50%,2-1,,,58%,21%,19%,64%,35%
+1950,E2,Wigan,Cheltenham,25/09/2021,15%,23%,54%,44%,56%,1-1,,,56%,29%,15%,29%,71%
+1951,E2,Rotherham,Crewe,25/09/2021,31%,25%,40%,51%,49%,2-0,,,71%,23%,6%,29%,71%
+1952,E2,Plymouth,Doncaster,25/09/2021,35%,23%,38%,62%,38%,2-0,,,82%,17%,1%,31%,69%
+1953,E2,Cambridge,Fleetwood Town,25/09/2021,49%,29%,22%,35%,65%,2-2,,,38%,24%,35%,62%,38%
+1954,E2,Oxford,Gillingham,25/09/2021,52%,25%,22%,49%,51%,1-0,,,65%,28%,7%,22%,78%
+1955,E2,Burton,Lincoln,25/09/2021,15%,20%,57%,57%,42%,1-1,,,46%,28%,25%,40%,60%
+1956,E2,Charlton,Portsmouth,25/09/2021,26%,22%,47%,64%,35%,0-0,,,20%,67%,13%,1%,99%
+1957,E2,Ipswich,Sheffield Weds,25/09/2021,64%,24%,12%,39%,61%,1-1,,,47%,27%,25%,43%,57%
+1958,E2,Milton Keynes Dons,Wycombe,25/09/2021,62%,20%,17%,64%,35%,1-1,,,53%,29%,18%,32%,68%
+2499,E3,Crawley Town,Bradford,25/09/2021,45%,25%,28%,51%,48%,1-0,,,60%,29%,11%,25%,75%
+2500,E3,Walsall,Bristol Rvs,25/09/2021,44%,33%,22%,26%,74%,2-1,,,73%,17%,10%,59%,40%
+2501,E3,Sutton,Carlisle,25/09/2021,62%,25%,13%,37%,63%,1-1,,,49%,29%,21%,35%,65%
+2502,E3,Swindon,Colchester,25/09/2021,49%,30%,20%,30%,70%,1-1,,,18%,31%,46%,26%,74%
+2503,E3,Hartlepool,Exeter,25/09/2021,46%,26%,26%,46%,54%,1-0,,,61%,31%,8%,17%,83%
+2504,E3,Leyton Orient,Mansfield,25/09/2021,38%,29%,30%,37%,63%,3-0,,,87%,9%,2%,59%,38%
+2505,E3,Barrow,Newport County,25/09/2021,28%,24%,43%,54%,46%,2-1,,,48%,25%,26%,54%,46%
+2506,E3,Salford,Northampton,25/09/2021,75%,18%,7%,46%,53%,0-0,,,16%,72%,12%,1%,99%
+2507,E3,Rochdale,Oldham,25/09/2021,21%,18%,54%,75%,23%,1-0,,,55%,31%,14%,22%,78%
+2508,E3,Scunthorpe,Port Vale,25/09/2021,28%,26%,42%,46%,54%,0-2,,,7%,19%,62%,43%,56%
+2509,E3,Harrogate,Stevenage,25/09/2021,32%,37%,30%,19%,81%,3-1,,,68%,17%,13%,73%,25%
+2510,E3,Forest Green,Tranmere,25/09/2021,40%,27%,31%,45%,55%,1-0,,,58%,42%,0%,6%,94%
+3032,EC,Aldershot,Halifax,25/09/2021,24%,23%,47%,55%,45%,1-2,,,11%,18%,61%,56%,44%
+3033,EC,Altrincham,Notts County,25/09/2021,21%,26%,48%,44%,56%,1-3,,,13%,14%,63%,78%,18%
+3034,EC,Barnet,Weymouth,25/09/2021,15%,25%,53%,40%,60%,1-4,,,3%,7%,71%,71%,22%
+3035,EC,Boreham Wood,Yeovil,25/09/2021,50%,24%,25%,57%,42%,0-1,,,11%,33%,50%,18%,82%
+3036,EC,Chesterfield,Torquay,25/09/2021,30%,29%,38%,38%,62%,4-2,,,64%,16%,15%,83%,10%
+3037,EC,Dag and Red,Solihull,25/09/2021,47%,28%,23%,38%,62%,2-3,,,33%,19%,44%,84%,13%
+3038,EC,Dover Athletic,Bromley,25/09/2021,10%,16%,63%,63%,36%,0-1,,,0%,52%,46%,3%,97%
+3039,EC,Eastleigh,Woking,25/09/2021,59%,30%,12%,24%,76%,1-3,,,12%,16%,62%,69%,29%
+3040,EC,Kings Lynn,Wealdstone,25/09/2021,63%,21%,15%,54%,45%,1-1,,,13%,26%,54%,32%,68%
+3041,EC,Maidenhead,Grimsby,25/09/2021,52%,23%,24%,62%,38%,1-2,,,9%,19%,61%,46%,53%
+3042,EC,Stockport,Wrexham,25/09/2021,47%,28%,24%,38%,61%,0-2,,,5%,14%,66%,50%,49%
+3531,F1,St Etienne,Nice,25/09/2021,23%,26%,45%,43%,57%,0-2,,,0%,15%,68%,30%,70%
+3532,F1,Strasbourg,Lille,25/09/2021,7%,17%,63%,48%,51%,2-1,,,45%,24%,30%,61%,39%
+3533,F1,Lyon,Lorient,25/09/2021,78%,13%,6%,73%,22%,3-1,,,66%,17%,15%,79%,18%
+3534,F1,Paris SG,Montpellier,25/09/2021,72%,17%,10%,59%,40%,6-1,,,50%,8%,1%,52%,2%
+3931,F2,Bastia,Ajaccio,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,1-1,,,30%,40%,29%,15%,85%
+3932,F2,Nancy,Amiens,25/09/2021,42%,24%,31%,58%,42%,0-3,,,2%,8%,70%,61%,36%
+3933,F2,Sochaux,Auxerre,25/09/2021,31%,25%,40%,52%,48%,1-2,,,16%,26%,52%,38%,62%
+3934,F2,Toulouse,Caen,25/09/2021,75%,15%,8%,66%,32%,1-0,,,51%,40%,9%,10%,90%
+3935,F2,Pau FC,Dunkerque,25/09/2021,60%,25%,14%,36%,63%,2-0,,,79%,14%,5%,55%,43%
+3936,F2,Rodez,Grenoble,25/09/2021,38%,32%,28%,28%,72%,2-0,,,81%,19%,0%,23%,77%
+3937,F2,Quevilly Rouen,Guingamp,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,0-1,,,9%,37%,49%,13%,87%
+3938,F2,Nimes,Le Havre,25/09/2021,24%,24%,47%,54%,46%,0-0,,,0%,80%,19%,0%,100%
+3939,F2,Niort,Paris FC,25/09/2021,17%,27%,50%,35%,65%,0-1,,,9%,53%,37%,4%,96%
+3940,F2,Dijon,Valenciennes,25/09/2021,13%,24%,55%,38%,62%,1-1,,,25%,26%,44%,45%,55%
+4655,N1,Vitesse,For Sittard,25/09/2021,13%,16%,61%,70%,29%,0-2,,,0%,17%,67%,26%,74%
+4656,N1,Ajax,Groningen,25/09/2021,60%,22%,18%,58%,41%,9-0,,,23%,0%,0%,22%,1%
+4657,N1,Feyenoord,Nijmegen,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,3-0,,,92%,5%,0%,53%,44%
+4658,N1,Willem II,PSV Eindhoven,25/09/2021,11%,14%,64%,72%,25%,0-3,,,0%,5%,69%,53%,44%
+4659,N1,Heracles,Waalwijk,25/09/2021,71%,20%,8%,41%,58%,0-2,,,0%,17%,67%,26%,74%
+5249,SC0,Dundee,Rangers,25/09/2021,11%,21%,59%,45%,55%,1-2,,,25%,24%,46%,54%,46%
+5250,SC0,Celtic,Dundee United,25/09/2021,83%,14%,3%,48%,51%,2-0,,,88%,12%,0%,36%,64%
+5251,SC0,Motherwell,Ross County,25/09/2021,41%,27%,31%,47%,53%,2-0,,,86%,11%,2%,49%,50%
+5252,SC0,Hibernian,St Johnstone,25/09/2021,39%,25%,33%,53%,47%,0-0,,,0%,100%,0%,0%,100%
+5253,SC0,St Mirren,Aberdeen,25/09/2021,29%,39%,31%,16%,84%,0-0,,,17%,55%,27%,3%,97%
+5254,SC0,Hearts,Livingston,25/09/2021,74%,15%,9%,74%,22%,1-0,,,65%,35%,0%,9%,91%
+5441,SC1,Ayr United,Greenock Morton,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,,,#N/A,#N/A,#N/A,#N/A,#N/A
+5442,SC1,Dunfermline,Hamilton,25/09/2021,74%,16%,9%,68%,30%,0-4,,,0%,2%,67%,66%,22%
+5443,SC1,Arbroath FC,Kilmarnock,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,,,#N/A,#N/A,#N/A,#N/A,#N/A
+5444,SC1,Raith Rovers,Partick Thistle,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,,,#N/A,#N/A,#N/A,#N/A,#N/A
+5445,SC1,Inverness CT,Queens,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,,,#N/A,#N/A,#N/A,#N/A,#N/A
+5651,SP1,Alaves,Ath Madrid,25/09/2021,14%,25%,54%,37%,63%,0-4,,,1%,4%,70%,70%,18%
+5652,SP1,Valencia,Ath Bilbao,25/09/2021,52%,25%,22%,46%,54%,0-0,,,0%,100%,0%,0%,100%
+5653,SP1,Sevilla,Espanyol,25/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,,,#N/A,#N/A,#N/A,#N/A,#N/A
+5654,SP1,Real Madrid,Villarreal,25/09/2021,47%,27%,25%,43%,57%,4-2,,,68%,14%,10%,80%,8%
+359,D1,Bochum,Stuttgart,26/09/2021,64%,19%,16%,67%,32%,2-0,,,76%,18%,6%,44%,56%
+360,D1,Freiburg,Augsburg,26/09/2021,58%,25%,16%,40%,59%,0-0,,,0%,100%,0%,0%,100%
+682,D2,Hamburg,Nurnberg,26/09/2021,67%,19%,14%,64%,35%,2-1,,,44%,25%,28%,51%,49%
+683,D2,Hannover,Sandhausen,26/09/2021,75%,16%,8%,60%,39%,1-1,,,34%,33%,31%,28%,72%
+684,D2,Dresden,Werder Bremen,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,1-1,,,21%,28%,46%,36%,64%
+976,E0,Southampton,Wolves,26/09/2021,56%,26%,18%,41%,59%,0-0,,,11%,67%,23%,1%,99%
+977,E0,Arsenal,Tottenham,26/09/2021,32%,26%,38%,50%,50%,0-0,,,29%,54%,17%,4%,96%
+3535,F1,Bordeaux,Rennes,26/09/2021,24%,32%,41%,28%,72%,1-1,,,42%,35%,23%,22%,78%
+3536,F1,Brest,Metz,26/09/2021,32%,24%,40%,59%,41%,2-1,,,48%,24%,27%,57%,42%
+3537,F1,Reims,Nantes,26/09/2021,27%,31%,39%,31%,69%,1-1,,,38%,33%,27%,26%,74%
+3538,F1,Troyes,Angers,26/09/2021,66%,20%,13%,53%,46%,0-2,,,9%,22%,59%,36%,64%
+3539,F1,Clermont,Monaco,26/09/2021,57%,25%,17%,42%,57%,1-1,,,52%,29%,18%,30%,70%
+3540,F1,Marseille,Lens,26/09/2021,49%,24%,26%,58%,41%,2-2,,,32%,22%,42%,68%,31%
+4271,I1,Empoli,Bologna,26/09/2021,77%,15%,7%,62%,37%,0-0,,,0%,100%,0%,0%,100%
+4272,I1,Genoa,Verona,26/09/2021,34%,27%,36%,47%,52%,1-0,,,43%,57%,0%,2%,98%
+4273,I1,Inter,Atalanta,26/09/2021,52%,22%,25%,67%,32%,2-0,,,89%,11%,0%,38%,61%
+4274,I1,Juventus,Sampdoria,26/09/2021,66%,21%,12%,48%,52%,0-0,,,0%,100%,0%,0%,100%
+4275,I1,Lazio,Roma,26/09/2021,61%,20%,18%,66%,33%,0-2,,,0%,11%,69%,37%,62%
+4276,I1,Napoli,Cagliari,26/09/2021,70%,18%,11%,59%,40%,4-0,,,81%,5%,1%,69%,15%
+4277,I1,Sassuolo,Salernitana,26/09/2021,38%,26%,34%,52%,48%,0-0,,,0%,100%,0%,0%,100%
+4278,I1,Spezia,Milan,26/09/2021,8%,14%,66%,67%,31%,0-1,,,0%,57%,41%,2%,98%
+4279,I1,Udinese,Fiorentina,26/09/2021,32%,35%,31%,22%,78%,3-1,,,76%,15%,8%,67%,30%
+4280,I1,Venezia,Torino,26/09/2021,55%,22%,22%,61%,39%,#N/A,,,#N/A,#N/A,#N/A,#N/A,#N/A
+4660,N1,Sparta Rotterdam,Cambuur,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,5-1,,,76%,8%,1%,70%,10%
+4661,N1,AZ Alkmaar,Go Ahead Eagles,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,0-2,,,0%,17%,67%,26%,74%
+4662,N1,Heerenveen,Twente,26/09/2021,38%,28%,32%,40%,60%,2-1,,,72%,17%,10%,58%,41%
+4663,N1,Utrecht,Zwolle,26/09/2021,49%,22%,28%,69%,31%,3-0,,,92%,5%,0%,56%,41%
+4961,P1,Moreirense,Arouca,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,3-1,,,70%,16%,12%,74%,23%
+4962,P1,Pacos Ferreira,Belenenses,26/09/2021,47%,33%,19%,23%,77%,1-0,,,63%,37%,0%,8%,92%
+4963,P1,Guimaraes,Benfica,26/09/2021,5%,10%,69%,69%,27%,0-1,,,15%,43%,39%,9%,91%
+4964,P1,Santa Clara,Sp Braga,26/09/2021,37%,27%,33%,46%,54%,0-3,,,4%,10%,69%,63%,34%
+4965,P1,Boavista,Estoril,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,1-1,,,45%,34%,20%,21%,79%
+4966,P1,Tondela,Famalicao,26/09/2021,33%,27%,37%,46%,54%,2-1,,,54%,22%,22%,63%,37%
+4967,P1,Portimonense,Vizela,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,0-0,,,0%,61%,38%,1%,99%
+4968,P1,Sp Lisbon,Maritimo,26/09/2021,78%,15%,6%,55%,44%,2-0,,,80%,15%,5%,48%,52%
+4969,P1,Gil Vicente,Porto,26/09/2021,8%,18%,62%,46%,53%,1-1,,,35%,26%,36%,48%,52%
+5655,SP1,Mallorca,Osasuna,26/09/2021,66%,22%,11%,41%,59%,2-1,,,47%,25%,27%,54%,46%
+5656,SP1,Barcelona,Levante,26/09/2021,69%,18%,12%,63%,35%,2-1,,,77%,16%,7%,57%,42%
+5657,SP1,Sociedad,Elche,26/09/2021,68%,19%,12%,57%,42%,0-0,,,33%,67%,0%,1%,99%
+5658,SP1,Vallecano,Cadiz,26/09/2021,57%,22%,20%,58%,41%,3-0,,,91%,4%,0%,58%,37%
+5659,SP1,Betis,Getafe,26/09/2021,61%,24%,14%,40%,60%,1-0,,,34%,46%,20%,8%,92%
+6031,T1,Atakas Hatayspor,Fenerbahce,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,,,#N/A,#N/A,#N/A,#N/A,#N/A
+6032,T1,Giresunspor,Kayserispor,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,0-0,,,0%,61%,38%,1%,99%
+6033,T1,Kasimpasa,Konyaspor,26/09/2021,39%,28%,31%,43%,57%,1-1,,,30%,39%,29%,15%,85%
+6034,T1,Galatasaray,Goztep,26/09/2021,70%,18%,11%,62%,37%,2-1,,,60%,22%,18%,57%,42%
+6035,T1,Trabzonspor,Alanyaspor,26/09/2021,45%,30%,24%,32%,68%,3-0,,,84%,10%,3%,68%,26%
+6036,T1,Antalyaspor,Yeni Malatyaspor,26/09/2021,34%,27%,36%,48%,52%,2-0,,,73%,19%,8%,45%,55%
+6037,T1,Sivasspor,Karagumruk,26/09/2021,42%,33%,23%,24%,76%,0-0,,,28%,72%,0%,0%,100%
+6038,T1,Ad. Demirspor,Gaziantep,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,1-1,,,36%,37%,26%,19%,81%
+6039,T1,Buyuksehyr,Rizespor,26/09/2021,42%,24%,32%,62%,38%,0-1,,,0%,51%,46%,3%,97%
+6040,T1,Altay,Besiktas,26/09/2021,#N/A,#N/A,#N/A,#N/A,#N/A,0-0,,,0%,100%,0%,0%,100%
+978,E0,Crystal Palace,Brighton,27/09/2021,30%,29%,37%,37%,63%,0-0,,,36%,64%,0%,1%,99%
+5660,SP1,Celta,Granada,27/09/2021,55%,20%,24%,75%,23%,1-0,,,55%,45%,0%,5%,95%
+1407,E1,Cardiff,West Brom,28/09/2021,68%,19%,12%,61%,38%,1-2,,,29%,24%,43%,55%,45%
+1408,E1,Huddersfield,Blackburn,28/09/2021,34%,29%,34%,39%,61%,1-2,,,35%,24%,38%,60%,40%
+1409,E1,Hull,Blackpool,28/09/2021,39%,39%,21%,14%,86%,0-1,,,0%,27%,63%,14%,85%
+1410,E1,Middlesbrough,Sheffield United,28/09/2021,74%,20%,6%,37%,63%,2-0,,,80%,19%,0%,22%,77%
+1411,E1,Preston,Stoke,28/09/2021,29%,34%,34%,23%,77%,2-1,,,47%,25%,27%,55%,45%
+1412,E1,QPR,Birmingham,28/09/2021,41%,30%,27%,34%,66%,0-2,,,8%,22%,60%,36%,64%
+1959,E2,Oxford,Accrington,28/09/2021,62%,24%,14%,42%,57%,2-0,,,71%,23%,6%,29%,71%
+1960,E2,Rotherham,AFC Wimbledon,28/09/2021,32%,22%,42%,70%,29%,2-2,,,34%,21%,41%,76%,23%
+1961,E2,Charlton,Bolton,28/09/2021,27%,21%,46%,67%,32%,1-2,,,19%,25%,50%,43%,57%
+1962,E2,Sunderland,Cheltenham,28/09/2021,30%,32%,36%,29%,71%,2-1,,,68%,20%,12%,56%,44%
+1963,E2,Plymouth,Crewe,28/09/2021,36%,26%,35%,51%,48%,2-0,,,77%,21%,2%,24%,76%
+1964,E2,Ipswich,Doncaster,28/09/2021,47%,30%,22%,32%,68%,3-0,,,80%,14%,5%,56%,42%
+1965,E2,Milton Keynes Dons,Fleetwood Town,28/09/2021,49%,27%,23%,43%,56%,2-1,,,56%,25%,18%,43%,57%
+1966,E2,Cambridge,Gillingham,28/09/2021,42%,27%,29%,44%,56%,1-1,,,49%,28%,21%,36%,64%
+1967,E2,Morecambe,Lincoln,28/09/2021,27%,25%,43%,51%,49%,2-2,,,39%,24%,35%,61%,39%
+1968,E2,Burton,Portsmouth,28/09/2021,20%,20%,54%,66%,33%,0-0,,,33%,59%,8%,2%,98%
+1969,E2,Wigan,Sheffield Weds,28/09/2021,46%,24%,28%,59%,41%,1-0,,,52%,40%,7%,9%,91%
+1970,E2,Shrewsbury,Wycombe,28/09/2021,49%,24%,25%,56%,43%,1-1,,,18%,28%,48%,32%,68%

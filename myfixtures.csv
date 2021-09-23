@@ -17,158 +17,511 @@
 "358","D1","Mgladbach","Dortmund",2021-09-25
 "359","D1","Bochum","Stuttgart",2021-09-26
 "360","D1","Freiburg","Augsburg",2021-09-26
-"663","E0","Chelsea","Man City",2021-09-25
-"664","E0","Man United","Aston Villa",2021-09-25
-"665","E0","Everton","Norwich",2021-09-25
-"666","E0","Leeds","West Ham",2021-09-25
-"667","E0","Leicester","Burnley",2021-09-25
-"668","E0","Watford","Newcastle",2021-09-25
-"669","E0","Brentford","Liverpool",2021-09-25
-"670","E0","Southampton","Wolves",2021-09-26
-"671","E0","Arsenal","Tottenham",2021-09-26
-"672","E0","Crystal Palace","Brighton",2021-09-27
-"1089","E1","Coventry","Peterboro",2021-09-24
-"1090","E1","West Brom","QPR",2021-09-24
-"1091","E1","Reading","Middlesbrough",2021-09-25
-"1092","E1","Birmingham","Preston",2021-09-25
-"1093","E1","Blackburn","Cardiff",2021-09-25
-"1094","E1","Blackpool","Barnsley",2021-09-25
-"1095","E1","Bournemouth","Luton",2021-09-25
-"1096","E1","Bristol City","Fulham",2021-09-25
-"1097","E1","Nottm Forest","Millwall",2021-09-25
-"1098","E1","Sheffield United","Derby",2021-09-25
-"1099","E1","Stoke","Hull",2021-09-25
-"1100","E1","Swansea","Huddersfield",2021-09-25
-"1101","E1","Cardiff","West Brom",2021-09-28
-"1102","E1","Huddersfield","Blackburn",2021-09-28
-"1103","E1","Hull","Blackpool",2021-09-28
-"1104","E1","Middlesbrough","Sheffield United",2021-09-28
-"1105","E1","Preston","Stoke",2021-09-28
-"1106","E1","QPR","Birmingham",2021-09-28
-"1641","E2","Morecambe","Accrington",2021-09-25
-"1642","E2","Shrewsbury","AFC Wimbledon",2021-09-25
-"1643","E2","Sunderland","Bolton",2021-09-25
-"1644","E2","Wigan","Cheltenham",2021-09-25
-"1645","E2","Rotherham","Crewe",2021-09-25
-"1646","E2","Plymouth","Doncaster",2021-09-25
-"1647","E2","Cambridge","Fleetwood Town",2021-09-25
-"1648","E2","Oxford","Gillingham",2021-09-25
-"1649","E2","Burton","Lincoln",2021-09-25
-"1650","E2","Charlton","Portsmouth",2021-09-25
-"1651","E2","Ipswich","Sheffield Weds",2021-09-25
-"1652","E2","Milton Keynes Dons","Wycombe",2021-09-25
-"1653","E2","Oxford","Accrington",2021-09-28
-"1654","E2","Rotherham","AFC Wimbledon",2021-09-28
-"1655","E2","Charlton","Bolton",2021-09-28
-"1656","E2","Sunderland","Cheltenham",2021-09-28
-"1657","E2","Plymouth","Crewe",2021-09-28
-"1658","E2","Ipswich","Doncaster",2021-09-28
-"1659","E2","Milton Keynes Dons","Fleetwood Town",2021-09-28
-"1660","E2","Cambridge","Gillingham",2021-09-28
-"1661","E2","Morecambe","Lincoln",2021-09-28
-"1662","E2","Burton","Portsmouth",2021-09-28
-"1663","E2","Wigan","Sheffield Weds",2021-09-28
-"1664","E2","Shrewsbury","Wycombe",2021-09-28
-"2193","E3","Crawley Town","Bradford",2021-09-25
-"2194","E3","Walsall","Bristol Rvs",2021-09-25
-"2195","E3","Sutton","Carlisle",2021-09-25
-"2196","E3","Swindon","Colchester",2021-09-25
-"2197","E3","Hartlepool","Exeter",2021-09-25
-"2198","E3","Leyton Orient","Mansfield",2021-09-25
-"2199","E3","Barrow","Newport County",2021-09-25
-"2200","E3","Salford","Northampton",2021-09-25
-"2201","E3","Rochdale","Oldham",2021-09-25
-"2202","E3","Scunthorpe","Port Vale",2021-09-25
-"2203","E3","Harrogate","Stevenage",2021-09-25
-"2204","E3","Forest Green","Tranmere",2021-09-25
-"2726","EC","Aldershot","Halifax",2021-09-25
-"2727","EC","Altrincham","Notts County",2021-09-25
-"2728","EC","Barnet","Weymouth",2021-09-25
-"2729","EC","Boreham Wood","Yeovil",2021-09-25
-"2730","EC","Chesterfield","Torquay",2021-09-25
-"2731","EC","Dag and Red","Solihull",2021-09-25
-"2732","EC","Dover Athletic","Bromley",2021-09-25
-"2733","EC","Eastleigh","Woking",2021-09-25
-"2734","EC","Kings Lynn","Wealdstone",2021-09-25
-"2735","EC","Maidenhead","Grimsby",2021-09-25
-"2736","EC","Stockport","Wrexham",2021-09-25
-"3215","F1","Lille","Reims",2021-09-22
-"3216","F1","Monaco","St Etienne",2021-09-22
-"3217","F1","Montpellier","Bordeaux",2021-09-22
-"3218","F1","Nantes","Brest",2021-09-22
-"3219","F1","Rennes","Clermont",2021-09-22
-"3220","F1","Angers","Marseille",2021-09-22
-"3221","F1","Lens","Strasbourg",2021-09-22
-"3222","F1","Lorient","Nice",2021-09-22
-"3223","F1","Lyon","Troyes",2021-09-22
-"3224","F1","Metz","Paris SG",2021-09-22
-"3225","F1","St Etienne","Nice",2021-09-25
-"3226","F1","Strasbourg","Lille",2021-09-25
-"3227","F1","Lyon","Lorient",2021-09-25
-"3228","F1","Paris SG","Montpellier",2021-09-25
-"3229","F1","Bordeaux","Rennes",2021-09-26
-"3230","F1","Brest","Metz",2021-09-26
-"3231","F1","Reims","Nantes",2021-09-26
-"3232","F1","Troyes","Angers",2021-09-26
-"3233","F1","Clermont","Monaco",2021-09-26
-"3234","F1","Marseille","Lens",2021-09-26
-"3575","I1","Bologna","Genoa",2021-09-21
-"3576","I1","Atalanta","Sassuolo",2021-09-21
-"3577","I1","Fiorentina","Inter",2021-09-21
-"3578","I1","Salernitana","Verona",2021-09-22
-"3579","I1","Spezia","Juventus",2021-09-22
-"3580","I1","Cagliari","Empoli",2021-09-22
-"3581","I1","Milan","Venezia",2021-09-22
-"3582","I1","Sampdoria","Napoli",2021-09-23
-"3583","I1","Torino","Lazio",2021-09-23
-"3584","I1","Roma","Udinese",2021-09-23
-"3585","I1","Empoli","Bologna",2021-09-26
-"3586","I1","Genoa","Verona",2021-09-26
-"3587","I1","Inter","Atalanta",2021-09-26
-"3588","I1","Juventus","Sampdoria",2021-09-26
-"3589","I1","Lazio","Roma",2021-09-26
-"3590","I1","Napoli","Cagliari",2021-09-26
-"3591","I1","Sassuolo","Salernitana",2021-09-26
-"3592","I1","Spezia","Milan",2021-09-26
-"3593","I1","Udinese","Fiorentina",2021-09-26
-"3594","I1","Venezia","Torino",2021-09-26
-"3965","SP1","Getafe","Ath Madrid",2021-09-21
-"3966","SP1","Ath Bilbao","Vallecano",2021-09-21
-"3967","SP1","Levante","Celta",2021-09-21
-"3968","SP1","Espanyol","Alaves",2021-09-22
-"3969","SP1","Sevilla","Valencia",2021-09-22
-"3970","SP1","Real Madrid","Mallorca",2021-09-22
-"3971","SP1","Villarreal","Elche",2021-09-22
-"3972","SP1","Granada","Sociedad",2021-09-23
-"3973","SP1","Osasuna","Betis",2021-09-23
-"3974","SP1","Cadiz","Barcelona",2021-09-23
-"3975","SP1","Alaves","Ath Madrid",2021-09-25
-"3976","SP1","Valencia","Ath Bilbao",2021-09-25
-"3977","SP1","Sevilla","Espanyol",2021-09-25
-"3978","SP1","Real Madrid","Villarreal",2021-09-25
-"3979","SP1","Mallorca","Osasuna",2021-09-26
-"3980","SP1","Barcelona","Levante",2021-09-26
-"3981","SP1","Sociedad","Elche",2021-09-26
-"3982","SP1","Vallecano","Cadiz",2021-09-26
-"3983","SP1","Betis","Getafe",2021-09-26
-"3984","SP1","Celta","Granada",2021-09-27
-"4345","T1","Gaziantep","Buyuksehyr",2021-09-22
-"4346","T1","Karagumruk","Antalyaspor",2021-09-22
-"4347","T1","Besiktas","Ad. Demirspor",2021-09-22
-"4348","T1","Yeni Malatyaspor","Sivasspor",2021-09-22
-"4349","T1","Alanyaspor","Kasimpasa",2021-09-22
-"4350","T1","Kayserispor","Galatasaray",2021-09-22
-"4351","T1","Konyaspor","Trabzonspor",2021-09-22
-"4352","T1","Fenerbahce","Giresunspor",2021-09-22
-"4353","T1","Goztep","Atakas Hatayspor",2021-09-22
-"4354","T1","Rizespor","Altay",2021-09-22
-"4355","T1","Atakas Hatayspor","Fenerbahce",2021-09-26
-"4356","T1","Giresunspor","Kayserispor",2021-09-26
-"4357","T1","Kasimpasa","Konyaspor",2021-09-26
-"4358","T1","Galatasaray","Goztep",2021-09-26
-"4359","T1","Trabzonspor","Alanyaspor",2021-09-26
-"4360","T1","Antalyaspor","Yeni Malatyaspor",2021-09-26
-"4361","T1","Sivasspor","Karagumruk",2021-09-26
-"4362","T1","Ad. Demirspor","Gaziantep",2021-09-26
-"4363","T1","Buyuksehyr","Rizespor",2021-09-26
-"4364","T1","Altay","Besiktas",2021-09-26
+"676","D2","Heidenheim","Darmstadt",2021-09-24
+"677","D2","Regensburg","Erzgebirge Aue",2021-09-24
+"678","D2","Ingolstadt","Fortuna Dusseldorf",2021-09-25
+"679","D2","Paderborn","Holstein Kiel",2021-09-25
+"680","D2","Hansa Rostock","Schalke 04",2021-09-25
+"681","D2","Karlsruhe","St Pauli",2021-09-25
+"682","D2","Hamburg","Nurnberg",2021-09-26
+"683","D2","Hannover","Sandhausen",2021-09-26
+"684","D2","Dresden","Werder Bremen",2021-09-26
+"969","E0","Chelsea","Man City",2021-09-25
+"970","E0","Man United","Aston Villa",2021-09-25
+"971","E0","Everton","Norwich",2021-09-25
+"972","E0","Leeds","West Ham",2021-09-25
+"973","E0","Leicester","Burnley",2021-09-25
+"974","E0","Watford","Newcastle",2021-09-25
+"975","E0","Brentford","Liverpool",2021-09-25
+"976","E0","Southampton","Wolves",2021-09-26
+"977","E0","Arsenal","Tottenham",2021-09-26
+"978","E0","Crystal Palace","Brighton",2021-09-27
+"1395","E1","Coventry","Peterboro",2021-09-24
+"1396","E1","West Brom","QPR",2021-09-24
+"1397","E1","Reading","Middlesbrough",2021-09-25
+"1398","E1","Birmingham","Preston",2021-09-25
+"1399","E1","Blackburn","Cardiff",2021-09-25
+"1400","E1","Blackpool","Barnsley",2021-09-25
+"1401","E1","Bournemouth","Luton",2021-09-25
+"1402","E1","Bristol City","Fulham",2021-09-25
+"1403","E1","Nottm Forest","Millwall",2021-09-25
+"1404","E1","Sheffield United","Derby",2021-09-25
+"1405","E1","Stoke","Hull",2021-09-25
+"1406","E1","Swansea","Huddersfield",2021-09-25
+"1407","E1","Cardiff","West Brom",2021-09-28
+"1408","E1","Huddersfield","Blackburn",2021-09-28
+"1409","E1","Hull","Blackpool",2021-09-28
+"1410","E1","Middlesbrough","Sheffield United",2021-09-28
+"1411","E1","Preston","Stoke",2021-09-28
+"1412","E1","QPR","Birmingham",2021-09-28
+"1947","E2","Morecambe","Accrington",2021-09-25
+"1948","E2","Shrewsbury","AFC Wimbledon",2021-09-25
+"1949","E2","Sunderland","Bolton",2021-09-25
+"1950","E2","Wigan","Cheltenham",2021-09-25
+"1951","E2","Rotherham","Crewe",2021-09-25
+"1952","E2","Plymouth","Doncaster",2021-09-25
+"1953","E2","Cambridge","Fleetwood Town",2021-09-25
+"1954","E2","Oxford","Gillingham",2021-09-25
+"1955","E2","Burton","Lincoln",2021-09-25
+"1956","E2","Charlton","Portsmouth",2021-09-25
+"1957","E2","Ipswich","Sheffield Weds",2021-09-25
+"1958","E2","Milton Keynes Dons","Wycombe",2021-09-25
+"1959","E2","Oxford","Accrington",2021-09-28
+"1960","E2","Rotherham","AFC Wimbledon",2021-09-28
+"1961","E2","Charlton","Bolton",2021-09-28
+"1962","E2","Sunderland","Cheltenham",2021-09-28
+"1963","E2","Plymouth","Crewe",2021-09-28
+"1964","E2","Ipswich","Doncaster",2021-09-28
+"1965","E2","Milton Keynes Dons","Fleetwood Town",2021-09-28
+"1966","E2","Cambridge","Gillingham",2021-09-28
+"1967","E2","Morecambe","Lincoln",2021-09-28
+"1968","E2","Burton","Portsmouth",2021-09-28
+"1969","E2","Wigan","Sheffield Weds",2021-09-28
+"1970","E2","Shrewsbury","Wycombe",2021-09-28
+"2499","E3","Crawley Town","Bradford",2021-09-25
+"2500","E3","Walsall","Bristol Rvs",2021-09-25
+"2501","E3","Sutton","Carlisle",2021-09-25
+"2502","E3","Swindon","Colchester",2021-09-25
+"2503","E3","Hartlepool","Exeter",2021-09-25
+"2504","E3","Leyton Orient","Mansfield",2021-09-25
+"2505","E3","Barrow","Newport County",2021-09-25
+"2506","E3","Salford","Northampton",2021-09-25
+"2507","E3","Rochdale","Oldham",2021-09-25
+"2508","E3","Scunthorpe","Port Vale",2021-09-25
+"2509","E3","Harrogate","Stevenage",2021-09-25
+"2510","E3","Forest Green","Tranmere",2021-09-25
+"3032","EC","Aldershot","Halifax",2021-09-25
+"3033","EC","Altrincham","Notts County",2021-09-25
+"3034","EC","Barnet","Weymouth",2021-09-25
+"3035","EC","Boreham Wood","Yeovil",2021-09-25
+"3036","EC","Chesterfield","Torquay",2021-09-25
+"3037","EC","Dag and Red","Solihull",2021-09-25
+"3038","EC","Dover Athletic","Bromley",2021-09-25
+"3039","EC","Eastleigh","Woking",2021-09-25
+"3040","EC","Kings Lynn","Wealdstone",2021-09-25
+"3041","EC","Maidenhead","Grimsby",2021-09-25
+"3042","EC","Stockport","Wrexham",2021-09-25
+"3521","F1","Lille","Reims",2021-09-22
+"3522","F1","Monaco","St Etienne",2021-09-22
+"3523","F1","Montpellier","Bordeaux",2021-09-22
+"3524","F1","Nantes","Brest",2021-09-22
+"3525","F1","Rennes","Clermont",2021-09-22
+"3526","F1","Angers","Marseille",2021-09-22
+"3527","F1","Lens","Strasbourg",2021-09-22
+"3528","F1","Lorient","Nice",2021-09-22
+"3529","F1","Lyon","Troyes",2021-09-22
+"3530","F1","Metz","Paris SG",2021-09-22
+"3531","F1","St Etienne","Nice",2021-09-25
+"3532","F1","Strasbourg","Lille",2021-09-25
+"3533","F1","Lyon","Lorient",2021-09-25
+"3534","F1","Paris SG","Montpellier",2021-09-25
+"3535","F1","Bordeaux","Rennes",2021-09-26
+"3536","F1","Brest","Metz",2021-09-26
+"3537","F1","Reims","Nantes",2021-09-26
+"3538","F1","Troyes","Angers",2021-09-26
+"3539","F1","Clermont","Monaco",2021-09-26
+"3540","F1","Marseille","Lens",2021-09-26
+"3921","F2","Valenciennes","Bastia",2021-09-21
+"3922","F2","Caen","Dijon",2021-09-21
+"3923","F2","Paris FC","Nimes",2021-09-21
+"3924","F2","Grenoble","Nancy",2021-09-21
+"3925","F2","Ajaccio","Niort",2021-09-21
+"3926","F2","Amiens","Pau FC",2021-09-21
+"3927","F2","Le Havre","Quevilly Rouen",2021-09-21
+"3928","F2","Auxerre","Rodez",2021-09-21
+"3929","F2","Guingamp","Sochaux",2021-09-21
+"3930","F2","Dunkerque","Toulouse",2021-09-21
+"3931","F2","Bastia","Ajaccio",2021-09-25
+"3932","F2","Nancy","Amiens",2021-09-25
+"3933","F2","Sochaux","Auxerre",2021-09-25
+"3934","F2","Toulouse","Caen",2021-09-25
+"3935","F2","Pau FC","Dunkerque",2021-09-25
+"3936","F2","Rodez","Grenoble",2021-09-25
+"3937","F2","Quevilly Rouen","Guingamp",2021-09-25
+"3938","F2","Nimes","Le Havre",2021-09-25
+"3939","F2","Niort","Paris FC",2021-09-25
+"3940","F2","Dijon","Valenciennes",2021-09-25
+"4261","I1","Bologna","Genoa",2021-09-21
+"4262","I1","Atalanta","Sassuolo",2021-09-21
+"4263","I1","Fiorentina","Inter",2021-09-21
+"4264","I1","Salernitana","Verona",2021-09-22
+"4265","I1","Spezia","Juventus",2021-09-22
+"4266","I1","Cagliari","Empoli",2021-09-22
+"4267","I1","Milan","Venezia",2021-09-22
+"4268","I1","Sampdoria","Napoli",2021-09-23
+"4269","I1","Torino","Lazio",2021-09-23
+"4270","I1","Roma","Udinese",2021-09-23
+"4271","I1","Empoli","Bologna",2021-09-26
+"4272","I1","Genoa","Verona",2021-09-26
+"4273","I1","Inter","Atalanta",2021-09-26
+"4274","I1","Juventus","Sampdoria",2021-09-26
+"4275","I1","Lazio","Roma",2021-09-26
+"4276","I1","Napoli","Cagliari",2021-09-26
+"4277","I1","Sassuolo","Salernitana",2021-09-26
+"4278","I1","Spezia","Milan",2021-09-26
+"4279","I1","Udinese","Fiorentina",2021-09-26
+"4280","I1","Venezia","Torino",2021-09-26
+"4646","N1","For Sittard","Ajax",2021-09-21
+"4647","N1","Waalwijk","Willem II",2021-09-21
+"4648","N1","Feyenoord","Heerenveen",2021-09-22
+"4649","N1","Cambuur","Heracles",2021-09-22
+"4650","N1","Go Ahead Eagles","PSV Eindhoven",2021-09-22
+"4651","N1","Nijmegen","Utrecht",2021-09-22
+"4652","N1","Groningen","Vitesse",2021-09-22
+"4653","N1","Twente","AZ Alkmaar",2021-09-23
+"4654","N1","Zwolle","Sparta Rotterdam",2021-09-23
+"4655","N1","Vitesse","For Sittard",2021-09-25
+"4656","N1","Ajax","Groningen",2021-09-25
+"4657","N1","Feyenoord","Nijmegen",2021-09-25
+"4658","N1","Willem II","PSV Eindhoven",2021-09-25
+"4659","N1","Heracles","Waalwijk",2021-09-25
+"4660","N1","Sparta Rotterdam","Cambuur",2021-09-26
+"4661","N1","AZ Alkmaar","Go Ahead Eagles",2021-09-26
+"4662","N1","Heerenveen","Twente",2021-09-26
+"4663","N1","Utrecht","Zwolle",2021-09-26
+"4961","P1","Moreirense","Arouca",2021-09-26
+"4962","P1","Pacos Ferreira","Belenenses",2021-09-26
+"4963","P1","Guimaraes","Benfica",2021-09-26
+"4964","P1","Santa Clara","Sp Braga",2021-09-26
+"4965","P1","Boavista","Estoril",2021-09-26
+"4966","P1","Tondela","Famalicao",2021-09-26
+"4967","P1","Portimonense","Vizela",2021-09-26
+"4968","P1","Sp Lisbon","Maritimo",2021-09-26
+"4969","P1","Gil Vicente","Porto",2021-09-26
+"5249","SC0","Dundee","Rangers",2021-09-25
+"5250","SC0","Celtic","Dundee United",2021-09-25
+"5251","SC0","Motherwell","Ross County",2021-09-25
+"5252","SC0","Hibernian","St Johnstone",2021-09-25
+"5253","SC0","St Mirren","Aberdeen",2021-09-25
+"5254","SC0","Hearts","Livingston",2021-09-25
+"5441","SC1","Ayr United","Greenock Morton",2021-09-25
+"5442","SC1","Dunfermline","Hamilton",2021-09-25
+"5443","SC1","Arbroath FC","Kilmarnock",2021-09-25
+"5444","SC1","Raith Rovers","Partick Thistle",2021-09-25
+"5445","SC1","Inverness CT","Queens",2021-09-25
+"5641","SP1","Getafe","Ath Madrid",2021-09-21
+"5642","SP1","Ath Bilbao","Vallecano",2021-09-21
+"5643","SP1","Levante","Celta",2021-09-21
+"5644","SP1","Espanyol","Alaves",2021-09-22
+"5645","SP1","Sevilla","Valencia",2021-09-22
+"5646","SP1","Real Madrid","Mallorca",2021-09-22
+"5647","SP1","Villarreal","Elche",2021-09-22
+"5648","SP1","Granada","Sociedad",2021-09-23
+"5649","SP1","Osasuna","Betis",2021-09-23
+"5650","SP1","Cadiz","Barcelona",2021-09-23
+"5651","SP1","Alaves","Ath Madrid",2021-09-25
+"5652","SP1","Valencia","Ath Bilbao",2021-09-25
+"5653","SP1","Sevilla","Espanyol",2021-09-25
+"5654","SP1","Real Madrid","Villarreal",2021-09-25
+"5655","SP1","Mallorca","Osasuna",2021-09-26
+"5656","SP1","Barcelona","Levante",2021-09-26
+"5657","SP1","Sociedad","Elche",2021-09-26
+"5658","SP1","Vallecano","Cadiz",2021-09-26
+"5659","SP1","Betis","Getafe",2021-09-26
+"5660","SP1","Celta","Granada",2021-09-27
+"NA",NA,NA,NA,NA
+"NA.1",NA,NA,NA,NA
+"NA.2",NA,NA,NA,NA
+"NA.3",NA,NA,NA,NA
+"NA.4",NA,NA,NA,NA
+"NA.5",NA,NA,NA,NA
+"NA.6",NA,NA,NA,NA
+"NA.7",NA,NA,NA,NA
+"NA.8",NA,NA,NA,NA
+"NA.9",NA,NA,NA,NA
+"NA.10",NA,NA,NA,NA
+"NA.11",NA,NA,NA,NA
+"NA.12",NA,NA,NA,NA
+"NA.13",NA,NA,NA,NA
+"NA.14",NA,NA,NA,NA
+"NA.15",NA,NA,NA,NA
+"NA.16",NA,NA,NA,NA
+"NA.17",NA,NA,NA,NA
+"NA.18",NA,NA,NA,NA
+"NA.19",NA,NA,NA,NA
+"NA.20",NA,NA,NA,NA
+"NA.21",NA,NA,NA,NA
+"NA.22",NA,NA,NA,NA
+"NA.23",NA,NA,NA,NA
+"NA.24",NA,NA,NA,NA
+"NA.25",NA,NA,NA,NA
+"NA.26",NA,NA,NA,NA
+"NA.27",NA,NA,NA,NA
+"NA.28",NA,NA,NA,NA
+"NA.29",NA,NA,NA,NA
+"NA.30",NA,NA,NA,NA
+"NA.31",NA,NA,NA,NA
+"NA.32",NA,NA,NA,NA
+"NA.33",NA,NA,NA,NA
+"NA.34",NA,NA,NA,NA
+"NA.35",NA,NA,NA,NA
+"NA.36",NA,NA,NA,NA
+"NA.37",NA,NA,NA,NA
+"NA.38",NA,NA,NA,NA
+"NA.39",NA,NA,NA,NA
+"NA.40",NA,NA,NA,NA
+"NA.41",NA,NA,NA,NA
+"NA.42",NA,NA,NA,NA
+"NA.43",NA,NA,NA,NA
+"NA.44",NA,NA,NA,NA
+"NA.45",NA,NA,NA,NA
+"NA.46",NA,NA,NA,NA
+"NA.47",NA,NA,NA,NA
+"NA.48",NA,NA,NA,NA
+"NA.49",NA,NA,NA,NA
+"NA.50",NA,NA,NA,NA
+"NA.51",NA,NA,NA,NA
+"NA.52",NA,NA,NA,NA
+"NA.53",NA,NA,NA,NA
+"NA.54",NA,NA,NA,NA
+"NA.55",NA,NA,NA,NA
+"NA.56",NA,NA,NA,NA
+"NA.57",NA,NA,NA,NA
+"NA.58",NA,NA,NA,NA
+"NA.59",NA,NA,NA,NA
+"NA.60",NA,NA,NA,NA
+"NA.61",NA,NA,NA,NA
+"NA.62",NA,NA,NA,NA
+"NA.63",NA,NA,NA,NA
+"NA.64",NA,NA,NA,NA
+"NA.65",NA,NA,NA,NA
+"NA.66",NA,NA,NA,NA
+"NA.67",NA,NA,NA,NA
+"NA.68",NA,NA,NA,NA
+"NA.69",NA,NA,NA,NA
+"NA.70",NA,NA,NA,NA
+"NA.71",NA,NA,NA,NA
+"NA.72",NA,NA,NA,NA
+"NA.73",NA,NA,NA,NA
+"NA.74",NA,NA,NA,NA
+"NA.75",NA,NA,NA,NA
+"NA.76",NA,NA,NA,NA
+"NA.77",NA,NA,NA,NA
+"NA.78",NA,NA,NA,NA
+"NA.79",NA,NA,NA,NA
+"NA.80",NA,NA,NA,NA
+"NA.81",NA,NA,NA,NA
+"NA.82",NA,NA,NA,NA
+"NA.83",NA,NA,NA,NA
+"NA.84",NA,NA,NA,NA
+"NA.85",NA,NA,NA,NA
+"NA.86",NA,NA,NA,NA
+"NA.87",NA,NA,NA,NA
+"NA.88",NA,NA,NA,NA
+"NA.89",NA,NA,NA,NA
+"NA.90",NA,NA,NA,NA
+"NA.91",NA,NA,NA,NA
+"NA.92",NA,NA,NA,NA
+"NA.93",NA,NA,NA,NA
+"NA.94",NA,NA,NA,NA
+"NA.95",NA,NA,NA,NA
+"NA.96",NA,NA,NA,NA
+"NA.97",NA,NA,NA,NA
+"NA.98",NA,NA,NA,NA
+"NA.99",NA,NA,NA,NA
+"NA.100",NA,NA,NA,NA
+"NA.101",NA,NA,NA,NA
+"NA.102",NA,NA,NA,NA
+"NA.103",NA,NA,NA,NA
+"NA.104",NA,NA,NA,NA
+"NA.105",NA,NA,NA,NA
+"NA.106",NA,NA,NA,NA
+"NA.107",NA,NA,NA,NA
+"NA.108",NA,NA,NA,NA
+"NA.109",NA,NA,NA,NA
+"NA.110",NA,NA,NA,NA
+"NA.111",NA,NA,NA,NA
+"NA.112",NA,NA,NA,NA
+"NA.113",NA,NA,NA,NA
+"NA.114",NA,NA,NA,NA
+"NA.115",NA,NA,NA,NA
+"NA.116",NA,NA,NA,NA
+"NA.117",NA,NA,NA,NA
+"NA.118",NA,NA,NA,NA
+"NA.119",NA,NA,NA,NA
+"NA.120",NA,NA,NA,NA
+"NA.121",NA,NA,NA,NA
+"NA.122",NA,NA,NA,NA
+"NA.123",NA,NA,NA,NA
+"NA.124",NA,NA,NA,NA
+"NA.125",NA,NA,NA,NA
+"NA.126",NA,NA,NA,NA
+"NA.127",NA,NA,NA,NA
+"NA.128",NA,NA,NA,NA
+"NA.129",NA,NA,NA,NA
+"NA.130",NA,NA,NA,NA
+"NA.131",NA,NA,NA,NA
+"NA.132",NA,NA,NA,NA
+"NA.133",NA,NA,NA,NA
+"NA.134",NA,NA,NA,NA
+"NA.135",NA,NA,NA,NA
+"NA.136",NA,NA,NA,NA
+"NA.137",NA,NA,NA,NA
+"NA.138",NA,NA,NA,NA
+"NA.139",NA,NA,NA,NA
+"NA.140",NA,NA,NA,NA
+"NA.141",NA,NA,NA,NA
+"NA.142",NA,NA,NA,NA
+"NA.143",NA,NA,NA,NA
+"NA.144",NA,NA,NA,NA
+"NA.145",NA,NA,NA,NA
+"NA.146",NA,NA,NA,NA
+"NA.147",NA,NA,NA,NA
+"NA.148",NA,NA,NA,NA
+"NA.149",NA,NA,NA,NA
+"NA.150",NA,NA,NA,NA
+"NA.151",NA,NA,NA,NA
+"NA.152",NA,NA,NA,NA
+"NA.153",NA,NA,NA,NA
+"NA.154",NA,NA,NA,NA
+"NA.155",NA,NA,NA,NA
+"NA.156",NA,NA,NA,NA
+"NA.157",NA,NA,NA,NA
+"NA.158",NA,NA,NA,NA
+"NA.159",NA,NA,NA,NA
+"NA.160",NA,NA,NA,NA
+"NA.161",NA,NA,NA,NA
+"NA.162",NA,NA,NA,NA
+"NA.163",NA,NA,NA,NA
+"NA.164",NA,NA,NA,NA
+"NA.165",NA,NA,NA,NA
+"NA.166",NA,NA,NA,NA
+"NA.167",NA,NA,NA,NA
+"NA.168",NA,NA,NA,NA
+"NA.169",NA,NA,NA,NA
+"NA.170",NA,NA,NA,NA
+"NA.171",NA,NA,NA,NA
+"NA.172",NA,NA,NA,NA
+"NA.173",NA,NA,NA,NA
+"NA.174",NA,NA,NA,NA
+"NA.175",NA,NA,NA,NA
+"NA.176",NA,NA,NA,NA
+"NA.177",NA,NA,NA,NA
+"NA.178",NA,NA,NA,NA
+"NA.179",NA,NA,NA,NA
+"NA.180",NA,NA,NA,NA
+"NA.181",NA,NA,NA,NA
+"NA.182",NA,NA,NA,NA
+"NA.183",NA,NA,NA,NA
+"NA.184",NA,NA,NA,NA
+"NA.185",NA,NA,NA,NA
+"NA.186",NA,NA,NA,NA
+"NA.187",NA,NA,NA,NA
+"NA.188",NA,NA,NA,NA
+"NA.189",NA,NA,NA,NA
+"NA.190",NA,NA,NA,NA
+"NA.191",NA,NA,NA,NA
+"NA.192",NA,NA,NA,NA
+"NA.193",NA,NA,NA,NA
+"NA.194",NA,NA,NA,NA
+"NA.195",NA,NA,NA,NA
+"NA.196",NA,NA,NA,NA
+"NA.197",NA,NA,NA,NA
+"NA.198",NA,NA,NA,NA
+"NA.199",NA,NA,NA,NA
+"NA.200",NA,NA,NA,NA
+"NA.201",NA,NA,NA,NA
+"NA.202",NA,NA,NA,NA
+"NA.203",NA,NA,NA,NA
+"NA.204",NA,NA,NA,NA
+"NA.205",NA,NA,NA,NA
+"NA.206",NA,NA,NA,NA
+"NA.207",NA,NA,NA,NA
+"NA.208",NA,NA,NA,NA
+"NA.209",NA,NA,NA,NA
+"NA.210",NA,NA,NA,NA
+"NA.211",NA,NA,NA,NA
+"NA.212",NA,NA,NA,NA
+"NA.213",NA,NA,NA,NA
+"NA.214",NA,NA,NA,NA
+"NA.215",NA,NA,NA,NA
+"NA.216",NA,NA,NA,NA
+"NA.217",NA,NA,NA,NA
+"NA.218",NA,NA,NA,NA
+"NA.219",NA,NA,NA,NA
+"NA.220",NA,NA,NA,NA
+"NA.221",NA,NA,NA,NA
+"NA.222",NA,NA,NA,NA
+"NA.223",NA,NA,NA,NA
+"NA.224",NA,NA,NA,NA
+"NA.225",NA,NA,NA,NA
+"NA.226",NA,NA,NA,NA
+"NA.227",NA,NA,NA,NA
+"NA.228",NA,NA,NA,NA
+"NA.229",NA,NA,NA,NA
+"NA.230",NA,NA,NA,NA
+"NA.231",NA,NA,NA,NA
+"NA.232",NA,NA,NA,NA
+"NA.233",NA,NA,NA,NA
+"NA.234",NA,NA,NA,NA
+"NA.235",NA,NA,NA,NA
+"NA.236",NA,NA,NA,NA
+"NA.237",NA,NA,NA,NA
+"NA.238",NA,NA,NA,NA
+"NA.239",NA,NA,NA,NA
+"NA.240",NA,NA,NA,NA
+"NA.241",NA,NA,NA,NA
+"NA.242",NA,NA,NA,NA
+"NA.243",NA,NA,NA,NA
+"NA.244",NA,NA,NA,NA
+"NA.245",NA,NA,NA,NA
+"NA.246",NA,NA,NA,NA
+"NA.247",NA,NA,NA,NA
+"NA.248",NA,NA,NA,NA
+"NA.249",NA,NA,NA,NA
+"NA.250",NA,NA,NA,NA
+"NA.251",NA,NA,NA,NA
+"NA.252",NA,NA,NA,NA
+"NA.253",NA,NA,NA,NA
+"NA.254",NA,NA,NA,NA
+"NA.255",NA,NA,NA,NA
+"NA.256",NA,NA,NA,NA
+"NA.257",NA,NA,NA,NA
+"NA.258",NA,NA,NA,NA
+"NA.259",NA,NA,NA,NA
+"NA.260",NA,NA,NA,NA
+"NA.261",NA,NA,NA,NA
+"NA.262",NA,NA,NA,NA
+"NA.263",NA,NA,NA,NA
+"NA.264",NA,NA,NA,NA
+"NA.265",NA,NA,NA,NA
+"NA.266",NA,NA,NA,NA
+"NA.267",NA,NA,NA,NA
+"NA.268",NA,NA,NA,NA
+"NA.269",NA,NA,NA,NA
+"NA.270",NA,NA,NA,NA
+"NA.271",NA,NA,NA,NA
+"NA.272",NA,NA,NA,NA
+"NA.273",NA,NA,NA,NA
+"NA.274",NA,NA,NA,NA
+"NA.275",NA,NA,NA,NA
+"NA.276",NA,NA,NA,NA
+"NA.277",NA,NA,NA,NA
+"NA.278",NA,NA,NA,NA
+"NA.279",NA,NA,NA,NA
+"NA.280",NA,NA,NA,NA
+"NA.281",NA,NA,NA,NA
+"NA.282",NA,NA,NA,NA
+"NA.283",NA,NA,NA,NA
+"NA.284",NA,NA,NA,NA
+"NA.285",NA,NA,NA,NA
+"6483","T1","Gaziantep","Buyuksehyr",2021-09-22
+"6484","T1","Karagumruk","Antalyaspor",2021-09-22
+"6485","T1","Besiktas","Ad. Demirspor",2021-09-22
+"6486","T1","Yeni Malatyaspor","Sivasspor",2021-09-22
+"6487","T1","Alanyaspor","Kasimpasa",2021-09-22
+"6488","T1","Kayserispor","Galatasaray",2021-09-22
+"6489","T1","Konyaspor","Trabzonspor",2021-09-22
+"6490","T1","Fenerbahce","Giresunspor",2021-09-22
+"6491","T1","Goztep","Atakas Hatayspor",2021-09-22
+"6492","T1","Rizespor","Altay",2021-09-22
+"6493","T1","Atakas Hatayspor","Fenerbahce",2021-09-26
+"6494","T1","Giresunspor","Kayserispor",2021-09-26
+"6495","T1","Kasimpasa","Konyaspor",2021-09-26
+"6496","T1","Galatasaray","Goztep",2021-09-26
+"6497","T1","Trabzonspor","Alanyaspor",2021-09-26
+"6498","T1","Antalyaspor","Yeni Malatyaspor",2021-09-26
+"6499","T1","Sivasspor","Karagumruk",2021-09-26
+"6500","T1","Ad. Demirspor","Gaziantep",2021-09-26
+"6501","T1","Buyuksehyr","Rizespor",2021-09-26
+"6502","T1","Altay","Besiktas",2021-09-26

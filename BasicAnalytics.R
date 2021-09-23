@@ -190,5 +190,51 @@ tempecteams <- sort(unique(EC_schedule20212022$Home_Team))
 EC_schedule20212022 <- mgsub(EC_schedule20212022,c( "Aldershot Town","Altrincham","Barnet","Boreham Wood","Bromley","Chesterfield","Dag & Red","Dover Athletic","Eastleigh","Grimsby Town","FC Halifax Town","King's Lynn","Maidenhead Utd","Notts County","Solihull Moors","Southend United","Stockport","Torquay","Wealdstone","Weymouth","Woking","Wrexham","Yeovil Town"),c( "Aldershot","Altrincham","Barnet","Boreham Wood","Bromley","Chesterfield","Dag and Red","Dover Athletic","Eastleigh","Grimsby","Halifax","Kings Lynn","Maidenhead","Notts County","Solihull","Southend","Stockport","Torquay","Wealdstone","Weymouth","Woking","Wrexham","Yeovil"))
 
 write.csv(EC_schedule20212022,'EC_schedule20212022.csv')
+##########################################################################
+d2teams2122 <- poissonteams2122[poissonteams2122$division == "D2",]
+sort(d2teams2122$HomeTeam)
+sort(unique(D2_schedule20212022$Home_Team))
+D2_schedule20212022 <- mgsub(D2_schedule20212022,c( "Darmstadt 98","Dusseldorf","Hamburger SV","Hannover 96","Ingolstadt 04","Jahn Regensburg","Karlsruher","Paderborn 07","St. Pauli"),c( "Darmstadt","Fortuna Dusseldorf","Hamburg","Hannover","Ingolstadt","Regensburg","Karlsruhe","Paderborn","St Pauli"))
+write.csv(D2_schedule20212022,'D2_schedule20212022.csv')
+##########################################################################
+f2teams2122 <- poissonteams2122[poissonteams2122$division == "F2",]
+sort(f2teams2122$HomeTeam)
+sort(unique(F2_schedule20212022$Home_Team))
+F2_schedule20212022 <- mgsub(F2_schedule20212022,c( "Rodez Aveyron","Quevilly-Rouen"),c( "Rodez","Quevilly Rouen"))
+write.csv(F2_schedule20212022,'F2_schedule20212022.csv')
+###########################################################################
+n1teams2122 <- poissonteams2122[poissonteams2122$division == "N1",]
+sort(n1teams2122$HomeTeam)
+sort(unique(N1_schedule20212022$Home_Team))
+N1_schedule20212022 <- mgsub(N1_schedule20212022,c( "Fortuna Sittard","Go Ahead","Heracles Almelo","NEC Nijmegen","RKC Waalwijk"),c( "For Sittard","Go Ahead Eagles","Heracles","Nijmegen","Waalwijk"))
+write.csv(N1_schedule20212022,'N1_schedule20212022.csv')
+########################################################################
+p1teams2122 <- poissonteams2122[poissonteams2122$division == "P1",]
+sort(p1teams2122$HomeTeam)
+sort(unique(P1_schedule20212022$Home_Team))
+P1_schedule20212022 <- mgsub(P1_schedule20212022,c( "Braga","Gil Vicente FC","Pacos","Sporting CP","FC Vizela","Vitoria"),c( "Sp Braga","Gil Vicente","Pacos Ferreira","Sp Lisbon","Vizela","Guimaraes"))
+write.csv(P1_schedule20212022,'P1_schedule20212022.csv')
+##############################################################################
+sc0teams2122 <- poissonteams2122[poissonteams2122$division == "SC0",]
+sort(sc0teams2122$HomeTeam)
+sort(unique(SC0_schedule20212022$Home_Team))
+SC0_schedule20212022 <- mgsub(SC0_schedule20212022,c( "Braga","Gil Vicente FC","Pacos","Sporting CP","FC Vizela","Vitoria"),c( "Sp Braga","Gil Vicente","Pacos Ferreira","Sp Lisbon","Vizela","Guimaraes"))
+write.csv(SC0_schedule20212022,'SC0_schedule20212022.csv')
+##############################################################################################
+sc1teams2122 <- poissonteams2122[poissonteams2122$division == "SC1",]
+sort(sc1teams2122$HomeTeam)
+sort(unique(SC1_schedule20212022$Home_Team))
+SC1_schedule20212022 <- mgsub(SC1_schedule20212022,c( "Arbroath FC","Ayr United","Greenock Morton","Inverness CT","Partick Thistle","Queens","Raith Rovers"),c( "Arbroath","Ayr","Morton","Inverness C","Partick","Queen of Sth","Raith Rvs"))
+write.csv(SC1_schedule20212022,'SC1_schedule20212022.csv')
+#############################################################################
+sp2teams2122 <- poissonteams2122[poissonteams2122$division == "SP2",]
+sort(sp2teams2122$HomeTeam)
+sort(unique(SP2_schedule20212022$Home_Team))
+SP2_schedule20212022 <- mgsub(SP2_schedule20212022,c( "SD Amorebieta","CD Mirandes","Heracles Almelo","NEC Nijmegen","RKC Waalwijk"),c( "Amorebieta","Mirandes","Heracles","Nijmegen","Waalwijk"))
+write.csv(SP2_schedule20212022,'SP2_schedule20212022.csv')
+
+
+
+
 
 

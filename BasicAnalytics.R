@@ -230,8 +230,46 @@ write.csv(SC1_schedule20212022,'SC1_schedule20212022.csv')
 sp2teams2122 <- poissonteams2122[poissonteams2122$division == "SP2",]
 sort(sp2teams2122$HomeTeam)
 sort(unique(SP2_schedule20212022$Home_Team))
-SP2_schedule20212022 <- mgsub(SP2_schedule20212022,c( "SD Amorebieta","CD Mirandes","Heracles Almelo","NEC Nijmegen","RKC Waalwijk"),c( "Amorebieta","Mirandes","Heracles","Nijmegen","Waalwijk"))
+SP2_schedule20212022 <- mgsub(SP2_schedule20212022,c( "SD Amorebieta","CD Mirandes","UD Ibiza","Real Sociedad B","Sporting Gijon"),c( "Amorebieta","Mirandes","Ibiza","Sociedad B","Sp Gijon"))
 write.csv(SP2_schedule20212022,'SP2_schedule20212022.csv')
+############################################################################
+poissonteamsnewleagues2122 <- readxl::read_excel('../FDAS/poisson calc_20212022_newleagues.xlsx',sheet = 'home')
+autteams2122 <- poissonteamsnewleagues2122[poissonteamsnewleagues2122$division == "Admiral Bundesliga",]
+sort(autteams2122$HomeTeam)
+sort(unique(AUT_schedule20212022$Home_Team))
+AUT_schedule20212022 <- mgsub(AUT_schedule20212022,c( "SK Austria Klagenfurt","SCR Altach","Austria Wien","Rapid Wien","RB Salzburg","WSG Wattens"),c( "A. Klagenfurt","Altach","Austria Vienna","Rapid Vienna","Salzburg","Tirol"))
+write.csv(AUT_schedule20212022,'AUT_schedule20212022.csv')
+######################################################################
+dnkteams2122 <- poissonteamsnewleagues2122[poissonteamsnewleagues2122$division == "Superliga",]
+sort(dnkteams2122$HomeTeam)
+sort(unique(DNK_schedule20212022$Home_Team))
+DNK_schedule20212022 <- mgsub(DNK_schedule20212022,c( "Randers","Vejle BK","AGF"),c( "Randers FC","Vejle","Aarhus"))
+write.csv(DNK_schedule20212022,'DNK_schedule20212022.csv')
+####################################################################################################
+polteams2122 <- poissonteamsnewleagues2122[poissonteamsnewleagues2122$division == "Ekstraklasa",]
+sort(polteams2122$HomeTeam)
+sort(unique(POL_schedule20212022$Home_Team))
+POL_schedule20212022 <- mgsub(POL_schedule20212022,c( "Gornik Leczna","Gornik Zabrze","Legia Warsaw","RKS Rakow","Termalica Nieciecza","Wisla Krakow","Zaglebie Lubin"),c( "Leczna","Gornik Z","Legia","Rakow","Termalica B-B.","Wisla","Zaglebie"))
+write.csv(POL_schedule20212022,'POL_schedule20212022.csv')
+#############################################################################
+routeams2122 <- poissonteamsnewleagues2122[poissonteamsnewleagues2122$division == "Liga 1",]
+sort(routeams2122$HomeTeam)
+sort(unique(ROU_schedule20212022$Home_Team))
+ROU_schedule20212022 <- mgsub(ROU_schedule20212022,c( "Chindia","Clinceni","Arges Pitesti","Botosani","Sepsi","Gaz Metan","FC U Craiova","Dinamo","FC U Craiova","CS U Craiova","Voluntari"),c( "Chindia Targoviste","Academica Clinceni","FC Arges","FC Botosani","Sepsi Sf. Gheorghe","Gaz Metan Medias","U Craiova 1948","Din. Bucuresti","Univ. Craiova","U Craiova 1948","FC Voluntari"))
+write.csv(ROU_schedule20212022,'ROU_schedule20212022.csv')
+##########################################################################################
+rusteams2122 <- poissonteamsnewleagues2122[poissonteamsnewleagues2122$division == "Premier League",]
+sort(rusteams2122$HomeTeam)
+sort(unique(RUS_schedule20212022$Home_Team))
+RUS_schedule20212022 <- mgsub(RUS_schedule20212022,c( "Dynamo Mosc","Rostov","FC Khimki","Loko Moscow","Samara"),c( "Dynamo Moscow","FK Rostov","Khimki","Lokomotiv Moscow","FK Krylya Sovetov Samara"))
+write.csv(RUS_schedule20212022,'RUS_schedule20212022.csv')
+##########################################################################################
+swzteams2122 <- poissonteamsnewleagues2122[poissonteamsnewleagues2122$division == "Swiss",]
+sort(swzteams2122$HomeTeam)
+sort(unique(SWZ_schedule20212022$Home_Team))
+SWZ_schedule20212022 <- mgsub(SWZ_schedule20212022,c( "Grasshopper","Lausanne-Sport","AGF"),c( "Grasshoppers","Lausanne","Aarhus"))
+write.csv(SWZ_schedule20212022,'SWZ_schedule20212022.csv')
+
 
 
 

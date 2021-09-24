@@ -1,0 +1,241 @@
+MatchNumber,RoundNumber,Location,Date,Home_Team,Away_Team
+1,1,stadium,7/15/2021,FC Botosani,FCSB
+2,1,,7/16/2021,Sepsi Sf. Gheorghe,Academica Clinceni
+3,1,,7/16/2021,CFR Cluj,U Craiova 1948
+4,1,,7/17/2021,U Craiova 1948,FC Arges
+5,1,,7/17/2021,Gaz Metan Medias,Mioveni
+6,1,,7/18/2021,Rapid Bucuresti,Chindia Targoviste
+7,1,,7/18/2021,UTA Arad,Farul Constanta
+8,1,,7/19/2021,Din. Bucuresti,FC Voluntari
+9,1,,7/23/2021,Mioveni,Rapid Bucuresti
+10,1,,7/23/2021,FC Arges,UTA Arad
+11,1,,7/24/2021,FC Voluntari,FC Botosani
+12,1,,7/24/2021,Academica Clinceni,CFR Cluj
+13,1,,7/25/2021,FCSB,U Craiova 1948
+14,1,,7/25/2021,Farul Constanta,Gaz Metan Medias
+15,1,,7/26/2021,U Craiova 1948,Din. Bucuresti
+16,1,,7/26/2021,Chindia Targoviste,Sepsi Sf. Gheorghe
+17,1,,7/31/2021,Gaz Metan Medias,FC Arges
+18,1,,7/31/2021,U Craiova 1948,FC Botosani
+19,1,,7/31/2021,CFR Cluj,Chindia Targoviste
+20,1,,7/31/2021,Din. Bucuresti,Academica Clinceni
+21,1,,7/31/2021,Rapid Bucuresti,Farul Constanta
+22,1,,7/31/2021,FC Voluntari,U Craiova 1948
+23,1,,7/31/2021,UTA Arad,FCSB
+24,1,,7/31/2021,Sepsi Sf. Gheorghe,Mioveni
+25,1,,8/7/2021,Mioveni,CFR Cluj
+26,1,,8/7/2021,Chindia Targoviste,Din. Bucuresti
+27,1,,8/7/2021,Academica Clinceni,U Craiova 1948
+28,1,,8/7/2021,FCSB,Gaz Metan Medias
+29,1,,8/7/2021,FC Arges,Rapid Bucuresti
+30,1,,8/7/2021,Farul Constanta,Sepsi Sf. Gheorghe
+31,1,,8/7/2021,FC Botosani,UTA Arad
+32,1,,8/7/2021,U Craiova 1948,FC Voluntari
+33,1,,8/14/2021,Sepsi Sf. Gheorghe,FC Arges
+34,1,,8/14/2021,Gaz Metan Medias,FC Botosani
+35,1,,8/14/2021,U Craiova 1948,Chindia Targoviste
+36,1,,8/14/2021,FC Voluntari,Academica Clinceni
+37,1,,8/14/2021,UTA Arad,U Craiova 1948
+38,1,,8/14/2021,CFR Cluj,Farul Constanta
+39,1,,8/14/2021,Rapid Bucuresti,FCSB
+40,1,,8/14/2021,Din. Bucuresti,Mioveni
+41,1,,8/21/2021,FC Arges,CFR Cluj
+42,1,,8/21/2021,Chindia Targoviste,Academica Clinceni
+43,1,,8/21/2021,Farul Constanta,Din. Bucuresti
+44,1,,8/21/2021,Mioveni,U Craiova 1948
+45,1,,8/21/2021,U Craiova 1948,Gaz Metan Medias
+46,1,,8/21/2021,FC Botosani,Rapid Bucuresti
+47,1,,8/21/2021,FCSB,Sepsi Sf. Gheorghe
+48,1,,8/21/2021,UTA Arad,FC Voluntari
+49,1,,8/28/2021,Din. Bucuresti,FC Arges
+50,1,,8/28/2021,Sepsi Sf. Gheorghe,FC Botosani
+51,1,,8/28/2021,FC Voluntari,Chindia Targoviste
+52,1,,8/28/2021,Rapid Bucuresti,U Craiova 1948
+53,1,,8/28/2021,U Craiova 1948,Farul Constanta
+54,1,,8/28/2021,CFR Cluj,FCSB
+55,1,,8/28/2021,Academica Clinceni,Mioveni
+56,1,,8/28/2021,Gaz Metan Medias,UTA Arad
+57,1,,9/11/2021,FC Botosani,CFR Cluj
+58,1,,9/11/2021,Mioveni,Chindia Targoviste
+59,1,,9/11/2021,Farul Constanta,Academica Clinceni
+60,1,,9/11/2021,FCSB,Din. Bucuresti
+61,1,,9/11/2021,FC Arges,U Craiova 1948
+62,1,,9/11/2021,UTA Arad,Rapid Bucuresti
+63,1,,9/11/2021,U Craiova 1948,Sepsi Sf. Gheorghe
+64,1,,9/11/2021,Gaz Metan Medias,FC Voluntari
+65,1,,9/18/2021,Academica Clinceni,FC Arges
+66,1,,9/18/2021,Din. Bucuresti,FC Botosani
+67,1,,9/18/2021,CFR Cluj,U Craiova 1948
+68,1,,9/18/2021,Chindia Targoviste,Farul Constanta
+69,1,,9/18/2021,U Craiova 1948,FCSB
+70,1,,9/18/2021,Rapid Bucuresti,Gaz Metan Medias
+71,1,,9/18/2021,FC Voluntari,Mioveni
+72,1,,9/18/2021,Sepsi Sf. Gheorghe,UTA Arad
+73,1,,9/25/2021,UTA Arad,CFR Cluj
+74,1,,9/25/2021,FC Arges,Chindia Targoviste
+75,1,,9/25/2021,FCSB,Academica Clinceni
+76,1,,9/25/2021,U Craiova 1948,Din. Bucuresti
+77,1,,9/25/2021,FC Botosani,U Craiova 1948
+78,1,,9/25/2021,Farul Constanta,Mioveni
+79,1,,9/25/2021,Gaz Metan Medias,Sepsi Sf. Gheorghe
+80,1,,9/25/2021,Rapid Bucuresti,FC Voluntari
+81,1,,10/2/2021,Mioveni,FC Arges
+82,1,,10/2/2021,Academica Clinceni,FC Botosani
+83,1,,10/2/2021,U Craiova 1948,U Craiova 1948
+84,1,,10/2/2021,FC Voluntari,Farul Constanta
+85,1,,10/2/2021,Chindia Targoviste,FCSB
+86,1,,10/2/2021,CFR Cluj,Gaz Metan Medias
+87,1,,10/2/2021,Sepsi Sf. Gheorghe,Rapid Bucuresti
+88,1,,10/2/2021,Din. Bucuresti,UTA Arad
+89,1,,10/16/2021,Rapid Bucuresti,CFR Cluj
+90,1,,10/16/2021,FC Botosani,Chindia Targoviste
+91,1,,10/16/2021,U Craiova 1948,Academica Clinceni
+92,1,,10/16/2021,Gaz Metan Medias,Din. Bucuresti
+93,1,,10/16/2021,FC Arges,Farul Constanta
+94,1,,10/16/2021,UTA Arad,U Craiova 1948
+95,1,,10/16/2021,FCSB,Mioveni
+96,1,,10/16/2021,Sepsi Sf. Gheorghe,FC Voluntari
+97,1,,10/23/2021,FC Voluntari,FC Arges
+98,1,,10/23/2021,Mioveni,FC Botosani
+99,1,,10/23/2021,Chindia Targoviste,U Craiova 1948
+100,1,,10/23/2021,Farul Constanta,FCSB
+101,1,,10/23/2021,U Craiova 1948,Gaz Metan Medias
+102,1,,10/23/2021,Din. Bucuresti,Rapid Bucuresti
+103,1,,10/23/2021,CFR Cluj,Sepsi Sf. Gheorghe
+104,1,,10/23/2021,Academica Clinceni,UTA Arad
+105,1,,10/30/2021,FCSB,FC Arges
+106,1,,10/30/2021,UTA Arad,Chindia Targoviste
+107,1,,10/30/2021,Gaz Metan Medias,Academica Clinceni
+108,1,,10/30/2021,Sepsi Sf. Gheorghe,Din. Bucuresti
+109,1,,10/30/2021,FC Botosani,Farul Constanta
+110,1,,10/30/2021,Rapid Bucuresti,U Craiova 1948
+111,1,,10/30/2021,U Craiova 1948,Mioveni
+112,1,,10/30/2021,CFR Cluj,FC Voluntari
+113,1,,11/6/2021,FC Arges,FC Botosani
+114,1,,11/6/2021,Din. Bucuresti,CFR Cluj
+115,1,,11/6/2021,FC Voluntari,U Craiova 1948
+116,1,,11/6/2021,Farul Constanta,FCSB
+117,1,,11/6/2021,Chindia Targoviste,Gaz Metan Medias
+118,1,,11/6/2021,Academica Clinceni,Rapid Bucuresti
+119,1,,11/6/2021,U Craiova 1948,Sepsi Sf. Gheorghe
+120,1,,11/6/2021,Mioveni,UTA Arad
+121,1,,11/20/2021,FCSB,FC Botosani
+122,1,,11/20/2021,U Craiova 1948,CFR Cluj
+123,1,,11/20/2021,FC Arges,U Craiova 1948
+124,1,,11/20/2021,FC Voluntari,Din. Bucuresti
+125,1,,11/20/2021,Mioveni,Gaz Metan Medias
+126,1,,11/20/2021,Chindia Targoviste,Rapid Bucuresti
+127,1,,11/20/2021,Academica Clinceni,Sepsi Sf. Gheorghe
+128,1,,11/20/2021,Farul Constanta,UTA Arad
+129,1,,11/27/2021,UTA Arad,FC Arges
+130,1,,11/27/2021,Sepsi Sf. Gheorghe,Chindia Targoviste
+131,1,,11/27/2021,CFR Cluj,Academica Clinceni
+132,1,,11/27/2021,Gaz Metan Medias,Farul Constanta
+133,1,,11/27/2021,Din. Bucuresti,U Craiova 1948
+134,1,,11/27/2021,U Craiova 1948,FCSB
+135,1,,11/27/2021,Rapid Bucuresti,Mioveni
+136,1,,11/27/2021,FC Botosani,FC Voluntari
+137,1,,12/4/2021,Chindia Targoviste,CFR Cluj
+138,1,,12/4/2021,FC Botosani,U Craiova 1948
+139,1,,12/4/2021,Academica Clinceni,Din. Bucuresti
+140,1,,12/4/2021,FC Arges,Gaz Metan Medias
+141,1,,12/4/2021,Farul Constanta,Rapid Bucuresti
+142,1,,12/4/2021,Mioveni,Sepsi Sf. Gheorghe
+143,1,,12/4/2021,FCSB,UTA Arad
+144,1,,12/4/2021,U Craiova 1948,FC Voluntari
+145,1,,12/11/2021,Rapid Bucuresti,FC Arges
+146,1,,12/11/2021,UTA Arad,FC Botosani
+147,1,,12/11/2021,Din. Bucuresti,Chindia Targoviste
+148,1,,12/11/2021,U Craiova 1948,Academica Clinceni
+149,1,,12/11/2021,FC Voluntari,U Craiova 1948
+150,1,,12/11/2021,Sepsi Sf. Gheorghe,Farul Constanta
+151,1,,12/11/2021,Gaz Metan Medias,FCSB
+152,1,,12/11/2021,CFR Cluj,Mioveni
+153,1,,12/15/2021,Farul Constanta,CFR Cluj
+154,1,,12/15/2021,Mioveni,Din. Bucuresti
+155,1,,12/15/2021,Chindia Targoviste,U Craiova 1948
+156,1,,12/15/2021,FC Botosani,Gaz Metan Medias
+157,1,,12/15/2021,FCSB,Rapid Bucuresti
+158,1,,12/15/2021,FC Arges,Sepsi Sf. Gheorghe
+159,1,,12/15/2021,U Craiova 1948,UTA Arad
+160,1,,12/15/2021,Academica Clinceni,FC Voluntari
+161,1,,12/18/2021,CFR Cluj,FC Arges
+162,1,,12/18/2021,Rapid Bucuresti,FC Botosani
+163,1,,12/18/2021,Academica Clinceni,Chindia Targoviste
+164,1,,12/18/2021,Gaz Metan Medias,U Craiova 1948
+165,1,,12/18/2021,Din. Bucuresti,Farul Constanta
+166,1,,12/18/2021,Sepsi Sf. Gheorghe,FCSB
+167,1,,12/18/2021,U Craiova 1948,Mioveni
+168,1,,12/18/2021,FC Voluntari,UTA Arad
+169,1,,1/22/2022,FCSB,CFR Cluj
+170,1,,1/22/2022,Mioveni,Academica Clinceni
+171,1,,1/22/2022,FC Arges,Din. Bucuresti
+172,1,,1/22/2022,Farul Constanta,U Craiova 1948
+173,1,,1/22/2022,UTA Arad,Gaz Metan Medias
+174,1,,1/22/2022,U Craiova 1948,Rapid Bucuresti
+175,1,,1/22/2022,FC Botosani,Sepsi Sf. Gheorghe
+176,1,,1/22/2022,Chindia Targoviste,FC Voluntari
+177,1,,1/29/2022,U Craiova 1948,FC Arges
+178,1,,1/29/2022,CFR Cluj,FC Botosani
+179,1,,1/29/2022,Sepsi Sf. Gheorghe,U Craiova 1948
+180,1,,1/29/2022,Academica Clinceni,Farul Constanta
+181,1,,1/29/2022,Din. Bucuresti,FCSB
+182,1,,1/29/2022,FC Voluntari,Gaz Metan Medias
+183,1,,1/29/2022,Chindia Targoviste,Mioveni
+184,1,,1/29/2022,Rapid Bucuresti,UTA Arad
+185,1,,2/5/2022,U Craiova 1948,CFR Cluj
+186,1,,2/5/2022,Farul Constanta,Chindia Targoviste
+187,1,,2/5/2022,FC Arges,Academica Clinceni
+188,1,,2/5/2022,FC Botosani,Din. Bucuresti
+189,1,,2/5/2022,FCSB,U Craiova 1948
+190,1,,2/5/2022,Gaz Metan Medias,Rapid Bucuresti
+191,1,,2/5/2022,UTA Arad,Sepsi Sf. Gheorghe
+192,1,,2/5/2022,Mioveni,FC Voluntari
+193,1,,2/9/2022,Chindia Targoviste,FC Arges
+194,1,,2/9/2022,U Craiova 1948,FC Botosani
+195,1,,2/9/2022,Din. Bucuresti,U Craiova 1948
+196,1,,2/9/2022,Mioveni,Farul Constanta
+197,1,,2/9/2022,Academica Clinceni,FCSB
+198,1,,2/9/2022,Sepsi Sf. Gheorghe,Gaz Metan Medias
+199,1,,2/9/2022,FC Voluntari,Rapid Bucuresti
+200,1,,2/9/2022,CFR Cluj,UTA Arad
+201,1,,2/12/2022,Gaz Metan Medias,CFR Cluj
+202,1,,2/12/2022,FCSB,Chindia Targoviste
+203,1,,2/12/2022,FC Botosani,Academica Clinceni
+204,1,,2/12/2022,UTA Arad,Din. Bucuresti
+205,1,,2/12/2022,U Craiova 1948,U Craiova 1948
+206,1,,2/12/2022,FC Arges,Mioveni
+207,1,,2/12/2022,Rapid Bucuresti,Sepsi Sf. Gheorghe
+208,1,,2/12/2022,Farul Constanta,FC Voluntari
+209,1,,2/19/2022,Farul Constanta,FC Arges
+210,1,,2/19/2022,Chindia Targoviste,FC Botosani
+211,1,,2/19/2022,Academica Clinceni,U Craiova 1948
+212,1,,2/19/2022,Mioveni,FCSB
+213,1,,2/19/2022,Din. Bucuresti,Gaz Metan Medias
+214,1,,2/19/2022,CFR Cluj,Rapid Bucuresti
+215,1,,2/19/2022,FC Voluntari,Sepsi Sf. Gheorghe
+216,1,,2/19/2022,U Craiova 1948,UTA Arad
+217,1,,2/26/2022,Sepsi Sf. Gheorghe,CFR Cluj
+218,1,,2/26/2022,U Craiova 1948,Chindia Targoviste
+219,1,,2/26/2022,UTA Arad,Academica Clinceni
+220,1,,2/26/2022,Rapid Bucuresti,Din. Bucuresti
+221,1,,2/26/2022,FCSB,Farul Constanta
+222,1,,2/26/2022,Gaz Metan Medias,U Craiova 1948
+223,1,,2/26/2022,FC Botosani,Mioveni
+224,1,,2/26/2022,FC Arges,FC Voluntari
+225,1,,3/1/2022,Farul Constanta,FC Botosani
+226,1,,3/1/2022,FC Voluntari,CFR Cluj
+227,1,,3/1/2022,Mioveni,U Craiova 1948
+228,1,,3/1/2022,FC Arges,FCSB
+229,1,,3/1/2022,Academica Clinceni,Gaz Metan Medias
+230,1,,3/1/2022,U Craiova 1948,Rapid Bucuresti
+231,1,,3/1/2022,Din. Bucuresti,Sepsi Sf. Gheorghe
+232,1,,3/1/2022,Chindia Targoviste,UTA Arad
+233,1,,3/5/2022,FC Botosani,FC Arges
+234,1,,3/5/2022,Gaz Metan Medias,Chindia Targoviste
+235,1,,3/5/2022,Rapid Bucuresti,Academica Clinceni
+236,1,,3/5/2022,CFR Cluj,Din. Bucuresti
+237,1,,3/5/2022,U Craiova 1948,Farul Constanta
+238,1,,3/5/2022,Sepsi Sf. Gheorghe,U Craiova 1948
+239,1,,3/5/2022,UTA Arad,Mioveni
+240,1,,3/5/2022,FCSB,FC Voluntari

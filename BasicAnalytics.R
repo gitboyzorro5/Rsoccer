@@ -267,7 +267,7 @@ write.csv(RUS_schedule20212022,'RUS_schedule20212022.csv')
 swzteams2122 <- poissonteamsnewleagues2122[poissonteamsnewleagues2122$division == "Swiss",]
 sort(swzteams2122$HomeTeam)
 sort(unique(SWZ_schedule20212022$Home_Team))
-SWZ_schedule20212022 <- mgsub(SWZ_schedule20212022,c( "Grasshopper","Lausanne-Sport","AGF"),c( "Grasshoppers","Lausanne","Aarhus"))
+SWZ_schedule20212022 <- mgsub(SWZ_schedule20212022,c( "Grasshopper","Lausanne-Sport","Servette FC"),c( "Grasshoppers","Lausanne","Servette"))
 write.csv(SWZ_schedule20212022,'SWZ_schedule20212022.csv')
 
 

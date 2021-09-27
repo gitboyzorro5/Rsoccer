@@ -45,7 +45,7 @@ P1_schedule20212022$Date <- mdy(P1_schedule20212022$Date)
 SC0_schedule20212022$Date <- mdy(SC0_schedule20212022$Date)
 SC1_schedule20212022$Date <- mdy(SC1_schedule20212022$Date)
 SP1_schedule20212022$Date <- dmy(SP1_schedule20212022$Date)
-SP2_schedule20212022$Date <- dmy(SP2_schedule20212022$Date)
+SP2_schedule20212022$Date <- mdy(SP2_schedule20212022$Date)
 T1_schedule20212022$Date <- dmy(T1_schedule20212022$Date)
 UEL_schedule20212022$Date_uel <- dmy(UEL_schedule20212022$Date_uel)
 #insert divisions
@@ -72,6 +72,6 @@ all_schedule20212022 <- rbind(B1_schedule20212022,D1_schedule20212022,D2_schedul
 
 all_schedule20212022 <- all_schedule20212022[,c(7,5,6,3)]
 
-myfixtures <- all_schedule20212022[all_schedule20212022$Date >= '2021-09-21' & all_schedule20212022$Date <= '2021-09-28',]
+myfixtures <- all_schedule20212022[all_schedule20212022$Date >= '2021-09-29' & all_schedule20212022$Date <= '2021-10-05',]
 
 write.csv(myfixtures,'myfixtures.csv')

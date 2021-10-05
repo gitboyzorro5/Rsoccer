@@ -6,28 +6,28 @@ library('scales')
 library('R.utils')
 ############################
 #create last n games
-b1_last_n_games <- 34
-d1_last_n_games <- 34
-d2_last_n_games <- 34
-e0_last_n_games <- 38
+b1_last_n_games <- 6
+d1_last_n_games <- 6
+d2_last_n_games <- 6
+e0_last_n_games <- 6
 e1_last_n_games <- 6
 e2_last_n_games <- 6
 e3_last_n_games <- 6
 ec_last_n_games <- 6
-f1_last_n_games <- 38
-f2_last_n_games <- 38
+f1_last_n_games <- 6
+f2_last_n_games <- 6
 g1_last_n_games <- 6
-i1_last_n_games <- 38
-i2_last_n_games <- 38
-n1_last_n_games <- 38
-p1_last_n_games <- 38
+i1_last_n_games <- 6
+i2_last_n_games <- 6
+n1_last_n_games <- 6
+p1_last_n_games <- 6
 sc0_last_n_games <- 6
 sc1_last_n_games <- 6
 sc2_last_n_games <- 6
 sc3_last_n_games <- 6
-sp1_last_n_games <- 38
+sp1_last_n_games <- 6
 sp2_last_n_games <- 6
-t1_last_n_games <- 38
+t1_last_n_games <- 6
 ############################
 #B1
 #form

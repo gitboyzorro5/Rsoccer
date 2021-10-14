@@ -5,10 +5,7 @@ Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 library('scales')
 library('lubridate')
-library('pinnacle.data')
-library('odds.converter')
 library('sqldf')
-library('mgsub')
 
 CONF <- read.csv('results.csv')
 sort(unique(CONF$tournament))
@@ -21,7 +18,7 @@ AFC <- CONF[CONF$tournament == "AFC Asian Cup qualification",]
 AFC_teams <- sort(unique(AFC$home_team))
 AFC_fed <-  as.data.frame(AFC_teams)
 AFC_fed$div <- "AFC"
-AFC_fed
+
 ###################################################
 CAF <- CONF[CONF$tournament == "African Cup of Nations",]
 CAF_teams <- sort(unique(CAF$home_team))
@@ -43,11 +40,11 @@ CONMEBOL <- CONF[CONF$tournament == "Copa AmÃ©rica",]
 CONMEBOL_teams <- sort(unique(CONMEBOL$home_team))
 CONMEBOL_fed <-  as.data.frame(CONMEBOL_teams)
 CONMEBOL_fed$div <- "CONMEBOL"
-CONMEBOL_fed
 ###############################################
 FIFA_conf <- mapply(c,CONCACAF_fed,AFC_fed,CAF_fed,UEFA_fed,OFC_fed,CONMEBOL_fed)
 FIFA_conf <- as.data.frame(FIFA_conf)
 
+colnames(FIFA_conf)[1] <- "home_team"
 
 
 

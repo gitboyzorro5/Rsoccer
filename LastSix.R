@@ -133,6 +133,30 @@ for(index_b1_cs in 1:length(b1_teams))
 final_b1_cs <- as.data.frame(final_b1_cs)
 colnames(final_b1_cs) <- "CSForm"
 #################################################
+#Win Margin
+#goals scored
+#create final_b1_wm object
+final_b1_wm <- c()
+suml6_b1_wm <- c()
+for(index_b1_wm in 1:length(b1_teams))
+{
+  index_b1_wm <- row.names(b1_winmargin_h) == b1_teams[index_b1_wm]
+  form_b1_wm <- b1_winmargin_h[index_b1_wm]
+  deleted_form_b1_wm <- form_b1_wm[!form_b1_wm[] == ""]
+  l6_form_b1_wm <- tail(deleted_form_b1_wm,b1_last_n_games)
+  l6_form_b1_wm <- as.numeric(l6_form_b1_wm)
+  suml6_b1_wm[index_b1_wm] <- sum(l6_form_b1_wm)
+  suml6_b1_wm[index_b1_wm] <- paste("(",suml6_b1_wm[index_b1_wm],")",sep = "")
+  l6_form_b1_wm <- paste(l6_form_b1_wm,collapse = " ")
+  final_b1_wm[index_b1_wm] <- rbind(paste(b1_teams[index_b1_wm],l6_form_b1_wm,suml6_b1_wm[index_b1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
+
+}
+final_b1_wm
+#change column names
+final_b1_wm <- as.data.frame(final_b1_wm)
+colnames(final_b1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_b1_hf_against
 final_b1_hf_against <- c()
@@ -150,7 +174,7 @@ for(index_b1_hf_against in 1:length(b1_teams))
 final_b1_hf_against <- as.data.frame(final_b1_hf_against)
 colnames(final_b1_hf_against) <- "Team against"
 #combine the columns
-final_b1_all <- cbind(final_b1_hf,final_b1_gs,final_b1_gc,final_b1_tg,final_b1_cs,final_b1_hf_against)
+final_b1_all <- cbind(final_b1_hf,final_b1_gs,final_b1_gc,final_b1_tg,final_b1_cs,final_b1_wm,final_b1_hf_against)
 write.xlsx(final_b1_all,'Divisions/B1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #D1
@@ -257,6 +281,31 @@ for(index_d1_cs in 1:length(d1_teams))
 final_d1_cs <- as.data.frame(final_d1_cs)
 colnames(final_d1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_d1_wm object
+final_d1_wm <- c()
+suml6_d1_wm <- c()
+for(index_d1_wm in 1:length(d1_teams))
+{
+  index_d1_wm <- row.names(d1_winmargin_h) == d1_teams[index_d1_wm]
+  form_d1_wm <- d1_winmargin_h[index_d1_wm]
+  deleted_form_d1_wm <- form_d1_wm[!form_d1_wm[] == ""]
+  l6_form_d1_wm <- tail(deleted_form_d1_wm,d1_last_n_games)
+  l6_form_d1_wm <- as.numeric(l6_form_d1_wm)
+  suml6_d1_wm[index_d1_wm] <- sum(l6_form_d1_wm)
+  suml6_d1_wm[index_d1_wm] <- paste("(",suml6_d1_wm[index_d1_wm],")",sep = "")
+  l6_form_d1_wm <- paste(l6_form_d1_wm,collapse = " ")
+  final_d1_wm[index_d1_wm] <- rbind(paste(d1_teams[index_d1_wm],l6_form_d1_wm,suml6_d1_wm[index_d1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d1_teams[index],l6_form)
+
+}
+final_d1_wm
+#change column names
+final_d1_wm <- as.data.frame(final_d1_wm)
+colnames(final_d1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_d1_hf_against
 final_d1_hf_against <- c()
@@ -274,7 +323,7 @@ for(index_d1_hf_against in 1:length(d1_teams))
 final_d1_hf_against <- as.data.frame(final_d1_hf_against)
 colnames(final_d1_hf_against) <- "Team against"
 #combine the columns
-final_d1_all <- cbind(final_d1_hf,final_d1_gs,final_d1_gc,final_d1_tg,final_d1_cs,final_d1_hf_against)
+final_d1_all <- cbind(final_d1_hf,final_d1_gs,final_d1_gc,final_d1_tg,final_d1_cs,final_d1_wm,final_d1_hf_against)
 write.xlsx(final_d1_all,'Divisions/D1.xlsx',sheetName = "L6", append = TRUE)
 ############################################################################
 #D2
@@ -381,6 +430,31 @@ for(index_d2_cs in 1:length(d2_teams))
 final_d2_cs <- as.data.frame(final_d2_cs)
 colnames(final_d2_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_d2_wm object
+final_d2_wm <- c()
+suml6_d2_wm <- c()
+for(index_d2_wm in 1:length(d2_teams))
+{
+  index_d2_wm <- row.names(d2_winmargin_h) == d2_teams[index_d2_wm]
+  form_d2_wm <- d2_winmargin_h[index_d2_wm]
+  deleted_form_d2_wm <- form_d2_wm[!form_d2_wm[] == ""]
+  l6_form_d2_wm <- tail(deleted_form_d2_wm,d2_last_n_games)
+  l6_form_d2_wm <- as.numeric(l6_form_d2_wm)
+  suml6_d2_wm[index_d2_wm] <- sum(l6_form_d2_wm)
+  suml6_d2_wm[index_d2_wm] <- paste("(",suml6_d2_wm[index_d2_wm],")",sep = "")
+  l6_form_d2_wm <- paste(l6_form_d2_wm,collapse = " ")
+  final_d2_wm[index_d2_wm] <- rbind(paste(d2_teams[index_d2_wm],l6_form_d2_wm,suml6_d2_wm[index_d2_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d2_teams[index],l6_form)
+
+}
+final_d2_wm
+#change column names
+final_d2_wm <- as.data.frame(final_d2_wm)
+colnames(final_d2_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_d2_hf_against
 final_d2_hf_against <- c()
@@ -398,7 +472,7 @@ for(index_d2_hf_against in 1:length(d2_teams))
 final_d2_hf_against <- as.data.frame(final_d2_hf_against)
 colnames(final_d2_hf_against) <- "Team against"
 #combine the columns
-final_d2_all <- cbind(final_d2_hf,final_d2_gs,final_d2_gc,final_d2_tg,final_d2_cs,final_d2_hf_against)
+final_d2_all <- cbind(final_d2_hf,final_d2_gs,final_d2_gc,final_d2_tg,final_d2_cs,final_d2_wm,final_d2_hf_against)
 write.xlsx(final_d2_all,'Divisions/D2.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #E0
@@ -505,6 +579,31 @@ for(index_e0_cs in 1:length(e0_teams))
 final_e0_cs <- as.data.frame(final_e0_cs)
 colnames(final_e0_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_e0_wm object
+final_e0_wm <- c()
+suml6_e0_wm <- c()
+for(index_e0_wm in 1:length(e0_teams))
+{
+  index_e0_wm <- row.names(e0_winmargin_h) == e0_teams[index_e0_wm]
+  form_e0_wm <- e0_winmargin_h[index_e0_wm]
+  deleted_form_e0_wm <- form_e0_wm[!form_e0_wm[] == ""]
+  l6_form_e0_wm <- tail(deleted_form_e0_wm,e0_last_n_games)
+  l6_form_e0_wm <- as.numeric(l6_form_e0_wm)
+  suml6_e0_wm[index_e0_wm] <- sum(l6_form_e0_wm)
+  suml6_e0_wm[index_e0_wm] <- paste("(",suml6_e0_wm[index_e0_wm],")",sep = "")
+  l6_form_e0_wm <- paste(l6_form_e0_wm,collapse = " ")
+  final_e0_wm[index_e0_wm] <- rbind(paste(e0_teams[index_e0_wm],l6_form_e0_wm,suml6_e0_wm[index_e0_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e0_teams[index],l6_form)
+
+}
+final_e0_wm
+#change column names
+final_e0_wm <- as.data.frame(final_e0_wm)
+colnames(final_e0_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_e0_hf_against
 final_e0_hf_against <- c()
@@ -522,7 +621,7 @@ for(index_e0_hf_against in 1:length(e0_teams))
 final_e0_hf_against <- as.data.frame(final_e0_hf_against)
 colnames(final_e0_hf_against) <- "Team against"
 #combine the columns
-final_e0_all <- cbind(final_e0_hf,final_e0_gs,final_e0_gc,final_e0_tg,final_e0_cs,final_e0_hf_against)
+final_e0_all <- cbind(final_e0_hf,final_e0_gs,final_e0_gc,final_e0_tg,final_e0_cs,final_e0_wm,final_e0_hf_against)
 write.xlsx(final_e0_all,'Divisions/E0.xlsx',sheetName = "L6", append = TRUE)
 ##################################################################################
 #E1
@@ -629,6 +728,31 @@ for(index_e1_cs in 1:length(e1_teams))
 final_e1_cs <- as.data.frame(final_e1_cs)
 colnames(final_e1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_e1_wm object
+final_e1_wm <- c()
+suml6_e1_wm <- c()
+for(index_e1_wm in 1:length(e1_teams))
+{
+  index_e1_wm <- row.names(e1_winmargin_h) == e1_teams[index_e1_wm]
+  form_e1_wm <- e1_winmargin_h[index_e1_wm]
+  deleted_form_e1_wm <- form_e1_wm[!form_e1_wm[] == ""]
+  l6_form_e1_wm <- tail(deleted_form_e1_wm,e1_last_n_games)
+  l6_form_e1_wm <- as.numeric(l6_form_e1_wm)
+  suml6_e1_wm[index_e1_wm] <- sum(l6_form_e1_wm)
+  suml6_e1_wm[index_e1_wm] <- paste("(",suml6_e1_wm[index_e1_wm],")",sep = "")
+  l6_form_e1_wm <- paste(l6_form_e1_wm,collapse = " ")
+  final_e1_wm[index_e1_wm] <- rbind(paste(e1_teams[index_e1_wm],l6_form_e1_wm,suml6_e1_wm[index_e1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e1_teams[index],l6_form)
+
+}
+final_e1_wm
+#change column names
+final_e1_wm <- as.data.frame(final_e1_wm)
+colnames(final_e1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_e1_hf_against
 final_e1_hf_against <- c()
@@ -646,7 +770,7 @@ for(index_e1_hf_against in 1:length(e1_teams))
 final_e1_hf_against <- as.data.frame(final_e1_hf_against)
 colnames(final_e1_hf_against) <- "Team against"
 #combine the columns
-final_e1_all <- cbind(final_e1_hf,final_e1_gs,final_e1_gc,final_e1_tg,final_e1_cs,final_e1_hf_against)
+final_e1_all <- cbind(final_e1_hf,final_e1_gs,final_e1_gc,final_e1_tg,final_e1_cs,final_e1_wm,final_e1_hf_against)
 write.xlsx(final_e1_all,'Divisions/E1.xlsx',sheetName = "L6", append = TRUE)
 ###############################################################################
 #E2
@@ -753,6 +877,31 @@ for(index_e2_cs in 1:length(e2_teams))
 final_e2_cs <- as.data.frame(final_e2_cs)
 colnames(final_e2_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_e2_wm object
+final_e2_wm <- c()
+suml6_e2_wm <- c()
+for(index_e2_wm in 1:length(e2_teams))
+{
+  index_e2_wm <- row.names(e2_winmargin_h) == e2_teams[index_e2_wm]
+  form_e2_wm <- e2_winmargin_h[index_e2_wm]
+  deleted_form_e2_wm <- form_e2_wm[!form_e2_wm[] == ""]
+  l6_form_e2_wm <- tail(deleted_form_e2_wm,e2_last_n_games)
+  l6_form_e2_wm <- as.numeric(l6_form_e2_wm)
+  suml6_e2_wm[index_e2_wm] <- sum(l6_form_e2_wm)
+  suml6_e2_wm[index_e2_wm] <- paste("(",suml6_e2_wm[index_e2_wm],")",sep = "")
+  l6_form_e2_wm <- paste(l6_form_e2_wm,collapse = " ")
+  final_e2_wm[index_e2_wm] <- rbind(paste(e2_teams[index_e2_wm],l6_form_e2_wm,suml6_e2_wm[index_e2_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e2_teams[index],l6_form)
+
+}
+final_e2_wm
+#change column names
+final_e2_wm <- as.data.frame(final_e2_wm)
+colnames(final_e2_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_e2_hf_against
 final_e2_hf_against <- c()
@@ -770,7 +919,7 @@ for(index_e2_hf_against in 1:length(e2_teams))
 final_e2_hf_against <- as.data.frame(final_e2_hf_against)
 colnames(final_e2_hf_against) <- "Team against"
 #combine the columns
-final_e2_all <- cbind(final_e2_hf,final_e2_gs,final_e2_gc,final_e2_tg,final_e2_cs,final_e2_hf_against)
+final_e2_all <- cbind(final_e2_hf,final_e2_gs,final_e2_gc,final_e2_tg,final_e2_cs,final_e2_wm,final_e2_hf_against)
 write.xlsx(final_e2_all,'Divisions/E2.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #E3
@@ -877,6 +1026,31 @@ for(index_e3_cs in 1:length(e3_teams))
 final_e3_cs <- as.data.frame(final_e3_cs)
 colnames(final_e3_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_e3_wm object
+final_e3_wm <- c()
+suml6_e3_wm <- c()
+for(index_e3_wm in 1:length(e3_teams))
+{
+  index_e3_wm <- row.names(e3_winmargin_h) == e3_teams[index_e3_wm]
+  form_e3_wm <- e3_winmargin_h[index_e3_wm]
+  deleted_form_e3_wm <- form_e3_wm[!form_e3_wm[] == ""]
+  l6_form_e3_wm <- tail(deleted_form_e3_wm,e3_last_n_games)
+  l6_form_e3_wm <- as.numeric(l6_form_e3_wm)
+  suml6_e3_wm[index_e3_wm] <- sum(l6_form_e3_wm)
+  suml6_e3_wm[index_e3_wm] <- paste("(",suml6_e3_wm[index_e3_wm],")",sep = "")
+  l6_form_e3_wm <- paste(l6_form_e3_wm,collapse = " ")
+  final_e3_wm[index_e3_wm] <- rbind(paste(e3_teams[index_e3_wm],l6_form_e3_wm,suml6_e3_wm[index_e3_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e3_teams[index],l6_form)
+
+}
+final_e3_wm
+#change column names
+final_e3_wm <- as.data.frame(final_e3_wm)
+colnames(final_e3_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_e3_hf_against
 final_e3_hf_against <- c()
@@ -894,7 +1068,7 @@ for(index_e3_hf_against in 1:length(e3_teams))
 final_e3_hf_against <- as.data.frame(final_e3_hf_against)
 colnames(final_e3_hf_against) <- "Team against"
 #combine the columns
-final_e3_all <- cbind(final_e3_hf,final_e3_gs,final_e3_gc,final_e3_tg,final_e3_cs,final_e3_hf_against)
+final_e3_all <- cbind(final_e3_hf,final_e3_gs,final_e3_gc,final_e3_tg,final_e3_cs,final_e3_wm,final_e3_hf_against)
 write.xlsx(final_e3_all,'Divisions/E3.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #EC
@@ -1001,6 +1175,31 @@ for(index_ec_cs in 1:length(ec_teams))
 final_ec_cs <- as.data.frame(final_ec_cs)
 colnames(final_ec_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_ec_wm object
+final_ec_wm <- c()
+suml6_ec_wm <- c()
+for(index_ec_wm in 1:length(ec_teams))
+{
+  index_ec_wm <- row.names(ec_winmargin_h) == ec_teams[index_ec_wm]
+  form_ec_wm <- ec_winmargin_h[index_ec_wm]
+  deleted_form_ec_wm <- form_ec_wm[!form_ec_wm[] == ""]
+  l6_form_ec_wm <- tail(deleted_form_ec_wm,ec_last_n_games)
+  l6_form_ec_wm <- as.numeric(l6_form_ec_wm)
+  suml6_ec_wm[index_ec_wm] <- sum(l6_form_ec_wm)
+  suml6_ec_wm[index_ec_wm] <- paste("(",suml6_ec_wm[index_ec_wm],")",sep = "")
+  l6_form_ec_wm <- paste(l6_form_ec_wm,collapse = " ")
+  final_ec_wm[index_ec_wm] <- rbind(paste(ec_teams[index_ec_wm],l6_form_ec_wm,suml6_ec_wm[index_ec_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ec_teams[index],l6_form)
+
+}
+final_ec_wm
+#change column names
+final_ec_wm <- as.data.frame(final_ec_wm)
+colnames(final_ec_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_ec_hf_against
 final_ec_hf_against <- c()
@@ -1018,7 +1217,7 @@ for(index_ec_hf_against in 1:length(ec_teams))
 final_ec_hf_against <- as.data.frame(final_ec_hf_against)
 colnames(final_ec_hf_against) <- "Team against"
 #combine the columns
-final_ec_all <- cbind(final_ec_hf,final_ec_gs,final_ec_gc,final_ec_tg,final_ec_cs,final_ec_hf_against)
+final_ec_all <- cbind(final_ec_hf,final_ec_gs,final_ec_gc,final_ec_tg,final_ec_cs,final_ec_wm,final_ec_hf_against)
 write.xlsx(final_ec_all,'Divisions/EC.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #F1
@@ -1125,6 +1324,31 @@ for(index_f1_cs in 1:length(f1_teams))
 final_f1_cs <- as.data.frame(final_f1_cs)
 colnames(final_f1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_f1_wm object
+final_f1_wm <- c()
+suml6_f1_wm <- c()
+for(index_f1_wm in 1:length(f1_teams))
+{
+  index_f1_wm <- row.names(f1_winmargin_h) == f1_teams[index_f1_wm]
+  form_f1_wm <- f1_winmargin_h[index_f1_wm]
+  deleted_form_f1_wm <- form_f1_wm[!form_f1_wm[] == ""]
+  l6_form_f1_wm <- tail(deleted_form_f1_wm,f1_last_n_games)
+  l6_form_f1_wm <- as.numeric(l6_form_f1_wm)
+  suml6_f1_wm[index_f1_wm] <- sum(l6_form_f1_wm)
+  suml6_f1_wm[index_f1_wm] <- paste("(",suml6_f1_wm[index_f1_wm],")",sep = "")
+  l6_form_f1_wm <- paste(l6_form_f1_wm,collapse = " ")
+  final_f1_wm[index_f1_wm] <- rbind(paste(f1_teams[index_f1_wm],l6_form_f1_wm,suml6_f1_wm[index_f1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",f1_teams[index],l6_form)
+
+}
+final_f1_wm
+#change column names
+final_f1_wm <- as.data.frame(final_f1_wm)
+colnames(final_f1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_f1_hf_against
 final_f1_hf_against <- c()
@@ -1142,7 +1366,7 @@ for(index_f1_hf_against in 1:length(f1_teams))
 final_f1_hf_against <- as.data.frame(final_f1_hf_against)
 colnames(final_f1_hf_against) <- "Team against"
 #combine the columns
-final_f1_all <- cbind(final_f1_hf,final_f1_gs,final_f1_gc,final_f1_tg,final_f1_cs,final_f1_hf_against)
+final_f1_all <- cbind(final_f1_hf,final_f1_gs,final_f1_gc,final_f1_tg,final_f1_cs,final_f1_wm,final_f1_hf_against)
 write.xlsx(final_f1_all,'Divisions/F1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 ################################################################################
@@ -1250,6 +1474,31 @@ for(index_f2_cs in 1:length(f2_teams))
 final_f2_cs <- as.data.frame(final_f2_cs)
 colnames(final_f2_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_f2_wm object
+final_f2_wm <- c()
+suml6_f2_wm <- c()
+for(index_f2_wm in 1:length(f2_teams))
+{
+  index_f2_wm <- row.names(f2_winmargin_h) == f2_teams[index_f2_wm]
+  form_f2_wm <- f2_winmargin_h[index_f2_wm]
+  deleted_form_f2_wm <- form_f2_wm[!form_f2_wm[] == ""]
+  l6_form_f2_wm <- tail(deleted_form_f2_wm,f2_last_n_games)
+  l6_form_f2_wm <- as.numeric(l6_form_f2_wm)
+  suml6_f2_wm[index_f2_wm] <- sum(l6_form_f2_wm)
+  suml6_f2_wm[index_f2_wm] <- paste("(",suml6_f2_wm[index_f2_wm],")",sep = "")
+  l6_form_f2_wm <- paste(l6_form_f2_wm,collapse = " ")
+  final_f2_wm[index_f2_wm] <- rbind(paste(f2_teams[index_f2_wm],l6_form_f2_wm,suml6_f2_wm[index_f2_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",f2_teams[index],l6_form)
+
+}
+final_f2_wm
+#change column names
+final_f2_wm <- as.data.frame(final_f2_wm)
+colnames(final_f2_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_f2_hf_against
 final_f2_hf_against <- c()
@@ -1267,7 +1516,7 @@ for(index_f2_hf_against in 1:length(f2_teams))
 final_f2_hf_against <- as.data.frame(final_f2_hf_against)
 colnames(final_f2_hf_against) <- "Team against"
 #combine the columns
-final_f2_all <- cbind(final_f2_hf,final_f2_gs,final_f2_gc,final_f2_tg,final_f2_cs,final_f2_hf_against)
+final_f2_all <- cbind(final_f2_hf,final_f2_gs,final_f2_gc,final_f2_tg,final_f2_cs,final_f2_wm,final_f2_hf_against)
 write.xlsx(final_f2_all,'Divisions/F2.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #G1
@@ -1374,6 +1623,31 @@ for(index_g1_cs in 1:length(g1_teams))
 final_g1_cs <- as.data.frame(final_g1_cs)
 colnames(final_g1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_g1_wm object
+final_g1_wm <- c()
+suml6_g1_wm <- c()
+for(index_g1_wm in 1:length(g1_teams))
+{
+  index_g1_wm <- row.names(g1_winmargin_h) == g1_teams[index_g1_wm]
+  form_g1_wm <- g1_winmargin_h[index_g1_wm]
+  deleted_form_g1_wm <- form_g1_wm[!form_g1_wm[] == ""]
+  l6_form_g1_wm <- tail(deleted_form_g1_wm,g1_last_n_games)
+  l6_form_g1_wm <- as.numeric(l6_form_g1_wm)
+  suml6_g1_wm[index_g1_wm] <- sum(l6_form_g1_wm)
+  suml6_g1_wm[index_g1_wm] <- paste("(",suml6_g1_wm[index_g1_wm],")",sep = "")
+  l6_form_g1_wm <- paste(l6_form_g1_wm,collapse = " ")
+  final_g1_wm[index_g1_wm] <- rbind(paste(g1_teams[index_g1_wm],l6_form_g1_wm,suml6_g1_wm[index_g1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",g1_teams[index],l6_form)
+
+}
+final_g1_wm
+#change column names
+final_g1_wm <- as.data.frame(final_g1_wm)
+colnames(final_g1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_g1_hf_against
 final_g1_hf_against <- c()
@@ -1391,7 +1665,7 @@ for(index_g1_hf_against in 1:length(g1_teams))
 final_g1_hf_against <- as.data.frame(final_g1_hf_against)
 colnames(final_g1_hf_against) <- "Team against"
 #combine the columns
-final_g1_all <- cbind(final_g1_hf,final_g1_gs,final_g1_gc,final_g1_tg,final_g1_cs,final_g1_hf_against)
+final_g1_all <- cbind(final_g1_hf,final_g1_gs,final_g1_gc,final_g1_tg,final_g1_cs,final_g1_wm,final_g1_hf_against)
 write.xlsx(final_g1_all,'Divisions/G1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #I1
@@ -1498,6 +1772,31 @@ for(index_i1_cs in 1:length(i1_teams))
 final_i1_cs <- as.data.frame(final_i1_cs)
 colnames(final_i1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_i1_wm object
+final_i1_wm <- c()
+suml6_i1_wm <- c()
+for(index_i1_wm in 1:length(i1_teams))
+{
+  index_i1_wm <- row.names(i1_winmargin_h) == i1_teams[index_i1_wm]
+  form_i1_wm <- i1_winmargin_h[index_i1_wm]
+  deleted_form_i1_wm <- form_i1_wm[!form_i1_wm[] == ""]
+  l6_form_i1_wm <- tail(deleted_form_i1_wm,i1_last_n_games)
+  l6_form_i1_wm <- as.numeric(l6_form_i1_wm)
+  suml6_i1_wm[index_i1_wm] <- sum(l6_form_i1_wm)
+  suml6_i1_wm[index_i1_wm] <- paste("(",suml6_i1_wm[index_i1_wm],")",sep = "")
+  l6_form_i1_wm <- paste(l6_form_i1_wm,collapse = " ")
+  final_i1_wm[index_i1_wm] <- rbind(paste(i1_teams[index_i1_wm],l6_form_i1_wm,suml6_i1_wm[index_i1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",i1_teams[index],l6_form)
+
+}
+final_i1_wm
+#change column names
+final_i1_wm <- as.data.frame(final_i1_wm)
+colnames(final_i1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_i1_hf_against
 final_i1_hf_against <- c()
@@ -1515,7 +1814,7 @@ for(index_i1_hf_against in 1:length(i1_teams))
 final_i1_hf_against <- as.data.frame(final_i1_hf_against)
 colnames(final_i1_hf_against) <- "Team against"
 #combine the columns
-final_i1_all <- cbind(final_i1_hf,final_i1_gs,final_i1_gc,final_i1_tg,final_i1_cs,final_i1_hf_against)
+final_i1_all <- cbind(final_i1_hf,final_i1_gs,final_i1_gc,final_i1_tg,final_i1_cs,final_i1_wm,final_i1_hf_against)
 write.xlsx(final_i1_all,'Divisions/I1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #I2
@@ -1622,6 +1921,31 @@ for(index_i2_cs in 1:length(i2_teams))
 final_i2_cs <- as.data.frame(final_i2_cs)
 colnames(final_i2_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_i2_wm object
+final_i2_wm <- c()
+suml6_i2_wm <- c()
+for(index_i2_wm in 1:length(i2_teams))
+{
+  index_i2_wm <- row.names(i2_winmargin_h) == i2_teams[index_i2_wm]
+  form_i2_wm <- i2_winmargin_h[index_i2_wm]
+  deleted_form_i2_wm <- form_i2_wm[!form_i2_wm[] == ""]
+  l6_form_i2_wm <- tail(deleted_form_i2_wm,i2_last_n_games)
+  l6_form_i2_wm <- as.numeric(l6_form_i2_wm)
+  suml6_i2_wm[index_i2_wm] <- sum(l6_form_i2_wm)
+  suml6_i2_wm[index_i2_wm] <- paste("(",suml6_i2_wm[index_i2_wm],")",sep = "")
+  l6_form_i2_wm <- paste(l6_form_i2_wm,collapse = " ")
+  final_i2_wm[index_i2_wm] <- rbind(paste(i2_teams[index_i2_wm],l6_form_i2_wm,suml6_i2_wm[index_i2_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",i2_teams[index],l6_form)
+
+}
+final_i2_wm
+#change column names
+final_i2_wm <- as.data.frame(final_i2_wm)
+colnames(final_i2_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_i2_hf_against
 final_i2_hf_against <- c()
@@ -1639,7 +1963,7 @@ for(index_i2_hf_against in 1:length(i2_teams))
 final_i2_hf_against <- as.data.frame(final_i2_hf_against)
 colnames(final_i2_hf_against) <- "Team against"
 #combine the columns
-final_i2_all <- cbind(final_i2_hf,final_i2_gs,final_i2_gc,final_i2_tg,final_i2_cs,final_i2_hf_against)
+final_i2_all <- cbind(final_i2_hf,final_i2_gs,final_i2_gc,final_i2_tg,final_i2_cs,final_i2_wm,final_i2_hf_against)
 write.xlsx(final_i2_all,'Divisions/I2.xlsx',sheetName = "L6", append = TRUE)
 ###############################################################################
 #N1
@@ -1746,6 +2070,31 @@ for(index_n1_cs in 1:length(n1_teams))
 final_n1_cs <- as.data.frame(final_n1_cs)
 colnames(final_n1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_n1_wm object
+final_n1_wm <- c()
+suml6_n1_wm <- c()
+for(index_n1_wm in 1:length(n1_teams))
+{
+  index_n1_wm <- row.names(n1_winmargin_h) == n1_teams[index_n1_wm]
+  form_n1_wm <- n1_winmargin_h[index_n1_wm]
+  deleted_form_n1_wm <- form_n1_wm[!form_n1_wm[] == ""]
+  l6_form_n1_wm <- tail(deleted_form_n1_wm,n1_last_n_games)
+  l6_form_n1_wm <- as.numeric(l6_form_n1_wm)
+  suml6_n1_wm[index_n1_wm] <- sum(l6_form_n1_wm)
+  suml6_n1_wm[index_n1_wm] <- paste("(",suml6_n1_wm[index_n1_wm],")",sep = "")
+  l6_form_n1_wm <- paste(l6_form_n1_wm,collapse = " ")
+  final_n1_wm[index_n1_wm] <- rbind(paste(n1_teams[index_n1_wm],l6_form_n1_wm,suml6_n1_wm[index_n1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",n1_teams[index],l6_form)
+
+}
+final_n1_wm
+#change column names
+final_n1_wm <- as.data.frame(final_n1_wm)
+colnames(final_n1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_n1_hf_against
 final_n1_hf_against <- c()
@@ -1763,7 +2112,7 @@ for(index_n1_hf_against in 1:length(n1_teams))
 final_n1_hf_against <- as.data.frame(final_n1_hf_against)
 colnames(final_n1_hf_against) <- "Team against"
 #combine the columns
-final_n1_all <- cbind(final_n1_hf,final_n1_gs,final_n1_gc,final_n1_tg,final_n1_cs,final_n1_hf_against)
+final_n1_all <- cbind(final_n1_hf,final_n1_gs,final_n1_gc,final_n1_tg,final_n1_cs,final_n1_wm,final_n1_hf_against)
 write.xlsx(final_n1_all,'Divisions/N1.xlsx',sheetName = "L6", append = TRUE)
 #################################################################################
 #P1
@@ -1870,6 +2219,31 @@ for(index_p1_cs in 1:length(p1_teams))
 final_p1_cs <- as.data.frame(final_p1_cs)
 colnames(final_p1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_p1_wm object
+final_p1_wm <- c()
+suml6_p1_wm <- c()
+for(index_p1_wm in 1:length(p1_teams))
+{
+  index_p1_wm <- row.names(p1_winmargin_h) == p1_teams[index_p1_wm]
+  form_p1_wm <- p1_winmargin_h[index_p1_wm]
+  deleted_form_p1_wm <- form_p1_wm[!form_p1_wm[] == ""]
+  l6_form_p1_wm <- tail(deleted_form_p1_wm,p1_last_n_games)
+  l6_form_p1_wm <- as.numeric(l6_form_p1_wm)
+  suml6_p1_wm[index_p1_wm] <- sum(l6_form_p1_wm)
+  suml6_p1_wm[index_p1_wm] <- paste("(",suml6_p1_wm[index_p1_wm],")",sep = "")
+  l6_form_p1_wm <- paste(l6_form_p1_wm,collapse = " ")
+  final_p1_wm[index_p1_wm] <- rbind(paste(p1_teams[index_p1_wm],l6_form_p1_wm,suml6_p1_wm[index_p1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",p1_teams[index],l6_form)
+
+}
+final_p1_wm
+#change column names
+final_p1_wm <- as.data.frame(final_p1_wm)
+colnames(final_p1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_p1_hf_against
 final_p1_hf_against <- c()
@@ -1887,7 +2261,7 @@ for(index_p1_hf_against in 1:length(p1_teams))
 final_p1_hf_against <- as.data.frame(final_p1_hf_against)
 colnames(final_p1_hf_against) <- "Team against"
 #combine the columns
-final_p1_all <- cbind(final_p1_hf,final_p1_gs,final_p1_gc,final_p1_tg,final_p1_cs,final_p1_hf_against)
+final_p1_all <- cbind(final_p1_hf,final_p1_gs,final_p1_gc,final_p1_tg,final_p1_cs,final_p1_wm,final_p1_hf_against)
 write.xlsx(final_p1_all,'Divisions/P1.xlsx',sheetName = "L6", append = TRUE)
 ########################################################################################
 #SC0
@@ -1994,6 +2368,31 @@ for(index_sc0_cs in 1:length(sc0_teams))
 final_sc0_cs <- as.data.frame(final_sc0_cs)
 colnames(final_sc0_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_sc0_wm object
+final_sc0_wm <- c()
+suml6_sc0_wm <- c()
+for(index_sc0_wm in 1:length(sc0_teams))
+{
+  index_sc0_wm <- row.names(sc0_winmargin_h) == sc0_teams[index_sc0_wm]
+  form_sc0_wm <- sc0_winmargin_h[index_sc0_wm]
+  deleted_form_sc0_wm <- form_sc0_wm[!form_sc0_wm[] == ""]
+  l6_form_sc0_wm <- tail(deleted_form_sc0_wm,sc0_last_n_games)
+  l6_form_sc0_wm <- as.numeric(l6_form_sc0_wm)
+  suml6_sc0_wm[index_sc0_wm] <- sum(l6_form_sc0_wm)
+  suml6_sc0_wm[index_sc0_wm] <- paste("(",suml6_sc0_wm[index_sc0_wm],")",sep = "")
+  l6_form_sc0_wm <- paste(l6_form_sc0_wm,collapse = " ")
+  final_sc0_wm[index_sc0_wm] <- rbind(paste(sc0_teams[index_sc0_wm],l6_form_sc0_wm,suml6_sc0_wm[index_sc0_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc0_teams[index],l6_form)
+
+}
+final_sc0_wm
+#change column names
+final_sc0_wm <- as.data.frame(final_sc0_wm)
+colnames(final_sc0_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_sc0_hf_against
 final_sc0_hf_against <- c()
@@ -2011,7 +2410,7 @@ for(index_sc0_hf_against in 1:length(sc0_teams))
 final_sc0_hf_against <- as.data.frame(final_sc0_hf_against)
 colnames(final_sc0_hf_against) <- "Team against"
 #combine the columns
-final_sc0_all <- cbind(final_sc0_hf,final_sc0_gs,final_sc0_gc,final_sc0_tg,final_sc0_cs,final_sc0_hf_against)
+final_sc0_all <- cbind(final_sc0_hf,final_sc0_gs,final_sc0_gc,final_sc0_tg,final_sc0_cs,final_sc0_wm,final_sc0_hf_against)
 write.xlsx(final_sc0_all,'Divisions/SC0.xlsx',sheetName = "L6", append = TRUE)
 ######################################################################################
 #SC1
@@ -2118,6 +2517,31 @@ for(index_sc1_cs in 1:length(sc1_teams))
 final_sc1_cs <- as.data.frame(final_sc1_cs)
 colnames(final_sc1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_sc1_wm object
+final_sc1_wm <- c()
+suml6_sc1_wm <- c()
+for(index_sc1_wm in 1:length(sc1_teams))
+{
+  index_sc1_wm <- row.names(sc1_winmargin_h) == sc1_teams[index_sc1_wm]
+  form_sc1_wm <- sc1_winmargin_h[index_sc1_wm]
+  deleted_form_sc1_wm <- form_sc1_wm[!form_sc1_wm[] == ""]
+  l6_form_sc1_wm <- tail(deleted_form_sc1_wm,sc1_last_n_games)
+  l6_form_sc1_wm <- as.numeric(l6_form_sc1_wm)
+  suml6_sc1_wm[index_sc1_wm] <- sum(l6_form_sc1_wm)
+  suml6_sc1_wm[index_sc1_wm] <- paste("(",suml6_sc1_wm[index_sc1_wm],")",sep = "")
+  l6_form_sc1_wm <- paste(l6_form_sc1_wm,collapse = " ")
+  final_sc1_wm[index_sc1_wm] <- rbind(paste(sc1_teams[index_sc1_wm],l6_form_sc1_wm,suml6_sc1_wm[index_sc1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc1_teams[index],l6_form)
+
+}
+final_sc1_wm
+#change column names
+final_sc1_wm <- as.data.frame(final_sc1_wm)
+colnames(final_sc1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_sc1_hf_against
 final_sc1_hf_against <- c()
@@ -2135,7 +2559,7 @@ for(index_sc1_hf_against in 1:length(sc1_teams))
 final_sc1_hf_against <- as.data.frame(final_sc1_hf_against)
 colnames(final_sc1_hf_against) <- "Team against"
 #combine the columns
-final_sc1_all <- cbind(final_sc1_hf,final_sc1_gs,final_sc1_gc,final_sc1_tg,final_sc1_cs,final_sc1_hf_against)
+final_sc1_all <- cbind(final_sc1_hf,final_sc1_gs,final_sc1_gc,final_sc1_tg,final_sc1_cs,final_sc1_wm,final_sc1_hf_against)
 write.xlsx(final_sc1_all,'Divisions/SC1.xlsx',sheetName = "L6", append = TRUE)
 ###################################################################################
 #SC2
@@ -2242,6 +2666,31 @@ for(index_sc2_cs in 1:length(sc2_teams))
 final_sc2_cs <- as.data.frame(final_sc2_cs)
 colnames(final_sc2_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_sc2_wm object
+final_sc2_wm <- c()
+suml6_sc2_wm <- c()
+for(index_sc2_wm in 1:length(sc2_teams))
+{
+  index_sc2_wm <- row.names(sc2_winmargin_h) == sc2_teams[index_sc2_wm]
+  form_sc2_wm <- sc2_winmargin_h[index_sc2_wm]
+  deleted_form_sc2_wm <- form_sc2_wm[!form_sc2_wm[] == ""]
+  l6_form_sc2_wm <- tail(deleted_form_sc2_wm,sc2_last_n_games)
+  l6_form_sc2_wm <- as.numeric(l6_form_sc2_wm)
+  suml6_sc2_wm[index_sc2_wm] <- sum(l6_form_sc2_wm)
+  suml6_sc2_wm[index_sc2_wm] <- paste("(",suml6_sc2_wm[index_sc2_wm],")",sep = "")
+  l6_form_sc2_wm <- paste(l6_form_sc2_wm,collapse = " ")
+  final_sc2_wm[index_sc2_wm] <- rbind(paste(sc2_teams[index_sc2_wm],l6_form_sc2_wm,suml6_sc2_wm[index_sc2_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc2_teams[index],l6_form)
+
+}
+final_sc2_wm
+#change column names
+final_sc2_wm <- as.data.frame(final_sc2_wm)
+colnames(final_sc2_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_sc2_hf_against
 final_sc2_hf_against <- c()
@@ -2259,7 +2708,7 @@ for(index_sc2_hf_against in 1:length(sc2_teams))
 final_sc2_hf_against <- as.data.frame(final_sc2_hf_against)
 colnames(final_sc2_hf_against) <- "Team against"
 #combine the columns
-final_sc2_all <- cbind(final_sc2_hf,final_sc2_gs,final_sc2_gc,final_sc2_tg,final_sc2_cs,final_sc2_hf_against)
+final_sc2_all <- cbind(final_sc2_hf,final_sc2_gs,final_sc2_gc,final_sc2_tg,final_sc2_cs,final_sc2_wm,final_sc2_hf_against)
 write.xlsx(final_sc2_all,'Divisions/SC2.xlsx',sheetName = "L6", append = TRUE)
 #####################################################################################
 #SC3
@@ -2366,6 +2815,31 @@ for(index_sc3_cs in 1:length(sc3_teams))
 final_sc3_cs <- as.data.frame(final_sc3_cs)
 colnames(final_sc3_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_sc3_wm object
+final_sc3_wm <- c()
+suml6_sc3_wm <- c()
+for(index_sc3_wm in 1:length(sc3_teams))
+{
+  index_sc3_wm <- row.names(sc3_winmargin_h) == sc3_teams[index_sc3_wm]
+  form_sc3_wm <- sc3_winmargin_h[index_sc3_wm]
+  deleted_form_sc3_wm <- form_sc3_wm[!form_sc3_wm[] == ""]
+  l6_form_sc3_wm <- tail(deleted_form_sc3_wm,sc3_last_n_games)
+  l6_form_sc3_wm <- as.numeric(l6_form_sc3_wm)
+  suml6_sc3_wm[index_sc3_wm] <- sum(l6_form_sc3_wm)
+  suml6_sc3_wm[index_sc3_wm] <- paste("(",suml6_sc3_wm[index_sc3_wm],")",sep = "")
+  l6_form_sc3_wm <- paste(l6_form_sc3_wm,collapse = " ")
+  final_sc3_wm[index_sc3_wm] <- rbind(paste(sc3_teams[index_sc3_wm],l6_form_sc3_wm,suml6_sc3_wm[index_sc3_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc3_teams[index],l6_form)
+
+}
+final_sc3_wm
+#change column names
+final_sc3_wm <- as.data.frame(final_sc3_wm)
+colnames(final_sc3_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_sc3_hf_against
 final_sc3_hf_against <- c()
@@ -2383,7 +2857,7 @@ for(index_sc3_hf_against in 1:length(sc3_teams))
 final_sc3_hf_against <- as.data.frame(final_sc3_hf_against)
 colnames(final_sc3_hf_against) <- "Team against"
 #combine the columns
-final_sc3_all <- cbind(final_sc3_hf,final_sc3_gs,final_sc3_gc,final_sc3_tg,final_sc3_cs,final_sc3_hf_against)
+final_sc3_all <- cbind(final_sc3_hf,final_sc3_gs,final_sc3_gc,final_sc3_tg,final_sc3_cs,final_sc3_wm,final_sc3_hf_against)
 write.xlsx(final_sc3_all,'Divisions/SC3.xlsx',sheetName = "L6", append = TRUE)
 ######################################################################################
 #SP1
@@ -2490,6 +2964,31 @@ for(index_sp1_cs in 1:length(sp1_teams))
 final_sp1_cs <- as.data.frame(final_sp1_cs)
 colnames(final_sp1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_sp1_wm object
+final_sp1_wm <- c()
+suml6_sp1_wm <- c()
+for(index_sp1_wm in 1:length(sp1_teams))
+{
+  index_sp1_wm <- row.names(sp1_winmargin_h) == sp1_teams[index_sp1_wm]
+  form_sp1_wm <- sp1_winmargin_h[index_sp1_wm]
+  deleted_form_sp1_wm <- form_sp1_wm[!form_sp1_wm[] == ""]
+  l6_form_sp1_wm <- tail(deleted_form_sp1_wm,sp1_last_n_games)
+  l6_form_sp1_wm <- as.numeric(l6_form_sp1_wm)
+  suml6_sp1_wm[index_sp1_wm] <- sum(l6_form_sp1_wm)
+  suml6_sp1_wm[index_sp1_wm] <- paste("(",suml6_sp1_wm[index_sp1_wm],")",sep = "")
+  l6_form_sp1_wm <- paste(l6_form_sp1_wm,collapse = " ")
+  final_sp1_wm[index_sp1_wm] <- rbind(paste(sp1_teams[index_sp1_wm],l6_form_sp1_wm,suml6_sp1_wm[index_sp1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sp1_teams[index],l6_form)
+
+}
+final_sp1_wm
+#change column names
+final_sp1_wm <- as.data.frame(final_sp1_wm)
+colnames(final_sp1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_sp1_hf_against
 final_sp1_hf_against <- c()
@@ -2507,7 +3006,7 @@ for(index_sp1_hf_against in 1:length(sp1_teams))
 final_sp1_hf_against <- as.data.frame(final_sp1_hf_against)
 colnames(final_sp1_hf_against) <- "Team against"
 #combine the columns
-final_sp1_all <- cbind(final_sp1_hf,final_sp1_gs,final_sp1_gc,final_sp1_tg,final_sp1_cs,final_sp1_hf_against)
+final_sp1_all <- cbind(final_sp1_hf,final_sp1_gs,final_sp1_gc,final_sp1_tg,final_sp1_cs,final_sp1_wm,final_sp1_hf_against)
 write.xlsx(final_sp1_all,'Divisions/SP1.xlsx',sheetName = "L6", append = TRUE)
 #####################################################################################
 #SP2
@@ -2614,6 +3113,31 @@ for(index_sp2_cs in 1:length(sp2_teams))
 final_sp2_cs <- as.data.frame(final_sp2_cs)
 colnames(final_sp2_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_sp2_wm object
+final_sp2_wm <- c()
+suml6_sp2_wm <- c()
+for(index_sp2_wm in 1:length(sp2_teams))
+{
+  index_sp2_wm <- row.names(sp2_winmargin_h) == sp2_teams[index_sp2_wm]
+  form_sp2_wm <- sp2_winmargin_h[index_sp2_wm]
+  deleted_form_sp2_wm <- form_sp2_wm[!form_sp2_wm[] == ""]
+  l6_form_sp2_wm <- tail(deleted_form_sp2_wm,sp2_last_n_games)
+  l6_form_sp2_wm <- as.numeric(l6_form_sp2_wm)
+  suml6_sp2_wm[index_sp2_wm] <- sum(l6_form_sp2_wm)
+  suml6_sp2_wm[index_sp2_wm] <- paste("(",suml6_sp2_wm[index_sp2_wm],")",sep = "")
+  l6_form_sp2_wm <- paste(l6_form_sp2_wm,collapse = " ")
+  final_sp2_wm[index_sp2_wm] <- rbind(paste(sp2_teams[index_sp2_wm],l6_form_sp2_wm,suml6_sp2_wm[index_sp2_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sp2_teams[index],l6_form)
+
+}
+final_sp2_wm
+#change column names
+final_sp2_wm <- as.data.frame(final_sp2_wm)
+colnames(final_sp2_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_sp2_hf_against
 final_sp2_hf_against <- c()
@@ -2631,7 +3155,7 @@ for(index_sp2_hf_against in 1:length(sp2_teams))
 final_sp2_hf_against <- as.data.frame(final_sp2_hf_against)
 colnames(final_sp2_hf_against) <- "Team against"
 #combine the columns
-final_sp2_all <- cbind(final_sp2_hf,final_sp2_gs,final_sp2_gc,final_sp2_tg,final_sp2_cs,final_sp2_hf_against)
+final_sp2_all <- cbind(final_sp2_hf,final_sp2_gs,final_sp2_gc,final_sp2_tg,final_sp2_cs,final_sp2_wm,final_sp2_hf_against)
 write.xlsx(final_sp2_all,'Divisions/SP2.xlsx',sheetName = "L6", append = TRUE)
 ####################################################################################################
 #T1
@@ -2738,6 +3262,31 @@ for(index_t1_cs in 1:length(t1_teams))
 final_t1_cs <- as.data.frame(final_t1_cs)
 colnames(final_t1_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_t1_wm object
+final_t1_wm <- c()
+suml6_t1_wm <- c()
+for(index_t1_wm in 1:length(t1_teams))
+{
+  index_t1_wm <- row.names(t1_winmargin_h) == t1_teams[index_t1_wm]
+  form_t1_wm <- t1_winmargin_h[index_t1_wm]
+  deleted_form_t1_wm <- form_t1_wm[!form_t1_wm[] == ""]
+  l6_form_t1_wm <- tail(deleted_form_t1_wm,t1_last_n_games)
+  l6_form_t1_wm <- as.numeric(l6_form_t1_wm)
+  suml6_t1_wm[index_t1_wm] <- sum(l6_form_t1_wm)
+  suml6_t1_wm[index_t1_wm] <- paste("(",suml6_t1_wm[index_t1_wm],")",sep = "")
+  l6_form_t1_wm <- paste(l6_form_t1_wm,collapse = " ")
+  final_t1_wm[index_t1_wm] <- rbind(paste(t1_teams[index_t1_wm],l6_form_t1_wm,suml6_t1_wm[index_t1_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",t1_teams[index],l6_form)
+
+}
+final_t1_wm
+#change column names
+final_t1_wm <- as.data.frame(final_t1_wm)
+colnames(final_t1_wm) <- "Win Margin"
+#################################################
 #Team against
 #create final_t1_hf_against
 final_t1_hf_against <- c()
@@ -2755,7 +3304,7 @@ for(index_t1_hf_against in 1:length(t1_teams))
 final_t1_hf_against <- as.data.frame(final_t1_hf_against)
 colnames(final_t1_hf_against) <- "Team against"
 #combine the columns
-final_t1_all <- cbind(final_t1_hf,final_t1_gs,final_t1_gc,final_t1_tg,final_t1_cs,final_t1_hf_against)
+final_t1_all <- cbind(final_t1_hf,final_t1_gs,final_t1_gc,final_t1_tg,final_t1_cs,final_t1_wm,final_t1_hf_against)
 write.xlsx(final_t1_all,'Divisions/T1.xlsx',sheetName = "L6", append = TRUE)
 
 

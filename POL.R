@@ -154,6 +154,25 @@ for(pol_rowh_f_against in 1:nrow(pol_form_team_against_h)) {
 
   }
 }
+#######################################################################
+#win margin
+pol_winmargin_h <- tapply(POL$HG - POL$AG, POL[c("Home", "Date")],mean)
+pol_winmargin_a <- tapply(POL$AG - POL$HG, POL[c("Away", "Date")],mean)
+pol_winmargin_h[is.na(pol_winmargin_h)] <- ""
+#
+for(pol_rowhwm in 1:nrow(pol_winmargin_h)) {
+  for(pol_colhwm in 1:ncol(pol_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(pol_rowawm in 1:nrow(pol_winmargin_a)) {
+      for(pol_colawm in 1:ncol(pol_winmargin_a)) {
+        ifelse(!pol_winmargin_a[pol_rowawm,pol_colawm]=="",pol_winmargin_h[pol_rowawm,pol_colawm] <- pol_winmargin_a[pol_rowawm,pol_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
 ####################################################################################################################
 ##########Goals over under############
 #POL
@@ -373,7 +392,7 @@ write.xlsx(points_pol,'POL.xlsx',sheetName = "table", append = TRUE)
 #POL
 #form
 #create final_pol_hf object
-pol_last_n_games <- 6
+#pol_last_n_games <- 6
 final_pol_hf <- c()
 for(index_pol_hf in 1:length(pol_teams))
 {
@@ -475,6 +494,31 @@ for(index_pol_cs in 1:length(pol_teams))
 final_pol_cs <- as.data.frame(final_pol_cs)
 colnames(final_pol_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_pol_wm object
+final_pol_wm <- c()
+suml6_pol_wm <- c()
+for(index_pol_wm in 1:length(pol_teams))
+{
+  index_pol_wm <- row.names(pol_winmargin_h) == pol_teams[index_pol_wm]
+  form_pol_wm <- pol_winmargin_h[index_pol_wm]
+  deleted_form_pol_wm <- form_pol_wm[!form_pol_wm[] == ""]
+  l6_form_pol_wm <- tail(deleted_form_pol_wm,pol_last_n_games)
+  l6_form_pol_wm <- as.numeric(l6_form_pol_wm)
+  suml6_pol_wm[index_pol_wm] <- sum(l6_form_pol_wm)
+  suml6_pol_wm[index_pol_wm] <- paste("(",suml6_pol_wm[index_pol_wm],")",sep = "")
+  l6_form_pol_wm <- paste(l6_form_pol_wm,collapse = " ")
+  final_pol_wm[index_pol_wm] <- rbind(paste(pol_teams[index_pol_wm],l6_form_pol_wm,suml6_pol_wm[index_pol_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",pol_teams[index],l6_form)
+
+}
+final_pol_wm
+#change column names
+final_pol_wm <- as.data.frame(final_pol_wm)
+colnames(final_pol_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_pol_hf_against
 final_pol_hf_against <- c()
@@ -492,7 +536,7 @@ for(index_pol_hf_against in 1:length(pol_teams))
 final_pol_hf_against <- as.data.frame(final_pol_hf_against)
 colnames(final_pol_hf_against) <- "Team against"
 #combine the columns
-final_pol_all <- cbind(final_pol_hf,final_pol_gs,final_pol_gc,final_pol_tg,final_pol_cs,final_pol_hf_against)
+final_pol_all <- cbind(final_pol_hf,final_pol_gs,final_pol_gc,final_pol_tg,final_pol_cs,final_pol_wm,final_pol_hf_against)
 write.xlsx(final_pol_all,'POL.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

@@ -156,6 +156,26 @@ for(swz_rowh_f_against in 1:nrow(swz_form_team_against_h)) {
 
   }
 }
+#######################################################################
+#win margin
+swz_winmargin_h <- tapply(SWZ$HG - SWZ$AG, SWZ[c("Home", "Date")],mean)
+swz_winmargin_a <- tapply(SWZ$AG - SWZ$HG, SWZ[c("Away", "Date")],mean)
+swz_winmargin_h[is.na(swz_winmargin_h)] <- ""
+#
+for(swz_rowhwm in 1:nrow(swz_winmargin_h)) {
+  for(swz_colhwm in 1:ncol(swz_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(swz_rowawm in 1:nrow(swz_winmargin_a)) {
+      for(swz_colawm in 1:ncol(swz_winmargin_a)) {
+        ifelse(!swz_winmargin_a[swz_rowawm,swz_colawm]=="",swz_winmargin_h[swz_rowawm,swz_colawm] <- swz_winmargin_a[swz_rowawm,swz_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+##
 ####################################################################################################################
 ##########Goals over under############
 #SWZ
@@ -375,7 +395,7 @@ write.xlsx(points_swz,'SWZ.xlsx',sheetName = "table", append = TRUE)
 #SWZ
 #form
 #create final_swz_hf object
-swz_last_n_games <- 6
+#swz_last_n_games <- 6
 final_swz_hf <- c()
 for(index_swz_hf in 1:length(swz_teams))
 {
@@ -477,6 +497,31 @@ for(index_swz_cs in 1:length(swz_teams))
 final_swz_cs <- as.data.frame(final_swz_cs)
 colnames(final_swz_cs) <- "CSForm"
 #################################################
+################################################
+#Win Margin
+#goals scored
+#create final_swz_wm object
+final_swz_wm <- c()
+suml6_swz_wm <- c()
+for(index_swz_wm in 1:length(swz_teams))
+{
+  index_swz_wm <- row.names(swz_winmargin_h) == swz_teams[index_swz_wm]
+  form_swz_wm <- swz_winmargin_h[index_swz_wm]
+  deleted_form_swz_wm <- form_swz_wm[!form_swz_wm[] == ""]
+  l6_form_swz_wm <- tail(deleted_form_swz_wm,swz_last_n_games)
+  l6_form_swz_wm <- as.numeric(l6_form_swz_wm)
+  suml6_swz_wm[index_swz_wm] <- sum(l6_form_swz_wm)
+  suml6_swz_wm[index_swz_wm] <- paste("(",suml6_swz_wm[index_swz_wm],")",sep = "")
+  l6_form_swz_wm <- paste(l6_form_swz_wm,collapse = " ")
+  final_swz_wm[index_swz_wm] <- rbind(paste(swz_teams[index_swz_wm],l6_form_swz_wm,suml6_swz_wm[index_swz_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",swz_teams[index],l6_form)
+
+}
+final_swz_wm
+#change column names
+final_swz_wm <- as.data.frame(final_swz_wm)
+colnames(final_swz_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_swz_hf_against
 final_swz_hf_against <- c()
@@ -494,7 +539,7 @@ for(index_swz_hf_against in 1:length(swz_teams))
 final_swz_hf_against <- as.data.frame(final_swz_hf_against)
 colnames(final_swz_hf_against) <- "Team against"
 #combine the columns
-final_swz_all <- cbind(final_swz_hf,final_swz_gs,final_swz_gc,final_swz_tg,final_swz_cs,final_swz_hf_against)
+final_swz_all <- cbind(final_swz_hf,final_swz_gs,final_swz_gc,final_swz_tg,final_swz_cs,final_swz_wm,final_swz_hf_against)
 write.xlsx(final_swz_all,'SWZ.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

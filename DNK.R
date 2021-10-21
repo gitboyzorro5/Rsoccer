@@ -155,6 +155,25 @@ for(dnk_rowh_f_against in 1:nrow(dnk_form_team_against_h)) {
 
   }
 }
+#win margin
+dnk_winmargin_h <- tapply(DNK$HG - DNK$AG, DNK[c("Home", "Date")],mean)
+dnk_winmargin_a <- tapply(DNK$AG - DNK$HG, DNK[c("Away", "Date")],mean)
+dnk_winmargin_h[is.na(dnk_winmargin_h)] <- ""
+#
+for(dnk_rowhwm in 1:nrow(dnk_winmargin_h)) {
+  for(dnk_colhwm in 1:ncol(dnk_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(dnk_rowawm in 1:nrow(dnk_winmargin_a)) {
+      for(dnk_colawm in 1:ncol(dnk_winmargin_a)) {
+        ifelse(!dnk_winmargin_a[dnk_rowawm,dnk_colawm]=="",dnk_winmargin_h[dnk_rowawm,dnk_colawm] <- dnk_winmargin_a[dnk_rowawm,dnk_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #DNK
@@ -374,7 +393,7 @@ write.xlsx(points_dnk,'DNK.xlsx',sheetName = "table", append = TRUE)
 #DNK
 #form
 #create final_dnk_hf object
-dnk_last_n_games <- 6
+#dnk_last_n_games <- 6
 final_dnk_hf <- c()
 for(index_dnk_hf in 1:length(dnk_teams))
 {
@@ -476,6 +495,31 @@ for(index_dnk_cs in 1:length(dnk_teams))
 final_dnk_cs <- as.data.frame(final_dnk_cs)
 colnames(final_dnk_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_dnk_wm object
+final_dnk_wm <- c()
+suml6_dnk_wm <- c()
+for(index_dnk_wm in 1:length(dnk_teams))
+{
+  index_dnk_wm <- row.names(dnk_winmargin_h) == dnk_teams[index_dnk_wm]
+  form_dnk_wm <- dnk_winmargin_h[index_dnk_wm]
+  deleted_form_dnk_wm <- form_dnk_wm[!form_dnk_wm[] == ""]
+  l6_form_dnk_wm <- tail(deleted_form_dnk_wm,dnk_last_n_games)
+  l6_form_dnk_wm <- as.numeric(l6_form_dnk_wm)
+  suml6_dnk_wm[index_dnk_wm] <- sum(l6_form_dnk_wm)
+  suml6_dnk_wm[index_dnk_wm] <- paste("(",suml6_dnk_wm[index_dnk_wm],")",sep = "")
+  l6_form_dnk_wm <- paste(l6_form_dnk_wm,collapse = " ")
+  final_dnk_wm[index_dnk_wm] <- rbind(paste(dnk_teams[index_dnk_wm],l6_form_dnk_wm,suml6_dnk_wm[index_dnk_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",dnk_teams[index],l6_form)
+
+}
+final_dnk_wm
+#change column names
+final_dnk_wm <- as.data.frame(final_dnk_wm)
+colnames(final_dnk_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_dnk_hf_against
 final_dnk_hf_against <- c()
@@ -493,7 +537,7 @@ for(index_dnk_hf_against in 1:length(dnk_teams))
 final_dnk_hf_against <- as.data.frame(final_dnk_hf_against)
 colnames(final_dnk_hf_against) <- "Team against"
 #combine the columns
-final_dnk_all <- cbind(final_dnk_hf,final_dnk_gs,final_dnk_gc,final_dnk_tg,final_dnk_cs,final_dnk_hf_against)
+final_dnk_all <- cbind(final_dnk_hf,final_dnk_gs,final_dnk_gc,final_dnk_tg,final_dnk_cs,final_dnk_wm,final_dnk_hf_against)
 write.xlsx(final_dnk_all,'DNK.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

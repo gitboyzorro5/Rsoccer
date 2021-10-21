@@ -155,6 +155,25 @@ for(chn_rowh_f_against in 1:nrow(chn_form_team_against_h)) {
 
   }
 }
+#win margin
+chn_winmargin_h <- tapply(CHN$HG - CHN$AG, CHN[c("Home", "Date")],mean)
+chn_winmargin_a <- tapply(CHN$AG - CHN$HG, CHN[c("Away", "Date")],mean)
+chn_winmargin_h[is.na(chn_winmargin_h)] <- ""
+#
+for(chn_rowhwm in 1:nrow(chn_winmargin_h)) {
+  for(chn_colhwm in 1:ncol(chn_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(chn_rowawm in 1:nrow(chn_winmargin_a)) {
+      for(chn_colawm in 1:ncol(chn_winmargin_a)) {
+        ifelse(!chn_winmargin_a[chn_rowawm,chn_colawm]=="",chn_winmargin_h[chn_rowawm,chn_colawm] <- chn_winmargin_a[chn_rowawm,chn_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #CHN
@@ -374,7 +393,7 @@ write.xlsx(points_chn,'CHN.xlsx',sheetName = "table", append = TRUE)
 #CHN
 #form
 #create final_chn_hf object
-chn_last_n_games <- 6
+#chn_last_n_games <- 6
 final_chn_hf <- c()
 for(index_chn_hf in 1:length(chn_teams))
 {
@@ -476,6 +495,31 @@ for(index_chn_cs in 1:length(chn_teams))
 final_chn_cs <- as.data.frame(final_chn_cs)
 colnames(final_chn_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_chn_wm object
+final_chn_wm <- c()
+suml6_chn_wm <- c()
+for(index_chn_wm in 1:length(chn_teams))
+{
+  index_chn_wm <- row.names(chn_winmargin_h) == chn_teams[index_chn_wm]
+  form_chn_wm <- chn_winmargin_h[index_chn_wm]
+  deleted_form_chn_wm <- form_chn_wm[!form_chn_wm[] == ""]
+  l6_form_chn_wm <- tail(deleted_form_chn_wm,chn_last_n_games)
+  l6_form_chn_wm <- as.numeric(l6_form_chn_wm)
+  suml6_chn_wm[index_chn_wm] <- sum(l6_form_chn_wm)
+  suml6_chn_wm[index_chn_wm] <- paste("(",suml6_chn_wm[index_chn_wm],")",sep = "")
+  l6_form_chn_wm <- paste(l6_form_chn_wm,collapse = " ")
+  final_chn_wm[index_chn_wm] <- rbind(paste(chn_teams[index_chn_wm],l6_form_chn_wm,suml6_chn_wm[index_chn_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",chn_teams[index],l6_form)
+
+}
+final_chn_wm
+#change column names
+final_chn_wm <- as.data.frame(final_chn_wm)
+colnames(final_chn_wm) <- "Win Margin"
+################################################################
 #Team against
 #create final_chn_hf_against
 final_chn_hf_against <- c()
@@ -493,7 +537,7 @@ for(index_chn_hf_against in 1:length(chn_teams))
 final_chn_hf_against <- as.data.frame(final_chn_hf_against)
 colnames(final_chn_hf_against) <- "Team against"
 #combine the columns
-final_chn_all <- cbind(final_chn_hf,final_chn_gs,final_chn_gc,final_chn_tg,final_chn_cs,final_chn_hf_against)
+final_chn_all <- cbind(final_chn_hf,final_chn_gs,final_chn_gc,final_chn_tg,final_chn_cs,final_chn_wm,final_chn_hf_against)
 write.xlsx(final_chn_all,'CHN.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

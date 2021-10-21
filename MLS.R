@@ -155,6 +155,26 @@ for(mls_rowh_f_against in 1:nrow(mls_form_team_against_h)) {
 
   }
 }
+#######################################################################
+#win margin
+mls_winmargin_h <- tapply(MLS$HG - MLS$AG, MLS[c("Home", "Date")],mean)
+mls_winmargin_a <- tapply(MLS$AG - MLS$HG, MLS[c("Away", "Date")],mean)
+mls_winmargin_h[is.na(mls_winmargin_h)] <- ""
+#
+for(mls_rowhwm in 1:nrow(mls_winmargin_h)) {
+  for(mls_colhwm in 1:ncol(mls_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(mls_rowawm in 1:nrow(mls_winmargin_a)) {
+      for(mls_colawm in 1:ncol(mls_winmargin_a)) {
+        ifelse(!mls_winmargin_a[mls_rowawm,mls_colawm]=="",mls_winmargin_h[mls_rowawm,mls_colawm] <- mls_winmargin_a[mls_rowawm,mls_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #MLS
@@ -374,7 +394,7 @@ write.xlsx(points_mls,'MLS.xlsx',sheetName = "table", append = TRUE)
 #MLS
 #form
 #create final_mls_hf object
-mls_last_n_games <- 6
+#mls_last_n_games <- 6
 final_mls_hf <- c()
 for(index_mls_hf in 1:length(mls_teams))
 {
@@ -476,6 +496,31 @@ for(index_mls_cs in 1:length(mls_teams))
 final_mls_cs <- as.data.frame(final_mls_cs)
 colnames(final_mls_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_mls_wm object
+final_mls_wm <- c()
+suml6_mls_wm <- c()
+for(index_mls_wm in 1:length(mls_teams))
+{
+  index_mls_wm <- row.names(mls_winmargin_h) == mls_teams[index_mls_wm]
+  form_mls_wm <- mls_winmargin_h[index_mls_wm]
+  deleted_form_mls_wm <- form_mls_wm[!form_mls_wm[] == ""]
+  l6_form_mls_wm <- tail(deleted_form_mls_wm,mls_last_n_games)
+  l6_form_mls_wm <- as.numeric(l6_form_mls_wm)
+  suml6_mls_wm[index_mls_wm] <- sum(l6_form_mls_wm)
+  suml6_mls_wm[index_mls_wm] <- paste("(",suml6_mls_wm[index_mls_wm],")",sep = "")
+  l6_form_mls_wm <- paste(l6_form_mls_wm,collapse = " ")
+  final_mls_wm[index_mls_wm] <- rbind(paste(mls_teams[index_mls_wm],l6_form_mls_wm,suml6_mls_wm[index_mls_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",mls_teams[index],l6_form)
+
+}
+final_mls_wm
+#change column names
+final_mls_wm <- as.data.frame(final_mls_wm)
+colnames(final_mls_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_mls_hf_against
 final_mls_hf_against <- c()
@@ -493,7 +538,7 @@ for(index_mls_hf_against in 1:length(mls_teams))
 final_mls_hf_against <- as.data.frame(final_mls_hf_against)
 colnames(final_mls_hf_against) <- "Team against"
 #combine the columns
-final_mls_all <- cbind(final_mls_hf,final_mls_gs,final_mls_gc,final_mls_tg,final_mls_cs,final_mls_hf_against)
+final_mls_all <- cbind(final_mls_hf,final_mls_gs,final_mls_gc,final_mls_tg,final_mls_cs,final_mls_wm,final_mls_hf_against)
 write.xlsx(final_mls_all,'MLS.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

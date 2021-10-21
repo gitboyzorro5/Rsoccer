@@ -155,6 +155,25 @@ for(mex_rowh_f_against in 1:nrow(mex_form_team_against_h)) {
 
   }
 }
+#######################################################################
+#win margin
+mex_winmargin_h <- tapply(MEX$HG - MEX$AG, MEX[c("Home", "Date")],mean)
+mex_winmargin_a <- tapply(MEX$AG - MEX$HG, MEX[c("Away", "Date")],mean)
+mex_winmargin_h[is.na(mex_winmargin_h)] <- ""
+#
+for(mex_rowhwm in 1:nrow(mex_winmargin_h)) {
+  for(mex_colhwm in 1:ncol(mex_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(mex_rowawm in 1:nrow(mex_winmargin_a)) {
+      for(mex_colawm in 1:ncol(mex_winmargin_a)) {
+        ifelse(!mex_winmargin_a[mex_rowawm,mex_colawm]=="",mex_winmargin_h[mex_rowawm,mex_colawm] <- mex_winmargin_a[mex_rowawm,mex_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
 ####################################################################################################################
 ##########Goals over under############
 #MEX
@@ -374,7 +393,7 @@ write.xlsx(points_mex,'MEX.xlsx',sheetName = "table", append = TRUE)
 #MEX
 #form
 #create final_mex_hf object
-mex_last_n_games <- 6
+#mex_last_n_games <- 6
 final_mex_hf <- c()
 for(index_mex_hf in 1:length(mex_teams))
 {
@@ -476,6 +495,31 @@ for(index_mex_cs in 1:length(mex_teams))
 final_mex_cs <- as.data.frame(final_mex_cs)
 colnames(final_mex_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_mex_wm object
+final_mex_wm <- c()
+suml6_mex_wm <- c()
+for(index_mex_wm in 1:length(mex_teams))
+{
+  index_mex_wm <- row.names(mex_winmargin_h) == mex_teams[index_mex_wm]
+  form_mex_wm <- mex_winmargin_h[index_mex_wm]
+  deleted_form_mex_wm <- form_mex_wm[!form_mex_wm[] == ""]
+  l6_form_mex_wm <- tail(deleted_form_mex_wm,mex_last_n_games)
+  l6_form_mex_wm <- as.numeric(l6_form_mex_wm)
+  suml6_mex_wm[index_mex_wm] <- sum(l6_form_mex_wm)
+  suml6_mex_wm[index_mex_wm] <- paste("(",suml6_mex_wm[index_mex_wm],")",sep = "")
+  l6_form_mex_wm <- paste(l6_form_mex_wm,collapse = " ")
+  final_mex_wm[index_mex_wm] <- rbind(paste(mex_teams[index_mex_wm],l6_form_mex_wm,suml6_mex_wm[index_mex_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",mex_teams[index],l6_form)
+
+}
+final_mex_wm
+#change column names
+final_mex_wm <- as.data.frame(final_mex_wm)
+colnames(final_mex_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_mex_hf_against
 final_mex_hf_against <- c()
@@ -493,7 +537,7 @@ for(index_mex_hf_against in 1:length(mex_teams))
 final_mex_hf_against <- as.data.frame(final_mex_hf_against)
 colnames(final_mex_hf_against) <- "Team against"
 #combine the columns
-final_mex_all <- cbind(final_mex_hf,final_mex_gs,final_mex_gc,final_mex_tg,final_mex_cs,final_mex_hf_against)
+final_mex_all <- cbind(final_mex_hf,final_mex_gs,final_mex_gc,final_mex_tg,final_mex_cs,final_mex_wm,final_mex_hf_against)
 write.xlsx(final_mex_all,'MEX.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

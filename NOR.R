@@ -155,6 +155,24 @@ for(nor_rowh_f_against in 1:nrow(nor_form_team_against_h)) {
 
   }
 }
+#win margin
+nor_winmargin_h <- tapply(NOR$HG - NOR$AG, NOR[c("Home", "Date")],mean)
+nor_winmargin_a <- tapply(NOR$AG - NOR$HG, NOR[c("Away", "Date")],mean)
+nor_winmargin_h[is.na(nor_winmargin_h)] <- ""
+#
+for(nor_rowhwm in 1:nrow(nor_winmargin_h)) {
+  for(nor_colhwm in 1:ncol(nor_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(nor_rowawm in 1:nrow(nor_winmargin_a)) {
+      for(nor_colawm in 1:ncol(nor_winmargin_a)) {
+        ifelse(!nor_winmargin_a[nor_rowawm,nor_colawm]=="",nor_winmargin_h[nor_rowawm,nor_colawm] <- nor_winmargin_a[nor_rowawm,nor_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
 ####################################################################################################################
 ##########Goals over under############
 #NOR
@@ -375,7 +393,7 @@ write.xlsx(points_nor,'NOR.xlsx',sheetName = "table", append = TRUE)
 #NOR
 #form
 #create final_nor_hf object
-nor_last_n_games <- 6
+#nor_last_n_games <- 6
 final_nor_hf <- c()
 for(index_nor_hf in 1:length(nor_teams))
 {
@@ -477,6 +495,31 @@ for(index_nor_cs in 1:length(nor_teams))
 final_nor_cs <- as.data.frame(final_nor_cs)
 colnames(final_nor_cs) <- "CSForm"
 #################################################
+################################################
+#Win Margin
+#goals scored
+#create final_nor_wm object
+final_nor_wm <- c()
+suml6_nor_wm <- c()
+for(index_nor_wm in 1:length(nor_teams))
+{
+  index_nor_wm <- row.names(nor_winmargin_h) == nor_teams[index_nor_wm]
+  form_nor_wm <- nor_winmargin_h[index_nor_wm]
+  deleted_form_nor_wm <- form_nor_wm[!form_nor_wm[] == ""]
+  l6_form_nor_wm <- tail(deleted_form_nor_wm,nor_last_n_games)
+  l6_form_nor_wm <- as.numeric(l6_form_nor_wm)
+  suml6_nor_wm[index_nor_wm] <- sum(l6_form_nor_wm)
+  suml6_nor_wm[index_nor_wm] <- paste("(",suml6_nor_wm[index_nor_wm],")",sep = "")
+  l6_form_nor_wm <- paste(l6_form_nor_wm,collapse = " ")
+  final_nor_wm[index_nor_wm] <- rbind(paste(nor_teams[index_nor_wm],l6_form_nor_wm,suml6_nor_wm[index_nor_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",nor_teams[index],l6_form)
+
+}
+final_nor_wm
+#change column names
+final_nor_wm <- as.data.frame(final_nor_wm)
+colnames(final_nor_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_nor_hf_against
 final_nor_hf_against <- c()
@@ -494,7 +537,7 @@ for(index_nor_hf_against in 1:length(nor_teams))
 final_nor_hf_against <- as.data.frame(final_nor_hf_against)
 colnames(final_nor_hf_against) <- "Team against"
 #combine the columns
-final_nor_all <- cbind(final_nor_hf,final_nor_gs,final_nor_gc,final_nor_tg,final_nor_cs,final_nor_hf_against)
+final_nor_all <- cbind(final_nor_hf,final_nor_gs,final_nor_gc,final_nor_tg,final_nor_cs,final_nor_wm,final_nor_hf_against)
 write.xlsx(final_nor_all,'NOR.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

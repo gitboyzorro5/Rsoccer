@@ -156,6 +156,26 @@ for(aut_rowh_f_against in 1:nrow(aut_form_team_against_h)) {
 
   }
 }
+#######################################################################
+#win margin
+aut_winmargin_h <- tapply(AUT$HG - AUT$AG, AUT[c("Home", "Date")],mean)
+aut_winmargin_a <- tapply(AUT$AG - AUT$HG, AUT[c("Away", "Date")],mean)
+aut_winmargin_h[is.na(aut_winmargin_h)] <- ""
+#
+for(aut_rowhwm in 1:nrow(aut_winmargin_h)) {
+  for(aut_colhwm in 1:ncol(aut_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(aut_rowawm in 1:nrow(aut_winmargin_a)) {
+      for(aut_colawm in 1:ncol(aut_winmargin_a)) {
+        ifelse(!aut_winmargin_a[aut_rowawm,aut_colawm]=="",aut_winmargin_h[aut_rowawm,aut_colawm] <- aut_winmargin_a[aut_rowawm,aut_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #AUT
@@ -374,7 +394,7 @@ write.xlsx(points_aut,'AUT.xlsx',sheetName = "table", append = TRUE)
 #AUT
 #form
 #create final_aut_hf object
-aut_last_n_games <- 6
+#aut_last_n_games <- 6
 final_aut_hf <- c()
 for(index_aut_hf in 1:length(aut_teams))
 {
@@ -476,6 +496,30 @@ for(index_aut_cs in 1:length(aut_teams))
 final_aut_cs <- as.data.frame(final_aut_cs)
 colnames(final_aut_cs) <- "CSForm"
 #################################################
+#Win Margin
+#goals scored
+#create final_aut_wm object
+final_aut_wm <- c()
+suml6_aut_wm <- c()
+for(index_aut_wm in 1:length(aut_teams))
+{
+  index_aut_wm <- row.names(aut_winmargin_h) == aut_teams[index_aut_wm]
+  form_aut_wm <- aut_winmargin_h[index_aut_wm]
+  deleted_form_aut_wm <- form_aut_wm[!form_aut_wm[] == ""]
+  l6_form_aut_wm <- tail(deleted_form_aut_wm,aut_last_n_games)
+  l6_form_aut_wm <- as.numeric(l6_form_aut_wm)
+  suml6_aut_wm[index_aut_wm] <- sum(l6_form_aut_wm)
+  suml6_aut_wm[index_aut_wm] <- paste("(",suml6_aut_wm[index_aut_wm],")",sep = "")
+  l6_form_aut_wm <- paste(l6_form_aut_wm,collapse = " ")
+  final_aut_wm[index_aut_wm] <- rbind(paste(aut_teams[index_aut_wm],l6_form_aut_wm,suml6_aut_wm[index_aut_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",aut_teams[index],l6_form)
+
+}
+final_aut_wm
+#change column names
+final_aut_wm <- as.data.frame(final_aut_wm)
+colnames(final_aut_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_aut_hf_against
 final_aut_hf_against <- c()
@@ -493,7 +537,7 @@ for(index_aut_hf_against in 1:length(aut_teams))
 final_aut_hf_against <- as.data.frame(final_aut_hf_against)
 colnames(final_aut_hf_against) <- "Team against"
 #combine the columns
-final_aut_all <- cbind(final_aut_hf,final_aut_gs,final_aut_gc,final_aut_tg,final_aut_cs,final_aut_hf_against)
+final_aut_all <- cbind(final_aut_hf,final_aut_gs,final_aut_gc,final_aut_tg,final_aut_cs,final_aut_wm,final_aut_hf_against)
 write.xlsx(final_aut_all,'AUT.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

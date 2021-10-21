@@ -155,6 +155,24 @@ for(rus_rowh_f_against in 1:nrow(rus_form_team_against_h)) {
 
   }
 }
+#win margin
+rus_winmargin_h <- tapply(RUS$HG - RUS$AG, RUS[c("Home", "Date")],mean)
+rus_winmargin_a <- tapply(RUS$AG - RUS$HG, RUS[c("Away", "Date")],mean)
+rus_winmargin_h[is.na(rus_winmargin_h)] <- ""
+#
+for(rus_rowhwm in 1:nrow(rus_winmargin_h)) {
+  for(rus_colhwm in 1:ncol(rus_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(rus_rowawm in 1:nrow(rus_winmargin_a)) {
+      for(rus_colawm in 1:ncol(rus_winmargin_a)) {
+        ifelse(!rus_winmargin_a[rus_rowawm,rus_colawm]=="",rus_winmargin_h[rus_rowawm,rus_colawm] <- rus_winmargin_a[rus_rowawm,rus_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
 ####################################################################################################################
 ##########Goals over under############
 #RUS
@@ -374,7 +392,7 @@ write.xlsx(points_rus,'RUS.xlsx',sheetName = "table", append = TRUE)
 #RUS
 #form
 #create final_rus_hf object
-rus_last_n_games <- 6
+#rus_last_n_games <- 6
 final_rus_hf <- c()
 for(index_rus_hf in 1:length(rus_teams))
 {
@@ -476,6 +494,31 @@ for(index_rus_cs in 1:length(rus_teams))
 final_rus_cs <- as.data.frame(final_rus_cs)
 colnames(final_rus_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_rus_wm object
+final_rus_wm <- c()
+suml6_rus_wm <- c()
+for(index_rus_wm in 1:length(rus_teams))
+{
+  index_rus_wm <- row.names(rus_winmargin_h) == rus_teams[index_rus_wm]
+  form_rus_wm <- rus_winmargin_h[index_rus_wm]
+  deleted_form_rus_wm <- form_rus_wm[!form_rus_wm[] == ""]
+  l6_form_rus_wm <- tail(deleted_form_rus_wm,rus_last_n_games)
+  l6_form_rus_wm <- as.numeric(l6_form_rus_wm)
+  suml6_rus_wm[index_rus_wm] <- sum(l6_form_rus_wm)
+  suml6_rus_wm[index_rus_wm] <- paste("(",suml6_rus_wm[index_rus_wm],")",sep = "")
+  l6_form_rus_wm <- paste(l6_form_rus_wm,collapse = " ")
+  final_rus_wm[index_rus_wm] <- rbind(paste(rus_teams[index_rus_wm],l6_form_rus_wm,suml6_rus_wm[index_rus_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",rus_teams[index],l6_form)
+
+}
+final_rus_wm
+#change column names
+final_rus_wm <- as.data.frame(final_rus_wm)
+colnames(final_rus_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_rus_hf_against
 final_rus_hf_against <- c()
@@ -493,7 +536,7 @@ for(index_rus_hf_against in 1:length(rus_teams))
 final_rus_hf_against <- as.data.frame(final_rus_hf_against)
 colnames(final_rus_hf_against) <- "Team against"
 #combine the columns
-final_rus_all <- cbind(final_rus_hf,final_rus_gs,final_rus_gc,final_rus_tg,final_rus_cs,final_rus_hf_against)
+final_rus_all <- cbind(final_rus_hf,final_rus_gs,final_rus_gc,final_rus_tg,final_rus_cs,final_rus_wm,final_rus_hf_against)
 write.xlsx(final_rus_all,'RUS.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

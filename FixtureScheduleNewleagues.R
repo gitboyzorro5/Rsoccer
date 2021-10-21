@@ -35,7 +35,7 @@ all_schedule20212022newleagues <- rbind(AUT_schedule20212022,DNK_schedule2021202
 
 all_schedule20212022newleagues <- all_schedule20212022newleagues[,c(7,5,6,4)]
 
-myfixturesnewleagues <- all_schedule20212022newleagues[all_schedule20212022newleagues$Date >= '2021-09-29' & all_schedule20212022newleagues$Date <= '2021-10-05',]
+myfixturesnewleagues <- all_schedule20212022newleagues[all_schedule20212022newleagues$Date >= '2021-10-21' & all_schedule20212022newleagues$Date <= '2021-10-26',]
 
 write.csv(myfixturesnewleagues,'myfixturesnewleagues.csv')
 

@@ -155,6 +155,25 @@ for(irl_rowh_f_against in 1:nrow(irl_form_team_against_h)) {
 
   }
 }
+#win margin
+irl_winmargin_h <- tapply(IRL$HG - IRL$AG, IRL[c("Home", "Date")],mean)
+irl_winmargin_a <- tapply(IRL$AG - IRL$HG, IRL[c("Away", "Date")],mean)
+irl_winmargin_h[is.na(irl_winmargin_h)] <- ""
+#
+for(irl_rowhwm in 1:nrow(irl_winmargin_h)) {
+  for(irl_colhwm in 1:ncol(irl_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(irl_rowawm in 1:nrow(irl_winmargin_a)) {
+      for(irl_colawm in 1:ncol(irl_winmargin_a)) {
+        ifelse(!irl_winmargin_a[irl_rowawm,irl_colawm]=="",irl_winmargin_h[irl_rowawm,irl_colawm] <- irl_winmargin_a[irl_rowawm,irl_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
+
 ####################################################################################################################
 ##########Goals over under############
 #IRL
@@ -374,7 +393,7 @@ write.xlsx(points_irl,'IRL.xlsx',sheetName = "table", append = TRUE)
 #IRL
 #form
 #create final_irl_hf object
-irl_last_n_games <- 6
+#irl_last_n_games <- 6
 final_irl_hf <- c()
 for(index_irl_hf in 1:length(irl_teams))
 {
@@ -476,6 +495,29 @@ for(index_irl_cs in 1:length(irl_teams))
 final_irl_cs <- as.data.frame(final_irl_cs)
 colnames(final_irl_cs) <- "CSForm"
 #################################################
+#Win Margin
+#goals scored
+#create final_irl_wm object
+final_irl_wm <- c()
+suml6_irl_wm <- c()
+for(index_irl_wm in 1:length(irl_teams))
+{
+  index_irl_wm <- row.names(irl_winmargin_h) == irl_teams[index_irl_wm]
+  form_irl_wm <- irl_winmargin_h[index_irl_wm]
+  deleted_form_irl_wm <- form_irl_wm[!form_irl_wm[] == ""]
+  l6_form_irl_wm <- tail(deleted_form_irl_wm,irl_last_n_games)
+  l6_form_irl_wm <- as.numeric(l6_form_irl_wm)
+  suml6_irl_wm[index_irl_wm] <- sum(l6_form_irl_wm)
+  suml6_irl_wm[index_irl_wm] <- paste("(",suml6_irl_wm[index_irl_wm],")",sep = "")
+  l6_form_irl_wm <- paste(l6_form_irl_wm,collapse = " ")
+  final_irl_wm[index_irl_wm] <- rbind(paste(irl_teams[index_irl_wm],l6_form_irl_wm,suml6_irl_wm[index_irl_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",irl_teams[index],l6_form)
+
+}
+final_irl_wm
+#change column names
+final_irl_wm <- as.data.frame(final_irl_wm)
+colnames(final_irl_wm) <- "Win Margin"
 #Team against
 #create final_irl_hf_against
 final_irl_hf_against <- c()
@@ -493,7 +535,7 @@ for(index_irl_hf_against in 1:length(irl_teams))
 final_irl_hf_against <- as.data.frame(final_irl_hf_against)
 colnames(final_irl_hf_against) <- "Team against"
 #combine the columns
-final_irl_all <- cbind(final_irl_hf,final_irl_gs,final_irl_gc,final_irl_tg,final_irl_cs,final_irl_hf_against)
+final_irl_all <- cbind(final_irl_hf,final_irl_gs,final_irl_gc,final_irl_tg,final_irl_cs,final_irl_wm,final_irl_hf_against)
 write.xlsx(final_irl_all,'IRL.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

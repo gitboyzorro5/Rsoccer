@@ -155,6 +155,25 @@ for(rou_rowh_f_against in 1:nrow(rou_form_team_against_h)) {
 
   }
 }
+#######################################################################
+#win margin
+rou_winmargin_h <- tapply(ROU$HG - ROU$AG, ROU[c("Home", "Date")],mean)
+rou_winmargin_a <- tapply(ROU$AG - ROU$HG, ROU[c("Away", "Date")],mean)
+rou_winmargin_h[is.na(rou_winmargin_h)] <- ""
+#
+for(rou_rowhwm in 1:nrow(rou_winmargin_h)) {
+  for(rou_colhwm in 1:ncol(rou_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(rou_rowawm in 1:nrow(rou_winmargin_a)) {
+      for(rou_colawm in 1:ncol(rou_winmargin_a)) {
+        ifelse(!rou_winmargin_a[rou_rowawm,rou_colawm]=="",rou_winmargin_h[rou_rowawm,rou_colawm] <- rou_winmargin_a[rou_rowawm,rou_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
 ####################################################################################################################
 ##########Goals over under############
 #ROU
@@ -374,7 +393,7 @@ write.xlsx(points_rou,'ROU.xlsx',sheetName = "table", append = TRUE)
 #ROU
 #form
 #create final_rou_hf object
-rou_last_n_games <- 6
+#rou_last_n_games <- 6
 final_rou_hf <- c()
 for(index_rou_hf in 1:length(rou_teams))
 {
@@ -476,6 +495,31 @@ for(index_rou_cs in 1:length(rou_teams))
 final_rou_cs <- as.data.frame(final_rou_cs)
 colnames(final_rou_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_rou_wm object
+final_rou_wm <- c()
+suml6_rou_wm <- c()
+for(index_rou_wm in 1:length(rou_teams))
+{
+  index_rou_wm <- row.names(rou_winmargin_h) == rou_teams[index_rou_wm]
+  form_rou_wm <- rou_winmargin_h[index_rou_wm]
+  deleted_form_rou_wm <- form_rou_wm[!form_rou_wm[] == ""]
+  l6_form_rou_wm <- tail(deleted_form_rou_wm,rou_last_n_games)
+  l6_form_rou_wm <- as.numeric(l6_form_rou_wm)
+  suml6_rou_wm[index_rou_wm] <- sum(l6_form_rou_wm)
+  suml6_rou_wm[index_rou_wm] <- paste("(",suml6_rou_wm[index_rou_wm],")",sep = "")
+  l6_form_rou_wm <- paste(l6_form_rou_wm,collapse = " ")
+  final_rou_wm[index_rou_wm] <- rbind(paste(rou_teams[index_rou_wm],l6_form_rou_wm,suml6_rou_wm[index_rou_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",rou_teams[index],l6_form)
+
+}
+final_rou_wm
+#change column names
+final_rou_wm <- as.data.frame(final_rou_wm)
+colnames(final_rou_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_rou_hf_against
 final_rou_hf_against <- c()
@@ -493,7 +537,7 @@ for(index_rou_hf_against in 1:length(rou_teams))
 final_rou_hf_against <- as.data.frame(final_rou_hf_against)
 colnames(final_rou_hf_against) <- "Team against"
 #combine the columns
-final_rou_all <- cbind(final_rou_hf,final_rou_gs,final_rou_gc,final_rou_tg,final_rou_cs,final_rou_hf_against)
+final_rou_all <- cbind(final_rou_hf,final_rou_gs,final_rou_gc,final_rou_tg,final_rou_cs,final_rou_wm,final_rou_hf_against)
 write.xlsx(final_rou_all,'ROU.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

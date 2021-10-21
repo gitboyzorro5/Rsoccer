@@ -162,6 +162,24 @@ for(bra_rowh_f_against in 1:nrow(bra_form_team_against_h)) {
 
   }
 }
+#win margin
+bra_winmargin_h <- tapply(BRA$HG - BRA$AG, BRA[c("Home", "Date")],mean)
+bra_winmargin_a <- tapply(BRA$AG - BRA$HG, BRA[c("Away", "Date")],mean)
+bra_winmargin_h[is.na(bra_winmargin_h)] <- ""
+#
+for(bra_rowhwm in 1:nrow(bra_winmargin_h)) {
+  for(bra_colhwm in 1:ncol(bra_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(bra_rowawm in 1:nrow(bra_winmargin_a)) {
+      for(bra_colawm in 1:ncol(bra_winmargin_a)) {
+        ifelse(!bra_winmargin_a[bra_rowawm,bra_colawm]=="",bra_winmargin_h[bra_rowawm,bra_colawm] <- bra_winmargin_a[bra_rowawm,bra_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
 ####################################################################################################################
 ##########Goals over under############
 #BRA
@@ -381,7 +399,7 @@ write.xlsx(points_bra,'BRA.xlsx',sheetName = "table", append = TRUE)
 #BRA
 #form
 #create final_bra_hf object
-bra_last_n_games <- 6
+#bra_last_n_games <- 6
 final_bra_hf <- c()
 for(index_bra_hf in 1:length(bra_teams))
 {
@@ -497,10 +515,35 @@ for(index_bra_hf_against in 1:length(bra_teams))
   #bundesform[] <- printf("%s\t%s\n",bra_teams[index],l6_form)
 
 }
+#################################################
+#Win Margin
+#goals scored
+#create final_bra_wm object
+final_bra_wm <- c()
+suml6_bra_wm <- c()
+for(index_bra_wm in 1:length(bra_teams))
+{
+  index_bra_wm <- row.names(bra_winmargin_h) == bra_teams[index_bra_wm]
+  form_bra_wm <- bra_winmargin_h[index_bra_wm]
+  deleted_form_bra_wm <- form_bra_wm[!form_bra_wm[] == ""]
+  l6_form_bra_wm <- tail(deleted_form_bra_wm,bra_last_n_games)
+  l6_form_bra_wm <- as.numeric(l6_form_bra_wm)
+  suml6_bra_wm[index_bra_wm] <- sum(l6_form_bra_wm)
+  suml6_bra_wm[index_bra_wm] <- paste("(",suml6_bra_wm[index_bra_wm],")",sep = "")
+  l6_form_bra_wm <- paste(l6_form_bra_wm,collapse = " ")
+  final_bra_wm[index_bra_wm] <- rbind(paste(bra_teams[index_bra_wm],l6_form_bra_wm,suml6_bra_wm[index_bra_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",bra_teams[index],l6_form)
+
+}
+final_bra_wm
+#change column names
+final_bra_wm <- as.data.frame(final_bra_wm)
+colnames(final_bra_wm) <- "Win Margin"
+###########################################################################
 final_bra_hf_against <- as.data.frame(final_bra_hf_against)
 colnames(final_bra_hf_against) <- "Team against"
 #combine the columns
-final_bra_all <- cbind(final_bra_hf,final_bra_gs,final_bra_gc,final_bra_tg,final_bra_cs,final_bra_hf_against)
+final_bra_all <- cbind(final_bra_hf,final_bra_gs,final_bra_gc,final_bra_tg,final_bra_cs,final_bra_wm,final_bra_hf_against)
 write.xlsx(final_bra_all,'BRA.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

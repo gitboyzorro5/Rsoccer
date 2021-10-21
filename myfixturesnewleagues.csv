@@ -1,43 +1,43 @@
 ,Div,Home_Team,Away_Team,Date
-883,Premier League,Ufa,Ural,10/1/2021
-884,Premier League,Dynamo Moscow,FK Krylya Sovetov Samara,10/1/2021
-885,Premier League,Arsenal Tula,Khimki,10/1/2021
-886,Premier League,Akhmat Grozny,Spartak Moscow,10/1/2021
-887,Premier League,Lokomotiv Moscow,FK Rostov,10/1/2021
-888,Premier League,Zenit,Sochi,10/1/2021
-889,Premier League,Rubin Kazan,Nizhny Novgorod,10/1/2021
-890,Premier League,CSKA Moscow,Krasnodar,10/1/2021
-55,Admiral Bundesliga,Hartberg,Sturm Graz,10/2/2021
-56,Admiral Bundesliga,Salzburg,LASK,10/2/2021
-57,Admiral Bundesliga,Rapid Vienna,Tirol,10/2/2021
-58,Admiral Bundesliga,Admira,Altach,10/2/2021
-59,Admiral Bundesliga,Ried,A. Klagenfurt,10/2/2021
-60,Admiral Bundesliga,Wolfsberger AC,Austria Vienna,10/2/2021
-346,Ekstraklasa,Lech Poznan,Slask Wroclaw,10/2/2021
-347,Ekstraklasa,Radomiak Radom,Termalica B-B.,10/2/2021
-348,Ekstraklasa,Pogon Szczecin,Leczna,10/2/2021
-349,Ekstraklasa,Zaglebie,Jagiellonia,10/2/2021
-350,Ekstraklasa,Lechia Gdansk,Legia,10/2/2021
-351,Ekstraklasa,Cracovia,Stal Mielec,10/2/2021
-352,Ekstraklasa,Rakow,Warta Poznan,10/2/2021
-353,Ekstraklasa,Piast Gliwice,Wisla,10/2/2021
-354,Ekstraklasa,Gornik Z,Wisla Plock,10/2/2021
-651,Liga 1,Mioveni,FC Arges,10/2/2021
-652,Liga 1,Academica Clinceni,FC Botosani,10/2/2021
-653,Liga 1,U Craiova 1948,U Craiova 1948,10/2/2021
-654,Liga 1,FC Voluntari,Farul Constanta,10/2/2021
-655,Liga 1,Chindia Targoviste,FCSB,10/2/2021
-656,Liga 1,CFR Cluj,Gaz Metan Medias,10/2/2021
-657,Liga 1,Sepsi Sf. Gheorghe,Rapid Bucuresti,10/2/2021
-658,Liga 1,Din. Bucuresti,UTA Arad,10/2/2021
-1091,Swiss,Lugano,Lausanne,10/2/2021
-1092,Swiss,Grasshoppers,St. Gallen,10/2/2021
-193,superliga,Midtjylland,Aarhus,10/3/2021
-194,superliga,Randers FC,Brondby,10/3/2021
-195,superliga,Silkeborg,Nordsjaelland,10/3/2021
-196,superliga,Aalborg,Sonderjyske,10/3/2021
-197,superliga,Odense,Vejle,10/3/2021
-198,superliga,FC Copenhagen,Viborg,10/3/2021
-1093,Swiss,Basel,Luzern,10/3/2021
-1094,Swiss,Zurich,Sion,10/3/2021
-1095,Swiss,Servette,Young Boys,10/3/2021
+899,Premier League,CSKA Moscow,FK Krylya Sovetov Samara,10/22/2021
+900,Premier League,Lokomotiv Moscow,Sochi,10/22/2021
+901,Premier League,Ufa,Rubin Kazan,10/22/2021
+902,Premier League,Zenit,Spartak Moscow,10/22/2021
+903,Premier League,Akhmat Grozny,Ural,10/22/2021
+904,Premier League,Dynamo Moscow,Khimki,10/22/2021
+905,Premier League,FK Rostov,Arsenal Tula,10/22/2021
+906,Premier League,Nizhny Novgorod,Krasnodar,10/22/2021
+67,Admiral Bundesliga,Wolfsberger AC,A. Klagenfurt,10/23/2021
+68,Admiral Bundesliga,LASK,Altach,10/23/2021
+69,Admiral Bundesliga,Austria Vienna,Ried,10/23/2021
+70,Admiral Bundesliga,Salzburg,Sturm Graz,10/23/2021
+71,Admiral Bundesliga,Hartberg,Rapid Vienna,10/23/2021
+72,Admiral Bundesliga,Admira,Tirol,10/23/2021
+364,Ekstraklasa,Wisla,Slask Wroclaw,10/23/2021
+365,Ekstraklasa,Rakow,Termalica B-B.,10/23/2021
+366,Ekstraklasa,Zaglebie,Cracovia,10/23/2021
+367,Ekstraklasa,Radomiak Radom,Leczna,10/23/2021
+368,Ekstraklasa,Lechia Gdansk,Gornik Z,10/23/2021
+369,Ekstraklasa,Pogon Szczecin,Jagiellonia,10/23/2021
+370,Ekstraklasa,Piast Gliwice,Legia,10/23/2021
+371,Ekstraklasa,Warta Poznan,Stal Mielec,10/23/2021
+372,Ekstraklasa,Lech Poznan,Wisla Plock,10/23/2021
+667,Liga 1,FC Voluntari,FC Arges,10/23/2021
+668,Liga 1,Mioveni,FC Botosani,10/23/2021
+669,Liga 1,Chindia Targoviste,U Craiova 1948,10/23/2021
+670,Liga 1,Farul Constanta,FCSB,10/23/2021
+671,Liga 1,U Craiova 1948,Gaz Metan Medias,10/23/2021
+672,Liga 1,Din. Bucuresti,Rapid Bucuresti,10/23/2021
+673,Liga 1,CFR Cluj,Sepsi Sf. Gheorghe,10/23/2021
+674,Liga 1,Academica Clinceni,UTA Arad,10/23/2021
+1101,Swiss,Young Boys,Lausanne,10/23/2021
+1102,Swiss,Basel,Lugano,10/23/2021
+1103,Swiss,Servette,Sion,10/23/2021
+1104,Swiss,Luzern,St. Gallen,10/23/2021
+1105,Swiss,Grasshoppers,Zurich,10/23/2021
+205,superliga,Randers FC,Aarhus,10/24/2021
+206,superliga,Brondby,FC Copenhagen,10/24/2021
+207,superliga,Vejle,Nordsjaelland,10/24/2021
+208,superliga,Silkeborg,Odense,10/24/2021
+209,superliga,Midtjylland,Sonderjyske,10/24/2021
+210,superliga,Aalborg,Viborg,10/24/2021

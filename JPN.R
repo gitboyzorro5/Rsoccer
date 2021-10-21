@@ -155,6 +155,24 @@ for(jpn_rowh_f_against in 1:nrow(jpn_form_team_against_h)) {
 
   }
 }
+#win margin
+jpn_winmargin_h <- tapply(JPN$HG - JPN$AG, JPN[c("Home", "Date")],mean)
+jpn_winmargin_a <- tapply(JPN$AG - JPN$HG, JPN[c("Away", "Date")],mean)
+jpn_winmargin_h[is.na(jpn_winmargin_h)] <- ""
+#
+for(jpn_rowhwm in 1:nrow(jpn_winmargin_h)) {
+  for(jpn_colhwm in 1:ncol(jpn_winmargin_h)) {
+
+    # print(my_matrix[row, col])
+    for(jpn_rowawm in 1:nrow(jpn_winmargin_a)) {
+      for(jpn_colawm in 1:ncol(jpn_winmargin_a)) {
+        ifelse(!jpn_winmargin_a[jpn_rowawm,jpn_colawm]=="",jpn_winmargin_h[jpn_rowawm,jpn_colawm] <- jpn_winmargin_a[jpn_rowawm,jpn_colawm],next)
+        #print(my_matrix[row, col])
+      }
+    }
+
+  }
+}
 ####################################################################################################################
 ##########Goals over under############
 #JPN
@@ -374,7 +392,7 @@ write.xlsx(points_jpn,'JPN.xlsx',sheetName = "table", append = TRUE)
 #JPN
 #form
 #create final_jpn_hf object
-jpn_last_n_games <- 6
+#jpn_last_n_games <- 6
 final_jpn_hf <- c()
 for(index_jpn_hf in 1:length(jpn_teams))
 {
@@ -476,6 +494,31 @@ for(index_jpn_cs in 1:length(jpn_teams))
 final_jpn_cs <- as.data.frame(final_jpn_cs)
 colnames(final_jpn_cs) <- "CSForm"
 #################################################
+#################################################
+#Win Margin
+#goals scored
+#create final_jpn_wm object
+final_jpn_wm <- c()
+suml6_jpn_wm <- c()
+for(index_jpn_wm in 1:length(jpn_teams))
+{
+  index_jpn_wm <- row.names(jpn_winmargin_h) == jpn_teams[index_jpn_wm]
+  form_jpn_wm <- jpn_winmargin_h[index_jpn_wm]
+  deleted_form_jpn_wm <- form_jpn_wm[!form_jpn_wm[] == ""]
+  l6_form_jpn_wm <- tail(deleted_form_jpn_wm,jpn_last_n_games)
+  l6_form_jpn_wm <- as.numeric(l6_form_jpn_wm)
+  suml6_jpn_wm[index_jpn_wm] <- sum(l6_form_jpn_wm)
+  suml6_jpn_wm[index_jpn_wm] <- paste("(",suml6_jpn_wm[index_jpn_wm],")",sep = "")
+  l6_form_jpn_wm <- paste(l6_form_jpn_wm,collapse = " ")
+  final_jpn_wm[index_jpn_wm] <- rbind(paste(jpn_teams[index_jpn_wm],l6_form_jpn_wm,suml6_jpn_wm[index_jpn_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",jpn_teams[index],l6_form)
+
+}
+final_jpn_wm
+#change column names
+final_jpn_wm <- as.data.frame(final_jpn_wm)
+colnames(final_jpn_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_jpn_hf_against
 final_jpn_hf_against <- c()
@@ -493,7 +536,7 @@ for(index_jpn_hf_against in 1:length(jpn_teams))
 final_jpn_hf_against <- as.data.frame(final_jpn_hf_against)
 colnames(final_jpn_hf_against) <- "Team against"
 #combine the columns
-final_jpn_all <- cbind(final_jpn_hf,final_jpn_gs,final_jpn_gc,final_jpn_tg,final_jpn_cs,final_jpn_hf_against)
+final_jpn_all <- cbind(final_jpn_hf,final_jpn_gs,final_jpn_gc,final_jpn_tg,final_jpn_cs,final_jpn_wm,final_jpn_hf_against)
 write.xlsx(final_jpn_all,'JPN.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################

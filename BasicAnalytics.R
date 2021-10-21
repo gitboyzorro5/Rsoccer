@@ -270,7 +270,9 @@ sort(unique(SWZ_schedule20212022$Home_Team))
 SWZ_schedule20212022 <- mgsub(SWZ_schedule20212022,c( "Grasshopper","Lausanne-Sport","Servette FC"),c( "Grasshoppers","Lausanne","Servette"))
 write.csv(SWZ_schedule20212022,'SWZ_schedule20212022.csv')
 
-sc1_games_played[1]
+apply(b1_winmargin_h,1,sum)
+
+
 
 
 

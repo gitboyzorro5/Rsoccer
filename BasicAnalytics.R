@@ -271,8 +271,9 @@ SWZ_schedule20212022 <- mgsub(SWZ_schedule20212022,c( "Grasshopper","Lausanne-Sp
 write.csv(SWZ_schedule20212022,'SWZ_schedule20212022.csv')
 
 apply(b1_winmargin_h,1,sum)
-
-
+e0_league_table[e0_league_table$Team == "Chelsea",6]
+typeof(l6_form_e0_gs)
+class(suml6_e0_gs)
 
 
 

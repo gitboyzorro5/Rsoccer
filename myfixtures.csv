@@ -1,191 +1,200 @@
 ,Div,Home_Team,Away_Team,Date
-379,D1,Bochum,Ein Frankfurt,10/22/2021
-380,D1,FC Koln,Leverkusen,10/22/2021
-381,D1,Bielefeld,Dortmund,10/22/2021
-382,D1,Hertha,Mgladbach,10/22/2021
-383,D1,Mainz,Augsburg,10/22/2021
-384,D1,Stuttgart,Union Berlin,10/22/2021
-385,D1,Wolfsburg,Freiburg,10/22/2021
-386,D1,RB Leipzig,Greuther Furth,10/22/2021
-387,D1,Bayern Munich,Hoffenheim,10/22/2021
-999,E0,Arsenal,Aston Villa,10/22/2021
-4682,N1,Willem II,For Sittard,10/22/2021
-100,B1,Anderlecht,Beerschot VA,10/23/2021
-101,B1,Seraing,Charleroi,10/23/2021
-102,B1,Antwerp,Club Brugge,10/23/2021
-103,B1,Genk,Gent,10/23/2021
-104,B1,Kortrijk,Oostende,10/23/2021
-105,B1,Oud-Heverlee Leuven,St Truiden,10/23/2021
-106,B1,Cercle Brugge,Standard,10/23/2021
-107,B1,Eupen,St. Gilloise,10/23/2021
-108,B1,Mechelen,Waregem,10/23/2021
-1000,E0,Chelsea,Norwich,10/23/2021
-1001,E0,Crystal Palace,Newcastle,10/23/2021
-1002,E0,Everton,Watford,10/23/2021
-1003,E0,Leeds,Wolves,10/23/2021
-1004,E0,Southampton,Burnley,10/23/2021
-1005,E0,Brighton,Man City,10/23/2021
-1455,E1,Barnsley,Sheffield United,10/23/2021
-1456,E1,Birmingham,Swansea,10/23/2021
-1457,E1,Blackburn,Reading,10/23/2021
-1458,E1,Blackpool,Preston,10/23/2021
-1459,E1,Bournemouth,Huddersfield,10/23/2021
-1460,E1,Cardiff,Middlesbrough,10/23/2021
-1461,E1,Coventry,Derby,10/23/2021
-1462,E1,Luton,Hull,10/23/2021
-1463,E1,Millwall,Stoke,10/23/2021
-1464,E1,Nottm Forest,Fulham,10/23/2021
-1465,E1,Peterboro,QPR,10/23/2021
-1466,E1,West Brom,Bristol City,10/23/2021
-2019,E2,Shrewsbury,Cambridge,10/23/2021
-2020,E2,Sunderland,Charlton,10/23/2021
-2021,E2,Doncaster,Cheltenham,10/23/2021
-2022,E2,Wycombe,Crewe,10/23/2021
-2023,E2,Ipswich,Fleetwood Town,10/23/2021
-2024,E2,Bolton,Gillingham,10/23/2021
-2025,E2,Sheffield Weds,Lincoln,10/23/2021
-2026,E2,Burton,Oxford,10/23/2021
-2027,E2,Morecambe,Plymouth,10/23/2021
-2028,E2,Accrington,Portsmouth,10/23/2021
-2029,E2,Milton Keynes Dons,Rotherham,10/23/2021
-2030,E2,AFC Wimbledon,Wigan,10/23/2021
-2559,E3,Walsall,Barrow,10/23/2021
-2560,E3,Swindon,Bradford,10/23/2021
-2561,E3,Port Vale,Colchester,10/23/2021
-2562,E3,Scunthorpe,Crawley Town,10/23/2021
-2563,E3,Hartlepool,Harrogate,10/23/2021
-2564,E3,Stevenage,Leyton Orient,10/23/2021
-2565,E3,Exeter,Mansfield,10/23/2021
-2566,E3,Bristol Rvs,Newport County,10/23/2021
-2567,E3,Tranmere,Northampton,10/23/2021
-2568,E3,Carlisle,Oldham,10/23/2021
-2569,E3,Forest Green,Salford,10/23/2021
-2570,E3,Rochdale,Sutton,10/23/2021
-3076,EC,Aldershot,Bromley,10/23/2021
-3077,EC,Barnet,Wrexham,10/23/2021
-3078,EC,Chesterfield,Boreham Wood,10/23/2021
-3079,EC,Dag and Red,Southend,10/23/2021
-3080,EC,Eastleigh,Altrincham,10/23/2021
-3081,EC,Grimsby,Yeovil,10/23/2021
-3082,EC,Maidenhead,Woking,10/23/2021
-3083,EC,Notts County,Stockport,10/23/2021
-3084,EC,Solihull,Halifax,10/23/2021
-3085,EC,Torquay,Kings Lynn,10/23/2021
-3086,EC,Weymouth,Wealdstone,10/23/2021
-3961,F2,Auxerre,Bastia,10/23/2021
-3962,F2,Dunkerque,Caen,10/23/2021
-3963,F2,Grenoble,Dijon,10/23/2021
-3964,F2,Guingamp,Nimes,10/23/2021
-3965,F2,Ajaccio,Nancy,10/23/2021
-3966,F2,Le Havre,Pau FC,10/23/2021
-3967,F2,Sochaux,Quevilly Rouen,10/23/2021
-3968,F2,Niort,Rodez,10/23/2021
-3969,F2,Paris FC,Toulouse,10/23/2021
-3970,F2,Amiens,Valenciennes,10/23/2021
-4683,N1,Utrecht,Heerenveen,10/23/2021
-4684,N1,Zwolle,Heracles,10/23/2021
-4685,N1,Twente,Nijmegen,10/23/2021
-4686,N1,Waalwijk,Sparta Rotterdam,10/23/2021
-5267,SC0,St Mirren,Rangers,10/23/2021
-5268,SC0,Hearts,Dundee,10/23/2021
-5269,SC0,Aberdeen,Hibernian,10/23/2021
-5270,SC0,Celtic,St Johnstone,10/23/2021
-5271,SC0,Dundee United,Motherwell,10/23/2021
-5272,SC0,Ross County,Livingston,10/23/2021
-5456,SC1,Arbroath FC,Ayr United,10/23/2021
-5457,SC1,Partick Thistle,Dunfermline,10/23/2021
-5458,SC1,Queens,Greenock Morton,10/23/2021
-5459,SC1,Kilmarnock,Hamilton,10/23/2021
-5460,SC1,Raith Rovers,Inverness CT,10/23/2021
-703,D2,Holstein Kiel,Darmstadt,10/24/2021
-704,D2,Schalke 04,Dresden,10/24/2021
-705,D2,Paderborn,Hamburg,10/24/2021
-706,D2,Regensburg,Hannover,10/24/2021
-707,D2,St Pauli,Hansa Rostock,10/24/2021
-708,D2,Nurnberg,Heidenheim,10/24/2021
-709,D2,Erzgebirge Aue,Ingolstadt,10/24/2021
-710,D2,Fortuna Dusseldorf,Karlsruhe,10/24/2021
-711,D2,Sandhausen,Werder Bremen,10/24/2021
-1006,E0,Brentford,Leicester,10/24/2021
-1007,E0,West Ham,Tottenham,10/24/2021
-1008,E0,Man United,Liverpool,10/24/2021
-3561,F1,Lens,Metz,10/24/2021
-3562,F1,Lille,Brest,10/24/2021
-3563,F1,Lorient,Bordeaux,10/24/2021
-3564,F1,Marseille,Paris SG,10/24/2021
-3565,F1,Monaco,Montpellier,10/24/2021
-3566,F1,Nantes,Clermont,10/24/2021
-3567,F1,Nice,Lyon,10/24/2021
-3568,F1,Reims,Troyes,10/24/2021
-3569,F1,Rennes,Strasbourg,10/24/2021
-3570,F1,St Etienne,Angers,10/24/2021
-4301,I1,Atalanta,Udinese,10/24/2021
-4302,I1,Bologna,Milan,10/24/2021
-4303,I1,Fiorentina,Cagliari,10/24/2021
-4304,I1,Verona,Lazio,10/24/2021
-4305,I1,Inter,Juventus,10/24/2021
-4306,I1,Roma,Napoli,10/24/2021
-4307,I1,Salernitana,Empoli,10/24/2021
-4308,I1,Sampdoria,Spezia,10/24/2021
-4309,I1,Sassuolo,Venezia,10/24/2021
-4310,I1,Torino,Genoa,10/24/2021
-4687,N1,Groningen,AZ Alkmaar,10/24/2021
-4688,N1,Cambuur,Feyenoord,10/24/2021
-4689,N1,Vitesse,Go Ahead Eagles,10/24/2021
-4690,N1,Ajax,PSV Eindhoven,10/24/2021
-4979,P1,Pacos Ferreira,Arouca,10/24/2021
-4980,P1,Boavista,Belenenses,10/24/2021
-4981,P1,Vizela,Benfica,10/24/2021
-4982,P1,Gil Vicente,Sp Braga,10/24/2021
-4983,P1,Portimonense,Estoril,10/24/2021
-4984,P1,Santa Clara,Famalicao,10/24/2021
-4985,P1,Guimaraes,Maritimo,10/24/2021
-4986,P1,Sp Lisbon,Moreirense,10/24/2021
-4987,P1,Tondela,Porto,10/24/2021
-5681,SP1,Ath Bilbao,Villarreal,10/24/2021
-5682,SP1,Ath Madrid,Sociedad,10/24/2021
-5683,SP1,Barcelona,Real Madrid,10/24/2021
-5684,SP1,Betis,Vallecano,10/24/2021
-5685,SP1,Getafe,Celta,10/24/2021
-5686,SP1,Cadiz,Alaves,10/24/2021
-5687,SP1,Osasuna,Granada,10/24/2021
-5688,SP1,Sevilla,Levante,10/24/2021
-5689,SP1,Valencia,Mallorca,10/24/2021
-5690,SP1,Elche,Espanol,10/24/2021
-6092,SP2,Las Palmas,Alcorcon,10/24/2021
-6093,SP2,CD Mirandes,Almeria,10/24/2021
-6094,SP2,Eibar,Cartagena,10/24/2021
-6095,SP2,UD Ibiza,Fuenlabrada,10/24/2021
-6096,SP2,Burgos,Huesca,10/24/2021
-6097,SP2,Malaga,Lugo,10/24/2021
-6098,SP2,Ponferradina,Oviedo,10/24/2021
-6099,SP2,SD Amorebieta,Real Sociedad B,10/24/2021
-6100,SP2,Leganes,Tenerife,10/24/2021
-6101,SP2,Sporting Gijon,Valladolid,10/24/2021
-6102,SP2,Girona,Zaragoza,10/24/2021
-6523,T1,Gaziantep,Giresunspor,10/24/2021
-6524,T1,Karagumruk,Atakas Hatayspor,10/24/2021
-6525,T1,Besiktas,Galatasaray,10/24/2021
-6526,T1,Yeni Malatyaspor,Altay,10/24/2021
-6527,T1,Antalyaspor,Buyuksehyr,10/24/2021
-6528,T1,Sivasspor,Ad. Demirspor,10/24/2021
-6529,T1,Konyaspor,Kayserispor,10/24/2021
-6530,T1,Fenerbahce,Alanyaspor,10/24/2021
-6531,T1,Goztep,Trabzonspor,10/24/2021
-6532,T1,Rizespor,Kasimpasa,10/24/2021
-3087,EC,Aldershot,Weymouth,10/26/2021
-3088,EC,Altrincham,Solihull,10/26/2021
-3089,EC,Chesterfield,Eastleigh,10/26/2021
-3090,EC,Halifax,Dag and Red,10/26/2021
-3091,EC,Kings Lynn,Boreham Wood,10/26/2021
-3092,EC,Maidenhead,Wrexham,10/26/2021
-3093,EC,Notts County,Bromley,10/26/2021
-3094,EC,Southend,Dover Athletic,10/26/2021
-3095,EC,Stockport,Barnet,10/26/2021
-3096,EC,Wealdstone,Grimsby,10/26/2021
-3097,EC,Yeovil,Woking,10/26/2021
-5461,SC1,Inverness CT,Arbroath FC,10/26/2021
-5462,SC1,Ayr United,Kilmarnock,10/26/2021
-5463,SC1,Greenock Morton,Partick Thistle,10/26/2021
-5464,SC1,Hamilton,Queens,10/26/2021
-5465,SC1,Dunfermline,Raith Rovers,10/26/2021
+4311,I1,Cagliari,Roma,10/27/2021
+4312,I1,Empoli,Inter,10/27/2021
+4313,I1,Juventus,Sassuolo,10/27/2021
+4314,I1,Lazio,Fiorentina,10/27/2021
+4315,I1,Milan,Torino,10/27/2021
+4316,I1,Napoli,Bologna,10/27/2021
+4317,I1,Sampdoria,Atalanta,10/27/2021
+4318,I1,Spezia,Genoa,10/27/2021
+4319,I1,Udinese,Verona,10/27/2021
+4320,I1,Venezia,Salernitana,10/27/2021
+5273,SC0,Livingston,Dundee United,10/27/2021
+5274,SC0,Hibernian,Celtic,10/27/2021
+5275,SC0,St Johnstone,Hearts,10/27/2021
+5276,SC0,Motherwell,St Mirren,10/27/2021
+5277,SC0,Dundee,Ross County,10/27/2021
+5278,SC0,Rangers,Aberdeen,10/27/2021
+5691,SP1,Alaves,Elche,10/27/2021
+5692,SP1,Betis,Valencia,10/27/2021
+5693,SP1,Celta,Sociedad,10/27/2021
+5694,SP1,Mallorca,Sevilla,10/27/2021
+5695,SP1,Granada,Getafe,10/27/2021
+5696,SP1,Espanyol,Ath Bilbao,10/27/2021
+5697,SP1,Levante,Ath Madrid,10/27/2021
+5698,SP1,Real Madrid,Osasuna,10/27/2021
+5699,SP1,Vallecano,Barcelona,10/27/2021
+5700,SP1,Villarreal,Cadiz,10/27/2021
+388,D1,Bielefeld,Mainz,10/29/2021
+389,D1,Augsburg,Stuttgart,10/29/2021
+390,D1,Hoffenheim,Hertha,10/29/2021
+391,D1,Freiburg,Greuther Furth,10/29/2021
+392,D1,Mgladbach,Bochum,10/29/2021
+393,D1,Union Berlin,Bayern Munich,10/29/2021
+394,D1,Leverkusen,Wolfsburg,10/29/2021
+395,D1,Ein Frankfurt,RB Leipzig,10/29/2021
+396,D1,Dortmund,FC Koln,10/29/2021
+109,B1,Cercle Brugge,Antwerp,10/30/2021
+110,B1,St Truiden,Club Brugge,10/30/2021
+111,B1,Charleroi,Eupen,10/30/2021
+112,B1,Waregem,Genk,10/30/2021
+113,B1,Standard,Kortrijk,10/30/2021
+114,B1,Oostende,Mechelen,10/30/2021
+115,B1,Anderlecht,Oud-Heverlee Leuven,10/30/2021
+116,B1,Beerschot VA,Seraing,10/30/2021
+117,B1,Gent,St. Gilloise,10/30/2021
+1009,E0,Leicester,Arsenal,10/30/2021
+1010,E0,Burnley,Brentford,10/30/2021
+1011,E0,Liverpool,Brighton,10/30/2021
+1012,E0,Man City,Crystal Palace,10/30/2021
+1013,E0,Newcastle,Chelsea,10/30/2021
+1014,E0,Watford,Southampton,10/30/2021
+1015,E0,Tottenham,Man United,10/30/2021
+1467,E1,Bristol City,Barnsley,10/30/2021
+1468,E1,Derby,Blackburn,10/30/2021
+1469,E1,Fulham,West Brom,10/30/2021
+1470,E1,Huddersfield,Millwall,10/30/2021
+1471,E1,Hull,Coventry,10/30/2021
+1472,E1,Middlesbrough,Birmingham,10/30/2021
+1473,E1,Preston,Luton,10/30/2021
+1474,E1,QPR,Nottm Forest,10/30/2021
+1475,E1,Reading,Bournemouth,10/30/2021
+1476,E1,Sheffield United,Blackpool,10/30/2021
+1477,E1,Stoke,Cardiff,10/30/2021
+1478,E1,Swansea,Peterboro,10/30/2021
+2031,E2,Gillingham,Accrington,10/30/2021
+2032,E2,Cambridge,AFC Wimbledon,10/30/2021
+2033,E2,Portsmouth,Bolton,10/30/2021
+2034,E2,Wigan,Burton,10/30/2021
+2035,E2,Charlton,Doncaster,10/30/2021
+2036,E2,Plymouth,Ipswich,10/30/2021
+2037,E2,Crewe,Milton Keynes Dons,10/30/2021
+2038,E2,Oxford,Morecambe,10/30/2021
+2039,E2,Cheltenham,Sheffield Weds,10/30/2021
+2040,E2,Lincoln,Shrewsbury,10/30/2021
+2041,E2,Rotherham,Sunderland,10/30/2021
+2042,E2,Fleetwood Town,Wycombe,10/30/2021
+2571,E3,Harrogate,Bristol Rvs,10/30/2021
+2572,E3,Northampton,Carlisle,10/30/2021
+2573,E3,Salford,Exeter,10/30/2021
+2574,E3,Bradford,Forest Green,10/30/2021
+2575,E3,Leyton Orient,Hartlepool,10/30/2021
+2576,E3,Crawley Town,Port Vale,10/30/2021
+2577,E3,Barrow,Rochdale,10/30/2021
+2578,E3,Colchester,Scunthorpe,10/30/2021
+2579,E3,Newport County,Stevenage,10/30/2021
+2580,E3,Oldham,Swindon,10/30/2021
+2581,E3,Mansfield,Tranmere,10/30/2021
+2582,E3,Sutton,Walsall,10/30/2021
+3098,EC,Barnet,Aldershot,10/30/2021
+3099,EC,Boreham Wood,Southend,10/30/2021
+3100,EC,Bromley,Halifax,10/30/2021
+3101,EC,Dag and Red,Chesterfield,10/30/2021
+3102,EC,Dover Athletic,Stockport,10/30/2021
+3103,EC,Eastleigh,Maidenhead,10/30/2021
+3104,EC,Grimsby,Notts County,10/30/2021
+3105,EC,Solihull,Yeovil,10/30/2021
+3106,EC,Weymouth,Kings Lynn,10/30/2021
+3107,EC,Woking,Altrincham,10/30/2021
+3108,EC,Wrexham,Torquay,10/30/2021
+3971,F2,Pau FC,Ajaccio,10/30/2021
+3972,F2,Bastia,Amiens,10/30/2021
+3973,F2,Valenciennes,Auxerre,10/30/2021
+3974,F2,Caen,Grenoble,10/30/2021
+3975,F2,Toulouse,Guingamp,10/30/2021
+3976,F2,Dunkerque,Le Havre,10/30/2021
+3977,F2,Nimes,Niort,10/30/2021
+3978,F2,Dijon,Paris FC,10/30/2021
+3979,F2,Rodez,Quevilly Rouen,10/30/2021
+3980,F2,Nancy,Sochaux,10/30/2021
+4691,N1,Heracles,Ajax,10/30/2021
+4692,N1,Go Ahead Eagles,For Sittard,10/30/2021
+4693,N1,PSV Eindhoven,Twente,10/30/2021
+4694,N1,Heerenveen,Vitesse,10/30/2021
+4695,N1,AZ Alkmaar,Zwolle,10/30/2021
+5279,SC0,St Mirren,Dundee,10/30/2021
+5280,SC0,Aberdeen,Hearts,10/30/2021
+5281,SC0,Ross County,Hibernian,10/30/2021
+5282,SC0,Dundee United,St Johnstone,10/30/2021
+5283,SC0,Celtic,Livingston,10/30/2021
+5284,SC0,Motherwell,Rangers,10/30/2021
+5466,SC1,Raith Rovers,Ayr United,10/30/2021
+5467,SC1,Arbroath FC,Dunfermline,10/30/2021
+5468,SC1,Greenock Morton,Hamilton,10/30/2021
+5469,SC1,Partick Thistle,Inverness CT,10/30/2021
+5470,SC1,Kilmarnock,Queens,10/30/2021
+712,D2,Hansa Rostock,Fortuna Dusseldorf,10/31/2021
+713,D2,Hannover,Erzgebirge Aue,10/31/2021
+714,D2,Hamburg,Holstein Kiel,10/31/2021
+715,D2,Ingolstadt,Regensburg,10/31/2021
+716,D2,Darmstadt,Nurnberg,10/31/2021
+717,D2,Karlsruhe,Paderborn,10/31/2021
+718,D2,Dresden,Sandhausen,10/31/2021
+719,D2,Heidenheim,Schalke 04,10/31/2021
+720,D2,Werder Bremen,St Pauli,10/31/2021
+1016,E0,Norwich,Leeds,10/31/2021
+1017,E0,Aston Villa,West Ham,10/31/2021
+3571,F1,Angers,Nice,10/31/2021
+3572,F1,Bordeaux,Reims,10/31/2021
+3573,F1,Brest,Monaco,10/31/2021
+3574,F1,Clermont,Marseille,10/31/2021
+3575,F1,Lyon,Lens,10/31/2021
+3576,F1,Metz,St Etienne,10/31/2021
+3577,F1,Montpellier,Nantes,10/31/2021
+3578,F1,Paris SG,Lille,10/31/2021
+3579,F1,Strasbourg,Lorient,10/31/2021
+3580,F1,Troyes,Rennes,10/31/2021
+4321,I1,Atalanta,Lazio,10/31/2021
+4322,I1,Bologna,Cagliari,10/31/2021
+4323,I1,Fiorentina,Spezia,10/31/2021
+4324,I1,Genoa,Venezia,10/31/2021
+4325,I1,Verona,Juventus,10/31/2021
+4326,I1,Inter,Udinese,10/31/2021
+4327,I1,Roma,Milan,10/31/2021
+4328,I1,Salernitana,Napoli,10/31/2021
+4329,I1,Sassuolo,Empoli,10/31/2021
+4330,I1,Torino,Sampdoria,10/31/2021
+4696,N1,Waalwijk,Cambuur,10/31/2021
+4697,N1,Sparta Rotterdam,Feyenoord,10/31/2021
+4698,N1,Nijmegen,Groningen,10/31/2021
+4699,N1,Utrecht,Willem II,10/31/2021
+4988,P1,Estoril,Benfica,10/31/2021
+4989,P1,Porto,Boavista,10/31/2021
+4990,P1,Famalicao,Vizela,10/31/2021
+4991,P1,Maritimo,Gil Vicente,10/31/2021
+4992,P1,Moreirense,Pacos Ferreira,10/31/2021
+4993,P1,Sp Braga,Portimonense,10/31/2021
+4994,P1,Belenenses,Santa Clara,10/31/2021
+4995,P1,Arouca,Tondela,10/31/2021
+4996,P1,Sp Lisbon,Guimaraes,10/31/2021
+5701,SP1,Ath Madrid,Betis,10/31/2021
+5702,SP1,Barcelona,Alaves,10/31/2021
+5703,SP1,Getafe,Espanyol,10/31/2021
+5704,SP1,Cadiz,Mallorca,10/31/2021
+5705,SP1,Levante,Granada,10/31/2021
+5706,SP1,Sociedad,Ath Bilbao,10/31/2021
+5707,SP1,Sevilla,Osasuna,10/31/2021
+5708,SP1,Valencia,Villarreal,10/31/2021
+5709,SP1,Vallecano,Celta,10/31/2021
+5710,SP1,Elche,Real Madrid,10/31/2021
+6103,SP2,Tenerife,Burgos,10/31/2021
+6104,SP2,Zaragoza,CD Mirandes,10/31/2021
+6105,SP2,Valladolid,Eibar,10/31/2021
+6106,SP2,Fuenlabrada,Girona,10/31/2021
+6107,SP2,Real Sociedad B,Las Palmas,10/31/2021
+6108,SP2,Almeria,Leganes,10/31/2021
+6109,SP2,Oviedo,Malaga,10/31/2021
+6110,SP2,Cartagena,Ponferradina,10/31/2021
+6111,SP2,Huesca,SD Amorebieta,10/31/2021
+6112,SP2,Lugo,Sporting Gijon,10/31/2021
+6113,SP2,Alcorcon,UD Ibiza,10/31/2021
+6533,T1,Atakas Hatayspor,Besiktas,10/31/2021
+6534,T1,Giresunspor,Antalyaspor,10/31/2021
+6535,T1,Kasimpasa,Yeni Malatyaspor,10/31/2021
+6536,T1,Galatasaray,Gaziantep,10/31/2021
+6537,T1,Trabzonspor,Rizespor,10/31/2021
+6538,T1,Alanyaspor,Goztep,10/31/2021
+6539,T1,Kayserispor,Karagumruk,10/31/2021
+6540,T1,Konyaspor,Fenerbahce,10/31/2021
+6541,T1,Buyuksehyr,Ad. Demirspor,10/31/2021
+6542,T1,Altay,Sivasspor,10/31/2021

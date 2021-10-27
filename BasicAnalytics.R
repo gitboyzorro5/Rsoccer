@@ -274,6 +274,77 @@ apply(b1_winmargin_h,1,sum)
 e0_league_table[e0_league_table$Team == "Chelsea",6]
 typeof(l6_form_e0_gs)
 class(suml6_e0_gs)
+##################################################################################################################
+final_b1_wm <- c()
+suml6_b1_wm <- c()
+for(index_b1_wm_gp in 1:b1_games_played[1])
+{
+
+for(index_b1_wm in 1:length(b1_teams))
+{
+
+  {
+  index_b1_wm <- row.names(b1_winmargin_h) == b1_teams[index_b1_wm]
+  form_b1_wm <- b1_winmargin_h[index_b1_wm]
+
+  deleted_form_b1_wm <- form_b1_wm[!form_b1_wm[] == ""]
+  l6_form_b1_wm <- deleted_form_b1_wm[index_b1_wm_gp]
+  l6_form_b1_wm <- as.numeric(l6_form_b1_wm)
+  suml6_b1_wm[index_b1_wm] <- sum(l6_form_b1_wm)
+  l6_form_b1_wm <- paste(l6_form_b1_wm,collapse = " ")
+  final_b1_wm[index_b1_wm] <- cbind(paste(b1_teams[index_b1_wm],l6_form_b1_wm,suml6_b1_wm[index_b1_wm], sep = ",",collapse = ""))
+  }
+  #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
+}
+}
+
+final_b1_wm
+b1_winmargin_h
+typeof(deleted_form_b1_wm)
+suml6_b1_wm
+dim(form_b1_wm)
+cbind(b1_teams,suml6_b1_wm)
+
+for(b1_rowhwmsum in 1:nrow(b1_winmargin_h)) {
+  for(b1_colhwmsum in 1:ncol(b1_winmargin_h)) {
+
+
+
+  }
+
+    }
+
+as.numeric(b1_winmargin_h)
+b1_winmargin_h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

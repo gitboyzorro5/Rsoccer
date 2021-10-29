@@ -8,22 +8,22 @@ library('lubridate')
 library('sqldf')
 library('mgsub')
 ######################
-# aut_last_n_games <- 6
-# arg_last_n_games <- 6
-# bra_last_n_games <- 6
-# chn_last_n_games <- 6
-# dnk_last_n_games <- 6
-# fin_last_n_games <- 6
-# irl_last_n_games <- 6
-# jpn_last_n_games <- 6
-# mex_last_n_games <- 6
-# mls_last_n_games <- 6
-# nor_last_n_games <- 6
-# pol_last_n_games <- 6
-# rou_last_n_games <- 6
-# rus_last_n_games <- 6
-# swe_last_n_games <- 6
-# swz_last_n_games <- 6
+aut_last_n_games <- 6
+arg_last_n_games <- 6
+bra_last_n_games <- 6
+chn_last_n_games <- 6
+dnk_last_n_games <- 6
+fin_last_n_games <- 6
+irl_last_n_games <- 6
+jpn_last_n_games <- 6
+mex_last_n_games <- 6
+mls_last_n_games <- 6
+nor_last_n_games <- 6
+pol_last_n_games <- 6
+rou_last_n_games <- 6
+rus_last_n_games <- 6
+swe_last_n_games <- 6
+swz_last_n_games <- 6
 ######################
 # aut_last_n_games <- aut_games_played[1]
 # arg_last_n_games <- arg_games_played[1]

@@ -6,54 +6,54 @@ library('scales')
 library('R.utils')
 ############################
 #create last n games
-# b1_last_n_games <- 6
-# d1_last_n_games <- 6
-# d2_last_n_games <- 6
-# e0_last_n_games <- 6
-# e1_last_n_games <- 6
-# e2_last_n_games <- 6
-# e3_last_n_games <- 6
-# ec_last_n_games <- 6
-# f1_last_n_games <- 6
-# f2_last_n_games <- 6
-# g1_last_n_games <- 6
-# i1_last_n_games <- 6
-# i2_last_n_games <- 6
-# n1_last_n_games <- 6
-# p1_last_n_games <- 6
-# sc0_last_n_games <- 6
-# sc1_last_n_games <- 6
-# sc2_last_n_games <- 6
-# sc3_last_n_games <- 6
-# sp1_last_n_games <- 6
-# sp2_last_n_games <- 6
-# t1_last_n_games <- 6
+b1_last_n_games <- 6
+d1_last_n_games <- 6
+d2_last_n_games <- 6
+e0_last_n_games <- 6
+e1_last_n_games <- 6
+e2_last_n_games <- 6
+e3_last_n_games <- 6
+ec_last_n_games <- 6
+f1_last_n_games <- 6
+f2_last_n_games <- 6
+g1_last_n_games <- 6
+i1_last_n_games <- 6
+i2_last_n_games <- 6
+n1_last_n_games <- 6
+p1_last_n_games <- 6
+sc0_last_n_games <- 6
+sc1_last_n_games <- 6
+sc2_last_n_games <- 6
+sc3_last_n_games <- 6
+sp1_last_n_games <- 6
+sp2_last_n_games <- 6
+t1_last_n_games <- 6
 # #####################################
 #####################################
 # #create last total games
-b1_last_n_games <- b1_games_played[1]
-d1_last_n_games <- d1_games_played[1]
-d2_last_n_games <- d2_games_played[1]
-e0_last_n_games <- e0_games_played[1]
-e1_last_n_games <- e1_games_played[1]
-e2_last_n_games <- e2_games_played[1]
-e3_last_n_games <- e3_games_played[1]
-ec_last_n_games <- ec_games_played[1]
-f1_last_n_games <- f1_games_played[1]
-f2_last_n_games <- f2_games_played[1]
-g1_last_n_games <- g1_games_played[1]
-i1_last_n_games <- i1_games_played[1]
-i2_last_n_games <- i2_games_played[1]
-n1_last_n_games <- n1_games_played[1]
-p1_last_n_games <- p1_games_played[1]
-sc0_last_n_games <- sc0_games_played[1]
-sc1_last_n_games <- sc1_games_played[1]
-sc2_last_n_games <- sc2_games_played[1]
-sc3_last_n_games <- sc3_games_played[1]
-sp1_last_n_games <- sp1_games_played[1]
-sp2_last_n_games <- sp2_games_played[1]
-t1_last_n_games <- t1_games_played[1]
-########################################
+# b1_last_n_games <- b1_games_played[1]
+# d1_last_n_games <- d1_games_played[1]
+# d2_last_n_games <- d2_games_played[1]
+# e0_last_n_games <- e0_games_played[1]
+# e1_last_n_games <- e1_games_played[1]
+# e2_last_n_games <- e2_games_played[1]
+# e3_last_n_games <- e3_games_played[1]
+# ec_last_n_games <- ec_games_played[1]
+# f1_last_n_games <- f1_games_played[1]
+# f2_last_n_games <- f2_games_played[1]
+# g1_last_n_games <- g1_games_played[1]
+# i1_last_n_games <- i1_games_played[1]
+# i2_last_n_games <- i2_games_played[1]
+# n1_last_n_games <- n1_games_played[1]
+# p1_last_n_games <- p1_games_played[1]
+# sc0_last_n_games <- sc0_games_played[1]
+# sc1_last_n_games <- sc1_games_played[1]
+# sc2_last_n_games <- sc2_games_played[1]
+# sc3_last_n_games <- sc3_games_played[1]
+# sp1_last_n_games <- sp1_games_played[1]
+# sp2_last_n_games <- sp2_games_played[1]
+# t1_last_n_games <- t1_games_played[1]
+# ########################################
 ########################################
 
 #B1

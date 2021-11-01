@@ -315,7 +315,30 @@ for(b1_rowhwmsum in 1:nrow(b1_winmargin_h)) {
     }
 
 as.numeric(b1_winmargin_h)
+################################################################
 b1_winmargin_h
+
+#install.packages('reshape2')
+library('reshape2')
+
+b1_winmargin_h_margindata <- melt(b1_winmargin_h)
+colnames(b1_winmargin_h_margindata)[1] <- "Team"
+b1_winmargin_h_margindata
+B1_margindata <- B1
+B1_margindata$homewinmargin
+B1_margindata$awaywinmargin
+colnames(B1_margindata)
+class(B1_margindata)
+require(RH2)
+library(sqldf)
+B1_margindata$homewinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_margindata ON  b1_winmargin_h_margindata.Date = B1_margindata.Date and Team = B1_margindata.HomeTeam")
+B1_margindata$awaywinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_margindata ON  b1_winmargin_h_margindata.Date = B1_margindata.Date and Team = B1_margindata.AwayTeam")
+
+head(B1_margindata,10)
+
+
+
+
 
 
 

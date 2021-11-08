@@ -165,8 +165,21 @@ colnames(b1_prediction) <- "prediction"
 b1_prediction
 
 b1_picks <- cbind(B1_fixtures$Div,B1_fixtures$HomeTeam_b1,B1_fixtures$AwayTeam_b1,b1_prediction)
-colnames(b1_picks)[1] <- "b1picks_Div"
-colnames(b1_picks)[2] <- "b1picks_HomeTeam"
-colnames(b1_picks)[3] <- "b1picks_AwayTeam"
-b1_picks$matchid <- paste(b1_picks$b1picks_HomeTeam,b1_picks$b1picks_AwayTeam,sep = "-")
-b1_picks
+colnames(b1_picks)[1] <- "picks_Div"
+colnames(b1_picks)[2] <- "picks_HomeTeam"
+colnames(b1_picks)[3] <- "picks_AwayTeam"
+b1_picks$matchid <- paste(b1_picks$picks_HomeTeam,b1_picks$picks_AwayTeam,sep = "-")
+############################################################################################
+############################################################################################
+#join the data
+myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20212022.xlsx', sheet = '3way')
+myodds_fixtures$matchid <- paste(myodds_fixtures$HT,myodds_fixtures$AT, sep = "-")
+myodds_fixtures_prediction <- dplyr::left_join(myodds_fixtures,b1_picks)
+write.csv(myodds_fixtures_prediction,'myodds_fixtures_prediction.csv')
+
+
+
+
+
+
+

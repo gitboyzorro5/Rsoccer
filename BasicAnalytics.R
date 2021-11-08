@@ -322,6 +322,7 @@ b1_winmargin_h
 library('reshape2')
 
 b1_winmargin_h_margindata <- melt(b1_winmargin_h)
+b1_winmargin_h_margindata
 colnames(b1_winmargin_h_margindata)[1] <- "Team"
 b1_winmargin_h_margindata
 B1_margindata <- B1
@@ -335,10 +336,19 @@ B1_margindata$homewinmargin <- sqldf("select b1_winmargin_h_margindata.Value fro
 B1_margindata$awaywinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_margindata ON  b1_winmargin_h_margindata.Date = B1_margindata.Date and Team = B1_margindata.AwayTeam")
 
 head(B1_margindata,10)
+#############################################
+b1_hometeamindex <- match(c("Anderlecht"),b1_teams)
+
+b1_awayteamindex <- match(c("Genk"),b1_teams)
 
 
-
-
+b1_form_vec <- as.vector(b1_form_h[b1_hometeamindex,])
+b1_form_vec[is.na(b1_form_vec)] <- ""
+b1_form_vec <- b1_form_vec[b1_form_vec != ""]
+b1_form_vec  <-tail(b1_form_vec,6)
+length(which(b1_form_vec == "W"))
+length(which(b1_form_vec == "D"))
+length(which(b1_form_vec == "L"))
 
 
 

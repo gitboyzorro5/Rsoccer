@@ -379,7 +379,3 @@ length(which(b1_form_vec == "L"))
 
 
 
-
-
-
-

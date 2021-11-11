@@ -352,8 +352,7 @@ length(which(b1_form_vec == "L"))
 
 
 
-
-
+e2_picks[e2_picks$picks_HomeTeam == "Milton Keynes Dons",]
 
 
 

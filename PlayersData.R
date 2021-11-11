@@ -24,7 +24,7 @@ webpage_i1 <- read_html(i1html)
 webpage_f1 <- read_html(f1html)
 webpage_sc0 <- read_html(sc0html)
 webpage_mls <- read_html(mlshtml)
-
+pp
 e0_scorersdata <- webpage_e0 %>% html_nodes(css ='table') %>% html_table()
 e1_scorersdata <- webpage_e1 %>% html_nodes(css ='table') %>% html_table()
 e2_scorersdata <- webpage_e2 %>% html_nodes(css ='table') %>% html_table()

@@ -316,57 +316,42 @@ for(b1_rowhwmsum in 1:nrow(b1_winmargin_h)) {
 
 as.numeric(b1_winmargin_h)
 ################################################################
-b1_winmargin_h
-
+b1_firstgames <- length(b1_teams)/2
 #install.packages('reshape2')
 library('reshape2')
-
 b1_winmargin_h_margindata <- melt(b1_winmargin_h)
-b1_winmargin_h_margindata
 colnames(b1_winmargin_h_margindata)[1] <- "Team"
-b1_winmargin_h_margindata
 B1_margindata <- B1
-B1_margindata$homewinmargin
-B1_margindata$awaywinmargin
-colnames(B1_margindata)
-class(B1_margindata)
+B1_margindata$homewinmargin <- "0"
+B1_margindata$awaywinmargin <- "0"
 require(RH2)
 library(sqldf)
-B1_margindata$homewinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_margindata ON  b1_winmargin_h_margindata.Date = B1_margindata.Date and Team = B1_margindata.HomeTeam")
-B1_margindata$awaywinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_margindata ON  b1_winmargin_h_margindata.Date = B1_margindata.Date and Team = B1_margindata.AwayTeam")
 
-head(B1_margindata,10)
-#############################################
-b1_hometeamindex <- match(c("Anderlecht"),b1_teams)
+for(b1_margindata_row in 1:nrow(B1_margindata)){
 
-b1_awayteamindex <- match(c("Genk"),b1_teams)
+if(b1_margindata_row <= b1_firstgames){
 
-
-b1_form_vec <- as.vector(b1_form_h[b1_hometeamindex,])
-b1_form_vec[is.na(b1_form_vec)] <- ""
-b1_form_vec <- b1_form_vec[b1_form_vec != ""]
-b1_form_vec  <-tail(b1_form_vec,6)
-length(which(b1_form_vec == "W"))
-length(which(b1_form_vec == "D"))
-length(which(b1_form_vec == "L"))
+B1_margindata$homewinmargin <- "0"
+B1_margindata$awaywinmargin <- "0"
 
 
+}else
+  B1_margindata$homewinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_margindata ON  b1_winmargin_h_margindata.Date = B1_margindata.Date and Team = B1_margindata.HomeTeam")
+  B1_margindata$awaywinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_margindata ON  b1_winmargin_h_margindata.Date = B1_margindata.Date and Team = B1_margindata.AwayTeam")
 
-e2_picks[e2_picks$picks_HomeTeam == "Milton Keynes Dons",]
+}
+######################################
 
+#split first matches
+B1_firstsplit <-  head(B1_margindata,b1_firstgames)
+B1_secondsplit <- tail(B1_margindata,nrow(B1_margindata) - b1_firstgames)
 
+B1_secondsplit$homewinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_secondsplit ON  b1_winmargin_h_margindata.Date = B1_secondsplit.Date and Team = B1_secondsplit.HomeTeam")
+B1_secondsplit$awaywinmargin <- sqldf("select b1_winmargin_h_margindata.Value from b1_winmargin_h_margindata inner join B1_secondsplit ON  b1_winmargin_h_margindata.Date = B1_secondsplit.Date and Team = B1_secondsplit.AwayTeam")
 
-tabyl(allteams20212022,Div,TG) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
+B1_merged <- rbind(B1_firstsplit,B1_secondsplit)
 
-
-
-
-ifelse
-
-
-
-
-
+rm(B1_merged)
 
 
 

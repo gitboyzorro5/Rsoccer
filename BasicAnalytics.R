@@ -356,12 +356,12 @@ e2_picks[e2_picks$picks_HomeTeam == "Milton Keynes Dons",]
 
 
 
+tabyl(allteams20212022,Div,TG) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 
 
 
 
-
-
+ifelse
 
 
 

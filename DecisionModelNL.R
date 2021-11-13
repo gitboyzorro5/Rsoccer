@@ -139,10 +139,9 @@ for(aut_row in 1:nrow(AUT_fixtures))
 
   ifelse(aut_at_last6points > aut_ht_last6points & aut_at_totalwinmargin > aut_ht_totalwinmargin,aut_3waypick <- "2",aut_3waypick <- "1X")
 
-  ifelse(aut_ht_avgtotalgoals >=2.5 & aut_at_avgtotalgoals >= 2.5 & aut_ht_no_of_ov25 + aut_at_no_of_ov25 >= 6,aut_goalspick <- "ov25",aut_goalspick <- "un25")
+  if(aut_ht_no_of_ov25 + aut_at_no_of_ov25 >= 6) {aut_goalspick <- "ov25"} else {aut_goalspick <- "un25"}
 
-  ifelse(aut_ht_avgtotalgoals <=2.3 & aut_at_avgtotalgoals <= 2.3 & aut_ht_no_of_un25 + aut_at_no_of_un25 >= 6,aut_goalspick <- "un25",aut_goalspick <- "ov25")
-
+  if(aut_ht_no_of_un25 + aut_at_no_of_un25 >= 6) {aut_goalspick <- "un25"} else {aut_goalspick <- "ov25"}
 
   aut_prediction[aut_row] <- rbind(paste(aut_3waypick,aut_goalspick,sep = ","))
 
@@ -290,10 +289,10 @@ for(arg_row in 1:nrow(ARG_fixtures))
 
   ifelse(arg_at_last6points > arg_ht_last6points & arg_at_totalwinmargin > arg_ht_totalwinmargin,arg_3waypick <- "2",arg_3waypick <- "1X")
 
-  ifelse(arg_ht_avgtotalgoals >=2.5 & arg_at_avgtotalgoals >= 2.5 & arg_ht_no_of_ov25 + arg_at_no_of_ov25 >= 6,arg_goalspick <- "ov25",arg_goalspick <- "un25")
 
-  ifelse(arg_ht_avgtotalgoals <=2.3 & arg_at_avgtotalgoals <= 2.3 & arg_ht_no_of_un25 + arg_at_no_of_un25 >= 6,arg_goalspick <- "un25",arg_goalspick <- "ov25")
+  if(arg_ht_no_of_ov25 + arg_at_no_of_ov25 >= 6) {arg_goalspick <- "ov25"} else {arg_goalspick <- "un25"}
 
+  if(arg_ht_no_of_un25 + arg_at_no_of_un25 >= 6) {arg_goalspick <- "un25"} else {arg_goalspick <- "ov25"}
 
   arg_prediction[arg_row] <- rbind(paste(arg_3waypick,arg_goalspick,sep = ","))
 
@@ -440,10 +439,9 @@ for(bra_row in 1:nrow(BRA_fixtures))
 
   ifelse(bra_at_last6points > bra_ht_last6points & bra_at_totalwinmargin > bra_ht_totalwinmargin,bra_3waypick <- "2",bra_3waypick <- "1X")
 
-  ifelse(bra_ht_avgtotalgoals >=2.5 & bra_at_avgtotalgoals >= 2.5 & bra_ht_no_of_ov25 + bra_at_no_of_ov25 >= 6,bra_goalspick <- "ov25",bra_goalspick <- "un25")
+  if(bra_ht_no_of_ov25 + bra_at_no_of_ov25 >= 6) {bra_goalspick <- "ov25"} else {bra_goalspick <- "un25"}
 
-  ifelse(bra_ht_avgtotalgoals <=2.3 & bra_at_avgtotalgoals <= 2.3 & bra_ht_no_of_un25 + bra_at_no_of_un25 >= 6,bra_goalspick <- "un25",bra_goalspick <- "ov25")
-
+  if(bra_ht_no_of_un25 + bra_at_no_of_un25 >= 6) {bra_goalspick <- "un25"} else {bra_goalspick <- "ov25"}
 
   bra_prediction[bra_row] <- rbind(paste(bra_3waypick,bra_goalspick,sep = ","))
 
@@ -591,9 +589,9 @@ for(chn_row in 1:nrow(CHN_fixtures))
 
   ifelse(chn_at_last6points > chn_ht_last6points & chn_at_totalwinmargin > chn_ht_totalwinmargin,chn_3waypick <- "2",chn_3waypick <- "1X")
 
-  ifelse(chn_ht_avgtotalgoals >=2.5 & chn_at_avgtotalgoals >= 2.5 & chn_ht_no_of_ov25 + chn_at_no_of_ov25 >= 6,chn_goalspick <- "ov25",chn_goalspick <- "un25")
+  if(chn_ht_no_of_ov25 + chn_at_no_of_ov25 >= 6) {chn_goalspick <- "ov25"} else {chn_goalspick <- "un25"}
 
-  ifelse(chn_ht_avgtotalgoals <=2.3 & chn_at_avgtotalgoals <= 2.3 & chn_ht_no_of_un25 + chn_at_no_of_un25 >= 6,chn_goalspick <- "un25",chn_goalspick <- "ov25")
+  if(chn_ht_no_of_un25 + chn_at_no_of_un25 >= 6) {chn_goalspick <- "un25"} else {chn_goalspick <- "ov25"}
 
   chn_prediction[chn_row] <- rbind(paste(chn_3waypick,chn_goalspick,sep = ","))
 
@@ -740,10 +738,9 @@ for(dnk_row in 1:nrow(DNK_fixtures))
 
   ifelse(dnk_at_last6points > dnk_ht_last6points & dnk_at_totalwinmargin > dnk_ht_totalwinmargin,dnk_3waypick <- "2",dnk_3waypick <- "1X")
 
-  ifelse(dnk_ht_avgtotalgoals >=2 & dnk_at_avgtotalgoals >= 2 & dnk_ht_no_of_ov25 + dnk_at_no_of_ov25 >= 6,dnk_goalspick <- "ov25",dnk_goalspick <- "un25")
+  if(dnk_ht_no_of_ov25 + dnk_at_no_of_ov25 >= 6) {dnk_goalspick <- "ov25"} else {dnk_goalspick <- "un25"}
 
-  ifelse(dnk_ht_avgtotalgoals <=2.3 & dnk_at_avgtotalgoals <= 2.3 & dnk_ht_no_of_un25 + dnk_at_no_of_un25 >= 6,dnk_goalspick <- "un25",dnk_goalspick <- "ov25")
-
+  if(dnk_ht_no_of_un25 + dnk_at_no_of_un25 >= 6) {dnk_goalspick <- "un25"} else {dnk_goalspick <- "ov25"}
 
   dnk_prediction[dnk_row] <- rbind(paste(dnk_3waypick,dnk_goalspick,sep = ","))
 
@@ -890,9 +887,9 @@ for(fin_row in 1:nrow(FIN_fixtures))
 
   ifelse(fin_at_last6points > fin_ht_last6points & fin_at_totalwinmargin > fin_ht_totalwinmargin,fin_3waypick <- "2",fin_3waypick <- "1X")
 
-  ifelse(fin_ht_avgtotalgoals >=2.5 & fin_at_avgtotalgoals >= 2.5 & fin_ht_no_of_ov25 + fin_at_no_of_ov25 >= 6,fin_goalspick <- "ov25",fin_goalspick <- "un25")
+  if(fin_ht_no_of_ov25 + fin_at_no_of_ov25 >= 6) {fin_goalspick <- "ov25"} else {fin_goalspick <- "un25"}
 
-  ifelse(fin_ht_avgtotalgoals <=2.3 & fin_at_avgtotalgoals <= 2.3 & fin_ht_no_of_un25 + fin_at_no_of_un25 >= 6,fin_goalspick <- "un25",fin_goalspick <- "ov25")
+  if(fin_ht_no_of_un25 + fin_at_no_of_un25 >= 6) {fin_goalspick <- "un25"} else {fin_goalspick <- "ov25"}
 
   fin_prediction[fin_row] <- rbind(paste(fin_3waypick,fin_goalspick,sep = ","))
 
@@ -1039,9 +1036,9 @@ for(irl_row in 1:nrow(IRL_fixtures))
 
   ifelse(irl_at_last6points > irl_ht_last6points & irl_at_totalwinmargin > irl_ht_totalwinmargin,irl_3waypick <- "2",irl_3waypick <- "1X")
 
-  ifelse(irl_ht_avgtotalgoals >=2.5 & irl_at_avgtotalgoals >= 2.5 & irl_ht_no_of_ov25 + irl_at_no_of_ov25 >= 6,irl_goalspick <- "ov25",irl_goalspick <- "un25")
+  if(irl_ht_no_of_ov25 + irl_at_no_of_ov25 >= 6) {irl_goalspick <- "ov25"} else {irl_goalspick <- "un25"}
 
-  ifelse(irl_ht_avgtotalgoals <=2.3 & irl_at_avgtotalgoals <= 2.3 & irl_ht_no_of_un25 + irl_at_no_of_un25 >= 6,irl_goalspick <- "un25",irl_goalspick <- "ov25")
+  if(irl_ht_no_of_un25 + irl_at_no_of_un25 >= 6) {irl_goalspick <- "un25"} else {irl_goalspick <- "ov25"}
 
   irl_prediction[irl_row] <- rbind(paste(irl_3waypick,irl_goalspick,sep = ","))
 
@@ -1188,9 +1185,10 @@ for(jpn_row in 1:nrow(JPN_fixtures))
 
   ifelse(jpn_at_last6points > jpn_ht_last6points & jpn_at_totalwinmargin > jpn_ht_totalwinmargin,jpn_3waypick <- "2",jpn_3waypick <- "1X")
 
-  ifelse(jpn_ht_avgtotalgoals >=2.5 & jpn_at_avgtotalgoals >= 2.5 & jpn_ht_no_of_ov25 + jpn_at_no_of_ov25 >= 6,jpn_goalspick <- "ov25",jpn_goalspick <- "un25")
 
-  ifelse(jpn_ht_avgtotalgoals <=2.3 & jpn_at_avgtotalgoals <= 2.3 & jpn_ht_no_of_un25 + jpn_at_no_of_un25 >= 6,jpn_goalspick <- "un25",jpn_goalspick <- "ov25")
+  if(jpn_ht_no_of_ov25 + jpn_at_no_of_ov25 >= 6) {jpn_goalspick <- "ov25"} else {jpn_goalspick <- "un25"}
+
+  if(jpn_ht_no_of_un25 + jpn_at_no_of_un25 >= 6) {jpn_goalspick <- "un25"} else {jpn_goalspick <- "ov25"}
 
   jpn_prediction[jpn_row] <- rbind(paste(jpn_3waypick,jpn_goalspick,sep = ","))
 
@@ -1337,9 +1335,10 @@ for(mex_row in 1:nrow(MEX_fixtures))
 
   ifelse(mex_at_last6points > mex_ht_last6points & mex_at_totalwinmargin > mex_ht_totalwinmargin,mex_3waypick <- "2",mex_3waypick <- "1X")
 
-  ifelse(mex_ht_avgtotalgoals >=2.5 & mex_at_avgtotalgoals >= 2.5 & mex_ht_no_of_ov25 + mex_at_no_of_ov25 >= 6,mex_goalspick <- "ov25",mex_goalspick <- "un25")
 
-  ifelse(mex_ht_avgtotalgoals <=2.3 & mex_at_avgtotalgoals <= 2.3 & mex_ht_no_of_un25 + mex_at_no_of_un25 >= 6,mex_goalspick <- "un25",mex_goalspick <- "ov25")
+  if(mex_ht_no_of_ov25 + mex_at_no_of_ov25 >= 6) {mex_goalspick <- "ov25"} else {mex_goalspick <- "un25"}
+
+  if(mex_ht_no_of_un25 + mex_at_no_of_un25 >= 6) {mex_goalspick <- "un25"} else {mex_goalspick <- "ov25"}
 
   mex_prediction[mex_row] <- rbind(paste(mex_3waypick,mex_goalspick,sep = ","))
 
@@ -1486,9 +1485,9 @@ for(mls_row in 1:nrow(MLS_fixtures))
 
   ifelse(mls_at_last6points > mls_ht_last6points & mls_at_totalwinmargin > mls_ht_totalwinmargin,mls_3waypick <- "2",mls_3waypick <- "1X")
 
-  ifelse(mls_ht_avgtotalgoals >=2.5 & mls_at_avgtotalgoals >= 2.5 & mls_ht_no_of_ov25 + mls_at_no_of_ov25 >= 6,mls_goalspick <- "ov25",mls_goalspick <- "un25")
+  if(mls_ht_no_of_ov25 + mls_at_no_of_ov25 >= 6) {mls_goalspick <- "ov25"} else {mls_goalspick <- "un25"}
 
-  ifelse(mls_ht_avgtotalgoals <=2.3 & mls_at_avgtotalgoals <= 2.3 & mls_ht_no_of_un25 + mls_at_no_of_un25 >= 6,mls_goalspick <- "un25",mls_goalspick <- "ov25")
+  if(mls_ht_no_of_un25 + mls_at_no_of_un25 >= 6) {mls_goalspick <- "un25"} else {mls_goalspick <- "ov25"}
 
   mls_prediction[mls_row] <- rbind(paste(mls_3waypick,mls_goalspick,sep = ","))
 
@@ -1635,9 +1634,9 @@ for(nor_row in 1:nrow(NOR_fixtures))
 
   ifelse(nor_at_last6points > nor_ht_last6points & nor_at_totalwinmargin > nor_ht_totalwinmargin,nor_3waypick <- "2",nor_3waypick <- "1X")
 
-  ifelse(nor_ht_avgtotalgoals >=2.5 & nor_at_avgtotalgoals >= 2.5 & nor_ht_no_of_ov25 + nor_at_no_of_ov25 >= 6,nor_goalspick <- "ov25",nor_goalspick <- "un25")
+  if(nor_ht_no_of_ov25 + nor_at_no_of_ov25 >= 6) {nor_goalspick <- "ov25"} else {nor_goalspick <- "un25"}
 
-  ifelse(nor_ht_avgtotalgoals <=2.3 & nor_at_avgtotalgoals <= 2.3 & nor_ht_no_of_un25 + nor_at_no_of_un25 >= 6,nor_goalspick <- "un25",nor_goalspick <- "ov25")
+  if(nor_ht_no_of_un25 + nor_at_no_of_un25 >= 6) {nor_goalspick <- "un25"} else {nor_goalspick <- "ov25"}
 
   nor_prediction[nor_row] <- rbind(paste(nor_3waypick,nor_goalspick,sep = ","))
 
@@ -1784,9 +1783,10 @@ for(pol_row in 1:nrow(POL_fixtures))
 
   ifelse(pol_at_last6points > pol_ht_last6points & pol_at_totalwinmargin > pol_ht_totalwinmargin,pol_3waypick <- "2",pol_3waypick <- "1X")
 
-  ifelse(pol_ht_avgtotalgoals >=2.5 & pol_at_avgtotalgoals >= 2.5 & pol_ht_no_of_ov25 + pol_at_no_of_ov25 >= 6,pol_goalspick <- "ov25",pol_goalspick <- "un25")
 
-  ifelse(pol_ht_avgtotalgoals <=2.3 & pol_at_avgtotalgoals <= 2.3 & pol_ht_no_of_un25 + pol_at_no_of_un25 >= 6,pol_goalspick <- "un25",pol_goalspick <- "ov25")
+  if(pol_ht_no_of_ov25 + pol_at_no_of_ov25 >= 6) {pol_goalspick <- "ov25"} else {pol_goalspick <- "un25"}
+
+  if(pol_ht_no_of_un25 + pol_at_no_of_un25 >= 6) {pol_goalspick <- "un25"} else {pol_goalspick <- "ov25"}
 
   pol_prediction[pol_row] <- rbind(paste(pol_3waypick,pol_goalspick,sep = ","))
 
@@ -1933,9 +1933,10 @@ for(rou_row in 1:nrow(ROU_fixtures))
 
   ifelse(rou_at_last6points > rou_ht_last6points & rou_at_totalwinmargin > rou_ht_totalwinmargin,rou_3waypick <- "2",rou_3waypick <- "1X")
 
-  ifelse(rou_ht_avgtotalgoals >=2.5 & rou_at_avgtotalgoals >= 2.5 & rou_ht_no_of_ov25 + rou_at_no_of_ov25 >= 6,rou_goalspick <- "ov25",rou_goalspick <- "un25")
 
-  ifelse(rou_ht_avgtotalgoals <=2.3 & rou_at_avgtotalgoals <= 2.3 & rou_ht_no_of_un25 + rou_at_no_of_un25 >= 6,rou_goalspick <- "un25",rou_goalspick <- "ov25")
+  if(rou_ht_no_of_ov25 + rou_at_no_of_ov25 >= 6) {rou_goalspick <- "ov25"} else {rou_goalspick <- "un25"}
+
+  if(rou_ht_no_of_un25 + rou_at_no_of_un25 >= 6) {rou_goalspick <- "un25"} else {rou_goalspick <- "ov25"}
 
   rou_prediction[rou_row] <- rbind(paste(rou_3waypick,rou_goalspick,sep = ","))
 
@@ -2082,9 +2083,9 @@ for(rus_row in 1:nrow(RUS_fixtures))
 
   ifelse(rus_at_last6points > rus_ht_last6points & rus_at_totalwinmargin > rus_ht_totalwinmargin,rus_3waypick <- "2",rus_3waypick <- "1X")
 
-  ifelse(rus_ht_avgtotalgoals >=2.5 & rus_at_avgtotalgoals >= 2.5 & rus_ht_no_of_ov25 + rus_at_no_of_ov25 >= 6,rus_goalspick <- "ov25",rus_goalspick <- "un25")
+  if(rus_ht_no_of_ov25 + rus_at_no_of_ov25 >= 6) {rus_goalspick <- "ov25"} else {rus_goalspick <- "un25"}
 
-  ifelse(rus_ht_avgtotalgoals <=2.3 & rus_at_avgtotalgoals <= 2.3 & rus_ht_no_of_un25 + rus_at_no_of_un25 >= 6,rus_goalspick <- "un25",rus_goalspick <- "ov25")
+  if(rus_ht_no_of_un25 + rus_at_no_of_un25 >= 6) {rus_goalspick <- "un25"} else {rus_goalspick <- "ov25"}
 
 
   rus_prediction[rus_row] <- rbind(paste(rus_3waypick,rus_goalspick,sep = ","))
@@ -2232,9 +2233,9 @@ for(swe_row in 1:nrow(SWE_fixtures))
 
   ifelse(swe_at_last6points > swe_ht_last6points & swe_at_totalwinmargin > swe_ht_totalwinmargin,swe_3waypick <- "2",swe_3waypick <- "1X")
 
-  ifelse(swe_ht_avgtotalgoals >=2.5 & swe_at_avgtotalgoals >= 2.5 & swe_ht_no_of_ov25 + swe_at_no_of_ov25 >= 6,swe_goalspick <- "ov25",swe_goalspick <- "un25")
+  if(swe_ht_no_of_ov25 + swe_at_no_of_ov25 >= 6) {swe_goalspick <- "ov25"} else {swe_goalspick <- "un25"}
 
-  ifelse(swe_ht_avgtotalgoals <=2.3 & swe_at_avgtotalgoals <= 2.3 & swe_ht_no_of_un25 + swe_at_no_of_un25 >= 6,swe_goalspick <- "un25",swe_goalspick <- "ov25")
+  if(swe_ht_no_of_un25 + swe_at_no_of_un25 >= 6) {swe_goalspick <- "un25"} else {swe_goalspick <- "ov25"}
 
 
   swe_prediction[swe_row] <- rbind(paste(swe_3waypick,swe_goalspick,sep = ","))
@@ -2382,10 +2383,9 @@ for(swz_row in 1:nrow(SWZ_fixtures))
 
   ifelse(swz_at_last6points > swz_ht_last6points & swz_at_totalwinmargin > swz_ht_totalwinmargin,swz_3waypick <- "2",swz_3waypick <- "1X")
 
-  ifelse(swz_ht_avgtotalgoals >=2.5 & swz_at_avgtotalgoals >= 2.5 & swz_ht_no_of_ov25 + swz_at_no_of_ov25 >= 6,swz_goalspick <- "ov25",swz_goalspick <- "un25")
+  if(swz_ht_no_of_ov25 + swz_at_no_of_ov25 >= 6) {swz_goalspick <- "ov25"} else {swz_goalspick <- "un25"}
 
-  ifelse(swz_ht_avgtotalgoals <=2.3 & swz_at_avgtotalgoals <= 2.3 & swz_ht_no_of_un25 + swz_at_no_of_un25 >= 6,swz_goalspick <- "un25",swz_goalspick <- "ov25")
-
+  if(swz_ht_no_of_un25 + swz_at_no_of_un25 >= 6) {swz_goalspick <- "un25"} else {swz_goalspick <- "ov25"}
 
   swz_prediction[swz_row] <- rbind(paste(swz_3waypick,swz_goalspick,sep = ","))
 

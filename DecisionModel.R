@@ -143,14 +143,16 @@ if(b1_ht_no_of_ov25 + b1_at_no_of_ov25 >= 6) {b1_goalspick <- "ov25"} else {b1_g
 
 if(b1_ht_no_of_un25 + b1_at_no_of_un25 >= 6) {b1_goalspick <- "un25"} else {b1_goalspick <- "ov25"}
 
+if(b1_ht_matches_scoring >= 4 && b1_at_matches_scoring >=4) {b1_btts <- "BTTS-Y"} else {b1_btts <- "BTTS-N"}
 
-b1_prediction[b1_row] <- rbind(paste(b1_3waypick,b1_goalspick,sep = ","))
+
+b1_prediction[b1_row] <- rbind(paste(b1_3waypick,b1_goalspick,b1_btts,sep = ","))
 
 }
 
 b1_prediction <- as.data.frame(b1_prediction)
 colnames(b1_prediction) <- "prediction"
-b1_prediction
+b1_picks
 
 b1_picks <- cbind(B1_fixtures$Div,B1_fixtures$HomeTeam_b1,B1_fixtures$AwayTeam_b1,b1_prediction)
 colnames(b1_picks)[1] <- "picks_Div"
@@ -293,6 +295,8 @@ for(d1_row in 1:nrow(D1_fixtures))
   if(d1_ht_no_of_ov25 + d1_at_no_of_ov25 >= 6) {d1_goalspick <- "ov25"} else {d1_goalspick <- "un25"}
 
   if(d1_ht_no_of_un25 + d1_at_no_of_un25 >= 6) {d1_goalspick <- "un25"} else {d1_goalspick <- "ov25"}
+
+  if(d1_ht_matches_scoring >= 4 && d1_at_matches_scoring >=4) {d1_btts <- "BTTS-Y"} else {d1_btts <- "BTTS-N"}
 
   d1_prediction[d1_row] <- rbind(paste(d1_3waypick,d1_goalspick,sep = ","))
 
@@ -442,6 +446,8 @@ for(d2_row in 1:nrow(D2_fixtures))
   if(d2_ht_no_of_ov25 + d2_at_no_of_ov25 >= 6) {d2_goalspick <- "ov25"} else {d2_goalspick <- "un25"}
 
   if(d2_ht_no_of_un25 + d2_at_no_of_un25 >= 6) {d2_goalspick <- "un25"} else {d2_goalspick <- "ov25"}
+
+  if(d2_ht_matches_scoring >= 4 && d2_at_matches_scoring >=4) {d2_btts <- "BTTS-Y"} else {d2_btts <- "BTTS-N"}
 
   d2_prediction[d2_row] <- rbind(paste(d2_3waypick,d2_goalspick,sep = ","))
 
@@ -594,6 +600,8 @@ for(e0_row in 1:nrow(E0_fixtures))
 
   if(e0_ht_no_of_un25 + e0_at_no_of_un25 >= 6) {e0_goalspick <- "un25"} else {e0_goalspick <- "ov25"}
 
+  if(e0_ht_matches_scoring >= 4 && e0_at_matches_scoring >=4) {e0_btts <- "BTTS-Y"} else {e0_btts <- "BTTS-N"}
+
   e0_prediction[e0_row] <- rbind(paste(e0_3waypick,e0_goalspick,sep = ","))
 
 }
@@ -744,6 +752,8 @@ for(e1_row in 1:nrow(E1_fixtures))
 
   if(e1_ht_no_of_un25 + e1_at_no_of_un25 >= 6) {e1_goalspick <- "un25"} else {e1_goalspick <- "ov25"}
 
+  if(e1_ht_matches_scoring >= 4 && e1_at_matches_scoring >=4) {e1_btts <- "BTTS-Y"} else {e1_btts <- "BTTS-N"}
+
 
   e1_prediction[e1_row] <- rbind(paste(e1_3waypick,e1_goalspick,sep = ","))
 
@@ -893,6 +903,8 @@ for(e2_row in 1:nrow(E2_fixtures))
   if(e2_ht_no_of_ov25 + e2_at_no_of_ov25 >= 6) {e2_goalspick <- "ov25"} else {e2_goalspick <- "un25"}
 
   if(e2_ht_no_of_un25 + e2_at_no_of_un25 >= 6) {e2_goalspick <- "un25"} else {e2_goalspick <- "ov25"}
+
+  if(e2_ht_matches_scoring >= 4 && e2_at_matches_scoring >=4) {e2_btts <- "BTTS-Y"} else {e2_btts <- "BTTS-N"}
 
   e2_prediction[e2_row] <- rbind(paste(e2_3waypick,e2_goalspick,sep = ","))
 

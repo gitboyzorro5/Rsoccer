@@ -13,6 +13,8 @@ unlink('picks_fixtures_prediction_nl.csv')
 AUT_fixtures$Hometeam_aut_index <- match(AUT_fixtures$HomeTeam_aut,aut_teams)
 AUT_fixtures$Awayteam_aut_index <- match(AUT_fixtures$AwayTeam_aut,aut_teams)
 aut_prediction <- c()
+aut_HWM <- c()
+aut_AWM <- c()
 for(aut_row in 1:nrow(AUT_fixtures))
 {
 
@@ -135,34 +137,49 @@ for(aut_row in 1:nrow(AUT_fixtures))
   aut_ht_last6points <- aut_ht_numberof_wins*3 + aut_ht_numberof_draws*1
   aut_at_last6points <- aut_at_numberof_wins*3 + aut_at_numberof_draws*1
 
-  ifelse(aut_ht_last6points > aut_at_last6points & aut_ht_totalwinmargin > aut_at_totalwinmargin,aut_3waypick <- "1",aut_3waypick <- "X2")
+  if(aut_ht_last6points > aut_at_last6points) {aut_3waypick <- "1"}  else {aut_3waypick <- "X2"}
 
-  ifelse(aut_at_last6points > aut_ht_last6points & aut_at_totalwinmargin > aut_ht_totalwinmargin,aut_3waypick <- "2",aut_3waypick <- "1X")
+  if(aut_at_last6points > aut_ht_last6points ) {aut_3waypick <- "2"} else {aut_3waypick <- "1X"}
 
   if(aut_ht_no_of_ov25 + aut_at_no_of_ov25 >= 6) {aut_goalspick <- "ov25"} else {aut_goalspick <- "un25"}
 
   if(aut_ht_no_of_un25 + aut_at_no_of_un25 >= 6) {aut_goalspick <- "un25"} else {aut_goalspick <- "ov25"}
 
-  aut_prediction[aut_row] <- rbind(paste(aut_3waypick,aut_goalspick,sep = ","))
+  if(aut_ht_matches_scoring >= 4 && aut_at_matches_scoring >=4) {aut_btts <- "BTTS-Y"} else {aut_btts <- "BTTS-N"}
+
+
+  aut_prediction[aut_row] <- rbind(paste(aut_3waypick,aut_goalspick,aut_btts,sep = ","))
+  aut_HWM[aut_row] <- aut_ht_totalwinmargin
+  aut_AWM[aut_row] <- aut_at_totalwinmargin
+
 
 }
 
 aut_prediction <- as.data.frame(aut_prediction)
 colnames(aut_prediction) <- "prediction"
-aut_prediction
 
-aut_picks <- cbind(AUT_fixtures$Div,AUT_fixtures$HomeTeam_aut,AUT_fixtures$AwayTeam_aut,aut_prediction)
+aut_HWM <- as.data.frame(aut_HWM)
+colnames(aut_HWM) <- "HWM"
+
+aut_AWM <- as.data.frame(aut_AWM)
+colnames(aut_AWM) <- "AWM"
+
+
+aut_picks <- cbind(AUT_fixtures$Div,AUT_fixtures$HomeTeam_aut,AUT_fixtures$AwayTeam_aut,aut_prediction,aut_HWM,aut_AWM)
 colnames(aut_picks)[1] <- "picks_Div"
 colnames(aut_picks)[2] <- "picks_HomeTeam"
 colnames(aut_picks)[3] <- "picks_AwayTeam"
 aut_picks$matchid <- paste(aut_picks$picks_HomeTeam,aut_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of AUT
+aut_picks
 ############################################################################################
 #ARG
 ARG_fixtures$Hometeam_arg_index <- match(ARG_fixtures$HomeTeam_arg,arg_teams)
 ARG_fixtures$Awayteam_arg_index <- match(ARG_fixtures$AwayTeam_arg,arg_teams)
 arg_prediction <- c()
+arg_HWM <- c()
+arg_AWM <- c()
 for(arg_row in 1:nrow(ARG_fixtures))
 {
 
@@ -285,34 +302,49 @@ for(arg_row in 1:nrow(ARG_fixtures))
   arg_ht_last6points <- arg_ht_numberof_wins*3 + arg_ht_numberof_draws*1
   arg_at_last6points <- arg_at_numberof_wins*3 + arg_at_numberof_draws*1
 
-  ifelse(arg_ht_last6points > arg_at_last6points & arg_ht_totalwinmargin > arg_at_totalwinmargin,arg_3waypick <- "1",arg_3waypick <- "X2")
+  if(arg_ht_last6points > arg_at_last6points) {arg_3waypick <- "1"}  else {arg_3waypick <- "X2"}
 
-  ifelse(arg_at_last6points > arg_ht_last6points & arg_at_totalwinmargin > arg_ht_totalwinmargin,arg_3waypick <- "2",arg_3waypick <- "1X")
-
+  if(arg_at_last6points > arg_ht_last6points ) {arg_3waypick <- "2"} else {arg_3waypick <- "1X"}
 
   if(arg_ht_no_of_ov25 + arg_at_no_of_ov25 >= 6) {arg_goalspick <- "ov25"} else {arg_goalspick <- "un25"}
 
   if(arg_ht_no_of_un25 + arg_at_no_of_un25 >= 6) {arg_goalspick <- "un25"} else {arg_goalspick <- "ov25"}
 
-  arg_prediction[arg_row] <- rbind(paste(arg_3waypick,arg_goalspick,sep = ","))
+  if(arg_ht_matches_scoring >= 4 && arg_at_matches_scoring >=4) {arg_btts <- "BTTS-Y"} else {arg_btts <- "BTTS-N"}
+
+
+  arg_prediction[arg_row] <- rbind(paste(arg_3waypick,arg_goalspick,arg_btts,sep = ","))
+  arg_HWM[arg_row] <- arg_ht_totalwinmargin
+  arg_AWM[arg_row] <- arg_at_totalwinmargin
+
 
 }
 
 arg_prediction <- as.data.frame(arg_prediction)
 colnames(arg_prediction) <- "prediction"
-arg_prediction
 
-arg_picks <- cbind(ARG_fixtures$Div,ARG_fixtures$HomeTeam_arg,ARG_fixtures$AwayTeam_arg,arg_prediction)
+arg_HWM <- as.data.frame(arg_HWM)
+colnames(arg_HWM) <- "HWM"
+
+arg_AWM <- as.data.frame(arg_AWM)
+colnames(arg_AWM) <- "AWM"
+
+
+arg_picks <- cbind(ARG_fixtures$Div,ARG_fixtures$HomeTeam_arg,ARG_fixtures$AwayTeam_arg,arg_prediction,arg_HWM,arg_AWM)
 colnames(arg_picks)[1] <- "picks_Div"
 colnames(arg_picks)[2] <- "picks_HomeTeam"
 colnames(arg_picks)[3] <- "picks_AwayTeam"
 arg_picks$matchid <- paste(arg_picks$picks_HomeTeam,arg_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of ARG
+arg_picks
+############################################################################################
 #BRA
 BRA_fixtures$Hometeam_bra_index <- match(BRA_fixtures$HomeTeam_bra,bra_teams)
 BRA_fixtures$Awayteam_bra_index <- match(BRA_fixtures$AwayTeam_bra,bra_teams)
 bra_prediction <- c()
+bra_HWM <- c()
+bra_AWM <- c()
 for(bra_row in 1:nrow(BRA_fixtures))
 {
 
@@ -435,34 +467,49 @@ for(bra_row in 1:nrow(BRA_fixtures))
   bra_ht_last6points <- bra_ht_numberof_wins*3 + bra_ht_numberof_draws*1
   bra_at_last6points <- bra_at_numberof_wins*3 + bra_at_numberof_draws*1
 
-  ifelse(bra_ht_last6points > bra_at_last6points & bra_ht_totalwinmargin > bra_at_totalwinmargin,bra_3waypick <- "1",bra_3waypick <- "X2")
+  if(bra_ht_last6points > bra_at_last6points) {bra_3waypick <- "1"}  else {bra_3waypick <- "X2"}
 
-  ifelse(bra_at_last6points > bra_ht_last6points & bra_at_totalwinmargin > bra_ht_totalwinmargin,bra_3waypick <- "2",bra_3waypick <- "1X")
+  if(bra_at_last6points > bra_ht_last6points ) {bra_3waypick <- "2"} else {bra_3waypick <- "1X"}
 
   if(bra_ht_no_of_ov25 + bra_at_no_of_ov25 >= 6) {bra_goalspick <- "ov25"} else {bra_goalspick <- "un25"}
 
   if(bra_ht_no_of_un25 + bra_at_no_of_un25 >= 6) {bra_goalspick <- "un25"} else {bra_goalspick <- "ov25"}
 
-  bra_prediction[bra_row] <- rbind(paste(bra_3waypick,bra_goalspick,sep = ","))
+  if(bra_ht_matches_scoring >= 4 && bra_at_matches_scoring >=4) {bra_btts <- "BTTS-Y"} else {bra_btts <- "BTTS-N"}
+
+
+  bra_prediction[bra_row] <- rbind(paste(bra_3waypick,bra_goalspick,bra_btts,sep = ","))
+  bra_HWM[bra_row] <- bra_ht_totalwinmargin
+  bra_AWM[bra_row] <- bra_at_totalwinmargin
+
 
 }
 
 bra_prediction <- as.data.frame(bra_prediction)
 colnames(bra_prediction) <- "prediction"
-bra_prediction
 
-bra_picks <- cbind(BRA_fixtures$Div,BRA_fixtures$HomeTeam_bra,BRA_fixtures$AwayTeam_bra,bra_prediction)
+bra_HWM <- as.data.frame(bra_HWM)
+colnames(bra_HWM) <- "HWM"
+
+bra_AWM <- as.data.frame(bra_AWM)
+colnames(bra_AWM) <- "AWM"
+
+
+bra_picks <- cbind(BRA_fixtures$Div,BRA_fixtures$HomeTeam_bra,BRA_fixtures$AwayTeam_bra,bra_prediction,bra_HWM,bra_AWM)
 colnames(bra_picks)[1] <- "picks_Div"
 colnames(bra_picks)[2] <- "picks_HomeTeam"
 colnames(bra_picks)[3] <- "picks_AwayTeam"
 bra_picks$matchid <- paste(bra_picks$picks_HomeTeam,bra_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of BRA
+bra_picks
 ############################################################################################
 #CHN
 CHN_fixtures$Hometeam_chn_index <- match(CHN_fixtures$HomeTeam_chn,chn_teams)
 CHN_fixtures$Awayteam_chn_index <- match(CHN_fixtures$AwayTeam_chn,chn_teams)
 chn_prediction <- c()
+chn_HWM <- c()
+chn_AWM <- c()
 for(chn_row in 1:nrow(CHN_fixtures))
 {
 
@@ -585,33 +632,49 @@ for(chn_row in 1:nrow(CHN_fixtures))
   chn_ht_last6points <- chn_ht_numberof_wins*3 + chn_ht_numberof_draws*1
   chn_at_last6points <- chn_at_numberof_wins*3 + chn_at_numberof_draws*1
 
-  ifelse(chn_ht_last6points > chn_at_last6points & chn_ht_totalwinmargin > chn_at_totalwinmargin,chn_3waypick <- "1",chn_3waypick <- "X2")
+  if(chn_ht_last6points > chn_at_last6points) {chn_3waypick <- "1"}  else {chn_3waypick <- "X2"}
 
-  ifelse(chn_at_last6points > chn_ht_last6points & chn_at_totalwinmargin > chn_ht_totalwinmargin,chn_3waypick <- "2",chn_3waypick <- "1X")
+  if(chn_at_last6points > chn_ht_last6points ) {chn_3waypick <- "2"} else {chn_3waypick <- "1X"}
 
   if(chn_ht_no_of_ov25 + chn_at_no_of_ov25 >= 6) {chn_goalspick <- "ov25"} else {chn_goalspick <- "un25"}
 
   if(chn_ht_no_of_un25 + chn_at_no_of_un25 >= 6) {chn_goalspick <- "un25"} else {chn_goalspick <- "ov25"}
 
-  chn_prediction[chn_row] <- rbind(paste(chn_3waypick,chn_goalspick,sep = ","))
+  if(chn_ht_matches_scoring >= 4 && chn_at_matches_scoring >=4) {chn_btts <- "BTTS-Y"} else {chn_btts <- "BTTS-N"}
+
+
+  chn_prediction[chn_row] <- rbind(paste(chn_3waypick,chn_goalspick,chn_btts,sep = ","))
+  chn_HWM[chn_row] <- chn_ht_totalwinmargin
+  chn_AWM[chn_row] <- chn_at_totalwinmargin
+
 
 }
 
 chn_prediction <- as.data.frame(chn_prediction)
 colnames(chn_prediction) <- "prediction"
-chn_prediction
 
-chn_picks <- cbind(CHN_fixtures$Div,CHN_fixtures$HomeTeam_chn,CHN_fixtures$AwayTeam_chn,chn_prediction)
+chn_HWM <- as.data.frame(chn_HWM)
+colnames(chn_HWM) <- "HWM"
+
+chn_AWM <- as.data.frame(chn_AWM)
+colnames(chn_AWM) <- "AWM"
+
+
+chn_picks <- cbind(CHN_fixtures$Div,CHN_fixtures$HomeTeam_chn,CHN_fixtures$AwayTeam_chn,chn_prediction,chn_HWM,chn_AWM)
 colnames(chn_picks)[1] <- "picks_Div"
 colnames(chn_picks)[2] <- "picks_HomeTeam"
 colnames(chn_picks)[3] <- "picks_AwayTeam"
 chn_picks$matchid <- paste(chn_picks$picks_HomeTeam,chn_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of CHN
+chn_picks
+############################################################################################
 #DNK
 DNK_fixtures$Hometeam_dnk_index <- match(DNK_fixtures$HomeTeam_dnk,dnk_teams)
 DNK_fixtures$Awayteam_dnk_index <- match(DNK_fixtures$AwayTeam_dnk,dnk_teams)
 dnk_prediction <- c()
+dnk_HWM <- c()
+dnk_AWM <- c()
 for(dnk_row in 1:nrow(DNK_fixtures))
 {
 
@@ -734,33 +797,49 @@ for(dnk_row in 1:nrow(DNK_fixtures))
   dnk_ht_last6points <- dnk_ht_numberof_wins*3 + dnk_ht_numberof_draws*1
   dnk_at_last6points <- dnk_at_numberof_wins*3 + dnk_at_numberof_draws*1
 
-  ifelse(dnk_ht_last6points > dnk_at_last6points & dnk_ht_totalwinmargin > dnk_at_totalwinmargin,dnk_3waypick <- "1",dnk_3waypick <- "X2")
+  if(dnk_ht_last6points > dnk_at_last6points) {dnk_3waypick <- "1"}  else {dnk_3waypick <- "X2"}
 
-  ifelse(dnk_at_last6points > dnk_ht_last6points & dnk_at_totalwinmargin > dnk_ht_totalwinmargin,dnk_3waypick <- "2",dnk_3waypick <- "1X")
+  if(dnk_at_last6points > dnk_ht_last6points ) {dnk_3waypick <- "2"} else {dnk_3waypick <- "1X"}
 
   if(dnk_ht_no_of_ov25 + dnk_at_no_of_ov25 >= 6) {dnk_goalspick <- "ov25"} else {dnk_goalspick <- "un25"}
 
   if(dnk_ht_no_of_un25 + dnk_at_no_of_un25 >= 6) {dnk_goalspick <- "un25"} else {dnk_goalspick <- "ov25"}
 
-  dnk_prediction[dnk_row] <- rbind(paste(dnk_3waypick,dnk_goalspick,sep = ","))
+  if(dnk_ht_matches_scoring >= 4 && dnk_at_matches_scoring >=4) {dnk_btts <- "BTTS-Y"} else {dnk_btts <- "BTTS-N"}
+
+
+  dnk_prediction[dnk_row] <- rbind(paste(dnk_3waypick,dnk_goalspick,dnk_btts,sep = ","))
+  dnk_HWM[dnk_row] <- dnk_ht_totalwinmargin
+  dnk_AWM[dnk_row] <- dnk_at_totalwinmargin
+
 
 }
 
 dnk_prediction <- as.data.frame(dnk_prediction)
 colnames(dnk_prediction) <- "prediction"
-dnk_prediction
 
-dnk_picks <- cbind(DNK_fixtures$Div,DNK_fixtures$HomeTeam_dnk,DNK_fixtures$AwayTeam_dnk,dnk_prediction)
+dnk_HWM <- as.data.frame(dnk_HWM)
+colnames(dnk_HWM) <- "HWM"
+
+dnk_AWM <- as.data.frame(dnk_AWM)
+colnames(dnk_AWM) <- "AWM"
+
+
+dnk_picks <- cbind(DNK_fixtures$Div,DNK_fixtures$HomeTeam_dnk,DNK_fixtures$AwayTeam_dnk,dnk_prediction,dnk_HWM,dnk_AWM)
 colnames(dnk_picks)[1] <- "picks_Div"
 colnames(dnk_picks)[2] <- "picks_HomeTeam"
 colnames(dnk_picks)[3] <- "picks_AwayTeam"
 dnk_picks$matchid <- paste(dnk_picks$picks_HomeTeam,dnk_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of DNK
+dnk_picks
+############################################################################################
 #FIN
 FIN_fixtures$Hometeam_fin_index <- match(FIN_fixtures$HomeTeam_fin,fin_teams)
 FIN_fixtures$Awayteam_fin_index <- match(FIN_fixtures$AwayTeam_fin,fin_teams)
 fin_prediction <- c()
+fin_HWM <- c()
+fin_AWM <- c()
 for(fin_row in 1:nrow(FIN_fixtures))
 {
 
@@ -883,33 +962,50 @@ for(fin_row in 1:nrow(FIN_fixtures))
   fin_ht_last6points <- fin_ht_numberof_wins*3 + fin_ht_numberof_draws*1
   fin_at_last6points <- fin_at_numberof_wins*3 + fin_at_numberof_draws*1
 
-  ifelse(fin_ht_last6points > fin_at_last6points & fin_ht_totalwinmargin > fin_at_totalwinmargin,fin_3waypick <- "1",fin_3waypick <- "X2")
+  if(fin_ht_last6points > fin_at_last6points) {fin_3waypick <- "1"}  else {fin_3waypick <- "X2"}
 
-  ifelse(fin_at_last6points > fin_ht_last6points & fin_at_totalwinmargin > fin_ht_totalwinmargin,fin_3waypick <- "2",fin_3waypick <- "1X")
+  if(fin_at_last6points > fin_ht_last6points ) {fin_3waypick <- "2"} else {fin_3waypick <- "1X"}
 
   if(fin_ht_no_of_ov25 + fin_at_no_of_ov25 >= 6) {fin_goalspick <- "ov25"} else {fin_goalspick <- "un25"}
 
   if(fin_ht_no_of_un25 + fin_at_no_of_un25 >= 6) {fin_goalspick <- "un25"} else {fin_goalspick <- "ov25"}
 
-  fin_prediction[fin_row] <- rbind(paste(fin_3waypick,fin_goalspick,sep = ","))
+  if(fin_ht_matches_scoring >= 4 && fin_at_matches_scoring >=4) {fin_btts <- "BTTS-Y"} else {fin_btts <- "BTTS-N"}
+
+
+  fin_prediction[fin_row] <- rbind(paste(fin_3waypick,fin_goalspick,fin_btts,sep = ","))
+  fin_HWM[fin_row] <- fin_ht_totalwinmargin
+  fin_AWM[fin_row] <- fin_at_totalwinmargin
+
 
 }
 
 fin_prediction <- as.data.frame(fin_prediction)
 colnames(fin_prediction) <- "prediction"
-fin_prediction
 
-fin_picks <- cbind(FIN_fixtures$Div,FIN_fixtures$HomeTeam_fin,FIN_fixtures$AwayTeam_fin,fin_prediction)
+fin_HWM <- as.data.frame(fin_HWM)
+colnames(fin_HWM) <- "HWM"
+
+fin_AWM <- as.data.frame(fin_AWM)
+colnames(fin_AWM) <- "AWM"
+
+
+fin_picks <- cbind(FIN_fixtures$Div,FIN_fixtures$HomeTeam_fin,FIN_fixtures$AwayTeam_fin,fin_prediction,fin_HWM,fin_AWM)
 colnames(fin_picks)[1] <- "picks_Div"
 colnames(fin_picks)[2] <- "picks_HomeTeam"
 colnames(fin_picks)[3] <- "picks_AwayTeam"
 fin_picks$matchid <- paste(fin_picks$picks_HomeTeam,fin_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of FIN
+fin_picks
+############################################################################################
+#end of FIN
 #IRL
 IRL_fixtures$Hometeam_irl_index <- match(IRL_fixtures$HomeTeam_irl,irl_teams)
 IRL_fixtures$Awayteam_irl_index <- match(IRL_fixtures$AwayTeam_irl,irl_teams)
 irl_prediction <- c()
+irl_HWM <- c()
+irl_AWM <- c()
 for(irl_row in 1:nrow(IRL_fixtures))
 {
 
@@ -1032,33 +1128,50 @@ for(irl_row in 1:nrow(IRL_fixtures))
   irl_ht_last6points <- irl_ht_numberof_wins*3 + irl_ht_numberof_draws*1
   irl_at_last6points <- irl_at_numberof_wins*3 + irl_at_numberof_draws*1
 
-  ifelse(irl_ht_last6points > irl_at_last6points & irl_ht_totalwinmargin > irl_at_totalwinmargin,irl_3waypick <- "1",irl_3waypick <- "X2")
+  if(irl_ht_last6points > irl_at_last6points) {irl_3waypick <- "1"}  else {irl_3waypick <- "X2"}
 
-  ifelse(irl_at_last6points > irl_ht_last6points & irl_at_totalwinmargin > irl_ht_totalwinmargin,irl_3waypick <- "2",irl_3waypick <- "1X")
+  if(irl_at_last6points > irl_ht_last6points ) {irl_3waypick <- "2"} else {irl_3waypick <- "1X"}
 
   if(irl_ht_no_of_ov25 + irl_at_no_of_ov25 >= 6) {irl_goalspick <- "ov25"} else {irl_goalspick <- "un25"}
 
   if(irl_ht_no_of_un25 + irl_at_no_of_un25 >= 6) {irl_goalspick <- "un25"} else {irl_goalspick <- "ov25"}
 
-  irl_prediction[irl_row] <- rbind(paste(irl_3waypick,irl_goalspick,sep = ","))
+  if(irl_ht_matches_scoring >= 4 && irl_at_matches_scoring >=4) {irl_btts <- "BTTS-Y"} else {irl_btts <- "BTTS-N"}
+
+
+  irl_prediction[irl_row] <- rbind(paste(irl_3waypick,irl_goalspick,irl_btts,sep = ","))
+  irl_HWM[irl_row] <- irl_ht_totalwinmargin
+  irl_AWM[irl_row] <- irl_at_totalwinmargin
+
 
 }
 
 irl_prediction <- as.data.frame(irl_prediction)
 colnames(irl_prediction) <- "prediction"
-irl_prediction
 
-irl_picks <- cbind(IRL_fixtures$Div,IRL_fixtures$HomeTeam_irl,IRL_fixtures$AwayTeam_irl,irl_prediction)
+irl_HWM <- as.data.frame(irl_HWM)
+colnames(irl_HWM) <- "HWM"
+
+irl_AWM <- as.data.frame(irl_AWM)
+colnames(irl_AWM) <- "AWM"
+
+
+irl_picks <- cbind(IRL_fixtures$Div,IRL_fixtures$HomeTeam_irl,IRL_fixtures$AwayTeam_irl,irl_prediction,irl_HWM,irl_AWM)
 colnames(irl_picks)[1] <- "picks_Div"
 colnames(irl_picks)[2] <- "picks_HomeTeam"
 colnames(irl_picks)[3] <- "picks_AwayTeam"
 irl_picks$matchid <- paste(irl_picks$picks_HomeTeam,irl_picks$picks_AwayTeam,sep = "-")
+############################################################################################
+#end of IRL
+irl_picks
 ############################################################################################
 #end of irl
 #JPN
 JPN_fixtures$Hometeam_jpn_index <- match(JPN_fixtures$HomeTeam_jpn,jpn_teams)
 JPN_fixtures$Awayteam_jpn_index <- match(JPN_fixtures$AwayTeam_jpn,jpn_teams)
 jpn_prediction <- c()
+jpn_HWM <- c()
+jpn_AWM <- c()
 for(jpn_row in 1:nrow(JPN_fixtures))
 {
 
@@ -1181,34 +1294,48 @@ for(jpn_row in 1:nrow(JPN_fixtures))
   jpn_ht_last6points <- jpn_ht_numberof_wins*3 + jpn_ht_numberof_draws*1
   jpn_at_last6points <- jpn_at_numberof_wins*3 + jpn_at_numberof_draws*1
 
-  ifelse(jpn_ht_last6points > jpn_at_last6points & jpn_ht_totalwinmargin > jpn_at_totalwinmargin,jpn_3waypick <- "1",jpn_3waypick <- "X2")
+  if(jpn_ht_last6points > jpn_at_last6points) {jpn_3waypick <- "1"}  else {jpn_3waypick <- "X2"}
 
-  ifelse(jpn_at_last6points > jpn_ht_last6points & jpn_at_totalwinmargin > jpn_ht_totalwinmargin,jpn_3waypick <- "2",jpn_3waypick <- "1X")
-
+  if(jpn_at_last6points > jpn_ht_last6points ) {jpn_3waypick <- "2"} else {jpn_3waypick <- "1X"}
 
   if(jpn_ht_no_of_ov25 + jpn_at_no_of_ov25 >= 6) {jpn_goalspick <- "ov25"} else {jpn_goalspick <- "un25"}
 
   if(jpn_ht_no_of_un25 + jpn_at_no_of_un25 >= 6) {jpn_goalspick <- "un25"} else {jpn_goalspick <- "ov25"}
 
-  jpn_prediction[jpn_row] <- rbind(paste(jpn_3waypick,jpn_goalspick,sep = ","))
+  if(jpn_ht_matches_scoring >= 4 && jpn_at_matches_scoring >=4) {jpn_btts <- "BTTS-Y"} else {jpn_btts <- "BTTS-N"}
+
+
+  jpn_prediction[jpn_row] <- rbind(paste(jpn_3waypick,jpn_goalspick,jpn_btts,sep = ","))
+  jpn_HWM[jpn_row] <- jpn_ht_totalwinmargin
+  jpn_AWM[jpn_row] <- jpn_at_totalwinmargin
+
 
 }
 
 jpn_prediction <- as.data.frame(jpn_prediction)
 colnames(jpn_prediction) <- "prediction"
-jpn_prediction
 
-jpn_picks <- cbind(JPN_fixtures$Div,JPN_fixtures$HomeTeam_jpn,JPN_fixtures$AwayTeam_jpn,jpn_prediction)
+jpn_HWM <- as.data.frame(jpn_HWM)
+colnames(jpn_HWM) <- "HWM"
+
+jpn_AWM <- as.data.frame(jpn_AWM)
+colnames(jpn_AWM) <- "AWM"
+
+
+jpn_picks <- cbind(JPN_fixtures$Div,JPN_fixtures$HomeTeam_jpn,JPN_fixtures$AwayTeam_jpn,jpn_prediction,jpn_HWM,jpn_AWM)
 colnames(jpn_picks)[1] <- "picks_Div"
 colnames(jpn_picks)[2] <- "picks_HomeTeam"
 colnames(jpn_picks)[3] <- "picks_AwayTeam"
 jpn_picks$matchid <- paste(jpn_picks$picks_HomeTeam,jpn_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of JPN
+jpn_picks
 #MEX
 MEX_fixtures$Hometeam_mex_index <- match(MEX_fixtures$HomeTeam_mex,mex_teams)
 MEX_fixtures$Awayteam_mex_index <- match(MEX_fixtures$AwayTeam_mex,mex_teams)
 mex_prediction <- c()
+mex_HWM <- c()
+mex_AWM <- c()
 for(mex_row in 1:nrow(MEX_fixtures))
 {
 
@@ -1331,34 +1458,50 @@ for(mex_row in 1:nrow(MEX_fixtures))
   mex_ht_last6points <- mex_ht_numberof_wins*3 + mex_ht_numberof_draws*1
   mex_at_last6points <- mex_at_numberof_wins*3 + mex_at_numberof_draws*1
 
-  ifelse(mex_ht_last6points > mex_at_last6points & mex_ht_totalwinmargin > mex_at_totalwinmargin,mex_3waypick <- "1",mex_3waypick <- "X2")
+  if(mex_ht_last6points > mex_at_last6points) {mex_3waypick <- "1"}  else {mex_3waypick <- "X2"}
 
-  ifelse(mex_at_last6points > mex_ht_last6points & mex_at_totalwinmargin > mex_ht_totalwinmargin,mex_3waypick <- "2",mex_3waypick <- "1X")
-
+  if(mex_at_last6points > mex_ht_last6points ) {mex_3waypick <- "2"} else {mex_3waypick <- "1X"}
 
   if(mex_ht_no_of_ov25 + mex_at_no_of_ov25 >= 6) {mex_goalspick <- "ov25"} else {mex_goalspick <- "un25"}
 
   if(mex_ht_no_of_un25 + mex_at_no_of_un25 >= 6) {mex_goalspick <- "un25"} else {mex_goalspick <- "ov25"}
 
-  mex_prediction[mex_row] <- rbind(paste(mex_3waypick,mex_goalspick,sep = ","))
+  if(mex_ht_matches_scoring >= 4 && mex_at_matches_scoring >=4) {mex_btts <- "BTTS-Y"} else {mex_btts <- "BTTS-N"}
+
+
+  mex_prediction[mex_row] <- rbind(paste(mex_3waypick,mex_goalspick,mex_btts,sep = ","))
+  mex_HWM[mex_row] <- mex_ht_totalwinmargin
+  mex_AWM[mex_row] <- mex_at_totalwinmargin
+
 
 }
 
 mex_prediction <- as.data.frame(mex_prediction)
 colnames(mex_prediction) <- "prediction"
-mex_prediction
 
-mex_picks <- cbind(MEX_fixtures$Div,MEX_fixtures$HomeTeam_mex,MEX_fixtures$AwayTeam_mex,mex_prediction)
+mex_HWM <- as.data.frame(mex_HWM)
+colnames(mex_HWM) <- "HWM"
+
+mex_AWM <- as.data.frame(mex_AWM)
+colnames(mex_AWM) <- "AWM"
+
+
+mex_picks <- cbind(MEX_fixtures$Div,MEX_fixtures$HomeTeam_mex,MEX_fixtures$AwayTeam_mex,mex_prediction,mex_HWM,mex_AWM)
 colnames(mex_picks)[1] <- "picks_Div"
 colnames(mex_picks)[2] <- "picks_HomeTeam"
 colnames(mex_picks)[3] <- "picks_AwayTeam"
 mex_picks$matchid <- paste(mex_picks$picks_HomeTeam,mex_picks$picks_AwayTeam,sep = "-")
+############################################################################################
+#end of MEX
+mex_picks
 ############################################################################################
 #end of mex
 #MLS
 MLS_fixtures$Hometeam_mls_index <- match(MLS_fixtures$HomeTeam_mls,mls_teams)
 MLS_fixtures$Awayteam_mls_index <- match(MLS_fixtures$AwayTeam_mls,mls_teams)
 mls_prediction <- c()
+mls_HWM <- c()
+mls_AWM <- c()
 for(mls_row in 1:nrow(MLS_fixtures))
 {
 
@@ -1481,33 +1624,50 @@ for(mls_row in 1:nrow(MLS_fixtures))
   mls_ht_last6points <- mls_ht_numberof_wins*3 + mls_ht_numberof_draws*1
   mls_at_last6points <- mls_at_numberof_wins*3 + mls_at_numberof_draws*1
 
-  ifelse(mls_ht_last6points > mls_at_last6points & mls_ht_totalwinmargin > mls_at_totalwinmargin,mls_3waypick <- "1",mls_3waypick <- "X2")
+  if(mls_ht_last6points > mls_at_last6points) {mls_3waypick <- "1"}  else {mls_3waypick <- "X2"}
 
-  ifelse(mls_at_last6points > mls_ht_last6points & mls_at_totalwinmargin > mls_ht_totalwinmargin,mls_3waypick <- "2",mls_3waypick <- "1X")
+  if(mls_at_last6points > mls_ht_last6points ) {mls_3waypick <- "2"} else {mls_3waypick <- "1X"}
 
   if(mls_ht_no_of_ov25 + mls_at_no_of_ov25 >= 6) {mls_goalspick <- "ov25"} else {mls_goalspick <- "un25"}
 
   if(mls_ht_no_of_un25 + mls_at_no_of_un25 >= 6) {mls_goalspick <- "un25"} else {mls_goalspick <- "ov25"}
 
-  mls_prediction[mls_row] <- rbind(paste(mls_3waypick,mls_goalspick,sep = ","))
+  if(mls_ht_matches_scoring >= 4 && mls_at_matches_scoring >=4) {mls_btts <- "BTTS-Y"} else {mls_btts <- "BTTS-N"}
+
+
+  mls_prediction[mls_row] <- rbind(paste(mls_3waypick,mls_goalspick,mls_btts,sep = ","))
+  mls_HWM[mls_row] <- mls_ht_totalwinmargin
+  mls_AWM[mls_row] <- mls_at_totalwinmargin
+
 
 }
 
 mls_prediction <- as.data.frame(mls_prediction)
 colnames(mls_prediction) <- "prediction"
-mls_prediction
 
-mls_picks <- cbind(MLS_fixtures$Div,MLS_fixtures$HomeTeam_mls,MLS_fixtures$AwayTeam_mls,mls_prediction)
+mls_HWM <- as.data.frame(mls_HWM)
+colnames(mls_HWM) <- "HWM"
+
+mls_AWM <- as.data.frame(mls_AWM)
+colnames(mls_AWM) <- "AWM"
+
+
+mls_picks <- cbind(MLS_fixtures$Div,MLS_fixtures$HomeTeam_mls,MLS_fixtures$AwayTeam_mls,mls_prediction,mls_HWM,mls_AWM)
 colnames(mls_picks)[1] <- "picks_Div"
 colnames(mls_picks)[2] <- "picks_HomeTeam"
 colnames(mls_picks)[3] <- "picks_AwayTeam"
 mls_picks$matchid <- paste(mls_picks$picks_HomeTeam,mls_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of MLS
+mls_picks
+############################################################################################
+#end of MLS
 #NOR
 NOR_fixtures$Hometeam_nor_index <- match(NOR_fixtures$HomeTeam_nor,nor_teams)
 NOR_fixtures$Awayteam_nor_index <- match(NOR_fixtures$AwayTeam_nor,nor_teams)
 nor_prediction <- c()
+nor_HWM <- c()
+nor_AWM <- c()
 for(nor_row in 1:nrow(NOR_fixtures))
 {
 
@@ -1630,33 +1790,50 @@ for(nor_row in 1:nrow(NOR_fixtures))
   nor_ht_last6points <- nor_ht_numberof_wins*3 + nor_ht_numberof_draws*1
   nor_at_last6points <- nor_at_numberof_wins*3 + nor_at_numberof_draws*1
 
-  ifelse(nor_ht_last6points > nor_at_last6points & nor_ht_totalwinmargin > nor_at_totalwinmargin,nor_3waypick <- "1",nor_3waypick <- "X2")
+  if(nor_ht_last6points > nor_at_last6points) {nor_3waypick <- "1"}  else {nor_3waypick <- "X2"}
 
-  ifelse(nor_at_last6points > nor_ht_last6points & nor_at_totalwinmargin > nor_ht_totalwinmargin,nor_3waypick <- "2",nor_3waypick <- "1X")
+  if(nor_at_last6points > nor_ht_last6points ) {nor_3waypick <- "2"} else {nor_3waypick <- "1X"}
 
   if(nor_ht_no_of_ov25 + nor_at_no_of_ov25 >= 6) {nor_goalspick <- "ov25"} else {nor_goalspick <- "un25"}
 
   if(nor_ht_no_of_un25 + nor_at_no_of_un25 >= 6) {nor_goalspick <- "un25"} else {nor_goalspick <- "ov25"}
 
-  nor_prediction[nor_row] <- rbind(paste(nor_3waypick,nor_goalspick,sep = ","))
+  if(nor_ht_matches_scoring >= 4 && nor_at_matches_scoring >=4) {nor_btts <- "BTTS-Y"} else {nor_btts <- "BTTS-N"}
+
+
+  nor_prediction[nor_row] <- rbind(paste(nor_3waypick,nor_goalspick,nor_btts,sep = ","))
+  nor_HWM[nor_row] <- nor_ht_totalwinmargin
+  nor_AWM[nor_row] <- nor_at_totalwinmargin
+
 
 }
 
 nor_prediction <- as.data.frame(nor_prediction)
 colnames(nor_prediction) <- "prediction"
-nor_prediction
 
-nor_picks <- cbind(NOR_fixtures$Div,NOR_fixtures$HomeTeam_nor,NOR_fixtures$AwayTeam_nor,nor_prediction)
+nor_HWM <- as.data.frame(nor_HWM)
+colnames(nor_HWM) <- "HWM"
+
+nor_AWM <- as.data.frame(nor_AWM)
+colnames(nor_AWM) <- "AWM"
+
+
+nor_picks <- cbind(NOR_fixtures$Div,NOR_fixtures$HomeTeam_nor,NOR_fixtures$AwayTeam_nor,nor_prediction,nor_HWM,nor_AWM)
 colnames(nor_picks)[1] <- "picks_Div"
 colnames(nor_picks)[2] <- "picks_HomeTeam"
 colnames(nor_picks)[3] <- "picks_AwayTeam"
 nor_picks$matchid <- paste(nor_picks$picks_HomeTeam,nor_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of NOR
+nor_picks
+############################################################################################
+#end of NOR
 #POL
 POL_fixtures$Hometeam_pol_index <- match(POL_fixtures$HomeTeam_pol,pol_teams)
 POL_fixtures$Awayteam_pol_index <- match(POL_fixtures$AwayTeam_pol,pol_teams)
 pol_prediction <- c()
+pol_HWM <- c()
+pol_AWM <- c()
 for(pol_row in 1:nrow(POL_fixtures))
 {
 
@@ -1779,34 +1956,50 @@ for(pol_row in 1:nrow(POL_fixtures))
   pol_ht_last6points <- pol_ht_numberof_wins*3 + pol_ht_numberof_draws*1
   pol_at_last6points <- pol_at_numberof_wins*3 + pol_at_numberof_draws*1
 
-  ifelse(pol_ht_last6points > pol_at_last6points & pol_ht_totalwinmargin > pol_at_totalwinmargin,pol_3waypick <- "1",pol_3waypick <- "X2")
+  if(pol_ht_last6points > pol_at_last6points) {pol_3waypick <- "1"}  else {pol_3waypick <- "X2"}
 
-  ifelse(pol_at_last6points > pol_ht_last6points & pol_at_totalwinmargin > pol_ht_totalwinmargin,pol_3waypick <- "2",pol_3waypick <- "1X")
-
+  if(pol_at_last6points > pol_ht_last6points ) {pol_3waypick <- "2"} else {pol_3waypick <- "1X"}
 
   if(pol_ht_no_of_ov25 + pol_at_no_of_ov25 >= 6) {pol_goalspick <- "ov25"} else {pol_goalspick <- "un25"}
 
   if(pol_ht_no_of_un25 + pol_at_no_of_un25 >= 6) {pol_goalspick <- "un25"} else {pol_goalspick <- "ov25"}
 
-  pol_prediction[pol_row] <- rbind(paste(pol_3waypick,pol_goalspick,sep = ","))
+  if(pol_ht_matches_scoring >= 4 && pol_at_matches_scoring >=4) {pol_btts <- "BTTS-Y"} else {pol_btts <- "BTTS-N"}
+
+
+  pol_prediction[pol_row] <- rbind(paste(pol_3waypick,pol_goalspick,pol_btts,sep = ","))
+  pol_HWM[pol_row] <- pol_ht_totalwinmargin
+  pol_AWM[pol_row] <- pol_at_totalwinmargin
+
 
 }
 
 pol_prediction <- as.data.frame(pol_prediction)
 colnames(pol_prediction) <- "prediction"
-pol_prediction
 
-pol_picks <- cbind(POL_fixtures$Div,POL_fixtures$HomeTeam_pol,POL_fixtures$AwayTeam_pol,pol_prediction)
+pol_HWM <- as.data.frame(pol_HWM)
+colnames(pol_HWM) <- "HWM"
+
+pol_AWM <- as.data.frame(pol_AWM)
+colnames(pol_AWM) <- "AWM"
+
+
+pol_picks <- cbind(POL_fixtures$Div,POL_fixtures$HomeTeam_pol,POL_fixtures$AwayTeam_pol,pol_prediction,pol_HWM,pol_AWM)
 colnames(pol_picks)[1] <- "picks_Div"
 colnames(pol_picks)[2] <- "picks_HomeTeam"
 colnames(pol_picks)[3] <- "picks_AwayTeam"
 pol_picks$matchid <- paste(pol_picks$picks_HomeTeam,pol_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of POL
+pol_picks
+############################################################################################
+#end of POL
 #ROU
 ROU_fixtures$Hometeam_rou_index <- match(ROU_fixtures$HomeTeam_rou,rou_teams)
 ROU_fixtures$Awayteam_rou_index <- match(ROU_fixtures$AwayTeam_rou,rou_teams)
 rou_prediction <- c()
+rou_HWM <- c()
+rou_AWM <- c()
 for(rou_row in 1:nrow(ROU_fixtures))
 {
 
@@ -1909,7 +2102,7 @@ for(rou_row in 1:nrow(ROU_fixtures))
   rou_ht_no_of_winmargin_ov0 <- length(which(rou_winmargin_vec_ht >= 0))
   rou_ht_no_of_winmargin_ov1 <- length(which(rou_winmargin_vec_ht >= 1))
   rou_ht_no_of_winmargin_un0 <- length(which(rou_winmargin_vec_ht <= 0))
-  rou_ht_no_of_winmargin_urou <- length(which(rou_winmargin_vec_ht <= 1))
+  rou_ht_no_of_winmargin_un1 <- length(which(rou_winmargin_vec_ht <= 1))
   #awayteam
   rou_winmargin_vec_at <- as.vector(rou_winmargin_h[rou_awayteamindex,])
   rou_winmargin_vec_at[is.na(rou_winmargin_vec_at)] <- ""
@@ -1921,7 +2114,7 @@ for(rou_row in 1:nrow(ROU_fixtures))
   rou_at_no_of_winmargin_ov0 <- length(which(rou_winmargin_vec_at >= 0))
   rou_at_no_of_winmargin_ov1 <- length(which(rou_winmargin_vec_at >= 1))
   rou_at_no_of_winmargin_un0 <- length(which(rou_winmargin_vec_at <= 0))
-  rou_at_no_of_winmargin_urou <- length(which(rou_winmargin_vec_at <= 1))
+  rou_at_no_of_winmargin_un1 <- length(which(rou_winmargin_vec_at <= 1))
   ##################################################################################
   ##########################################
   ####we need to decide ############
@@ -1929,34 +2122,50 @@ for(rou_row in 1:nrow(ROU_fixtures))
   rou_ht_last6points <- rou_ht_numberof_wins*3 + rou_ht_numberof_draws*1
   rou_at_last6points <- rou_at_numberof_wins*3 + rou_at_numberof_draws*1
 
-  ifelse(rou_ht_last6points > rou_at_last6points & rou_ht_totalwinmargin > rou_at_totalwinmargin,rou_3waypick <- "1",rou_3waypick <- "X2")
+  if(rou_ht_last6points > rou_at_last6points) {rou_3waypick <- "1"}  else {rou_3waypick <- "X2"}
 
-  ifelse(rou_at_last6points > rou_ht_last6points & rou_at_totalwinmargin > rou_ht_totalwinmargin,rou_3waypick <- "2",rou_3waypick <- "1X")
-
+  if(rou_at_last6points > rou_ht_last6points ) {rou_3waypick <- "2"} else {rou_3waypick <- "1X"}
 
   if(rou_ht_no_of_ov25 + rou_at_no_of_ov25 >= 6) {rou_goalspick <- "ov25"} else {rou_goalspick <- "un25"}
 
   if(rou_ht_no_of_un25 + rou_at_no_of_un25 >= 6) {rou_goalspick <- "un25"} else {rou_goalspick <- "ov25"}
 
-  rou_prediction[rou_row] <- rbind(paste(rou_3waypick,rou_goalspick,sep = ","))
+  if(rou_ht_matches_scoring >= 4 && rou_at_matches_scoring >=4) {rou_btts <- "BTTS-Y"} else {rou_btts <- "BTTS-N"}
+
+
+  rou_prediction[rou_row] <- rbind(paste(rou_3waypick,rou_goalspick,rou_btts,sep = ","))
+  rou_HWM[rou_row] <- rou_ht_totalwinmargin
+  rou_AWM[rou_row] <- rou_at_totalwinmargin
+
 
 }
 
 rou_prediction <- as.data.frame(rou_prediction)
 colnames(rou_prediction) <- "prediction"
-rou_prediction
 
-rou_picks <- cbind(ROU_fixtures$Div,ROU_fixtures$HomeTeam_rou,ROU_fixtures$AwayTeam_rou,rou_prediction)
+rou_HWM <- as.data.frame(rou_HWM)
+colnames(rou_HWM) <- "HWM"
+
+rou_AWM <- as.data.frame(rou_AWM)
+colnames(rou_AWM) <- "AWM"
+
+
+rou_picks <- cbind(ROU_fixtures$Div,ROU_fixtures$HomeTeam_rou,ROU_fixtures$AwayTeam_rou,rou_prediction,rou_HWM,rou_AWM)
 colnames(rou_picks)[1] <- "picks_Div"
 colnames(rou_picks)[2] <- "picks_HomeTeam"
 colnames(rou_picks)[3] <- "picks_AwayTeam"
 rou_picks$matchid <- paste(rou_picks$picks_HomeTeam,rou_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of ROU
+rou_picks
+############################################################################################
+#end of ROU
 #RUS
 RUS_fixtures$Hometeam_rus_index <- match(RUS_fixtures$HomeTeam_rus,rus_teams)
 RUS_fixtures$Awayteam_rus_index <- match(RUS_fixtures$AwayTeam_rus,rus_teams)
 rus_prediction <- c()
+rus_HWM <- c()
+rus_AWM <- c()
 for(rus_row in 1:nrow(RUS_fixtures))
 {
 
@@ -2079,34 +2288,50 @@ for(rus_row in 1:nrow(RUS_fixtures))
   rus_ht_last6points <- rus_ht_numberof_wins*3 + rus_ht_numberof_draws*1
   rus_at_last6points <- rus_at_numberof_wins*3 + rus_at_numberof_draws*1
 
-  ifelse(rus_ht_last6points > rus_at_last6points & rus_ht_totalwinmargin > rus_at_totalwinmargin,rus_3waypick <- "1",rus_3waypick <- "X2")
+  if(rus_ht_last6points > rus_at_last6points) {rus_3waypick <- "1"}  else {rus_3waypick <- "X2"}
 
-  ifelse(rus_at_last6points > rus_ht_last6points & rus_at_totalwinmargin > rus_ht_totalwinmargin,rus_3waypick <- "2",rus_3waypick <- "1X")
+  if(rus_at_last6points > rus_ht_last6points ) {rus_3waypick <- "2"} else {rus_3waypick <- "1X"}
 
   if(rus_ht_no_of_ov25 + rus_at_no_of_ov25 >= 6) {rus_goalspick <- "ov25"} else {rus_goalspick <- "un25"}
 
   if(rus_ht_no_of_un25 + rus_at_no_of_un25 >= 6) {rus_goalspick <- "un25"} else {rus_goalspick <- "ov25"}
 
+  if(rus_ht_matches_scoring >= 4 && rus_at_matches_scoring >=4) {rus_btts <- "BTTS-Y"} else {rus_btts <- "BTTS-N"}
 
-  rus_prediction[rus_row] <- rbind(paste(rus_3waypick,rus_goalspick,sep = ","))
+
+  rus_prediction[rus_row] <- rbind(paste(rus_3waypick,rus_goalspick,rus_btts,sep = ","))
+  rus_HWM[rus_row] <- rus_ht_totalwinmargin
+  rus_AWM[rus_row] <- rus_at_totalwinmargin
+
 
 }
 
 rus_prediction <- as.data.frame(rus_prediction)
 colnames(rus_prediction) <- "prediction"
-rus_prediction
 
-rus_picks <- cbind(RUS_fixtures$Div,RUS_fixtures$HomeTeam_rus,RUS_fixtures$AwayTeam_rus,rus_prediction)
+rus_HWM <- as.data.frame(rus_HWM)
+colnames(rus_HWM) <- "HWM"
+
+rus_AWM <- as.data.frame(rus_AWM)
+colnames(rus_AWM) <- "AWM"
+
+
+rus_picks <- cbind(RUS_fixtures$Div,RUS_fixtures$HomeTeam_rus,RUS_fixtures$AwayTeam_rus,rus_prediction,rus_HWM,rus_AWM)
 colnames(rus_picks)[1] <- "picks_Div"
 colnames(rus_picks)[2] <- "picks_HomeTeam"
 colnames(rus_picks)[3] <- "picks_AwayTeam"
 rus_picks$matchid <- paste(rus_picks$picks_HomeTeam,rus_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of RUS
+rus_picks
+############################################################################################
+#end of RUS
 #SWE
 SWE_fixtures$Hometeam_swe_index <- match(SWE_fixtures$HomeTeam_swe,swe_teams)
 SWE_fixtures$Awayteam_swe_index <- match(SWE_fixtures$AwayTeam_swe,swe_teams)
 swe_prediction <- c()
+swe_HWM <- c()
+swe_AWM <- c()
 for(swe_row in 1:nrow(SWE_fixtures))
 {
 
@@ -2229,34 +2454,50 @@ for(swe_row in 1:nrow(SWE_fixtures))
   swe_ht_last6points <- swe_ht_numberof_wins*3 + swe_ht_numberof_draws*1
   swe_at_last6points <- swe_at_numberof_wins*3 + swe_at_numberof_draws*1
 
-  ifelse(swe_ht_last6points > swe_at_last6points & swe_ht_totalwinmargin > swe_at_totalwinmargin,swe_3waypick <- "1",swe_3waypick <- "X2")
+  if(swe_ht_last6points > swe_at_last6points) {swe_3waypick <- "1"}  else {swe_3waypick <- "X2"}
 
-  ifelse(swe_at_last6points > swe_ht_last6points & swe_at_totalwinmargin > swe_ht_totalwinmargin,swe_3waypick <- "2",swe_3waypick <- "1X")
+  if(swe_at_last6points > swe_ht_last6points ) {swe_3waypick <- "2"} else {swe_3waypick <- "1X"}
 
   if(swe_ht_no_of_ov25 + swe_at_no_of_ov25 >= 6) {swe_goalspick <- "ov25"} else {swe_goalspick <- "un25"}
 
   if(swe_ht_no_of_un25 + swe_at_no_of_un25 >= 6) {swe_goalspick <- "un25"} else {swe_goalspick <- "ov25"}
 
+  if(swe_ht_matches_scoring >= 4 && swe_at_matches_scoring >=4) {swe_btts <- "BTTS-Y"} else {swe_btts <- "BTTS-N"}
 
-  swe_prediction[swe_row] <- rbind(paste(swe_3waypick,swe_goalspick,sep = ","))
+
+  swe_prediction[swe_row] <- rbind(paste(swe_3waypick,swe_goalspick,swe_btts,sep = ","))
+  swe_HWM[swe_row] <- swe_ht_totalwinmargin
+  swe_AWM[swe_row] <- swe_at_totalwinmargin
+
 
 }
 
 swe_prediction <- as.data.frame(swe_prediction)
 colnames(swe_prediction) <- "prediction"
-swe_prediction
 
-swe_picks <- cbind(SWE_fixtures$Div,SWE_fixtures$HomeTeam_swe,SWE_fixtures$AwayTeam_swe,swe_prediction)
+swe_HWM <- as.data.frame(swe_HWM)
+colnames(swe_HWM) <- "HWM"
+
+swe_AWM <- as.data.frame(swe_AWM)
+colnames(swe_AWM) <- "AWM"
+
+
+swe_picks <- cbind(SWE_fixtures$Div,SWE_fixtures$HomeTeam_swe,SWE_fixtures$AwayTeam_swe,swe_prediction,swe_HWM,swe_AWM)
 colnames(swe_picks)[1] <- "picks_Div"
 colnames(swe_picks)[2] <- "picks_HomeTeam"
 colnames(swe_picks)[3] <- "picks_AwayTeam"
 swe_picks$matchid <- paste(swe_picks$picks_HomeTeam,swe_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
 #end of SWE
+swe_picks
+############################################################################################
+#end of SWE
 #SWZ
 SWZ_fixtures$Hometeam_swz_index <- match(SWZ_fixtures$HomeTeam_swz,swz_teams)
 SWZ_fixtures$Awayteam_swz_index <- match(SWZ_fixtures$AwayTeam_swz,swz_teams)
 swz_prediction <- c()
+swz_HWM <- c()
+swz_AWM <- c()
 for(swz_row in 1:nrow(SWZ_fixtures))
 {
 
@@ -2379,27 +2620,42 @@ for(swz_row in 1:nrow(SWZ_fixtures))
   swz_ht_last6points <- swz_ht_numberof_wins*3 + swz_ht_numberof_draws*1
   swz_at_last6points <- swz_at_numberof_wins*3 + swz_at_numberof_draws*1
 
-  ifelse(swz_ht_last6points > swz_at_last6points & swz_ht_totalwinmargin > swz_at_totalwinmargin,swz_3waypick <- "1",swz_3waypick <- "X2")
+  if(swz_ht_last6points > swz_at_last6points) {swz_3waypick <- "1"}  else {swz_3waypick <- "X2"}
 
-  ifelse(swz_at_last6points > swz_ht_last6points & swz_at_totalwinmargin > swz_ht_totalwinmargin,swz_3waypick <- "2",swz_3waypick <- "1X")
+  if(swz_at_last6points > swz_ht_last6points ) {swz_3waypick <- "2"} else {swz_3waypick <- "1X"}
 
   if(swz_ht_no_of_ov25 + swz_at_no_of_ov25 >= 6) {swz_goalspick <- "ov25"} else {swz_goalspick <- "un25"}
 
   if(swz_ht_no_of_un25 + swz_at_no_of_un25 >= 6) {swz_goalspick <- "un25"} else {swz_goalspick <- "ov25"}
 
-  swz_prediction[swz_row] <- rbind(paste(swz_3waypick,swz_goalspick,sep = ","))
+  if(swz_ht_matches_scoring >= 4 && swz_at_matches_scoring >=4) {swz_btts <- "BTTS-Y"} else {swz_btts <- "BTTS-N"}
+
+
+  swz_prediction[swz_row] <- rbind(paste(swz_3waypick,swz_goalspick,swz_btts,sep = ","))
+  swz_HWM[swz_row] <- swz_ht_totalwinmargin
+  swz_AWM[swz_row] <- swz_at_totalwinmargin
+
 
 }
 
 swz_prediction <- as.data.frame(swz_prediction)
 colnames(swz_prediction) <- "prediction"
-swz_prediction
 
-swz_picks <- cbind(SWZ_fixtures$Div,SWZ_fixtures$HomeTeam_swz,SWZ_fixtures$AwayTeam_swz,swz_prediction)
+swz_HWM <- as.data.frame(swz_HWM)
+colnames(swz_HWM) <- "HWM"
+
+swz_AWM <- as.data.frame(swz_AWM)
+colnames(swz_AWM) <- "AWM"
+
+
+swz_picks <- cbind(SWZ_fixtures$Div,SWZ_fixtures$HomeTeam_swz,SWZ_fixtures$AwayTeam_swz,swz_prediction,swz_HWM,swz_AWM)
 colnames(swz_picks)[1] <- "picks_Div"
 colnames(swz_picks)[2] <- "picks_HomeTeam"
 colnames(swz_picks)[3] <- "picks_AwayTeam"
 swz_picks$matchid <- paste(swz_picks$picks_HomeTeam,swz_picks$picks_AwayTeam,sep = "-")
+############################################################################################
+#end of SWZ
+swz_picks
 ############################################################################################
 #end of SWZ
 ############################################################################################

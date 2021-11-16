@@ -1,43 +1,43 @@
-"","X","Div","Home_Team","Away_Team","Date","matchid","picks_Div","picks_HomeTeam","picks_AwayTeam","prediction"
-"1",899,"Premier League","CSKA Moscow","FK Krylya Sovetov Samara","10/22/2021","CSKA Moscow-FK Krylya Sovetov Samara","RUS","CSKA Moscow","FK Krylya Sovetov Samara","2,ov25"
-"2",900,"Premier League","Lokomotiv Moscow","Sochi","10/22/2021","Lokomotiv Moscow-Sochi","RUS","Lokomotiv Moscow","Sochi","2,ov25"
-"3",901,"Premier League","Ufa","Rubin Kazan","10/22/2021","Ufa-Rubin Kazan","RUS","Ufa","Rubin Kazan","1X,ov25"
-"4",902,"Premier League","Zenit","Spartak Moscow","10/22/2021","Zenit-Spartak Moscow","RUS","Zenit","Spartak Moscow","1X,ov25"
-"5",903,"Premier League","Akhmat Grozny","Ural","10/22/2021","Akhmat Grozny-Ural","RUS","Akhmat Grozny","Ural","1X,un25"
-"6",904,"Premier League","Dynamo Moscow","Khimki","10/22/2021","Dynamo Moscow-Khimki","RUS","Dynamo Moscow","Khimki","1X,ov25"
-"7",905,"Premier League","FK Rostov","Arsenal Tula","10/22/2021","FK Rostov-Arsenal Tula","RUS","FK Rostov","Arsenal Tula","1X,ov25"
-"8",906,"Premier League","Nizhny Novgorod","Krasnodar","10/22/2021","Nizhny Novgorod-Krasnodar","RUS","Nizhny Novgorod","Krasnodar","2,ov25"
-"9",67,"Admiral Bundesliga","Wolfsberger AC","A. Klagenfurt","10/23/2021","Wolfsberger AC-A. Klagenfurt","AUT","Wolfsberger AC","A. Klagenfurt","1X,ov25"
-"10",68,"Admiral Bundesliga","LASK","Altach","10/23/2021","LASK-Altach","AUT","LASK","Altach","1X,ov25"
-"11",69,"Admiral Bundesliga","Austria Vienna","Ried","10/23/2021","Austria Vienna-Ried","AUT","Austria Vienna","Ried","1X,ov25"
-"12",70,"Admiral Bundesliga","Salzburg","Sturm Graz","10/23/2021","Salzburg-Sturm Graz","AUT","Salzburg","Sturm Graz","1X,ov25"
-"13",71,"Admiral Bundesliga","Hartberg","Rapid Vienna","10/23/2021","Hartberg-Rapid Vienna","AUT","Hartberg","Rapid Vienna","1X,ov25"
-"14",72,"Admiral Bundesliga","Admira","Tirol","10/23/2021","Admira-Tirol","AUT","Admira","Tirol","1X,ov25"
-"15",364,"Ekstraklasa","Wisla","Slask Wroclaw","10/23/2021","Wisla-Slask Wroclaw","POL","Wisla","Slask Wroclaw","2,ov25"
-"16",365,"Ekstraklasa","Rakow","Termalica B-B.","10/23/2021","Rakow-Termalica B-B.","POL","Rakow","Termalica B-B.","1X,ov25"
-"17",366,"Ekstraklasa","Zaglebie","Cracovia","10/23/2021","Zaglebie-Cracovia","POL","Zaglebie","Cracovia","2,ov25"
-"18",367,"Ekstraklasa","Radomiak Radom","Leczna","10/23/2021","Radomiak Radom-Leczna","POL","Radomiak Radom","Leczna","1X,ov25"
-"19",368,"Ekstraklasa","Lechia Gdansk","Gornik Z","10/23/2021","Lechia Gdansk-Gornik Z",NA,NA,NA,NA
-"20",369,"Ekstraklasa","Pogon Szczecin","Jagiellonia","10/23/2021","Pogon Szczecin-Jagiellonia","POL","Pogon Szczecin","Jagiellonia","1X,ov25"
-"21",370,"Ekstraklasa","Piast Gliwice","Legia","10/23/2021","Piast Gliwice-Legia","POL","Piast Gliwice","Legia","1X,ov25"
-"22",371,"Ekstraklasa","Warta Poznan","Stal Mielec","10/23/2021","Warta Poznan-Stal Mielec","POL","Warta Poznan","Stal Mielec","2,ov25"
-"23",372,"Ekstraklasa","Lech Poznan","Wisla Plock","10/23/2021","Lech Poznan-Wisla Plock","POL","Lech Poznan","Wisla Plock","1X,ov25"
-"24",667,"Liga 1","FC Voluntari","FC Arges","10/23/2021","FC Voluntari-FC Arges","ROU","FC Voluntari","FC Arges","1X,un25"
-"25",668,"Liga 1","Mioveni","FC Botosani","10/23/2021","Mioveni-FC Botosani","ROU","Mioveni","FC Botosani","2,ov25"
-"26",669,"Liga 1","Chindia Targoviste","U Craiova 1948","10/23/2021","Chindia Targoviste-U Craiova 1948","ROU","Chindia Targoviste","U Craiova 1948","1X,un25"
-"27",670,"Liga 1","Farul Constanta","FCSB","10/23/2021","Farul Constanta-FCSB",NA,NA,NA,NA
-"28",671,"Liga 1","U Craiova 1948","Gaz Metan Medias","10/23/2021","U Craiova 1948-Gaz Metan Medias","ROU","U Craiova 1948","Gaz Metan Medias","1X,un25"
-"29",672,"Liga 1","Din. Bucuresti","Rapid Bucuresti","10/23/2021","Din. Bucuresti-Rapid Bucuresti",NA,NA,NA,NA
-"30",673,"Liga 1","CFR Cluj","Sepsi Sf. Gheorghe","10/23/2021","CFR Cluj-Sepsi Sf. Gheorghe","ROU","CFR Cluj","Sepsi Sf. Gheorghe","1X,ov25"
-"31",674,"Liga 1","Academica Clinceni","UTA Arad","10/23/2021","Academica Clinceni-UTA Arad","ROU","Academica Clinceni","UTA Arad","2,ov25"
-"32",1101,"Swiss","Young Boys","Lausanne","10/23/2021","Young Boys-Lausanne","SWZ","Young Boys","Lausanne","1X,ov25"
-"33",1102,"Swiss","Basel","Lugano","10/23/2021","Basel-Lugano","SWZ","Basel","Lugano","1X,ov25"
-"34",1103,"Swiss","Servette","Sion","10/23/2021","Servette-Sion","SWZ","Servette","Sion","2,ov25"
-"35",1104,"Swiss","Luzern","St. Gallen","10/23/2021","Luzern-St. Gallen","SWZ","Luzern","St. Gallen","1X,ov25"
-"36",1105,"Swiss","Grasshoppers","Zurich","10/23/2021","Grasshoppers-Zurich","SWZ","Grasshoppers","Zurich","1X,ov25"
-"37",205,"superliga","Randers FC","Aarhus","10/24/2021","Randers FC-Aarhus","DNK","Randers FC","Aarhus","2,un25"
-"38",206,"superliga","Brondby","FC Copenhagen","10/24/2021","Brondby-FC Copenhagen","DNK","Brondby","FC Copenhagen","1X,ov25"
-"39",207,"superliga","Vejle","Nordsjaelland","10/24/2021","Vejle-Nordsjaelland","DNK","Vejle","Nordsjaelland","1X,ov25"
-"40",208,"superliga","Silkeborg","Odense","10/24/2021","Silkeborg-Odense","DNK","Silkeborg","Odense","1X,ov25"
-"41",209,"superliga","Midtjylland","Sonderjyske","10/24/2021","Midtjylland-Sonderjyske","DNK","Midtjylland","Sonderjyske","1X,ov25"
-"42",210,"superliga","Aalborg","Viborg","10/24/2021","Aalborg-Viborg","DNK","Aalborg","Viborg","1X,ov25"
+"","X","Div","Home_Team","Away_Team","Date","matchid","picks_Div","picks_HomeTeam","picks_AwayTeam","prediction","HWM","AWM"
+"1",899,"Premier League","CSKA Moscow","FK Krylya Sovetov Samara","10/22/2021","CSKA Moscow-FK Krylya Sovetov Samara","RUS","CSKA Moscow","FK Krylya Sovetov Samara","2,un25,BTTS-Y",1,4
+"2",900,"Premier League","Lokomotiv Moscow","Sochi","10/22/2021","Lokomotiv Moscow-Sochi","RUS","Lokomotiv Moscow","Sochi","2,ov25,BTTS-Y",1,2
+"3",901,"Premier League","Ufa","Rubin Kazan","10/22/2021","Ufa-Rubin Kazan","RUS","Ufa","Rubin Kazan","1X,un25,BTTS-N",-2,-6
+"4",902,"Premier League","Zenit","Spartak Moscow","10/22/2021","Zenit-Spartak Moscow","RUS","Zenit","Spartak Moscow","1X,ov25,BTTS-Y",8,-3
+"5",903,"Premier League","Akhmat Grozny","Ural","10/22/2021","Akhmat Grozny-Ural","RUS","Akhmat Grozny","Ural","1X,un25,BTTS-N",0,1
+"6",904,"Premier League","Dynamo Moscow","Khimki","10/22/2021","Dynamo Moscow-Khimki","RUS","Dynamo Moscow","Khimki","1X,un25,BTTS-N",2,-4
+"7",905,"Premier League","FK Rostov","Arsenal Tula","10/22/2021","FK Rostov-Arsenal Tula","RUS","FK Rostov","Arsenal Tula","1X,ov25,BTTS-N",7,-6
+"8",906,"Premier League","Nizhny Novgorod","Krasnodar","10/22/2021","Nizhny Novgorod-Krasnodar","RUS","Nizhny Novgorod","Krasnodar","2,un25,BTTS-N",-9,4
+"9",67,"Admiral Bundesliga","Wolfsberger AC","A. Klagenfurt","10/23/2021","Wolfsberger AC-A. Klagenfurt","AUT","Wolfsberger AC","A. Klagenfurt","1X,ov25,BTTS-Y",1,5
+"10",68,"Admiral Bundesliga","LASK","Altach","10/23/2021","LASK-Altach","AUT","LASK","Altach","1X,un25,BTTS-N",0,-7
+"11",69,"Admiral Bundesliga","Austria Vienna","Ried","10/23/2021","Austria Vienna-Ried","AUT","Austria Vienna","Ried","1X,ov25,BTTS-Y",2,-5
+"12",70,"Admiral Bundesliga","Salzburg","Sturm Graz","10/23/2021","Salzburg-Sturm Graz","AUT","Salzburg","Sturm Graz","1X,ov25,BTTS-Y",8,2
+"13",71,"Admiral Bundesliga","Hartberg","Rapid Vienna","10/23/2021","Hartberg-Rapid Vienna","AUT","Hartberg","Rapid Vienna","1X,ov25,BTTS-Y",0,-2
+"14",72,"Admiral Bundesliga","Admira","Tirol","10/23/2021","Admira-Tirol","AUT","Admira","Tirol","2,ov25,BTTS-Y",-2,-3
+"15",364,"Ekstraklasa","Wisla","Slask Wroclaw","10/23/2021","Wisla-Slask Wroclaw","POL","Wisla","Slask Wroclaw","2,ov25,BTTS-N",-7,1
+"16",365,"Ekstraklasa","Rakow","Termalica B-B.","10/23/2021","Rakow-Termalica B-B.","POL","Rakow","Termalica B-B.","1X,ov25,BTTS-Y",5,0
+"17",366,"Ekstraklasa","Zaglebie","Cracovia","10/23/2021","Zaglebie-Cracovia","POL","Zaglebie","Cracovia","2,un25,BTTS-Y",-2,2
+"18",367,"Ekstraklasa","Radomiak Radom","Leczna","10/23/2021","Radomiak Radom-Leczna","POL","Radomiak Radom","Leczna","1X,un25,BTTS-Y",4,-9
+"19",368,"Ekstraklasa","Lechia Gdansk","Gornik Z","10/23/2021","Lechia Gdansk-Gornik Z",NA,NA,NA,NA,NA,NA
+"20",369,"Ekstraklasa","Pogon Szczecin","Jagiellonia","10/23/2021","Pogon Szczecin-Jagiellonia","POL","Pogon Szczecin","Jagiellonia","1X,un25,BTTS-Y",8,-1
+"21",370,"Ekstraklasa","Piast Gliwice","Legia","10/23/2021","Piast Gliwice-Legia","POL","Piast Gliwice","Legia","1X,ov25,BTTS-Y",1,-11
+"22",371,"Ekstraklasa","Warta Poznan","Stal Mielec","10/23/2021","Warta Poznan-Stal Mielec","POL","Warta Poznan","Stal Mielec","2,un25,BTTS-N",-8,5
+"23",372,"Ekstraklasa","Lech Poznan","Wisla Plock","10/23/2021","Lech Poznan-Wisla Plock","POL","Lech Poznan","Wisla Plock","1X,un25,BTTS-Y",7,-4
+"24",667,"Liga 1","FC Voluntari","FC Arges","10/23/2021","FC Voluntari-FC Arges","ROU","FC Voluntari","FC Arges","1X,un25,BTTS-N",0,1
+"25",668,"Liga 1","Mioveni","FC Botosani","10/23/2021","Mioveni-FC Botosani","ROU","Mioveni","FC Botosani","2,un25,BTTS-N",-7,-1
+"26",669,"Liga 1","Chindia Targoviste","U Craiova 1948","10/23/2021","Chindia Targoviste-U Craiova 1948","ROU","Chindia Targoviste","U Craiova 1948","2,un25,BTTS-N",-1,-1
+"27",670,"Liga 1","Farul Constanta","FCSB","10/23/2021","Farul Constanta-FCSB",NA,NA,NA,NA,NA,NA
+"28",671,"Liga 1","U Craiova 1948","Gaz Metan Medias","10/23/2021","U Craiova 1948-Gaz Metan Medias","ROU","U Craiova 1948","Gaz Metan Medias","2,un25,BTTS-N",-1,-1
+"29",672,"Liga 1","Din. Bucuresti","Rapid Bucuresti","10/23/2021","Din. Bucuresti-Rapid Bucuresti",NA,NA,NA,NA,NA,NA
+"30",673,"Liga 1","CFR Cluj","Sepsi Sf. Gheorghe","10/23/2021","CFR Cluj-Sepsi Sf. Gheorghe","ROU","CFR Cluj","Sepsi Sf. Gheorghe","1X,un25,BTTS-Y",6,0
+"31",674,"Liga 1","Academica Clinceni","UTA Arad","10/23/2021","Academica Clinceni-UTA Arad","ROU","Academica Clinceni","UTA Arad","2,un25,BTTS-N",-10,1
+"32",1101,"Swiss","Young Boys","Lausanne","10/23/2021","Young Boys-Lausanne","SWZ","Young Boys","Lausanne","1X,un25,BTTS-Y",6,-3
+"33",1102,"Swiss","Basel","Lugano","10/23/2021","Basel-Lugano","SWZ","Basel","Lugano","2,un25,BTTS-Y",4,3
+"34",1103,"Swiss","Servette","Sion","10/23/2021","Servette-Sion","SWZ","Servette","Sion","2,ov25,BTTS-Y",-10,-7
+"35",1104,"Swiss","Luzern","St. Gallen","10/23/2021","Luzern-St. Gallen","SWZ","Luzern","St. Gallen","2,un25,BTTS-Y",0,-2
+"36",1105,"Swiss","Grasshoppers","Zurich","10/23/2021","Grasshoppers-Zurich","SWZ","Grasshoppers","Zurich","1X,ov25,BTTS-Y",5,4
+"37",205,"superliga","Randers FC","Aarhus","10/24/2021","Randers FC-Aarhus","DNK","Randers FC","Aarhus","2,un25,BTTS-N",-1,0
+"38",206,"superliga","Brondby","FC Copenhagen","10/24/2021","Brondby-FC Copenhagen","DNK","Brondby","FC Copenhagen","1X,ov25,BTTS-Y",5,6
+"39",207,"superliga","Vejle","Nordsjaelland","10/24/2021","Vejle-Nordsjaelland","DNK","Vejle","Nordsjaelland","1X,ov25,BTTS-Y",-8,-11
+"40",208,"superliga","Silkeborg","Odense","10/24/2021","Silkeborg-Odense","DNK","Silkeborg","Odense","1X,un25,BTTS-Y",11,4
+"41",209,"superliga","Midtjylland","Sonderjyske","10/24/2021","Midtjylland-Sonderjyske","DNK","Midtjylland","Sonderjyske","1X,ov25,BTTS-N",5,-14
+"42",210,"superliga","Aalborg","Viborg","10/24/2021","Aalborg-Viborg","DNK","Aalborg","Viborg","1X,un25,BTTS-Y",1,2

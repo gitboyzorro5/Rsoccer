@@ -19,7 +19,7 @@ allteams20212022scores$matchid <- paste(allteams20212022scores$HomeTeam,allteams
 #myoddscores$Date <- ymd(myoddscores$Date)
 #allteams20212022scores <- allteams20212022scores[allteams20212022scores$Date >= '2021-08-28',]
 #myoddscores <- myoddscores[myoddscores$Date >= '2021-08-28',]
-myoddscores <- myoddscores[,c(24,25,32,29)]
+myoddscores <- myoddscores[,c(24,25,34,29)]
 allteams20212022scores <- allteams20212022scores[,c(3,4,30,15,24)]
 
 finalscore <- dplyr::left_join(myoddscores,allteams20212022scores)
@@ -82,3 +82,5 @@ write.xlsx(finalscore_newleagues,'finalscore_newleagues.xlsx')
 rm(myoddscores_newleagues)
 rm(allteams20212022scores_newleagues)
 
+myoddscores
+tail(allteams20212022)

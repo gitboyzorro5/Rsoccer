@@ -312,7 +312,7 @@ for(d1_row in 1:nrow(D1_fixtures))
 
   if(d1_ht_matches_scoring >= 4 && d1_at_matches_scoring >=4) {d1_btts <- "BTTS-Y"} else {d1_btts <- "BTTS-N"}
 
-  d1_prediction[d1_row] <- rbind(paste(d1_3waypick,d1_goalspick,sep = ","))
+  d1_prediction[d1_row] <- rbind(paste(d1_3waypick,d1_goalspick,d1_btts,sep = ","))
   d1_HWM[d1_row] <- d1_ht_totalwinmargin
   d1_AWM[d1_row] <- d1_at_totalwinmargin
 
@@ -473,7 +473,7 @@ for(d2_row in 1:nrow(D2_fixtures))
 
   if(d2_ht_matches_scoring >= 4 && d2_at_matches_scoring >=4) {d2_btts <- "BTTS-Y"} else {d2_btts <- "BTTS-N"}
 
-  d2_prediction[d2_row] <- rbind(paste(d2_3waypick,d2_goalspick,sep = ","))
+  d2_prediction[d2_row] <- rbind(paste(d2_3waypick,d2_goalspick,d2_btts,sep = ","))
   d2_HWM[d2_row] <- d2_ht_totalwinmargin
   d2_AWM[d2_row] <- d2_at_totalwinmargin
 
@@ -638,7 +638,7 @@ for(e0_row in 1:nrow(E0_fixtures))
 
   if(e0_ht_matches_scoring >= 4 && e0_at_matches_scoring >=4) {e0_btts <- "BTTS-Y"} else {e0_btts <- "BTTS-N"}
 
-  e0_prediction[e0_row] <- rbind(paste(e0_3waypick,e0_goalspick,sep = ","))
+  e0_prediction[e0_row] <- rbind(paste(e0_3waypick,e0_goalspick,e0_btts,sep = ","))
   e0_HWM[e0_row] <- e0_ht_totalwinmargin
   e0_AWM[e0_row] <- e0_at_totalwinmargin
 
@@ -803,7 +803,7 @@ for(e1_row in 1:nrow(E1_fixtures))
   if(e1_ht_matches_scoring >= 4 && e1_at_matches_scoring >=4) {e1_btts <- "BTTS-Y"} else {e1_btts <- "BTTS-N"}
 
 
-  e1_prediction[e1_row] <- rbind(paste(e1_3waypick,e1_goalspick,sep = ","))
+  e1_prediction[e1_row] <- rbind(paste(e1_3waypick,e1_goalspick,e1_btts,sep = ","))
   e1_HWM[e1_row] <- e1_ht_totalwinmargin
   e1_AWM[e1_row] <- e1_at_totalwinmargin
 
@@ -966,7 +966,7 @@ for(e2_row in 1:nrow(E2_fixtures))
 
   if(e2_ht_matches_scoring >= 4 && e2_at_matches_scoring >=4) {e2_btts <- "BTTS-Y"} else {e2_btts <- "BTTS-N"}
 
-  e2_prediction[e2_row] <- rbind(paste(e2_3waypick,e2_goalspick,sep = ","))
+  e2_prediction[e2_row] <- rbind(paste(e2_3waypick,e2_goalspick,e2_btts,sep = ","))
   e2_HWM[e2_row] <- e2_ht_totalwinmargin
   e2_AWM[e2_row] <- e2_at_totalwinmargin
 
@@ -1128,7 +1128,7 @@ for(e3_row in 1:nrow(E3_fixtures))
 
   if(e3_ht_matches_scoring >= 4 && e3_at_matches_scoring >=4) {e3_btts <- "BTTS-Y"} else {e3_btts <- "BTTS-N"}
 
-  e3_prediction[e3_row] <- rbind(paste(e3_3waypick,e3_goalspick,sep = ","))
+  e3_prediction[e3_row] <- rbind(paste(e3_3waypick,e3_goalspick,e3_btts,sep = ","))
   e3_HWM[e3_row] <- e3_ht_totalwinmargin
   e3_AWM[e3_row] <- e3_at_totalwinmargin
 
@@ -1288,7 +1288,7 @@ for(ec_row in 1:nrow(EC_fixtures))
 
   if(ec_ht_matches_scoring >= 4 && ec_at_matches_scoring >=4) {ec_btts <- "BTTS-Y"} else {ec_btts <- "BTTS-N"}
 
-  ec_prediction[ec_row] <- rbind(paste(ec_3waypick,ec_goalspick,sep = ","))
+  ec_prediction[ec_row] <- rbind(paste(ec_3waypick,ec_goalspick,ec_btts,sep = ","))
   ec_HWM[ec_row] <- ec_ht_totalwinmargin
   ec_AWM[ec_row] <- ec_at_totalwinmargin
 
@@ -1451,7 +1451,7 @@ for(f1_row in 1:nrow(F1_fixtures))
 
   if(f1_ht_matches_scoring >= 4 && f1_at_matches_scoring >=4) {f1_btts <- "BTTS-Y"} else {f1_btts <- "BTTS-N"}
 
-  f1_prediction[f1_row] <- rbind(paste(f1_3waypick,f1_goalspick,sep = ","))
+  f1_prediction[f1_row] <- rbind(paste(f1_3waypick,f1_goalspick,f1_btts,sep = ","))
   f1_HWM[f1_row] <- f1_ht_totalwinmargin
   f1_AWM[f1_row] <- f1_at_totalwinmargin
 
@@ -1614,7 +1614,7 @@ for(f2_row in 1:nrow(F2_fixtures))
 
   if(f2_ht_matches_scoring >= 4 && f2_at_matches_scoring >=4) {f2_btts <- "BTTS-Y"} else {f2_btts <- "BTTS-N"}
 
-  f2_prediction[f2_row] <- rbind(paste(f2_3waypick,f2_goalspick,sep = ","))
+  f2_prediction[f2_row] <- rbind(paste(f2_3waypick,f2_goalspick,f2_btts,sep = ","))
   f2_HWM[f2_row] <- f2_ht_totalwinmargin
   f2_AWM[f2_row] <- f2_at_totalwinmargin
 
@@ -1776,7 +1776,7 @@ for(g1_row in 1:nrow(G1_fixtures))
 
   if(g1_ht_matches_scoring >= 4 && g1_at_matches_scoring >=4) {g1_btts <- "BTTS-Y"} else {g1_btts <- "BTTS-N"}
 
-  g1_prediction[g1_row] <- rbind(paste(g1_3waypick,g1_goalspick,sep = ","))
+  g1_prediction[g1_row] <- rbind(paste(g1_3waypick,g1_goalspick,g1_btts,sep = ","))
   g1_HWM[g1_row] <- g1_ht_totalwinmargin
   g1_AWM[g1_row] <- g1_at_totalwinmargin
 
@@ -1938,7 +1938,7 @@ for(i1_row in 1:nrow(I1_fixtures))
 
   if(i1_ht_matches_scoring >= 4 && i1_at_matches_scoring >=4) {i1_btts <- "BTTS-Y"} else {i1_btts <- "BTTS-N"}
 
-  i1_prediction[i1_row] <- rbind(paste(i1_3waypick,i1_goalspick,sep = ","))
+  i1_prediction[i1_row] <- rbind(paste(i1_3waypick,i1_goalspick,i1_btts,sep = ","))
   i1_HWM[i1_row] <- i1_ht_totalwinmargin
   i1_AWM[i1_row] <- i1_at_totalwinmargin
 
@@ -2099,7 +2099,7 @@ for(i2_row in 1:nrow(I2_fixtures))
 
   if(i2_ht_matches_scoring >= 4 && i2_at_matches_scoring >=4) {i2_btts <- "BTTS-Y"} else {i2_btts <- "BTTS-N"}
 
-  i2_prediction[i2_row] <- rbind(paste(i2_3waypick,i2_goalspick,sep = ","))
+  i2_prediction[i2_row] <- rbind(paste(i2_3waypick,i2_goalspick,i2_btts,sep = ","))
   i2_HWM[i2_row] <- i2_ht_totalwinmargin
   i2_AWM[i2_row] <- i2_at_totalwinmargin
 
@@ -2262,7 +2262,7 @@ for(n1_row in 1:nrow(N1_fixtures))
 
   if(n1_ht_matches_scoring >= 4 && n1_at_matches_scoring >=4) {n1_btts <- "BTTS-Y"} else {n1_btts <- "BTTS-N"}
 
-  n1_prediction[n1_row] <- rbind(paste(n1_3waypick,n1_goalspick,sep = ","))
+  n1_prediction[n1_row] <- rbind(paste(n1_3waypick,n1_goalspick,n1_btts,sep = ","))
   n1_HWM[n1_row] <- n1_ht_totalwinmargin
   n1_AWM[n1_row] <- n1_at_totalwinmargin
 

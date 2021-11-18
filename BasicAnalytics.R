@@ -368,6 +368,7 @@ B1_secondsplit$awaywinmargin <- sqldf("select b1_winmargin_h_margindata.Value fr
 #####################################################################################################################
 #begin gamesate algortihm
 b1_firstgames <- length(b1_teams)/2
+B1_margindata <- B1
 B1_firstsplit <-  head(B1_margindata,b1_firstgames)
 B1_secondsplit <- tail(B1_margindata,nrow(B1_margindata) - b1_firstgames)
 B1_secondsplit$b1_HomeTeam_index_wm <- match(B1_secondsplit$HomeTeam,b1_teams)
@@ -407,14 +408,16 @@ for (b1_secondsplitrow in 1:nrow(B1_secondsplit))
   }
 
 }
-###################################################################################################
-###################################################################################################
+
 b1_homewinmargin
 b1_awaywinmargin
 
 B1_gamestate_data <- cbind(B1_secondsplit,b1_homewinmargin,b1_awaywinmargin)
 
 tail(B1_gamestate_data,5)
+###################################################################################################
+###################################################################################################
+
 ###################################################################################################
 
 

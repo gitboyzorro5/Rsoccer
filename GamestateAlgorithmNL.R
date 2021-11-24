@@ -9,11 +9,10 @@ AUT_margindata <- AUT
 aut_firstgames <- length(aut_teams)/2
 AUT_firstsplit <-  head(AUT_margindata,aut_firstgames)
 AUT_secondsplit <- tail(AUT_margindata,nrow(AUT_margindata) - aut_firstgames)
-AUT_secondsplit$aut_HomeTeam_index_wm <- match(AUT_secondsplit$HomeTeam,aut_teams)
-AUT_secondsplit$aut_AwayTeam_index_wm <- match(AUT_secondsplit$AwayTeam,aut_teams)
-AUT_secondsplit
-AUT_secondsplit$aut_homegame_no <- rep(2:aut_games_played[1] - 1, each = length(aut_teams)/2)
-AUT_secondsplit$aut_awaygame_no <- rep(2:aut_games_played[1] - 1, each = length(aut_teams)/2)
+AUT_secondsplit$aut_HomeTeam_index_wm <- match(AUT_secondsplit$Home,aut_teams)
+AUT_secondsplit$aut_AwayTeam_index_wm <- match(AUT_secondsplit$Away,aut_teams)
+AUT_secondsplit$aut_homegame_no <- rep(2:max(aut_games_played[]) - 1,each = length(aut_teams)/2,length.out = nrow(AUT_secondsplit))
+AUT_secondsplit$aut_awaygame_no <- rep(2:max(aut_games_played[]) - 1,each = length(aut_teams)/2,length.out = nrow(AUT_secondsplit))
 
 aut_homewinmargin <- c()
 aut_awaywinmargin <- c()
@@ -52,6 +51,7 @@ aut_homewinmargin
 aut_awaywinmargin
 
 AUT_gamestate_data <- cbind(AUT_secondsplit,aut_homewinmargin,aut_awaywinmargin)
+AUT_gamestate_data
 AUT_gamestate_data$aut_GSCS <- paste(AUT_gamestate_data$aut_homewinmargin,AUT_gamestate_data$aut_awaywinmargin, sep = ",")
 AUT_gamestate_data$aut_GSH <- AUT_gamestate_data$aut_homewinmargin - AUT_gamestate_data$aut_awaywinmargin
 head(AUT_gamestate_data,5)
@@ -60,22 +60,26 @@ AUT_gamestate_copy$aut_HomeTeam_index_wm <- NULL
 AUT_gamestate_copy$aut_AwayTeam_index_wm <- NULL
 AUT_gamestate_copy$aut_homegame_no <- NULL
 AUT_gamestate_copy$aut_awaygame_no <- NULL
-colnames(AUT_gamestate_copy)[30] <- "homewinmargin"
-colnames(AUT_gamestate_copy)[31] <- "awaywinmargin"
-colnames(AUT_gamestate_copy)[32] <- "GSCS"
-colnames(AUT_gamestate_copy)[33] <- "GSH"
+head(AUT_gamestate_copy)
+colnames(AUT_gamestate_copy)[22] <- "homewinmargin"
+colnames(AUT_gamestate_copy)[23] <- "awaywinmargin"
+colnames(AUT_gamestate_copy)[24] <- "GSCS"
+colnames(AUT_gamestate_copy)[25] <- "GSH"
+AUT_gamestate_copy$CS <- paste(AUT_gamestate_copy$HG,AUT_gamestate_copy$AG, sep = "-")
+AUT_gamestate_copy
 #end AUT
 ###################################################################################################
 ###################################################################################################
+#ARG
 #ARG
 ARG_margindata <- ARG
 arg_firstgames <- length(arg_teams)/2
 ARG_firstsplit <-  head(ARG_margindata,arg_firstgames)
 ARG_secondsplit <- tail(ARG_margindata,nrow(ARG_margindata) - arg_firstgames)
-ARG_secondsplit$arg_HomeTeam_index_wm <- match(ARG_secondsplit$HomeTeam,arg_teams)
-ARG_secondsplit$arg_AwayTeam_index_wm <- match(ARG_secondsplit$AwayTeam,arg_teams)
-ARG_secondsplit$arg_homegame_no <- rep(2:arg_games_played[1] - 1, each = length(arg_teams)/2)
-ARG_secondsplit$arg_awaygame_no <- rep(2:arg_games_played[1] - 1, each = length(arg_teams)/2)
+ARG_secondsplit$arg_HomeTeam_index_wm <- match(ARG_secondsplit$Home,arg_teams)
+ARG_secondsplit$arg_AwayTeam_index_wm <- match(ARG_secondsplit$Away,arg_teams)
+ARG_secondsplit$arg_homegame_no <- rep(2:max(arg_games_played[]) - 1,each = length(arg_teams)/2,length.out = nrow(ARG_secondsplit))
+ARG_secondsplit$arg_awaygame_no <- rep(2:max(arg_games_played[]) - 1,each = length(arg_teams)/2,length.out = nrow(ARG_secondsplit))
 
 arg_homewinmargin <- c()
 arg_awaywinmargin <- c()
@@ -114,6 +118,7 @@ arg_homewinmargin
 arg_awaywinmargin
 
 ARG_gamestate_data <- cbind(ARG_secondsplit,arg_homewinmargin,arg_awaywinmargin)
+ARG_gamestate_data
 ARG_gamestate_data$arg_GSCS <- paste(ARG_gamestate_data$arg_homewinmargin,ARG_gamestate_data$arg_awaywinmargin, sep = ",")
 ARG_gamestate_data$arg_GSH <- ARG_gamestate_data$arg_homewinmargin - ARG_gamestate_data$arg_awaywinmargin
 head(ARG_gamestate_data,5)
@@ -122,1242 +127,950 @@ ARG_gamestate_copy$arg_HomeTeam_index_wm <- NULL
 ARG_gamestate_copy$arg_AwayTeam_index_wm <- NULL
 ARG_gamestate_copy$arg_homegame_no <- NULL
 ARG_gamestate_copy$arg_awaygame_no <- NULL
-colnames(ARG_gamestate_copy)[30] <- "homewinmargin"
-colnames(ARG_gamestate_copy)[31] <- "awaywinmargin"
-colnames(ARG_gamestate_copy)[32] <- "GSCS"
-colnames(ARG_gamestate_copy)[33] <- "GSH"
+head(ARG_gamestate_copy)
+colnames(ARG_gamestate_copy)[22] <- "homewinmargin"
+colnames(ARG_gamestate_copy)[23] <- "awaywinmargin"
+colnames(ARG_gamestate_copy)[24] <- "GSCS"
+colnames(ARG_gamestate_copy)[25] <- "GSH"
+ARG_gamestate_copy$CS <- paste(ARG_gamestate_copy$HG,ARG_gamestate_copy$AG, sep = "-")
+ARG_gamestate_copy
+#end ARG
 #end ARG
 ###################################################################################################
 ###################################################################################################
-#D2
-D2_margindata <- D2
-d2_firstgames <- length(d2_teams)/2
-D2_firstsplit <-  head(D2_margindata,d2_firstgames)
-D2_secondsplit <- tail(D2_margindata,nrow(D2_margindata) - d2_firstgames)
-D2_secondsplit$d2_HomeTeam_index_wm <- match(D2_secondsplit$HomeTeam,d2_teams)
-D2_secondsplit$d2_AwayTeam_index_wm <- match(D2_secondsplit$AwayTeam,d2_teams)
-D2_secondsplit$d2_homegame_no <- rep(2:max(d2_games_played[]) - 1,each = length(d2_teams)/2,length.out = nrow(D2_secondsplit))
-D2_secondsplit$d2_awaygame_no <- rep(2:max(d2_games_played[]) - 1,each = length(d2_teams)/2,length.out = nrow(D2_secondsplit))
+#BRA
+BRA_margindata <- BRA
+bra_firstgames <- length(bra_teams)/2
+BRA_firstsplit <-  head(BRA_margindata,bra_firstgames)
+BRA_secondsplit <- tail(BRA_margindata,nrow(BRA_margindata) - bra_firstgames)
+BRA_secondsplit$bra_HomeTeam_index_wm <- match(BRA_secondsplit$Home,bra_teams)
+BRA_secondsplit$bra_AwayTeam_index_wm <- match(BRA_secondsplit$Away,bra_teams)
+BRA_secondsplit$bra_homegame_no <- rep(2:max(bra_games_played[]) - 1,each = length(bra_teams)/2,length.out = nrow(BRA_secondsplit))
+BRA_secondsplit$bra_awaygame_no <- rep(2:max(bra_games_played[]) - 1,each = length(bra_teams)/2,length.out = nrow(BRA_secondsplit))
 
-d2_homewinmargin <- c()
-d2_awaywinmargin <- c()
+bra_homewinmargin <- c()
+bra_awaywinmargin <- c()
 
-for (d2_secondsplitrow in 1:nrow(D2_secondsplit))
+for (bra_secondsplitrow in 1:nrow(BRA_secondsplit))
 {
 
-  d2_hometeamindex_wm <- D2_secondsplit[d2_secondsplitrow,"d2_HomeTeam_index_wm"]
-  d2_awayteamindex_wm <- D2_secondsplit[d2_secondsplitrow,"d2_AwayTeam_index_wm"]
-  d2_hometeam_game_no <- D2_secondsplit[d2_secondsplitrow,"d2_homegame_no"]
-  d2_awayteam_game_no <- D2_secondsplit[d2_secondsplitrow,"d2_awaygame_no"]
+  bra_hometeamindex_wm <- BRA_secondsplit[bra_secondsplitrow,"bra_HomeTeam_index_wm"]
+  bra_awayteamindex_wm <- BRA_secondsplit[bra_secondsplitrow,"bra_AwayTeam_index_wm"]
+  bra_hometeam_game_no <- BRA_secondsplit[bra_secondsplitrow,"bra_homegame_no"]
+  bra_awayteam_game_no <- BRA_secondsplit[bra_secondsplitrow,"bra_awaygame_no"]
 
-  d2_winmargin_vec_gamestate_h <- as.vector(d2_winmargin_h[d2_hometeamindex_wm,])
-  d2_winmargin_vec_gamestate_h[is.na(d2_winmargin_vec_gamestate_h)] <- ""
-  d2_winmargin_vec_gamestate_h <- d2_winmargin_vec_gamestate_h[d2_winmargin_vec_gamestate_h != ""]
-  d2_winmargin_vec_gamestate_h <- as.numeric(d2_winmargin_vec_gamestate_h)
+  bra_winmargin_vec_gamestate_h <- as.vector(bra_winmargin_h[bra_hometeamindex_wm,])
+  bra_winmargin_vec_gamestate_h[is.na(bra_winmargin_vec_gamestate_h)] <- ""
+  bra_winmargin_vec_gamestate_h <- bra_winmargin_vec_gamestate_h[bra_winmargin_vec_gamestate_h != ""]
+  bra_winmargin_vec_gamestate_h <- as.numeric(bra_winmargin_vec_gamestate_h)
 
-  d2_winmargin_vec_gamestate_a <- as.vector(d2_winmargin_h[d2_awayteamindex_wm,])
-  d2_winmargin_vec_gamestate_a[is.na(d2_winmargin_vec_gamestate_a)] <- ""
-  d2_winmargin_vec_gamestate_a <- d2_winmargin_vec_gamestate_a[d2_winmargin_vec_gamestate_a != ""]
-  d2_winmargin_vec_gamestate_a <- as.numeric(d2_winmargin_vec_gamestate_a)
+  bra_winmargin_vec_gamestate_a <- as.vector(bra_winmargin_h[bra_awayteamindex_wm,])
+  bra_winmargin_vec_gamestate_a[is.na(bra_winmargin_vec_gamestate_a)] <- ""
+  bra_winmargin_vec_gamestate_a <- bra_winmargin_vec_gamestate_a[bra_winmargin_vec_gamestate_a != ""]
+  bra_winmargin_vec_gamestate_a <- as.numeric(bra_winmargin_vec_gamestate_a)
 
-  for (d2_game_no in 1:d2_games_played[1])
+  for (bra_game_no in 1:bra_games_played[1])
 
   {
 
-    d2_homewinmargin[d2_secondsplitrow] <- d2_winmargin_vec_gamestate_h[d2_hometeam_game_no]
-    d2_awaywinmargin[d2_secondsplitrow] <- d2_winmargin_vec_gamestate_a[d2_awayteam_game_no]
+    bra_homewinmargin[bra_secondsplitrow] <- bra_winmargin_vec_gamestate_h[bra_hometeam_game_no]
+    bra_awaywinmargin[bra_secondsplitrow] <- bra_winmargin_vec_gamestate_a[bra_awayteam_game_no]
 
 
   }
 
 }
 
-d2_homewinmargin
-d2_awaywinmargin
+bra_homewinmargin
+bra_awaywinmargin
 
-D2_gamestate_data <- cbind(D2_secondsplit,d2_homewinmargin,d2_awaywinmargin)
-D2_gamestate_data$d2_GSCS <- paste(D2_gamestate_data$d2_homewinmargin,D2_gamestate_data$d2_awaywinmargin, sep = ",")
-D2_gamestate_data$d2_GSH <- D2_gamestate_data$d2_homewinmargin - D2_gamestate_data$d2_awaywinmargin
-head(D2_gamestate_data,5)
-D2_gamestate_copy <- D2_gamestate_data
-D2_gamestate_copy$d2_HomeTeam_index_wm <- NULL
-D2_gamestate_copy$d2_AwayTeam_index_wm <- NULL
-D2_gamestate_copy$d2_homegame_no <- NULL
-D2_gamestate_copy$d2_awaygame_no <- NULL
-colnames(D2_gamestate_copy)[30] <- "homewinmargin"
-colnames(D2_gamestate_copy)[31] <- "awaywinmargin"
-colnames(D2_gamestate_copy)[32] <- "GSCS"
-colnames(D2_gamestate_copy)[33] <- "GSH"
-#end D2
+BRA_gamestate_data <- cbind(BRA_secondsplit,bra_homewinmargin,bra_awaywinmargin)
+BRA_gamestate_data
+BRA_gamestate_data$bra_GSCS <- paste(BRA_gamestate_data$bra_homewinmargin,BRA_gamestate_data$bra_awaywinmargin, sep = ",")
+BRA_gamestate_data$bra_GSH <- BRA_gamestate_data$bra_homewinmargin - BRA_gamestate_data$bra_awaywinmargin
+head(BRA_gamestate_data,5)
+BRA_gamestate_copy <- BRA_gamestate_data
+BRA_gamestate_copy$bra_HomeTeam_index_wm <- NULL
+BRA_gamestate_copy$bra_AwayTeam_index_wm <- NULL
+BRA_gamestate_copy$bra_homegame_no <- NULL
+BRA_gamestate_copy$bra_awaygame_no <- NULL
+head(BRA_gamestate_copy)
+colnames(BRA_gamestate_copy)[22] <- "homewinmargin"
+colnames(BRA_gamestate_copy)[23] <- "awaywinmargin"
+colnames(BRA_gamestate_copy)[24] <- "GSCS"
+colnames(BRA_gamestate_copy)[25] <- "GSH"
+BRA_gamestate_copy$CS <- paste(BRA_gamestate_copy$HG,BRA_gamestate_copy$AG, sep = "-")
+BRA_gamestate_copy
+#end BRA
 ###################################################################################################
-#E0
-E0_margindata <- E0
-e0_firstgames <- length(e0_teams)/2
-E0_firstsplit <-  head(E0_margindata,e0_firstgames)
-E0_secondsplit <- tail(E0_margindata,nrow(E0_margindata) - e0_firstgames)
-E0_secondsplit$e0_HomeTeam_index_wm <- match(E0_secondsplit$HomeTeam,e0_teams)
-E0_secondsplit$e0_AwayTeam_index_wm <- match(E0_secondsplit$AwayTeam,e0_teams)
-E0_secondsplit$e0_homegame_no <- rep(2:e0_games_played[1] - 1, each = length(e0_teams)/2)
-E0_secondsplit$e0_awaygame_no <- rep(2:e0_games_played[1] - 1, each = length(e0_teams)/2)
+#CHN
+CHN_margindata <- CHN
+chn_firstgames <- length(chn_teams)/2
+CHN_firstsplit <-  head(CHN_margindata,chn_firstgames)
+CHN_secondsplit <- tail(CHN_margindata,nrow(CHN_margindata) - chn_firstgames)
+CHN_secondsplit$chn_HomeTeam_index_wm <- match(CHN_secondsplit$Home,chn_teams)
+CHN_secondsplit$chn_AwayTeam_index_wm <- match(CHN_secondsplit$Away,chn_teams)
+CHN_secondsplit$chn_homegame_no <- rep(2:max(chn_games_played[]) - 1,each = length(chn_teams)/2,length.out = nrow(CHN_secondsplit))
+CHN_secondsplit$chn_awaygame_no <- rep(2:max(chn_games_played[]) - 1,each = length(chn_teams)/2,length.out = nrow(CHN_secondsplit))
 
-e0_homewinmargin <- c()
-e0_awaywinmargin <- c()
+chn_homewinmargin <- c()
+chn_awaywinmargin <- c()
 
-for (e0_secondsplitrow in 1:nrow(E0_secondsplit))
+for (chn_secondsplitrow in 1:nrow(CHN_secondsplit))
 {
 
-  e0_hometeamindex_wm <- E0_secondsplit[e0_secondsplitrow,"e0_HomeTeam_index_wm"]
-  e0_awayteamindex_wm <- E0_secondsplit[e0_secondsplitrow,"e0_AwayTeam_index_wm"]
-  e0_hometeam_game_no <- E0_secondsplit[e0_secondsplitrow,"e0_homegame_no"]
-  e0_awayteam_game_no <- E0_secondsplit[e0_secondsplitrow,"e0_awaygame_no"]
+  chn_hometeamindex_wm <- CHN_secondsplit[chn_secondsplitrow,"chn_HomeTeam_index_wm"]
+  chn_awayteamindex_wm <- CHN_secondsplit[chn_secondsplitrow,"chn_AwayTeam_index_wm"]
+  chn_hometeam_game_no <- CHN_secondsplit[chn_secondsplitrow,"chn_homegame_no"]
+  chn_awayteam_game_no <- CHN_secondsplit[chn_secondsplitrow,"chn_awaygame_no"]
 
-  e0_winmargin_vec_gamestate_h <- as.vector(e0_winmargin_h[e0_hometeamindex_wm,])
-  e0_winmargin_vec_gamestate_h[is.na(e0_winmargin_vec_gamestate_h)] <- ""
-  e0_winmargin_vec_gamestate_h <- e0_winmargin_vec_gamestate_h[e0_winmargin_vec_gamestate_h != ""]
-  e0_winmargin_vec_gamestate_h <- as.numeric(e0_winmargin_vec_gamestate_h)
+  chn_winmargin_vec_gamestate_h <- as.vector(chn_winmargin_h[chn_hometeamindex_wm,])
+  chn_winmargin_vec_gamestate_h[is.na(chn_winmargin_vec_gamestate_h)] <- ""
+  chn_winmargin_vec_gamestate_h <- chn_winmargin_vec_gamestate_h[chn_winmargin_vec_gamestate_h != ""]
+  chn_winmargin_vec_gamestate_h <- as.numeric(chn_winmargin_vec_gamestate_h)
 
-  e0_winmargin_vec_gamestate_a <- as.vector(e0_winmargin_h[e0_awayteamindex_wm,])
-  e0_winmargin_vec_gamestate_a[is.na(e0_winmargin_vec_gamestate_a)] <- ""
-  e0_winmargin_vec_gamestate_a <- e0_winmargin_vec_gamestate_a[e0_winmargin_vec_gamestate_a != ""]
-  e0_winmargin_vec_gamestate_a <- as.numeric(e0_winmargin_vec_gamestate_a)
+  chn_winmargin_vec_gamestate_a <- as.vector(chn_winmargin_h[chn_awayteamindex_wm,])
+  chn_winmargin_vec_gamestate_a[is.na(chn_winmargin_vec_gamestate_a)] <- ""
+  chn_winmargin_vec_gamestate_a <- chn_winmargin_vec_gamestate_a[chn_winmargin_vec_gamestate_a != ""]
+  chn_winmargin_vec_gamestate_a <- as.numeric(chn_winmargin_vec_gamestate_a)
 
-  for (e0_game_no in 1:e0_games_played[1])
+  for (chn_game_no in 1:chn_games_played[1])
 
   {
 
-    e0_homewinmargin[e0_secondsplitrow] <- e0_winmargin_vec_gamestate_h[e0_hometeam_game_no]
-    e0_awaywinmargin[e0_secondsplitrow] <- e0_winmargin_vec_gamestate_a[e0_awayteam_game_no]
+    chn_homewinmargin[chn_secondsplitrow] <- chn_winmargin_vec_gamestate_h[chn_hometeam_game_no]
+    chn_awaywinmargin[chn_secondsplitrow] <- chn_winmargin_vec_gamestate_a[chn_awayteam_game_no]
 
 
   }
 
 }
 
-e0_homewinmargin
-e0_awaywinmargin
+chn_homewinmargin
+chn_awaywinmargin
 
-E0_gamestate_data <- cbind(E0_secondsplit,e0_homewinmargin,e0_awaywinmargin)
-E0_gamestate_data$e0_GSCS <- paste(E0_gamestate_data$e0_homewinmargin,E0_gamestate_data$e0_awaywinmargin, sep = ",")
-E0_gamestate_data$e0_GSH <- E0_gamestate_data$e0_homewinmargin - E0_gamestate_data$e0_awaywinmargin
-head(E0_gamestate_data,5)
-E0_gamestate_copy <- E0_gamestate_data
-E0_gamestate_copy$e0_HomeTeam_index_wm <- NULL
-E0_gamestate_copy$e0_AwayTeam_index_wm <- NULL
-E0_gamestate_copy$e0_homegame_no <- NULL
-E0_gamestate_copy$e0_awaygame_no <- NULL
-colnames(E0_gamestate_copy)[30] <- "homewinmargin"
-colnames(E0_gamestate_copy)[31] <- "awaywinmargin"
-colnames(E0_gamestate_copy)[32] <- "GSCS"
-colnames(E0_gamestate_copy)[33] <- "GSH"
-#end E0
+CHN_gamestate_data <- cbind(CHN_secondsplit,chn_homewinmargin,chn_awaywinmargin)
+CHN_gamestate_data
+CHN_gamestate_data$chn_GSCS <- paste(CHN_gamestate_data$chn_homewinmargin,CHN_gamestate_data$chn_awaywinmargin, sep = ",")
+CHN_gamestate_data$chn_GSH <- CHN_gamestate_data$chn_homewinmargin - CHN_gamestate_data$chn_awaywinmargin
+head(CHN_gamestate_data,5)
+CHN_gamestate_copy <- CHN_gamestate_data
+CHN_gamestate_copy$chn_HomeTeam_index_wm <- NULL
+CHN_gamestate_copy$chn_AwayTeam_index_wm <- NULL
+CHN_gamestate_copy$chn_homegame_no <- NULL
+CHN_gamestate_copy$chn_awaygame_no <- NULL
+head(CHN_gamestate_copy)
+colnames(CHN_gamestate_copy)[22] <- "homewinmargin"
+colnames(CHN_gamestate_copy)[23] <- "awaywinmargin"
+colnames(CHN_gamestate_copy)[24] <- "GSCS"
+colnames(CHN_gamestate_copy)[25] <- "GSH"
+CHN_gamestate_copy$CS <- paste(CHN_gamestate_copy$HG,CHN_gamestate_copy$AG, sep = "-")
+CHN_gamestate_copy
+#end CHN
 ####################################################################################################################
-#E1
-E1_margindata <- E1
-e1_firstgames <- length(e1_teams)/2
-E1_firstsplit <-  head(E1_margindata,e1_firstgames)
-E1_secondsplit <- tail(E1_margindata,nrow(E1_margindata) - e1_firstgames)
-E1_secondsplit$e1_HomeTeam_index_wm <- match(E1_secondsplit$HomeTeam,e1_teams)
-E1_secondsplit$e1_AwayTeam_index_wm <- match(E1_secondsplit$AwayTeam,e1_teams)
-E1_secondsplit$e1_homegame_no <- rep(2:e1_games_played[1] - 1, each = length(e1_teams)/2)
-E1_secondsplit$e1_awaygame_no <- rep(2:e1_games_played[1] - 1, each = length(e1_teams)/2)
+####################################################################################################################
+#DNK
+DNK_margindata <- DNK
+dnk_firstgames <- length(dnk_teams)/2
+DNK_firstsplit <-  head(DNK_margindata,dnk_firstgames)
+DNK_secondsplit <- tail(DNK_margindata,nrow(DNK_margindata) - dnk_firstgames)
+DNK_secondsplit$dnk_HomeTeam_index_wm <- match(DNK_secondsplit$Home,dnk_teams)
+DNK_secondsplit$dnk_AwayTeam_index_wm <- match(DNK_secondsplit$Away,dnk_teams)
+DNK_secondsplit$dnk_homegame_no <- rep(2:max(dnk_games_played[]) - 1,each = length(dnk_teams)/2,length.out = nrow(DNK_secondsplit))
+DNK_secondsplit$dnk_awaygame_no <- rep(2:max(dnk_games_played[]) - 1,each = length(dnk_teams)/2,length.out = nrow(DNK_secondsplit))
 
-e1_homewinmargin <- c()
-e1_awaywinmargin <- c()
+dnk_homewinmargin <- c()
+dnk_awaywinmargin <- c()
 
-for (e1_secondsplitrow in 1:nrow(E1_secondsplit))
+for (dnk_secondsplitrow in 1:nrow(DNK_secondsplit))
 {
 
-  e1_hometeamindex_wm <- E1_secondsplit[e1_secondsplitrow,"e1_HomeTeam_index_wm"]
-  e1_awayteamindex_wm <- E1_secondsplit[e1_secondsplitrow,"e1_AwayTeam_index_wm"]
-  e1_hometeam_game_no <- E1_secondsplit[e1_secondsplitrow,"e1_homegame_no"]
-  e1_awayteam_game_no <- E1_secondsplit[e1_secondsplitrow,"e1_awaygame_no"]
+  dnk_hometeamindex_wm <- DNK_secondsplit[dnk_secondsplitrow,"dnk_HomeTeam_index_wm"]
+  dnk_awayteamindex_wm <- DNK_secondsplit[dnk_secondsplitrow,"dnk_AwayTeam_index_wm"]
+  dnk_hometeam_game_no <- DNK_secondsplit[dnk_secondsplitrow,"dnk_homegame_no"]
+  dnk_awayteam_game_no <- DNK_secondsplit[dnk_secondsplitrow,"dnk_awaygame_no"]
 
-  e1_winmargin_vec_gamestate_h <- as.vector(e1_winmargin_h[e1_hometeamindex_wm,])
-  e1_winmargin_vec_gamestate_h[is.na(e1_winmargin_vec_gamestate_h)] <- ""
-  e1_winmargin_vec_gamestate_h <- e1_winmargin_vec_gamestate_h[e1_winmargin_vec_gamestate_h != ""]
-  e1_winmargin_vec_gamestate_h <- as.numeric(e1_winmargin_vec_gamestate_h)
+  dnk_winmargin_vec_gamestate_h <- as.vector(dnk_winmargin_h[dnk_hometeamindex_wm,])
+  dnk_winmargin_vec_gamestate_h[is.na(dnk_winmargin_vec_gamestate_h)] <- ""
+  dnk_winmargin_vec_gamestate_h <- dnk_winmargin_vec_gamestate_h[dnk_winmargin_vec_gamestate_h != ""]
+  dnk_winmargin_vec_gamestate_h <- as.numeric(dnk_winmargin_vec_gamestate_h)
 
-  e1_winmargin_vec_gamestate_a <- as.vector(e1_winmargin_h[e1_awayteamindex_wm,])
-  e1_winmargin_vec_gamestate_a[is.na(e1_winmargin_vec_gamestate_a)] <- ""
-  e1_winmargin_vec_gamestate_a <- e1_winmargin_vec_gamestate_a[e1_winmargin_vec_gamestate_a != ""]
-  e1_winmargin_vec_gamestate_a <- as.numeric(e1_winmargin_vec_gamestate_a)
+  dnk_winmargin_vec_gamestate_a <- as.vector(dnk_winmargin_h[dnk_awayteamindex_wm,])
+  dnk_winmargin_vec_gamestate_a[is.na(dnk_winmargin_vec_gamestate_a)] <- ""
+  dnk_winmargin_vec_gamestate_a <- dnk_winmargin_vec_gamestate_a[dnk_winmargin_vec_gamestate_a != ""]
+  dnk_winmargin_vec_gamestate_a <- as.numeric(dnk_winmargin_vec_gamestate_a)
 
-  for (e1_game_no in 1:e1_games_played[1])
+  for (dnk_game_no in 1:dnk_games_played[1])
 
   {
 
-    e1_homewinmargin[e1_secondsplitrow] <- e1_winmargin_vec_gamestate_h[e1_hometeam_game_no]
-    e1_awaywinmargin[e1_secondsplitrow] <- e1_winmargin_vec_gamestate_a[e1_awayteam_game_no]
+    dnk_homewinmargin[dnk_secondsplitrow] <- dnk_winmargin_vec_gamestate_h[dnk_hometeam_game_no]
+    dnk_awaywinmargin[dnk_secondsplitrow] <- dnk_winmargin_vec_gamestate_a[dnk_awayteam_game_no]
 
 
   }
 
 }
 
-e1_homewinmargin
-e1_awaywinmargin
+dnk_homewinmargin
+dnk_awaywinmargin
 
-E1_gamestate_data <- cbind(E1_secondsplit,e1_homewinmargin,e1_awaywinmargin)
-E1_gamestate_data$e1_GSCS <- paste(E1_gamestate_data$e1_homewinmargin,E1_gamestate_data$e1_awaywinmargin, sep = ",")
-E1_gamestate_data$e1_GSH <- E1_gamestate_data$e1_homewinmargin - E1_gamestate_data$e1_awaywinmargin
-head(E1_gamestate_data,5)
-E1_gamestate_copy <- E1_gamestate_data
-E1_gamestate_copy$e1_HomeTeam_index_wm <- NULL
-E1_gamestate_copy$e1_AwayTeam_index_wm <- NULL
-E1_gamestate_copy$e1_homegame_no <- NULL
-E1_gamestate_copy$e1_awaygame_no <- NULL
-colnames(E1_gamestate_copy)[30] <- "homewinmargin"
-colnames(E1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(E1_gamestate_copy)[32] <- "GSCS"
-colnames(E1_gamestate_copy)[33] <- "GSH"
-#end E1
+DNK_gamestate_data <- cbind(DNK_secondsplit,dnk_homewinmargin,dnk_awaywinmargin)
+DNK_gamestate_data
+DNK_gamestate_data$dnk_GSCS <- paste(DNK_gamestate_data$dnk_homewinmargin,DNK_gamestate_data$dnk_awaywinmargin, sep = ",")
+DNK_gamestate_data$dnk_GSH <- DNK_gamestate_data$dnk_homewinmargin - DNK_gamestate_data$dnk_awaywinmargin
+head(DNK_gamestate_data,5)
+DNK_gamestate_copy <- DNK_gamestate_data
+DNK_gamestate_copy$dnk_HomeTeam_index_wm <- NULL
+DNK_gamestate_copy$dnk_AwayTeam_index_wm <- NULL
+DNK_gamestate_copy$dnk_homegame_no <- NULL
+DNK_gamestate_copy$dnk_awaygame_no <- NULL
+head(DNK_gamestate_copy)
+colnames(DNK_gamestate_copy)[22] <- "homewinmargin"
+colnames(DNK_gamestate_copy)[23] <- "awaywinmargin"
+colnames(DNK_gamestate_copy)[24] <- "GSCS"
+colnames(DNK_gamestate_copy)[25] <- "GSH"
+DNK_gamestate_copy$CS <- paste(DNK_gamestate_copy$HG,DNK_gamestate_copy$AG, sep = "-")
+DNK_gamestate_copy
+#end DNK
 ###################################################################################################
-#E2
-E2_margindata <- E2
-e2_firstgames <- length(e2_teams)/2
-E2_firstsplit <-  head(E2_margindata,e2_firstgames)
-E2_secondsplit <- tail(E2_margindata,nrow(E2_margindata) - e2_firstgames)
-E2_secondsplit$e2_HomeTeam_index_wm <- match(E2_secondsplit$HomeTeam,e2_teams)
-E2_secondsplit$e2_AwayTeam_index_wm <- match(E2_secondsplit$AwayTeam,e2_teams)
-E2_secondsplit$e2_homegame_no <- rep(2:max(e2_games_played[]) - 1,each = length(e2_teams)/2,length.out = nrow(E2_secondsplit))
-E2_secondsplit$e2_awaygame_no <- rep(2:max(e2_games_played[]) - 1,each = length(e2_teams)/2,length.out = nrow(E2_secondsplit))
+###################################################################################################
+#FIN
+FIN_margindata <- FIN
+fin_firstgames <- length(fin_teams)/2
+FIN_firstsplit <-  head(FIN_margindata,fin_firstgames)
+FIN_secondsplit <- tail(FIN_margindata,nrow(FIN_margindata) - fin_firstgames)
+FIN_secondsplit$fin_HomeTeam_index_wm <- match(FIN_secondsplit$Home,fin_teams)
+FIN_secondsplit$fin_AwayTeam_index_wm <- match(FIN_secondsplit$Away,fin_teams)
+FIN_secondsplit$fin_homegame_no <- rep(2:max(fin_games_played[]) - 1,each = length(fin_teams)/2,length.out = nrow(FIN_secondsplit))
+FIN_secondsplit$fin_awaygame_no <- rep(2:max(fin_games_played[]) - 1,each = length(fin_teams)/2,length.out = nrow(FIN_secondsplit))
 
-e2_homewinmargin <- c()
-e2_awaywinmargin <- c()
+fin_homewinmargin <- c()
+fin_awaywinmargin <- c()
 
-for (e2_secondsplitrow in 1:nrow(E2_secondsplit))
+for (fin_secondsplitrow in 1:nrow(FIN_secondsplit))
 {
 
-  e2_hometeamindex_wm <- E2_secondsplit[e2_secondsplitrow,"e2_HomeTeam_index_wm"]
-  e2_awayteamindex_wm <- E2_secondsplit[e2_secondsplitrow,"e2_AwayTeam_index_wm"]
-  e2_hometeam_game_no <- E2_secondsplit[e2_secondsplitrow,"e2_homegame_no"]
-  e2_awayteam_game_no <- E2_secondsplit[e2_secondsplitrow,"e2_awaygame_no"]
+  fin_hometeamindex_wm <- FIN_secondsplit[fin_secondsplitrow,"fin_HomeTeam_index_wm"]
+  fin_awayteamindex_wm <- FIN_secondsplit[fin_secondsplitrow,"fin_AwayTeam_index_wm"]
+  fin_hometeam_game_no <- FIN_secondsplit[fin_secondsplitrow,"fin_homegame_no"]
+  fin_awayteam_game_no <- FIN_secondsplit[fin_secondsplitrow,"fin_awaygame_no"]
 
-  e2_winmargin_vec_gamestate_h <- as.vector(e2_winmargin_h[e2_hometeamindex_wm,])
-  e2_winmargin_vec_gamestate_h[is.na(e2_winmargin_vec_gamestate_h)] <- ""
-  e2_winmargin_vec_gamestate_h <- e2_winmargin_vec_gamestate_h[e2_winmargin_vec_gamestate_h != ""]
-  e2_winmargin_vec_gamestate_h <- as.numeric(e2_winmargin_vec_gamestate_h)
+  fin_winmargin_vec_gamestate_h <- as.vector(fin_winmargin_h[fin_hometeamindex_wm,])
+  fin_winmargin_vec_gamestate_h[is.na(fin_winmargin_vec_gamestate_h)] <- ""
+  fin_winmargin_vec_gamestate_h <- fin_winmargin_vec_gamestate_h[fin_winmargin_vec_gamestate_h != ""]
+  fin_winmargin_vec_gamestate_h <- as.numeric(fin_winmargin_vec_gamestate_h)
 
-  e2_winmargin_vec_gamestate_a <- as.vector(e2_winmargin_h[e2_awayteamindex_wm,])
-  e2_winmargin_vec_gamestate_a[is.na(e2_winmargin_vec_gamestate_a)] <- ""
-  e2_winmargin_vec_gamestate_a <- e2_winmargin_vec_gamestate_a[e2_winmargin_vec_gamestate_a != ""]
-  e2_winmargin_vec_gamestate_a <- as.numeric(e2_winmargin_vec_gamestate_a)
+  fin_winmargin_vec_gamestate_a <- as.vector(fin_winmargin_h[fin_awayteamindex_wm,])
+  fin_winmargin_vec_gamestate_a[is.na(fin_winmargin_vec_gamestate_a)] <- ""
+  fin_winmargin_vec_gamestate_a <- fin_winmargin_vec_gamestate_a[fin_winmargin_vec_gamestate_a != ""]
+  fin_winmargin_vec_gamestate_a <- as.numeric(fin_winmargin_vec_gamestate_a)
 
-  for (e2_game_no in 1:e2_games_played[1])
+  for (fin_game_no in 1:fin_games_played[1])
 
   {
 
-    e2_homewinmargin[e2_secondsplitrow] <- e2_winmargin_vec_gamestate_h[e2_hometeam_game_no]
-    e2_awaywinmargin[e2_secondsplitrow] <- e2_winmargin_vec_gamestate_a[e2_awayteam_game_no]
+    fin_homewinmargin[fin_secondsplitrow] <- fin_winmargin_vec_gamestate_h[fin_hometeam_game_no]
+    fin_awaywinmargin[fin_secondsplitrow] <- fin_winmargin_vec_gamestate_a[fin_awayteam_game_no]
 
 
   }
 
 }
 
-e2_homewinmargin
-e2_awaywinmargin
+fin_homewinmargin
+fin_awaywinmargin
 
-E2_gamestate_data <- cbind(E2_secondsplit,e2_homewinmargin,e2_awaywinmargin)
-E2_gamestate_data$e2_GSCS <- paste(E2_gamestate_data$e2_homewinmargin,E2_gamestate_data$e2_awaywinmargin, sep = ",")
-E2_gamestate_data$e2_GSH <- E2_gamestate_data$e2_homewinmargin - E2_gamestate_data$e2_awaywinmargin
-head(E2_gamestate_data,5)
-E2_gamestate_copy <- E2_gamestate_data
-E2_gamestate_copy$e2_HomeTeam_index_wm <- NULL
-E2_gamestate_copy$e2_AwayTeam_index_wm <- NULL
-E2_gamestate_copy$e2_homegame_no <- NULL
-E2_gamestate_copy$e2_awaygame_no <- NULL
-colnames(E2_gamestate_copy)[30] <- "homewinmargin"
-colnames(E2_gamestate_copy)[31] <- "awaywinmargin"
-colnames(E2_gamestate_copy)[32] <- "GSCS"
-colnames(E2_gamestate_copy)[33] <- "GSH"
-#end E2
+FIN_gamestate_data <- cbind(FIN_secondsplit,fin_homewinmargin,fin_awaywinmargin)
+FIN_gamestate_data
+FIN_gamestate_data$fin_GSCS <- paste(FIN_gamestate_data$fin_homewinmargin,FIN_gamestate_data$fin_awaywinmargin, sep = ",")
+FIN_gamestate_data$fin_GSH <- FIN_gamestate_data$fin_homewinmargin - FIN_gamestate_data$fin_awaywinmargin
+head(FIN_gamestate_data,5)
+FIN_gamestate_copy <- FIN_gamestate_data
+FIN_gamestate_copy$fin_HomeTeam_index_wm <- NULL
+FIN_gamestate_copy$fin_AwayTeam_index_wm <- NULL
+FIN_gamestate_copy$fin_homegame_no <- NULL
+FIN_gamestate_copy$fin_awaygame_no <- NULL
+head(FIN_gamestate_copy)
+colnames(FIN_gamestate_copy)[22] <- "homewinmargin"
+colnames(FIN_gamestate_copy)[23] <- "awaywinmargin"
+colnames(FIN_gamestate_copy)[24] <- "GSCS"
+colnames(FIN_gamestate_copy)[25] <- "GSH"
+FIN_gamestate_copy$CS <- paste(FIN_gamestate_copy$HG,FIN_gamestate_copy$AG, sep = "-")
+FIN_gamestate_copy
+#end FIN
 ###################################################################################################
-#E3
-E3_margindata <- E3
-e3_firstgames <- length(e3_teams)/2
-E3_firstsplit <-  head(E3_margindata,e3_firstgames)
-E3_secondsplit <- tail(E3_margindata,nrow(E3_margindata) - e3_firstgames)
-E3_secondsplit$e3_HomeTeam_index_wm <- match(E3_secondsplit$HomeTeam,e3_teams)
-E3_secondsplit$e3_AwayTeam_index_wm <- match(E3_secondsplit$AwayTeam,e3_teams)
-E3_secondsplit$e3_homegame_no <- rep(2:max(e3_games_played[]) - 1,each = length(e3_teams)/2,length.out = nrow(E3_secondsplit))
-E3_secondsplit$e3_awaygame_no <- rep(2:max(e3_games_played[]) - 1,each = length(e3_teams)/2,length.out = nrow(E3_secondsplit))
+##################################################################################################
+#IRL
+IRL_margindata <- IRL
+irl_firstgames <- length(irl_teams)/2
+IRL_firstsplit <-  head(IRL_margindata,irl_firstgames)
+IRL_secondsplit <- tail(IRL_margindata,nrow(IRL_margindata) - irl_firstgames)
+IRL_secondsplit$irl_HomeTeam_index_wm <- match(IRL_secondsplit$Home,irl_teams)
+IRL_secondsplit$irl_AwayTeam_index_wm <- match(IRL_secondsplit$Away,irl_teams)
+IRL_secondsplit$irl_homegame_no <- rep(2:max(irl_games_played[]) - 1,each = length(irl_teams)/2,length.out = nrow(IRL_secondsplit))
+IRL_secondsplit$irl_awaygame_no <- rep(2:max(irl_games_played[]) - 1,each = length(irl_teams)/2,length.out = nrow(IRL_secondsplit))
 
+irl_homewinmargin <- c()
+irl_awaywinmargin <- c()
 
-e3_homewinmargin <- c()
-e3_awaywinmargin <- c()
-
-for (e3_secondsplitrow in 1:nrow(E3_secondsplit))
+for (irl_secondsplitrow in 1:nrow(IRL_secondsplit))
 {
 
-  e3_hometeamindex_wm <- E3_secondsplit[e3_secondsplitrow,"e3_HomeTeam_index_wm"]
-  e3_awayteamindex_wm <- E3_secondsplit[e3_secondsplitrow,"e3_AwayTeam_index_wm"]
-  e3_hometeam_game_no <- E3_secondsplit[e3_secondsplitrow,"e3_homegame_no"]
-  e3_awayteam_game_no <- E3_secondsplit[e3_secondsplitrow,"e3_awaygame_no"]
+  irl_hometeamindex_wm <- IRL_secondsplit[irl_secondsplitrow,"irl_HomeTeam_index_wm"]
+  irl_awayteamindex_wm <- IRL_secondsplit[irl_secondsplitrow,"irl_AwayTeam_index_wm"]
+  irl_hometeam_game_no <- IRL_secondsplit[irl_secondsplitrow,"irl_homegame_no"]
+  irl_awayteam_game_no <- IRL_secondsplit[irl_secondsplitrow,"irl_awaygame_no"]
 
-  e3_winmargin_vec_gamestate_h <- as.vector(e3_winmargin_h[e3_hometeamindex_wm,])
-  e3_winmargin_vec_gamestate_h[is.na(e3_winmargin_vec_gamestate_h)] <- ""
-  e3_winmargin_vec_gamestate_h <- e3_winmargin_vec_gamestate_h[e3_winmargin_vec_gamestate_h != ""]
-  e3_winmargin_vec_gamestate_h <- as.numeric(e3_winmargin_vec_gamestate_h)
+  irl_winmargin_vec_gamestate_h <- as.vector(irl_winmargin_h[irl_hometeamindex_wm,])
+  irl_winmargin_vec_gamestate_h[is.na(irl_winmargin_vec_gamestate_h)] <- ""
+  irl_winmargin_vec_gamestate_h <- irl_winmargin_vec_gamestate_h[irl_winmargin_vec_gamestate_h != ""]
+  irl_winmargin_vec_gamestate_h <- as.numeric(irl_winmargin_vec_gamestate_h)
 
-  e3_winmargin_vec_gamestate_a <- as.vector(e3_winmargin_h[e3_awayteamindex_wm,])
-  e3_winmargin_vec_gamestate_a[is.na(e3_winmargin_vec_gamestate_a)] <- ""
-  e3_winmargin_vec_gamestate_a <- e3_winmargin_vec_gamestate_a[e3_winmargin_vec_gamestate_a != ""]
-  e3_winmargin_vec_gamestate_a <- as.numeric(e3_winmargin_vec_gamestate_a)
+  irl_winmargin_vec_gamestate_a <- as.vector(irl_winmargin_h[irl_awayteamindex_wm,])
+  irl_winmargin_vec_gamestate_a[is.na(irl_winmargin_vec_gamestate_a)] <- ""
+  irl_winmargin_vec_gamestate_a <- irl_winmargin_vec_gamestate_a[irl_winmargin_vec_gamestate_a != ""]
+  irl_winmargin_vec_gamestate_a <- as.numeric(irl_winmargin_vec_gamestate_a)
 
-  for (e3_game_no in 1:e3_games_played[1])
+  for (irl_game_no in 1:irl_games_played[1])
 
   {
 
-    e3_homewinmargin[e3_secondsplitrow] <- e3_winmargin_vec_gamestate_h[e3_hometeam_game_no]
-    e3_awaywinmargin[e3_secondsplitrow] <- e3_winmargin_vec_gamestate_a[e3_awayteam_game_no]
+    irl_homewinmargin[irl_secondsplitrow] <- irl_winmargin_vec_gamestate_h[irl_hometeam_game_no]
+    irl_awaywinmargin[irl_secondsplitrow] <- irl_winmargin_vec_gamestate_a[irl_awayteam_game_no]
 
 
   }
 
 }
 
-e3_homewinmargin
-e3_awaywinmargin
+irl_homewinmargin
+irl_awaywinmargin
 
-E3_gamestate_data <- cbind(E3_secondsplit,e3_homewinmargin,e3_awaywinmargin)
-E3_gamestate_data$e3_GSCS <- paste(E3_gamestate_data$e3_homewinmargin,E3_gamestate_data$e3_awaywinmargin, sep = ",")
-E3_gamestate_data$e3_GSH <- E3_gamestate_data$e3_homewinmargin - E3_gamestate_data$e3_awaywinmargin
-head(E3_gamestate_data,5)
-E3_gamestate_copy <- E3_gamestate_data
-E3_gamestate_copy$e3_HomeTeam_index_wm <- NULL
-E3_gamestate_copy$e3_AwayTeam_index_wm <- NULL
-E3_gamestate_copy$e3_homegame_no <- NULL
-E3_gamestate_copy$e3_awaygame_no <- NULL
-colnames(E3_gamestate_copy)[30] <- "homewinmargin"
-colnames(E3_gamestate_copy)[31] <- "awaywinmargin"
-colnames(E3_gamestate_copy)[32] <- "GSCS"
-colnames(E3_gamestate_copy)[33] <- "GSH"
-#end E3
+IRL_gamestate_data <- cbind(IRL_secondsplit,irl_homewinmargin,irl_awaywinmargin)
+IRL_gamestate_data
+IRL_gamestate_data$irl_GSCS <- paste(IRL_gamestate_data$irl_homewinmargin,IRL_gamestate_data$irl_awaywinmargin, sep = ",")
+IRL_gamestate_data$irl_GSH <- IRL_gamestate_data$irl_homewinmargin - IRL_gamestate_data$irl_awaywinmargin
+head(IRL_gamestate_data,5)
+IRL_gamestate_copy <- IRL_gamestate_data
+IRL_gamestate_copy$irl_HomeTeam_index_wm <- NULL
+IRL_gamestate_copy$irl_AwayTeam_index_wm <- NULL
+IRL_gamestate_copy$irl_homegame_no <- NULL
+IRL_gamestate_copy$irl_awaygame_no <- NULL
+head(IRL_gamestate_copy)
+colnames(IRL_gamestate_copy)[22] <- "homewinmargin"
+colnames(IRL_gamestate_copy)[23] <- "awaywinmargin"
+colnames(IRL_gamestate_copy)[24] <- "GSCS"
+colnames(IRL_gamestate_copy)[25] <- "GSH"
+IRL_gamestate_copy$CS <- paste(IRL_gamestate_copy$HG,IRL_gamestate_copy$AG, sep = "-")
+IRL_gamestate_copy
+#end IRL
 ###################################################################################################
-#EC
-EC_margindata <- EC
-ec_firstgames <- length(ec_teams)/2
-EC_firstsplit <-  head(EC_margindata,ec_firstgames)
-EC_secondsplit <- tail(EC_margindata,nrow(EC_margindata) - ec_firstgames)
-EC_secondsplit$ec_HomeTeam_index_wm <- match(EC_secondsplit$HomeTeam,ec_teams)
-EC_secondsplit$ec_AwayTeam_index_wm <- match(EC_secondsplit$AwayTeam,ec_teams)
-EC_secondsplit$ec_homegame_no <- rep(2:max(ec_games_played[]) - 1,each = length(ec_teams)/2,length.out = nrow(EC_secondsplit))
-EC_secondsplit$ec_awaygame_no <- rep(2:max(ec_games_played[]) - 1,each = length(ec_teams)/2,length.out = nrow(EC_secondsplit))
+###################################################################################################
+#JPN
+JPN_margindata <- JPN
+jpn_firstgames <- length(jpn_teams)/2
+JPN_firstsplit <-  head(JPN_margindata,jpn_firstgames)
+JPN_secondsplit <- tail(JPN_margindata,nrow(JPN_margindata) - jpn_firstgames)
+JPN_secondsplit$jpn_HomeTeam_index_wm <- match(JPN_secondsplit$Home,jpn_teams)
+JPN_secondsplit$jpn_AwayTeam_index_wm <- match(JPN_secondsplit$Away,jpn_teams)
+JPN_secondsplit$jpn_homegame_no <- rep(2:max(jpn_games_played[]) - 1,each = length(jpn_teams)/2,length.out = nrow(JPN_secondsplit))
+JPN_secondsplit$jpn_awaygame_no <- rep(2:max(jpn_games_played[]) - 1,each = length(jpn_teams)/2,length.out = nrow(JPN_secondsplit))
 
+jpn_homewinmargin <- c()
+jpn_awaywinmargin <- c()
 
-ec_homewinmargin <- c()
-ec_awaywinmargin <- c()
-
-for (ec_secondsplitrow in 1:nrow(EC_secondsplit))
+for (jpn_secondsplitrow in 1:nrow(JPN_secondsplit))
 {
 
-  ec_hometeamindex_wm <- EC_secondsplit[ec_secondsplitrow,"ec_HomeTeam_index_wm"]
-  ec_awayteamindex_wm <- EC_secondsplit[ec_secondsplitrow,"ec_AwayTeam_index_wm"]
-  ec_hometeam_game_no <- EC_secondsplit[ec_secondsplitrow,"ec_homegame_no"]
-  ec_awayteam_game_no <- EC_secondsplit[ec_secondsplitrow,"ec_awaygame_no"]
+  jpn_hometeamindex_wm <- JPN_secondsplit[jpn_secondsplitrow,"jpn_HomeTeam_index_wm"]
+  jpn_awayteamindex_wm <- JPN_secondsplit[jpn_secondsplitrow,"jpn_AwayTeam_index_wm"]
+  jpn_hometeam_game_no <- JPN_secondsplit[jpn_secondsplitrow,"jpn_homegame_no"]
+  jpn_awayteam_game_no <- JPN_secondsplit[jpn_secondsplitrow,"jpn_awaygame_no"]
 
-  ec_winmargin_vec_gamestate_h <- as.vector(ec_winmargin_h[ec_hometeamindex_wm,])
-  ec_winmargin_vec_gamestate_h[is.na(ec_winmargin_vec_gamestate_h)] <- ""
-  ec_winmargin_vec_gamestate_h <- ec_winmargin_vec_gamestate_h[ec_winmargin_vec_gamestate_h != ""]
-  ec_winmargin_vec_gamestate_h <- as.numeric(ec_winmargin_vec_gamestate_h)
+  jpn_winmargin_vec_gamestate_h <- as.vector(jpn_winmargin_h[jpn_hometeamindex_wm,])
+  jpn_winmargin_vec_gamestate_h[is.na(jpn_winmargin_vec_gamestate_h)] <- ""
+  jpn_winmargin_vec_gamestate_h <- jpn_winmargin_vec_gamestate_h[jpn_winmargin_vec_gamestate_h != ""]
+  jpn_winmargin_vec_gamestate_h <- as.numeric(jpn_winmargin_vec_gamestate_h)
 
-  ec_winmargin_vec_gamestate_a <- as.vector(ec_winmargin_h[ec_awayteamindex_wm,])
-  ec_winmargin_vec_gamestate_a[is.na(ec_winmargin_vec_gamestate_a)] <- ""
-  ec_winmargin_vec_gamestate_a <- ec_winmargin_vec_gamestate_a[ec_winmargin_vec_gamestate_a != ""]
-  ec_winmargin_vec_gamestate_a <- as.numeric(ec_winmargin_vec_gamestate_a)
+  jpn_winmargin_vec_gamestate_a <- as.vector(jpn_winmargin_h[jpn_awayteamindex_wm,])
+  jpn_winmargin_vec_gamestate_a[is.na(jpn_winmargin_vec_gamestate_a)] <- ""
+  jpn_winmargin_vec_gamestate_a <- jpn_winmargin_vec_gamestate_a[jpn_winmargin_vec_gamestate_a != ""]
+  jpn_winmargin_vec_gamestate_a <- as.numeric(jpn_winmargin_vec_gamestate_a)
 
-  for (ec_game_no in 1:ec_games_played[1])
+  for (jpn_game_no in 1:jpn_games_played[1])
 
   {
 
-    ec_homewinmargin[ec_secondsplitrow] <- ec_winmargin_vec_gamestate_h[ec_hometeam_game_no]
-    ec_awaywinmargin[ec_secondsplitrow] <- ec_winmargin_vec_gamestate_a[ec_awayteam_game_no]
+    jpn_homewinmargin[jpn_secondsplitrow] <- jpn_winmargin_vec_gamestate_h[jpn_hometeam_game_no]
+    jpn_awaywinmargin[jpn_secondsplitrow] <- jpn_winmargin_vec_gamestate_a[jpn_awayteam_game_no]
 
 
   }
 
 }
 
-ec_homewinmargin
-ec_awaywinmargin
+jpn_homewinmargin
+jpn_awaywinmargin
 
-EC_gamestate_data <- cbind(EC_secondsplit,ec_homewinmargin,ec_awaywinmargin)
-EC_gamestate_data$ec_GSCS <- paste(EC_gamestate_data$ec_homewinmargin,EC_gamestate_data$ec_awaywinmargin, sep = ",")
-EC_gamestate_data$ec_GSH <- EC_gamestate_data$ec_homewinmargin - EC_gamestate_data$ec_awaywinmargin
-head(EC_gamestate_data,5)
-EC_gamestate_copy <- EC_gamestate_data
-EC_gamestate_copy$ec_HomeTeam_index_wm <- NULL
-EC_gamestate_copy$ec_AwayTeam_index_wm <- NULL
-EC_gamestate_copy$ec_homegame_no <- NULL
-EC_gamestate_copy$ec_awaygame_no <- NULL
-colnames(EC_gamestate_copy)[30] <- "homewinmargin"
-colnames(EC_gamestate_copy)[31] <- "awaywinmargin"
-colnames(EC_gamestate_copy)[32] <- "GSCS"
-colnames(EC_gamestate_copy)[33] <- "GSH"
-#end EC
+JPN_gamestate_data <- cbind(JPN_secondsplit,jpn_homewinmargin,jpn_awaywinmargin)
+JPN_gamestate_data
+JPN_gamestate_data$jpn_GSCS <- paste(JPN_gamestate_data$jpn_homewinmargin,JPN_gamestate_data$jpn_awaywinmargin, sep = ",")
+JPN_gamestate_data$jpn_GSH <- JPN_gamestate_data$jpn_homewinmargin - JPN_gamestate_data$jpn_awaywinmargin
+head(JPN_gamestate_data,5)
+JPN_gamestate_copy <- JPN_gamestate_data
+JPN_gamestate_copy$jpn_HomeTeam_index_wm <- NULL
+JPN_gamestate_copy$jpn_AwayTeam_index_wm <- NULL
+JPN_gamestate_copy$jpn_homegame_no <- NULL
+JPN_gamestate_copy$jpn_awaygame_no <- NULL
+head(JPN_gamestate_copy)
+colnames(JPN_gamestate_copy)[22] <- "homewinmargin"
+colnames(JPN_gamestate_copy)[23] <- "awaywinmargin"
+colnames(JPN_gamestate_copy)[24] <- "GSCS"
+colnames(JPN_gamestate_copy)[25] <- "GSH"
+JPN_gamestate_copy$CS <- paste(JPN_gamestate_copy$HG,JPN_gamestate_copy$AG, sep = "-")
+JPN_gamestate_copy
+#end JPN
 ###################################################################################################
-#F1
-F1_margindata <- F1
-f1_firstgames <- length(f1_teams)/2
-F1_firstsplit <-  head(F1_margindata,f1_firstgames)
-F1_secondsplit <- tail(F1_margindata,nrow(F1_margindata) - f1_firstgames)
-F1_secondsplit$f1_HomeTeam_index_wm <- match(F1_secondsplit$HomeTeam,f1_teams)
-F1_secondsplit$f1_AwayTeam_index_wm <- match(F1_secondsplit$AwayTeam,f1_teams)
-F1_secondsplit$f1_homegame_no <- rep(2:f1_games_played[1] - 1, each = length(f1_teams)/2)
-F1_secondsplit$f1_awaygame_no <- rep(2:f1_games_played[1] - 1, each = length(f1_teams)/2)
+###################################################################################################
+#AUT
+MEX_margindata <- MEX
+mex_firstgames <- length(mex_teams)/2
+MEX_firstsplit <-  head(MEX_margindata,mex_firstgames)
+MEX_secondsplit <- tail(MEX_margindata,nrow(MEX_margindata) - mex_firstgames)
+MEX_secondsplit$mex_HomeTeam_index_wm <- match(MEX_secondsplit$Home,mex_teams)
+MEX_secondsplit$mex_AwayTeam_index_wm <- match(MEX_secondsplit$Away,mex_teams)
+MEX_secondsplit$mex_homegame_no <- rep(2:max(mex_games_played[]) - 1,each = length(mex_teams)/2,length.out = nrow(MEX_secondsplit))
+MEX_secondsplit$mex_awaygame_no <- rep(2:max(mex_games_played[]) - 1,each = length(mex_teams)/2,length.out = nrow(MEX_secondsplit))
 
-f1_homewinmargin <- c()
-f1_awaywinmargin <- c()
+mex_homewinmargin <- c()
+mex_awaywinmargin <- c()
 
-for (f1_secondsplitrow in 1:nrow(F1_secondsplit))
+for (mex_secondsplitrow in 1:nrow(MEX_secondsplit))
 {
 
-  f1_hometeamindex_wm <- F1_secondsplit[f1_secondsplitrow,"f1_HomeTeam_index_wm"]
-  f1_awayteamindex_wm <- F1_secondsplit[f1_secondsplitrow,"f1_AwayTeam_index_wm"]
-  f1_hometeam_game_no <- F1_secondsplit[f1_secondsplitrow,"f1_homegame_no"]
-  f1_awayteam_game_no <- F1_secondsplit[f1_secondsplitrow,"f1_awaygame_no"]
+  mex_hometeamindex_wm <- MEX_secondsplit[mex_secondsplitrow,"mex_HomeTeam_index_wm"]
+  mex_awayteamindex_wm <- MEX_secondsplit[mex_secondsplitrow,"mex_AwayTeam_index_wm"]
+  mex_hometeam_game_no <- MEX_secondsplit[mex_secondsplitrow,"mex_homegame_no"]
+  mex_awayteam_game_no <- MEX_secondsplit[mex_secondsplitrow,"mex_awaygame_no"]
 
-  f1_winmargin_vec_gamestate_h <- as.vector(f1_winmargin_h[f1_hometeamindex_wm,])
-  f1_winmargin_vec_gamestate_h[is.na(f1_winmargin_vec_gamestate_h)] <- ""
-  f1_winmargin_vec_gamestate_h <- f1_winmargin_vec_gamestate_h[f1_winmargin_vec_gamestate_h != ""]
-  f1_winmargin_vec_gamestate_h <- as.numeric(f1_winmargin_vec_gamestate_h)
+  mex_winmargin_vec_gamestate_h <- as.vector(mex_winmargin_h[mex_hometeamindex_wm,])
+  mex_winmargin_vec_gamestate_h[is.na(mex_winmargin_vec_gamestate_h)] <- ""
+  mex_winmargin_vec_gamestate_h <- mex_winmargin_vec_gamestate_h[mex_winmargin_vec_gamestate_h != ""]
+  mex_winmargin_vec_gamestate_h <- as.numeric(mex_winmargin_vec_gamestate_h)
 
-  f1_winmargin_vec_gamestate_a <- as.vector(f1_winmargin_h[f1_awayteamindex_wm,])
-  f1_winmargin_vec_gamestate_a[is.na(f1_winmargin_vec_gamestate_a)] <- ""
-  f1_winmargin_vec_gamestate_a <- f1_winmargin_vec_gamestate_a[f1_winmargin_vec_gamestate_a != ""]
-  f1_winmargin_vec_gamestate_a <- as.numeric(f1_winmargin_vec_gamestate_a)
+  mex_winmargin_vec_gamestate_a <- as.vector(mex_winmargin_h[mex_awayteamindex_wm,])
+  mex_winmargin_vec_gamestate_a[is.na(mex_winmargin_vec_gamestate_a)] <- ""
+  mex_winmargin_vec_gamestate_a <- mex_winmargin_vec_gamestate_a[mex_winmargin_vec_gamestate_a != ""]
+  mex_winmargin_vec_gamestate_a <- as.numeric(mex_winmargin_vec_gamestate_a)
 
-  for (f1_game_no in 1:f1_games_played[1])
+  for (mex_game_no in 1:mex_games_played[1])
 
   {
 
-    f1_homewinmargin[f1_secondsplitrow] <- f1_winmargin_vec_gamestate_h[f1_hometeam_game_no]
-    f1_awaywinmargin[f1_secondsplitrow] <- f1_winmargin_vec_gamestate_a[f1_awayteam_game_no]
+    mex_homewinmargin[mex_secondsplitrow] <- mex_winmargin_vec_gamestate_h[mex_hometeam_game_no]
+    mex_awaywinmargin[mex_secondsplitrow] <- mex_winmargin_vec_gamestate_a[mex_awayteam_game_no]
 
 
   }
 
 }
 
-f1_homewinmargin
-f1_awaywinmargin
+mex_homewinmargin
+mex_awaywinmargin
 
-F1_gamestate_data <- cbind(F1_secondsplit,f1_homewinmargin,f1_awaywinmargin)
-F1_gamestate_data$f1_GSCS <- paste(F1_gamestate_data$f1_homewinmargin,F1_gamestate_data$f1_awaywinmargin, sep = ",")
-F1_gamestate_data$f1_GSH <- F1_gamestate_data$f1_homewinmargin - F1_gamestate_data$f1_awaywinmargin
-head(F1_gamestate_data,5)
-F1_gamestate_copy <- F1_gamestate_data
-F1_gamestate_copy$f1_HomeTeam_index_wm <- NULL
-F1_gamestate_copy$f1_AwayTeam_index_wm <- NULL
-F1_gamestate_copy$f1_homegame_no <- NULL
-F1_gamestate_copy$f1_awaygame_no <- NULL
-colnames(F1_gamestate_copy)[30] <- "homewinmargin"
-colnames(F1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(F1_gamestate_copy)[32] <- "GSCS"
-colnames(F1_gamestate_copy)[33] <- "GSH"
-#end F1
+MEX_gamestate_data <- cbind(MEX_secondsplit,mex_homewinmargin,mex_awaywinmargin)
+MEX_gamestate_data
+MEX_gamestate_data$mex_GSCS <- paste(MEX_gamestate_data$mex_homewinmargin,MEX_gamestate_data$mex_awaywinmargin, sep = ",")
+MEX_gamestate_data$mex_GSH <- MEX_gamestate_data$mex_homewinmargin - MEX_gamestate_data$mex_awaywinmargin
+head(MEX_gamestate_data,5)
+MEX_gamestate_copy <- MEX_gamestate_data
+MEX_gamestate_copy$mex_HomeTeam_index_wm <- NULL
+MEX_gamestate_copy$mex_AwayTeam_index_wm <- NULL
+MEX_gamestate_copy$mex_homegame_no <- NULL
+MEX_gamestate_copy$mex_awaygame_no <- NULL
+head(MEX_gamestate_copy)
+colnames(MEX_gamestate_copy)[22] <- "homewinmargin"
+colnames(MEX_gamestate_copy)[23] <- "awaywinmargin"
+colnames(MEX_gamestate_copy)[24] <- "GSCS"
+colnames(MEX_gamestate_copy)[25] <- "GSH"
+MEX_gamestate_copy$CS <- paste(MEX_gamestate_copy$HG,MEX_gamestate_copy$AG, sep = "-")
+MEX_gamestate_copy
+#end MEX
 ###################################################################################################
-#F2
-F2_margindata <- F2
-f2_firstgames <- length(f2_teams)/2
-F2_firstsplit <-  head(F2_margindata,f2_firstgames)
-F2_secondsplit <- tail(F2_margindata,nrow(F2_margindata) - f2_firstgames)
-F2_secondsplit$f2_HomeTeam_index_wm <- match(F2_secondsplit$HomeTeam,f2_teams)
-F2_secondsplit$f2_AwayTeam_index_wm <- match(F2_secondsplit$AwayTeam,f2_teams)
-F2_secondsplit$f2_homegame_no <- rep(2:f2_games_played[1] - 1, each = length(f2_teams)/2)
-F2_secondsplit$f2_awaygame_no <- rep(2:f2_games_played[1] - 1, each = length(f2_teams)/2)
+###################################################################################################
+#MLS
+MLS_margindata <- MLS
+mls_firstgames <- length(mls_teams)/2
+MLS_firstsplit <-  head(MLS_margindata,mls_firstgames)
+MLS_secondsplit <- tail(MLS_margindata,nrow(MLS_margindata) - mls_firstgames)
+MLS_secondsplit$mls_HomeTeam_index_wm <- match(MLS_secondsplit$Home,mls_teams)
+MLS_secondsplit$mls_AwayTeam_index_wm <- match(MLS_secondsplit$Away,mls_teams)
+MLS_secondsplit$mls_homegame_no <- rep(2:max(mls_games_played[]) - 1,each = length(mls_teams)/2,length.out = nrow(MLS_secondsplit))
+MLS_secondsplit$mls_awaygame_no <- rep(2:max(mls_games_played[]) - 1,each = length(mls_teams)/2,length.out = nrow(MLS_secondsplit))
 
-f2_homewinmargin <- c()
-f2_awaywinmargin <- c()
+mls_homewinmargin <- c()
+mls_awaywinmargin <- c()
 
-for (f2_secondsplitrow in 1:nrow(F2_secondsplit))
+for (mls_secondsplitrow in 1:nrow(MLS_secondsplit))
 {
 
-  f2_hometeamindex_wm <- F2_secondsplit[f2_secondsplitrow,"f2_HomeTeam_index_wm"]
-  f2_awayteamindex_wm <- F2_secondsplit[f2_secondsplitrow,"f2_AwayTeam_index_wm"]
-  f2_hometeam_game_no <- F2_secondsplit[f2_secondsplitrow,"f2_homegame_no"]
-  f2_awayteam_game_no <- F2_secondsplit[f2_secondsplitrow,"f2_awaygame_no"]
+  mls_hometeamindex_wm <- MLS_secondsplit[mls_secondsplitrow,"mls_HomeTeam_index_wm"]
+  mls_awayteamindex_wm <- MLS_secondsplit[mls_secondsplitrow,"mls_AwayTeam_index_wm"]
+  mls_hometeam_game_no <- MLS_secondsplit[mls_secondsplitrow,"mls_homegame_no"]
+  mls_awayteam_game_no <- MLS_secondsplit[mls_secondsplitrow,"mls_awaygame_no"]
 
-  f2_winmargin_vec_gamestate_h <- as.vector(f2_winmargin_h[f2_hometeamindex_wm,])
-  f2_winmargin_vec_gamestate_h[is.na(f2_winmargin_vec_gamestate_h)] <- ""
-  f2_winmargin_vec_gamestate_h <- f2_winmargin_vec_gamestate_h[f2_winmargin_vec_gamestate_h != ""]
-  f2_winmargin_vec_gamestate_h <- as.numeric(f2_winmargin_vec_gamestate_h)
+  mls_winmargin_vec_gamestate_h <- as.vector(mls_winmargin_h[mls_hometeamindex_wm,])
+  mls_winmargin_vec_gamestate_h[is.na(mls_winmargin_vec_gamestate_h)] <- ""
+  mls_winmargin_vec_gamestate_h <- mls_winmargin_vec_gamestate_h[mls_winmargin_vec_gamestate_h != ""]
+  mls_winmargin_vec_gamestate_h <- as.numeric(mls_winmargin_vec_gamestate_h)
 
-  f2_winmargin_vec_gamestate_a <- as.vector(f2_winmargin_h[f2_awayteamindex_wm,])
-  f2_winmargin_vec_gamestate_a[is.na(f2_winmargin_vec_gamestate_a)] <- ""
-  f2_winmargin_vec_gamestate_a <- f2_winmargin_vec_gamestate_a[f2_winmargin_vec_gamestate_a != ""]
-  f2_winmargin_vec_gamestate_a <- as.numeric(f2_winmargin_vec_gamestate_a)
+  mls_winmargin_vec_gamestate_a <- as.vector(mls_winmargin_h[mls_awayteamindex_wm,])
+  mls_winmargin_vec_gamestate_a[is.na(mls_winmargin_vec_gamestate_a)] <- ""
+  mls_winmargin_vec_gamestate_a <- mls_winmargin_vec_gamestate_a[mls_winmargin_vec_gamestate_a != ""]
+  mls_winmargin_vec_gamestate_a <- as.numeric(mls_winmargin_vec_gamestate_a)
 
-  for (f2_game_no in 1:f2_games_played[1])
+  for (mls_game_no in 1:mls_games_played[1])
 
   {
 
-    f2_homewinmargin[f2_secondsplitrow] <- f2_winmargin_vec_gamestate_h[f2_hometeam_game_no]
-    f2_awaywinmargin[f2_secondsplitrow] <- f2_winmargin_vec_gamestate_a[f2_awayteam_game_no]
+    mls_homewinmargin[mls_secondsplitrow] <- mls_winmargin_vec_gamestate_h[mls_hometeam_game_no]
+    mls_awaywinmargin[mls_secondsplitrow] <- mls_winmargin_vec_gamestate_a[mls_awayteam_game_no]
 
 
   }
 
 }
 
-f2_homewinmargin
-f2_awaywinmargin
+mls_homewinmargin
+mls_awaywinmargin
 
-F2_gamestate_data <- cbind(F2_secondsplit,f2_homewinmargin,f2_awaywinmargin)
-F2_gamestate_data$f2_GSCS <- paste(F2_gamestate_data$f2_homewinmargin,F2_gamestate_data$f2_awaywinmargin, sep = ",")
-F2_gamestate_data$f2_GSH <- F2_gamestate_data$f2_homewinmargin - F2_gamestate_data$f2_awaywinmargin
-head(F2_gamestate_data,5)
-F2_gamestate_copy <- F2_gamestate_data
-F2_gamestate_copy$f2_HomeTeam_index_wm <- NULL
-F2_gamestate_copy$f2_AwayTeam_index_wm <- NULL
-F2_gamestate_copy$f2_homegame_no <- NULL
-F2_gamestate_copy$f2_awaygame_no <- NULL
-colnames(F2_gamestate_copy)[30] <- "homewinmargin"
-colnames(F2_gamestate_copy)[31] <- "awaywinmargin"
-colnames(F2_gamestate_copy)[32] <- "GSCS"
-colnames(F2_gamestate_copy)[33] <- "GSH"
-#end F2
+MLS_gamestate_data <- cbind(MLS_secondsplit,mls_homewinmargin,mls_awaywinmargin)
+MLS_gamestate_data
+MLS_gamestate_data$mls_GSCS <- paste(MLS_gamestate_data$mls_homewinmargin,MLS_gamestate_data$mls_awaywinmargin, sep = ",")
+MLS_gamestate_data$mls_GSH <- MLS_gamestate_data$mls_homewinmargin - MLS_gamestate_data$mls_awaywinmargin
+head(MLS_gamestate_data,5)
+MLS_gamestate_copy <- MLS_gamestate_data
+MLS_gamestate_copy$mls_HomeTeam_index_wm <- NULL
+MLS_gamestate_copy$mls_AwayTeam_index_wm <- NULL
+MLS_gamestate_copy$mls_homegame_no <- NULL
+MLS_gamestate_copy$mls_awaygame_no <- NULL
+head(MLS_gamestate_copy)
+colnames(MLS_gamestate_copy)[22] <- "homewinmargin"
+colnames(MLS_gamestate_copy)[23] <- "awaywinmargin"
+colnames(MLS_gamestate_copy)[24] <- "GSCS"
+colnames(MLS_gamestate_copy)[25] <- "GSH"
+MLS_gamestate_copy$CS <- paste(MLS_gamestate_copy$HG,MLS_gamestate_copy$AG, sep = "-")
+MLS_gamestate_copy
+#end MLS
 ###################################################################################################
-#G1
-G1_margindata <- G1
-g1_firstgames <- length(g1_teams)/2
-G1_firstsplit <-  head(G1_margindata,g1_firstgames)
-G1_secondsplit <- tail(G1_margindata,nrow(G1_margindata) - g1_firstgames)
-G1_secondsplit$g1_HomeTeam_index_wm <- match(G1_secondsplit$HomeTeam,g1_teams)
-G1_secondsplit$g1_AwayTeam_index_wm <- match(G1_secondsplit$AwayTeam,g1_teams)
-G1_secondsplit$g1_homegame_no <- rep(2:g1_games_played[1] - 1, each = length(g1_teams)/2)
-G1_secondsplit$g1_awaygame_no <- rep(2:g1_games_played[1] - 1, each = length(g1_teams)/2)
+###################################################################################################
+#NOR
+NOR_margindata <- NOR
+nor_firstgames <- length(nor_teams)/2
+NOR_firstsplit <-  head(NOR_margindata,nor_firstgames)
+NOR_secondsplit <- tail(NOR_margindata,nrow(NOR_margindata) - nor_firstgames)
+NOR_secondsplit$nor_HomeTeam_index_wm <- match(NOR_secondsplit$Home,nor_teams)
+NOR_secondsplit$nor_AwayTeam_index_wm <- match(NOR_secondsplit$Away,nor_teams)
+NOR_secondsplit$nor_homegame_no <- rep(2:max(nor_games_played[]) - 1,each = length(nor_teams)/2,length.out = nrow(NOR_secondsplit))
+NOR_secondsplit$nor_awaygame_no <- rep(2:max(nor_games_played[]) - 1,each = length(nor_teams)/2,length.out = nrow(NOR_secondsplit))
 
-g1_homewinmargin <- c()
-g1_awaywinmargin <- c()
+nor_homewinmargin <- c()
+nor_awaywinmargin <- c()
 
-for (g1_secondsplitrow in 1:nrow(G1_secondsplit))
+for (nor_secondsplitrow in 1:nrow(NOR_secondsplit))
 {
 
-  g1_hometeamindex_wm <- G1_secondsplit[g1_secondsplitrow,"g1_HomeTeam_index_wm"]
-  g1_awayteamindex_wm <- G1_secondsplit[g1_secondsplitrow,"g1_AwayTeam_index_wm"]
-  g1_hometeam_game_no <- G1_secondsplit[g1_secondsplitrow,"g1_homegame_no"]
-  g1_awayteam_game_no <- G1_secondsplit[g1_secondsplitrow,"g1_awaygame_no"]
+  nor_hometeamindex_wm <- NOR_secondsplit[nor_secondsplitrow,"nor_HomeTeam_index_wm"]
+  nor_awayteamindex_wm <- NOR_secondsplit[nor_secondsplitrow,"nor_AwayTeam_index_wm"]
+  nor_hometeam_game_no <- NOR_secondsplit[nor_secondsplitrow,"nor_homegame_no"]
+  nor_awayteam_game_no <- NOR_secondsplit[nor_secondsplitrow,"nor_awaygame_no"]
 
-  g1_winmargin_vec_gamestate_h <- as.vector(g1_winmargin_h[g1_hometeamindex_wm,])
-  g1_winmargin_vec_gamestate_h[is.na(g1_winmargin_vec_gamestate_h)] <- ""
-  g1_winmargin_vec_gamestate_h <- g1_winmargin_vec_gamestate_h[g1_winmargin_vec_gamestate_h != ""]
-  g1_winmargin_vec_gamestate_h <- as.numeric(g1_winmargin_vec_gamestate_h)
+  nor_winmargin_vec_gamestate_h <- as.vector(nor_winmargin_h[nor_hometeamindex_wm,])
+  nor_winmargin_vec_gamestate_h[is.na(nor_winmargin_vec_gamestate_h)] <- ""
+  nor_winmargin_vec_gamestate_h <- nor_winmargin_vec_gamestate_h[nor_winmargin_vec_gamestate_h != ""]
+  nor_winmargin_vec_gamestate_h <- as.numeric(nor_winmargin_vec_gamestate_h)
 
-  g1_winmargin_vec_gamestate_a <- as.vector(g1_winmargin_h[g1_awayteamindex_wm,])
-  g1_winmargin_vec_gamestate_a[is.na(g1_winmargin_vec_gamestate_a)] <- ""
-  g1_winmargin_vec_gamestate_a <- g1_winmargin_vec_gamestate_a[g1_winmargin_vec_gamestate_a != ""]
-  g1_winmargin_vec_gamestate_a <- as.numeric(g1_winmargin_vec_gamestate_a)
+  nor_winmargin_vec_gamestate_a <- as.vector(nor_winmargin_h[nor_awayteamindex_wm,])
+  nor_winmargin_vec_gamestate_a[is.na(nor_winmargin_vec_gamestate_a)] <- ""
+  nor_winmargin_vec_gamestate_a <- nor_winmargin_vec_gamestate_a[nor_winmargin_vec_gamestate_a != ""]
+  nor_winmargin_vec_gamestate_a <- as.numeric(nor_winmargin_vec_gamestate_a)
 
-  for (g1_game_no in 1:g1_games_played[1])
+  for (nor_game_no in 1:nor_games_played[1])
 
   {
 
-    g1_homewinmargin[g1_secondsplitrow] <- g1_winmargin_vec_gamestate_h[g1_hometeam_game_no]
-    g1_awaywinmargin[g1_secondsplitrow] <- g1_winmargin_vec_gamestate_a[g1_awayteam_game_no]
+    nor_homewinmargin[nor_secondsplitrow] <- nor_winmargin_vec_gamestate_h[nor_hometeam_game_no]
+    nor_awaywinmargin[nor_secondsplitrow] <- nor_winmargin_vec_gamestate_a[nor_awayteam_game_no]
 
 
   }
 
 }
 
-g1_homewinmargin
-g1_awaywinmargin
+nor_homewinmargin
+nor_awaywinmargin
 
-G1_gamestate_data <- cbind(G1_secondsplit,g1_homewinmargin,g1_awaywinmargin)
-G1_gamestate_data$g1_GSCS <- paste(G1_gamestate_data$g1_homewinmargin,G1_gamestate_data$g1_awaywinmargin, sep = ",")
-G1_gamestate_data$g1_GSH <- G1_gamestate_data$g1_homewinmargin - G1_gamestate_data$g1_awaywinmargin
-head(G1_gamestate_data,5)
-G1_gamestate_copy <- G1_gamestate_data
-G1_gamestate_copy$g1_HomeTeam_index_wm <- NULL
-G1_gamestate_copy$g1_AwayTeam_index_wm <- NULL
-G1_gamestate_copy$g1_homegame_no <- NULL
-G1_gamestate_copy$g1_awaygame_no <- NULL
-colnames(G1_gamestate_copy)[30] <- "homewinmargin"
-colnames(G1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(G1_gamestate_copy)[32] <- "GSCS"
-colnames(G1_gamestate_copy)[33] <- "GSH"
-#end G1
+NOR_gamestate_data <- cbind(NOR_secondsplit,nor_homewinmargin,nor_awaywinmargin)
+NOR_gamestate_data
+NOR_gamestate_data$nor_GSCS <- paste(NOR_gamestate_data$nor_homewinmargin,NOR_gamestate_data$nor_awaywinmargin, sep = ",")
+NOR_gamestate_data$nor_GSH <- NOR_gamestate_data$nor_homewinmargin - NOR_gamestate_data$nor_awaywinmargin
+head(NOR_gamestate_data,5)
+NOR_gamestate_copy <- NOR_gamestate_data
+NOR_gamestate_copy$nor_HomeTeam_index_wm <- NULL
+NOR_gamestate_copy$nor_AwayTeam_index_wm <- NULL
+NOR_gamestate_copy$nor_homegame_no <- NULL
+NOR_gamestate_copy$nor_awaygame_no <- NULL
+head(NOR_gamestate_copy)
+colnames(NOR_gamestate_copy)[22] <- "homewinmargin"
+colnames(NOR_gamestate_copy)[23] <- "awaywinmargin"
+colnames(NOR_gamestate_copy)[24] <- "GSCS"
+colnames(NOR_gamestate_copy)[25] <- "GSH"
+NOR_gamestate_copy$CS <- paste(NOR_gamestate_copy$HG,NOR_gamestate_copy$AG, sep = "-")
+NOR_gamestate_copy
+#end NOR
 ###################################################################################################
-#I1
-I1_margindata <- I1
-i1_firstgames <- length(i1_teams)/2
-I1_firstsplit <-  head(I1_margindata,i1_firstgames)
-I1_secondsplit <- tail(I1_margindata,nrow(I1_margindata) - i1_firstgames)
-I1_secondsplit$i1_HomeTeam_index_wm <- match(I1_secondsplit$HomeTeam,i1_teams)
-I1_secondsplit$i1_AwayTeam_index_wm <- match(I1_secondsplit$AwayTeam,i1_teams)
-I1_secondsplit$i1_homegame_no <- rep(2:i1_games_played[1] - 1, each = length(i1_teams)/2)
-I1_secondsplit$i1_awaygame_no <- rep(2:i1_games_played[1] - 1, each = length(i1_teams)/2)
+###################################################################################################
+#POL
+POL_margindata <- POL
+pol_firstgames <- length(pol_teams)/2
+POL_firstsplit <-  head(POL_margindata,pol_firstgames)
+POL_secondsplit <- tail(POL_margindata,nrow(POL_margindata) - pol_firstgames)
+POL_secondsplit$pol_HomeTeam_index_wm <- match(POL_secondsplit$Home,pol_teams)
+POL_secondsplit$pol_AwayTeam_index_wm <- match(POL_secondsplit$Away,pol_teams)
+POL_secondsplit$pol_homegame_no <- rep(2:max(pol_games_played[]) - 1,each = length(pol_teams)/2,length.out = nrow(POL_secondsplit))
+POL_secondsplit$pol_awaygame_no <- rep(2:max(pol_games_played[]) - 1,each = length(pol_teams)/2,length.out = nrow(POL_secondsplit))
 
-i1_homewinmargin <- c()
-i1_awaywinmargin <- c()
+pol_homewinmargin <- c()
+pol_awaywinmargin <- c()
 
-for (i1_secondsplitrow in 1:nrow(I1_secondsplit))
+for (pol_secondsplitrow in 1:nrow(POL_secondsplit))
 {
 
-  i1_hometeamindex_wm <- I1_secondsplit[i1_secondsplitrow,"i1_HomeTeam_index_wm"]
-  i1_awayteamindex_wm <- I1_secondsplit[i1_secondsplitrow,"i1_AwayTeam_index_wm"]
-  i1_hometeam_game_no <- I1_secondsplit[i1_secondsplitrow,"i1_homegame_no"]
-  i1_awayteam_game_no <- I1_secondsplit[i1_secondsplitrow,"i1_awaygame_no"]
+  pol_hometeamindex_wm <- POL_secondsplit[pol_secondsplitrow,"pol_HomeTeam_index_wm"]
+  pol_awayteamindex_wm <- POL_secondsplit[pol_secondsplitrow,"pol_AwayTeam_index_wm"]
+  pol_hometeam_game_no <- POL_secondsplit[pol_secondsplitrow,"pol_homegame_no"]
+  pol_awayteam_game_no <- POL_secondsplit[pol_secondsplitrow,"pol_awaygame_no"]
 
-  i1_winmargin_vec_gamestate_h <- as.vector(i1_winmargin_h[i1_hometeamindex_wm,])
-  i1_winmargin_vec_gamestate_h[is.na(i1_winmargin_vec_gamestate_h)] <- ""
-  i1_winmargin_vec_gamestate_h <- i1_winmargin_vec_gamestate_h[i1_winmargin_vec_gamestate_h != ""]
-  i1_winmargin_vec_gamestate_h <- as.numeric(i1_winmargin_vec_gamestate_h)
+  pol_winmargin_vec_gamestate_h <- as.vector(pol_winmargin_h[pol_hometeamindex_wm,])
+  pol_winmargin_vec_gamestate_h[is.na(pol_winmargin_vec_gamestate_h)] <- ""
+  pol_winmargin_vec_gamestate_h <- pol_winmargin_vec_gamestate_h[pol_winmargin_vec_gamestate_h != ""]
+  pol_winmargin_vec_gamestate_h <- as.numeric(pol_winmargin_vec_gamestate_h)
 
-  i1_winmargin_vec_gamestate_a <- as.vector(i1_winmargin_h[i1_awayteamindex_wm,])
-  i1_winmargin_vec_gamestate_a[is.na(i1_winmargin_vec_gamestate_a)] <- ""
-  i1_winmargin_vec_gamestate_a <- i1_winmargin_vec_gamestate_a[i1_winmargin_vec_gamestate_a != ""]
-  i1_winmargin_vec_gamestate_a <- as.numeric(i1_winmargin_vec_gamestate_a)
+  pol_winmargin_vec_gamestate_a <- as.vector(pol_winmargin_h[pol_awayteamindex_wm,])
+  pol_winmargin_vec_gamestate_a[is.na(pol_winmargin_vec_gamestate_a)] <- ""
+  pol_winmargin_vec_gamestate_a <- pol_winmargin_vec_gamestate_a[pol_winmargin_vec_gamestate_a != ""]
+  pol_winmargin_vec_gamestate_a <- as.numeric(pol_winmargin_vec_gamestate_a)
 
-  for (i1_game_no in 1:i1_games_played[1])
+  for (pol_game_no in 1:pol_games_played[1])
 
   {
 
-    i1_homewinmargin[i1_secondsplitrow] <- i1_winmargin_vec_gamestate_h[i1_hometeam_game_no]
-    i1_awaywinmargin[i1_secondsplitrow] <- i1_winmargin_vec_gamestate_a[i1_awayteam_game_no]
+    pol_homewinmargin[pol_secondsplitrow] <- pol_winmargin_vec_gamestate_h[pol_hometeam_game_no]
+    pol_awaywinmargin[pol_secondsplitrow] <- pol_winmargin_vec_gamestate_a[pol_awayteam_game_no]
 
 
   }
 
 }
 
-i1_homewinmargin
-i1_awaywinmargin
+pol_homewinmargin
+pol_awaywinmargin
 
-I1_gamestate_data <- cbind(I1_secondsplit,i1_homewinmargin,i1_awaywinmargin)
-I1_gamestate_data$i1_GSCS <- paste(I1_gamestate_data$i1_homewinmargin,I1_gamestate_data$i1_awaywinmargin, sep = ",")
-I1_gamestate_data$i1_GSH <- I1_gamestate_data$i1_homewinmargin - I1_gamestate_data$i1_awaywinmargin
-head(I1_gamestate_data,5)
-I1_gamestate_copy <- I1_gamestate_data
-I1_gamestate_copy$i1_HomeTeam_index_wm <- NULL
-I1_gamestate_copy$i1_AwayTeam_index_wm <- NULL
-I1_gamestate_copy$i1_homegame_no <- NULL
-I1_gamestate_copy$i1_awaygame_no <- NULL
-colnames(I1_gamestate_copy)[30] <- "homewinmargin"
-colnames(I1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(I1_gamestate_copy)[32] <- "GSCS"
-colnames(I1_gamestate_copy)[33] <- "GSH"
-#end I1
+POL_gamestate_data <- cbind(POL_secondsplit,pol_homewinmargin,pol_awaywinmargin)
+POL_gamestate_data
+POL_gamestate_data$pol_GSCS <- paste(POL_gamestate_data$pol_homewinmargin,POL_gamestate_data$pol_awaywinmargin, sep = ",")
+POL_gamestate_data$pol_GSH <- POL_gamestate_data$pol_homewinmargin - POL_gamestate_data$pol_awaywinmargin
+head(POL_gamestate_data,5)
+POL_gamestate_copy <- POL_gamestate_data
+POL_gamestate_copy$pol_HomeTeam_index_wm <- NULL
+POL_gamestate_copy$pol_AwayTeam_index_wm <- NULL
+POL_gamestate_copy$pol_homegame_no <- NULL
+POL_gamestate_copy$pol_awaygame_no <- NULL
+head(POL_gamestate_copy)
+colnames(POL_gamestate_copy)[22] <- "homewinmargin"
+colnames(POL_gamestate_copy)[23] <- "awaywinmargin"
+colnames(POL_gamestate_copy)[24] <- "GSCS"
+colnames(POL_gamestate_copy)[25] <- "GSH"
+POL_gamestate_copy$CS <- paste(POL_gamestate_copy$HG,POL_gamestate_copy$AG, sep = "-")
+POL_gamestate_copy
+#end POL
 ###################################################################################################
-#I2
-I2_margindata <- I2
-i2_firstgames <- length(i2_teams)/2
-I2_firstsplit <-  head(I2_margindata,i2_firstgames)
-I2_secondsplit <- tail(I2_margindata,nrow(I2_margindata) - i2_firstgames)
-I2_secondsplit$i2_HomeTeam_index_wm <- match(I2_secondsplit$HomeTeam,i2_teams)
-I2_secondsplit$i2_AwayTeam_index_wm <- match(I2_secondsplit$AwayTeam,i2_teams)
-I2_secondsplit$i2_homegame_no <- rep(2:i2_games_played[1] - 1, each = length(i2_teams)/2)
-I2_secondsplit$i2_awaygame_no <- rep(2:i2_games_played[1] - 1, each = length(i2_teams)/2)
+###################################################################################################
+#ROU
+ROU_margindata <- ROU
+rou_firstgames <- length(rou_teams)/2
+ROU_firstsplit <-  head(ROU_margindata,rou_firstgames)
+ROU_secondsplit <- tail(ROU_margindata,nrow(ROU_margindata) - rou_firstgames)
+ROU_secondsplit$rou_HomeTeam_index_wm <- match(ROU_secondsplit$Home,rou_teams)
+ROU_secondsplit$rou_AwayTeam_index_wm <- match(ROU_secondsplit$Away,rou_teams)
+ROU_secondsplit$rou_homegame_no <- rep(2:max(rou_games_played[]) - 1,each = length(rou_teams)/2,length.out = nrow(ROU_secondsplit))
+ROU_secondsplit$rou_awaygame_no <- rep(2:max(rou_games_played[]) - 1,each = length(rou_teams)/2,length.out = nrow(ROU_secondsplit))
 
-i2_homewinmargin <- c()
-i2_awaywinmargin <- c()
+rou_homewinmargin <- c()
+rou_awaywinmargin <- c()
 
-for (i2_secondsplitrow in 1:nrow(I2_secondsplit))
+for (rou_secondsplitrow in 1:nrow(ROU_secondsplit))
 {
 
-  i2_hometeamindex_wm <- I2_secondsplit[i2_secondsplitrow,"i2_HomeTeam_index_wm"]
-  i2_awayteamindex_wm <- I2_secondsplit[i2_secondsplitrow,"i2_AwayTeam_index_wm"]
-  i2_hometeam_game_no <- I2_secondsplit[i2_secondsplitrow,"i2_homegame_no"]
-  i2_awayteam_game_no <- I2_secondsplit[i2_secondsplitrow,"i2_awaygame_no"]
+  rou_hometeamindex_wm <- ROU_secondsplit[rou_secondsplitrow,"rou_HomeTeam_index_wm"]
+  rou_awayteamindex_wm <- ROU_secondsplit[rou_secondsplitrow,"rou_AwayTeam_index_wm"]
+  rou_hometeam_game_no <- ROU_secondsplit[rou_secondsplitrow,"rou_homegame_no"]
+  rou_awayteam_game_no <- ROU_secondsplit[rou_secondsplitrow,"rou_awaygame_no"]
 
-  i2_winmargin_vec_gamestate_h <- as.vector(i2_winmargin_h[i2_hometeamindex_wm,])
-  i2_winmargin_vec_gamestate_h[is.na(i2_winmargin_vec_gamestate_h)] <- ""
-  i2_winmargin_vec_gamestate_h <- i2_winmargin_vec_gamestate_h[i2_winmargin_vec_gamestate_h != ""]
-  i2_winmargin_vec_gamestate_h <- as.numeric(i2_winmargin_vec_gamestate_h)
+  rou_winmargin_vec_gamestate_h <- as.vector(rou_winmargin_h[rou_hometeamindex_wm,])
+  rou_winmargin_vec_gamestate_h[is.na(rou_winmargin_vec_gamestate_h)] <- ""
+  rou_winmargin_vec_gamestate_h <- rou_winmargin_vec_gamestate_h[rou_winmargin_vec_gamestate_h != ""]
+  rou_winmargin_vec_gamestate_h <- as.numeric(rou_winmargin_vec_gamestate_h)
 
-  i2_winmargin_vec_gamestate_a <- as.vector(i2_winmargin_h[i2_awayteamindex_wm,])
-  i2_winmargin_vec_gamestate_a[is.na(i2_winmargin_vec_gamestate_a)] <- ""
-  i2_winmargin_vec_gamestate_a <- i2_winmargin_vec_gamestate_a[i2_winmargin_vec_gamestate_a != ""]
-  i2_winmargin_vec_gamestate_a <- as.numeric(i2_winmargin_vec_gamestate_a)
+  rou_winmargin_vec_gamestate_a <- as.vector(rou_winmargin_h[rou_awayteamindex_wm,])
+  rou_winmargin_vec_gamestate_a[is.na(rou_winmargin_vec_gamestate_a)] <- ""
+  rou_winmargin_vec_gamestate_a <- rou_winmargin_vec_gamestate_a[rou_winmargin_vec_gamestate_a != ""]
+  rou_winmargin_vec_gamestate_a <- as.numeric(rou_winmargin_vec_gamestate_a)
 
-  for (i2_game_no in 1:i2_games_played[1])
+  for (rou_game_no in 1:rou_games_played[1])
 
   {
 
-    i2_homewinmargin[i2_secondsplitrow] <- i2_winmargin_vec_gamestate_h[i2_hometeam_game_no]
-    i2_awaywinmargin[i2_secondsplitrow] <- i2_winmargin_vec_gamestate_a[i2_awayteam_game_no]
+    rou_homewinmargin[rou_secondsplitrow] <- rou_winmargin_vec_gamestate_h[rou_hometeam_game_no]
+    rou_awaywinmargin[rou_secondsplitrow] <- rou_winmargin_vec_gamestate_a[rou_awayteam_game_no]
 
 
   }
 
 }
 
-i2_homewinmargin
-i2_awaywinmargin
+rou_homewinmargin
+rou_awaywinmargin
 
-I2_gamestate_data <- cbind(I2_secondsplit,i2_homewinmargin,i2_awaywinmargin)
-I2_gamestate_data$i2_GSCS <- paste(I2_gamestate_data$i2_homewinmargin,I2_gamestate_data$i2_awaywinmargin, sep = ",")
-I2_gamestate_data$i2_GSH <- I2_gamestate_data$i2_homewinmargin - I2_gamestate_data$i2_awaywinmargin
-head(I2_gamestate_data,5)
-I2_gamestate_copy <- I2_gamestate_data
-I2_gamestate_copy$i2_HomeTeam_index_wm <- NULL
-I2_gamestate_copy$i2_AwayTeam_index_wm <- NULL
-I2_gamestate_copy$i2_homegame_no <- NULL
-I2_gamestate_copy$i2_awaygame_no <- NULL
-colnames(I2_gamestate_copy)[30] <- "homewinmargin"
-colnames(I2_gamestate_copy)[31] <- "awaywinmargin"
-colnames(I2_gamestate_copy)[32] <- "GSCS"
-colnames(I2_gamestate_copy)[33] <- "GSH"
-#end I2
+ROU_gamestate_data <- cbind(ROU_secondsplit,rou_homewinmargin,rou_awaywinmargin)
+ROU_gamestate_data
+ROU_gamestate_data$rou_GSCS <- paste(ROU_gamestate_data$rou_homewinmargin,ROU_gamestate_data$rou_awaywinmargin, sep = ",")
+ROU_gamestate_data$rou_GSH <- ROU_gamestate_data$rou_homewinmargin - ROU_gamestate_data$rou_awaywinmargin
+head(ROU_gamestate_data,5)
+ROU_gamestate_copy <- ROU_gamestate_data
+ROU_gamestate_copy$rou_HomeTeam_index_wm <- NULL
+ROU_gamestate_copy$rou_AwayTeam_index_wm <- NULL
+ROU_gamestate_copy$rou_homegame_no <- NULL
+ROU_gamestate_copy$rou_awaygame_no <- NULL
+head(ROU_gamestate_copy)
+colnames(ROU_gamestate_copy)[22] <- "homewinmargin"
+colnames(ROU_gamestate_copy)[23] <- "awaywinmargin"
+colnames(ROU_gamestate_copy)[24] <- "GSCS"
+colnames(ROU_gamestate_copy)[25] <- "GSH"
+ROU_gamestate_copy$CS <- paste(ROU_gamestate_copy$HG,ROU_gamestate_copy$AG, sep = "-")
+ROU_gamestate_copy
+#end ROU
 ###################################################################################################
-#N1
-N1_margindata <- N1
-n1_firstgames <- length(n1_teams)/2
-N1_firstsplit <-  head(N1_margindata,n1_firstgames)
-N1_secondsplit <- tail(N1_margindata,nrow(N1_margindata) - n1_firstgames)
-N1_secondsplit$n1_HomeTeam_index_wm <- match(N1_secondsplit$HomeTeam,n1_teams)
-N1_secondsplit$n1_AwayTeam_index_wm <- match(N1_secondsplit$AwayTeam,n1_teams)
-N1_secondsplit$n1_homegame_no <- rep(2:max(n1_games_played[]) - 1,each = length(n1_teams)/2,length.out = nrow(N1_secondsplit))
-N1_secondsplit$n1_awaygame_no <-  rep(2:max(n1_games_played[]) - 1,each = length(n1_teams)/2,length.out = nrow(N1_secondsplit))
+###################################################################################################
+#RUS
+RUS_margindata <- RUS
+rus_firstgames <- length(rus_teams)/2
+RUS_firstsplit <-  head(RUS_margindata,rus_firstgames)
+RUS_secondsplit <- tail(RUS_margindata,nrow(RUS_margindata) - rus_firstgames)
+RUS_secondsplit$rus_HomeTeam_index_wm <- match(RUS_secondsplit$Home,rus_teams)
+RUS_secondsplit$rus_AwayTeam_index_wm <- match(RUS_secondsplit$Away,rus_teams)
+RUS_secondsplit$rus_homegame_no <- rep(2:max(rus_games_played[]) - 1,each = length(rus_teams)/2,length.out = nrow(RUS_secondsplit))
+RUS_secondsplit$rus_awaygame_no <- rep(2:max(rus_games_played[]) - 1,each = length(rus_teams)/2,length.out = nrow(RUS_secondsplit))
 
-n1_homewinmargin <- c()
-n1_awaywinmargin <- c()
+rus_homewinmargin <- c()
+rus_awaywinmargin <- c()
 
-for (n1_secondsplitrow in 1:nrow(N1_secondsplit))
+for (rus_secondsplitrow in 1:nrow(RUS_secondsplit))
 {
 
-  n1_hometeamindex_wm <- N1_secondsplit[n1_secondsplitrow,"n1_HomeTeam_index_wm"]
-  n1_awayteamindex_wm <- N1_secondsplit[n1_secondsplitrow,"n1_AwayTeam_index_wm"]
-  n1_hometeam_game_no <- N1_secondsplit[n1_secondsplitrow,"n1_homegame_no"]
-  n1_awayteam_game_no <- N1_secondsplit[n1_secondsplitrow,"n1_awaygame_no"]
+  rus_hometeamindex_wm <- RUS_secondsplit[rus_secondsplitrow,"rus_HomeTeam_index_wm"]
+  rus_awayteamindex_wm <- RUS_secondsplit[rus_secondsplitrow,"rus_AwayTeam_index_wm"]
+  rus_hometeam_game_no <- RUS_secondsplit[rus_secondsplitrow,"rus_homegame_no"]
+  rus_awayteam_game_no <- RUS_secondsplit[rus_secondsplitrow,"rus_awaygame_no"]
 
-  n1_winmargin_vec_gamestate_h <- as.vector(n1_winmargin_h[n1_hometeamindex_wm,])
-  n1_winmargin_vec_gamestate_h[is.na(n1_winmargin_vec_gamestate_h)] <- ""
-  n1_winmargin_vec_gamestate_h <- n1_winmargin_vec_gamestate_h[n1_winmargin_vec_gamestate_h != ""]
-  n1_winmargin_vec_gamestate_h <- as.numeric(n1_winmargin_vec_gamestate_h)
+  rus_winmargin_vec_gamestate_h <- as.vector(rus_winmargin_h[rus_hometeamindex_wm,])
+  rus_winmargin_vec_gamestate_h[is.na(rus_winmargin_vec_gamestate_h)] <- ""
+  rus_winmargin_vec_gamestate_h <- rus_winmargin_vec_gamestate_h[rus_winmargin_vec_gamestate_h != ""]
+  rus_winmargin_vec_gamestate_h <- as.numeric(rus_winmargin_vec_gamestate_h)
 
-  n1_winmargin_vec_gamestate_a <- as.vector(n1_winmargin_h[n1_awayteamindex_wm,])
-  n1_winmargin_vec_gamestate_a[is.na(n1_winmargin_vec_gamestate_a)] <- ""
-  n1_winmargin_vec_gamestate_a <- n1_winmargin_vec_gamestate_a[n1_winmargin_vec_gamestate_a != ""]
-  n1_winmargin_vec_gamestate_a <- as.numeric(n1_winmargin_vec_gamestate_a)
+  rus_winmargin_vec_gamestate_a <- as.vector(rus_winmargin_h[rus_awayteamindex_wm,])
+  rus_winmargin_vec_gamestate_a[is.na(rus_winmargin_vec_gamestate_a)] <- ""
+  rus_winmargin_vec_gamestate_a <- rus_winmargin_vec_gamestate_a[rus_winmargin_vec_gamestate_a != ""]
+  rus_winmargin_vec_gamestate_a <- as.numeric(rus_winmargin_vec_gamestate_a)
 
-  for (n1_game_no in 1:n1_games_played[1])
+  for (rus_game_no in 1:rus_games_played[1])
 
   {
 
-    n1_homewinmargin[n1_secondsplitrow] <- n1_winmargin_vec_gamestate_h[n1_hometeam_game_no]
-    n1_awaywinmargin[n1_secondsplitrow] <- n1_winmargin_vec_gamestate_a[n1_awayteam_game_no]
+    rus_homewinmargin[rus_secondsplitrow] <- rus_winmargin_vec_gamestate_h[rus_hometeam_game_no]
+    rus_awaywinmargin[rus_secondsplitrow] <- rus_winmargin_vec_gamestate_a[rus_awayteam_game_no]
 
 
   }
 
 }
 
-n1_homewinmargin
-n1_awaywinmargin
+rus_homewinmargin
+rus_awaywinmargin
 
-N1_gamestate_data <- cbind(N1_secondsplit,n1_homewinmargin,n1_awaywinmargin)
-N1_gamestate_data$n1_GSCS <- paste(N1_gamestate_data$n1_homewinmargin,N1_gamestate_data$n1_awaywinmargin, sep = ",")
-N1_gamestate_data$n1_GSH <- N1_gamestate_data$n1_homewinmargin - N1_gamestate_data$n1_awaywinmargin
-head(N1_gamestate_data,5)
-N1_gamestate_copy <- N1_gamestate_data
-N1_gamestate_copy$n1_HomeTeam_index_wm <- NULL
-N1_gamestate_copy$n1_AwayTeam_index_wm <- NULL
-N1_gamestate_copy$n1_homegame_no <- NULL
-N1_gamestate_copy$n1_awaygame_no <- NULL
-colnames(N1_gamestate_copy)[30] <- "homewinmargin"
-colnames(N1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(N1_gamestate_copy)[32] <- "GSCS"
-colnames(N1_gamestate_copy)[33] <- "GSH"
-#end N1
+RUS_gamestate_data <- cbind(RUS_secondsplit,rus_homewinmargin,rus_awaywinmargin)
+RUS_gamestate_data
+RUS_gamestate_data$rus_GSCS <- paste(RUS_gamestate_data$rus_homewinmargin,RUS_gamestate_data$rus_awaywinmargin, sep = ",")
+RUS_gamestate_data$rus_GSH <- RUS_gamestate_data$rus_homewinmargin - RUS_gamestate_data$rus_awaywinmargin
+head(RUS_gamestate_data,5)
+RUS_gamestate_copy <- RUS_gamestate_data
+RUS_gamestate_copy$rus_HomeTeam_index_wm <- NULL
+RUS_gamestate_copy$rus_AwayTeam_index_wm <- NULL
+RUS_gamestate_copy$rus_homegame_no <- NULL
+RUS_gamestate_copy$rus_awaygame_no <- NULL
+head(RUS_gamestate_copy)
+colnames(RUS_gamestate_copy)[22] <- "homewinmargin"
+colnames(RUS_gamestate_copy)[23] <- "awaywinmargin"
+colnames(RUS_gamestate_copy)[24] <- "GSCS"
+colnames(RUS_gamestate_copy)[25] <- "GSH"
+RUS_gamestate_copy$CS <- paste(RUS_gamestate_copy$HG,RUS_gamestate_copy$AG, sep = "-")
+RUS_gamestate_copy
+#end RUS
 ###################################################################################################
-#P1
-P1_margindata <- P1
-p1_firstgames <- length(p1_teams)/2
-P1_firstsplit <-  head(P1_margindata,p1_firstgames)
-P1_secondsplit <- tail(P1_margindata,nrow(P1_margindata) - p1_firstgames)
-P1_secondsplit$p1_HomeTeam_index_wm <- match(P1_secondsplit$HomeTeam,p1_teams)
-P1_secondsplit$p1_AwayTeam_index_wm <- match(P1_secondsplit$AwayTeam,p1_teams)
-P1_secondsplit$p1_homegame_no <- rep(2:p1_games_played[1] - 1, each = length(p1_teams)/2)
-P1_secondsplit$p1_awaygame_no <- rep(2:p1_games_played[1] - 1, each = length(p1_teams)/2)
+###################################################################################################
+#SWE
+SWE_margindata <- SWE
+swe_firstgames <- length(swe_teams)/2
+SWE_firstsplit <-  head(SWE_margindata,swe_firstgames)
+SWE_secondsplit <- tail(SWE_margindata,nrow(SWE_margindata) - swe_firstgames)
+SWE_secondsplit$swe_HomeTeam_index_wm <- match(SWE_secondsplit$Home,swe_teams)
+SWE_secondsplit$swe_AwayTeam_index_wm <- match(SWE_secondsplit$Away,swe_teams)
+SWE_secondsplit$swe_homegame_no <- rep(2:max(swe_games_played[]) - 1,each = length(swe_teams)/2,length.out = nrow(SWE_secondsplit))
+SWE_secondsplit$swe_awaygame_no <- rep(2:max(swe_games_played[]) - 1,each = length(swe_teams)/2,length.out = nrow(SWE_secondsplit))
 
-p1_homewinmargin <- c()
-p1_awaywinmargin <- c()
+swe_homewinmargin <- c()
+swe_awaywinmargin <- c()
 
-for (p1_secondsplitrow in 1:nrow(P1_secondsplit))
+for (swe_secondsplitrow in 1:nrow(SWE_secondsplit))
 {
 
-  p1_hometeamindex_wm <- P1_secondsplit[p1_secondsplitrow,"p1_HomeTeam_index_wm"]
-  p1_awayteamindex_wm <- P1_secondsplit[p1_secondsplitrow,"p1_AwayTeam_index_wm"]
-  p1_hometeam_game_no <- P1_secondsplit[p1_secondsplitrow,"p1_homegame_no"]
-  p1_awayteam_game_no <- P1_secondsplit[p1_secondsplitrow,"p1_awaygame_no"]
+  swe_hometeamindex_wm <- SWE_secondsplit[swe_secondsplitrow,"swe_HomeTeam_index_wm"]
+  swe_awayteamindex_wm <- SWE_secondsplit[swe_secondsplitrow,"swe_AwayTeam_index_wm"]
+  swe_hometeam_game_no <- SWE_secondsplit[swe_secondsplitrow,"swe_homegame_no"]
+  swe_awayteam_game_no <- SWE_secondsplit[swe_secondsplitrow,"swe_awaygame_no"]
 
-  p1_winmargin_vec_gamestate_h <- as.vector(p1_winmargin_h[p1_hometeamindex_wm,])
-  p1_winmargin_vec_gamestate_h[is.na(p1_winmargin_vec_gamestate_h)] <- ""
-  p1_winmargin_vec_gamestate_h <- p1_winmargin_vec_gamestate_h[p1_winmargin_vec_gamestate_h != ""]
-  p1_winmargin_vec_gamestate_h <- as.numeric(p1_winmargin_vec_gamestate_h)
+  swe_winmargin_vec_gamestate_h <- as.vector(swe_winmargin_h[swe_hometeamindex_wm,])
+  swe_winmargin_vec_gamestate_h[is.na(swe_winmargin_vec_gamestate_h)] <- ""
+  swe_winmargin_vec_gamestate_h <- swe_winmargin_vec_gamestate_h[swe_winmargin_vec_gamestate_h != ""]
+  swe_winmargin_vec_gamestate_h <- as.numeric(swe_winmargin_vec_gamestate_h)
 
-  p1_winmargin_vec_gamestate_a <- as.vector(p1_winmargin_h[p1_awayteamindex_wm,])
-  p1_winmargin_vec_gamestate_a[is.na(p1_winmargin_vec_gamestate_a)] <- ""
-  p1_winmargin_vec_gamestate_a <- p1_winmargin_vec_gamestate_a[p1_winmargin_vec_gamestate_a != ""]
-  p1_winmargin_vec_gamestate_a <- as.numeric(p1_winmargin_vec_gamestate_a)
+  swe_winmargin_vec_gamestate_a <- as.vector(swe_winmargin_h[swe_awayteamindex_wm,])
+  swe_winmargin_vec_gamestate_a[is.na(swe_winmargin_vec_gamestate_a)] <- ""
+  swe_winmargin_vec_gamestate_a <- swe_winmargin_vec_gamestate_a[swe_winmargin_vec_gamestate_a != ""]
+  swe_winmargin_vec_gamestate_a <- as.numeric(swe_winmargin_vec_gamestate_a)
 
-  for (p1_game_no in 1:p1_games_played[1])
+  for (swe_game_no in 1:swe_games_played[1])
 
   {
 
-    p1_homewinmargin[p1_secondsplitrow] <- p1_winmargin_vec_gamestate_h[p1_hometeam_game_no]
-    p1_awaywinmargin[p1_secondsplitrow] <- p1_winmargin_vec_gamestate_a[p1_awayteam_game_no]
+    swe_homewinmargin[swe_secondsplitrow] <- swe_winmargin_vec_gamestate_h[swe_hometeam_game_no]
+    swe_awaywinmargin[swe_secondsplitrow] <- swe_winmargin_vec_gamestate_a[swe_awayteam_game_no]
 
 
   }
 
 }
 
-p1_homewinmargin
-p1_awaywinmargin
+swe_homewinmargin
+swe_awaywinmargin
 
-P1_gamestate_data <- cbind(P1_secondsplit,p1_homewinmargin,p1_awaywinmargin)
-P1_gamestate_data$p1_GSCS <- paste(P1_gamestate_data$p1_homewinmargin,P1_gamestate_data$p1_awaywinmargin, sep = ",")
-P1_gamestate_data$p1_GSH <- P1_gamestate_data$p1_homewinmargin - P1_gamestate_data$p1_awaywinmargin
-head(P1_gamestate_data,5)
-P1_gamestate_copy <- P1_gamestate_data
-P1_gamestate_copy$p1_HomeTeam_index_wm <- NULL
-P1_gamestate_copy$p1_AwayTeam_index_wm <- NULL
-P1_gamestate_copy$p1_homegame_no <- NULL
-P1_gamestate_copy$p1_awaygame_no <- NULL
-colnames(P1_gamestate_copy)[30] <- "homewinmargin"
-colnames(P1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(P1_gamestate_copy)[32] <- "GSCS"
-colnames(P1_gamestate_copy)[33] <- "GSH"
-#end P1
+SWE_gamestate_data <- cbind(SWE_secondsplit,swe_homewinmargin,swe_awaywinmargin)
+SWE_gamestate_data
+SWE_gamestate_data$swe_GSCS <- paste(SWE_gamestate_data$swe_homewinmargin,SWE_gamestate_data$swe_awaywinmargin, sep = ",")
+SWE_gamestate_data$swe_GSH <- SWE_gamestate_data$swe_homewinmargin - SWE_gamestate_data$swe_awaywinmargin
+head(SWE_gamestate_data,5)
+SWE_gamestate_copy <- SWE_gamestate_data
+SWE_gamestate_copy$swe_HomeTeam_index_wm <- NULL
+SWE_gamestate_copy$swe_AwayTeam_index_wm <- NULL
+SWE_gamestate_copy$swe_homegame_no <- NULL
+SWE_gamestate_copy$swe_awaygame_no <- NULL
+head(SWE_gamestate_copy)
+colnames(SWE_gamestate_copy)[22] <- "homewinmargin"
+colnames(SWE_gamestate_copy)[23] <- "awaywinmargin"
+colnames(SWE_gamestate_copy)[24] <- "GSCS"
+colnames(SWE_gamestate_copy)[25] <- "GSH"
+SWE_gamestate_copy$CS <- paste(SWE_gamestate_copy$HG,SWE_gamestate_copy$AG, sep = "-")
+SWE_gamestate_copy
+#end SWE
 ###################################################################################################
-#SC0
-SC0_margindata <- SC0
-sc0_firstgames <- length(sc0_teams)/2
-SC0_firstsplit <-  head(SC0_margindata,sc0_firstgames)
-SC0_secondsplit <- tail(SC0_margindata,nrow(SC0_margindata) - sc0_firstgames)
-SC0_secondsplit$sc0_HomeTeam_index_wm <- match(SC0_secondsplit$HomeTeam,sc0_teams)
-SC0_secondsplit$sc0_AwayTeam_index_wm <- match(SC0_secondsplit$AwayTeam,sc0_teams)
-SC0_secondsplit$sc0_homegame_no <-  rep(2:max(sc0_games_played[]) - 1,each = length(sc0_teams)/2,length.out = nrow(SC0_secondsplit))
-SC0_secondsplit$sc0_awaygame_no <-  rep(2:max(sc0_games_played[]) - 1,each = length(sc0_teams)/2,length.out = nrow(SC0_secondsplit))
+###################################################################################################
+#SWZ
+SWZ_margindata <- SWZ
+swz_firstgames <- length(swz_teams)/2
+SWZ_firstsplit <-  head(SWZ_margindata,swz_firstgames)
+SWZ_secondsplit <- tail(SWZ_margindata,nrow(SWZ_margindata) - swz_firstgames)
+SWZ_secondsplit$swz_HomeTeam_index_wm <- match(SWZ_secondsplit$Home,swz_teams)
+SWZ_secondsplit$swz_AwayTeam_index_wm <- match(SWZ_secondsplit$Away,swz_teams)
+SWZ_secondsplit$swz_homegame_no <- rep(2:max(swz_games_played[]) - 1,each = length(swz_teams)/2,length.out = nrow(SWZ_secondsplit))
+SWZ_secondsplit$swz_awaygame_no <- rep(2:max(swz_games_played[]) - 1,each = length(swz_teams)/2,length.out = nrow(SWZ_secondsplit))
 
-sc0_homewinmargin <- c()
-sc0_awaywinmargin <- c()
+swz_homewinmargin <- c()
+swz_awaywinmargin <- c()
 
-for (sc0_secondsplitrow in 1:nrow(SC0_secondsplit))
+for (swz_secondsplitrow in 1:nrow(SWZ_secondsplit))
 {
 
-  sc0_hometeamindex_wm <- SC0_secondsplit[sc0_secondsplitrow,"sc0_HomeTeam_index_wm"]
-  sc0_awayteamindex_wm <- SC0_secondsplit[sc0_secondsplitrow,"sc0_AwayTeam_index_wm"]
-  sc0_hometeam_game_no <- SC0_secondsplit[sc0_secondsplitrow,"sc0_homegame_no"]
-  sc0_awayteam_game_no <- SC0_secondsplit[sc0_secondsplitrow,"sc0_awaygame_no"]
+  swz_hometeamindex_wm <- SWZ_secondsplit[swz_secondsplitrow,"swz_HomeTeam_index_wm"]
+  swz_awayteamindex_wm <- SWZ_secondsplit[swz_secondsplitrow,"swz_AwayTeam_index_wm"]
+  swz_hometeam_game_no <- SWZ_secondsplit[swz_secondsplitrow,"swz_homegame_no"]
+  swz_awayteam_game_no <- SWZ_secondsplit[swz_secondsplitrow,"swz_awaygame_no"]
 
-  sc0_winmargin_vec_gamestate_h <- as.vector(sc0_winmargin_h[sc0_hometeamindex_wm,])
-  sc0_winmargin_vec_gamestate_h[is.na(sc0_winmargin_vec_gamestate_h)] <- ""
-  sc0_winmargin_vec_gamestate_h <- sc0_winmargin_vec_gamestate_h[sc0_winmargin_vec_gamestate_h != ""]
-  sc0_winmargin_vec_gamestate_h <- as.numeric(sc0_winmargin_vec_gamestate_h)
+  swz_winmargin_vec_gamestate_h <- as.vector(swz_winmargin_h[swz_hometeamindex_wm,])
+  swz_winmargin_vec_gamestate_h[is.na(swz_winmargin_vec_gamestate_h)] <- ""
+  swz_winmargin_vec_gamestate_h <- swz_winmargin_vec_gamestate_h[swz_winmargin_vec_gamestate_h != ""]
+  swz_winmargin_vec_gamestate_h <- as.numeric(swz_winmargin_vec_gamestate_h)
 
-  sc0_winmargin_vec_gamestate_a <- as.vector(sc0_winmargin_h[sc0_awayteamindex_wm,])
-  sc0_winmargin_vec_gamestate_a[is.na(sc0_winmargin_vec_gamestate_a)] <- ""
-  sc0_winmargin_vec_gamestate_a <- sc0_winmargin_vec_gamestate_a[sc0_winmargin_vec_gamestate_a != ""]
-  sc0_winmargin_vec_gamestate_a <- as.numeric(sc0_winmargin_vec_gamestate_a)
+  swz_winmargin_vec_gamestate_a <- as.vector(swz_winmargin_h[swz_awayteamindex_wm,])
+  swz_winmargin_vec_gamestate_a[is.na(swz_winmargin_vec_gamestate_a)] <- ""
+  swz_winmargin_vec_gamestate_a <- swz_winmargin_vec_gamestate_a[swz_winmargin_vec_gamestate_a != ""]
+  swz_winmargin_vec_gamestate_a <- as.numeric(swz_winmargin_vec_gamestate_a)
 
-  for (sc0_game_no in 1:sc0_games_played[1])
+  for (swz_game_no in 1:swz_games_played[1])
 
   {
 
-    sc0_homewinmargin[sc0_secondsplitrow] <- sc0_winmargin_vec_gamestate_h[sc0_hometeam_game_no]
-    sc0_awaywinmargin[sc0_secondsplitrow] <- sc0_winmargin_vec_gamestate_a[sc0_awayteam_game_no]
+    swz_homewinmargin[swz_secondsplitrow] <- swz_winmargin_vec_gamestate_h[swz_hometeam_game_no]
+    swz_awaywinmargin[swz_secondsplitrow] <- swz_winmargin_vec_gamestate_a[swz_awayteam_game_no]
 
 
   }
 
 }
 
-sc0_homewinmargin
-sc0_awaywinmargin
+swz_homewinmargin
+swz_awaywinmargin
 
-SC0_gamestate_data <- cbind(SC0_secondsplit,sc0_homewinmargin,sc0_awaywinmargin)
-SC0_gamestate_data$sc0_GSCS <- paste(SC0_gamestate_data$sc0_homewinmargin,SC0_gamestate_data$sc0_awaywinmargin, sep = ",")
-SC0_gamestate_data$sc0_GSH <- SC0_gamestate_data$sc0_homewinmargin - SC0_gamestate_data$sc0_awaywinmargin
-head(SC0_gamestate_data,5)
-SC0_gamestate_copy <- SC0_gamestate_data
-SC0_gamestate_copy$sc0_HomeTeam_index_wm <- NULL
-SC0_gamestate_copy$sc0_AwayTeam_index_wm <- NULL
-SC0_gamestate_copy$sc0_homegame_no <- NULL
-SC0_gamestate_copy$sc0_awaygame_no <- NULL
-colnames(SC0_gamestate_copy)[30] <- "homewinmargin"
-colnames(SC0_gamestate_copy)[31] <- "awaywinmargin"
-colnames(SC0_gamestate_copy)[32] <- "GSCS"
-colnames(SC0_gamestate_copy)[33] <- "GSH"
-#end SC0
+SWZ_gamestate_data <- cbind(SWZ_secondsplit,swz_homewinmargin,swz_awaywinmargin)
+SWZ_gamestate_data
+SWZ_gamestate_data$swz_GSCS <- paste(SWZ_gamestate_data$swz_homewinmargin,SWZ_gamestate_data$swz_awaywinmargin, sep = ",")
+SWZ_gamestate_data$swz_GSH <- SWZ_gamestate_data$swz_homewinmargin - SWZ_gamestate_data$swz_awaywinmargin
+head(SWZ_gamestate_data,5)
+SWZ_gamestate_copy <- SWZ_gamestate_data
+SWZ_gamestate_copy$swz_HomeTeam_index_wm <- NULL
+SWZ_gamestate_copy$swz_AwayTeam_index_wm <- NULL
+SWZ_gamestate_copy$swz_homegame_no <- NULL
+SWZ_gamestate_copy$swz_awaygame_no <- NULL
+head(SWZ_gamestate_copy)
+colnames(SWZ_gamestate_copy)[22] <- "homewinmargin"
+colnames(SWZ_gamestate_copy)[23] <- "awaywinmargin"
+colnames(SWZ_gamestate_copy)[24] <- "GSCS"
+colnames(SWZ_gamestate_copy)[25] <- "GSH"
+SWZ_gamestate_copy$CS <- paste(SWZ_gamestate_copy$HG,SWZ_gamestate_copy$AG, sep = "-")
+SWZ_gamestate_copy
+#end SWZ
 ###################################################################################################
-#SC1
-SC1_margindata <- SC1
-sc1_firstgames <- length(sc1_teams)/2
-SC1_firstsplit <-  head(SC1_margindata,sc1_firstgames)
-SC1_secondsplit <- tail(SC1_margindata,nrow(SC1_margindata) - sc1_firstgames)
-SC1_secondsplit$sc1_HomeTeam_index_wm <- match(SC1_secondsplit$HomeTeam,sc1_teams)
-SC1_secondsplit$sc1_AwayTeam_index_wm <- match(SC1_secondsplit$AwayTeam,sc1_teams)
-SC1_secondsplit$sc1_homegame_no <-  rep(2:max(sc1_games_played[]) - 1,each = length(sc1_teams)/2,length.out = nrow(SC1_secondsplit))
-SC1_secondsplit$sc1_awaygame_no <-  rep(2:max(sc1_games_played[]) - 1,each = length(sc1_teams)/2,length.out = nrow(SC1_secondsplit))
-
-sc1_homewinmargin <- c()
-sc1_awaywinmargin <- c()
-
-for (sc1_secondsplitrow in 1:nrow(SC1_secondsplit))
-{
-
-  sc1_hometeamindex_wm <- SC1_secondsplit[sc1_secondsplitrow,"sc1_HomeTeam_index_wm"]
-  sc1_awayteamindex_wm <- SC1_secondsplit[sc1_secondsplitrow,"sc1_AwayTeam_index_wm"]
-  sc1_hometeam_game_no <- SC1_secondsplit[sc1_secondsplitrow,"sc1_homegame_no"]
-  sc1_awayteam_game_no <- SC1_secondsplit[sc1_secondsplitrow,"sc1_awaygame_no"]
-
-  sc1_winmargin_vec_gamestate_h <- as.vector(sc1_winmargin_h[sc1_hometeamindex_wm,])
-  sc1_winmargin_vec_gamestate_h[is.na(sc1_winmargin_vec_gamestate_h)] <- ""
-  sc1_winmargin_vec_gamestate_h <- sc1_winmargin_vec_gamestate_h[sc1_winmargin_vec_gamestate_h != ""]
-  sc1_winmargin_vec_gamestate_h <- as.numeric(sc1_winmargin_vec_gamestate_h)
-
-  sc1_winmargin_vec_gamestate_a <- as.vector(sc1_winmargin_h[sc1_awayteamindex_wm,])
-  sc1_winmargin_vec_gamestate_a[is.na(sc1_winmargin_vec_gamestate_a)] <- ""
-  sc1_winmargin_vec_gamestate_a <- sc1_winmargin_vec_gamestate_a[sc1_winmargin_vec_gamestate_a != ""]
-  sc1_winmargin_vec_gamestate_a <- as.numeric(sc1_winmargin_vec_gamestate_a)
-
-  for (sc1_game_no in 1:sc1_games_played[1])
-
-  {
-
-    sc1_homewinmargin[sc1_secondsplitrow] <- sc1_winmargin_vec_gamestate_h[sc1_hometeam_game_no]
-    sc1_awaywinmargin[sc1_secondsplitrow] <- sc1_winmargin_vec_gamestate_a[sc1_awayteam_game_no]
-
-
-  }
-
-}
-
-sc1_homewinmargin
-sc1_awaywinmargin
-
-SC1_gamestate_data <- cbind(SC1_secondsplit,sc1_homewinmargin,sc1_awaywinmargin)
-SC1_gamestate_data$sc1_GSCS <- paste(SC1_gamestate_data$sc1_homewinmargin,SC1_gamestate_data$sc1_awaywinmargin, sep = ",")
-SC1_gamestate_data$sc1_GSH <- SC1_gamestate_data$sc1_homewinmargin - SC1_gamestate_data$sc1_awaywinmargin
-head(SC1_gamestate_data,5)
-SC1_gamestate_copy <- SC1_gamestate_data
-SC1_gamestate_copy$sc1_HomeTeam_index_wm <- NULL
-SC1_gamestate_copy$sc1_AwayTeam_index_wm <- NULL
-SC1_gamestate_copy$sc1_homegame_no <- NULL
-SC1_gamestate_copy$sc1_awaygame_no <- NULL
-colnames(SC1_gamestate_copy)[30] <- "homewinmargin"
-colnames(SC1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(SC1_gamestate_copy)[32] <- "GSCS"
-colnames(SC1_gamestate_copy)[33] <- "GSH"
-#end SC1
 ###################################################################################################
-#SC2
-SC2_margindata <- SC2
-sc2_firstgames <- length(sc2_teams)/2
-SC2_firstsplit <-  head(SC2_margindata,sc2_firstgames)
-SC2_secondsplit <- tail(SC2_margindata,nrow(SC2_margindata) - sc2_firstgames)
-SC2_secondsplit$sc2_HomeTeam_index_wm <- match(SC2_secondsplit$HomeTeam,sc2_teams)
-SC2_secondsplit$sc2_AwayTeam_index_wm <- match(SC2_secondsplit$AwayTeam,sc2_teams)
-SC2_secondsplit$sc2_homegame_no <- rep(2:max(sc2_games_played[]) - 1,each = length(sc2_teams)/2,length.out = nrow(SC2_secondsplit))
-SC2_secondsplit$sc2_awaygame_no <- rep(2:max(sc2_games_played[]) - 1,each = length(sc2_teams)/2,length.out = nrow(SC2_secondsplit))
-
-sc2_homewinmargin <- c()
-sc2_awaywinmargin <- c()
-
-for (sc2_secondsplitrow in 1:nrow(SC2_secondsplit))
-{
-
-  sc2_hometeamindex_wm <- SC2_secondsplit[sc2_secondsplitrow,"sc2_HomeTeam_index_wm"]
-  sc2_awayteamindex_wm <- SC2_secondsplit[sc2_secondsplitrow,"sc2_AwayTeam_index_wm"]
-  sc2_hometeam_game_no <- SC2_secondsplit[sc2_secondsplitrow,"sc2_homegame_no"]
-  sc2_awayteam_game_no <- SC2_secondsplit[sc2_secondsplitrow,"sc2_awaygame_no"]
-
-  sc2_winmargin_vec_gamestate_h <- as.vector(sc2_winmargin_h[sc2_hometeamindex_wm,])
-  sc2_winmargin_vec_gamestate_h[is.na(sc2_winmargin_vec_gamestate_h)] <- ""
-  sc2_winmargin_vec_gamestate_h <- sc2_winmargin_vec_gamestate_h[sc2_winmargin_vec_gamestate_h != ""]
-  sc2_winmargin_vec_gamestate_h <- as.numeric(sc2_winmargin_vec_gamestate_h)
-
-  sc2_winmargin_vec_gamestate_a <- as.vector(sc2_winmargin_h[sc2_awayteamindex_wm,])
-  sc2_winmargin_vec_gamestate_a[is.na(sc2_winmargin_vec_gamestate_a)] <- ""
-  sc2_winmargin_vec_gamestate_a <- sc2_winmargin_vec_gamestate_a[sc2_winmargin_vec_gamestate_a != ""]
-  sc2_winmargin_vec_gamestate_a <- as.numeric(sc2_winmargin_vec_gamestate_a)
-
-  for (sc2_game_no in 1:sc2_games_played[1])
-
-  {
-
-    sc2_homewinmargin[sc2_secondsplitrow] <- sc2_winmargin_vec_gamestate_h[sc2_hometeam_game_no]
-    sc2_awaywinmargin[sc2_secondsplitrow] <- sc2_winmargin_vec_gamestate_a[sc2_awayteam_game_no]
-
-
-  }
-
-}
-
-sc2_homewinmargin
-sc2_awaywinmargin
-
-SC2_gamestate_data <- cbind(SC2_secondsplit,sc2_homewinmargin,sc2_awaywinmargin)
-SC2_gamestate_data$sc2_GSCS <- paste(SC2_gamestate_data$sc2_homewinmargin,SC2_gamestate_data$sc2_awaywinmargin, sep = ",")
-SC2_gamestate_data$sc2_GSH <- SC2_gamestate_data$sc2_homewinmargin - SC2_gamestate_data$sc2_awaywinmargin
-head(SC2_gamestate_data,5)
-SC2_gamestate_copy <- SC2_gamestate_data
-SC2_gamestate_copy$sc2_HomeTeam_index_wm <- NULL
-SC2_gamestate_copy$sc2_AwayTeam_index_wm <- NULL
-SC2_gamestate_copy$sc2_homegame_no <- NULL
-SC2_gamestate_copy$sc2_awaygame_no <- NULL
-colnames(SC2_gamestate_copy)[30] <- "homewinmargin"
-colnames(SC2_gamestate_copy)[31] <- "awaywinmargin"
-colnames(SC2_gamestate_copy)[32] <- "GSCS"
-colnames(SC2_gamestate_copy)[33] <- "GSH"
-#end SC2
-###################################################################################################
-#SC3
-SC3_margindata <- SC3
-sc3_firstgames <- length(sc3_teams)/2
-SC3_firstsplit <-  head(SC3_margindata,sc3_firstgames)
-SC3_secondsplit <- tail(SC3_margindata,nrow(SC3_margindata) - sc3_firstgames)
-SC3_secondsplit$sc3_HomeTeam_index_wm <- match(SC3_secondsplit$HomeTeam,sc3_teams)
-SC3_secondsplit$sc3_AwayTeam_index_wm <- match(SC3_secondsplit$AwayTeam,sc3_teams)
-SC3_secondsplit$sc3_homegame_no <-  rep(2:max(sc3_games_played[]) - 1,each = length(sc3_teams)/2,length.out = nrow(SC3_secondsplit))
-SC3_secondsplit$sc3_awaygame_no <-  rep(2:max(sc3_games_played[]) - 1,each = length(sc3_teams)/2,length.out = nrow(SC3_secondsplit))
-
-sc3_homewinmargin <- c()
-sc3_awaywinmargin <- c()
-
-for (sc3_secondsplitrow in 1:nrow(SC3_secondsplit))
-{
-
-  sc3_hometeamindex_wm <- SC3_secondsplit[sc3_secondsplitrow,"sc3_HomeTeam_index_wm"]
-  sc3_awayteamindex_wm <- SC3_secondsplit[sc3_secondsplitrow,"sc3_AwayTeam_index_wm"]
-  sc3_hometeam_game_no <- SC3_secondsplit[sc3_secondsplitrow,"sc3_homegame_no"]
-  sc3_awayteam_game_no <- SC3_secondsplit[sc3_secondsplitrow,"sc3_awaygame_no"]
-
-  sc3_winmargin_vec_gamestate_h <- as.vector(sc3_winmargin_h[sc3_hometeamindex_wm,])
-  sc3_winmargin_vec_gamestate_h[is.na(sc3_winmargin_vec_gamestate_h)] <- ""
-  sc3_winmargin_vec_gamestate_h <- sc3_winmargin_vec_gamestate_h[sc3_winmargin_vec_gamestate_h != ""]
-  sc3_winmargin_vec_gamestate_h <- as.numeric(sc3_winmargin_vec_gamestate_h)
-
-  sc3_winmargin_vec_gamestate_a <- as.vector(sc3_winmargin_h[sc3_awayteamindex_wm,])
-  sc3_winmargin_vec_gamestate_a[is.na(sc3_winmargin_vec_gamestate_a)] <- ""
-  sc3_winmargin_vec_gamestate_a <- sc3_winmargin_vec_gamestate_a[sc3_winmargin_vec_gamestate_a != ""]
-  sc3_winmargin_vec_gamestate_a <- as.numeric(sc3_winmargin_vec_gamestate_a)
-
-  for (sc3_game_no in 1:sc3_games_played[1])
-
-  {
-
-    sc3_homewinmargin[sc3_secondsplitrow] <- sc3_winmargin_vec_gamestate_h[sc3_hometeam_game_no]
-    sc3_awaywinmargin[sc3_secondsplitrow] <- sc3_winmargin_vec_gamestate_a[sc3_awayteam_game_no]
-
-
-  }
-
-}
-
-sc3_homewinmargin
-sc3_awaywinmargin
-
-SC3_gamestate_data <- cbind(SC3_secondsplit,sc3_homewinmargin,sc3_awaywinmargin)
-SC3_gamestate_data$sc3_GSCS <- paste(SC3_gamestate_data$sc3_homewinmargin,SC3_gamestate_data$sc3_awaywinmargin, sep = ",")
-SC3_gamestate_data$sc3_GSH <- SC3_gamestate_data$sc3_homewinmargin - SC3_gamestate_data$sc3_awaywinmargin
-head(SC3_gamestate_data,5)
-SC3_gamestate_copy <- SC3_gamestate_data
-SC3_gamestate_copy$sc3_HomeTeam_index_wm <- NULL
-SC3_gamestate_copy$sc3_AwayTeam_index_wm <- NULL
-SC3_gamestate_copy$sc3_homegame_no <- NULL
-SC3_gamestate_copy$sc3_awaygame_no <- NULL
-colnames(SC3_gamestate_copy)[30] <- "homewinmargin"
-colnames(SC3_gamestate_copy)[31] <- "awaywinmargin"
-colnames(SC3_gamestate_copy)[32] <- "GSCS"
-colnames(SC3_gamestate_copy)[33] <- "GSH"
-#end SC3
-###################################################################################################
-#SP1
-SP1_margindata <- SP1
-sp1_firstgames <- length(sp1_teams)/2
-SP1_firstsplit <-  head(SP1_margindata,sp1_firstgames)
-SP1_secondsplit <- tail(SP1_margindata,nrow(SP1_margindata) - sp1_firstgames)
-SP1_secondsplit$sp1_HomeTeam_index_wm <- match(SP1_secondsplit$HomeTeam,sp1_teams)
-SP1_secondsplit$sp1_AwayTeam_index_wm <- match(SP1_secondsplit$AwayTeam,sp1_teams)
-SP1_secondsplit$sp1_homegame_no <-  rep(2:max(sp1_games_played[]) - 1,each = length(sp1_teams)/2,length.out = nrow(SP1_secondsplit))
-SP1_secondsplit$sp1_awaygame_no <-  rep(2:max(sp1_games_played[]) - 1,each = length(sp1_teams)/2,length.out = nrow(SP1_secondsplit))
-
-sp1_homewinmargin <- c()
-sp1_awaywinmargin <- c()
-
-for (sp1_secondsplitrow in 1:nrow(SP1_secondsplit))
-{
-
-  sp1_hometeamindex_wm <- SP1_secondsplit[sp1_secondsplitrow,"sp1_HomeTeam_index_wm"]
-  sp1_awayteamindex_wm <- SP1_secondsplit[sp1_secondsplitrow,"sp1_AwayTeam_index_wm"]
-  sp1_hometeam_game_no <- SP1_secondsplit[sp1_secondsplitrow,"sp1_homegame_no"]
-  sp1_awayteam_game_no <- SP1_secondsplit[sp1_secondsplitrow,"sp1_awaygame_no"]
-
-  sp1_winmargin_vec_gamestate_h <- as.vector(sp1_winmargin_h[sp1_hometeamindex_wm,])
-  sp1_winmargin_vec_gamestate_h[is.na(sp1_winmargin_vec_gamestate_h)] <- ""
-  sp1_winmargin_vec_gamestate_h <- sp1_winmargin_vec_gamestate_h[sp1_winmargin_vec_gamestate_h != ""]
-  sp1_winmargin_vec_gamestate_h <- as.numeric(sp1_winmargin_vec_gamestate_h)
-
-  sp1_winmargin_vec_gamestate_a <- as.vector(sp1_winmargin_h[sp1_awayteamindex_wm,])
-  sp1_winmargin_vec_gamestate_a[is.na(sp1_winmargin_vec_gamestate_a)] <- ""
-  sp1_winmargin_vec_gamestate_a <- sp1_winmargin_vec_gamestate_a[sp1_winmargin_vec_gamestate_a != ""]
-  sp1_winmargin_vec_gamestate_a <- as.numeric(sp1_winmargin_vec_gamestate_a)
-
-  for (sp1_game_no in 1:sp1_games_played[1])
-
-  {
-
-    sp1_homewinmargin[sp1_secondsplitrow] <- sp1_winmargin_vec_gamestate_h[sp1_hometeam_game_no]
-    sp1_awaywinmargin[sp1_secondsplitrow] <- sp1_winmargin_vec_gamestate_a[sp1_awayteam_game_no]
-
-
-  }
-
-}
-
-sp1_homewinmargin
-sp1_awaywinmargin
-
-SP1_gamestate_data <- cbind(SP1_secondsplit,sp1_homewinmargin,sp1_awaywinmargin)
-SP1_gamestate_data$sp1_GSCS <- paste(SP1_gamestate_data$sp1_homewinmargin,SP1_gamestate_data$sp1_awaywinmargin, sep = ",")
-SP1_gamestate_data$sp1_GSH <- SP1_gamestate_data$sp1_homewinmargin - SP1_gamestate_data$sp1_awaywinmargin
-head(SP1_gamestate_data,5)
-SP1_gamestate_copy <- SP1_gamestate_data
-SP1_gamestate_copy$sp1_HomeTeam_index_wm <- NULL
-SP1_gamestate_copy$sp1_AwayTeam_index_wm <- NULL
-SP1_gamestate_copy$sp1_homegame_no <- NULL
-SP1_gamestate_copy$sp1_awaygame_no <- NULL
-colnames(SP1_gamestate_copy)[30] <- "homewinmargin"
-colnames(SP1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(SP1_gamestate_copy)[32] <- "GSCS"
-colnames(SP1_gamestate_copy)[33] <- "GSH"
-#end SP1
-###################################################################################################
-#SP2
-SP2_margindata <- SP2
-sp2_firstgames <- length(sp2_teams)/2
-SP2_firstsplit <-  head(SP2_margindata,sp2_firstgames)
-SP2_secondsplit <- tail(SP2_margindata,nrow(SP2_margindata) - sp2_firstgames)
-SP2_secondsplit$sp2_HomeTeam_index_wm <- match(SP2_secondsplit$HomeTeam,sp2_teams)
-SP2_secondsplit$sp2_AwayTeam_index_wm <- match(SP2_secondsplit$AwayTeam,sp2_teams)
-SP2_secondsplit$sp2_homegame_no <- rep(2:max(sp2_games_played[]) - 1,each = length(sp2_teams)/2,length.out = nrow(SP2_secondsplit))
-SP2_secondsplit$sp2_awaygame_no <- rep(2:max(sp2_games_played[]) - 1,each = length(sp2_teams)/2,length.out = nrow(SP2_secondsplit))
-
-sp2_homewinmargin <- c()
-sp2_awaywinmargin <- c()
-
-for (sp2_secondsplitrow in 1:nrow(SP2_secondsplit))
-{
-
-  sp2_hometeamindex_wm <- SP2_secondsplit[sp2_secondsplitrow,"sp2_HomeTeam_index_wm"]
-  sp2_awayteamindex_wm <- SP2_secondsplit[sp2_secondsplitrow,"sp2_AwayTeam_index_wm"]
-  sp2_hometeam_game_no <- SP2_secondsplit[sp2_secondsplitrow,"sp2_homegame_no"]
-  sp2_awayteam_game_no <- SP2_secondsplit[sp2_secondsplitrow,"sp2_awaygame_no"]
-
-  sp2_winmargin_vec_gamestate_h <- as.vector(sp2_winmargin_h[sp2_hometeamindex_wm,])
-  sp2_winmargin_vec_gamestate_h[is.na(sp2_winmargin_vec_gamestate_h)] <- ""
-  sp2_winmargin_vec_gamestate_h <- sp2_winmargin_vec_gamestate_h[sp2_winmargin_vec_gamestate_h != ""]
-  sp2_winmargin_vec_gamestate_h <- as.numeric(sp2_winmargin_vec_gamestate_h)
-
-  sp2_winmargin_vec_gamestate_a <- as.vector(sp2_winmargin_h[sp2_awayteamindex_wm,])
-  sp2_winmargin_vec_gamestate_a[is.na(sp2_winmargin_vec_gamestate_a)] <- ""
-  sp2_winmargin_vec_gamestate_a <- sp2_winmargin_vec_gamestate_a[sp2_winmargin_vec_gamestate_a != ""]
-  sp2_winmargin_vec_gamestate_a <- as.numeric(sp2_winmargin_vec_gamestate_a)
-
-  for (sp2_game_no in 1:sp2_games_played[1])
-
-  {
-
-    sp2_homewinmargin[sp2_secondsplitrow] <- sp2_winmargin_vec_gamestate_h[sp2_hometeam_game_no]
-    sp2_awaywinmargin[sp2_secondsplitrow] <- sp2_winmargin_vec_gamestate_a[sp2_awayteam_game_no]
-
-
-  }
-
-}
-
-sp2_homewinmargin
-sp2_awaywinmargin
-
-SP2_gamestate_data <- cbind(SP2_secondsplit,sp2_homewinmargin,sp2_awaywinmargin)
-SP2_gamestate_data$sp2_GSCS <- paste(SP2_gamestate_data$sp2_homewinmargin,SP2_gamestate_data$sp2_awaywinmargin, sep = ",")
-SP2_gamestate_data$sp2_GSH <- SP2_gamestate_data$sp2_homewinmargin - SP2_gamestate_data$sp2_awaywinmargin
-head(SP2_gamestate_data,5)
-SP2_gamestate_copy <- SP2_gamestate_data
-SP2_gamestate_copy$sp2_HomeTeam_index_wm <- NULL
-SP2_gamestate_copy$sp2_AwayTeam_index_wm <- NULL
-SP2_gamestate_copy$sp2_homegame_no <- NULL
-SP2_gamestate_copy$sp2_awaygame_no <- NULL
-colnames(SP2_gamestate_copy)[30] <- "homewinmargin"
-colnames(SP2_gamestate_copy)[31] <- "awaywinmargin"
-colnames(SP2_gamestate_copy)[32] <- "GSCS"
-colnames(SP2_gamestate_copy)[33] <- "GSH"
-#end SP2
-###################################################################################################
-#T1
-T1_margindata <- T1
-t1_firstgames <- length(t1_teams)/2
-T1_firstsplit <-  head(T1_margindata,t1_firstgames)
-T1_secondsplit <- tail(T1_margindata,nrow(T1_margindata) - t1_firstgames)
-T1_secondsplit$t1_HomeTeam_index_wm <- match(T1_secondsplit$HomeTeam,t1_teams)
-T1_secondsplit$t1_AwayTeam_index_wm <- match(T1_secondsplit$AwayTeam,t1_teams)
-T1_secondsplit$t1_homegame_no <- rep(2:t1_games_played[1] - 1, each = length(t1_teams)/2)
-T1_secondsplit$t1_awaygame_no <- rep(2:t1_games_played[1] - 1, each = length(t1_teams)/2)
-
-t1_homewinmargin <- c()
-t1_awaywinmargin <- c()
-
-for (t1_secondsplitrow in 1:nrow(T1_secondsplit))
-{
-
-  t1_hometeamindex_wm <- T1_secondsplit[t1_secondsplitrow,"t1_HomeTeam_index_wm"]
-  t1_awayteamindex_wm <- T1_secondsplit[t1_secondsplitrow,"t1_AwayTeam_index_wm"]
-  t1_hometeam_game_no <- T1_secondsplit[t1_secondsplitrow,"t1_homegame_no"]
-  t1_awayteam_game_no <- T1_secondsplit[t1_secondsplitrow,"t1_awaygame_no"]
-
-  t1_winmargin_vec_gamestate_h <- as.vector(t1_winmargin_h[t1_hometeamindex_wm,])
-  t1_winmargin_vec_gamestate_h[is.na(t1_winmargin_vec_gamestate_h)] <- ""
-  t1_winmargin_vec_gamestate_h <- t1_winmargin_vec_gamestate_h[t1_winmargin_vec_gamestate_h != ""]
-  t1_winmargin_vec_gamestate_h <- as.numeric(t1_winmargin_vec_gamestate_h)
-
-  t1_winmargin_vec_gamestate_a <- as.vector(t1_winmargin_h[t1_awayteamindex_wm,])
-  t1_winmargin_vec_gamestate_a[is.na(t1_winmargin_vec_gamestate_a)] <- ""
-  t1_winmargin_vec_gamestate_a <- t1_winmargin_vec_gamestate_a[t1_winmargin_vec_gamestate_a != ""]
-  t1_winmargin_vec_gamestate_a <- as.numeric(t1_winmargin_vec_gamestate_a)
-
-  for (t1_game_no in 1:t1_games_played[1])
-
-  {
-
-    t1_homewinmargin[t1_secondsplitrow] <- t1_winmargin_vec_gamestate_h[t1_hometeam_game_no]
-    t1_awaywinmargin[t1_secondsplitrow] <- t1_winmargin_vec_gamestate_a[t1_awayteam_game_no]
-
-
-  }
-
-}
-
-t1_homewinmargin
-t1_awaywinmargin
-
-T1_gamestate_data <- cbind(T1_secondsplit,t1_homewinmargin,t1_awaywinmargin)
-T1_gamestate_data$t1_GSCS <- paste(T1_gamestate_data$t1_homewinmargin,T1_gamestate_data$t1_awaywinmargin, sep = ",")
-T1_gamestate_data$t1_GSH <- T1_gamestate_data$t1_homewinmargin - T1_gamestate_data$t1_awaywinmargin
-head(T1_gamestate_data,5)
-T1_gamestate_copy <- T1_gamestate_data
-T1_gamestate_copy$t1_HomeTeam_index_wm <- NULL
-T1_gamestate_copy$t1_AwayTeam_index_wm <- NULL
-T1_gamestate_copy$t1_homegame_no <- NULL
-T1_gamestate_copy$t1_awaygame_no <- NULL
-colnames(T1_gamestate_copy)[30] <- "homewinmargin"
-colnames(T1_gamestate_copy)[31] <- "awaywinmargin"
-colnames(T1_gamestate_copy)[32] <- "GSCS"
-colnames(T1_gamestate_copy)[33] <- "GSH"
-#end T1
+#join the dataframes
 ###################################################################################################
 ###################################################################################################
 
-allteams20212022_gamestate <- rbind(B1_gamestate_copy,D1_gamestate_copy,D2_gamestate_copy,E0_gamestate_copy,E1_gamestate_copy,E2_gamestate_copy,
-                                    E3_gamestate_copy,EC_gamestate_copy,F1_gamestate_copy,F2_gamestate_copy,G1_gamestate_copy,I1_gamestate_copy,I2_gamestate_copy,N1_gamestate_copy,
-                                    P1_gamestate_copy,SC0_gamestate_copy,SC1_gamestate_copy,SC2_gamestate_copy,SC3_gamestate_copy,SP1_gamestate_copy,SP2_gamestate_copy,T1_gamestate_copy)
+allteams20212022_gamestate_nl <- rbind(AUT_gamestate_copy,ARG_gamestate_copy,BRA_gamestate_copy,CHN_gamestate_copy,DNK_gamestate_copy,FIN_gamestate_copy,
+                                    IRL_gamestate_copy,JPN_gamestate_copy,MEX_gamestate_copy,MLS_gamestate_copy,NOR_gamestate_copy,POL_gamestate_copy,ROU_gamestate_copy,RUS_gamestate_copy,
+                                    SWE_gamestate_copy,SWZ_gamestate_copy)
 
 nrow(allteams20212022_gamestate)
+allteams20212022_gamestate_nl
 
 
 

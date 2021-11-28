@@ -27,53 +27,53 @@
 "26",1036,"E0","Tottenham","Leeds","11/20/2021","Tottenham-Leeds","E0","Tottenham","Leeds","1X,un25,BTTS-N",-1,0
 "27",1037,"E0","Watford","Man United","11/20/2021","Watford-Man United","E0","Watford","Man United","1X,ov25,BTTS-N",-2,-9
 "28",1038,"E0","Wolves","West Ham","11/20/2021","Wolves-West Ham","E0","Wolves","West Ham","1X,un25,BTTS-Y",2,4
-"29",1503,"E1","Bristol City","Blackburn","11/20/2021","Bristol City-Blackburn","E1","Bristol City","Blackburn","2,ov25,BTTS-Y",-7,-3
-"30",1504,"E1","Derby","Bournemouth","11/20/2021","Derby-Bournemouth","E1","Derby","Bournemouth","2,ov25,BTTS-Y",-1,8
-"31",1505,"E1","Fulham","Barnsley","11/20/2021","Fulham-Barnsley","E1","Fulham","Barnsley","1X,ov25,BTTS-Y",20,-8
-"32",1506,"E1","Huddersfield","West Brom","11/20/2021","Huddersfield-West Brom","E1","Huddersfield","West Brom","1X,un25,BTTS-Y",-2,-1
-"33",1507,"E1","Hull","Birmingham","11/20/2021","Hull-Birmingham","E1","Hull","Birmingham","2,un25,BTTS-N",0,3
-"34",1508,"E1","Middlesbrough","Millwall","11/20/2021","Middlesbrough-Millwall","E1","Middlesbrough","Millwall","2,un25,BTTS-Y",0,2
-"35",1509,"E1","Preston","Cardiff","11/20/2021","Preston-Cardiff","E1","Preston","Cardiff","1X,ov25,BTTS-N",-2,-3
+"29",1503,"E1","Bristol City","Blackburn","11/20/2021","Bristol City-Blackburn","E1","Bristol City","Blackburn","2,ov25,BTTS-Y",-5,2
+"30",1504,"E1","Derby","Bournemouth","11/20/2021","Derby-Bournemouth","E1","Derby","Bournemouth","2,ov25,BTTS-Y",-1,7
+"31",1505,"E1","Fulham","Barnsley","11/20/2021","Fulham-Barnsley","E1","Fulham","Barnsley","1X,ov25,BTTS-Y",18,-8
+"32",1506,"E1","Huddersfield","West Brom","11/20/2021","Huddersfield-West Brom","E1","Huddersfield","West Brom","2,un25,BTTS-N",-3,0
+"33",1507,"E1","Hull","Birmingham","11/20/2021","Hull-Birmingham","E1","Hull","Birmingham","2,un25,BTTS-N",2,3
+"34",1508,"E1","Middlesbrough","Millwall","11/20/2021","Middlesbrough-Millwall","E1","Middlesbrough","Millwall","2,un25,BTTS-Y",-3,1
+"35",1509,"E1","Preston","Cardiff","11/20/2021","Preston-Cardiff","E1","Preston","Cardiff","1X,ov25,BTTS-N",-2,-2
 "36",1510,"E1","QPR","Luton","11/20/2021","QPR-Luton","E1","QPR","Luton","1X,un25,BTTS-N",3,-2
-"37",1511,"E1","Reading","Nottm Forest","11/20/2021","Reading-Nottm Forest","E1","Reading","Nottm Forest","2,un25,BTTS-N",-5,0
-"38",1512,"E1","Sheffield United","Coventry","11/20/2021","Sheffield United-Coventry","E1","Sheffield United","Coventry","2,un25,BTTS-Y",-3,0
-"39",1513,"E1","Stoke","Peterboro","11/20/2021","Stoke-Peterboro","E1","Stoke","Peterboro","1X,un25,BTTS-N",2,-4
-"40",1514,"E1","Swansea","Blackpool","11/20/2021","Swansea-Blackpool","E1","Swansea","Blackpool","2,un25,BTTS-Y",0,3
-"41",2055,"E2","Portsmouth","AFC Wimbledon","11/20/2021","Portsmouth-AFC Wimbledon","E2","Portsmouth","AFC Wimbledon","1X,un25,BTTS-Y",-1,-3
-"42",2056,"E2","Wycombe","Bolton","11/20/2021","Wycombe-Bolton","E2","Wycombe","Bolton","1X,un25,BTTS-N",-2,-7
-"43",2057,"E2","Milton Keynes Dons","Burton","11/20/2021","Milton Keynes Dons-Burton","E2","Milton Keynes Dons","Burton","1X,un25,BTTS-N",4,-4
-"44",2058,"E2","Rotherham","Cambridge","11/20/2021","Rotherham-Cambridge","E2","Rotherham","Cambridge","1X,ov25,BTTS-Y",12,-5
-"45",2059,"E2","Crewe","Gillingham","11/20/2021","Crewe-Gillingham","E2","Crewe","Gillingham","2,un25,BTTS-Y",-8,-2
-"46",2060,"E2","Sunderland","Ipswich","11/20/2021","Sunderland-Ipswich","E2","Sunderland","Ipswich","2,ov25,BTTS-Y",-1,5
-"47",2061,"E2","Doncaster","Lincoln","11/20/2021","Doncaster-Lincoln","E2","Doncaster","Lincoln","2,un25,BTTS-N",-4,1
-"48",2062,"E2","Fleetwood Town","Morecambe","11/20/2021","Fleetwood Town-Morecambe","E2","Fleetwood Town","Morecambe","1X,ov25,BTTS-Y",-1,-6
-"49",2063,"E2","Wigan","Oxford","11/20/2021","Wigan-Oxford","E2","Wigan","Oxford","1X,ov25,BTTS-Y",7,5
-"50",2064,"E2","Charlton","Plymouth","11/20/2021","Charlton-Plymouth","E2","Charlton","Plymouth","1X,un25,BTTS-Y",7,7
-"51",2065,"E2","Accrington","Sheffield Weds","11/20/2021","Accrington-Sheffield Weds","E2","Accrington","Sheffield Weds","2,ov25,BTTS-Y",-4,4
-"52",2066,"E2","Cheltenham","Shrewsbury","11/20/2021","Cheltenham-Shrewsbury","E2","Cheltenham","Shrewsbury","1X,ov25,BTTS-Y",3,0
-"53",2595,"E3","Exeter","Carlisle","11/20/2021","Exeter-Carlisle","E3","Exeter","Carlisle","1X,ov25,BTTS-N",6,-5
-"54",2596,"E3","Stevenage","Colchester","11/20/2021","Stevenage-Colchester","E3","Stevenage","Colchester","2,ov25,BTTS-N",-11,-4
-"55",2597,"E3","Barrow","Crawley Town","11/20/2021","Barrow-Crawley Town","E3","Barrow","Crawley Town","1X,un25,BTTS-Y",-4,-5
-"56",2598,"E3","Hartlepool","Forest Green","11/20/2021","Hartlepool-Forest Green","E3","Hartlepool","Forest Green","2,ov25,BTTS-Y",-7,4
-"57",2599,"E3","Bradford","Northampton","11/20/2021","Bradford-Northampton","E3","Bradford","Northampton","2,un25,BTTS-Y",0,9
-"58",2600,"E3","Oldham","Port Vale","11/20/2021","Oldham-Port Vale","E3","Oldham","Port Vale","2,ov25,BTTS-Y",-1,7
-"59",2601,"E3","Walsall","Rochdale","11/20/2021","Walsall-Rochdale","E3","Walsall","Rochdale","2,ov25,BTTS-Y",1,2
-"60",2602,"E3","Harrogate","Salford","11/20/2021","Harrogate-Salford","E3","Harrogate","Salford","2,un25,BTTS-N",-3,1
-"61",2603,"E3","Mansfield","Scunthorpe","11/20/2021","Mansfield-Scunthorpe","E3","Mansfield","Scunthorpe","1X,un25,BTTS-Y",2,-4
-"62",2604,"E3","Leyton Orient","Sutton","11/20/2021","Leyton Orient-Sutton","E3","Leyton Orient","Sutton","1X,ov25,BTTS-Y",8,-3
+"37",1511,"E1","Reading","Nottm Forest","11/20/2021","Reading-Nottm Forest","E1","Reading","Nottm Forest","2,un25,BTTS-N",-5,-1
+"38",1512,"E1","Sheffield United","Coventry","11/20/2021","Sheffield United-Coventry","E1","Sheffield United","Coventry","2,un25,BTTS-Y",-1,1
+"39",1513,"E1","Stoke","Peterboro","11/20/2021","Stoke-Peterboro","E1","Stoke","Peterboro","1X,un25,BTTS-N",2,-9
+"40",1514,"E1","Swansea","Blackpool","11/20/2021","Swansea-Blackpool","E1","Swansea","Blackpool","1X,un25,BTTS-Y",1,2
+"41",2055,"E2","Portsmouth","AFC Wimbledon","11/20/2021","Portsmouth-AFC Wimbledon","E2","Portsmouth","AFC Wimbledon","1X,un25,BTTS-Y",6,-2
+"42",2056,"E2","Wycombe","Bolton","11/20/2021","Wycombe-Bolton","E2","Wycombe","Bolton","1X,ov25,BTTS-N",1,0
+"43",2057,"E2","Milton Keynes Dons","Burton","11/20/2021","Milton Keynes Dons-Burton","E2","Milton Keynes Dons","Burton","1X,ov25,BTTS-N",4,-1
+"44",2058,"E2","Rotherham","Cambridge","11/20/2021","Rotherham-Cambridge","E2","Rotherham","Cambridge","1X,un25,BTTS-Y",11,-2
+"45",2059,"E2","Crewe","Gillingham","11/20/2021","Crewe-Gillingham","E2","Crewe","Gillingham","2,un25,BTTS-N",-5,-3
+"46",2060,"E2","Sunderland","Ipswich","11/20/2021","Sunderland-Ipswich","E2","Sunderland","Ipswich","1X,un25,BTTS-N",-2,-1
+"47",2061,"E2","Doncaster","Lincoln","11/20/2021","Doncaster-Lincoln","E2","Doncaster","Lincoln","1X,un25,BTTS-N",-6,-3
+"48",2062,"E2","Fleetwood Town","Morecambe","11/20/2021","Fleetwood Town-Morecambe","E2","Fleetwood Town","Morecambe","2,ov25,BTTS-Y",-6,-5
+"49",2063,"E2","Wigan","Oxford","11/20/2021","Wigan-Oxford","E2","Wigan","Oxford","2,ov25,BTTS-Y",3,6
+"50",2064,"E2","Charlton","Plymouth","11/20/2021","Charlton-Plymouth","E2","Charlton","Plymouth","1X,un25,BTTS-Y",8,2
+"51",2065,"E2","Accrington","Sheffield Weds","11/20/2021","Accrington-Sheffield Weds","E2","Accrington","Sheffield Weds","2,ov25,BTTS-Y",-7,5
+"52",2066,"E2","Cheltenham","Shrewsbury","11/20/2021","Cheltenham-Shrewsbury","E2","Cheltenham","Shrewsbury","1X,un25,BTTS-Y",4,1
+"53",2595,"E3","Exeter","Carlisle","11/20/2021","Exeter-Carlisle","E3","Exeter","Carlisle","1X,ov25,BTTS-N",4,-6
+"54",2596,"E3","Stevenage","Colchester","11/20/2021","Stevenage-Colchester","E3","Stevenage","Colchester","2,ov25,BTTS-N",-8,-3
+"55",2597,"E3","Barrow","Crawley Town","11/20/2021","Barrow-Crawley Town","E3","Barrow","Crawley Town","1X,un25,BTTS-N",-4,-6
+"56",2598,"E3","Hartlepool","Forest Green","11/20/2021","Hartlepool-Forest Green","E3","Hartlepool","Forest Green","2,ov25,BTTS-Y",-7,8
+"57",2599,"E3","Bradford","Northampton","11/20/2021","Bradford-Northampton","E3","Bradford","Northampton","2,ov25,BTTS-Y",-1,8
+"58",2600,"E3","Oldham","Port Vale","11/20/2021","Oldham-Port Vale","E3","Oldham","Port Vale","2,ov25,BTTS-Y",-5,4
+"59",2601,"E3","Walsall","Rochdale","11/20/2021","Walsall-Rochdale","E3","Walsall","Rochdale","1X,ov25,BTTS-Y",2,2
+"60",2602,"E3","Harrogate","Salford","11/20/2021","Harrogate-Salford","E3","Harrogate","Salford","1X,un25,BTTS-Y",0,-1
+"61",2603,"E3","Mansfield","Scunthorpe","11/20/2021","Mansfield-Scunthorpe","E3","Mansfield","Scunthorpe","1X,un25,BTTS-Y",2,-2
+"62",2604,"E3","Leyton Orient","Sutton","11/20/2021","Leyton Orient-Sutton","E3","Leyton Orient","Sutton","1X,un25,BTTS-Y",8,0
 "63",2605,"E3","Newport County","Swindon","11/20/2021","Newport County-Swindon","E3","Newport County","Swindon","1X,ov25,BTTS-Y",7,4
 "64",2606,"E3","Bristol Rvs","Tranmere","11/20/2021","Bristol Rvs-Tranmere","E3","Bristol Rvs","Tranmere","1X,un25,BTTS-N",0,-4
-"65",3120,"EC","Barnet","Torquay","11/20/2021","Barnet-Torquay","EC","Barnet","Torquay","1X,ov25,BTTS-Y",0,-2
-"66",3121,"EC","Boreham Wood","Maidenhead","11/20/2021","Boreham Wood-Maidenhead","EC","Boreham Wood","Maidenhead","1X,un25,BTTS-N",7,-8
-"67",3122,"EC","Bromley","Kings Lynn","11/20/2021","Bromley-Kings Lynn","EC","Bromley","Kings Lynn","1X,un25,BTTS-N",4,-10
-"68",3123,"EC","Dag and Red","Yeovil","11/20/2021","Dag and Red-Yeovil","EC","Dag and Red","Yeovil","1X,un25,BTTS-N",2,2
-"69",3124,"EC","Dover Athletic","Halifax","11/20/2021","Dover Athletic-Halifax","EC","Dover Athletic","Halifax","2,ov25,BTTS-Y",-11,5
-"70",3125,"EC","Eastleigh","Notts County","11/20/2021","Eastleigh-Notts County","EC","Eastleigh","Notts County","2,un25,BTTS-Y",3,4
-"71",3126,"EC","Grimsby","Southend","11/20/2021","Grimsby-Southend","EC","Grimsby","Southend","1X,un25,BTTS-N",1,-8
-"72",3127,"EC","Solihull","Chesterfield","11/20/2021","Solihull-Chesterfield","EC","Solihull","Chesterfield","2,un25,BTTS-N",-1,12
-"73",3128,"EC","Weymouth","Altrincham","11/20/2021","Weymouth-Altrincham","EC","Weymouth","Altrincham","1X,un25,BTTS-Y",-6,0
-"74",3129,"EC","Woking","Stockport","11/20/2021","Woking-Stockport","EC","Woking","Stockport","2,ov25,BTTS-Y",-3,3
-"75",3130,"EC","Wrexham","Wealdstone","11/20/2021","Wrexham-Wealdstone","EC","Wrexham","Wealdstone","1X,un25,BTTS-Y",11,1
+"65",3120,"EC","Barnet","Torquay","11/20/2021","Barnet-Torquay","EC","Barnet","Torquay","1X,ov25,BTTS-Y",0,-1
+"66",3121,"EC","Boreham Wood","Maidenhead","11/20/2021","Boreham Wood-Maidenhead","EC","Boreham Wood","Maidenhead","1X,un25,BTTS-N",5,-8
+"67",3122,"EC","Bromley","Kings Lynn","11/20/2021","Bromley-Kings Lynn","EC","Bromley","Kings Lynn","1X,un25,BTTS-N",2,-14
+"68",3123,"EC","Dag and Red","Yeovil","11/20/2021","Dag and Red-Yeovil","EC","Dag and Red","Yeovil","1X,un25,BTTS-N",3,3
+"69",3124,"EC","Dover Athletic","Halifax","11/20/2021","Dover Athletic-Halifax","EC","Dover Athletic","Halifax","2,ov25,BTTS-Y",-11,3
+"70",3125,"EC","Eastleigh","Notts County","11/20/2021","Eastleigh-Notts County","EC","Eastleigh","Notts County","1X,un25,BTTS-Y",3,2
+"71",3126,"EC","Grimsby","Southend","11/20/2021","Grimsby-Southend","EC","Grimsby","Southend","1X,un25,BTTS-N",-2,-8
+"72",3127,"EC","Solihull","Chesterfield","11/20/2021","Solihull-Chesterfield","EC","Solihull","Chesterfield","2,un25,BTTS-N",0,8
+"73",3128,"EC","Weymouth","Altrincham","11/20/2021","Weymouth-Altrincham","EC","Weymouth","Altrincham","1X,ov25,BTTS-Y",-5,0
+"74",3129,"EC","Woking","Stockport","11/20/2021","Woking-Stockport","EC","Woking","Stockport","2,ov25,BTTS-Y",-1,7
+"75",3130,"EC","Wrexham","Wealdstone","11/20/2021","Wrexham-Wealdstone","EC","Wrexham","Wealdstone","1X,un25,BTTS-Y",9,2
 "76",3991,"F2","Dunkerque","Ajaccio","11/20/2021","Dunkerque-Ajaccio","F2","Dunkerque","Ajaccio","2,un25,BTTS-Y",3,4
 "77",3992,"F2","Le Havre","Amiens","11/20/2021","Le Havre-Amiens","F2","Le Havre","Amiens","1X,un25,BTTS-N",2,2
 "78",3993,"F2","Dijon","Auxerre","11/20/2021","Dijon-Auxerre","F2","Dijon","Auxerre","1X,ov25,BTTS-N",0,-3
@@ -90,9 +90,9 @@
 "89",4712,"N1","Sparta Rotterdam","Twente","11/20/2021","Sparta Rotterdam-Twente","N1","Sparta Rotterdam","Twente","1X,un25,BTTS-N",-1,-2
 "90",4713,"N1","PSV Eindhoven","Vitesse","11/20/2021","PSV Eindhoven-Vitesse","N1","PSV Eindhoven","Vitesse","1X,ov25,BTTS-Y",6,1
 "91",5291,"SC0","Motherwell","Hearts","11/20/2021","Motherwell-Hearts","SC0","Motherwell","Hearts","1X,un25,BTTS-Y",-4,0
-"92",5292,"SC0","Hibernian","Dundee","11/20/2021","Hibernian-Dundee","SC0","Hibernian","Dundee","2,ov25,BTTS-Y",-6,-7
+"92",5292,"SC0","Hibernian","Dundee","11/20/2021","Hibernian-Dundee","SC0","Hibernian","Dundee","2,ov25,BTTS-N",-7,-7
 "93",5293,"SC0","Rangers","St Johnstone","11/20/2021","Rangers-St Johnstone","SC0","Rangers","St Johnstone","1X,ov25,BTTS-N",9,-2
-"94",5294,"SC0","Ross County","Celtic","11/20/2021","Ross County-Celtic","SC0","Ross County","Celtic","2,ov25,BTTS-Y",-1,9
+"94",5294,"SC0","Ross County","Celtic","11/20/2021","Ross County-Celtic","SC0","Ross County","Celtic","2,ov25,BTTS-Y",1,9
 "95",5295,"SC0","St Mirren","Livingston","11/20/2021","St Mirren-Livingston","SC0","St Mirren","Livingston","2,un25,BTTS-Y",-1,3
 "96",5296,"SC0","Dundee United","Aberdeen","11/20/2021","Dundee United-Aberdeen","SC0","Dundee United","Aberdeen","1X,un25,BTTS-Y",1,-2
 "97",5481,"SC1","Kilmarnock","Arbroath","11/20/2021","Kilmarnock-Arbroath","SC1","Kilmarnock","Arbroath","1X,un25,BTTS-Y",6,4
@@ -105,7 +105,7 @@
 "104",732,"D2","Heidenheim","Holstein Kiel","11/21/2021","Heidenheim-Holstein Kiel","D2","Heidenheim","Holstein Kiel","1X,un25,BTTS-N",-9,-2
 "105",733,"D2","Hamburg","Regensburg","11/21/2021","Hamburg-Regensburg","D2","Hamburg","Regensburg","1X,ov25,BTTS-Y",4,1
 "106",734,"D2","Ingolstadt","Karlsruhe","11/21/2021","Ingolstadt-Karlsruhe","D2","Ingolstadt","Karlsruhe","2,ov25,BTTS-N",-8,-3
-"107",735,"D2","Sandhausen","Nurnberg","11/21/2021","Sandhausen-Nurnberg","D2","Sandhausen","Nurnberg","2,ov25,BTTS-Y",-4,3
+"107",735,"D2","Sandhausen","Nurnberg","11/21/2021","Sandhausen-Nurnberg","D2","Sandhausen","Nurnberg","2,ov25,BTTS-Y",-7,3
 "108",736,"D2","Hannover","Paderborn","11/21/2021","Hannover-Paderborn","D2","Hannover","Paderborn","2,un25,BTTS-N",-3,3
 "109",737,"D2","Werder Bremen","Schalke 04","11/21/2021","Werder Bremen-Schalke 04","D2","Werder Bremen","Schalke 04","2,ov25,BTTS-Y",1,4
 "110",738,"D2","Darmstadt","St Pauli","11/21/2021","Darmstadt-St Pauli","D2","Darmstadt","St Pauli","1X,ov25,BTTS-Y",16,7
@@ -164,44 +164,44 @@
 "163",6560,"T1","Konyaspor","Rizespor","11/21/2021","Konyaspor-Rizespor","T1","Konyaspor","Rizespor","1X,un25,BTTS-Y",7,-4
 "164",6561,"T1","Buyuksehyr","Sivasspor","11/21/2021","Buyuksehyr-Sivasspor","T1","Buyuksehyr","Sivasspor","1X,ov25,BTTS-Y",4,-2
 "165",6562,"T1","Altay","Ad. Demirspor","11/21/2021","Altay-Ad. Demirspor","T1","Altay","Ad. Demirspor","2,un25,BTTS-Y",-8,1
-"166",1515,"E1","Blackpool","West Brom","11/23/2021","Blackpool-West Brom","E1","Blackpool","West Brom","1X,un25,BTTS-Y",3,-1
-"167",1516,"E1","Coventry","Birmingham","11/23/2021","Coventry-Birmingham","E1","Coventry","Birmingham","2,un25,BTTS-Y",0,3
-"168",1517,"E1","Fulham","Derby","11/23/2021","Fulham-Derby","E1","Fulham","Derby","1X,ov25,BTTS-Y",20,-1
-"169",1518,"E1","Middlesbrough","Preston","11/23/2021","Middlesbrough-Preston","E1","Middlesbrough","Preston","1X,un25,BTTS-Y",0,-2
-"170",1519,"E1","Nottm Forest","Luton","11/23/2021","Nottm Forest-Luton","E1","Nottm Forest","Luton","1X,un25,BTTS-N",0,-2
-"171",1520,"E1","Reading","Sheffield United","11/23/2021","Reading-Sheffield United","E1","Reading","Sheffield United","2,un25,BTTS-N",-5,-3
-"172",2067,"E2","Burton","Accrington","11/23/2021","Burton-Accrington","E2","Burton","Accrington","1X,un25,BTTS-N",-4,-4
-"173",2068,"E2","Morecambe","Charlton","11/23/2021","Morecambe-Charlton","E2","Morecambe","Charlton","2,un25,BTTS-Y",-6,7
-"174",2069,"E2","Gillingham","Cheltenham","11/23/2021","Gillingham-Cheltenham","E2","Gillingham","Cheltenham","2,un25,BTTS-Y",-2,3
-"175",2070,"E2","AFC Wimbledon","Crewe","11/23/2021","AFC Wimbledon-Crewe","E2","AFC Wimbledon","Crewe","1X,un25,BTTS-Y",-3,-8
-"176",2071,"E2","Bolton","Doncaster","11/23/2021","Bolton-Doncaster","E2","Bolton","Doncaster","2,un25,BTTS-N",-7,-4
-"177",2072,"E2","Oxford","Fleetwood Town","11/23/2021","Oxford-Fleetwood Town","E2","Oxford","Fleetwood Town","1X,ov25,BTTS-Y",5,-1
-"178",2073,"E2","Sheffield Weds","Milton Keynes Dons","11/23/2021","Sheffield Weds-Milton Keynes Dons","E2","Sheffield Weds","Milton Keynes Dons","1X,ov25,BTTS-Y",4,4
-"179",2074,"E2","Lincoln","Portsmouth","11/23/2021","Lincoln-Portsmouth","E2","Lincoln","Portsmouth","1X,un25,BTTS-Y",1,-1
-"180",2075,"E2","Ipswich","Rotherham","11/23/2021","Ipswich-Rotherham","E2","Ipswich","Rotherham","2,ov25,BTTS-Y",5,12
-"181",2076,"E2","Shrewsbury","Sunderland","11/23/2021","Shrewsbury-Sunderland","E2","Shrewsbury","Sunderland","1X,ov25,BTTS-Y",0,-1
-"182",2077,"E2","Cambridge","Wigan","11/23/2021","Cambridge-Wigan","E2","Cambridge","Wigan","2,ov25,BTTS-Y",-5,7
-"183",2078,"E2","Plymouth","Wycombe","11/23/2021","Plymouth-Wycombe","E2","Plymouth","Wycombe","1X,ov25,BTTS-Y",7,-2
-"184",2607,"E3","Forest Green","Barrow","11/23/2021","Forest Green-Barrow","E3","Forest Green","Barrow","1X,un25,BTTS-Y",4,-4
-"185",2608,"E3","Tranmere","Bradford","11/23/2021","Tranmere-Bradford","E3","Tranmere","Bradford","2,un25,BTTS-N",-4,0
-"186",2609,"E3","Salford","Bristol Rvs","11/23/2021","Salford-Bristol Rvs","E3","Salford","Bristol Rvs","1X,un25,BTTS-Y",1,0
-"187",2610,"E3","Colchester","Exeter","11/23/2021","Colchester-Exeter","E3","Colchester","Exeter","2,ov25,BTTS-Y",-4,6
-"188",2611,"E3","Carlisle","Harrogate","11/23/2021","Carlisle-Harrogate","E3","Carlisle","Harrogate","2,un25,BTTS-N",-5,-3
+"166",1515,"E1","Blackpool","West Brom","11/23/2021","Blackpool-West Brom","E1","Blackpool","West Brom","1X,un25,BTTS-N",2,0
+"167",1516,"E1","Coventry","Birmingham","11/23/2021","Coventry-Birmingham","E1","Coventry","Birmingham","2,un25,BTTS-Y",1,3
+"168",1517,"E1","Fulham","Derby","11/23/2021","Fulham-Derby","E1","Fulham","Derby","1X,ov25,BTTS-Y",18,-1
+"169",1518,"E1","Middlesbrough","Preston","11/23/2021","Middlesbrough-Preston","E1","Middlesbrough","Preston","2,un25,BTTS-Y",-3,-2
+"170",1519,"E1","Nottm Forest","Luton","11/23/2021","Nottm Forest-Luton","E1","Nottm Forest","Luton","1X,un25,BTTS-N",-1,-2
+"171",1520,"E1","Reading","Sheffield United","11/23/2021","Reading-Sheffield United","E1","Reading","Sheffield United","2,un25,BTTS-N",-5,-1
+"172",2067,"E2","Burton","Accrington","11/23/2021","Burton-Accrington","E2","Burton","Accrington","1X,ov25,BTTS-N",-1,-7
+"173",2068,"E2","Morecambe","Charlton","11/23/2021","Morecambe-Charlton","E2","Morecambe","Charlton","2,un25,BTTS-Y",-5,8
+"174",2069,"E2","Gillingham","Cheltenham","11/23/2021","Gillingham-Cheltenham","E2","Gillingham","Cheltenham","2,un25,BTTS-N",-3,4
+"175",2070,"E2","AFC Wimbledon","Crewe","11/23/2021","AFC Wimbledon-Crewe","E2","AFC Wimbledon","Crewe","1X,un25,BTTS-Y",-2,-5
+"176",2071,"E2","Bolton","Doncaster","11/23/2021","Bolton-Doncaster","E2","Bolton","Doncaster","1X,un25,BTTS-N",0,-6
+"177",2072,"E2","Oxford","Fleetwood Town","11/23/2021","Oxford-Fleetwood Town","E2","Oxford","Fleetwood Town","1X,ov25,BTTS-Y",6,-6
+"178",2073,"E2","Sheffield Weds","Milton Keynes Dons","11/23/2021","Sheffield Weds-Milton Keynes Dons","E2","Sheffield Weds","Milton Keynes Dons","1X,ov25,BTTS-Y",5,4
+"179",2074,"E2","Lincoln","Portsmouth","11/23/2021","Lincoln-Portsmouth","E2","Lincoln","Portsmouth","2,un25,BTTS-N",-3,6
+"180",2075,"E2","Ipswich","Rotherham","11/23/2021","Ipswich-Rotherham","E2","Ipswich","Rotherham","2,un25,BTTS-N",-1,11
+"181",2076,"E2","Shrewsbury","Sunderland","11/23/2021","Shrewsbury-Sunderland","E2","Shrewsbury","Sunderland","1X,un25,BTTS-Y",1,-2
+"182",2077,"E2","Cambridge","Wigan","11/23/2021","Cambridge-Wigan","E2","Cambridge","Wigan","2,ov25,BTTS-Y",-2,3
+"183",2078,"E2","Plymouth","Wycombe","11/23/2021","Plymouth-Wycombe","E2","Plymouth","Wycombe","1X,ov25,BTTS-Y",2,1
+"184",2607,"E3","Forest Green","Barrow","11/23/2021","Forest Green-Barrow","E3","Forest Green","Barrow","1X,un25,BTTS-N",8,-4
+"185",2608,"E3","Tranmere","Bradford","11/23/2021","Tranmere-Bradford","E3","Tranmere","Bradford","2,un25,BTTS-N",-4,-1
+"186",2609,"E3","Salford","Bristol Rvs","11/23/2021","Salford-Bristol Rvs","E3","Salford","Bristol Rvs","2,un25,BTTS-Y",-1,0
+"187",2610,"E3","Colchester","Exeter","11/23/2021","Colchester-Exeter","E3","Colchester","Exeter","2,ov25,BTTS-Y",-3,4
+"188",2611,"E3","Carlisle","Harrogate","11/23/2021","Carlisle-Harrogate","E3","Carlisle","Harrogate","2,un25,BTTS-N",-6,0
 "189",2612,"E3","Swindon","Hartlepool","11/23/2021","Swindon-Hartlepool","E3","Swindon","Hartlepool","1X,ov25,BTTS-Y",4,-7
-"190",2613,"E3","Scunthorpe","Leyton Orient","11/23/2021","Scunthorpe-Leyton Orient","E3","Scunthorpe","Leyton Orient","2,un25,BTTS-Y",-4,8
-"191",2614,"E3","Sutton","Mansfield","11/23/2021","Sutton-Mansfield","E3","Sutton","Mansfield","2,ov25,BTTS-Y",-3,2
-"192",2615,"E3","Crawley Town","Newport County","11/23/2021","Crawley Town-Newport County","E3","Crawley Town","Newport County","2,ov25,BTTS-Y",-5,7
-"193",2616,"E3","Northampton","Oldham","11/23/2021","Northampton-Oldham","E3","Northampton","Oldham","1X,ov25,BTTS-Y",9,-1
-"194",2617,"E3","Rochdale","Stevenage","11/23/2021","Rochdale-Stevenage","E3","Rochdale","Stevenage","1X,ov25,BTTS-N",2,-11
-"195",2618,"E3","Port Vale","Walsall","11/23/2021","Port Vale-Walsall","E3","Port Vale","Walsall","1X,ov25,BTTS-Y",7,1
-"196",3131,"EC","Aldershot","Torquay","11/23/2021","Aldershot-Torquay","EC","Aldershot","Torquay","2,un25,BTTS-N",-9,-2
-"197",3132,"EC","Boreham Wood","Notts County","11/23/2021","Boreham Wood-Notts County","EC","Boreham Wood","Notts County","1X,un25,BTTS-Y",7,4
-"198",3133,"EC","Bromley","Yeovil","11/23/2021","Bromley-Yeovil","EC","Bromley","Yeovil","1X,un25,BTTS-Y",4,2
-"199",3134,"EC","Chesterfield","Altrincham","11/23/2021","Chesterfield-Altrincham","EC","Chesterfield","Altrincham","1X,ov25,BTTS-Y",12,0
-"200",3135,"EC","Dag and Red","Eastleigh","11/23/2021","Dag and Red-Eastleigh","EC","Dag and Red","Eastleigh","2,un25,BTTS-N",2,3
-"201",3136,"EC","Dover Athletic","Wealdstone","11/23/2021","Dover Athletic-Wealdstone","EC","Dover Athletic","Wealdstone","2,ov25,BTTS-Y",-11,1
-"202",3137,"EC","Halifax","Wrexham","11/23/2021","Halifax-Wrexham","EC","Halifax","Wrexham","1X,un25,BTTS-Y",5,11
-"203",3138,"EC","Solihull","Grimsby","11/23/2021","Solihull-Grimsby","EC","Solihull","Grimsby","1X,un25,BTTS-N",-1,1
+"190",2613,"E3","Scunthorpe","Leyton Orient","11/23/2021","Scunthorpe-Leyton Orient","E3","Scunthorpe","Leyton Orient","2,un25,BTTS-Y",-2,8
+"191",2614,"E3","Sutton","Mansfield","11/23/2021","Sutton-Mansfield","E3","Sutton","Mansfield","2,un25,BTTS-Y",0,2
+"192",2615,"E3","Crawley Town","Newport County","11/23/2021","Crawley Town-Newport County","E3","Crawley Town","Newport County","2,ov25,BTTS-Y",-6,7
+"193",2616,"E3","Northampton","Oldham","11/23/2021","Northampton-Oldham","E3","Northampton","Oldham","1X,ov25,BTTS-Y",8,-5
+"194",2617,"E3","Rochdale","Stevenage","11/23/2021","Rochdale-Stevenage","E3","Rochdale","Stevenage","1X,ov25,BTTS-N",2,-8
+"195",2618,"E3","Port Vale","Walsall","11/23/2021","Port Vale-Walsall","E3","Port Vale","Walsall","1X,un25,BTTS-Y",4,2
+"196",3131,"EC","Aldershot","Torquay","11/23/2021","Aldershot-Torquay","EC","Aldershot","Torquay","2,un25,BTTS-Y",-7,-1
+"197",3132,"EC","Boreham Wood","Notts County","11/23/2021","Boreham Wood-Notts County","EC","Boreham Wood","Notts County","1X,un25,BTTS-Y",5,2
+"198",3133,"EC","Bromley","Yeovil","11/23/2021","Bromley-Yeovil","EC","Bromley","Yeovil","2,un25,BTTS-Y",2,3
+"199",3134,"EC","Chesterfield","Altrincham","11/23/2021","Chesterfield-Altrincham","EC","Chesterfield","Altrincham","1X,ov25,BTTS-Y",8,0
+"200",3135,"EC","Dag and Red","Eastleigh","11/23/2021","Dag and Red-Eastleigh","EC","Dag and Red","Eastleigh","1X,un25,BTTS-N",3,3
+"201",3136,"EC","Dover Athletic","Wealdstone","11/23/2021","Dover Athletic-Wealdstone","EC","Dover Athletic","Wealdstone","2,ov25,BTTS-Y",-11,2
+"202",3137,"EC","Halifax","Wrexham","11/23/2021","Halifax-Wrexham","EC","Halifax","Wrexham","2,un25,BTTS-Y",3,9
+"203",3138,"EC","Solihull","Grimsby","11/23/2021","Solihull-Grimsby","EC","Solihull","Grimsby","1X,un25,BTTS-N",0,-2
 "204",3139,"EC","Southend","Maidenhead","11/23/2021","Southend-Maidenhead","EC","Southend","Maidenhead","1X,ov25,BTTS-N",-8,-8
-"205",3140,"EC","Stockport","Kings Lynn","11/23/2021","Stockport-Kings Lynn","EC","Stockport","Kings Lynn","1X,un25,BTTS-N",3,-10
-"206",3141,"EC","Weymouth","Woking","11/23/2021","Weymouth-Woking","EC","Weymouth","Woking","1X,un25,BTTS-Y",-6,-3
+"205",3140,"EC","Stockport","Kings Lynn","11/23/2021","Stockport-Kings Lynn","EC","Stockport","Kings Lynn","1X,ov25,BTTS-N",7,-14
+"206",3141,"EC","Weymouth","Woking","11/23/2021","Weymouth-Woking","EC","Weymouth","Woking","2,un25,BTTS-Y",-5,-1

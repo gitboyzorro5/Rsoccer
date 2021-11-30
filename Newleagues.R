@@ -8,39 +8,39 @@ library('lubridate')
 library('sqldf')
 library('mgsub')
 ######################
-aut_last_n_games <- 6
-arg_last_n_games <- 6
-bra_last_n_games <- 6
-chn_last_n_games <- 6
-dnk_last_n_games <- 6
-fin_last_n_games <- 6
-irl_last_n_games <- 6
-jpn_last_n_games <- 6
-mex_last_n_games <- 6
-mls_last_n_games <- 6
-nor_last_n_games <- 6
-pol_last_n_games <- 6
-rou_last_n_games <- 6
-rus_last_n_games <- 6
-swe_last_n_games <- 6
-swz_last_n_games <- 6
+# aut_last_n_games <- 6
+# arg_last_n_games <- 6
+# bra_last_n_games <- 6
+# chn_last_n_games <- 6
+# dnk_last_n_games <- 6
+# fin_last_n_games <- 6
+# irl_last_n_games <- 6
+# jpn_last_n_games <- 6
+# mex_last_n_games <- 6
+# mls_last_n_games <- 6
+# nor_last_n_games <- 6
+# pol_last_n_games <- 6
+# rou_last_n_games <- 6
+# rus_last_n_games <- 6
+# swe_last_n_games <- 6
+# swz_last_n_games <- 6
 ######################
-# aut_last_n_games <- aut_games_played[1]
-# arg_last_n_games <- arg_games_played[1]
-# bra_last_n_games <- bra_games_played[1]
-# chn_last_n_games <- chn_games_played[1]
-# dnk_last_n_games <- dnk_games_played[1]
-# fin_last_n_games <- fin_games_played[1]
-# irl_last_n_games <- irl_games_played[1]
-# jpn_last_n_games <- jpn_games_played[1]
-# mex_last_n_games <- mex_games_played[1]
-# mls_last_n_games <- mls_games_played[1]
-# nor_last_n_games <- nor_games_played[1]
-# pol_last_n_games <- pol_games_played[1]
-# rou_last_n_games <- rou_games_played[1]
-# rus_last_n_games <- rus_games_played[1]
-# swe_last_n_games <- swe_games_played[1]
-# swz_last_n_games <- swz_games_played[1]
+aut_last_n_games <- aut_games_played[1]
+arg_last_n_games <- arg_games_played[1]
+bra_last_n_games <- bra_games_played[1]
+chn_last_n_games <- chn_games_played[1]
+dnk_last_n_games <- dnk_games_played[1]
+fin_last_n_games <- fin_games_played[1]
+irl_last_n_games <- irl_games_played[1]
+jpn_last_n_games <- jpn_games_played[1]
+mex_last_n_games <- mex_games_played[1]
+mls_last_n_games <- mls_games_played[1]
+nor_last_n_games <- nor_games_played[1]
+pol_last_n_games <- pol_games_played[1]
+rou_last_n_games <- rou_games_played[1]
+rus_last_n_games <- rus_games_played[1]
+swe_last_n_games <- swe_games_played[1]
+swz_last_n_games <- swz_games_played[1]
 
 ##########3
 source("ARG.R")

@@ -433,9 +433,14 @@ rep(2:b1_games_played[1] - 1, each = length(b1_teams)/2)
 ###################################################################################################
 ###################################################################################################
 subset(allteams20212022_gamestate[allteams20212022_gamestate$GSH >= 3,],Div == "D1")
+#####################################################################################################
 
+b1_yellowtotals_vec_ht <- as.vector(b1_yellowtotalsv2[1,])
+b1_yellowtotals_vec_ht[is.na(b1_yellowtotals_vec_ht)] <- ""
+b1_yellowtotals_vec_ht <- b1_yellowtotals_vec_ht[b1_yellowtotals_vec_ht != ""]
+b1_yellowtotals_vec_ht  <-tail(b1_yellowtotals_vec_ht,1)
 
-
+b1_yellowtotals_vec_ht
 
 
 

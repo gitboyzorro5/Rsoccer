@@ -15,6 +15,8 @@ AUT_fixtures$Awayteam_aut_index <- match(AUT_fixtures$AwayTeam_aut,aut_teams)
 aut_prediction <- c()
 aut_HWM <- c()
 aut_AWM <- c()
+aut_HWMLM <- c()
+aut_AWMLM <- c()
 for(aut_row in 1:nrow(AUT_fixtures))
 {
 
@@ -131,7 +133,20 @@ for(aut_row in 1:nrow(AUT_fixtures))
   aut_at_no_of_winmargin_un0 <- length(which(aut_winmargin_vec_at <= 0))
   aut_at_no_of_winmargin_un1 <- length(which(aut_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  aut_winmargin_vec_ht_lm <- as.vector(aut_winmargin_h[aut_hometeamindex,])
+  aut_winmargin_vec_ht_lm[is.na(aut_winmargin_vec_ht_lm)] <- ""
+  aut_winmargin_vec_ht_lm <- aut_winmargin_vec_ht_lm[aut_winmargin_vec_ht_lm != ""]
+  aut_winmargin_vec_ht_lm  <-tail(aut_winmargin_vec_ht_lm,1)
+  #awayteam
+  aut_winmargin_vec_at_lm <- as.vector(aut_winmargin_h[aut_awayteamindex,])
+  aut_winmargin_vec_at_lm[is.na(aut_winmargin_vec_at_lm)] <- ""
+  aut_winmargin_vec_at_lm <- aut_winmargin_vec_at_lm[aut_winmargin_vec_at_lm != ""]
+  aut_winmargin_vec_at_lm  <-tail(aut_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   aut_ht_last6points <- aut_ht_numberof_wins*3 + aut_ht_numberof_draws*1
@@ -152,6 +167,9 @@ for(aut_row in 1:nrow(AUT_fixtures))
   aut_HWM[aut_row] <- aut_ht_totalwinmargin
   aut_AWM[aut_row] <- aut_at_totalwinmargin
 
+  aut_HWMLM[aut_row] <- aut_winmargin_vec_ht_lm
+  aut_AWMLM[aut_row] <- aut_winmargin_vec_at_lm
+
 
 }
 
@@ -164,8 +182,13 @@ colnames(aut_HWM) <- "HWM"
 aut_AWM <- as.data.frame(aut_AWM)
 colnames(aut_AWM) <- "AWM"
 
+aut_HWMLM <- as.data.frame(aut_HWMLM)
+colnames(aut_HWMLM) <- "HWMLM"
 
-aut_picks <- cbind(AUT_fixtures$Div,AUT_fixtures$HomeTeam_aut,AUT_fixtures$AwayTeam_aut,aut_prediction,aut_HWM,aut_AWM)
+aut_AWMLM <- as.data.frame(aut_AWMLM)
+colnames(aut_AWMLM) <- "AWMLM"
+
+aut_picks <- cbind(AUT_fixtures$Div,AUT_fixtures$HomeTeam_aut,AUT_fixtures$AwayTeam_aut,aut_prediction,aut_HWM,aut_AWM,aut_HWMLM,aut_AWMLM)
 colnames(aut_picks)[1] <- "picks_Div"
 colnames(aut_picks)[2] <- "picks_HomeTeam"
 colnames(aut_picks)[3] <- "picks_AwayTeam"
@@ -180,6 +203,8 @@ ARG_fixtures$Awayteam_arg_index <- match(ARG_fixtures$AwayTeam_arg,arg_teams)
 arg_prediction <- c()
 arg_HWM <- c()
 arg_AWM <- c()
+arg_HWMLM <- c()
+arg_AWMLM <- c()
 for(arg_row in 1:nrow(ARG_fixtures))
 {
 
@@ -296,7 +321,20 @@ for(arg_row in 1:nrow(ARG_fixtures))
   arg_at_no_of_winmargin_un0 <- length(which(arg_winmargin_vec_at <= 0))
   arg_at_no_of_winmargin_un1 <- length(which(arg_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  arg_winmargin_vec_ht_lm <- as.vector(arg_winmargin_h[arg_hometeamindex,])
+  arg_winmargin_vec_ht_lm[is.na(arg_winmargin_vec_ht_lm)] <- ""
+  arg_winmargin_vec_ht_lm <- arg_winmargin_vec_ht_lm[arg_winmargin_vec_ht_lm != ""]
+  arg_winmargin_vec_ht_lm  <-tail(arg_winmargin_vec_ht_lm,1)
+  #awayteam
+  arg_winmargin_vec_at_lm <- as.vector(arg_winmargin_h[arg_awayteamindex,])
+  arg_winmargin_vec_at_lm[is.na(arg_winmargin_vec_at_lm)] <- ""
+  arg_winmargin_vec_at_lm <- arg_winmargin_vec_at_lm[arg_winmargin_vec_at_lm != ""]
+  arg_winmargin_vec_at_lm  <-tail(arg_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   arg_ht_last6points <- arg_ht_numberof_wins*3 + arg_ht_numberof_draws*1
@@ -317,6 +355,9 @@ for(arg_row in 1:nrow(ARG_fixtures))
   arg_HWM[arg_row] <- arg_ht_totalwinmargin
   arg_AWM[arg_row] <- arg_at_totalwinmargin
 
+  arg_HWMLM[arg_row] <- arg_winmargin_vec_ht_lm
+  arg_AWMLM[arg_row] <- arg_winmargin_vec_at_lm
+
 
 }
 
@@ -329,8 +370,13 @@ colnames(arg_HWM) <- "HWM"
 arg_AWM <- as.data.frame(arg_AWM)
 colnames(arg_AWM) <- "AWM"
 
+arg_HWMLM <- as.data.frame(arg_HWMLM)
+colnames(arg_HWMLM) <- "HWMLM"
 
-arg_picks <- cbind(ARG_fixtures$Div,ARG_fixtures$HomeTeam_arg,ARG_fixtures$AwayTeam_arg,arg_prediction,arg_HWM,arg_AWM)
+arg_AWMLM <- as.data.frame(arg_AWMLM)
+colnames(arg_AWMLM) <- "AWMLM"
+
+arg_picks <- cbind(ARG_fixtures$Div,ARG_fixtures$HomeTeam_arg,ARG_fixtures$AwayTeam_arg,arg_prediction,arg_HWM,arg_AWM,arg_HWMLM,arg_AWMLM)
 colnames(arg_picks)[1] <- "picks_Div"
 colnames(arg_picks)[2] <- "picks_HomeTeam"
 colnames(arg_picks)[3] <- "picks_AwayTeam"
@@ -345,6 +391,8 @@ BRA_fixtures$Awayteam_bra_index <- match(BRA_fixtures$AwayTeam_bra,bra_teams)
 bra_prediction <- c()
 bra_HWM <- c()
 bra_AWM <- c()
+bra_HWMLM <- c()
+bra_AWMLM <- c()
 for(bra_row in 1:nrow(BRA_fixtures))
 {
 
@@ -461,7 +509,20 @@ for(bra_row in 1:nrow(BRA_fixtures))
   bra_at_no_of_winmargin_un0 <- length(which(bra_winmargin_vec_at <= 0))
   bra_at_no_of_winmargin_un1 <- length(which(bra_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  bra_winmargin_vec_ht_lm <- as.vector(bra_winmargin_h[bra_hometeamindex,])
+  bra_winmargin_vec_ht_lm[is.na(bra_winmargin_vec_ht_lm)] <- ""
+  bra_winmargin_vec_ht_lm <- bra_winmargin_vec_ht_lm[bra_winmargin_vec_ht_lm != ""]
+  bra_winmargin_vec_ht_lm  <-tail(bra_winmargin_vec_ht_lm,1)
+  #awayteam
+  bra_winmargin_vec_at_lm <- as.vector(bra_winmargin_h[bra_awayteamindex,])
+  bra_winmargin_vec_at_lm[is.na(bra_winmargin_vec_at_lm)] <- ""
+  bra_winmargin_vec_at_lm <- bra_winmargin_vec_at_lm[bra_winmargin_vec_at_lm != ""]
+  bra_winmargin_vec_at_lm  <-tail(bra_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   bra_ht_last6points <- bra_ht_numberof_wins*3 + bra_ht_numberof_draws*1
@@ -482,6 +543,9 @@ for(bra_row in 1:nrow(BRA_fixtures))
   bra_HWM[bra_row] <- bra_ht_totalwinmargin
   bra_AWM[bra_row] <- bra_at_totalwinmargin
 
+  bra_HWMLM[bra_row] <- bra_winmargin_vec_ht_lm
+  bra_AWMLM[bra_row] <- bra_winmargin_vec_at_lm
+
 
 }
 
@@ -494,8 +558,13 @@ colnames(bra_HWM) <- "HWM"
 bra_AWM <- as.data.frame(bra_AWM)
 colnames(bra_AWM) <- "AWM"
 
+bra_HWMLM <- as.data.frame(bra_HWMLM)
+colnames(bra_HWMLM) <- "HWMLM"
 
-bra_picks <- cbind(BRA_fixtures$Div,BRA_fixtures$HomeTeam_bra,BRA_fixtures$AwayTeam_bra,bra_prediction,bra_HWM,bra_AWM)
+bra_AWMLM <- as.data.frame(bra_AWMLM)
+colnames(bra_AWMLM) <- "AWMLM"
+
+bra_picks <- cbind(BRA_fixtures$Div,BRA_fixtures$HomeTeam_bra,BRA_fixtures$AwayTeam_bra,bra_prediction,bra_HWM,bra_AWM,bra_HWMLM,bra_AWMLM)
 colnames(bra_picks)[1] <- "picks_Div"
 colnames(bra_picks)[2] <- "picks_HomeTeam"
 colnames(bra_picks)[3] <- "picks_AwayTeam"
@@ -510,6 +579,8 @@ CHN_fixtures$Awayteam_chn_index <- match(CHN_fixtures$AwayTeam_chn,chn_teams)
 chn_prediction <- c()
 chn_HWM <- c()
 chn_AWM <- c()
+chn_HWMLM <- c()
+chn_AWMLM <- c()
 for(chn_row in 1:nrow(CHN_fixtures))
 {
 
@@ -626,7 +697,20 @@ for(chn_row in 1:nrow(CHN_fixtures))
   chn_at_no_of_winmargin_un0 <- length(which(chn_winmargin_vec_at <= 0))
   chn_at_no_of_winmargin_un1 <- length(which(chn_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  chn_winmargin_vec_ht_lm <- as.vector(chn_winmargin_h[chn_hometeamindex,])
+  chn_winmargin_vec_ht_lm[is.na(chn_winmargin_vec_ht_lm)] <- ""
+  chn_winmargin_vec_ht_lm <- chn_winmargin_vec_ht_lm[chn_winmargin_vec_ht_lm != ""]
+  chn_winmargin_vec_ht_lm  <-tail(chn_winmargin_vec_ht_lm,1)
+  #awayteam
+  chn_winmargin_vec_at_lm <- as.vector(chn_winmargin_h[chn_awayteamindex,])
+  chn_winmargin_vec_at_lm[is.na(chn_winmargin_vec_at_lm)] <- ""
+  chn_winmargin_vec_at_lm <- chn_winmargin_vec_at_lm[chn_winmargin_vec_at_lm != ""]
+  chn_winmargin_vec_at_lm  <-tail(chn_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   chn_ht_last6points <- chn_ht_numberof_wins*3 + chn_ht_numberof_draws*1
@@ -647,6 +731,9 @@ for(chn_row in 1:nrow(CHN_fixtures))
   chn_HWM[chn_row] <- chn_ht_totalwinmargin
   chn_AWM[chn_row] <- chn_at_totalwinmargin
 
+  chn_HWMLM[chn_row] <- chn_winmargin_vec_ht_lm
+  chn_AWMLM[chn_row] <- chn_winmargin_vec_at_lm
+
 
 }
 
@@ -659,8 +746,13 @@ colnames(chn_HWM) <- "HWM"
 chn_AWM <- as.data.frame(chn_AWM)
 colnames(chn_AWM) <- "AWM"
 
+chn_HWMLM <- as.data.frame(chn_HWMLM)
+colnames(chn_HWMLM) <- "HWMLM"
 
-chn_picks <- cbind(CHN_fixtures$Div,CHN_fixtures$HomeTeam_chn,CHN_fixtures$AwayTeam_chn,chn_prediction,chn_HWM,chn_AWM)
+chn_AWMLM <- as.data.frame(chn_AWMLM)
+colnames(chn_AWMLM) <- "AWMLM"
+
+chn_picks <- cbind(CHN_fixtures$Div,CHN_fixtures$HomeTeam_chn,CHN_fixtures$AwayTeam_chn,chn_prediction,chn_HWM,chn_AWM,chn_HWMLM,chn_AWMLM)
 colnames(chn_picks)[1] <- "picks_Div"
 colnames(chn_picks)[2] <- "picks_HomeTeam"
 colnames(chn_picks)[3] <- "picks_AwayTeam"
@@ -675,6 +767,8 @@ DNK_fixtures$Awayteam_dnk_index <- match(DNK_fixtures$AwayTeam_dnk,dnk_teams)
 dnk_prediction <- c()
 dnk_HWM <- c()
 dnk_AWM <- c()
+dnk_HWMLM <- c()
+dnk_AWMLM <- c()
 for(dnk_row in 1:nrow(DNK_fixtures))
 {
 
@@ -791,7 +885,20 @@ for(dnk_row in 1:nrow(DNK_fixtures))
   dnk_at_no_of_winmargin_un0 <- length(which(dnk_winmargin_vec_at <= 0))
   dnk_at_no_of_winmargin_un1 <- length(which(dnk_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  dnk_winmargin_vec_ht_lm <- as.vector(dnk_winmargin_h[dnk_hometeamindex,])
+  dnk_winmargin_vec_ht_lm[is.na(dnk_winmargin_vec_ht_lm)] <- ""
+  dnk_winmargin_vec_ht_lm <- dnk_winmargin_vec_ht_lm[dnk_winmargin_vec_ht_lm != ""]
+  dnk_winmargin_vec_ht_lm  <-tail(dnk_winmargin_vec_ht_lm,1)
+  #awayteam
+  dnk_winmargin_vec_at_lm <- as.vector(dnk_winmargin_h[dnk_awayteamindex,])
+  dnk_winmargin_vec_at_lm[is.na(dnk_winmargin_vec_at_lm)] <- ""
+  dnk_winmargin_vec_at_lm <- dnk_winmargin_vec_at_lm[dnk_winmargin_vec_at_lm != ""]
+  dnk_winmargin_vec_at_lm  <-tail(dnk_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   dnk_ht_last6points <- dnk_ht_numberof_wins*3 + dnk_ht_numberof_draws*1
@@ -812,6 +919,9 @@ for(dnk_row in 1:nrow(DNK_fixtures))
   dnk_HWM[dnk_row] <- dnk_ht_totalwinmargin
   dnk_AWM[dnk_row] <- dnk_at_totalwinmargin
 
+  dnk_HWMLM[dnk_row] <- dnk_winmargin_vec_ht_lm
+  dnk_AWMLM[dnk_row] <- dnk_winmargin_vec_at_lm
+
 
 }
 
@@ -824,8 +934,13 @@ colnames(dnk_HWM) <- "HWM"
 dnk_AWM <- as.data.frame(dnk_AWM)
 colnames(dnk_AWM) <- "AWM"
 
+dnk_HWMLM <- as.data.frame(dnk_HWMLM)
+colnames(dnk_HWMLM) <- "HWMLM"
 
-dnk_picks <- cbind(DNK_fixtures$Div,DNK_fixtures$HomeTeam_dnk,DNK_fixtures$AwayTeam_dnk,dnk_prediction,dnk_HWM,dnk_AWM)
+dnk_AWMLM <- as.data.frame(dnk_AWMLM)
+colnames(dnk_AWMLM) <- "AWMLM"
+
+dnk_picks <- cbind(DNK_fixtures$Div,DNK_fixtures$HomeTeam_dnk,DNK_fixtures$AwayTeam_dnk,dnk_prediction,dnk_HWM,dnk_AWM,dnk_HWMLM,dnk_AWMLM)
 colnames(dnk_picks)[1] <- "picks_Div"
 colnames(dnk_picks)[2] <- "picks_HomeTeam"
 colnames(dnk_picks)[3] <- "picks_AwayTeam"
@@ -840,6 +955,8 @@ FIN_fixtures$Awayteam_fin_index <- match(FIN_fixtures$AwayTeam_fin,fin_teams)
 fin_prediction <- c()
 fin_HWM <- c()
 fin_AWM <- c()
+fin_HWMLM <- c()
+fin_AWMLM <- c()
 for(fin_row in 1:nrow(FIN_fixtures))
 {
 
@@ -956,7 +1073,20 @@ for(fin_row in 1:nrow(FIN_fixtures))
   fin_at_no_of_winmargin_un0 <- length(which(fin_winmargin_vec_at <= 0))
   fin_at_no_of_winmargin_un1 <- length(which(fin_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  fin_winmargin_vec_ht_lm <- as.vector(fin_winmargin_h[fin_hometeamindex,])
+  fin_winmargin_vec_ht_lm[is.na(fin_winmargin_vec_ht_lm)] <- ""
+  fin_winmargin_vec_ht_lm <- fin_winmargin_vec_ht_lm[fin_winmargin_vec_ht_lm != ""]
+  fin_winmargin_vec_ht_lm  <-tail(fin_winmargin_vec_ht_lm,1)
+  #awayteam
+  fin_winmargin_vec_at_lm <- as.vector(fin_winmargin_h[fin_awayteamindex,])
+  fin_winmargin_vec_at_lm[is.na(fin_winmargin_vec_at_lm)] <- ""
+  fin_winmargin_vec_at_lm <- fin_winmargin_vec_at_lm[fin_winmargin_vec_at_lm != ""]
+  fin_winmargin_vec_at_lm  <-tail(fin_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   fin_ht_last6points <- fin_ht_numberof_wins*3 + fin_ht_numberof_draws*1
@@ -977,6 +1107,9 @@ for(fin_row in 1:nrow(FIN_fixtures))
   fin_HWM[fin_row] <- fin_ht_totalwinmargin
   fin_AWM[fin_row] <- fin_at_totalwinmargin
 
+  fin_HWMLM[fin_row] <- fin_winmargin_vec_ht_lm
+  fin_AWMLM[fin_row] <- fin_winmargin_vec_at_lm
+
 
 }
 
@@ -989,8 +1122,13 @@ colnames(fin_HWM) <- "HWM"
 fin_AWM <- as.data.frame(fin_AWM)
 colnames(fin_AWM) <- "AWM"
 
+fin_HWMLM <- as.data.frame(fin_HWMLM)
+colnames(fin_HWMLM) <- "HWMLM"
 
-fin_picks <- cbind(FIN_fixtures$Div,FIN_fixtures$HomeTeam_fin,FIN_fixtures$AwayTeam_fin,fin_prediction,fin_HWM,fin_AWM)
+fin_AWMLM <- as.data.frame(fin_AWMLM)
+colnames(fin_AWMLM) <- "AWMLM"
+
+fin_picks <- cbind(FIN_fixtures$Div,FIN_fixtures$HomeTeam_fin,FIN_fixtures$AwayTeam_fin,fin_prediction,fin_HWM,fin_AWM,fin_HWMLM,fin_AWMLM)
 colnames(fin_picks)[1] <- "picks_Div"
 colnames(fin_picks)[2] <- "picks_HomeTeam"
 colnames(fin_picks)[3] <- "picks_AwayTeam"
@@ -1006,6 +1144,8 @@ IRL_fixtures$Awayteam_irl_index <- match(IRL_fixtures$AwayTeam_irl,irl_teams)
 irl_prediction <- c()
 irl_HWM <- c()
 irl_AWM <- c()
+irl_HWMLM <- c()
+irl_AWMLM <- c()
 for(irl_row in 1:nrow(IRL_fixtures))
 {
 
@@ -1122,7 +1262,20 @@ for(irl_row in 1:nrow(IRL_fixtures))
   irl_at_no_of_winmargin_un0 <- length(which(irl_winmargin_vec_at <= 0))
   irl_at_no_of_winmargin_un1 <- length(which(irl_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  irl_winmargin_vec_ht_lm <- as.vector(irl_winmargin_h[irl_hometeamindex,])
+  irl_winmargin_vec_ht_lm[is.na(irl_winmargin_vec_ht_lm)] <- ""
+  irl_winmargin_vec_ht_lm <- irl_winmargin_vec_ht_lm[irl_winmargin_vec_ht_lm != ""]
+  irl_winmargin_vec_ht_lm  <-tail(irl_winmargin_vec_ht_lm,1)
+  #awayteam
+  irl_winmargin_vec_at_lm <- as.vector(irl_winmargin_h[irl_awayteamindex,])
+  irl_winmargin_vec_at_lm[is.na(irl_winmargin_vec_at_lm)] <- ""
+  irl_winmargin_vec_at_lm <- irl_winmargin_vec_at_lm[irl_winmargin_vec_at_lm != ""]
+  irl_winmargin_vec_at_lm  <-tail(irl_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   irl_ht_last6points <- irl_ht_numberof_wins*3 + irl_ht_numberof_draws*1
@@ -1143,6 +1296,9 @@ for(irl_row in 1:nrow(IRL_fixtures))
   irl_HWM[irl_row] <- irl_ht_totalwinmargin
   irl_AWM[irl_row] <- irl_at_totalwinmargin
 
+  irl_HWMLM[irl_row] <- irl_winmargin_vec_ht_lm
+  irl_AWMLM[irl_row] <- irl_winmargin_vec_at_lm
+
 
 }
 
@@ -1155,8 +1311,13 @@ colnames(irl_HWM) <- "HWM"
 irl_AWM <- as.data.frame(irl_AWM)
 colnames(irl_AWM) <- "AWM"
 
+irl_HWMLM <- as.data.frame(irl_HWMLM)
+colnames(irl_HWMLM) <- "HWMLM"
 
-irl_picks <- cbind(IRL_fixtures$Div,IRL_fixtures$HomeTeam_irl,IRL_fixtures$AwayTeam_irl,irl_prediction,irl_HWM,irl_AWM)
+irl_AWMLM <- as.data.frame(irl_AWMLM)
+colnames(irl_AWMLM) <- "AWMLM"
+
+irl_picks <- cbind(IRL_fixtures$Div,IRL_fixtures$HomeTeam_irl,IRL_fixtures$AwayTeam_irl,irl_prediction,irl_HWM,irl_AWM,irl_HWMLM,irl_AWMLM)
 colnames(irl_picks)[1] <- "picks_Div"
 colnames(irl_picks)[2] <- "picks_HomeTeam"
 colnames(irl_picks)[3] <- "picks_AwayTeam"
@@ -1172,6 +1333,8 @@ JPN_fixtures$Awayteam_jpn_index <- match(JPN_fixtures$AwayTeam_jpn,jpn_teams)
 jpn_prediction <- c()
 jpn_HWM <- c()
 jpn_AWM <- c()
+jpn_HWMLM <- c()
+jpn_AWMLM <- c()
 for(jpn_row in 1:nrow(JPN_fixtures))
 {
 
@@ -1288,7 +1451,20 @@ for(jpn_row in 1:nrow(JPN_fixtures))
   jpn_at_no_of_winmargin_un0 <- length(which(jpn_winmargin_vec_at <= 0))
   jpn_at_no_of_winmargin_un1 <- length(which(jpn_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  jpn_winmargin_vec_ht_lm <- as.vector(jpn_winmargin_h[jpn_hometeamindex,])
+  jpn_winmargin_vec_ht_lm[is.na(jpn_winmargin_vec_ht_lm)] <- ""
+  jpn_winmargin_vec_ht_lm <- jpn_winmargin_vec_ht_lm[jpn_winmargin_vec_ht_lm != ""]
+  jpn_winmargin_vec_ht_lm  <-tail(jpn_winmargin_vec_ht_lm,1)
+  #awayteam
+  jpn_winmargin_vec_at_lm <- as.vector(jpn_winmargin_h[jpn_awayteamindex,])
+  jpn_winmargin_vec_at_lm[is.na(jpn_winmargin_vec_at_lm)] <- ""
+  jpn_winmargin_vec_at_lm <- jpn_winmargin_vec_at_lm[jpn_winmargin_vec_at_lm != ""]
+  jpn_winmargin_vec_at_lm  <-tail(jpn_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   jpn_ht_last6points <- jpn_ht_numberof_wins*3 + jpn_ht_numberof_draws*1
@@ -1309,6 +1485,9 @@ for(jpn_row in 1:nrow(JPN_fixtures))
   jpn_HWM[jpn_row] <- jpn_ht_totalwinmargin
   jpn_AWM[jpn_row] <- jpn_at_totalwinmargin
 
+  jpn_HWMLM[jpn_row] <- jpn_winmargin_vec_ht_lm
+  jpn_AWMLM[jpn_row] <- jpn_winmargin_vec_at_lm
+
 
 }
 
@@ -1321,8 +1500,13 @@ colnames(jpn_HWM) <- "HWM"
 jpn_AWM <- as.data.frame(jpn_AWM)
 colnames(jpn_AWM) <- "AWM"
 
+jpn_HWMLM <- as.data.frame(jpn_HWMLM)
+colnames(jpn_HWMLM) <- "HWMLM"
 
-jpn_picks <- cbind(JPN_fixtures$Div,JPN_fixtures$HomeTeam_jpn,JPN_fixtures$AwayTeam_jpn,jpn_prediction,jpn_HWM,jpn_AWM)
+jpn_AWMLM <- as.data.frame(jpn_AWMLM)
+colnames(jpn_AWMLM) <- "AWMLM"
+
+jpn_picks <- cbind(JPN_fixtures$Div,JPN_fixtures$HomeTeam_jpn,JPN_fixtures$AwayTeam_jpn,jpn_prediction,jpn_HWM,jpn_AWM,jpn_HWMLM,jpn_AWMLM)
 colnames(jpn_picks)[1] <- "picks_Div"
 colnames(jpn_picks)[2] <- "picks_HomeTeam"
 colnames(jpn_picks)[3] <- "picks_AwayTeam"
@@ -1336,6 +1520,8 @@ MEX_fixtures$Awayteam_mex_index <- match(MEX_fixtures$AwayTeam_mex,mex_teams)
 mex_prediction <- c()
 mex_HWM <- c()
 mex_AWM <- c()
+mex_HWMLM <- c()
+mex_AWMLM <- c()
 for(mex_row in 1:nrow(MEX_fixtures))
 {
 
@@ -1452,7 +1638,20 @@ for(mex_row in 1:nrow(MEX_fixtures))
   mex_at_no_of_winmargin_un0 <- length(which(mex_winmargin_vec_at <= 0))
   mex_at_no_of_winmargin_un1 <- length(which(mex_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  mex_winmargin_vec_ht_lm <- as.vector(mex_winmargin_h[mex_hometeamindex,])
+  mex_winmargin_vec_ht_lm[is.na(mex_winmargin_vec_ht_lm)] <- ""
+  mex_winmargin_vec_ht_lm <- mex_winmargin_vec_ht_lm[mex_winmargin_vec_ht_lm != ""]
+  mex_winmargin_vec_ht_lm  <-tail(mex_winmargin_vec_ht_lm,1)
+  #awayteam
+  mex_winmargin_vec_at_lm <- as.vector(mex_winmargin_h[mex_awayteamindex,])
+  mex_winmargin_vec_at_lm[is.na(mex_winmargin_vec_at_lm)] <- ""
+  mex_winmargin_vec_at_lm <- mex_winmargin_vec_at_lm[mex_winmargin_vec_at_lm != ""]
+  mex_winmargin_vec_at_lm  <-tail(mex_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   mex_ht_last6points <- mex_ht_numberof_wins*3 + mex_ht_numberof_draws*1
@@ -1473,6 +1672,9 @@ for(mex_row in 1:nrow(MEX_fixtures))
   mex_HWM[mex_row] <- mex_ht_totalwinmargin
   mex_AWM[mex_row] <- mex_at_totalwinmargin
 
+  mex_HWMLM[mex_row] <- mex_winmargin_vec_ht_lm
+  mex_AWMLM[mex_row] <- mex_winmargin_vec_at_lm
+
 
 }
 
@@ -1485,8 +1687,13 @@ colnames(mex_HWM) <- "HWM"
 mex_AWM <- as.data.frame(mex_AWM)
 colnames(mex_AWM) <- "AWM"
 
+mex_HWMLM <- as.data.frame(mex_HWMLM)
+colnames(mex_HWMLM) <- "HWMLM"
 
-mex_picks <- cbind(MEX_fixtures$Div,MEX_fixtures$HomeTeam_mex,MEX_fixtures$AwayTeam_mex,mex_prediction,mex_HWM,mex_AWM)
+mex_AWMLM <- as.data.frame(mex_AWMLM)
+colnames(mex_AWMLM) <- "AWMLM"
+
+mex_picks <- cbind(MEX_fixtures$Div,MEX_fixtures$HomeTeam_mex,MEX_fixtures$AwayTeam_mex,mex_prediction,mex_HWM,mex_AWM,mex_HWMLM,mex_AWMLM)
 colnames(mex_picks)[1] <- "picks_Div"
 colnames(mex_picks)[2] <- "picks_HomeTeam"
 colnames(mex_picks)[3] <- "picks_AwayTeam"
@@ -1502,6 +1709,8 @@ MLS_fixtures$Awayteam_mls_index <- match(MLS_fixtures$AwayTeam_mls,mls_teams)
 mls_prediction <- c()
 mls_HWM <- c()
 mls_AWM <- c()
+mls_HWMLM <- c()
+mls_AWMLM <- c()
 for(mls_row in 1:nrow(MLS_fixtures))
 {
 
@@ -1618,7 +1827,20 @@ for(mls_row in 1:nrow(MLS_fixtures))
   mls_at_no_of_winmargin_un0 <- length(which(mls_winmargin_vec_at <= 0))
   mls_at_no_of_winmargin_un1 <- length(which(mls_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  mls_winmargin_vec_ht_lm <- as.vector(mls_winmargin_h[mls_hometeamindex,])
+  mls_winmargin_vec_ht_lm[is.na(mls_winmargin_vec_ht_lm)] <- ""
+  mls_winmargin_vec_ht_lm <- mls_winmargin_vec_ht_lm[mls_winmargin_vec_ht_lm != ""]
+  mls_winmargin_vec_ht_lm  <-tail(mls_winmargin_vec_ht_lm,1)
+  #awayteam
+  mls_winmargin_vec_at_lm <- as.vector(mls_winmargin_h[mls_awayteamindex,])
+  mls_winmargin_vec_at_lm[is.na(mls_winmargin_vec_at_lm)] <- ""
+  mls_winmargin_vec_at_lm <- mls_winmargin_vec_at_lm[mls_winmargin_vec_at_lm != ""]
+  mls_winmargin_vec_at_lm  <-tail(mls_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   mls_ht_last6points <- mls_ht_numberof_wins*3 + mls_ht_numberof_draws*1
@@ -1639,6 +1861,9 @@ for(mls_row in 1:nrow(MLS_fixtures))
   mls_HWM[mls_row] <- mls_ht_totalwinmargin
   mls_AWM[mls_row] <- mls_at_totalwinmargin
 
+  mls_HWMLM[mls_row] <- mls_winmargin_vec_ht_lm
+  mls_AWMLM[mls_row] <- mls_winmargin_vec_at_lm
+
 
 }
 
@@ -1651,8 +1876,13 @@ colnames(mls_HWM) <- "HWM"
 mls_AWM <- as.data.frame(mls_AWM)
 colnames(mls_AWM) <- "AWM"
 
+mls_HWMLM <- as.data.frame(mls_HWMLM)
+colnames(mls_HWMLM) <- "HWMLM"
 
-mls_picks <- cbind(MLS_fixtures$Div,MLS_fixtures$HomeTeam_mls,MLS_fixtures$AwayTeam_mls,mls_prediction,mls_HWM,mls_AWM)
+mls_AWMLM <- as.data.frame(mls_AWMLM)
+colnames(mls_AWMLM) <- "AWMLM"
+
+mls_picks <- cbind(MLS_fixtures$Div,MLS_fixtures$HomeTeam_mls,MLS_fixtures$AwayTeam_mls,mls_prediction,mls_HWM,mls_AWM,mls_HWMLM,mls_AWMLM)
 colnames(mls_picks)[1] <- "picks_Div"
 colnames(mls_picks)[2] <- "picks_HomeTeam"
 colnames(mls_picks)[3] <- "picks_AwayTeam"
@@ -1668,6 +1898,8 @@ NOR_fixtures$Awayteam_nor_index <- match(NOR_fixtures$AwayTeam_nor,nor_teams)
 nor_prediction <- c()
 nor_HWM <- c()
 nor_AWM <- c()
+nor_HWMLM <- c()
+nor_AWMLM <- c()
 for(nor_row in 1:nrow(NOR_fixtures))
 {
 
@@ -1784,7 +2016,20 @@ for(nor_row in 1:nrow(NOR_fixtures))
   nor_at_no_of_winmargin_un0 <- length(which(nor_winmargin_vec_at <= 0))
   nor_at_no_of_winmargin_un1 <- length(which(nor_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  nor_winmargin_vec_ht_lm <- as.vector(nor_winmargin_h[nor_hometeamindex,])
+  nor_winmargin_vec_ht_lm[is.na(nor_winmargin_vec_ht_lm)] <- ""
+  nor_winmargin_vec_ht_lm <- nor_winmargin_vec_ht_lm[nor_winmargin_vec_ht_lm != ""]
+  nor_winmargin_vec_ht_lm  <-tail(nor_winmargin_vec_ht_lm,1)
+  #awayteam
+  nor_winmargin_vec_at_lm <- as.vector(nor_winmargin_h[nor_awayteamindex,])
+  nor_winmargin_vec_at_lm[is.na(nor_winmargin_vec_at_lm)] <- ""
+  nor_winmargin_vec_at_lm <- nor_winmargin_vec_at_lm[nor_winmargin_vec_at_lm != ""]
+  nor_winmargin_vec_at_lm  <-tail(nor_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   nor_ht_last6points <- nor_ht_numberof_wins*3 + nor_ht_numberof_draws*1
@@ -1805,6 +2050,9 @@ for(nor_row in 1:nrow(NOR_fixtures))
   nor_HWM[nor_row] <- nor_ht_totalwinmargin
   nor_AWM[nor_row] <- nor_at_totalwinmargin
 
+  nor_HWMLM[nor_row] <- nor_winmargin_vec_ht_lm
+  nor_AWMLM[nor_row] <- nor_winmargin_vec_at_lm
+
 
 }
 
@@ -1817,8 +2065,13 @@ colnames(nor_HWM) <- "HWM"
 nor_AWM <- as.data.frame(nor_AWM)
 colnames(nor_AWM) <- "AWM"
 
+nor_HWMLM <- as.data.frame(nor_HWMLM)
+colnames(nor_HWMLM) <- "HWMLM"
 
-nor_picks <- cbind(NOR_fixtures$Div,NOR_fixtures$HomeTeam_nor,NOR_fixtures$AwayTeam_nor,nor_prediction,nor_HWM,nor_AWM)
+nor_AWMLM <- as.data.frame(nor_AWMLM)
+colnames(nor_AWMLM) <- "AWMLM"
+
+nor_picks <- cbind(NOR_fixtures$Div,NOR_fixtures$HomeTeam_nor,NOR_fixtures$AwayTeam_nor,nor_prediction,nor_HWM,nor_AWM,nor_HWMLM,nor_AWMLM)
 colnames(nor_picks)[1] <- "picks_Div"
 colnames(nor_picks)[2] <- "picks_HomeTeam"
 colnames(nor_picks)[3] <- "picks_AwayTeam"
@@ -1834,6 +2087,8 @@ POL_fixtures$Awayteam_pol_index <- match(POL_fixtures$AwayTeam_pol,pol_teams)
 pol_prediction <- c()
 pol_HWM <- c()
 pol_AWM <- c()
+pol_HWMLM <- c()
+pol_AWMLM <- c()
 for(pol_row in 1:nrow(POL_fixtures))
 {
 
@@ -1950,7 +2205,20 @@ for(pol_row in 1:nrow(POL_fixtures))
   pol_at_no_of_winmargin_un0 <- length(which(pol_winmargin_vec_at <= 0))
   pol_at_no_of_winmargin_un1 <- length(which(pol_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  pol_winmargin_vec_ht_lm <- as.vector(pol_winmargin_h[pol_hometeamindex,])
+  pol_winmargin_vec_ht_lm[is.na(pol_winmargin_vec_ht_lm)] <- ""
+  pol_winmargin_vec_ht_lm <- pol_winmargin_vec_ht_lm[pol_winmargin_vec_ht_lm != ""]
+  pol_winmargin_vec_ht_lm  <-tail(pol_winmargin_vec_ht_lm,1)
+  #awayteam
+  pol_winmargin_vec_at_lm <- as.vector(pol_winmargin_h[pol_awayteamindex,])
+  pol_winmargin_vec_at_lm[is.na(pol_winmargin_vec_at_lm)] <- ""
+  pol_winmargin_vec_at_lm <- pol_winmargin_vec_at_lm[pol_winmargin_vec_at_lm != ""]
+  pol_winmargin_vec_at_lm  <-tail(pol_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   pol_ht_last6points <- pol_ht_numberof_wins*3 + pol_ht_numberof_draws*1
@@ -1971,6 +2239,9 @@ for(pol_row in 1:nrow(POL_fixtures))
   pol_HWM[pol_row] <- pol_ht_totalwinmargin
   pol_AWM[pol_row] <- pol_at_totalwinmargin
 
+  pol_HWMLM[pol_row] <- pol_winmargin_vec_ht_lm
+  pol_AWMLM[pol_row] <- pol_winmargin_vec_at_lm
+
 
 }
 
@@ -1983,8 +2254,13 @@ colnames(pol_HWM) <- "HWM"
 pol_AWM <- as.data.frame(pol_AWM)
 colnames(pol_AWM) <- "AWM"
 
+pol_HWMLM <- as.data.frame(pol_HWMLM)
+colnames(pol_HWMLM) <- "HWMLM"
 
-pol_picks <- cbind(POL_fixtures$Div,POL_fixtures$HomeTeam_pol,POL_fixtures$AwayTeam_pol,pol_prediction,pol_HWM,pol_AWM)
+pol_AWMLM <- as.data.frame(pol_AWMLM)
+colnames(pol_AWMLM) <- "AWMLM"
+
+pol_picks <- cbind(POL_fixtures$Div,POL_fixtures$HomeTeam_pol,POL_fixtures$AwayTeam_pol,pol_prediction,pol_HWM,pol_AWM,pol_HWMLM,pol_AWMLM)
 colnames(pol_picks)[1] <- "picks_Div"
 colnames(pol_picks)[2] <- "picks_HomeTeam"
 colnames(pol_picks)[3] <- "picks_AwayTeam"
@@ -2000,6 +2276,8 @@ ROU_fixtures$Awayteam_rou_index <- match(ROU_fixtures$AwayTeam_rou,rou_teams)
 rou_prediction <- c()
 rou_HWM <- c()
 rou_AWM <- c()
+rou_HWMLM <- c()
+rou_AWMLM <- c()
 for(rou_row in 1:nrow(ROU_fixtures))
 {
 
@@ -2116,7 +2394,20 @@ for(rou_row in 1:nrow(ROU_fixtures))
   rou_at_no_of_winmargin_un0 <- length(which(rou_winmargin_vec_at <= 0))
   rou_at_no_of_winmargin_un1 <- length(which(rou_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  rou_winmargin_vec_ht_lm <- as.vector(rou_winmargin_h[rou_hometeamindex,])
+  rou_winmargin_vec_ht_lm[is.na(rou_winmargin_vec_ht_lm)] <- ""
+  rou_winmargin_vec_ht_lm <- rou_winmargin_vec_ht_lm[rou_winmargin_vec_ht_lm != ""]
+  rou_winmargin_vec_ht_lm  <-tail(rou_winmargin_vec_ht_lm,1)
+  #awayteam
+  rou_winmargin_vec_at_lm <- as.vector(rou_winmargin_h[rou_awayteamindex,])
+  rou_winmargin_vec_at_lm[is.na(rou_winmargin_vec_at_lm)] <- ""
+  rou_winmargin_vec_at_lm <- rou_winmargin_vec_at_lm[rou_winmargin_vec_at_lm != ""]
+  rou_winmargin_vec_at_lm  <-tail(rou_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   rou_ht_last6points <- rou_ht_numberof_wins*3 + rou_ht_numberof_draws*1
@@ -2137,6 +2428,9 @@ for(rou_row in 1:nrow(ROU_fixtures))
   rou_HWM[rou_row] <- rou_ht_totalwinmargin
   rou_AWM[rou_row] <- rou_at_totalwinmargin
 
+  rou_HWMLM[rou_row] <- rou_winmargin_vec_ht_lm
+  rou_AWMLM[rou_row] <- rou_winmargin_vec_at_lm
+
 
 }
 
@@ -2149,8 +2443,13 @@ colnames(rou_HWM) <- "HWM"
 rou_AWM <- as.data.frame(rou_AWM)
 colnames(rou_AWM) <- "AWM"
 
+rou_HWMLM <- as.data.frame(rou_HWMLM)
+colnames(rou_HWMLM) <- "HWMLM"
 
-rou_picks <- cbind(ROU_fixtures$Div,ROU_fixtures$HomeTeam_rou,ROU_fixtures$AwayTeam_rou,rou_prediction,rou_HWM,rou_AWM)
+rou_AWMLM <- as.data.frame(rou_AWMLM)
+colnames(rou_AWMLM) <- "AWMLM"
+
+rou_picks <- cbind(ROU_fixtures$Div,ROU_fixtures$HomeTeam_rou,ROU_fixtures$AwayTeam_rou,rou_prediction,rou_HWM,rou_AWM,rou_HWMLM,rou_AWMLM)
 colnames(rou_picks)[1] <- "picks_Div"
 colnames(rou_picks)[2] <- "picks_HomeTeam"
 colnames(rou_picks)[3] <- "picks_AwayTeam"
@@ -2166,6 +2465,8 @@ RUS_fixtures$Awayteam_rus_index <- match(RUS_fixtures$AwayTeam_rus,rus_teams)
 rus_prediction <- c()
 rus_HWM <- c()
 rus_AWM <- c()
+rus_HWMLM <- c()
+rus_AWMLM <- c()
 for(rus_row in 1:nrow(RUS_fixtures))
 {
 
@@ -2282,7 +2583,20 @@ for(rus_row in 1:nrow(RUS_fixtures))
   rus_at_no_of_winmargin_un0 <- length(which(rus_winmargin_vec_at <= 0))
   rus_at_no_of_winmargin_un1 <- length(which(rus_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  rus_winmargin_vec_ht_lm <- as.vector(rus_winmargin_h[rus_hometeamindex,])
+  rus_winmargin_vec_ht_lm[is.na(rus_winmargin_vec_ht_lm)] <- ""
+  rus_winmargin_vec_ht_lm <- rus_winmargin_vec_ht_lm[rus_winmargin_vec_ht_lm != ""]
+  rus_winmargin_vec_ht_lm  <-tail(rus_winmargin_vec_ht_lm,1)
+  #awayteam
+  rus_winmargin_vec_at_lm <- as.vector(rus_winmargin_h[rus_awayteamindex,])
+  rus_winmargin_vec_at_lm[is.na(rus_winmargin_vec_at_lm)] <- ""
+  rus_winmargin_vec_at_lm <- rus_winmargin_vec_at_lm[rus_winmargin_vec_at_lm != ""]
+  rus_winmargin_vec_at_lm  <-tail(rus_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   rus_ht_last6points <- rus_ht_numberof_wins*3 + rus_ht_numberof_draws*1
@@ -2303,6 +2617,9 @@ for(rus_row in 1:nrow(RUS_fixtures))
   rus_HWM[rus_row] <- rus_ht_totalwinmargin
   rus_AWM[rus_row] <- rus_at_totalwinmargin
 
+  rus_HWMLM[rus_row] <- rus_winmargin_vec_ht_lm
+  rus_AWMLM[rus_row] <- rus_winmargin_vec_at_lm
+
 
 }
 
@@ -2315,8 +2632,13 @@ colnames(rus_HWM) <- "HWM"
 rus_AWM <- as.data.frame(rus_AWM)
 colnames(rus_AWM) <- "AWM"
 
+rus_HWMLM <- as.data.frame(rus_HWMLM)
+colnames(rus_HWMLM) <- "HWMLM"
 
-rus_picks <- cbind(RUS_fixtures$Div,RUS_fixtures$HomeTeam_rus,RUS_fixtures$AwayTeam_rus,rus_prediction,rus_HWM,rus_AWM)
+rus_AWMLM <- as.data.frame(rus_AWMLM)
+colnames(rus_AWMLM) <- "AWMLM"
+
+rus_picks <- cbind(RUS_fixtures$Div,RUS_fixtures$HomeTeam_rus,RUS_fixtures$AwayTeam_rus,rus_prediction,rus_HWM,rus_AWM,rus_HWMLM,rus_AWMLM)
 colnames(rus_picks)[1] <- "picks_Div"
 colnames(rus_picks)[2] <- "picks_HomeTeam"
 colnames(rus_picks)[3] <- "picks_AwayTeam"
@@ -2332,6 +2654,8 @@ SWE_fixtures$Awayteam_swe_index <- match(SWE_fixtures$AwayTeam_swe,swe_teams)
 swe_prediction <- c()
 swe_HWM <- c()
 swe_AWM <- c()
+swe_HWMLM <- c()
+swe_AWMLM <- c()
 for(swe_row in 1:nrow(SWE_fixtures))
 {
 
@@ -2448,7 +2772,20 @@ for(swe_row in 1:nrow(SWE_fixtures))
   swe_at_no_of_winmargin_un0 <- length(which(swe_winmargin_vec_at <= 0))
   swe_at_no_of_winmargin_un1 <- length(which(swe_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  swe_winmargin_vec_ht_lm <- as.vector(swe_winmargin_h[swe_hometeamindex,])
+  swe_winmargin_vec_ht_lm[is.na(swe_winmargin_vec_ht_lm)] <- ""
+  swe_winmargin_vec_ht_lm <- swe_winmargin_vec_ht_lm[swe_winmargin_vec_ht_lm != ""]
+  swe_winmargin_vec_ht_lm  <-tail(swe_winmargin_vec_ht_lm,1)
+  #awayteam
+  swe_winmargin_vec_at_lm <- as.vector(swe_winmargin_h[swe_awayteamindex,])
+  swe_winmargin_vec_at_lm[is.na(swe_winmargin_vec_at_lm)] <- ""
+  swe_winmargin_vec_at_lm <- swe_winmargin_vec_at_lm[swe_winmargin_vec_at_lm != ""]
+  swe_winmargin_vec_at_lm  <-tail(swe_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   swe_ht_last6points <- swe_ht_numberof_wins*3 + swe_ht_numberof_draws*1
@@ -2469,6 +2806,9 @@ for(swe_row in 1:nrow(SWE_fixtures))
   swe_HWM[swe_row] <- swe_ht_totalwinmargin
   swe_AWM[swe_row] <- swe_at_totalwinmargin
 
+  swe_HWMLM[swe_row] <- swe_winmargin_vec_ht_lm
+  swe_AWMLM[swe_row] <- swe_winmargin_vec_at_lm
+
 
 }
 
@@ -2481,8 +2821,13 @@ colnames(swe_HWM) <- "HWM"
 swe_AWM <- as.data.frame(swe_AWM)
 colnames(swe_AWM) <- "AWM"
 
+swe_HWMLM <- as.data.frame(swe_HWMLM)
+colnames(swe_HWMLM) <- "HWMLM"
 
-swe_picks <- cbind(SWE_fixtures$Div,SWE_fixtures$HomeTeam_swe,SWE_fixtures$AwayTeam_swe,swe_prediction,swe_HWM,swe_AWM)
+swe_AWMLM <- as.data.frame(swe_AWMLM)
+colnames(swe_AWMLM) <- "AWMLM"
+
+swe_picks <- cbind(SWE_fixtures$Div,SWE_fixtures$HomeTeam_swe,SWE_fixtures$AwayTeam_swe,swe_prediction,swe_HWM,swe_AWM,swe_HWMLM,swe_AWMLM)
 colnames(swe_picks)[1] <- "picks_Div"
 colnames(swe_picks)[2] <- "picks_HomeTeam"
 colnames(swe_picks)[3] <- "picks_AwayTeam"
@@ -2498,6 +2843,8 @@ SWZ_fixtures$Awayteam_swz_index <- match(SWZ_fixtures$AwayTeam_swz,swz_teams)
 swz_prediction <- c()
 swz_HWM <- c()
 swz_AWM <- c()
+swz_HWMLM <- c()
+swz_AWMLM <- c()
 for(swz_row in 1:nrow(SWZ_fixtures))
 {
 
@@ -2614,7 +2961,20 @@ for(swz_row in 1:nrow(SWZ_fixtures))
   swz_at_no_of_winmargin_un0 <- length(which(swz_winmargin_vec_at <= 0))
   swz_at_no_of_winmargin_un1 <- length(which(swz_winmargin_vec_at <= 1))
   ##################################################################################
-  ##########################################
+  ##################################################################################
+  ##################################################################################
+  #very last win margin
+  #hometeam
+  swz_winmargin_vec_ht_lm <- as.vector(swz_winmargin_h[swz_hometeamindex,])
+  swz_winmargin_vec_ht_lm[is.na(swz_winmargin_vec_ht_lm)] <- ""
+  swz_winmargin_vec_ht_lm <- swz_winmargin_vec_ht_lm[swz_winmargin_vec_ht_lm != ""]
+  swz_winmargin_vec_ht_lm  <-tail(swz_winmargin_vec_ht_lm,1)
+  #awayteam
+  swz_winmargin_vec_at_lm <- as.vector(swz_winmargin_h[swz_awayteamindex,])
+  swz_winmargin_vec_at_lm[is.na(swz_winmargin_vec_at_lm)] <- ""
+  swz_winmargin_vec_at_lm <- swz_winmargin_vec_at_lm[swz_winmargin_vec_at_lm != ""]
+  swz_winmargin_vec_at_lm  <-tail(swz_winmargin_vec_at_lm,1)
+  #################################################################################
   ####we need to decide ############
   #winner goals
   swz_ht_last6points <- swz_ht_numberof_wins*3 + swz_ht_numberof_draws*1
@@ -2635,6 +2995,9 @@ for(swz_row in 1:nrow(SWZ_fixtures))
   swz_HWM[swz_row] <- swz_ht_totalwinmargin
   swz_AWM[swz_row] <- swz_at_totalwinmargin
 
+  swz_HWMLM[swz_row] <- swz_winmargin_vec_ht_lm
+  swz_AWMLM[swz_row] <- swz_winmargin_vec_at_lm
+
 
 }
 
@@ -2647,8 +3010,13 @@ colnames(swz_HWM) <- "HWM"
 swz_AWM <- as.data.frame(swz_AWM)
 colnames(swz_AWM) <- "AWM"
 
+swz_HWMLM <- as.data.frame(swz_HWMLM)
+colnames(swz_HWMLM) <- "HWMLM"
 
-swz_picks <- cbind(SWZ_fixtures$Div,SWZ_fixtures$HomeTeam_swz,SWZ_fixtures$AwayTeam_swz,swz_prediction,swz_HWM,swz_AWM)
+swz_AWMLM <- as.data.frame(swz_AWMLM)
+colnames(swz_AWMLM) <- "AWMLM"
+
+swz_picks <- cbind(SWZ_fixtures$Div,SWZ_fixtures$HomeTeam_swz,SWZ_fixtures$AwayTeam_swz,swz_prediction,swz_HWM,swz_AWM,swz_HWMLM,swz_AWMLM)
 colnames(swz_picks)[1] <- "picks_Div"
 colnames(swz_picks)[2] <- "picks_HomeTeam"
 colnames(swz_picks)[3] <- "picks_AwayTeam"

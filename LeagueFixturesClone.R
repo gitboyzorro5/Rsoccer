@@ -8,6 +8,7 @@ library('scales')
 library('lubridate')
 #########################################################################################################################################
 unlink('clonedprediction.xlsx')
+unlink('picks_fixtures_prediction_cloned.csv')
 #########################################################################################################################################
 B1_fixtures_clone <- B1_fixtures
 colnames(B1_fixtures_clone)[61] <- "Hwin"
@@ -1321,7 +1322,10 @@ mycloned_prediction <- dplyr::left_join(myodds_fixtures,allteams20212022_clonefi
 write.xlsx(mycloned_prediction,'clonedprediction.xlsx')
 
 
-
+picks_fixtures_cloned <- read.csv('myfixtures.csv')
+picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$Home_Team,picks_fixtures_cloned$Away_Team, sep = "-")
+picks_fixtures_prediction_cloned <- dplyr::left_join(picks_fixtures_cloned,allteams20212022_clonefixtures)
+write.xlsx(picks_fixtures_prediction_cloned,'picks_fixtures_prediction_cloned.csv')
 
 
 

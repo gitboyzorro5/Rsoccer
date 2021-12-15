@@ -1361,7 +1361,7 @@ nrow(allteams20212022_gamestate)
 
 
 
-
+View(allteams20212022_gamestate[allteams20212022_gamestate$GSCS == "-1,-1",])
 
 
 

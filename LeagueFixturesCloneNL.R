@@ -971,7 +971,7 @@ mycloned_prediction_nl <- dplyr::left_join(myodds_fixtures_nl,allteams20212022_c
 write.xlsx(mycloned_prediction_nl,'clonedprediction_nl.xlsx')
 
 
-dplyr::left_join(myodds_fixtures_nl,allteams20212022_clonefixtures_nl)
+
 
 
 

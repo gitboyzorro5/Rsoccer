@@ -1325,7 +1325,7 @@ write.xlsx(mycloned_prediction,'clonedprediction.xlsx')
 picks_fixtures_cloned <- read.csv('myfixtures.csv')
 picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$Home_Team,picks_fixtures_cloned$Away_Team, sep = "-")
 picks_fixtures_prediction_cloned <- dplyr::left_join(picks_fixtures_cloned,allteams20212022_clonefixtures)
-write.xlsx(picks_fixtures_prediction_cloned,'picks_fixtures_prediction_cloned.csv')
+write.xlsx(picks_fixtures_prediction_cloned,'picks_fixtures_prediction_cloned.xlsx')
 
 
 

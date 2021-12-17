@@ -439,14 +439,23 @@ b1_yellowtotals_vec_ht <- as.vector(b1_yellowtotalsv2[1,])
 b1_yellowtotals_vec_ht[is.na(b1_yellowtotals_vec_ht)] <- ""
 b1_yellowtotals_vec_ht <- b1_yellowtotals_vec_ht[b1_yellowtotals_vec_ht != ""]
 b1_yellowtotals_vec_ht  <-tail(b1_yellowtotals_vec_ht,1)
+#####################################################################################################
+install.packages('tesseract')
+library(tesseract)
 
-b1_yellowtotals_vec_ht
+eng <- tesseract("eng")
+text <- tesseract::ocr("C:\\Users\\Magut\\Documents\\bet_history\\pinnacle\\pinnacle254.png", engine = eng)
+text_split <- strsplit(text,"\n")
+text_split <- as.vector(text_split)
+text_split <- unlist(text_split)
+text_split
+#Accepted:  :Stake
+#pinnacle:
+#Total - FT - Turkey - Super League
+#Final score:
+#Settled:
 
-
-
-
-
-
-
-
+head(grep("Settled",text_split),1)
+head(grep("@",text_split),1)
+text_split
 

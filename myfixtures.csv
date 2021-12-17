@@ -1,172 +1,144 @@
-,Div,Home_Team,Away_Team,Date
-442,D1,Bielefeld,Bochum,12/14/2021
-443,D1,Augsburg,RB Leipzig,12/14/2021
-444,D1,Mainz,Hertha,12/14/2021
-445,D1,Stuttgart,Bayern Munich,12/14/2021
-446,D1,Mgladbach,Ein Frankfurt,12/14/2021
-447,D1,Union Berlin,Freiburg,12/14/2021
-448,D1,Leverkusen,Hoffenheim,12/14/2021
-449,D1,Wolfsburg,FC Koln,12/14/2021
-450,D1,Dortmund,Greuther Furth,12/14/2021
-1079,E0,Arsenal,West Ham,12/14/2021
-1080,E0,Brentford,Man United,12/14/2021
-1081,E0,Brighton,Wolves,12/14/2021
-1082,E0,Burnley,Watford,12/14/2021
-1083,E0,Leicester,Tottenham,12/14/2021
-1084,E0,Norwich,Aston Villa,12/14/2021
-1085,E0,Crystal Palace,Southampton,12/14/2021
-163,B1,Standard,Beerschot VA,12/15/2021
-164,B1,Genk,Charleroi,12/15/2021
-165,B1,Oud-Heverlee Leuven,Club Brugge,12/15/2021
-166,B1,Antwerp,Eupen,12/15/2021
-167,B1,Mechelen,Gent,12/15/2021
-168,B1,Oostende,Kortrijk,12/15/2021
-169,B1,Cercle Brugge,Seraing,12/15/2021
-170,B1,Anderlecht,St Truiden,12/15/2021
-171,B1,Waregem,St. Gilloise,12/15/2021
-1086,E0,Chelsea,Everton,12/15/2021
-1087,E0,Liverpool,Newcastle,12/15/2021
-1088,E0,Man City,Leeds,12/15/2021
-451,D1,Greuther Furth,Augsburg,12/17/2021
-452,D1,Bochum,Union Berlin,12/17/2021
-453,D1,FC Koln,Stuttgart,12/17/2021
-454,D1,Hertha,Dortmund,12/17/2021
-455,D1,Hoffenheim,Mgladbach,12/17/2021
-456,D1,Freiburg,Leverkusen,12/17/2021
-457,D1,Ein Frankfurt,Mainz,12/17/2021
-458,D1,RB Leipzig,Bielefeld,12/17/2021
-459,D1,Bayern Munich,Wolfsburg,12/17/2021
-4745,N1,For Sittard,Utrecht,12/17/2021
-172,B1,Club Brugge,Anderlecht,12/18/2021
-173,B1,Genk,Antwerp,12/18/2021
-174,B1,St. Gilloise,Cercle Brugge,12/18/2021
-175,B1,Eupen,Charleroi,12/18/2021
-176,B1,Seraing,Kortrijk,12/18/2021
-177,B1,Waregem,Mechelen,12/18/2021
-178,B1,Beerschot VA,Oostende,12/18/2021
-179,B1,Gent,St Truiden,12/18/2021
-180,B1,Oud-Heverlee Leuven,Standard,12/18/2021
-1089,E0,Aston Villa,Burnley,12/18/2021
-1090,E0,Everton,Leicester,12/18/2021
-1091,E0,Leeds,Arsenal,12/18/2021
-1092,E0,Man United,Brighton,12/18/2021
-1093,E0,Newcastle,Man City,12/18/2021
-1094,E0,Southampton,Brentford,12/18/2021
-1095,E0,Tottenham,Liverpool,12/18/2021
-1096,E0,Watford,Crystal Palace,12/18/2021
-1097,E0,West Ham,Norwich,12/18/2021
-1098,E0,Wolves,Chelsea,12/18/2021
-1563,E1,Barnsley,West Brom,12/18/2021
-1564,E1,Blackburn,Birmingham,12/18/2021
-1565,E1,Blackpool,Peterboro,12/18/2021
-1566,E1,Bristol City,Huddersfield,12/18/2021
-1567,E1,Cardiff,Derby,12/18/2021
-1568,E1,Coventry,Stoke,12/18/2021
-1569,E1,Fulham,Sheffield United,12/18/2021
-1570,E1,Middlesbrough,Bournemouth,12/18/2021
-1571,E1,Millwall,Preston,12/18/2021
-1572,E1,Nottm Forest,Hull,12/18/2021
-1573,E1,QPR,Swansea,12/18/2021
-1574,E1,Reading,Luton,12/18/2021
-2115,E2,Sheffield Weds,Accrington,12/18/2021
-2116,E2,Plymouth,Charlton,12/18/2021
-2117,E2,Shrewsbury,Cheltenham,12/18/2021
-2118,E2,Gillingham,Crewe,12/18/2021
-2119,E2,Lincoln,Doncaster,12/18/2021
-2120,E2,Morecambe,Fleetwood Town,12/18/2021
-2121,E2,Burton,Milton Keynes Dons,12/18/2021
-2122,E2,AFC Wimbledon,Portsmouth,12/18/2021
-2123,E2,Cambridge,Rotherham,12/18/2021
-2124,E2,Ipswich,Sunderland,12/18/2021
-2125,E2,Oxford,Wigan,12/18/2021
-2126,E2,Bolton,Wycombe,12/18/2021
-2655,E3,Northampton,Barrow,12/18/2021
-2656,E3,Carlisle,Bradford,12/18/2021
-2657,E3,Scunthorpe,Bristol Rvs,12/18/2021
-2658,E3,Port Vale,Exeter,12/18/2021
-2659,E3,Sutton,Harrogate,12/18/2021
-2660,E3,Colchester,Hartlepool,12/18/2021
-2661,E3,Tranmere,Leyton Orient,12/18/2021
-2662,E3,Forest Green,Mansfield,12/18/2021
-2663,E3,Rochdale,Newport County,12/18/2021
-2664,E3,Crawley Town,Oldham,12/18/2021
-2665,E3,Salford,Stevenage,12/18/2021
-2666,E3,Swindon,Walsall,12/18/2021
-4746,N1,Heracles,Groningen,12/18/2021
-4747,N1,Zwolle,Twente,12/18/2021
-4748,N1,Sparta Rotterdam,Vitesse,12/18/2021
-4749,N1,AZ Alkmaar,Willem II,12/18/2021
-5321,SC0,St Mirren,Celtic,12/18/2021
-5322,SC0,Hibernian,Aberdeen,12/18/2021
-5323,SC0,Motherwell,St Johnstone,12/18/2021
-5324,SC0,Livingston,Ross County,12/18/2021
-5325,SC0,Rangers,Dundee United,12/18/2021
-5326,SC0,Dundee,Hearts,12/18/2021
-5496,SC1,Queen of Sth,Ayr,12/18/2021
-5497,SC1,Kilmarnock,Dunfermline,12/18/2021
-5498,SC1,Arbroath,Morton,12/18/2021
-5499,SC1,Inverness C,Hamilton,12/18/2021
-5500,SC1,Partick,Raith Rvs,12/18/2021
-766,D2,Regensburg,Darmstadt,12/19/2021
-767,D2,Ingolstadt,Dresden,12/19/2021
-768,D2,Karlsruhe,Hansa Rostock,12/19/2021
-769,D2,Paderborn,Heidenheim,12/19/2021
-770,D2,Erzgebirge Aue,Nurnberg,12/19/2021
-771,D2,Fortuna Dusseldorf,Sandhausen,12/19/2021
-772,D2,Hamburg,Schalke 04,12/19/2021
-773,D2,Holstein Kiel,St Pauli,12/19/2021
-774,D2,Hannover,Werder Bremen,12/19/2021
-4391,I1,Atalanta,Roma,12/19/2021
-4392,I1,Bologna,Juventus,12/19/2021
-4393,I1,Cagliari,Udinese,12/19/2021
-4394,I1,Fiorentina,Sassuolo,12/19/2021
-4395,I1,Lazio,Genoa,12/19/2021
-4396,I1,Milan,Napoli,12/19/2021
-4397,I1,Salernitana,Inter,12/19/2021
-4398,I1,Sampdoria,Venezia,12/19/2021
-4399,I1,Spezia,Empoli,12/19/2021
-4400,I1,Torino,Verona,12/19/2021
-4750,N1,Feyenoord,Ajax,12/19/2021
-4751,N1,Cambuur,Heerenveen,12/19/2021
-4752,N1,Go Ahead Eagles,Nijmegen,12/19/2021
-4753,N1,Waalwijk,PSV Eindhoven,12/19/2021
-5033,P1,Portimonense,Arouca,12/19/2021
-5034,P1,Sp Braga,Belenenses,12/19/2021
-5035,P1,Estoril,Famalicao,12/19/2021
-5036,P1,Benfica,Maritimo,12/19/2021
-5037,P1,Boavista,Moreirense,12/19/2021
-5038,P1,Tondela,Pacos Ferreira,12/19/2021
-5039,P1,Vizela,Porto,12/19/2021
-5040,P1,Gil Vicente,Sp Lisbon,12/19/2021
-5041,P1,Santa Clara,Guimaraes,12/19/2021
-5761,SP1,Ath Bilbao,Betis,12/19/2021
-5762,SP1,Barcelona,Elche,12/19/2021
-5763,SP1,Celta,Espanyol,12/19/2021
-5764,SP1,Getafe,Osasuna,12/19/2021
-5765,SP1,Granada,Mallorca,12/19/2021
-5766,SP1,Levante,Valencia,12/19/2021
-5767,SP1,Real Madrid,Cadiz,12/19/2021
-5768,SP1,Sociedad,Villarreal,12/19/2021
-5769,SP1,Sevilla,Ath Madrid,12/19/2021
-5770,SP1,Vallecano,Alaves,12/19/2021
-6191,SP2,Huesca,Alcorcon,12/19/2021
-6192,SP2,Lugo,Almeria,12/19/2021
-6193,SP2,Girona,Burgos,12/19/2021
-6194,SP2,Cartagena,Mirandes,12/19/2021
-6195,SP2,Las Palmas,Eibar,12/19/2021
-6196,SP2,Malaga,Leganes,12/19/2021
-6197,SP2,Fuenlabrada,Oviedo,12/19/2021
-6198,SP2,Ponferradina,Amorebieta,12/19/2021
-6199,SP2,Ibiza,Sp Gijon,12/19/2021
-6200,SP2,Zaragoza,Tenerife,12/19/2021
-6201,SP2,Sociedad B,Valladolid,12/19/2021
-6593,T1,Giresunspor,Altay,12/19/2021
-6594,T1,Kasimpasa,Sivasspor,12/19/2021
-6595,T1,Galatasaray,Buyuksehyr,12/19/2021
-6596,T1,Trabzonspor,Hatayspor,12/19/2021
-6597,T1,Alanyaspor,Ad. Demirspor,12/19/2021
-6598,T1,Kayserispor,Gaziantep,12/19/2021
-6599,T1,Konyaspor,Antalyaspor,12/19/2021
-6600,T1,Fenerbahce,Besiktas,12/19/2021
-6601,T1,Goztep,Karagumruk,12/19/2021
-6602,T1,Rizespor,Yeni Malatyaspor,12/19/2021
+"","Div","Home_Team","Away_Team","Date"
+"172","B1","Club Brugge","Anderlecht",2021-12-18
+"173","B1","Genk","Antwerp",2021-12-18
+"174","B1","St. Gilloise","Cercle Brugge",2021-12-18
+"175","B1","Eupen","Charleroi",2021-12-18
+"176","B1","Seraing","Kortrijk",2021-12-18
+"177","B1","Waregem","Mechelen",2021-12-18
+"178","B1","Beerschot VA","Oostende",2021-12-18
+"179","B1","Gent","St Truiden",2021-12-18
+"180","B1","Oud-Heverlee Leuven","Standard",2021-12-18
+"451","D1","Greuther Furth","Augsburg",2021-12-17
+"452","D1","Bochum","Union Berlin",2021-12-17
+"453","D1","FC Koln","Stuttgart",2021-12-17
+"454","D1","Hertha","Dortmund",2021-12-17
+"455","D1","Hoffenheim","Mgladbach",2021-12-17
+"456","D1","Freiburg","Leverkusen",2021-12-17
+"457","D1","Ein Frankfurt","Mainz",2021-12-17
+"458","D1","RB Leipzig","Bielefeld",2021-12-17
+"459","D1","Bayern Munich","Wolfsburg",2021-12-17
+"766","D2","Regensburg","Darmstadt",2021-12-19
+"767","D2","Ingolstadt","Dresden",2021-12-19
+"768","D2","Karlsruhe","Hansa Rostock",2021-12-19
+"769","D2","Paderborn","Heidenheim",2021-12-19
+"770","D2","Erzgebirge Aue","Nurnberg",2021-12-19
+"771","D2","Fortuna Dusseldorf","Sandhausen",2021-12-19
+"772","D2","Hamburg","Schalke 04",2021-12-19
+"773","D2","Holstein Kiel","St Pauli",2021-12-19
+"774","D2","Hannover","Werder Bremen",2021-12-19
+"1089","E0","Aston Villa","Burnley",2021-12-18
+"1090","E0","Everton","Leicester",2021-12-18
+"1091","E0","Leeds","Arsenal",2021-12-18
+"1092","E0","Man United","Brighton",2021-12-18
+"1093","E0","Newcastle","Man City",2021-12-18
+"1094","E0","Southampton","Brentford",2021-12-18
+"1095","E0","Tottenham","Liverpool",2021-12-18
+"1096","E0","Watford","Crystal Palace",2021-12-18
+"1097","E0","West Ham","Norwich",2021-12-18
+"1098","E0","Wolves","Chelsea",2021-12-18
+"1563","E1","Barnsley","West Brom",2021-12-18
+"1564","E1","Blackburn","Birmingham",2021-12-18
+"1565","E1","Blackpool","Peterboro",2021-12-18
+"1566","E1","Bristol City","Huddersfield",2021-12-18
+"1567","E1","Cardiff","Derby",2021-12-18
+"1568","E1","Coventry","Stoke",2021-12-18
+"1569","E1","Fulham","Sheffield United",2021-12-18
+"1570","E1","Middlesbrough","Bournemouth",2021-12-18
+"1571","E1","Millwall","Preston",2021-12-18
+"1572","E1","Nottm Forest","Hull",2021-12-18
+"1573","E1","QPR","Swansea",2021-12-18
+"1574","E1","Reading","Luton",2021-12-18
+"2115","E2","Sheffield Weds","Accrington",2021-12-18
+"2116","E2","Plymouth","Charlton",2021-12-18
+"2117","E2","Shrewsbury","Cheltenham",2021-12-18
+"2118","E2","Gillingham","Crewe",2021-12-18
+"2119","E2","Lincoln","Doncaster",2021-12-18
+"2120","E2","Morecambe","Fleetwood Town",2021-12-18
+"2121","E2","Burton","Milton Keynes Dons",2021-12-18
+"2122","E2","AFC Wimbledon","Portsmouth",2021-12-18
+"2123","E2","Cambridge","Rotherham",2021-12-18
+"2124","E2","Ipswich","Sunderland",2021-12-18
+"2125","E2","Oxford","Wigan",2021-12-18
+"2126","E2","Bolton","Wycombe",2021-12-18
+"2655","E3","Northampton","Barrow",2021-12-18
+"2656","E3","Carlisle","Bradford",2021-12-18
+"2657","E3","Scunthorpe","Bristol Rvs",2021-12-18
+"2658","E3","Port Vale","Exeter",2021-12-18
+"2659","E3","Sutton","Harrogate",2021-12-18
+"2660","E3","Colchester","Hartlepool",2021-12-18
+"2661","E3","Tranmere","Leyton Orient",2021-12-18
+"2662","E3","Forest Green","Mansfield",2021-12-18
+"2663","E3","Rochdale","Newport County",2021-12-18
+"2664","E3","Crawley Town","Oldham",2021-12-18
+"2665","E3","Salford","Stevenage",2021-12-18
+"2666","E3","Swindon","Walsall",2021-12-18
+"4391","I1","Atalanta","Roma",2021-12-19
+"4392","I1","Bologna","Juventus",2021-12-19
+"4393","I1","Cagliari","Udinese",2021-12-19
+"4394","I1","Fiorentina","Sassuolo",2021-12-19
+"4395","I1","Lazio","Genoa",2021-12-19
+"4396","I1","Milan","Napoli",2021-12-19
+"4397","I1","Salernitana","Inter",2021-12-19
+"4398","I1","Sampdoria","Venezia",2021-12-19
+"4399","I1","Spezia","Empoli",2021-12-19
+"4400","I1","Torino","Verona",2021-12-19
+"4745","N1","For Sittard","Utrecht",2021-12-17
+"4746","N1","Heracles","Groningen",2021-12-18
+"4747","N1","Zwolle","Twente",2021-12-18
+"4748","N1","Sparta Rotterdam","Vitesse",2021-12-18
+"4749","N1","AZ Alkmaar","Willem II",2021-12-18
+"4750","N1","Feyenoord","Ajax",2021-12-19
+"4751","N1","Cambuur","Heerenveen",2021-12-19
+"4752","N1","Go Ahead Eagles","Nijmegen",2021-12-19
+"4753","N1","Waalwijk","PSV Eindhoven",2021-12-19
+"5033","P1","Portimonense","Arouca",2021-12-19
+"5034","P1","Sp Braga","Belenenses",2021-12-19
+"5035","P1","Estoril","Famalicao",2021-12-19
+"5036","P1","Benfica","Maritimo",2021-12-19
+"5037","P1","Boavista","Moreirense",2021-12-19
+"5038","P1","Tondela","Pacos Ferreira",2021-12-19
+"5039","P1","Vizela","Porto",2021-12-19
+"5040","P1","Gil Vicente","Sp Lisbon",2021-12-19
+"5041","P1","Santa Clara","Guimaraes",2021-12-19
+"5321","SC0","St Mirren","Celtic",2021-12-18
+"5322","SC0","Hibernian","Aberdeen",2021-12-18
+"5323","SC0","Motherwell","St Johnstone",2021-12-18
+"5324","SC0","Livingston","Ross County",2021-12-18
+"5325","SC0","Rangers","Dundee United",2021-12-18
+"5326","SC0","Dundee","Hearts",2021-12-18
+"5496","SC1","Queen of Sth","Ayr",2021-12-18
+"5497","SC1","Kilmarnock","Dunfermline",2021-12-18
+"5498","SC1","Arbroath","Morton",2021-12-18
+"5499","SC1","Inverness C","Hamilton",2021-12-18
+"5500","SC1","Partick","Raith Rvs",2021-12-18
+"5761","SP1","Ath Bilbao","Betis",2021-12-19
+"5762","SP1","Barcelona","Elche",2021-12-19
+"5763","SP1","Celta","Espanyol",2021-12-19
+"5764","SP1","Getafe","Osasuna",2021-12-19
+"5765","SP1","Granada","Mallorca",2021-12-19
+"5766","SP1","Levante","Valencia",2021-12-19
+"5767","SP1","Real Madrid","Cadiz",2021-12-19
+"5768","SP1","Sociedad","Villarreal",2021-12-19
+"5769","SP1","Sevilla","Ath Madrid",2021-12-19
+"5770","SP1","Vallecano","Alaves",2021-12-19
+"6191","SP2","Huesca","Alcorcon",2021-12-19
+"6192","SP2","Lugo","Almeria",2021-12-19
+"6193","SP2","Girona","Burgos",2021-12-19
+"6194","SP2","Cartagena","Mirandes",2021-12-19
+"6195","SP2","Las Palmas","Eibar",2021-12-19
+"6196","SP2","Malaga","Leganes",2021-12-19
+"6197","SP2","Fuenlabrada","Oviedo",2021-12-19
+"6198","SP2","Ponferradina","Amorebieta",2021-12-19
+"6199","SP2","Ibiza","Sp Gijon",2021-12-19
+"6200","SP2","Zaragoza","Tenerife",2021-12-19
+"6201","SP2","Sociedad B","Valladolid",2021-12-19
+"6593","T1","Giresunspor","Altay",2021-12-19
+"6594","T1","Kasimpasa","Sivasspor",2021-12-19
+"6595","T1","Galatasaray","Buyuksehyr",2021-12-19
+"6596","T1","Trabzonspor","Hatayspor",2021-12-19
+"6597","T1","Alanyaspor","Ad. Demirspor",2021-12-19
+"6598","T1","Kayserispor","Gaziantep",2021-12-19
+"6599","T1","Konyaspor","Antalyaspor",2021-12-19
+"6600","T1","Fenerbahce","Besiktas",2021-12-19
+"6601","T1","Goztep","Karagumruk",2021-12-19
+"6602","T1","Rizespor","Yeni Malatyaspor",2021-12-19

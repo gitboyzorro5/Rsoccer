@@ -1365,24 +1365,29 @@ View(allteams20212022_gamestate[allteams20212022_gamestate$GSCS == "-1,-1",])
 
 
 
+library(tidyr)
+ gamestate_ovun <- allteams20212022_gamestate %>% group_by(GSCS,OV25) %>% summarise(count=n())
 
+ library(xlsx)
+ write.csv(gamestate_ovun,'gamestateovun.csv')
 
+colnames(allteams20212022_gamestate)
 
+sort(gamestate_ovun)
 
+allteams2010presentdf$winmargin <- NULL
+allteams2010presentdf[allteams2010presentdf$matchkey == "Lorient-Paris SG",]
 
+df$count <- as.numeric(ave(df$gender, df$gender, FUN = length))
 
+stats::ave(allteams2010presentdf$HomeTeam,allteams2010presentdf$FTR,FUN = length(allteams2010presentdf$FTR))
 
+summary(allteams2010presentdf)
 
-
-
-
-
-
-
-
-
-
-
+library(plyr)
+library(dplyr)
+allteams2010presentdf$homewins <-  ddply(allteams2010presentdf,.(HomeTeam),transform,count=length(which(FTR == "H")))
+head(allteams2010presentdf)
 
 
 

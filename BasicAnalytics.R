@@ -459,3 +459,10 @@ head(grep("Settled",text_split),1)
 head(grep("@",text_split),1)
 text_split
 
+
+
+
+
+allteams20202021[allteams20202021$HomeTeam == "Eastleigh",]
+
+nrow(allteams20202021)

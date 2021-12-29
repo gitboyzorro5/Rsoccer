@@ -466,3 +466,41 @@ text_split
 allteams20202021[allteams20202021$HomeTeam == "Eastleigh",]
 
 nrow(allteams20202021)
+##################################################################################################################
+allteams20202021_backup <- allteams20202021
+##################################################################################################################
+#
+library(xlsx)
+library(lubridate)
+#2way
+myodds_history_20202021 <- readxl::read_excel('../Desktop/myodds_history_20202021.xlsx', sheet = '2way')
+
+myodds_history_20202021_np <- myodds_history_20202021[myodds_history_20202021$SCORE == "P",]
+
+myodds_history_20202021_np$matchid <- paste(myodds_history_20202021_np$HT,myodds_history_20202021_np$AT,sep = "-")
+
+allteams20202021$matchid <- paste(allteams20202021$HomeTeam,allteams20202021$AwayTeam,sep = "-")
+
+final_myodds_history_20202021 <- dplyr::left_join(myodds_history_20202021_np,allteams20202021,by = "matchid")
+write.xlsx(final_myodds_history_20202021,'final_myodds_history_20202021.xlsx')
+##################################################################################################################
+##################################################################################################################
+#3way
+myodds_history_20202021_3way <- readxl::read_excel('../Desktop/myodds_history_20202021.xlsx', sheet = '3way')
+
+myodds_history_20202021_np_3way <- myodds_history_20202021_3way[myodds_history_20202021_3way$SCORE == "P",]
+
+
+myodds_history_20202021_np_3way$matchid <- paste(myodds_history_20202021_np_3way$HT,myodds_history_20202021_np_3way$AT,sep = "-")
+
+#allteams20202021$matchid <- paste(allteams20202021$HomeTeam,allteams20202021$AwayTeam,sep = "-")
+
+final_myodds_history_20202021_3way <- dplyr::left_join(myodds_history_20202021_np_3way,allteams20202021,by = "matchid")
+write.xlsx(final_myodds_history_20202021_3way,'final_myodds_history_20202021_3way.xlsx')
+###################################################################################################################
+
+
+
+
+
+

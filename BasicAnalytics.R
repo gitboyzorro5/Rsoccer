@@ -498,6 +498,118 @@ myodds_history_20202021_np_3way$matchid <- paste(myodds_history_20202021_np_3way
 final_myodds_history_20202021_3way <- dplyr::left_join(myodds_history_20202021_np_3way,allteams20202021,by = "matchid")
 write.xlsx(final_myodds_history_20202021_3way,'final_myodds_history_20202021_3way.xlsx')
 ###################################################################################################################
+###################################################################################################################
+#simulations
+B1_sim <- B1
+B1_sim$matchid <- paste(B1_sim$HomeTeam,B1_sim$AwayTeam,sep = "-")
+B1_fixtures$matchid <- paste(B1_fixtures$HomeTeam_b1,B1_fixtures$AwayTeam_b1,sep = "-")
+B1_fixtures$b1_FTR <- sapply(B1_fixtures$b1_pscore,switch,
+'1-0' = 'H','2-0'='H','2-1'= 'H','3-0'= 'H','3-1'= 'H','3-2'= 'H','4-0'= 'H','4-1'= 'H','4-2'= 'H','4-3'= 'H','5-0'= 'H','5-1'= 'H','5-2'= 'H','5-3'= 'H','5-4'= 'H','6-0'= 'H','6-1'= 'H','6-2'= 'H','6-3'= 'H','6-4'= 'H','6-5'= 'H','7-0'= 'H','7-2'= 'H','9-0'= 'H',
+'0-0' = 'D','1-1' = 'D','2-2' = 'D','3-3' = 'D','4-4' = 'D','5-5' = 'D',
+'0-1'= 'A','0-2' = 'A','1-2'= 'A','0-3'= 'A','1-3'= 'A','2-3'= 'A','0-4'= 'A','1-4'= 'A','2-4'= 'A','3-4'= 'A','0-5'= 'A','1-5'= 'A','2-5'= 'A','3-5'= 'A','4-5'= 'A','0-6'= 'A','1-6'= 'A','2-6'= 'A','3-6'= 'A','4-6'= 'A','3-8'= 'A','5-6'= 'A')
+
+B1_fixtures$b1_gamestatus <- ifelse(B1_fixtures$matchid %in% B1_sim$matchid,"played","notplayed")
+
+b1_home_wins_sim <- c()
+b1_away_wins_sim <- c()
+b1_home_draws_sim <- c()
+b1_away_draws_sim <- c()
+b1_home_loss_sim <- c()
+b1_away_loss_sim <- c()
+
+
+
+for (i_b1_wins_sim in 1:length(b1_teams))
+{
+
+  b1_home_wins_sim[i_b1_wins_sim] <- nrow(B1_fixtures[B1_fixtures$HomeTeam_b1 == b1_teams[i_b1_wins_sim] & B1_fixtures$b1_FTR == "H" & B1_fixtures$b1_gamestatus =="notplayed",])
+  b1_away_wins_sim[i_b1_wins_sim] <- nrow(B1_fixtures[B1_fixtures$AwayTeam_b1 == b1_teams[i_b1_wins_sim] & B1_fixtures$b1_FTR == "A" & B1_fixtures$b1_gamestatus == "notplayed",])
+  b1_home_draws_sim[i_b1_wins_sim] <- nrow(B1_fixtures[B1_fixtures$HomeTeam_b1 == b1_teams[i_b1_wins_sim] & B1_fixtures$b1_FTR == "D" & B1_fixtures$b1_gamestatus == "notplayed",])
+  b1_away_draws_sim[i_b1_wins_sim] <- nrow(B1_fixtures[B1_fixtures$AwayTeam_b1 == b1_teams[i_b1_wins_sim] & B1_fixtures$b1_FTR == "D" & B1_fixtures$b1_gamestatus == "notplayed",])
+  b1_home_loss_sim[i_b1_wins_sim] <- nrow(B1_fixtures[B1_fixtures$HomeTeam_b1 == b1_teams[i_b1_wins_sim] & B1_fixtures$b1_FTR == "A" & B1_fixtures$b1_gamestatus == "notplayed",])
+  b1_away_loss_sim[i_b1_wins_sim] <- nrow(B1_fixtures[B1_fixtures$AwayTeam_b1 == b1_teams[i_b1_wins_sim] & B1_fixtures$b1_FTR == "H" & B1_fixtures$b1_gamestatus == "notplayed", ])
+
+}
+
+b1_total_wins_sim <- b1_home_wins_sim + b1_away_wins_sim
+b1_total_draws_sim <- b1_home_draws_sim + b1_away_draws_sim
+b1_total_loss_sim <- b1_home_loss_sim + b1_away_loss_sim
+
+b1_home_games_sim <- c()
+b1_away_games_sim <-c()
+
+for (i_b1_sim in 1:length(b1_teams))
+{
+
+  b1_home_games_sim[i_b1_sim] <- nrow(B1_fixtures[B1_fixtures$HomeTeam_b1 == b1_teams[i_b1_sim] & B1_fixtures$b1_gamestatus == "notplayed",])
+  b1_away_games_sim[i_b1_sim]  <- nrow(B1_fixtures[B1_fixtures$AwayTeam_b1 == b1_teams[i_b1_sim] & B1_fixtures$b1_gamestatus == "notplayed",])
+
+}
+
+b1_games_played_sim <- b1_home_games_sim + b1_away_games_sim
+
+b1_league_table_sim <- cbind(b1_teams,b1_games_played_sim,b1_total_wins_sim,b1_total_draws_sim,b1_total_loss_sim)
+b1_PTS_sim <- (b1_total_wins_sim*3) + (b1_total_draws_sim*1)
+b1_league_table_sim <- cbind(b1_league_table_sim,b1_PTS_sim)
+
+b1_games_played_simfinal <- b1_games_played + b1_games_played_sim
+b1_total_wins_simfinal <- b1_total_wins + b1_total_wins_sim
+b1_total_draws_simfinal <- b1_total_draws + b1_total_draws_sim
+b1_total_loss_simfinal <- b1_total_loss + b1_total_loss_sim
+b1_PTS_simfinal <- b1_PTS + b1_PTS_sim
+
+b1_league_table_simfinal <- cbind(b1_teams,b1_games_played_simfinal,b1_total_wins_simfinal,b1_total_draws_simfinal,b1_total_loss_simfinal,b1_PTS_simfinal)
+b1_league_table_simfinal <- as.data.frame(b1_league_table_simfinal)
+names(b1_league_table_simfinal)[names(b1_league_table_simfinal) == "b1_teams"] <- "Team_f"
+names(b1_league_table_simfinal)[names(b1_league_table_simfinal) == "b1_games_played_simfinal"] <- "P_f"
+names(b1_league_table_simfinal)[names(b1_league_table_simfinal) == "b1_total_wins_simfinal"] <- "W_f"
+names(b1_league_table_simfinal)[names(b1_league_table_simfinal) == "b1_total_draws_simfinal"] <- "D_f"
+names(b1_league_table_simfinal)[names(b1_league_table_simfinal) == "b1_total_loss_simfinal"] <- "L_f"
+names(b1_league_table_simfinal)[names(b1_league_table_simfinal) == "b1_PTS_simfinal"] <- "PTS_f"
+points_b1_sim <-  b1_league_table_simfinal[order(as.numeric(b1_league_table_simfinal$b1_PTS_simfinal), decreasing = TRUE),]
+
+library('xlsx')
+write.xlsx(b1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "B1_sim")
+write.xlsx(points_b1_sim,'Divisions/Simulations.xlsx', sheetName = "B1_simfinal",append = TRUE)
+############################################################################################################################################################
+############################################################################################################################################################
+
+
+
+
+
+
+b1_GS <- b1_scoring$TGS
+b1_GC <-b1_conceding$TGC
+b1_GD <- b1_scoring$TGS - b1_conceding$TGC
+b1_PTS <- (b1_total_wins*3) + (b1_total_draws*1)
+b1_league_table <- cbind(b1_league_table,b1_GS,b1_GC,b1_GD,b1_PTS)
+b1_league_table <- as.data.frame(b1_league_table)
+#rename the columns
+names(b1_league_table)[names(b1_league_table) == "b1_teams"] <- "Team"
+names(b1_league_table)[names(b1_league_table) == "b1_games_played"] <- "P"
+names(b1_league_table)[names(b1_league_table) == "b1_total_wins"] <- "W"
+names(b1_league_table)[names(b1_league_table) == "b1_total_draws"] <- "D"
+names(b1_league_table)[names(b1_league_table) == "b1_total_loss"] <- "L"
+names(b1_league_table)[names(b1_league_table) == "b1_GS"] <- "F"
+names(b1_league_table)[names(b1_league_table) == "b1_GC"] <- "A"
+points_b1 <- b1_league_table[order(as.numeric(b1_league_table$b1_PTS), decreasing = TRUE),]
+points_b1$b1_rank <- 1:length(b1_teams)
+row.names(points_b1) <- points_b1$b1_rank
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

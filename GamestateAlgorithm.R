@@ -1358,7 +1358,7 @@ P1_gamestate_copy,SC0_gamestate_copy,SC1_gamestate_copy,SC2_gamestate_copy,SC3_g
 
 nrow(allteams20212022_gamestate)
 
-
+colnames(allteams20212022_gamestate)
 
 
 View(allteams20212022_gamestate[allteams20212022_gamestate$GSCS == "-1,-1",])
@@ -1389,8 +1389,8 @@ library(dplyr)
 allteams2010presentdf$homewins <-  ddply(allteams2010presentdf,.(HomeTeam),transform,count=length(which(FTR == "H")))
 head(allteams2010presentdf)
 
-
-
+gamestate_ovun <- allteams20212022_gamestate[allteams20212022_gamestate$homewinmargin <= -1 & allteams20212022_gamestate$awaywinmargin <= -1,]
+gamestate_ovun %>% group_by(OV25) %>% summarise(count=n())
 
 
 

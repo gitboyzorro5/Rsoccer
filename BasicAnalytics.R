@@ -596,7 +596,9 @@ names(b1_league_table)[names(b1_league_table) == "b1_GC"] <- "A"
 points_b1 <- b1_league_table[order(as.numeric(b1_league_table$b1_PTS), decreasing = TRUE),]
 points_b1$b1_rank <- 1:length(b1_teams)
 row.names(points_b1) <- points_b1$b1_rank
+###################################################################################################
 
+B1$Date
 
 
 

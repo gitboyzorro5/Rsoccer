@@ -1,137 +1,130 @@
 ,Div,Home_Team,Away_Team,Date
-4021,F2,Paris FC,Amiens,12/21/2021
-4022,F2,Rodez,Bastia,12/21/2021
-4023,F2,Quevilly Rouen,Caen,12/21/2021
-4024,F2,Nancy,Dijon,12/21/2021
-4025,F2,Guingamp,Dunkerque,12/21/2021
-4026,F2,Ajaccio,Grenoble,12/21/2021
-4027,F2,Auxerre,Le Havre,12/21/2021
-4028,F2,Niort,Pau FC,12/21/2021
-4029,F2,Nimes,Toulouse,12/21/2021
-4030,F2,Sochaux,Valenciennes,12/21/2021
-4754,N1,AZ Alkmaar,Groningen,12/21/2021
-4755,N1,Vitesse,Zwolle,12/21/2021
-3641,F1,Bordeaux,Lille,12/22/2021
-3642,F1,Clermont,Strasbourg,12/22/2021
-3643,F1,Lorient,Paris SG,12/22/2021
-3644,F1,Lyon,Metz,12/22/2021
-3645,F1,Marseille,Reims,12/22/2021
-3646,F1,Monaco,Rennes,12/22/2021
-3647,F1,Montpellier,Angers,12/22/2021
-3648,F1,Nice,Lens,12/22/2021
-3649,F1,St Etienne,Nantes,12/22/2021
-3650,F1,Troyes,Brest,12/22/2021
-4401,I1,Empoli,Milan,12/22/2021
-4402,I1,Genoa,Atalanta,12/22/2021
-4403,I1,Verona,Fiorentina,12/22/2021
-4404,I1,Inter,Torino,12/22/2021
-4405,I1,Juventus,Cagliari,12/22/2021
-4406,I1,Napoli,Spezia,12/22/2021
-4407,I1,Roma,Sampdoria,12/22/2021
-4408,I1,Sassuolo,Bologna,12/22/2021
-4409,I1,Udinese,Salernitana,12/22/2021
-4410,I1,Venezia,Lazio,12/22/2021
-4756,N1,Heracles,Cambuur,12/22/2021
-4757,N1,Heerenveen,Feyenoord,12/22/2021
-4758,N1,Willem II,Nijmegen,12/22/2021
-4759,N1,Sparta Rotterdam,Waalwijk,12/22/2021
-4760,N1,Utrecht,Twente,12/22/2021
-6603,T1,Hatayspor,Konyaspor,12/22/2021
-6604,T1,Gaziantep,Alanyaspor,12/22/2021
-6605,T1,Karagumruk,Fenerbahce,12/22/2021
-6606,T1,Besiktas,Goztep,12/22/2021
-6607,T1,Yeni Malatyaspor,Kayserispor,12/22/2021
-6608,T1,Antalyaspor,Kasimpasa,12/22/2021
-6609,T1,Sivasspor,Rizespor,12/22/2021
-6610,T1,Ad. Demirspor,Galatasaray,12/22/2021
-6611,T1,Buyuksehyr,Giresunspor,12/22/2021
-6612,T1,Altay,Trabzonspor,12/22/2021
-4761,N1,Ajax,For Sittard,12/23/2021
-4762,N1,PSV Eindhoven,Go Ahead Eagles,12/23/2021
-181,B1,Beerschot VA,Anderlecht,12/26/2021
-182,B1,Kortrijk,Antwerp,12/26/2021
-183,B1,Cercle Brugge,Club Brugge,12/26/2021
-184,B1,St Truiden,Eupen,12/26/2021
-185,B1,Oostende,Genk,12/26/2021
-186,B1,St. Gilloise,Gent,12/26/2021
-187,B1,Charleroi,Oud-Heverlee Leuven,12/26/2021
-188,B1,Mechelen,Seraing,12/26/2021
-189,B1,Standard,Waregem,12/26/2021
-1099,E0,Aston Villa,Chelsea,12/26/2021
-1100,E0,Brighton,Brentford,12/26/2021
-1101,E0,Burnley,Everton,12/26/2021
-1102,E0,Liverpool,Leeds,12/26/2021
-1103,E0,Man City,Leicester,12/26/2021
-1104,E0,Newcastle,Man United,12/26/2021
-1105,E0,Norwich,Arsenal,12/26/2021
-1106,E0,Tottenham,Crystal Palace,12/26/2021
-1107,E0,West Ham,Southampton,12/26/2021
-1108,E0,Wolves,Watford,12/26/2021
-1575,E1,Barnsley,Stoke,12/26/2021
-1576,E1,Cardiff,Coventry,12/26/2021
-1577,E1,Derby,West Brom,12/26/2021
-1578,E1,Fulham,Birmingham,12/26/2021
-1579,E1,Huddersfield,Blackpool,12/26/2021
-1580,E1,Hull,Blackburn,12/26/2021
-1581,E1,Luton,Bristol City,12/26/2021
-1582,E1,Middlesbrough,Nottm Forest,12/26/2021
-1583,E1,Millwall,Swansea,12/26/2021
-1584,E1,Peterboro,Reading,12/26/2021
-1585,E1,Preston,Sheffield United,12/26/2021
-1586,E1,QPR,Bournemouth,12/26/2021
-2127,E2,Sheffield Weds,Burton,12/26/2021
-2128,E2,Wycombe,Cambridge,12/26/2021
-2129,E2,AFC Wimbledon,Charlton,12/26/2021
-2130,E2,Gillingham,Ipswich,12/26/2021
-2131,E2,Lincoln,Milton Keynes Dons,12/26/2021
-2132,E2,Bolton,Morecambe,12/26/2021
-2133,E2,Portsmouth,Oxford,12/26/2021
-2134,E2,Cheltenham,Plymouth,12/26/2021
-2135,E2,Accrington,Rotherham,12/26/2021
-2136,E2,Fleetwood Town,Shrewsbury,12/26/2021
-2137,E2,Doncaster,Sunderland,12/26/2021
-2138,E2,Crewe,Wigan,12/26/2021
-2667,E3,Tranmere,Barrow,12/26/2021
-2668,E3,Stevenage,Crawley Town,12/26/2021
-2669,E3,Newport County,Forest Green,12/26/2021
-2670,E3,Bradford,Harrogate,12/26/2021
-2671,E3,Mansfield,Hartlepool,12/26/2021
-2672,E3,Colchester,Leyton Orient,12/26/2021
-2673,E3,Carlisle,Rochdale,12/26/2021
-2674,E3,Port Vale,Salford,12/26/2021
-2675,E3,Oldham,Scunthorpe,12/26/2021
-2676,E3,Bristol Rvs,Sutton,12/26/2021
-2677,E3,Exeter,Swindon,12/26/2021
-2678,E3,Northampton,Walsall,12/26/2021
-3175,EC,Aldershot,Woking,12/26/2021
-3176,EC,Barnet,Boreham Wood,12/26/2021
-3177,EC,Bromley,Southend,12/26/2021
-3178,EC,Dover Athletic,Dag and Red,12/26/2021
-3179,EC,Halifax,Grimsby,12/26/2021
-3180,EC,Kings Lynn,Notts County,12/26/2021
-3181,EC,Stockport,Altrincham,12/26/2021
-3182,EC,Torquay,Yeovil,12/26/2021
-3183,EC,Wealdstone,Maidenhead,12/26/2021
-3184,EC,Weymouth,Eastleigh,12/26/2021
-3185,EC,Wrexham,Solihull,12/26/2021
-5327,SC0,Motherwell,Livingston,12/26/2021
-5328,SC0,Rangers,St Mirren,12/26/2021
-5329,SC0,St Johnstone,Celtic,12/26/2021
-5330,SC0,Dundee United,Hibernian,12/26/2021
-5331,SC0,Hearts,Ross County,12/26/2021
-5332,SC0,Aberdeen,Dundee,12/26/2021
-5501,SC1,Dunfermline,Arbroath,12/26/2021
-5502,SC1,Hamilton,Kilmarnock,12/26/2021
-5503,SC1,Inverness C,Partick,12/26/2021
-5504,SC1,Morton,Queen of Sth,12/26/2021
-5505,SC1,Ayr,Raith Rvs,12/26/2021
-6613,T1,Giresunspor,Hatayspor,12/26/2021
-6614,T1,Kasimpasa,Altay,12/26/2021
-6615,T1,Galatasaray,Antalyaspor,12/26/2021
-6616,T1,Trabzonspor,Buyuksehyr,12/26/2021
-6617,T1,Alanyaspor,Karagumruk,12/26/2021
-6618,T1,Kayserispor,Sivasspor,12/26/2021
-6619,T1,Konyaspor,Besiktas,12/26/2021
-6620,T1,Fenerbahce,Yeni Malatyaspor,12/26/2021
-6621,T1,Goztep,Ad. Demirspor,12/26/2021
-6622,T1,Rizespor,Gaziantep,12/26/2021
+4411,I1,Atalanta,Torino,1/6/2022
+4412,I1,Bologna,Inter,1/6/2022
+4413,I1,Fiorentina,Udinese,1/6/2022
+4414,I1,Juventus,Napoli,1/6/2022
+4415,I1,Lazio,Empoli,1/6/2022
+4416,I1,Milan,Roma,1/6/2022
+4417,I1,Salernitana,Venezia,1/6/2022
+4418,I1,Sampdoria,Cagliari,1/6/2022
+4419,I1,Sassuolo,Genoa,1/6/2022
+4420,I1,Spezia,Verona,1/6/2022
+460,D1,Greuther Furth,Stuttgart,1/7/2022
+461,D1,Bochum,Wolfsburg,1/7/2022
+462,D1,Hertha,FC Koln,1/7/2022
+463,D1,Hoffenheim,Augsburg,1/7/2022
+464,D1,Freiburg,Bielefeld,1/7/2022
+465,D1,Leverkusen,Union Berlin,1/7/2022
+466,D1,Ein Frankfurt,Dortmund,1/7/2022
+467,D1,RB Leipzig,Mainz,1/7/2022
+468,D1,Bayern Munich,Mgladbach,1/7/2022
+2163,E2,Cheltenham,Burton,1/8/2022
+2164,E2,Bolton,Cambridge,1/8/2022
+2165,E2,Crewe,Charlton,1/8/2022
+2166,E2,AFC Wimbledon,Ipswich,1/8/2022
+2167,E2,Accrington,Milton Keynes Dons,1/8/2022
+2168,E2,Sheffield Weds,Morecambe,1/8/2022
+2169,E2,Lincoln,Oxford,1/8/2022
+2170,E2,Fleetwood Town,Plymouth,1/8/2022
+2171,E2,Doncaster,Rotherham,1/8/2022
+2172,E2,Gillingham,Shrewsbury,1/8/2022
+2173,E2,Wycombe,Sunderland,1/8/2022
+2174,E2,Portsmouth,Wigan,1/8/2022
+2703,E3,Bristol Rvs,Barrow,1/8/2022
+2704,E3,Northampton,Crawley Town,1/8/2022
+2705,E3,Port Vale,Forest Green,1/8/2022
+2706,E3,Exeter,Harrogate,1/8/2022
+2707,E3,Carlisle,Hartlepool,1/8/2022
+2708,E3,Bradford,Leyton Orient,1/8/2022
+2709,E3,Colchester,Rochdale,1/8/2022
+2710,E3,Newport County,Salford,1/8/2022
+2711,E3,Tranmere,Scunthorpe,1/8/2022
+2712,E3,Oldham,Sutton,1/8/2022
+2713,E3,Mansfield,Swindon,1/8/2022
+2714,E3,Stevenage,Walsall,1/8/2022
+3208,EC,Aldershot,Maidenhead,1/8/2022
+3209,EC,Barnet,Altrincham,1/8/2022
+3210,EC,Bromley,Solihull,1/8/2022
+3211,EC,Dover Athletic,Notts County,1/8/2022
+3212,EC,Halifax,Eastleigh,1/8/2022
+3213,EC,Kings Lynn,Woking,1/8/2022
+3214,EC,Stockport,Chesterfield,1/8/2022
+3215,EC,Torquay,Dag and Red,1/8/2022
+3216,EC,Wealdstone,Yeovil,1/8/2022
+3217,EC,Weymouth,Southend,1/8/2022
+3218,EC,Wrexham,Boreham Wood,1/8/2022
+4031,F2,Amiens,Ajaccio,1/8/2022
+4032,F2,Grenoble,Auxerre,1/8/2022
+4033,F2,Valenciennes,Guingamp,1/8/2022
+4034,F2,Dijon,Nimes,1/8/2022
+4035,F2,Toulouse,Nancy,1/8/2022
+4036,F2,Caen,Niort,1/8/2022
+4037,F2,Dunkerque,Paris FC,1/8/2022
+4038,F2,Bastia,Quevilly Rouen,1/8/2022
+4039,F2,Pau FC,Rodez,1/8/2022
+4040,F2,Le Havre,Sochaux,1/8/2022
+5051,P1,Belenenses,Arouca,1/8/2022
+5052,P1,Sp Braga,Famalicao,1/8/2022
+5053,P1,Portimonense,Maritimo,1/8/2022
+5054,P1,Vizela,Moreirense,1/8/2022
+5055,P1,Benfica,Pacos Ferreira,1/8/2022
+5056,P1,Estoril,Porto,1/8/2022
+5057,P1,Santa Clara,Sp Lisbon,1/8/2022
+5058,P1,Boavista,Tondela,1/8/2022
+5059,P1,Gil Vicente,Guimaraes,1/8/2022
+5516,SC1,Ayr,Arbroath,1/8/2022
+5517,SC1,Morton,Dunfermline,1/8/2022
+5518,SC1,Queen of Sth,Kilmarnock,1/8/2022
+5519,SC1,Hamilton,Partick,1/8/2022
+5520,SC1,Inverness C,Raith Rvs,1/8/2022
+3651,F1,Angers,St Etienne,1/9/2022
+3652,F1,Bordeaux,Marseille,1/9/2022
+3653,F1,Brest,Nice,1/9/2022
+3654,F1,Clermont,Reims,1/9/2022
+3655,F1,Lens,Rennes,1/9/2022
+3656,F1,Lille,Lorient,1/9/2022
+3657,F1,Lyon,Paris SG,1/9/2022
+3658,F1,Metz,Strasbourg,1/9/2022
+3659,F1,Montpellier,Troyes,1/9/2022
+3660,F1,Nantes,Monaco,1/9/2022
+4421,I1,Cagliari,Bologna,1/9/2022
+4422,I1,Empoli,Sassuolo,1/9/2022
+4423,I1,Genoa,Spezia,1/9/2022
+4424,I1,Verona,Salernitana,1/9/2022
+4425,I1,Inter,Lazio,1/9/2022
+4426,I1,Napoli,Sampdoria,1/9/2022
+4427,I1,Roma,Juventus,1/9/2022
+4428,I1,Torino,Fiorentina,1/9/2022
+4429,I1,Udinese,Atalanta,1/9/2022
+4430,I1,Venezia,Milan,1/9/2022
+5781,SP1,Alaves,Ath Bilbao,1/9/2022
+5782,SP1,Granada,Barcelona,1/9/2022
+5783,SP1,Espanyol,Elche,1/9/2022
+5784,SP1,Levante,Mallorca,1/9/2022
+5785,SP1,Osasuna,Cadiz,1/9/2022
+5786,SP1,Real Madrid,Valencia,1/9/2022
+5787,SP1,Sociedad,Celta,1/9/2022
+5788,SP1,Sevilla,Getafe,1/9/2022
+5789,SP1,Vallecano,Betis,1/9/2022
+5790,SP1,Villarreal,Ath Madrid,1/9/2022
+6213,SP2,Ibiza,Alcorcon,1/9/2022
+6214,SP2,Las Palmas,Almeria,1/9/2022
+6215,SP2,Valladolid,Burgos,1/9/2022
+6216,SP2,Lugo,Mirandes,1/9/2022
+6217,SP2,Oviedo,Eibar,1/9/2022
+6218,SP2,Girona,Fuenlabrada,1/9/2022
+6219,SP2,Cartagena,Huesca,1/9/2022
+6220,SP2,Leganes,Sociedad B,1/9/2022
+6221,SP2,Malaga,Sp Gijon,1/9/2022
+6222,SP2,Amorebieta,Tenerife,1/9/2022
+6223,SP2,Ponferradina,Zaragoza,1/9/2022
+6623,T1,Galatasaray,Giresunspor,1/9/2022
+6624,T1,Gaziantep,Karagumruk,1/9/2022
+6625,T1,Rizespor,Besiktas,1/9/2022
+6626,T1,Trabzonspor,Yeni Malatyaspor,1/9/2022
+6627,T1,Goztep,Antalyaspor,1/9/2022
+6628,T1,Konyaspor,Sivasspor,1/9/2022
+6629,T1,Fenerbahce,Ad. Demirspor,1/9/2022
+6630,T1,Alanyaspor,Buyuksehyr,1/9/2022
+6631,T1,Kayserispor,Altay,1/9/2022
+6632,T1,Kasimpasa,Hatayspor,1/9/2022

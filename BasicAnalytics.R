@@ -596,19 +596,96 @@ names(b1_league_table)[names(b1_league_table) == "b1_GC"] <- "A"
 points_b1 <- b1_league_table[order(as.numeric(b1_league_table$b1_PTS), decreasing = TRUE),]
 points_b1$b1_rank <- 1:length(b1_teams)
 row.names(points_b1) <- points_b1$b1_rank
-###################################################################################################
+################################################################################################
+################################################################################################
+b1_totalrounds <-  (length(b1_teams) - 1 )*2
+b1_totalmatches <- (length(b1_teams)*(length(b1_teams) - 1))
+b1_eachround <- b1_totalmatches / b1_totalrounds
 
-B1$Date
+b1_matchesplayed <-  nrow(B1)
 
+B1_rounds <- B1
 
+if(b1_matchesplayed %% b1_eachround == 0)
+{
+  b1_currentround <- b1_matchesplayed / b1_eachround
+  b1_matchday <- c()
+  b1_matchday <- rep(1:b1_currentround, each = b1_eachround)
+}else if(b1_matchesplayed %% b1_eachround != 0)
 
+{
 
+  b1_modulus <- b1_matchesplayed %% b1_eachround
+  b1_currentround <- (b1_matchesplayed - b1_modulus) / b1_eachround
+  b1_matchday <- c()
+  b1_matchday_vec1 <- c()
+  b1_matchday_vec2 <- c()
+  b1_matchday_vec1 <- rep(1:b1_currentround, each = b1_eachround)
+  b1_matchday_vec2[1:b1_modulus] <- c(b1_currentround + 1)
+  b1_matchday <- append(b1_matchday_vec1,b1_matchday_vec2)
+}
+B1_rounds
+B1_rounds <- cbind(B1_rounds,b1_matchday)
+#####################################################################################################
+#####################################################################################################
+sp1_totalrounds <-  (length(sp1_teams) - 1 )*2
+sp1_totalmatches <- (length(sp1_teams)*(length(sp1_teams) - 1))
+sp1_eachround <- sp1_totalmatches / sp1_totalrounds
 
+sp1_matchesplayed <-  nrow(SP1)
 
+SP1_rounds <- SP1
 
+if(sp1_matchesplayed %% sp1_eachround == 0)
+{
+  sp1_currentround <- sp1_matchesplayed / sp1_eachround
+  sp1_matchday <- c()
+  sp1_matchday <- rep(1:sp1_currentround, each = sp1_eachround)
+} else if(sp1_matchesplayed %% sp1_eachround != 0)
 
+  {
 
+  sp1_modulus <- sp1_matchesplayed %% sp1_eachround
+  sp1_currentround <- (sp1_matchesplayed - sp1_modulus) / sp1_eachround
+  sp1_matchday <- c()
+  sp1_matchday_vec1 <- c()
+  sp1_matchday_vec2 <- c()
+  sp1_matchday_vec1 <- rep(1:sp1_currentround, each = sp1_eachround)
+  sp1_matchday_vec2[1:sp1_modulus] <- c(sp1_currentround + 1)
+  sp1_matchday <- append(sp1_matchday_vec1,sp1_matchday_vec2)
+}
 
+sp1_matchday
+SP1_rounds <- cbind(SP1_rounds,sp1_matchday)
+################################################################################
+e0_totalrounds <-  (length(e0_teams) - 1 )*2
+e0_totalmatches <- (length(e0_teams)*(length(e0_teams) - 1))
+e0_eachround <- e0_totalmatches / e0_totalrounds
+
+e0_matchesplayed <-  nrow(E0)
+
+E0_rounds <- E0
+
+if(e0_matchesplayed %% e0_eachround == 0)
+{
+  e0_currentround <- e0_matchesplayed / e0_eachround
+  e0_matchday <- c()
+  e0_matchday <- rep(1:e0_currentround, each = e0_eachround)
+}else if(e0_matchesplayed %% e0_eachround != 0)
+
+{
+
+  e0_modulus <- e0_matchesplayed %% e0_eachround
+  e0_currentround <- (e0_matchesplayed - e0_modulus) / e0_eachround
+  e0_matchday <- c()
+  e0_matchday_vec1 <- c()
+  e0_matchday_vec2 <- c()
+  e0_matchday_vec1 <- rep(1:e0_currentround, each = e0_eachround)
+  e0_matchday_vec2[1:e0_modulus] <- c(e0_currentround + 1)
+  e0_matchday <- append(e0_matchday_vec1,e0_matchday_vec2)
+}
+E0_rounds
+E0_rounds <- cbind(E0_rounds,e0_matchday)
 
 
 

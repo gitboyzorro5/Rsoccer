@@ -628,66 +628,86 @@ B1_rounds
 B1_rounds <- cbind(B1_rounds,b1_matchday)
 #####################################################################################################
 #####################################################################################################
-sp1_totalrounds <-  (length(sp1_teams) - 1 )*2
-sp1_totalmatches <- (length(sp1_teams)*(length(sp1_teams) - 1))
-sp1_eachround <- sp1_totalmatches / sp1_totalrounds
+#####################################################################################################
 
-sp1_matchesplayed <-  nrow(SP1)
+#hwins and away wins
+b1_home_wins_rnds <- c()
+b1_away_wins_rnds <- c()
+b1_home_draws_rnds <- c()
+b1_away_draws_rnds <- c()
+b1_home_loss_rnds <- c()
+b1_away_loss_rnds <- c()
 
-SP1_rounds <- SP1
+#b1_krounds is total rounds as per current season
+b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
+b1_roundmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
 
-if(sp1_matchesplayed %% sp1_eachround == 0)
-{
-  sp1_currentround <- sp1_matchesplayed / sp1_eachround
-  sp1_matchday <- c()
-  sp1_matchday <- rep(1:sp1_currentround, each = sp1_eachround)
-} else if(sp1_matchesplayed %% sp1_eachround != 0)
-
+for(i_b1_krounds in 1:b1_krounds)
   {
 
-  sp1_modulus <- sp1_matchesplayed %% sp1_eachround
-  sp1_currentround <- (sp1_matchesplayed - sp1_modulus) / sp1_eachround
-  sp1_matchday <- c()
-  sp1_matchday_vec1 <- c()
-  sp1_matchday_vec2 <- c()
-  sp1_matchday_vec1 <- rep(1:sp1_currentround, each = sp1_eachround)
-  sp1_matchday_vec2[1:sp1_modulus] <- c(sp1_currentround + 1)
-  sp1_matchday <- append(sp1_matchday_vec1,sp1_matchday_vec2)
-}
-
-sp1_matchday
-SP1_rounds <- cbind(SP1_rounds,sp1_matchday)
-################################################################################
-e0_totalrounds <-  (length(e0_teams) - 1 )*2
-e0_totalmatches <- (length(e0_teams)*(length(e0_teams) - 1))
-e0_eachround <- e0_totalmatches / e0_totalrounds
-
-e0_matchesplayed <-  nrow(E0)
-
-E0_rounds <- E0
-
-if(e0_matchesplayed %% e0_eachround == 0)
-{
-  e0_currentround <- e0_matchesplayed / e0_eachround
-  e0_matchday <- c()
-  e0_matchday <- rep(1:e0_currentround, each = e0_eachround)
-}else if(e0_matchesplayed %% e0_eachround != 0)
-
+for (i_b1_wins_rnds in 1:length(b1_teams))
 {
 
-  e0_modulus <- e0_matchesplayed %% e0_eachround
-  e0_currentround <- (e0_matchesplayed - e0_modulus) / e0_eachround
-  e0_matchday <- c()
-  e0_matchday_vec1 <- c()
-  e0_matchday_vec2 <- c()
-  e0_matchday_vec1 <- rep(1:e0_currentround, each = e0_eachround)
-  e0_matchday_vec2[1:e0_modulus] <- c(e0_currentround + 1)
-  e0_matchday <- append(e0_matchday_vec1,e0_matchday_vec2)
+  b1_home_wins_rnds[i_b1_wins_rnds] <- nrow(B1_rounds[B1_rounds$HomeTeam == b1_teams[i_b1_wins_rnds] & B1_rounds$FTR == "H" & B1_rounds$b1_matchday <= i_b1_krounds,])
+  b1_away_wins_rnds[i_b1_wins_rnds] <- nrow(B1_rounds[B1_rounds$AwayTeam == b1_teams[i_b1_wins_rnds] & B1_rounds$FTR == "A" & B1_rounds$b1_matchday <= i_b1_krounds,])
+  b1_home_draws_rnds[i_b1_wins_rnds] <- nrow(B1_rounds[B1_rounds$HomeTeam == b1_teams[i_b1_wins_rnds] & B1_rounds$FTR == "D" & B1_rounds$b1_matchday <= i_b1_krounds,])
+  b1_away_draws_rnds[i_b1_wins_rnds] <- nrow(B1_rounds[B1_rounds$AwayTeam == b1_teams[i_b1_wins_rnds] & B1_rounds$FTR == "D" & B1_rounds$b1_matchday <= i_b1_krounds,])
+  b1_home_loss_rnds[i_b1_wins_rnds] <- nrow(B1_rounds[B1_rounds$HomeTeam == b1_teams[i_b1_wins_rnds] & B1_rounds$FTR == "A" & B1_rounds$b1_matchday <= i_b1_krounds,])
+  b1_away_loss_rnds[i_b1_wins_rnds] <- nrow(B1_rounds[B1_rounds$AwayTeam == b1_teams[i_b1_wins_rnds] & B1_rounds$FTR == "H" & B1_rounds$b1_matchday <= i_b1_krounds,])
+
 }
-E0_rounds
-E0_rounds <- cbind(E0_rounds,e0_matchday)
+
+b1_total_wins_rnds <- b1_home_wins_rnds + b1_away_wins_rnds
+b1_total_draws_rnds <- b1_home_draws_rnds + b1_away_draws_rnds
+b1_total_loss_rnds <- b1_home_loss_rnds + b1_away_loss_rnds
 
 
+b1_home_games_rnds <- c()
+b1_away_games_rnds <-c()
+
+for (i_b1_rnds in 1:length(b1_teams))
+{
+
+  b1_home_games_rnds[i_b1_rnds] <- nrow(B1_rounds[B1_rounds$HomeTeam == b1_teams[i_b1_rnds] & B1_rounds$b1_matchday <= i_b1_krounds,])
+  b1_away_games_rnds[i_b1_rnds]  <- nrow(B1_rounds[B1_rounds$AwayTeam == b1_teams[i_b1_rnds] & B1_rounds$b1_matchday <= i_b1_krounds,])
+
+}
+
+b1_games_played_rnds <- b1_home_games_rnds + b1_away_games_rnds
+
+b1_league_table_rnds <- cbind(b1_teams,b1_games_played_rnds,b1_total_wins_rnds,b1_total_draws_rnds,b1_total_loss_rnds)
+
+# b1_GS <- b1_scoring$TGS
+# b1_GC <-b1_conceding$TGC
+# b1_GD <- b1_scoring$TGS - b1_conceding$TGC
+
+b1_PTS_rnds <- (b1_total_wins_rnds*3) + (b1_total_draws_rnds*1)
+b1_league_table_rnds <- cbind(b1_league_table_rnds,b1_PTS_rnds)
+b1_league_table_rnds <- as.data.frame(b1_league_table_rnds)
+#rename the columns
+names(b1_league_table_rnds)[names(b1_league_table_rnds) == "b1_teams"] <- "Team"
+names(b1_league_table_rnds)[names(b1_league_table_rnds) == "b1_games_played_rnds"] <- "P"
+names(b1_league_table_rnds)[names(b1_league_table_rnds) == "b1_total_wins_rnds"] <- "W"
+names(b1_league_table_rnds)[names(b1_league_table_rnds) == "b1_total_draws_rnds"] <- "D"
+names(b1_league_table_rnds)[names(b1_league_table_rnds) == "b1_total_loss_rnds"] <- "L"
+# names(b1_league_table)[names(b1_league_table) == "b1_GS"] <- "F"
+# names(b1_league_table)[names(b1_league_table) == "b1_GC"] <- "A"
+points_b1_rnds <- b1_league_table_rnds[order(as.numeric(b1_league_table_rnds$b1_PTS_rnds), decreasing = TRUE),]
+points_b1_rnds$b1_rank_rnds <- 1:length(b1_teams)
+row.names(points_b1_rnds) <- points_b1_rnds$b1_rank
+
+
+points_b1_rnds <- points_b1_rnds[order(as.character(points_b1_rnds$Team)),]
+
+
+b1_roundmatrix[,i_b1_krounds] <- as.data.frame(points_b1_rnds$b1_rank_rnds)
+
+
+}
+
+b1_roundmatrix <- cbind(b1_teams,b1_roundmatrix)
+
+write.xlsx(b1_roundmatrix,'b1_roundmatrix.xlsx')
 
 
 

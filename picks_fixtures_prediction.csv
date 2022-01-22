@@ -1,130 +1,184 @@
-"","X","Div","Home_Team","Away_Team","Date","matchid","picks_Div","picks_HomeTeam","picks_AwayTeam","prediction","HWM","AWM","HWMLM","AWMLM","AVGHY","AVGAY"
-"1",4411,"I1","Atalanta","Torino","1/6/2022","Atalanta-Torino","I1","Atalanta","Torino","1X,ov25,BTTS-Y",7,0,"4","-1","5.05","4.7368"
-"2",4412,"I1","Bologna","Inter","1/6/2022","Bologna-Inter","I1","Bologna","Inter","2,ov25,BTTS-Y",1,16,"3","1","5.2105","4.25"
-"3",4413,"I1","Fiorentina","Udinese","1/6/2022","Fiorentina-Udinese","I1","Fiorentina","Udinese","1X,ov25,BTTS-Y",6,-2,"0","-4","5.3158","5.2105"
-"4",4414,"I1","Juventus","Napoli","1/6/2022","Juventus-Napoli","I1","Juventus","Napoli","1X,un25,BTTS-Y",7,-1,"1","1","4.7143","4.381"
-"5",4415,"I1","Lazio","Empoli","1/6/2022","Lazio-Empoli","I1","Lazio","Empoli","1X,ov25,BTTS-Y",4,-3,"-1","-4","5.1905","4.4286"
-"6",4416,"I1","Milan","Roma","1/6/2022","Milan-Roma","I1","Milan","Roma","1X,ov25,BTTS-Y",8,-1,"3","-1","4.2857","5.4762"
-"7",4417,"I1","Salernitana","Venezia","1/6/2022","Salernitana-Venezia","I1","Salernitana","Venezia","1X,ov25,BTTS-N",-12,-10,"1","-3","4.1579","4.6"
-"8",4418,"I1","Sampdoria","Cagliari","1/6/2022","Sampdoria-Cagliari","I1","Sampdoria","Cagliari","1X,un25,BTTS-N",-2,-9,"-1","1","4.8095","4.45"
-"9",4419,"I1","Sassuolo","Genoa","1/6/2022","Sassuolo-Genoa","I1","Sassuolo","Genoa","1X,ov25,BTTS-N",2,-7,"4","-1","4.9524","4.7619"
-"10",4420,"I1","Spezia","Verona","1/6/2022","Spezia-Verona","I1","Spezia","Verona","1X,un25,BTTS-Y",-1,-1,"1","-1","4.619","4.5238"
-"11",460,"D1","Greuther Furth","Stuttgart","1/7/2022","Greuther Furth-Stuttgart","D1","Greuther Furth","Stuttgart","2,un25,BTTS-N",-11,-3,"0","0","3.3333","3.5"
-"12",461,"D1","Bochum","Wolfsburg","1/7/2022","Bochum-Wolfsburg","D1","Bochum","Wolfsburg","1X,un25,BTTS-N",0,-13,"1","-1","3.5556","4.3889"
-"13",462,"D1","Hertha","FC Koln","1/7/2022","Hertha-FC Koln","D1","Hertha","FC Koln","2,ov25,BTTS-Y",-3,5,"-2","2","2.9444","3.8333"
-"14",463,"D1","Hoffenheim","Augsburg","1/7/2022","Hoffenheim-Augsburg","D1","Hoffenheim","Augsburg","1X,ov25,BTTS-Y",7,-1,"2","-2","3.7222","3.6111"
-"15",464,"D1","Freiburg","Bielefeld","1/7/2022","Freiburg-Bielefeld","D1","Freiburg","Bielefeld","1X,un25,BTTS-Y",5,1,"0","0","3.4444","3.3333"
-"16",465,"D1","Leverkusen","Union Berlin","1/7/2022","Leverkusen-Union Berlin","D1","Leverkusen","Union Berlin","1X,ov25,BTTS-Y",4,0,"0","0","4.1111","3"
-"17",466,"D1","Ein Frankfurt","Dortmund","1/7/2022","Ein Frankfurt-Dortmund","D1","Ein Frankfurt","Dortmund","1X,ov25,BTTS-Y",4,4,"-1","1","3.8889","4.3333"
-"18",467,"D1","RB Leipzig","Mainz","1/7/2022","RB Leipzig-Mainz","D1","RB Leipzig","Mainz","1X,ov25,BTTS-Y",1,1,"3","-3","3.2778","4.1111"
-"19",468,"D1","Bayern Munich","Mgladbach","1/7/2022","Bayern Munich-Mgladbach","D1","Bayern Munich","Mgladbach","1X,ov25,BTTS-Y",11,-12,"-1","1","2.1111","4.3889"
-"20",2163,"E2","Cheltenham","Burton","1/8/2022","Cheltenham-Burton","E2","Cheltenham","Burton","2,ov25,BTTS-Y",-9,6,"0","0","3.12","3.2083"
-"21",2164,"E2","Bolton","Cambridge","1/8/2022","Bolton-Cambridge","E2","Bolton","Cambridge","2,ov25,BTTS-N",-3,1,"-1","0","3.5217","3.75"
-"22",2165,"E2","Crewe","Charlton","1/8/2022","Crewe-Charlton","E2","Crewe","Charlton","2,un25,BTTS-N",-4,1,"-3","-1","3.5833","4.1667"
-"23",2166,"E2","AFC Wimbledon","Ipswich","1/8/2022","AFC Wimbledon-Ipswich","E2","AFC Wimbledon","Ipswich","2,ov25,BTTS-Y",-1,4,"-3","4","3.9048","3.48"
-"24",2167,"E2","Accrington","Milton Keynes Dons","1/8/2022","Accrington-Milton Keynes Dons","E2","Accrington","Milton Keynes Dons","1X,un25,BTTS-Y",4,4,"0","0","3.84","3.375"
-"25",2168,"E2","Sheffield Weds","Morecambe","1/8/2022","Sheffield Weds-Morecambe","E2","Sheffield Weds","Morecambe","1X,ov25,BTTS-N",-3,-11,"-1","1","3.5417","2.8333"
-"26",2169,"E2","Lincoln","Oxford","1/8/2022","Lincoln-Oxford","E2","Lincoln","Oxford","2,ov25,BTTS-N",-5,2,"2","-2","3.5652","3.52"
-"27",2170,"E2","Fleetwood Town","Plymouth","1/8/2022","Fleetwood Town-Plymouth","E2","Fleetwood Town","Plymouth","1X,ov25,BTTS-Y",-2,-2,"1","2","3.5833","3.875"
-"28",2171,"E2","Doncaster","Rotherham","1/8/2022","Doncaster-Rotherham","E2","Doncaster","Rotherham","2,un25,BTTS-N",-7,7,"-1","1","3.3333","3.25"
-"29",2172,"E2","Gillingham","Shrewsbury","1/8/2022","Gillingham-Shrewsbury","E2","Gillingham","Shrewsbury","2,un25,BTTS-N",-12,4,"-4","1","2.875","3.4"
-"30",2173,"E2","Wycombe","Sunderland","1/8/2022","Wycombe-Sunderland","E2","Wycombe","Sunderland","2,ov25,BTTS-Y",1,14,"0","0","3.36","3.48"
-"31",2174,"E2","Portsmouth","Wigan","1/8/2022","Portsmouth-Wigan","E2","Portsmouth","Wigan","1X,ov25,BTTS-Y",7,4,"0","1","3.3478","4.1905"
-"32",2703,"E3","Bristol Rvs","Barrow","1/8/2022","Bristol Rvs-Barrow","E3","Bristol Rvs","Barrow","1X,un25,BTTS-N",0,-4,"2","-1","4.2381","4.5652"
-"33",2704,"E3","Northampton","Crawley Town","1/8/2022","Northampton-Crawley Town","E3","Northampton","Crawley Town","1X,ov25,BTTS-Y",0,3,"-1","1","3.5652","3.3182"
-"34",2705,"E3","Port Vale","Forest Green","1/8/2022","Port Vale-Forest Green","E3","Port Vale","Forest Green","2,un25,BTTS-Y",0,9,"-1","0","3.619","3.5909"
-"35",2706,"E3","Exeter","Harrogate","1/8/2022","Exeter-Harrogate","E3","Exeter","Harrogate","2,un25,BTTS-Y",-5,-5,"0","-1","2.3913","3.0909"
-"36",2707,"E3","Carlisle","Hartlepool","1/8/2022","Carlisle-Hartlepool","E3","Carlisle","Hartlepool","1X,un25,BTTS-N",3,-4,"2","0","3.1739","3.1739"
-"37",2708,"E3","Bradford","Leyton Orient","1/8/2022","Bradford-Leyton Orient","E3","Bradford","Leyton Orient","2,un25,BTTS-Y",-2,3,"-2","-1","3.3913","3.9091"
-"38",2709,"E3","Colchester","Rochdale","1/8/2022","Colchester-Rochdale","E3","Colchester","Rochdale","2,ov25,BTTS-N",-4,0,"-2","3","3.3333","2.7727"
-"39",2710,"E3","Newport County","Salford","1/8/2022","Newport County-Salford","E3","Newport County","Salford","2,un25,BTTS-Y",-3,6,"-2","2","3.25","3.8636"
-"40",2711,"E3","Tranmere","Scunthorpe","1/8/2022","Tranmere-Scunthorpe","E3","Tranmere","Scunthorpe","1X,un25,BTTS-N",10,-3,"4","-4","3.3913","3.0417"
-"41",2712,"E3","Oldham","Sutton","1/8/2022","Oldham-Sutton","E3","Oldham","Sutton","2,un25,BTTS-N",-5,4,"0","1","3.2917","3.4348"
-"42",2713,"E3","Mansfield","Swindon","1/8/2022","Mansfield-Swindon","E3","Mansfield","Swindon","1X,ov25,BTTS-Y",4,0,"1","3","3.6364","3.7727"
-"43",2714,"E3","Stevenage","Walsall","1/8/2022","Stevenage-Walsall","E3","Stevenage","Walsall","2,un25,BTTS-N",-3,1,"2","-2","3.3333","3.087"
-"44",3208,"EC","Aldershot","Maidenhead","1/8/2022","Aldershot-Maidenhead","EC","Aldershot","Maidenhead","1X,un25,BTTS-N",3,-10,"0","0","4.7826","2.5"
-"45",3209,"EC","Barnet","Altrincham","1/8/2022","Barnet-Altrincham","EC","Barnet","Altrincham","1X,un25,BTTS-Y",4,-8,"0","0","3.2381","3.3182"
-"46",3210,"EC","Bromley","Solihull","1/8/2022","Bromley-Solihull","EC","Bromley","Solihull","1X,un25,BTTS-Y",0,6,"1","-1","3.1818","3.3636"
-"47",3211,"EC","Dover Athletic","Notts County","1/8/2022","Dover Athletic-Notts County","EC","Dover Athletic","Notts County","2,un25,BTTS-Y",-7,6,"-2","2","2.7727","4.35"
-"48",3212,"EC","Halifax","Eastleigh","1/8/2022","Halifax-Eastleigh","EC","Halifax","Eastleigh","1X,un25,BTTS-N",8,-4,"4","-4","3.4091","3.8095"
-"49",3213,"EC","Kings Lynn","Woking","1/8/2022","Kings Lynn-Woking","EC","Kings Lynn","Woking","2,un25,BTTS-N",-9,-5,"-1","-1","3.2","4"
-"50",3214,"EC","Stockport","Chesterfield","1/8/2022","Stockport-Chesterfield","EC","Stockport","Chesterfield","1X,ov25,BTTS-Y",13,8,"1","1","3.05","3.5"
-"51",3215,"EC","Torquay","Dag and Red","1/8/2022","Torquay-Dag and Red","EC","Torquay","Dag and Red","1X,ov25,BTTS-Y",5,5,"0","0","3.0435","2.8261"
-"52",3216,"EC","Wealdstone","Yeovil","1/8/2022","Wealdstone-Yeovil","EC","Wealdstone","Yeovil","2,un25,BTTS-Y",-3,0,"-1","-1","3.5789","3.85"
-"53",3217,"EC","Weymouth","Southend","1/8/2022","Weymouth-Southend","EC","Weymouth","Southend","2,un25,BTTS-Y",-8,-2,"-1","1","1.8571","3.95"
-"54",3218,"EC","Wrexham","Boreham Wood","1/8/2022","Wrexham-Boreham Wood","EC","Wrexham","Boreham Wood","1X,un25,BTTS-Y",2,7,"-2","0","3.1818","2.6316"
-"55",4031,"F2","Amiens","Ajaccio","1/8/2022","Amiens-Ajaccio","F2","Amiens","Ajaccio","2,un25,BTTS-N",5,3,"-1","1","3.9474","4.5263"
-"56",4032,"F2","Grenoble","Auxerre","1/8/2022","Grenoble-Auxerre","F2","Grenoble","Auxerre","2,un25,BTTS-N",-6,3,"-1","1","3.5","3"
-"57",4033,"F2","Valenciennes","Guingamp","1/8/2022","Valenciennes-Guingamp","F2","Valenciennes","Guingamp","1X,un25,BTTS-Y",-2,-3,"0","0","4.35","4.65"
-"58",4034,"F2","Dijon","Nimes","1/8/2022","Dijon-Nimes","F2","Dijon","Nimes","2,ov25,BTTS-Y",2,2,"-1","1","4.65","4.3"
-"59",4035,"F2","Toulouse","Nancy","1/8/2022","Toulouse-Nancy","F2","Toulouse","Nancy","1X,ov25,BTTS-N",3,-5,"1","-3","3.6842","3.7368"
-"60",4036,"F2","Caen","Niort","1/8/2022","Caen-Niort","F2","Caen","Niort","2,ov25,BTTS-N",0,1,"0","3","3.2105","3.8947"
-"61",4037,"F2","Dunkerque","Paris FC","1/8/2022","Dunkerque-Paris FC","F2","Dunkerque","Paris FC","2,un25,BTTS-N",-7,8,"-1","1","3.7895","2.7368"
-"62",4038,"F2","Bastia","Quevilly Rouen","1/8/2022","Bastia-Quevilly Rouen","F2","Bastia","Quevilly Rouen","1X,ov25,BTTS-Y",5,-2,"3","-3","3.7","3.75"
-"63",4039,"F2","Pau FC","Rodez","1/8/2022","Pau FC-Rodez","F2","Pau FC","Rodez","2,un25,BTTS-N",-2,-2,"4","-4","3.4","3.65"
-"64",4040,"F2","Le Havre","Sochaux","1/8/2022","Le Havre-Sochaux","F2","Le Havre","Sochaux","1X,un25,BTTS-N",0,-2,"-1","1","3.5","4"
-"65",5051,"P1","Belenenses","Arouca","1/8/2022","Belenenses-Arouca","P1","Belenenses","Arouca","2,ov25,BTTS-N",-12,-10,"1","-1","6.125","6.7647"
-"66",5052,"P1","Sp Braga","Famalicao","1/8/2022","Sp Braga-Famalicao","P1","Sp Braga","Famalicao","1X,ov25,BTTS-Y",11,-7,"0","0","5.8235","6.1875"
-"67",5053,"P1","Portimonense","Maritimo","1/8/2022","Portimonense-Maritimo","P1","Portimonense","Maritimo","2,ov25,BTTS-Y",-1,2,"-1","1","6.3529","7.1765"
-"68",5054,"P1","Vizela","Moreirense","1/8/2022","Vizela-Moreirense","P1","Vizela","Moreirense","2,un25,BTTS-N",-5,-1,"-1","1","5.4118","5.9412"
-"69",5055,"P1","Benfica","Pacos Ferreira","1/8/2022","Benfica-Pacos Ferreira","P1","Benfica","Pacos Ferreira","1X,ov25,BTTS-N",14,-4,"2","-2","4.6471","5.5294"
-"70",5056,"P1","Estoril","Porto","1/8/2022","Estoril-Porto","P1","Estoril","Porto","2,ov25,BTTS-Y",-3,12,"-1","1","6.0588","6.5882"
-"71",5057,"P1","Santa Clara","Sp Lisbon","1/8/2022","Santa Clara-Sp Lisbon","P1","Santa Clara","Sp Lisbon","2,ov25,BTTS-Y",-1,9,"1","-1","5.8824","6.4118"
-"72",5058,"P1","Boavista","Tondela","1/8/2022","Boavista-Tondela","P1","Boavista","Tondela","1X,un25,BTTS-N",-2,-8,"0","0","6.2353","6.7059"
-"73",5059,"P1","Gil Vicente","Guimaraes","1/8/2022","Gil Vicente-Guimaraes","P1","Gil Vicente","Guimaraes","1X,ov25,BTTS-Y",5,3,"3","0","6.25","5.5625"
-"74",5516,"SC1","Ayr","Arbroath","1/8/2022","Ayr-Arbroath","SC1","Ayr","Arbroath","2,un25,BTTS-N",-3,5,"1","-1","2.875","2.8571"
-"75",5517,"SC1","Morton","Dunfermline","1/8/2022","Morton-Dunfermline","SC1","Morton","Dunfermline","1X,ov25,BTTS-N",-2,-6,"5","-5","2.3","2.5"
-"76",5518,"SC1","Queen of Sth","Kilmarnock","1/8/2022","Queen of Sth-Kilmarnock","SC1","Queen of Sth","Kilmarnock","2,un25,BTTS-N",-3,0,"-2","2","2.6","2.8"
-"77",5519,"SC1","Hamilton","Partick","1/8/2022","Hamilton-Partick","SC1","Hamilton","Partick","1X,un25,BTTS-Y",4,4,"0","0","2.9762","3"
-"78",5520,"SC1","Inverness C","Raith Rvs","1/8/2022","Inverness C-Raith Rvs","SC1","Inverness C","Raith Rvs","1X,un25,BTTS-N",6,-2,"0","0","3.05","3.4286"
-"79",3651,"F1","Angers","St Etienne","1/9/2022","Angers-St Etienne","F1","Angers","St Etienne","1X,un25,BTTS-N",-4,-10,"-3","-1","3.8421","3.8421"
-"80",3652,"F1","Bordeaux","Marseille","1/9/2022","Bordeaux-Marseille","F1","Bordeaux","Marseille","2,un25,BTTS-Y",-5,4,"-1","1","3.8","3.7368"
-"81",3653,"F1","Brest","Nice","1/9/2022","Brest-Nice","F1","Brest","Nice","1X,ov25,BTTS-N",-4,1,"-3","3","3.65","3.65"
-"82",3654,"F1","Clermont","Reims","1/9/2022","Clermont-Reims","F1","Clermont","Reims","2,un25,BTTS-N",-2,3,"0","0","3.6316","4.45"
-"83",3655,"F1","Lens","Rennes","1/9/2022","Lens-Rennes","F1","Lens","Rennes","1X,ov25,BTTS-Y",-1,3,"1","-1","4.2","3.2"
-"84",3656,"F1","Lille","Lorient","1/9/2022","Lille-Lorient","F1","Lille","Lorient","1X,un25,BTTS-N",3,-9,"1","0","4.9474","3.8421"
-"85",3657,"F1","Lyon","Paris SG","1/9/2022","Lyon-Paris SG","F1","Lyon","Paris SG","2,un25,BTTS-Y",0,4,"0","0","3.8421","4.05"
-"86",3658,"F1","Metz","Strasbourg","1/9/2022","Metz-Strasbourg","F1","Metz","Strasbourg","2,un25,BTTS-Y",-4,6,"-2","2","4.1","4"
-"87",3659,"F1","Montpellier","Troyes","1/9/2022","Montpellier-Troyes","F1","Montpellier","Troyes","1X,un25,BTTS-Y",7,-2,"3","0","4.4737","4.3684"
-"88",3660,"F1","Nantes","Monaco","1/9/2022","Nantes-Monaco","F1","Nantes","Monaco","1X,un25,BTTS-Y",2,5,"0","0","3.55","3.85"
-"89",4421,"I1","Cagliari","Bologna","1/9/2022","Cagliari-Bologna","I1","Cagliari","Bologna","2,un25,BTTS-N",-9,1,"1","3","4.45","5.2105"
-"90",4422,"I1","Empoli","Sassuolo","1/9/2022","Empoli-Sassuolo","I1","Empoli","Sassuolo","2,ov25,BTTS-Y",-3,2,"-4","4","4.4286","4.9524"
-"91",4423,"I1","Genoa","Spezia","1/9/2022","Genoa-Spezia","I1","Genoa","Spezia","2,un25,BTTS-N",-7,-1,"-1","1","4.7619","4.619"
-"92",4424,"I1","Verona","Salernitana","1/9/2022","Verona-Salernitana","I1","Verona","Salernitana","1X,ov25,BTTS-N",-1,-12,"-1","1","4.5238","4.1579"
-"93",4425,"I1","Inter","Lazio","1/9/2022","Inter-Lazio","I1","Inter","Lazio","1X,ov25,BTTS-Y",16,4,"1","-1","4.25","5.1905"
-"94",4426,"I1","Napoli","Sampdoria","1/9/2022","Napoli-Sampdoria","I1","Napoli","Sampdoria","1X,un25,BTTS-Y",-1,-2,"1","-1","4.381","4.8095"
-"95",4427,"I1","Roma","Juventus","1/9/2022","Roma-Juventus","I1","Roma","Juventus","2,un25,BTTS-Y",-1,7,"-1","1","5.4762","4.7143"
-"96",4428,"I1","Torino","Fiorentina","1/9/2022","Torino-Fiorentina","I1","Torino","Fiorentina","2,ov25,BTTS-Y",0,6,"-1","0","4.7368","5.3158"
-"97",4429,"I1","Udinese","Atalanta","1/9/2022","Udinese-Atalanta","I1","Udinese","Atalanta","2,ov25,BTTS-Y",-2,7,"-4","4","5.2105","5.05"
-"98",4430,"I1","Venezia","Milan","1/9/2022","Venezia-Milan","I1","Venezia","Milan","2,ov25,BTTS-Y",-10,8,"-3","3","4.6","4.2857"
-"99",5781,"SP1","Alaves","Ath Bilbao","1/9/2022","Alaves-Ath Bilbao","SP1","Alaves","Ath Bilbao","2,un25,BTTS-N",-6,1,"0","0","4.3","4.381"
-"100",5782,"SP1","Granada","Barcelona","1/9/2022","Granada-Barcelona","SP1","Granada","Barcelona","1X,un25,BTTS-Y",5,1,"0","0","5.2","5.15"
-"101",5783,"SP1","Espanyol","Elche","1/9/2022","Espanyol-Elche",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"102",5784,"SP1","Levante","Mallorca","1/9/2022","Levante-Mallorca","SP1","Levante","Mallorca","2,un25,BTTS-N",-7,-5,"2","-2","5.35","5.8"
-"103",5785,"SP1","Osasuna","Cadiz","1/9/2022","Osasuna-Cadiz","SP1","Osasuna","Cadiz","1X,un25,BTTS-N",-1,-8,"2","-2","4.9","4.95"
-"104",5786,"SP1","Real Madrid","Valencia","1/9/2022","Real Madrid-Valencia","SP1","Real Madrid","Valencia","1X,ov25,BTTS-Y",7,-1,"3","-3","3.9048","7"
-"105",5787,"SP1","Sociedad","Celta","1/9/2022","Sociedad-Celta","SP1","Sociedad","Celta","2,un25,BTTS-N",-8,3,"1","-1","4.8","5.3"
-"106",5788,"SP1","Sevilla","Getafe","1/9/2022","Sevilla-Getafe","SP1","Sevilla","Getafe","1X,un25,BTTS-N",5,1,"1","-1","4.7","5.75"
-"107",5789,"SP1","Vallecano","Betis","1/9/2022","Vallecano-Betis","SP1","Vallecano","Betis","2,un25,BTTS-Y",-1,4,"0","0","5.4","4.05"
-"108",5790,"SP1","Villarreal","Ath Madrid","1/9/2022","Villarreal-Ath Madrid","SP1","Villarreal","Ath Madrid","1X,ov25,BTTS-Y",11,-3,"0","0","4.5","4.8"
-"109",6213,"SP2","Ibiza","Alcorcon","1/9/2022","Ibiza-Alcorcon","SP2","Ibiza","Alcorcon","1X,un25,BTTS-N",2,-7,"4","-4","3.5217","4.2174"
-"110",6214,"SP2","Las Palmas","Almeria","1/9/2022","Las Palmas-Almeria","SP2","Las Palmas","Almeria","2,un25,BTTS-Y",-2,4,"0","0","5.6087","4.8636"
-"111",6215,"SP2","Valladolid","Burgos","1/9/2022","Valladolid-Burgos","SP2","Valladolid","Burgos","1X,un25,BTTS-Y",6,3,"1","-1","4.6522","3.6522"
-"112",6216,"SP2","Lugo","Mirandes","1/9/2022","Lugo-Mirandes","SP2","Lugo","Mirandes","1X,un25,BTTS-Y",1,-1,"1","-1","4.9545","4.4348"
-"113",6217,"SP2","Oviedo","Eibar","1/9/2022","Oviedo-Eibar","SP2","Oviedo","Eibar","1X,un25,BTTS-Y",5,3,"2","1","4.7727","3.7273"
-"114",6218,"SP2","Girona","Fuenlabrada","1/9/2022","Girona-Fuenlabrada","SP2","Girona","Fuenlabrada","1X,un25,BTTS-Y",5,-4,"1","-1","5.6957","6"
-"115",6219,"SP2","Cartagena","Huesca","1/9/2022","Cartagena-Huesca","SP2","Cartagena","Huesca","2,un25,BTTS-N",-1,3,"-3","3","4.6522","4.6957"
-"116",6220,"SP2","Leganes","Sociedad B","1/9/2022","Leganes-Sociedad B","SP2","Leganes","Sociedad B","1X,un25,BTTS-N",1,-8,"0","0","4","3.4783"
-"117",6221,"SP2","Malaga","Sp Gijon","1/9/2022","Malaga-Sp Gijon","SP2","Malaga","Sp Gijon","2,un25,BTTS-Y",-5,1,"0","0","5.4348","5.1304"
-"118",6222,"SP2","Amorebieta","Tenerife","1/9/2022","Amorebieta-Tenerife","SP2","Amorebieta","Tenerife","2,un25,BTTS-Y",1,3,"0","0","3.4783","4.9565"
-"119",6223,"SP2","Ponferradina","Zaragoza","1/9/2022","Ponferradina-Zaragoza","SP2","Ponferradina","Zaragoza","1X,un25,BTTS-N",0,-6,"0","0","4.3043","5.6087"
-"120",6623,"T1","Galatasaray","Giresunspor","1/9/2022","Galatasaray-Giresunspor","T1","Galatasaray","Giresunspor","2,un25,BTTS-N",-2,1,"-1","1","5.5","4.25"
-"121",6624,"T1","Gaziantep","Karagumruk","1/9/2022","Gaziantep-Karagumruk","T1","Gaziantep","Karagumruk","1X,ov25,BTTS-Y",4,-6,"2","-2","4.2","4.55"
-"122",6625,"T1","Rizespor","Besiktas","1/9/2022","Rizespor-Besiktas","T1","Rizespor","Besiktas","2,ov25,BTTS-Y",-2,2,"0","0","3.85","4.65"
-"123",6626,"T1","Trabzonspor","Yeni Malatyaspor","1/9/2022","Trabzonspor-Yeni Malatyaspor","T1","Trabzonspor","Yeni Malatyaspor","1X,un25,BTTS-N",5,-8,"1","-1","4.45","3.95"
-"124",6627,"T1","Goztep","Antalyaspor","1/9/2022","Goztep-Antalyaspor","T1","Goztep","Antalyaspor","1X,un25,BTTS-N",1,-8,"4","-4","5.45","5.45"
-"125",6628,"T1","Konyaspor","Sivasspor","1/9/2022","Konyaspor-Sivasspor","T1","Konyaspor","Sivasspor","1X,un25,BTTS-Y",6,2,"-1","1","4.3","4.95"
-"126",6629,"T1","Fenerbahce","Ad. Demirspor","1/9/2022","Fenerbahce-Ad. Demirspor","T1","Fenerbahce","Ad. Demirspor","2,un25,BTTS-Y",5,3,"2","0","4.0526","4"
-"127",6630,"T1","Alanyaspor","Buyuksehyr","1/9/2022","Alanyaspor-Buyuksehyr","T1","Alanyaspor","Buyuksehyr","2,un25,BTTS-Y",0,6,"0","0","4.5","3.55"
-"128",6631,"T1","Kayserispor","Altay","1/9/2022","Kayserispor-Altay","T1","Kayserispor","Altay","1X,ov25,BTTS-Y",4,-7,"1","-1","4.45","3.95"
-"129",6632,"T1","Kasimpasa","Hatayspor","1/9/2022","Kasimpasa-Hatayspor","T1","Kasimpasa","Hatayspor","1X,ov25,BTTS-Y",1,-7,"2","-2","4.9","4.65"
+,X,Div,Home_Team,Away_Team,Date,matchid,picks_Div,picks_HomeTeam,picks_AwayTeam,prediction,HWM,AWM,HWMLM,AWMLM,AVGHY,AVGAY
+1,5791,SP1,Ath Bilbao,Real Madrid,1/19/2022,Ath Bilbao-Real Madrid,SP1,Ath Bilbao,Real Madrid,"2,un25,BTTS-N",1,7,0,3,4.381,3.9048
+2,5792,SP1,Ath Madrid,Levante,1/19/2022,Ath Madrid-Levante,SP1,Ath Madrid,Levante,"1X,ov25,BTTS-Y",-3,-7,0,2,4.8,5.35
+3,5793,SP1,Barcelona,Vallecano,1/19/2022,Barcelona-Vallecano,SP1,Barcelona,Vallecano,"1X,un25,BTTS-Y",1,-1,0,0,5.15,5.4
+4,5794,SP1,Betis,Alaves,1/19/2022,Betis-Alaves,SP1,Betis,Alaves,"1X,un25,BTTS-Y",4,-6,0,0,4.05,4.3
+5,5795,SP1,Celta,Osasuna,1/19/2022,Celta-Osasuna,SP1,Celta,Osasuna,"1X,un25,BTTS-Y",3,-1,-1,2,5.3,4.9
+6,5796,SP1,Mallorca,Sociedad,1/19/2022,Mallorca-Sociedad,SP1,Mallorca,Sociedad,"1X,un25,BTTS-N",-5,-8,-2,1,5.8,4.8
+7,5797,SP1,Getafe,Granada,1/19/2022,Getafe-Granada,SP1,Getafe,Granada,"2,un25,BTTS-N",1,5,-1,0,5.75,5.2
+8,5798,SP1,Cadiz,Espanol,1/19/2022,Cadiz-Espanol,SP1,Cadiz,Espanol,"2,un25,BTTS-N",-8,-1,-2,-1,4.95,5.45
+9,5799,SP1,Valencia,Sevilla,1/19/2022,Valencia-Sevilla,SP1,Valencia,Sevilla,"2,un25,BTTS-Y",-1,5,-3,1,7,4.7
+10,5800,SP1,Elche,Villarreal,1/19/2022,Elche-Villarreal,SP1,Elche,Villarreal,"2,ov25,BTTS-Y",2,11,1,-1,4.7143,4.619
+11,6643,T1,Trabzonspor,Giresunspor,1/19/2022,Trabzonspor-Giresunspor,T1,Trabzonspor,Giresunspor,"1X,un25,BTTS-N",3,-3,0,-2,4.381,4.0476
+12,6644,T1,Galatasaray,Kasimpasa,1/19/2022,Galatasaray-Kasimpasa,T1,Galatasaray,Kasimpasa,"2,un25,BTTS-N",-4,3,-2,2,5.7143,4.6667
+13,6645,T1,Karagumruk,Besiktas,1/19/2022,Karagumruk-Besiktas,T1,Karagumruk,Besiktas,"2,un25,BTTS-Y",-2,3,2,1,4.619,4.619
+14,6646,T1,Gaziantep,Yeni Malatyaspor,1/19/2022,Gaziantep-Yeni Malatyaspor,T1,Gaziantep,Yeni Malatyaspor,"1X,un25,BTTS-N",4,-9,-1,-1,4.1905,3.8571
+15,6647,T1,Rizespor,Antalyaspor,1/19/2022,Rizespor-Antalyaspor,T1,Rizespor,Antalyaspor,"1X,un25,BTTS-N",0,-6,-2,0,3.9524,5.381
+16,6648,T1,Goztep,Sivasspor,1/19/2022,Goztep-Sivasspor,T1,Goztep,Sivasspor,"2,un25,BTTS-Y",1,1,1,0,5.2857,4.8571
+17,6649,T1,Konyaspor,Ad. Demirspor,1/19/2022,Konyaspor-Ad. Demirspor,T1,Konyaspor,Ad. Demirspor,"2,un25,BTTS-Y",6,6,-1,0,4.3,3.8571
+18,6650,T1,Kayserispor,Buyuksehyr,1/19/2022,Kayserispor-Buyuksehyr,T1,Kayserispor,Buyuksehyr,"2,un25,BTTS-Y",2,6,0,0,4.2381,3.55
+19,6651,T1,Fenerbahce,Altay,1/19/2022,Fenerbahce-Altay,T1,Fenerbahce,Altay,"1X,un25,BTTS-N",0,-9,0,-2,4.0952,4
+20,6652,T1,Alanyaspor,Hatayspor,1/19/2022,Alanyaspor-Hatayspor,T1,Alanyaspor,Hatayspor,"2,ov25,BTTS-Y",3,-2,2,2,4.5238,4.9048
+21,478,D1,Greuther Furth,Mainz,1/21/2022,Greuther Furth-Mainz,D1,Greuther Furth,Mainz,"2,ov25,BTTS-N",-8,3,0,1,3.4211,4.2105
+22,479,D1,Bochum,FC Koln,1/21/2022,Bochum-FC Koln,D1,Bochum,FC Koln,"2,un25,BTTS-N",-2,-2,-1,-4,3.6842,3.6842
+23,480,D1,Hertha,Bayern Munich,1/21/2022,Hertha-Bayern Munich,D1,Hertha,Bayern Munich,"2,ov25,BTTS-Y",-3,14,0,4,2.8947,2.0526
+24,481,D1,Hoffenheim,Dortmund,1/21/2022,Hoffenheim-Dortmund,D1,Hoffenheim,Dortmund,"1X,ov25,BTTS-Y",3,6,-1,4,3.6842,4.2105
+25,482,D1,Freiburg,Stuttgart,1/21/2022,Freiburg-Stuttgart,D1,Freiburg,Stuttgart,"1X,ov25,BTTS-N",2,-6,-4,-2,3.3684,3.5263
+26,483,D1,Mgladbach,Union Berlin,1/21/2022,Mgladbach-Union Berlin,D1,Mgladbach,Union Berlin,"2,ov25,BTTS-Y",-10,2,-1,1,4.4211,3
+27,484,D1,Leverkusen,Augsburg,1/21/2022,Leverkusen-Augsburg,D1,Leverkusen,Augsburg,"1X,ov25,BTTS-Y",3,-1,1,0,4.1579,3.7368
+28,485,D1,Ein Frankfurt,Bielefeld,1/21/2022,Ein Frankfurt-Bielefeld,D1,Ein Frankfurt,Bielefeld,"1X,un25,BTTS-Y",3,2,0,0,4,3.4211
+29,486,D1,RB Leipzig,Wolfsburg,1/21/2022,RB Leipzig-Wolfsburg,D1,RB Leipzig,Wolfsburg,"1X,un25,BTTS-N",5,-11,2,0,3.3158,4.2632
+30,4772,N1,Waalwijk,For Sittard,1/21/2022,Waalwijk-For Sittard,N1,Waalwijk,For Sittard,"1X,ov25,BTTS-Y",-1,-11,2,-1,2.9474,2.8421
+31,199,B1,Mechelen,Anderlecht,1/22/2022,Mechelen-Anderlecht,B1,Mechelen,Anderlecht,"2,ov25,BTTS-Y",-2,15,2,0,4.381,3.5
+32,200,B1,Oostende,Antwerp,1/22/2022,Oostende-Antwerp,B1,Oostende,Antwerp,"2,ov25,BTTS-N",-7,8,-4,3,4.381,5
+33,201,B1,Standard,Club Brugge,1/22/2022,Standard-Club Brugge,B1,Standard,Club Brugge,"2,ov25,BTTS-Y",-6,7,0,2,5.8095,4.8182
+34,202,B1,Kortrijk,Eupen,1/22/2022,Kortrijk-Eupen,B1,Kortrijk,Eupen,"1X,un25,BTTS-N",3,-10,0,-2,5.5238,4.2273
+35,203,B1,St. Gilloise,Genk,1/22/2022,St. Gilloise-Genk,B1,St. Gilloise,Genk,"1X,un25,BTTS-Y",4,8,0,3,4.5714,3.3636
+36,204,B1,Charleroi,Gent,1/22/2022,Charleroi-Gent,B1,Charleroi,Gent,"2,ov25,BTTS-Y",0,2,-3,0,3.7727,4.5
+37,205,B1,Beerschot VA,Oud-Heverlee Leuven,1/22/2022,Beerschot VA-Oud-Heverlee Leuven,B1,Beerschot VA,Oud-Heverlee Leuven,"2,ov25,BTTS-N",-16,1,-3,3,4.5714,5
+38,206,B1,St Truiden,Seraing,1/22/2022,St Truiden-Seraing,B1,St Truiden,Seraing,"1X,un25,BTTS-N",-5,-10,-2,-2,4.0909,4.5238
+39,207,B1,Cercle Brugge,Waregem,1/22/2022,Cercle Brugge-Waregem,B1,Cercle Brugge,Waregem,"1X,un25,BTTS-Y",8,-2,2,1,4.6818,4.4762
+40,1139,E0,Arsenal,Burnley,1/22/2022,Arsenal-Burnley,E0,Arsenal,Burnley,"1X,ov25,BTTS-N",11,-5,-1,-2,3.1,3.4118
+41,1140,E0,Brentford,Wolves,1/22/2022,Brentford-Wolves,E0,Brentford,Wolves,"2,un25,BTTS-N",-7,2,-3,2,3.4286,3.85
+42,1141,E0,Chelsea,Tottenham,1/22/2022,Chelsea-Tottenham,E0,Chelsea,Tottenham,"2,un25,BTTS-Y",1,9,-1,1,3.8182,3.6667
+43,1142,E0,Crystal Palace,Liverpool,1/22/2022,Crystal Palace-Liverpool,E0,Crystal Palace,Liverpool,"2,ov25,BTTS-Y",1,5,0,3,3.7619,3.0952
+44,1143,E0,Everton,Aston Villa,1/22/2022,Everton-Aston Villa,E0,Everton,Aston Villa,"2,ov25,BTTS-Y",-6,-1,-1,0,3.7895,4.1
+45,1144,E0,Leeds,Newcastle,1/22/2022,Leeds-Newcastle,E0,Leeds,Newcastle,"1X,ov25,BTTS-Y",-8,-9,1,0,4.7,4.25
+46,1145,E0,Leicester,Brighton,1/22/2022,Leicester-Brighton,E0,Leicester,Brighton,"1X,un25,BTTS-Y",3,2,1,0,2.8889,4.15
+47,1146,E0,Man United,West Ham,1/22/2022,Man United-West Ham,E0,Man United,West Ham,"1X,un25,BTTS-Y",3,2,0,-1,3.45,2.5
+48,1147,E0,Southampton,Man City,1/22/2022,Southampton-Man City,E0,Southampton,Man City,"2,ov25,BTTS-Y",-1,17,-2,1,3.7619,2.9091
+49,1148,E0,Watford,Norwich,1/22/2022,Watford-Norwich,E0,Watford,Norwich,"2,ov25,BTTS-N",-8,-12,0,1,3.8421,3.381
+50,1623,E1,Bristol City,Cardiff,1/22/2022,Bristol City-Cardiff,E1,Bristol City,Cardiff,"1X,ov25,BTTS-Y",-4,-4,-4,-1,3.1538,3.56
+51,1624,E1,Nottm Forest,Derby,1/22/2022,Nottm Forest-Derby,E1,Nottm Forest,Derby,"2,un25,BTTS-Y",4,4,1,2,4.2692,3.7308
+52,1625,E1,Birmingham,Barnsley,1/22/2022,Birmingham-Barnsley,E1,Birmingham,Barnsley,"1X,un25,BTTS-N",-6,-4,0,-1,3.52,3.5
+53,1626,E1,Blackburn,Middlesbrough,1/22/2022,Blackburn-Middlesbrough,E1,Blackburn,Middlesbrough,"1X,un25,BTTS-Y",9,6,1,1,4.4231,4.3077
+54,1627,E1,Blackpool,Millwall,1/22/2022,Blackpool-Millwall,E1,Blackpool,Millwall,"1X,ov25,BTTS-Y",-3,-1,1,-1,3.6154,3.72
+55,1628,E1,Bournemouth,Hull,1/22/2022,Bournemouth-Hull,E1,Bournemouth,Hull,"1X,un25,BTTS-Y",0,-3,-1,-2,3.8077,3.36
+56,1629,E1,Coventry,QPR,1/22/2022,Coventry-QPR,E1,Coventry,QPR,"2,un25,BTTS-Y",1,1,3,1,3.7083,3.36
+57,1630,E1,Reading,Huddersfield,1/22/2022,Reading-Huddersfield,E1,Reading,Huddersfield,"2,un25,BTTS-Y",-8,3,-1,0,3.68,3.4074
+58,1631,E1,Sheffield United,Luton,1/22/2022,Sheffield United-Luton,E1,Sheffield United,Luton,"1X,un25,BTTS-Y",3,1,-2,1,3.5217,3.6522
+59,1632,E1,Stoke,Fulham,1/22/2022,Stoke-Fulham,E1,Stoke,Fulham,"2,un25,BTTS-Y",1,10,2,4,3.96,3.68
+60,1633,E1,Swansea,Preston,1/22/2022,Swansea-Preston,E1,Swansea,Preston,"2,un25,BTTS-Y",-3,2,0,0,3.7826,3.6667
+61,1634,E1,West Brom,Peterboro,1/22/2022,West Brom-Peterboro,E1,West Brom,Peterboro,"1X,un25,BTTS-N",0,-10,-1,-3,3.5,3.625
+62,2187,E2,Ipswich,Accrington,1/22/2022,Ipswich-Accrington,E2,Ipswich,Accrington,"2,un25,BTTS-Y",1,0,-2,0,3.5385,3.7308
+63,2188,E2,Burton,AFC Wimbledon,1/22/2022,Burton-AFC Wimbledon,E2,Burton,AFC Wimbledon,"1X,ov25,BTTS-N",4,-2,2,0,3.2,3.7391
+64,2189,E2,Shrewsbury,Bolton,1/22/2022,Shrewsbury-Bolton,E2,Shrewsbury,Bolton,"1X,un25,BTTS-N",5,-5,0,2,3.3462,3.6
+65,2190,E2,Rotherham,Cheltenham,1/22/2022,Rotherham-Cheltenham,E2,Rotherham,Cheltenham,"1X,un25,BTTS-Y",6,-4,-1,0,3.2,3.1923
+66,2191,E2,Cambridge,Crewe,1/22/2022,Cambridge-Crewe,E2,Cambridge,Crewe,"2,un25,BTTS-N",2,-1,1,0,3.64,3.5769
+67,2192,E2,Milton Keynes Dons,Doncaster,1/22/2022,Milton Keynes Dons-Doncaster,E2,Milton Keynes Dons,Doncaster,"1X,ov25,BTTS-Y",2,-6,1,-1,3.2692,3.36
+68,2193,E2,Charlton,Fleetwood Town,1/22/2022,Charlton-Fleetwood Town,E2,Charlton,Fleetwood Town,"2,un25,BTTS-Y",1,3,0,1,4.2308,3.52
+69,2194,E2,Wigan,Gillingham,1/22/2022,Wigan-Gillingham,E2,Wigan,Gillingham,"1X,ov25,BTTS-N",4,-12,1,-2,4.1818,2.88
+70,2195,E2,Plymouth,Lincoln,1/22/2022,Plymouth-Lincoln,E2,Plymouth,Lincoln,"1X,un25,BTTS-Y",-1,0,-2,-1,3.84,3.68
+71,2196,E2,Sunderland,Portsmouth,1/22/2022,Sunderland-Portsmouth,E2,Sunderland,Portsmouth,"2,un25,BTTS-Y",6,5,0,-1,3.5926,3.375
+72,2197,E2,Oxford,Sheffield Weds,1/22/2022,Oxford-Sheffield Weds,E2,Oxford,Sheffield Weds,"2,un25,BTTS-N",-1,-2,-2,2,3.5385,3.52
+73,2198,E2,Morecambe,Wycombe,1/22/2022,Morecambe-Wycombe,E2,Morecambe,Wycombe,"2,un25,BTTS-N",-7,4,0,2,2.88,3.4074
+74,2727,E3,Rochdale,Bradford,1/22/2022,Rochdale-Bradford,E3,Rochdale,Bradford,"2,ov25,BTTS-Y",-2,0,-2,1,2.7391,3.375
+75,2728,E3,Swindon,Bristol Rvs,1/22/2022,Swindon-Bristol Rvs,E3,Swindon,Bristol Rvs,"2,ov25,BTTS-Y",-1,1,2,2,3.7083,4.3182
+76,2729,E3,Forest Green,Carlisle,1/22/2022,Forest Green-Carlisle,E3,Forest Green,Carlisle,"2,un25,BTTS-Y",7,5,0,0,3.5833,3.2083
+77,2730,E3,Salford,Colchester,1/22/2022,Salford-Colchester,E3,Salford,Colchester,"1X,un25,BTTS-N",3,-9,-1,-2,3.875,3.3043
+78,2731,E3,Walsall,Exeter,1/22/2022,Walsall-Exeter,E3,Walsall,Exeter,"1X,un25,BTTS-Y",-2,-1,-2,2,3,2.375
+79,2732,E3,Barrow,Mansfield,1/22/2022,Barrow-Mansfield,E3,Barrow,Mansfield,"2,un25,BTTS-N",0,7,2,2,4.5417,3.5833
+80,2733,E3,Scunthorpe,Newport County,1/22/2022,Scunthorpe-Newport County,E3,Scunthorpe,Newport County,"2,ov25,BTTS-N",-5,1,-2,4,3,3.32
+81,2734,E3,Sutton,Northampton,1/22/2022,Sutton-Northampton,E3,Sutton,Northampton,"1X,ov25,BTTS-Y",2,-1,0,0,3.3333,3.625
+82,2735,E3,Harrogate,Oldham,1/22/2022,Harrogate-Oldham,E3,Harrogate,Oldham,"1X,un25,BTTS-N",-7,-5,-4,0,3.1739,3.2917
+83,2736,E3,Leyton Orient,Port Vale,1/22/2022,Leyton Orient-Port Vale,E3,Leyton Orient,Port Vale,"1X,ov25,BTTS-Y",3,-2,-1,-2,3.9091,3.5
+84,2737,E3,Hartlepool,Stevenage,1/22/2022,Hartlepool-Stevenage,E3,Hartlepool,Stevenage,"1X,un25,BTTS-N",-4,-3,-2,0,3.2917,3.24
+85,2738,E3,Crawley Town,Tranmere,1/22/2022,Crawley Town-Tranmere,E3,Crawley Town,Tranmere,"2,un25,BTTS-Y",3,10,0,2,3.3478,3.4
+86,3219,EC,Altrincham,Torquay,1/22/2022,Altrincham-Torquay,EC,Altrincham,Torquay,"2,ov25,BTTS-N",-12,5,-2,0,3.1667,3.0435
+87,3220,EC,Boreham Wood,Weymouth,1/22/2022,Boreham Wood-Weymouth,EC,Boreham Wood,Weymouth,"1X,un25,BTTS-Y",7,-8,1,-1,2.7,1.8571
+88,3221,EC,Chesterfield,Aldershot,1/22/2022,Chesterfield-Aldershot,EC,Chesterfield,Aldershot,"1X,un25,BTTS-Y",7,3,3,0,3.4762,4.7826
+89,3222,EC,Dag and Red,Stockport,1/22/2022,Dag and Red-Stockport,EC,Dag and Red,Stockport,"2,ov25,BTTS-Y",5,15,0,3,2.8261,3.0476
+90,3223,EC,Grimsby,Bromley,1/22/2022,Grimsby-Bromley,EC,Grimsby,Bromley,"2,un25,BTTS-N",-3,0,2,1,2.8636,3.1818
+91,3224,EC,Maidenhead,Halifax,1/22/2022,Maidenhead-Halifax,EC,Maidenhead,Halifax,"2,un25,BTTS-N",-10,8,0,1,2.5,3.3478
+92,3225,EC,Notts County,Barnet,1/22/2022,Notts County-Barnet,EC,Notts County,Barnet,"1X,ov25,BTTS-Y",6,0,2,-3,4.2857,3.2273
+93,3226,EC,Solihull,Dover Athletic,1/22/2022,Solihull-Dover Athletic,EC,Solihull,Dover Athletic,"1X,un25,BTTS-Y",6,-8,-1,-1,3.3636,2.8261
+94,3227,EC,Southend,Kings Lynn,1/22/2022,Southend-Kings Lynn,EC,Southend,Kings Lynn,"1X,un25,BTTS-N",0,-10,1,-2,3.9524,3.1905
+95,3228,EC,Woking,Wealdstone,1/22/2022,Woking-Wealdstone,EC,Woking,Wealdstone,"2,ov25,BTTS-Y",-5,-4,-1,1,4,3.619
+96,3229,EC,Yeovil,Wrexham,1/22/2022,Yeovil-Wrexham,EC,Yeovil,Wrexham,"2,un25,BTTS-Y",-2,2,-1,-2,3.8571,3.1818
+97,4051,F2,Caen,Ajaccio,1/22/2022,Caen-Ajaccio,F2,Caen,Ajaccio,"2,un25,BTTS-Y",0,3,-1,1,3.65,4.5263
+98,4052,F2,Amiens,Guingamp,1/22/2022,Amiens-Guingamp,F2,Amiens,Guingamp,"1X,un25,BTTS-N",5,-2,-1,0,3.9474,4.619
+99,4053,F2,Pau FC,Nimes,1/22/2022,Pau FC-Nimes,F2,Pau FC,Nimes,"2,ov25,BTTS-Y",1,2,0,1,3.5238,4.3
+100,4054,F2,Valenciennes,Nancy,1/22/2022,Valenciennes-Nancy,F2,Valenciennes,Nancy,"1X,un25,BTTS-Y",-2,-4,0,1,4.35,3.7
+101,4055,F2,Grenoble,Niort,1/22/2022,Grenoble-Niort,F2,Grenoble,Niort,"2,ov25,BTTS-N",-7,1,0,3,3.5238,3.8947
+102,4056,F2,Auxerre,Paris FC,1/22/2022,Auxerre-Paris FC,F2,Auxerre,Paris FC,"2,un25,BTTS-Y",3,7,1,0,3,2.65
+103,4057,F2,Dijon,Quevilly Rouen,1/22/2022,Dijon-Quevilly Rouen,F2,Dijon,Quevilly Rouen,"1X,ov25,BTTS-Y",5,-2,2,-3,4.6667,3.75
+104,4058,F2,Le Havre,Rodez,1/22/2022,Le Havre-Rodez,F2,Le Havre,Rodez,"1X,un25,BTTS-N",0,-3,0,-2,3.381,3.7143
+105,4059,F2,Dunkerque,Sochaux,1/22/2022,Dunkerque-Sochaux,F2,Dunkerque,Sochaux,"2,un25,BTTS-N",-7,0,-1,1,3.7895,4.381
+106,4060,F2,Bastia,Toulouse,1/22/2022,Bastia-Toulouse,F2,Bastia,Toulouse,"2,un25,BTTS-Y",3,3,-1,0,3.6667,3.8
+107,4773,N1,AZ Alkmaar,Cambuur,1/22/2022,AZ Alkmaar-Cambuur,N1,AZ Alkmaar,Cambuur,"1X,ov25,BTTS-Y",9,-3,1,0,2.8421,2.7895
+108,4774,N1,Vitesse,Groningen,1/22/2022,Vitesse-Groningen,N1,Vitesse,Groningen,"1X,un25,BTTS-Y",8,-1,1,-1,3.7895,3.6316
+109,4775,N1,Willem II,Twente,1/22/2022,Willem II-Twente,N1,Willem II,Twente,"2,un25,BTTS-N",-14,6,-2,2,3.1579,3.7895
+110,4776,N1,Heerenveen,Zwolle,1/22/2022,Heerenveen-Zwolle,N1,Heerenveen,Zwolle,"1X,un25,BTTS-N",-3,-2,-2,2,2.6842,3.2632
+111,784,D2,Ingolstadt,Darmstadt,1/23/2022,Ingolstadt-Darmstadt,D2,Ingolstadt,Darmstadt,"2,ov25,BTTS-Y",-2,6,-1,0,3.5789,4.4211
+112,785,D2,Hannover,Dresden,1/23/2022,Hannover-Dresden,D2,Hannover,Dresden,"1X,un25,BTTS-Y",-4,-1,1,0,3.6842,4.2105
+113,786,D2,Hansa Rostock,Heidenheim,1/23/2022,Hansa Rostock-Heidenheim,D2,Hansa Rostock,Heidenheim,"2,ov25,BTTS-Y",-5,6,-1,1,4.7895,3.4211
+114,787,D2,Regensburg,Holstein Kiel,1/23/2022,Regensburg-Holstein Kiel,D2,Regensburg,Holstein Kiel,"2,ov25,BTTS-Y",-4,2,3,0,3.8947,4.4211
+115,788,D2,Fortuna Dusseldorf,Nurnberg,1/23/2022,Fortuna Dusseldorf-Nurnberg,D2,Fortuna Dusseldorf,Nurnberg,"2,ov25,BTTS-N",-4,-1,-3,-1,3.5263,4.4211
+116,789,D2,Karlsruhe,Sandhausen,1/23/2022,Karlsruhe-Sandhausen,D2,Karlsruhe,Sandhausen,"1X,ov25,BTTS-Y",3,-7,0,-3,3.7368,4.1053
+117,790,D2,Erzgebirge Aue,Schalke 04,1/23/2022,Erzgebirge Aue-Schalke 04,D2,Erzgebirge Aue,Schalke 04,"2,ov25,BTTS-Y",-7,5,0,0,3.6842,3.7368
+118,791,D2,Hamburg,St Pauli,1/23/2022,Hamburg-St Pauli,D2,Hamburg,St Pauli,"1X,ov25,BTTS-Y",8,1,0,0,5.1053,3.6316
+119,792,D2,Paderborn,Werder Bremen,1/23/2022,Paderborn-Werder Bremen,D2,Paderborn,Werder Bremen,"2,ov25,BTTS-Y",-1,10,1,3,4.3684,4.8421
+120,3671,F1,Angers,Troyes,1/23/2022,Angers-Troyes,F1,Angers,Troyes,"1X,un25,BTTS-Y",-5,-2,0,-1,3.85,4.3
+121,3672,F1,Bordeaux,Strasbourg,1/23/2022,Bordeaux-Strasbourg,F1,Bordeaux,Strasbourg,"2,ov25,BTTS-Y",-10,8,-6,2,3.9048,4
+122,3673,F1,Brest,Lille,1/23/2022,Brest-Lille,F1,Brest,Lille,"2,un25,BTTS-N",-7,3,-2,0,3.8571,5
+123,3674,F1,Clermont,Rennes,1/23/2022,Clermont-Rennes,F1,Clermont,Rennes,"2,ov25,BTTS-N",-5,7,-4,6,3.5,3.3333
+124,3675,F1,Lens,Marseille,1/23/2022,Lens-Marseille,F1,Lens,Marseille,"2,un25,BTTS-Y",0,3,1,0,4.0952,3.85
+125,3676,F1,Lyon,St Etienne,1/23/2022,Lyon-St Etienne,F1,Lyon,St Etienne,"1X,un25,BTTS-N",0,-12,1,-1,3.8,3.75
+126,3677,F1,Metz,Nice,1/23/2022,Metz-Nice,F1,Metz,Nice,"2,ov25,BTTS-Y",-4,3,1,1,4.2857,3.619
+127,3678,F1,Montpellier,Monaco,1/23/2022,Montpellier-Monaco,F1,Montpellier,Monaco,"2,ov25,BTTS-Y",7,9,-2,4,4.45,3.7143
+128,3679,F1,Nantes,Lorient,1/23/2022,Nantes-Lorient,F1,Nantes,Lorient,"1X,un25,BTTS-N",1,-8,-1,0,3.5238,3.85
+129,3680,F1,Paris SG,Reims,1/23/2022,Paris SG-Reims,F1,Paris SG,Reims,"1X,un25,BTTS-Y",4,1,2,-1,4.2381,4.619
+130,4441,I1,Cagliari,Fiorentina,1/23/2022,Cagliari-Fiorentina,I1,Cagliari,Fiorentina,"2,ov25,BTTS-N",-9,7,-1,6,4.5909,5.1905
+131,4442,I1,Empoli,Roma,1/23/2022,Empoli-Roma,I1,Empoli,Roma,"2,un25,BTTS-Y",-5,3,0,1,4.5909,5.5455
+132,4443,I1,Genoa,Udinese,1/23/2022,Genoa-Udinese,I1,Genoa,Udinese,"2,ov25,BTTS-N",-11,-4,-6,-2,4.7273,5.1
+133,4444,I1,Verona,Bologna,1/23/2022,Verona-Bologna,I1,Verona,Bologna,"1X,ov25,BTTS-Y",0,-4,2,-2,4.5909,5.1429
+134,4445,I1,Inter,Venezia,1/23/2022,Inter-Venezia,I1,Inter,Venezia,"1X,ov25,BTTS-Y",14,-6,0,0,4.2381,4.7619
+135,4446,I1,Lazio,Atalanta,1/23/2022,Lazio-Atalanta,I1,Lazio,Atalanta,"2,ov25,BTTS-Y",5,3,3,0,5.1818,5
+136,4447,I1,Milan,Juventus,1/23/2022,Milan-Juventus,I1,Milan,Juventus,"2,un25,BTTS-Y",5,7,-1,2,4.4091,4.6364
+137,4448,I1,Napoli,Salernitana,1/23/2022,Napoli-Salernitana,I1,Napoli,Salernitana,"1X,un25,BTTS-N",2,-15,2,-3,4.3636,4.2
+138,4449,I1,Spezia,Sampdoria,1/23/2022,Spezia-Sampdoria,I1,Spezia,Sampdoria,"1X,un25,BTTS-Y",0,-1,1,-1,4.7273,4.6818
+139,4450,I1,Torino,Sassuolo,1/23/2022,Torino-Sassuolo,I1,Torino,Sassuolo,"1X,ov25,BTTS-Y",6,0,1,-2,4.5714,5
+140,4777,N1,PSV Eindhoven,Ajax,1/23/2022,PSV Eindhoven-Ajax,N1,PSV Eindhoven,Ajax,"1X,ov25,BTTS-Y",10,15,1,3,2.2632,2.8421
+141,4778,N1,Nijmegen,Feyenoord,1/23/2022,Nijmegen-Feyenoord,N1,Nijmegen,Feyenoord,"2,un25,BTTS-Y",0,6,0,-1,3.4737,3.2105
+142,4779,N1,Heracles,Go Ahead Eagles,1/23/2022,Heracles-Go Ahead Eagles,N1,Heracles,Go Ahead Eagles,"1X,un25,BTTS-N",-1,-6,0,-2,3.4737,3.1053
+143,4780,N1,Sparta Rotterdam,Utrecht,1/23/2022,Sparta Rotterdam-Utrecht,N1,Sparta Rotterdam,Utrecht,"2,un25,BTTS-Y",-3,-5,0,-3,3.0526,3.3684
+144,5069,P1,Maritimo,Belenenses,1/23/2022,Maritimo-Belenenses,P1,Maritimo,Belenenses,"1X,un25,BTTS-N",1,-7,1,-3,6.9444,6.0556
+145,5070,P1,Arouca,Benfica,1/23/2022,Arouca-Benfica,P1,Arouca,Benfica,"2,ov25,BTTS-Y",-10,7,-1,0,6.7647,4.8333
+146,5071,P1,Pacos Ferreira,Boavista,1/23/2022,Pacos Ferreira-Boavista,P1,Pacos Ferreira,Boavista,"1X,un25,BTTS-N",-2,-1,0,0,5.6111,6.1667
+147,5072,P1,Sp Lisbon,Sp Braga,1/23/2022,Sp Lisbon-Sp Braga,P1,Sp Lisbon,Sp Braga,"1X,un25,BTTS-Y",9,7,2,-1,6.3889,5.6667
+148,5073,P1,Guimaraes,Estoril,1/23/2022,Guimaraes-Estoril,P1,Guimaraes,Estoril,"1X,un25,BTTS-Y",2,-3,0,-1,5.8333,6.0588
+149,5074,P1,Porto,Famalicao,1/23/2022,Porto-Famalicao,P1,Porto,Famalicao,"1X,ov25,BTTS-Y",14,-6,3,0,6.6667,6.0556
+150,5075,P1,Tondela,Vizela,1/23/2022,Tondela-Vizela,P1,Tondela,Vizela,"2,un25,BTTS-N",-6,-4,0,-2,6.4444,5.4444
+151,5076,P1,Gil Vicente,Portimonense,1/23/2022,Gil Vicente-Portimonense,P1,Gil Vicente,Portimonense,"1X,ov25,BTTS-Y",6,-4,0,0,6.2222,6.5
+152,5077,P1,Moreirense,Santa Clara,1/23/2022,Moreirense-Santa Clara,P1,Moreirense,Santa Clara,"2,un25,BTTS-Y",-1,-1,0,0,6.0556,5.6667
+153,5801,SP1,Alaves,Barcelona,1/23/2022,Alaves-Barcelona,SP1,Alaves,Barcelona,"2,un25,BTTS-Y",-6,1,0,0,4.3,5.15
+154,5802,SP1,Ath Madrid,Valencia,1/23/2022,Ath Madrid-Valencia,SP1,Ath Madrid,Valencia,"2,ov25,BTTS-Y",-3,-1,0,-3,4.8,7
+155,5803,SP1,Granada,Osasuna,1/23/2022,Granada-Osasuna,SP1,Granada,Osasuna,"1X,un25,BTTS-Y",5,-1,0,2,5.2,4.9
+156,5804,SP1,Espanol,Betis,1/23/2022,Espanol-Betis,SP1,Espanol,Betis,"2,ov25,BTTS-Y",-1,4,-1,0,5.45,4.05
+157,5805,SP1,Levante,Cadiz,1/23/2022,Levante-Cadiz,SP1,Levante,Cadiz,"1X,un25,BTTS-N",-7,-8,2,-2,5.35,4.95
+158,5806,SP1,Real Madrid,Elche,1/23/2022,Real Madrid-Elche,SP1,Real Madrid,Elche,"1X,un25,BTTS-Y",7,2,3,1,3.9048,4.7143
+159,5807,SP1,Sociedad,Getafe,1/23/2022,Sociedad-Getafe,SP1,Sociedad,Getafe,"2,un25,BTTS-N",-8,1,1,-1,4.8,5.75
+160,5808,SP1,Sevilla,Celta,1/23/2022,Sevilla-Celta,SP1,Sevilla,Celta,"1X,un25,BTTS-Y",5,3,1,-1,4.7,5.3
+161,5809,SP1,Vallecano,Ath Bilbao,1/23/2022,Vallecano-Ath Bilbao,SP1,Vallecano,Ath Bilbao,"1X,un25,BTTS-N",-1,1,0,0,5.4,4.381
+162,5810,SP1,Villarreal,Mallorca,1/23/2022,Villarreal-Mallorca,SP1,Villarreal,Mallorca,"1X,un25,BTTS-N",11,-5,-1,-2,4.619,5.8
+163,6224,SP2,Sociedad B,Cartagena,1/23/2022,Sociedad B-Cartagena,SP2,Sociedad B,Cartagena,"2,un25,BTTS-N",-8,-1,0,-3,3.4783,4.6522
+164,6225,SP2,Alcorcon,Mirandes,1/23/2022,Alcorcon-Mirandes,SP2,Alcorcon,Mirandes,"2,un25,BTTS-Y",-7,-1,-4,-1,4.2174,4.4348
+165,6226,SP2,Almeria,Eibar,1/23/2022,Almeria-Eibar,SP2,Almeria,Eibar,"2,un25,BTTS-Y",4,3,0,0,4.8636,3.7391
+166,6227,SP2,Fuenlabrada,Las Palmas,1/23/2022,Fuenlabrada-Las Palmas,SP2,Fuenlabrada,Las Palmas,"2,un25,BTTS-Y",-4,-2,-1,0,6,5.6087
+167,6228,SP2,Burgos,Leganes,1/23/2022,Burgos-Leganes,SP2,Burgos,Leganes,"1X,un25,BTTS-Y",3,1,-1,0,3.6522,4
+168,6229,SP2,Girona,Lugo,1/23/2022,Girona-Lugo,SP2,Girona,Lugo,"1X,un25,BTTS-Y",5,1,1,1,5.6957,4.9545
+169,6230,SP2,Tenerife,Oviedo,1/23/2022,Tenerife-Oviedo,SP2,Tenerife,Oviedo,"1X,un25,BTTS-Y",3,3,0,0,4.9565,4.7391
+170,6231,SP2,Huesca,Ponferradina,1/23/2022,Huesca-Ponferradina,SP2,Huesca,Ponferradina,"1X,un25,BTTS-N",3,0,3,0,4.6957,4.3043
+171,6232,SP2,Sp Gijon,Amorebieta,1/23/2022,Sp Gijon-Amorebieta,SP2,Sp Gijon,Amorebieta,"2,un25,BTTS-Y",1,1,0,0,5.1304,3.4783
+172,6233,SP2,Malaga,Ibiza,1/23/2022,Malaga-Ibiza,SP2,Malaga,Ibiza,"2,un25,BTTS-N",-5,2,0,4,5.4348,3.5217
+173,6234,SP2,Zaragoza,Valladolid,1/23/2022,Zaragoza-Valladolid,SP2,Zaragoza,Valladolid,"2,un25,BTTS-N",-6,6,0,1,5.6087,4.6522
+174,6653,T1,Hatayspor,Rizespor,1/23/2022,Hatayspor-Rizespor,T1,Hatayspor,Rizespor,"1X,un25,BTTS-Y",-2,0,2,-2,4.9048,3.9524
+175,6654,T1,Antalyaspor,Gaziantep,1/23/2022,Antalyaspor-Gaziantep,T1,Antalyaspor,Gaziantep,"2,un25,BTTS-N",-6,4,0,-1,5.381,4.1905
+176,6655,T1,Ad. Demirspor,Karagumruk,1/23/2022,Ad. Demirspor-Karagumruk,T1,Ad. Demirspor,Karagumruk,"1X,un25,BTTS-Y",6,-2,0,2,3.8571,4.619
+177,6656,T1,Yeni Malatyaspor,Besiktas,1/23/2022,Yeni Malatyaspor-Besiktas,T1,Yeni Malatyaspor,Besiktas,"2,ov25,BTTS-N",-9,3,-1,1,3.8571,4.619
+178,6657,T1,Galatasaray,Trabzonspor,1/23/2022,Galatasaray-Trabzonspor,T1,Galatasaray,Trabzonspor,"2,un25,BTTS-N",-4,3,-2,0,5.7143,4.381
+179,6658,T1,Giresunspor,Alanyaspor,1/23/2022,Giresunspor-Alanyaspor,T1,Giresunspor,Alanyaspor,"2,un25,BTTS-N",-3,3,-2,2,4.0476,4.5238
+180,6659,T1,Kasimpasa,Kayserispor,1/23/2022,Kasimpasa-Kayserispor,T1,Kasimpasa,Kayserispor,"1X,un25,BTTS-Y",3,2,2,0,4.6667,4.2381
+181,6660,T1,Altay,Konyaspor,1/23/2022,Altay-Konyaspor,T1,Altay,Konyaspor,"2,un25,BTTS-N",-9,6,-2,-1,4,4.3
+182,6661,T1,Sivasspor,Fenerbahce,1/23/2022,Sivasspor-Fenerbahce,T1,Sivasspor,Fenerbahce,"1X,un25,BTTS-Y",1,0,0,0,4.8571,4.0952
+183,6662,T1,Buyuksehyr,Goztep,1/23/2022,Buyuksehyr-Goztep,T1,Buyuksehyr,Goztep,"1X,ov25,BTTS-Y",6,1,0,1,3.55,5.2857

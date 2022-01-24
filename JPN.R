@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('JPN.xlsx')
+unlink('NL/JPN.xlsx')
 ######################JPN START#######################################
 #####################################################################
 JPN <- read.csv('../FDAS/JPN.csv')
@@ -47,7 +47,7 @@ jpn_goaltotalsv2 <- cbind(jpn_totalgoalsv2,jpn_games_played)
 jpn_avg_totalgoals <- round((jpn_totalgoals/ jpn_games_played), digits = 4)
 jpn_goaltotalsv2[is.na(jpn_goaltotalsv2)] <- ""
 jpn_goaltotalsv2 <- cbind(jpn_goaltotalsv2,jpn_avg_totalgoals)
-write.xlsx(jpn_goaltotalsv2,'JPN.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(jpn_goaltotalsv2,'NL/JPN.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(jpn_rowhgs in 1:nrow(jpn_goalscored_h)) {
 
   }
 }
-write.xlsx(jpn_goalscored_h,'JPN.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(jpn_goalscored_h,'NL/JPN.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(jpn_rowhgc in 1:nrow(jpn_goalconceded_h)) {
 
   }
 }
-write.xlsx(jpn_goalconceded_h,'JPN.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(jpn_goalconceded_h,'NL/JPN.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 jpn_form_h <- tapply(JPN$FTR, JPN[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(jpn_rowh_f in 1:nrow(jpn_form_h)) {
 
   }
 }
-write.xlsx(jpn_form_h,'JPN.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(jpn_form_h,'NL/JPN.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 jpn_totalgoals_h <- tapply(JPN$TG, JPN[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(jpn_rowh in 1:nrow(jpn_totalgoals_h)) {
 
   }
 }
-write.xlsx(jpn_totalgoals_h,'JPN.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(jpn_totalgoals_h,'NL/JPN.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 jpn_form_team_against_h <- tapply(JPN$Away, JPN[c("Home", "Date")],median)
@@ -267,7 +267,7 @@ jpn_un55 <- jpn_un55_home + jpn_un55_away
 jpn_ov55 <- jpn_ov55_home + jpn_ov55_away
 
 jpn_ovundata <- cbind(jpn_teams,jpn_un05,jpn_ov05,jpn_un15,jpn_ov15,jpn_un25,jpn_ov25,jpn_un35,jpn_ov35,jpn_un45,jpn_ov45,jpn_un55,jpn_ov55)
-write.xlsx(jpn_ovundata,'JPN.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(jpn_ovundata,'NL/JPN.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -386,7 +386,7 @@ for(jpn_rowhrank in 1:nrow(jpn_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_jpn,'JPN.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_jpn,'NL/JPN.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six jpn###################################################
 #JPN
@@ -537,7 +537,7 @@ final_jpn_hf_against <- as.data.frame(final_jpn_hf_against)
 colnames(final_jpn_hf_against) <- "Team against"
 #combine the columns
 final_jpn_all <- cbind(final_jpn_hf,final_jpn_gs,final_jpn_gc,final_jpn_tg,final_jpn_cs,final_jpn_wm,final_jpn_hf_against)
-write.xlsx(final_jpn_all,'JPN.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_jpn_all,'NL/JPN.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -586,8 +586,8 @@ jpn_away_poisson <- cbind(jpn_division,jpn_teams,jpn_avg_AG,jpn_away_as,jpn_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(jpn_home_poisson,'JPN.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(jpn_away_poisson,'JPN.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(jpn_home_poisson,'NL/JPN.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(jpn_away_poisson,'NL/JPN.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################JPN FIXTURES##########################################################################
 #JPN
@@ -930,7 +930,7 @@ JPN_fixtures$jpn_ov25 <- percent(JPN_fixtures$jpn_ov25, accuracy = 0.1)
 JPN_fixtures$jpn_un25 <- percent(JPN_fixtures$jpn_un25, accuracy = 0.1)
 JPN_fixtures$jpn_pscore <- paste(round(JPN_fixtures$jpn_xGH,digits = 0),round(JPN_fixtures$jpn_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(JPN_fixtures,'JPN.xlsx',sheetName = "JPN", append = TRUE)
+write.xlsx(JPN_fixtures,'NL/JPN.xlsx',sheetName = "JPN", append = TRUE)
 ###########################################################################################################
 ########################JPN END###########################################################################
 JPN <- read.csv('../FDAS/JPN.csv')
@@ -939,8 +939,8 @@ JPN$OV25 <- ifelse(JPN$TG >= 3,"Y","N")
 jpn_ftr_summary <- tabyl(JPN,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 jpn_ov25_summary <- tabyl(JPN,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(jpn_ftr_summary,'JPN.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(jpn_ov25_summary,'JPN.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(jpn_ftr_summary,'NL/JPN.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(jpn_ov25_summary,'NL/JPN.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

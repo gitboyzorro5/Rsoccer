@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('POL.xlsx')
+unlink('NL/POL.xlsx')
 ######################POL START#######################################
 #####################################################################
 POL <- read.csv('../FDAS/POL.csv')
@@ -46,7 +46,7 @@ pol_goaltotalsv2 <- cbind(pol_totalgoalsv2,pol_games_played)
 pol_avg_totalgoals <- round((pol_totalgoals/ pol_games_played), digits = 4)
 pol_goaltotalsv2[is.na(pol_goaltotalsv2)] <- ""
 pol_goaltotalsv2 <- cbind(pol_goaltotalsv2,pol_avg_totalgoals)
-write.xlsx(pol_goaltotalsv2,'POL.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(pol_goaltotalsv2,'NL/POL.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -68,7 +68,7 @@ for(pol_rowhgs in 1:nrow(pol_goalscored_h)) {
 
   }
 }
-write.xlsx(pol_goalscored_h,'POL.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(pol_goalscored_h,'NL/POL.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -90,7 +90,7 @@ for(pol_rowhgc in 1:nrow(pol_goalconceded_h)) {
 
   }
 }
-write.xlsx(pol_goalconceded_h,'POL.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(pol_goalconceded_h,'NL/POL.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 pol_form_h <- tapply(POL$FTR, POL[c("Home", "Date")],median)
@@ -114,7 +114,7 @@ for(pol_rowh_f in 1:nrow(pol_form_h)) {
 
   }
 }
-write.xlsx(pol_form_h,'POL.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(pol_form_h,'NL/POL.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 pol_totalgoals_h <- tapply(POL$TG, POL[c("Home", "Date")],mean)
@@ -134,7 +134,7 @@ for(pol_rowh in 1:nrow(pol_totalgoals_h)) {
 
   }
 }
-write.xlsx(pol_totalgoals_h,'POL.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(pol_totalgoals_h,'NL/POL.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 pol_form_team_against_h <- tapply(POL$Away, POL[c("Home", "Date")],median)
@@ -267,7 +267,7 @@ pol_un55 <- pol_un55_home + pol_un55_away
 pol_ov55 <- pol_ov55_home + pol_ov55_away
 
 pol_ovundata <- cbind(pol_teams,pol_un05,pol_ov05,pol_un15,pol_ov15,pol_un25,pol_ov25,pol_un35,pol_ov35,pol_un45,pol_ov45,pol_un55,pol_ov55)
-write.xlsx(pol_ovundata,'POL.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(pol_ovundata,'NL/POL.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -386,7 +386,7 @@ for(pol_rowhrank in 1:nrow(pol_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_pol,'POL.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_pol,'NL/POL.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six pol###################################################
 #POL
@@ -537,7 +537,7 @@ final_pol_hf_against <- as.data.frame(final_pol_hf_against)
 colnames(final_pol_hf_against) <- "Team against"
 #combine the columns
 final_pol_all <- cbind(final_pol_hf,final_pol_gs,final_pol_gc,final_pol_tg,final_pol_cs,final_pol_wm,final_pol_hf_against)
-write.xlsx(final_pol_all,'POL.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_pol_all,'NL/POL.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -586,8 +586,8 @@ pol_away_poisson <- cbind(pol_division,pol_teams,pol_avg_AG,pol_away_as,pol_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(pol_home_poisson,'POL.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(pol_away_poisson,'POL.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(pol_home_poisson,'NL/POL.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(pol_away_poisson,'NL/POL.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################POL FIXTURES##########################################################################
 #POL
@@ -930,7 +930,7 @@ POL_fixtures$pol_ov25 <- percent(POL_fixtures$pol_ov25, accuracy = 0.1)
 POL_fixtures$pol_un25 <- percent(POL_fixtures$pol_un25, accuracy = 0.1)
 POL_fixtures$pol_pscore <- paste(round(POL_fixtures$pol_xGH,digits = 0),round(POL_fixtures$pol_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(POL_fixtures,'POL.xlsx',sheetName = "POL", append = TRUE)
+write.xlsx(POL_fixtures,'NL/POL.xlsx',sheetName = "POL", append = TRUE)
 ###########################################################################################################
 ########################POL END###########################################################################
 POL <- read.csv('../FDAS/POL.csv')
@@ -939,8 +939,8 @@ POL$OV25 <- ifelse(POL$TG >= 3,"Y","N")
 pol_ftr_summary <- tabyl(POL,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 pol_ov25_summary <- tabyl(POL,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(pol_ftr_summary,'POL.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(pol_ov25_summary,'POL.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(pol_ftr_summary,'NL/POL.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(pol_ov25_summary,'NL/POL.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

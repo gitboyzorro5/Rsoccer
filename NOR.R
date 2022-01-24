@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('NOR.xlsx')
+unlink('NL/NOR.xlsx')
 ######################NOR START#######################################
 #####################################################################
 NOR <- read.csv('../FDAS/NOR.csv')
@@ -47,7 +47,7 @@ nor_goaltotalsv2 <- cbind(nor_totalgoalsv2,nor_games_played)
 nor_avg_totalgoals <- round((nor_totalgoals/ nor_games_played), digits = 4)
 nor_goaltotalsv2[is.na(nor_goaltotalsv2)] <- ""
 nor_goaltotalsv2 <- cbind(nor_goaltotalsv2,nor_avg_totalgoals)
-write.xlsx(nor_goaltotalsv2,'NOR.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(nor_goaltotalsv2,'NL/NOR.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(nor_rowhgs in 1:nrow(nor_goalscored_h)) {
 
   }
 }
-write.xlsx(nor_goalscored_h,'NOR.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(nor_goalscored_h,'NL/NOR.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(nor_rowhgc in 1:nrow(nor_goalconceded_h)) {
 
   }
 }
-write.xlsx(nor_goalconceded_h,'NOR.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(nor_goalconceded_h,'NL/NOR.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 nor_form_h <- tapply(NOR$FTR, NOR[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(nor_rowh_f in 1:nrow(nor_form_h)) {
 
   }
 }
-write.xlsx(nor_form_h,'NOR.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(nor_form_h,'NL/NOR.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 nor_totalgoals_h <- tapply(NOR$TG, NOR[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(nor_rowh in 1:nrow(nor_totalgoals_h)) {
 
   }
 }
-write.xlsx(nor_totalgoals_h,'NOR.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(nor_totalgoals_h,'NL/NOR.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 nor_form_team_against_h <- tapply(NOR$Away, NOR[c("Home", "Date")],median)
@@ -267,7 +267,7 @@ nor_un55 <- nor_un55_home + nor_un55_away
 nor_ov55 <- nor_ov55_home + nor_ov55_away
 
 nor_ovundata <- cbind(nor_teams,nor_un05,nor_ov05,nor_un15,nor_ov15,nor_un25,nor_ov25,nor_un35,nor_ov35,nor_un45,nor_ov45,nor_un55,nor_ov55)
-write.xlsx(nor_ovundata,'NOR.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(nor_ovundata,'NL/NOR.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -387,7 +387,7 @@ for(nor_rowhrank in 1:nrow(nor_form_team_against_h)) {
   }
 }
 
-write.xlsx(points_nor,'NOR.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_nor,'NL/NOR.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six nor###################################################
 #NOR
@@ -538,7 +538,7 @@ final_nor_hf_against <- as.data.frame(final_nor_hf_against)
 colnames(final_nor_hf_against) <- "Team against"
 #combine the columns
 final_nor_all <- cbind(final_nor_hf,final_nor_gs,final_nor_gc,final_nor_tg,final_nor_cs,final_nor_wm,final_nor_hf_against)
-write.xlsx(final_nor_all,'NOR.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_nor_all,'NL/NOR.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -587,8 +587,8 @@ nor_away_poisson <- cbind(nor_division,nor_teams,nor_avg_AG,nor_away_as,nor_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(nor_home_poisson,'NOR.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(nor_away_poisson,'NOR.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(nor_home_poisson,'NL/NOR.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(nor_away_poisson,'NL/NOR.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################NOR FIXTURES##########################################################################
 #NOR
@@ -1087,7 +1087,7 @@ NOR_fixtures$nor_AH_125_A <- percent(NOR_fixtures$nor_AH_125_A, accuracy = 0.1)
 ########Asian Handicaps######################################################################################################
 NOR_fixtures$nor_pscore <- paste(round(NOR_fixtures$nor_xGH,digits = 0),round(NOR_fixtures$nor_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(NOR_fixtures,'NOR.xlsx',sheetName = "NOR", append = TRUE)
+write.xlsx(NOR_fixtures,'NL/NOR.xlsx',sheetName = "NOR", append = TRUE)
 ###########################################################################################################
 ########################NOR END###########################################################################
 NOR <- read.csv('../FDAS/NOR.csv')
@@ -1096,8 +1096,8 @@ NOR$OV25 <- ifelse(NOR$TG >= 3,"Y","N")
 nor_ftr_summary <- tabyl(NOR,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 nor_ov25_summary <- tabyl(NOR,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(nor_ftr_summary,'NOR.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(nor_ov25_summary,'NOR.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(nor_ftr_summary,'NL/NOR.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(nor_ov25_summary,'NL/NOR.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

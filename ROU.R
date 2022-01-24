@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('ROU.xlsx')
+unlink('NL/ROU.xlsx')
 ######################ROU START#######################################
 #####################################################################
 ROU <- read.csv('../FDAS/ROU.csv')
@@ -47,7 +47,7 @@ rou_goaltotalsv2 <- cbind(rou_totalgoalsv2,rou_games_played)
 rou_avg_totalgoals <- round((rou_totalgoals/ rou_games_played), digits = 4)
 rou_goaltotalsv2[is.na(rou_goaltotalsv2)] <- ""
 rou_goaltotalsv2 <- cbind(rou_goaltotalsv2,rou_avg_totalgoals)
-write.xlsx(rou_goaltotalsv2,'ROU.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(rou_goaltotalsv2,'NL/ROU.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(rou_rowhgs in 1:nrow(rou_goalscored_h)) {
 
   }
 }
-write.xlsx(rou_goalscored_h,'ROU.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(rou_goalscored_h,'NL/ROU.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(rou_rowhgc in 1:nrow(rou_goalconceded_h)) {
 
   }
 }
-write.xlsx(rou_goalconceded_h,'ROU.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(rou_goalconceded_h,'NL/ROU.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 rou_form_h <- tapply(ROU$FTR, ROU[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(rou_rowh_f in 1:nrow(rou_form_h)) {
 
   }
 }
-write.xlsx(rou_form_h,'ROU.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(rou_form_h,'NL/ROU.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 rou_totalgoals_h <- tapply(ROU$TG, ROU[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(rou_rowh in 1:nrow(rou_totalgoals_h)) {
 
   }
 }
-write.xlsx(rou_totalgoals_h,'ROU.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(rou_totalgoals_h,'NL/ROU.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 rou_form_team_against_h <- tapply(ROU$Away, ROU[c("Home", "Date")],median)
@@ -268,7 +268,7 @@ rou_un55 <- rou_un55_home + rou_un55_away
 rou_ov55 <- rou_ov55_home + rou_ov55_away
 
 rou_ovundata <- cbind(rou_teams,rou_un05,rou_ov05,rou_un15,rou_ov15,rou_un25,rou_ov25,rou_un35,rou_ov35,rou_un45,rou_ov45,rou_un55,rou_ov55)
-write.xlsx(rou_ovundata,'ROU.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(rou_ovundata,'NL/ROU.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -387,7 +387,7 @@ for(rou_rowhrank in 1:nrow(rou_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_rou,'ROU.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_rou,'NL/ROU.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six rou###################################################
 #ROU
@@ -538,7 +538,7 @@ final_rou_hf_against <- as.data.frame(final_rou_hf_against)
 colnames(final_rou_hf_against) <- "Team against"
 #combine the columns
 final_rou_all <- cbind(final_rou_hf,final_rou_gs,final_rou_gc,final_rou_tg,final_rou_cs,final_rou_wm,final_rou_hf_against)
-write.xlsx(final_rou_all,'ROU.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_rou_all,'NL/ROU.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -587,8 +587,8 @@ rou_away_poisson <- cbind(rou_division,rou_teams,rou_avg_AG,rou_away_as,rou_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(rou_home_poisson,'ROU.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(rou_away_poisson,'ROU.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(rou_home_poisson,'NL/ROU.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(rou_away_poisson,'NL/ROU.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################ROU FIXTURES##########################################################################
 #ROU
@@ -931,7 +931,7 @@ ROU_fixtures$rou_ov25 <- percent(ROU_fixtures$rou_ov25, accuracy = 0.1)
 ROU_fixtures$rou_un25 <- percent(ROU_fixtures$rou_un25, accuracy = 0.1)
 ROU_fixtures$rou_pscore <- paste(round(ROU_fixtures$rou_xGH,digits = 0),round(ROU_fixtures$rou_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(ROU_fixtures,'ROU.xlsx',sheetName = "ROU", append = TRUE)
+write.xlsx(ROU_fixtures,'NL/ROU.xlsx',sheetName = "ROU", append = TRUE)
 ###########################################################################################################
 ########################ROU END###########################################################################
 ROU <- read.csv('../FDAS/ROU.csv')
@@ -940,8 +940,8 @@ ROU$OV25 <- ifelse(ROU$TG >= 3,"Y","N")
 rou_ftr_summary <- tabyl(ROU,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 rou_ov25_summary <- tabyl(ROU,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(rou_ftr_summary,'ROU.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(rou_ov25_summary,'ROU.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(rou_ftr_summary,'NL/ROU.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(rou_ov25_summary,'NL/ROU.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('IRL.xlsx')
+unlink('NL/IRL.xlsx')
 ######################IRL START#######################################
 #####################################################################
 IRL <- read.csv('../FDAS/IRL.csv')
@@ -47,7 +47,7 @@ irl_goaltotalsv2 <- cbind(irl_totalgoalsv2,irl_games_played)
 irl_avg_totalgoals <- round((irl_totalgoals/ irl_games_played), digits = 4)
 irl_goaltotalsv2[is.na(irl_goaltotalsv2)] <- ""
 irl_goaltotalsv2 <- cbind(irl_goaltotalsv2,irl_avg_totalgoals)
-write.xlsx(irl_goaltotalsv2,'IRL.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(irl_goaltotalsv2,'NL/IRL.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(irl_rowhgs in 1:nrow(irl_goalscored_h)) {
 
   }
 }
-write.xlsx(irl_goalscored_h,'IRL.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(irl_goalscored_h,'NL/IRL.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(irl_rowhgc in 1:nrow(irl_goalconceded_h)) {
 
   }
 }
-write.xlsx(irl_goalconceded_h,'IRL.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(irl_goalconceded_h,'NL/IRL.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 irl_form_h <- tapply(IRL$FTR, IRL[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(irl_rowh_f in 1:nrow(irl_form_h)) {
 
   }
 }
-write.xlsx(irl_form_h,'IRL.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(irl_form_h,'NL/IRL.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 irl_totalgoals_h <- tapply(IRL$TG, IRL[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(irl_rowh in 1:nrow(irl_totalgoals_h)) {
 
   }
 }
-write.xlsx(irl_totalgoals_h,'IRL.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(irl_totalgoals_h,'NL/IRL.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 irl_form_team_against_h <- tapply(IRL$Away, IRL[c("Home", "Date")],median)
@@ -268,7 +268,7 @@ irl_un55 <- irl_un55_home + irl_un55_away
 irl_ov55 <- irl_ov55_home + irl_ov55_away
 
 irl_ovundata <- cbind(irl_teams,irl_un05,irl_ov05,irl_un15,irl_ov15,irl_un25,irl_ov25,irl_un35,irl_ov35,irl_un45,irl_ov45,irl_un55,irl_ov55)
-write.xlsx(irl_ovundata,'IRL.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(irl_ovundata,'NL/IRL.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -387,7 +387,7 @@ for(irl_rowhrank in 1:nrow(irl_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_irl,'IRL.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_irl,'NL/IRL.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six irl###################################################
 #IRL
@@ -536,7 +536,7 @@ final_irl_hf_against <- as.data.frame(final_irl_hf_against)
 colnames(final_irl_hf_against) <- "Team against"
 #combine the columns
 final_irl_all <- cbind(final_irl_hf,final_irl_gs,final_irl_gc,final_irl_tg,final_irl_cs,final_irl_wm,final_irl_hf_against)
-write.xlsx(final_irl_all,'IRL.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_irl_all,'NL/IRL.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -585,8 +585,8 @@ irl_away_poisson <- cbind(irl_division,irl_teams,irl_avg_AG,irl_away_as,irl_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(irl_home_poisson,'IRL.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(irl_away_poisson,'IRL.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(irl_home_poisson,'NL/IRL.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(irl_away_poisson,'NL/IRL.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################IRL FIXTURES##########################################################################
 #IRL
@@ -929,7 +929,7 @@ IRL_fixtures$irl_ov25 <- percent(IRL_fixtures$irl_ov25, accuracy = 0.1)
 IRL_fixtures$irl_un25 <- percent(IRL_fixtures$irl_un25, accuracy = 0.1)
 IRL_fixtures$irl_pscore <- paste(round(IRL_fixtures$irl_xGH,digits = 0),round(IRL_fixtures$irl_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(IRL_fixtures,'IRL.xlsx',sheetName = "IRL", append = TRUE)
+write.xlsx(IRL_fixtures,'NL/IRL.xlsx',sheetName = "IRL", append = TRUE)
 ###########################################################################################################
 ########################IRL END###########################################################################
 IRL <- read.csv('../FDAS/IRL.csv')
@@ -938,8 +938,8 @@ IRL$OV25 <- ifelse(IRL$TG >= 3,"Y","N")
 irl_ftr_summary <- tabyl(IRL,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 irl_ov25_summary <- tabyl(IRL,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(irl_ftr_summary,'IRL.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(irl_ov25_summary,'IRL.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(irl_ftr_summary,'NL/IRL.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(irl_ov25_summary,'NL/IRL.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

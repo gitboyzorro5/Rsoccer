@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('BRA.xlsx')
+unlink('NL/BRA.xlsx')
 ######################BRA START#######################################
 #####################################################################
 BRA <- read.csv('../FDAS/BRA.csv')
@@ -54,7 +54,7 @@ bra_goaltotalsv2 <- cbind(bra_totalgoalsv2,bra_games_played)
 bra_avg_totalgoals <- round((bra_totalgoals/ bra_games_played), digits = 4)
 bra_goaltotalsv2[is.na(bra_goaltotalsv2)] <- ""
 bra_goaltotalsv2 <- cbind(bra_goaltotalsv2,bra_avg_totalgoals)
-write.xlsx(bra_goaltotalsv2,'BRA.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(bra_goaltotalsv2,'NL/BRA.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -76,7 +76,7 @@ for(bra_rowhgs in 1:nrow(bra_goalscored_h)) {
 
   }
 }
-write.xlsx(bra_goalscored_h,'BRA.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(bra_goalscored_h,'NL/BRA.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -98,7 +98,7 @@ for(bra_rowhgc in 1:nrow(bra_goalconceded_h)) {
 
   }
 }
-write.xlsx(bra_goalconceded_h,'BRA.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(bra_goalconceded_h,'NL/BRA.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 bra_form_h <- tapply(BRA$FTR, BRA[c("Home", "Date")],median)
@@ -122,7 +122,7 @@ for(bra_rowh_f in 1:nrow(bra_form_h)) {
 
   }
 }
-write.xlsx(bra_form_h,'BRA.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(bra_form_h,'NL/BRA.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 bra_totalgoals_h <- tapply(BRA$TG, BRA[c("Home", "Date")],mean)
@@ -142,7 +142,7 @@ for(bra_rowh in 1:nrow(bra_totalgoals_h)) {
 
   }
 }
-write.xlsx(bra_totalgoals_h,'BRA.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(bra_totalgoals_h,'NL/BRA.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 bra_form_team_against_h <- tapply(BRA$Away, BRA[c("Home", "Date")],median)
@@ -274,7 +274,7 @@ bra_un55 <- bra_un55_home + bra_un55_away
 bra_ov55 <- bra_ov55_home + bra_ov55_away
 
 bra_ovundata <- cbind(bra_teams,bra_un05,bra_ov05,bra_un15,bra_ov15,bra_un25,bra_ov25,bra_un35,bra_ov35,bra_un45,bra_ov45,bra_un55,bra_ov55)
-write.xlsx(bra_ovundata,'BRA.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(bra_ovundata,'NL/BRA.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -393,7 +393,7 @@ for(bra_rowhrank in 1:nrow(bra_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_bra,'BRA.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_bra,'NL/BRA.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six bra###################################################
 #BRA
@@ -544,7 +544,7 @@ final_bra_hf_against <- as.data.frame(final_bra_hf_against)
 colnames(final_bra_hf_against) <- "Team against"
 #combine the columns
 final_bra_all <- cbind(final_bra_hf,final_bra_gs,final_bra_gc,final_bra_tg,final_bra_cs,final_bra_wm,final_bra_hf_against)
-write.xlsx(final_bra_all,'BRA.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_bra_all,'NL/BRA.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -593,8 +593,8 @@ bra_away_poisson <- cbind(bra_division,bra_teams,bra_avg_AG,bra_away_as,bra_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(bra_home_poisson,'BRA.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(bra_away_poisson,'BRA.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(bra_home_poisson,'NL/BRA.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(bra_away_poisson,'NL/BRA.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################BRA FIXTURES##########################################################################
 #BRA
@@ -937,7 +937,7 @@ BRA_fixtures$bra_ov25 <- percent(BRA_fixtures$bra_ov25, accuracy = 0.1)
 BRA_fixtures$bra_un25 <- percent(BRA_fixtures$bra_un25, accuracy = 0.1)
 BRA_fixtures$bra_pscore <- paste(round(BRA_fixtures$bra_xGH,digits = 0),round(BRA_fixtures$bra_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(BRA_fixtures,'BRA.xlsx',sheetName = "BRA", append = TRUE)
+write.xlsx(BRA_fixtures,'NL/BRA.xlsx',sheetName = "BRA", append = TRUE)
 ###########################################################################################################
 ########################BRA END###########################################################################
 BRA <- read.csv('../FDAS/BRA.csv')
@@ -946,8 +946,8 @@ BRA$OV25 <- ifelse(BRA$TG >= 3,"Y","N")
 bra_ftr_summary <- tabyl(BRA,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 bra_ov25_summary <- tabyl(BRA,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(bra_ftr_summary,'BRA.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(bra_ov25_summary,'BRA.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(bra_ftr_summary,'NL/BRA.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(bra_ov25_summary,'NL/BRA.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

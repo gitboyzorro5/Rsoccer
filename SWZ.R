@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('SWZ.xlsx')
+unlink('NL/SWZ.xlsx')
 ######################SWZ START#######################################
 #####################################################################
 SWZ <- read.csv('../FDAS/SWZ.csv')
@@ -48,7 +48,7 @@ swz_goaltotalsv2 <- cbind(swz_totalgoalsv2,swz_games_played)
 swz_avg_totalgoals <- round((swz_totalgoals/ swz_games_played), digits = 4)
 swz_goaltotalsv2[is.na(swz_goaltotalsv2)] <- ""
 swz_goaltotalsv2 <- cbind(swz_goaltotalsv2,swz_avg_totalgoals)
-write.xlsx(swz_goaltotalsv2,'SWZ.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(swz_goaltotalsv2,'NL/SWZ.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -70,7 +70,7 @@ for(swz_rowhgs in 1:nrow(swz_goalscored_h)) {
 
   }
 }
-write.xlsx(swz_goalscored_h,'SWZ.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(swz_goalscored_h,'NL/SWZ.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -92,7 +92,7 @@ for(swz_rowhgc in 1:nrow(swz_goalconceded_h)) {
 
   }
 }
-write.xlsx(swz_goalconceded_h,'SWZ.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(swz_goalconceded_h,'NL/SWZ.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 swz_form_h <- tapply(SWZ$FTR, SWZ[c("Home", "Date")],median)
@@ -116,7 +116,7 @@ for(swz_rowh_f in 1:nrow(swz_form_h)) {
 
   }
 }
-write.xlsx(swz_form_h,'SWZ.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(swz_form_h,'NL/SWZ.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 swz_totalgoals_h <- tapply(SWZ$TG, SWZ[c("Home", "Date")],mean)
@@ -136,7 +136,7 @@ for(swz_rowh in 1:nrow(swz_totalgoals_h)) {
 
   }
 }
-write.xlsx(swz_totalgoals_h,'SWZ.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(swz_totalgoals_h,'NL/SWZ.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 swz_form_team_against_h <- tapply(SWZ$Away, SWZ[c("Home", "Date")],median)
@@ -270,7 +270,7 @@ swz_un55 <- swz_un55_home + swz_un55_away
 swz_ov55 <- swz_ov55_home + swz_ov55_away
 
 swz_ovundata <- cbind(swz_teams,swz_un05,swz_ov05,swz_un15,swz_ov15,swz_un25,swz_ov25,swz_un35,swz_ov35,swz_un45,swz_ov45,swz_un55,swz_ov55)
-write.xlsx(swz_ovundata,'SWZ.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(swz_ovundata,'NL/SWZ.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -389,7 +389,7 @@ for(swz_rowhrank in 1:nrow(swz_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_swz,'SWZ.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_swz,'NL/SWZ.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six swz###################################################
 #SWZ
@@ -540,7 +540,7 @@ final_swz_hf_against <- as.data.frame(final_swz_hf_against)
 colnames(final_swz_hf_against) <- "Team against"
 #combine the columns
 final_swz_all <- cbind(final_swz_hf,final_swz_gs,final_swz_gc,final_swz_tg,final_swz_cs,final_swz_wm,final_swz_hf_against)
-write.xlsx(final_swz_all,'SWZ.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_swz_all,'NL/SWZ.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -589,8 +589,8 @@ swz_away_poisson <- cbind(swz_division,swz_teams,swz_avg_AG,swz_away_as,swz_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(swz_home_poisson,'SWZ.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(swz_away_poisson,'SWZ.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(swz_home_poisson,'NL/SWZ.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(swz_away_poisson,'NL/SWZ.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################SWZ FIXTURES##########################################################################
 #SWZ
@@ -933,7 +933,7 @@ SWZ_fixtures$swz_ov25 <- percent(SWZ_fixtures$swz_ov25, accuracy = 0.1)
 SWZ_fixtures$swz_un25 <- percent(SWZ_fixtures$swz_un25, accuracy = 0.1)
 SWZ_fixtures$swz_pscore <- paste(round(SWZ_fixtures$swz_xGH,digits = 0),round(SWZ_fixtures$swz_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(SWZ_fixtures,'SWZ.xlsx',sheetName = "SWZ", append = TRUE)
+write.xlsx(SWZ_fixtures,'NL/SWZ.xlsx',sheetName = "SWZ", append = TRUE)
 ###########################################################################################################
 ########################SWZ END###########################################################################
 SWZ <- read.csv('../FDAS/SWZ.csv')
@@ -942,8 +942,8 @@ SWZ$OV25 <- ifelse(SWZ$TG >= 3,"Y","N")
 swz_ftr_summary <- tabyl(SWZ,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 swz_ov25_summary <- tabyl(SWZ,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(swz_ftr_summary,'SWZ.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(swz_ov25_summary,'SWZ.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(swz_ftr_summary,'NL/SWZ.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(swz_ov25_summary,'NL/SWZ.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

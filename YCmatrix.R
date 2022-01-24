@@ -407,31 +407,31 @@ for(t1_rowhys in 1:nrow(t1_yellowscored_h)) {
   }
 }
 
-
-
-#write out the data to excel
-write.xlsx(b1_yellowscored_h,'YCmatrix.xlsx',sheetName = "B1")
-write.xlsx(d1_yellowscored_h,'YCmatrix.xlsx',sheetName = "D1", append = TRUE)
-write.xlsx(d2_yellowscored_h,'YCmatrix.xlsx',sheetName = "D2", append = TRUE)
-write.xlsx(e0_yellowscored_h,'YCmatrix.xlsx',sheetName = "E0", append = TRUE)
-write.xlsx(e1_yellowscored_h,'YCmatrix.xlsx',sheetName = "E1", append = TRUE)
-write.xlsx(e2_yellowscored_h,'YCmatrix.xlsx',sheetName = "E2", append = TRUE)
-write.xlsx(e3_yellowscored_h,'YCmatrix.xlsx',sheetName = "E3", append = TRUE)
-write.xlsx(ec_yellowscored_h,'YCmatrix.xlsx',sheetName = "EC", append = TRUE)
-write.xlsx(f1_yellowscored_h,'YCmatrix.xlsx',sheetName = "F1", append = TRUE)
-write.xlsx(f2_yellowscored_h,'YCmatrix.xlsx',sheetName = "F2", append = TRUE)
-write.xlsx(g1_yellowscored_h,'YCmatrix.xlsx',sheetName = "G1", append = TRUE)
-write.xlsx(i1_yellowscored_h,'YCmatrix.xlsx',sheetName = "I1", append = TRUE)
-write.xlsx(i2_yellowscored_h,'YCmatrix.xlsx',sheetName = "I2", append = TRUE)
-write.xlsx(n1_yellowscored_h,'YCmatrix.xlsx',sheetName = "N1", append = TRUE)
-write.xlsx(p1_yellowscored_h,'YCmatrix.xlsx',sheetName = "P1", append = TRUE)
-write.xlsx(sc0_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC0", append = TRUE)
-write.xlsx(sc1_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC1", append = TRUE)
-write.xlsx(sc2_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC2", append = TRUE)
-write.xlsx(sc3_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC3", append = TRUE)
-write.xlsx(sp1_yellowscored_h,'YCmatrix.xlsx',sheetName = "SP1", append = TRUE)
-write.xlsx(sp2_yellowscored_h,'YCmatrix.xlsx',sheetName = "SP2", append = TRUE)
-write.xlsx(t1_yellowscored_h,'YCmatrix.xlsx',sheetName = "T1", append = TRUE)
+#
+#
+# #write out the data to excel
+# write.xlsx(b1_yellowscored_h,'YCmatrix.xlsx',sheetName = "B1")
+# write.xlsx(d1_yellowscored_h,'YCmatrix.xlsx',sheetName = "D1", append = TRUE)
+# write.xlsx(d2_yellowscored_h,'YCmatrix.xlsx',sheetName = "D2", append = TRUE)
+# write.xlsx(e0_yellowscored_h,'YCmatrix.xlsx',sheetName = "E0", append = TRUE)
+# write.xlsx(e1_yellowscored_h,'YCmatrix.xlsx',sheetName = "E1", append = TRUE)
+# write.xlsx(e2_yellowscored_h,'YCmatrix.xlsx',sheetName = "E2", append = TRUE)
+# write.xlsx(e3_yellowscored_h,'YCmatrix.xlsx',sheetName = "E3", append = TRUE)
+# write.xlsx(ec_yellowscored_h,'YCmatrix.xlsx',sheetName = "EC", append = TRUE)
+# write.xlsx(f1_yellowscored_h,'YCmatrix.xlsx',sheetName = "F1", append = TRUE)
+# write.xlsx(f2_yellowscored_h,'YCmatrix.xlsx',sheetName = "F2", append = TRUE)
+# write.xlsx(g1_yellowscored_h,'YCmatrix.xlsx',sheetName = "G1", append = TRUE)
+# write.xlsx(i1_yellowscored_h,'YCmatrix.xlsx',sheetName = "I1", append = TRUE)
+# write.xlsx(i2_yellowscored_h,'YCmatrix.xlsx',sheetName = "I2", append = TRUE)
+# write.xlsx(n1_yellowscored_h,'YCmatrix.xlsx',sheetName = "N1", append = TRUE)
+# write.xlsx(p1_yellowscored_h,'YCmatrix.xlsx',sheetName = "P1", append = TRUE)
+# write.xlsx(sc0_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC0", append = TRUE)
+# write.xlsx(sc1_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC1", append = TRUE)
+# write.xlsx(sc2_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC2", append = TRUE)
+# write.xlsx(sc3_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC3", append = TRUE)
+# write.xlsx(sp1_yellowscored_h,'YCmatrix.xlsx',sheetName = "SP1", append = TRUE)
+# write.xlsx(sp2_yellowscored_h,'YCmatrix.xlsx',sheetName = "SP2", append = TRUE)
+# write.xlsx(t1_yellowscored_h,'YCmatrix.xlsx',sheetName = "T1", append = TRUE)
 
 
 allteams20202021

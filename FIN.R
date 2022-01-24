@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('FIN.xlsx')
+unlink('NL/FIN.xlsx')
 ######################FIN START#######################################
 #####################################################################
 FIN <- read.csv('../FDAS/FIN.csv')
@@ -47,7 +47,7 @@ fin_goaltotalsv2 <- cbind(fin_totalgoalsv2,fin_games_played)
 fin_avg_totalgoals <- round((fin_totalgoals/ fin_games_played), digits = 4)
 fin_goaltotalsv2[is.na(fin_goaltotalsv2)] <- ""
 fin_goaltotalsv2 <- cbind(fin_goaltotalsv2,fin_avg_totalgoals)
-write.xlsx(fin_goaltotalsv2,'FIN.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(fin_goaltotalsv2,'NL/FIN.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(fin_rowhgs in 1:nrow(fin_goalscored_h)) {
 
   }
 }
-write.xlsx(fin_goalscored_h,'FIN.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(fin_goalscored_h,'NL/FIN.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(fin_rowhgc in 1:nrow(fin_goalconceded_h)) {
 
   }
 }
-write.xlsx(fin_goalconceded_h,'FIN.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(fin_goalconceded_h,'NL/FIN.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 fin_form_h <- tapply(FIN$FTR, FIN[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(fin_rowh_f in 1:nrow(fin_form_h)) {
 
   }
 }
-write.xlsx(fin_form_h,'FIN.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(fin_form_h,'NL/FIN.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 fin_totalgoals_h <- tapply(FIN$TG, FIN[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(fin_rowh in 1:nrow(fin_totalgoals_h)) {
 
   }
 }
-write.xlsx(fin_totalgoals_h,'FIN.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(fin_totalgoals_h,'NL/FIN.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 fin_form_team_against_h <- tapply(FIN$Away, FIN[c("Home", "Date")],median)
@@ -267,7 +267,7 @@ fin_un55 <- fin_un55_home + fin_un55_away
 fin_ov55 <- fin_ov55_home + fin_ov55_away
 
 fin_ovundata <- cbind(fin_teams,fin_un05,fin_ov05,fin_un15,fin_ov15,fin_un25,fin_ov25,fin_un35,fin_ov35,fin_un45,fin_ov45,fin_un55,fin_ov55)
-write.xlsx(fin_ovundata,'FIN.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(fin_ovundata,'NL/FIN.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -386,7 +386,7 @@ for(fin_rowhrank in 1:nrow(fin_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_fin,'FIN.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_fin,'NL/FIN.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six fin###################################################
 #FIN
@@ -537,7 +537,7 @@ final_fin_hf_against <- as.data.frame(final_fin_hf_against)
 colnames(final_fin_hf_against) <- "Team against"
 #combine the columns
 final_fin_all <- cbind(final_fin_hf,final_fin_gs,final_fin_gc,final_fin_tg,final_fin_cs,final_fin_wm,final_fin_hf_against)
-write.xlsx(final_fin_all,'FIN.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_fin_all,'NL/FIN.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -586,8 +586,8 @@ fin_away_poisson <- cbind(fin_division,fin_teams,fin_avg_AG,fin_away_as,fin_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(fin_home_poisson,'FIN.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(fin_away_poisson,'FIN.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(fin_home_poisson,'NL/FIN.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(fin_away_poisson,'NL/FIN.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################FIN FIXTURES##########################################################################
 #FIN
@@ -930,7 +930,7 @@ FIN_fixtures$fin_AH_125_A <- percent(FIN_fixtures$fin_AH_125_A, accuracy = 0.1)
 ########Asian Handicaps######################################################################################################
 FIN_fixtures$fin_pscore <- paste(round(FIN_fixtures$fin_xGH,digits = 0),round(FIN_fixtures$fin_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(FIN_fixtures,'FIN.xlsx',sheetName = "FIN", append = TRUE)
+write.xlsx(FIN_fixtures,'NL/FIN.xlsx',sheetName = "FIN", append = TRUE)
 ###########################################################################################################
 ########################FIN END###########################################################################
 FIN <- read.csv('../FDAS/FIN.csv')
@@ -939,8 +939,8 @@ FIN$OV25 <- ifelse(FIN$TG >= 3,"Y","N")
 fin_ftr_summary <- tabyl(FIN,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 fin_ov25_summary <- tabyl(FIN,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(fin_ftr_summary,'FIN.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(fin_ov25_summary,'FIN.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(fin_ftr_summary,'NL/FIN.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(fin_ov25_summary,'NL/FIN.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

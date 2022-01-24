@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('MLS.xlsx')
+unlink('NL/MLS.xlsx')
 ######################MLS START#######################################
 #####################################################################
 MLS <- read.csv('../FDAS/USA.csv')
@@ -47,7 +47,7 @@ mls_goaltotalsv2 <- cbind(mls_totalgoalsv2,mls_games_played)
 mls_avg_totalgoals <- round((mls_totalgoals/ mls_games_played), digits = 4)
 mls_goaltotalsv2[is.na(mls_goaltotalsv2)] <- ""
 mls_goaltotalsv2 <- cbind(mls_goaltotalsv2,mls_avg_totalgoals)
-write.xlsx(mls_goaltotalsv2,'MLS.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(mls_goaltotalsv2,'NL/MLS.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(mls_rowhgs in 1:nrow(mls_goalscored_h)) {
 
   }
 }
-write.xlsx(mls_goalscored_h,'MLS.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(mls_goalscored_h,'NL/MLS.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(mls_rowhgc in 1:nrow(mls_goalconceded_h)) {
 
   }
 }
-write.xlsx(mls_goalconceded_h,'MLS.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(mls_goalconceded_h,'NL/MLS.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 mls_form_h <- tapply(MLS$FTR, MLS[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(mls_rowh_f in 1:nrow(mls_form_h)) {
 
   }
 }
-write.xlsx(mls_form_h,'MLS.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(mls_form_h,'NL/MLS.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 mls_totalgoals_h <- tapply(MLS$TG, MLS[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(mls_rowh in 1:nrow(mls_totalgoals_h)) {
 
   }
 }
-write.xlsx(mls_totalgoals_h,'MLS.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(mls_totalgoals_h,'NL/MLS.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 mls_form_team_against_h <- tapply(MLS$Away, MLS[c("Home", "Date")],median)
@@ -269,7 +269,7 @@ mls_un55 <- mls_un55_home + mls_un55_away
 mls_ov55 <- mls_ov55_home + mls_ov55_away
 
 mls_ovundata <- cbind(mls_teams,mls_un05,mls_ov05,mls_un15,mls_ov15,mls_un25,mls_ov25,mls_un35,mls_ov35,mls_un45,mls_ov45,mls_un55,mls_ov55)
-write.xlsx(mls_ovundata,'MLS.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(mls_ovundata,'NL/MLS.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -388,7 +388,7 @@ for(mls_rowhrank in 1:nrow(mls_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_mls,'MLS.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_mls,'NL/MLS.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six mls###################################################
 #MLS
@@ -539,7 +539,7 @@ final_mls_hf_against <- as.data.frame(final_mls_hf_against)
 colnames(final_mls_hf_against) <- "Team against"
 #combine the columns
 final_mls_all <- cbind(final_mls_hf,final_mls_gs,final_mls_gc,final_mls_tg,final_mls_cs,final_mls_wm,final_mls_hf_against)
-write.xlsx(final_mls_all,'MLS.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_mls_all,'NL/MLS.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -588,8 +588,8 @@ mls_away_poisson <- cbind(mls_division,mls_teams,mls_avg_AG,mls_away_as,mls_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(mls_home_poisson,'MLS.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(mls_away_poisson,'MLS.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(mls_home_poisson,'NL/MLS.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(mls_away_poisson,'NL/MLS.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################MLS FIXTURES##########################################################################
 #MLS
@@ -933,7 +933,7 @@ MLS_fixtures$mls_ov25 <- percent(MLS_fixtures$mls_ov25, accuracy = 0.1)
 MLS_fixtures$mls_un25 <- percent(MLS_fixtures$mls_un25, accuracy = 0.1)
 MLS_fixtures$mls_pscore <- paste(round(MLS_fixtures$mls_xGH,digits = 0),round(MLS_fixtures$mls_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(MLS_fixtures,'MLS.xlsx',sheetName = "MLS", append = TRUE)
+write.xlsx(MLS_fixtures,'NL/MLS.xlsx',sheetName = "MLS", append = TRUE)
 ###########################################################################################################
 ########################MLS END###########################################################################
 MLS <- read.csv('../FDAS/USA.csv')
@@ -942,8 +942,8 @@ MLS$OV25 <- ifelse(MLS$TG >= 3,"Y","N")
 mls_ftr_summary <- tabyl(MLS,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 mls_ov25_summary <- tabyl(MLS,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(mls_ftr_summary,'MLS.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(mls_ov25_summary,'MLS.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(mls_ftr_summary,'NL/MLS.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(mls_ov25_summary,'NL/MLS.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

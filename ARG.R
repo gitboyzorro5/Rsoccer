@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('ARG.xlsx')
+unlink('NL/ARG.xlsx')
 ######################ARG START#######################################
 #####################################################################
 ARG <- read.csv('../FDAS/ARG.csv')
@@ -48,7 +48,7 @@ arg_goaltotalsv2 <- cbind(arg_totalgoalsv2,arg_games_played)
 arg_avg_totalgoals <- round((arg_totalgoals/ arg_games_played), digits = 4)
 arg_goaltotalsv2[is.na(arg_goaltotalsv2)] <- ""
 arg_goaltotalsv2 <- cbind(arg_goaltotalsv2,arg_avg_totalgoals)
-write.xlsx(arg_goaltotalsv2,'ARG.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(arg_goaltotalsv2,'NL/ARG.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -70,7 +70,7 @@ for(arg_rowhgs in 1:nrow(arg_goalscored_h)) {
 
   }
 }
-write.xlsx(arg_goalscored_h,'ARG.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(arg_goalscored_h,'NL/ARG.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -92,7 +92,7 @@ for(arg_rowhgc in 1:nrow(arg_goalconceded_h)) {
 
   }
 }
-write.xlsx(arg_goalconceded_h,'ARG.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(arg_goalconceded_h,'NL/ARG.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 arg_form_h <- tapply(ARG$FTR, ARG[c("Home", "Date")],median)
@@ -116,7 +116,7 @@ for(arg_rowh_f in 1:nrow(arg_form_h)) {
 
   }
 }
-write.xlsx(arg_form_h,'ARG.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(arg_form_h,'NL/ARG.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 arg_totalgoals_h <- tapply(ARG$TG, ARG[c("Home", "Date")],mean)
@@ -136,7 +136,7 @@ for(arg_rowh in 1:nrow(arg_totalgoals_h)) {
 
   }
 }
-write.xlsx(arg_totalgoals_h,'ARG.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(arg_totalgoals_h,'NL/ARG.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 arg_form_team_against_h <- tapply(ARG$Away, ARG[c("Home", "Date")],median)
@@ -271,7 +271,7 @@ arg_un55 <- arg_un55_home + arg_un55_away
 arg_ov55 <- arg_ov55_home + arg_ov55_away
 
 arg_ovundata <- cbind(arg_teams,arg_un05,arg_ov05,arg_un15,arg_ov15,arg_un25,arg_ov25,arg_un35,arg_ov35,arg_un45,arg_ov45,arg_un55,arg_ov55)
-write.xlsx(arg_ovundata,'ARG.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(arg_ovundata,'NL/ARG.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -390,7 +390,7 @@ for(arg_rowhrank in 1:nrow(arg_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_arg,'ARG.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_arg,'NL/ARG.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six arg###################################################
 #ARG
@@ -541,7 +541,7 @@ final_arg_hf_against <- as.data.frame(final_arg_hf_against)
 colnames(final_arg_hf_against) <- "Team against"
 #combine the columns
 final_arg_all <- cbind(final_arg_hf,final_arg_gs,final_arg_gc,final_arg_tg,final_arg_cs,final_arg_wm,final_arg_hf_against)
-write.xlsx(final_arg_all,'ARG.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_arg_all,'NL/ARG.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -590,8 +590,8 @@ arg_away_poisson <- cbind(arg_division,arg_teams,arg_avg_AG,arg_away_as,arg_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(arg_home_poisson,'ARG.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(arg_away_poisson,'ARG.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(arg_home_poisson,'NL/ARG.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(arg_away_poisson,'NL/ARG.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################ARG FIXTURES##########################################################################
 #ARG
@@ -934,7 +934,7 @@ ARG_fixtures$arg_ov25 <- percent(ARG_fixtures$arg_ov25, accuracy = 0.1)
 ARG_fixtures$arg_un25 <- percent(ARG_fixtures$arg_un25, accuracy = 0.1)
 ARG_fixtures$arg_pscore <- paste(round(ARG_fixtures$arg_xGH,digits = 0),round(ARG_fixtures$arg_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(ARG_fixtures,'ARG.xlsx',sheetName = "ARG", append = TRUE)
+write.xlsx(ARG_fixtures,'NL/ARG.xlsx',sheetName = "ARG", append = TRUE)
 ###########################################################################################################
 ########################ARG END###########################################################################
 ARG <- read.csv('../FDAS/ARG.csv')
@@ -943,8 +943,8 @@ ARG$OV25 <- ifelse(ARG$TG >= 3,"Y","N")
 arg_ftr_summary <- tabyl(ARG,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 arg_ov25_summary <- tabyl(ARG,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(arg_ftr_summary,'ARG.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(arg_ov25_summary,'ARG.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(arg_ftr_summary,'NL/ARG.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(arg_ov25_summary,'NL/ARG.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

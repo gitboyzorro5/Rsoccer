@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('AUT.xlsx')
+unlink('NL/AUT.xlsx')
 ######################AUT START#######################################
 #####################################################################
 AUT <- read.csv('../FDAS/AUT.csv')
@@ -48,7 +48,7 @@ aut_goaltotalsv2 <- cbind(aut_totalgoalsv2,aut_games_played)
 aut_avg_totalgoals <- round((aut_totalgoals/ aut_games_played), digits = 4)
 aut_goaltotalsv2[is.na(aut_goaltotalsv2)] <- ""
 aut_goaltotalsv2 <- cbind(aut_goaltotalsv2,aut_avg_totalgoals)
-write.xlsx(aut_goaltotalsv2,'AUT.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(aut_goaltotalsv2,'NL/AUT.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -70,7 +70,7 @@ for(aut_rowhgs in 1:nrow(aut_goalscored_h)) {
 
   }
 }
-write.xlsx(aut_goalscored_h,'AUT.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(aut_goalscored_h,'NL/AUT.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -92,7 +92,7 @@ for(aut_rowhgc in 1:nrow(aut_goalconceded_h)) {
 
   }
 }
-write.xlsx(aut_goalconceded_h,'AUT.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(aut_goalconceded_h,'NL/AUT.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 aut_form_h <- tapply(AUT$FTR, AUT[c("Home", "Date")],median)
@@ -116,7 +116,7 @@ for(aut_rowh_f in 1:nrow(aut_form_h)) {
 
   }
 }
-write.xlsx(aut_form_h,'AUT.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(aut_form_h,'NL/AUT.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 aut_totalgoals_h <- tapply(AUT$TG, AUT[c("Home", "Date")],mean)
@@ -136,7 +136,7 @@ for(aut_rowh in 1:nrow(aut_totalgoals_h)) {
 
   }
 }
-write.xlsx(aut_totalgoals_h,'AUT.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(aut_totalgoals_h,'NL/AUT.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 aut_form_team_against_h <- tapply(AUT$Away, AUT[c("Home", "Date")],median)
@@ -270,7 +270,7 @@ aut_un55 <- aut_un55_home + aut_un55_away
 aut_ov55 <- aut_ov55_home + aut_ov55_away
 
 aut_ovundata <- cbind(aut_teams,aut_un05,aut_ov05,aut_un15,aut_ov15,aut_un25,aut_ov25,aut_un35,aut_ov35,aut_un45,aut_ov45,aut_un55,aut_ov55)
-write.xlsx(aut_ovundata,'AUT.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(aut_ovundata,'NL/AUT.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -388,7 +388,7 @@ for(aut_rowhrank in 1:nrow(aut_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_aut,'AUT.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_aut,'NL/AUT.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six aut###################################################
 #AUT
@@ -538,7 +538,7 @@ final_aut_hf_against <- as.data.frame(final_aut_hf_against)
 colnames(final_aut_hf_against) <- "Team against"
 #combine the columns
 final_aut_all <- cbind(final_aut_hf,final_aut_gs,final_aut_gc,final_aut_tg,final_aut_cs,final_aut_wm,final_aut_hf_against)
-write.xlsx(final_aut_all,'AUT.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_aut_all,'NL/AUT.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -587,8 +587,8 @@ aut_away_poisson <- cbind(aut_division,aut_teams,aut_avg_AG,aut_away_as,aut_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(aut_home_poisson,'AUT.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(aut_away_poisson,'AUT.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(aut_home_poisson,'NL/AUT.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(aut_away_poisson,'NL/AUT.xlsx',sheetName = "awaypoisson", append = TRUE)
 aut_home_poisson
 aut_away_poisson
 ##########################################################################################################
@@ -933,7 +933,7 @@ AUT_fixtures$aut_ov25 <- percent(AUT_fixtures$aut_ov25, accuracy = 0.1)
 AUT_fixtures$aut_un25 <- percent(AUT_fixtures$aut_un25, accuracy = 0.1)
 AUT_fixtures$aut_pscore <- paste(round(AUT_fixtures$aut_xGH,digits = 0),round(AUT_fixtures$aut_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(AUT_fixtures,'AUT.xlsx',sheetName = "AUT", append = TRUE)
+write.xlsx(AUT_fixtures,'NL/AUT.xlsx',sheetName = "AUT", append = TRUE)
 ###########################################################################################################
 ########################AUT END###########################################################################
 AUT <- read.csv('../FDAS/AUT.csv')
@@ -942,8 +942,8 @@ AUT$OV25 <- ifelse(AUT$TG >= 3,"Y","N")
 aut_ftr_summary <- tabyl(AUT,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 aut_ov25_summary <- tabyl(AUT,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(aut_ftr_summary,'AUT.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(aut_ov25_summary,'AUT.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(aut_ftr_summary,'NL/AUT.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(aut_ov25_summary,'NL/AUT.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('RUS.xlsx')
+unlink('NL/RUS.xlsx')
 ######################RUS START#######################################
 #####################################################################
 RUS <- read.csv('../FDAS/RUS.csv')
@@ -47,7 +47,7 @@ rus_goaltotalsv2 <- cbind(rus_totalgoalsv2,rus_games_played)
 rus_avg_totalgoals <- round((rus_totalgoals/ rus_games_played), digits = 4)
 rus_goaltotalsv2[is.na(rus_goaltotalsv2)] <- ""
 rus_goaltotalsv2 <- cbind(rus_goaltotalsv2,rus_avg_totalgoals)
-write.xlsx(rus_goaltotalsv2,'RUS.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(rus_goaltotalsv2,'NL/RUS.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(rus_rowhgs in 1:nrow(rus_goalscored_h)) {
 
   }
 }
-write.xlsx(rus_goalscored_h,'RUS.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(rus_goalscored_h,'NL/RUS.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(rus_rowhgc in 1:nrow(rus_goalconceded_h)) {
 
   }
 }
-write.xlsx(rus_goalconceded_h,'RUS.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(rus_goalconceded_h,'NL/RUS.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 rus_form_h <- tapply(RUS$FTR, RUS[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(rus_rowh_f in 1:nrow(rus_form_h)) {
 
   }
 }
-write.xlsx(rus_form_h,'RUS.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(rus_form_h,'NL/RUS.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 rus_totalgoals_h <- tapply(RUS$TG, RUS[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(rus_rowh in 1:nrow(rus_totalgoals_h)) {
 
   }
 }
-write.xlsx(rus_totalgoals_h,'RUS.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(rus_totalgoals_h,'NL/RUS.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 rus_form_team_against_h <- tapply(RUS$Away, RUS[c("Home", "Date")],median)
@@ -267,7 +267,7 @@ rus_un55 <- rus_un55_home + rus_un55_away
 rus_ov55 <- rus_ov55_home + rus_ov55_away
 
 rus_ovundata <- cbind(rus_teams,rus_un05,rus_ov05,rus_un15,rus_ov15,rus_un25,rus_ov25,rus_un35,rus_ov35,rus_un45,rus_ov45,rus_un55,rus_ov55)
-write.xlsx(rus_ovundata,'RUS.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(rus_ovundata,'NL/RUS.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -386,7 +386,7 @@ for(rus_rowhrank in 1:nrow(rus_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_rus,'RUS.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_rus,'NL/RUS.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six rus###################################################
 #RUS
@@ -537,7 +537,7 @@ final_rus_hf_against <- as.data.frame(final_rus_hf_against)
 colnames(final_rus_hf_against) <- "Team against"
 #combine the columns
 final_rus_all <- cbind(final_rus_hf,final_rus_gs,final_rus_gc,final_rus_tg,final_rus_cs,final_rus_wm,final_rus_hf_against)
-write.xlsx(final_rus_all,'RUS.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_rus_all,'NL/RUS.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -586,8 +586,8 @@ rus_away_poisson <- cbind(rus_division,rus_teams,rus_avg_AG,rus_away_as,rus_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(rus_home_poisson,'RUS.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(rus_away_poisson,'RUS.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(rus_home_poisson,'NL/RUS.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(rus_away_poisson,'NL/RUS.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################RUS FIXTURES##########################################################################
 #RUS
@@ -930,7 +930,7 @@ RUS_fixtures$rus_ov25 <- percent(RUS_fixtures$rus_ov25, accuracy = 0.1)
 RUS_fixtures$rus_un25 <- percent(RUS_fixtures$rus_un25, accuracy = 0.1)
 RUS_fixtures$rus_pscore <- paste(round(RUS_fixtures$rus_xGH,digits = 0),round(RUS_fixtures$rus_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(RUS_fixtures,'RUS.xlsx',sheetName = "RUS", append = TRUE)
+write.xlsx(RUS_fixtures,'NL/RUS.xlsx',sheetName = "RUS", append = TRUE)
 ###########################################################################################################
 ########################RUS END###########################################################################
 RUS <- read.csv('../FDAS/RUS.csv')
@@ -939,8 +939,8 @@ RUS$OV25 <- ifelse(RUS$TG >= 3,"Y","N")
 rus_ftr_summary <- tabyl(RUS,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 rus_ov25_summary <- tabyl(RUS,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(rus_ftr_summary,'RUS.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(rus_ov25_summary,'RUS.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(rus_ftr_summary,'NL/RUS.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(rus_ov25_summary,'NL/RUS.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

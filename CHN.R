@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('CHN.xlsx')
+unlink('NL/CHN.xlsx')
 ######################CHN START#######################################
 #####################################################################
 CHN <- read.csv('../FDAS/CHN.csv')
@@ -47,7 +47,7 @@ chn_goaltotalsv2 <- cbind(chn_totalgoalsv2,chn_games_played)
 chn_avg_totalgoals <- round((chn_totalgoals/ chn_games_played), digits = 4)
 chn_goaltotalsv2[is.na(chn_goaltotalsv2)] <- ""
 chn_goaltotalsv2 <- cbind(chn_goaltotalsv2,chn_avg_totalgoals)
-write.xlsx(chn_goaltotalsv2,'CHN.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(chn_goaltotalsv2,'NL/CHN.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(chn_rowhgs in 1:nrow(chn_goalscored_h)) {
 
   }
 }
-write.xlsx(chn_goalscored_h,'CHN.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(chn_goalscored_h,'NL/CHN.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(chn_rowhgc in 1:nrow(chn_goalconceded_h)) {
 
   }
 }
-write.xlsx(chn_goalconceded_h,'CHN.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(chn_goalconceded_h,'NL/CHN.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 chn_form_h <- tapply(CHN$FTR, CHN[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(chn_rowh_f in 1:nrow(chn_form_h)) {
 
   }
 }
-write.xlsx(chn_form_h,'CHN.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(chn_form_h,'NL/CHN.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 chn_totalgoals_h <- tapply(CHN$TG, CHN[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(chn_rowh in 1:nrow(chn_totalgoals_h)) {
 
   }
 }
-write.xlsx(chn_totalgoals_h,'CHN.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(chn_totalgoals_h,'NL/CHN.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 chn_form_team_against_h <- tapply(CHN$Away, CHN[c("Home", "Date")],median)
@@ -268,7 +268,7 @@ chn_un55 <- chn_un55_home + chn_un55_away
 chn_ov55 <- chn_ov55_home + chn_ov55_away
 
 chn_ovundata <- cbind(chn_teams,chn_un05,chn_ov05,chn_un15,chn_ov15,chn_un25,chn_ov25,chn_un35,chn_ov35,chn_un45,chn_ov45,chn_un55,chn_ov55)
-write.xlsx(chn_ovundata,'CHN.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(chn_ovundata,'NL/CHN.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -387,7 +387,7 @@ for(chn_rowhrank in 1:nrow(chn_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_chn,'CHN.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_chn,'NL/CHN.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six chn###################################################
 #CHN
@@ -538,7 +538,7 @@ final_chn_hf_against <- as.data.frame(final_chn_hf_against)
 colnames(final_chn_hf_against) <- "Team against"
 #combine the columns
 final_chn_all <- cbind(final_chn_hf,final_chn_gs,final_chn_gc,final_chn_tg,final_chn_cs,final_chn_wm,final_chn_hf_against)
-write.xlsx(final_chn_all,'CHN.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_chn_all,'NL/CHN.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -587,8 +587,8 @@ chn_away_poisson <- cbind(chn_division,chn_teams,chn_avg_AG,chn_away_as,chn_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(chn_home_poisson,'CHN.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(chn_away_poisson,'CHN.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(chn_home_poisson,'NL/CHN.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(chn_away_poisson,'NL/CHN.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################CHN FIXTURES##########################################################################
 #CHN
@@ -931,7 +931,7 @@ CHN_fixtures$chn_ov25 <- percent(CHN_fixtures$chn_ov25, accuracy = 0.1)
 CHN_fixtures$chn_un25 <- percent(CHN_fixtures$chn_un25, accuracy = 0.1)
 CHN_fixtures$chn_pscore <- paste(round(CHN_fixtures$chn_xGH,digits = 0),round(CHN_fixtures$chn_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(CHN_fixtures,'CHN.xlsx',sheetName = "CHN", append = TRUE)
+write.xlsx(CHN_fixtures,'NL/CHN.xlsx',sheetName = "CHN", append = TRUE)
 ###########################################################################################################
 ########################CHN END###########################################################################
 CHN <- read.csv('../FDAS/CHN.csv')
@@ -940,8 +940,8 @@ CHN$OV25 <- ifelse(CHN$TG >= 3,"Y","N")
 chn_ftr_summary <- tabyl(CHN,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 chn_ov25_summary <- tabyl(CHN,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(chn_ftr_summary,'CHN.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(chn_ov25_summary,'CHN.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(chn_ftr_summary,'NL/CHN.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(chn_ov25_summary,'NL/CHN.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

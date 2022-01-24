@@ -7,7 +7,7 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('DNK.xlsx')
+unlink('NL/DNK.xlsx')
 ######################DNK START#######################################
 #####################################################################
 DNK <- read.csv('../FDAS/DNK.csv')
@@ -47,7 +47,7 @@ dnk_goaltotalsv2 <- cbind(dnk_totalgoalsv2,dnk_games_played)
 dnk_avg_totalgoals <- round((dnk_totalgoals/ dnk_games_played), digits = 4)
 dnk_goaltotalsv2[is.na(dnk_goaltotalsv2)] <- ""
 dnk_goaltotalsv2 <- cbind(dnk_goaltotalsv2,dnk_avg_totalgoals)
-write.xlsx(dnk_goaltotalsv2,'DNK.xlsx',sheetName = "totalgoalsv2")
+write.xlsx(dnk_goaltotalsv2,'NL/DNK.xlsx',sheetName = "totalgoalsv2")
 ############################################
 ####GSmatrix################################
 #create home and away matrices
@@ -69,7 +69,7 @@ for(dnk_rowhgs in 1:nrow(dnk_goalscored_h)) {
 
   }
 }
-write.xlsx(dnk_goalscored_h,'DNK.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(dnk_goalscored_h,'NL/DNK.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 ####GCmatrix################################
 #create home and away matrices
@@ -91,7 +91,7 @@ for(dnk_rowhgc in 1:nrow(dnk_goalconceded_h)) {
 
   }
 }
-write.xlsx(dnk_goalconceded_h,'DNK.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(dnk_goalconceded_h,'NL/DNK.xlsx',sheetName = "gcmatrix", append = TRUE)
 #########################################################################################
 ####Teamform################################
 dnk_form_h <- tapply(DNK$FTR, DNK[c("Home", "Date")],median)
@@ -115,7 +115,7 @@ for(dnk_rowh_f in 1:nrow(dnk_form_h)) {
 
   }
 }
-write.xlsx(dnk_form_h,'DNK.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(dnk_form_h,'NL/DNK.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
 #######TGMatrix##################################################################
 dnk_totalgoals_h <- tapply(DNK$TG, DNK[c("Home", "Date")],mean)
@@ -135,7 +135,7 @@ for(dnk_rowh in 1:nrow(dnk_totalgoals_h)) {
 
   }
 }
-write.xlsx(dnk_totalgoals_h,'DNK.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(dnk_totalgoals_h,'NL/DNK.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 dnk_form_team_against_h <- tapply(DNK$Away, DNK[c("Home", "Date")],median)
@@ -268,7 +268,7 @@ dnk_un55 <- dnk_un55_home + dnk_un55_away
 dnk_ov55 <- dnk_ov55_home + dnk_ov55_away
 
 dnk_ovundata <- cbind(dnk_teams,dnk_un05,dnk_ov05,dnk_un15,dnk_ov15,dnk_un25,dnk_ov25,dnk_un35,dnk_ov35,dnk_un45,dnk_ov45,dnk_un55,dnk_ov55)
-write.xlsx(dnk_ovundata,'DNK.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(dnk_ovundata,'NL/DNK.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -387,7 +387,7 @@ for(dnk_rowhrank in 1:nrow(dnk_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_dnk,'DNK.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_dnk,'NL/DNK.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six dnk###################################################
 #DNK
@@ -538,7 +538,7 @@ final_dnk_hf_against <- as.data.frame(final_dnk_hf_against)
 colnames(final_dnk_hf_against) <- "Team against"
 #combine the columns
 final_dnk_all <- cbind(final_dnk_hf,final_dnk_gs,final_dnk_gc,final_dnk_tg,final_dnk_cs,final_dnk_wm,final_dnk_hf_against)
-write.xlsx(final_dnk_all,'DNK.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_dnk_all,'NL/DNK.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -587,8 +587,8 @@ dnk_away_poisson <- cbind(dnk_division,dnk_teams,dnk_avg_AG,dnk_away_as,dnk_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(dnk_home_poisson,'DNK.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(dnk_away_poisson,'DNK.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(dnk_home_poisson,'NL/DNK.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(dnk_away_poisson,'NL/DNK.xlsx',sheetName = "awaypoisson", append = TRUE)
 ##########################################################################################################
 ###################DNK FIXTURES##########################################################################
 #DNK
@@ -931,7 +931,7 @@ DNK_fixtures$dnk_ov25 <- percent(DNK_fixtures$dnk_ov25, accuracy = 0.1)
 DNK_fixtures$dnk_un25 <- percent(DNK_fixtures$dnk_un25, accuracy = 0.1)
 DNK_fixtures$dnk_pscore <- paste(round(DNK_fixtures$dnk_xGH,digits = 0),round(DNK_fixtures$dnk_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(DNK_fixtures,'DNK.xlsx',sheetName = "DNK", append = TRUE)
+write.xlsx(DNK_fixtures,'NL/DNK.xlsx',sheetName = "DNK", append = TRUE)
 ###########################################################################################################
 ########################DNK END###########################################################################
 DNK <- read.csv('../FDAS/DNK.csv')
@@ -940,8 +940,8 @@ DNK$OV25 <- ifelse(DNK$TG >= 3,"Y","N")
 dnk_ftr_summary <- tabyl(DNK,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 dnk_ov25_summary <- tabyl(DNK,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(dnk_ftr_summary,'DNK.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(dnk_ov25_summary,'DNK.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(dnk_ftr_summary,'NL/DNK.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(dnk_ov25_summary,'NL/DNK.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

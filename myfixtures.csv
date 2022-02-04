@@ -1,184 +1,217 @@
 ,Div,Home_Team,Away_Team,Date
-5791,SP1,Ath Bilbao,Real Madrid,1/19/2022
-5792,SP1,Ath Madrid,Levante,1/19/2022
-5793,SP1,Barcelona,Vallecano,1/19/2022
-5794,SP1,Betis,Alaves,1/19/2022
-5795,SP1,Celta,Osasuna,1/19/2022
-5796,SP1,Mallorca,Sociedad,1/19/2022
-5797,SP1,Getafe,Granada,1/19/2022
-5798,SP1,Cadiz,Espanol,1/19/2022
-5799,SP1,Valencia,Sevilla,1/19/2022
-5800,SP1,Elche,Villarreal,1/19/2022
-6643,T1,Trabzonspor,Giresunspor,1/19/2022
-6644,T1,Galatasaray,Kasimpasa,1/19/2022
-6645,T1,Karagumruk,Besiktas,1/19/2022
-6646,T1,Gaziantep,Yeni Malatyaspor,1/19/2022
-6647,T1,Rizespor,Antalyaspor,1/19/2022
-6648,T1,Goztep,Sivasspor,1/19/2022
-6649,T1,Konyaspor,Ad. Demirspor,1/19/2022
-6650,T1,Kayserispor,Buyuksehyr,1/19/2022
-6651,T1,Fenerbahce,Altay,1/19/2022
-6652,T1,Alanyaspor,Hatayspor,1/19/2022
-478,D1,Greuther Furth,Mainz,1/21/2022
-479,D1,Bochum,FC Koln,1/21/2022
-480,D1,Hertha,Bayern Munich,1/21/2022
-481,D1,Hoffenheim,Dortmund,1/21/2022
-482,D1,Freiburg,Stuttgart,1/21/2022
-483,D1,Mgladbach,Union Berlin,1/21/2022
-484,D1,Leverkusen,Augsburg,1/21/2022
-485,D1,Ein Frankfurt,Bielefeld,1/21/2022
-486,D1,RB Leipzig,Wolfsburg,1/21/2022
-4772,N1,Waalwijk,For Sittard,1/21/2022
-199,B1,Mechelen,Anderlecht,1/22/2022
-200,B1,Oostende,Antwerp,1/22/2022
-201,B1,Standard,Club Brugge,1/22/2022
-202,B1,Kortrijk,Eupen,1/22/2022
-203,B1,St. Gilloise,Genk,1/22/2022
-204,B1,Charleroi,Gent,1/22/2022
-205,B1,Beerschot VA,Oud-Heverlee Leuven,1/22/2022
-206,B1,St Truiden,Seraing,1/22/2022
-207,B1,Cercle Brugge,Waregem,1/22/2022
-1139,E0,Arsenal,Burnley,1/22/2022
-1140,E0,Brentford,Wolves,1/22/2022
-1141,E0,Chelsea,Tottenham,1/22/2022
-1142,E0,Crystal Palace,Liverpool,1/22/2022
-1143,E0,Everton,Aston Villa,1/22/2022
-1144,E0,Leeds,Newcastle,1/22/2022
-1145,E0,Leicester,Brighton,1/22/2022
-1146,E0,Man United,West Ham,1/22/2022
-1147,E0,Southampton,Man City,1/22/2022
-1148,E0,Watford,Norwich,1/22/2022
-1623,E1,Bristol City,Cardiff,1/22/2022
-1624,E1,Nottm Forest,Derby,1/22/2022
-1625,E1,Birmingham,Barnsley,1/22/2022
-1626,E1,Blackburn,Middlesbrough,1/22/2022
-1627,E1,Blackpool,Millwall,1/22/2022
-1628,E1,Bournemouth,Hull,1/22/2022
-1629,E1,Coventry,QPR,1/22/2022
-1630,E1,Reading,Huddersfield,1/22/2022
-1631,E1,Sheffield United,Luton,1/22/2022
-1632,E1,Stoke,Fulham,1/22/2022
-1633,E1,Swansea,Preston,1/22/2022
-1634,E1,West Brom,Peterboro,1/22/2022
-2187,E2,Ipswich,Accrington,1/22/2022
-2188,E2,Burton,AFC Wimbledon,1/22/2022
-2189,E2,Shrewsbury,Bolton,1/22/2022
-2190,E2,Rotherham,Cheltenham,1/22/2022
-2191,E2,Cambridge,Crewe,1/22/2022
-2192,E2,Milton Keynes Dons,Doncaster,1/22/2022
-2193,E2,Charlton,Fleetwood Town,1/22/2022
-2194,E2,Wigan,Gillingham,1/22/2022
-2195,E2,Plymouth,Lincoln,1/22/2022
-2196,E2,Sunderland,Portsmouth,1/22/2022
-2197,E2,Oxford,Sheffield Weds,1/22/2022
-2198,E2,Morecambe,Wycombe,1/22/2022
-2727,E3,Rochdale,Bradford,1/22/2022
-2728,E3,Swindon,Bristol Rvs,1/22/2022
-2729,E3,Forest Green,Carlisle,1/22/2022
-2730,E3,Salford,Colchester,1/22/2022
-2731,E3,Walsall,Exeter,1/22/2022
-2732,E3,Barrow,Mansfield,1/22/2022
-2733,E3,Scunthorpe,Newport County,1/22/2022
-2734,E3,Sutton,Northampton,1/22/2022
-2735,E3,Harrogate,Oldham,1/22/2022
-2736,E3,Leyton Orient,Port Vale,1/22/2022
-2737,E3,Hartlepool,Stevenage,1/22/2022
-2738,E3,Crawley Town,Tranmere,1/22/2022
-3219,EC,Altrincham,Torquay,1/22/2022
-3220,EC,Boreham Wood,Weymouth,1/22/2022
-3221,EC,Chesterfield,Aldershot,1/22/2022
-3222,EC,Dag and Red,Stockport,1/22/2022
-3223,EC,Grimsby,Bromley,1/22/2022
-3224,EC,Maidenhead,Halifax,1/22/2022
-3225,EC,Notts County,Barnet,1/22/2022
-3226,EC,Solihull,Dover Athletic,1/22/2022
-3227,EC,Southend,Kings Lynn,1/22/2022
-3228,EC,Woking,Wealdstone,1/22/2022
-3229,EC,Yeovil,Wrexham,1/22/2022
-4051,F2,Caen,Ajaccio,1/22/2022
-4052,F2,Amiens,Guingamp,1/22/2022
-4053,F2,Pau FC,Nimes,1/22/2022
-4054,F2,Valenciennes,Nancy,1/22/2022
-4055,F2,Grenoble,Niort,1/22/2022
-4056,F2,Auxerre,Paris FC,1/22/2022
-4057,F2,Dijon,Quevilly Rouen,1/22/2022
-4058,F2,Le Havre,Rodez,1/22/2022
-4059,F2,Dunkerque,Sochaux,1/22/2022
-4060,F2,Bastia,Toulouse,1/22/2022
-4773,N1,AZ Alkmaar,Cambuur,1/22/2022
-4774,N1,Vitesse,Groningen,1/22/2022
-4775,N1,Willem II,Twente,1/22/2022
-4776,N1,Heerenveen,Zwolle,1/22/2022
-784,D2,Ingolstadt,Darmstadt,1/23/2022
-785,D2,Hannover,Dresden,1/23/2022
-786,D2,Hansa Rostock,Heidenheim,1/23/2022
-787,D2,Regensburg,Holstein Kiel,1/23/2022
-788,D2,Fortuna Dusseldorf,Nurnberg,1/23/2022
-789,D2,Karlsruhe,Sandhausen,1/23/2022
-790,D2,Erzgebirge Aue,Schalke 04,1/23/2022
-791,D2,Hamburg,St Pauli,1/23/2022
-792,D2,Paderborn,Werder Bremen,1/23/2022
-3671,F1,Angers,Troyes,1/23/2022
-3672,F1,Bordeaux,Strasbourg,1/23/2022
-3673,F1,Brest,Lille,1/23/2022
-3674,F1,Clermont,Rennes,1/23/2022
-3675,F1,Lens,Marseille,1/23/2022
-3676,F1,Lyon,St Etienne,1/23/2022
-3677,F1,Metz,Nice,1/23/2022
-3678,F1,Montpellier,Monaco,1/23/2022
-3679,F1,Nantes,Lorient,1/23/2022
-3680,F1,Paris SG,Reims,1/23/2022
-4441,I1,Cagliari,Fiorentina,1/23/2022
-4442,I1,Empoli,Roma,1/23/2022
-4443,I1,Genoa,Udinese,1/23/2022
-4444,I1,Verona,Bologna,1/23/2022
-4445,I1,Inter,Venezia,1/23/2022
-4446,I1,Lazio,Atalanta,1/23/2022
-4447,I1,Milan,Juventus,1/23/2022
-4448,I1,Napoli,Salernitana,1/23/2022
-4449,I1,Spezia,Sampdoria,1/23/2022
-4450,I1,Torino,Sassuolo,1/23/2022
-4777,N1,PSV Eindhoven,Ajax,1/23/2022
-4778,N1,Nijmegen,Feyenoord,1/23/2022
-4779,N1,Heracles,Go Ahead Eagles,1/23/2022
-4780,N1,Sparta Rotterdam,Utrecht,1/23/2022
-5069,P1,Maritimo,Belenenses,1/23/2022
-5070,P1,Arouca,Benfica,1/23/2022
-5071,P1,Pacos Ferreira,Boavista,1/23/2022
-5072,P1,Sp Lisbon,Sp Braga,1/23/2022
-5073,P1,Guimaraes,Estoril,1/23/2022
-5074,P1,Porto,Famalicao,1/23/2022
-5075,P1,Tondela,Vizela,1/23/2022
-5076,P1,Gil Vicente,Portimonense,1/23/2022
-5077,P1,Moreirense,Santa Clara,1/23/2022
-5801,SP1,Alaves,Barcelona,1/23/2022
-5802,SP1,Ath Madrid,Valencia,1/23/2022
-5803,SP1,Granada,Osasuna,1/23/2022
-5804,SP1,Espanol,Betis,1/23/2022
-5805,SP1,Levante,Cadiz,1/23/2022
-5806,SP1,Real Madrid,Elche,1/23/2022
-5807,SP1,Sociedad,Getafe,1/23/2022
-5808,SP1,Sevilla,Celta,1/23/2022
-5809,SP1,Vallecano,Ath Bilbao,1/23/2022
-5810,SP1,Villarreal,Mallorca,1/23/2022
-6224,SP2,Sociedad B,Cartagena,1/23/2022
-6225,SP2,Alcorcon,Mirandes,1/23/2022
-6226,SP2,Almeria,Eibar,1/23/2022
-6227,SP2,Fuenlabrada,Las Palmas,1/23/2022
-6228,SP2,Burgos,Leganes,1/23/2022
-6229,SP2,Girona,Lugo,1/23/2022
-6230,SP2,Tenerife,Oviedo,1/23/2022
-6231,SP2,Huesca,Ponferradina,1/23/2022
-6232,SP2,Sp Gijon,Amorebieta,1/23/2022
-6233,SP2,Malaga,Ibiza,1/23/2022
-6234,SP2,Zaragoza,Valladolid,1/23/2022
-6653,T1,Hatayspor,Rizespor,1/23/2022
-6654,T1,Antalyaspor,Gaziantep,1/23/2022
-6655,T1,Ad. Demirspor,Karagumruk,1/23/2022
-6656,T1,Yeni Malatyaspor,Besiktas,1/23/2022
-6657,T1,Galatasaray,Trabzonspor,1/23/2022
-6658,T1,Giresunspor,Alanyaspor,1/23/2022
-6659,T1,Kasimpasa,Kayserispor,1/23/2022
-6660,T1,Altay,Konyaspor,1/23/2022
-6661,T1,Sivasspor,Fenerbahce,1/23/2022
-6662,T1,Buyuksehyr,Goztep,1/23/2022
+487,D1,FC Koln,Freiburg,2/4/2022
+488,D1,Bielefeld,Mgladbach,2/4/2022
+489,D1,Hertha,Bochum,2/4/2022
+490,D1,Augsburg,Union Berlin,2/4/2022
+491,D1,Mainz,Hoffenheim,2/4/2022
+492,D1,Stuttgart,Ein Frankfurt,2/4/2022
+493,D1,Wolfsburg,Greuther Furth,2/4/2022
+494,D1,Dortmund,Leverkusen,2/4/2022
+495,D1,Bayern Munich,RB Leipzig,2/4/2022
+226,B1,Mechelen,Beerschot VA,2/5/2022
+227,B1,Standard,Cercle Brugge,2/5/2022
+228,B1,Anderlecht,Eupen,2/5/2022
+229,B1,Club Brugge,Gent,2/5/2022
+230,B1,Oostende,Oud-Heverlee Leuven,2/5/2022
+231,B1,Charleroi,Seraing,2/5/2022
+232,B1,Kortrijk,St Truiden,2/5/2022
+233,B1,Antwerp,St. Gilloise,2/5/2022
+234,B1,Genk,Waregem,2/5/2022
+1647,E1,Barnsley,Cardiff,2/5/2022
+1648,E1,Birmingham,Sheffield United,2/5/2022
+1649,E1,Blackpool,Bristol City,2/5/2022
+1650,E1,Huddersfield,Derby,2/5/2022
+1651,E1,Hull,Preston,2/5/2022
+1652,E1,Middlesbrough,Fulham,2/5/2022
+1653,E1,Millwall,QPR,2/5/2022
+1654,E1,Nottm Forest,Coventry,2/5/2022
+1655,E1,Peterboro,Luton,2/5/2022
+1656,E1,Reading,Stoke,2/5/2022
+1657,E1,Swansea,Blackburn,2/5/2022
+1658,E1,West Brom,Bournemouth,2/5/2022
+2211,E2,Rotherham,Accrington,2/5/2022
+2212,E2,Charlton,AFC Wimbledon,2/5/2022
+2213,E2,Morecambe,Bolton,2/5/2022
+2214,E2,Plymouth,Cheltenham,2/5/2022
+2215,E2,Wigan,Crewe,2/5/2022
+2216,E2,Sunderland,Doncaster,2/5/2022
+2217,E2,Shrewsbury,Fleetwood Town,2/5/2022
+2218,E2,Ipswich,Gillingham,2/5/2022
+2219,E2,Milton Keynes Dons,Lincoln,2/5/2022
+2220,E2,Oxford,Portsmouth,2/5/2022
+2221,E2,Burton,Sheffield Weds,2/5/2022
+2222,E2,Cambridge,Wycombe,2/5/2022
+2751,E3,Harrogate,Bradford,2/5/2022
+2752,E3,Sutton,Bristol Rvs,2/5/2022
+2753,E3,Rochdale,Carlisle,2/5/2022
+2754,E3,Leyton Orient,Colchester,2/5/2022
+2755,E3,Swindon,Exeter,2/5/2022
+2756,E3,Hartlepool,Mansfield,2/5/2022
+2757,E3,Forest Green,Newport County,2/5/2022
+2758,E3,Walsall,Northampton,2/5/2022
+2759,E3,Scunthorpe,Oldham,2/5/2022
+2760,E3,Salford,Port Vale,2/5/2022
+2761,E3,Crawley Town,Stevenage,2/5/2022
+2762,E3,Barrow,Tranmere,2/5/2022
+3252,EC,Aldershot,Barnet,2/5/2022
+3253,EC,Altrincham,Woking,2/5/2022
+3254,EC,Chesterfield,Dag and Red,2/5/2022
+3255,EC,Halifax,Bromley,2/5/2022
+3256,EC,Kings Lynn,Weymouth,2/5/2022
+3257,EC,Maidenhead,Eastleigh,2/5/2022
+3258,EC,Notts County,Grimsby,2/5/2022
+3259,EC,Southend,Boreham Wood,2/5/2022
+3260,EC,Stockport,Dover Athletic,2/5/2022
+3261,EC,Torquay,Wrexham,2/5/2022
+3262,EC,Yeovil,Solihull,2/5/2022
+4061,F2,Paris FC,Ajaccio,2/5/2022
+4062,F2,Sochaux,Amiens,2/5/2022
+4063,F2,Guingamp,Auxerre,2/5/2022
+4064,F2,Nancy,Caen,2/5/2022
+4065,F2,Toulouse,Dijon,2/5/2022
+4066,F2,Nimes,Dunkerque,2/5/2022
+4067,F2,Quevilly Rouen,Grenoble,2/5/2022
+4068,F2,Niort,Le Havre,2/5/2022
+4069,F2,Bastia,Pau FC,2/5/2022
+4070,F2,Rodez,Valenciennes,2/5/2022
+4781,N1,PSV Eindhoven,AZ Alkmaar,2/5/2022
+4782,N1,Utrecht,Cambuur,2/5/2022
+4783,N1,For Sittard,Heerenveen,2/5/2022
+4784,N1,Zwolle,Nijmegen,2/5/2022
+4785,N1,Twente,Vitesse,2/5/2022
+5357,SC0,Hibernian,St Mirren,2/5/2022
+5358,SC0,Rangers,Hearts,2/5/2022
+5359,SC0,Motherwell,Celtic,2/5/2022
+5360,SC0,Livingston,Aberdeen,2/5/2022
+5361,SC0,Dundee,Ross County,2/5/2022
+5362,SC0,St Johnstone,Dundee United,2/5/2022
+5531,SC1,Ayr,Dunfermline,2/5/2022
+5532,SC1,Inverness C,Morton,2/5/2022
+5533,SC1,Raith Rvs,Hamilton,2/5/2022
+5534,SC1,Arbroath,Kilmarnock,2/5/2022
+5535,SC1,Partick,Queen of Sth,2/5/2022
+793,D2,Holstein Kiel,Fortuna Dusseldorf,2/6/2022
+794,D2,Sandhausen,Erzgebirge Aue,2/6/2022
+795,D2,Darmstadt,Hamburg,2/6/2022
+796,D2,Heidenheim,Hannover,2/6/2022
+797,D2,Dresden,Hansa Rostock,2/6/2022
+798,D2,Nurnberg,Ingolstadt,2/6/2022
+799,D2,Schalke 04,Regensburg,2/6/2022
+800,D2,Werder Bremen,Karlsruhe,2/6/2022
+801,D2,St Pauli,Paderborn,2/6/2022
+3681,F1,Lille,Paris SG,2/6/2022
+3682,F1,Lorient,Lens,2/6/2022
+3683,F1,Marseille,Angers,2/6/2022
+3684,F1,Monaco,Lyon,2/6/2022
+3685,F1,Nice,Clermont,2/6/2022
+3686,F1,Reims,Bordeaux,2/6/2022
+3687,F1,Rennes,Brest,2/6/2022
+3688,F1,St Etienne,Montpellier,2/6/2022
+3689,F1,Strasbourg,Nantes,2/6/2022
+3690,F1,Troyes,Metz,2/6/2022
+4451,I1,Atalanta,Cagliari,2/6/2022
+4452,I1,Bologna,Empoli,2/6/2022
+4453,I1,Fiorentina,Lazio,2/6/2022
+4454,I1,Inter,Milan,2/6/2022
+4455,I1,Juventus,Verona,2/6/2022
+4456,I1,Roma,Genoa,2/6/2022
+4457,I1,Salernitana,Spezia,2/6/2022
+4458,I1,Sampdoria,Sassuolo,2/6/2022
+4459,I1,Udinese,Torino,2/6/2022
+4460,I1,Venezia,Napoli,2/6/2022
+4786,N1,Groningen,Go Ahead Eagles,2/6/2022
+4787,N1,Ajax,Heracles,2/6/2022
+4788,N1,Willem II,Waalwijk,2/6/2022
+4789,N1,Feyenoord,Sparta Rotterdam,2/6/2022
+5087,P1,Moreirense,Belenenses,2/6/2022
+5088,P1,Tondela,Benfica,2/6/2022
+5089,P1,Guimaraes,Sp Braga,2/6/2022
+5090,P1,Maritimo,Estoril,2/6/2022
+5091,P1,Sp Lisbon,Famalicao,2/6/2022
+5092,P1,Boavista,Vizela,2/6/2022
+5093,P1,Pacos Ferreira,Portimonense,2/6/2022
+5094,P1,Arouca,Porto,2/6/2022
+5095,P1,Gil Vicente,Santa Clara,2/6/2022
+5811,SP1,Ath Bilbao,Espanyol,2/6/2022
+5812,SP1,Barcelona,Ath Madrid,2/6/2022
+5813,SP1,Betis,Villarreal,2/6/2022
+5814,SP1,Celta,Vallecano,2/6/2022
+5815,SP1,Mallorca,Cadiz,2/6/2022
+5816,SP1,Getafe,Levante,2/6/2022
+5817,SP1,Osasuna,Sevilla,2/6/2022
+5818,SP1,Real Madrid,Granada,2/6/2022
+5819,SP1,Valencia,Sociedad,2/6/2022
+5820,SP1,Elche,Alaves,2/6/2022
+6246,SP2,Burgos,Alcorcon,2/6/2022
+6247,SP2,Huesca,Mirandes,2/6/2022
+6248,SP2,Sp Gijon,Eibar,2/6/2022
+6249,SP2,Cartagena,Las Palmas,2/6/2022
+6250,SP2,Tenerife,Leganes,2/6/2022
+6251,SP2,Sociedad B,Lugo,2/6/2022
+6252,SP2,Zaragoza,Malaga,2/6/2022
+6253,SP2,Amorebieta,Oviedo,2/6/2022
+6254,SP2,Girona,Ponferradina,2/6/2022
+6255,SP2,Almeria,Ibiza,2/6/2022
+6256,SP2,Fuenlabrada,Valladolid,2/6/2022
+6663,T1,Konyaspor,Giresunspor,2/6/2022
+6664,T1,Trabzonspor,Kasimpasa,2/6/2022
+6665,T1,Alanyaspor,Galatasaray,2/6/2022
+6666,T1,Karagumruk,Yeni Malatyaspor,2/6/2022
+6667,T1,Besiktas,Antalyaspor,2/6/2022
+6668,T1,Gaziantep,Sivasspor,2/6/2022
+6669,T1,Rizespor,Ad. Demirspor,2/6/2022
+6670,T1,Fenerbahce,Buyuksehyr,2/6/2022
+6671,T1,Goztep,Altay,2/6/2022
+6672,T1,Kayserispor,Hatayspor,2/6/2022
+1149,E0,Aston Villa,Leeds,2/8/2022
+1150,E0,Brighton,Chelsea,2/8/2022
+1151,E0,Burnley,Man United,2/8/2022
+1152,E0,Norwich,Crystal Palace,2/8/2022
+1153,E0,West Ham,Watford,2/8/2022
+1154,E0,Wolves,Arsenal,2/8/2022
+1659,E1,Cardiff,Peterboro,2/8/2022
+1660,E1,Coventry,Blackpool,2/8/2022
+1661,E1,Derby,Hull,2/8/2022
+1662,E1,Fulham,Millwall,2/8/2022
+1663,E1,Luton,Barnsley,2/8/2022
+1664,E1,Stoke,Swansea,2/8/2022
+2223,E2,Portsmouth,Burton,2/8/2022
+2224,E2,Gillingham,Cambridge,2/8/2022
+2225,E2,Bolton,Charlton,2/8/2022
+2226,E2,Doncaster,Ipswich,2/8/2022
+2227,E2,Fleetwood Town,Milton Keynes Dons,2/8/2022
+2228,E2,Lincoln,Morecambe,2/8/2022
+2229,E2,Accrington,Oxford,2/8/2022
+2230,E2,Crewe,Plymouth,2/8/2022
+2231,E2,AFC Wimbledon,Rotherham,2/8/2022
+2232,E2,Wycombe,Shrewsbury,2/8/2022
+2233,E2,Cheltenham,Sunderland,2/8/2022
+2234,E2,Sheffield Weds,Wigan,2/8/2022
+2763,E3,Hartlepool,Barrow,2/8/2022
+2764,E3,Stevenage,Bradford,2/8/2022
+2765,E3,Oldham,Bristol Rvs,2/8/2022
+2766,E3,Mansfield,Colchester,2/8/2022
+2767,E3,Harrogate,Crawley Town,2/8/2022
+2768,E3,Exeter,Leyton Orient,2/8/2022
+2769,E3,Northampton,Newport County,2/8/2022
+2770,E3,Carlisle,Port Vale,2/8/2022
+2771,E3,Forest Green,Rochdale,2/8/2022
+2772,E3,Salford,Sutton,2/8/2022
+2773,E3,Tranmere,Swindon,2/8/2022
+2774,E3,Scunthorpe,Walsall,2/8/2022
+1155,E0,Newcastle,Everton,2/9/2022
+1156,E0,Tottenham,Southampton,2/9/2022
+1157,E0,Liverpool,Leicester,2/9/2022
+1158,E0,Man City,Brentford,2/9/2022
+1665,E1,Blackburn,Nottm Forest,2/9/2022
+1666,E1,Bournemouth,Birmingham,2/9/2022
+1667,E1,Bristol City,Reading,2/9/2022
+1668,E1,Preston,Huddersfield,2/9/2022
+1669,E1,QPR,Middlesbrough,2/9/2022
+1670,E1,Sheffield United,West Brom,2/9/2022
+5363,SC0,Hearts,Dundee,2/9/2022
+5364,SC0,Dundee United,Motherwell,2/9/2022
+5365,SC0,Ross County,Livingston,2/9/2022
+5366,SC0,Aberdeen,Celtic,2/9/2022
+5367,SC0,St Mirren,St Johnstone,2/9/2022
+5368,SC0,Rangers,Hibernian,2/9/2022

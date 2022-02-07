@@ -1,11 +1,11 @@
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 
-
+B1_rounds
 #####################################################################################################################
 #begin gamesate algortihm
 #B1
-B1_margindata <- B1
+B1_margindata <- B1_rounds
 b1_firstgames <- length(b1_teams)/2
 B1_firstsplit <-  head(B1_margindata,b1_firstgames)
 B1_secondsplit <- tail(B1_margindata,nrow(B1_margindata) - b1_firstgames)
@@ -13,6 +13,9 @@ B1_secondsplit$b1_HomeTeam_index_wm <- match(B1_secondsplit$HomeTeam,b1_teams)
 B1_secondsplit$b1_AwayTeam_index_wm <- match(B1_secondsplit$AwayTeam,b1_teams)
 B1_secondsplit$b1_homegame_no <- rep(2:b1_games_played[1] - 1, each = length(b1_teams)/2)
 B1_secondsplit$b1_awaygame_no <- rep(2:b1_games_played[1] - 1, each = length(b1_teams)/2)
+
+# B1_secondsplit$b1_homegame_no <- rep(2:b1_games_played[1] - 1, each = length(b1_teams)/2)
+# B1_secondsplit$b1_awaygame_no <- rep(2:b1_games_played[1] - 1, each = length(b1_teams)/2)
 
 b1_homewinmargin <- c()
 b1_awaywinmargin <- c()

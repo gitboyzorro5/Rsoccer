@@ -6,6 +6,7 @@ options(java.parameters = "-Xmx2048m")
 library('xlsx')
 library('scales')
 library('lubridate')
+
 #########################################################################################################################################
 unlink('clonedprediction.xlsx')
 unlink('picks_fixtures_prediction_cloned.csv')

@@ -711,35 +711,53 @@ write.xlsx(b1_roundmatrix,'b1_roundmatrix.xlsx')
 ##################################################################################################################
 ##################################################################################################################
 #b1_krounds is total rounds as per current season
-# b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
-# b1_goalscoredmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
-#
-# b1_goalsfor <- c()
-#
-# for(i_b1_krounds in 1:b1_krounds)
-# {
-#
-#   for (i_b1_gs in 1:length(b1_teams))
-#   {
-#
-#    b1_goalsfor[i_b1_gs] <-
-#
-#   }
-#
-#   b1_goalscoredmatrix[,i_b1_krounds] <- as.data.frame(b1_goalsfor[])
-#
-# }
-#
-# b1_goalscoredmatrix <- cbind(b1_teams,b1_goalscoredmatrix)
-#
-#
-# b1_goalsfor
-# b1_goalscoredmatrix
-# b1_teams
-# head(B1,10)
-#
-# warnings()
-#
+b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
+b1_goalscoredmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
+
+b1_goalsfor <- c()
+
+for(i_b1_krounds in 1:b1_krounds)
+{
+
+  for (i_b1_gs in 1:length(b1_teams))
+  {
+
+   b1_goalsfor[i_b1_gs] <- if(B1_rounds$HomeTeam == b1_teams[i_b1_tg] & B1_rounds$b1_matchday <= i_b1_krounds) {B1_round['FTHG']}
+   else {B1_rounds['FTAG']}
+
+  }
+
+  b1_goalscoredmatrix[,i_b1_krounds] <- as.data.frame(b1_goalsfor[])
+
+}
+
+b1_goalscoredmatrix <- cbind(b1_teams,b1_goalscoredmatrix)
+
+
+b1_goalsfor
+b1_goalscoredmatrix
+b1_teams
+
+ams
+head(B1_rounds,10)
+
+warnings()
+
+b1_homegoalstemp <- B1_rounds$FTHG[B1_rounds$b1_matchday == 1]
+
+b1_awaygoalstemp <- B1_rounds$FTAG[B1_rounds$b1_matchday == 1]
+
+b1_hometeamstemp <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == 1]
+
+b1_awayteamstemp <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== 1]
+
+
+names(b1_hometeamstemp) <- b1_homegoalstemp
+
+names(b1_awayteamstemp) <- b1_awaygoalstemp
+
+
+
 
 
 

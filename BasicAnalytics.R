@@ -743,33 +743,43 @@ head(B1_rounds,10)
 
 warnings()
 
-b1_homegoalstemp <- B1_rounds$FTHG[B1_rounds$b1_matchday == 1]
+#################################################################################
+#################################################################################
+b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
+b1_goalscoredmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
+b1_goalscoredround <- c()
+for(i_b1_krounds in 1:b1_krounds)
+{
+b1_homegoalstemp <- B1_rounds$FTHG[B1_rounds$b1_matchday == i_b1_krounds]
 
-b1_awaygoalstemp <- B1_rounds$FTAG[B1_rounds$b1_matchday == 1]
+b1_awaygoalstemp <- B1_rounds$FTAG[B1_rounds$b1_matchday == i_b1_krounds]
 
-b1_hometeamstemp <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == 1]
+b1_hometeamstemp <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == i_b1_krounds]
 
-b1_awayteamstemp <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== 1]
-
-
-names(b1_hometeamstemp) <- b1_homegoalstemp
-
-names(b1_awayteamstemp) <- b1_awaygoalstemp
-
-
-
-
+b1_awayteamstemp <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== i_b1_krounds]
 
 
+# names(b1_hometeamstemp) <- b1_homegoalstemp
+# names(b1_awayteamstemp) <- b1_awaygoalstemp
 
+b1_goalscombined <- c(b1_homegoalstemp,b1_awaygoalstemp)
+b1_teamscombined <- c(b1_hometeamstemp,b1_awayteamstemp)
 
+b1_goalscoredround <- data.frame(b1_teamscombined,b1_goalscombined)
 
+b1_goalscoredround <- b1_goalscoredround[order(b1_goalscoredround$b1_teamscombined),]
+b1_goalscoredround$b1_teamscombined <- NULL
+b1_goalscoredmatrix[,i_b1_krounds] <- b1_goalscoredround
 
+}
 
+b1_goalscoredmatrix
 
+B1_rounds[B1_rounds$b1_matchday == 2,]
+B1_rounds[B1_rounds$b1_matchday == 21,]
 
-
-
+tail(B1_rounds)
+b1_teams
 
 
 

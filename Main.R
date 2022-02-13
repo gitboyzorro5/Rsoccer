@@ -17,8 +17,15 @@ source("TeamAgainst.R")
 source("ShotsAnalysis.R")
 source("LeagueTables.R")
 source("PoissonModel.R")
-#delete files in divisions
 unlink("Divisions/*",recursive = T,force = T)
+source("Matchday.R")
+source("GSmatrix_rounds.R")
+source("GCmatrix_rounds.R")
+source("TGmatrix_rounds.R")
+source("Teamform_rounds.R")
+source("TableSimulation.R")
 source("MasterWrite.R")
 source("LastSix.R")
 source("LeagueFixtures.R")
+
+

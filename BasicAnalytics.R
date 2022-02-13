@@ -750,20 +750,16 @@ b1_goalscoredmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_kroun
 b1_goalscoredround <- c()
 for(i_b1_krounds in 1:b1_krounds)
 {
-b1_homegoalstemp <- B1_rounds$FTHG[B1_rounds$b1_matchday == i_b1_krounds]
+b1_homegoalscored <- B1_rounds$FTHG[B1_rounds$b1_matchday == i_b1_krounds]
 
-b1_awaygoalstemp <- B1_rounds$FTAG[B1_rounds$b1_matchday == i_b1_krounds]
+b1_awaygoalscored <- B1_rounds$FTAG[B1_rounds$b1_matchday == i_b1_krounds]
 
-b1_hometeamstemp <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == i_b1_krounds]
+b1_hometeamstemp_gs <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == i_b1_krounds]
 
-b1_awayteamstemp <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== i_b1_krounds]
+b1_awayteamstemp_gs <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== i_b1_krounds]
 
-
-# names(b1_hometeamstemp) <- b1_homegoalstemp
-# names(b1_awayteamstemp) <- b1_awaygoalstemp
-
-b1_goalscombined <- c(b1_homegoalstemp,b1_awaygoalstemp)
-b1_teamscombined <- c(b1_hometeamstemp,b1_awayteamstemp)
+b1_goalscombined <- c(b1_homegoalscored,b1_awaygoalscored)
+b1_teamscombined <- c(b1_hometeamstemp_gs,b1_awayteamstemp_gs)
 
 b1_goalscoredround <- data.frame(b1_teamscombined,b1_goalscombined)
 
@@ -773,19 +769,105 @@ b1_goalscoredmatrix[,i_b1_krounds] <- b1_goalscoredround
 
 }
 
+b1_goalscoredmatrix <- cbind(b1_teams,b1_goalscoredmatrix)
+
 b1_goalscoredmatrix
 
-B1_rounds[B1_rounds$b1_matchday == 2,]
-B1_rounds[B1_rounds$b1_matchday == 21,]
+##########################################################################
+##########################################################################
+b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
+b1_goalconcededmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
+b1_goalconcededround <- c()
+for(i_b1_krounds in 1:b1_krounds)
+{
+  b1_homegoalconceded <- B1_rounds$FTAG[B1_rounds$b1_matchday == i_b1_krounds]
 
-tail(B1_rounds)
-b1_teams
+  b1_awaygoalconceded <- B1_rounds$FTHG[B1_rounds$b1_matchday == i_b1_krounds]
 
+  b1_hometeamstemp_gc <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == i_b1_krounds]
 
+  b1_awayteamstemp_gc <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== i_b1_krounds]
 
+  b1_goalsconcededcombined <- c(b1_homegoalconceded,b1_awaygoalconceded)
+  b1_teamscombined_gc <- c(b1_hometeamstemp_gc,b1_awayteamstemp_gc)
 
+  b1_goalconcededround <- data.frame(b1_teamscombined_gc,b1_goalsconcededcombined)
 
+  b1_goalconcededround <- b1_goalconcededround[order(b1_goalconcededround$b1_teamscombined_gc),]
+  b1_goalconcededround$b1_teamscombined_gc <- NULL
+  b1_goalconcededmatrix[,i_b1_krounds] <- b1_goalconcededround
 
+}
+
+b1_goalconcededmatrix <- cbind(b1_teams,b1_goalconcededmatrix)
+
+b1_goalconcededmatrix
+
+#################################################################
+#################################################################
+b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
+b1_goaltotalmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
+b1_goaltotalround <- c()
+for(i_b1_krounds in 1:b1_krounds)
+{
+  b1_homegoaltotal <- B1_rounds$TG[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_awaygoaltotal <- B1_rounds$TG[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_hometeamstemp_tg <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_awayteamstemp_tg <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== i_b1_krounds]
+
+  b1_goalscombined_tg <- c(b1_homegoaltotal,b1_awaygoaltotal)
+  b1_teamscombined_tg <- c(b1_hometeamstemp_tg,b1_awayteamstemp_tg)
+
+  b1_goaltotalround <- data.frame(b1_teamscombined_tg,b1_goalscombined_tg)
+
+  b1_goaltotalround <- b1_goaltotalround[order(b1_goaltotalround$b1_teamscombined_tg),]
+  b1_goaltotalround$b1_teamscombined_tg <- NULL
+  b1_goaltotalmatrix[,i_b1_krounds] <- b1_goaltotalround
+
+}
+
+b1_goaltotalmatrix <- cbind(b1_teams,b1_goaltotalmatrix)
+
+b1_goaltotalmatrix
+############################################################################################
+############################################################################################
+b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
+b1_formmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
+b1_formround <- c()
+for(i_b1_krounds in 1:b1_krounds)
+{
+  b1_homeform <- B1_rounds$FTR[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_homeform <- sub("H","W",b1_homeform)
+  b1_homeform <- sub("A","L",b1_homeform)
+
+  b1_awayform <- B1_rounds$FTR[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_awayform <- sub("A","W",b1_awayform)
+  b1_awayform <- sub("H","L",b1_awayform)
+
+  b1_hometeamstemp_form <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_awayteamstemp_form <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== i_b1_krounds]
+
+  b1_formcombined <- c(b1_homeform,b1_awayform)
+  b1_teamscombined_form <- c(b1_hometeamstemp_form,b1_awayteamstemp_form)
+
+  b1_formround <- data.frame(b1_teamscombined_form,b1_formcombined)
+
+  b1_formround <- b1_formround[order(b1_formround$b1_teamscombined_form),]
+  b1_formround$b1_teamscombined_form <- NULL
+  b1_formmatrix[,i_b1_krounds] <- b1_formround
+
+}
+
+b1_formmatrix <- cbind(b1_teams,b1_formmatrix)
+
+#########################################################################################
+########################################################################################
 
 
 

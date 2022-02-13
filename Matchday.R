@@ -1,7 +1,7 @@
 library('xlsx')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 
-
+tail(E1_rounds)
 ##############################################################################################
 b1_totalrounds <-  (length(b1_teams) - 1 )*2
 b1_totalmatches <- (length(b1_teams)*(length(b1_teams) - 1))
@@ -210,6 +210,7 @@ E3_rounds <- cbind(E3_rounds,e3_matchday)
 ec_totalrounds <-  (length(ec_teams) - 1 )*2
 ec_totalmatches <- (length(ec_teams)*(length(ec_teams) - 1))
 ec_eachround <- ec_totalmatches / ec_totalrounds
+
 
 ec_matchesplayed <-  nrow(EC)
 

@@ -242,16 +242,16 @@ for(i_f1_krounds in 1:f1_krounds)
 f1_goalconcededmatrix <- cbind(f1_teams,f1_goalconcededmatrix)
 ##############################################################################################
 #f2
-f2_krounds <- tail(unique(B1_rounds$f2_matchday),1)
+f2_krounds <- tail(unique(F2_rounds$f2_matchday),1)
 f2_goalconcededmatrix <- data.frame(matrix(nrow = length(f2_teams),ncol = f2_krounds))
 f2_goalconcededround <- c()
 for(i_f2_krounds in 1:f2_krounds)
 {
-  f2_homegoalconceded <- B1_rounds$FTAG[B1_rounds$f2_matchday == i_f2_krounds]
+  f2_homegoalconceded <- F2_rounds$FTAG[F2_rounds$f2_matchday == i_f2_krounds]
 
-  f2_awaygoalconceded <- B1_rounds$FTHG[B1_rounds$f2_matchday == i_f2_krounds]
+  f2_awaygoalconceded <- F2_rounds$FTHG[F2_rounds$f2_matchday == i_f2_krounds]
 
-  f2_hometeamstemp_gc <- B1_rounds$HomeTeam[B1_rounds$f2_matchday == i_f2_krounds]
+  f2_hometeamstemp_gc <- F2_rounds$HomeTeam[F2_rounds$f2_matchday == i_f2_krounds]
 
   f2_awayteamstemp_gc <- F2_rounds$AwayTeam[F2_rounds$f2_matchday== i_f2_krounds]
 

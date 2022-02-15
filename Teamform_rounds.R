@@ -257,7 +257,7 @@ for(i_ec_krounds in 1:ec_krounds)
   ec_formround <- ec_formround[order(ec_formround$ec_teamscombined_form),]
   ec_formround$ec_teamscombined_form <- NULL
   ec_formmatrix[,i_ec_krounds] <- ec_formround
-
+ec_formmatrix
 }
 
 ec_formmatrix <- cbind(ec_teams,ec_formmatrix)

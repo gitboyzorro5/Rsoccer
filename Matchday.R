@@ -209,8 +209,7 @@ E3_rounds <- cbind(E3_rounds,e3_matchday)
 ##############################################################################################
 ec_totalrounds <-  (length(ec_teams) - 1 )*2
 ec_totalmatches <- (length(ec_teams)*(length(ec_teams) - 1))
-ec_eachround <- floor(ec_totalmatches / ec_totalrounds)
-
+ec_eachround <- ceiling(ec_totalmatches / ec_totalrounds)
 
 ec_matchesplayed <-  nrow(EC)
 

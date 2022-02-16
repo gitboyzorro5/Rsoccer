@@ -92,7 +92,7 @@ for(i_e0_krounds in 1:e0_krounds)
 
   e0_hometeamstemp_gs <- E0_rounds$HomeTeam[E0_rounds$e0_matchday == i_e0_krounds]
 
-  e0_awayteamstemp_gs <- E0_rounds$AwayTeam[E0_rounds$e0_matchday== i_e0_krounds]
+  e0_awayteamstemp_gs <- E0_rounds$AwayTeam[E0_rounds$e0_matchday == i_e0_krounds]
 
   e0_goalscombined <- c(e0_homegoalscored,e0_awaygoalscored)
   e0_teamscombined <- c(e0_hometeamstemp_gs,e0_awayteamstemp_gs)

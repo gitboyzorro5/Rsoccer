@@ -6,6 +6,7 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+library('mgsub')
 #delete current file
 unlink('NL/AUT.xlsx')
 ######################AUT START#######################################
@@ -25,6 +26,8 @@ AUT$FTR <- with(AUT,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
 ###################################################
+# AUT <- mgsub(AUT,c("Wolfsberger"),c("Wolfsberger AC"))
+# AUT <- mgsub(AUT,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 aut_totalgoalsv2 <- tapply(AUT$TG, AUT[c("Home", "Away")],mean)
 aut_totalgoalsv2
@@ -49,7 +52,35 @@ aut_avg_totalgoals <- round((aut_totalgoals/ aut_games_played), digits = 4)
 aut_goaltotalsv2[is.na(aut_goaltotalsv2)] <- ""
 aut_goaltotalsv2 <- cbind(aut_goaltotalsv2,aut_avg_totalgoals)
 write.xlsx(aut_goaltotalsv2,'NL/AUT.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#aut goal scored rounds
+#####################################################################
+aut_krounds <- tail(unique(AUT_rounds$aut_matchday),1)
+nrow(AUT)
+aut_goalscoredmatrix <- data.frame(matrix(nrow = length(aut_teams),ncol = aut_krounds))
+aut_goalscoredround <- c()
+for(i_aut_krounds in 1:aut_krounds)
+{
+  aut_homegoalscored <- AUT_rounds$HG[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_awaygoalscored <- AUT_rounds$AG[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_hometeamstemp_gs <- AUT_rounds$Home[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_awayteamstemp_gs <- AUT_rounds$Away[AUT_rounds$aut_matchday== i_aut_krounds]
+
+  aut_goalscombined <- c(aut_homegoalscored,aut_awaygoalscored)
+  aut_teamscombined <- c(aut_hometeamstemp_gs,aut_awayteamstemp_gs)
+
+  aut_goalscoredround <- data.frame(aut_teamscombined,aut_goalscombined)
+
+  aut_goalscoredround <- aut_goalscoredround[order(aut_goalscoredround$aut_teamscombined),]
+  aut_goalscoredround$aut_teamscombined <- NULL
+  aut_goalscoredmatrix[,i_aut_krounds] <- aut_goalscoredround
+
+}
+
+aut_goalscoredmatrix <- cbind(aut_teams,aut_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 aut_goalscored_h <- tapply(AUT$HG, AUT[c("Home", "Date")],mean)
@@ -70,9 +101,37 @@ for(aut_rowhgs in 1:nrow(aut_goalscored_h)) {
 
   }
 }
-write.xlsx(aut_goalscored_h,'NL/AUT.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(aut_goalscoredmatrix,'NL/AUT.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#aut goal conceded rounds
+#aut
+aut_krounds <- tail(unique(AUT_rounds$aut_matchday),1)
+aut_goalconcededmatrix <- data.frame(matrix(nrow = length(aut_teams),ncol = aut_krounds))
+aut_goalconcededround <- c()
+for(i_aut_krounds in 1:aut_krounds)
+{
+  aut_homegoalconceded <- AUT_rounds$AG[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_awaygoalconceded <- AUT_rounds$HG[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_hometeamstemp_gc <- AUT_rounds$Home[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_awayteamstemp_gc <- AUT_rounds$Away[AUT_rounds$aut_matchday== i_aut_krounds]
+
+  aut_goalsconcededcombined <- c(aut_homegoalconceded,aut_awaygoalconceded)
+  aut_teamscombined_gc <- c(aut_hometeamstemp_gc,aut_awayteamstemp_gc)
+
+  aut_goalconcededround <- data.frame(aut_teamscombined_gc,aut_goalsconcededcombined)
+
+  aut_goalconcededround <- aut_goalconcededround[order(aut_goalconcededround$aut_teamscombined_gc),]
+  aut_goalconcededround$aut_teamscombined_gc <- NULL
+  aut_goalconcededmatrix[,i_aut_krounds] <- aut_goalconcededround
+
+}
+
+aut_goalconcededmatrix <- cbind(aut_teams,aut_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 aut_goalconceded_h <- tapply(AUT$AG, AUT[c("Home", "Date")],mean)
 aut_goalconceded_a <- tapply(AUT$HG, AUT[c("Away", "Date")],mean)
@@ -92,9 +151,45 @@ for(aut_rowhgc in 1:nrow(aut_goalconceded_h)) {
 
   }
 }
-write.xlsx(aut_goalconceded_h,'NL/AUT.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(aut_goalconcededmatrix,'NL/AUT.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#aut team form
+aut_krounds <- tail(unique(AUT_rounds$aut_matchday),1)
+aut_formmatrix <- data.frame(matrix(nrow = length(aut_teams),ncol = aut_krounds))
+aut_formround <- c()
+for(i_aut_krounds in 1:aut_krounds)
+{
+  aut_homeform <- AUT_rounds$Res[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_homeform <- sub("H","W",aut_homeform)
+  aut_homeform <- sub("A","L",aut_homeform)
+
+  aut_awayform <- AUT_rounds$Res[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_awayform <- sub("A","W",aut_awayform)
+  aut_awayform <- sub("H","L",aut_awayform)
+
+  aut_hometeamstemp_form <- AUT_rounds$Home[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_awayteamstemp_form <- AUT_rounds$Away[AUT_rounds$aut_matchday== i_aut_krounds]
+
+  aut_formcombined <- c(aut_homeform,aut_awayform)
+  aut_teamscombined_form <- c(aut_hometeamstemp_form,aut_awayteamstemp_form)
+
+  aut_formround <- data.frame(aut_teamscombined_form,aut_formcombined)
+
+  aut_formround <- aut_formround[order(aut_formround$aut_teamscombined_form),]
+  aut_formround$aut_teamscombined_form <- NULL
+  aut_formmatrix[,i_aut_krounds] <- aut_formround
+
+}
+
+aut_formmatrix <- cbind(aut_teams,aut_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 aut_form_h <- tapply(AUT$FTR, AUT[c("Home", "Date")],median)
 aut_form_a <- tapply(AUT$FTR, AUT[c("Away", "Date")],median)
 aut_form_h[is.na(aut_form_h)] <- ""
@@ -116,8 +211,37 @@ for(aut_rowh_f in 1:nrow(aut_form_h)) {
 
   }
 }
-write.xlsx(aut_form_h,'NL/AUT.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(aut_formmatrix,'NL/AUT.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#aut total goals rounds
+aut_krounds <- tail(unique(AUT_rounds$aut_matchday),1)
+aut_goaltotalmatrix <- data.frame(matrix(nrow = length(aut_teams),ncol = aut_krounds))
+aut_goaltotalround <- c()
+for(i_aut_krounds in 1:aut_krounds)
+{
+  aut_homegoaltotal <- AUT_rounds$TG[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_awaygoaltotal <- AUT_rounds$TG[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_hometeamstemp_tg <- AUT_rounds$Home[AUT_rounds$aut_matchday == i_aut_krounds]
+
+  aut_awayteamstemp_tg <- AUT_rounds$Away[AUT_rounds$aut_matchday== i_aut_krounds]
+
+  aut_goalscombined_tg <- c(aut_homegoaltotal,aut_awaygoaltotal)
+  aut_teamscombined_tg <- c(aut_hometeamstemp_tg,aut_awayteamstemp_tg)
+
+  aut_goaltotalround <- data.frame(aut_teamscombined_tg,aut_goalscombined_tg)
+
+  aut_goaltotalround <- aut_goaltotalround[order(aut_goaltotalround$aut_teamscombined_tg),]
+  aut_goaltotalround$aut_teamscombined_tg <- NULL
+  aut_goaltotalmatrix[,i_aut_krounds] <- aut_goaltotalround
+
+}
+
+aut_goaltotalmatrix <- cbind(aut_teams,aut_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 aut_totalgoals_h <- tapply(AUT$TG, AUT[c("Home", "Date")],mean)
 aut_totalgoals_a <- tapply(AUT$TG, AUT[c("Away", "Date")],mean)
@@ -136,7 +260,7 @@ for(aut_rowh in 1:nrow(aut_totalgoals_h)) {
 
   }
 }
-write.xlsx(aut_totalgoals_h,'NL/AUT.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(aut_goaltotalmatrix,'NL/AUT.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 aut_form_team_against_h <- tapply(AUT$Away, AUT[c("Home", "Date")],median)

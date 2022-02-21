@@ -8,6 +8,7 @@ library('lubridate')
 library('sqldf')
 #delete current file
 unlink('NL/BRA.xlsx')
+
 ######################BRA START#######################################
 #####################################################################
 BRA <- read.csv('../FDAS/BRA.csv')
@@ -31,12 +32,15 @@ BRA$OV25 <- ifelse(BRA$TG >= 3,"Y","N")
 BRA$FTR <- with(BRA,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+head(BRA)
 ###################################################
 ####GoalTotalsv2##################################
+####GoalTotalsv2##################################
 bra_totalgoalsv2 <- tapply(BRA$TG, BRA[c("Home", "Away")],mean)
+bra_totalgoalsv2
 bra_hgtotals <- rowSums(bra_totalgoalsv2,na.rm = T)
 bra_agtotals <- colSums(bra_totalgoalsv2,na.rm = T)
-dim(bra_totalgoalsv2)
+
 bra_totalgoals <- bra_hgtotals + bra_agtotals
 bra_totalgoalsv2 <- cbind(bra_totalgoalsv2,bra_totalgoals)
 bra_teams <- sort(unique(BRA$Home))
@@ -55,7 +59,35 @@ bra_avg_totalgoals <- round((bra_totalgoals/ bra_games_played), digits = 4)
 bra_goaltotalsv2[is.na(bra_goaltotalsv2)] <- ""
 bra_goaltotalsv2 <- cbind(bra_goaltotalsv2,bra_avg_totalgoals)
 write.xlsx(bra_goaltotalsv2,'NL/BRA.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#bra goal scored rounds
+#####################################################################
+bra_krounds <- tail(unique(BRA_rounds$bra_matchday),1)
+nrow(BRA)
+bra_goalscoredmatrix <- data.frame(matrix(nrow = length(bra_teams),ncol = bra_krounds))
+bra_goalscoredround <- c()
+for(i_bra_krounds in 1:bra_krounds)
+{
+  bra_homegoalscored <- BRA_rounds$HG[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_awaygoalscored <- BRA_rounds$AG[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_hometeamstemp_gs <- BRA_rounds$Home[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_awayteamstemp_gs <- BRA_rounds$Away[BRA_rounds$bra_matchday== i_bra_krounds]
+
+  bra_goalscombined <- c(bra_homegoalscored,bra_awaygoalscored)
+  bra_teamscombined <- c(bra_hometeamstemp_gs,bra_awayteamstemp_gs)
+
+  bra_goalscoredround <- data.frame(bra_teamscombined,bra_goalscombined)
+
+  bra_goalscoredround <- bra_goalscoredround[order(bra_goalscoredround$bra_teamscombined),]
+  bra_goalscoredround$bra_teamscombined <- NULL
+  bra_goalscoredmatrix[,i_bra_krounds] <- bra_goalscoredround
+
+}
+
+bra_goalscoredmatrix <- cbind(bra_teams,bra_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 bra_goalscored_h <- tapply(BRA$HG, BRA[c("Home", "Date")],mean)
@@ -76,9 +108,37 @@ for(bra_rowhgs in 1:nrow(bra_goalscored_h)) {
 
   }
 }
-write.xlsx(bra_goalscored_h,'NL/BRA.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(bra_goalscoredmatrix,'NL/BRA.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#bra goal conceded rounds
+#bra
+bra_krounds <- tail(unique(BRA_rounds$bra_matchday),1)
+bra_goalconcededmatrix <- data.frame(matrix(nrow = length(bra_teams),ncol = bra_krounds))
+bra_goalconcededround <- c()
+for(i_bra_krounds in 1:bra_krounds)
+{
+  bra_homegoalconceded <- BRA_rounds$AG[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_awaygoalconceded <- BRA_rounds$HG[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_hometeamstemp_gc <- BRA_rounds$Home[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_awayteamstemp_gc <- BRA_rounds$Away[BRA_rounds$bra_matchday== i_bra_krounds]
+
+  bra_goalsconcededcombined <- c(bra_homegoalconceded,bra_awaygoalconceded)
+  bra_teamscombined_gc <- c(bra_hometeamstemp_gc,bra_awayteamstemp_gc)
+
+  bra_goalconcededround <- data.frame(bra_teamscombined_gc,bra_goalsconcededcombined)
+
+  bra_goalconcededround <- bra_goalconcededround[order(bra_goalconcededround$bra_teamscombined_gc),]
+  bra_goalconcededround$bra_teamscombined_gc <- NULL
+  bra_goalconcededmatrix[,i_bra_krounds] <- bra_goalconcededround
+
+}
+
+bra_goalconcededmatrix <- cbind(bra_teams,bra_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 bra_goalconceded_h <- tapply(BRA$AG, BRA[c("Home", "Date")],mean)
 bra_goalconceded_a <- tapply(BRA$HG, BRA[c("Away", "Date")],mean)
@@ -98,9 +158,45 @@ for(bra_rowhgc in 1:nrow(bra_goalconceded_h)) {
 
   }
 }
-write.xlsx(bra_goalconceded_h,'NL/BRA.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(bra_goalconcededmatrix,'NL/BRA.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#bra team form
+bra_krounds <- tail(unique(BRA_rounds$bra_matchday),1)
+bra_formmatrix <- data.frame(matrix(nrow = length(bra_teams),ncol = bra_krounds))
+bra_formround <- c()
+for(i_bra_krounds in 1:bra_krounds)
+{
+  bra_homeform <- BRA_rounds$FTR[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_homeform <- sub("H","W",bra_homeform)
+  bra_homeform <- sub("A","L",bra_homeform)
+
+  bra_awayform <- BRA_rounds$FTR[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_awayform <- sub("A","W",bra_awayform)
+  bra_awayform <- sub("H","L",bra_awayform)
+
+  bra_hometeamstemp_form <- BRA_rounds$Home[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_awayteamstemp_form <- BRA_rounds$Away[BRA_rounds$bra_matchday== i_bra_krounds]
+
+  bra_formcombined <- c(bra_homeform,bra_awayform)
+  bra_teamscombined_form <- c(bra_hometeamstemp_form,bra_awayteamstemp_form)
+
+  bra_formround <- data.frame(bra_teamscombined_form,bra_formcombined)
+
+  bra_formround <- bra_formround[order(bra_formround$bra_teamscombined_form),]
+  bra_formround$bra_teamscombined_form <- NULL
+  bra_formmatrix[,i_bra_krounds] <- bra_formround
+
+}
+
+bra_formmatrix <- cbind(bra_teams,bra_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 bra_form_h <- tapply(BRA$FTR, BRA[c("Home", "Date")],median)
 bra_form_a <- tapply(BRA$FTR, BRA[c("Away", "Date")],median)
 bra_form_h[is.na(bra_form_h)] <- ""
@@ -122,8 +218,37 @@ for(bra_rowh_f in 1:nrow(bra_form_h)) {
 
   }
 }
-write.xlsx(bra_form_h,'NL/BRA.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(bra_formmatrix,'NL/BRA.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#bra total goals rounds
+bra_krounds <- tail(unique(BRA_rounds$bra_matchday),1)
+bra_goaltotalmatrix <- data.frame(matrix(nrow = length(bra_teams),ncol = bra_krounds))
+bra_goaltotalround <- c()
+for(i_bra_krounds in 1:bra_krounds)
+{
+  bra_homegoaltotal <- BRA_rounds$TG[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_awaygoaltotal <- BRA_rounds$TG[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_hometeamstemp_tg <- BRA_rounds$Home[BRA_rounds$bra_matchday == i_bra_krounds]
+
+  bra_awayteamstemp_tg <- BRA_rounds$Away[BRA_rounds$bra_matchday== i_bra_krounds]
+
+  bra_goalscombined_tg <- c(bra_homegoaltotal,bra_awaygoaltotal)
+  bra_teamscombined_tg <- c(bra_hometeamstemp_tg,bra_awayteamstemp_tg)
+
+  bra_goaltotalround <- data.frame(bra_teamscombined_tg,bra_goalscombined_tg)
+
+  bra_goaltotalround <- bra_goaltotalround[order(bra_goaltotalround$bra_teamscombined_tg),]
+  bra_goaltotalround$bra_teamscombined_tg <- NULL
+  bra_goaltotalmatrix[,i_bra_krounds] <- bra_goaltotalround
+
+}
+
+bra_goaltotalmatrix <- cbind(bra_teams,bra_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 bra_totalgoals_h <- tapply(BRA$TG, BRA[c("Home", "Date")],mean)
 bra_totalgoals_a <- tapply(BRA$TG, BRA[c("Away", "Date")],mean)
@@ -142,7 +267,7 @@ for(bra_rowh in 1:nrow(bra_totalgoals_h)) {
 
   }
 }
-write.xlsx(bra_totalgoals_h,'NL/BRA.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(bra_goaltotalmatrix,'NL/BRA.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 bra_form_team_against_h <- tapply(BRA$Away, BRA[c("Home", "Date")],median)
@@ -162,6 +287,7 @@ for(bra_rowh_f_against in 1:nrow(bra_form_team_against_h)) {
 
   }
 }
+#######################################################################
 #win margin
 bra_winmargin_h <- tapply(BRA$HG - BRA$AG, BRA[c("Home", "Date")],mean)
 bra_winmargin_a <- tapply(BRA$AG - BRA$HG, BRA[c("Away", "Date")],mean)
@@ -180,6 +306,7 @@ for(bra_rowhwm in 1:nrow(bra_winmargin_h)) {
 
   }
 }
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #BRA
@@ -298,6 +425,7 @@ for(bra_rowh_f_cs in 1:nrow(bra_csform_h)) {
 
   }
 }
+##########################################################################################
 ##########################################################################################
 ###########################################################################################
 ############Scoring and conceding analysis

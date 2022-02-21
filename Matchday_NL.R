@@ -3,10 +3,10 @@ Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 
 
 ##############################################################################################
+#ARG <- subset(ARG,Season == "2021")
 arg_totalrounds <-  (length(arg_teams) - 1 )*2
 arg_totalmatches <- (length(arg_teams)*(length(arg_teams) - 1))
 arg_eachround <- arg_totalmatches / arg_totalrounds
-
 arg_matchesplayed <-  nrow(ARG)
 
 ARG_rounds <- ARG
@@ -30,15 +30,17 @@ if(arg_matchesplayed %% arg_eachround == 0)
   arg_matchday <- append(arg_matchday_vec1,arg_matchday_vec2)
 }
 ARG_rounds <- cbind(ARG_rounds,arg_matchday)
+tail(ARG_rounds)
 #####################################################################################################
 #####################################################################################################
 ##############################################################################################
+AUT <- subset(AUT,Season == "2021/2022")
 aut_totalrounds <-  (length(aut_teams) - 1 )*2
 aut_totalmatches <- (length(aut_teams)*(length(aut_teams) - 1))
 aut_eachround <- aut_totalmatches / aut_totalrounds
 
 aut_matchesplayed <-  nrow(AUT)
-
+AUT_rounds
 AUT_rounds <- AUT
 
 if(aut_matchesplayed %% aut_eachround == 0)
@@ -49,6 +51,10 @@ if(aut_matchesplayed %% aut_eachround == 0)
 }else if(aut_matchesplayed %% aut_eachround != 0)
 
 {
+
+
+
+
 
   aut_modulus <- aut_matchesplayed %% aut_eachround
   aut_currentround <- (aut_matchesplayed - aut_modulus) / aut_eachround
@@ -62,6 +68,7 @@ if(aut_matchesplayed %% aut_eachround == 0)
 AUT_rounds <- cbind(AUT_rounds,aut_matchday)
 #####################################################################################################
 ##############################################################################################
+BRA <- subset(BRA,Season == "2021")
 bra_totalrounds <-  (length(bra_teams) - 1 )*2
 bra_totalmatches <- (length(bra_teams)*(length(bra_teams) - 1))
 bra_eachround <- bra_totalmatches / bra_totalrounds
@@ -91,6 +98,7 @@ if(bra_matchesplayed %% bra_eachround == 0)
 BRA_rounds <- cbind(BRA_rounds,bra_matchday)
 #####################################################################################################
 ##############################################################################################
+CHN <- subset(CHN,Season == "2021")
 chn_totalrounds <-  (length(chn_teams) - 1 )*2
 chn_totalmatches <- (length(chn_teams)*(length(chn_teams) - 1))
 chn_eachround <- chn_totalmatches / chn_totalrounds
@@ -120,6 +128,7 @@ if(chn_matchesplayed %% chn_eachround == 0)
 CHN_rounds <- cbind(CHN_rounds,chn_matchday)
 #####################################################################################################
 ##############################################################################################
+DNK <- subset(DNK,Season == "2021/2022")
 dnk_totalrounds <-  (length(dnk_teams) - 1 )*2
 dnk_totalmatches <- (length(dnk_teams)*(length(dnk_teams) - 1))
 dnk_eachround <- dnk_totalmatches / dnk_totalrounds
@@ -149,6 +158,7 @@ if(dnk_matchesplayed %% dnk_eachround == 0)
 DNK_rounds <- cbind(DNK_rounds,dnk_matchday)
 #####################################################################################################
 ##############################################################################################
+FIN <- subset(FIN,Season == "2021")
 fin_totalrounds <-  (length(fin_teams) - 1 )*2
 fin_totalmatches <- (length(fin_teams)*(length(fin_teams) - 1))
 fin_eachround <- fin_totalmatches / fin_totalrounds
@@ -178,6 +188,7 @@ if(fin_matchesplayed %% fin_eachround == 0)
 FIN_rounds <- cbind(FIN_rounds,fin_matchday)
 #####################################################################################################
 ##############################################################################################
+IRL <- subset(IRL,Season == "2021")
 irl_totalrounds <-  (length(irl_teams) - 1 )*2
 irl_totalmatches <- (length(irl_teams)*(length(irl_teams) - 1))
 irl_eachround <- irl_totalmatches / irl_totalrounds
@@ -207,6 +218,7 @@ if(irl_matchesplayed %% irl_eachround == 0)
 IRL_rounds <- cbind(IRL_rounds,irl_matchday)
 #####################################################################################################
 ##############################################################################################
+JPN <- subset(JPN,Season == "2021")
 jpn_totalrounds <-  (length(jpn_teams) - 1 )*2
 jpn_totalmatches <- (length(jpn_teams)*(length(jpn_teams) - 1))
 jpn_eachround <- jpn_totalmatches / jpn_totalrounds
@@ -236,6 +248,7 @@ if(jpn_matchesplayed %% jpn_eachround == 0)
 JPN_rounds <- cbind(JPN_rounds,jpn_matchday)
 #####################################################################################################
 ##############################################################################################
+MEX <- subset(MEX,Season == "2020/2021")
 mex_totalrounds <-  (length(mex_teams) - 1 )*2
 mex_totalmatches <- (length(mex_teams)*(length(mex_teams) - 1))
 mex_eachround <- mex_totalmatches / mex_totalrounds
@@ -265,6 +278,7 @@ if(mex_matchesplayed %% mex_eachround == 0)
 MEX_rounds <- cbind(MEX_rounds,mex_matchday)
 #####################################################################################################
 ##############################################################################################
+MLS <- subset(MLS,Season == "2021")
 mls_totalrounds <-  (length(mls_teams) - 1 )*2
 mls_totalmatches <- (length(mls_teams)*(length(mls_teams) - 1))
 mls_eachround <- mls_totalmatches / mls_totalrounds
@@ -294,6 +308,7 @@ if(mls_matchesplayed %% mls_eachround == 0)
 MLS_rounds <- cbind(MLS_rounds,mls_matchday)
 #####################################################################################################
 ##############################################################################################
+NOR <- subset(NOR,Season == "2021")
 nor_totalrounds <-  (length(nor_teams) - 1 )*2
 nor_totalmatches <- (length(nor_teams)*(length(nor_teams) - 1))
 nor_eachround <- nor_totalmatches / nor_totalrounds
@@ -323,6 +338,7 @@ if(nor_matchesplayed %% nor_eachround == 0)
 NOR_rounds <- cbind(NOR_rounds,nor_matchday)
 #####################################################################################################
 ##############################################################################################
+POL <- subset(POL,Season == "2021/2022")
 pol_totalrounds <-  (length(pol_teams) - 1 )*2
 pol_totalmatches <- (length(pol_teams)*(length(pol_teams) - 1))
 pol_eachround <- pol_totalmatches / pol_totalrounds
@@ -352,6 +368,7 @@ if(pol_matchesplayed %% pol_eachround == 0)
 POL_rounds <- cbind(POL_rounds,pol_matchday)
 #####################################################################################################
 ##############################################################################################
+ROU <- subset(ROU,Season == "2021/2022")
 rou_totalrounds <-  (length(rou_teams) - 1 )*2
 rou_totalmatches <- (length(rou_teams)*(length(rou_teams) - 1))
 rou_eachround <- rou_totalmatches / rou_totalrounds
@@ -381,6 +398,7 @@ if(rou_matchesplayed %% rou_eachround == 0)
 ROU_rounds <- cbind(ROU_rounds,rou_matchday)
 ##########################################################
 ##############################################################################################
+RUS <- subset(RUS,Season == "2021/2022")
 rus_totalrounds <-  (length(rus_teams) - 1 )*2
 rus_totalmatches <- (length(rus_teams)*(length(rus_teams) - 1))
 rus_eachround <- rus_totalmatches / rus_totalrounds
@@ -410,6 +428,7 @@ if(rus_matchesplayed %% rus_eachround == 0)
 RUS_rounds <- cbind(RUS_rounds,rus_matchday)
 #####################################################################################################
 ##############################################################################################
+SWE <- subset(SWE,Season == "2021")
 swe_totalrounds <-  (length(swe_teams) - 1 )*2
 swe_totalmatches <- (length(swe_teams)*(length(swe_teams) - 1))
 swe_eachround <- swe_totalmatches / swe_totalrounds
@@ -439,6 +458,7 @@ if(swe_matchesplayed %% swe_eachround == 0)
 SWE_rounds <- cbind(SWE_rounds,swe_matchday)
 #####################################################################################################
 ##############################################################################################
+SWZ <- subset(SWZ,Season == "2021/2022")
 swz_totalrounds <-  (length(swz_teams) - 1 )*2
 swz_totalmatches <- (length(swz_teams)*(length(swz_teams) - 1))
 swz_eachround <- swz_totalmatches / swz_totalrounds

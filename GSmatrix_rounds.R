@@ -105,6 +105,7 @@ for(i_e0_krounds in 1:e0_krounds)
 
 }
 
+
 e0_goalscoredmatrix <- cbind(e0_teams,e0_goalscoredmatrix)
 #############################################################################################
 #e1

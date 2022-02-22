@@ -11,6 +11,8 @@ unlink('NL/FIN.xlsx')
 ######################FIN START#######################################
 #####################################################################
 FIN <- read.csv('../FDAS/FIN.csv')
+FIN <- FIN[!FIN$Home == "Rovaniemi",]
+FIN <- FIN[!FIN$Away == "Rovaniemi",]
 FIN <- within(FIN,rm(Res))
 FIN$Date <- dmy(FIN$Date)
 FIN <- FIN[order(as.Date(FIN$Date, format = "%d/%m%Y"), decreasing = FALSE),]
@@ -23,7 +25,10 @@ FIN$OV25 <- ifelse(FIN$TG >= 3,"Y","N")
 FIN$FTR <- with(FIN,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+
 ###################################################
+# FIN <- mgsub(FIN,c("Wolfsberger"),c("Wolfsberger AC"))
+# FIN <- mgsub(FIN,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 fin_totalgoalsv2 <- tapply(FIN$TG, FIN[c("Home", "Away")],mean)
 fin_totalgoalsv2
@@ -48,7 +53,35 @@ fin_avg_totalgoals <- round((fin_totalgoals/ fin_games_played), digits = 4)
 fin_goaltotalsv2[is.na(fin_goaltotalsv2)] <- ""
 fin_goaltotalsv2 <- cbind(fin_goaltotalsv2,fin_avg_totalgoals)
 write.xlsx(fin_goaltotalsv2,'NL/FIN.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#fin goal scored rounds
+#####################################################################
+fin_krounds <- tail(unique(FIN_rounds$fin_matchday),1)
+nrow(FIN)
+fin_goalscoredmatrix <- data.frame(matrix(nrow = length(fin_teams),ncol = fin_krounds))
+fin_goalscoredround <- c()
+for(i_fin_krounds in 1:fin_krounds)
+{
+  fin_homegoalscored <- FIN_rounds$HG[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_awaygoalscored <- FIN_rounds$AG[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_hometeamstemp_gs <- FIN_rounds$Home[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_awayteamstemp_gs <- FIN_rounds$Away[FIN_rounds$fin_matchday== i_fin_krounds]
+
+  fin_goalscombined <- c(fin_homegoalscored,fin_awaygoalscored)
+  fin_teamscombined <- c(fin_hometeamstemp_gs,fin_awayteamstemp_gs)
+
+  fin_goalscoredround <- data.frame(fin_teamscombined,fin_goalscombined)
+
+  fin_goalscoredround <- fin_goalscoredround[order(fin_goalscoredround$fin_teamscombined),]
+  fin_goalscoredround$fin_teamscombined <- NULL
+  fin_goalscoredmatrix[,i_fin_krounds] <- fin_goalscoredround
+
+}
+
+fin_goalscoredmatrix <- cbind(fin_teams,fin_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 fin_goalscored_h <- tapply(FIN$HG, FIN[c("Home", "Date")],mean)
@@ -69,9 +102,37 @@ for(fin_rowhgs in 1:nrow(fin_goalscored_h)) {
 
   }
 }
-write.xlsx(fin_goalscored_h,'NL/FIN.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(fin_goalscoredmatrix,'NL/FIN.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#fin goal conceded rounds
+#fin
+fin_krounds <- tail(unique(FIN_rounds$fin_matchday),1)
+fin_goalconcededmatrix <- data.frame(matrix(nrow = length(fin_teams),ncol = fin_krounds))
+fin_goalconcededround <- c()
+for(i_fin_krounds in 1:fin_krounds)
+{
+  fin_homegoalconceded <- FIN_rounds$AG[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_awaygoalconceded <- FIN_rounds$HG[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_hometeamstemp_gc <- FIN_rounds$Home[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_awayteamstemp_gc <- FIN_rounds$Away[FIN_rounds$fin_matchday== i_fin_krounds]
+
+  fin_goalsconcededcombined <- c(fin_homegoalconceded,fin_awaygoalconceded)
+  fin_teamscombined_gc <- c(fin_hometeamstemp_gc,fin_awayteamstemp_gc)
+
+  fin_goalconcededround <- data.frame(fin_teamscombined_gc,fin_goalsconcededcombined)
+
+  fin_goalconcededround <- fin_goalconcededround[order(fin_goalconcededround$fin_teamscombined_gc),]
+  fin_goalconcededround$fin_teamscombined_gc <- NULL
+  fin_goalconcededmatrix[,i_fin_krounds] <- fin_goalconcededround
+
+}
+
+fin_goalconcededmatrix <- cbind(fin_teams,fin_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 fin_goalconceded_h <- tapply(FIN$AG, FIN[c("Home", "Date")],mean)
 fin_goalconceded_a <- tapply(FIN$HG, FIN[c("Away", "Date")],mean)
@@ -91,9 +152,45 @@ for(fin_rowhgc in 1:nrow(fin_goalconceded_h)) {
 
   }
 }
-write.xlsx(fin_goalconceded_h,'NL/FIN.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(fin_goalconcededmatrix,'NL/FIN.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#fin team form
+fin_krounds <- tail(unique(FIN_rounds$fin_matchday),1)
+fin_formmatrix <- data.frame(matrix(nrow = length(fin_teams),ncol = fin_krounds))
+fin_formround <- c()
+for(i_fin_krounds in 1:fin_krounds)
+{
+  fin_homeform <- FIN_rounds$FTR[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_homeform <- sub("H","W",fin_homeform)
+  fin_homeform <- sub("A","L",fin_homeform)
+
+  fin_awayform <- FIN_rounds$FTR[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_awayform <- sub("A","W",fin_awayform)
+  fin_awayform <- sub("H","L",fin_awayform)
+
+  fin_hometeamstemp_form <- FIN_rounds$Home[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_awayteamstemp_form <- FIN_rounds$Away[FIN_rounds$fin_matchday== i_fin_krounds]
+
+  fin_formcombined <- c(fin_homeform,fin_awayform)
+  fin_teamscombined_form <- c(fin_hometeamstemp_form,fin_awayteamstemp_form)
+
+  fin_formround <- data.frame(fin_teamscombined_form,fin_formcombined)
+
+  fin_formround <- fin_formround[order(fin_formround$fin_teamscombined_form),]
+  fin_formround$fin_teamscombined_form <- NULL
+  fin_formmatrix[,i_fin_krounds] <- fin_formround
+
+}
+
+fin_formmatrix <- cbind(fin_teams,fin_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 fin_form_h <- tapply(FIN$FTR, FIN[c("Home", "Date")],median)
 fin_form_a <- tapply(FIN$FTR, FIN[c("Away", "Date")],median)
 fin_form_h[is.na(fin_form_h)] <- ""
@@ -115,8 +212,37 @@ for(fin_rowh_f in 1:nrow(fin_form_h)) {
 
   }
 }
-write.xlsx(fin_form_h,'NL/FIN.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(fin_formmatrix,'NL/FIN.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#fin total goals rounds
+fin_krounds <- tail(unique(FIN_rounds$fin_matchday),1)
+fin_goaltotalmatrix <- data.frame(matrix(nrow = length(fin_teams),ncol = fin_krounds))
+fin_goaltotalround <- c()
+for(i_fin_krounds in 1:fin_krounds)
+{
+  fin_homegoaltotal <- FIN_rounds$TG[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_awaygoaltotal <- FIN_rounds$TG[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_hometeamstemp_tg <- FIN_rounds$Home[FIN_rounds$fin_matchday == i_fin_krounds]
+
+  fin_awayteamstemp_tg <- FIN_rounds$Away[FIN_rounds$fin_matchday== i_fin_krounds]
+
+  fin_goalscombined_tg <- c(fin_homegoaltotal,fin_awaygoaltotal)
+  fin_teamscombined_tg <- c(fin_hometeamstemp_tg,fin_awayteamstemp_tg)
+
+  fin_goaltotalround <- data.frame(fin_teamscombined_tg,fin_goalscombined_tg)
+
+  fin_goaltotalround <- fin_goaltotalround[order(fin_goaltotalround$fin_teamscombined_tg),]
+  fin_goaltotalround$fin_teamscombined_tg <- NULL
+  fin_goaltotalmatrix[,i_fin_krounds] <- fin_goaltotalround
+
+}
+
+fin_goaltotalmatrix <- cbind(fin_teams,fin_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 fin_totalgoals_h <- tapply(FIN$TG, FIN[c("Home", "Date")],mean)
 fin_totalgoals_a <- tapply(FIN$TG, FIN[c("Away", "Date")],mean)
@@ -135,7 +261,7 @@ for(fin_rowh in 1:nrow(fin_totalgoals_h)) {
 
   }
 }
-write.xlsx(fin_totalgoals_h,'NL/FIN.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(fin_goaltotalmatrix,'NL/FIN.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 fin_form_team_against_h <- tapply(FIN$Away, FIN[c("Home", "Date")],median)
@@ -155,6 +281,7 @@ for(fin_rowh_f_against in 1:nrow(fin_form_team_against_h)) {
 
   }
 }
+#######################################################################
 #win margin
 fin_winmargin_h <- tapply(FIN$HG - FIN$AG, FIN[c("Home", "Date")],mean)
 fin_winmargin_a <- tapply(FIN$AG - FIN$HG, FIN[c("Away", "Date")],mean)
@@ -173,6 +300,7 @@ for(fin_rowhwm in 1:nrow(fin_winmargin_h)) {
 
   }
 }
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #FIN
@@ -325,7 +453,6 @@ names(fin_away_conceding)[names(fin_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
 fin_conceding <- merge(fin_home_conceding,fin_away_conceding,by='Group.1',all = T)
 fin_conceding$TGC <- fin_conceding$TFthc + fin_conceding$TFtac
-
 
 ######################################################################################
 ###########League Table###############################################################
@@ -518,7 +645,6 @@ final_fin_wm
 final_fin_wm <- as.data.frame(final_fin_wm)
 colnames(final_fin_wm) <- "Win Margin"
 ###########################################################################
-#################################################
 #Team against
 #create final_fin_hf_against
 final_fin_hf_against <- c()
@@ -588,6 +714,8 @@ fin_away_poisson <- cbind(fin_division,fin_teams,fin_avg_AG,fin_away_as,fin_away
 #write.csv(away_poisson,'R_away.csv')
 write.xlsx(fin_home_poisson,'NL/FIN.xlsx',sheetName = "homepoisson", append = TRUE)
 write.xlsx(fin_away_poisson,'NL/FIN.xlsx',sheetName = "awaypoisson", append = TRUE)
+fin_home_poisson
+fin_away_poisson
 ##########################################################################################################
 ###################FIN FIXTURES##########################################################################
 #FIN
@@ -740,10 +868,6 @@ FIN_fixtures$fin_un25_odds <- round((1/FIN_fixtures$fin_un25),digits = 2)
 
 FIN_fixtures$fin_ov25_odds
 FIN_fixtures$fin_un25_odds
-#percentages
-FIN_fixtures$fin_ov25 <- percent(FIN_fixtures$fin_ov25, accuracy = 0.1)
-
-FIN_fixtures$fin_un25 <- percent(FIN_fixtures$fin_un25, accuracy = 0.1)
 ###############################################################################
 ###BTTS########################################################################
 #BTTSY
@@ -786,7 +910,7 @@ FIN_fixtures$fin_AH_0_H <- (
 )
 #AH_0_A
 FIN_fixtures$fin_AH_0_A <- (
-    FIN_fixtures$fin_0_1 + FIN_fixtures$fin_0_2 + FIN_fixtures$fin_1_2 + FIN_fixtures$fin_0_3 + FIN_fixtures$fin_1_3 +
+  FIN_fixtures$fin_0_1 + FIN_fixtures$fin_0_2 + FIN_fixtures$fin_1_2 + FIN_fixtures$fin_0_3 + FIN_fixtures$fin_1_3 +
     FIN_fixtures$fin_2_3 + FIN_fixtures$fin_0_4 + FIN_fixtures$fin_1_4 + FIN_fixtures$fin_2_4 + FIN_fixtures$fin_3_4 +
     FIN_fixtures$fin_0_5 +FIN_fixtures$fin_1_5 + FIN_fixtures$fin_2_5 + FIN_fixtures$fin_3_5 + FIN_fixtures$fin_4_5 +
     FIN_fixtures$fin_0_6 + FIN_fixtures$fin_1_6 + FIN_fixtures$fin_2_6 + FIN_fixtures$fin_3_6 + FIN_fixtures$fin_4_6 +
@@ -928,6 +1052,10 @@ FIN_fixtures$fin_AH_125_H <- percent(FIN_fixtures$fin_AH_125_H, accuracy = 0.1)
 FIN_fixtures$fin_AH_125_A <- percent(FIN_fixtures$fin_AH_125_A, accuracy = 0.1)
 ####################################################################################
 ########Asian Handicaps######################################################################################################
+#percentages
+FIN_fixtures$fin_ov25 <- percent(FIN_fixtures$fin_ov25, accuracy = 0.1)
+
+FIN_fixtures$fin_un25 <- percent(FIN_fixtures$fin_un25, accuracy = 0.1)
 FIN_fixtures$fin_pscore <- paste(round(FIN_fixtures$fin_xGH,digits = 0),round(FIN_fixtures$fin_xGA,digits = 0),sep = "-")
 #write out
 write.xlsx(FIN_fixtures,'NL/FIN.xlsx',sheetName = "FIN", append = TRUE)

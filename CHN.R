@@ -6,6 +6,7 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+library('mgsub')
 #delete current file
 unlink('NL/CHN.xlsx')
 ######################CHN START#######################################
@@ -15,15 +16,18 @@ CHN <- within(CHN,rm(Res))
 CHN$Date <- dmy(CHN$Date)
 CHN <- CHN[order(as.Date(CHN$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 CHN$CS <- paste(CHN$HG,CHN$AG, sep = "-")
+
 #CHN_qualificaton <- subset(CHN,tournament == "UEFA Euro qualification")
 CHN <- subset(CHN,Season == "2021")
 #CHN <- CHN[CHN$Date > '2008-01-01',])
 CHN$TG <- CHN$HG + CHN$AG
 CHN$OV25 <- ifelse(CHN$TG >= 3,"Y","N")
 CHN$FTR <- with(CHN,
-                ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
+               ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
 ###################################################
+# CHN <- mgsub(CHN,c("Wolfsberger"),c("Wolfsberger AC"))
+# CHN <- mgsub(CHN,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 chn_totalgoalsv2 <- tapply(CHN$TG, CHN[c("Home", "Away")],mean)
 chn_totalgoalsv2
@@ -48,7 +52,35 @@ chn_avg_totalgoals <- round((chn_totalgoals/ chn_games_played), digits = 4)
 chn_goaltotalsv2[is.na(chn_goaltotalsv2)] <- ""
 chn_goaltotalsv2 <- cbind(chn_goaltotalsv2,chn_avg_totalgoals)
 write.xlsx(chn_goaltotalsv2,'NL/CHN.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#chn goal scored rounds
+#####################################################################
+chn_krounds <- tail(unique(CHN_rounds$chn_matchday),1)
+nrow(CHN)
+chn_goalscoredmatrix <- data.frame(matrix(nrow = length(chn_teams),ncol = chn_krounds))
+chn_goalscoredround <- c()
+for(i_chn_krounds in 1:chn_krounds)
+{
+  chn_homegoalscored <- CHN_rounds$HG[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_awaygoalscored <- CHN_rounds$AG[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_hometeamstemp_gs <- CHN_rounds$Home[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_awayteamstemp_gs <- CHN_rounds$Away[CHN_rounds$chn_matchday== i_chn_krounds]
+
+  chn_goalscombined <- c(chn_homegoalscored,chn_awaygoalscored)
+  chn_teamscombined <- c(chn_hometeamstemp_gs,chn_awayteamstemp_gs)
+
+  chn_goalscoredround <- data.frame(chn_teamscombined,chn_goalscombined)
+
+  chn_goalscoredround <- chn_goalscoredround[order(chn_goalscoredround$chn_teamscombined),]
+  chn_goalscoredround$chn_teamscombined <- NULL
+  chn_goalscoredmatrix[,i_chn_krounds] <- chn_goalscoredround
+
+}
+chn_goalscoredmatrix
+chn_goalscoredmatrix <- cbind(chn_teams,chn_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 chn_goalscored_h <- tapply(CHN$HG, CHN[c("Home", "Date")],mean)
@@ -69,9 +101,37 @@ for(chn_rowhgs in 1:nrow(chn_goalscored_h)) {
 
   }
 }
-write.xlsx(chn_goalscored_h,'NL/CHN.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(chn_goalscoredmatrix,'NL/CHN.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#chn goal conceded rounds
+#chn
+chn_krounds <- tail(unique(CHN_rounds$chn_matchday),1)
+chn_goalconcededmatrix <- data.frame(matrix(nrow = length(chn_teams),ncol = chn_krounds))
+chn_goalconcededround <- c()
+for(i_chn_krounds in 1:chn_krounds)
+{
+  chn_homegoalconceded <- CHN_rounds$AG[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_awaygoalconceded <- CHN_rounds$HG[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_hometeamstemp_gc <- CHN_rounds$Home[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_awayteamstemp_gc <- CHN_rounds$Away[CHN_rounds$chn_matchday== i_chn_krounds]
+
+  chn_goalsconcededcombined <- c(chn_homegoalconceded,chn_awaygoalconceded)
+  chn_teamscombined_gc <- c(chn_hometeamstemp_gc,chn_awayteamstemp_gc)
+
+  chn_goalconcededround <- data.frame(chn_teamscombined_gc,chn_goalsconcededcombined)
+
+  chn_goalconcededround <- chn_goalconcededround[order(chn_goalconcededround$chn_teamscombined_gc),]
+  chn_goalconcededround$chn_teamscombined_gc <- NULL
+  chn_goalconcededmatrix[,i_chn_krounds] <- chn_goalconcededround
+
+}
+
+chn_goalconcededmatrix <- cbind(chn_teams,chn_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 chn_goalconceded_h <- tapply(CHN$AG, CHN[c("Home", "Date")],mean)
 chn_goalconceded_a <- tapply(CHN$HG, CHN[c("Away", "Date")],mean)
@@ -91,9 +151,45 @@ for(chn_rowhgc in 1:nrow(chn_goalconceded_h)) {
 
   }
 }
-write.xlsx(chn_goalconceded_h,'NL/CHN.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(chn_goalconcededmatrix,'NL/CHN.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#chn team form
+chn_krounds <- tail(unique(CHN_rounds$chn_matchday),1)
+chn_formmatrix <- data.frame(matrix(nrow = length(chn_teams),ncol = chn_krounds))
+chn_formround <- c()
+for(i_chn_krounds in 1:chn_krounds)
+{
+  chn_homeform <- CHN_rounds$FTR[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_homeform <- sub("H","W",chn_homeform)
+  chn_homeform <- sub("A","L",chn_homeform)
+
+  chn_awayform <- CHN_rounds$FTR[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_awayform <- sub("A","W",chn_awayform)
+  chn_awayform <- sub("H","L",chn_awayform)
+
+  chn_hometeamstemp_form <- CHN_rounds$Home[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_awayteamstemp_form <- CHN_rounds$Away[CHN_rounds$chn_matchday== i_chn_krounds]
+
+  chn_formcombined <- c(chn_homeform,chn_awayform)
+  chn_teamscombined_form <- c(chn_hometeamstemp_form,chn_awayteamstemp_form)
+
+  chn_formround <- data.frame(chn_teamscombined_form,chn_formcombined)
+
+  chn_formround <- chn_formround[order(chn_formround$chn_teamscombined_form),]
+  chn_formround$chn_teamscombined_form <- NULL
+  chn_formmatrix[,i_chn_krounds] <- chn_formround
+
+}
+
+chn_formmatrix <- cbind(chn_teams,chn_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 chn_form_h <- tapply(CHN$FTR, CHN[c("Home", "Date")],median)
 chn_form_a <- tapply(CHN$FTR, CHN[c("Away", "Date")],median)
 chn_form_h[is.na(chn_form_h)] <- ""
@@ -115,8 +211,37 @@ for(chn_rowh_f in 1:nrow(chn_form_h)) {
 
   }
 }
-write.xlsx(chn_form_h,'NL/CHN.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(chn_formmatrix,'NL/CHN.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#chn total goals rounds
+chn_krounds <- tail(unique(CHN_rounds$chn_matchday),1)
+chn_goaltotalmatrix <- data.frame(matrix(nrow = length(chn_teams),ncol = chn_krounds))
+chn_goaltotalround <- c()
+for(i_chn_krounds in 1:chn_krounds)
+{
+  chn_homegoaltotal <- CHN_rounds$TG[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_awaygoaltotal <- CHN_rounds$TG[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_hometeamstemp_tg <- CHN_rounds$Home[CHN_rounds$chn_matchday == i_chn_krounds]
+
+  chn_awayteamstemp_tg <- CHN_rounds$Away[CHN_rounds$chn_matchday== i_chn_krounds]
+
+  chn_goalscombined_tg <- c(chn_homegoaltotal,chn_awaygoaltotal)
+  chn_teamscombined_tg <- c(chn_hometeamstemp_tg,chn_awayteamstemp_tg)
+
+  chn_goaltotalround <- data.frame(chn_teamscombined_tg,chn_goalscombined_tg)
+
+  chn_goaltotalround <- chn_goaltotalround[order(chn_goaltotalround$chn_teamscombined_tg),]
+  chn_goaltotalround$chn_teamscombined_tg <- NULL
+  chn_goaltotalmatrix[,i_chn_krounds] <- chn_goaltotalround
+
+}
+
+chn_goaltotalmatrix <- cbind(chn_teams,chn_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 chn_totalgoals_h <- tapply(CHN$TG, CHN[c("Home", "Date")],mean)
 chn_totalgoals_a <- tapply(CHN$TG, CHN[c("Away", "Date")],mean)
@@ -135,7 +260,7 @@ for(chn_rowh in 1:nrow(chn_totalgoals_h)) {
 
   }
 }
-write.xlsx(chn_totalgoals_h,'NL/CHN.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(chn_goaltotalmatrix,'NL/CHN.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 chn_form_team_against_h <- tapply(CHN$Away, CHN[c("Home", "Date")],median)
@@ -155,6 +280,7 @@ for(chn_rowh_f_against in 1:nrow(chn_form_team_against_h)) {
 
   }
 }
+#######################################################################
 #win margin
 chn_winmargin_h <- tapply(CHN$HG - CHN$AG, CHN[c("Home", "Date")],mean)
 chn_winmargin_a <- tapply(CHN$AG - CHN$HG, CHN[c("Away", "Date")],mean)
@@ -327,7 +453,6 @@ names(chn_away_conceding)[names(chn_away_conceding) == "x.y"] <- "Avg_Ftac"
 chn_conceding <- merge(chn_home_conceding,chn_away_conceding,by='Group.1',all = T)
 chn_conceding$TGC <- chn_conceding$TFthc + chn_conceding$TFtac
 
-
 ######################################################################################
 ###########League Table###############################################################
 
@@ -495,7 +620,6 @@ for(index_chn_cs in 1:length(chn_teams))
 final_chn_cs <- as.data.frame(final_chn_cs)
 colnames(final_chn_cs) <- "CSForm"
 #################################################
-#################################################
 #Win Margin
 #goals scored
 #create final_chn_wm object
@@ -519,7 +643,7 @@ final_chn_wm
 #change column names
 final_chn_wm <- as.data.frame(final_chn_wm)
 colnames(final_chn_wm) <- "Win Margin"
-################################################################
+###########################################################################
 #Team against
 #create final_chn_hf_against
 final_chn_hf_against <- c()
@@ -589,6 +713,8 @@ chn_away_poisson <- cbind(chn_division,chn_teams,chn_avg_AG,chn_away_as,chn_away
 #write.csv(away_poisson,'R_away.csv')
 write.xlsx(chn_home_poisson,'NL/CHN.xlsx',sheetName = "homepoisson", append = TRUE)
 write.xlsx(chn_away_poisson,'NL/CHN.xlsx',sheetName = "awaypoisson", append = TRUE)
+chn_home_poisson
+chn_away_poisson
 ##########################################################################################################
 ###################CHN FIXTURES##########################################################################
 #CHN

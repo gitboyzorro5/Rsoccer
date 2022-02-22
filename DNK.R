@@ -6,6 +6,7 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+library('mgsub')
 #delete current file
 unlink('NL/DNK.xlsx')
 ######################DNK START#######################################
@@ -15,15 +16,18 @@ DNK <- within(DNK,rm(Res))
 DNK$Date <- dmy(DNK$Date)
 DNK <- DNK[order(as.Date(DNK$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 DNK$CS <- paste(DNK$HG,DNK$AG, sep = "-")
+
 #DNK_qualificaton <- subset(DNK,tournament == "UEFA Euro qualification")
 DNK <- subset(DNK,Season == "2021/2022")
 #DNK <- DNK[DNK$Date > '2008-01-01',])
 DNK$TG <- DNK$HG + DNK$AG
 DNK$OV25 <- ifelse(DNK$TG >= 3,"Y","N")
 DNK$FTR <- with(DNK,
-                ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
+               ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
 ###################################################
+# DNK <- mgsub(DNK,c("Wolfsberger"),c("Wolfsberger AC"))
+# DNK <- mgsub(DNK,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 dnk_totalgoalsv2 <- tapply(DNK$TG, DNK[c("Home", "Away")],mean)
 dnk_totalgoalsv2
@@ -48,7 +52,35 @@ dnk_avg_totalgoals <- round((dnk_totalgoals/ dnk_games_played), digits = 4)
 dnk_goaltotalsv2[is.na(dnk_goaltotalsv2)] <- ""
 dnk_goaltotalsv2 <- cbind(dnk_goaltotalsv2,dnk_avg_totalgoals)
 write.xlsx(dnk_goaltotalsv2,'NL/DNK.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#dnk goal scored rounds
+#####################################################################
+dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)
+nrow(DNK)
+dnk_goalscoredmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds))
+dnk_goalscoredround <- c()
+for(i_dnk_krounds in 1:dnk_krounds)
+{
+  dnk_homegoalscored <- DNK_rounds$HG[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_awaygoalscored <- DNK_rounds$AG[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_hometeamstemp_gs <- DNK_rounds$Home[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_awayteamstemp_gs <- DNK_rounds$Away[DNK_rounds$dnk_matchday== i_dnk_krounds]
+
+  dnk_goalscombined <- c(dnk_homegoalscored,dnk_awaygoalscored)
+  dnk_teamscombined <- c(dnk_hometeamstemp_gs,dnk_awayteamstemp_gs)
+
+  dnk_goalscoredround <- data.frame(dnk_teamscombined,dnk_goalscombined)
+
+  dnk_goalscoredround <- dnk_goalscoredround[order(dnk_goalscoredround$dnk_teamscombined),]
+  dnk_goalscoredround$dnk_teamscombined <- NULL
+  dnk_goalscoredmatrix[,i_dnk_krounds] <- dnk_goalscoredround
+
+}
+
+dnk_goalscoredmatrix <- cbind(dnk_teams,dnk_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 dnk_goalscored_h <- tapply(DNK$HG, DNK[c("Home", "Date")],mean)
@@ -69,9 +101,37 @@ for(dnk_rowhgs in 1:nrow(dnk_goalscored_h)) {
 
   }
 }
-write.xlsx(dnk_goalscored_h,'NL/DNK.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(dnk_goalscoredmatrix,'NL/DNK.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#dnk goal conceded rounds
+#dnk
+dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)
+dnk_goalconcededmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds))
+dnk_goalconcededround <- c()
+for(i_dnk_krounds in 1:dnk_krounds)
+{
+  dnk_homegoalconceded <- DNK_rounds$AG[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_awaygoalconceded <- DNK_rounds$HG[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_hometeamstemp_gc <- DNK_rounds$Home[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_awayteamstemp_gc <- DNK_rounds$Away[DNK_rounds$dnk_matchday== i_dnk_krounds]
+
+  dnk_goalsconcededcombined <- c(dnk_homegoalconceded,dnk_awaygoalconceded)
+  dnk_teamscombined_gc <- c(dnk_hometeamstemp_gc,dnk_awayteamstemp_gc)
+
+  dnk_goalconcededround <- data.frame(dnk_teamscombined_gc,dnk_goalsconcededcombined)
+
+  dnk_goalconcededround <- dnk_goalconcededround[order(dnk_goalconcededround$dnk_teamscombined_gc),]
+  dnk_goalconcededround$dnk_teamscombined_gc <- NULL
+  dnk_goalconcededmatrix[,i_dnk_krounds] <- dnk_goalconcededround
+
+}
+
+dnk_goalconcededmatrix <- cbind(dnk_teams,dnk_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 dnk_goalconceded_h <- tapply(DNK$AG, DNK[c("Home", "Date")],mean)
 dnk_goalconceded_a <- tapply(DNK$HG, DNK[c("Away", "Date")],mean)
@@ -88,12 +148,48 @@ for(dnk_rowhgc in 1:nrow(dnk_goalconceded_h)) {
         #print(my_matrix[row, col])
       }
     }
-
+    DNK
   }
 }
-write.xlsx(dnk_goalconceded_h,'NL/DNK.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(dnk_goalconcededmatrix,'NL/DNK.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#dnk team form
+dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)
+dnk_formmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds))
+dnk_formround <- c()
+for(i_dnk_krounds in 1:dnk_krounds)
+{
+  dnk_homeform <- DNK_rounds$Res[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_homeform <- sub("H","W",dnk_homeform)
+  dnk_homeform <- sub("A","L",dnk_homeform)
+
+  dnk_awayform <- DNK_rounds$Res[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_awayform <- sub("A","W",dnk_awayform)
+  dnk_awayform <- sub("H","L",dnk_awayform)
+
+  dnk_hometeamstemp_form <- DNK_rounds$Home[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_awayteamstemp_form <- DNK_rounds$Away[DNK_rounds$dnk_matchday== i_dnk_krounds]
+
+  dnk_formcombined <- c(dnk_homeform,dnk_awayform)
+  dnk_teamscombined_form <- c(dnk_hometeamstemp_form,dnk_awayteamstemp_form)
+
+  dnk_formround <- data.frame(dnk_teamscombined_form,dnk_formcombined)
+
+  dnk_formround <- dnk_formround[order(dnk_formround$dnk_teamscombined_form),]
+  dnk_formround$dnk_teamscombined_form <- NULL
+  dnk_formmatrix[,i_dnk_krounds] <- dnk_formround
+
+}
+
+dnk_formmatrix <- cbind(dnk_teams,dnk_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 dnk_form_h <- tapply(DNK$FTR, DNK[c("Home", "Date")],median)
 dnk_form_a <- tapply(DNK$FTR, DNK[c("Away", "Date")],median)
 dnk_form_h[is.na(dnk_form_h)] <- ""
@@ -115,8 +211,37 @@ for(dnk_rowh_f in 1:nrow(dnk_form_h)) {
 
   }
 }
-write.xlsx(dnk_form_h,'NL/DNK.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(dnk_formmatrix,'NL/DNK.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#dnk total goals rounds
+dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)
+dnk_goaltotalmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds))
+dnk_goaltotalround <- c()
+for(i_dnk_krounds in 1:dnk_krounds)
+{
+  dnk_homegoaltotal <- DNK_rounds$TG[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_awaygoaltotal <- DNK_rounds$TG[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_hometeamstemp_tg <- DNK_rounds$Home[DNK_rounds$dnk_matchday == i_dnk_krounds]
+
+  dnk_awayteamstemp_tg <- DNK_rounds$Away[DNK_rounds$dnk_matchday== i_dnk_krounds]
+
+  dnk_goalscombined_tg <- c(dnk_homegoaltotal,dnk_awaygoaltotal)
+  dnk_teamscombined_tg <- c(dnk_hometeamstemp_tg,dnk_awayteamstemp_tg)
+
+  dnk_goaltotalround <- data.frame(dnk_teamscombined_tg,dnk_goalscombined_tg)
+
+  dnk_goaltotalround <- dnk_goaltotalround[order(dnk_goaltotalround$dnk_teamscombined_tg),]
+  dnk_goaltotalround$dnk_teamscombined_tg <- NULL
+  dnk_goaltotalmatrix[,i_dnk_krounds] <- dnk_goaltotalround
+
+}
+
+dnk_goaltotalmatrix <- cbind(dnk_teams,dnk_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 dnk_totalgoals_h <- tapply(DNK$TG, DNK[c("Home", "Date")],mean)
 dnk_totalgoals_a <- tapply(DNK$TG, DNK[c("Away", "Date")],mean)
@@ -135,7 +260,7 @@ for(dnk_rowh in 1:nrow(dnk_totalgoals_h)) {
 
   }
 }
-write.xlsx(dnk_totalgoals_h,'NL/DNK.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(dnk_goaltotalmatrix,'NL/DNK.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 dnk_form_team_against_h <- tapply(DNK$Away, DNK[c("Home", "Date")],median)
@@ -155,6 +280,7 @@ for(dnk_rowh_f_against in 1:nrow(dnk_form_team_against_h)) {
 
   }
 }
+#######################################################################
 #win margin
 dnk_winmargin_h <- tapply(DNK$HG - DNK$AG, DNK[c("Home", "Date")],mean)
 dnk_winmargin_a <- tapply(DNK$AG - DNK$HG, DNK[c("Away", "Date")],mean)
@@ -327,7 +453,6 @@ names(dnk_away_conceding)[names(dnk_away_conceding) == "x.y"] <- "Avg_Ftac"
 dnk_conceding <- merge(dnk_home_conceding,dnk_away_conceding,by='Group.1',all = T)
 dnk_conceding$TGC <- dnk_conceding$TFthc + dnk_conceding$TFtac
 
-
 ######################################################################################
 ###########League Table###############################################################
 
@@ -495,7 +620,6 @@ for(index_dnk_cs in 1:length(dnk_teams))
 final_dnk_cs <- as.data.frame(final_dnk_cs)
 colnames(final_dnk_cs) <- "CSForm"
 #################################################
-#################################################
 #Win Margin
 #goals scored
 #create final_dnk_wm object
@@ -589,6 +713,8 @@ dnk_away_poisson <- cbind(dnk_division,dnk_teams,dnk_avg_AG,dnk_away_as,dnk_away
 #write.csv(away_poisson,'R_away.csv')
 write.xlsx(dnk_home_poisson,'NL/DNK.xlsx',sheetName = "homepoisson", append = TRUE)
 write.xlsx(dnk_away_poisson,'NL/DNK.xlsx',sheetName = "awaypoisson", append = TRUE)
+dnk_home_poisson
+dnk_away_poisson
 ##########################################################################################################
 ###################DNK FIXTURES##########################################################################
 #DNK

@@ -162,7 +162,6 @@ FIN <- subset(FIN,Season == "2021")
 fin_totalrounds <-  (length(fin_teams) - 1 )*2
 fin_totalmatches <- (length(fin_teams)*(length(fin_teams) - 1))
 fin_eachround <- fin_totalmatches / fin_totalrounds
-
 fin_matchesplayed <-  nrow(FIN)
 
 FIN_rounds <- FIN
@@ -282,7 +281,7 @@ MLS <- subset(MLS,Season == "2021")
 mls_totalrounds <-  (length(mls_teams) - 1 )*2
 mls_totalmatches <- (length(mls_teams)*(length(mls_teams) - 1))
 mls_eachround <- mls_totalmatches / mls_totalrounds
-
+mls_eachround
 mls_matchesplayed <-  nrow(MLS)
 
 MLS_rounds <- MLS
@@ -432,7 +431,7 @@ SWE <- subset(SWE,Season == "2021")
 swe_totalrounds <-  (length(swe_teams) - 1 )*2
 swe_totalmatches <- (length(swe_teams)*(length(swe_teams) - 1))
 swe_eachround <- swe_totalmatches / swe_totalrounds
-
+swe_eachround
 swe_matchesplayed <-  nrow(SWE)
 
 SWE_rounds <- SWE

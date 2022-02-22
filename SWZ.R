@@ -25,6 +25,8 @@ SWZ$FTR <- with(SWZ,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
 ###################################################
+# SWZ <- mgsub(SWZ,c("Wolfsberger"),c("Wolfsberger AC"))
+# SWZ <- mgsub(SWZ,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 swz_totalgoalsv2 <- tapply(SWZ$TG, SWZ[c("Home", "Away")],mean)
 swz_totalgoalsv2
@@ -49,7 +51,35 @@ swz_avg_totalgoals <- round((swz_totalgoals/ swz_games_played), digits = 4)
 swz_goaltotalsv2[is.na(swz_goaltotalsv2)] <- ""
 swz_goaltotalsv2 <- cbind(swz_goaltotalsv2,swz_avg_totalgoals)
 write.xlsx(swz_goaltotalsv2,'NL/SWZ.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#swz goal scored rounds
+#####################################################################
+swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)
+nrow(SWZ)
+swz_goalscoredmatrix <- data.frame(matrix(nrow = length(swz_teams),ncol = swz_krounds))
+swz_goalscoredround <- c()
+for(i_swz_krounds in 1:swz_krounds)
+{
+  swz_homegoalscored <- SWZ_rounds$HG[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_awaygoalscored <- SWZ_rounds$AG[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_hometeamstemp_gs <- SWZ_rounds$Home[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_awayteamstemp_gs <- SWZ_rounds$Away[SWZ_rounds$swz_matchday== i_swz_krounds]
+
+  swz_goalscombined <- c(swz_homegoalscored,swz_awaygoalscored)
+  swz_teamscombined <- c(swz_hometeamstemp_gs,swz_awayteamstemp_gs)
+
+  swz_goalscoredround <- data.frame(swz_teamscombined,swz_goalscombined)
+
+  swz_goalscoredround <- swz_goalscoredround[order(swz_goalscoredround$swz_teamscombined),]
+  swz_goalscoredround$swz_teamscombined <- NULL
+  swz_goalscoredmatrix[,i_swz_krounds] <- swz_goalscoredround
+
+}
+
+swz_goalscoredmatrix <- cbind(swz_teams,swz_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 swz_goalscored_h <- tapply(SWZ$HG, SWZ[c("Home", "Date")],mean)
@@ -70,9 +100,37 @@ for(swz_rowhgs in 1:nrow(swz_goalscored_h)) {
 
   }
 }
-write.xlsx(swz_goalscored_h,'NL/SWZ.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(swz_goalscoredmatrix,'NL/SWZ.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#swz goal conceded rounds
+#swz
+swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)
+swz_goalconcededmatrix <- data.frame(matrix(nrow = length(swz_teams),ncol = swz_krounds))
+swz_goalconcededround <- c()
+for(i_swz_krounds in 1:swz_krounds)
+{
+  swz_homegoalconceded <- SWZ_rounds$AG[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_awaygoalconceded <- SWZ_rounds$HG[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_hometeamstemp_gc <- SWZ_rounds$Home[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_awayteamstemp_gc <- SWZ_rounds$Away[SWZ_rounds$swz_matchday== i_swz_krounds]
+
+  swz_goalsconcededcombined <- c(swz_homegoalconceded,swz_awaygoalconceded)
+  swz_teamscombined_gc <- c(swz_hometeamstemp_gc,swz_awayteamstemp_gc)
+
+  swz_goalconcededround <- data.frame(swz_teamscombined_gc,swz_goalsconcededcombined)
+
+  swz_goalconcededround <- swz_goalconcededround[order(swz_goalconcededround$swz_teamscombined_gc),]
+  swz_goalconcededround$swz_teamscombined_gc <- NULL
+  swz_goalconcededmatrix[,i_swz_krounds] <- swz_goalconcededround
+
+}
+
+swz_goalconcededmatrix <- cbind(swz_teams,swz_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 swz_goalconceded_h <- tapply(SWZ$AG, SWZ[c("Home", "Date")],mean)
 swz_goalconceded_a <- tapply(SWZ$HG, SWZ[c("Away", "Date")],mean)
@@ -92,9 +150,45 @@ for(swz_rowhgc in 1:nrow(swz_goalconceded_h)) {
 
   }
 }
-write.xlsx(swz_goalconceded_h,'NL/SWZ.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(swz_goalconcededmatrix,'NL/SWZ.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#swz team form
+swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)
+swz_formmatrix <- data.frame(matrix(nrow = length(swz_teams),ncol = swz_krounds))
+swz_formround <- c()
+for(i_swz_krounds in 1:swz_krounds)
+{
+  swz_homeform <- SWZ_rounds$FTR[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_homeform <- sub("H","W",swz_homeform)
+  swz_homeform <- sub("A","L",swz_homeform)
+
+  swz_awayform <- SWZ_rounds$FTR[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_awayform <- sub("A","W",swz_awayform)
+  swz_awayform <- sub("H","L",swz_awayform)
+
+  swz_hometeamstemp_form <- SWZ_rounds$Home[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_awayteamstemp_form <- SWZ_rounds$Away[SWZ_rounds$swz_matchday== i_swz_krounds]
+
+  swz_formcombined <- c(swz_homeform,swz_awayform)
+  swz_teamscombined_form <- c(swz_hometeamstemp_form,swz_awayteamstemp_form)
+
+  swz_formround <- data.frame(swz_teamscombined_form,swz_formcombined)
+
+  swz_formround <- swz_formround[order(swz_formround$swz_teamscombined_form),]
+  swz_formround$swz_teamscombined_form <- NULL
+  swz_formmatrix[,i_swz_krounds] <- swz_formround
+
+}
+swz_formmatrix
+swz_formmatrix <- cbind(swz_teams,swz_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 swz_form_h <- tapply(SWZ$FTR, SWZ[c("Home", "Date")],median)
 swz_form_a <- tapply(SWZ$FTR, SWZ[c("Away", "Date")],median)
 swz_form_h[is.na(swz_form_h)] <- ""
@@ -116,8 +210,37 @@ for(swz_rowh_f in 1:nrow(swz_form_h)) {
 
   }
 }
-write.xlsx(swz_form_h,'NL/SWZ.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(swz_formmatrix,'NL/SWZ.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#swz total goals rounds
+swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)
+swz_goaltotalmatrix <- data.frame(matrix(nrow = length(swz_teams),ncol = swz_krounds))
+swz_goaltotalround <- c()
+for(i_swz_krounds in 1:swz_krounds)
+{
+  swz_homegoaltotal <- SWZ_rounds$TG[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_awaygoaltotal <- SWZ_rounds$TG[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_hometeamstemp_tg <- SWZ_rounds$Home[SWZ_rounds$swz_matchday == i_swz_krounds]
+
+  swz_awayteamstemp_tg <- SWZ_rounds$Away[SWZ_rounds$swz_matchday== i_swz_krounds]
+
+  swz_goalscombined_tg <- c(swz_homegoaltotal,swz_awaygoaltotal)
+  swz_teamscombined_tg <- c(swz_hometeamstemp_tg,swz_awayteamstemp_tg)
+
+  swz_goaltotalround <- data.frame(swz_teamscombined_tg,swz_goalscombined_tg)
+
+  swz_goaltotalround <- swz_goaltotalround[order(swz_goaltotalround$swz_teamscombined_tg),]
+  swz_goaltotalround$swz_teamscombined_tg <- NULL
+  swz_goaltotalmatrix[,i_swz_krounds] <- swz_goaltotalround
+
+}
+
+swz_goaltotalmatrix <- cbind(swz_teams,swz_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 swz_totalgoals_h <- tapply(SWZ$TG, SWZ[c("Home", "Date")],mean)
 swz_totalgoals_a <- tapply(SWZ$TG, SWZ[c("Away", "Date")],mean)
@@ -136,7 +259,7 @@ for(swz_rowh in 1:nrow(swz_totalgoals_h)) {
 
   }
 }
-write.xlsx(swz_totalgoals_h,'NL/SWZ.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(swz_goaltotalmatrix,'NL/SWZ.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 swz_form_team_against_h <- tapply(SWZ$Away, SWZ[c("Home", "Date")],median)
@@ -175,7 +298,7 @@ for(swz_rowhwm in 1:nrow(swz_winmargin_h)) {
 
   }
 }
-##
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #SWZ
@@ -328,7 +451,6 @@ names(swz_away_conceding)[names(swz_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
 swz_conceding <- merge(swz_home_conceding,swz_away_conceding,by='Group.1',all = T)
 swz_conceding$TGC <- swz_conceding$TFthc + swz_conceding$TFtac
-
 
 ######################################################################################
 ###########League Table###############################################################
@@ -497,7 +619,6 @@ for(index_swz_cs in 1:length(swz_teams))
 final_swz_cs <- as.data.frame(final_swz_cs)
 colnames(final_swz_cs) <- "CSForm"
 #################################################
-################################################
 #Win Margin
 #goals scored
 #create final_swz_wm object
@@ -591,6 +712,8 @@ swz_away_poisson <- cbind(swz_division,swz_teams,swz_avg_AG,swz_away_as,swz_away
 #write.csv(away_poisson,'R_away.csv')
 write.xlsx(swz_home_poisson,'NL/SWZ.xlsx',sheetName = "homepoisson", append = TRUE)
 write.xlsx(swz_away_poisson,'NL/SWZ.xlsx',sheetName = "awaypoisson", append = TRUE)
+swz_home_poisson
+swz_away_poisson
 ##########################################################################################################
 ###################SWZ FIXTURES##########################################################################
 #SWZ

@@ -23,6 +23,7 @@ MLS$OV25 <- ifelse(MLS$TG >= 3,"Y","N")
 MLS$FTR <- with(MLS,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+
 ###################################################
 ####GoalTotalsv2##################################
 mls_totalgoalsv2 <- tapply(MLS$TG, MLS[c("Home", "Away")],mean)

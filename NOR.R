@@ -11,6 +11,7 @@ unlink('NL/NOR.xlsx')
 ######################NOR START#######################################
 #####################################################################
 NOR <- read.csv('../FDAS/NOR.csv')
+NOR <- NOR[!NOR$Away == "Jerv",]
 NOR <- within(NOR,rm(Res))
 NOR$Date <- dmy(NOR$Date)
 NOR <- NOR[order(as.Date(NOR$Date, format = "%d/%m%Y"), decreasing = FALSE),]
@@ -23,8 +24,8 @@ NOR$OV25 <- ifelse(NOR$TG >= 3,"Y","N")
 NOR$FTR <- with(NOR,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-###################################################
-####GoalTotalsv2##################################
+##########################################################################################
+#########################################################################################
 nor_totalgoalsv2 <- tapply(NOR$TG, NOR[c("Home", "Away")],mean)
 nor_totalgoalsv2
 nor_hgtotals <- rowSums(nor_totalgoalsv2,na.rm = T)
@@ -48,7 +49,35 @@ nor_avg_totalgoals <- round((nor_totalgoals/ nor_games_played), digits = 4)
 nor_goaltotalsv2[is.na(nor_goaltotalsv2)] <- ""
 nor_goaltotalsv2 <- cbind(nor_goaltotalsv2,nor_avg_totalgoals)
 write.xlsx(nor_goaltotalsv2,'NL/NOR.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#nor goal scored rounds
+#####################################################################
+nor_krounds <- tail(unique(NOR_rounds$nor_matchday),1)
+nrow(NOR)
+nor_goalscoredmatrix <- data.frame(matrix(nrow = length(nor_teams),ncol = nor_krounds))
+nor_goalscoredround <- c()
+for(i_nor_krounds in 1:nor_krounds)
+{
+  nor_homegoalscored <- NOR_rounds$HG[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_awaygoalscored <- NOR_rounds$AG[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_hometeamstemp_gs <- NOR_rounds$Home[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_awayteamstemp_gs <- NOR_rounds$Away[NOR_rounds$nor_matchday== i_nor_krounds]
+
+  nor_goalscombined <- c(nor_homegoalscored,nor_awaygoalscored)
+  nor_teamscombined <- c(nor_hometeamstemp_gs,nor_awayteamstemp_gs)
+
+  nor_goalscoredround <- data.frame(nor_teamscombined,nor_goalscombined)
+
+  nor_goalscoredround <- nor_goalscoredround[order(nor_goalscoredround$nor_teamscombined),]
+  nor_goalscoredround$nor_teamscombined <- NULL
+  nor_goalscoredmatrix[,i_nor_krounds] <- nor_goalscoredround
+
+}
+
+nor_goalscoredmatrix <- cbind(nor_teams,nor_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 nor_goalscored_h <- tapply(NOR$HG, NOR[c("Home", "Date")],mean)
@@ -69,9 +98,37 @@ for(nor_rowhgs in 1:nrow(nor_goalscored_h)) {
 
   }
 }
-write.xlsx(nor_goalscored_h,'NL/NOR.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(nor_goalscoredmatrix,'NL/NOR.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#nor goal conceded rounds
+#nor
+nor_krounds <- tail(unique(NOR_rounds$nor_matchday),1)
+nor_goalconcededmatrix <- data.frame(matrix(nrow = length(nor_teams),ncol = nor_krounds))
+nor_goalconcededround <- c()
+for(i_nor_krounds in 1:nor_krounds)
+{
+  nor_homegoalconceded <- NOR_rounds$AG[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_awaygoalconceded <- NOR_rounds$HG[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_hometeamstemp_gc <- NOR_rounds$Home[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_awayteamstemp_gc <- NOR_rounds$Away[NOR_rounds$nor_matchday== i_nor_krounds]
+
+  nor_goalsconcededcombined <- c(nor_homegoalconceded,nor_awaygoalconceded)
+  nor_teamscombined_gc <- c(nor_hometeamstemp_gc,nor_awayteamstemp_gc)
+
+  nor_goalconcededround <- data.frame(nor_teamscombined_gc,nor_goalsconcededcombined)
+
+  nor_goalconcededround <- nor_goalconcededround[order(nor_goalconcededround$nor_teamscombined_gc),]
+  nor_goalconcededround$nor_teamscombined_gc <- NULL
+  nor_goalconcededmatrix[,i_nor_krounds] <- nor_goalconcededround
+
+}
+
+nor_goalconcededmatrix <- cbind(nor_teams,nor_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 nor_goalconceded_h <- tapply(NOR$AG, NOR[c("Home", "Date")],mean)
 nor_goalconceded_a <- tapply(NOR$HG, NOR[c("Away", "Date")],mean)
@@ -91,9 +148,45 @@ for(nor_rowhgc in 1:nrow(nor_goalconceded_h)) {
 
   }
 }
-write.xlsx(nor_goalconceded_h,'NL/NOR.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(nor_goalconcededmatrix,'NL/NOR.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#nor team form
+nor_krounds <- tail(unique(NOR_rounds$nor_matchday),1)
+nor_formmatrix <- data.frame(matrix(nrow = length(nor_teams),ncol = nor_krounds))
+nor_formround <- c()
+for(i_nor_krounds in 1:nor_krounds)
+{
+  nor_homeform <- NOR_rounds$FTR[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_homeform <- sub("H","W",nor_homeform)
+  nor_homeform <- sub("A","L",nor_homeform)
+
+  nor_awayform <- NOR_rounds$FTR[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_awayform <- sub("A","W",nor_awayform)
+  nor_awayform <- sub("H","L",nor_awayform)
+
+  nor_hometeamstemp_form <- NOR_rounds$Home[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_awayteamstemp_form <- NOR_rounds$Away[NOR_rounds$nor_matchday== i_nor_krounds]
+
+  nor_formcombined <- c(nor_homeform,nor_awayform)
+  nor_teamscombined_form <- c(nor_hometeamstemp_form,nor_awayteamstemp_form)
+
+  nor_formround <- data.frame(nor_teamscombined_form,nor_formcombined)
+
+  nor_formround <- nor_formround[order(nor_formround$nor_teamscombined_form),]
+  nor_formround$nor_teamscombined_form <- NULL
+  nor_formmatrix[,i_nor_krounds] <- nor_formround
+
+}
+
+nor_formmatrix <- cbind(nor_teams,nor_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 nor_form_h <- tapply(NOR$FTR, NOR[c("Home", "Date")],median)
 nor_form_a <- tapply(NOR$FTR, NOR[c("Away", "Date")],median)
 nor_form_h[is.na(nor_form_h)] <- ""
@@ -115,8 +208,37 @@ for(nor_rowh_f in 1:nrow(nor_form_h)) {
 
   }
 }
-write.xlsx(nor_form_h,'NL/NOR.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(nor_formmatrix,'NL/NOR.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#nor total goals rounds
+nor_krounds <- tail(unique(NOR_rounds$nor_matchday),1)
+nor_goaltotalmatrix <- data.frame(matrix(nrow = length(nor_teams),ncol = nor_krounds))
+nor_goaltotalround <- c()
+for(i_nor_krounds in 1:nor_krounds)
+{
+  nor_homegoaltotal <- NOR_rounds$TG[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_awaygoaltotal <- NOR_rounds$TG[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_hometeamstemp_tg <- NOR_rounds$Home[NOR_rounds$nor_matchday == i_nor_krounds]
+
+  nor_awayteamstemp_tg <- NOR_rounds$Away[NOR_rounds$nor_matchday== i_nor_krounds]
+
+  nor_goalscombined_tg <- c(nor_homegoaltotal,nor_awaygoaltotal)
+  nor_teamscombined_tg <- c(nor_hometeamstemp_tg,nor_awayteamstemp_tg)
+
+  nor_goaltotalround <- data.frame(nor_teamscombined_tg,nor_goalscombined_tg)
+
+  nor_goaltotalround <- nor_goaltotalround[order(nor_goaltotalround$nor_teamscombined_tg),]
+  nor_goaltotalround$nor_teamscombined_tg <- NULL
+  nor_goaltotalmatrix[,i_nor_krounds] <- nor_goaltotalround
+
+}
+
+nor_goaltotalmatrix <- cbind(nor_teams,nor_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 nor_totalgoals_h <- tapply(NOR$TG, NOR[c("Home", "Date")],mean)
 nor_totalgoals_a <- tapply(NOR$TG, NOR[c("Away", "Date")],mean)
@@ -135,7 +257,7 @@ for(nor_rowh in 1:nrow(nor_totalgoals_h)) {
 
   }
 }
-write.xlsx(nor_totalgoals_h,'NL/NOR.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(nor_goaltotalmatrix,'NL/NOR.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 nor_form_team_against_h <- tapply(NOR$Away, NOR[c("Home", "Date")],median)
@@ -155,6 +277,7 @@ for(nor_rowh_f_against in 1:nrow(nor_form_team_against_h)) {
 
   }
 }
+#######################################################################
 #win margin
 nor_winmargin_h <- tapply(NOR$HG - NOR$AG, NOR[c("Home", "Date")],mean)
 nor_winmargin_a <- tapply(NOR$AG - NOR$HG, NOR[c("Away", "Date")],mean)
@@ -173,6 +296,7 @@ for(nor_rowhwm in 1:nrow(nor_winmargin_h)) {
 
   }
 }
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #NOR
@@ -326,7 +450,6 @@ names(nor_away_conceding)[names(nor_away_conceding) == "x.y"] <- "Avg_Ftac"
 nor_conceding <- merge(nor_home_conceding,nor_away_conceding,by='Group.1',all = T)
 nor_conceding$TGC <- nor_conceding$TFthc + nor_conceding$TFtac
 
-
 ######################################################################################
 ###########League Table###############################################################
 
@@ -386,7 +509,6 @@ for(nor_rowhrank in 1:nrow(nor_form_team_against_h)) {
 
   }
 }
-
 write.xlsx(points_nor,'NL/NOR.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six nor###################################################
@@ -495,7 +617,6 @@ for(index_nor_cs in 1:length(nor_teams))
 final_nor_cs <- as.data.frame(final_nor_cs)
 colnames(final_nor_cs) <- "CSForm"
 #################################################
-################################################
 #Win Margin
 #goals scored
 #create final_nor_wm object
@@ -589,6 +710,8 @@ nor_away_poisson <- cbind(nor_division,nor_teams,nor_avg_AG,nor_away_as,nor_away
 #write.csv(away_poisson,'R_away.csv')
 write.xlsx(nor_home_poisson,'NL/NOR.xlsx',sheetName = "homepoisson", append = TRUE)
 write.xlsx(nor_away_poisson,'NL/NOR.xlsx',sheetName = "awaypoisson", append = TRUE)
+nor_home_poisson
+nor_away_poisson
 ##########################################################################################################
 ###################NOR FIXTURES##########################################################################
 #NOR
@@ -929,162 +1052,6 @@ NOR_fixtures$nor_AH_125_A <- percent(NOR_fixtures$nor_AH_125_A, accuracy = 0.1)
 NOR_fixtures$nor_ov25 <- percent(NOR_fixtures$nor_ov25, accuracy = 0.1)
 
 NOR_fixtures$nor_un25 <- percent(NOR_fixtures$nor_un25, accuracy = 0.1)
-########Asian Handicaps##########################################################################################################
-##########################################################################
-#AH(0)
-#AH_0_H
-NOR_fixtures$nor_AH_0_H <- (
-  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
-    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
-    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
-    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
-    NOR_fixtures$nor_6_5 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
-    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6
-)
-#AH_0_A
-NOR_fixtures$nor_AH_0_A <- (
-  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
-    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
-    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
-    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
-    NOR_fixtures$nor_5_6 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
-    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6
-)
-
-#odds
-NOR_fixtures$nor_AH_0_H_odds <- round((1/NOR_fixtures$nor_AH_0_H),digits = 2)
-NOR_fixtures$nor_AH_0_A_odds <- round((1/NOR_fixtures$nor_AH_0_A),digits = 2)
-
-NOR_fixtures$nor_AH_0_H_odds
-NOR_fixtures$nor_AH_0_A_odds
-#percentages
-NOR_fixtures$nor_AH_0_H <- percent(NOR_fixtures$nor_AH_0_H, accuracy = 0.1)
-NOR_fixtures$nor_AH_0_A <- percent(NOR_fixtures$nor_AH_0_A, accuracy = 0.1)
-####################################################################################
-##########################################################################
-#AH(-0.75)
-#AH_n075_H
-NOR_fixtures$nor_AH_n075_H <- (
-  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
-    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
-    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
-    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
-    NOR_fixtures$nor_6_5
-)
-#AH_n075_A
-NOR_fixtures$nor_AH_n075_A <- (
-  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
-    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
-    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
-    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
-    NOR_fixtures$nor_5_6
-)
-
-#odds
-NOR_fixtures$nor_AH_n075_H_odds <- round((1/NOR_fixtures$nor_AH_n075_H),digits = 2)
-NOR_fixtures$nor_AH_n075_A_odds <- round((1/NOR_fixtures$nor_AH_n075_A),digits = 2)
-
-NOR_fixtures$nor_AH_n075_H_odds
-NOR_fixtures$nor_AH_n075_A_odds
-#percentages
-NOR_fixtures$nor_AH_n075_H <- percent(NOR_fixtures$nor_AH_n075_H, accuracy = 0.1)
-NOR_fixtures$nor_AH_n075_A <- percent(NOR_fixtures$nor_AH_n075_A, accuracy = 0.1)
-##########################################################################
-#AH(0.75)
-#AH_075_H
-NOR_fixtures$nor_AH_075_H <- (
-  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
-    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
-    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
-    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
-    NOR_fixtures$nor_6_5 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
-    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6 + NOR_fixtures$nor_0_1 + NOR_fixtures$nor_1_2 +
-    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_3_4 + NOR_fixtures$nor_4_5 + NOR_fixtures$nor_5_6
-)
-#AH_075_A
-NOR_fixtures$nor_AH_075_A <- (
-  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
-    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
-    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
-    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
-    NOR_fixtures$nor_5_6 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
-    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6 + NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_1 +
-    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_3 + NOR_fixtures$nor_5_4 + NOR_fixtures$nor_6_5
-)
-
-#odds
-NOR_fixtures$nor_AH_075_H_odds <- round((1/NOR_fixtures$nor_AH_075_H),digits = 2)
-NOR_fixtures$nor_AH_075_A_odds <- round((1/NOR_fixtures$nor_AH_075_A),digits = 2)
-
-NOR_fixtures$nor_AH_075_H_odds
-NOR_fixtures$nor_AH_075_A_odds
-#percentages
-NOR_fixtures$nor_AH_075_H <- percent(NOR_fixtures$nor_AH_075_H, accuracy = 0.1)
-NOR_fixtures$nor_AH_075_A <- percent(NOR_fixtures$nor_AH_075_A, accuracy = 0.1)
-####################################################################################
-#AH(-1.25)
-#AH_n125_H
-NOR_fixtures$nor_AH_n125_H <- (
-  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
-    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
-    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
-    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
-    NOR_fixtures$nor_6_5
-)
-#AH_n125_A
-NOR_fixtures$nor_AH_n125_A <- (
-  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
-    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
-    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
-    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
-    NOR_fixtures$nor_5_6
-)
-
-#odds
-NOR_fixtures$nor_AH_n125_H_odds <- round((1/NOR_fixtures$nor_AH_n125_H),digits = 2)
-NOR_fixtures$nor_AH_n125_A_odds <- round((1/NOR_fixtures$nor_AH_n125_A),digits = 2)
-
-NOR_fixtures$nor_AH_n125_H_odds
-NOR_fixtures$nor_AH_n125_A_odds
-#percentages
-NOR_fixtures$nor_AH_n125_H <- percent(NOR_fixtures$nor_AH_n125_H, accuracy = 0.1)
-NOR_fixtures$nor_AH_n125_A <- percent(NOR_fixtures$nor_AH_n125_A, accuracy = 0.1)
-
-####################################################################################
-##########################################################################
-#AH(1.25)
-#AH_125_H
-NOR_fixtures$nor_AH_125_H <- (
-  NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_0 + NOR_fixtures$nor_2_1 + NOR_fixtures$nor_3_0 + NOR_fixtures$nor_3_1 +
-    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_0 + NOR_fixtures$nor_4_1 + NOR_fixtures$nor_4_2 + NOR_fixtures$nor_4_3 +
-    NOR_fixtures$nor_5_0 +NOR_fixtures$nor_5_1 + NOR_fixtures$nor_5_2 + NOR_fixtures$nor_5_3 + NOR_fixtures$nor_5_4 +
-    NOR_fixtures$nor_6_0 + NOR_fixtures$nor_6_1 + NOR_fixtures$nor_6_2 + NOR_fixtures$nor_6_3 + NOR_fixtures$nor_6_4 +
-    NOR_fixtures$nor_6_5 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
-    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6 + NOR_fixtures$nor_0_1 + NOR_fixtures$nor_1_2 +
-    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_3_4 + NOR_fixtures$nor_4_5 + NOR_fixtures$nor_5_6
-)
-#AH_125_A
-NOR_fixtures$nor_AH_125_A <- (
-  NOR_fixtures$nor_0_1 + NOR_fixtures$nor_0_2 + NOR_fixtures$nor_1_2 + NOR_fixtures$nor_0_3 + NOR_fixtures$nor_1_3 +
-    NOR_fixtures$nor_2_3 + NOR_fixtures$nor_0_4 + NOR_fixtures$nor_1_4 + NOR_fixtures$nor_2_4 + NOR_fixtures$nor_3_4 +
-    NOR_fixtures$nor_0_5 +NOR_fixtures$nor_1_5 + NOR_fixtures$nor_2_5 + NOR_fixtures$nor_3_5 + NOR_fixtures$nor_4_5 +
-    NOR_fixtures$nor_0_6 + NOR_fixtures$nor_1_6 + NOR_fixtures$nor_2_6 + NOR_fixtures$nor_3_6 + NOR_fixtures$nor_4_6 +
-    NOR_fixtures$nor_5_6 + NOR_fixtures$nor_0_0 + NOR_fixtures$nor_1_1 + NOR_fixtures$nor_2_2 + NOR_fixtures$nor_3_3 +
-    NOR_fixtures$nor_4_4 + NOR_fixtures$nor_5_5 + NOR_fixtures$nor_6_6 + NOR_fixtures$nor_1_0 + NOR_fixtures$nor_2_1 +
-    NOR_fixtures$nor_3_2 + NOR_fixtures$nor_4_3 + NOR_fixtures$nor_5_4 + NOR_fixtures$nor_6_5
-)
-
-#odds
-NOR_fixtures$nor_AH_125_H_odds <- round((1/NOR_fixtures$nor_AH_125_H),digits = 2)
-NOR_fixtures$nor_AH_125_A_odds <- round((1/NOR_fixtures$nor_AH_125_A),digits = 2)
-
-NOR_fixtures$nor_AH_125_H_odds
-NOR_fixtures$nor_AH_125_A_odds
-#percentages
-NOR_fixtures$nor_AH_125_H <- percent(NOR_fixtures$nor_AH_125_H, accuracy = 0.1)
-NOR_fixtures$nor_AH_125_A <- percent(NOR_fixtures$nor_AH_125_A, accuracy = 0.1)
-####################################################################################
-########Asian Handicaps######################################################################################################
 NOR_fixtures$nor_pscore <- paste(round(NOR_fixtures$nor_xGH,digits = 0),round(NOR_fixtures$nor_xGA,digits = 0),sep = "-")
 #write out
 write.xlsx(NOR_fixtures,'NL/NOR.xlsx',sheetName = "NOR", append = TRUE)
@@ -1098,6 +1065,8 @@ nor_ov25_summary <- tabyl(NOR,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(nor_ftr_summary,'NL/NOR.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(nor_ov25_summary,'NL/NOR.xlsx',sheetName = "OVUN25", append = TRUE)
+
+
 
 
 

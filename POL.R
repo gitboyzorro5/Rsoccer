@@ -23,9 +23,14 @@ POL$OV25 <- ifelse(POL$TG >= 3,"Y","N")
 POL$FTR <- with(POL,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+
+####################################################################################
 ###################################################
+# B1 <- mgsub(B1,c("Wolfsberger"),c("Wolfsberger AC"))
+# B1 <- mgsub(B1,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 pol_totalgoalsv2 <- tapply(POL$TG, POL[c("Home", "Away")],mean)
+pol_totalgoalsv2
 pol_hgtotals <- rowSums(pol_totalgoalsv2,na.rm = T)
 pol_agtotals <- colSums(pol_totalgoalsv2,na.rm = T)
 
@@ -47,7 +52,35 @@ pol_avg_totalgoals <- round((pol_totalgoals/ pol_games_played), digits = 4)
 pol_goaltotalsv2[is.na(pol_goaltotalsv2)] <- ""
 pol_goaltotalsv2 <- cbind(pol_goaltotalsv2,pol_avg_totalgoals)
 write.xlsx(pol_goaltotalsv2,'NL/POL.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#pol goal scored rounds
+#####################################################################
+pol_krounds <- tail(unique(POL_rounds$pol_matchday),1)
+nrow(POL)
+pol_goalscoredmatrix <- data.frame(matrix(nrow = length(pol_teams),ncol = pol_krounds))
+pol_goalscoredround <- c()
+for(i_pol_krounds in 1:pol_krounds)
+{
+  pol_homegoalscored <- POL_rounds$HG[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_awaygoalscored <- POL_rounds$AG[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_hometeamstemp_gs <- POL_rounds$Home[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_awayteamstemp_gs <- POL_rounds$Away[POL_rounds$pol_matchday== i_pol_krounds]
+
+  pol_goalscombined <- c(pol_homegoalscored,pol_awaygoalscored)
+  pol_teamscombined <- c(pol_hometeamstemp_gs,pol_awayteamstemp_gs)
+
+  pol_goalscoredround <- data.frame(pol_teamscombined,pol_goalscombined)
+
+  pol_goalscoredround <- pol_goalscoredround[order(pol_goalscoredround$pol_teamscombined),]
+  pol_goalscoredround$pol_teamscombined <- NULL
+  pol_goalscoredmatrix[,i_pol_krounds] <- pol_goalscoredround
+
+}
+
+pol_goalscoredmatrix <- cbind(pol_teams,pol_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 pol_goalscored_h <- tapply(POL$HG, POL[c("Home", "Date")],mean)
@@ -68,9 +101,37 @@ for(pol_rowhgs in 1:nrow(pol_goalscored_h)) {
 
   }
 }
-write.xlsx(pol_goalscored_h,'NL/POL.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(pol_goalscoredmatrix,'NL/POL.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#pol goal conceded rounds
+#pol
+pol_krounds <- tail(unique(POL_rounds$pol_matchday),1)
+pol_goalconcededmatrix <- data.frame(matrix(nrow = length(pol_teams),ncol = pol_krounds))
+pol_goalconcededround <- c()
+for(i_pol_krounds in 1:pol_krounds)
+{
+  pol_homegoalconceded <- POL_rounds$AG[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_awaygoalconceded <- POL_rounds$HG[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_hometeamstemp_gc <- POL_rounds$Home[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_awayteamstemp_gc <- POL_rounds$Away[POL_rounds$pol_matchday== i_pol_krounds]
+
+  pol_goalsconcededcombined <- c(pol_homegoalconceded,pol_awaygoalconceded)
+  pol_teamscombined_gc <- c(pol_hometeamstemp_gc,pol_awayteamstemp_gc)
+
+  pol_goalconcededround <- data.frame(pol_teamscombined_gc,pol_goalsconcededcombined)
+
+  pol_goalconcededround <- pol_goalconcededround[order(pol_goalconcededround$pol_teamscombined_gc),]
+  pol_goalconcededround$pol_teamscombined_gc <- NULL
+  pol_goalconcededmatrix[,i_pol_krounds] <- pol_goalconcededround
+
+}
+
+pol_goalconcededmatrix <- cbind(pol_teams,pol_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 pol_goalconceded_h <- tapply(POL$AG, POL[c("Home", "Date")],mean)
 pol_goalconceded_a <- tapply(POL$HG, POL[c("Away", "Date")],mean)
@@ -90,9 +151,45 @@ for(pol_rowhgc in 1:nrow(pol_goalconceded_h)) {
 
   }
 }
-write.xlsx(pol_goalconceded_h,'NL/POL.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(pol_goalconcededmatrix,'NL/POL.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#pol team form
+pol_krounds <- tail(unique(POL_rounds$pol_matchday),1)
+pol_formmatrix <- data.frame(matrix(nrow = length(pol_teams),ncol = pol_krounds))
+pol_formround <- c()
+for(i_pol_krounds in 1:pol_krounds)
+{
+  pol_homeform <- POL_rounds$Res[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_homeform <- sub("H","W",pol_homeform)
+  pol_homeform <- sub("A","L",pol_homeform)
+
+  pol_awayform <- POL_rounds$Res[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_awayform <- sub("A","W",pol_awayform)
+  pol_awayform <- sub("H","L",pol_awayform)
+
+  pol_hometeamstemp_form <- POL_rounds$Home[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_awayteamstemp_form <- POL_rounds$Away[POL_rounds$pol_matchday== i_pol_krounds]
+
+  pol_formcombined <- c(pol_homeform,pol_awayform)
+  pol_teamscombined_form <- c(pol_hometeamstemp_form,pol_awayteamstemp_form)
+
+  pol_formround <- data.frame(pol_teamscombined_form,pol_formcombined)
+
+  pol_formround <- pol_formround[order(pol_formround$pol_teamscombined_form),]
+  pol_formround$pol_teamscombined_form <- NULL
+  pol_formmatrix[,i_pol_krounds] <- pol_formround
+
+}
+pol_formmatrix
+pol_formmatrix <- cbind(pol_teams,pol_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 pol_form_h <- tapply(POL$FTR, POL[c("Home", "Date")],median)
 pol_form_a <- tapply(POL$FTR, POL[c("Away", "Date")],median)
 pol_form_h[is.na(pol_form_h)] <- ""
@@ -114,8 +211,37 @@ for(pol_rowh_f in 1:nrow(pol_form_h)) {
 
   }
 }
-write.xlsx(pol_form_h,'NL/POL.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(pol_formmatrix,'NL/POL.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#pol total goals rounds
+pol_krounds <- tail(unique(POL_rounds$pol_matchday),1)
+pol_goaltotalmatrix <- data.frame(matrix(nrow = length(pol_teams),ncol = pol_krounds))
+pol_goaltotalround <- c()
+for(i_pol_krounds in 1:pol_krounds)
+{
+  pol_homegoaltotal <- POL_rounds$TG[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_awaygoaltotal <- POL_rounds$TG[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_hometeamstemp_tg <- POL_rounds$Home[POL_rounds$pol_matchday == i_pol_krounds]
+
+  pol_awayteamstemp_tg <- POL_rounds$Away[POL_rounds$pol_matchday== i_pol_krounds]
+
+  pol_goalscombined_tg <- c(pol_homegoaltotal,pol_awaygoaltotal)
+  pol_teamscombined_tg <- c(pol_hometeamstemp_tg,pol_awayteamstemp_tg)
+
+  pol_goaltotalround <- data.frame(pol_teamscombined_tg,pol_goalscombined_tg)
+
+  pol_goaltotalround <- pol_goaltotalround[order(pol_goaltotalround$pol_teamscombined_tg),]
+  pol_goaltotalround$pol_teamscombined_tg <- NULL
+  pol_goaltotalmatrix[,i_pol_krounds] <- pol_goaltotalround
+
+}
+
+pol_goaltotalmatrix <- cbind(pol_teams,pol_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 pol_totalgoals_h <- tapply(POL$TG, POL[c("Home", "Date")],mean)
 pol_totalgoals_a <- tapply(POL$TG, POL[c("Away", "Date")],mean)
@@ -134,7 +260,7 @@ for(pol_rowh in 1:nrow(pol_totalgoals_h)) {
 
   }
 }
-write.xlsx(pol_totalgoals_h,'NL/POL.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(pol_goaltotalmatrix,'NL/POL.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 pol_form_team_against_h <- tapply(POL$Away, POL[c("Home", "Date")],median)
@@ -173,6 +299,7 @@ for(pol_rowhwm in 1:nrow(pol_winmargin_h)) {
 
   }
 }
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #POL
@@ -325,7 +452,6 @@ names(pol_away_conceding)[names(pol_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
 pol_conceding <- merge(pol_home_conceding,pol_away_conceding,by='Group.1',all = T)
 pol_conceding$TGC <- pol_conceding$TFthc + pol_conceding$TFtac
-
 
 ######################################################################################
 ###########League Table###############################################################
@@ -494,7 +620,6 @@ for(index_pol_cs in 1:length(pol_teams))
 final_pol_cs <- as.data.frame(final_pol_cs)
 colnames(final_pol_cs) <- "CSForm"
 #################################################
-#################################################
 #Win Margin
 #goals scored
 #create final_pol_wm object
@@ -588,6 +713,8 @@ pol_away_poisson <- cbind(pol_division,pol_teams,pol_avg_AG,pol_away_as,pol_away
 #write.csv(away_poisson,'R_away.csv')
 write.xlsx(pol_home_poisson,'NL/POL.xlsx',sheetName = "homepoisson", append = TRUE)
 write.xlsx(pol_away_poisson,'NL/POL.xlsx',sheetName = "awaypoisson", append = TRUE)
+pol_home_poisson
+pol_away_poisson
 ##########################################################################################################
 ###################POL FIXTURES##########################################################################
 #POL

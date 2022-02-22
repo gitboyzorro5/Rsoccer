@@ -6,6 +6,7 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+library('mgsub')
 #delete current file
 unlink('NL/IRL.xlsx')
 ######################IRL START#######################################
@@ -15,15 +16,19 @@ IRL <- within(IRL,rm(Res))
 IRL$Date <- dmy(IRL$Date)
 IRL <- IRL[order(as.Date(IRL$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 IRL$CS <- paste(IRL$HG,IRL$AG, sep = "-")
+
 #IRL_qualificaton <- subset(IRL,tournament == "UEFA Euro qualification")
 IRL <- subset(IRL,Season == "2021")
 #IRL <- IRL[IRL$Date > '2008-01-01',])
 IRL$TG <- IRL$HG + IRL$AG
 IRL$OV25 <- ifelse(IRL$TG >= 3,"Y","N")
 IRL$FTR <- with(IRL,
-                ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
+               ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+
 ###################################################
+# IRL <- mgsub(IRL,c("Wolfsberger"),c("Wolfsberger AC"))
+# IRL <- mgsub(IRL,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 irl_totalgoalsv2 <- tapply(IRL$TG, IRL[c("Home", "Away")],mean)
 irl_totalgoalsv2
@@ -48,7 +53,35 @@ irl_avg_totalgoals <- round((irl_totalgoals/ irl_games_played), digits = 4)
 irl_goaltotalsv2[is.na(irl_goaltotalsv2)] <- ""
 irl_goaltotalsv2 <- cbind(irl_goaltotalsv2,irl_avg_totalgoals)
 write.xlsx(irl_goaltotalsv2,'NL/IRL.xlsx',sheetName = "totalgoalsv2")
-############################################
+#####################################################################
+#irl goal scored rounds
+#####################################################################
+irl_krounds <- tail(unique(IRL_rounds$irl_matchday),1)
+nrow(IRL)
+irl_goalscoredmatrix <- data.frame(matrix(nrow = length(irl_teams),ncol = irl_krounds))
+irl_goalscoredround <- c()
+for(i_irl_krounds in 1:irl_krounds)
+{
+  irl_homegoalscored <- IRL_rounds$HG[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_awaygoalscored <- IRL_rounds$AG[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_hometeamstemp_gs <- IRL_rounds$Home[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_awayteamstemp_gs <- IRL_rounds$Away[IRL_rounds$irl_matchday== i_irl_krounds]
+
+  irl_goalscombined <- c(irl_homegoalscored,irl_awaygoalscored)
+  irl_teamscombined <- c(irl_hometeamstemp_gs,irl_awayteamstemp_gs)
+
+  irl_goalscoredround <- data.frame(irl_teamscombined,irl_goalscombined)
+
+  irl_goalscoredround <- irl_goalscoredround[order(irl_goalscoredround$irl_teamscombined),]
+  irl_goalscoredround$irl_teamscombined <- NULL
+  irl_goalscoredmatrix[,i_irl_krounds] <- irl_goalscoredround
+
+}
+
+irl_goalscoredmatrix <- cbind(irl_teams,irl_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 irl_goalscored_h <- tapply(IRL$HG, IRL[c("Home", "Date")],mean)
@@ -69,9 +102,37 @@ for(irl_rowhgs in 1:nrow(irl_goalscored_h)) {
 
   }
 }
-write.xlsx(irl_goalscored_h,'NL/IRL.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(irl_goalscoredmatrix,'NL/IRL.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#irl goal conceded rounds
+#irl
+irl_krounds <- tail(unique(IRL_rounds$irl_matchday),1)
+irl_goalconcededmatrix <- data.frame(matrix(nrow = length(irl_teams),ncol = irl_krounds))
+irl_goalconcededround <- c()
+for(i_irl_krounds in 1:irl_krounds)
+{
+  irl_homegoalconceded <- IRL_rounds$AG[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_awaygoalconceded <- IRL_rounds$HG[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_hometeamstemp_gc <- IRL_rounds$Home[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_awayteamstemp_gc <- IRL_rounds$Away[IRL_rounds$irl_matchday== i_irl_krounds]
+
+  irl_goalsconcededcombined <- c(irl_homegoalconceded,irl_awaygoalconceded)
+  irl_teamscombined_gc <- c(irl_hometeamstemp_gc,irl_awayteamstemp_gc)
+
+  irl_goalconcededround <- data.frame(irl_teamscombined_gc,irl_goalsconcededcombined)
+
+  irl_goalconcededround <- irl_goalconcededround[order(irl_goalconcededround$irl_teamscombined_gc),]
+  irl_goalconcededround$irl_teamscombined_gc <- NULL
+  irl_goalconcededmatrix[,i_irl_krounds] <- irl_goalconcededround
+
+}
+
+irl_goalconcededmatrix <- cbind(irl_teams,irl_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 irl_goalconceded_h <- tapply(IRL$AG, IRL[c("Home", "Date")],mean)
 irl_goalconceded_a <- tapply(IRL$HG, IRL[c("Away", "Date")],mean)
@@ -91,9 +152,45 @@ for(irl_rowhgc in 1:nrow(irl_goalconceded_h)) {
 
   }
 }
-write.xlsx(irl_goalconceded_h,'NL/IRL.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(irl_goalconcededmatrix,'NL/IRL.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#irl team form
+irl_krounds <- tail(unique(IRL_rounds$irl_matchday),1)
+irl_formmatrix <- data.frame(matrix(nrow = length(irl_teams),ncol = irl_krounds))
+irl_formround <- c()
+for(i_irl_krounds in 1:irl_krounds)
+{
+  irl_homeform <- IRL_rounds$FTR[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_homeform <- sub("H","W",irl_homeform)
+  irl_homeform <- sub("A","L",irl_homeform)
+
+  irl_awayform <- IRL_rounds$FTR[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_awayform <- sub("A","W",irl_awayform)
+  irl_awayform <- sub("H","L",irl_awayform)
+
+  irl_hometeamstemp_form <- IRL_rounds$Home[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_awayteamstemp_form <- IRL_rounds$Away[IRL_rounds$irl_matchday== i_irl_krounds]
+
+  irl_formcombined <- c(irl_homeform,irl_awayform)
+  irl_teamscombined_form <- c(irl_hometeamstemp_form,irl_awayteamstemp_form)
+
+  irl_formround <- data.frame(irl_teamscombined_form,irl_formcombined)
+
+  irl_formround <- irl_formround[order(irl_formround$irl_teamscombined_form),]
+  irl_formround$irl_teamscombined_form <- NULL
+  irl_formmatrix[,i_irl_krounds] <- irl_formround
+
+}
+
+irl_formmatrix <- cbind(irl_teams,irl_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 irl_form_h <- tapply(IRL$FTR, IRL[c("Home", "Date")],median)
 irl_form_a <- tapply(IRL$FTR, IRL[c("Away", "Date")],median)
 irl_form_h[is.na(irl_form_h)] <- ""
@@ -115,8 +212,37 @@ for(irl_rowh_f in 1:nrow(irl_form_h)) {
 
   }
 }
-write.xlsx(irl_form_h,'NL/IRL.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(irl_formmatrix,'NL/IRL.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#irl total goals rounds
+irl_krounds <- tail(unique(IRL_rounds$irl_matchday),1)
+irl_goaltotalmatrix <- data.frame(matrix(nrow = length(irl_teams),ncol = irl_krounds))
+irl_goaltotalround <- c()
+for(i_irl_krounds in 1:irl_krounds)
+{
+  irl_homegoaltotal <- IRL_rounds$TG[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_awaygoaltotal <- IRL_rounds$TG[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_hometeamstemp_tg <- IRL_rounds$Home[IRL_rounds$irl_matchday == i_irl_krounds]
+
+  irl_awayteamstemp_tg <- IRL_rounds$Away[IRL_rounds$irl_matchday== i_irl_krounds]
+
+  irl_goalscombined_tg <- c(irl_homegoaltotal,irl_awaygoaltotal)
+  irl_teamscombined_tg <- c(irl_hometeamstemp_tg,irl_awayteamstemp_tg)
+
+  irl_goaltotalround <- data.frame(irl_teamscombined_tg,irl_goalscombined_tg)
+
+  irl_goaltotalround <- irl_goaltotalround[order(irl_goaltotalround$irl_teamscombined_tg),]
+  irl_goaltotalround$irl_teamscombined_tg <- NULL
+  irl_goaltotalmatrix[,i_irl_krounds] <- irl_goaltotalround
+
+}
+
+irl_goaltotalmatrix <- cbind(irl_teams,irl_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 irl_totalgoals_h <- tapply(IRL$TG, IRL[c("Home", "Date")],mean)
 irl_totalgoals_a <- tapply(IRL$TG, IRL[c("Away", "Date")],mean)
@@ -135,7 +261,7 @@ for(irl_rowh in 1:nrow(irl_totalgoals_h)) {
 
   }
 }
-write.xlsx(irl_totalgoals_h,'NL/IRL.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(irl_goaltotalmatrix,'NL/IRL.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 irl_form_team_against_h <- tapply(IRL$Away, IRL[c("Home", "Date")],median)
@@ -155,6 +281,7 @@ for(irl_rowh_f_against in 1:nrow(irl_form_team_against_h)) {
 
   }
 }
+#######################################################################
 #win margin
 irl_winmargin_h <- tapply(IRL$HG - IRL$AG, IRL[c("Home", "Date")],mean)
 irl_winmargin_a <- tapply(IRL$AG - IRL$HG, IRL[c("Away", "Date")],mean)
@@ -173,7 +300,7 @@ for(irl_rowhwm in 1:nrow(irl_winmargin_h)) {
 
   }
 }
-
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #IRL
@@ -326,7 +453,6 @@ names(irl_away_conceding)[names(irl_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
 irl_conceding <- merge(irl_home_conceding,irl_away_conceding,by='Group.1',all = T)
 irl_conceding$TGC <- irl_conceding$TFthc + irl_conceding$TFtac
-
 
 ######################################################################################
 ###########League Table###############################################################
@@ -518,6 +644,7 @@ final_irl_wm
 #change column names
 final_irl_wm <- as.data.frame(final_irl_wm)
 colnames(final_irl_wm) <- "Win Margin"
+###########################################################################
 #Team against
 #create final_irl_hf_against
 final_irl_hf_against <- c()
@@ -587,6 +714,8 @@ irl_away_poisson <- cbind(irl_division,irl_teams,irl_avg_AG,irl_away_as,irl_away
 #write.csv(away_poisson,'R_away.csv')
 write.xlsx(irl_home_poisson,'NL/IRL.xlsx',sheetName = "homepoisson", append = TRUE)
 write.xlsx(irl_away_poisson,'NL/IRL.xlsx',sheetName = "awaypoisson", append = TRUE)
+irl_home_poisson
+irl_away_poisson
 ##########################################################################################################
 ###################IRL FIXTURES##########################################################################
 #IRL

@@ -32,7 +32,7 @@ BRA$OV25 <- ifelse(BRA$TG >= 3,"Y","N")
 BRA$FTR <- with(BRA,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-head(BRA)
+
 ###################################################
 ####GoalTotalsv2##################################
 ####GoalTotalsv2##################################
@@ -86,7 +86,7 @@ for(i_bra_krounds in 1:bra_krounds)
   bra_goalscoredmatrix[,i_bra_krounds] <- bra_goalscoredround
 
 }
-
+bra_goalscoredmatrix
 bra_goalscoredmatrix <- cbind(bra_teams,bra_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
@@ -108,6 +108,7 @@ for(bra_rowhgs in 1:nrow(bra_goalscored_h)) {
 
   }
 }
+
 write.xlsx(bra_goalscoredmatrix,'NL/BRA.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
 #bra goal conceded rounds

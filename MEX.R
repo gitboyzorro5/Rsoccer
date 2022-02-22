@@ -24,6 +24,8 @@ MEX$FTR <- with(MEX,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
 ###################################################
+# MEX <- mgsub(MEX,c("Wolfsberger"),c("Wolfsberger AC"))
+# MEX <- mgsub(MEX,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 mex_totalgoalsv2 <- tapply(MEX$TG, MEX[c("Home", "Away")],mean)
 mex_totalgoalsv2
@@ -47,8 +49,36 @@ mex_goaltotalsv2 <- cbind(mex_totalgoalsv2,mex_games_played)
 mex_avg_totalgoals <- round((mex_totalgoals/ mex_games_played), digits = 4)
 mex_goaltotalsv2[is.na(mex_goaltotalsv2)] <- ""
 mex_goaltotalsv2 <- cbind(mex_goaltotalsv2,mex_avg_totalgoals)
-write.xlsx(mex_goaltotalsv2,'MEX.xlsx',sheetName = "totalgoalsv2")
-############################################
+write.xlsx(mex_goaltotalsv2,'NL/MEX.xlsx',sheetName = "totalgoalsv2")
+#####################################################################
+#mex goal scored rounds
+#####################################################################
+mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)
+nrow(MEX)
+mex_goalscoredmatrix <- data.frame(matrix(nrow = length(mex_teams),ncol = mex_krounds))
+mex_goalscoredround <- c()
+for(i_mex_krounds in 1:mex_krounds)
+{
+  mex_homegoalscored <- MEX_rounds$HG[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_awaygoalscored <- MEX_rounds$AG[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_hometeamstemp_gs <- MEX_rounds$Home[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_awayteamstemp_gs <- MEX_rounds$Away[MEX_rounds$mex_matchday== i_mex_krounds]
+
+  mex_goalscombined <- c(mex_homegoalscored,mex_awaygoalscored)
+  mex_teamscombined <- c(mex_hometeamstemp_gs,mex_awayteamstemp_gs)
+
+  mex_goalscoredround <- data.frame(mex_teamscombined,mex_goalscombined)
+
+  mex_goalscoredround <- mex_goalscoredround[order(mex_goalscoredround$mex_teamscombined),]
+  mex_goalscoredround$mex_teamscombined <- NULL
+  mex_goalscoredmatrix[,i_mex_krounds] <- mex_goalscoredround
+
+}
+mex_goalscoredmatrix
+mex_goalscoredmatrix <- cbind(mex_teams,mex_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 mex_goalscored_h <- tapply(MEX$HG, MEX[c("Home", "Date")],mean)
@@ -69,9 +99,37 @@ for(mex_rowhgs in 1:nrow(mex_goalscored_h)) {
 
   }
 }
-write.xlsx(mex_goalscored_h,'MEX.xlsx',sheetName = "gsmatrix", append = TRUE)
+write.xlsx(mex_goalscoredmatrix,'NL/MEX.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#mex goal conceded rounds
+#mex
+mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)
+mex_goalconcededmatrix <- data.frame(matrix(nrow = length(mex_teams),ncol = mex_krounds))
+mex_goalconcededround <- c()
+for(i_mex_krounds in 1:mex_krounds)
+{
+  mex_homegoalconceded <- MEX_rounds$AG[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_awaygoalconceded <- MEX_rounds$HG[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_hometeamstemp_gc <- MEX_rounds$Home[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_awayteamstemp_gc <- MEX_rounds$Away[MEX_rounds$mex_matchday== i_mex_krounds]
+
+  mex_goalsconcededcombined <- c(mex_homegoalconceded,mex_awaygoalconceded)
+  mex_teamscombined_gc <- c(mex_hometeamstemp_gc,mex_awayteamstemp_gc)
+
+  mex_goalconcededround <- data.frame(mex_teamscombined_gc,mex_goalsconcededcombined)
+
+  mex_goalconcededround <- mex_goalconcededround[order(mex_goalconcededround$mex_teamscombined_gc),]
+  mex_goalconcededround$mex_teamscombined_gc <- NULL
+  mex_goalconcededmatrix[,i_mex_krounds] <- mex_goalconcededround
+
+}
+
+mex_goalconcededmatrix <- cbind(mex_teams,mex_goalconcededmatrix)
+
+####GCmatrix#############################################################################
 #create home and away matrices
 mex_goalconceded_h <- tapply(MEX$AG, MEX[c("Home", "Date")],mean)
 mex_goalconceded_a <- tapply(MEX$HG, MEX[c("Away", "Date")],mean)
@@ -91,9 +149,45 @@ for(mex_rowhgc in 1:nrow(mex_goalconceded_h)) {
 
   }
 }
-write.xlsx(mex_goalconceded_h,'MEX.xlsx',sheetName = "gcmatrix", append = TRUE)
+write.xlsx(mex_goalconcededmatrix,'NL/MEX.xlsx',sheetName = "gcmatrix", append = TRUE)
+########################################################################################
+#mex team form
+mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)
+mex_formmatrix <- data.frame(matrix(nrow = length(mex_teams),ncol = mex_krounds))
+mex_formround <- c()
+for(i_mex_krounds in 1:mex_krounds)
+{
+  mex_homeform <- MEX_rounds$FTR[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_homeform <- sub("H","W",mex_homeform)
+  mex_homeform <- sub("A","L",mex_homeform)
+
+  mex_awayform <- MEX_rounds$FTR[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_awayform <- sub("A","W",mex_awayform)
+  mex_awayform <- sub("H","L",mex_awayform)
+
+  mex_hometeamstemp_form <- MEX_rounds$Home[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_awayteamstemp_form <- MEX_rounds$Away[MEX_rounds$mex_matchday== i_mex_krounds]
+
+  mex_formcombined <- c(mex_homeform,mex_awayform)
+  mex_teamscombined_form <- c(mex_hometeamstemp_form,mex_awayteamstemp_form)
+
+  mex_formround <- data.frame(mex_teamscombined_form,mex_formcombined)
+
+  mex_formround <- mex_formround[order(mex_formround$mex_teamscombined_form),]
+  mex_formround$mex_teamscombined_form <- NULL
+  mex_formmatrix[,i_mex_krounds] <- mex_formround
+
+}
+
+mex_formmatrix <- cbind(mex_teams,mex_formmatrix)
+########################################################################################
+########################################################################################
 #########################################################################################
-####Teamform################################
+####Teamform#############################################################################
+
 mex_form_h <- tapply(MEX$FTR, MEX[c("Home", "Date")],median)
 mex_form_a <- tapply(MEX$FTR, MEX[c("Away", "Date")],median)
 mex_form_h[is.na(mex_form_h)] <- ""
@@ -115,8 +209,37 @@ for(mex_rowh_f in 1:nrow(mex_form_h)) {
 
   }
 }
-write.xlsx(mex_form_h,'MEX.xlsx',sheetName = "form", append = TRUE)
+write.xlsx(mex_formmatrix,'NL/MEX.xlsx',sheetName = "form", append = TRUE)
 ##################################################################################
+##################################################################################
+#mex total goals rounds
+mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)
+mex_goaltotalmatrix <- data.frame(matrix(nrow = length(mex_teams),ncol = mex_krounds))
+mex_goaltotalround <- c()
+for(i_mex_krounds in 1:mex_krounds)
+{
+  mex_homegoaltotal <- MEX_rounds$TG[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_awaygoaltotal <- MEX_rounds$TG[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_hometeamstemp_tg <- MEX_rounds$Home[MEX_rounds$mex_matchday == i_mex_krounds]
+
+  mex_awayteamstemp_tg <- MEX_rounds$Away[MEX_rounds$mex_matchday== i_mex_krounds]
+
+  mex_goalscombined_tg <- c(mex_homegoaltotal,mex_awaygoaltotal)
+  mex_teamscombined_tg <- c(mex_hometeamstemp_tg,mex_awayteamstemp_tg)
+
+  mex_goaltotalround <- data.frame(mex_teamscombined_tg,mex_goalscombined_tg)
+
+  mex_goaltotalround <- mex_goaltotalround[order(mex_goaltotalround$mex_teamscombined_tg),]
+  mex_goaltotalround$mex_teamscombined_tg <- NULL
+  mex_goaltotalmatrix[,i_mex_krounds] <- mex_goaltotalround
+
+}
+
+mex_goaltotalmatrix <- cbind(mex_teams,mex_goaltotalmatrix)
+##############################################################################################
+#d1
 #######TGMatrix##################################################################
 mex_totalgoals_h <- tapply(MEX$TG, MEX[c("Home", "Date")],mean)
 mex_totalgoals_a <- tapply(MEX$TG, MEX[c("Away", "Date")],mean)
@@ -135,7 +258,7 @@ for(mex_rowh in 1:nrow(mex_totalgoals_h)) {
 
   }
 }
-write.xlsx(mex_totalgoals_h,'MEX.xlsx',sheetName = "tgmatrix", append = TRUE)
+write.xlsx(mex_goaltotalmatrix,'NL/MEX.xlsx',sheetName = "tgmatrix", append = TRUE)
 ##################################################################################
 #######TeamAgainst##################################################################
 mex_form_team_against_h <- tapply(MEX$Away, MEX[c("Home", "Date")],median)
@@ -174,6 +297,7 @@ for(mex_rowhwm in 1:nrow(mex_winmargin_h)) {
 
   }
 }
+#######################################################################
 ####################################################################################################################
 ##########Goals over under############
 #MEX
@@ -268,7 +392,7 @@ mex_un55 <- mex_un55_home + mex_un55_away
 mex_ov55 <- mex_ov55_home + mex_ov55_away
 
 mex_ovundata <- cbind(mex_teams,mex_un05,mex_ov05,mex_un15,mex_ov15,mex_un25,mex_ov25,mex_un35,mex_ov35,mex_un45,mex_ov45,mex_un55,mex_ov55)
-write.xlsx(mex_ovundata,'MEX.xlsx',sheetName = "OVUN", append = TRUE)
+write.xlsx(mex_ovundata,'NL/MEX.xlsx',sheetName = "OVUN", append = TRUE)
 ###############################################################################################################################
 
 ##########################################################################################
@@ -326,7 +450,6 @@ names(mex_away_conceding)[names(mex_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
 mex_conceding <- merge(mex_home_conceding,mex_away_conceding,by='Group.1',all = T)
 mex_conceding$TGC <- mex_conceding$TFthc + mex_conceding$TFtac
-
 
 ######################################################################################
 ###########League Table###############################################################
@@ -387,7 +510,7 @@ for(mex_rowhrank in 1:nrow(mex_form_team_against_h)) {
 
   }
 }
-write.xlsx(points_mex,'MEX.xlsx',sheetName = "table", append = TRUE)
+write.xlsx(points_mex,'NL/MEX.xlsx',sheetName = "table", append = TRUE)
 ##########################################################################################################
 #########################################last six mex###################################################
 #MEX
@@ -495,7 +618,6 @@ for(index_mex_cs in 1:length(mex_teams))
 final_mex_cs <- as.data.frame(final_mex_cs)
 colnames(final_mex_cs) <- "CSForm"
 #################################################
-#################################################
 #Win Margin
 #goals scored
 #create final_mex_wm object
@@ -538,7 +660,7 @@ final_mex_hf_against <- as.data.frame(final_mex_hf_against)
 colnames(final_mex_hf_against) <- "Team against"
 #combine the columns
 final_mex_all <- cbind(final_mex_hf,final_mex_gs,final_mex_gc,final_mex_tg,final_mex_cs,final_mex_wm,final_mex_hf_against)
-write.xlsx(final_mex_all,'MEX.xlsx',sheetName = "L6", append = TRUE)
+write.xlsx(final_mex_all,'NL/MEX.xlsx',sheetName = "L6", append = TRUE)
 #############################################################################################################
 ##########################poisson model######################################################################
 #poisson model
@@ -587,8 +709,10 @@ mex_away_poisson <- cbind(mex_division,mex_teams,mex_avg_AG,mex_away_as,mex_away
 #write another one
 #write.csv(home_poisson,'R_home.csv')
 #write.csv(away_poisson,'R_away.csv')
-write.xlsx(mex_home_poisson,'MEX.xlsx',sheetName = "homepoisson", append = TRUE)
-write.xlsx(mex_away_poisson,'MEX.xlsx',sheetName = "awaypoisson", append = TRUE)
+write.xlsx(mex_home_poisson,'NL/MEX.xlsx',sheetName = "homepoisson", append = TRUE)
+write.xlsx(mex_away_poisson,'NL/MEX.xlsx',sheetName = "awaypoisson", append = TRUE)
+mex_home_poisson
+mex_away_poisson
 ##########################################################################################################
 ###################MEX FIXTURES##########################################################################
 #MEX
@@ -931,7 +1055,7 @@ MEX_fixtures$mex_ov25 <- percent(MEX_fixtures$mex_ov25, accuracy = 0.1)
 MEX_fixtures$mex_un25 <- percent(MEX_fixtures$mex_un25, accuracy = 0.1)
 MEX_fixtures$mex_pscore <- paste(round(MEX_fixtures$mex_xGH,digits = 0),round(MEX_fixtures$mex_xGA,digits = 0),sep = "-")
 #write out
-write.xlsx(MEX_fixtures,'MEX.xlsx',sheetName = "MEX", append = TRUE)
+write.xlsx(MEX_fixtures,'NL/MEX.xlsx',sheetName = "MEX", append = TRUE)
 ###########################################################################################################
 ########################MEX END###########################################################################
 MEX <- read.csv('../FDAS/MEX.csv')
@@ -940,8 +1064,8 @@ MEX$OV25 <- ifelse(MEX$TG >= 3,"Y","N")
 mex_ftr_summary <- tabyl(MEX,Season,Res) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 mex_ov25_summary <- tabyl(MEX,Season,OV25) %>% adorn_percentages("row") %>% adorn_pct_formatting(digits = 1)
 ftr_summary <- ftr_summary[,c(1,3,2)]
-write.xlsx(mex_ftr_summary,'MEX.xlsx',sheetName = "FTR", append = TRUE)
-write.xlsx(mex_ov25_summary,'MEX.xlsx',sheetName = "OVUN25", append = TRUE)
+write.xlsx(mex_ftr_summary,'NL/MEX.xlsx',sheetName = "FTR", append = TRUE)
+write.xlsx(mex_ov25_summary,'NL/MEX.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
 

@@ -75,9 +75,12 @@ names(b1_league_table_simfinal)[names(b1_league_table_simfinal) == "b1_total_los
 names(b1_league_table_simfinal)[names(b1_league_table_simfinal) == "b1_PTS_simfinal"] <- "PTS_f"
 points_b1_sim <-  b1_league_table_simfinal[order(as.numeric(b1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+B1_notplayed <- B1_fixtures[B1_fixtures$b1_gamestatus == "notplayed",]
+
 write.xlsx(points_b1,'Divisions/Simulations.xlsx', sheetName = "B1_Table",append = TRUE)
 write.xlsx(b1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "B1_sim",append = TRUE)
 write.xlsx(points_b1_sim,'Divisions/Simulations.xlsx', sheetName = "B1_simfinal",append = TRUE)
+write.xlsx(B1_notplayed,'Divisions/Simulations.xlsx', sheetName = "B1_notplayed",append = TRUE)
 ############################################################################################################################################################
 ############################################################################################################################################################
 #D1
@@ -149,9 +152,12 @@ names(d1_league_table_simfinal)[names(d1_league_table_simfinal) == "d1_total_los
 names(d1_league_table_simfinal)[names(d1_league_table_simfinal) == "d1_PTS_simfinal"] <- "PTS_f"
 points_d1_sim <-  d1_league_table_simfinal[order(as.numeric(d1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+D1_notplayed <- D1_fixtures[D1_fixtures$d1_gamestatus == "notplayed",]
+
 write.xlsx(points_d1,'Divisions/Simulations.xlsx', sheetName = "D1_table",append = TRUE)
 write.xlsx(d1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "D1_sim",append = TRUE)
 write.xlsx(points_d1_sim,'Divisions/Simulations.xlsx', sheetName = "D1_simfinal",append = TRUE)
+write.xlsx(D1_notplayed,'Divisions/Simulations.xlsx', sheetName = "D1_simfinal",append = TRUE)
 ############################################################################################################################################################
 ############################################################################################################################################################
 #D2

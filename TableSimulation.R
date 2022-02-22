@@ -2,6 +2,7 @@ library('plyr')
 library('dplyr')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
+options(java.parameters = "-Xmx4g")
 unlink('Divisions/Simulations.xlsx')
 #simulation of league tables
 ##################################################################################################################
@@ -80,7 +81,7 @@ B1_notplayed <- B1_fixtures[B1_fixtures$b1_gamestatus == "notplayed",]
 write.xlsx(points_b1,'Divisions/Simulations.xlsx', sheetName = "B1_Table",append = TRUE)
 write.xlsx(b1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "B1_sim",append = TRUE)
 write.xlsx(points_b1_sim,'Divisions/Simulations.xlsx', sheetName = "B1_simfinal",append = TRUE)
-write.xlsx(B1_notplayed,'Divisions/Simulations.xlsx', sheetName = "B1_notplayed",append = TRUE)
+#write.xlsx(B1_notplayed,'Divisions/Simulations.xlsx', sheetName = "B1_notplayed",append = TRUE)
 ############################################################################################################################################################
 ############################################################################################################################################################
 #D1
@@ -157,7 +158,7 @@ D1_notplayed <- D1_fixtures[D1_fixtures$d1_gamestatus == "notplayed",]
 write.xlsx(points_d1,'Divisions/Simulations.xlsx', sheetName = "D1_table",append = TRUE)
 write.xlsx(d1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "D1_sim",append = TRUE)
 write.xlsx(points_d1_sim,'Divisions/Simulations.xlsx', sheetName = "D1_simfinal",append = TRUE)
-write.xlsx(D1_notplayed,'Divisions/Simulations.xlsx', sheetName = "D1_simfinal",append = TRUE)
+#write.xlsx(D1_notplayed,'Divisions/Simulations.xlsx', sheetName = "D1_notplayed",append = TRUE)
 ############################################################################################################################################################
 ############################################################################################################################################################
 #D2
@@ -229,9 +230,13 @@ names(d2_league_table_simfinal)[names(d2_league_table_simfinal) == "d2_total_los
 names(d2_league_table_simfinal)[names(d2_league_table_simfinal) == "d2_PTS_simfinal"] <- "PTS_f"
 points_d2_sim <-  d2_league_table_simfinal[order(as.numeric(d2_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+D2_notplayed <- D2_fixtures[D2_fixtures$d2_gamestatus == "notplayed",]
+
+
 write.xlsx(points_d2,'Divisions/Simulations.xlsx', sheetName = "D2_table",append = TRUE)
 write.xlsx(d2_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "D2_sim",append = TRUE)
 write.xlsx(points_d2_sim,'Divisions/Simulations.xlsx', sheetName = "D2_simfinal",append = TRUE)
+#write.xlsx(D2_notplayed,'Divisions/Simulations.xlsx', sheetName = "D2_notplayed",append = TRUE)
 ############################################################################################################################
 ###########################################################################################################################
 #E0
@@ -303,9 +308,13 @@ names(e0_league_table_simfinal)[names(e0_league_table_simfinal) == "e0_total_los
 names(e0_league_table_simfinal)[names(e0_league_table_simfinal) == "e0_PTS_simfinal"] <- "PTS_f"
 points_e0_sim <-  e0_league_table_simfinal[order(as.numeric(e0_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+E0_notplayed <- E0_fixtures[E0_fixtures$e0_gamestatus == "notplayed",]
+
+
 write.xlsx(points_e0,'Divisions/Simulations.xlsx', sheetName = "E0_table",append = TRUE)
 write.xlsx(e0_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "E0_sim",append = TRUE)
 write.xlsx(points_e0_sim,'Divisions/Simulations.xlsx', sheetName = "E0_simfinal",append = TRUE)
+#write.xlsx(E0_notplayed,'Divisions/Simulations.xlsx', sheetName = "E0_notplayed",append = TRUE)
 #########################################################################################################################################
 #########################################################################################################################################
 ###################################################################################################################
@@ -378,9 +387,13 @@ names(e1_league_table_simfinal)[names(e1_league_table_simfinal) == "e1_total_los
 names(e1_league_table_simfinal)[names(e1_league_table_simfinal) == "e1_PTS_simfinal"] <- "PTS_f"
 points_e1_sim <-  e1_league_table_simfinal[order(as.numeric(e1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+E1_notplayed <- E1_fixtures[E1_fixtures$e1_gamestatus == "notplayed",]
+
+
 write.xlsx(points_e1,'Divisions/Simulations.xlsx', sheetName = "E1_table",append = TRUE)
 write.xlsx(e1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "E1_sim",append = TRUE)
 write.xlsx(points_e1_sim,'Divisions/Simulations.xlsx', sheetName = "E1_simfinal",append = TRUE)
+#write.xlsx(E1_notplayed,'Divisions/Simulations.xlsx', sheetName = "E1_notplayed",append = TRUE)
 ###############################################################################################################################
 ###############################################################################################################################
 #E2
@@ -452,9 +465,13 @@ names(e2_league_table_simfinal)[names(e2_league_table_simfinal) == "e2_total_los
 names(e2_league_table_simfinal)[names(e2_league_table_simfinal) == "e2_PTS_simfinal"] <- "PTS_f"
 points_e2_sim <-  e2_league_table_simfinal[order(as.numeric(e2_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+E2_notplayed <- E2_fixtures[E2_fixtures$e2_gamestatus == "notplayed",]
+
 write.xlsx(points_e2,'Divisions/Simulations.xlsx', sheetName = "E2_table",append = TRUE)
 write.xlsx(e2_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "E2_sim",append = TRUE)
 write.xlsx(points_e2_sim,'Divisions/Simulations.xlsx', sheetName = "E2_simfinal",append = TRUE)
+#write.xlsx(E2_notplayed,'Divisions/Simulations.xlsx', sheetName = "E2_notplayed",append = TRUE)
+
 ###################################################################################################################################
 ###################################################################################################################
 #E3
@@ -526,9 +543,12 @@ names(e3_league_table_simfinal)[names(e3_league_table_simfinal) == "e3_total_los
 names(e3_league_table_simfinal)[names(e3_league_table_simfinal) == "e3_PTS_simfinal"] <- "PTS_f"
 points_e3_sim <-  e3_league_table_simfinal[order(as.numeric(e3_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+E3_notplayed <- E3_fixtures[E3_fixtures$e3_gamestatus == "notplayed",]
+
 write.xlsx(points_e3,'Divisions/Simulations.xlsx', sheetName = "E3_table",append = TRUE)
 write.xlsx(e3_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "E3_sim",append = TRUE)
 write.xlsx(points_e3_sim,'Divisions/Simulations.xlsx', sheetName = "E3_simfinal",append = TRUE)
+#write.xlsx(E3_notplayed,'Divisions/Simulations.xlsx', sheetName = "E3_notplayed",append = TRUE)
 ###############################################################################################################################
 ###############################################################################################################################
 #EC
@@ -600,9 +620,12 @@ names(ec_league_table_simfinal)[names(ec_league_table_simfinal) == "ec_total_los
 names(ec_league_table_simfinal)[names(ec_league_table_simfinal) == "ec_PTS_simfinal"] <- "PTS_f"
 points_ec_sim <-  ec_league_table_simfinal[order(as.numeric(ec_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+EC_notplayed <- EC_fixtures[EC_fixtures$ec_gamestatus == "notplayed",]
+
 write.xlsx(points_ec,'Divisions/Simulations.xlsx', sheetName = "EC_table",append = TRUE)
 write.xlsx(ec_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "EC_sim",append = TRUE)
 write.xlsx(points_ec_sim,'Divisions/Simulations.xlsx', sheetName = "EC_simfinal",append = TRUE)
+#write.xlsx(EC_notplayed,'Divisions/Simulations.xlsx', sheetName = "EC_notplayed",append = TRUE)
 ##############################################################################################################################
 ##############################################################################################################################
 #F1
@@ -674,9 +697,12 @@ names(f1_league_table_simfinal)[names(f1_league_table_simfinal) == "f1_total_los
 names(f1_league_table_simfinal)[names(f1_league_table_simfinal) == "f1_PTS_simfinal"] <- "PTS_f"
 points_f1_sim <-  f1_league_table_simfinal[order(as.numeric(f1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+F1_notplayed <- F1_fixtures[F1_fixtures$f1_gamestatus == "notplayed",]
+
 write.xlsx(points_f1,'Divisions/Simulations.xlsx', sheetName = "F1_table",append = TRUE)
 write.xlsx(f1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "F1_sim",append = TRUE)
 write.xlsx(points_f1_sim,'Divisions/Simulations.xlsx', sheetName = "F1_simfinal",append = TRUE)
+#write.xlsx(F1_notplayed,'Divisions/Simulations.xlsx', sheetName = "F1_notplayed",append = TRUE)
 #################################################################################################################################
 #################################################################################################################################
 #F2
@@ -748,9 +774,12 @@ names(f2_league_table_simfinal)[names(f2_league_table_simfinal) == "f2_total_los
 names(f2_league_table_simfinal)[names(f2_league_table_simfinal) == "f2_PTS_simfinal"] <- "PTS_f"
 points_f2_sim <-  f2_league_table_simfinal[order(as.numeric(f2_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+F2_notplayed <- F2_fixtures[F2_fixtures$f2_gamestatus == "notplayed",]
+
 write.xlsx(points_f2,'Divisions/Simulations.xlsx', sheetName = "F2_table",append = TRUE)
 write.xlsx(f2_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "F2_sim",append = TRUE)
 write.xlsx(points_f2_sim,'Divisions/Simulations.xlsx', sheetName = "F2_simfinal",append = TRUE)
+#write.xlsx(F2_notplayed,'Divisions/Simulations.xlsx', sheetName = "F2_notplayed",append = TRUE)
 ####################################################################################################################################
 ###################################################################################################################
 #G1
@@ -822,9 +851,13 @@ names(g1_league_table_simfinal)[names(g1_league_table_simfinal) == "g1_total_los
 names(g1_league_table_simfinal)[names(g1_league_table_simfinal) == "g1_PTS_simfinal"] <- "PTS_f"
 points_g1_sim <-  g1_league_table_simfinal[order(as.numeric(g1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+G1_notplayed <- G1_fixtures[G1_fixtures$g1_gamestatus == "notplayed",]
+
+
 write.xlsx(points_g1,'Divisions/Simulations.xlsx', sheetName = "G1_Table",append = TRUE)
 write.xlsx(g1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "G1_sim",append = TRUE)
 write.xlsx(points_g1_sim,'Divisions/Simulations.xlsx', sheetName = "G1_simfinal",append = TRUE)
+#write.xlsx(G1_notplayed,'Divisions/Simulations.xlsx', sheetName = "G1_notplayed",append = TRUE)
 ############################################################################################################################################################
 ############################################################################################################################################################
 #I1
@@ -896,9 +929,13 @@ names(i1_league_table_simfinal)[names(i1_league_table_simfinal) == "i1_total_los
 names(i1_league_table_simfinal)[names(i1_league_table_simfinal) == "i1_PTS_simfinal"] <- "PTS_f"
 points_i1_sim <-  i1_league_table_simfinal[order(as.numeric(i1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+I1_notplayed <- I1_fixtures[I1_fixtures$i1_gamestatus == "notplayed",]
+
+
 write.xlsx(points_i1,'Divisions/Simulations.xlsx', sheetName = "I1_table",append = TRUE)
 write.xlsx(i1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "I1_sim",append = TRUE)
 write.xlsx(points_i1_sim,'Divisions/Simulations.xlsx', sheetName = "I1_simfinal",append = TRUE)
+#write.xlsx(I1_notplayed,'Divisions/Simulations.xlsx', sheetName = "I1_notplayed",append = TRUE)
 ##################################################################################################################################
 ##################################################################################################################################
 #I2
@@ -970,9 +1007,12 @@ names(i2_league_table_simfinal)[names(i2_league_table_simfinal) == "i2_total_los
 names(i2_league_table_simfinal)[names(i2_league_table_simfinal) == "i2_PTS_simfinal"] <- "PTS_f"
 points_i2_sim <-  i2_league_table_simfinal[order(as.numeric(i2_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+I2_notplayed <- I2_fixtures[I2_fixtures$i2_gamestatus == "notplayed",]
+
 write.xlsx(points_i2,'Divisions/Simulations.xlsx', sheetName = "I2_table",append = TRUE)
 write.xlsx(i2_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "I2_sim",append = TRUE)
 write.xlsx(points_i2_sim,'Divisions/Simulations.xlsx', sheetName = "I2_simfinal",append = TRUE)
+#write.xlsx(I2_notplayed,'Divisions/Simulations.xlsx', sheetName = "I2_simfinal",append = TRUE)
 #########################################################################################################################################
 #########################################################################################################################################
 #N1
@@ -1044,9 +1084,12 @@ names(n1_league_table_simfinal)[names(n1_league_table_simfinal) == "n1_total_los
 names(n1_league_table_simfinal)[names(n1_league_table_simfinal) == "n1_PTS_simfinal"] <- "PTS_f"
 points_n1_sim <-  n1_league_table_simfinal[order(as.numeric(n1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+N1_notplayed <- N1_fixtures[N1_fixtures$n1_gamestatus == "notplayed",]
+
 write.xlsx(points_n1,'Divisions/Simulations.xlsx', sheetName = "N1_table",append = TRUE)
 write.xlsx(n1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "N1_sim",append = TRUE)
 write.xlsx(points_n1_sim,'Divisions/Simulations.xlsx', sheetName = "N1_simfinal",append = TRUE)
+#write.xlsx(N1_notplayed,'Divisions/Simulations.xlsx', sheetName = "N1_notplayed",append = TRUE)
 ###################################################################################################################################
 ###################################################################################################################################
 #P1
@@ -1118,9 +1161,13 @@ names(p1_league_table_simfinal)[names(p1_league_table_simfinal) == "p1_total_los
 names(p1_league_table_simfinal)[names(p1_league_table_simfinal) == "p1_PTS_simfinal"] <- "PTS_f"
 points_p1_sim <-  p1_league_table_simfinal[order(as.numeric(p1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+P1_notplayed <- P1_fixtures[P1_fixtures$p1_gamestatus == "notplayed",]
+
+
 write.xlsx(points_p1,'Divisions/Simulations.xlsx', sheetName = "P1_table",append = TRUE)
 write.xlsx(p1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "P1_sim",append = TRUE)
 write.xlsx(points_p1_sim,'Divisions/Simulations.xlsx', sheetName = "P1_simfinal",append = TRUE)
+#write.xlsx(P1_notplayed,'Divisions/Simulations.xlsx', sheetName = "P1_notplayed",append = TRUE)
 ##########################################################################################################################################
 ###################################################################################################################
 #SP1
@@ -1192,9 +1239,13 @@ names(sp1_league_table_simfinal)[names(sp1_league_table_simfinal) == "sp1_total_
 names(sp1_league_table_simfinal)[names(sp1_league_table_simfinal) == "sp1_PTS_simfinal"] <- "PTS_f"
 points_sp1_sim <-  sp1_league_table_simfinal[order(as.numeric(sp1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+SP1_notplayed <- SP1_fixtures[SP1_fixtures$sp1_gamestatus == "notplayed",]
+
+
 write.xlsx(points_sp1,'Divisions/Simulations.xlsx', sheetName = "SP1_table",append = TRUE)
 write.xlsx(sp1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "SP1_sim",append = TRUE)
 write.xlsx(points_sp1_sim,'Divisions/Simulations.xlsx', sheetName = "SP1_simfinal",append = TRUE)
+#write.xlsx(SP1_notplayed,'Divisions/Simulations.xlsx', sheetName = "SP1_notplayed",append = TRUE)
 #####################################################################################################################################
 ###################################################################################################################
 #SP2
@@ -1266,9 +1317,12 @@ names(sp2_league_table_simfinal)[names(sp2_league_table_simfinal) == "sp2_total_
 names(sp2_league_table_simfinal)[names(sp2_league_table_simfinal) == "sp2_PTS_simfinal"] <- "PTS_f"
 points_sp2_sim <-  sp2_league_table_simfinal[order(as.numeric(sp2_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+SP2_notplayed <- SP2_fixtures[SP2_fixtures$sp2_gamestatus == "notplayed",]
+
 write.xlsx(points_sp2,'Divisions/Simulations.xlsx', sheetName = "SP2_table",append = TRUE)
 write.xlsx(sp2_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "SP2_sim",append = TRUE)
 write.xlsx(points_sp2_sim,'Divisions/Simulations.xlsx', sheetName = "SP2_simfinal",append = TRUE)
+#write.xlsx(SP2_notplayed,'Divisions/Simulations.xlsx', sheetName = "SP1_simfinal",append = TRUE)
 ##########################################################################################################################################
 ##########################################################################################################################################
 #SC0
@@ -1340,9 +1394,12 @@ names(sc0_league_table_simfinal)[names(sc0_league_table_simfinal) == "sc0_total_
 names(sc0_league_table_simfinal)[names(sc0_league_table_simfinal) == "sc0_PTS_simfinal"] <- "PTS_f"
 points_sc0_sim <-  sc0_league_table_simfinal[order(as.numeric(sc0_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+SC0_notplayed <- SC0_fixtures[SC0_fixtures$sc0_gamestatus == "notplayed",]
+
 write.xlsx(points_sc0,'Divisions/Simulations.xlsx', sheetName = "SC0_table",append = TRUE)
 write.xlsx(sc0_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "SC0_sim",append = TRUE)
 write.xlsx(points_sc0_sim,'Divisions/Simulations.xlsx', sheetName = "SC0_simfinal",append = TRUE)
+#write.xlsx(SC0_notplayed,'Divisions/Simulations.xlsx', sheetName = "SC0_notplayed",append = TRUE)
 ######################################################################################################################################
 ######################################################################################################################################
 #SC1
@@ -1414,9 +1471,12 @@ names(sc1_league_table_simfinal)[names(sc1_league_table_simfinal) == "sc1_total_
 names(sc1_league_table_simfinal)[names(sc1_league_table_simfinal) == "sc1_PTS_simfinal"] <- "PTS_f"
 points_sc1_sim <-  sc1_league_table_simfinal[order(as.numeric(sc1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+SC1_notplayed <- SC1_fixtures[SC1_fixtures$sc1_gamestatus == "notplayed",]
+
 write.xlsx(points_sc1,'Divisions/Simulations.xlsx', sheetName = "SC1_table",append = TRUE)
 write.xlsx(sc1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "SC1_sim",append = TRUE)
 write.xlsx(points_sc1_sim,'Divisions/Simulations.xlsx', sheetName = "SC1_simfinal",append = TRUE)
+#write.xlsx(SC1_notplayed,'Divisions/Simulations.xlsx', sheetName = "SC1_notplayed",append = TRUE)
 ###################################################################################################################################
 ###################################################################################################################
 #T1
@@ -1488,9 +1548,12 @@ names(t1_league_table_simfinal)[names(t1_league_table_simfinal) == "t1_total_los
 names(t1_league_table_simfinal)[names(t1_league_table_simfinal) == "t1_PTS_simfinal"] <- "PTS_f"
 points_t1_sim <-  t1_league_table_simfinal[order(as.numeric(t1_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
+T1_notplayed <- T1_fixtures[T1_fixtures$t1_gamestatus == "notplayed",]
+
 write.xlsx(points_t1,'Divisions/Simulations.xlsx', sheetName = "T1_table",append = TRUE)
 write.xlsx(t1_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "T1_sim",append = TRUE)
 write.xlsx(points_t1_sim,'Divisions/Simulations.xlsx', sheetName = "T1_simfinal",append = TRUE)
+#write.xlsx(T1_notplayed,'Divisions/Simulations.xlsx', sheetName = "T1_notplayed",append = TRUE)
 ######################################################################################################################################
 
 

@@ -49,6 +49,35 @@ jpn_goaltotalsv2[is.na(jpn_goaltotalsv2)] <- ""
 jpn_goaltotalsv2 <- cbind(jpn_goaltotalsv2,jpn_avg_totalgoals)
 write.xlsx(jpn_goaltotalsv2,'NL/JPN.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+JPN <- subset(JPN,Season == "2021")
+jpn_totalrounds <-  (length(jpn_teams) - 1 )*2
+jpn_totalmatches <- (length(jpn_teams)*(length(jpn_teams) - 1))
+jpn_eachround <- jpn_totalmatches / jpn_totalrounds
+
+jpn_matchesplayed <-  nrow(JPN)
+
+JPN_rounds <- JPN
+
+if(jpn_matchesplayed %% jpn_eachround == 0)
+{
+  jpn_currentround <- jpn_matchesplayed / jpn_eachround
+  jpn_matchday <- c()
+  jpn_matchday <- rep(1:jpn_currentround, each = jpn_eachround)
+}else if(jpn_matchesplayed %% jpn_eachround != 0)
+
+{
+
+  jpn_modulus <- jpn_matchesplayed %% jpn_eachround
+  jpn_currentround <- (jpn_matchesplayed - jpn_modulus) / jpn_eachround
+  jpn_matchday <- c()
+  jpn_matchday_vjpn1 <- c()
+  jpn_matchday_vjpn2 <- c()
+  jpn_matchday_vjpn1 <- rep(1:jpn_currentround, each = jpn_eachround)
+  jpn_matchday_vjpn2[1:jpn_modulus] <- c(jpn_currentround + 1)
+  jpn_matchday <- append(jpn_matchday_vjpn1,jpn_matchday_vjpn2)
+}
+JPN_rounds <- cbind(JPN_rounds,jpn_matchday)
+#####################################################################################################
 #jpn goal scored rounds
 #####################################################################
 jpn_krounds <- tail(unique(JPN_rounds$jpn_matchday),1)

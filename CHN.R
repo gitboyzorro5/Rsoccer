@@ -53,6 +53,36 @@ chn_goaltotalsv2[is.na(chn_goaltotalsv2)] <- ""
 chn_goaltotalsv2 <- cbind(chn_goaltotalsv2,chn_avg_totalgoals)
 write.xlsx(chn_goaltotalsv2,'NL/CHN.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+CHN <- subset(CHN,Season == "2021")
+chn_totalrounds <-  (length(chn_teams) - 1 )*2
+chn_totalmatches <- (length(chn_teams)*(length(chn_teams) - 1))
+chn_eachround <- chn_totalmatches / chn_totalrounds
+
+chn_matchesplayed <-  nrow(CHN)
+
+CHN_rounds <- CHN
+
+if(chn_matchesplayed %% chn_eachround == 0)
+{
+  chn_currentround <- chn_matchesplayed / chn_eachround
+  chn_matchday <- c()
+  chn_matchday <- rep(1:chn_currentround, each = chn_eachround)
+}else if(chn_matchesplayed %% chn_eachround != 0)
+
+{
+
+  chn_modulus <- chn_matchesplayed %% chn_eachround
+  chn_currentround <- (chn_matchesplayed - chn_modulus) / chn_eachround
+  chn_matchday <- c()
+  chn_matchday_vec1 <- c()
+  chn_matchday_vec2 <- c()
+  chn_matchday_vec1 <- rep(1:chn_currentround, each = chn_eachround)
+  chn_matchday_vec2[1:chn_modulus] <- c(chn_currentround + 1)
+  chn_matchday <- append(chn_matchday_vec1,chn_matchday_vec2)
+}
+CHN_rounds <- cbind(CHN_rounds,chn_matchday)
+#####################################################################################################
+##############################################################################################
 #chn goal scored rounds
 #####################################################################
 chn_krounds <- tail(unique(CHN_rounds$chn_matchday),1)

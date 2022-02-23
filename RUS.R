@@ -51,6 +51,35 @@ rus_goaltotalsv2[is.na(rus_goaltotalsv2)] <- ""
 rus_goaltotalsv2 <- cbind(rus_goaltotalsv2,rus_avg_totalgoals)
 write.xlsx(rus_goaltotalsv2,'NL/RUS.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+RUS <- subset(RUS,Season == "2021/2022")
+rus_totalrounds <-  (length(rus_teams) - 1 )*2
+rus_totalmatches <- (length(rus_teams)*(length(rus_teams) - 1))
+rus_eachround <- rus_totalmatches / rus_totalrounds
+
+rus_matchesplayed <-  nrow(RUS)
+
+RUS_rounds <- RUS
+
+if(rus_matchesplayed %% rus_eachround == 0)
+{
+  rus_currentround <- rus_matchesplayed / rus_eachround
+  rus_matchday <- c()
+  rus_matchday <- rep(1:rus_currentround, each = rus_eachround)
+}else if(rus_matchesplayed %% rus_eachround != 0)
+
+{
+
+  rus_modulus <- rus_matchesplayed %% rus_eachround
+  rus_currentround <- (rus_matchesplayed - rus_modulus) / rus_eachround
+  rus_matchday <- c()
+  rus_matchday_vec1 <- c()
+  rus_matchday_vec2 <- c()
+  rus_matchday_vec1 <- rep(1:rus_currentround, each = rus_eachround)
+  rus_matchday_vec2[1:rus_modulus] <- c(rus_currentround + 1)
+  rus_matchday <- append(rus_matchday_vec1,rus_matchday_vec2)
+}
+RUS_rounds <- cbind(RUS_rounds,rus_matchday)
+#####################################################################################################
 #rus goal scored rounds
 #####################################################################
 rus_krounds <- tail(unique(RUS_rounds$rus_matchday),1)

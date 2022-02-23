@@ -23,8 +23,8 @@ SWE$OV25 <- ifelse(SWE$TG >= 3,"Y","N")
 SWE$FTR <- with(SWE,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-###################################################
-####GoalTotalsv2##################################
+#######################################################################################
+####GoalTotalsv2#######################################################################
 swe_totalgoalsv2 <- tapply(SWE$TG, SWE[c("Home", "Away")],mean)
 swe_totalgoalsv2
 swe_hgtotals <- rowSums(swe_totalgoalsv2,na.rm = T)
@@ -48,6 +48,36 @@ swe_avg_totalgoals <- round((swe_totalgoals/ swe_games_played), digits = 4)
 swe_goaltotalsv2[is.na(swe_goaltotalsv2)] <- ""
 swe_goaltotalsv2 <- cbind(swe_goaltotalsv2,swe_avg_totalgoals)
 write.xlsx(swe_goaltotalsv2,'NL/SWE.xlsx',sheetName = "totalgoalsv2")
+############################################################################################
+# SWE <- subset(SWE,Season == "2021")
+# swe_totalrounds <-  (length(swe_teams) - 1 )*2
+# swe_totalmatches <- (length(swe_teams)*(length(swe_teams) - 1))
+# swe_eachround <- swe_totalmatches / swe_totalrounds
+# swe_eachround
+# swe_matchesplayed <-  nrow(SWE)
+#
+# SWE_rounds <- SWE
+#
+# if(swe_matchesplayed %% swe_eachround == 0)
+# {
+#   swe_currentround <- swe_matchesplayed / swe_eachround
+#   swe_matchday <- c()
+#   swe_matchday <- rep(1:swe_currentround, each = swe_eachround)
+# }else if(swe_matchesplayed %% swe_eachround != 0)
+#
+# {
+#
+#   swe_modulus <- swe_matchesplayed %% swe_eachround
+#   swe_currentround <- (swe_matchesplayed - swe_modulus) / swe_eachround
+#   swe_matchday <- c()
+#   swe_matchday_vec1 <- c()
+#   swe_matchday_vec2 <- c()
+#   swe_matchday_vec1 <- rep(1:swe_currentround, each = swe_eachround)
+#   swe_matchday_vec2[1:swe_modulus] <- c(swe_currentround + 1)
+#   swe_matchday <- append(swe_matchday_vec1,swe_matchday_vec2)
+# }
+# SWE_rounds <- cbind(SWE_rounds,swe_matchday)
+# #####################################################################################################
 ############################################
 ####GSmatrix################################
 #create home and away matrices

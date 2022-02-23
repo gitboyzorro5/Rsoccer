@@ -16,7 +16,6 @@ IRL <- within(IRL,rm(Res))
 IRL$Date <- dmy(IRL$Date)
 IRL <- IRL[order(as.Date(IRL$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 IRL$CS <- paste(IRL$HG,IRL$AG, sep = "-")
-
 #IRL_qualificaton <- subset(IRL,tournament == "UEFA Euro qualification")
 IRL <- subset(IRL,Season == "2021")
 #IRL <- IRL[IRL$Date > '2008-01-01',])
@@ -54,6 +53,35 @@ irl_goaltotalsv2[is.na(irl_goaltotalsv2)] <- ""
 irl_goaltotalsv2 <- cbind(irl_goaltotalsv2,irl_avg_totalgoals)
 write.xlsx(irl_goaltotalsv2,'NL/IRL.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+IRL <- subset(IRL,Season == "2021")
+irl_totalrounds <-  (length(irl_teams) - 1 )*2
+irl_totalmatches <- (length(irl_teams)*(length(irl_teams) - 1))
+irl_eachround <- irl_totalmatches / irl_totalrounds
+
+irl_matchesplayed <-  nrow(IRL)
+
+IRL_rounds <- IRL
+
+if(irl_matchesplayed %% irl_eachround == 0)
+{
+  irl_currentround <- irl_matchesplayed / irl_eachround
+  irl_matchday <- c()
+  irl_matchday <- rep(1:irl_currentround, each = irl_eachround)
+}else if(irl_matchesplayed %% irl_eachround != 0)
+
+{
+
+  irl_modulus <- irl_matchesplayed %% irl_eachround
+  irl_currentround <- (irl_matchesplayed - irl_modulus) / irl_eachround
+  irl_matchday <- c()
+  irl_matchday_vec1 <- c()
+  irl_matchday_vec2 <- c()
+  irl_matchday_vec1 <- rep(1:irl_currentround, each = irl_eachround)
+  irl_matchday_vec2[1:irl_modulus] <- c(irl_currentround + 1)
+  irl_matchday <- append(irl_matchday_vec1,irl_matchday_vec2)
+}
+IRL_rounds <- cbind(IRL_rounds,irl_matchday)
+#####################################################################################################
 #irl goal scored rounds
 #####################################################################
 irl_krounds <- tail(unique(IRL_rounds$irl_matchday),1)

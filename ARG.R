@@ -24,10 +24,8 @@ ARG$OV25 <- ifelse(ARG$TG >= 3,"Y","N")
 ARG$FTR <- with(ARG,
                ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-tail(ARG)
+
 ###################################################
-# ARG <- mgsub(ARG,c("Wolfsberger"),c("Wolfsberger AC"))
-# ARG <- mgsub(ARG,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 arg_totalgoalsv2 <- tapply(ARG$TG, ARG[c("Home", "Away")],mean)
 arg_totalgoalsv2
@@ -52,6 +50,34 @@ arg_avg_totalgoals <- round((arg_totalgoals/ arg_games_played), digits = 4)
 arg_goaltotalsv2[is.na(arg_goaltotalsv2)] <- ""
 arg_goaltotalsv2 <- cbind(arg_goaltotalsv2,arg_avg_totalgoals)
 write.xlsx(arg_goaltotalsv2,'NL/ARG.xlsx',sheetName = "totalgoalsv2")
+
+#ARG <- subset(ARG,Season == "2021")
+arg_totalrounds <-  (length(arg_teams) - 1 )*2
+arg_totalmatches <- (length(arg_teams)*(length(arg_teams) - 1))
+arg_eachround <- arg_totalmatches / arg_totalrounds
+arg_matchesplayed <-  nrow(ARG)
+
+ARG_rounds <- ARG
+
+if(arg_matchesplayed %% arg_eachround == 0)
+{
+  arg_currentround <- arg_matchesplayed / arg_eachround
+  arg_matchday <- c()
+  arg_matchday <- rep(1:arg_currentround, each = arg_eachround)
+}else if(arg_matchesplayed %% arg_eachround != 0)
+
+{
+
+  arg_modulus <- arg_matchesplayed %% arg_eachround
+  arg_currentround <- (arg_matchesplayed - arg_modulus) / arg_eachround
+  arg_matchday <- c()
+  arg_matchday_vec1 <- c()
+  arg_matchday_vec2 <- c()
+  arg_matchday_vec1 <- rep(1:arg_currentround, each = arg_eachround)
+  arg_matchday_vec2[1:arg_modulus] <- c(arg_currentround + 1)
+  arg_matchday <- append(arg_matchday_vec1,arg_matchday_vec2)
+}
+ARG_rounds <- cbind(ARG_rounds,arg_matchday)
 #####################################################################
 #arg goal scored rounds
 #####################################################################

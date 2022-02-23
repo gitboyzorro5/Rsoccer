@@ -52,6 +52,35 @@ swz_goaltotalsv2[is.na(swz_goaltotalsv2)] <- ""
 swz_goaltotalsv2 <- cbind(swz_goaltotalsv2,swz_avg_totalgoals)
 write.xlsx(swz_goaltotalsv2,'NL/SWZ.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+SWZ <- subset(SWZ,Season == "2021/2022")
+swz_totalrounds <-  (length(swz_teams) - 1 )*2
+swz_totalmatches <- (length(swz_teams)*(length(swz_teams) - 1))
+swz_eachround <- swz_totalmatches / swz_totalrounds
+
+swz_matchesplayed <-  nrow(SWZ)
+
+SWZ_rounds <- SWZ
+
+if(swz_matchesplayed %% swz_eachround == 0)
+{
+  swz_currentround <- swz_matchesplayed / swz_eachround
+  swz_matchday <- c()
+  swz_matchday <- rep(1:swz_currentround, each = swz_eachround)
+}else if(swz_matchesplayed %% swz_eachround != 0)
+
+{
+
+  swz_modulus <- swz_matchesplayed %% swz_eachround
+  swz_currentround <- (swz_matchesplayed - swz_modulus) / swz_eachround
+  swz_matchday <- c()
+  swz_matchday_vec1 <- c()
+  swz_matchday_vec2 <- c()
+  swz_matchday_vec1 <- rep(1:swz_currentround, each = swz_eachround)
+  swz_matchday_vec2[1:swz_modulus] <- c(swz_currentround + 1)
+  swz_matchday <- append(swz_matchday_vec1,swz_matchday_vec2)
+}
+SWZ_rounds <- cbind(SWZ_rounds,swz_matchday)
+#####################################################################################################
 #swz goal scored rounds
 #####################################################################
 swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)

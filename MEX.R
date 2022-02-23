@@ -51,6 +51,36 @@ mex_goaltotalsv2[is.na(mex_goaltotalsv2)] <- ""
 mex_goaltotalsv2 <- cbind(mex_goaltotalsv2,mex_avg_totalgoals)
 write.xlsx(mex_goaltotalsv2,'NL/MEX.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+##############################################################################################
+MEX <- subset(MEX,Season == "2020/2021")
+mex_totalrounds <-  (length(mex_teams) - 1 )*2
+mex_totalmatches <- (length(mex_teams)*(length(mex_teams) - 1))
+mex_eachround <- mex_totalmatches / mex_totalrounds
+
+mex_matchesplayed <-  nrow(MEX)
+
+MEX_rounds <- MEX
+
+if(mex_matchesplayed %% mex_eachround == 0)
+{
+  mex_currentround <- mex_matchesplayed / mex_eachround
+  mex_matchday <- c()
+  mex_matchday <- rep(1:mex_currentround, each = mex_eachround)
+}else if(mex_matchesplayed %% mex_eachround != 0)
+
+{
+
+  mex_modulus <- mex_matchesplayed %% mex_eachround
+  mex_currentround <- (mex_matchesplayed - mex_modulus) / mex_eachround
+  mex_matchday <- c()
+  mex_matchday_vec1 <- c()
+  mex_matchday_vec2 <- c()
+  mex_matchday_vec1 <- rep(1:mex_currentround, each = mex_eachround)
+  mex_matchday_vec2[1:mex_modulus] <- c(mex_currentround + 1)
+  mex_matchday <- append(mex_matchday_vec1,mex_matchday_vec2)
+}
+MEX_rounds <- cbind(MEX_rounds,mex_matchday)
+#####################################################################################################
 #mex goal scored rounds
 #####################################################################
 mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)

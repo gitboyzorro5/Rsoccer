@@ -54,6 +54,34 @@ fin_goaltotalsv2[is.na(fin_goaltotalsv2)] <- ""
 fin_goaltotalsv2 <- cbind(fin_goaltotalsv2,fin_avg_totalgoals)
 write.xlsx(fin_goaltotalsv2,'NL/FIN.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+FIN <- subset(FIN,Season == "2021")
+fin_totalrounds <-  (length(fin_teams) - 1 )*2
+fin_totalmatches <- (length(fin_teams)*(length(fin_teams) - 1))
+fin_eachround <- fin_totalmatches / fin_totalrounds
+fin_matchesplayed <-  nrow(FIN)
+
+FIN_rounds <- FIN
+
+if(fin_matchesplayed %% fin_eachround == 0)
+{
+  fin_currentround <- fin_matchesplayed / fin_eachround
+  fin_matchday <- c()
+  fin_matchday <- rep(1:fin_currentround, each = fin_eachround)
+}else if(fin_matchesplayed %% fin_eachround != 0)
+
+{
+
+  fin_modulus <- fin_matchesplayed %% fin_eachround
+  fin_currentround <- (fin_matchesplayed - fin_modulus) / fin_eachround
+  fin_matchday <- c()
+  fin_matchday_vec1 <- c()
+  fin_matchday_vec2 <- c()
+  fin_matchday_vec1 <- rep(1:fin_currentround, each = fin_eachround)
+  fin_matchday_vec2[1:fin_modulus] <- c(fin_currentround + 1)
+  fin_matchday <- append(fin_matchday_vec1,fin_matchday_vec2)
+}
+FIN_rounds <- cbind(FIN_rounds,fin_matchday)
+#####################################################################################################
 #fin goal scored rounds
 #####################################################################
 fin_krounds <- tail(unique(FIN_rounds$fin_matchday),1)

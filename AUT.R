@@ -12,6 +12,7 @@ unlink('NL/AUT.xlsx')
 ######################AUT START#######################################
 #####################################################################
 AUT <- read.csv('../FDAS/AUT.csv')
+
 AUT <- within(AUT,rm(Res))
 AUT$Date <- dmy(AUT$Date)
 AUT <- AUT[order(as.Date(AUT$Date, format = "%d/%m%Y"), decreasing = FALSE),]
@@ -25,10 +26,14 @@ AUT$OV25 <- ifelse(AUT$TG >= 3,"Y","N")
 AUT$FTR <- with(AUT,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-###################################################
+# ##################################################################################
 # AUT <- mgsub(AUT,c("Wolfsberger"),c("Wolfsberger AC"))
 # AUT <- mgsub(AUT,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
-####GoalTotalsv2##################################
+####GoalTotalsv2##################################################################
+
+#####################################################################################################
+##############################################################################################
+
 aut_totalgoalsv2 <- tapply(AUT$TG, AUT[c("Home", "Away")],mean)
 aut_totalgoalsv2
 aut_hgtotals <- rowSums(aut_totalgoalsv2,na.rm = T)
@@ -36,7 +41,7 @@ aut_agtotals <- colSums(aut_totalgoalsv2,na.rm = T)
 
 aut_totalgoals <- aut_hgtotals + aut_agtotals
 aut_totalgoalsv2 <- cbind(aut_totalgoalsv2,aut_totalgoals)
-aut_teams <- sort(unique(AUT$Home))
+#aut_teams <- sort(unique(AUT$Home))
 aut_home_games <- c()
 aut_away_games <-c()
 for (i_aut in 1:length(aut_teams))
@@ -53,6 +58,38 @@ aut_goaltotalsv2[is.na(aut_goaltotalsv2)] <- ""
 aut_goaltotalsv2 <- cbind(aut_goaltotalsv2,aut_avg_totalgoals)
 write.xlsx(aut_goaltotalsv2,'NL/AUT.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+#AUT <- subset(AUT,Season == "2021/2022")
+aut_totalrounds <-  (length(aut_teams) - 1 )*2
+aut_totalmatches <- (length(aut_teams)*(length(aut_teams) - 1))
+aut_eachround <- aut_totalmatches / aut_totalrounds
+
+aut_matchesplayed <-  nrow(AUT)
+AUT_rounds
+AUT_rounds <- AUT
+
+if(aut_matchesplayed %% aut_eachround == 0)
+{
+  aut_currentround <- aut_matchesplayed / aut_eachround
+  aut_matchday <- c()
+  aut_matchday <- rep(1:aut_currentround, each = aut_eachround)
+}else if(aut_matchesplayed %% aut_eachround != 0)
+
+{
+
+
+
+
+
+  aut_modulus <- aut_matchesplayed %% aut_eachround
+  aut_currentround <- (aut_matchesplayed - aut_modulus) / aut_eachround
+  aut_matchday <- c()
+  aut_matchday_vec1 <- c()
+  aut_matchday_vec2 <- c()
+  aut_matchday_vec1 <- rep(1:aut_currentround, each = aut_eachround)
+  aut_matchday_vec2[1:aut_modulus] <- c(aut_currentround + 1)
+  aut_matchday <- append(aut_matchday_vec1,aut_matchday_vec2)
+}
+AUT_rounds <- cbind(AUT_rounds,aut_matchday)
 #aut goal scored rounds
 #####################################################################
 aut_krounds <- tail(unique(AUT_rounds$aut_matchday),1)

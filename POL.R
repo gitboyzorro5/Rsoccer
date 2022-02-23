@@ -53,6 +53,36 @@ pol_goaltotalsv2[is.na(pol_goaltotalsv2)] <- ""
 pol_goaltotalsv2 <- cbind(pol_goaltotalsv2,pol_avg_totalgoals)
 write.xlsx(pol_goaltotalsv2,'NL/POL.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+POL <- subset(POL,Season == "2021/2022")
+pol_totalrounds <-  (length(pol_teams) - 1 )*2
+pol_totalmatches <- (length(pol_teams)*(length(pol_teams) - 1))
+pol_eachround <- pol_totalmatches / pol_totalrounds
+
+pol_matchesplayed <-  nrow(POL)
+
+POL_rounds <- POL
+
+if(pol_matchesplayed %% pol_eachround == 0)
+{
+  pol_currentround <- pol_matchesplayed / pol_eachround
+  pol_matchday <- c()
+  pol_matchday <- rep(1:pol_currentround, each = pol_eachround)
+}else if(pol_matchesplayed %% pol_eachround != 0)
+
+{
+
+  pol_modulus <- pol_matchesplayed %% pol_eachround
+  pol_currentround <- (pol_matchesplayed - pol_modulus) / pol_eachround
+  pol_matchday <- c()
+  pol_matchday_vec1 <- c()
+  pol_matchday_vec2 <- c()
+  pol_matchday_vec1 <- rep(1:pol_currentround, each = pol_eachround)
+  pol_matchday_vec2[1:pol_modulus] <- c(pol_currentround + 1)
+  pol_matchday <- append(pol_matchday_vec1,pol_matchday_vec2)
+}
+POL_rounds <- cbind(POL_rounds,pol_matchday)
+#####################################################################################################
+##############################################################################################
 #pol goal scored rounds
 #####################################################################
 pol_krounds <- tail(unique(POL_rounds$pol_matchday),1)

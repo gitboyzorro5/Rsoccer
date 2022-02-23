@@ -71,3 +71,6 @@ R_away_newleagues <- mgsub(R_away_newleagues,c("ARG","AUT","BRA","CHN","DNK","FI
 
 write.csv(R_home_newleagues,'R_home_newleagues.csv')
 write.csv(R_away_newleagues,'R_away_newleagues.csv')
+
+source("RoundMatrix_NL.R")
+source("TableSimulation_NL.R")

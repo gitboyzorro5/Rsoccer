@@ -48,6 +48,37 @@ rou_goaltotalsv2[is.na(rou_goaltotalsv2)] <- ""
 rou_goaltotalsv2 <- cbind(rou_goaltotalsv2,rou_avg_totalgoals)
 write.xlsx(rou_goaltotalsv2,'NL/ROU.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+##############################################################################################
+ROU <- subset(ROU,Season == "2021/2022")
+rou_totalrounds <-  (length(rou_teams) - 1 )*2
+rou_totalmatches <- (length(rou_teams)*(length(rou_teams) - 1))
+rou_eachround <- rou_totalmatches / rou_totalrounds
+
+rou_matchesplayed <-  nrow(ROU)
+
+ROU_rounds <- ROU
+
+if(rou_matchesplayed %% rou_eachround == 0)
+{
+  rou_currentround <- rou_matchesplayed / rou_eachround
+  rou_matchday <- c()
+  rou_matchday <- rep(1:rou_currentround, each = rou_eachround)
+}else if(rou_matchesplayed %% rou_eachround != 0)
+
+{
+
+  rou_modulus <- rou_matchesplayed %% rou_eachround
+  rou_currentround <- (rou_matchesplayed - rou_modulus) / rou_eachround
+  rou_matchday <- c()
+  rou_matchday_vec1 <- c()
+  rou_matchday_vec2 <- c()
+  rou_matchday_vec1 <- rep(1:rou_currentround, each = rou_eachround)
+  rou_matchday_vec2[1:rou_modulus] <- c(rou_currentround + 1)
+  rou_matchday <- append(rou_matchday_vec1,rou_matchday_vec2)
+}
+ROU_rounds <- cbind(ROU_rounds,rou_matchday)
+##########################################################
+##############################################################################################
 #rou goal scored rounds
 #####################################################################
 rou_krounds <- tail(unique(ROU_rounds$rou_matchday),1)

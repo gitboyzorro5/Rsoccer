@@ -35,6 +35,7 @@ BRA$FTR <- with(BRA,
 
 ###################################################
 ####GoalTotalsv2##################################
+
 ####GoalTotalsv2##################################
 bra_totalgoalsv2 <- tapply(BRA$TG, BRA[c("Home", "Away")],mean)
 bra_totalgoalsv2
@@ -59,6 +60,36 @@ bra_avg_totalgoals <- round((bra_totalgoals/ bra_games_played), digits = 4)
 bra_goaltotalsv2[is.na(bra_goaltotalsv2)] <- ""
 bra_goaltotalsv2 <- cbind(bra_goaltotalsv2,bra_avg_totalgoals)
 write.xlsx(bra_goaltotalsv2,'NL/BRA.xlsx',sheetName = "totalgoalsv2")
+
+BRA <- subset(BRA,Season == "2021")
+bra_totalrounds <-  (length(bra_teams) - 1 )*2
+bra_totalmatches <- (length(bra_teams)*(length(bra_teams) - 1))
+bra_eachround <- bra_totalmatches / bra_totalrounds
+
+bra_matchesplayed <-  nrow(BRA)
+
+BRA_rounds <- BRA
+
+if(bra_matchesplayed %% bra_eachround == 0)
+{
+  bra_currentround <- bra_matchesplayed / bra_eachround
+  bra_matchday <- c()
+  bra_matchday <- rep(1:bra_currentround, each = bra_eachround)
+}else if(bra_matchesplayed %% bra_eachround != 0)
+
+{
+
+  bra_modulus <- bra_matchesplayed %% bra_eachround
+  bra_currentround <- (bra_matchesplayed - bra_modulus) / bra_eachround
+  bra_matchday <- c()
+  bra_matchday_vec1 <- c()
+  bra_matchday_vec2 <- c()
+  bra_matchday_vec1 <- rep(1:bra_currentround, each = bra_eachround)
+  bra_matchday_vec2[1:bra_modulus] <- c(bra_currentround + 1)
+  bra_matchday <- append(bra_matchday_vec1,bra_matchday_vec2)
+}
+BRA_rounds <- cbind(BRA_rounds,bra_matchday)
+#####################################################################################################
 #####################################################################
 #bra goal scored rounds
 #####################################################################
@@ -86,7 +117,7 @@ for(i_bra_krounds in 1:bra_krounds)
   bra_goalscoredmatrix[,i_bra_krounds] <- bra_goalscoredround
 
 }
-bra_goalscoredmatrix
+
 bra_goalscoredmatrix <- cbind(bra_teams,bra_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices

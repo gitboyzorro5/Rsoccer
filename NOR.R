@@ -50,6 +50,38 @@ nor_goaltotalsv2[is.na(nor_goaltotalsv2)] <- ""
 nor_goaltotalsv2 <- cbind(nor_goaltotalsv2,nor_avg_totalgoals)
 write.xlsx(nor_goaltotalsv2,'NL/NOR.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+#####################################################################################################
+##############################################################################################
+NOR <- subset(NOR,Season == "2021")
+nor_totalrounds <-  (length(nor_teams) - 1 )*2
+nor_totalmatches <- (length(nor_teams)*(length(nor_teams) - 1))
+nor_eachround <- nor_totalmatches / nor_totalrounds
+
+nor_matchesplayed <-  nrow(NOR)
+
+NOR_rounds <- NOR
+
+if(nor_matchesplayed %% nor_eachround == 0)
+{
+  nor_currentround <- nor_matchesplayed / nor_eachround
+  nor_matchday <- c()
+  nor_matchday <- rep(1:nor_currentround, each = nor_eachround)
+}else if(nor_matchesplayed %% nor_eachround != 0)
+
+{
+
+  nor_modulus <- nor_matchesplayed %% nor_eachround
+  nor_currentround <- (nor_matchesplayed - nor_modulus) / nor_eachround
+  nor_matchday <- c()
+  nor_matchday_vec1 <- c()
+  nor_matchday_vec2 <- c()
+  nor_matchday_vec1 <- rep(1:nor_currentround, each = nor_eachround)
+  nor_matchday_vec2[1:nor_modulus] <- c(nor_currentround + 1)
+  nor_matchday <- append(nor_matchday_vec1,nor_matchday_vec2)
+}
+NOR_rounds <- cbind(NOR_rounds,nor_matchday)
+#####################################################################################################
+##############################################################################################
 #nor goal scored rounds
 #####################################################################
 nor_krounds <- tail(unique(NOR_rounds$nor_matchday),1)

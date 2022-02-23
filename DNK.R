@@ -53,6 +53,35 @@ dnk_goaltotalsv2[is.na(dnk_goaltotalsv2)] <- ""
 dnk_goaltotalsv2 <- cbind(dnk_goaltotalsv2,dnk_avg_totalgoals)
 write.xlsx(dnk_goaltotalsv2,'NL/DNK.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
+DNK <- subset(DNK,Season == "2021/2022")
+dnk_totalrounds <-  (length(dnk_teams) - 1 )*2
+dnk_totalmatches <- (length(dnk_teams)*(length(dnk_teams) - 1))
+dnk_eachround <- dnk_totalmatches / dnk_totalrounds
+
+dnk_matchesplayed <-  nrow(DNK)
+
+DNK_rounds <- DNK
+
+if(dnk_matchesplayed %% dnk_eachround == 0)
+{
+  dnk_currentround <- dnk_matchesplayed / dnk_eachround
+  dnk_matchday <- c()
+  dnk_matchday <- rep(1:dnk_currentround, each = dnk_eachround)
+}else if(dnk_matchesplayed %% dnk_eachround != 0)
+
+{
+
+  dnk_modulus <- dnk_matchesplayed %% dnk_eachround
+  dnk_currentround <- (dnk_matchesplayed - dnk_modulus) / dnk_eachround
+  dnk_matchday <- c()
+  dnk_matchday_vec1 <- c()
+  dnk_matchday_vec2 <- c()
+  dnk_matchday_vec1 <- rep(1:dnk_currentround, each = dnk_eachround)
+  dnk_matchday_vec2[1:dnk_modulus] <- c(dnk_currentround + 1)
+  dnk_matchday <- append(dnk_matchday_vec1,dnk_matchday_vec2)
+}
+DNK_rounds <- cbind(DNK_rounds,dnk_matchday)
+#####################################################################################################
 #dnk goal scored rounds
 #####################################################################
 dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)

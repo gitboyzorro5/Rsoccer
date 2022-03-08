@@ -868,9 +868,70 @@ b1_formmatrix <- cbind(b1_teams,b1_formmatrix)
 
 #########################################################################################
 ########################################################################################
-tail(D1_rounds,18)
 
-unique(D1_rounds$d1_matchday)
-30
-E3_rounds[E3_rounds$e3_matchday == 30,]
+
+#b1
+b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
+b1_winmarginmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
+b1_winmarginround <- c()
+for(i_b1_krounds in 1:b1_krounds)
+{
+  b1_homewinmargin <- B1_rounds$FTHG - B1_rounds$FTAG[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_awaywinmargin <- B1_rounds$FTAG - B1_rounds$FTHG[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_hometeamstemp_wm <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == i_b1_krounds]
+
+  b1_awayteamstemp_wm <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== i_b1_krounds]
+
+  b1_winmargincombined <- c(b1_homewinmargin,b1_awaywinmargin)
+  b1_teamscombined_wm <- c(b1_hometeamstemp_wm,b1_awayteamstemp_wm)
+
+  b1_winmarginround <- data.frame(b1_teamscombined_wm,b1_goalsconcededcombined)
+
+  b1_winmarginround <- b1_winmarginround[order(b1_winmarginround$b1_teamscombined_wm),]
+  b1_winmarginround$b1_teamscombined_wm <- NULL
+  b1_winmarginmatrix[,i_b1_krounds] <- b1_winmarginround
+
+}
+
+b1_winmarginmatrix <- cbind(b1_teams,b1_winmarginmatrix)
+###############################################################################################
+
+b1_goalscoredmatrix - b1_goalconcededmatrix
+head(B1)
+b1_teams
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

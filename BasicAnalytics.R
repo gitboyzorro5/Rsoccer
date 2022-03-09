@@ -903,7 +903,7 @@ head(B1)
 b1_teams
 
 
-
+E0_rounds[E0_rounds$e0_matchday == 25,]
 
 
 

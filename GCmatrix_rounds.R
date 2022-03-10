@@ -1,5 +1,5 @@
 #b1
-b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
+#b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
 b1_goalconcededmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
 b1_goalconcededround <- c()
 for(i_b1_krounds in 1:b1_krounds)
@@ -26,7 +26,7 @@ for(i_b1_krounds in 1:b1_krounds)
 b1_goalconcededmatrix <- cbind(b1_teams,b1_goalconcededmatrix)
 ###############################################################################################
 #d1
-d1_krounds <- tail(unique(D1_rounds$d1_matchday),1)
+#d1_krounds <- tail(unique(D1_rounds$d1_matchday),1)
 d1_goalconcededmatrix <- data.frame(matrix(nrow = length(d1_teams),ncol = d1_krounds))
 d1_goalconcededround <- c()
 for(i_d1_krounds in 1:d1_krounds)
@@ -53,7 +53,7 @@ for(i_d1_krounds in 1:d1_krounds)
 d1_goalconcededmatrix <- cbind(d1_teams,d1_goalconcededmatrix)
 ##############################################################################################
 #d2
-d2_krounds <- tail(unique(D2_rounds$d2_matchday),1)
+#d2_krounds <- tail(unique(D2_rounds$d2_matchday),1)
 d2_goalconcededmatrix <- data.frame(matrix(nrow = length(d2_teams),ncol = d2_krounds))
 d2_goalconcededround <- c()
 for(i_d2_krounds in 1:d2_krounds)
@@ -80,7 +80,7 @@ for(i_d2_krounds in 1:d2_krounds)
 d2_goalconcededmatrix <- cbind(d2_teams,d2_goalconcededmatrix)
 ##############################################################################################
 #e0
-e0_krounds <- tail(unique(E0_rounds$e0_matchday),1)
+#e0_krounds <- tail(unique(E0_rounds$e0_matchday),1)
 e0_goalconcededmatrix <- data.frame(matrix(nrow = length(e0_teams),ncol = e0_krounds))
 e0_goalconcededround <- c()
 for(i_e0_krounds in 1:e0_krounds)
@@ -107,7 +107,7 @@ for(i_e0_krounds in 1:e0_krounds)
 e0_goalconcededmatrix <- cbind(e0_teams,e0_goalconcededmatrix)
 ##############################################################################################
 #e1
-e1_krounds <- tail(unique(E1_rounds$e1_matchday),1)
+#e1_krounds <- tail(unique(E1_rounds$e1_matchday),1)
 e1_goalconcededmatrix <- data.frame(matrix(nrow = length(e1_teams),ncol = e1_krounds))
 e1_goalconcededround <- c()
 for(i_e1_krounds in 1:e1_krounds)
@@ -134,7 +134,7 @@ for(i_e1_krounds in 1:e1_krounds)
 e1_goalconcededmatrix <- cbind(e1_teams,e1_goalconcededmatrix)
 ##############################################################################################
 #e2
-e2_krounds <- tail(unique(E2_rounds$e2_matchday),1)
+#e2_krounds <- tail(unique(E2_rounds$e2_matchday),1)
 e2_goalconcededmatrix <- data.frame(matrix(nrow = length(e2_teams),ncol = e2_krounds))
 e2_goalconcededround <- c()
 for(i_e2_krounds in 1:e2_krounds)
@@ -161,7 +161,7 @@ for(i_e2_krounds in 1:e2_krounds)
 e2_goalconcededmatrix <- cbind(e2_teams,e2_goalconcededmatrix)
 ##############################################################################################
 #e3
-e3_krounds <- tail(unique(E3_rounds$e3_matchday),1)
+#e3_krounds <- tail(unique(E3_rounds$e3_matchday),1)
 e3_goalconcededmatrix <- data.frame(matrix(nrow = length(e3_teams),ncol = e3_krounds))
 e3_goalconcededround <- c()
 for(i_e3_krounds in 1:e3_krounds)
@@ -188,7 +188,7 @@ for(i_e3_krounds in 1:e3_krounds)
 e3_goalconcededmatrix <- cbind(e3_teams,e3_goalconcededmatrix)
 ##############################################################################################
 #ec
-ec_krounds <- tail(unique(EC_rounds$ec_matchday),1)
+#ec_krounds <- tail(unique(EC_rounds$ec_matchday),1)
 ec_goalconcededmatrix <- data.frame(matrix(nrow = length(ec_teams),ncol = ec_krounds))
 ec_goalconcededround <- c()
 for(i_ec_krounds in 1:ec_krounds)
@@ -215,7 +215,7 @@ for(i_ec_krounds in 1:ec_krounds)
 ec_goalconcededmatrix <- cbind(ec_teams,ec_goalconcededmatrix)
 ##############################################################################################
 #f1
-f1_krounds <- tail(unique(F1_rounds$f1_matchday),1)
+#f1_krounds <- tail(unique(F1_rounds$f1_matchday),1)
 f1_goalconcededmatrix <- data.frame(matrix(nrow = length(f1_teams),ncol = f1_krounds))
 f1_goalconcededround <- c()
 for(i_f1_krounds in 1:f1_krounds)
@@ -242,7 +242,7 @@ for(i_f1_krounds in 1:f1_krounds)
 f1_goalconcededmatrix <- cbind(f1_teams,f1_goalconcededmatrix)
 ##############################################################################################
 #f2
-f2_krounds <- tail(unique(F2_rounds$f2_matchday),1)
+#f2_krounds <- tail(unique(F2_rounds$f2_matchday),1)
 f2_goalconcededmatrix <- data.frame(matrix(nrow = length(f2_teams),ncol = f2_krounds))
 f2_goalconcededround <- c()
 for(i_f2_krounds in 1:f2_krounds)
@@ -269,7 +269,7 @@ for(i_f2_krounds in 1:f2_krounds)
 f2_goalconcededmatrix <- cbind(f2_teams,f2_goalconcededmatrix)
 ##############################################################################################
 #g1
-g1_krounds <- tail(unique(G1_rounds$g1_matchday),1)
+#g1_krounds <- tail(unique(G1_rounds$g1_matchday),1)
 g1_goalconcededmatrix <- data.frame(matrix(nrow = length(g1_teams),ncol = g1_krounds))
 g1_goalconcededround <- c()
 for(i_g1_krounds in 1:g1_krounds)
@@ -296,7 +296,7 @@ for(i_g1_krounds in 1:g1_krounds)
 g1_goalconcededmatrix <- cbind(g1_teams,g1_goalconcededmatrix)
 ##############################################################################################
 #b1
-i1_krounds <- tail(unique(I1_rounds$i1_matchday),1)
+#i1_krounds <- tail(unique(I1_rounds$i1_matchday),1)
 i1_goalconcededmatrix <- data.frame(matrix(nrow = length(i1_teams),ncol = i1_krounds))
 i1_goalconcededround <- c()
 for(i_i1_krounds in 1:i1_krounds)
@@ -323,7 +323,7 @@ for(i_i1_krounds in 1:i1_krounds)
 i1_goalconcededmatrix <- cbind(i1_teams,i1_goalconcededmatrix)
 ##############################################################################################
 #i2
-i2_krounds <- tail(unique(I2_rounds$i2_matchday),1)
+#i2_krounds <- tail(unique(I2_rounds$i2_matchday),1)
 i2_goalconcededmatrix <- data.frame(matrix(nrow = length(i2_teams),ncol = i2_krounds))
 i2_goalconcededround <- c()
 for(i_i2_krounds in 1:i2_krounds)
@@ -350,7 +350,7 @@ for(i_i2_krounds in 1:i2_krounds)
 i2_goalconcededmatrix <- cbind(i2_teams,i2_goalconcededmatrix)
 ##############################################################################################
 #n1
-n1_krounds <- tail(unique(N1_rounds$n1_matchday),1)
+#n1_krounds <- tail(unique(N1_rounds$n1_matchday),1)
 n1_goalconcededmatrix <- data.frame(matrix(nrow = length(n1_teams),ncol = n1_krounds))
 n1_goalconcededround <- c()
 for(i_n1_krounds in 1:n1_krounds)
@@ -377,7 +377,7 @@ for(i_n1_krounds in 1:n1_krounds)
 n1_goalconcededmatrix <- cbind(n1_teams,n1_goalconcededmatrix)
 ##############################################################################################
 #p1
-p1_krounds <- tail(unique(P1_rounds$p1_matchday),1)
+#p1_krounds <- tail(unique(P1_rounds$p1_matchday),1)
 p1_goalconcededmatrix <- data.frame(matrix(nrow = length(p1_teams),ncol = p1_krounds))
 p1_goalconcededround <- c()
 for(i_p1_krounds in 1:p1_krounds)
@@ -404,7 +404,7 @@ for(i_p1_krounds in 1:p1_krounds)
 p1_goalconcededmatrix <- cbind(p1_teams,p1_goalconcededmatrix)
 ##############################################################################################
 #sp1
-sp1_krounds <- tail(unique(SP1_rounds$sp1_matchday),1)
+#sp1_krounds <- tail(unique(SP1_rounds$sp1_matchday),1)
 sp1_goalconcededmatrix <- data.frame(matrix(nrow = length(sp1_teams),ncol = sp1_krounds))
 sp1_goalconcededround <- c()
 for(i_sp1_krounds in 1:sp1_krounds)
@@ -431,7 +431,7 @@ for(i_sp1_krounds in 1:sp1_krounds)
 sp1_goalconcededmatrix <- cbind(sp1_teams,sp1_goalconcededmatrix)
 ##############################################################################################
 #sp2
-sp2_krounds <- tail(unique(SP2_rounds$sp2_matchday),1)
+#sp2_krounds <- tail(unique(SP2_rounds$sp2_matchday),1)
 sp2_goalconcededmatrix <- data.frame(matrix(nrow = length(sp2_teams),ncol = sp2_krounds))
 sp2_goalconcededround <- c()
 for(i_sp2_krounds in 1:sp2_krounds)
@@ -458,7 +458,7 @@ for(i_sp2_krounds in 1:sp2_krounds)
 sp2_goalconcededmatrix <- cbind(sp2_teams,sp2_goalconcededmatrix)
 ##############################################################################################
 #sc0
-sc0_krounds <- tail(unique(SC0_rounds$sc0_matchday),1)
+#sc0_krounds <- tail(unique(SC0_rounds$sc0_matchday),1)
 sc0_goalconcededmatrix <- data.frame(matrix(nrow = length(sc0_teams),ncol = sc0_krounds))
 sc0_goalconcededround <- c()
 for(i_sc0_krounds in 1:sc0_krounds)
@@ -485,7 +485,7 @@ for(i_sc0_krounds in 1:sc0_krounds)
 sc0_goalconcededmatrix <- cbind(sc0_teams,sc0_goalconcededmatrix)
 ##############################################################################################
 #sc1
-sc1_krounds <- tail(unique(SC1_rounds$sc1_matchday),1)
+#sc1_krounds <- tail(unique(SC1_rounds$sc1_matchday),1)
 sc1_goalconcededmatrix <- data.frame(matrix(nrow = length(sc1_teams),ncol = sc1_krounds))
 sc1_goalconcededround <- c()
 for(i_sc1_krounds in 1:sc1_krounds)
@@ -512,7 +512,7 @@ for(i_sc1_krounds in 1:sc1_krounds)
 sc1_goalconcededmatrix <- cbind(sc1_teams,sc1_goalconcededmatrix)
 ##############################################################################################
 #sc2
-sc2_krounds <- tail(unique(SC2_rounds$sc2_matchday),1)
+#sc2_krounds <- tail(unique(SC2_rounds$sc2_matchday),1)
 sc2_goalconcededmatrix <- data.frame(matrix(nrow = length(sc2_teams),ncol = sc2_krounds))
 sc2_goalconcededround <- c()
 for(i_sc2_krounds in 1:sc2_krounds)
@@ -539,7 +539,7 @@ for(i_sc2_krounds in 1:sc2_krounds)
 sc2_goalconcededmatrix <- cbind(sc2_teams,sc2_goalconcededmatrix)
 ##############################################################################################
 #sc3
-sc3_krounds <- tail(unique(SC3_rounds$sc3_matchday),1)
+#sc3_krounds <- tail(unique(SC3_rounds$sc3_matchday),1)
 sc3_goalconcededmatrix <- data.frame(matrix(nrow = length(sc3_teams),ncol = sc3_krounds))
 sc3_goalconcededround <- c()
 for(i_sc3_krounds in 1:sc3_krounds)
@@ -566,7 +566,7 @@ for(i_sc3_krounds in 1:sc3_krounds)
 sc3_goalconcededmatrix <- cbind(sc3_teams,sc3_goalconcededmatrix)
 ##############################################################################################
 #t1
-t1_krounds <- tail(unique(T1_rounds$t1_matchday),1)
+#t1_krounds <- tail(unique(T1_rounds$t1_matchday),1)
 t1_goalconcededmatrix <- data.frame(matrix(nrow = length(t1_teams),ncol = t1_krounds))
 t1_goalconcededround <- c()
 for(i_t1_krounds in 1:t1_krounds)

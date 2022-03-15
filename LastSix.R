@@ -6,51 +6,51 @@ library('scales')
 library('R.utils')
 # ############################
 #create last n games
-b1_last_n_games <- 6
-d1_last_n_games <- 6
-d2_last_n_games <- 6
-e0_last_n_games <- 6
-e1_last_n_games <- 6
-e2_last_n_games <- 6
-e3_last_n_games <- 6
-ec_last_n_games <- 6
-f1_last_n_games <- 6
-f2_last_n_games <- 6
-g1_last_n_games <- 6
-i1_last_n_games <- 6
-i2_last_n_games <- 6
-n1_last_n_games <- 6
-p1_last_n_games <- 6
-sc0_last_n_games <- 6
-sc1_last_n_games <- 6
-sc2_last_n_games <- 6
-sc3_last_n_games <- 6
-sp1_last_n_games <- 6
-sp2_last_n_games <- 6
-t1_last_n_games <- 6
+# b1_last_n_games <- 6
+# d1_last_n_games <- 6
+# d2_last_n_games <- 6
+# e0_last_n_games <- 6
+# e1_last_n_games <- 6
+# e2_last_n_games <- 6
+# e3_last_n_games <- 6
+# ec_last_n_games <- 6
+# f1_last_n_games <- 6
+# f2_last_n_games <- 6
+# g1_last_n_games <- 6
+# i1_last_n_games <- 6
+# i2_last_n_games <- 6
+# n1_last_n_games <- 6
+# p1_last_n_games <- 6
+# sc0_last_n_games <- 6
+# sc1_last_n_games <- 6
+# sc2_last_n_games <- 6
+# sc3_last_n_games <- 6
+# sp1_last_n_games <- 6
+# sp2_last_n_games <- 6
+# t1_last_n_games <- 6
 #create last total games
-# b1_last_n_games <- b1_games_played[1]
-# d1_last_n_games <- d1_games_played[1]
-# d2_last_n_games <- d2_games_played[1]
-# e0_last_n_games <- e0_games_played[1]
-# e1_last_n_games <- e1_games_played[1]
-# e2_last_n_games <- e2_games_played[1]
-# e3_last_n_games <- e3_games_played[1]
-# ec_last_n_games <- ec_games_played[1]
-# f1_last_n_games <- f1_games_played[1]
-# f2_last_n_games <- f2_games_played[1]
-# g1_last_n_games <- g1_games_played[1]
-# i1_last_n_games <- i1_games_played[1]
-# i2_last_n_games <- i2_games_played[1]
-# n1_last_n_games <- n1_games_played[1]
-# p1_last_n_games <- p1_games_played[1]
-# sc0_last_n_games <- sc0_games_played[1]
-# sc1_last_n_games <- sc1_games_played[1]
-# sc2_last_n_games <- sc2_games_played[1]
-# sc3_last_n_games <- sc3_games_played[1]
-# sp1_last_n_games <- sp1_games_played[1]
-# sp2_last_n_games <- sp2_games_played[1]
-# t1_last_n_games <- t1_games_played[1]
+b1_last_n_games <- b1_games_played[1]
+d1_last_n_games <- d1_games_played[1]
+d2_last_n_games <- d2_games_played[1]
+e0_last_n_games <- e0_games_played[1]
+e1_last_n_games <- e1_games_played[1]
+e2_last_n_games <- e2_games_played[1]
+e3_last_n_games <- e3_games_played[1]
+ec_last_n_games <- ec_games_played[1]
+f1_last_n_games <- f1_games_played[1]
+f2_last_n_games <- f2_games_played[1]
+g1_last_n_games <- g1_games_played[1]
+i1_last_n_games <- i1_games_played[1]
+i2_last_n_games <- i2_games_played[1]
+n1_last_n_games <- n1_games_played[1]
+p1_last_n_games <- p1_games_played[1]
+sc0_last_n_games <- sc0_games_played[1]
+sc1_last_n_games <- sc1_games_played[1]
+sc2_last_n_games <- sc2_games_played[1]
+sc3_last_n_games <- sc3_games_played[1]
+sp1_last_n_games <- sp1_games_played[1]
+sp2_last_n_games <- sp2_games_played[1]
+t1_last_n_games <- t1_games_played[1]
 # ########################################
 ########################################
 
@@ -99,6 +99,7 @@ colnames(final_b1_gs) <- "Goals scored"
 #create final_b1_gc object
 final_b1_gc <- c()
 suml6_b1_gc <- c()
+l6_form_b1_gc <- c()
 for(index_b1_gc in 1:length(b1_teams))
 {
   index_b1_gc <- row.names(b1_goalconceded_h) == b1_teams[index_b1_gc]
@@ -108,12 +109,24 @@ for(index_b1_gc in 1:length(b1_teams))
   l6_form_b1_gc <- as.numeric(l6_form_b1_gc)
   suml6_b1_gc[index_b1_gc] <- sum(l6_form_b1_gc)
   suml6_b1_gc[index_b1_gc] <- paste("(",suml6_b1_gc[index_b1_gc],")",sep = "")
-  l6_form_b1_gc <- paste(l6_form_b1_gc,collapse = " ")
+  #l6_form_b1_gc <- paste(l6_form_b1_gc,collapse = " ")
+  l6_form_b1_gc <- paste(shQuote(l6_form_b1_gc, type="cmd2"), collapse=",")
+  #l6_form_b1_gc <- sub("\'",'\"',l6_form_b1_gc)
   final_b1_gc[index_b1_gc] <- rbind(paste(b1_teams[index_b1_gc],l6_form_b1_gc,suml6_b1_gc[index_b1_gc], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
+
+  # #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
 
 }
 
+final_b1_gc <- gsub("\(",'',final_b1_gc)
+shQ
+
+write.csv(final_b1_gc,"finalbi4.csv")
+write.xlsx(final_b1_gc,"finalb1xl2.xlsx")
+
+l6_form_b1_gc
+final_b1_gc
+cat(paste(shQuote(l6_form_b1_gc, type="cmd"), collapse=","))
 #change column names
 final_b1_gc <- as.data.frame(final_b1_gc)
 colnames(final_b1_gc) <- "Goals conceded"

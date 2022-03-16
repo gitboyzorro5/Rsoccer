@@ -119,17 +119,18 @@ for(index_b1_gc in 1:length(b1_teams))
 }
 
 final_b1_gc <- gsub("\(",'',final_b1_gc)
-shQ
-
 write.csv(final_b1_gc,"finalbi4.csv")
 write.xlsx(final_b1_gc,"finalb1xl2.xlsx")
 
-l6_form_b1_gc
+class(l6_form_b1_gc)
 final_b1_gc
 cat(paste(shQuote(l6_form_b1_gc, type="cmd"), collapse=","))
 #change column names
 final_b1_gc <- as.data.frame(final_b1_gc)
 colnames(final_b1_gc) <- "Goals conceded"
+
+
+
 #total goals
 #create final_b1_tg object
 final_b1_tg <- c()

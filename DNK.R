@@ -188,12 +188,12 @@ dnk_formmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds)
 dnk_formround <- c()
 for(i_dnk_krounds in 1:dnk_krounds)
 {
-  dnk_homeform <- DNK_rounds$Res[DNK_rounds$dnk_matchday == i_dnk_krounds]
+  dnk_homeform <- DNK_rounds$FTR[DNK_rounds$dnk_matchday == i_dnk_krounds]
 
   dnk_homeform <- sub("H","W",dnk_homeform)
   dnk_homeform <- sub("A","L",dnk_homeform)
 
-  dnk_awayform <- DNK_rounds$Res[DNK_rounds$dnk_matchday == i_dnk_krounds]
+  dnk_awayform <- DNK_rounds$FTR[DNK_rounds$dnk_matchday == i_dnk_krounds]
 
   dnk_awayform <- sub("A","W",dnk_awayform)
   dnk_awayform <- sub("H","L",dnk_awayform)

@@ -196,12 +196,12 @@ aut_formmatrix <- data.frame(matrix(nrow = length(aut_teams),ncol = aut_krounds)
 aut_formround <- c()
 for(i_aut_krounds in 1:aut_krounds)
 {
-  aut_homeform <- AUT_rounds$Res[AUT_rounds$aut_matchday == i_aut_krounds]
+  aut_homeform <- AUT_rounds$FTR[AUT_rounds$aut_matchday == i_aut_krounds]
 
   aut_homeform <- sub("H","W",aut_homeform)
   aut_homeform <- sub("A","L",aut_homeform)
 
-  aut_awayform <- AUT_rounds$Res[AUT_rounds$aut_matchday == i_aut_krounds]
+  aut_awayform <- AUT_rounds$FTR[AUT_rounds$aut_matchday == i_aut_krounds]
 
   aut_awayform <- sub("A","W",aut_awayform)
   aut_awayform <- sub("H","L",aut_awayform)
@@ -218,6 +218,7 @@ for(i_aut_krounds in 1:aut_krounds)
   aut_formround <- aut_formround[order(aut_formround$aut_teamscombined_form),]
   aut_formround$aut_teamscombined_form <- NULL
   aut_formmatrix[,i_aut_krounds] <- aut_formround
+aut_teams
 
 }
 

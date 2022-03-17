@@ -31,7 +31,6 @@ rus_totalgoalsv2 <- tapply(RUS$TG, RUS[c("Home", "Away")],mean)
 rus_totalgoalsv2
 rus_hgtotals <- rowSums(rus_totalgoalsv2,na.rm = T)
 rus_agtotals <- colSums(rus_totalgoalsv2,na.rm = T)
-
 rus_totalgoals <- rus_hgtotals + rus_agtotals
 rus_totalgoalsv2 <- cbind(rus_totalgoalsv2,rus_totalgoals)
 rus_teams <- sort(unique(RUS$Home))

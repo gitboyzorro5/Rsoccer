@@ -99,7 +99,6 @@ colnames(final_b1_gs) <- "Goals scored"
 #create final_b1_gc object
 final_b1_gc <- c()
 suml6_b1_gc <- c()
-l6_form_b1_gc <- c()
 for(index_b1_gc in 1:length(b1_teams))
 {
   index_b1_gc <- row.names(b1_goalconceded_h) == b1_teams[index_b1_gc]
@@ -108,29 +107,56 @@ for(index_b1_gc in 1:length(b1_teams))
   l6_form_b1_gc <- tail(deleted_form_b1_gc,b1_last_n_games)
   l6_form_b1_gc <- as.numeric(l6_form_b1_gc)
   suml6_b1_gc[index_b1_gc] <- sum(l6_form_b1_gc)
-  suml6_b1_gc[index_b1_gc] <- paste("(",suml6_b1_gc[index_b1_gc],")",sep = "")
+  suml6_b1_gc[index_b1_gc] <- paste(suml6_b1_gc[index_b1_gc],sep = "")
+  l6_form_b1_gc <- as.character(l6_form_b1_gc)
+  l6_form_b1_gc_flattened <- stri_paste(l6_form_b1_gc,collapse = '')
+  l6_form_b1_gc <- as.numeric(strsplit(as.character(l6_form_b1_gc_flattened),"")[[1]])
   #l6_form_b1_gc <- paste(l6_form_b1_gc,collapse = " ")
-  l6_form_b1_gc <- paste(shQuote(l6_form_b1_gc, type="cmd2"), collapse=",")
+  #l6_form_b1_gc <- paste(shQuote(l6_form_b1_gc, type="cmd2"), collapse=",")
   #l6_form_b1_gc <- sub("\'",'\"',l6_form_b1_gc)
-  final_b1_gc[index_b1_gc] <- rbind(paste(b1_teams[index_b1_gc],l6_form_b1_gc,suml6_b1_gc[index_b1_gc], sep = ",",collapse = ""))
-
+  final_b1_gc[index_b1_gc] <- rbind(paste(l6_form_b1_gc, sep = "\n",collapse = ","))
   # #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
 
 }
 
-final_b1_gc <- gsub("\(",'',final_b1_gc)
-write.csv(final_b1_gc,"finalbi4.csv")
-write.xlsx(final_b1_gc,"finalb1xl2.xlsx")
-
-class(l6_form_b1_gc)
+write.csv(final_b1_gc,"finalb1test5.csv")
 final_b1_gc
-cat(paste(shQuote(l6_form_b1_gc, type="cmd"), collapse=","))
+l6_form_b1_gc
+suml6_b1_gc
+length(l6_form_b1_gc)
+
+typeof(l6_form_b1_gc)
+library(xlsx)
+library(tidyr)
+length(deleted_form_b1_gc)
+
+stri_paste(l6_form_b1_gc,collapse = '')
+
+paste(l6_form_b1_gc,collapse = " ")
+
+l6_form_b1_gc_flattened <- stri_paste(l6_form_b1_gc,collapse = '')
+l6_form_b1_gc_flattened
+
+
+
+testflat <- "12345"
+tidyr::separate(testflat)
+split(testflat,f = length(testflat))
+
+l6_form_b1_gcsplitted <- as.numeric(strsplit(as.character(l6_form_b1_gc_flattened),"")[[1]])
+write.csv(l6_form_b1_gcsplitted,"l6_form_b1_gcsplitted.csv")
+is.integer(l6_form_b1_gc)
+paate(l6_form_b1_gc, sep = ", ")
+class(l6_form_b1_gc)
+shQuote(final_b1_gc, type = "cmd2")
+
+cat(paste(shQuote(final_b1_gc, type="cmd2"), collapse = " , "))
 #change column names
 final_b1_gc <- as.data.frame(final_b1_gc)
 colnames(final_b1_gc) <- "Goals conceded"
 
 
-
+toString(l6_form_b1_gc)
 #total goals
 #create final_b1_tg object
 final_b1_tg <- c()

@@ -2,7 +2,7 @@
 #################################################
 ###
 
-ROUND_20212022 <- 18
+ROUND_20212022 <- 7
 
 #########################################################
 B1 <- B1_rounds[B1_rounds$b1_matchday <= ROUND_20212022,]
@@ -98,13 +98,26 @@ T1$TG <- as.numeric(T1$TG)
 source("goaltotalsv2.R")
 source("ShotsAnalysis.R")
 source("PoissonModel.R")
-i2_totalgames_poiss <- c()
-i2_totalgames_poiss[1:length(i2_teams)] <- "18"
-i2_home_poisson <- cbind(i2_home_poisson,i2_totalgames_poiss)
-i2_away_poisson <- cbind(i2_away_poisson,i2_totalgames_poiss)
+# i2_totalgames_poiss <- c()
+# i2_totalgames_poiss[1:length(i2_teams)] <- "6"
+# i2_home_poisson <- cbind(i2_home_poisson,i2_totalgames_poiss)
+# i2_away_poisson <- cbind(i2_away_poisson,i2_totalgames_poiss)
+#
+# write.csv(i2_home_poisson,"i2_home_poisson.csv")
+# write.csv(i2_away_poisson,"i2_away_poisson.csv")
+#
 
-write.csv(i2_home_poisson,"i2_home_poisson.csv")
-write.csv(i2_away_poisson,"i2_away_poisson.csv")
+allhomepoisson <- rbind(b1_home_poisson,d1_home_poisson,d2_home_poisson,e0_home_poisson,e1_home_poisson,e2_home_poisson,
+                         e3_home_poisson,ec_home_poisson,f1_home_poisson,f2_home_poisson,g1_home_poisson,i1_home_poisson,
+                         i2_home_poisson,n1_home_poisson,p1_home_poisson,sp1_home_poisson,sp2_home_poisson,sc0_home_poisson,
+                         sc1_home_poisson,sc2_home_poisson,sc3_home_poisson,t1_home_poisson)
 
-tail(I2)
+
+
+allawaypoisson <- rbind(b1_away_poisson,d1_away_poisson,d2_away_poisson,e0_away_poisson,e1_away_poisson,e2_away_poisson,
+                        e3_away_poisson,ec_away_poisson,f1_away_poisson,f2_away_poisson,g1_away_poisson,i1_away_poisson,
+                        i2_away_poisson,n1_away_poisson,p1_away_poisson,sp1_away_poisson,sp2_away_poisson,sc0_away_poisson,
+                        sc1_away_poisson,sc2_away_poisson,sc3_away_poisson,t1_away_poisson)
+
+
 

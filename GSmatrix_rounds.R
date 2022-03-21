@@ -1,603 +1,595 @@
-
+library('dplyr')
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+library('xlsx')
+library(stringr)
+library(stringi)
 #b1
-# b1_noofcurrentmatchdaygames <- nrow(B1_rounds[B1_rounds$b1_matchday == b1_krounds,])
-# ifelse(b1_noofcurrentmatchdaygames == b1_eachround,b1_krounds <- tail(unique(B1_rounds$b1_matchday),1),b1_krounds <- tail(unique(B1_rounds$b1_matchday),1) - 1 )
-#b1_krounds <- tail(unique(B1_rounds$b1_matchday),1)
-b1_goalscoredmatrix <- data.frame(matrix(nrow = length(b1_teams),ncol = b1_krounds))
-b1_goalscoredround <- c()
-for(i_b1_krounds in 1:b1_krounds)
+final_b1_gs <- matrix(nrow = length(b1_teams),ncol = b1_totalrounds )
+suml6_b1_gs <- c()
+l6_form_b1_gssplitted <- c()
+form_b1_gs <- c()
+for(index_b1_gs in 1:length(b1_teams))
 {
-  b1_homegoalscored <- B1_rounds$FTHG[B1_rounds$b1_matchday == i_b1_krounds]
-
-  b1_awaygoalscored <- B1_rounds$FTAG[B1_rounds$b1_matchday == i_b1_krounds]
-
-  b1_hometeamstemp_gs <- B1_rounds$HomeTeam[B1_rounds$b1_matchday == i_b1_krounds]
-
-  b1_awayteamstemp_gs <- B1_rounds$AwayTeam[B1_rounds$b1_matchday== i_b1_krounds]
-
-  b1_goalscombined <- c(b1_homegoalscored,b1_awaygoalscored)
-  b1_teamscombined <- c(b1_hometeamstemp_gs,b1_awayteamstemp_gs)
-
-  b1_goalscoredround <- data.frame(b1_teamscombined,b1_goalscombined)
-
-  b1_goalscoredround <- b1_goalscoredround[order(b1_goalscoredround$b1_teamscombined),]
-  b1_goalscoredround$b1_teamscombined <- NULL
-  b1_goalscoredmatrix[,i_b1_krounds] <- b1_goalscoredround
-
+  for(index_b1_gs_cols in 1:b1_totalrounds)
+  {
+    index_b1_gs  <- row.names(b1_goalscored_h) == b1_teams[index_b1_gs]
+    form_b1_gs <- b1_goalscored_h[index_b1_gs ]
+    deleted_form_b1_gs <- form_b1_gs[!form_b1_gs[] == ""]
+    l6_form_b1_gs <- tail(deleted_form_b1_gs,b1_last_n_games)
+    l6_form_b1_gs <- as.numeric(l6_form_b1_gs)
+    suml6_b1_gs[index_b1_gs] <- sum(l6_form_b1_gs)
+    suml6_b1_gs[index_b1_gs] <- paste(suml6_b1_gs[index_b1_gs],sep = "")
+    l6_form_b1_gs <- as.character(l6_form_b1_gs)
+    l6_form_b1_gs_flattened <- stri_paste(l6_form_b1_gs,collapse = '')
+    l6_form_b1_gssplitted <- as.numeric(strsplit(as.character(l6_form_b1_gs_flattened),"")[[1]])
+    final_b1_gs[index_b1_gs,index_b1_gs_cols] <- l6_form_b1_gssplitted[index_b1_gs_cols]
+  }
 }
 
-b1_goalscoredmatrix <- cbind(b1_teams,b1_goalscoredmatrix)
-#############################################################################################
+final_b1_gs[is.na(final_b1_gs)] <- ""
+b1_goalscoredmatrix <- cbind(b1_teams,final_b1_gs,suml6_b1_gs)
+##############################################################################################
 #d1
-# e0_noofcurrentmatchdaygames <- nrow(E0_rounds[E0_rounds$e0_matchday == e0_krounds,])
-# ifelse(e0_noofcurrentmatchdaygames == e0_eachround,e0_krounds <- tail(unique(E0_rounds$e0_matchday),1),e0_krounds <- tail(unique(E0_rounds$e0_matchday),1) - 1 )
-# #e0_krounds <- tail(unique(E0_rounds$e0_matchday),1)
-d1_goalscoredmatrix <- data.frame(matrix(nrow = length(d1_teams),ncol = d1_krounds))
-d1_goalscoredround <- c()
-for(i_d1_krounds in 1:d1_krounds)
+final_d1_gs <- matrix(nrow = length(d1_teams),ncol = d1_totalrounds )
+suml6_d1_gs <- c()
+l6_form_d1_gssplitted <- c()
+form_d1_gs <- c()
+for(index_d1_gs in 1:length(d1_teams))
 {
-  d1_homegoalscored <- D1_rounds$FTHG[D1_rounds$d1_matchday == i_d1_krounds]
-
-  d1_awaygoalscored <- D1_rounds$FTAG[D1_rounds$d1_matchday == i_d1_krounds]
-
-  d1_hometeamstemp_gs <- D1_rounds$HomeTeam[D1_rounds$d1_matchday == i_d1_krounds]
-
-  d1_awayteamstemp_gs <- D1_rounds$AwayTeam[D1_rounds$d1_matchday== i_d1_krounds]
-
-  d1_goalscombined <- c(d1_homegoalscored,d1_awaygoalscored)
-  d1_teamscombined <- c(d1_hometeamstemp_gs,d1_awayteamstemp_gs)
-
-  d1_goalscoredround <- data.frame(d1_teamscombined,d1_goalscombined)
-
-  d1_goalscoredround <- d1_goalscoredround[order(d1_goalscoredround$d1_teamscombined),]
-  d1_goalscoredround$d1_teamscombined <- NULL
-  d1_goalscoredmatrix[,i_d1_krounds] <- d1_goalscoredround
-
+  for(index_d1_gs_cols in 1:d1_totalrounds)
+  {
+    index_d1_gs  <- row.names(d1_goalscored_h) == d1_teams[index_d1_gs]
+    form_d1_gs <- d1_goalscored_h[index_d1_gs ]
+    deleted_form_d1_gs <- form_d1_gs[!form_d1_gs[] == ""]
+    l6_form_d1_gs <- tail(deleted_form_d1_gs,d1_last_n_games)
+    l6_form_d1_gs <- as.numeric(l6_form_d1_gs)
+    suml6_d1_gs[index_d1_gs] <- sum(l6_form_d1_gs)
+    suml6_d1_gs[index_d1_gs] <- paste(suml6_d1_gs[index_d1_gs],sep = "")
+    l6_form_d1_gs <- as.character(l6_form_d1_gs)
+    l6_form_d1_gs_flattened <- stri_paste(l6_form_d1_gs,collapse = '')
+    l6_form_d1_gssplitted <- as.numeric(strsplit(as.character(l6_form_d1_gs_flattened),"")[[1]])
+    final_d1_gs[index_d1_gs,index_d1_gs_cols] <- l6_form_d1_gssplitted[index_d1_gs_cols]
+  }
 }
 
-d1_goalscoredmatrix <- cbind(d1_teams,d1_goalscoredmatrix)
-#############################################################################################
+final_d1_gs[is.na(final_d1_gs)] <- ""
+d1_goalscoredmatrix <- cbind(d1_teams,final_d1_gs,suml6_d1_gs)
+##############################################################################################
 #d2
-#d2_krounds <- tail(unique(D2_rounds$d2_matchday),1)
-d2_goalscoredmatrix <- data.frame(matrix(nrow = length(d2_teams),ncol = d2_krounds))
-d2_goalscoredround <- c()
-for(i_d2_krounds in 1:d2_krounds)
+final_d2_gs <- matrix(nrow = length(d2_teams),ncol = d2_totalrounds )
+suml6_d2_gs <- c()
+l6_form_d2_gssplitted <- c()
+form_d2_gs <- c()
+for(index_d2_gs in 1:length(d2_teams))
 {
-  d2_homegoalscored <- D2_rounds$FTHG[D2_rounds$d2_matchday == i_d2_krounds]
-
-  d2_awaygoalscored <- D2_rounds$FTAG[D2_rounds$d2_matchday == i_d2_krounds]
-
-  d2_hometeamstemp_gs <- D2_rounds$HomeTeam[D2_rounds$d2_matchday == i_d2_krounds]
-
-  d2_awayteamstemp_gs <- D2_rounds$AwayTeam[D2_rounds$d2_matchday== i_d2_krounds]
-
-  d2_goalscombined <- c(d2_homegoalscored,d2_awaygoalscored)
-  d2_teamscombined <- c(d2_hometeamstemp_gs,d2_awayteamstemp_gs)
-
-  d2_goalscoredround <- data.frame(d2_teamscombined,d2_goalscombined)
-
-  d2_goalscoredround <- d2_goalscoredround[order(d2_goalscoredround$d2_teamscombined),]
-  d2_goalscoredround$d2_teamscombined <- NULL
-  d2_goalscoredmatrix[,i_d2_krounds] <- d2_goalscoredround
-
+  for(index_d2_gs_cols in 1:d2_totalrounds)
+  {
+    index_d2_gs  <- row.names(d2_goalscored_h) == d2_teams[index_d2_gs]
+    form_d2_gs <- d2_goalscored_h[index_d2_gs ]
+    deleted_form_d2_gs <- form_d2_gs[!form_d2_gs[] == ""]
+    l6_form_d2_gs <- tail(deleted_form_d2_gs,d2_last_n_games)
+    l6_form_d2_gs <- as.numeric(l6_form_d2_gs)
+    suml6_d2_gs[index_d2_gs] <- sum(l6_form_d2_gs)
+    suml6_d2_gs[index_d2_gs] <- paste(suml6_d2_gs[index_d2_gs],sep = "")
+    l6_form_d2_gs <- as.character(l6_form_d2_gs)
+    l6_form_d2_gs_flattened <- stri_paste(l6_form_d2_gs,collapse = '')
+    l6_form_d2_gssplitted <- as.numeric(strsplit(as.character(l6_form_d2_gs_flattened),"")[[1]])
+    final_d2_gs[index_d2_gs,index_d2_gs_cols] <- l6_form_d2_gssplitted[index_d2_gs_cols]
+  }
 }
 
-d2_goalscoredmatrix <- cbind(d2_teams,d2_goalscoredmatrix)
-#############################################################################################
+final_d2_gs[is.na(final_d2_gs)] <- ""
+d2_goalscoredmatrix <- cbind(d2_teams,final_d2_gs,suml6_d2_gs)
+##############################################################################################
 #e0
-#e0_krounds <- tail(unique(E0_rounds$e0_matchday),1)
-e0_goalscoredmatrix <- data.frame(matrix(nrow = length(e0_teams),ncol = e0_krounds))
-e0_goalscoredround <- c()
-for(i_e0_krounds in 1:e0_krounds)
+final_e0_gs <- matrix(nrow = length(e0_teams),ncol = e0_totalrounds )
+suml6_e0_gs <- c()
+l6_form_e0_gssplitted <- c()
+form_e0_gs <- c()
+for(index_e0_gs in 1:length(e0_teams))
 {
-  e0_homegoalscored <- E0_rounds$FTHG[E0_rounds$e0_matchday == i_e0_krounds]
-
-  e0_awaygoalscored <- E0_rounds$FTAG[E0_rounds$e0_matchday == i_e0_krounds]
-
-  e0_hometeamstemp_gs <- E0_rounds$HomeTeam[E0_rounds$e0_matchday == i_e0_krounds]
-
-  e0_awayteamstemp_gs <- E0_rounds$AwayTeam[E0_rounds$e0_matchday == i_e0_krounds]
-
-  e0_goalscombined <- c(e0_homegoalscored,e0_awaygoalscored)
-  e0_teamscombined <- c(e0_hometeamstemp_gs,e0_awayteamstemp_gs)
-
-  e0_goalscoredround <- data.frame(e0_teamscombined,e0_goalscombined)
-
-  e0_goalscoredround <- e0_goalscoredround[order(e0_goalscoredround$e0_teamscombined),]
-  e0_goalscoredround$e0_teamscombined <- NULL
-  e0_goalscoredmatrix[,i_e0_krounds] <- e0_goalscoredround
-
+  for(index_e0_gs_cols in 1:e0_totalrounds)
+  {
+    index_e0_gs  <- row.names(e0_goalscored_h) == e0_teams[index_e0_gs]
+    form_e0_gs <- e0_goalscored_h[index_e0_gs ]
+    deleted_form_e0_gs <- form_e0_gs[!form_e0_gs[] == ""]
+    l6_form_e0_gs <- tail(deleted_form_e0_gs,e0_last_n_games)
+    l6_form_e0_gs <- as.numeric(l6_form_e0_gs)
+    suml6_e0_gs[index_e0_gs] <- sum(l6_form_e0_gs)
+    suml6_e0_gs[index_e0_gs] <- paste(suml6_e0_gs[index_e0_gs],sep = "")
+    l6_form_e0_gs <- as.character(l6_form_e0_gs)
+    l6_form_e0_gs_flattened <- stri_paste(l6_form_e0_gs,collapse = '')
+    l6_form_e0_gssplitted <- as.numeric(strsplit(as.character(l6_form_e0_gs_flattened),"")[[1]])
+    final_e0_gs[index_e0_gs,index_e0_gs_cols] <- l6_form_e0_gssplitted[index_e0_gs_cols]
+  }
 }
 
-
-e0_goalscoredmatrix <- cbind(e0_teams,e0_goalscoredmatrix)
-#############################################################################################
+final_e0_gs[is.na(final_e0_gs)] <- ""
+e0_goalscoredmatrix <- cbind(e0_teams,final_e0_gs,suml6_e0_gs)
+##############################################################################################
 #e1
-#e1_krounds <- tail(unique(E1_rounds$e1_matchday),1)
-e1_goalscoredmatrix <- data.frame(matrix(nrow = length(e1_teams),ncol = e1_krounds))
-e1_goalscoredround <- c()
-for(i_e1_krounds in 1:e1_krounds)
+final_e1_gs <- matrix(nrow = length(e1_teams),ncol = e1_totalrounds )
+suml6_e1_gs <- c()
+l6_form_e1_gssplitted <- c()
+form_e1_gs <- c()
+for(index_e1_gs in 1:length(e1_teams))
 {
-  e1_homegoalscored <- E1_rounds$FTHG[E1_rounds$e1_matchday == i_e1_krounds]
-
-  e1_awaygoalscored <- E1_rounds$FTAG[E1_rounds$e1_matchday == i_e1_krounds]
-
-  e1_hometeamstemp_gs <- E1_rounds$HomeTeam[E1_rounds$e1_matchday == i_e1_krounds]
-
-  e1_awayteamstemp_gs <- E1_rounds$AwayTeam[E1_rounds$e1_matchday== i_e1_krounds]
-
-  e1_goalscombined <- c(e1_homegoalscored,e1_awaygoalscored)
-  e1_teamscombined <- c(e1_hometeamstemp_gs,e1_awayteamstemp_gs)
-
-  e1_goalscoredround <- data.frame(e1_teamscombined,e1_goalscombined)
-
-  e1_goalscoredround <- e1_goalscoredround[order(e1_goalscoredround$e1_teamscombined),]
-  e1_goalscoredround$e1_teamscombined <- NULL
-  e1_goalscoredmatrix[,i_e1_krounds] <- e1_goalscoredround
-
+  for(index_e1_gs_cols in 1:e1_totalrounds)
+  {
+    index_e1_gs  <- row.names(e1_goalscored_h) == e1_teams[index_e1_gs]
+    form_e1_gs <- e1_goalscored_h[index_e1_gs ]
+    deleted_form_e1_gs <- form_e1_gs[!form_e1_gs[] == ""]
+    l6_form_e1_gs <- tail(deleted_form_e1_gs,e1_last_n_games)
+    l6_form_e1_gs <- as.numeric(l6_form_e1_gs)
+    suml6_e1_gs[index_e1_gs] <- sum(l6_form_e1_gs)
+    suml6_e1_gs[index_e1_gs] <- paste(suml6_e1_gs[index_e1_gs],sep = "")
+    l6_form_e1_gs <- as.character(l6_form_e1_gs)
+    l6_form_e1_gs_flattened <- stri_paste(l6_form_e1_gs,collapse = '')
+    l6_form_e1_gssplitted <- as.numeric(strsplit(as.character(l6_form_e1_gs_flattened),"")[[1]])
+    final_e1_gs[index_e1_gs,index_e1_gs_cols] <- l6_form_e1_gssplitted[index_e1_gs_cols]
+  }
 }
 
-e1_goalscoredmatrix <- cbind(e1_teams,e1_goalscoredmatrix)
-#############################################################################################
+final_e1_gs[is.na(final_e1_gs)] <- ""
+e1_goalscoredmatrix <- cbind(e1_teams,final_e1_gs,suml6_e1_gs)
+##############################################################################################
 #e2
-#e2_krounds <- tail(unique(E2_rounds$e2_matchday),1)
-e2_goalscoredmatrix <- data.frame(matrix(nrow = length(e2_teams),ncol = e2_krounds))
-e2_goalscoredround <- c()
-for(i_e2_krounds in 1:e2_krounds)
+final_e2_gs <- matrix(nrow = length(e2_teams),ncol = e2_totalrounds )
+suml6_e2_gs <- c()
+l6_form_e2_gssplitted <- c()
+form_e2_gs <- c()
+for(index_e2_gs in 1:length(e2_teams))
 {
-  e2_homegoalscored <- E2_rounds$FTHG[E2_rounds$e2_matchday == i_e2_krounds]
-
-  e2_awaygoalscored <- E2_rounds$FTAG[E2_rounds$e2_matchday == i_e2_krounds]
-
-  e2_hometeamstemp_gs <- E2_rounds$HomeTeam[E2_rounds$e2_matchday == i_e2_krounds]
-
-  e2_awayteamstemp_gs <- E2_rounds$AwayTeam[E2_rounds$e2_matchday== i_e2_krounds]
-
-  e2_goalscombined <- c(e2_homegoalscored,e2_awaygoalscored)
-  e2_teamscombined <- c(e2_hometeamstemp_gs,e2_awayteamstemp_gs)
-
-  e2_goalscoredround <- data.frame(e2_teamscombined,e2_goalscombined)
-
-  e2_goalscoredround <- e2_goalscoredround[order(e2_goalscoredround$e2_teamscombined),]
-  e2_goalscoredround$e2_teamscombined <- NULL
-  e2_goalscoredmatrix[,i_e2_krounds] <- e2_goalscoredround
-
+  for(index_e2_gs_cols in 1:e2_totalrounds)
+  {
+    index_e2_gs  <- row.names(e2_goalscored_h) == e2_teams[index_e2_gs]
+    form_e2_gs <- e2_goalscored_h[index_e2_gs ]
+    deleted_form_e2_gs <- form_e2_gs[!form_e2_gs[] == ""]
+    l6_form_e2_gs <- tail(deleted_form_e2_gs,e2_last_n_games)
+    l6_form_e2_gs <- as.numeric(l6_form_e2_gs)
+    suml6_e2_gs[index_e2_gs] <- sum(l6_form_e2_gs)
+    suml6_e2_gs[index_e2_gs] <- paste(suml6_e2_gs[index_e2_gs],sep = "")
+    l6_form_e2_gs <- as.character(l6_form_e2_gs)
+    l6_form_e2_gs_flattened <- stri_paste(l6_form_e2_gs,collapse = '')
+    l6_form_e2_gssplitted <- as.numeric(strsplit(as.character(l6_form_e2_gs_flattened),"")[[1]])
+    final_e2_gs[index_e2_gs,index_e2_gs_cols] <- l6_form_e2_gssplitted[index_e2_gs_cols]
+  }
 }
 
-e2_goalscoredmatrix <- cbind(e2_teams,e2_goalscoredmatrix)
-#############################################################################################
+final_e2_gs[is.na(final_e2_gs)] <- ""
+e2_goalscoredmatrix <- cbind(e2_teams,final_e2_gs,suml6_e2_gs)
+##############################################################################################
 #e3
-#e3_krounds <- tail(unique(E3_rounds$e3_matchday),1)
-e3_goalscoredmatrix <- data.frame(matrix(nrow = length(e3_teams),ncol = e3_krounds))
-e3_goalscoredround <- c()
-for(i_e3_krounds in 1:e3_krounds)
+final_e3_gs <- matrix(nrow = length(e3_teams),ncol = e3_totalrounds )
+suml6_e3_gs <- c()
+l6_form_e3_gssplitted <- c()
+form_e3_gs <- c()
+for(index_e3_gs in 1:length(e3_teams))
 {
-  e3_homegoalscored <- E3_rounds$FTHG[E3_rounds$e3_matchday == i_e3_krounds]
-
-  e3_awaygoalscored <- E3_rounds$FTAG[E3_rounds$e3_matchday == i_e3_krounds]
-
-  e3_hometeamstemp_gs <- E3_rounds$HomeTeam[E3_rounds$e3_matchday == i_e3_krounds]
-
-  e3_awayteamstemp_gs <- E3_rounds$AwayTeam[E3_rounds$e3_matchday== i_e3_krounds]
-
-  e3_goalscombined <- c(e3_homegoalscored,e3_awaygoalscored)
-  e3_teamscombined <- c(e3_hometeamstemp_gs,e3_awayteamstemp_gs)
-
-  e3_goalscoredround <- data.frame(e3_teamscombined,e3_goalscombined)
-
-  e3_goalscoredround <- e3_goalscoredround[order(e3_goalscoredround$e3_teamscombined),]
-  e3_goalscoredround$e3_teamscombined <- NULL
-  e3_goalscoredmatrix[,i_e3_krounds] <- e3_goalscoredround
-
+  for(index_e3_gs_cols in 1:e3_totalrounds)
+  {
+    index_e3_gs  <- row.names(e3_goalscored_h) == e3_teams[index_e3_gs]
+    form_e3_gs <- e3_goalscored_h[index_e3_gs ]
+    deleted_form_e3_gs <- form_e3_gs[!form_e3_gs[] == ""]
+    l6_form_e3_gs <- tail(deleted_form_e3_gs,e3_last_n_games)
+    l6_form_e3_gs <- as.numeric(l6_form_e3_gs)
+    suml6_e3_gs[index_e3_gs] <- sum(l6_form_e3_gs)
+    suml6_e3_gs[index_e3_gs] <- paste(suml6_e3_gs[index_e3_gs],sep = "")
+    l6_form_e3_gs <- as.character(l6_form_e3_gs)
+    l6_form_e3_gs_flattened <- stri_paste(l6_form_e3_gs,collapse = '')
+    l6_form_e3_gssplitted <- as.numeric(strsplit(as.character(l6_form_e3_gs_flattened),"")[[1]])
+    final_e3_gs[index_e3_gs,index_e3_gs_cols] <- l6_form_e3_gssplitted[index_e3_gs_cols]
+  }
 }
 
-e3_goalscoredmatrix <- cbind(e3_teams,e3_goalscoredmatrix)
-#############################################################################################
+final_e3_gs[is.na(final_e3_gs)] <- ""
+e3_goalscoredmatrix <- cbind(e3_teams,final_e3_gs,suml6_e3_gs)
+##############################################################################################
 #ec
-#ec_krounds <- tail(unique(EC_rounds$ec_matchday),1)
-ec_goalscoredmatrix <- data.frame(matrix(nrow = length(ec_teams),ncol = ec_krounds))
-ec_goalscoredround <- c()
-for(i_ec_krounds in 1:ec_krounds)
+final_ec_gs <- matrix(nrow = length(ec_teams),ncol = ec_totalrounds )
+suml6_ec_gs <- c()
+l6_form_ec_gssplitted <- c()
+form_ec_gs <- c()
+for(index_ec_gs in 1:length(ec_teams))
 {
-  ec_homegoalscored <- EC_rounds$FTHG[EC_rounds$ec_matchday == i_ec_krounds]
-
-  ec_awaygoalscored <- EC_rounds$FTAG[EC_rounds$ec_matchday == i_ec_krounds]
-
-  ec_hometeamstemp_gs <- EC_rounds$HomeTeam[EC_rounds$ec_matchday == i_ec_krounds]
-
-  ec_awayteamstemp_gs <- EC_rounds$AwayTeam[EC_rounds$ec_matchday== i_ec_krounds]
-
-  ec_goalscombined <- c(ec_homegoalscored,ec_awaygoalscored)
-  ec_teamscombined <- c(ec_hometeamstemp_gs,ec_awayteamstemp_gs)
-
-  ec_goalscoredround <- data.frame(ec_teamscombined,ec_goalscombined)
-
-  ec_goalscoredround <- ec_goalscoredround[order(ec_goalscoredround$ec_teamscombined),]
-  ec_goalscoredround$ec_teamscombined <- NULL
-  ec_goalscoredmatrix[,i_ec_krounds] <- ec_goalscoredround
-
+  for(index_ec_gs_cols in 1:ec_totalrounds)
+  {
+    index_ec_gs  <- row.names(ec_goalscored_h) == ec_teams[index_ec_gs]
+    form_ec_gs <- ec_goalscored_h[index_ec_gs ]
+    deleted_form_ec_gs <- form_ec_gs[!form_ec_gs[] == ""]
+    l6_form_ec_gs <- tail(deleted_form_ec_gs,ec_last_n_games)
+    l6_form_ec_gs <- as.numeric(l6_form_ec_gs)
+    suml6_ec_gs[index_ec_gs] <- sum(l6_form_ec_gs)
+    suml6_ec_gs[index_ec_gs] <- paste(suml6_ec_gs[index_ec_gs],sep = "")
+    l6_form_ec_gs <- as.character(l6_form_ec_gs)
+    l6_form_ec_gs_flattened <- stri_paste(l6_form_ec_gs,collapse = '')
+    l6_form_ec_gssplitted <- as.numeric(strsplit(as.character(l6_form_ec_gs_flattened),"")[[1]])
+    final_ec_gs[index_ec_gs,index_ec_gs_cols] <- l6_form_ec_gssplitted[index_ec_gs_cols]
+  }
 }
 
-ec_goalscoredmatrix <- cbind(ec_teams,ec_goalscoredmatrix)
-#############################################################################################
+final_ec_gs[is.na(final_ec_gs)] <- ""
+ec_goalscoredmatrix <- cbind(ec_teams,final_ec_gs,suml6_ec_gs)
+##############################################################################################
 #f1
-#f1_krounds <- tail(unique(F1_rounds$f1_matchday),1)
-f1_goalscoredmatrix <- data.frame(matrix(nrow = length(f1_teams),ncol = f1_krounds))
-f1_goalscoredround <- c()
-for(i_f1_krounds in 1:f1_krounds)
+final_f1_gs <- matrix(nrow = length(f1_teams),ncol = f1_totalrounds )
+suml6_f1_gs <- c()
+l6_form_f1_gssplitted <- c()
+form_f1_gs <- c()
+for(index_f1_gs in 1:length(f1_teams))
 {
-  f1_homegoalscored <- F1_rounds$FTHG[F1_rounds$f1_matchday == i_f1_krounds]
-
-  f1_awaygoalscored <- F1_rounds$FTAG[F1_rounds$f1_matchday == i_f1_krounds]
-
-  f1_hometeamstemp_gs <- F1_rounds$HomeTeam[F1_rounds$f1_matchday == i_f1_krounds]
-
-  f1_awayteamstemp_gs <- F1_rounds$AwayTeam[F1_rounds$f1_matchday== i_f1_krounds]
-
-  f1_goalscombined <- c(f1_homegoalscored,f1_awaygoalscored)
-  f1_teamscombined <- c(f1_hometeamstemp_gs,f1_awayteamstemp_gs)
-
-  f1_goalscoredround <- data.frame(f1_teamscombined,f1_goalscombined)
-
-  f1_goalscoredround <- f1_goalscoredround[order(f1_goalscoredround$f1_teamscombined),]
-  f1_goalscoredround$f1_teamscombined <- NULL
-  f1_goalscoredmatrix[,i_f1_krounds] <- f1_goalscoredround
-
+  for(index_f1_gs_cols in 1:f1_totalrounds)
+  {
+    index_f1_gs  <- row.names(f1_goalscored_h) == f1_teams[index_f1_gs]
+    form_f1_gs <- f1_goalscored_h[index_f1_gs ]
+    deleted_form_f1_gs <- form_f1_gs[!form_f1_gs[] == ""]
+    l6_form_f1_gs <- tail(deleted_form_f1_gs,f1_last_n_games)
+    l6_form_f1_gs <- as.numeric(l6_form_f1_gs)
+    suml6_f1_gs[index_f1_gs] <- sum(l6_form_f1_gs)
+    suml6_f1_gs[index_f1_gs] <- paste(suml6_f1_gs[index_f1_gs],sep = "")
+    l6_form_f1_gs <- as.character(l6_form_f1_gs)
+    l6_form_f1_gs_flattened <- stri_paste(l6_form_f1_gs,collapse = '')
+    l6_form_f1_gssplitted <- as.numeric(strsplit(as.character(l6_form_f1_gs_flattened),"")[[1]])
+    final_f1_gs[index_f1_gs,index_f1_gs_cols] <- l6_form_f1_gssplitted[index_f1_gs_cols]
+  }
 }
 
-f1_goalscoredmatrix <- cbind(f1_teams,f1_goalscoredmatrix)
-#############################################################################################
+final_f1_gs[is.na(final_f1_gs)] <- ""
+f1_goalscoredmatrix <- cbind(f1_teams,final_f1_gs,suml6_f1_gs)
+##############################################################################################
 #f2
-#f2_krounds <- tail(unique(F2_rounds$f2_matchday),1)
-f2_goalscoredmatrix <- data.frame(matrix(nrow = length(f2_teams),ncol = f2_krounds))
-f2_goalscoredround <- c()
-for(i_f2_krounds in 1:f2_krounds)
+final_f2_gs <- matrix(nrow = length(f2_teams),ncol = f2_totalrounds )
+suml6_f2_gs <- c()
+l6_form_f2_gssplitted <- c()
+form_f2_gs <- c()
+for(index_f2_gs in 1:length(f2_teams))
 {
-  f2_homegoalscored <- F2_rounds$FTHG[F2_rounds$f2_matchday == i_f2_krounds]
-
-  f2_awaygoalscored <- F2_rounds$FTAG[F2_rounds$f2_matchday == i_f2_krounds]
-
-  f2_hometeamstemp_gs <- F2_rounds$HomeTeam[F2_rounds$f2_matchday == i_f2_krounds]
-
-  f2_awayteamstemp_gs <- F2_rounds$AwayTeam[F2_rounds$f2_matchday== i_f2_krounds]
-
-  f2_goalscombined <- c(f2_homegoalscored,f2_awaygoalscored)
-  f2_teamscombined <- c(f2_hometeamstemp_gs,f2_awayteamstemp_gs)
-
-  f2_goalscoredround <- data.frame(f2_teamscombined,f2_goalscombined)
-
-  f2_goalscoredround <- f2_goalscoredround[order(f2_goalscoredround$f2_teamscombined),]
-  f2_goalscoredround$f2_teamscombined <- NULL
-  f2_goalscoredmatrix[,i_f2_krounds] <- f2_goalscoredround
-
+  for(index_f2_gs_cols in 1:f2_totalrounds)
+  {
+    index_f2_gs  <- row.names(f2_goalscored_h) == f2_teams[index_f2_gs]
+    form_f2_gs <- f2_goalscored_h[index_f2_gs ]
+    deleted_form_f2_gs <- form_f2_gs[!form_f2_gs[] == ""]
+    l6_form_f2_gs <- tail(deleted_form_f2_gs,f2_last_n_games)
+    l6_form_f2_gs <- as.numeric(l6_form_f2_gs)
+    suml6_f2_gs[index_f2_gs] <- sum(l6_form_f2_gs)
+    suml6_f2_gs[index_f2_gs] <- paste(suml6_f2_gs[index_f2_gs],sep = "")
+    l6_form_f2_gs <- as.character(l6_form_f2_gs)
+    l6_form_f2_gs_flattened <- stri_paste(l6_form_f2_gs,collapse = '')
+    l6_form_f2_gssplitted <- as.numeric(strsplit(as.character(l6_form_f2_gs_flattened),"")[[1]])
+    final_f2_gs[index_f2_gs,index_f2_gs_cols] <- l6_form_f2_gssplitted[index_f2_gs_cols]
+  }
 }
 
-f2_goalscoredmatrix <- cbind(f2_teams,f2_goalscoredmatrix)
-#############################################################################################
+final_f2_gs[is.na(final_f2_gs)] <- ""
+f2_goalscoredmatrix <- cbind(f2_teams,final_f2_gs,suml6_f2_gs)
+##############################################################################################
 #g1
-#g1_krounds <- tail(unique(G1_rounds$g1_matchday),1)
-g1_goalscoredmatrix <- data.frame(matrix(nrow = length(g1_teams),ncol = g1_krounds))
-g1_goalscoredround <- c()
-for(i_g1_krounds in 1:g1_krounds)
+final_g1_gs <- matrix(nrow = length(g1_teams),ncol = g1_totalrounds )
+suml6_g1_gs <- c()
+l6_form_g1_gssplitted <- c()
+form_g1_gs <- c()
+for(index_g1_gs in 1:length(g1_teams))
 {
-  g1_homegoalscored <- G1_rounds$FTHG[G1_rounds$g1_matchday == i_g1_krounds]
-
-  g1_awaygoalscored <- G1_rounds$FTAG[G1_rounds$g1_matchday == i_g1_krounds]
-
-  g1_hometeamstemp_gs <- G1_rounds$HomeTeam[G1_rounds$g1_matchday == i_g1_krounds]
-
-  g1_awayteamstemp_gs <- G1_rounds$AwayTeam[G1_rounds$g1_matchday== i_g1_krounds]
-
-  g1_goalscombined <- c(g1_homegoalscored,g1_awaygoalscored)
-  g1_teamscombined <- c(g1_hometeamstemp_gs,g1_awayteamstemp_gs)
-
-  g1_goalscoredround <- data.frame(g1_teamscombined,g1_goalscombined)
-
-  g1_goalscoredround <- g1_goalscoredround[order(g1_goalscoredround$g1_teamscombined),]
-  g1_goalscoredround$g1_teamscombined <- NULL
-  g1_goalscoredmatrix[,i_g1_krounds] <- g1_goalscoredround
-
+  for(index_g1_gs_cols in 1:g1_totalrounds)
+  {
+    index_g1_gs  <- row.names(g1_goalscored_h) == g1_teams[index_g1_gs]
+    form_g1_gs <- g1_goalscored_h[index_g1_gs ]
+    deleted_form_g1_gs <- form_g1_gs[!form_g1_gs[] == ""]
+    l6_form_g1_gs <- tail(deleted_form_g1_gs,g1_last_n_games)
+    l6_form_g1_gs <- as.numeric(l6_form_g1_gs)
+    suml6_g1_gs[index_g1_gs] <- sum(l6_form_g1_gs)
+    suml6_g1_gs[index_g1_gs] <- paste(suml6_g1_gs[index_g1_gs],sep = "")
+    l6_form_g1_gs <- as.character(l6_form_g1_gs)
+    l6_form_g1_gs_flattened <- stri_paste(l6_form_g1_gs,collapse = '')
+    l6_form_g1_gssplitted <- as.numeric(strsplit(as.character(l6_form_g1_gs_flattened),"")[[1]])
+    final_g1_gs[index_g1_gs,index_g1_gs_cols] <- l6_form_g1_gssplitted[index_g1_gs_cols]
+  }
 }
 
-g1_goalscoredmatrix <- cbind(g1_teams,g1_goalscoredmatrix)
-#############################################################################################
+final_g1_gs[is.na(final_g1_gs)] <- ""
+g1_goalscoredmatrix <- cbind(g1_teams,final_g1_gs,suml6_g1_gs)
+##############################################################################################
 #i1
-#i1_krounds <- tail(unique(I1_rounds$i1_matchday),1)
-i1_goalscoredmatrix <- data.frame(matrix(nrow = length(i1_teams),ncol = i1_krounds))
-i1_goalscoredround <- c()
-for(i_i1_krounds in 1:i1_krounds)
+final_i1_gs <- matrix(nrow = length(i1_teams),ncol = i1_totalrounds )
+suml6_i1_gs <- c()
+l6_form_i1_gssplitted <- c()
+form_i1_gs <- c()
+for(index_i1_gs in 1:length(i1_teams))
 {
-  i1_homegoalscored <- I1_rounds$FTHG[I1_rounds$i1_matchday == i_i1_krounds]
-
-  i1_awaygoalscored <- I1_rounds$FTAG[I1_rounds$i1_matchday == i_i1_krounds]
-
-  i1_hometeamstemp_gs <- I1_rounds$HomeTeam[I1_rounds$i1_matchday == i_i1_krounds]
-
-  i1_awayteamstemp_gs <- I1_rounds$AwayTeam[I1_rounds$i1_matchday== i_i1_krounds]
-
-  i1_goalscombined <- c(i1_homegoalscored,i1_awaygoalscored)
-  i1_teamscombined <- c(i1_hometeamstemp_gs,i1_awayteamstemp_gs)
-
-  i1_goalscoredround <- data.frame(i1_teamscombined,i1_goalscombined)
-
-  i1_goalscoredround <- i1_goalscoredround[order(i1_goalscoredround$i1_teamscombined),]
-  i1_goalscoredround$i1_teamscombined <- NULL
-  i1_goalscoredmatrix[,i_i1_krounds] <- i1_goalscoredround
-
+  for(index_i1_gs_cols in 1:i1_totalrounds)
+  {
+    index_i1_gs  <- row.names(i1_goalscored_h) == i1_teams[index_i1_gs]
+    form_i1_gs <- i1_goalscored_h[index_i1_gs ]
+    deleted_form_i1_gs <- form_i1_gs[!form_i1_gs[] == ""]
+    l6_form_i1_gs <- tail(deleted_form_i1_gs,i1_last_n_games)
+    l6_form_i1_gs <- as.numeric(l6_form_i1_gs)
+    suml6_i1_gs[index_i1_gs] <- sum(l6_form_i1_gs)
+    suml6_i1_gs[index_i1_gs] <- paste(suml6_i1_gs[index_i1_gs],sep = "")
+    l6_form_i1_gs <- as.character(l6_form_i1_gs)
+    l6_form_i1_gs_flattened <- stri_paste(l6_form_i1_gs,collapse = '')
+    l6_form_i1_gssplitted <- as.numeric(strsplit(as.character(l6_form_i1_gs_flattened),"")[[1]])
+    final_i1_gs[index_i1_gs,index_i1_gs_cols] <- l6_form_i1_gssplitted[index_i1_gs_cols]
+  }
 }
 
-i1_goalscoredmatrix <- cbind(i1_teams,i1_goalscoredmatrix)
-#############################################################################################
-#i2
-#i2_krounds <- tail(unique(I2_rounds$i2_matchday),1)
-i2_goalscoredmatrix <- data.frame(matrix(nrow = length(i2_teams),ncol = i2_krounds))
-i2_goalscoredround <- c()
-for(i_i2_krounds in 1:i2_krounds)
+final_i1_gs[is.na(final_i1_gs)] <- ""
+i1_goalscoredmatrix <- cbind(i1_teams,final_i1_gs,suml6_i1_gs)
+##############################################################################################
+##i2
+final_i2_gs <- matrix(nrow = length(i2_teams),ncol = i2_totalrounds )
+suml6_i2_gs <- c()
+l6_form_i2_gssplitted <- c()
+form_i2_gs <- c()
+for(index_i2_gs in 1:length(i2_teams))
 {
-  i2_homegoalscored <- I2_rounds$FTHG[I2_rounds$i2_matchday == i_i2_krounds]
-
-  i2_awaygoalscored <- I2_rounds$FTAG[I2_rounds$i2_matchday == i_i2_krounds]
-
-  i2_hometeamstemp_gs <- I2_rounds$HomeTeam[I2_rounds$i2_matchday == i_i2_krounds]
-
-  i2_awayteamstemp_gs <- I2_rounds$AwayTeam[I2_rounds$i2_matchday== i_i2_krounds]
-
-  i2_goalscombined <- c(i2_homegoalscored,i2_awaygoalscored)
-  i2_teamscombined <- c(i2_hometeamstemp_gs,i2_awayteamstemp_gs)
-
-  i2_goalscoredround <- data.frame(i2_teamscombined,i2_goalscombined)
-
-  i2_goalscoredround <- i2_goalscoredround[order(i2_goalscoredround$i2_teamscombined),]
-  i2_goalscoredround$i2_teamscombined <- NULL
-  i2_goalscoredmatrix[,i_i2_krounds] <- i2_goalscoredround
-
+  for(index_i2_gs_cols in 1:i2_totalrounds)
+  {
+    index_i2_gs  <- row.names(i2_goalscored_h) == i2_teams[index_i2_gs]
+    form_i2_gs <- i2_goalscored_h[index_i2_gs ]
+    deleted_form_i2_gs <- form_i2_gs[!form_i2_gs[] == ""]
+    l6_form_i2_gs <- tail(deleted_form_i2_gs,i2_last_n_games)
+    l6_form_i2_gs <- as.numeric(l6_form_i2_gs)
+    suml6_i2_gs[index_i2_gs] <- sum(l6_form_i2_gs)
+    suml6_i2_gs[index_i2_gs] <- paste(suml6_i2_gs[index_i2_gs],sep = "")
+    l6_form_i2_gs <- as.character(l6_form_i2_gs)
+    l6_form_i2_gs_flattened <- stri_paste(l6_form_i2_gs,collapse = '')
+    l6_form_i2_gssplitted <- as.numeric(strsplit(as.character(l6_form_i2_gs_flattened),"")[[1]])
+    final_i2_gs[index_i2_gs,index_i2_gs_cols] <- l6_form_i2_gssplitted[index_i2_gs_cols]
+  }
 }
 
-i2_goalscoredmatrix <- cbind(i2_teams,i2_goalscoredmatrix)
-#############################################################################################
+final_i2_gs[is.na(final_i2_gs)] <- ""
+i2_goalscoredmatrix <- cbind(i2_teams,final_i2_gs,suml6_i2_gs)
+##############################################################################################
 #n1
-#n1_krounds <- tail(unique(N1_rounds$n1_matchday),1)
-n1_goalscoredmatrix <- data.frame(matrix(nrow = length(n1_teams),ncol = n1_krounds))
-n1_goalscoredround <- c()
-for(i_n1_krounds in 1:n1_krounds)
+final_n1_gs <- matrix(nrow = length(n1_teams),ncol = n1_totalrounds )
+suml6_n1_gs <- c()
+l6_form_n1_gssplitted <- c()
+form_n1_gs <- c()
+for(index_n1_gs in 1:length(n1_teams))
 {
-  n1_homegoalscored <- N1_rounds$FTHG[N1_rounds$n1_matchday == i_n1_krounds]
-
-  n1_awaygoalscored <- N1_rounds$FTAG[N1_rounds$n1_matchday == i_n1_krounds]
-
-  n1_hometeamstemp_gs <- N1_rounds$HomeTeam[N1_rounds$n1_matchday == i_n1_krounds]
-
-  n1_awayteamstemp_gs <- N1_rounds$AwayTeam[N1_rounds$n1_matchday== i_n1_krounds]
-
-  n1_goalscombined <- c(n1_homegoalscored,n1_awaygoalscored)
-  n1_teamscombined <- c(n1_hometeamstemp_gs,n1_awayteamstemp_gs)
-
-  n1_goalscoredround <- data.frame(n1_teamscombined,n1_goalscombined)
-
-  n1_goalscoredround <- n1_goalscoredround[order(n1_goalscoredround$n1_teamscombined),]
-  n1_goalscoredround$n1_teamscombined <- NULL
-  n1_goalscoredmatrix[,i_n1_krounds] <- n1_goalscoredround
-
+  for(index_n1_gs_cols in 1:n1_totalrounds)
+  {
+    index_n1_gs  <- row.names(n1_goalscored_h) == n1_teams[index_n1_gs]
+    form_n1_gs <- n1_goalscored_h[index_n1_gs ]
+    deleted_form_n1_gs <- form_n1_gs[!form_n1_gs[] == ""]
+    l6_form_n1_gs <- tail(deleted_form_n1_gs,n1_last_n_games)
+    l6_form_n1_gs <- as.numeric(l6_form_n1_gs)
+    suml6_n1_gs[index_n1_gs] <- sum(l6_form_n1_gs)
+    suml6_n1_gs[index_n1_gs] <- paste(suml6_n1_gs[index_n1_gs],sep = "")
+    l6_form_n1_gs <- as.character(l6_form_n1_gs)
+    l6_form_n1_gs_flattened <- stri_paste(l6_form_n1_gs,collapse = '')
+    l6_form_n1_gssplitted <- as.numeric(strsplit(as.character(l6_form_n1_gs_flattened),"")[[1]])
+    final_n1_gs[index_n1_gs,index_n1_gs_cols] <- l6_form_n1_gssplitted[index_n1_gs_cols]
+  }
 }
 
-n1_goalscoredmatrix <- cbind(n1_teams,n1_goalscoredmatrix)
-#############################################################################################
+final_n1_gs[is.na(final_n1_gs)] <- ""
+n1_goalscoredmatrix <- cbind(n1_teams,final_n1_gs,suml6_n1_gs)
+##############################################################################################
 #p1
-#p1_krounds <- tail(unique(P1_rounds$p1_matchday),1)
-p1_goalscoredmatrix <- data.frame(matrix(nrow = length(p1_teams),ncol = p1_krounds))
-p1_goalscoredround <- c()
-for(i_p1_krounds in 1:p1_krounds)
+final_p1_gs <- matrix(nrow = length(p1_teams),ncol = p1_totalrounds )
+suml6_p1_gs <- c()
+l6_form_p1_gssplitted <- c()
+form_p1_gs <- c()
+for(index_p1_gs in 1:length(p1_teams))
 {
-  p1_homegoalscored <- P1_rounds$FTHG[P1_rounds$p1_matchday == i_p1_krounds]
-
-  p1_awaygoalscored <- P1_rounds$FTAG[P1_rounds$p1_matchday == i_p1_krounds]
-
-  p1_hometeamstemp_gs <- P1_rounds$HomeTeam[P1_rounds$p1_matchday == i_p1_krounds]
-
-  p1_awayteamstemp_gs <- P1_rounds$AwayTeam[P1_rounds$p1_matchday== i_p1_krounds]
-
-  p1_goalscombined <- c(p1_homegoalscored,p1_awaygoalscored)
-  p1_teamscombined <- c(p1_hometeamstemp_gs,p1_awayteamstemp_gs)
-
-  p1_goalscoredround <- data.frame(p1_teamscombined,p1_goalscombined)
-
-  p1_goalscoredround <- p1_goalscoredround[order(p1_goalscoredround$p1_teamscombined),]
-  p1_goalscoredround$p1_teamscombined <- NULL
-  p1_goalscoredmatrix[,i_p1_krounds] <- p1_goalscoredround
-
+  for(index_p1_gs_cols in 1:p1_totalrounds)
+  {
+    index_p1_gs  <- row.names(p1_goalscored_h) == p1_teams[index_p1_gs]
+    form_p1_gs <- p1_goalscored_h[index_p1_gs ]
+    deleted_form_p1_gs <- form_p1_gs[!form_p1_gs[] == ""]
+    l6_form_p1_gs <- tail(deleted_form_p1_gs,p1_last_n_games)
+    l6_form_p1_gs <- as.numeric(l6_form_p1_gs)
+    suml6_p1_gs[index_p1_gs] <- sum(l6_form_p1_gs)
+    suml6_p1_gs[index_p1_gs] <- paste(suml6_p1_gs[index_p1_gs],sep = "")
+    l6_form_p1_gs <- as.character(l6_form_p1_gs)
+    l6_form_p1_gs_flattened <- stri_paste(l6_form_p1_gs,collapse = '')
+    l6_form_p1_gssplitted <- as.numeric(strsplit(as.character(l6_form_p1_gs_flattened),"")[[1]])
+    final_p1_gs[index_p1_gs,index_p1_gs_cols] <- l6_form_p1_gssplitted[index_p1_gs_cols]
+  }
 }
 
-p1_goalscoredmatrix <- cbind(p1_teams,p1_goalscoredmatrix)
-#############################################################################################
+final_p1_gs[is.na(final_p1_gs)] <- ""
+p1_goalscoredmatrix <- cbind(p1_teams,final_p1_gs,suml6_p1_gs)
+##############################################################################################
 #sp1
-#sp1_krounds <- tail(unique(SP1_rounds$sp1_matchday),1)
-sp1_goalscoredmatrix <- data.frame(matrix(nrow = length(sp1_teams),ncol = sp1_krounds))
-sp1_goalscoredround <- c()
-for(i_sp1_krounds in 1:sp1_krounds)
+final_sp1_gs <- matrix(nrow = length(sp1_teams),ncol = sp1_totalrounds )
+suml6_sp1_gs <- c()
+l6_form_sp1_gssplitted <- c()
+form_sp1_gs <- c()
+for(index_sp1_gs in 1:length(sp1_teams))
 {
-  sp1_homegoalscored <- SP1_rounds$FTHG[SP1_rounds$sp1_matchday == i_sp1_krounds]
-
-  sp1_awaygoalscored <- SP1_rounds$FTAG[SP1_rounds$sp1_matchday == i_sp1_krounds]
-
-  sp1_hometeamstemp_gs <- SP1_rounds$HomeTeam[SP1_rounds$sp1_matchday == i_sp1_krounds]
-
-  sp1_awayteamstemp_gs <- SP1_rounds$AwayTeam[SP1_rounds$sp1_matchday== i_sp1_krounds]
-
-  sp1_goalscombined <- c(sp1_homegoalscored,sp1_awaygoalscored)
-  sp1_teamscombined <- c(sp1_hometeamstemp_gs,sp1_awayteamstemp_gs)
-
-  sp1_goalscoredround <- data.frame(sp1_teamscombined,sp1_goalscombined)
-
-  sp1_goalscoredround <- sp1_goalscoredround[order(sp1_goalscoredround$sp1_teamscombined),]
-  sp1_goalscoredround$sp1_teamscombined <- NULL
-  sp1_goalscoredmatrix[,i_sp1_krounds] <- sp1_goalscoredround
-
+  for(index_sp1_gs_cols in 1:sp1_totalrounds)
+  {
+    index_sp1_gs  <- row.names(sp1_goalscored_h) == sp1_teams[index_sp1_gs]
+    form_sp1_gs <- sp1_goalscored_h[index_sp1_gs ]
+    deleted_form_sp1_gs <- form_sp1_gs[!form_sp1_gs[] == ""]
+    l6_form_sp1_gs <- tail(deleted_form_sp1_gs,sp1_last_n_games)
+    l6_form_sp1_gs <- as.numeric(l6_form_sp1_gs)
+    suml6_sp1_gs[index_sp1_gs] <- sum(l6_form_sp1_gs)
+    suml6_sp1_gs[index_sp1_gs] <- paste(suml6_sp1_gs[index_sp1_gs],sep = "")
+    l6_form_sp1_gs <- as.character(l6_form_sp1_gs)
+    l6_form_sp1_gs_flattened <- stri_paste(l6_form_sp1_gs,collapse = '')
+    l6_form_sp1_gssplitted <- as.numeric(strsplit(as.character(l6_form_sp1_gs_flattened),"")[[1]])
+    final_sp1_gs[index_sp1_gs,index_sp1_gs_cols] <- l6_form_sp1_gssplitted[index_sp1_gs_cols]
+  }
 }
 
-sp1_goalscoredmatrix <- cbind(sp1_teams,sp1_goalscoredmatrix)
-#############################################################################################
+final_sp1_gs[is.na(final_sp1_gs)] <- ""
+sp1_goalscoredmatrix <- cbind(sp1_teams,final_sp1_gs,suml6_sp1_gs)
+##############################################################################################
 #sp2
-#sp2_krounds <- tail(unique(SP2_rounds$sp2_matchday),1)
-sp2_goalscoredmatrix <- data.frame(matrix(nrow = length(sp2_teams),ncol = sp2_krounds))
-sp2_goalscoredround <- c()
-for(i_sp2_krounds in 1:sp2_krounds)
+final_sp2_gs <- matrix(nrow = length(sp2_teams),ncol = sp2_totalrounds )
+suml6_sp2_gs <- c()
+l6_form_sp2_gssplitted <- c()
+form_sp2_gs <- c()
+for(index_sp2_gs in 1:length(sp2_teams))
 {
-  sp2_homegoalscored <- SP2_rounds$FTHG[SP2_rounds$sp2_matchday == i_sp2_krounds]
-
-  sp2_awaygoalscored <- SP2_rounds$FTAG[SP2_rounds$sp2_matchday == i_sp2_krounds]
-
-  sp2_hometeamstemp_gs <- SP2_rounds$HomeTeam[SP2_rounds$sp2_matchday == i_sp2_krounds]
-
-  sp2_awayteamstemp_gs <- SP2_rounds$AwayTeam[SP2_rounds$sp2_matchday== i_sp2_krounds]
-
-  sp2_goalscombined <- c(sp2_homegoalscored,sp2_awaygoalscored)
-  sp2_teamscombined <- c(sp2_hometeamstemp_gs,sp2_awayteamstemp_gs)
-
-  sp2_goalscoredround <- data.frame(sp2_teamscombined,sp2_goalscombined)
-
-  sp2_goalscoredround <- sp2_goalscoredround[order(sp2_goalscoredround$sp2_teamscombined),]
-  sp2_goalscoredround$sp2_teamscombined <- NULL
-  sp2_goalscoredmatrix[,i_sp2_krounds] <- sp2_goalscoredround
-
+  for(index_sp2_gs_cols in 1:sp2_totalrounds)
+  {
+    index_sp2_gs  <- row.names(sp2_goalscored_h) == sp2_teams[index_sp2_gs]
+    form_sp2_gs <- sp2_goalscored_h[index_sp2_gs ]
+    deleted_form_sp2_gs <- form_sp2_gs[!form_sp2_gs[] == ""]
+    l6_form_sp2_gs <- tail(deleted_form_sp2_gs,sp2_last_n_games)
+    l6_form_sp2_gs <- as.numeric(l6_form_sp2_gs)
+    suml6_sp2_gs[index_sp2_gs] <- sum(l6_form_sp2_gs)
+    suml6_sp2_gs[index_sp2_gs] <- paste(suml6_sp2_gs[index_sp2_gs],sep = "")
+    l6_form_sp2_gs <- as.character(l6_form_sp2_gs)
+    l6_form_sp2_gs_flattened <- stri_paste(l6_form_sp2_gs,collapse = '')
+    l6_form_sp2_gssplitted <- as.numeric(strsplit(as.character(l6_form_sp2_gs_flattened),"")[[1]])
+    final_sp2_gs[index_sp2_gs,index_sp2_gs_cols] <- l6_form_sp2_gssplitted[index_sp2_gs_cols]
+  }
 }
 
-sp2_goalscoredmatrix <- cbind(sp2_teams,sp2_goalscoredmatrix)
-#############################################################################################
+final_sp2_gs[is.na(final_sp2_gs)] <- ""
+sp2_goalscoredmatrix <- cbind(sp2_teams,final_sp2_gs,suml6_sp2_gs)
+##############################################################################################
 #sc0
-#sc0_krounds <- tail(unique(SC0_rounds$sc0_matchday),1)
-sc0_goalscoredmatrix <- data.frame(matrix(nrow = length(sc0_teams),ncol = sc0_krounds))
-sc0_goalscoredround <- c()
-for(i_sc0_krounds in 1:sc0_krounds)
+final_sc0_gs <- matrix(nrow = length(sc0_teams),ncol = sc0_totalrounds )
+suml6_sc0_gs <- c()
+l6_form_sc0_gssplitted <- c()
+form_sc0_gs <- c()
+for(index_sc0_gs in 1:length(sc0_teams))
 {
-  sc0_homegoalscored <- SC0_rounds$FTHG[SC0_rounds$sc0_matchday == i_sc0_krounds]
-
-  sc0_awaygoalscored <- SC0_rounds$FTAG[SC0_rounds$sc0_matchday == i_sc0_krounds]
-
-  sc0_hometeamstemp_gs <- SC0_rounds$HomeTeam[SC0_rounds$sc0_matchday == i_sc0_krounds]
-
-  sc0_awayteamstemp_gs <- SC0_rounds$AwayTeam[SC0_rounds$sc0_matchday== i_sc0_krounds]
-
-  sc0_goalscombined <- c(sc0_homegoalscored,sc0_awaygoalscored)
-  sc0_teamscombined <- c(sc0_hometeamstemp_gs,sc0_awayteamstemp_gs)
-
-  sc0_goalscoredround <- data.frame(sc0_teamscombined,sc0_goalscombined)
-
-  sc0_goalscoredround <- sc0_goalscoredround[order(sc0_goalscoredround$sc0_teamscombined),]
-  sc0_goalscoredround$sc0_teamscombined <- NULL
-  sc0_goalscoredmatrix[,i_sc0_krounds] <- sc0_goalscoredround
-
+  for(index_sc0_gs_cols in 1:sc0_totalrounds)
+  {
+    index_sc0_gs  <- row.names(sc0_goalscored_h) == sc0_teams[index_sc0_gs]
+    form_sc0_gs <- sc0_goalscored_h[index_sc0_gs ]
+    deleted_form_sc0_gs <- form_sc0_gs[!form_sc0_gs[] == ""]
+    l6_form_sc0_gs <- tail(deleted_form_sc0_gs,sc0_last_n_games)
+    l6_form_sc0_gs <- as.numeric(l6_form_sc0_gs)
+    suml6_sc0_gs[index_sc0_gs] <- sum(l6_form_sc0_gs)
+    suml6_sc0_gs[index_sc0_gs] <- paste(suml6_sc0_gs[index_sc0_gs],sep = "")
+    l6_form_sc0_gs <- as.character(l6_form_sc0_gs)
+    l6_form_sc0_gs_flattened <- stri_paste(l6_form_sc0_gs,collapse = '')
+    l6_form_sc0_gssplitted <- as.numeric(strsplit(as.character(l6_form_sc0_gs_flattened),"")[[1]])
+    final_sc0_gs[index_sc0_gs,index_sc0_gs_cols] <- l6_form_sc0_gssplitted[index_sc0_gs_cols]
+  }
 }
 
-sc0_goalscoredmatrix <- cbind(sc0_teams,sc0_goalscoredmatrix)
-#############################################################################################
+final_sc0_gs[is.na(final_sc0_gs)] <- ""
+sc0_goalscoredmatrix <- cbind(sc0_teams,final_sc0_gs,suml6_sc0_gs)
+##############################################################################################
 #sc1
-#sc1_krounds <- tail(unique(SC1_rounds$sc1_matchday),1)
-sc1_goalscoredmatrix <- data.frame(matrix(nrow = length(sc1_teams),ncol = sc1_krounds))
-sc1_goalscoredround <- c()
-for(i_sc1_krounds in 1:sc1_krounds)
+final_sc1_gs <- matrix(nrow = length(sc1_teams),ncol = sc1_totalrounds )
+suml6_sc1_gs <- c()
+l6_form_sc1_gssplitted <- c()
+form_sc1_gs <- c()
+for(index_sc1_gs in 1:length(sc1_teams))
 {
-  sc1_homegoalscored <- SC1_rounds$FTHG[SC1_rounds$sc1_matchday == i_sc1_krounds]
-
-  sc1_awaygoalscored <- SC1_rounds$FTAG[SC1_rounds$sc1_matchday == i_sc1_krounds]
-
-  sc1_hometeamstemp_gs <- SC1_rounds$HomeTeam[SC1_rounds$sc1_matchday == i_sc1_krounds]
-
-  sc1_awayteamstemp_gs <- SC1_rounds$AwayTeam[SC1_rounds$sc1_matchday== i_sc1_krounds]
-
-  sc1_goalscombined <- c(sc1_homegoalscored,sc1_awaygoalscored)
-  sc1_teamscombined <- c(sc1_hometeamstemp_gs,sc1_awayteamstemp_gs)
-
-  sc1_goalscoredround <- data.frame(sc1_teamscombined,sc1_goalscombined)
-
-  sc1_goalscoredround <- sc1_goalscoredround[order(sc1_goalscoredround$sc1_teamscombined),]
-  sc1_goalscoredround$sc1_teamscombined <- NULL
-  sc1_goalscoredmatrix[,i_sc1_krounds] <- sc1_goalscoredround
-
+  for(index_sc1_gs_cols in 1:sc1_totalrounds)
+  {
+    index_sc1_gs  <- row.names(sc1_goalscored_h) == sc1_teams[index_sc1_gs]
+    form_sc1_gs <- sc1_goalscored_h[index_sc1_gs ]
+    deleted_form_sc1_gs <- form_sc1_gs[!form_sc1_gs[] == ""]
+    l6_form_sc1_gs <- tail(deleted_form_sc1_gs,sc1_last_n_games)
+    l6_form_sc1_gs <- as.numeric(l6_form_sc1_gs)
+    suml6_sc1_gs[index_sc1_gs] <- sum(l6_form_sc1_gs)
+    suml6_sc1_gs[index_sc1_gs] <- paste(suml6_sc1_gs[index_sc1_gs],sep = "")
+    l6_form_sc1_gs <- as.character(l6_form_sc1_gs)
+    l6_form_sc1_gs_flattened <- stri_paste(l6_form_sc1_gs,collapse = '')
+    l6_form_sc1_gssplitted <- as.numeric(strsplit(as.character(l6_form_sc1_gs_flattened),"")[[1]])
+    final_sc1_gs[index_sc1_gs,index_sc1_gs_cols] <- l6_form_sc1_gssplitted[index_sc1_gs_cols]
+  }
 }
 
-sc1_goalscoredmatrix <- cbind(sc1_teams,sc1_goalscoredmatrix)
-#############################################################################################
+final_sc1_gs[is.na(final_sc1_gs)] <- ""
+sc1_goalscoredmatrix <- cbind(sc1_teams,final_sc1_gs,suml6_sc1_gs)
+##############################################################################################
 #sc2
-#sc2_krounds <- tail(unique(SC2_rounds$sc2_matchday),1)
-sc2_goalscoredmatrix <- data.frame(matrix(nrow = length(sc2_teams),ncol = sc2_krounds))
-sc2_goalscoredround <- c()
-for(i_sc2_krounds in 1:sc2_krounds)
+final_sc2_gs <- matrix(nrow = length(sc2_teams),ncol = sc2_totalrounds )
+suml6_sc2_gs <- c()
+l6_form_sc2_gssplitted <- c()
+form_sc2_gs <- c()
+for(index_sc2_gs in 1:length(sc2_teams))
 {
-  sc2_homegoalscored <- SC2_rounds$FTHG[SC2_rounds$sc2_matchday == i_sc2_krounds]
-
-  sc2_awaygoalscored <- SC2_rounds$FTAG[SC2_rounds$sc2_matchday == i_sc2_krounds]
-
-  sc2_hometeamstemp_gs <- SC2_rounds$HomeTeam[SC2_rounds$sc2_matchday == i_sc2_krounds]
-
-  sc2_awayteamstemp_gs <- SC2_rounds$AwayTeam[SC2_rounds$sc2_matchday== i_sc2_krounds]
-
-  sc2_goalscombined <- c(sc2_homegoalscored,sc2_awaygoalscored)
-  sc2_teamscombined <- c(sc2_hometeamstemp_gs,sc2_awayteamstemp_gs)
-
-  sc2_goalscoredround <- data.frame(sc2_teamscombined,sc2_goalscombined)
-
-  sc2_goalscoredround <- sc2_goalscoredround[order(sc2_goalscoredround$sc2_teamscombined),]
-  sc2_goalscoredround$sc2_teamscombined <- NULL
-  sc2_goalscoredmatrix[,i_sc2_krounds] <- sc2_goalscoredround
-
+  for(index_sc2_gs_cols in 1:sc2_totalrounds)
+  {
+    index_sc2_gs  <- row.names(sc2_goalscored_h) == sc2_teams[index_sc2_gs]
+    form_sc2_gs <- sc2_goalscored_h[index_sc2_gs ]
+    deleted_form_sc2_gs <- form_sc2_gs[!form_sc2_gs[] == ""]
+    l6_form_sc2_gs <- tail(deleted_form_sc2_gs,sc2_last_n_games)
+    l6_form_sc2_gs <- as.numeric(l6_form_sc2_gs)
+    suml6_sc2_gs[index_sc2_gs] <- sum(l6_form_sc2_gs)
+    suml6_sc2_gs[index_sc2_gs] <- paste(suml6_sc2_gs[index_sc2_gs],sep = "")
+    l6_form_sc2_gs <- as.character(l6_form_sc2_gs)
+    l6_form_sc2_gs_flattened <- stri_paste(l6_form_sc2_gs,collapse = '')
+    l6_form_sc2_gssplitted <- as.numeric(strsplit(as.character(l6_form_sc2_gs_flattened),"")[[1]])
+    final_sc2_gs[index_sc2_gs,index_sc2_gs_cols] <- l6_form_sc2_gssplitted[index_sc2_gs_cols]
+  }
 }
 
-sc2_goalscoredmatrix <- cbind(sc2_teams,sc2_goalscoredmatrix)
-#############################################################################################
+final_sc2_gs[is.na(final_sc2_gs)] <- ""
+sc2_goalscoredmatrix <- cbind(sc2_teams,final_sc2_gs,suml6_sc2_gs)
+##############################################################################################
 #sc3
-#sc3_krounds <- tail(unique(SC3_rounds$sc3_matchday),1)
-sc3_goalscoredmatrix <- data.frame(matrix(nrow = length(sc3_teams),ncol = sc3_krounds))
-sc3_goalscoredround <- c()
-for(i_sc3_krounds in 1:sc3_krounds)
+final_sc3_gs <- matrix(nrow = length(sc3_teams),ncol = sc3_totalrounds )
+suml6_sc3_gs <- c()
+l6_form_sc3_gssplitted <- c()
+form_sc3_gs <- c()
+for(index_sc3_gs in 1:length(sc3_teams))
 {
-  sc3_homegoalscored <- SC3_rounds$FTHG[SC3_rounds$sc3_matchday == i_sc3_krounds]
-
-  sc3_awaygoalscored <- SC3_rounds$FTAG[SC3_rounds$sc3_matchday == i_sc3_krounds]
-
-  sc3_hometeamstemp_gs <- SC3_rounds$HomeTeam[SC3_rounds$sc3_matchday == i_sc3_krounds]
-
-  sc3_awayteamstemp_gs <- SC3_rounds$AwayTeam[SC3_rounds$sc3_matchday== i_sc3_krounds]
-
-  sc3_goalscombined <- c(sc3_homegoalscored,sc3_awaygoalscored)
-  sc3_teamscombined <- c(sc3_hometeamstemp_gs,sc3_awayteamstemp_gs)
-
-  sc3_goalscoredround <- data.frame(sc3_teamscombined,sc3_goalscombined)
-
-  sc3_goalscoredround <- sc3_goalscoredround[order(sc3_goalscoredround$sc3_teamscombined),]
-  sc3_goalscoredround$sc3_teamscombined <- NULL
-  sc3_goalscoredmatrix[,i_sc3_krounds] <- sc3_goalscoredround
-
+  for(index_sc3_gs_cols in 1:sc3_totalrounds)
+  {
+    index_sc3_gs  <- row.names(sc3_goalscored_h) == sc3_teams[index_sc3_gs]
+    form_sc3_gs <- sc3_goalscored_h[index_sc3_gs ]
+    deleted_form_sc3_gs <- form_sc3_gs[!form_sc3_gs[] == ""]
+    l6_form_sc3_gs <- tail(deleted_form_sc3_gs,sc3_last_n_games)
+    l6_form_sc3_gs <- as.numeric(l6_form_sc3_gs)
+    suml6_sc3_gs[index_sc3_gs] <- sum(l6_form_sc3_gs)
+    suml6_sc3_gs[index_sc3_gs] <- paste(suml6_sc3_gs[index_sc3_gs],sep = "")
+    l6_form_sc3_gs <- as.character(l6_form_sc3_gs)
+    l6_form_sc3_gs_flattened <- stri_paste(l6_form_sc3_gs,collapse = '')
+    l6_form_sc3_gssplitted <- as.numeric(strsplit(as.character(l6_form_sc3_gs_flattened),"")[[1]])
+    final_sc3_gs[index_sc3_gs,index_sc3_gs_cols] <- l6_form_sc3_gssplitted[index_sc3_gs_cols]
+  }
 }
 
-sc3_goalscoredmatrix <- cbind(sc3_teams,sc3_goalscoredmatrix)
-#############################################################################################
+final_sc3_gs[is.na(final_sc3_gs)] <- ""
+sc3_goalscoredmatrix <- cbind(sc3_teams,final_sc3_gs,suml6_sc3_gs)
+##############################################################################################
 #t1
-#t1_krounds <- tail(unique(T1_rounds$t1_matchday),1)
-t1_goalscoredmatrix <- data.frame(matrix(nrow = length(t1_teams),ncol = t1_krounds))
-t1_goalscoredround <- c()
-for(i_t1_krounds in 1:t1_krounds)
+final_t1_gs <- matrix(nrow = length(t1_teams),ncol = t1_totalrounds )
+suml6_t1_gs <- c()
+l6_form_t1_gssplitted <- c()
+form_t1_gs <- c()
+for(index_t1_gs in 1:length(t1_teams))
 {
-  t1_homegoalscored <- T1_rounds$FTHG[T1_rounds$t1_matchday == i_t1_krounds]
-
-  t1_awaygoalscored <- T1_rounds$FTAG[T1_rounds$t1_matchday == i_t1_krounds]
-
-  t1_hometeamstemp_gs <- T1_rounds$HomeTeam[T1_rounds$t1_matchday == i_t1_krounds]
-
-  t1_awayteamstemp_gs <- T1_rounds$AwayTeam[T1_rounds$t1_matchday== i_t1_krounds]
-
-  t1_goalscombined <- c(t1_homegoalscored,t1_awaygoalscored)
-  t1_teamscombined <- c(t1_hometeamstemp_gs,t1_awayteamstemp_gs)
-
-  t1_goalscoredround <- data.frame(t1_teamscombined,t1_goalscombined)
-
-  t1_goalscoredround <- t1_goalscoredround[order(t1_goalscoredround$t1_teamscombined),]
-  t1_goalscoredround$t1_teamscombined <- NULL
-  t1_goalscoredmatrix[,i_t1_krounds] <- t1_goalscoredround
-
+  for(index_t1_gs_cols in 1:t1_totalrounds)
+  {
+    index_t1_gs  <- row.names(t1_goalscored_h) == t1_teams[index_t1_gs]
+    form_t1_gs <- t1_goalscored_h[index_t1_gs ]
+    deleted_form_t1_gs <- form_t1_gs[!form_t1_gs[] == ""]
+    l6_form_t1_gs <- tail(deleted_form_t1_gs,t1_last_n_games)
+    l6_form_t1_gs <- as.numeric(l6_form_t1_gs)
+    suml6_t1_gs[index_t1_gs] <- sum(l6_form_t1_gs)
+    suml6_t1_gs[index_t1_gs] <- paste(suml6_t1_gs[index_t1_gs],sep = "")
+    l6_form_t1_gs <- as.character(l6_form_t1_gs)
+    l6_form_t1_gs_flattened <- stri_paste(l6_form_t1_gs,collapse = '')
+    l6_form_t1_gssplitted <- as.numeric(strsplit(as.character(l6_form_t1_gs_flattened),"")[[1]])
+    final_t1_gs[index_t1_gs,index_t1_gs_cols] <- l6_form_t1_gssplitted[index_t1_gs_cols]
+  }
 }
 
-t1_goalscoredmatrix <- cbind(t1_teams,t1_goalscoredmatrix)
-#############################################################################################
+final_t1_gs[is.na(final_t1_gs)] <- ""
+t1_goalscoredmatrix <- cbind(t1_teams,final_t1_gs,suml6_t1_gs)
+##############################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

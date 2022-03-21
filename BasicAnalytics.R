@@ -905,14 +905,11 @@ b1_teams
 
 E0_rounds[E0_rounds$e0_matchday == 25,]
 
+object.size(EURO_fixtures)
 
-
-
-
-
-
-
-
+rm(teams)
+ls(pattern =".*")
+memory.profile()
 
 
 

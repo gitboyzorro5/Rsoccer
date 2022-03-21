@@ -4,53 +4,53 @@ Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 library('scales')
 library('R.utils')
-# ############################
-#create last n games
-# b1_last_n_games <- 6
-# d1_last_n_games <- 6
-# d2_last_n_games <- 6
-# e0_last_n_games <- 6
-# e1_last_n_games <- 6
-# e2_last_n_games <- 6
-# e3_last_n_games <- 6
-# ec_last_n_games <- 6
-# f1_last_n_games <- 6
-# f2_last_n_games <- 6
-# g1_last_n_games <- 6
-# i1_last_n_games <- 6
-# i2_last_n_games <- 6
-# n1_last_n_games <- 6
-# p1_last_n_games <- 6
-# sc0_last_n_games <- 6
-# sc1_last_n_games <- 6
-# sc2_last_n_games <- 6
-# sc3_last_n_games <- 6
-# sp1_last_n_games <- 6
-# sp2_last_n_games <- 6
-# t1_last_n_games <- 6
+############################
+create last n games
+b1_last_n_games <- 6
+d1_last_n_games <- 6
+d2_last_n_games <- 6
+e0_last_n_games <- 6
+e1_last_n_games <- 6
+e2_last_n_games <- 6
+e3_last_n_games <- 6
+ec_last_n_games <- 6
+f1_last_n_games <- 6
+f2_last_n_games <- 6
+g1_last_n_games <- 6
+i1_last_n_games <- 6
+i2_last_n_games <- 6
+n1_last_n_games <- 6
+p1_last_n_games <- 6
+sc0_last_n_games <- 6
+sc1_last_n_games <- 6
+sc2_last_n_games <- 6
+sc3_last_n_games <- 6
+sp1_last_n_games <- 6
+sp2_last_n_games <- 6
+t1_last_n_games <- 6
 #create last total games
-b1_last_n_games <- b1_games_played[1]
-d1_last_n_games <- d1_games_played[1]
-d2_last_n_games <- d2_games_played[1]
-e0_last_n_games <- e0_games_played[1]
-e1_last_n_games <- e1_games_played[1]
-e2_last_n_games <- e2_games_played[1]
-e3_last_n_games <- e3_games_played[1]
-ec_last_n_games <- ec_games_played[1]
-f1_last_n_games <- f1_games_played[1]
-f2_last_n_games <- f2_games_played[1]
-g1_last_n_games <- g1_games_played[1]
-i1_last_n_games <- i1_games_played[1]
-i2_last_n_games <- i2_games_played[1]
-n1_last_n_games <- n1_games_played[1]
-p1_last_n_games <- p1_games_played[1]
-sc0_last_n_games <- sc0_games_played[1]
-sc1_last_n_games <- sc1_games_played[1]
-sc2_last_n_games <- sc2_games_played[1]
-sc3_last_n_games <- sc3_games_played[1]
-sp1_last_n_games <- sp1_games_played[1]
-sp2_last_n_games <- sp2_games_played[1]
-t1_last_n_games <- t1_games_played[1]
+# b1_last_n_games <- b1_games_played[1]
+# d1_last_n_games <- d1_games_played[1]
+# d2_last_n_games <- d2_games_played[1]
+# e0_last_n_games <- e0_games_played[1]
+# e1_last_n_games <- e1_games_played[1]
+# e2_last_n_games <- e2_games_played[1]
+# e3_last_n_games <- e3_games_played[1]
+# ec_last_n_games <- ec_games_played[1]
+# f1_last_n_games <- f1_games_played[1]
+# f2_last_n_games <- f2_games_played[1]
+# g1_last_n_games <- g1_games_played[1]
+# i1_last_n_games <- i1_games_played[1]
+# i2_last_n_games <- i2_games_played[1]
+# n1_last_n_games <- n1_games_played[1]
+# p1_last_n_games <- p1_games_played[1]
+# sc0_last_n_games <- sc0_games_played[1]
+# sc1_last_n_games <- sc1_games_played[1]
+# sc2_last_n_games <- sc2_games_played[1]
+# sc3_last_n_games <- sc3_games_played[1]
+# sp1_last_n_games <- sp1_games_played[1]
+# sp2_last_n_games <- sp2_games_played[1]
+# t1_last_n_games <- t1_games_played[1]
 # ########################################
 ########################################
 
@@ -70,7 +70,7 @@ for(index_b1_hf in 1:length(b1_teams))
 
 }
 
-#change column names
+#change column nam
 final_b1_hf <- as.data.frame(final_b1_hf)
 colnames(final_b1_hf) <- "Form"
 #goals scored
@@ -107,50 +107,12 @@ for(index_b1_gc in 1:length(b1_teams))
   l6_form_b1_gc <- tail(deleted_form_b1_gc,b1_last_n_games)
   l6_form_b1_gc <- as.numeric(l6_form_b1_gc)
   suml6_b1_gc[index_b1_gc] <- sum(l6_form_b1_gc)
-  suml6_b1_gc[index_b1_gc] <- paste(suml6_b1_gc[index_b1_gc],sep = "")
-  l6_form_b1_gc <- as.character(l6_form_b1_gc)
-  l6_form_b1_gc_flattened <- stri_paste(l6_form_b1_gc,collapse = '')
-  l6_form_b1_gc <- as.numeric(strsplit(as.character(l6_form_b1_gc_flattened),"")[[1]])
-  #l6_form_b1_gc <- paste(l6_form_b1_gc,collapse = " ")
-  #l6_form_b1_gc <- paste(shQuote(l6_form_b1_gc, type="cmd2"), collapse=",")
-  #l6_form_b1_gc <- sub("\'",'\"',l6_form_b1_gc)
-  final_b1_gc[index_b1_gc] <- rbind(paste(l6_form_b1_gc, sep = "\n",collapse = ","))
-  # #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
+  suml6_b1_gc[index_b1_gc] <- paste("(",suml6_b1_gc[index_b1_gc],")",sep = "")
+  l6_form_b1_gc <- paste(l6_form_b1_gc,collapse = " ")
+  final_b1_gc[index_b1_gc] <- rbind(paste(b1_teams[index_b1_gc],l6_form_b1_gc,suml6_b1_gc[index_b1_gc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
 
 }
-
-write.csv(final_b1_gc,"finalb1test5.csv")
-final_b1_gc
-l6_form_b1_gc
-suml6_b1_gc
-length(l6_form_b1_gc)
-
-typeof(l6_form_b1_gc)
-library(xlsx)
-library(tidyr)
-length(deleted_form_b1_gc)
-
-stri_paste(l6_form_b1_gc,collapse = '')
-
-paste(l6_form_b1_gc,collapse = " ")
-
-l6_form_b1_gc_flattened <- stri_paste(l6_form_b1_gc,collapse = '')
-l6_form_b1_gc_flattened
-
-
-
-testflat <- "12345"
-tidyr::separate(testflat)
-split(testflat,f = length(testflat))
-
-l6_form_b1_gcsplitted <- as.numeric(strsplit(as.character(l6_form_b1_gc_flattened),"")[[1]])
-write.csv(l6_form_b1_gcsplitted,"l6_form_b1_gcsplitted.csv")
-is.integer(l6_form_b1_gc)
-paate(l6_form_b1_gc, sep = ", ")
-class(l6_form_b1_gc)
-shQuote(final_b1_gc, type = "cmd2")
-
-cat(paste(shQuote(final_b1_gc, type="cmd2"), collapse = " , "))
 #change column names
 final_b1_gc <- as.data.frame(final_b1_gc)
 colnames(final_b1_gc) <- "Goals conceded"

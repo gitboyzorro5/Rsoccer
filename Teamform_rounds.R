@@ -41,12 +41,12 @@ for(index_d1_hf in 1:length(d1_teams))
     form_d1_hf <- d1_form_h[index_d1_hf ]
     deleted_form_d1_hf <- form_d1_hf[!form_d1_hf[] == ""]
     l6_form_d1_hf <- tail(deleted_form_d1_hf,d1_last_n_games)
-    l6_form_d1_hf <- as.numeric(l6_form_d1_hf)
-    suml6_d1_hf[index_d1_hf] <- sum(l6_form_d1_hf)
-    suml6_d1_hf[index_d1_hf] <- paste(suml6_d1_hf[index_d1_hf],sep = "")
-    l6_form_d1_hf <- as.character(l6_form_d1_hf)
+    # l6_form_d1_hf <- as.numeric(l6_form_d1_hf)
+    # suml6_d1_hf[index_d1_hf] <- sum(l6_form_d1_hf)
+    # suml6_d1_hf[index_d1_hf] <- paste(suml6_d1_hf[index_d1_hf],sep = "")
+    # l6_form_d1_hf <- as.character(l6_form_d1_hf)
     l6_form_d1_hf_flattened <- stri_paste(l6_form_d1_hf,collapse = '')
-    l6_form_d1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_d1_hf_flattened),"")[[1]])
+    l6_form_d1_hfsplitted <- (strsplit(as.character(l6_form_d1_hf_flattened),"")[[1]])
     final_d1_hf[index_d1_hf,index_d1_hf_cols] <- l6_form_d1_hfsplitted[index_d1_hf_cols]
   }
 }
@@ -67,12 +67,12 @@ for(index_d2_hf in 1:length(d2_teams))
     form_d2_hf <- d2_form_h[index_d2_hf ]
     deleted_form_d2_hf <- form_d2_hf[!form_d2_hf[] == ""]
     l6_form_d2_hf <- tail(deleted_form_d2_hf,d2_last_n_games)
-    l6_form_d2_hf <- as.numeric(l6_form_d2_hf)
-    suml6_d2_hf[index_d2_hf] <- sum(l6_form_d2_hf)
-    suml6_d2_hf[index_d2_hf] <- paste(suml6_d2_hf[index_d2_hf],sep = "")
-    l6_form_d2_hf <- as.character(l6_form_d2_hf)
+    # l6_form_d2_hf <- as.numeric(l6_form_d2_hf)
+    # suml6_d2_hf[index_d2_hf] <- sum(l6_form_d2_hf)
+    # suml6_d2_hf[index_d2_hf] <- paste(suml6_d2_hf[index_d2_hf],sep = "")
+    # l6_form_d2_hf <- as.character(l6_form_d2_hf)
     l6_form_d2_hf_flattened <- stri_paste(l6_form_d2_hf,collapse = '')
-    l6_form_d2_hfsplitted <- as.numeric(strsplit(as.character(l6_form_d2_hf_flattened),"")[[1]])
+    l6_form_d2_hfsplitted <- (strsplit(as.character(l6_form_d2_hf_flattened),"")[[1]])
     final_d2_hf[index_d2_hf,index_d2_hf_cols] <- l6_form_d2_hfsplitted[index_d2_hf_cols]
   }
 }
@@ -93,12 +93,12 @@ for(index_e0_hf in 1:length(e0_teams))
     form_e0_hf <- e0_form_h[index_e0_hf ]
     deleted_form_e0_hf <- form_e0_hf[!form_e0_hf[] == ""]
     l6_form_e0_hf <- tail(deleted_form_e0_hf,e0_last_n_games)
-    l6_form_e0_hf <- as.numeric(l6_form_e0_hf)
-    suml6_e0_hf[index_e0_hf] <- sum(l6_form_e0_hf)
-    suml6_e0_hf[index_e0_hf] <- paste(suml6_e0_hf[index_e0_hf],sep = "")
-    l6_form_e0_hf <- as.character(l6_form_e0_hf)
+    # l6_form_e0_hf <- as.numeric(l6_form_e0_hf)
+    # suml6_e0_hf[index_e0_hf] <- sum(l6_form_e0_hf)
+    # suml6_e0_hf[index_e0_hf] <- paste(suml6_e0_hf[index_e0_hf],sep = "")
+    # l6_form_e0_hf <- as.character(l6_form_e0_hf)
     l6_form_e0_hf_flattened <- stri_paste(l6_form_e0_hf,collapse = '')
-    l6_form_e0_hfsplitted <- as.numeric(strsplit(as.character(l6_form_e0_hf_flattened),"")[[1]])
+    l6_form_e0_hfsplitted <- (strsplit(as.character(l6_form_e0_hf_flattened),"")[[1]])
     final_e0_hf[index_e0_hf,index_e0_hf_cols] <- l6_form_e0_hfsplitted[index_e0_hf_cols]
   }
 }
@@ -119,12 +119,12 @@ for(index_e1_hf in 1:length(e1_teams))
     form_e1_hf <- e1_form_h[index_e1_hf ]
     deleted_form_e1_hf <- form_e1_hf[!form_e1_hf[] == ""]
     l6_form_e1_hf <- tail(deleted_form_e1_hf,e1_last_n_games)
-    l6_form_e1_hf <- as.numeric(l6_form_e1_hf)
-    suml6_e1_hf[index_e1_hf] <- sum(l6_form_e1_hf)
-    suml6_e1_hf[index_e1_hf] <- paste(suml6_e1_hf[index_e1_hf],sep = "")
-    l6_form_e1_hf <- as.character(l6_form_e1_hf)
+    # l6_form_e1_hf <- as.numeric(l6_form_e1_hf)
+    # suml6_e1_hf[index_e1_hf] <- sum(l6_form_e1_hf)
+    # suml6_e1_hf[index_e1_hf] <- paste(suml6_e1_hf[index_e1_hf],sep = "")
+    # l6_form_e1_hf <- as.character(l6_form_e1_hf)
     l6_form_e1_hf_flattened <- stri_paste(l6_form_e1_hf,collapse = '')
-    l6_form_e1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_e1_hf_flattened),"")[[1]])
+    l6_form_e1_hfsplitted <- (strsplit(as.character(l6_form_e1_hf_flattened),"")[[1]])
     final_e1_hf[index_e1_hf,index_e1_hf_cols] <- l6_form_e1_hfsplitted[index_e1_hf_cols]
   }
 }
@@ -145,12 +145,12 @@ for(index_e2_hf in 1:length(e2_teams))
     form_e2_hf <- e2_form_h[index_e2_hf ]
     deleted_form_e2_hf <- form_e2_hf[!form_e2_hf[] == ""]
     l6_form_e2_hf <- tail(deleted_form_e2_hf,e2_last_n_games)
-    l6_form_e2_hf <- as.numeric(l6_form_e2_hf)
-    suml6_e2_hf[index_e2_hf] <- sum(l6_form_e2_hf)
-    suml6_e2_hf[index_e2_hf] <- paste(suml6_e2_hf[index_e2_hf],sep = "")
-    l6_form_e2_hf <- as.character(l6_form_e2_hf)
+    # l6_form_e2_hf <- as.numeric(l6_form_e2_hf)
+    # suml6_e2_hf[index_e2_hf] <- sum(l6_form_e2_hf)
+    # suml6_e2_hf[index_e2_hf] <- paste(suml6_e2_hf[index_e2_hf],sep = "")
+    # l6_form_e2_hf <- as.character(l6_form_e2_hf)
     l6_form_e2_hf_flattened <- stri_paste(l6_form_e2_hf,collapse = '')
-    l6_form_e2_hfsplitted <- as.numeric(strsplit(as.character(l6_form_e2_hf_flattened),"")[[1]])
+    l6_form_e2_hfsplitted <- (strsplit(as.character(l6_form_e2_hf_flattened),"")[[1]])
     final_e2_hf[index_e2_hf,index_e2_hf_cols] <- l6_form_e2_hfsplitted[index_e2_hf_cols]
   }
 }
@@ -171,12 +171,12 @@ for(index_e3_hf in 1:length(e3_teams))
     form_e3_hf <- e3_form_h[index_e3_hf ]
     deleted_form_e3_hf <- form_e3_hf[!form_e3_hf[] == ""]
     l6_form_e3_hf <- tail(deleted_form_e3_hf,e3_last_n_games)
-    l6_form_e3_hf <- as.numeric(l6_form_e3_hf)
-    suml6_e3_hf[index_e3_hf] <- sum(l6_form_e3_hf)
-    suml6_e3_hf[index_e3_hf] <- paste(suml6_e3_hf[index_e3_hf],sep = "")
-    l6_form_e3_hf <- as.character(l6_form_e3_hf)
+    # l6_form_e3_hf <- as.numeric(l6_form_e3_hf)
+    # suml6_e3_hf[index_e3_hf] <- sum(l6_form_e3_hf)
+    # suml6_e3_hf[index_e3_hf] <- paste(suml6_e3_hf[index_e3_hf],sep = "")
+    # l6_form_e3_hf <- as.character(l6_form_e3_hf)
     l6_form_e3_hf_flattened <- stri_paste(l6_form_e3_hf,collapse = '')
-    l6_form_e3_hfsplitted <- as.numeric(strsplit(as.character(l6_form_e3_hf_flattened),"")[[1]])
+    l6_form_e3_hfsplitted <- (strsplit(as.character(l6_form_e3_hf_flattened),"")[[1]])
     final_e3_hf[index_e3_hf,index_e3_hf_cols] <- l6_form_e3_hfsplitted[index_e3_hf_cols]
   }
 }
@@ -197,12 +197,12 @@ for(index_ec_hf in 1:length(ec_teams))
     form_ec_hf <- ec_form_h[index_ec_hf ]
     deleted_form_ec_hf <- form_ec_hf[!form_ec_hf[] == ""]
     l6_form_ec_hf <- tail(deleted_form_ec_hf,ec_last_n_games)
-    l6_form_ec_hf <- as.numeric(l6_form_ec_hf)
-    suml6_ec_hf[index_ec_hf] <- sum(l6_form_ec_hf)
-    suml6_ec_hf[index_ec_hf] <- paste(suml6_ec_hf[index_ec_hf],sep = "")
-    l6_form_ec_hf <- as.character(l6_form_ec_hf)
+    # l6_form_ec_hf <- as.numeric(l6_form_ec_hf)
+    # suml6_ec_hf[index_ec_hf] <- sum(l6_form_ec_hf)
+    # suml6_ec_hf[index_ec_hf] <- paste(suml6_ec_hf[index_ec_hf],sep = "")
+    # l6_form_ec_hf <- as.character(l6_form_ec_hf)
     l6_form_ec_hf_flattened <- stri_paste(l6_form_ec_hf,collapse = '')
-    l6_form_ec_hfsplitted <- as.numeric(strsplit(as.character(l6_form_ec_hf_flattened),"")[[1]])
+    l6_form_ec_hfsplitted <- (strsplit(as.character(l6_form_ec_hf_flattened),"")[[1]])
     final_ec_hf[index_ec_hf,index_ec_hf_cols] <- l6_form_ec_hfsplitted[index_ec_hf_cols]
   }
 }
@@ -223,12 +223,12 @@ for(index_f1_hf in 1:length(f1_teams))
     form_f1_hf <- f1_form_h[index_f1_hf ]
     deleted_form_f1_hf <- form_f1_hf[!form_f1_hf[] == ""]
     l6_form_f1_hf <- tail(deleted_form_f1_hf,f1_last_n_games)
-    l6_form_f1_hf <- as.numeric(l6_form_f1_hf)
-    suml6_f1_hf[index_f1_hf] <- sum(l6_form_f1_hf)
-    suml6_f1_hf[index_f1_hf] <- paste(suml6_f1_hf[index_f1_hf],sep = "")
-    l6_form_f1_hf <- as.character(l6_form_f1_hf)
+    # l6_form_f1_hf <- as.numeric(l6_form_f1_hf)
+    # suml6_f1_hf[index_f1_hf] <- sum(l6_form_f1_hf)
+    # suml6_f1_hf[index_f1_hf] <- paste(suml6_f1_hf[index_f1_hf],sep = "")
+    # l6_form_f1_hf <- as.character(l6_form_f1_hf)
     l6_form_f1_hf_flattened <- stri_paste(l6_form_f1_hf,collapse = '')
-    l6_form_f1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_f1_hf_flattened),"")[[1]])
+    l6_form_f1_hfsplitted <- (strsplit(as.character(l6_form_f1_hf_flattened),"")[[1]])
     final_f1_hf[index_f1_hf,index_f1_hf_cols] <- l6_form_f1_hfsplitted[index_f1_hf_cols]
   }
 }
@@ -249,12 +249,12 @@ for(index_f2_hf in 1:length(f2_teams))
     form_f2_hf <- f2_form_h[index_f2_hf ]
     deleted_form_f2_hf <- form_f2_hf[!form_f2_hf[] == ""]
     l6_form_f2_hf <- tail(deleted_form_f2_hf,f2_last_n_games)
-    l6_form_f2_hf <- as.numeric(l6_form_f2_hf)
-    suml6_f2_hf[index_f2_hf] <- sum(l6_form_f2_hf)
-    suml6_f2_hf[index_f2_hf] <- paste(suml6_f2_hf[index_f2_hf],sep = "")
-    l6_form_f2_hf <- as.character(l6_form_f2_hf)
+    # l6_form_f2_hf <- as.numeric(l6_form_f2_hf)
+    # suml6_f2_hf[index_f2_hf] <- sum(l6_form_f2_hf)
+    # suml6_f2_hf[index_f2_hf] <- paste(suml6_f2_hf[index_f2_hf],sep = "")
+    # l6_form_f2_hf <- as.character(l6_form_f2_hf)
     l6_form_f2_hf_flattened <- stri_paste(l6_form_f2_hf,collapse = '')
-    l6_form_f2_hfsplitted <- as.numeric(strsplit(as.character(l6_form_f2_hf_flattened),"")[[1]])
+    l6_form_f2_hfsplitted <- (strsplit(as.character(l6_form_f2_hf_flattened),"")[[1]])
     final_f2_hf[index_f2_hf,index_f2_hf_cols] <- l6_form_f2_hfsplitted[index_f2_hf_cols]
   }
 }
@@ -275,12 +275,12 @@ for(index_g1_hf in 1:length(g1_teams))
     form_g1_hf <- g1_form_h[index_g1_hf ]
     deleted_form_g1_hf <- form_g1_hf[!form_g1_hf[] == ""]
     l6_form_g1_hf <- tail(deleted_form_g1_hf,g1_last_n_games)
-    l6_form_g1_hf <- as.numeric(l6_form_g1_hf)
-    suml6_g1_hf[index_g1_hf] <- sum(l6_form_g1_hf)
-    suml6_g1_hf[index_g1_hf] <- paste(suml6_g1_hf[index_g1_hf],sep = "")
-    l6_form_g1_hf <- as.character(l6_form_g1_hf)
+    # l6_form_g1_hf <- as.numeric(l6_form_g1_hf)
+    # suml6_g1_hf[index_g1_hf] <- sum(l6_form_g1_hf)
+    # suml6_g1_hf[index_g1_hf] <- paste(suml6_g1_hf[index_g1_hf],sep = "")
+    # l6_form_g1_hf <- as.character(l6_form_g1_hf)
     l6_form_g1_hf_flattened <- stri_paste(l6_form_g1_hf,collapse = '')
-    l6_form_g1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_g1_hf_flattened),"")[[1]])
+    l6_form_g1_hfsplitted <- (strsplit(as.character(l6_form_g1_hf_flattened),"")[[1]])
     final_g1_hf[index_g1_hf,index_g1_hf_cols] <- l6_form_g1_hfsplitted[index_g1_hf_cols]
   }
 }
@@ -301,12 +301,12 @@ for(index_i1_hf in 1:length(i1_teams))
     form_i1_hf <- i1_form_h[index_i1_hf ]
     deleted_form_i1_hf <- form_i1_hf[!form_i1_hf[] == ""]
     l6_form_i1_hf <- tail(deleted_form_i1_hf,i1_last_n_games)
-    l6_form_i1_hf <- as.numeric(l6_form_i1_hf)
-    suml6_i1_hf[index_i1_hf] <- sum(l6_form_i1_hf)
-    suml6_i1_hf[index_i1_hf] <- paste(suml6_i1_hf[index_i1_hf],sep = "")
-    l6_form_i1_hf <- as.character(l6_form_i1_hf)
+    # l6_form_i1_hf <- as.numeric(l6_form_i1_hf)
+    # suml6_i1_hf[index_i1_hf] <- sum(l6_form_i1_hf)
+    # suml6_i1_hf[index_i1_hf] <- paste(suml6_i1_hf[index_i1_hf],sep = "")
+    # l6_form_i1_hf <- as.character(l6_form_i1_hf)
     l6_form_i1_hf_flattened <- stri_paste(l6_form_i1_hf,collapse = '')
-    l6_form_i1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_i1_hf_flattened),"")[[1]])
+    l6_form_i1_hfsplitted <- (strsplit(as.character(l6_form_i1_hf_flattened),"")[[1]])
     final_i1_hf[index_i1_hf,index_i1_hf_cols] <- l6_form_i1_hfsplitted[index_i1_hf_cols]
   }
 }
@@ -327,12 +327,12 @@ for(index_i2_hf in 1:length(i2_teams))
     form_i2_hf <- i2_form_h[index_i2_hf ]
     deleted_form_i2_hf <- form_i2_hf[!form_i2_hf[] == ""]
     l6_form_i2_hf <- tail(deleted_form_i2_hf,i2_last_n_games)
-    l6_form_i2_hf <- as.numeric(l6_form_i2_hf)
-    suml6_i2_hf[index_i2_hf] <- sum(l6_form_i2_hf)
-    suml6_i2_hf[index_i2_hf] <- paste(suml6_i2_hf[index_i2_hf],sep = "")
-    l6_form_i2_hf <- as.character(l6_form_i2_hf)
+    # l6_form_i2_hf <- as.numeric(l6_form_i2_hf)
+    # suml6_i2_hf[index_i2_hf] <- sum(l6_form_i2_hf)
+    # suml6_i2_hf[index_i2_hf] <- paste(suml6_i2_hf[index_i2_hf],sep = "")
+    # l6_form_i2_hf <- as.character(l6_form_i2_hf)
     l6_form_i2_hf_flattened <- stri_paste(l6_form_i2_hf,collapse = '')
-    l6_form_i2_hfsplitted <- as.numeric(strsplit(as.character(l6_form_i2_hf_flattened),"")[[1]])
+    l6_form_i2_hfsplitted <- (strsplit(as.character(l6_form_i2_hf_flattened),"")[[1]])
     final_i2_hf[index_i2_hf,index_i2_hf_cols] <- l6_form_i2_hfsplitted[index_i2_hf_cols]
   }
 }
@@ -353,12 +353,12 @@ for(index_n1_hf in 1:length(n1_teams))
     form_n1_hf <- n1_form_h[index_n1_hf ]
     deleted_form_n1_hf <- form_n1_hf[!form_n1_hf[] == ""]
     l6_form_n1_hf <- tail(deleted_form_n1_hf,n1_last_n_games)
-    l6_form_n1_hf <- as.numeric(l6_form_n1_hf)
-    suml6_n1_hf[index_n1_hf] <- sum(l6_form_n1_hf)
-    suml6_n1_hf[index_n1_hf] <- paste(suml6_n1_hf[index_n1_hf],sep = "")
-    l6_form_n1_hf <- as.character(l6_form_n1_hf)
+    # l6_form_n1_hf <- as.numeric(l6_form_n1_hf)
+    # suml6_n1_hf[index_n1_hf] <- sum(l6_form_n1_hf)
+    # suml6_n1_hf[index_n1_hf] <- paste(suml6_n1_hf[index_n1_hf],sep = "")
+    # l6_form_n1_hf <- as.character(l6_form_n1_hf)
     l6_form_n1_hf_flattened <- stri_paste(l6_form_n1_hf,collapse = '')
-    l6_form_n1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_n1_hf_flattened),"")[[1]])
+    l6_form_n1_hfsplitted <- (strsplit(as.character(l6_form_n1_hf_flattened),"")[[1]])
     final_n1_hf[index_n1_hf,index_n1_hf_cols] <- l6_form_n1_hfsplitted[index_n1_hf_cols]
   }
 }
@@ -379,12 +379,12 @@ for(index_p1_hf in 1:length(p1_teams))
     form_p1_hf <- p1_form_h[index_p1_hf ]
     deleted_form_p1_hf <- form_p1_hf[!form_p1_hf[] == ""]
     l6_form_p1_hf <- tail(deleted_form_p1_hf,p1_last_n_games)
-    l6_form_p1_hf <- as.numeric(l6_form_p1_hf)
-    suml6_p1_hf[index_p1_hf] <- sum(l6_form_p1_hf)
-    suml6_p1_hf[index_p1_hf] <- paste(suml6_p1_hf[index_p1_hf],sep = "")
-    l6_form_p1_hf <- as.character(l6_form_p1_hf)
+    # l6_form_p1_hf <- as.numeric(l6_form_p1_hf)
+    # suml6_p1_hf[index_p1_hf] <- sum(l6_form_p1_hf)
+    # suml6_p1_hf[index_p1_hf] <- paste(suml6_p1_hf[index_p1_hf],sep = "")
+    # l6_form_p1_hf <- as.character(l6_form_p1_hf)
     l6_form_p1_hf_flattened <- stri_paste(l6_form_p1_hf,collapse = '')
-    l6_form_p1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_p1_hf_flattened),"")[[1]])
+    l6_form_p1_hfsplitted <- (strsplit(as.character(l6_form_p1_hf_flattened),"")[[1]])
     final_p1_hf[index_p1_hf,index_p1_hf_cols] <- l6_form_p1_hfsplitted[index_p1_hf_cols]
   }
 }
@@ -405,12 +405,12 @@ for(index_sp1_hf in 1:length(sp1_teams))
     form_sp1_hf <- sp1_form_h[index_sp1_hf ]
     deleted_form_sp1_hf <- form_sp1_hf[!form_sp1_hf[] == ""]
     l6_form_sp1_hf <- tail(deleted_form_sp1_hf,sp1_last_n_games)
-    l6_form_sp1_hf <- as.numeric(l6_form_sp1_hf)
-    suml6_sp1_hf[index_sp1_hf] <- sum(l6_form_sp1_hf)
-    suml6_sp1_hf[index_sp1_hf] <- paste(suml6_sp1_hf[index_sp1_hf],sep = "")
-    l6_form_sp1_hf <- as.character(l6_form_sp1_hf)
+    # l6_form_sp1_hf <- as.numeric(l6_form_sp1_hf)
+    # suml6_sp1_hf[index_sp1_hf] <- sum(l6_form_sp1_hf)
+    # suml6_sp1_hf[index_sp1_hf] <- paste(suml6_sp1_hf[index_sp1_hf],sep = "")
+    # l6_form_sp1_hf <- as.character(l6_form_sp1_hf)
     l6_form_sp1_hf_flattened <- stri_paste(l6_form_sp1_hf,collapse = '')
-    l6_form_sp1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_sp1_hf_flattened),"")[[1]])
+    l6_form_sp1_hfsplitted <- (strsplit(as.character(l6_form_sp1_hf_flattened),"")[[1]])
     final_sp1_hf[index_sp1_hf,index_sp1_hf_cols] <- l6_form_sp1_hfsplitted[index_sp1_hf_cols]
   }
 }
@@ -431,12 +431,12 @@ for(index_sp2_hf in 1:length(sp2_teams))
     form_sp2_hf <- sp2_form_h[index_sp2_hf ]
     deleted_form_sp2_hf <- form_sp2_hf[!form_sp2_hf[] == ""]
     l6_form_sp2_hf <- tail(deleted_form_sp2_hf,sp2_last_n_games)
-    l6_form_sp2_hf <- as.numeric(l6_form_sp2_hf)
-    suml6_sp2_hf[index_sp2_hf] <- sum(l6_form_sp2_hf)
-    suml6_sp2_hf[index_sp2_hf] <- paste(suml6_sp2_hf[index_sp2_hf],sep = "")
-    l6_form_sp2_hf <- as.character(l6_form_sp2_hf)
+    # l6_form_sp2_hf <- as.numeric(l6_form_sp2_hf)
+    # suml6_sp2_hf[index_sp2_hf] <- sum(l6_form_sp2_hf)
+    # suml6_sp2_hf[index_sp2_hf] <- paste(suml6_sp2_hf[index_sp2_hf],sep = "")
+    # l6_form_sp2_hf <- as.character(l6_form_sp2_hf)
     l6_form_sp2_hf_flattened <- stri_paste(l6_form_sp2_hf,collapse = '')
-    l6_form_sp2_hfsplitted <- as.numeric(strsplit(as.character(l6_form_sp2_hf_flattened),"")[[1]])
+    l6_form_sp2_hfsplitted <- (strsplit(as.character(l6_form_sp2_hf_flattened),"")[[1]])
     final_sp2_hf[index_sp2_hf,index_sp2_hf_cols] <- l6_form_sp2_hfsplitted[index_sp2_hf_cols]
   }
 }
@@ -457,12 +457,12 @@ for(index_sc0_hf in 1:length(sc0_teams))
     form_sc0_hf <- sc0_form_h[index_sc0_hf ]
     deleted_form_sc0_hf <- form_sc0_hf[!form_sc0_hf[] == ""]
     l6_form_sc0_hf <- tail(deleted_form_sc0_hf,sc0_last_n_games)
-    l6_form_sc0_hf <- as.numeric(l6_form_sc0_hf)
-    suml6_sc0_hf[index_sc0_hf] <- sum(l6_form_sc0_hf)
-    suml6_sc0_hf[index_sc0_hf] <- paste(suml6_sc0_hf[index_sc0_hf],sep = "")
-    l6_form_sc0_hf <- as.character(l6_form_sc0_hf)
+    # l6_form_sc0_hf <- as.numeric(l6_form_sc0_hf)
+    # suml6_sc0_hf[index_sc0_hf] <- sum(l6_form_sc0_hf)
+    # suml6_sc0_hf[index_sc0_hf] <- paste(suml6_sc0_hf[index_sc0_hf],sep = "")
+    # l6_form_sc0_hf <- as.character(l6_form_sc0_hf)
     l6_form_sc0_hf_flattened <- stri_paste(l6_form_sc0_hf,collapse = '')
-    l6_form_sc0_hfsplitted <- as.numeric(strsplit(as.character(l6_form_sc0_hf_flattened),"")[[1]])
+    l6_form_sc0_hfsplitted <- (strsplit(as.character(l6_form_sc0_hf_flattened),"")[[1]])
     final_sc0_hf[index_sc0_hf,index_sc0_hf_cols] <- l6_form_sc0_hfsplitted[index_sc0_hf_cols]
   }
 }
@@ -483,12 +483,12 @@ for(index_sc1_hf in 1:length(sc1_teams))
     form_sc1_hf <- sc1_form_h[index_sc1_hf ]
     deleted_form_sc1_hf <- form_sc1_hf[!form_sc1_hf[] == ""]
     l6_form_sc1_hf <- tail(deleted_form_sc1_hf,sc1_last_n_games)
-    l6_form_sc1_hf <- as.numeric(l6_form_sc1_hf)
-    suml6_sc1_hf[index_sc1_hf] <- sum(l6_form_sc1_hf)
-    suml6_sc1_hf[index_sc1_hf] <- paste(suml6_sc1_hf[index_sc1_hf],sep = "")
-    l6_form_sc1_hf <- as.character(l6_form_sc1_hf)
+    # l6_form_sc1_hf <- as.numeric(l6_form_sc1_hf)
+    # suml6_sc1_hf[index_sc1_hf] <- sum(l6_form_sc1_hf)
+    # suml6_sc1_hf[index_sc1_hf] <- paste(suml6_sc1_hf[index_sc1_hf],sep = "")
+    # l6_form_sc1_hf <- as.character(l6_form_sc1_hf)
     l6_form_sc1_hf_flattened <- stri_paste(l6_form_sc1_hf,collapse = '')
-    l6_form_sc1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_sc1_hf_flattened),"")[[1]])
+    l6_form_sc1_hfsplitted <- (strsplit(as.character(l6_form_sc1_hf_flattened),"")[[1]])
     final_sc1_hf[index_sc1_hf,index_sc1_hf_cols] <- l6_form_sc1_hfsplitted[index_sc1_hf_cols]
   }
 }
@@ -509,12 +509,12 @@ for(index_sc2_hf in 1:length(sc2_teams))
     form_sc2_hf <- sc2_form_h[index_sc2_hf ]
     deleted_form_sc2_hf <- form_sc2_hf[!form_sc2_hf[] == ""]
     l6_form_sc2_hf <- tail(deleted_form_sc2_hf,sc2_last_n_games)
-    l6_form_sc2_hf <- as.numeric(l6_form_sc2_hf)
-    suml6_sc2_hf[index_sc2_hf] <- sum(l6_form_sc2_hf)
-    suml6_sc2_hf[index_sc2_hf] <- paste(suml6_sc2_hf[index_sc2_hf],sep = "")
-    l6_form_sc2_hf <- as.character(l6_form_sc2_hf)
+    # l6_form_sc2_hf <- as.numeric(l6_form_sc2_hf)
+    # suml6_sc2_hf[index_sc2_hf] <- sum(l6_form_sc2_hf)
+    # suml6_sc2_hf[index_sc2_hf] <- paste(suml6_sc2_hf[index_sc2_hf],sep = "")
+    # l6_form_sc2_hf <- as.character(l6_form_sc2_hf)
     l6_form_sc2_hf_flattened <- stri_paste(l6_form_sc2_hf,collapse = '')
-    l6_form_sc2_hfsplitted <- as.numeric(strsplit(as.character(l6_form_sc2_hf_flattened),"")[[1]])
+    l6_form_sc2_hfsplitted <- (strsplit(as.character(l6_form_sc2_hf_flattened),"")[[1]])
     final_sc2_hf[index_sc2_hf,index_sc2_hf_cols] <- l6_form_sc2_hfsplitted[index_sc2_hf_cols]
   }
 }
@@ -535,12 +535,12 @@ for(index_sc3_hf in 1:length(sc3_teams))
     form_sc3_hf <- sc3_form_h[index_sc3_hf ]
     deleted_form_sc3_hf <- form_sc3_hf[!form_sc3_hf[] == ""]
     l6_form_sc3_hf <- tail(deleted_form_sc3_hf,sc3_last_n_games)
-    l6_form_sc3_hf <- as.numeric(l6_form_sc3_hf)
-    suml6_sc3_hf[index_sc3_hf] <- sum(l6_form_sc3_hf)
-    suml6_sc3_hf[index_sc3_hf] <- paste(suml6_sc3_hf[index_sc3_hf],sep = "")
-    l6_form_sc3_hf <- as.character(l6_form_sc3_hf)
+    # l6_form_sc3_hf <- as.numeric(l6_form_sc3_hf)
+    # suml6_sc3_hf[index_sc3_hf] <- sum(l6_form_sc3_hf)
+    # suml6_sc3_hf[index_sc3_hf] <- paste(suml6_sc3_hf[index_sc3_hf],sep = "")
+    # l6_form_sc3_hf <- as.character(l6_form_sc3_hf)
     l6_form_sc3_hf_flattened <- stri_paste(l6_form_sc3_hf,collapse = '')
-    l6_form_sc3_hfsplitted <- as.numeric(strsplit(as.character(l6_form_sc3_hf_flattened),"")[[1]])
+    l6_form_sc3_hfsplitted <- (strsplit(as.character(l6_form_sc3_hf_flattened),"")[[1]])
     final_sc3_hf[index_sc3_hf,index_sc3_hf_cols] <- l6_form_sc3_hfsplitted[index_sc3_hf_cols]
   }
 }
@@ -561,12 +561,12 @@ for(index_t1_hf in 1:length(t1_teams))
     form_t1_hf <- t1_form_h[index_t1_hf ]
     deleted_form_t1_hf <- form_t1_hf[!form_t1_hf[] == ""]
     l6_form_t1_hf <- tail(deleted_form_t1_hf,t1_last_n_games)
-    l6_form_t1_hf <- as.numeric(l6_form_t1_hf)
-    suml6_t1_hf[index_t1_hf] <- sum(l6_form_t1_hf)
-    suml6_t1_hf[index_t1_hf] <- paste(suml6_t1_hf[index_t1_hf],sep = "")
+    # l6_form_t1_hf <- as.numeric(l6_form_t1_hf)
+    # suml6_t1_hf[index_t1_hf] <- sum(l6_form_t1_hf)
+    # suml6_t1_hf[index_t1_hf] <- paste(suml6_t1_hf[index_t1_hf],sep = "")
     l6_form_t1_hf <- as.character(l6_form_t1_hf)
     l6_form_t1_hf_flattened <- stri_paste(l6_form_t1_hf,collapse = '')
-    l6_form_t1_hfsplitted <- as.numeric(strsplit(as.character(l6_form_t1_hf_flattened),"")[[1]])
+    l6_form_t1_hfsplitted <- (strsplit(as.character(l6_form_t1_hf_flattened),"")[[1]])
     final_t1_hf[index_t1_hf,index_t1_hf_cols] <- l6_form_t1_hfsplitted[index_t1_hf_cols]
   }
 }

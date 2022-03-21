@@ -5,7 +5,7 @@ library('xlsx')
 library('scales')
 library('R.utils')
 ############################
-create last n games
+#create last n games
 b1_last_n_games <- 6
 d1_last_n_games <- 6
 d2_last_n_games <- 6

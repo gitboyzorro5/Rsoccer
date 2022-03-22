@@ -7,6 +7,8 @@ library('scales')
 library('lubridate')
 library('sqldf')
 library('mgsub')
+library(stringr)
+library(stringi)
 #delete current file
 unlink('NL/ARG.xlsx')
 ######################ARG START#######################################
@@ -79,34 +81,7 @@ if(arg_matchesplayed %% arg_eachround == 0)
 }
 ARG_rounds <- cbind(ARG_rounds,arg_matchday)
 #####################################################################
-#arg goal scored rounds
 #####################################################################
-arg_krounds <- tail(unique(ARG_rounds$arg_matchday),1)
-nrow(ARG)
-arg_goalscoredmatrix <- data.frame(matrix(nrow = length(arg_teams),ncol = arg_krounds))
-arg_goalscoredround <- c()
-for(i_arg_krounds in 1:arg_krounds)
-{
-  arg_homegoalscored <- ARG_rounds$HG[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_awaygoalscored <- ARG_rounds$AG[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_hometeamstemp_gs <- ARG_rounds$Home[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_awayteamstemp_gs <- ARG_rounds$Away[ARG_rounds$arg_matchday== i_arg_krounds]
-
-  arg_goalscombined <- c(arg_homegoalscored,arg_awaygoalscored)
-  arg_teamscombined <- c(arg_hometeamstemp_gs,arg_awayteamstemp_gs)
-
-  arg_goalscoredround <- data.frame(arg_teamscombined,arg_goalscombined)
-
-  arg_goalscoredround <- arg_goalscoredround[order(arg_goalscoredround$arg_teamscombined),]
-  arg_goalscoredround$arg_teamscombined <- NULL
-  arg_goalscoredmatrix[,i_arg_krounds] <- arg_goalscoredround
-
-}
-arg_goalscoredmatrix
-arg_goalscoredmatrix <- cbind(arg_teams,arg_goalscoredmatrix)
 ####GSmatrix################################
 #create home and away matrices
 arg_goalscored_h <- tapply(ARG$HG, ARG[c("Home", "Date")],mean)
@@ -127,37 +102,50 @@ for(arg_rowhgs in 1:nrow(arg_goalscored_h)) {
 
   }
 }
-write.xlsx(arg_goalscoredmatrix,'NL/ARG.xlsx',sheetName = "gsmatrix", append = TRUE)
+#write.xlsx(arg_goalscoredmatrix,'NL/ARG.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-#arg goal conceded rounds
-#arg
-arg_krounds <- tail(unique(ARG_rounds$arg_matchday),1)
-arg_goalconcededmatrix <- data.frame(matrix(nrow = length(arg_teams),ncol = arg_krounds))
-arg_goalconcededround <- c()
-for(i_arg_krounds in 1:arg_krounds)
+#########################################################################################
+#arg goal scored rounds
+final_arg_gs <- matrix(nrow = length(arg_teams),ncol = arg_totalrounds )
+suml6_arg_gs <- c()
+sum_arg_zero_gs <- c()
+sum_arg_one_gs <- c()
+sum_arg_two_gs <- c()
+sum_arg_three_gs <- c()
+l6_form_arg_gssplitted <- c()
+form_arg_gs <- c()
+for(index_arg_gs in 1:length(arg_teams))
 {
-  arg_homegoalconceded <- ARG_rounds$AG[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_awaygoalconceded <- ARG_rounds$HG[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_hometeamstemp_gc <- ARG_rounds$Home[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_awayteamstemp_gc <- ARG_rounds$Away[ARG_rounds$arg_matchday== i_arg_krounds]
-
-  arg_goalsconcededcombined <- c(arg_homegoalconceded,arg_awaygoalconceded)
-  arg_teamscombined_gc <- c(arg_hometeamstemp_gc,arg_awayteamstemp_gc)
-
-  arg_goalconcededround <- data.frame(arg_teamscombined_gc,arg_goalsconcededcombined)
-
-  arg_goalconcededround <- arg_goalconcededround[order(arg_goalconcededround$arg_teamscombined_gc),]
-  arg_goalconcededround$arg_teamscombined_gc <- NULL
-  arg_goalconcededmatrix[,i_arg_krounds] <- arg_goalconcededround
-
+  for(index_arg_gs_cols in 1:arg_totalrounds)
+  {
+    index_arg_gs  <- row.names(arg_goalscored_h) == arg_teams[index_arg_gs]
+    form_arg_gs <- arg_goalscored_h[index_arg_gs ]
+    deleted_form_arg_gs <- form_arg_gs[!form_arg_gs[] == ""]
+    l6_form_arg_gs <- tail(deleted_form_arg_gs,arg_last_n_games)
+    l6_form_arg_gs <- as.numeric(l6_form_arg_gs)
+    suml6_arg_gs[index_arg_gs] <- sum(l6_form_arg_gs)
+    suml6_arg_gs[index_arg_gs] <- paste(suml6_arg_gs[index_arg_gs],sep = "")
+    sum_arg_zero_gs[index_arg_gs] <- length(which(l6_form_arg_gs == 0))
+    sum_arg_zero_gs[index_arg_gs] <- paste(sum_arg_zero_gs[index_arg_gs],sep = "")
+    sum_arg_one_gs[index_arg_gs] <- length(which(l6_form_arg_gs == 1))
+    sum_arg_one_gs[index_arg_gs] <- paste(sum_arg_one_gs[index_arg_gs],sep = "")
+    sum_arg_two_gs[index_arg_gs] <- length(which(l6_form_arg_gs >= 2))
+    sum_arg_two_gs[index_arg_gs] <- paste(sum_arg_two_gs[index_arg_gs],sep = "")
+    sum_arg_three_gs[index_arg_gs] <- length(which(l6_form_arg_gs >= 3))
+    sum_arg_three_gs[index_arg_gs] <- paste(sum_arg_three_gs[index_arg_gs],sep = "")
+    l6_form_arg_gs <- as.character(l6_form_arg_gs)
+    l6_form_arg_gs_flattened <- stri_paste(l6_form_arg_gs,collapse = '')
+    l6_form_arg_gssplitted <- as.numeric(strsplit(as.character(l6_form_arg_gs_flattened),"")[[1]])
+    final_arg_gs[index_arg_gs,index_arg_gs_cols] <- l6_form_arg_gssplitted[index_arg_gs_cols]
+  }
 }
 
-arg_goalconcededmatrix <- cbind(arg_teams,arg_goalconcededmatrix)
+final_arg_gs[is.na(final_arg_gs)] <- ""
+arg_goalscoredmatrix <- cbind(arg_teams,final_arg_gs,suml6_arg_gs,sum_arg_zero_gs,sum_arg_one_gs,sum_arg_two_gs,sum_arg_three_gs)
+write.xlsx(arg_goalscoredmatrix,'NL/ARG.xlsx',sheetName = "gsmatrix", append = TRUE)
+#################################################################################################################################
 
-####GCmatrix#############################################################################
+####GCmatrix#####################################################################################################################
 #create home and away matrices
 arg_goalconceded_h <- tapply(ARG$AG, ARG[c("Home", "Date")],mean)
 arg_goalconceded_a <- tapply(ARG$HG, ARG[c("Away", "Date")],mean)
@@ -177,44 +165,50 @@ for(arg_rowhgc in 1:nrow(arg_goalconceded_h)) {
 
   }
 }
-write.xlsx(arg_goalconcededmatrix,'NL/ARG.xlsx',sheetName = "gcmatrix", append = TRUE)
-########################################################################################
-#arg team form
-arg_krounds <- tail(unique(ARG_rounds$arg_matchday),1)
-arg_formmatrix <- data.frame(matrix(nrow = length(arg_teams),ncol = arg_krounds))
-arg_formround <- c()
-for(i_arg_krounds in 1:arg_krounds)
+#write.xlsx(arg_goalconcededmatrix,'NL/ARG.xlsx',sheetName = "gcmatrix", append = TRUE)
+############################################################################################################################################################
+#arg goal conceded rounds
+final_arg_gc <- matrix(nrow = length(arg_teams),ncol = arg_totalrounds )
+suml6_arg_gc <- c()
+sum_arg_zero_gc <- c()
+sum_arg_one_gc <- c()
+sum_arg_two_gc <- c()
+sum_arg_three_gc <- c()
+l6_form_arg_gcsplitted <- c()
+form_arg_gc <- c()
+for(index_arg_gc in 1:length(arg_teams))
 {
-  arg_homeform <- ARG_rounds$FTR[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_homeform <- sub("H","W",arg_homeform)
-  arg_homeform <- sub("A","L",arg_homeform)
-
-  arg_awayform <- ARG_rounds$FTR[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_awayform <- sub("A","W",arg_awayform)
-  arg_awayform <- sub("H","L",arg_awayform)
-
-  arg_hometeamstemp_form <- ARG_rounds$Home[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_awayteamstemp_form <- ARG_rounds$Away[ARG_rounds$arg_matchday== i_arg_krounds]
-
-  arg_formcombined <- c(arg_homeform,arg_awayform)
-  arg_teamscombined_form <- c(arg_hometeamstemp_form,arg_awayteamstemp_form)
-
-  arg_formround <- data.frame(arg_teamscombined_form,arg_formcombined)
-
-  arg_formround <- arg_formround[order(arg_formround$arg_teamscombined_form),]
-  arg_formround$arg_teamscombined_form <- NULL
-  arg_formmatrix[,i_arg_krounds] <- arg_formround
-
+  for(index_arg_gc_cols in 1:arg_totalrounds)
+  {
+    index_arg_gc  <- row.names(arg_goalconceded_h) == arg_teams[index_arg_gc]
+    form_arg_gc <- arg_goalconceded_h[index_arg_gc ]
+    deleted_form_arg_gc <- form_arg_gc[!form_arg_gc[] == ""]
+    l6_form_arg_gc <- tail(deleted_form_arg_gc,arg_last_n_games)
+    l6_form_arg_gc <- as.numeric(l6_form_arg_gc)
+    suml6_arg_gc[index_arg_gc] <- sum(l6_form_arg_gc)
+    suml6_arg_gc[index_arg_gc] <- paste(suml6_arg_gc[index_arg_gc],sep = "")
+    sum_arg_zero_gc[index_arg_gc] <- length(which(l6_form_arg_gc == 0))
+    sum_arg_zero_gc[index_arg_gc] <- paste(sum_arg_zero_gc[index_arg_gc],sep = "")
+    sum_arg_one_gc[index_arg_gc] <- length(which(l6_form_arg_gc == 1))
+    sum_arg_one_gc[index_arg_gc] <- paste(sum_arg_one_gc[index_arg_gc],sep = "")
+    sum_arg_two_gc[index_arg_gc] <- length(which(l6_form_arg_gc >= 2))
+    sum_arg_two_gc[index_arg_gc] <- paste(sum_arg_two_gc[index_arg_gc],sep = "")
+    sum_arg_three_gc[index_arg_gc] <- length(which(l6_form_arg_gc >= 3))
+    sum_arg_three_gc[index_arg_gc] <- paste(sum_arg_three_gc[index_arg_gc],sep = "")
+    l6_form_arg_gc <- as.character(l6_form_arg_gc)
+    l6_form_arg_gc_flattened <- stri_paste(l6_form_arg_gc,collapse = '')
+    l6_form_arg_gcsplitted <- as.numeric(strsplit(as.character(l6_form_arg_gc_flattened),"")[[1]])
+    final_arg_gc[index_arg_gc,index_arg_gc_cols] <- l6_form_arg_gcsplitted[index_arg_gc_cols]
+  }
 }
 
-arg_formmatrix <- cbind(arg_teams,arg_formmatrix)
-########################################################################################
-########################################################################################
-#########################################################################################
-####Teamform#############################################################################
+final_arg_gc[is.na(final_arg_gc)] <- ""
+arg_goalconcededmatrix <- cbind(arg_teams,final_arg_gc,suml6_arg_gc,sum_arg_zero_gc,sum_arg_one_gc,sum_arg_two_gc,sum_arg_three_gc)
+write.xlsx(arg_goalconcededmatrix,'NL/ARG.xlsx',sheetName = "gcmatrix2", append = TRUE)
+###################################################################################################################################
+
+###################################################################################################################################
+####Teamform#######################################################################################################################
 
 arg_form_h <- tapply(ARG$FTR, ARG[c("Home", "Date")],median)
 arg_form_a <- tapply(ARG$FTR, ARG[c("Away", "Date")],median)
@@ -237,38 +231,37 @@ for(arg_rowh_f in 1:nrow(arg_form_h)) {
 
   }
 }
-write.xlsx(arg_formmatrix,'NL/ARG.xlsx',sheetName = "form", append = TRUE)
-##################################################################################
-##################################################################################
-#arg total goals rounds
-arg_krounds <- tail(unique(ARG_rounds$arg_matchday),1)
-arg_goaltotalmatrix <- data.frame(matrix(nrow = length(arg_teams),ncol = arg_krounds))
-arg_goaltotalround <- c()
-for(i_arg_krounds in 1:arg_krounds)
+####################################################################################################################################
+#arg team form
+final_arg_hf <- matrix(nrow = length(arg_teams),ncol = arg_totalrounds )
+suml6_arg_hf <- c()
+l6_form_arg_hfsplitted <- c()
+form_arg_hf <- c()
+for(index_arg_hf in 1:length(arg_teams))
 {
-  arg_homegoaltotal <- ARG_rounds$TG[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_awaygoaltotal <- ARG_rounds$TG[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_hometeamstemp_tg <- ARG_rounds$Home[ARG_rounds$arg_matchday == i_arg_krounds]
-
-  arg_awayteamstemp_tg <- ARG_rounds$Away[ARG_rounds$arg_matchday== i_arg_krounds]
-
-  arg_goalscombined_tg <- c(arg_homegoaltotal,arg_awaygoaltotal)
-  arg_teamscombined_tg <- c(arg_hometeamstemp_tg,arg_awayteamstemp_tg)
-
-  arg_goaltotalround <- data.frame(arg_teamscombined_tg,arg_goalscombined_tg)
-
-  arg_goaltotalround <- arg_goaltotalround[order(arg_goaltotalround$arg_teamscombined_tg),]
-  arg_goaltotalround$arg_teamscombined_tg <- NULL
-  arg_goaltotalmatrix[,i_arg_krounds] <- arg_goaltotalround
-
+  for(index_arg_hf_cols in 1:arg_totalrounds)
+  {
+    index_arg_hf  <- row.names(arg_form_h) == arg_teams[index_arg_hf]
+    form_arg_hf <- arg_form_h[index_arg_hf ]
+    deleted_form_arg_hf <- form_arg_hf[!form_arg_hf[] == ""]
+    l6_form_arg_hf <- tail(deleted_form_arg_hf,arg_last_n_games)
+    # #l6_form_arg_hf <- as.numeric(l6_form_arg_hf)
+    # suml6_arg_hf[index_arg_hf] <- sum(l6_form_arg_hf)
+    # suml6_arg_hf[index_arg_hf] <- paste(suml6_arg_hf[index_arg_hf],sep = "")
+    #l6_form_arg_hf <- as.character(l6_form_arg_hf)
+    l6_form_arg_hf_flattened <- stri_paste(l6_form_arg_hf,collapse = '')
+    l6_form_arg_hfsplitted <- (strsplit(as.character(l6_form_arg_hf_flattened),"")[[1]])
+    final_arg_hf[index_arg_hf,index_arg_hf_cols] <- l6_form_arg_hfsplitted[index_arg_hf_cols]
+  }
 }
+final_arg_hf[is.na(final_arg_hf)] <- ""
+arg_formmatrix <- cbind(arg_teams,final_arg_hf)
 
-arg_goaltotalmatrix <- cbind(arg_teams,arg_goaltotalmatrix)
-##############################################################################################
-#d1
-#######TGMatrix##################################################################
+write.xlsx(arg_formmatrix,'NL/ARG.xlsx',sheetName = "form", append = TRUE)
+######################################################################################################################################
+######################################################################################################################################
+
+#######TGMatrix#######################################################################################################################
 arg_totalgoals_h <- tapply(ARG$TG, ARG[c("Home", "Date")],mean)
 arg_totalgoals_a <- tapply(ARG$TG, ARG[c("Away", "Date")],mean)
 arg_totalgoals_h[is.na(arg_totalgoals_h)] <- ""
@@ -286,9 +279,37 @@ for(arg_rowh in 1:nrow(arg_totalgoals_h)) {
 
   }
 }
+
+#arg total goals rounds
+#arg
+final_arg_tg <- matrix(nrow = length(arg_teams),ncol = arg_totalrounds )
+suml6_arg_tg <- c()
+l6_form_arg_tgsplitted <- c()
+form_arg_tg <- c()
+for(index_arg_tg in 1:length(arg_teams))
+{
+  for(index_arg_tg_cols in 1:arg_totalrounds)
+  {
+    index_arg_tg  <- row.names(arg_totalgoals_h) == arg_teams[index_arg_tg]
+    form_arg_tg <- arg_totalgoals_h[index_arg_tg ]
+    deleted_form_arg_tg <- form_arg_tg[!form_arg_tg[] == ""]
+    l6_form_arg_tg <- tail(deleted_form_arg_tg,arg_last_n_games)
+    l6_form_arg_tg <- as.numeric(l6_form_arg_tg)
+    suml6_arg_tg[index_arg_tg] <- sum(l6_form_arg_tg)
+    suml6_arg_tg[index_arg_tg] <- paste(suml6_arg_tg[index_arg_tg],sep = "")
+    l6_form_arg_tg <- as.character(l6_form_arg_tg)
+    l6_form_arg_tg_flattened <- stri_paste(l6_form_arg_tg,collapse = '')
+    l6_form_arg_tgsplitted <- as.numeric(strsplit(as.character(l6_form_arg_tg_flattened),"")[[1]])
+    final_arg_tg[index_arg_tg,index_arg_tg_cols] <- l6_form_arg_tgsplitted[index_arg_tg_cols]
+  }
+}
+
+final_arg_tg[is.na(final_arg_tg)] <- ""
+arg_goaltotalmatrix <- cbind(arg_teams,final_arg_tg,suml6_arg_tg)
+
 write.xlsx(arg_goaltotalmatrix,'NL/ARG.xlsx',sheetName = "tgmatrix", append = TRUE)
-##################################################################################
-#######TeamAgainst##################################################################
+#############################################################################################################################################
+#######TeamAgainst###########################################################################################################################
 arg_form_team_against_h <- tapply(ARG$Away, ARG[c("Home", "Date")],median)
 arg_form_team_against_a <- tapply(ARG$Home, ARG[c("Away", "Date")],median)
 arg_form_team_against_h[is.na(arg_form_team_against_h)] <- ""
@@ -306,7 +327,7 @@ for(arg_rowh_f_against in 1:nrow(arg_form_team_against_h)) {
 
   }
 }
-#######################################################################
+###############################################################################################################################################
 #win margin
 arg_winmargin_h <- tapply(ARG$HG - ARG$AG, ARG[c("Home", "Date")],mean)
 arg_winmargin_a <- tapply(ARG$AG - ARG$HG, ARG[c("Away", "Date")],mean)
@@ -325,8 +346,49 @@ for(arg_rowhwm in 1:nrow(arg_winmargin_h)) {
 
   }
 }
-#######################################################################
-####################################################################################################################
+####################################################################################################################################################
+final_arg_wm <- matrix(nrow = length(arg_teams),ncol = arg_totalrounds )
+suml6_arg_wm <- c()
+suml6_arg_wm_negone <- c()
+suml6_arg_wm_negtwo <- c()
+suml6_arg_wm_zero <- c()
+suml6_arg_wm_posone <- c()
+suml6_arg_wm_postwo <- c()
+l6_form_arg_wmsplitted <- c()
+form_arg_wm <- c()
+for(index_arg_wm in 1:length(arg_teams))
+{
+  for(index_arg_wm_cols in 1:arg_totalrounds)
+  {
+    index_arg_wm  <- row.names(arg_winmargin_h) == arg_teams[index_arg_wm]
+    form_arg_wm <- arg_winmargin_h[index_arg_wm ]
+    deleted_form_arg_wm <- form_arg_wm[!form_arg_wm[] == ""]
+    l6_form_arg_wm <- tail(deleted_form_arg_wm,arg_last_n_games)
+    l6_form_arg_wm <- as.numeric(l6_form_arg_wm)
+    suml6_arg_wm[index_arg_wm] <- sum(l6_form_arg_wm)
+    suml6_arg_wm[index_arg_wm] <- paste(suml6_arg_wm[index_arg_wm],sep = "")
+    suml6_arg_wm_negone[index_arg_wm] <- length(which(l6_form_arg_wm == -1))
+    suml6_arg_wm_negone[index_arg_wm] <- paste(suml6_arg_wm_negone[index_arg_wm],sep = "")
+    suml6_arg_wm_negtwo[index_arg_wm] <- length(which(l6_form_arg_wm <= -2))
+    suml6_arg_wm_negtwo[index_arg_wm] <- paste(suml6_arg_wm_negtwo[index_arg_wm],sep = "")
+    suml6_arg_wm_zero[index_arg_wm] <- length(which(l6_form_arg_wm == 0))
+    suml6_arg_wm_zero[index_arg_wm] <- paste(suml6_arg_wm_zero[index_arg_wm],sep = "")
+    suml6_arg_wm_posone[index_arg_wm] <- length(which(l6_form_arg_wm == 1))
+    suml6_arg_wm_posone[index_arg_wm] <- paste(suml6_arg_wm_posone[index_arg_wm],sep = "")
+    suml6_arg_wm_postwo[index_arg_wm] <- length(which(l6_form_arg_wm == 2))
+    suml6_arg_wm_postwo[index_arg_wm] <- paste(suml6_arg_wm_postwo[index_arg_wm],sep = "")
+    l6_form_arg_wm <- as.character(l6_form_arg_wm)
+    l6_form_arg_wm_flattened <- stri_paste(l6_form_arg_wm,collapse = ',')
+    l6_form_arg_wmsplitted <- (strsplit(as.character(l6_form_arg_wm_flattened),",")[[1]])
+    final_arg_wm[index_arg_wm,index_arg_wm_cols] <- l6_form_arg_wmsplitted[index_arg_wm_cols]
+  }
+}
+
+final_arg_wm[is.na(final_arg_wm)] <- ""
+arg_winmarginmatrix <- cbind(arg_teams,final_arg_wm,suml6_arg_wm,suml6_arg_wm_negtwo,suml6_arg_wm_negone,suml6_arg_wm_zero,suml6_arg_wm_posone,suml6_arg_wm_postwo)
+write.xlsx(arg_winmarginmatrix,'NL/ARG.xlsx',sheetName = "winmargin", append = TRUE)
+##########################################################################################################################################################
+##########################################################################################################################################################
 ##########Goals over under############
 #ARG
 arg_un05_home <- c()

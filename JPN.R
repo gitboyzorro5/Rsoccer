@@ -6,6 +6,8 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+library(stringr)
+library(stringi)
 #delete current file
 unlink('NL/JPN.xlsx')
 ######################JPN START#######################################
@@ -77,37 +79,7 @@ if(jpn_matchesplayed %% jpn_eachround == 0)
   jpn_matchday <- append(jpn_matchday_vjpn1,jpn_matchday_vjpn2)
 }
 JPN_rounds <- cbind(JPN_rounds,jpn_matchday)
-#####################################################################################################
-#jpn goal scored rounds
-#####################################################################
-jpn_krounds <- tail(unique(JPN_rounds$jpn_matchday),1)
-nrow(JPN)
-jpn_goalscoredmatrix <- data.frame(matrix(nrow = length(jpn_teams),ncol = jpn_krounds))
-jpn_goalscoredround <- c()
-for(i_jpn_krounds in 1:jpn_krounds)
-{
-  jpn_homegoalscored <- JPN_rounds$HG[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_awaygoalscored <- JPN_rounds$AG[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_hometeamstemp_gs <- JPN_rounds$Home[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_awayteamstemp_gs <- JPN_rounds$Away[JPN_rounds$jpn_matchday== i_jpn_krounds]
-
-  jpn_goalscombined <- c(jpn_homegoalscored,jpn_awaygoalscored)
-  jpn_teamscombined <- c(jpn_hometeamstemp_gs,jpn_awayteamstemp_gs)
-
-  jpn_goalscoredround <- data.frame(jpn_teamscombined,jpn_goalscombined)
-
-  jpn_goalscoredround <- jpn_goalscoredround[order(jpn_goalscoredround$jpn_teamscombined),]
-  jpn_goalscoredround$jpn_teamscombined <- NULL
-  jpn_goalscoredmatrix[,i_jpn_krounds] <- jpn_goalscoredround
-
-}
-
-jpn_goalscoredmatrix <- cbind(jpn_teams,jpn_goalscoredmatrix)
-####GSmatrix################################
-#create home and away matrices
+###################################################################################################################
 jpn_goalscored_h <- tapply(JPN$HG, JPN[c("Home", "Date")],mean)
 jpn_goalscored_a <- tapply(JPN$AG, JPN[c("Away", "Date")],mean)
 jpn_goalscored_h[is.na(jpn_goalscored_h)] <- ""
@@ -126,37 +98,50 @@ for(jpn_rowhgs in 1:nrow(jpn_goalscored_h)) {
 
   }
 }
-write.xlsx(jpn_goalscoredmatrix,'NL/JPN.xlsx',sheetName = "gsmatrix", append = TRUE)
+#write.xlsx(jpn_goalscoredmatrix,'NL/JPN.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-#jpn goal conceded rounds
-#jpn
-jpn_krounds <- tail(unique(JPN_rounds$jpn_matchday),1)
-jpn_goalconcededmatrix <- data.frame(matrix(nrow = length(jpn_teams),ncol = jpn_krounds))
-jpn_goalconcededround <- c()
-for(i_jpn_krounds in 1:jpn_krounds)
+#########################################################################################
+#jpn goal scored rounds
+final_jpn_gs <- matrix(nrow = length(jpn_teams),ncol = jpn_totalrounds )
+suml6_jpn_gs <- c()
+sum_jpn_zero_gs <- c()
+sum_jpn_one_gs <- c()
+sum_jpn_two_gs <- c()
+sum_jpn_three_gs <- c()
+l6_form_jpn_gssplitted <- c()
+form_jpn_gs <- c()
+for(index_jpn_gs in 1:length(jpn_teams))
 {
-  jpn_homegoalconceded <- JPN_rounds$AG[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_awaygoalconceded <- JPN_rounds$HG[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_hometeamstemp_gc <- JPN_rounds$Home[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_awayteamstemp_gc <- JPN_rounds$Away[JPN_rounds$jpn_matchday== i_jpn_krounds]
-
-  jpn_goalsconcededcombined <- c(jpn_homegoalconceded,jpn_awaygoalconceded)
-  jpn_teamscombined_gc <- c(jpn_hometeamstemp_gc,jpn_awayteamstemp_gc)
-
-  jpn_goalconcededround <- data.frame(jpn_teamscombined_gc,jpn_goalsconcededcombined)
-
-  jpn_goalconcededround <- jpn_goalconcededround[order(jpn_goalconcededround$jpn_teamscombined_gc),]
-  jpn_goalconcededround$jpn_teamscombined_gc <- NULL
-  jpn_goalconcededmatrix[,i_jpn_krounds] <- jpn_goalconcededround
-
+  for(index_jpn_gs_cols in 1:jpn_totalrounds)
+  {
+    index_jpn_gs  <- row.names(jpn_goalscored_h) == jpn_teams[index_jpn_gs]
+    form_jpn_gs <- jpn_goalscored_h[index_jpn_gs ]
+    deleted_form_jpn_gs <- form_jpn_gs[!form_jpn_gs[] == ""]
+    l6_form_jpn_gs <- tail(deleted_form_jpn_gs,jpn_last_n_games)
+    l6_form_jpn_gs <- as.numeric(l6_form_jpn_gs)
+    suml6_jpn_gs[index_jpn_gs] <- sum(l6_form_jpn_gs)
+    suml6_jpn_gs[index_jpn_gs] <- paste(suml6_jpn_gs[index_jpn_gs],sep = "")
+    sum_jpn_zero_gs[index_jpn_gs] <- length(which(l6_form_jpn_gs == 0))
+    sum_jpn_zero_gs[index_jpn_gs] <- paste(sum_jpn_zero_gs[index_jpn_gs],sep = "")
+    sum_jpn_one_gs[index_jpn_gs] <- length(which(l6_form_jpn_gs == 1))
+    sum_jpn_one_gs[index_jpn_gs] <- paste(sum_jpn_one_gs[index_jpn_gs],sep = "")
+    sum_jpn_two_gs[index_jpn_gs] <- length(which(l6_form_jpn_gs >= 2))
+    sum_jpn_two_gs[index_jpn_gs] <- paste(sum_jpn_two_gs[index_jpn_gs],sep = "")
+    sum_jpn_three_gs[index_jpn_gs] <- length(which(l6_form_jpn_gs >= 3))
+    sum_jpn_three_gs[index_jpn_gs] <- paste(sum_jpn_three_gs[index_jpn_gs],sep = "")
+    l6_form_jpn_gs <- as.character(l6_form_jpn_gs)
+    l6_form_jpn_gs_flattened <- stri_paste(l6_form_jpn_gs,collapse = '')
+    l6_form_jpn_gssplitted <- as.numeric(strsplit(as.character(l6_form_jpn_gs_flattened),"")[[1]])
+    final_jpn_gs[index_jpn_gs,index_jpn_gs_cols] <- l6_form_jpn_gssplitted[index_jpn_gs_cols]
+  }
 }
 
-jpn_goalconcededmatrix <- cbind(jpn_teams,jpn_goalconcededmatrix)
+final_jpn_gs[is.na(final_jpn_gs)] <- ""
+jpn_goalscoredmatrix <- cbind(jpn_teams,final_jpn_gs,suml6_jpn_gs,sum_jpn_zero_gs,sum_jpn_one_gs,sum_jpn_two_gs,sum_jpn_three_gs)
+write.xlsx(jpn_goalscoredmatrix,'NL/JPN.xlsx',sheetName = "gsmatrix", append = TRUE)
+#################################################################################################################################
 
-####GCmatrix#############################################################################
+####GCmatrix#####################################################################################################################
 #create home and away matrices
 jpn_goalconceded_h <- tapply(JPN$AG, JPN[c("Home", "Date")],mean)
 jpn_goalconceded_a <- tapply(JPN$HG, JPN[c("Away", "Date")],mean)
@@ -176,44 +161,50 @@ for(jpn_rowhgc in 1:nrow(jpn_goalconceded_h)) {
 
   }
 }
-write.xlsx(jpn_goalconcededmatrix,'NL/JPN.xlsx',sheetName = "gcmatrix", append = TRUE)
-########################################################################################
-#jpn team form
-jpn_krounds <- tail(unique(JPN_rounds$jpn_matchday),1)
-jpn_formmatrix <- data.frame(matrix(nrow = length(jpn_teams),ncol = jpn_krounds))
-jpn_formround <- c()
-for(i_jpn_krounds in 1:jpn_krounds)
+#write.xlsx(jpn_goalconcededmatrix,'NL/JPN.xlsx',sheetName = "gcmatrix", append = TRUE)
+############################################################################################################################################################
+#jpn goal conceded rounds
+final_jpn_gc <- matrix(nrow = length(jpn_teams),ncol = jpn_totalrounds )
+suml6_jpn_gc <- c()
+sum_jpn_zero_gc <- c()
+sum_jpn_one_gc <- c()
+sum_jpn_two_gc <- c()
+sum_jpn_three_gc <- c()
+l6_form_jpn_gcsplitted <- c()
+form_jpn_gc <- c()
+for(index_jpn_gc in 1:length(jpn_teams))
 {
-  jpn_homeform <- JPN_rounds$FTR[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_homeform <- sub("H","W",jpn_homeform)
-  jpn_homeform <- sub("A","L",jpn_homeform)
-
-  jpn_awayform <- JPN_rounds$FTR[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_awayform <- sub("A","W",jpn_awayform)
-  jpn_awayform <- sub("H","L",jpn_awayform)
-
-  jpn_hometeamstemp_form <- JPN_rounds$Home[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_awayteamstemp_form <- JPN_rounds$Away[JPN_rounds$jpn_matchday== i_jpn_krounds]
-
-  jpn_formcombined <- c(jpn_homeform,jpn_awayform)
-  jpn_teamscombined_form <- c(jpn_hometeamstemp_form,jpn_awayteamstemp_form)
-
-  jpn_formround <- data.frame(jpn_teamscombined_form,jpn_formcombined)
-
-  jpn_formround <- jpn_formround[order(jpn_formround$jpn_teamscombined_form),]
-  jpn_formround$jpn_teamscombined_form <- NULL
-  jpn_formmatrix[,i_jpn_krounds] <- jpn_formround
-
+  for(index_jpn_gc_cols in 1:jpn_totalrounds)
+  {
+    index_jpn_gc  <- row.names(jpn_goalconceded_h) == jpn_teams[index_jpn_gc]
+    form_jpn_gc <- jpn_goalconceded_h[index_jpn_gc ]
+    deleted_form_jpn_gc <- form_jpn_gc[!form_jpn_gc[] == ""]
+    l6_form_jpn_gc <- tail(deleted_form_jpn_gc,jpn_last_n_games)
+    l6_form_jpn_gc <- as.numeric(l6_form_jpn_gc)
+    suml6_jpn_gc[index_jpn_gc] <- sum(l6_form_jpn_gc)
+    suml6_jpn_gc[index_jpn_gc] <- paste(suml6_jpn_gc[index_jpn_gc],sep = "")
+    sum_jpn_zero_gc[index_jpn_gc] <- length(which(l6_form_jpn_gc == 0))
+    sum_jpn_zero_gc[index_jpn_gc] <- paste(sum_jpn_zero_gc[index_jpn_gc],sep = "")
+    sum_jpn_one_gc[index_jpn_gc] <- length(which(l6_form_jpn_gc == 1))
+    sum_jpn_one_gc[index_jpn_gc] <- paste(sum_jpn_one_gc[index_jpn_gc],sep = "")
+    sum_jpn_two_gc[index_jpn_gc] <- length(which(l6_form_jpn_gc >= 2))
+    sum_jpn_two_gc[index_jpn_gc] <- paste(sum_jpn_two_gc[index_jpn_gc],sep = "")
+    sum_jpn_three_gc[index_jpn_gc] <- length(which(l6_form_jpn_gc >= 3))
+    sum_jpn_three_gc[index_jpn_gc] <- paste(sum_jpn_three_gc[index_jpn_gc],sep = "")
+    l6_form_jpn_gc <- as.character(l6_form_jpn_gc)
+    l6_form_jpn_gc_flattened <- stri_paste(l6_form_jpn_gc,collapse = '')
+    l6_form_jpn_gcsplitted <- as.numeric(strsplit(as.character(l6_form_jpn_gc_flattened),"")[[1]])
+    final_jpn_gc[index_jpn_gc,index_jpn_gc_cols] <- l6_form_jpn_gcsplitted[index_jpn_gc_cols]
+  }
 }
 
-jpn_formmatrix <- cbind(jpn_teams,jpn_formmatrix)
-########################################################################################
-########################################################################################
-#########################################################################################
-####Teamform#############################################################################
+final_jpn_gc[is.na(final_jpn_gc)] <- ""
+jpn_goalconcededmatrix <- cbind(jpn_teams,final_jpn_gc,suml6_jpn_gc,sum_jpn_zero_gc,sum_jpn_one_gc,sum_jpn_two_gc,sum_jpn_three_gc)
+write.xlsx(jpn_goalconcededmatrix,'NL/JPN.xlsx',sheetName = "gcmatrix2", append = TRUE)
+###################################################################################################################################
+
+###################################################################################################################################
+####Teamform#######################################################################################################################
 
 jpn_form_h <- tapply(JPN$FTR, JPN[c("Home", "Date")],median)
 jpn_form_a <- tapply(JPN$FTR, JPN[c("Away", "Date")],median)
@@ -236,38 +227,37 @@ for(jpn_rowh_f in 1:nrow(jpn_form_h)) {
 
   }
 }
-write.xlsx(jpn_formmatrix,'NL/JPN.xlsx',sheetName = "form", append = TRUE)
-##################################################################################
-##################################################################################
-#jpn total goals rounds
-jpn_krounds <- tail(unique(JPN_rounds$jpn_matchday),1)
-jpn_goaltotalmatrix <- data.frame(matrix(nrow = length(jpn_teams),ncol = jpn_krounds))
-jpn_goaltotalround <- c()
-for(i_jpn_krounds in 1:jpn_krounds)
+####################################################################################################################################
+#jpn team form
+final_jpn_hf <- matrix(nrow = length(jpn_teams),ncol = jpn_totalrounds )
+suml6_jpn_hf <- c()
+l6_form_jpn_hfsplitted <- c()
+form_jpn_hf <- c()
+for(index_jpn_hf in 1:length(jpn_teams))
 {
-  jpn_homegoaltotal <- JPN_rounds$TG[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_awaygoaltotal <- JPN_rounds$TG[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_hometeamstemp_tg <- JPN_rounds$Home[JPN_rounds$jpn_matchday == i_jpn_krounds]
-
-  jpn_awayteamstemp_tg <- JPN_rounds$Away[JPN_rounds$jpn_matchday== i_jpn_krounds]
-
-  jpn_goalscombined_tg <- c(jpn_homegoaltotal,jpn_awaygoaltotal)
-  jpn_teamscombined_tg <- c(jpn_hometeamstemp_tg,jpn_awayteamstemp_tg)
-
-  jpn_goaltotalround <- data.frame(jpn_teamscombined_tg,jpn_goalscombined_tg)
-
-  jpn_goaltotalround <- jpn_goaltotalround[order(jpn_goaltotalround$jpn_teamscombined_tg),]
-  jpn_goaltotalround$jpn_teamscombined_tg <- NULL
-  jpn_goaltotalmatrix[,i_jpn_krounds] <- jpn_goaltotalround
-
+  for(index_jpn_hf_cols in 1:jpn_totalrounds)
+  {
+    index_jpn_hf  <- row.names(jpn_form_h) == jpn_teams[index_jpn_hf]
+    form_jpn_hf <- jpn_form_h[index_jpn_hf ]
+    deleted_form_jpn_hf <- form_jpn_hf[!form_jpn_hf[] == ""]
+    l6_form_jpn_hf <- tail(deleted_form_jpn_hf,jpn_last_n_games)
+    # #l6_form_jpn_hf <- as.numeric(l6_form_jpn_hf)
+    # suml6_jpn_hf[index_jpn_hf] <- sum(l6_form_jpn_hf)
+    # suml6_jpn_hf[index_jpn_hf] <- paste(suml6_jpn_hf[index_jpn_hf],sep = "")
+    #l6_form_jpn_hf <- as.character(l6_form_jpn_hf)
+    l6_form_jpn_hf_flattened <- stri_paste(l6_form_jpn_hf,collapse = '')
+    l6_form_jpn_hfsplitted <- (strsplit(as.character(l6_form_jpn_hf_flattened),"")[[1]])
+    final_jpn_hf[index_jpn_hf,index_jpn_hf_cols] <- l6_form_jpn_hfsplitted[index_jpn_hf_cols]
+  }
 }
+final_jpn_hf[is.na(final_jpn_hf)] <- ""
+jpn_formmatrix <- cbind(jpn_teams,final_jpn_hf)
 
-jpn_goaltotalmatrix <- cbind(jpn_teams,jpn_goaltotalmatrix)
-##############################################################################################
-#d1
-#######TGMatrix##################################################################
+write.xlsx(jpn_formmatrix,'NL/JPN.xlsx',sheetName = "form", append = TRUE)
+######################################################################################################################################
+######################################################################################################################################
+
+#######TGMatrix#######################################################################################################################
 jpn_totalgoals_h <- tapply(JPN$TG, JPN[c("Home", "Date")],mean)
 jpn_totalgoals_a <- tapply(JPN$TG, JPN[c("Away", "Date")],mean)
 jpn_totalgoals_h[is.na(jpn_totalgoals_h)] <- ""
@@ -285,9 +275,37 @@ for(jpn_rowh in 1:nrow(jpn_totalgoals_h)) {
 
   }
 }
+
+#jpn total goals rounds
+#jpn
+final_jpn_tg <- matrix(nrow = length(jpn_teams),ncol = jpn_totalrounds )
+suml6_jpn_tg <- c()
+l6_form_jpn_tgsplitted <- c()
+form_jpn_tg <- c()
+for(index_jpn_tg in 1:length(jpn_teams))
+{
+  for(index_jpn_tg_cols in 1:jpn_totalrounds)
+  {
+    index_jpn_tg  <- row.names(jpn_totalgoals_h) == jpn_teams[index_jpn_tg]
+    form_jpn_tg <- jpn_totalgoals_h[index_jpn_tg ]
+    deleted_form_jpn_tg <- form_jpn_tg[!form_jpn_tg[] == ""]
+    l6_form_jpn_tg <- tail(deleted_form_jpn_tg,jpn_last_n_games)
+    l6_form_jpn_tg <- as.numeric(l6_form_jpn_tg)
+    suml6_jpn_tg[index_jpn_tg] <- sum(l6_form_jpn_tg)
+    suml6_jpn_tg[index_jpn_tg] <- paste(suml6_jpn_tg[index_jpn_tg],sep = "")
+    l6_form_jpn_tg <- as.character(l6_form_jpn_tg)
+    l6_form_jpn_tg_flattened <- stri_paste(l6_form_jpn_tg,collapse = '')
+    l6_form_jpn_tgsplitted <- as.numeric(strsplit(as.character(l6_form_jpn_tg_flattened),"")[[1]])
+    final_jpn_tg[index_jpn_tg,index_jpn_tg_cols] <- l6_form_jpn_tgsplitted[index_jpn_tg_cols]
+  }
+}
+
+final_jpn_tg[is.na(final_jpn_tg)] <- ""
+jpn_goaltotalmatrix <- cbind(jpn_teams,final_jpn_tg,suml6_jpn_tg)
+
 write.xlsx(jpn_goaltotalmatrix,'NL/JPN.xlsx',sheetName = "tgmatrix", append = TRUE)
-##################################################################################
-#######TeamAgainst##################################################################
+#############################################################################################################################################
+#######TeamAgainst###########################################################################################################################
 jpn_form_team_against_h <- tapply(JPN$Away, JPN[c("Home", "Date")],median)
 jpn_form_team_against_a <- tapply(JPN$Home, JPN[c("Away", "Date")],median)
 jpn_form_team_against_h[is.na(jpn_form_team_against_h)] <- ""
@@ -305,7 +323,7 @@ for(jpn_rowh_f_against in 1:nrow(jpn_form_team_against_h)) {
 
   }
 }
-#######################################################################
+###############################################################################################################################################
 #win margin
 jpn_winmargin_h <- tapply(JPN$HG - JPN$AG, JPN[c("Home", "Date")],mean)
 jpn_winmargin_a <- tapply(JPN$AG - JPN$HG, JPN[c("Away", "Date")],mean)
@@ -324,9 +342,49 @@ for(jpn_rowhwm in 1:nrow(jpn_winmargin_h)) {
 
   }
 }
-#######################################################################
+####################################################################################################################################################
+final_jpn_wm <- matrix(nrow = length(jpn_teams),ncol = jpn_totalrounds )
+suml6_jpn_wm <- c()
+suml6_jpn_wm_negone <- c()
+suml6_jpn_wm_negtwo <- c()
+suml6_jpn_wm_zero <- c()
+suml6_jpn_wm_posone <- c()
+suml6_jpn_wm_postwo <- c()
+l6_form_jpn_wmsplitted <- c()
+form_jpn_wm <- c()
+for(index_jpn_wm in 1:length(jpn_teams))
+{
+  for(index_jpn_wm_cols in 1:jpn_totalrounds)
+  {
+    index_jpn_wm  <- row.names(jpn_winmargin_h) == jpn_teams[index_jpn_wm]
+    form_jpn_wm <- jpn_winmargin_h[index_jpn_wm ]
+    deleted_form_jpn_wm <- form_jpn_wm[!form_jpn_wm[] == ""]
+    l6_form_jpn_wm <- tail(deleted_form_jpn_wm,jpn_last_n_games)
+    l6_form_jpn_wm <- as.numeric(l6_form_jpn_wm)
+    suml6_jpn_wm[index_jpn_wm] <- sum(l6_form_jpn_wm)
+    suml6_jpn_wm[index_jpn_wm] <- paste(suml6_jpn_wm[index_jpn_wm],sep = "")
+    suml6_jpn_wm_negone[index_jpn_wm] <- length(which(l6_form_jpn_wm == -1))
+    suml6_jpn_wm_negone[index_jpn_wm] <- paste(suml6_jpn_wm_negone[index_jpn_wm],sep = "")
+    suml6_jpn_wm_negtwo[index_jpn_wm] <- length(which(l6_form_jpn_wm <= -2))
+    suml6_jpn_wm_negtwo[index_jpn_wm] <- paste(suml6_jpn_wm_negtwo[index_jpn_wm],sep = "")
+    suml6_jpn_wm_zero[index_jpn_wm] <- length(which(l6_form_jpn_wm == 0))
+    suml6_jpn_wm_zero[index_jpn_wm] <- paste(suml6_jpn_wm_zero[index_jpn_wm],sep = "")
+    suml6_jpn_wm_posone[index_jpn_wm] <- length(which(l6_form_jpn_wm == 1))
+    suml6_jpn_wm_posone[index_jpn_wm] <- paste(suml6_jpn_wm_posone[index_jpn_wm],sep = "")
+    suml6_jpn_wm_postwo[index_jpn_wm] <- length(which(l6_form_jpn_wm == 2))
+    suml6_jpn_wm_postwo[index_jpn_wm] <- paste(suml6_jpn_wm_postwo[index_jpn_wm],sep = "")
+    l6_form_jpn_wm <- as.character(l6_form_jpn_wm)
+    l6_form_jpn_wm_flattened <- stri_paste(l6_form_jpn_wm,collapse = ',')
+    l6_form_jpn_wmsplitted <- (strsplit(as.character(l6_form_jpn_wm_flattened),",")[[1]])
+    final_jpn_wm[index_jpn_wm,index_jpn_wm_cols] <- l6_form_jpn_wmsplitted[index_jpn_wm_cols]
+  }
+}
+
+final_jpn_wm[is.na(final_jpn_wm)] <- ""
+jpn_winmarginmatrix <- cbind(jpn_teams,final_jpn_wm,suml6_jpn_wm,suml6_jpn_wm_negtwo,suml6_jpn_wm_negone,suml6_jpn_wm_zero,suml6_jpn_wm_posone,suml6_jpn_wm_postwo)
+write.xlsx(jpn_winmarginmatrix,'NL/JPN.xlsx',sheetName = "winmargin", append = TRUE)
 ####################################################################################################################
-##########Goals over under############
+##########Goals over under##########################################################################################
 #JPN
 jpn_un05_home <- c()
 jpn_un05_away <- c()

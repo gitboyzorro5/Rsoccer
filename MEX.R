@@ -6,6 +6,8 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+library(stringr)
+library(stringi)
 #delete current file
 unlink('MEX.xlsx')
 ######################MEX START#######################################
@@ -81,36 +83,6 @@ if(mex_matchesplayed %% mex_eachround == 0)
 }
 MEX_rounds <- cbind(MEX_rounds,mex_matchday)
 #####################################################################################################
-#mex goal scored rounds
-#####################################################################
-mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)
-nrow(MEX)
-mex_goalscoredmatrix <- data.frame(matrix(nrow = length(mex_teams),ncol = mex_krounds))
-mex_goalscoredround <- c()
-for(i_mex_krounds in 1:mex_krounds)
-{
-  mex_homegoalscored <- MEX_rounds$HG[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_awaygoalscored <- MEX_rounds$AG[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_hometeamstemp_gs <- MEX_rounds$Home[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_awayteamstemp_gs <- MEX_rounds$Away[MEX_rounds$mex_matchday== i_mex_krounds]
-
-  mex_goalscombined <- c(mex_homegoalscored,mex_awaygoalscored)
-  mex_teamscombined <- c(mex_hometeamstemp_gs,mex_awayteamstemp_gs)
-
-  mex_goalscoredround <- data.frame(mex_teamscombined,mex_goalscombined)
-
-  mex_goalscoredround <- mex_goalscoredround[order(mex_goalscoredround$mex_teamscombined),]
-  mex_goalscoredround$mex_teamscombined <- NULL
-  mex_goalscoredmatrix[,i_mex_krounds] <- mex_goalscoredround
-
-}
-mex_goalscoredmatrix
-mex_goalscoredmatrix <- cbind(mex_teams,mex_goalscoredmatrix)
-####GSmatrix################################
-#create home and away matrices
 mex_goalscored_h <- tapply(MEX$HG, MEX[c("Home", "Date")],mean)
 mex_goalscored_a <- tapply(MEX$AG, MEX[c("Away", "Date")],mean)
 mex_goalscored_h[is.na(mex_goalscored_h)] <- ""
@@ -129,37 +101,50 @@ for(mex_rowhgs in 1:nrow(mex_goalscored_h)) {
 
   }
 }
-write.xlsx(mex_goalscoredmatrix,'NL/MEX.xlsx',sheetName = "gsmatrix", append = TRUE)
+#write.xlsx(mex_goalscoredmatrix,'NL/MEX.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-#mex goal conceded rounds
-#mex
-mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)
-mex_goalconcededmatrix <- data.frame(matrix(nrow = length(mex_teams),ncol = mex_krounds))
-mex_goalconcededround <- c()
-for(i_mex_krounds in 1:mex_krounds)
+#########################################################################################
+#mex goal scored rounds
+final_mex_gs <- matrix(nrow = length(mex_teams),ncol = mex_totalrounds )
+suml6_mex_gs <- c()
+sum_mex_zero_gs <- c()
+sum_mex_one_gs <- c()
+sum_mex_two_gs <- c()
+sum_mex_three_gs <- c()
+l6_form_mex_gssplitted <- c()
+form_mex_gs <- c()
+for(index_mex_gs in 1:length(mex_teams))
 {
-  mex_homegoalconceded <- MEX_rounds$AG[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_awaygoalconceded <- MEX_rounds$HG[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_hometeamstemp_gc <- MEX_rounds$Home[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_awayteamstemp_gc <- MEX_rounds$Away[MEX_rounds$mex_matchday== i_mex_krounds]
-
-  mex_goalsconcededcombined <- c(mex_homegoalconceded,mex_awaygoalconceded)
-  mex_teamscombined_gc <- c(mex_hometeamstemp_gc,mex_awayteamstemp_gc)
-
-  mex_goalconcededround <- data.frame(mex_teamscombined_gc,mex_goalsconcededcombined)
-
-  mex_goalconcededround <- mex_goalconcededround[order(mex_goalconcededround$mex_teamscombined_gc),]
-  mex_goalconcededround$mex_teamscombined_gc <- NULL
-  mex_goalconcededmatrix[,i_mex_krounds] <- mex_goalconcededround
-
+  for(index_mex_gs_cols in 1:mex_totalrounds)
+  {
+    index_mex_gs  <- row.names(mex_goalscored_h) == mex_teams[index_mex_gs]
+    form_mex_gs <- mex_goalscored_h[index_mex_gs ]
+    deleted_form_mex_gs <- form_mex_gs[!form_mex_gs[] == ""]
+    l6_form_mex_gs <- tail(deleted_form_mex_gs,mex_last_n_games)
+    l6_form_mex_gs <- as.numeric(l6_form_mex_gs)
+    suml6_mex_gs[index_mex_gs] <- sum(l6_form_mex_gs)
+    suml6_mex_gs[index_mex_gs] <- paste(suml6_mex_gs[index_mex_gs],sep = "")
+    sum_mex_zero_gs[index_mex_gs] <- length(which(l6_form_mex_gs == 0))
+    sum_mex_zero_gs[index_mex_gs] <- paste(sum_mex_zero_gs[index_mex_gs],sep = "")
+    sum_mex_one_gs[index_mex_gs] <- length(which(l6_form_mex_gs == 1))
+    sum_mex_one_gs[index_mex_gs] <- paste(sum_mex_one_gs[index_mex_gs],sep = "")
+    sum_mex_two_gs[index_mex_gs] <- length(which(l6_form_mex_gs >= 2))
+    sum_mex_two_gs[index_mex_gs] <- paste(sum_mex_two_gs[index_mex_gs],sep = "")
+    sum_mex_three_gs[index_mex_gs] <- length(which(l6_form_mex_gs >= 3))
+    sum_mex_three_gs[index_mex_gs] <- paste(sum_mex_three_gs[index_mex_gs],sep = "")
+    l6_form_mex_gs <- as.character(l6_form_mex_gs)
+    l6_form_mex_gs_flattened <- stri_paste(l6_form_mex_gs,collapse = '')
+    l6_form_mex_gssplitted <- as.numeric(strsplit(as.character(l6_form_mex_gs_flattened),"")[[1]])
+    final_mex_gs[index_mex_gs,index_mex_gs_cols] <- l6_form_mex_gssplitted[index_mex_gs_cols]
+  }
 }
 
-mex_goalconcededmatrix <- cbind(mex_teams,mex_goalconcededmatrix)
+final_mex_gs[is.na(final_mex_gs)] <- ""
+mex_goalscoredmatrix <- cbind(mex_teams,final_mex_gs,suml6_mex_gs,sum_mex_zero_gs,sum_mex_one_gs,sum_mex_two_gs,sum_mex_three_gs)
+write.xlsx(mex_goalscoredmatrix,'NL/MEX.xlsx',sheetName = "gsmatrix", append = TRUE)
+#################################################################################################################################
 
-####GCmatrix#############################################################################
+####GCmatrix#####################################################################################################################
 #create home and away matrices
 mex_goalconceded_h <- tapply(MEX$AG, MEX[c("Home", "Date")],mean)
 mex_goalconceded_a <- tapply(MEX$HG, MEX[c("Away", "Date")],mean)
@@ -179,44 +164,50 @@ for(mex_rowhgc in 1:nrow(mex_goalconceded_h)) {
 
   }
 }
-write.xlsx(mex_goalconcededmatrix,'NL/MEX.xlsx',sheetName = "gcmatrix", append = TRUE)
-########################################################################################
-#mex team form
-mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)
-mex_formmatrix <- data.frame(matrix(nrow = length(mex_teams),ncol = mex_krounds))
-mex_formround <- c()
-for(i_mex_krounds in 1:mex_krounds)
+#write.xlsx(mex_goalconcededmatrix,'NL/MEX.xlsx',sheetName = "gcmatrix", append = TRUE)
+############################################################################################################################################################
+#mex goal conceded rounds
+final_mex_gc <- matrix(nrow = length(mex_teams),ncol = mex_totalrounds )
+suml6_mex_gc <- c()
+sum_mex_zero_gc <- c()
+sum_mex_one_gc <- c()
+sum_mex_two_gc <- c()
+sum_mex_three_gc <- c()
+l6_form_mex_gcsplitted <- c()
+form_mex_gc <- c()
+for(index_mex_gc in 1:length(mex_teams))
 {
-  mex_homeform <- MEX_rounds$FTR[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_homeform <- sub("H","W",mex_homeform)
-  mex_homeform <- sub("A","L",mex_homeform)
-
-  mex_awayform <- MEX_rounds$FTR[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_awayform <- sub("A","W",mex_awayform)
-  mex_awayform <- sub("H","L",mex_awayform)
-
-  mex_hometeamstemp_form <- MEX_rounds$Home[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_awayteamstemp_form <- MEX_rounds$Away[MEX_rounds$mex_matchday== i_mex_krounds]
-
-  mex_formcombined <- c(mex_homeform,mex_awayform)
-  mex_teamscombined_form <- c(mex_hometeamstemp_form,mex_awayteamstemp_form)
-
-  mex_formround <- data.frame(mex_teamscombined_form,mex_formcombined)
-
-  mex_formround <- mex_formround[order(mex_formround$mex_teamscombined_form),]
-  mex_formround$mex_teamscombined_form <- NULL
-  mex_formmatrix[,i_mex_krounds] <- mex_formround
-
+  for(index_mex_gc_cols in 1:mex_totalrounds)
+  {
+    index_mex_gc  <- row.names(mex_goalconceded_h) == mex_teams[index_mex_gc]
+    form_mex_gc <- mex_goalconceded_h[index_mex_gc ]
+    deleted_form_mex_gc <- form_mex_gc[!form_mex_gc[] == ""]
+    l6_form_mex_gc <- tail(deleted_form_mex_gc,mex_last_n_games)
+    l6_form_mex_gc <- as.numeric(l6_form_mex_gc)
+    suml6_mex_gc[index_mex_gc] <- sum(l6_form_mex_gc)
+    suml6_mex_gc[index_mex_gc] <- paste(suml6_mex_gc[index_mex_gc],sep = "")
+    sum_mex_zero_gc[index_mex_gc] <- length(which(l6_form_mex_gc == 0))
+    sum_mex_zero_gc[index_mex_gc] <- paste(sum_mex_zero_gc[index_mex_gc],sep = "")
+    sum_mex_one_gc[index_mex_gc] <- length(which(l6_form_mex_gc == 1))
+    sum_mex_one_gc[index_mex_gc] <- paste(sum_mex_one_gc[index_mex_gc],sep = "")
+    sum_mex_two_gc[index_mex_gc] <- length(which(l6_form_mex_gc >= 2))
+    sum_mex_two_gc[index_mex_gc] <- paste(sum_mex_two_gc[index_mex_gc],sep = "")
+    sum_mex_three_gc[index_mex_gc] <- length(which(l6_form_mex_gc >= 3))
+    sum_mex_three_gc[index_mex_gc] <- paste(sum_mex_three_gc[index_mex_gc],sep = "")
+    l6_form_mex_gc <- as.character(l6_form_mex_gc)
+    l6_form_mex_gc_flattened <- stri_paste(l6_form_mex_gc,collapse = '')
+    l6_form_mex_gcsplitted <- as.numeric(strsplit(as.character(l6_form_mex_gc_flattened),"")[[1]])
+    final_mex_gc[index_mex_gc,index_mex_gc_cols] <- l6_form_mex_gcsplitted[index_mex_gc_cols]
+  }
 }
 
-mex_formmatrix <- cbind(mex_teams,mex_formmatrix)
-########################################################################################
-########################################################################################
-#########################################################################################
-####Teamform#############################################################################
+final_mex_gc[is.na(final_mex_gc)] <- ""
+mex_goalconcededmatrix <- cbind(mex_teams,final_mex_gc,suml6_mex_gc,sum_mex_zero_gc,sum_mex_one_gc,sum_mex_two_gc,sum_mex_three_gc)
+write.xlsx(mex_goalconcededmatrix,'NL/MEX.xlsx',sheetName = "gcmatrix2", append = TRUE)
+###################################################################################################################################
+
+###################################################################################################################################
+####Teamform#######################################################################################################################
 
 mex_form_h <- tapply(MEX$FTR, MEX[c("Home", "Date")],median)
 mex_form_a <- tapply(MEX$FTR, MEX[c("Away", "Date")],median)
@@ -239,38 +230,37 @@ for(mex_rowh_f in 1:nrow(mex_form_h)) {
 
   }
 }
-write.xlsx(mex_formmatrix,'NL/MEX.xlsx',sheetName = "form", append = TRUE)
-##################################################################################
-##################################################################################
-#mex total goals rounds
-mex_krounds <- tail(unique(MEX_rounds$mex_matchday),1)
-mex_goaltotalmatrix <- data.frame(matrix(nrow = length(mex_teams),ncol = mex_krounds))
-mex_goaltotalround <- c()
-for(i_mex_krounds in 1:mex_krounds)
+####################################################################################################################################
+#mex team form
+final_mex_hf <- matrix(nrow = length(mex_teams),ncol = mex_totalrounds )
+suml6_mex_hf <- c()
+l6_form_mex_hfsplitted <- c()
+form_mex_hf <- c()
+for(index_mex_hf in 1:length(mex_teams))
 {
-  mex_homegoaltotal <- MEX_rounds$TG[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_awaygoaltotal <- MEX_rounds$TG[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_hometeamstemp_tg <- MEX_rounds$Home[MEX_rounds$mex_matchday == i_mex_krounds]
-
-  mex_awayteamstemp_tg <- MEX_rounds$Away[MEX_rounds$mex_matchday== i_mex_krounds]
-
-  mex_goalscombined_tg <- c(mex_homegoaltotal,mex_awaygoaltotal)
-  mex_teamscombined_tg <- c(mex_hometeamstemp_tg,mex_awayteamstemp_tg)
-
-  mex_goaltotalround <- data.frame(mex_teamscombined_tg,mex_goalscombined_tg)
-
-  mex_goaltotalround <- mex_goaltotalround[order(mex_goaltotalround$mex_teamscombined_tg),]
-  mex_goaltotalround$mex_teamscombined_tg <- NULL
-  mex_goaltotalmatrix[,i_mex_krounds] <- mex_goaltotalround
-
+  for(index_mex_hf_cols in 1:mex_totalrounds)
+  {
+    index_mex_hf  <- row.names(mex_form_h) == mex_teams[index_mex_hf]
+    form_mex_hf <- mex_form_h[index_mex_hf ]
+    deleted_form_mex_hf <- form_mex_hf[!form_mex_hf[] == ""]
+    l6_form_mex_hf <- tail(deleted_form_mex_hf,mex_last_n_games)
+    # #l6_form_mex_hf <- as.numeric(l6_form_mex_hf)
+    # suml6_mex_hf[index_mex_hf] <- sum(l6_form_mex_hf)
+    # suml6_mex_hf[index_mex_hf] <- paste(suml6_mex_hf[index_mex_hf],sep = "")
+    #l6_form_mex_hf <- as.character(l6_form_mex_hf)
+    l6_form_mex_hf_flattened <- stri_paste(l6_form_mex_hf,collapse = '')
+    l6_form_mex_hfsplitted <- (strsplit(as.character(l6_form_mex_hf_flattened),"")[[1]])
+    final_mex_hf[index_mex_hf,index_mex_hf_cols] <- l6_form_mex_hfsplitted[index_mex_hf_cols]
+  }
 }
+final_mex_hf[is.na(final_mex_hf)] <- ""
+mex_formmatrix <- cbind(mex_teams,final_mex_hf)
 
-mex_goaltotalmatrix <- cbind(mex_teams,mex_goaltotalmatrix)
-##############################################################################################
-#d1
-#######TGMatrix##################################################################
+write.xlsx(mex_formmatrix,'NL/MEX.xlsx',sheetName = "form", append = TRUE)
+######################################################################################################################################
+######################################################################################################################################
+
+#######TGMatrix#######################################################################################################################
 mex_totalgoals_h <- tapply(MEX$TG, MEX[c("Home", "Date")],mean)
 mex_totalgoals_a <- tapply(MEX$TG, MEX[c("Away", "Date")],mean)
 mex_totalgoals_h[is.na(mex_totalgoals_h)] <- ""
@@ -288,9 +278,37 @@ for(mex_rowh in 1:nrow(mex_totalgoals_h)) {
 
   }
 }
+
+#mex total goals rounds
+#mex
+final_mex_tg <- matrix(nrow = length(mex_teams),ncol = mex_totalrounds )
+suml6_mex_tg <- c()
+l6_form_mex_tgsplitted <- c()
+form_mex_tg <- c()
+for(index_mex_tg in 1:length(mex_teams))
+{
+  for(index_mex_tg_cols in 1:mex_totalrounds)
+  {
+    index_mex_tg  <- row.names(mex_totalgoals_h) == mex_teams[index_mex_tg]
+    form_mex_tg <- mex_totalgoals_h[index_mex_tg ]
+    deleted_form_mex_tg <- form_mex_tg[!form_mex_tg[] == ""]
+    l6_form_mex_tg <- tail(deleted_form_mex_tg,mex_last_n_games)
+    l6_form_mex_tg <- as.numeric(l6_form_mex_tg)
+    suml6_mex_tg[index_mex_tg] <- sum(l6_form_mex_tg)
+    suml6_mex_tg[index_mex_tg] <- paste(suml6_mex_tg[index_mex_tg],sep = "")
+    l6_form_mex_tg <- as.character(l6_form_mex_tg)
+    l6_form_mex_tg_flattened <- stri_paste(l6_form_mex_tg,collapse = '')
+    l6_form_mex_tgsplitted <- as.numeric(strsplit(as.character(l6_form_mex_tg_flattened),"")[[1]])
+    final_mex_tg[index_mex_tg,index_mex_tg_cols] <- l6_form_mex_tgsplitted[index_mex_tg_cols]
+  }
+}
+
+final_mex_tg[is.na(final_mex_tg)] <- ""
+mex_goaltotalmatrix <- cbind(mex_teams,final_mex_tg,suml6_mex_tg)
+
 write.xlsx(mex_goaltotalmatrix,'NL/MEX.xlsx',sheetName = "tgmatrix", append = TRUE)
-##################################################################################
-#######TeamAgainst##################################################################
+#############################################################################################################################################
+#######TeamAgainst###########################################################################################################################
 mex_form_team_against_h <- tapply(MEX$Away, MEX[c("Home", "Date")],median)
 mex_form_team_against_a <- tapply(MEX$Home, MEX[c("Away", "Date")],median)
 mex_form_team_against_h[is.na(mex_form_team_against_h)] <- ""
@@ -308,7 +326,7 @@ for(mex_rowh_f_against in 1:nrow(mex_form_team_against_h)) {
 
   }
 }
-#######################################################################
+###############################################################################################################################################
 #win margin
 mex_winmargin_h <- tapply(MEX$HG - MEX$AG, MEX[c("Home", "Date")],mean)
 mex_winmargin_a <- tapply(MEX$AG - MEX$HG, MEX[c("Away", "Date")],mean)
@@ -327,7 +345,47 @@ for(mex_rowhwm in 1:nrow(mex_winmargin_h)) {
 
   }
 }
-#######################################################################
+####################################################################################################################################################
+final_mex_wm <- matrix(nrow = length(mex_teams),ncol = mex_totalrounds )
+suml6_mex_wm <- c()
+suml6_mex_wm_negone <- c()
+suml6_mex_wm_negtwo <- c()
+suml6_mex_wm_zero <- c()
+suml6_mex_wm_posone <- c()
+suml6_mex_wm_postwo <- c()
+l6_form_mex_wmsplitted <- c()
+form_mex_wm <- c()
+for(index_mex_wm in 1:length(mex_teams))
+{
+  for(index_mex_wm_cols in 1:mex_totalrounds)
+  {
+    index_mex_wm  <- row.names(mex_winmargin_h) == mex_teams[index_mex_wm]
+    form_mex_wm <- mex_winmargin_h[index_mex_wm ]
+    deleted_form_mex_wm <- form_mex_wm[!form_mex_wm[] == ""]
+    l6_form_mex_wm <- tail(deleted_form_mex_wm,mex_last_n_games)
+    l6_form_mex_wm <- as.numeric(l6_form_mex_wm)
+    suml6_mex_wm[index_mex_wm] <- sum(l6_form_mex_wm)
+    suml6_mex_wm[index_mex_wm] <- paste(suml6_mex_wm[index_mex_wm],sep = "")
+    suml6_mex_wm_negone[index_mex_wm] <- length(which(l6_form_mex_wm == -1))
+    suml6_mex_wm_negone[index_mex_wm] <- paste(suml6_mex_wm_negone[index_mex_wm],sep = "")
+    suml6_mex_wm_negtwo[index_mex_wm] <- length(which(l6_form_mex_wm <= -2))
+    suml6_mex_wm_negtwo[index_mex_wm] <- paste(suml6_mex_wm_negtwo[index_mex_wm],sep = "")
+    suml6_mex_wm_zero[index_mex_wm] <- length(which(l6_form_mex_wm == 0))
+    suml6_mex_wm_zero[index_mex_wm] <- paste(suml6_mex_wm_zero[index_mex_wm],sep = "")
+    suml6_mex_wm_posone[index_mex_wm] <- length(which(l6_form_mex_wm == 1))
+    suml6_mex_wm_posone[index_mex_wm] <- paste(suml6_mex_wm_posone[index_mex_wm],sep = "")
+    suml6_mex_wm_postwo[index_mex_wm] <- length(which(l6_form_mex_wm == 2))
+    suml6_mex_wm_postwo[index_mex_wm] <- paste(suml6_mex_wm_postwo[index_mex_wm],sep = "")
+    l6_form_mex_wm <- as.character(l6_form_mex_wm)
+    l6_form_mex_wm_flattened <- stri_paste(l6_form_mex_wm,collapse = ',')
+    l6_form_mex_wmsplitted <- (strsplit(as.character(l6_form_mex_wm_flattened),",")[[1]])
+    final_mex_wm[index_mex_wm,index_mex_wm_cols] <- l6_form_mex_wmsplitted[index_mex_wm_cols]
+  }
+}
+
+final_mex_wm[is.na(final_mex_wm)] <- ""
+mex_winmarginmatrix <- cbind(mex_teams,final_mex_wm,suml6_mex_wm,suml6_mex_wm_negtwo,suml6_mex_wm_negone,suml6_mex_wm_zero,suml6_mex_wm_posone,suml6_mex_wm_postwo)
+write.xlsx(mex_winmarginmatrix,'NL/MEX.xlsx',sheetName = "winmargin", append = TRUE)
 ####################################################################################################################
 ##########Goals over under############
 #MEX

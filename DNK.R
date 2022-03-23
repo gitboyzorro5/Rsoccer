@@ -7,6 +7,8 @@ library('scales')
 library('lubridate')
 library('sqldf')
 library('mgsub')
+library(stringr)
+library(stringi)
 #delete current file
 unlink('NL/DNK.xlsx')
 ######################DNK START#######################################
@@ -83,36 +85,7 @@ if(dnk_matchesplayed %% dnk_eachround == 0)
 DNK_rounds <- cbind(DNK_rounds,dnk_matchday)
 #####################################################################################################
 #dnk goal scored rounds
-#####################################################################
-dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)
-nrow(DNK)
-dnk_goalscoredmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds))
-dnk_goalscoredround <- c()
-for(i_dnk_krounds in 1:dnk_krounds)
-{
-  dnk_homegoalscored <- DNK_rounds$HG[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_awaygoalscored <- DNK_rounds$AG[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_hometeamstemp_gs <- DNK_rounds$Home[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_awayteamstemp_gs <- DNK_rounds$Away[DNK_rounds$dnk_matchday== i_dnk_krounds]
-
-  dnk_goalscombined <- c(dnk_homegoalscored,dnk_awaygoalscored)
-  dnk_teamscombined <- c(dnk_hometeamstemp_gs,dnk_awayteamstemp_gs)
-
-  dnk_goalscoredround <- data.frame(dnk_teamscombined,dnk_goalscombined)
-
-  dnk_goalscoredround <- dnk_goalscoredround[order(dnk_goalscoredround$dnk_teamscombined),]
-  dnk_goalscoredround$dnk_teamscombined <- NULL
-  dnk_goalscoredmatrix[,i_dnk_krounds] <- dnk_goalscoredround
-
-}
-
-dnk_goalscoredmatrix <- cbind(dnk_teams,dnk_goalscoredmatrix)
-####GSmatrix################################
-#create home and away matrices
-dnk_goalscored_h <- tapply(DNK$HG, DNK[c("Home", "Date")],mean)
+###########aut_goalscored_h <- tapply(AUT$HG, AUT[c("Home", "Date")],mean)
 dnk_goalscored_a <- tapply(DNK$AG, DNK[c("Away", "Date")],mean)
 dnk_goalscored_h[is.na(dnk_goalscored_h)] <- ""
 dnk_goalscored_a[is.na(dnk_goalscored_a)] <- ""
@@ -130,37 +103,50 @@ for(dnk_rowhgs in 1:nrow(dnk_goalscored_h)) {
 
   }
 }
-write.xlsx(dnk_goalscoredmatrix,'NL/DNK.xlsx',sheetName = "gsmatrix", append = TRUE)
+#write.xlsx(dnk_goalscoredmatrix,'NL/DNK.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-#dnk goal conceded rounds
-#dnk
-dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)
-dnk_goalconcededmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds))
-dnk_goalconcededround <- c()
-for(i_dnk_krounds in 1:dnk_krounds)
+#########################################################################################
+#dnk goal scored rounds
+final_dnk_gs <- matrix(nrow = length(dnk_teams),ncol = dnk_totalrounds )
+suml6_dnk_gs <- c()
+sum_dnk_zero_gs <- c()
+sum_dnk_one_gs <- c()
+sum_dnk_two_gs <- c()
+sum_dnk_three_gs <- c()
+l6_form_dnk_gssplitted <- c()
+form_dnk_gs <- c()
+for(index_dnk_gs in 1:length(dnk_teams))
 {
-  dnk_homegoalconceded <- DNK_rounds$AG[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_awaygoalconceded <- DNK_rounds$HG[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_hometeamstemp_gc <- DNK_rounds$Home[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_awayteamstemp_gc <- DNK_rounds$Away[DNK_rounds$dnk_matchday== i_dnk_krounds]
-
-  dnk_goalsconcededcombined <- c(dnk_homegoalconceded,dnk_awaygoalconceded)
-  dnk_teamscombined_gc <- c(dnk_hometeamstemp_gc,dnk_awayteamstemp_gc)
-
-  dnk_goalconcededround <- data.frame(dnk_teamscombined_gc,dnk_goalsconcededcombined)
-
-  dnk_goalconcededround <- dnk_goalconcededround[order(dnk_goalconcededround$dnk_teamscombined_gc),]
-  dnk_goalconcededround$dnk_teamscombined_gc <- NULL
-  dnk_goalconcededmatrix[,i_dnk_krounds] <- dnk_goalconcededround
-
+  for(index_dnk_gs_cols in 1:dnk_totalrounds)
+  {
+    index_dnk_gs  <- row.names(dnk_goalscored_h) == dnk_teams[index_dnk_gs]
+    form_dnk_gs <- dnk_goalscored_h[index_dnk_gs ]
+    deleted_form_dnk_gs <- form_dnk_gs[!form_dnk_gs[] == ""]
+    l6_form_dnk_gs <- tail(deleted_form_dnk_gs,dnk_last_n_games)
+    l6_form_dnk_gs <- as.numeric(l6_form_dnk_gs)
+    suml6_dnk_gs[index_dnk_gs] <- sum(l6_form_dnk_gs)
+    suml6_dnk_gs[index_dnk_gs] <- paste(suml6_dnk_gs[index_dnk_gs],sep = "")
+    sum_dnk_zero_gs[index_dnk_gs] <- length(which(l6_form_dnk_gs == 0))
+    sum_dnk_zero_gs[index_dnk_gs] <- paste(sum_dnk_zero_gs[index_dnk_gs],sep = "")
+    sum_dnk_one_gs[index_dnk_gs] <- length(which(l6_form_dnk_gs == 1))
+    sum_dnk_one_gs[index_dnk_gs] <- paste(sum_dnk_one_gs[index_dnk_gs],sep = "")
+    sum_dnk_two_gs[index_dnk_gs] <- length(which(l6_form_dnk_gs >= 2))
+    sum_dnk_two_gs[index_dnk_gs] <- paste(sum_dnk_two_gs[index_dnk_gs],sep = "")
+    sum_dnk_three_gs[index_dnk_gs] <- length(which(l6_form_dnk_gs >= 3))
+    sum_dnk_three_gs[index_dnk_gs] <- paste(sum_dnk_three_gs[index_dnk_gs],sep = "")
+    l6_form_dnk_gs <- as.character(l6_form_dnk_gs)
+    l6_form_dnk_gs_flattened <- stri_paste(l6_form_dnk_gs,collapse = '')
+    l6_form_dnk_gssplitted <- as.numeric(strsplit(as.character(l6_form_dnk_gs_flattened),"")[[1]])
+    final_dnk_gs[index_dnk_gs,index_dnk_gs_cols] <- l6_form_dnk_gssplitted[index_dnk_gs_cols]
+  }
 }
 
-dnk_goalconcededmatrix <- cbind(dnk_teams,dnk_goalconcededmatrix)
+final_dnk_gs[is.na(final_dnk_gs)] <- ""
+dnk_goalscoredmatrix <- cbind(dnk_teams,final_dnk_gs,suml6_dnk_gs,sum_dnk_zero_gs,sum_dnk_one_gs,sum_dnk_two_gs,sum_dnk_three_gs)
+write.xlsx(dnk_goalscoredmatrix,'NL/DNK.xlsx',sheetName = "gsmatrix", append = TRUE)
+#################################################################################################################################
 
-####GCmatrix#############################################################################
+####GCmatrix#####################################################################################################################
 #create home and away matrices
 dnk_goalconceded_h <- tapply(DNK$AG, DNK[c("Home", "Date")],mean)
 dnk_goalconceded_a <- tapply(DNK$HG, DNK[c("Away", "Date")],mean)
@@ -177,47 +163,53 @@ for(dnk_rowhgc in 1:nrow(dnk_goalconceded_h)) {
         #print(my_matrix[row, col])
       }
     }
-    DNK
+
   }
 }
-write.xlsx(dnk_goalconcededmatrix,'NL/DNK.xlsx',sheetName = "gcmatrix", append = TRUE)
-########################################################################################
-#dnk team form
-dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)
-dnk_formmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds))
-dnk_formround <- c()
-for(i_dnk_krounds in 1:dnk_krounds)
+#write.xlsx(dnk_goalconcededmatrix,'NL/DNK.xlsx',sheetName = "gcmatrix", append = TRUE)
+############################################################################################################################################################
+#dnk goal conceded rounds
+final_dnk_gc <- matrix(nrow = length(dnk_teams),ncol = dnk_totalrounds )
+suml6_dnk_gc <- c()
+sum_dnk_zero_gc <- c()
+sum_dnk_one_gc <- c()
+sum_dnk_two_gc <- c()
+sum_dnk_three_gc <- c()
+l6_form_dnk_gcsplitted <- c()
+form_dnk_gc <- c()
+for(index_dnk_gc in 1:length(dnk_teams))
 {
-  dnk_homeform <- DNK_rounds$FTR[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_homeform <- sub("H","W",dnk_homeform)
-  dnk_homeform <- sub("A","L",dnk_homeform)
-
-  dnk_awayform <- DNK_rounds$FTR[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_awayform <- sub("A","W",dnk_awayform)
-  dnk_awayform <- sub("H","L",dnk_awayform)
-
-  dnk_hometeamstemp_form <- DNK_rounds$Home[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_awayteamstemp_form <- DNK_rounds$Away[DNK_rounds$dnk_matchday== i_dnk_krounds]
-
-  dnk_formcombined <- c(dnk_homeform,dnk_awayform)
-  dnk_teamscombined_form <- c(dnk_hometeamstemp_form,dnk_awayteamstemp_form)
-
-  dnk_formround <- data.frame(dnk_teamscombined_form,dnk_formcombined)
-
-  dnk_formround <- dnk_formround[order(dnk_formround$dnk_teamscombined_form),]
-  dnk_formround$dnk_teamscombined_form <- NULL
-  dnk_formmatrix[,i_dnk_krounds] <- dnk_formround
-
+  for(index_dnk_gc_cols in 1:dnk_totalrounds)
+  {
+    index_dnk_gc  <- row.names(dnk_goalconceded_h) == dnk_teams[index_dnk_gc]
+    form_dnk_gc <- dnk_goalconceded_h[index_dnk_gc ]
+    deleted_form_dnk_gc <- form_dnk_gc[!form_dnk_gc[] == ""]
+    l6_form_dnk_gc <- tail(deleted_form_dnk_gc,dnk_last_n_games)
+    l6_form_dnk_gc <- as.numeric(l6_form_dnk_gc)
+    suml6_dnk_gc[index_dnk_gc] <- sum(l6_form_dnk_gc)
+    suml6_dnk_gc[index_dnk_gc] <- paste(suml6_dnk_gc[index_dnk_gc],sep = "")
+    sum_dnk_zero_gc[index_dnk_gc] <- length(which(l6_form_dnk_gc == 0))
+    sum_dnk_zero_gc[index_dnk_gc] <- paste(sum_dnk_zero_gc[index_dnk_gc],sep = "")
+    sum_dnk_one_gc[index_dnk_gc] <- length(which(l6_form_dnk_gc == 1))
+    sum_dnk_one_gc[index_dnk_gc] <- paste(sum_dnk_one_gc[index_dnk_gc],sep = "")
+    sum_dnk_two_gc[index_dnk_gc] <- length(which(l6_form_dnk_gc >= 2))
+    sum_dnk_two_gc[index_dnk_gc] <- paste(sum_dnk_two_gc[index_dnk_gc],sep = "")
+    sum_dnk_three_gc[index_dnk_gc] <- length(which(l6_form_dnk_gc >= 3))
+    sum_dnk_three_gc[index_dnk_gc] <- paste(sum_dnk_three_gc[index_dnk_gc],sep = "")
+    l6_form_dnk_gc <- as.character(l6_form_dnk_gc)
+    l6_form_dnk_gc_flattened <- stri_paste(l6_form_dnk_gc,collapse = '')
+    l6_form_dnk_gcsplitted <- as.numeric(strsplit(as.character(l6_form_dnk_gc_flattened),"")[[1]])
+    final_dnk_gc[index_dnk_gc,index_dnk_gc_cols] <- l6_form_dnk_gcsplitted[index_dnk_gc_cols]
+  }
 }
 
-dnk_formmatrix <- cbind(dnk_teams,dnk_formmatrix)
-########################################################################################
-########################################################################################
-#########################################################################################
-####Teamform#############################################################################
+final_dnk_gc[is.na(final_dnk_gc)] <- ""
+dnk_goalconcededmatrix <- cbind(dnk_teams,final_dnk_gc,suml6_dnk_gc,sum_dnk_zero_gc,sum_dnk_one_gc,sum_dnk_two_gc,sum_dnk_three_gc)
+write.xlsx(dnk_goalconcededmatrix,'NL/DNK.xlsx',sheetName = "gcmatrix2", append = TRUE)
+###################################################################################################################################
+
+###################################################################################################################################
+####Teamform#######################################################################################################################
 
 dnk_form_h <- tapply(DNK$FTR, DNK[c("Home", "Date")],median)
 dnk_form_a <- tapply(DNK$FTR, DNK[c("Away", "Date")],median)
@@ -240,38 +232,37 @@ for(dnk_rowh_f in 1:nrow(dnk_form_h)) {
 
   }
 }
-write.xlsx(dnk_formmatrix,'NL/DNK.xlsx',sheetName = "form", append = TRUE)
-##################################################################################
-##################################################################################
-#dnk total goals rounds
-dnk_krounds <- tail(unique(DNK_rounds$dnk_matchday),1)
-dnk_goaltotalmatrix <- data.frame(matrix(nrow = length(dnk_teams),ncol = dnk_krounds))
-dnk_goaltotalround <- c()
-for(i_dnk_krounds in 1:dnk_krounds)
+####################################################################################################################################
+#dnk team form
+final_dnk_hf <- matrix(nrow = length(dnk_teams),ncol = dnk_totalrounds )
+suml6_dnk_hf <- c()
+l6_form_dnk_hfsplitted <- c()
+form_dnk_hf <- c()
+for(index_dnk_hf in 1:length(dnk_teams))
 {
-  dnk_homegoaltotal <- DNK_rounds$TG[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_awaygoaltotal <- DNK_rounds$TG[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_hometeamstemp_tg <- DNK_rounds$Home[DNK_rounds$dnk_matchday == i_dnk_krounds]
-
-  dnk_awayteamstemp_tg <- DNK_rounds$Away[DNK_rounds$dnk_matchday== i_dnk_krounds]
-
-  dnk_goalscombined_tg <- c(dnk_homegoaltotal,dnk_awaygoaltotal)
-  dnk_teamscombined_tg <- c(dnk_hometeamstemp_tg,dnk_awayteamstemp_tg)
-
-  dnk_goaltotalround <- data.frame(dnk_teamscombined_tg,dnk_goalscombined_tg)
-
-  dnk_goaltotalround <- dnk_goaltotalround[order(dnk_goaltotalround$dnk_teamscombined_tg),]
-  dnk_goaltotalround$dnk_teamscombined_tg <- NULL
-  dnk_goaltotalmatrix[,i_dnk_krounds] <- dnk_goaltotalround
-
+  for(index_dnk_hf_cols in 1:dnk_totalrounds)
+  {
+    index_dnk_hf  <- row.names(dnk_form_h) == dnk_teams[index_dnk_hf]
+    form_dnk_hf <- dnk_form_h[index_dnk_hf ]
+    deleted_form_dnk_hf <- form_dnk_hf[!form_dnk_hf[] == ""]
+    l6_form_dnk_hf <- tail(deleted_form_dnk_hf,dnk_last_n_games)
+    # #l6_form_dnk_hf <- as.numeric(l6_form_dnk_hf)
+    # suml6_dnk_hf[index_dnk_hf] <- sum(l6_form_dnk_hf)
+    # suml6_dnk_hf[index_dnk_hf] <- paste(suml6_dnk_hf[index_dnk_hf],sep = "")
+    #l6_form_dnk_hf <- as.character(l6_form_dnk_hf)
+    l6_form_dnk_hf_flattened <- stri_paste(l6_form_dnk_hf,collapse = '')
+    l6_form_dnk_hfsplitted <- (strsplit(as.character(l6_form_dnk_hf_flattened),"")[[1]])
+    final_dnk_hf[index_dnk_hf,index_dnk_hf_cols] <- l6_form_dnk_hfsplitted[index_dnk_hf_cols]
+  }
 }
+final_dnk_hf[is.na(final_dnk_hf)] <- ""
+dnk_formmatrix <- cbind(dnk_teams,final_dnk_hf)
 
-dnk_goaltotalmatrix <- cbind(dnk_teams,dnk_goaltotalmatrix)
-##############################################################################################
-#d1
-#######TGMatrix##################################################################
+write.xlsx(dnk_formmatrix,'NL/DNK.xlsx',sheetName = "form", append = TRUE)
+######################################################################################################################################
+######################################################################################################################################
+
+#######TGMatrix#######################################################################################################################
 dnk_totalgoals_h <- tapply(DNK$TG, DNK[c("Home", "Date")],mean)
 dnk_totalgoals_a <- tapply(DNK$TG, DNK[c("Away", "Date")],mean)
 dnk_totalgoals_h[is.na(dnk_totalgoals_h)] <- ""
@@ -289,9 +280,37 @@ for(dnk_rowh in 1:nrow(dnk_totalgoals_h)) {
 
   }
 }
+
+#dnk total goals rounds
+#dnk
+final_dnk_tg <- matrix(nrow = length(dnk_teams),ncol = dnk_totalrounds )
+suml6_dnk_tg <- c()
+l6_form_dnk_tgsplitted <- c()
+form_dnk_tg <- c()
+for(index_dnk_tg in 1:length(dnk_teams))
+{
+  for(index_dnk_tg_cols in 1:dnk_totalrounds)
+  {
+    index_dnk_tg  <- row.names(dnk_totalgoals_h) == dnk_teams[index_dnk_tg]
+    form_dnk_tg <- dnk_totalgoals_h[index_dnk_tg ]
+    deleted_form_dnk_tg <- form_dnk_tg[!form_dnk_tg[] == ""]
+    l6_form_dnk_tg <- tail(deleted_form_dnk_tg,dnk_last_n_games)
+    l6_form_dnk_tg <- as.numeric(l6_form_dnk_tg)
+    suml6_dnk_tg[index_dnk_tg] <- sum(l6_form_dnk_tg)
+    suml6_dnk_tg[index_dnk_tg] <- paste(suml6_dnk_tg[index_dnk_tg],sep = "")
+    l6_form_dnk_tg <- as.character(l6_form_dnk_tg)
+    l6_form_dnk_tg_flattened <- stri_paste(l6_form_dnk_tg,collapse = '')
+    l6_form_dnk_tgsplitted <- as.numeric(strsplit(as.character(l6_form_dnk_tg_flattened),"")[[1]])
+    final_dnk_tg[index_dnk_tg,index_dnk_tg_cols] <- l6_form_dnk_tgsplitted[index_dnk_tg_cols]
+  }
+}
+
+final_dnk_tg[is.na(final_dnk_tg)] <- ""
+dnk_goaltotalmatrix <- cbind(dnk_teams,final_dnk_tg,suml6_dnk_tg)
+
 write.xlsx(dnk_goaltotalmatrix,'NL/DNK.xlsx',sheetName = "tgmatrix", append = TRUE)
-##################################################################################
-#######TeamAgainst##################################################################
+#############################################################################################################################################
+#######TeamAgainst###########################################################################################################################
 dnk_form_team_against_h <- tapply(DNK$Away, DNK[c("Home", "Date")],median)
 dnk_form_team_against_a <- tapply(DNK$Home, DNK[c("Away", "Date")],median)
 dnk_form_team_against_h[is.na(dnk_form_team_against_h)] <- ""
@@ -309,7 +328,7 @@ for(dnk_rowh_f_against in 1:nrow(dnk_form_team_against_h)) {
 
   }
 }
-#######################################################################
+###############################################################################################################################################
 #win margin
 dnk_winmargin_h <- tapply(DNK$HG - DNK$AG, DNK[c("Home", "Date")],mean)
 dnk_winmargin_a <- tapply(DNK$AG - DNK$HG, DNK[c("Away", "Date")],mean)
@@ -328,8 +347,50 @@ for(dnk_rowhwm in 1:nrow(dnk_winmargin_h)) {
 
   }
 }
-#######################################################################
-####################################################################################################################
+####################################################################################################################################################
+final_dnk_wm <- matrix(nrow = length(dnk_teams),ncol = dnk_totalrounds )
+suml6_dnk_wm <- c()
+suml6_dnk_wm_negone <- c()
+suml6_dnk_wm_negtwo <- c()
+suml6_dnk_wm_zero <- c()
+suml6_dnk_wm_posone <- c()
+suml6_dnk_wm_postwo <- c()
+l6_form_dnk_wmsplitted <- c()
+form_dnk_wm <- c()
+for(index_dnk_wm in 1:length(dnk_teams))
+{
+  for(index_dnk_wm_cols in 1:dnk_totalrounds)
+  {
+    index_dnk_wm  <- row.names(dnk_winmargin_h) == dnk_teams[index_dnk_wm]
+    form_dnk_wm <- dnk_winmargin_h[index_dnk_wm ]
+    deleted_form_dnk_wm <- form_dnk_wm[!form_dnk_wm[] == ""]
+    l6_form_dnk_wm <- tail(deleted_form_dnk_wm,dnk_last_n_games)
+    l6_form_dnk_wm <- as.numeric(l6_form_dnk_wm)
+    suml6_dnk_wm[index_dnk_wm] <- sum(l6_form_dnk_wm)
+    suml6_dnk_wm[index_dnk_wm] <- paste(suml6_dnk_wm[index_dnk_wm],sep = "")
+    suml6_dnk_wm_negone[index_dnk_wm] <- length(which(l6_form_dnk_wm == -1))
+    suml6_dnk_wm_negone[index_dnk_wm] <- paste(suml6_dnk_wm_negone[index_dnk_wm],sep = "")
+    suml6_dnk_wm_negtwo[index_dnk_wm] <- length(which(l6_form_dnk_wm <= -2))
+    suml6_dnk_wm_negtwo[index_dnk_wm] <- paste(suml6_dnk_wm_negtwo[index_dnk_wm],sep = "")
+    suml6_dnk_wm_zero[index_dnk_wm] <- length(which(l6_form_dnk_wm == 0))
+    suml6_dnk_wm_zero[index_dnk_wm] <- paste(suml6_dnk_wm_zero[index_dnk_wm],sep = "")
+    suml6_dnk_wm_posone[index_dnk_wm] <- length(which(l6_form_dnk_wm == 1))
+    suml6_dnk_wm_posone[index_dnk_wm] <- paste(suml6_dnk_wm_posone[index_dnk_wm],sep = "")
+    suml6_dnk_wm_postwo[index_dnk_wm] <- length(which(l6_form_dnk_wm == 2))
+    suml6_dnk_wm_postwo[index_dnk_wm] <- paste(suml6_dnk_wm_postwo[index_dnk_wm],sep = "")
+    l6_form_dnk_wm <- as.character(l6_form_dnk_wm)
+    l6_form_dnk_wm_flattened <- stri_paste(l6_form_dnk_wm,collapse = ',')
+    l6_form_dnk_wmsplitted <- (strsplit(as.character(l6_form_dnk_wm_flattened),",")[[1]])
+    final_dnk_wm[index_dnk_wm,index_dnk_wm_cols] <- l6_form_dnk_wmsplitted[index_dnk_wm_cols]
+  }
+}
+
+final_dnk_wm[is.na(final_dnk_wm)] <- ""
+dnk_winmarginmatrix <- cbind(dnk_teams,final_dnk_wm,suml6_dnk_wm,suml6_dnk_wm_negtwo,suml6_dnk_wm_negone,suml6_dnk_wm_zero,suml6_dnk_wm_posone,suml6_dnk_wm_postwo)
+write.xlsx(dnk_winmarginmatrix,'NL/DNK.xlsx',sheetName = "winmargin", append = TRUE)
+###################################################################################################################################################################
+
+###################################################################################################################################################################
 ##########Goals over under############
 #DNK
 dnk_un05_home <- c()

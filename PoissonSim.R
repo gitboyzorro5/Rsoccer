@@ -39,6 +39,7 @@ E3$TG <- as.numeric(E3$TG)
 EC <- EC_rounds[EC_rounds$ec_matchday <= ROUND_20212022,]
 EC$FTHG <- as.numeric(EC$FTHG)
 EC$FTAG <- as.numeric(EC$FTAG)
+
 EC$TG <- as.numeric(EC$TG)
 F1 <- F1_rounds[F1_rounds$f1_matchday <= ROUND_20212022,]
 F1$FTHG <- as.numeric(F1$FTHG)

@@ -6,6 +6,8 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+library(stringr)
+library(stringi)
 #delete current file
 unlink('NL/RUS.xlsx')
 ######################RUS START#######################################
@@ -53,7 +55,7 @@ write.xlsx(rus_goaltotalsv2,'NL/RUS.xlsx',sheetName = "totalgoalsv2")
 RUS <- subset(RUS,Season == "2021/2022")
 rus_totalrounds <-  (length(rus_teams) - 1 )*2
 rus_totalmatches <- (length(rus_teams)*(length(rus_teams) - 1))
-rus_eachround <- rus_totalmatches / rus_totalrounds
+rus_eachround <- ceiling(rus_totalmatches / rus_totalrounds)
 
 rus_matchesplayed <-  nrow(RUS)
 
@@ -79,36 +81,6 @@ if(rus_matchesplayed %% rus_eachround == 0)
 }
 RUS_rounds <- cbind(RUS_rounds,rus_matchday)
 #####################################################################################################
-#rus goal scored rounds
-#####################################################################
-rus_krounds <- tail(unique(RUS_rounds$rus_matchday),1)
-nrow(RUS)
-rus_goalscoredmatrix <- data.frame(matrix(nrow = length(rus_teams),ncol = rus_krounds))
-rus_goalscoredround <- c()
-for(i_rus_krounds in 1:rus_krounds)
-{
-  rus_homegoalscored <- RUS_rounds$HG[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_awaygoalscored <- RUS_rounds$AG[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_hometeamstemp_gs <- RUS_rounds$Home[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_awayteamstemp_gs <- RUS_rounds$Away[RUS_rounds$rus_matchday== i_rus_krounds]
-
-  rus_goalscombined <- c(rus_homegoalscored,rus_awaygoalscored)
-  rus_teamscombined <- c(rus_hometeamstemp_gs,rus_awayteamstemp_gs)
-
-  rus_goalscoredround <- data.frame(rus_teamscombined,rus_goalscombined)
-
-  rus_goalscoredround <- rus_goalscoredround[order(rus_goalscoredround$rus_teamscombined),]
-  rus_goalscoredround$rus_teamscombined <- NULL
-  rus_goalscoredmatrix[,i_rus_krounds] <- rus_goalscoredround
-
-}
-
-rus_goalscoredmatrix <- cbind(rus_teams,rus_goalscoredmatrix)
-####GSmatrix################################
-#create home and away matrices
 rus_goalscored_h <- tapply(RUS$HG, RUS[c("Home", "Date")],mean)
 rus_goalscored_a <- tapply(RUS$AG, RUS[c("Away", "Date")],mean)
 rus_goalscored_h[is.na(rus_goalscored_h)] <- ""
@@ -127,37 +99,50 @@ for(rus_rowhgs in 1:nrow(rus_goalscored_h)) {
 
   }
 }
-write.xlsx(rus_goalscoredmatrix,'NL/RUS.xlsx',sheetName = "gsmatrix", append = TRUE)
+#write.xlsx(rus_goalscoredmatrix,'NL/RUS.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-#rus goal conceded rounds
-#rus
-rus_krounds <- tail(unique(RUS_rounds$rus_matchday),1)
-rus_goalconcededmatrix <- data.frame(matrix(nrow = length(rus_teams),ncol = rus_krounds))
-rus_goalconcededround <- c()
-for(i_rus_krounds in 1:rus_krounds)
+#########################################################################################
+#rus goal scored rounds
+final_rus_gs <- matrix(nrow = length(rus_teams),ncol = rus_totalrounds )
+suml6_rus_gs <- c()
+sum_rus_zero_gs <- c()
+sum_rus_one_gs <- c()
+sum_rus_two_gs <- c()
+sum_rus_three_gs <- c()
+l6_form_rus_gssplitted <- c()
+form_rus_gs <- c()
+for(index_rus_gs in 1:length(rus_teams))
 {
-  rus_homegoalconceded <- RUS_rounds$AG[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_awaygoalconceded <- RUS_rounds$HG[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_hometeamstemp_gc <- RUS_rounds$Home[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_awayteamstemp_gc <- RUS_rounds$Away[RUS_rounds$rus_matchday== i_rus_krounds]
-
-  rus_goalsconcededcombined <- c(rus_homegoalconceded,rus_awaygoalconceded)
-  rus_teamscombined_gc <- c(rus_hometeamstemp_gc,rus_awayteamstemp_gc)
-
-  rus_goalconcededround <- data.frame(rus_teamscombined_gc,rus_goalsconcededcombined)
-
-  rus_goalconcededround <- rus_goalconcededround[order(rus_goalconcededround$rus_teamscombined_gc),]
-  rus_goalconcededround$rus_teamscombined_gc <- NULL
-  rus_goalconcededmatrix[,i_rus_krounds] <- rus_goalconcededround
-
+  for(index_rus_gs_cols in 1:rus_totalrounds)
+  {
+    index_rus_gs  <- row.names(rus_goalscored_h) == rus_teams[index_rus_gs]
+    form_rus_gs <- rus_goalscored_h[index_rus_gs ]
+    deleted_form_rus_gs <- form_rus_gs[!form_rus_gs[] == ""]
+    l6_form_rus_gs <- tail(deleted_form_rus_gs,rus_last_n_games)
+    l6_form_rus_gs <- as.numeric(l6_form_rus_gs)
+    suml6_rus_gs[index_rus_gs] <- sum(l6_form_rus_gs)
+    suml6_rus_gs[index_rus_gs] <- paste(suml6_rus_gs[index_rus_gs],sep = "")
+    sum_rus_zero_gs[index_rus_gs] <- length(which(l6_form_rus_gs == 0))
+    sum_rus_zero_gs[index_rus_gs] <- paste(sum_rus_zero_gs[index_rus_gs],sep = "")
+    sum_rus_one_gs[index_rus_gs] <- length(which(l6_form_rus_gs == 1))
+    sum_rus_one_gs[index_rus_gs] <- paste(sum_rus_one_gs[index_rus_gs],sep = "")
+    sum_rus_two_gs[index_rus_gs] <- length(which(l6_form_rus_gs >= 2))
+    sum_rus_two_gs[index_rus_gs] <- paste(sum_rus_two_gs[index_rus_gs],sep = "")
+    sum_rus_three_gs[index_rus_gs] <- length(which(l6_form_rus_gs >= 3))
+    sum_rus_three_gs[index_rus_gs] <- paste(sum_rus_three_gs[index_rus_gs],sep = "")
+    l6_form_rus_gs <- as.character(l6_form_rus_gs)
+    l6_form_rus_gs_flattened <- stri_paste(l6_form_rus_gs,collapse = '')
+    l6_form_rus_gssplitted <- as.numeric(strsplit(as.character(l6_form_rus_gs_flattened),"")[[1]])
+    final_rus_gs[index_rus_gs,index_rus_gs_cols] <- l6_form_rus_gssplitted[index_rus_gs_cols]
+  }
 }
 
-rus_goalconcededmatrix <- cbind(rus_teams,rus_goalconcededmatrix)
+final_rus_gs[is.na(final_rus_gs)] <- ""
+rus_goalscoredmatrix <- cbind(rus_teams,final_rus_gs,suml6_rus_gs,sum_rus_zero_gs,sum_rus_one_gs,sum_rus_two_gs,sum_rus_three_gs)
+write.xlsx(rus_goalscoredmatrix,'NL/RUS.xlsx',sheetName = "gsmatrix", append = TRUE)
+#################################################################################################################################
 
-####GCmatrix#############################################################################
+####GCmatrix#####################################################################################################################
 #create home and away matrices
 rus_goalconceded_h <- tapply(RUS$AG, RUS[c("Home", "Date")],mean)
 rus_goalconceded_a <- tapply(RUS$HG, RUS[c("Away", "Date")],mean)
@@ -177,44 +162,50 @@ for(rus_rowhgc in 1:nrow(rus_goalconceded_h)) {
 
   }
 }
-write.xlsx(rus_goalconcededmatrix,'NL/RUS.xlsx',sheetName = "gcmatrix", append = TRUE)
-########################################################################################
-#rus team form
-rus_krounds <- tail(unique(RUS_rounds$rus_matchday),1)
-rus_formmatrix <- data.frame(matrix(nrow = length(rus_teams),ncol = rus_krounds))
-rus_formround <- c()
-for(i_rus_krounds in 1:rus_krounds)
+#write.xlsx(rus_goalconcededmatrix,'NL/RUS.xlsx',sheetName = "gcmatrix", append = TRUE)
+############################################################################################################################################################
+#rus goal conceded rounds
+final_rus_gc <- matrix(nrow = length(rus_teams),ncol = rus_totalrounds )
+suml6_rus_gc <- c()
+sum_rus_zero_gc <- c()
+sum_rus_one_gc <- c()
+sum_rus_two_gc <- c()
+sum_rus_three_gc <- c()
+l6_form_rus_gcsplitted <- c()
+form_rus_gc <- c()
+for(index_rus_gc in 1:length(rus_teams))
 {
-  rus_homeform <- RUS_rounds$FTR[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_homeform <- sub("H","W",rus_homeform)
-  rus_homeform <- sub("A","L",rus_homeform)
-
-  rus_awayform <- RUS_rounds$FTR[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_awayform <- sub("A","W",rus_awayform)
-  rus_awayform <- sub("H","L",rus_awayform)
-
-  rus_hometeamstemp_form <- RUS_rounds$Home[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_awayteamstemp_form <- RUS_rounds$Away[RUS_rounds$rus_matchday== i_rus_krounds]
-
-  rus_formcombined <- c(rus_homeform,rus_awayform)
-  rus_teamscombined_form <- c(rus_hometeamstemp_form,rus_awayteamstemp_form)
-
-  rus_formround <- data.frame(rus_teamscombined_form,rus_formcombined)
-
-  rus_formround <- rus_formround[order(rus_formround$rus_teamscombined_form),]
-  rus_formround$rus_teamscombined_form <- NULL
-  rus_formmatrix[,i_rus_krounds] <- rus_formround
-
+  for(index_rus_gc_cols in 1:rus_totalrounds)
+  {
+    index_rus_gc  <- row.names(rus_goalconceded_h) == rus_teams[index_rus_gc]
+    form_rus_gc <- rus_goalconceded_h[index_rus_gc ]
+    deleted_form_rus_gc <- form_rus_gc[!form_rus_gc[] == ""]
+    l6_form_rus_gc <- tail(deleted_form_rus_gc,rus_last_n_games)
+    l6_form_rus_gc <- as.numeric(l6_form_rus_gc)
+    suml6_rus_gc[index_rus_gc] <- sum(l6_form_rus_gc)
+    suml6_rus_gc[index_rus_gc] <- paste(suml6_rus_gc[index_rus_gc],sep = "")
+    sum_rus_zero_gc[index_rus_gc] <- length(which(l6_form_rus_gc == 0))
+    sum_rus_zero_gc[index_rus_gc] <- paste(sum_rus_zero_gc[index_rus_gc],sep = "")
+    sum_rus_one_gc[index_rus_gc] <- length(which(l6_form_rus_gc == 1))
+    sum_rus_one_gc[index_rus_gc] <- paste(sum_rus_one_gc[index_rus_gc],sep = "")
+    sum_rus_two_gc[index_rus_gc] <- length(which(l6_form_rus_gc >= 2))
+    sum_rus_two_gc[index_rus_gc] <- paste(sum_rus_two_gc[index_rus_gc],sep = "")
+    sum_rus_three_gc[index_rus_gc] <- length(which(l6_form_rus_gc >= 3))
+    sum_rus_three_gc[index_rus_gc] <- paste(sum_rus_three_gc[index_rus_gc],sep = "")
+    l6_form_rus_gc <- as.character(l6_form_rus_gc)
+    l6_form_rus_gc_flattened <- stri_paste(l6_form_rus_gc,collapse = '')
+    l6_form_rus_gcsplitted <- as.numeric(strsplit(as.character(l6_form_rus_gc_flattened),"")[[1]])
+    final_rus_gc[index_rus_gc,index_rus_gc_cols] <- l6_form_rus_gcsplitted[index_rus_gc_cols]
+  }
 }
 
-rus_formmatrix <- cbind(rus_teams,rus_formmatrix)
-########################################################################################
-########################################################################################
-#########################################################################################
-####Teamform#############################################################################
+final_rus_gc[is.na(final_rus_gc)] <- ""
+rus_goalconcededmatrix <- cbind(rus_teams,final_rus_gc,suml6_rus_gc,sum_rus_zero_gc,sum_rus_one_gc,sum_rus_two_gc,sum_rus_three_gc)
+write.xlsx(rus_goalconcededmatrix,'NL/RUS.xlsx',sheetName = "gcmatrix2", append = TRUE)
+###################################################################################################################################
+
+###################################################################################################################################
+####Teamform#######################################################################################################################
 
 rus_form_h <- tapply(RUS$FTR, RUS[c("Home", "Date")],median)
 rus_form_a <- tapply(RUS$FTR, RUS[c("Away", "Date")],median)
@@ -237,38 +228,37 @@ for(rus_rowh_f in 1:nrow(rus_form_h)) {
 
   }
 }
-write.xlsx(rus_formmatrix,'NL/RUS.xlsx',sheetName = "form", append = TRUE)
-##################################################################################
-##################################################################################
-#rus total goals rounds
-rus_krounds <- tail(unique(RUS_rounds$rus_matchday),1)
-rus_goaltotalmatrix <- data.frame(matrix(nrow = length(rus_teams),ncol = rus_krounds))
-rus_goaltotalround <- c()
-for(i_rus_krounds in 1:rus_krounds)
+####################################################################################################################################
+#rus team form
+final_rus_hf <- matrix(nrow = length(rus_teams),ncol = rus_totalrounds )
+suml6_rus_hf <- c()
+l6_form_rus_hfsplitted <- c()
+form_rus_hf <- c()
+for(index_rus_hf in 1:length(rus_teams))
 {
-  rus_homegoaltotal <- RUS_rounds$TG[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_awaygoaltotal <- RUS_rounds$TG[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_hometeamstemp_tg <- RUS_rounds$Home[RUS_rounds$rus_matchday == i_rus_krounds]
-
-  rus_awayteamstemp_tg <- RUS_rounds$Away[RUS_rounds$rus_matchday== i_rus_krounds]
-
-  rus_goalscombined_tg <- c(rus_homegoaltotal,rus_awaygoaltotal)
-  rus_teamscombined_tg <- c(rus_hometeamstemp_tg,rus_awayteamstemp_tg)
-
-  rus_goaltotalround <- data.frame(rus_teamscombined_tg,rus_goalscombined_tg)
-
-  rus_goaltotalround <- rus_goaltotalround[order(rus_goaltotalround$rus_teamscombined_tg),]
-  rus_goaltotalround$rus_teamscombined_tg <- NULL
-  rus_goaltotalmatrix[,i_rus_krounds] <- rus_goaltotalround
-
+  for(index_rus_hf_cols in 1:rus_totalrounds)
+  {
+    index_rus_hf  <- row.names(rus_form_h) == rus_teams[index_rus_hf]
+    form_rus_hf <- rus_form_h[index_rus_hf ]
+    deleted_form_rus_hf <- form_rus_hf[!form_rus_hf[] == ""]
+    l6_form_rus_hf <- tail(deleted_form_rus_hf,rus_last_n_games)
+    # #l6_form_rus_hf <- as.numeric(l6_form_rus_hf)
+    # suml6_rus_hf[index_rus_hf] <- sum(l6_form_rus_hf)
+    # suml6_rus_hf[index_rus_hf] <- paste(suml6_rus_hf[index_rus_hf],sep = "")
+    #l6_form_rus_hf <- as.character(l6_form_rus_hf)
+    l6_form_rus_hf_flattened <- stri_paste(l6_form_rus_hf,collapse = '')
+    l6_form_rus_hfsplitted <- (strsplit(as.character(l6_form_rus_hf_flattened),"")[[1]])
+    final_rus_hf[index_rus_hf,index_rus_hf_cols] <- l6_form_rus_hfsplitted[index_rus_hf_cols]
+  }
 }
+final_rus_hf[is.na(final_rus_hf)] <- ""
+rus_formmatrix <- cbind(rus_teams,final_rus_hf)
 
-rus_goaltotalmatrix <- cbind(rus_teams,rus_goaltotalmatrix)
-##############################################################################################
-#d1
-#######TGMatrix##################################################################
+write.xlsx(rus_formmatrix,'NL/RUS.xlsx',sheetName = "form", append = TRUE)
+######################################################################################################################################
+######################################################################################################################################
+
+#######TGMatrix#######################################################################################################################
 rus_totalgoals_h <- tapply(RUS$TG, RUS[c("Home", "Date")],mean)
 rus_totalgoals_a <- tapply(RUS$TG, RUS[c("Away", "Date")],mean)
 rus_totalgoals_h[is.na(rus_totalgoals_h)] <- ""
@@ -286,9 +276,37 @@ for(rus_rowh in 1:nrow(rus_totalgoals_h)) {
 
   }
 }
+
+#rus total goals rounds
+#rus
+final_rus_tg <- matrix(nrow = length(rus_teams),ncol = rus_totalrounds )
+suml6_rus_tg <- c()
+l6_form_rus_tgsplitted <- c()
+form_rus_tg <- c()
+for(index_rus_tg in 1:length(rus_teams))
+{
+  for(index_rus_tg_cols in 1:rus_totalrounds)
+  {
+    index_rus_tg  <- row.names(rus_totalgoals_h) == rus_teams[index_rus_tg]
+    form_rus_tg <- rus_totalgoals_h[index_rus_tg ]
+    deleted_form_rus_tg <- form_rus_tg[!form_rus_tg[] == ""]
+    l6_form_rus_tg <- tail(deleted_form_rus_tg,rus_last_n_games)
+    l6_form_rus_tg <- as.numeric(l6_form_rus_tg)
+    suml6_rus_tg[index_rus_tg] <- sum(l6_form_rus_tg)
+    suml6_rus_tg[index_rus_tg] <- paste(suml6_rus_tg[index_rus_tg],sep = "")
+    l6_form_rus_tg <- as.character(l6_form_rus_tg)
+    l6_form_rus_tg_flattened <- stri_paste(l6_form_rus_tg,collapse = '')
+    l6_form_rus_tgsplitted <- as.numeric(strsplit(as.character(l6_form_rus_tg_flattened),"")[[1]])
+    final_rus_tg[index_rus_tg,index_rus_tg_cols] <- l6_form_rus_tgsplitted[index_rus_tg_cols]
+  }
+}
+
+final_rus_tg[is.na(final_rus_tg)] <- ""
+rus_goaltotalmatrix <- cbind(rus_teams,final_rus_tg,suml6_rus_tg)
+
 write.xlsx(rus_goaltotalmatrix,'NL/RUS.xlsx',sheetName = "tgmatrix", append = TRUE)
-##################################################################################
-#######TeamAgainst##################################################################
+#############################################################################################################################################
+#######TeamAgainst###########################################################################################################################
 rus_form_team_against_h <- tapply(RUS$Away, RUS[c("Home", "Date")],median)
 rus_form_team_against_a <- tapply(RUS$Home, RUS[c("Away", "Date")],median)
 rus_form_team_against_h[is.na(rus_form_team_against_h)] <- ""
@@ -306,7 +324,7 @@ for(rus_rowh_f_against in 1:nrow(rus_form_team_against_h)) {
 
   }
 }
-#######################################################################
+###############################################################################################################################################
 #win margin
 rus_winmargin_h <- tapply(RUS$HG - RUS$AG, RUS[c("Home", "Date")],mean)
 rus_winmargin_a <- tapply(RUS$AG - RUS$HG, RUS[c("Away", "Date")],mean)
@@ -325,6 +343,47 @@ for(rus_rowhwm in 1:nrow(rus_winmargin_h)) {
 
   }
 }
+####################################################################################################################################################
+final_rus_wm <- matrix(nrow = length(rus_teams),ncol = rus_totalrounds )
+suml6_rus_wm <- c()
+suml6_rus_wm_negone <- c()
+suml6_rus_wm_negtwo <- c()
+suml6_rus_wm_zero <- c()
+suml6_rus_wm_posone <- c()
+suml6_rus_wm_postwo <- c()
+l6_form_rus_wmsplitted <- c()
+form_rus_wm <- c()
+for(index_rus_wm in 1:length(rus_teams))
+{
+  for(index_rus_wm_cols in 1:rus_totalrounds)
+  {
+    index_rus_wm  <- row.names(rus_winmargin_h) == rus_teams[index_rus_wm]
+    form_rus_wm <- rus_winmargin_h[index_rus_wm ]
+    deleted_form_rus_wm <- form_rus_wm[!form_rus_wm[] == ""]
+    l6_form_rus_wm <- tail(deleted_form_rus_wm,rus_last_n_games)
+    l6_form_rus_wm <- as.numeric(l6_form_rus_wm)
+    suml6_rus_wm[index_rus_wm] <- sum(l6_form_rus_wm)
+    suml6_rus_wm[index_rus_wm] <- paste(suml6_rus_wm[index_rus_wm],sep = "")
+    suml6_rus_wm_negone[index_rus_wm] <- length(which(l6_form_rus_wm == -1))
+    suml6_rus_wm_negone[index_rus_wm] <- paste(suml6_rus_wm_negone[index_rus_wm],sep = "")
+    suml6_rus_wm_negtwo[index_rus_wm] <- length(which(l6_form_rus_wm <= -2))
+    suml6_rus_wm_negtwo[index_rus_wm] <- paste(suml6_rus_wm_negtwo[index_rus_wm],sep = "")
+    suml6_rus_wm_zero[index_rus_wm] <- length(which(l6_form_rus_wm == 0))
+    suml6_rus_wm_zero[index_rus_wm] <- paste(suml6_rus_wm_zero[index_rus_wm],sep = "")
+    suml6_rus_wm_posone[index_rus_wm] <- length(which(l6_form_rus_wm == 1))
+    suml6_rus_wm_posone[index_rus_wm] <- paste(suml6_rus_wm_posone[index_rus_wm],sep = "")
+    suml6_rus_wm_postwo[index_rus_wm] <- length(which(l6_form_rus_wm == 2))
+    suml6_rus_wm_postwo[index_rus_wm] <- paste(suml6_rus_wm_postwo[index_rus_wm],sep = "")
+    l6_form_rus_wm <- as.character(l6_form_rus_wm)
+    l6_form_rus_wm_flattened <- stri_paste(l6_form_rus_wm,collapse = ',')
+    l6_form_rus_wmsplitted <- (strsplit(as.character(l6_form_rus_wm_flattened),",")[[1]])
+    final_rus_wm[index_rus_wm,index_rus_wm_cols] <- l6_form_rus_wmsplitted[index_rus_wm_cols]
+  }
+}
+
+final_rus_wm[is.na(final_rus_wm)] <- ""
+rus_winmarginmatrix <- cbind(rus_teams,final_rus_wm,suml6_rus_wm,suml6_rus_wm_negtwo,suml6_rus_wm_negone,suml6_rus_wm_zero,suml6_rus_wm_posone,suml6_rus_wm_postwo)
+write.xlsx(rus_winmarginmatrix,'NL/RUS.xlsx',sheetName = "winmargin", append = TRUE)
 #######################################################################
 ####################################################################################################################
 ##########Goals over under############

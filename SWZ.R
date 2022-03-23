@@ -6,6 +6,8 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+library(stringr)
+library(stringi)
 #delete current file
 unlink('NL/SWZ.xlsx')
 ######################SWZ START#######################################
@@ -81,35 +83,6 @@ if(swz_matchesplayed %% swz_eachround == 0)
 }
 SWZ_rounds <- cbind(SWZ_rounds,swz_matchday)
 #####################################################################################################
-#swz goal scored rounds
-#####################################################################
-swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)
-nrow(SWZ)
-swz_goalscoredmatrix <- data.frame(matrix(nrow = length(swz_teams),ncol = swz_krounds))
-swz_goalscoredround <- c()
-for(i_swz_krounds in 1:swz_krounds)
-{
-  swz_homegoalscored <- SWZ_rounds$HG[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_awaygoalscored <- SWZ_rounds$AG[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_hometeamstemp_gs <- SWZ_rounds$Home[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_awayteamstemp_gs <- SWZ_rounds$Away[SWZ_rounds$swz_matchday== i_swz_krounds]
-
-  swz_goalscombined <- c(swz_homegoalscored,swz_awaygoalscored)
-  swz_teamscombined <- c(swz_hometeamstemp_gs,swz_awayteamstemp_gs)
-
-  swz_goalscoredround <- data.frame(swz_teamscombined,swz_goalscombined)
-
-  swz_goalscoredround <- swz_goalscoredround[order(swz_goalscoredround$swz_teamscombined),]
-  swz_goalscoredround$swz_teamscombined <- NULL
-  swz_goalscoredmatrix[,i_swz_krounds] <- swz_goalscoredround
-
-}
-
-swz_goalscoredmatrix <- cbind(swz_teams,swz_goalscoredmatrix)
-####GSmatrix################################
 #create home and away matrices
 swz_goalscored_h <- tapply(SWZ$HG, SWZ[c("Home", "Date")],mean)
 swz_goalscored_a <- tapply(SWZ$AG, SWZ[c("Away", "Date")],mean)
@@ -129,37 +102,50 @@ for(swz_rowhgs in 1:nrow(swz_goalscored_h)) {
 
   }
 }
-write.xlsx(swz_goalscoredmatrix,'NL/SWZ.xlsx',sheetName = "gsmatrix", append = TRUE)
+#write.xlsx(swz_goalscoredmatrix,'NL/SWZ.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-#swz goal conceded rounds
-#swz
-swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)
-swz_goalconcededmatrix <- data.frame(matrix(nrow = length(swz_teams),ncol = swz_krounds))
-swz_goalconcededround <- c()
-for(i_swz_krounds in 1:swz_krounds)
+#########################################################################################
+#swz goal scored rounds
+final_swz_gs <- matrix(nrow = length(swz_teams),ncol = swz_totalrounds )
+suml6_swz_gs <- c()
+sum_swz_zero_gs <- c()
+sum_swz_one_gs <- c()
+sum_swz_two_gs <- c()
+sum_swz_three_gs <- c()
+l6_form_swz_gssplitted <- c()
+form_swz_gs <- c()
+for(index_swz_gs in 1:length(swz_teams))
 {
-  swz_homegoalconceded <- SWZ_rounds$AG[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_awaygoalconceded <- SWZ_rounds$HG[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_hometeamstemp_gc <- SWZ_rounds$Home[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_awayteamstemp_gc <- SWZ_rounds$Away[SWZ_rounds$swz_matchday== i_swz_krounds]
-
-  swz_goalsconcededcombined <- c(swz_homegoalconceded,swz_awaygoalconceded)
-  swz_teamscombined_gc <- c(swz_hometeamstemp_gc,swz_awayteamstemp_gc)
-
-  swz_goalconcededround <- data.frame(swz_teamscombined_gc,swz_goalsconcededcombined)
-
-  swz_goalconcededround <- swz_goalconcededround[order(swz_goalconcededround$swz_teamscombined_gc),]
-  swz_goalconcededround$swz_teamscombined_gc <- NULL
-  swz_goalconcededmatrix[,i_swz_krounds] <- swz_goalconcededround
-
+  for(index_swz_gs_cols in 1:swz_totalrounds)
+  {
+    index_swz_gs  <- row.names(swz_goalscored_h) == swz_teams[index_swz_gs]
+    form_swz_gs <- swz_goalscored_h[index_swz_gs ]
+    deleted_form_swz_gs <- form_swz_gs[!form_swz_gs[] == ""]
+    l6_form_swz_gs <- tail(deleted_form_swz_gs,swz_last_n_games)
+    l6_form_swz_gs <- as.numeric(l6_form_swz_gs)
+    suml6_swz_gs[index_swz_gs] <- sum(l6_form_swz_gs)
+    suml6_swz_gs[index_swz_gs] <- paste(suml6_swz_gs[index_swz_gs],sep = "")
+    sum_swz_zero_gs[index_swz_gs] <- length(which(l6_form_swz_gs == 0))
+    sum_swz_zero_gs[index_swz_gs] <- paste(sum_swz_zero_gs[index_swz_gs],sep = "")
+    sum_swz_one_gs[index_swz_gs] <- length(which(l6_form_swz_gs == 1))
+    sum_swz_one_gs[index_swz_gs] <- paste(sum_swz_one_gs[index_swz_gs],sep = "")
+    sum_swz_two_gs[index_swz_gs] <- length(which(l6_form_swz_gs >= 2))
+    sum_swz_two_gs[index_swz_gs] <- paste(sum_swz_two_gs[index_swz_gs],sep = "")
+    sum_swz_three_gs[index_swz_gs] <- length(which(l6_form_swz_gs >= 3))
+    sum_swz_three_gs[index_swz_gs] <- paste(sum_swz_three_gs[index_swz_gs],sep = "")
+    l6_form_swz_gs <- as.character(l6_form_swz_gs)
+    l6_form_swz_gs_flattened <- stri_paste(l6_form_swz_gs,collapse = '')
+    l6_form_swz_gssplitted <- as.numeric(strsplit(as.character(l6_form_swz_gs_flattened),"")[[1]])
+    final_swz_gs[index_swz_gs,index_swz_gs_cols] <- l6_form_swz_gssplitted[index_swz_gs_cols]
+  }
 }
 
-swz_goalconcededmatrix <- cbind(swz_teams,swz_goalconcededmatrix)
+final_swz_gs[is.na(final_swz_gs)] <- ""
+swz_goalscoredmatrix <- cbind(swz_teams,final_swz_gs,suml6_swz_gs,sum_swz_zero_gs,sum_swz_one_gs,sum_swz_two_gs,sum_swz_three_gs)
+write.xlsx(swz_goalscoredmatrix,'NL/SWZ.xlsx',sheetName = "gsmatrix", append = TRUE)
+#################################################################################################################################
 
-####GCmatrix#############################################################################
+####GCmatrix#####################################################################################################################
 #create home and away matrices
 swz_goalconceded_h <- tapply(SWZ$AG, SWZ[c("Home", "Date")],mean)
 swz_goalconceded_a <- tapply(SWZ$HG, SWZ[c("Away", "Date")],mean)
@@ -179,44 +165,50 @@ for(swz_rowhgc in 1:nrow(swz_goalconceded_h)) {
 
   }
 }
-write.xlsx(swz_goalconcededmatrix,'NL/SWZ.xlsx',sheetName = "gcmatrix", append = TRUE)
-########################################################################################
-#swz team form
-swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)
-swz_formmatrix <- data.frame(matrix(nrow = length(swz_teams),ncol = swz_krounds))
-swz_formround <- c()
-for(i_swz_krounds in 1:swz_krounds)
+#write.xlsx(swz_goalconcededmatrix,'NL/SWZ.xlsx',sheetName = "gcmatrix", append = TRUE)
+############################################################################################################################################################
+#swz goal conceded rounds
+final_swz_gc <- matrix(nrow = length(swz_teams),ncol = swz_totalrounds )
+suml6_swz_gc <- c()
+sum_swz_zero_gc <- c()
+sum_swz_one_gc <- c()
+sum_swz_two_gc <- c()
+sum_swz_three_gc <- c()
+l6_form_swz_gcsplitted <- c()
+form_swz_gc <- c()
+for(index_swz_gc in 1:length(swz_teams))
 {
-  swz_homeform <- SWZ_rounds$FTR[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_homeform <- sub("H","W",swz_homeform)
-  swz_homeform <- sub("A","L",swz_homeform)
-
-  swz_awayform <- SWZ_rounds$FTR[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_awayform <- sub("A","W",swz_awayform)
-  swz_awayform <- sub("H","L",swz_awayform)
-
-  swz_hometeamstemp_form <- SWZ_rounds$Home[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_awayteamstemp_form <- SWZ_rounds$Away[SWZ_rounds$swz_matchday== i_swz_krounds]
-
-  swz_formcombined <- c(swz_homeform,swz_awayform)
-  swz_teamscombined_form <- c(swz_hometeamstemp_form,swz_awayteamstemp_form)
-
-  swz_formround <- data.frame(swz_teamscombined_form,swz_formcombined)
-
-  swz_formround <- swz_formround[order(swz_formround$swz_teamscombined_form),]
-  swz_formround$swz_teamscombined_form <- NULL
-  swz_formmatrix[,i_swz_krounds] <- swz_formround
-
+  for(index_swz_gc_cols in 1:swz_totalrounds)
+  {
+    index_swz_gc  <- row.names(swz_goalconceded_h) == swz_teams[index_swz_gc]
+    form_swz_gc <- swz_goalconceded_h[index_swz_gc ]
+    deleted_form_swz_gc <- form_swz_gc[!form_swz_gc[] == ""]
+    l6_form_swz_gc <- tail(deleted_form_swz_gc,swz_last_n_games)
+    l6_form_swz_gc <- as.numeric(l6_form_swz_gc)
+    suml6_swz_gc[index_swz_gc] <- sum(l6_form_swz_gc)
+    suml6_swz_gc[index_swz_gc] <- paste(suml6_swz_gc[index_swz_gc],sep = "")
+    sum_swz_zero_gc[index_swz_gc] <- length(which(l6_form_swz_gc == 0))
+    sum_swz_zero_gc[index_swz_gc] <- paste(sum_swz_zero_gc[index_swz_gc],sep = "")
+    sum_swz_one_gc[index_swz_gc] <- length(which(l6_form_swz_gc == 1))
+    sum_swz_one_gc[index_swz_gc] <- paste(sum_swz_one_gc[index_swz_gc],sep = "")
+    sum_swz_two_gc[index_swz_gc] <- length(which(l6_form_swz_gc >= 2))
+    sum_swz_two_gc[index_swz_gc] <- paste(sum_swz_two_gc[index_swz_gc],sep = "")
+    sum_swz_three_gc[index_swz_gc] <- length(which(l6_form_swz_gc >= 3))
+    sum_swz_three_gc[index_swz_gc] <- paste(sum_swz_three_gc[index_swz_gc],sep = "")
+    l6_form_swz_gc <- as.character(l6_form_swz_gc)
+    l6_form_swz_gc_flattened <- stri_paste(l6_form_swz_gc,collapse = '')
+    l6_form_swz_gcsplitted <- as.numeric(strsplit(as.character(l6_form_swz_gc_flattened),"")[[1]])
+    final_swz_gc[index_swz_gc,index_swz_gc_cols] <- l6_form_swz_gcsplitted[index_swz_gc_cols]
+  }
 }
-swz_formmatrix
-swz_formmatrix <- cbind(swz_teams,swz_formmatrix)
-########################################################################################
-########################################################################################
-#########################################################################################
-####Teamform#############################################################################
+
+final_swz_gc[is.na(final_swz_gc)] <- ""
+swz_goalconcededmatrix <- cbind(swz_teams,final_swz_gc,suml6_swz_gc,sum_swz_zero_gc,sum_swz_one_gc,sum_swz_two_gc,sum_swz_three_gc)
+write.xlsx(swz_goalconcededmatrix,'NL/SWZ.xlsx',sheetName = "gcmatrix2", append = TRUE)
+###################################################################################################################################
+
+###################################################################################################################################
+####Teamform#######################################################################################################################
 
 swz_form_h <- tapply(SWZ$FTR, SWZ[c("Home", "Date")],median)
 swz_form_a <- tapply(SWZ$FTR, SWZ[c("Away", "Date")],median)
@@ -239,38 +231,37 @@ for(swz_rowh_f in 1:nrow(swz_form_h)) {
 
   }
 }
-write.xlsx(swz_formmatrix,'NL/SWZ.xlsx',sheetName = "form", append = TRUE)
-##################################################################################
-##################################################################################
-#swz total goals rounds
-swz_krounds <- tail(unique(SWZ_rounds$swz_matchday),1)
-swz_goaltotalmatrix <- data.frame(matrix(nrow = length(swz_teams),ncol = swz_krounds))
-swz_goaltotalround <- c()
-for(i_swz_krounds in 1:swz_krounds)
+####################################################################################################################################
+#swz team form
+final_swz_hf <- matrix(nrow = length(swz_teams),ncol = swz_totalrounds )
+suml6_swz_hf <- c()
+l6_form_swz_hfsplitted <- c()
+form_swz_hf <- c()
+for(index_swz_hf in 1:length(swz_teams))
 {
-  swz_homegoaltotal <- SWZ_rounds$TG[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_awaygoaltotal <- SWZ_rounds$TG[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_hometeamstemp_tg <- SWZ_rounds$Home[SWZ_rounds$swz_matchday == i_swz_krounds]
-
-  swz_awayteamstemp_tg <- SWZ_rounds$Away[SWZ_rounds$swz_matchday== i_swz_krounds]
-
-  swz_goalscombined_tg <- c(swz_homegoaltotal,swz_awaygoaltotal)
-  swz_teamscombined_tg <- c(swz_hometeamstemp_tg,swz_awayteamstemp_tg)
-
-  swz_goaltotalround <- data.frame(swz_teamscombined_tg,swz_goalscombined_tg)
-
-  swz_goaltotalround <- swz_goaltotalround[order(swz_goaltotalround$swz_teamscombined_tg),]
-  swz_goaltotalround$swz_teamscombined_tg <- NULL
-  swz_goaltotalmatrix[,i_swz_krounds] <- swz_goaltotalround
-
+  for(index_swz_hf_cols in 1:swz_totalrounds)
+  {
+    index_swz_hf  <- row.names(swz_form_h) == swz_teams[index_swz_hf]
+    form_swz_hf <- swz_form_h[index_swz_hf ]
+    deleted_form_swz_hf <- form_swz_hf[!form_swz_hf[] == ""]
+    l6_form_swz_hf <- tail(deleted_form_swz_hf,swz_last_n_games)
+    # #l6_form_swz_hf <- as.numeric(l6_form_swz_hf)
+    # suml6_swz_hf[index_swz_hf] <- sum(l6_form_swz_hf)
+    # suml6_swz_hf[index_swz_hf] <- paste(suml6_swz_hf[index_swz_hf],sep = "")
+    #l6_form_swz_hf <- as.character(l6_form_swz_hf)
+    l6_form_swz_hf_flattened <- stri_paste(l6_form_swz_hf,collapse = '')
+    l6_form_swz_hfsplitted <- (strsplit(as.character(l6_form_swz_hf_flattened),"")[[1]])
+    final_swz_hf[index_swz_hf,index_swz_hf_cols] <- l6_form_swz_hfsplitted[index_swz_hf_cols]
+  }
 }
+final_swz_hf[is.na(final_swz_hf)] <- ""
+swz_formmatrix <- cbind(swz_teams,final_swz_hf)
 
-swz_goaltotalmatrix <- cbind(swz_teams,swz_goaltotalmatrix)
-##############################################################################################
-#d1
-#######TGMatrix##################################################################
+write.xlsx(swz_formmatrix,'NL/SWZ.xlsx',sheetName = "form", append = TRUE)
+######################################################################################################################################
+######################################################################################################################################
+
+#######TGMatrix#######################################################################################################################
 swz_totalgoals_h <- tapply(SWZ$TG, SWZ[c("Home", "Date")],mean)
 swz_totalgoals_a <- tapply(SWZ$TG, SWZ[c("Away", "Date")],mean)
 swz_totalgoals_h[is.na(swz_totalgoals_h)] <- ""
@@ -288,9 +279,37 @@ for(swz_rowh in 1:nrow(swz_totalgoals_h)) {
 
   }
 }
+
+#swz total goals rounds
+#swz
+final_swz_tg <- matrix(nrow = length(swz_teams),ncol = swz_totalrounds )
+suml6_swz_tg <- c()
+l6_form_swz_tgsplitted <- c()
+form_swz_tg <- c()
+for(index_swz_tg in 1:length(swz_teams))
+{
+  for(index_swz_tg_cols in 1:swz_totalrounds)
+  {
+    index_swz_tg  <- row.names(swz_totalgoals_h) == swz_teams[index_swz_tg]
+    form_swz_tg <- swz_totalgoals_h[index_swz_tg ]
+    deleted_form_swz_tg <- form_swz_tg[!form_swz_tg[] == ""]
+    l6_form_swz_tg <- tail(deleted_form_swz_tg,swz_last_n_games)
+    l6_form_swz_tg <- as.numeric(l6_form_swz_tg)
+    suml6_swz_tg[index_swz_tg] <- sum(l6_form_swz_tg)
+    suml6_swz_tg[index_swz_tg] <- paste(suml6_swz_tg[index_swz_tg],sep = "")
+    l6_form_swz_tg <- as.character(l6_form_swz_tg)
+    l6_form_swz_tg_flattened <- stri_paste(l6_form_swz_tg,collapse = '')
+    l6_form_swz_tgsplitted <- as.numeric(strsplit(as.character(l6_form_swz_tg_flattened),"")[[1]])
+    final_swz_tg[index_swz_tg,index_swz_tg_cols] <- l6_form_swz_tgsplitted[index_swz_tg_cols]
+  }
+}
+
+final_swz_tg[is.na(final_swz_tg)] <- ""
+swz_goaltotalmatrix <- cbind(swz_teams,final_swz_tg,suml6_swz_tg)
+
 write.xlsx(swz_goaltotalmatrix,'NL/SWZ.xlsx',sheetName = "tgmatrix", append = TRUE)
-##################################################################################
-#######TeamAgainst##################################################################
+#############################################################################################################################################
+#######TeamAgainst###########################################################################################################################
 swz_form_team_against_h <- tapply(SWZ$Away, SWZ[c("Home", "Date")],median)
 swz_form_team_against_a <- tapply(SWZ$Home, SWZ[c("Away", "Date")],median)
 swz_form_team_against_h[is.na(swz_form_team_against_h)] <- ""
@@ -308,7 +327,7 @@ for(swz_rowh_f_against in 1:nrow(swz_form_team_against_h)) {
 
   }
 }
-#######################################################################
+###############################################################################################################################################
 #win margin
 swz_winmargin_h <- tapply(SWZ$HG - SWZ$AG, SWZ[c("Home", "Date")],mean)
 swz_winmargin_a <- tapply(SWZ$AG - SWZ$HG, SWZ[c("Away", "Date")],mean)
@@ -327,7 +346,47 @@ for(swz_rowhwm in 1:nrow(swz_winmargin_h)) {
 
   }
 }
-#######################################################################
+####################################################################################################################################################
+final_swz_wm <- matrix(nrow = length(swz_teams),ncol = swz_totalrounds )
+suml6_swz_wm <- c()
+suml6_swz_wm_negone <- c()
+suml6_swz_wm_negtwo <- c()
+suml6_swz_wm_zero <- c()
+suml6_swz_wm_posone <- c()
+suml6_swz_wm_postwo <- c()
+l6_form_swz_wmsplitted <- c()
+form_swz_wm <- c()
+for(index_swz_wm in 1:length(swz_teams))
+{
+  for(index_swz_wm_cols in 1:swz_totalrounds)
+  {
+    index_swz_wm  <- row.names(swz_winmargin_h) == swz_teams[index_swz_wm]
+    form_swz_wm <- swz_winmargin_h[index_swz_wm ]
+    deleted_form_swz_wm <- form_swz_wm[!form_swz_wm[] == ""]
+    l6_form_swz_wm <- tail(deleted_form_swz_wm,swz_last_n_games)
+    l6_form_swz_wm <- as.numeric(l6_form_swz_wm)
+    suml6_swz_wm[index_swz_wm] <- sum(l6_form_swz_wm)
+    suml6_swz_wm[index_swz_wm] <- paste(suml6_swz_wm[index_swz_wm],sep = "")
+    suml6_swz_wm_negone[index_swz_wm] <- length(which(l6_form_swz_wm == -1))
+    suml6_swz_wm_negone[index_swz_wm] <- paste(suml6_swz_wm_negone[index_swz_wm],sep = "")
+    suml6_swz_wm_negtwo[index_swz_wm] <- length(which(l6_form_swz_wm <= -2))
+    suml6_swz_wm_negtwo[index_swz_wm] <- paste(suml6_swz_wm_negtwo[index_swz_wm],sep = "")
+    suml6_swz_wm_zero[index_swz_wm] <- length(which(l6_form_swz_wm == 0))
+    suml6_swz_wm_zero[index_swz_wm] <- paste(suml6_swz_wm_zero[index_swz_wm],sep = "")
+    suml6_swz_wm_posone[index_swz_wm] <- length(which(l6_form_swz_wm == 1))
+    suml6_swz_wm_posone[index_swz_wm] <- paste(suml6_swz_wm_posone[index_swz_wm],sep = "")
+    suml6_swz_wm_postwo[index_swz_wm] <- length(which(l6_form_swz_wm == 2))
+    suml6_swz_wm_postwo[index_swz_wm] <- paste(suml6_swz_wm_postwo[index_swz_wm],sep = "")
+    l6_form_swz_wm <- as.character(l6_form_swz_wm)
+    l6_form_swz_wm_flattened <- stri_paste(l6_form_swz_wm,collapse = ',')
+    l6_form_swz_wmsplitted <- (strsplit(as.character(l6_form_swz_wm_flattened),",")[[1]])
+    final_swz_wm[index_swz_wm,index_swz_wm_cols] <- l6_form_swz_wmsplitted[index_swz_wm_cols]
+  }
+}
+
+final_swz_wm[is.na(final_swz_wm)] <- ""
+swz_winmarginmatrix <- cbind(swz_teams,final_swz_wm,suml6_swz_wm,suml6_swz_wm_negtwo,suml6_swz_wm_negone,suml6_swz_wm_zero,suml6_swz_wm_posone,suml6_swz_wm_postwo)
+write.xlsx(swz_winmarginmatrix,'NL/SWZ.xlsx',sheetName = "winmargin", append = TRUE)
 ####################################################################################################################
 ##########Goals over under############
 #SWZ

@@ -7,6 +7,8 @@ library('scales')
 library('lubridate')
 library('sqldf')
 library('mgsub')
+library(stringr)
+library(stringi)
 #delete current file
 unlink('NL/AUT.xlsx')
 ######################AUT START#######################################

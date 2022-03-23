@@ -49,8 +49,44 @@ mls_avg_totalgoals <- round((mls_totalgoals/ mls_games_played), digits = 4)
 mls_goaltotalsv2[is.na(mls_goaltotalsv2)] <- ""
 mls_goaltotalsv2 <- cbind(mls_goaltotalsv2,mls_avg_totalgoals)
 write.xlsx(mls_goaltotalsv2,'NL/MLS.xlsx',sheetName = "totalgoalsv2")
-############################################
-####GSmatrix################################
+##########################################################################################
+####GSmatrix##############################################################################
+
+#MLS <- subset(MLS,Season == "2021/2022")
+mls_totalrounds <-  (length(mls_teams) - 1 )*2
+mls_totalmatches <- (length(mls_teams)*(length(mls_teams) - 1))
+mls_eachround <- ceiling(mls_totalmatches / mls_totalrounds)
+
+mls_matchesplayed <-  nrow(MLS)
+MLS_rounds
+MLS_rounds <- MLS
+
+if(mls_matchesplayed %% mls_eachround == 0)
+{
+  mls_currentround <- mls_matchesplayed / mls_eachround
+  mls_matchday <- c()
+  mls_matchday <- rep(1:mls_currentround, each = mls_eachround)
+}else if(mls_matchesplayed %% mls_eachround != 0)
+
+{
+
+
+
+
+
+  mls_modulus <- mls_matchesplayed %% mls_eachround
+  mls_currentround <- (mls_matchesplayed - mls_modulus) / mls_eachround
+  mls_matchday <- c()
+  mls_matchday_vec1 <- c()
+  mls_matchday_vec2 <- c()
+  mls_matchday_vec1 <- rep(1:mls_currentround, each = mls_eachround)
+  mls_matchday_vec2[1:mls_modulus] <- c(mls_currentround + 1)
+  mls_matchday <- append(mls_matchday_vec1,mls_matchday_vec2)
+}
+MLS_rounds <- cbind(MLS_rounds,mls_matchday)
+
+####################################################################################################################
+
 #create home and away matrices
 mls_goalscored_h <- tapply(MLS$HG, MLS[c("Home", "Date")],mean)
 mls_goalscored_a <- tapply(MLS$AG, MLS[c("Away", "Date")],mean)
@@ -70,9 +106,50 @@ for(mls_rowhgs in 1:nrow(mls_goalscored_h)) {
 
   }
 }
-write.xlsx(mls_goalscored_h,'NL/MLS.xlsx',sheetName = "gsmatrix", append = TRUE)
+#write.xlsx(mls_goalscoredmatrix,'NL/MLS.xlsx',sheetName = "gsmatrix", append = TRUE)
 #########################################################################################
-####GCmatrix################################
+#########################################################################################
+#mls goal scored rounds
+final_mls_gs <- matrix(nrow = length(mls_teams),ncol = mls_totalrounds )
+suml6_mls_gs <- c()
+sum_mls_zero_gs <- c()
+sum_mls_one_gs <- c()
+sum_mls_two_gs <- c()
+sum_mls_three_gs <- c()
+l6_form_mls_gssplitted <- c()
+form_mls_gs <- c()
+for(index_mls_gs in 1:length(mls_teams))
+{
+  for(index_mls_gs_cols in 1:mls_totalrounds)
+  {
+    index_mls_gs  <- row.names(mls_goalscored_h) == mls_teams[index_mls_gs]
+    form_mls_gs <- mls_goalscored_h[index_mls_gs ]
+    deleted_form_mls_gs <- form_mls_gs[!form_mls_gs[] == ""]
+    l6_form_mls_gs <- tail(deleted_form_mls_gs,mls_last_n_games)
+    l6_form_mls_gs <- as.numeric(l6_form_mls_gs)
+    suml6_mls_gs[index_mls_gs] <- sum(l6_form_mls_gs)
+    suml6_mls_gs[index_mls_gs] <- paste(suml6_mls_gs[index_mls_gs],sep = "")
+    sum_mls_zero_gs[index_mls_gs] <- length(which(l6_form_mls_gs == 0))
+    sum_mls_zero_gs[index_mls_gs] <- paste(sum_mls_zero_gs[index_mls_gs],sep = "")
+    sum_mls_one_gs[index_mls_gs] <- length(which(l6_form_mls_gs == 1))
+    sum_mls_one_gs[index_mls_gs] <- paste(sum_mls_one_gs[index_mls_gs],sep = "")
+    sum_mls_two_gs[index_mls_gs] <- length(which(l6_form_mls_gs >= 2))
+    sum_mls_two_gs[index_mls_gs] <- paste(sum_mls_two_gs[index_mls_gs],sep = "")
+    sum_mls_three_gs[index_mls_gs] <- length(which(l6_form_mls_gs >= 3))
+    sum_mls_three_gs[index_mls_gs] <- paste(sum_mls_three_gs[index_mls_gs],sep = "")
+    l6_form_mls_gs <- as.character(l6_form_mls_gs)
+    l6_form_mls_gs_flattened <- stri_paste(l6_form_mls_gs,collapse = '')
+    l6_form_mls_gssplitted <- as.numeric(strsplit(as.character(l6_form_mls_gs_flattened),"")[[1]])
+    final_mls_gs[index_mls_gs,index_mls_gs_cols] <- l6_form_mls_gssplitted[index_mls_gs_cols]
+  }
+}
+
+final_mls_gs[is.na(final_mls_gs)] <- ""
+mls_goalscoredmatrix <- cbind(mls_teams,final_mls_gs,suml6_mls_gs,sum_mls_zero_gs,sum_mls_one_gs,sum_mls_two_gs,sum_mls_three_gs)
+write.xlsx(mls_goalscoredmatrix,'NL/MLS.xlsx',sheetName = "gsmatrix", append = TRUE)
+#################################################################################################################################
+
+####GCmatrix#####################################################################################################################
 #create home and away matrices
 mls_goalconceded_h <- tapply(MLS$AG, MLS[c("Home", "Date")],mean)
 mls_goalconceded_a <- tapply(MLS$HG, MLS[c("Away", "Date")],mean)
@@ -92,9 +169,51 @@ for(mls_rowhgc in 1:nrow(mls_goalconceded_h)) {
 
   }
 }
-write.xlsx(mls_goalconceded_h,'NL/MLS.xlsx',sheetName = "gcmatrix", append = TRUE)
-#########################################################################################
-####Teamform################################
+#write.xlsx(mls_goalconcededmatrix,'NL/MLS.xlsx',sheetName = "gcmatrix", append = TRUE)
+############################################################################################################################################################
+#mls goal conceded rounds
+final_mls_gc <- matrix(nrow = length(mls_teams),ncol = mls_totalrounds )
+suml6_mls_gc <- c()
+sum_mls_zero_gc <- c()
+sum_mls_one_gc <- c()
+sum_mls_two_gc <- c()
+sum_mls_three_gc <- c()
+l6_form_mls_gcsplitted <- c()
+form_mls_gc <- c()
+for(index_mls_gc in 1:length(mls_teams))
+{
+  for(index_mls_gc_cols in 1:mls_totalrounds)
+  {
+    index_mls_gc  <- row.names(mls_goalconceded_h) == mls_teams[index_mls_gc]
+    form_mls_gc <- mls_goalconceded_h[index_mls_gc ]
+    deleted_form_mls_gc <- form_mls_gc[!form_mls_gc[] == ""]
+    l6_form_mls_gc <- tail(deleted_form_mls_gc,mls_last_n_games)
+    l6_form_mls_gc <- as.numeric(l6_form_mls_gc)
+    suml6_mls_gc[index_mls_gc] <- sum(l6_form_mls_gc)
+    suml6_mls_gc[index_mls_gc] <- paste(suml6_mls_gc[index_mls_gc],sep = "")
+    sum_mls_zero_gc[index_mls_gc] <- length(which(l6_form_mls_gc == 0))
+    sum_mls_zero_gc[index_mls_gc] <- paste(sum_mls_zero_gc[index_mls_gc],sep = "")
+    sum_mls_one_gc[index_mls_gc] <- length(which(l6_form_mls_gc == 1))
+    sum_mls_one_gc[index_mls_gc] <- paste(sum_mls_one_gc[index_mls_gc],sep = "")
+    sum_mls_two_gc[index_mls_gc] <- length(which(l6_form_mls_gc >= 2))
+    sum_mls_two_gc[index_mls_gc] <- paste(sum_mls_two_gc[index_mls_gc],sep = "")
+    sum_mls_three_gc[index_mls_gc] <- length(which(l6_form_mls_gc >= 3))
+    sum_mls_three_gc[index_mls_gc] <- paste(sum_mls_three_gc[index_mls_gc],sep = "")
+    l6_form_mls_gc <- as.character(l6_form_mls_gc)
+    l6_form_mls_gc_flattened <- stri_paste(l6_form_mls_gc,collapse = '')
+    l6_form_mls_gcsplitted <- as.numeric(strsplit(as.character(l6_form_mls_gc_flattened),"")[[1]])
+    final_mls_gc[index_mls_gc,index_mls_gc_cols] <- l6_form_mls_gcsplitted[index_mls_gc_cols]
+  }
+}
+
+final_mls_gc[is.na(final_mls_gc)] <- ""
+mls_goalconcededmatrix <- cbind(mls_teams,final_mls_gc,suml6_mls_gc,sum_mls_zero_gc,sum_mls_one_gc,sum_mls_two_gc,sum_mls_three_gc)
+write.xlsx(mls_goalconcededmatrix,'NL/MLS.xlsx',sheetName = "gcmatrix2", append = TRUE)
+###################################################################################################################################
+
+###################################################################################################################################
+####Teamform#######################################################################################################################
+
 mls_form_h <- tapply(MLS$FTR, MLS[c("Home", "Date")],median)
 mls_form_a <- tapply(MLS$FTR, MLS[c("Away", "Date")],median)
 mls_form_h[is.na(mls_form_h)] <- ""
@@ -116,9 +235,37 @@ for(mls_rowh_f in 1:nrow(mls_form_h)) {
 
   }
 }
-write.xlsx(mls_form_h,'NL/MLS.xlsx',sheetName = "form", append = TRUE)
-##################################################################################
-#######TGMatrix##################################################################
+####################################################################################################################################
+#mls team form
+final_mls_hf <- matrix(nrow = length(mls_teams),ncol = mls_totalrounds )
+suml6_mls_hf <- c()
+l6_form_mls_hfsplitted <- c()
+form_mls_hf <- c()
+for(index_mls_hf in 1:length(mls_teams))
+{
+  for(index_mls_hf_cols in 1:mls_totalrounds)
+  {
+    index_mls_hf  <- row.names(mls_form_h) == mls_teams[index_mls_hf]
+    form_mls_hf <- mls_form_h[index_mls_hf ]
+    deleted_form_mls_hf <- form_mls_hf[!form_mls_hf[] == ""]
+    l6_form_mls_hf <- tail(deleted_form_mls_hf,mls_last_n_games)
+    # #l6_form_mls_hf <- as.numeric(l6_form_mls_hf)
+    # suml6_mls_hf[index_mls_hf] <- sum(l6_form_mls_hf)
+    # suml6_mls_hf[index_mls_hf] <- paste(suml6_mls_hf[index_mls_hf],sep = "")
+    #l6_form_mls_hf <- as.character(l6_form_mls_hf)
+    l6_form_mls_hf_flattened <- stri_paste(l6_form_mls_hf,collapse = '')
+    l6_form_mls_hfsplitted <- (strsplit(as.character(l6_form_mls_hf_flattened),"")[[1]])
+    final_mls_hf[index_mls_hf,index_mls_hf_cols] <- l6_form_mls_hfsplitted[index_mls_hf_cols]
+  }
+}
+final_mls_hf[is.na(final_mls_hf)] <- ""
+mls_formmatrix <- cbind(mls_teams,final_mls_hf)
+
+write.xlsx(mls_formmatrix,'NL/MLS.xlsx',sheetName = "form", append = TRUE)
+######################################################################################################################################
+######################################################################################################################################
+
+#######TGMatrix#######################################################################################################################
 mls_totalgoals_h <- tapply(MLS$TG, MLS[c("Home", "Date")],mean)
 mls_totalgoals_a <- tapply(MLS$TG, MLS[c("Away", "Date")],mean)
 mls_totalgoals_h[is.na(mls_totalgoals_h)] <- ""
@@ -136,9 +283,37 @@ for(mls_rowh in 1:nrow(mls_totalgoals_h)) {
 
   }
 }
-write.xlsx(mls_totalgoals_h,'NL/MLS.xlsx',sheetName = "tgmatrix", append = TRUE)
-##################################################################################
-#######TeamAgainst##################################################################
+
+#mls total goals rounds
+#mls
+final_mls_tg <- matrix(nrow = length(mls_teams),ncol = mls_totalrounds )
+suml6_mls_tg <- c()
+l6_form_mls_tgsplitted <- c()
+form_mls_tg <- c()
+for(index_mls_tg in 1:length(mls_teams))
+{
+  for(index_mls_tg_cols in 1:mls_totalrounds)
+  {
+    index_mls_tg  <- row.names(mls_totalgoals_h) == mls_teams[index_mls_tg]
+    form_mls_tg <- mls_totalgoals_h[index_mls_tg ]
+    deleted_form_mls_tg <- form_mls_tg[!form_mls_tg[] == ""]
+    l6_form_mls_tg <- tail(deleted_form_mls_tg,mls_last_n_games)
+    l6_form_mls_tg <- as.numeric(l6_form_mls_tg)
+    suml6_mls_tg[index_mls_tg] <- sum(l6_form_mls_tg)
+    suml6_mls_tg[index_mls_tg] <- paste(suml6_mls_tg[index_mls_tg],sep = "")
+    l6_form_mls_tg <- as.character(l6_form_mls_tg)
+    l6_form_mls_tg_flattened <- stri_paste(l6_form_mls_tg,collapse = '')
+    l6_form_mls_tgsplitted <- as.numeric(strsplit(as.character(l6_form_mls_tg_flattened),"")[[1]])
+    final_mls_tg[index_mls_tg,index_mls_tg_cols] <- l6_form_mls_tgsplitted[index_mls_tg_cols]
+  }
+}
+
+final_mls_tg[is.na(final_mls_tg)] <- ""
+mls_goaltotalmatrix <- cbind(mls_teams,final_mls_tg,suml6_mls_tg)
+
+write.xlsx(mls_goaltotalmatrix,'NL/MLS.xlsx',sheetName = "tgmatrix", append = TRUE)
+#############################################################################################################################################
+#######TeamAgainst###########################################################################################################################
 mls_form_team_against_h <- tapply(MLS$Away, MLS[c("Home", "Date")],median)
 mls_form_team_against_a <- tapply(MLS$Home, MLS[c("Away", "Date")],median)
 mls_form_team_against_h[is.na(mls_form_team_against_h)] <- ""
@@ -156,7 +331,7 @@ for(mls_rowh_f_against in 1:nrow(mls_form_team_against_h)) {
 
   }
 }
-#######################################################################
+###############################################################################################################################################
 #win margin
 mls_winmargin_h <- tapply(MLS$HG - MLS$AG, MLS[c("Home", "Date")],mean)
 mls_winmargin_a <- tapply(MLS$AG - MLS$HG, MLS[c("Away", "Date")],mean)
@@ -175,9 +350,49 @@ for(mls_rowhwm in 1:nrow(mls_winmargin_h)) {
 
   }
 }
-#######################################################################
+####################################################################################################################################################
+final_mls_wm <- matrix(nrow = length(mls_teams),ncol = mls_totalrounds )
+suml6_mls_wm <- c()
+suml6_mls_wm_negone <- c()
+suml6_mls_wm_negtwo <- c()
+suml6_mls_wm_zero <- c()
+suml6_mls_wm_posone <- c()
+suml6_mls_wm_postwo <- c()
+l6_form_mls_wmsplitted <- c()
+form_mls_wm <- c()
+for(index_mls_wm in 1:length(mls_teams))
+{
+  for(index_mls_wm_cols in 1:mls_totalrounds)
+  {
+    index_mls_wm  <- row.names(mls_winmargin_h) == mls_teams[index_mls_wm]
+    form_mls_wm <- mls_winmargin_h[index_mls_wm ]
+    deleted_form_mls_wm <- form_mls_wm[!form_mls_wm[] == ""]
+    l6_form_mls_wm <- tail(deleted_form_mls_wm,mls_last_n_games)
+    l6_form_mls_wm <- as.numeric(l6_form_mls_wm)
+    suml6_mls_wm[index_mls_wm] <- sum(l6_form_mls_wm)
+    suml6_mls_wm[index_mls_wm] <- paste(suml6_mls_wm[index_mls_wm],sep = "")
+    suml6_mls_wm_negone[index_mls_wm] <- length(which(l6_form_mls_wm == -1))
+    suml6_mls_wm_negone[index_mls_wm] <- paste(suml6_mls_wm_negone[index_mls_wm],sep = "")
+    suml6_mls_wm_negtwo[index_mls_wm] <- length(which(l6_form_mls_wm <= -2))
+    suml6_mls_wm_negtwo[index_mls_wm] <- paste(suml6_mls_wm_negtwo[index_mls_wm],sep = "")
+    suml6_mls_wm_zero[index_mls_wm] <- length(which(l6_form_mls_wm == 0))
+    suml6_mls_wm_zero[index_mls_wm] <- paste(suml6_mls_wm_zero[index_mls_wm],sep = "")
+    suml6_mls_wm_posone[index_mls_wm] <- length(which(l6_form_mls_wm == 1))
+    suml6_mls_wm_posone[index_mls_wm] <- paste(suml6_mls_wm_posone[index_mls_wm],sep = "")
+    suml6_mls_wm_postwo[index_mls_wm] <- length(which(l6_form_mls_wm == 2))
+    suml6_mls_wm_postwo[index_mls_wm] <- paste(suml6_mls_wm_postwo[index_mls_wm],sep = "")
+    l6_form_mls_wm <- as.character(l6_form_mls_wm)
+    l6_form_mls_wm_flattened <- stri_paste(l6_form_mls_wm,collapse = ',')
+    l6_form_mls_wmsplitted <- (strsplit(as.character(l6_form_mls_wm_flattened),",")[[1]])
+    final_mls_wm[index_mls_wm,index_mls_wm_cols] <- l6_form_mls_wmsplitted[index_mls_wm_cols]
+  }
+}
+
+final_mls_wm[is.na(final_mls_wm)] <- ""
+mls_winmarginmatrix <- cbind(mls_teams,final_mls_wm,suml6_mls_wm,suml6_mls_wm_negtwo,suml6_mls_wm_negone,suml6_mls_wm_zero,suml6_mls_wm_posone,suml6_mls_wm_postwo)
+write.xlsx(mls_winmarginmatrix,'NL/MLS.xlsx',sheetName = "winmargin", append = TRUE)
 ####################################################################################################################
-##########Goals over under############
+##########Goals over under##########################################################################################
 #MLS
 mls_un05_home <- c()
 mls_un05_away <- c()

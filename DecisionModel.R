@@ -4626,7 +4626,7 @@ allteams20212022picks <- rbind(b1_picks,d1_picks,d2_picks,e0_picks,e1_picks,e2_p
 myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20212022.xlsx', sheet = '3way')
 myodds_fixtures$matchid <- paste(myodds_fixtures$HT,myodds_fixtures$AT, sep = "-")
 myodds_fixtures_prediction <- dplyr::left_join(myodds_fixtures,allteams20212022picks)
-write.csv(myodds_fixtures_prediction,'myodds_fixtures_prediction.csv')
+write.xlsx(myodds_fixtures_prediction,'myodds_fixtures_prediction.xlsx')
 ############################
 picks_fixtures <- read.csv('myfixtures.csv')
 picks_fixtures$matchid <- paste(picks_fixtures$Home_Team,picks_fixtures$Away_Team, sep = "-")

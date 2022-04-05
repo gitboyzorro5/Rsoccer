@@ -19,13 +19,14 @@ IRL$Date <- dmy(IRL$Date)
 IRL <- IRL[order(as.Date(IRL$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 IRL$CS <- paste(IRL$HG,IRL$AG, sep = "-")
 #IRL_qualificaton <- subset(IRL,tournament == "UEFA Euro qualification")
-IRL <- subset(IRL,Season == "2021")
+IRL <- subset(IRL,Season == "2022")
 #IRL <- IRL[IRL$Date > '2008-01-01',])
 IRL$TG <- IRL$HG + IRL$AG
 IRL$OV25 <- ifelse(IRL$TG >= 3,"Y","N")
 IRL$FTR <- with(IRL,
                ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+
 
 ###################################################
 # IRL <- mgsub(IRL,c("Wolfsberger"),c("Wolfsberger AC"))
@@ -55,7 +56,7 @@ irl_goaltotalsv2[is.na(irl_goaltotalsv2)] <- ""
 irl_goaltotalsv2 <- cbind(irl_goaltotalsv2,irl_avg_totalgoals)
 write.xlsx(irl_goaltotalsv2,'NL/IRL.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-IRL <- subset(IRL,Season == "2021")
+IRL <- subset(IRL,Season == "2022")
 irl_totalrounds <-  (length(irl_teams) - 1 )*2
 irl_totalmatches <- (length(irl_teams)*(length(irl_teams) - 1))
 irl_eachround <- irl_totalmatches / irl_totalrounds

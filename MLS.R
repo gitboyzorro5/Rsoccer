@@ -16,7 +16,7 @@ MLS$Date <- dmy(MLS$Date)
 MLS <- MLS[order(as.Date(MLS$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 MLS$CS <- paste(MLS$HG,MLS$AG, sep = "-")
 #MLS_qualificaton <- subset(MLS,tournament == "UEFA Euro qualification")
-MLS <- subset(MLS,Season == "2021")
+MLS <- subset(MLS,Season == "2022")
 #MLS <- MLS[MLS$Date > '2008-01-01',])
 MLS$TG <- MLS$HG + MLS$AG
 MLS$OV25 <- ifelse(MLS$TG >= 3,"Y","N")
@@ -30,7 +30,6 @@ mls_totalgoalsv2 <- tapply(MLS$TG, MLS[c("Home", "Away")],mean)
 mls_totalgoalsv2
 mls_hgtotals <- rowSums(mls_totalgoalsv2,na.rm = T)
 mls_agtotals <- colSums(mls_totalgoalsv2,na.rm = T)
-
 mls_totalgoals <- mls_hgtotals + mls_agtotals
 mls_totalgoalsv2 <- cbind(mls_totalgoalsv2,mls_totalgoals)
 mls_teams <- sort(unique(MLS$Home))
@@ -69,10 +68,6 @@ if(mls_matchesplayed %% mls_eachround == 0)
 }else if(mls_matchesplayed %% mls_eachround != 0)
 
 {
-
-
-
-
 
   mls_modulus <- mls_matchesplayed %% mls_eachround
   mls_currentround <- (mls_matchesplayed - mls_modulus) / mls_eachround

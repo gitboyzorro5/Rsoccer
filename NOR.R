@@ -19,7 +19,7 @@ NOR$Date <- dmy(NOR$Date)
 NOR <- NOR[order(as.Date(NOR$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 NOR$CS <- paste(NOR$HG,NOR$AG, sep = "-")
 #NOR_qualificaton <- subset(NOR,tournament == "UEFA Euro qualification")
-NOR <- subset(NOR,Season == "2021")
+NOR <- subset(NOR,Season == "2022")
 #NOR <- NOR[NOR$Date > '2008-01-01',])
 NOR$TG <- NOR$HG + NOR$AG
 NOR$OV25 <- ifelse(NOR$TG >= 3,"Y","N")
@@ -54,7 +54,7 @@ write.xlsx(nor_goaltotalsv2,'NL/NOR.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
 #####################################################################################################
 ##############################################################################################
-NOR <- subset(NOR,Season == "2021")
+NOR <- subset(NOR,Season == "2022")
 nor_totalrounds <-  (length(nor_teams) - 1 )*2
 nor_totalmatches <- (length(nor_teams)*(length(nor_teams) - 1))
 nor_eachround <- nor_totalmatches / nor_totalrounds

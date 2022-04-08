@@ -62,7 +62,7 @@ source("SWZ.R")
 #####################
 R_home_newleagues <- rbind(arg_home_poisson,aut_home_poisson,bra_home_poisson,chn_home_poisson,dnk_home_poisson,fin_home_poisson,irl_home_poisson,jpn_home_poisson,mex_home_poisson,nor_home_poisson,pol_home_poisson,rou_home_poisson,rus_home_poisson,swe_home_poisson,mls_home_poisson,swz_home_poisson)
 R_away_newleagues <- rbind(arg_away_poisson,aut_away_poisson,bra_away_poisson,chn_away_poisson,dnk_away_poisson,fin_away_poisson,irl_away_poisson,jpn_away_poisson,mex_away_poisson,nor_away_poisson,pol_away_poisson,rou_away_poisson,rus_away_poisson,swe_away_poisson,mls_away_poisson,swz_away_poisson)
-colnames(SWZ)
+
 unlink('R_home_newleagues.csv')
 unlink('R_away_newleagues.csv')
 

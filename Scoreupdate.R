@@ -73,8 +73,8 @@ allteams20212022scores_newleagues$Date <- dmy(allteams20212022scores_newleagues$
 myoddscores_newleagues <- readxl::read_excel('../FDAS/myodds_20212022_newleagues.xlsx', sheet = '3way')
 myoddscores_newleagues$Date <- dmy(myoddscores_newleagues$Date)
 
-myoddscores_newleagues$matchid <- paste(myoddscores_newleagues$HT,myoddscores_newleagues$AT,myoddscores_newleagues$Date, sep = "-")
-allteams20212022scores_newleagues$matchid <- paste(allteams20212022scores_newleagues$Home,allteams20212022scores_newleagues$Away,myoddscores_newleagues$Date, sep = "-")
+myoddscores_newleagues$matchid <- paste(myoddscores_newleagues$HT,myoddscores_newleagues$AT,myoddscores_newleagues$Date,sep = "-")
+allteams20212022scores_newleagues$matchid <- paste(allteams20212022scores_newleagues$Home,allteams20212022scores_newleagues$Away,allteams20212022scores_newleagues$Date,sep = "-")
 
 myoddscores_newleagues <- myoddscores_newleagues[,c(24,25,34,26,29)]
 allteams20212022scores_newleagues <- allteams20212022scores_newleagues[,c(6,7,23,22,20)]
@@ -89,3 +89,8 @@ rm(allteams20212022scores_newleagues)
 head(myoddscores_newleagues)
 
 
+colnames(myoddscores_newleagues)
+myoddscores_newleagues
+colnames(allteams20212022scores_newleagues)
+finalscore_newleagues
+tail(allteams20212022scores_newleagues)

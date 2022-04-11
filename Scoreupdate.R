@@ -86,7 +86,7 @@ write.xlsx(finalscore_newleagues,'finalscore_newleagues.xlsx')
 rm(myoddscores_newleagues)
 rm(allteams20212022scores_newleagues)
 
-head(myoddscores_newleagues)
+
 
 
 colnames(myoddscores_newleagues)

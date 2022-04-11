@@ -5,7 +5,7 @@ library('xlsx')
 library('scales')
 #B1
 write.xlsx(points_b1,'Divisions/B1.xlsx', sheetName = "Table")
-write.xlsx(b1_formmatrix,'Divisions/B1.xlsx', sheetName = "Form2", append = TRUE)
+write.xlsx(b1_formmatrix,'Divisions/B1.xlsx', sheetName = "Form", append = TRUE)
 write.xlsx(b1_goalscoredmatrix,'Divisions/B1.xlsx', sheetName = "Goals scored", append = TRUE)
 write.xlsx(b1_goalconcededmatrix,'Divisions/B1.xlsx', sheetName = "Goals conceded", append = TRUE)
 write.xlsx(b1_goaltotalmatrix,'Divisions/B1.xlsx', sheetName = "Total Goals form", append = TRUE)

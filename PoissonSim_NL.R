@@ -1,12 +1,12 @@
 
 #################################################
 ###
-poisson_round_nl <- 7
+poisson_round_nl <- 6
 allhomepoisson_nl <- c()
 allawaypoisson_nl <- c()
-# while (poisson_round_nl <= 30)
-#
-#   {
+ while (poisson_round_nl <= 38)
+
+   {
 
   ROUND_20212022_nl <- poisson_round_nl
 
@@ -77,38 +77,36 @@ allawaypoisson_nl <- c()
   SWZ$TG <- as.numeric(SWZ$TG)
   #############################################################
   source("midpoisson.R")
-  # ec_totalgames_poiss_nl <- c()
-  # ec_totalgames_poiss_nl[1:length(ec_teams)] <- paste("no",poisson_round_nl,sep = "")
-  # ec_home_poisson_nl <- cbind(ec_home_poisson_nl,ec_totalgames_poiss_nl)
-  # ec_away_poisson-nl <- cbind(ec_away_poisson_nl,ec_totalgames_poiss_nl)
+  nor_totalgames_poiss_nl <- c()
+  nor_totalgames_poiss_nl[1:length(nor_teams)] <- paste("no",poisson_round_nl,sep = "")
+  nor_home_poisson_nl <- cbind(nor_home_poisson,nor_totalgames_poiss_nl)
+  nor_away_poisson_nl <- cbind(nor_away_poisson,nor_totalgames_poiss_nl)
+
+  write.csv(nor_home_poisson_nl,paste("nor_home_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
+  write.csv(nor_away_poisson_nl,paste("nor_away_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
+
+
+  allhomepoisson_nl <- rbind(allhomepoisson_nl,nor_home_poisson_nl)
+  allawaypoisson_nl <- rbind(allawaypoisson_nl,nor_away_poisson_nl)
+  # allhomepoisson_nl <- rbind(aut_home_poisson,arg_home_poisson,bra_home_poisson,chn_home_poisson,dnk_home_poisson,fin_home_poisson,
+  #                         irl_home_poisson,jpn_home_poisson,mex_home_poisson,mls_home_poisson,nor_home_poisson,pol_home_poisson,
+  #                         rou_home_poisson,rus_home_poisson,swe_home_poisson,swz_home_poisson)
   #
-  # write.csv(ec_home_poisson_nl,paste("ec_home_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
-  # write.csv(ec_away_poisson_nl,paste("ec_away_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
-  #
-  #
-  # allhomepoisson_nl <- rbind(allhomepoisson_nl,ec_home_poisson_nl)
-  # allawaypoisson_nl <- rbind(allawaypoisson_nl,ec_away_poisson_nl)
-  allhomepoisson_nl <- rbind(aut_home_poisson,arg_home_poisson,bra_home_poisson,chn_home_poisson,dnk_home_poisson,fin_home_poisson,
-                          irl_home_poisson,jpn_home_poisson,mex_home_poisson,mls_home_poisson,nor_home_poisson,pol_home_poisson,
-                          rou_home_poisson,rus_home_poisson,swe_home_poisson,swz_home_poisson)
 
-
-
-  allawaypoisson_nl <- rbind(aut_away_poisson,arg_away_poisson,bra_away_poisson,chn_away_poisson,dnk_away_poisson,fin_away_poisson,
-                          irl_away_poisson,jpn_away_poisson,mex_away_poisson,mls_away_poisson,nor_away_poisson,pol_away_poisson,
-                          rou_away_poisson,rus_away_poisson,swe_away_poisson,swz_away_poisson)
-
-#   poisson_round_nl <- poisson_round_nl + 6
 #
-# }
+#   allawaypoisson_nl <- rbind(aut_away_poisson,arg_away_poisson,bra_away_poisson,chn_away_poisson,dnk_away_poisson,fin_away_poisson,
+#                           irl_away_poisson,jpn_away_poisson,mex_away_poisson,mls_away_poisson,nor_away_poisson,pol_away_poisson,
+#                           rou_away_poisson,rus_away_poisson,swe_away_poisson,swz_away_poisson)
+#
+  poisson_round_nl <- poisson_round_nl + 6
+#
+}
 
   allhomepoisson_nl <- mgsub(allhomepoisson_nl,c("ARG","AUT","BRA","CHN","DNK","FIN","IRL","JPN","MEX","NOR","POL","ROU","RUS","SWE","SWZ"),c("Liga Profesional","Admiral Bundesliga","Serie A","Super League","Superliga","Veikkausliiga","Premier Division","J1 League","Liga MX","Eliteserien","Ekstraklasa","Liga 1","Premier League","Allsvenskan","Swiss"))
   allawaypoisson_nl <- mgsub(allawaypoisson_nl,c("ARG","AUT","BRA","CHN","DNK","FIN","IRL","JPN","MEX","NOR","POL","ROU","RUS","SWE","SWZ"),c("Liga Profesional","Admiral Bundesliga","Serie A","Super League","Superliga","Veikkausliiga","Premier Division","J1 League","Liga MX","Eliteserien","Ekstraklasa","Liga 1","Premier League","Allsvenskan","Swiss"))
 
 write.csv(allhomepoisson_nl,"allhomepoisson_nl.csv")
 write.csv(allawaypoisson_nl,"allawaypoisson_nl.csv")
-
-
 
 
 

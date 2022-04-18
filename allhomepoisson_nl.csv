@@ -1,273 +1,97 @@
-,aut_division,aut_teams,aut_avg_HG,aut_home_as,aut_home_ds
-1,Admiral Bundesliga,A. Klagenfurt,1.5476,1.5077,1.2728
-2,Admiral Bundesliga,Admira,1.5476,1.0769,0.5091
-3,Admiral Bundesliga,Altach,1.5476,0.6462,0.9546
-4,Admiral Bundesliga,Austria Vienna,1.5476,0.6462,0.7637
-5,Admiral Bundesliga,Hartberg,1.5476,0.4308,1.0182
-6,Admiral Bundesliga,LASK,1.5476,0.4846,1.3364
-7,Admiral Bundesliga,Rapid Vienna,1.5476,1.1308,0.7637
-8,Admiral Bundesliga,Ried,1.5476,1.0769,0.5091
-9,Admiral Bundesliga,Salzburg,1.5476,2.3693,0.5091
-10,Admiral Bundesliga,Sturm Graz,1.5476,1.2923,1.3364
-11,Admiral Bundesliga,Tirol,1.5476,0.4846,0.9546
-12,Admiral Bundesliga,Wolfsberger AC,1.5476,1.1308,1.7182
-13,Liga Profesional,Aldosivi,1.2418,1.2079,0.9892
-14,Liga Profesional,Argentinos Jrs,1.2418,1.0066,0.9892
-15,Liga Profesional,Arsenal Sarandi,1.2418,0,1.8464
-16,Liga Profesional,Atl. Tucuman,1.2418,1.6106,1.3848
-17,Liga Profesional,Banfield,1.2418,0.8053,0.5935
-18,Liga Profesional,Boca Juniors,1.2418,1.0066,1.187
-19,Liga Profesional,Central Cordoba,1.2418,0.5369,1.3189
-20,Liga Profesional,Colon Santa FE,1.2418,1.0737,0.2638
-21,Liga Profesional,Defensa y Justicia,1.2418,1.8119,0.5935
-22,Liga Profesional,Estudiantes L.P.,1.2418,0.4026,0.9892
-23,Liga Profesional,Gimnasia L.P.,1.2418,1.6106,0.2638
-24,Liga Profesional,Godoy Cruz,1.2418,1.0737,2.374
-25,Liga Profesional,Huracan,1.2418,0.5369,0.5276
-26,Liga Profesional,Independiente,1.2418,1.6106,0.3957
-27,Liga Profesional,Lanus,1.2418,2.1474,1.0551
-28,Liga Profesional,Newells Old Boys,1.2418,0.2684,0.7913
-29,Liga Profesional,Patronato,1.2418,0,0.7913
-30,Liga Profesional,Platense,1.2418,0.4026,1.3848
-31,Liga Profesional,Racing Club,1.2418,1.0737,0.5276
-32,Liga Profesional,River Plate,1.2418,0.8053,0.2638
-33,Liga Profesional,Rosario Central,1.2418,1.6106,1.187
-34,Liga Profesional,San Lorenzo,1.2418,0.8053,1.5827
-35,Liga Profesional,Sarmiento Junin,1.2418,1.3421,1.0551
-36,Liga Profesional,Talleres Cordoba,1.2418,0.8053,0.7913
-37,Liga Profesional,Union de Santa Fe,1.2418,1.2079,0.9892
-38,Liga Profesional,Velez Sarsfield,1.2418,0.8053,1.8464
-39,Serie A,America MG,1.3,0.3846,0.6818
-40,Serie A,Athletico-PR,1.3,1.2821,0.9091
-41,Serie A,Atletico-MG,1.3,0.7692,0.9091
-42,Serie A,Atletico GO,1.3,0.5769,0.2273
-43,Serie A,Bahia,1.3,1.2308,1.0909
-44,Serie A,Bragantino,1.3,2.0513,1.8182
-45,Serie A,Ceara,1.3,1.3462,1.3636
-46,Serie A,Chapecoense-SC,1.3,0.2564,1.5152
-47,Serie A,Corinthians,1.3,0.7692,1.2121
-48,Serie A,Cuiaba,1.3,1.5385,1.8182
-49,Serie A,Flamengo RJ,1.3,1.3462,0.9091
-50,Serie A,Fluminense,1.3,0.7692,1.1364
-51,Serie A,Fortaleza,1.3,1.9231,0.9091
-52,Serie A,Gremio,1.3,0.5128,0.9091
-53,Serie A,Internacional,1.3,0.7692,1.3636
-54,Serie A,Juventude,1.3,0.3846,1.3636
-55,Serie A,Palmeiras,1.3,1.7308,1.1364
-56,Serie A,Santos,1.3,1.3462,0.2273
-57,Serie A,Sao Paulo,1.3,0.7692,0.9091
-58,Serie A,Sport Recife,1.3,0.2564,0.303
-59,Super League,Beijing Guoan,1.2698,1.05,0.28
-60,Super League,Cangzhou,1.2698,0.3938,0.84
-61,Super League,Changchun Yatai,1.2698,0.5906,0
-62,Super League,Chengdu Rongcheng,1.2698,Inf,Inf
-63,Super League,Chongqing Liangjiang Athletic,1.2698,0.4725,0.672
-64,Super League,Dalian Pro,1.2698,1.7719,1.89
-65,Super League,Guangzhou City,1.2698,1.4175,0.672
-66,Super League,Guangzhou FC,1.2698,0.7875,0.63
-67,Super League,Hebei,1.2698,1.3125,1.12
-68,Super League,Henan Songshan Longmen,1.2698,0.7875,2.5199
-69,Super League,Qingdao FC,1.2698,0.945,0.168
-70,Super League,Shandong Taishan,1.2698,1.3782,0.21
-71,Super League,Shanghai Port,1.2698,1.1813,0.84
-72,Super League,Shanghai Shenhua,1.2698,1.05,0.84
-73,Super League,Shenzhen,1.2698,0.7875,2.31
-74,Super League,Tianjin Jinmen Tiger,1.2698,0.1969,1.05
-75,Super League,Wuhan FC,1.2698,1.05,0.28
-76,Super League,Zhejiang Professional,1.2698,Inf,Inf
-77,Superliga,Aalborg,1.3095,1.0182,0.549
-78,Superliga,Aarhus,1.3095,0.9546,1.647
-79,Superliga,Brondby,1.3095,0.7637,0.549
-80,Superliga,FC Copenhagen,1.3095,1.5273,0.8235
-81,Superliga,Midtjylland,1.3095,2.0364,0.8235
-82,Superliga,Nordsjaelland,1.3095,1.3364,0.8235
-83,Superliga,Odense,1.3095,0.7637,1.3725
-84,Superliga,Randers FC,1.3095,0.7637,0.549
-85,Superliga,Silkeborg,1.3095,1.1455,0.4118
-86,Superliga,Sonderjyske,1.3095,0.5727,1.2353
-87,Superliga,Vejle,1.3095,0.3818,1.8529
-88,Superliga,Viborg,1.3095,0.7637,1.098
-89,Veikkausliiga,AC Oulu,1.1667,0.2143,1.4237
-90,Veikkausliiga,Haka,1.1667,0.4286,1.7796
-91,Veikkausliiga,HIFK,1.1667,1.0714,0.8898
-92,Veikkausliiga,HJK,1.1667,2.5714,0.7118
-93,Veikkausliiga,Honka,1.1667,0.2857,1.1864
-94,Veikkausliiga,Ilves,1.1667,1.4285,1.1864
-95,Veikkausliiga,Inter Turku,1.1667,1.7142,0.3559
-96,Veikkausliiga,KTP,1.1667,0.4286,1.7796
-97,Veikkausliiga,KuPS,1.1667,0.8571,0.3559
-98,Veikkausliiga,Lahti,1.1667,1.7142,1.0678
-99,Veikkausliiga,Mariehamn,1.1667,0.6428,1.4237
-100,Veikkausliiga,SJK,1.1667,0.5143,0.7118
-101,Premier Division,Bohemians,1.0816,1.4793,1.3999
-102,Premier Division,Bray,1.0816,Inf,Inf
-103,Premier Division,Derry City,1.0816,0.6164,0.5833
-104,Premier Division,Drogheda,1.0816,0.7396,1.05
-105,Premier Division,Dundalk,1.0816,0.5547,0.875
-106,Premier Division,Finn Harps,1.0816,0.9246,1.5312
-107,Premier Division,Galway,1.0816,Inf,Inf
-108,Premier Division,Longford,1.0816,0.7396,0.7
-109,Premier Division,Shamrock Rovers,1.0816,1.6642,0.525
-110,Premier Division,Sligo Rovers,1.0816,0.3698,1.05
-111,Premier Division,St. Patricks,1.0816,1.4793,1.3999
-112,Premier Division,Treaty United,1.0816,Inf,Inf
-113,Premier Division,UC Dublin,1.0816,Inf,Inf
-114,Premier Division,Waterford,1.0816,0.9246,1.3125
-115,J1 League,Avispa Fukuoka,1.4143,0.7071,1.5312
-116,J1 League,Cerezo Osaka,1.4143,1.0606,0.2187
-117,J1 League,FC Tokyo,1.4143,1.697,1.5749
-118,J1 League,Gamba Osaka,1.4143,0,0
-119,J1 League,Hokkaido Consadole Sapporo,1.4143,2.8283,2.1874
-120,J1 League,Kashima Antlers,1.4143,0.9899,1.225
-121,J1 League,Kashiwa Reysol,1.4143,0.7071,1.1666
-122,J1 League,Kawasaki Frontale,1.4143,1.4141,0.35
-123,J1 League,Nagoya Grampus,1.4143,0.9428,0
-124,J1 League,Oita Trinita,1.4143,0.7071,1.4583
-125,J1 League,Sagan Tosu,1.4143,1.5909,0
-126,J1 League,Sanfrecce Hiroshima,1.4143,0.7071,0.4375
-127,J1 League,Shimizu S-Pulse,1.4143,0.4714,1.4583
-128,J1 League,Shonan Bellmare,1.4143,0.7071,0.5833
-129,J1 League,Tokushima,1.4143,0.9428,1.1666
-130,J1 League,Urawa Reds,1.4143,0.7071,1.225
-131,J1 League,Vegalta Sendai,1.4143,0.3535,3.0624
-132,J1 League,Vissel Kobe,1.4143,0.4714,0.5833
-133,J1 League,Yokohama F. Marinos,1.4143,1.2727,0.7
-134,J1 League,Yokohama FC,1.4143,0.7071,2.0416
-135,Liga MX,Atl. San Luis,1.4762,0.6774,1.6962
-136,Liga MX,Atlas,1.4762,0.6774,1.2924
-137,Liga MX,Club America,1.4762,1.8064,1.2924
-138,Liga MX,Club Leon,1.4762,1.129,0.6462
-139,Liga MX,Club Tijuana,1.4762,0.6774,0.727
-140,Liga MX,Cruz Azul,1.4762,1.6935,0.4846
-141,Liga MX,Guadalajara Chivas,1.4762,0.3387,0.4846
-142,Liga MX,Juarez,1.4762,0.2258,0.6462
-143,Liga MX,Mazatlan FC,1.4762,0.6774,1.4539
-144,Liga MX,Monterrey,1.4762,1.3548,1.2116
-145,Liga MX,Necaxa,1.4762,0.6774,1.2116
-146,Liga MX,Pachuca,1.4762,1.0161,1.4539
-147,Liga MX,Puebla,1.4762,1.129,0.9693
-148,Liga MX,Queretaro,1.4762,1.3548,0.6462
-149,Liga MX,Santos Laguna,1.4762,0.9032,0.3231
-150,Liga MX,Toluca,1.4762,1.5806,1.2924
-151,Liga MX,U.A.N.L.- Tigres,1.4762,0.9032,0.9693
-152,Liga MX,U.N.A.M.- Pumas,1.4762,1.3548,0.9693
-153,MLS,Atlanta Utd,1.5408,1.298,1.0425
-154,MLS,Austin FC,1.5408,Inf,Inf
-155,MLS,CF Montreal,1.5408,0.649,1.7376
-156,MLS,Chicago Fire,1.5408,1.6225,1.5638
-157,MLS,Colorado Rapids,1.5408,0.8113,0.5213
-158,MLS,Columbus Crew,1.5408,0.649,1.0425
-159,MLS,DC United,1.5408,0.3245,1.0425
-160,MLS,FC Cincinnati,1.5408,2.2715,2.0851
-161,MLS,FC Dallas,1.5408,0.9735,0.7819
-162,MLS,Houston Dynamo,1.5408,0.4868,2.3457
-163,MLS,Inter Miami,1.5408,0.9735,1.0425
-164,MLS,Los Angeles FC,1.5408,1.298,0.7819
-165,MLS,Los Angeles Galaxy,1.5408,0.4868,0.7819
-166,MLS,Minnesota United,1.5408,1.1358,1.0425
-167,MLS,Nashville SC,1.5408,0.9086,0.417
-168,MLS,New England Revolution,1.5408,1.1358,0.7819
-169,MLS,New York City,1.5408,1.5144,1.0425
-170,MLS,New York Red Bulls,1.5408,0.8113,0.2606
-171,MLS,Orlando City,1.5408,0.9735,1.3032
-172,MLS,Philadelphia Union,1.5408,0.7788,0.6255
-173,MLS,Portland Timbers,1.5408,1.0817,1.39
-174,MLS,Real Salt Lake,1.5408,1.298,2.0851
-175,MLS,San Jose Earthquakes,1.5408,1.298,0.2085
-176,MLS,Seattle Sounders,1.5408,1.1682,0.834
-177,MLS,Sporting Kansas City,1.5408,0.649,0.5213
-178,MLS,Toronto FC,1.5408,0.9735,0.5213
-179,MLS,Vancouver Whitecaps,1.5408,1.298,1.0425
-180,Eliteserien,Bodo/Glimt,1.7857,1.792,0.6588
-181,Eliteserien,Brann,1.7857,0.7,1.647
-182,Eliteserien,Haugesund,1.7857,1.3067,0.549
-183,Eliteserien,Kristiansund,1.7857,0.56,0.4118
-184,Eliteserien,Lillestrom,1.7857,0.7467,1.098
-185,Eliteserien,Mjondalen,1.7857,0.3733,0.549
-186,Eliteserien,Molde,1.7857,1.68,0.8235
-187,Eliteserien,Odd,1.7857,0.56,0.4118
-188,Eliteserien,Rosenborg,1.7857,1.96,1.4412
-189,Eliteserien,Sandefjord,1.7857,0.7,1.647
-190,Eliteserien,Sarpsborg 08,1.7857,0,0.2745
-191,Eliteserien,Stabaek,1.7857,0.7467,1.3725
-192,Eliteserien,Stromsgodset,1.7857,1.12,0.8235
-193,Eliteserien,Tromso,1.7857,0.7467,2.1961
-194,Eliteserien,Valerenga,1.7857,0.84,1.0294
-195,Eliteserien,Viking,1.7857,1.26,0.8235
-196,Ekstraklasa,Cracovia,1.5397,1.0825,1.5218
-197,Ekstraklasa,Gornik Z.,1.5397,0.433,1.2174
-198,Ekstraklasa,Jagiellonia,1.5397,0.9093,0.9131
-199,Ekstraklasa,Lech Poznan,1.5397,1.299,0.1826
-200,Ekstraklasa,Lechia Gdansk,1.5397,1.299,0.6087
-201,Ekstraklasa,Leczna,1.5397,0.8118,2.2827
-202,Ekstraklasa,Legia,1.5397,0.6495,0
-203,Ekstraklasa,Piast Gliwice,1.5397,1.1366,1.8262
-204,Ekstraklasa,Pogon Szczecin,1.5397,1.299,0.4565
-205,Ekstraklasa,Radomiak Radom,1.5397,1.0825,0.6087
-206,Ekstraklasa,Rakow,1.5397,1.299,1.8262
-207,Ekstraklasa,Slask Wroclaw,1.5397,0.6495,0.6848
-208,Ekstraklasa,Stal Mielec,1.5397,0.866,0.9131
-209,Ekstraklasa,Termalica B-B.,1.5397,0.8118,1.8262
-210,Ekstraklasa,Warta Poznan,1.5397,0.3247,0.9131
-211,Ekstraklasa,Wisla,1.5397,1.1366,0.9131
-212,Ekstraklasa,Wisla Plock,1.5397,1.4613,0.2283
-213,Ekstraklasa,Zaglebie,1.5397,1.299,1.1413
-214,Liga 1,Academica Clinceni,1.1607,0.8615,1.9858
-215,Liga 1,CFR Cluj,1.1607,1.9385,0.8936
-216,Liga 1,Chindia Targoviste,1.1607,1.1487,1.1915
-217,Liga 1,Din. Bucuresti,1.1607,1.2923,1.7872
-218,Liga 1,Farul Constanta,1.1607,1.7231,0
-219,Liga 1,FC Arges,1.1607,0,1.1915
-220,Liga 1,FC Botosani,1.1607,0.5744,1.1915
-221,Liga 1,FC Rapid Bucuresti,1.1607,0.6462,0.5957
-222,Liga 1,FC Voluntari,1.1607,1.0769,0.8936
-223,Liga 1,FCSB,1.1607,2.0103,1.1915
-224,Liga 1,Gaz Metan Medias,1.1607,0.6462,1.1915
-225,Liga 1,Mioveni,1.1607,0.2872,1.1915
-226,Liga 1,Sepsi Sf. Gheorghe,1.1607,0.8615,1.4893
-227,Liga 1,U Craiova 1948,1.1607,0.5744,0.3972
-228,Liga 1,Univ. Craiova,1.1607,1.2923,0.5957
-229,Liga 1,UTA Arad,1.1607,0.8615,0.2979
-230,Premier League,Akhmat Grozny,1.4286,1.1666,1.0667
-231,Premier League,Arsenal Tula,1.4286,0.875,1.4
-232,Premier League,CSKA Moscow,1.4286,0.9333,0.5333
-233,Premier League,Dynamo Moscow,1.4286,0.9333,1.0667
-234,Premier League,FK Rostov,1.4286,0.7,2
-235,Premier League,Khimki,1.4286,0.7,1.2
-236,Premier League,Krasnodar,1.4286,1.1666,0.8
-237,Premier League,Krylya Sovetov,1.4286,0.4667,0.8
-238,Premier League,Lokomotiv Moscow,1.4286,1.4,0.6
-239,Premier League,Nizhny Novgorod,1.4286,0.7,1.0667
-240,Premier League,Rubin Kazan,1.4286,1.4,0.4
-241,Premier League,Sochi,1.4286,1.8666,0.2667
-242,Premier League,Spartak Moscow,1.4286,1.05,1
-243,Premier League,Ufa,1.4286,0.875,1.4
-244,Premier League,Ural,1.4286,0.35,1.2
-245,Premier League,Zenit,1.4286,1.6333,0.8
-246,Allsvenskan,AIK,1.4444,1.1077,0.5816
-247,Allsvenskan,Degerfors,1.4444,1.1539,0.3231
-248,Allsvenskan,Djurgarden,1.4444,1.0385,0.2423
-249,Allsvenskan,Elfsborg,1.4444,0.8654,1.6962
-250,Allsvenskan,Goteborg,1.4444,1.2116,1.4539
-251,Allsvenskan,Hacken,1.4444,1.2116,1.9385
-252,Allsvenskan,Halmstad,1.4444,0.5192,0.4846
-253,Allsvenskan,Hammarby,1.4444,1.3847,1.2116
-254,Allsvenskan,Helsingborg,1.4444,Inf,Inf
-255,Allsvenskan,Kalmar,1.4444,2.077,1.6962
-256,Allsvenskan,Malmo FF,1.4444,0.4154,0.1939
-257,Allsvenskan,Mjallby,1.4444,1.0385,0.727
-258,Allsvenskan,Norrkoping,1.4444,0.1731,0.727
-259,Allsvenskan,Orebro,1.4444,2.3078,1.2924
-260,Allsvenskan,Ostersunds,1.4444,0.3462,0.727
-261,Allsvenskan,Sirius,1.4444,1.1539,3.2309
-262,Allsvenskan,Varbergs,1.4444,1.3847,0.727
-263,Swiss,Basel,1.8571,2.1539,0.6481
-264,Swiss,Grasshoppers,1.8571,0.718,0.8642
-265,Swiss,Lausanne,1.8571,0.6731,1.7824
-266,Swiss,Lugano,1.8571,0.5385,0.8102
-267,Swiss,Luzern,1.8571,0.8077,1.4583
-268,Swiss,Servette,1.8571,1.6154,0.8642
-269,Swiss,Sion,1.8571,0.8077,0.8102
-270,Swiss,St. Gallen,1.8571,0.8077,1.2963
-271,Swiss,Young Boys,1.8571,1.0769,0.216
-272,Swiss,Zurich,1.8571,1.2564,0.8642
+"","nor_division","nor_teams","nor_avg_HG","nor_home_as","nor_home_ds","nor_totalgames_poiss_nl"
+"1","Eliteserien","Bodo/Glimt","1.6667","1.35","0.4211","no6"
+"2","Eliteserien","Brann","1.6667","0.8","1.4035","no6"
+"3","Eliteserien","Haugesund","1.6667","1.2","0.8421","no6"
+"4","Eliteserien","Kristiansund","1.6667","0.6","0.4211","no6"
+"5","Eliteserien","Lillestrom","1.6667","0.8","1.1228","no6"
+"6","Eliteserien","Mjondalen","1.6667","0.3","0.4211","no6"
+"7","Eliteserien","Molde","1.6667","1.6","0.8421","no6"
+"8","Eliteserien","Odd","1.6667","0.6","0.4211","no6"
+"9","Eliteserien","Rosenborg","1.6667","2.1","1.4737","no6"
+"10","Eliteserien","Sandefjord","1.6667","0.4","2.2456","no6"
+"11","Eliteserien","Sarpsborg 08","1.6667","0","0.2807","no6"
+"12","Eliteserien","Stabaek","1.6667","1.2","0.8421","no6"
+"13","Eliteserien","Stromsgodset","1.6667","1.2","0.8421","no6"
+"14","Eliteserien","Tromso","1.6667","0.8","2.2456","no6"
+"15","Eliteserien","Valerenga","1.6667","1","1.1228","no6"
+"16","Eliteserien","Viking","1.6667","1.35","0.8421","no6"
+"17","Eliteserien","Bodo/Glimt","1.7812","1.5439","1","no12"
+"18","Eliteserien","Brann","1.7812","0.6416","1.3968","no12"
+"19","Eliteserien","Haugesund","1.7812","1.31","0.4444","no12"
+"20","Eliteserien","Kristiansund","1.7812","0.7486","0.7407","no12"
+"21","Eliteserien","Lillestrom","1.7812","0.8983","0.8889","no12"
+"22","Eliteserien","Mjondalen","1.7812","0.6737","0.7111","no12"
+"23","Eliteserien","Molde","1.7812","1.7645","0.6349","no12"
+"24","Eliteserien","Odd","1.7812","1.1228","0.8889","no12"
+"25","Eliteserien","Rosenborg","1.7812","1.203","1.0159","no12"
+"26","Eliteserien","Sandefjord","1.7812","0.7486","1.1852","no12"
+"27","Eliteserien","Sarpsborg 08","1.7812","0.3743","0.7407","no12"
+"28","Eliteserien","Stabaek","1.7812","0.4491","1.6","no12"
+"29","Eliteserien","Stromsgodset","1.7812","1.2351","0.7111","no12"
+"30","Eliteserien","Tromso","1.7812","0.5614","1.7778","no12"
+"31","Eliteserien","Valerenga","1.7812","1.0426","1.1429","no12"
+"32","Eliteserien","Viking","1.7812","1.2164","1.1852","no12"
+"33","Eliteserien","Bodo/Glimt","1.875","1.3867","0.8182","no18"
+"34","Eliteserien","Brann","1.875","0.7111","1.4546","no18"
+"35","Eliteserien","Haugesund","1.875","1.0667","0.7273","no18"
+"36","Eliteserien","Kristiansund","1.875","1.0074","0.5455","no18"
+"37","Eliteserien","Lillestrom","1.875","0.7704","0.9091","no18"
+"38","Eliteserien","Mjondalen","1.875","0.6519","1.1818","no18"
+"39","Eliteserien","Molde","1.875","1.837","0.8182","no18"
+"40","Eliteserien","Odd","1.875","1.0667","1.125","no18"
+"41","Eliteserien","Rosenborg","1.875","1.363","0.9091","no18"
+"42","Eliteserien","Sandefjord","1.875","0.7467","0.9","no18"
+"43","Eliteserien","Sarpsborg 08","1.875","0.6519","0.5455","no18"
+"44","Eliteserien","Stabaek","1.875","0.6519","1.5455","no18"
+"45","Eliteserien","Stromsgodset","1.875","1.1852","0.7273","no18"
+"46","Eliteserien","Tromso","1.875","0.6","1.7387","no18"
+"47","Eliteserien","Valerenga","1.875","1.0074","1","no18"
+"48","Eliteserien","Viking","1.875","1.2444","1.1818","no18"
+"49","Eliteserien","Bodo/Glimt","1.8438","1.3107","0.7521","no24"
+"50","Eliteserien","Brann","1.8438","0.7231","1.3675","no24"
+"51","Eliteserien","Haugesund","1.8438","1.1751","0.7521","no24"
+"52","Eliteserien","Kristiansund","1.8438","0.9943","0.7521","no24"
+"53","Eliteserien","Lillestrom","1.8438","0.7683","0.8205","no24"
+"54","Eliteserien","Mjondalen","1.8438","0.8135","1.0256","no24"
+"55","Eliteserien","Molde","1.8438","1.6271","0.8889","no24"
+"56","Eliteserien","Odd","1.8438","1.0847","1.4918","no24"
+"57","Eliteserien","Rosenborg","1.8438","1.4463","0.9572","no24"
+"58","Eliteserien","Sandefjord","1.8438","0.6675","0.8836","no24"
+"59","Eliteserien","Sarpsborg 08","1.8438","0.7231","0.7521","no24"
+"60","Eliteserien","Stabaek","1.8438","0.4972","1.5726","no24"
+"61","Eliteserien","Stromsgodset","1.8438","1.1751","0.6837","no24"
+"62","Eliteserien","Tromso","1.8438","0.6779","1.2307","no24"
+"63","Eliteserien","Valerenga","1.8438","1.0395","0.8889","no24"
+"64","Eliteserien","Viking","1.8438","1.3107","1.2307","no24"
+"65","Eliteserien","Bodo/Glimt","1.8042","1.2563","0.6957","no30"
+"66","Eliteserien","Brann","1.8042","0.739","1.2843","no30"
+"67","Eliteserien","Haugesund","1.8042","1.1085","0.9097","no30"
+"68","Eliteserien","Kristiansund","1.8042","0.9977","0.8562","no30"
+"69","Eliteserien","Lillestrom","1.8042","0.8499","0.6957","no30"
+"70","Eliteserien","Mjondalen","1.8042","0.7021","1.1773","no30"
+"71","Eliteserien","Molde","1.8042","1.6997","0.9632","no30"
+"72","Eliteserien","Odd","1.8042","1.1085","1.5519","no30"
+"73","Eliteserien","Rosenborg","1.8042","1.2933","1.0167","no30"
+"74","Eliteserien","Sandefjord","1.8042","0.776","0.9632","no30"
+"75","Eliteserien","Sarpsborg 08","1.8042","0.776","0.7492","no30"
+"76","Eliteserien","Stabaek","1.8042","0.6282","1.4449","no30"
+"77","Eliteserien","Stromsgodset","1.8042","1.2194","0.6422","no30"
+"78","Eliteserien","Tromso","1.8042","0.5912","1.1238","no30"
+"79","Eliteserien","Valerenga","1.8042","0.9977","0.7492","no30"
+"80","Eliteserien","Viking","1.8042","1.2563","1.1773","no30"
+"81","Eliteserien","Bodo/Glimt","1.8042","1.2563","0.6957","no36"
+"82","Eliteserien","Brann","1.8042","0.739","1.2843","no36"
+"83","Eliteserien","Haugesund","1.8042","1.1085","0.9097","no36"
+"84","Eliteserien","Kristiansund","1.8042","0.9977","0.8562","no36"
+"85","Eliteserien","Lillestrom","1.8042","0.8499","0.6957","no36"
+"86","Eliteserien","Mjondalen","1.8042","0.7021","1.1773","no36"
+"87","Eliteserien","Molde","1.8042","1.6997","0.9632","no36"
+"88","Eliteserien","Odd","1.8042","1.1085","1.5519","no36"
+"89","Eliteserien","Rosenborg","1.8042","1.2933","1.0167","no36"
+"90","Eliteserien","Sandefjord","1.8042","0.776","0.9632","no36"
+"91","Eliteserien","Sarpsborg 08","1.8042","0.776","0.7492","no36"
+"92","Eliteserien","Stabaek","1.8042","0.6282","1.4449","no36"
+"93","Eliteserien","Stromsgodset","1.8042","1.2194","0.6422","no36"
+"94","Eliteserien","Tromso","1.8042","0.5912","1.1238","no36"
+"95","Eliteserien","Valerenga","1.8042","0.9977","0.7492","no36"
+"96","Eliteserien","Viking","1.8042","1.2563","1.1773","no36"

@@ -16,7 +16,7 @@ MLS$Date <- dmy(MLS$Date)
 MLS <- MLS[order(as.Date(MLS$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 MLS$CS <- paste(MLS$HG,MLS$AG, sep = "-")
 #MLS_qualificaton <- subset(MLS,tournament == "UEFA Euro qualification")
-MLS <- subset(MLS,Season == "2022")
+MLS <- subset(MLS,Season == "2021")
 #MLS <- MLS[MLS$Date > '2008-01-01',])
 MLS$TG <- MLS$HG + MLS$AG
 MLS$OV25 <- ifelse(MLS$TG >= 3,"Y","N")

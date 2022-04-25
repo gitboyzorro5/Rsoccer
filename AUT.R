@@ -80,8 +80,6 @@ if(aut_matchesplayed %% aut_eachround == 0)
 
 
 
-
-
   aut_modulus <- aut_matchesplayed %% aut_eachround
   aut_currentround <- (aut_matchesplayed - aut_modulus) / aut_eachround
   aut_matchday <- c()

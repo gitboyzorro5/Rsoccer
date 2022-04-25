@@ -77,17 +77,17 @@ allawaypoisson_nl <- c()
   SWZ$TG <- as.numeric(SWZ$TG)
   #############################################################
   source("midpoisson.R")
-  nor_totalgames_poiss_nl <- c()
-  nor_totalgames_poiss_nl[1:length(nor_teams)] <- paste("no",poisson_round_nl,sep = "")
-  nor_home_poisson_nl <- cbind(nor_home_poisson,nor_totalgames_poiss_nl)
-  nor_away_poisson_nl <- cbind(nor_away_poisson,nor_totalgames_poiss_nl)
+  aut_totalgames_poiss_nl <- c()
+  aut_totalgames_poiss_nl[1:length(aut_teams)] <- paste("no",poisson_round_nl,sep = "")
+  aut_home_poisson_nl <- cbind(aut_home_poisson,aut_totalgames_poiss_nl)
+  aut_away_poisson_nl <- cbind(aut_away_poisson,aut_totalgames_poiss_nl)
 
-  write.csv(nor_home_poisson_nl,paste("nor_home_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
-  write.csv(nor_away_poisson_nl,paste("nor_away_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
+  write.csv(aut_home_poisson_nl,paste("aut_home_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
+  write.csv(aut_away_poisson_nl,paste("aut_away_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
 
 
-  allhomepoisson_nl <- rbind(allhomepoisson_nl,nor_home_poisson_nl)
-  allawaypoisson_nl <- rbind(allawaypoisson_nl,nor_away_poisson_nl)
+  allhomepoisson_nl <- rbind(allhomepoisson_nl,aut_home_poisson_nl)
+  allawaypoisson_nl <- rbind(allawaypoisson_nl,aut_away_poisson_nl)
   # allhomepoisson_nl <- rbind(aut_home_poisson,arg_home_poisson,bra_home_poisson,chn_home_poisson,dnk_home_poisson,fin_home_poisson,
   #                         irl_home_poisson,jpn_home_poisson,mex_home_poisson,mls_home_poisson,nor_home_poisson,pol_home_poisson,
   #                         rou_home_poisson,rus_home_poisson,swe_home_poisson,swz_home_poisson)

@@ -19,7 +19,7 @@ ARG$Date <- dmy(ARG$Date)
 ARG <- ARG[order(as.Date(ARG$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 ARG$CS <- paste(ARG$HG,ARG$AG, sep = "-")
 #ARG_qualificaton <- subset(ARG,tournament == "UEFA Euro qualification")
-ARG <- subset(ARG,Season == "2022")
+ARG <- subset(ARG,Season == "2021")
 #ARG <- ARG[ARG$Date > '2008-01-01',])
 ARG$TG <- ARG$HG + ARG$AG
 ARG$OV25 <- ifelse(ARG$TG >= 3,"Y","N")

@@ -18,7 +18,7 @@ SWE$Date <- dmy(SWE$Date)
 SWE <- SWE[order(as.Date(SWE$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 SWE$CS <- paste(SWE$HG,SWE$AG, sep = "-")
 #SWE_qualificaton <- subset(SWE,tournament == "UEFA Euro qualification")
-SWE <- subset(SWE,Season == "2022")
+SWE <- subset(SWE,Season == "2021")
 #SWE <- SWE[SWE$Date > '2008-01-01',])
 SWE$TG <- SWE$HG + SWE$AG
 SWE$OV25 <- ifelse(SWE$TG >= 3,"Y","N")
@@ -51,7 +51,7 @@ swe_goaltotalsv2[is.na(swe_goaltotalsv2)] <- ""
 swe_goaltotalsv2 <- cbind(swe_goaltotalsv2,swe_avg_totalgoals)
 write.xlsx(swe_goaltotalsv2,'NL/SWE.xlsx',sheetName = "totalgoalsv2")
 ############################################################################################
-SWE <- subset(SWE,Season == "2022")
+SWE <- subset(SWE,Season == "2021")
 swe_totalrounds <-  (length(swe_teams) - 1 )*2
 swe_totalmatches <- (length(swe_teams)*(length(swe_teams) - 1))
 swe_eachround <- ceiling(swe_totalmatches / swe_totalrounds)

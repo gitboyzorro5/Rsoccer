@@ -18,7 +18,7 @@ JPN$Date <- dmy(JPN$Date)
 JPN <- JPN[order(as.Date(JPN$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 JPN$CS <- paste(JPN$HG,JPN$AG, sep = "-")
 #JPN_qualificaton <- subset(JPN,tournament == "UEFA Euro qualification")
-JPN <- subset(JPN,Season == "2021")
+JPN <- subset(JPN,Season == "2022")
 #JPN <- JPN[JPN$Date > '2008-01-01',])
 JPN$TG <- JPN$HG + JPN$AG
 JPN$OV25 <- ifelse(JPN$TG >= 3,"Y","N")
@@ -51,7 +51,7 @@ jpn_goaltotalsv2[is.na(jpn_goaltotalsv2)] <- ""
 jpn_goaltotalsv2 <- cbind(jpn_goaltotalsv2,jpn_avg_totalgoals)
 write.xlsx(jpn_goaltotalsv2,'NL/JPN.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-JPN <- subset(JPN,Season == "2021")
+JPN <- subset(JPN,Season == "2022")
 jpn_totalrounds <-  (length(jpn_teams) - 1 )*2
 jpn_totalmatches <- (length(jpn_teams)*(length(jpn_teams) - 1))
 jpn_eachround <- jpn_totalmatches / jpn_totalrounds
@@ -1152,5 +1152,6 @@ ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(jpn_ftr_summary,'NL/JPN.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(jpn_ov25_summary,'NL/JPN.xlsx',sheetName = "OVUN25", append = TRUE)
 
-
+write.xlsx(jpn_home_poisson,"jpnhome.xlsx")
+write.xlsx(jpn_away_poisson,"jpnaway.xlsx")
 

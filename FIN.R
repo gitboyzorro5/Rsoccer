@@ -20,7 +20,7 @@ FIN$Date <- dmy(FIN$Date)
 FIN <- FIN[order(as.Date(FIN$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 FIN$CS <- paste(FIN$HG,FIN$AG, sep = "-")
 #FIN_qualificaton <- subset(FIN,tournament == "UEFA Euro qualification")
-FIN <- subset(FIN,Season == "2021")
+FIN <- subset(FIN,Season == "2022")
 #FIN <- FIN[FIN$Date > '2008-01-01',])
 FIN$TG <- FIN$HG + FIN$AG
 FIN$OV25 <- ifelse(FIN$TG >= 3,"Y","N")
@@ -56,7 +56,7 @@ fin_goaltotalsv2[is.na(fin_goaltotalsv2)] <- ""
 fin_goaltotalsv2 <- cbind(fin_goaltotalsv2,fin_avg_totalgoals)
 write.xlsx(fin_goaltotalsv2,'NL/FIN.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-FIN <- subset(FIN,Season == "2021")
+FIN <- subset(FIN,Season == "2022")
 fin_totalrounds <-  (length(fin_teams) - 1 )*2
 fin_totalmatches <- (length(fin_teams)*(length(fin_teams) - 1))
 fin_eachround <- fin_totalmatches / fin_totalrounds

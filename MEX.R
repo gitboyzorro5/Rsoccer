@@ -18,7 +18,7 @@ MEX$Date <- dmy(MEX$Date)
 MEX <- MEX[order(as.Date(MEX$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 MEX$CS <- paste(MEX$HG,MEX$AG, sep = "-")
 #MEX_qualificaton <- subset(MEX,tournament == "UEFA Euro qualification")
-MEX <- subset(MEX,Season == "2020/2021")
+MEX <- subset(MEX,Season == "2021/2022")
 #MEX <- MEX[MEX$Date > '2008-01-01',])
 MEX$TG <- MEX$HG + MEX$AG
 MEX$OV25 <- ifelse(MEX$TG >= 3,"Y","N")
@@ -54,7 +54,7 @@ mex_goaltotalsv2 <- cbind(mex_goaltotalsv2,mex_avg_totalgoals)
 write.xlsx(mex_goaltotalsv2,'NL/MEX.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
 ##############################################################################################
-MEX <- subset(MEX,Season == "2020/2021")
+MEX <- subset(MEX,Season == "2021/2022")
 mex_totalrounds <-  (length(mex_teams) - 1 )*2
 mex_totalmatches <- (length(mex_teams)*(length(mex_teams) - 1))
 mex_eachround <- mex_totalmatches / mex_totalrounds

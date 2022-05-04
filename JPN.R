@@ -1152,6 +1152,4 @@ ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(jpn_ftr_summary,'NL/JPN.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(jpn_ov25_summary,'NL/JPN.xlsx',sheetName = "OVUN25", append = TRUE)
 
-write.xlsx(jpn_home_poisson,"jpnhome.xlsx")
-write.xlsx(jpn_away_poisson,"jpnaway.xlsx")
 

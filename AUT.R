@@ -1167,4 +1167,3 @@ write.xlsx(aut_ftr_summary,'NL/AUT.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(aut_ov25_summary,'NL/AUT.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
-

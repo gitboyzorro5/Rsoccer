@@ -10,7 +10,7 @@ library(stringr)
 library(stringi)
 #delete current file
 unlink('NL/BRA.xlsx')
-
+sort(unique(BRA$Home))
 ######################BRA START#######################################
 #####################################################################
 BRA <- read.csv('../FDAS/BRA.csv')
@@ -20,15 +20,15 @@ BRA <- BRA[order(as.Date(BRA$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 BRA$CS <- paste(BRA$HG,BRA$AG, sep = "-")
 #BRA_qualificaton <- subset(BRA,tournament == "UEFA Euro qualification")
 BRA <- subset(BRA,Season == "2022")
-BRA <- BRA[!BRA$Home =="Coritiba",]
-BRA <- BRA[!BRA$Away == "Coritiba",]
-BRA <- BRA[!BRA$Home =="Vasco",]
-BRA <- BRA[!BRA$Away == "Vasco",]
-#BRA <- BRA[!BRA$Home =="Goias",]
-#BRA <- BRA[!BRA$Away == "Goias",]
-BRA <- BRA[!BRA$Home =="Cuiaba Esporte",]
-BRA <- BRA[!BRA$Away == "Cuiaba Esporte",]
-#BRA <- BRA[BRA$Date > '2008-01-01',])
+# BRA <- BRA[!BRA$Home =="Coritiba",]
+# BRA <- BRA[!BRA$Away == "Coritiba",]
+# BRA <- BRA[!BRA$Home =="Vasco",]
+# BRA <- BRA[!BRA$Away == "Vasco",]
+# #BRA <- BRA[!BRA$Home =="Goias",]
+# #BRA <- BRA[!BRA$Away == "Goias",]
+# BRA <- BRA[!BRA$Home =="Cuiaba Esporte",]
+# BRA <- BRA[!BRA$Away == "Cuiaba Esporte",]
+# #BRA <- BRA[BRA$Date > '2008-01-01',])
 BRA$TG <- BRA$HG + BRA$AG
 BRA$OV25 <- ifelse(BRA$TG >= 3,"Y","N")
 BRA$FTR <- with(BRA,
@@ -63,7 +63,7 @@ bra_goaltotalsv2[is.na(bra_goaltotalsv2)] <- ""
 bra_goaltotalsv2 <- cbind(bra_goaltotalsv2,bra_avg_totalgoals)
 write.xlsx(bra_goaltotalsv2,'NL/BRA.xlsx',sheetName = "totalgoalsv2")
 
-BRA <- subset(BRA,Season == "2022")
+#BRA <- subset(BRA,Season == "2022")
 bra_totalrounds <-  (length(bra_teams) - 1 )*2
 bra_totalmatches <- (length(bra_teams)*(length(bra_teams) - 1))
 bra_eachround <- bra_totalmatches / bra_totalrounds

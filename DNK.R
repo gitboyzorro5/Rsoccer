@@ -85,7 +85,8 @@ if(dnk_matchesplayed %% dnk_eachround == 0)
 DNK_rounds <- cbind(DNK_rounds,dnk_matchday)
 #####################################################################################################
 #dnk goal scored rounds
-###########aut_goalscored_h <- tapply(AUT$HG, AUT[c("Home", "Date")],mean)
+###########
+dnk_goalscored_h <- tapply(DNK$HG, DNK[c("Home", "Date")],mean)
 dnk_goalscored_a <- tapply(DNK$AG, DNK[c("Away", "Date")],mean)
 dnk_goalscored_h[is.na(dnk_goalscored_h)] <- ""
 dnk_goalscored_a[is.na(dnk_goalscored_a)] <- ""

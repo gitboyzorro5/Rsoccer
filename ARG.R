@@ -26,7 +26,7 @@ ARG$OV25 <- ifelse(ARG$TG >= 3,"Y","N")
 ARG$FTR <- with(ARG,
                ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-
+sort(unique(ARG$Home))
 ###################################################
 ####GoalTotalsv2##################################
 arg_totalgoalsv2 <- tapply(ARG$TG, ARG[c("Home", "Away")],mean)

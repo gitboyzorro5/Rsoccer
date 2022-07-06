@@ -1159,6 +1159,6 @@ dnk_ov25_summary <- tabyl(DNK,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(dnk_ftr_summary,'NL/DNK.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(dnk_ov25_summary,'NL/DNK.xlsx',sheetName = "OVUN25", append = TRUE)
-
+DNK <- subset(DNK,Season == "2021/2022")
 
 

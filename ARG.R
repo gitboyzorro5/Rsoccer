@@ -26,7 +26,7 @@ ARG$OV25 <- ifelse(ARG$TG >= 3,"Y","N")
 ARG$FTR <- with(ARG,
                ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-sort(unique(ARG$Home))
+
 ###################################################
 ####GoalTotalsv2##################################
 arg_totalgoalsv2 <- tapply(ARG$TG, ARG[c("Home", "Away")],mean)
@@ -1156,5 +1156,5 @@ arg_ov25_summary <- tabyl(ARG,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(arg_ftr_summary,'NL/ARG.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(arg_ov25_summary,'NL/ARG.xlsx',sheetName = "OVUN25", append = TRUE)
-
+ARG <- subset(ARG,Season == "2022")
 

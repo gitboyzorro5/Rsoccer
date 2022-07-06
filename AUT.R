@@ -1165,5 +1165,5 @@ aut_ov25_summary <- tabyl(AUT,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(aut_ftr_summary,'NL/AUT.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(aut_ov25_summary,'NL/AUT.xlsx',sheetName = "OVUN25", append = TRUE)
-
+AUT <- subset(AUT,Season == "2021/2022")
 

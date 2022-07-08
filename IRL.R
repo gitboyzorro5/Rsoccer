@@ -1156,6 +1156,6 @@ irl_ov25_summary <- tabyl(IRL,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(irl_ftr_summary,'NL/IRL.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(irl_ov25_summary,'NL/IRL.xlsx',sheetName = "OVUN25", append = TRUE)
-
+IRL <- subset(IRL,Season == "2022")
 
 

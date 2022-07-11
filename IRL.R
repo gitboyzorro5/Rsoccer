@@ -145,7 +145,7 @@ final_irl_gs[is.na(final_irl_gs)] <- ""
 irl_goalscoredmatrix <- cbind(irl_teams,final_irl_gs,suml6_irl_gs,sum_irl_zero_gs,sum_irl_one_gs,sum_irl_two_gs,sum_irl_three_gs)
 write.xlsx(irl_goalscoredmatrix,'NL/IRL.xlsx',sheetName = "gsmatrix", append = TRUE)
 #################################################################################################################################
-
+irl_totalrounds
 ####GCmatrix#####################################################################################################################
 #create home and away matrices
 irl_goalconceded_h <- tapply(IRL$AG, IRL[c("Home", "Date")],mean)

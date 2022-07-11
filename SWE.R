@@ -1153,6 +1153,6 @@ swe_ov25_summary <- tabyl(SWE,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(swe_ftr_summary,'NL/SWE.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(swe_ov25_summary,'NL/SWE.xlsx',sheetName = "OVUN25", append = TRUE)
-
+SWE <- subset(SWE,Season == "2022")
 
 

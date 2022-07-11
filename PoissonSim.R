@@ -136,4 +136,3 @@ write.csv(allawaypoisson,"allawaypoisson.csv")
 
 
 
-

@@ -1155,5 +1155,5 @@ mls_ov25_summary <- tabyl(MLS,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(mls_ftr_summary,'NL/MLS.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(mls_ov25_summary,'NL/MLS.xlsx',sheetName = "OVUN25", append = TRUE)
-
+MLS <- subset(MLS,Season == "2022")
 

@@ -1154,6 +1154,6 @@ mex_ov25_summary <- tabyl(MEX,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(mex_ftr_summary,'NL/MEX.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(mex_ov25_summary,'NL/MEX.xlsx',sheetName = "OVUN25", append = TRUE)
-
+MEX <- subset(MEX,Season == "2021/2022")
 
 

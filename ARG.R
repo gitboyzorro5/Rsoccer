@@ -52,8 +52,8 @@ arg_avg_totalgoals <- round((arg_totalgoals/ arg_games_played), digits = 4)
 arg_goaltotalsv2[is.na(arg_goaltotalsv2)] <- ""
 arg_goaltotalsv2 <- cbind(arg_goaltotalsv2,arg_avg_totalgoals)
 write.xlsx(arg_goaltotalsv2,'NL/ARG.xlsx',sheetName = "totalgoalsv2")
-
-#ARG <- subset(ARG,Season == "2021")
+############################################################################
+ARG <- subset(ARG,Season == "2022")
 arg_totalrounds <-  (length(arg_teams) - 1 )*2
 arg_totalmatches <- (length(arg_teams)*(length(arg_teams) - 1))
 arg_eachround <- arg_totalmatches / arg_totalrounds

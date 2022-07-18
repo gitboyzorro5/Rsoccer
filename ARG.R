@@ -56,7 +56,7 @@ write.xlsx(arg_goaltotalsv2,'NL/ARG.xlsx',sheetName = "totalgoalsv2")
 ARG <- subset(ARG,Season == "2022")
 arg_totalrounds <-  (length(arg_teams) - 1 )*2
 arg_totalmatches <- (length(arg_teams)*(length(arg_teams) - 1))
-arg_eachround <- arg_totalmatches / arg_totalrounds
+arg_eachround <- ceiling(arg_totalmatches / arg_totalrounds)
 arg_matchesplayed <-  nrow(ARG)
 
 ARG_rounds <- ARG
@@ -79,6 +79,7 @@ if(arg_matchesplayed %% arg_eachround == 0)
   arg_matchday_vec2[1:arg_modulus] <- c(arg_currentround + 1)
   arg_matchday <- append(arg_matchday_vec1,arg_matchday_vec2)
 }
+
 ARG_rounds <- cbind(ARG_rounds,arg_matchday)
 #####################################################################
 #####################################################################

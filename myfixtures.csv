@@ -1,119 +1,19 @@
-,Div,Home_Team,Away_Team,Date
-604,D1,Bielefeld,RB Leipzig,5/14/2022
-605,D1,Augsburg,Greuther Furth,5/14/2022
-606,D1,Mainz,Ein Frankfurt,5/14/2022
-607,D1,Stuttgart,FC Koln,5/14/2022
-608,D1,Mgladbach,Hoffenheim,5/14/2022
-609,D1,Union Berlin,Bochum,5/14/2022
-610,D1,Leverkusen,Freiburg,5/14/2022
-611,D1,Wolfsburg,Bayern Munich,5/14/2022
-612,D1,Dortmund,Hertha,5/14/2022
-3821,F1,Bordeaux,Lorient,5/14/2022
-3822,F1,Lyon,Nantes,5/14/2022
-3823,F1,Metz,Angers,5/14/2022
-3824,F1,Monaco,Brest,5/14/2022
-3825,F1,Montpellier,Paris SG,5/14/2022
-3826,F1,Nice,Lille,5/14/2022
-3827,F1,Rennes,Marseille,5/14/2022
-3828,F1,St Etienne,Reims,5/14/2022
-3829,F1,Strasbourg,Clermont,5/14/2022
-3830,F1,Troyes,Lens,5/14/2022
-4211,F2,Auxerre,Amiens,5/14/2022
-4212,F2,Nimes,Bastia,5/14/2022
-4213,F2,Rodez,Caen,5/14/2022
-4214,F2,Sochaux,Dijon,5/14/2022
-4215,F2,Quevilly Rouen,Dunkerque,5/14/2022
-4216,F2,Paris FC,Grenoble,5/14/2022
-4217,F2,Guingamp,Le Havre,5/14/2022
-4218,F2,Nancy,Pau FC,5/14/2022
-4219,F2,Ajaccio,Toulouse,5/14/2022
-4220,F2,Niort,Valenciennes,5/14/2022
-910,D2,St Pauli,Fortuna Dusseldorf,5/15/2022
-911,D2,Dresden,Erzgebirge Aue,5/15/2022
-912,D2,Hansa Rostock,Hamburg,5/15/2022
-913,D2,Sandhausen,Holstein Kiel,5/15/2022
-914,D2,Hannover,Ingolstadt,5/15/2022
-915,D2,Werder Bremen,Regensburg,5/15/2022
-916,D2,Heidenheim,Karlsruhe,5/15/2022
-917,D2,Darmstadt,Paderborn,5/15/2022
-918,D2,Nurnberg,Schalke 04,5/15/2022
-1279,E0,Aston Villa,Crystal Palace,5/15/2022
-1280,E0,Everton,Brentford,5/15/2022
-1281,E0,Leeds,Brighton,5/15/2022
-1282,E0,Man United,Chelsea,5/15/2022
-1283,E0,Newcastle,Arsenal,5/15/2022
-1284,E0,Southampton,Liverpool,5/15/2022
-1285,E0,Tottenham,Burnley,5/15/2022
-1286,E0,Watford,Leicester,5/15/2022
-1287,E0,West Ham,Man City,5/15/2022
-1288,E0,Wolves,Norwich,5/15/2022
-3450,EC,Aldershot,Wealdstone,5/15/2022
-3451,EC,Altrincham,Yeovil,5/15/2022
-3452,EC,Barnet,Bromley,5/15/2022
-3453,EC,Boreham Wood,Solihull,5/15/2022
-3454,EC,Chesterfield,Woking,5/15/2022
-3455,EC,Dag and Red,Wrexham,5/15/2022
-3456,EC,Dover Athletic,Weymouth,5/15/2022
-3457,EC,Eastleigh,Grimsby,5/15/2022
-3458,EC,Maidenhead,Notts County,5/15/2022
-3459,EC,Southend,Torquay,5/15/2022
-3460,EC,Stockport,Halifax,5/15/2022
-4581,I1,Bologna,Sassuolo,5/15/2022
-4582,I1,Cagliari,Inter,5/15/2022
-4583,I1,Empoli,Salernitana,5/15/2022
-4584,I1,Verona,Torino,5/15/2022
-4585,I1,Juventus,Lazio,5/15/2022
-4586,I1,Milan,Atalanta,5/15/2022
-4587,I1,Napoli,Genoa,5/15/2022
-4588,I1,Roma,Venezia,5/15/2022
-4589,I1,Sampdoria,Fiorentina,5/15/2022
-4590,I1,Udinese,Spezia,5/15/2022
-4898,N1,Vitesse,Ajax,5/15/2022
-4899,N1,Groningen,Cambuur,5/15/2022
-4900,N1,Nijmegen,For Sittard,5/15/2022
-4901,N1,Heerenveen,Go Ahead Eagles,5/15/2022
-4902,N1,Zwolle,PSV Eindhoven,5/15/2022
-4903,N1,AZ Alkmaar,Waalwijk,5/15/2022
-4904,N1,Heracles,Sparta Rotterdam,5/15/2022
-4905,N1,Feyenoord,Twente,5/15/2022
-4906,N1,Willem II,Utrecht,5/15/2022
-5204,P1,Arouca,Belenenses,5/15/2022
-5205,P1,Pacos Ferreira,Benfica,5/15/2022
-5206,P1,Tondela,Boavista,5/15/2022
-5207,P1,Famalicao,Sp Braga,5/15/2022
-5208,P1,Porto,Estoril,5/15/2022
-5209,P1,Moreirense,Vizela,5/15/2022
-5210,P1,Guimaraes,Gil Vicente,5/15/2022
-5211,P1,Maritimo,Portimonense,5/15/2022
-5212,P1,Sp Lisbon,Santa Clara,5/15/2022
-5951,SP1,Ath Bilbao,Osasuna,5/15/2022
-5952,SP1,Ath Madrid,Sevilla,5/15/2022
-5953,SP1,Betis,Granada,5/15/2022
-5954,SP1,Celta,Elche,5/15/2022
-5955,SP1,Mallorca,Vallecano,5/15/2022
-5956,SP1,Getafe,Barcelona,5/15/2022
-5957,SP1,Cadiz,Real Madrid,5/15/2022
-5958,SP1,Espanyol,Valencia,5/15/2022
-5959,SP1,Levante,Alaves,5/15/2022
-5960,SP1,Villarreal,Sociedad,5/15/2022
-6400,SP2,Sociedad B,Almeria,5/15/2022
-6401,SP2,Burgos,Cartagena,5/15/2022
-6402,SP2,Leganes,Eibar,5/15/2022
-6403,SP2,Lugo,Fuenlabrada,5/15/2022
-6404,SP2,Sp Gijon,Girona,5/15/2022
-6405,SP2,Amorebieta,Huesca,5/15/2022
-6406,SP2,Alcorcon,Las Palmas,5/15/2022
-6407,SP2,Tenerife,Malaga,5/15/2022
-6408,SP2,Valladolid,Ponferradina,5/15/2022
-6409,SP2,Mirandes,Ibiza,5/15/2022
-6410,SP2,Oviedo,Zaragoza,5/15/2022
-6793,T1,Alanyaspor,Gaziantep,5/15/2022
-6794,T1,Fenerbahce,Karagumruk,5/15/2022
-6795,T1,Goztep,Besiktas,5/15/2022
-6796,T1,Kayserispor,Yeni Malatyaspor,5/15/2022
-6797,T1,Kasimpasa,Antalyaspor,5/15/2022
-6798,T1,Rizespor,Sivasspor,5/15/2022
-6799,T1,Galatasaray,Ad. Demirspor,5/15/2022
-6800,T1,Giresunspor,Buyuksehyr,5/15/2022
-6801,T1,Trabzonspor,Altay,5/15/2022
-6802,T1,Konyaspor,Hatayspor,5/15/2022
+"","Div","Home_Team","Away_Team","Date"
+"1","B1","St. Liege","Gent",2022-07-22
+"2","B1","Charleroi","Eupen",2022-07-23
+"3","B1","Kortrijk","Oud-Heverlee Leuven",2022-07-23
+"4","B1","St Truiden","St. Gilloise",2022-07-23
+"5","B1","Waregem","Seraing",2022-07-23
+"6","B1","Anderlecht","Oostende",2022-07-24
+"7","B1","Club Brugge","Genk",2022-07-24
+"8","B1","Mechelen","Antwerp",2022-07-24
+"9","B1","Westerlo","Cercle Brugge",2022-07-24
+"622","D2","Darmstadt","Sandhausen",2022-07-22
+"623","D2","Fortuna Dusseldorf","Paderborn",2022-07-22
+"624","D2","Hannover","St Pauli",2022-07-23
+"625","D2","Heidenheim","Braunschweig",2022-07-23
+"626","D2","Holstein Kiel","Kaiserslautern",2022-07-23
+"627","D2","Nurnberg","Greuther Furth",2022-07-23
+"628","D2","Arminia Bielefeld","Regensburg",2022-07-24
+"629","D2","Hamburg","Hansa Rostock",2022-07-24
+"630","D2","Karlsruhe","Magdeburg",2022-07-24

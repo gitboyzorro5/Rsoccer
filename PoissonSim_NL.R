@@ -13,10 +13,10 @@ ROUND_20212022_nl <- poisson_round_nl
   # AUT$HG <- as.numeric(AUT$HG)
   # AUT$AG <- as.numeric(AUT$AG)
   # AUT$TG <- as.numeric(AUT$TG)
-  # ARG <- ARG_rounds[ARG_rounds$arg_matchday <= ROUND_20212022_nl,]
-  # ARG$HG <- as.numeric(ARG$HG)
-  # ARG$AG <- as.numeric(ARG$AG)
-  # ARG$TG <- as.numeric(ARG$TG)
+  ARG <- ARG_rounds[ARG_rounds$arg_matchday <= ROUND_20212022_nl,]
+  ARG$HG <- as.numeric(ARG$HG)
+  ARG$AG <- as.numeric(ARG$AG)
+  ARG$TG <- as.numeric(ARG$TG)
   # BRA <- BRA_rounds[BRA_rounds$bra_matchday <= ROUND_20212022_nl,]
   # BRA$HG <- as.numeric(BRA$HG)
   # BRA$AG <- as.numeric(BRA$AG)
@@ -46,10 +46,10 @@ ROUND_20212022_nl <- poisson_round_nl
   # MEX$HG <- as.numeric(MEX$HG)
   # MEX$AG <- as.numeric(MEX$AG)
   # MEX$TG <- as.numeric(MEX$TG)
-  MLS <- MLS_rounds[MLS_rounds$mls_matchday <= ROUND_20212022_nl,]
-  MLS$HG <- as.numeric(MLS$HG)
-  MLS$AG <- as.numeric(MLS$AG)
-  MLS$TG <- as.numeric(MLS$TG)
+  # MLS <- MLS_rounds[MLS_rounds$mls_matchday <= ROUND_20212022_nl,]
+  # MLS$HG <- as.numeric(MLS$HG)
+  # MLS$AG <- as.numeric(MLS$AG)
+  # MLS$TG <- as.numeric(MLS$TG)
   # NOR <- NOR_rounds[NOR_rounds$nor_matchday <= ROUND_20212022_nl,]
   # NOR$HG <- as.numeric(NOR$HG)
   # NOR$AG <- as.numeric(NOR$AG)
@@ -77,103 +77,103 @@ ROUND_20212022_nl <- poisson_round_nl
   #############################################################
   #source("midpoisson.R")
   ############################################################
-mls_home_games <- c()
-mls_away_games <-c()
-for (i_mls in 1:length(mls_teams))
+arg_home_games <- c()
+arg_away_games <-c()
+for (i_arg in 1:length(arg_teams))
 {
 
-  mls_home_games[i_mls] <- nrow(MLS[MLS$Home == mls_teams[i_mls],])
-  mls_away_games[i_mls]  <- nrow(MLS[MLS$Away == mls_teams[i_mls],])
+  arg_home_games[i_arg] <- nrow(ARG[ARG$Home == arg_teams[i_arg],])
+  arg_away_games[i_arg]  <- nrow(ARG[ARG$Away == arg_teams[i_arg],])
 
 }
 
-mls_games_played <- mls_home_games + mls_away_games
+arg_games_played <- arg_home_games + arg_away_games
 
 #home goals scored
-mls_home_gs <- aggregate(MLS$HG, by = list(MLS$Home), FUN = sum)
-mls_home_gs_avg <- aggregate(MLS$HG, by = list(MLS$Home),mean)
-mls_home_scoring <- merge(mls_home_gs,mls_home_gs_avg, by='Group.1',all = T)
-names(mls_home_scoring)[names(mls_home_scoring) == "x.x"] <- "TFthg"
-names(mls_home_scoring)[names(mls_home_scoring) == "x.y"] <- "Avg_Fthg"
+arg_home_gs <- aggregate(ARG$HG, by = list(ARG$Home), FUN = sum)
+arg_home_gs_avg <- aggregate(ARG$HG, by = list(ARG$Home),mean)
+arg_home_scoring <- merge(arg_home_gs,arg_home_gs_avg, by='Group.1',all = T)
+names(arg_home_scoring)[names(arg_home_scoring) == "x.x"] <- "TFthg"
+names(arg_home_scoring)[names(arg_home_scoring) == "x.y"] <- "Avg_Fthg"
 #away goals scored
-mls_away_gs <- aggregate(MLS$AG, by = list(MLS$Away), FUN = sum)
-mls_away_gs_avg <- aggregate(MLS$AG, by = list(MLS$Away),mean)
-mls_away_scoring <- merge(mls_away_gs,mls_away_gs_avg, by='Group.1',all = T)
-names(mls_away_scoring)[names(mls_away_scoring) == "x.x"] <- "TFtag"
-names(mls_away_scoring)[names(mls_away_scoring) == "x.y"] <- "Avg_Ftag"
+arg_away_gs <- aggregate(ARG$AG, by = list(ARG$Away), FUN = sum)
+arg_away_gs_avg <- aggregate(ARG$AG, by = list(ARG$Away),mean)
+arg_away_scoring <- merge(arg_away_gs,arg_away_gs_avg, by='Group.1',all = T)
+names(arg_away_scoring)[names(arg_away_scoring) == "x.x"] <- "TFtag"
+names(arg_away_scoring)[names(arg_away_scoring) == "x.y"] <- "Avg_Ftag"
 #total goals scored
-mls_scoring <- merge(mls_home_scoring,mls_away_scoring,by='Group.1',all = T)
-mls_scoring$TGS <- mls_scoring$TFthg + mls_scoring$TFtag
+arg_scoring <- merge(arg_home_scoring,arg_away_scoring,by='Group.1',all = T)
+arg_scoring$TGS <- arg_scoring$TFthg + arg_scoring$TFtag
 
 #home goals conceded
-mls_home_gc <- aggregate(MLS$AG, by = list(MLS$Home), FUN = sum)
-mls_home_gc_avg <- aggregate(MLS$AG, by = list(MLS$Home),mean)
-mls_home_conceding <- merge(mls_home_gc,mls_home_gc_avg, by='Group.1',all = T)
-names(mls_home_conceding)[names(mls_home_conceding) == "x.x"] <- "TFthc"
-names(mls_home_conceding)[names(mls_home_conceding) == "x.y"] <- "Avg_Fthc"
+arg_home_gc <- aggregate(ARG$AG, by = list(ARG$Home), FUN = sum)
+arg_home_gc_avg <- aggregate(ARG$AG, by = list(ARG$Home),mean)
+arg_home_conceding <- merge(arg_home_gc,arg_home_gc_avg, by='Group.1',all = T)
+names(arg_home_conceding)[names(arg_home_conceding) == "x.x"] <- "TFthc"
+names(arg_home_conceding)[names(arg_home_conceding) == "x.y"] <- "Avg_Fthc"
 #away goals conceded
-mls_away_gc <- aggregate(MLS$HG, by = list(MLS$Away), FUN = sum)
-mls_away_gc_avg <- aggregate(MLS$HG, by = list(MLS$Away),mean)
-mls_away_conceding <- merge(mls_away_gc,mls_away_gc_avg, by='Group.1',all = T)
-names(mls_away_conceding)[names(mls_away_conceding) == "x.x"] <- "TFtac"
-names(mls_away_conceding)[names(mls_away_conceding) == "x.y"] <- "Avg_Ftac"
+arg_away_gc <- aggregate(ARG$HG, by = list(ARG$Away), FUN = sum)
+arg_away_gc_avg <- aggregate(ARG$HG, by = list(ARG$Away),mean)
+arg_away_conceding <- merge(arg_away_gc,arg_away_gc_avg, by='Group.1',all = T)
+names(arg_away_conceding)[names(arg_away_conceding) == "x.x"] <- "TFtac"
+names(arg_away_conceding)[names(arg_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
-mls_conceding <- merge(mls_home_conceding,mls_away_conceding,by='Group.1',all = T)
-mls_conceding$TGC <- mls_conceding$TFthc + mls_conceding$TFtac
+arg_conceding <- merge(arg_home_conceding,arg_away_conceding,by='Group.1',all = T)
+arg_conceding$TGC <- arg_conceding$TFthc + arg_conceding$TFtac
 
 #poisson model
 #get total games played
-mls_GP <- nrow(MLS)
+arg_GP <- nrow(ARG)
 #Calculate total home goals for each division
-mls_T_HG <- sum(mls_home_gs$x)
+arg_T_HG <- sum(arg_home_gs$x)
 #calculate average home goal
-mls_avg_HG <- round(mls_T_HG /mls_GP, digits = 4)
+arg_avg_HG <- round(arg_T_HG /arg_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-mls_T_AG <- sum(mls_away_gs$x)
+arg_T_AG <- sum(arg_away_gs$x)
 #calculate average away goal
-mls_avg_AG <- round(mls_T_AG /mls_GP, digits = 4)
+arg_avg_AG <- round(arg_T_AG /arg_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-mls_home_as <- round(((mls_home_gs$x/mls_home_games))/mls_avg_HG, digits = 4)
+arg_home_as <- round(((arg_home_gs$x/arg_home_games))/arg_avg_HG, digits = 4)
 #calculate away attack strength
-mls_away_as <- round(((mls_away_gs$x/mls_away_games))/mls_avg_AG, digits = 4)
+arg_away_as <- round(((arg_away_gs$x/arg_away_games))/arg_avg_AG, digits = 4)
 ################################################################################
 #get average home concede and away concede
-mls_avg_HC <- round(mls_T_AG /mls_GP, digits = 4)
+arg_avg_HC <- round(arg_T_AG /arg_GP, digits = 4)
 #avg away concede
-mls_avg_AC <- round(mls_T_HG /mls_GP, digits = 4)
+arg_avg_AC <- round(arg_T_HG /arg_GP, digits = 4)
 #calculate home and away defense strength
 #home defense strength
-mls_home_ds <- round(((mls_home_gc$x/mls_home_games))/mls_avg_HC, digits = 4)
+arg_home_ds <- round(((arg_home_gc$x/arg_home_games))/arg_avg_HC, digits = 4)
 #away defense strength
-mls_away_ds <- round(((mls_away_gc$x/mls_away_games))/mls_avg_AC, digits = 4)
+arg_away_ds <- round(((arg_away_gc$x/arg_away_games))/arg_avg_AC, digits = 4)
 #############################################################################
 #home poisson data
-#mls
-mls_division <- c()
-mls_division[1:length(mls_teams)] <- "MLS"
-mls_home_poisson <- cbind(mls_division,mls_teams,mls_avg_HG,mls_home_as,mls_home_ds)
+#arg
+arg_division <- c()
+arg_division[1:length(arg_teams)] <- "ARG"
+arg_home_poisson <- cbind(arg_division,arg_teams,arg_avg_HG,arg_home_as,arg_home_ds)
 #################################################################################
 #away poisson data
-#mls
-mls_division <- c()
-mls_division[1:length(mls_teams)] <- "MLS"
-mls_away_poisson <- cbind(mls_division,mls_teams,mls_avg_AG,mls_away_as,mls_away_ds)
+#arg
+arg_division <- c()
+arg_division[1:length(arg_teams)] <- "ARG"
+arg_away_poisson <- cbind(arg_division,arg_teams,arg_avg_AG,arg_away_as,arg_away_ds)
 #################################################################################
 
 ###############################################################################################
-mls_totalgames_poiss <- c()
-mls_totalgames_poiss[1:length(mls_teams)] <- paste("no",poisson_round_nl,sep = "")
-mls_home_poisson <- cbind(mls_home_poisson,mls_totalgames_poiss)
-mls_away_poisson <- cbind(mls_away_poisson,mls_totalgames_poiss)
+arg_totalgames_poiss <- c()
+arg_totalgames_poiss[1:length(arg_teams)] <- paste("no",poisson_round_nl,sep = "")
+arg_home_poisson <- cbind(arg_home_poisson,arg_totalgames_poiss)
+arg_away_poisson <- cbind(arg_away_poisson,arg_totalgames_poiss)
 
-write.csv(mls_home_poisson,paste("mls_home_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
-write.csv(mls_away_poisson,paste("mls_away_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
+write.csv(arg_home_poisson,paste("arg_home_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
+write.csv(arg_away_poisson,paste("arg_away_poisson_nl",ROUND_20212022_nl,".csv",sep = "_"))
 
 
-allhomepoisson_nl <- rbind(allhomepoisson_nl,mls_home_poisson)
-allawaypoisson_nl <- rbind(allawaypoisson_nl,mls_away_poisson)
+allhomepoisson_nl <- rbind(allhomepoisson_nl,arg_home_poisson)
+allawaypoisson_nl <- rbind(allawaypoisson_nl,arg_away_poisson)
    # allhomepoisson_nl <- rbind(aut_home_poisson,arg_home_poisson,bra_home_poisson,chn_home_poisson,dnk_home_poisson,fin_home_poisson,
    #                         irl_home_poisson,jpn_home_poisson,mex_home_poisson,mls_home_poisson,nor_home_poisson,pol_home_poisson,
    #                         rou_home_poisson,rus_home_poisson,swe_home_poisson,swz_home_poisson)

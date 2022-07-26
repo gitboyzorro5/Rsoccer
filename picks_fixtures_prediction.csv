@@ -1,5 +1,5 @@
 "","X","Div","Home_Team","Away_Team","Date","matchid","picks_Div","picks_HomeTeam","picks_AwayTeam","prediction","HWM","AWM","HWMLM","AWMLM","AVGHY","AVGAY"
-"1",1,"B1","St. Liege","Gent","2022-07-22","St. Liege-Gent",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"1",1,"B1","Standard","Gent","2022-07-22","Standard-Gent","B1","Standard","Gent","2,un25,BTTS-N",-4,10,"-3","5","5.6471","4.5294"
 "2",2,"B1","Charleroi","Eupen","2022-07-23","Charleroi-Eupen","B1","Charleroi","Eupen","1X,ov25,BTTS-N",5,-8,"3","-2","3.7059","3.8824"
 "3",3,"B1","Kortrijk","Oud-Heverlee Leuven","2022-07-23","Kortrijk-Oud-Heverlee Leuven","B1","Kortrijk","Oud-Heverlee Leuven","2,un25,BTTS-N",-8,-11,"-1","-5","4.7647","4.5588"
 "4",4,"B1","St Truiden","St. Gilloise","2022-07-23","St Truiden-St. Gilloise","B1","St Truiden","St. Gilloise","1X,un25,BTTS-Y",7,11,"3","5","4.2647","4.5294"

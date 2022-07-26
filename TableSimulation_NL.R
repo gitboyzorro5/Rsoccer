@@ -87,7 +87,7 @@ write.xlsx(AUT_notplayed,'NL/Simulations.xlsx', sheetName = "AUT_notplayed",appe
 ############################################################################################################################################################
 ############################################################################################################################################################
 #ARG
-ARG <- subset(ARG,Season == "2021")
+ARG <- subset(ARG,Season == "2022")
 ARG_sim <- ARG
 ARG_sim$matchid <- paste(ARG_sim$Home,ARG_sim$Away,sep = "-")
 ARG_fixtures$matchid <- paste(ARG_fixtures$HomeTeam_arg,ARG_fixtures$AwayTeam_arg,sep = "-")
@@ -165,7 +165,7 @@ write.xlsx(ARG_notplayed,'NL/Simulations.xlsx', sheetName = "ARG_notplayed",appe
 ############################################################################################################################################################
 ############################################################################################################################################################
 #BRA
-BRA <- subset(BRA,Season == "2021")
+BRA <- subset(BRA,Season == "2022")
 BRA_sim <- BRA
 BRA_sim$matchid <- paste(BRA_sim$Home,BRA_sim$Away,sep = "-")
 BRA_fixtures$matchid <- paste(BRA_fixtures$HomeTeam_bra,BRA_fixtures$AwayTeam_bra,sep = "-")
@@ -244,7 +244,7 @@ write.xlsx(BRA_notplayed,'NL/Simulations.xlsx', sheetName = "BRA_notplayed",appe
 ############################################################################################################################
 ###########################################################################################################################
 #CHN
-CHN <- subset(CHN,Season == "2021")
+CHN <- subset(CHN,Season == "2022")
 CHN_sim <- CHN
 CHN_sim$matchid <- paste(CHN_sim$Home,CHN_sim$Away,sep = "-")
 CHN_fixtures$matchid <- paste(CHN_fixtures$HomeTeam_chn,CHN_fixtures$AwayTeam_chn,sep = "-")
@@ -403,7 +403,7 @@ write.xlsx(DNK_notplayed,'NL/Simulations.xlsx', sheetName = "DNK_notplayed",appe
 ###############################################################################################################################
 ###############################################################################################################################
 #FIN
-FIN <- subset(FIN,Season == "2021")
+FIN <- subset(FIN,Season == "2022")
 FIN_sim <- FIN
 FIN_sim$matchid <- paste(FIN_sim$Home,FIN_sim$Away,sep = "-")
 FIN_fixtures$matchid <- paste(FIN_fixtures$HomeTeam_fin,FIN_fixtures$AwayTeam_fin,sep = "-")
@@ -482,7 +482,7 @@ write.xlsx(FIN_notplayed,'NL/Simulations.xlsx', sheetName = "FIN_notplayed",appe
 ###################################################################################################################################
 ###################################################################################################################
 #IRL
-IRL <- subset(IRL,Season == "2021")
+IRL <- subset(IRL,Season == "2022")
 IRL_sim <- IRL
 IRL_sim$matchid <- paste(IRL_sim$Home,IRL_sim$Away,sep = "-")
 IRL_fixtures$matchid <- paste(IRL_fixtures$HomeTeam_irl,IRL_fixtures$AwayTeam_irl,sep = "-")
@@ -560,7 +560,7 @@ write.xlsx(IRL_notplayed,'NL/Simulations.xlsx', sheetName = "IRL_notplayed",appe
 ###############################################################################################################################
 ###############################################################################################################################
 #JPN
-JPN <- subset(JPN,Season == "2021")
+JPN <- subset(JPN,Season == "2022")
 JPN_sim <- JPN
 JPN_sim$matchid <- paste(JPN_sim$Home,JPN_sim$Away,sep = "-")
 JPN_fixtures$matchid <- paste(JPN_fixtures$HomeTeam_jpn,JPN_fixtures$AwayTeam_jpn,sep = "-")
@@ -716,7 +716,7 @@ write.xlsx(MEX_notplayed,'NL/Simulations.xlsx', sheetName = "MEX_notplayed",appe
 #################################################################################################################################
 #################################################################################################################################
 #MLS
-MLS <- subset(MLS,Season == "2021")
+MLS <- subset(MLS,Season == "2022")
 MLS_sim <- MLS
 MLS_sim$matchid <- paste(MLS_sim$Home,MLS_sim$Away,sep = "-")
 MLS_fixtures$matchid <- paste(MLS_fixtures$HomeTeam_mls,MLS_fixtures$AwayTeam_mls,sep = "-")
@@ -794,7 +794,7 @@ write.xlsx(MLS_notplayed,'NL/Simulations.xlsx', sheetName = "MLS_notplayed",appe
 ####################################################################################################################################
 ###################################################################################################################
 #NOR
-NOR <- subset(NOR,Season == "2021")
+NOR <- subset(NOR,Season == "2022")
 NOR_sim <- NOR
 NOR_sim$matchid <- paste(NOR_sim$Home,NOR_sim$Away,sep = "-")
 NOR_fixtures$matchid <- paste(NOR_fixtures$HomeTeam_nor,NOR_fixtures$AwayTeam_nor,sep = "-")

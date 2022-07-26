@@ -1072,6 +1072,7 @@ allteams20212022_gamestate_nl <- rbind(AUT_gamestate_copy,ARG_gamestate_copy,BRA
 nrow(allteams20212022_gamestate)
 allteams20212022_gamestate_nl
 
+BRA_gamestate_copy
 
 
 

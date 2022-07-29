@@ -910,10 +910,27 @@ object.size(EURO_fixtures)
 rm(teams)
 ls(pattern =".*")
 memory.profile()
+####################################################
+b1_away_gs[,2]
+hist((e0_away_gs[,2]))
 
+####################################################
+parallel::detectCores()
 
+#############################################################
+test_fixture <- myfixtures[1,]
+test_fixture_inv <- test_fixture[,c(1,3,2,4)]
 
+final_test_fixture <- test_fixture[rep(seq_len(nrow(test_fixture)), each = 2),]
+final_test_fixture_inv <- test_fixture_inv[rep(seq_len(nrow(test_fixture_inv)), each = 2),]
 
+names(final_test_fixture_inv)[names(final_test_fixture_inv) == "Away_Team"] <- "Home_Team"
+names(final_test_fixture_inv)[names(final_test_fixture_inv) == "Home_Team"] <- "Away_Team"
+
+final_test_fixture
+final_test_fixture_inv
+
+rbind(final_test_fixture_inv,final_test_fixture)
 
 
 

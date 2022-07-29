@@ -72,7 +72,7 @@ all_schedule20222023 <- rbind(B1_schedule20222023,D1_schedule20222023,D2_schedul
 
 all_schedule20222023 <- all_schedule20222023[,c(9,6,7,8)]
 
-myfixtures <- all_schedule20222023[all_schedule20222023$Date >= '2022-07-18' & all_schedule20222023$Date <= '2022-07-25',]
+myfixtures <- all_schedule20222023[all_schedule20222023$Date >= '2022-07-28' & all_schedule20222023$Date <= '2022-08-01',]
 
 write.csv(myfixtures,'myfixtures.csv')
 

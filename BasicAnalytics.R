@@ -931,10 +931,13 @@ final_test_fixture
 final_test_fixture_inv
 
 rbind(final_test_fixture_inv,final_test_fixture)
+############################################################################################
 
 
 
 
+allteams_2010present <- read.csv('../FDAS/allteams2010-present.csv')
+nrow(allteams_2010present[allteams_2010present$CS == "1-0",])
 
 
 

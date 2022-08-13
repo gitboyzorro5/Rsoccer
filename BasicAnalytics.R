@@ -918,19 +918,37 @@ hist((e0_away_gs[,2]))
 parallel::detectCores()
 
 #############################################################
-test_fixture <- myfixtures[1,]
-test_fixture_inv <- test_fixture[,c(1,3,2,4)]
+myfixturesb1 <- subset(myfixtures,Div == "B1")
+#############################################################
+final_doublefixture_b1 <- c()
+final_first_column_b1 <- c()
+final_second_column_b1 <- c()
 
-final_test_fixture <- test_fixture[rep(seq_len(nrow(test_fixture)), each = 2),]
-final_test_fixture_inv <- test_fixture_inv[rep(seq_len(nrow(test_fixture_inv)), each = 2),]
+for(dbfixture_b1 in 1:nrow(myfixturesb1))
+{
+test_fixture_b1 <- myfixturesb1[dbfixture_b1,]
+test_fixture_inv_b1 <- test_fixture_b1[,c(1,3,2,4)]
 
-names(final_test_fixture_inv)[names(final_test_fixture_inv) == "Away_Team"] <- "Home_Team"
-names(final_test_fixture_inv)[names(final_test_fixture_inv) == "Home_Team"] <- "Away_Team"
 
-final_test_fixture
-final_test_fixture_inv
+final_test_fixture_b1 <- test_fixture_b1[rep(seq_len(nrow(test_fixture_b1)), each = 4),]
+final_test_fixture_inv_b1 <- test_fixture_inv_b1[rep(seq_len(nrow(test_fixture_inv_b1)), each = 4),]
 
-rbind(final_test_fixture_inv,final_test_fixture)
+
+final_test_fixture_b1 <- final_test_fixture_b1[,c(2,3)]
+final_test_fixture_inv_b1 <- final_test_fixture_inv_b1[,c(2,3)]
+
+final_first_column_b1 <- c(final_test_fixture_b1[,c(1)],final_test_fixture_inv_b1[,c(1)])
+final_second_column_b1 <- c(final_test_fixture_b1[,c(2)],final_test_fixture_inv_b1[,c(2)])
+
+mid_doublefixture_b1 <- cbind(final_first_column_b1,final_second_column_b1)
+
+final_doublefixture_b1 <- rbind(final_doublefixture_b1,mid_doublefixture_b1)
+
+
+}
+
+write.csv(final_doublefixture_b1,"finaldoublefixtureb1.csv")
+
 ############################################################################################
 
 
@@ -938,9 +956,6 @@ rbind(final_test_fixture_inv,final_test_fixture)
 
 allteams_2010present <- read.csv('../FDAS/allteams2010-present.csv')
 nrow(allteams_2010present[allteams_2010present$CS == "1-0",])
-
-
-
 
 
 

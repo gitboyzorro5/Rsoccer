@@ -1,0 +1,575 @@
+#############################################################
+myfixturesb1 <- subset(myfixtures,Div == "B1")
+#############################################################
+final_doublefixture_b1 <- c()
+final_first_column_b1 <- c()
+final_second_column_b1 <- c()
+
+for(dbfixture_b1 in 1:nrow(myfixturesb1))
+{
+  test_fixture_b1 <- myfixturesb1[dbfixture_b1,]
+  test_fixture_inv_b1 <- test_fixture_b1[,c(1,3,2,4)]
+
+
+  final_test_fixture_b1 <- test_fixture_b1[rep(seq_len(nrow(test_fixture_b1)), each = 4),]
+  final_test_fixture_inv_b1 <- test_fixture_inv_b1[rep(seq_len(nrow(test_fixture_inv_b1)), each = 4),]
+
+
+  final_test_fixture_b1 <- final_test_fixture_b1[,c(2,3)]
+  final_test_fixture_inv_b1 <- final_test_fixture_inv_b1[,c(2,3)]
+
+  final_first_column_b1 <- c(final_test_fixture_b1[,c(1)],final_test_fixture_inv_b1[,c(1)])
+  final_second_column_b1 <- c(final_test_fixture_b1[,c(2)],final_test_fixture_inv_b1[,c(2)])
+
+  mid_doublefixture_b1 <- cbind(final_first_column_b1,final_second_column_b1)
+
+  final_doublefixture_b1 <- rbind(final_doublefixture_b1,mid_doublefixture_b1)
+
+
+}
+unlink('finaldoublefixtureb1.csv')
+write.csv(final_doublefixture_b1,"finaldoublefixtureb1.csv")
+############################################################################################################################
+#############################################################
+myfixturesd1 <- subset(myfixtures,Div == "D1")
+#############################################################
+final_doublefixture_d1 <- c()
+final_first_column_d1 <- c()
+final_second_column_d1 <- c()
+
+for(dbfixture_d1 in 1:nrow(myfixturesd1))
+{
+  test_fixture_d1 <- myfixturesd1[dbfixture_d1,]
+  test_fixture_inv_d1 <- test_fixture_d1[,c(1,3,2,4)]
+myfixturesd1
+
+  final_test_fixture_d1 <- test_fixture_d1[rep(seq_len(nrow(test_fixture_d1)), each = 4),]
+  final_test_fixture_inv_d1 <- test_fixture_inv_d1[rep(seq_len(nrow(test_fixture_inv_d1)), each = 4),]
+
+
+  final_test_fixture_d1 <- final_test_fixture_d1[,c(2,3)]
+  final_test_fixture_inv_d1 <- final_test_fixture_inv_d1[,c(2,3)]
+
+  final_first_column_d1 <- c(final_test_fixture_d1[,c(1)],final_test_fixture_inv_d1[,c(1)])
+  final_second_column_d1 <- c(final_test_fixture_d1[,c(2)],final_test_fixture_inv_d1[,c(2)])
+
+  mid_doublefixture_d1 <- cbind(final_first_column_d1,final_second_column_d1)
+
+  final_doublefixture_d1 <- rbind(final_doublefixture_d1,mid_doublefixture_d1)
+
+
+}
+unlink('finaldoublefixtured1.csv')
+write.csv(final_doublefixture_d1,"finaldoublefixtured1.csv")
+#########################################################################################################################
+#############################################################
+myfixturesd2 <- subset(myfixtures,Div == "D2")
+#############################################################
+final_doublefixture_d2 <- c()
+final_first_column_d2 <- c()
+final_second_column_d2 <- c()
+
+for(dbfixture_d2 in 1:nrow(myfixturesd2))
+{
+  test_fixture_d2 <- myfixturesd2[dbfixture_d2,]
+  test_fixture_inv_d2 <- test_fixture_d2[,c(1,3,2,4)]
+
+
+  final_test_fixture_d2 <- test_fixture_d2[rep(seq_len(nrow(test_fixture_d2)), each = 4),]
+  final_test_fixture_inv_d2 <- test_fixture_inv_d2[rep(seq_len(nrow(test_fixture_inv_d2)), each = 4),]
+
+
+  final_test_fixture_d2 <- final_test_fixture_d2[,c(2,3)]
+  final_test_fixture_inv_d2 <- final_test_fixture_inv_d2[,c(2,3)]
+
+  final_first_column_d2 <- c(final_test_fixture_d2[,c(1)],final_test_fixture_inv_d2[,c(1)])
+  final_second_column_d2 <- c(final_test_fixture_d2[,c(2)],final_test_fixture_inv_d2[,c(2)])
+
+  mid_doublefixture_d2 <- cbind(final_first_column_d2,final_second_column_d2)
+
+  final_doublefixture_d2 <- rbind(final_doublefixture_d2,mid_doublefixture_d2)
+
+
+}
+unlink('finaldoublefixtured2.csv')
+write.csv(final_doublefixture_d2,"finaldoublefixtured2.csv")
+#####################################################################################################################
+#############################################################
+myfixturese0 <- subset(myfixtures,Div == "E0")
+#############################################################
+final_doublefixture_e0 <- c()
+final_first_column_e0 <- c()
+final_second_column_e0 <- c()
+
+for(dbfixture_e0 in 1:nrow(myfixturese0))
+{
+  test_fixture_e0 <- myfixturese0[dbfixture_e0,]
+  test_fixture_inv_e0 <- test_fixture_e0[,c(1,3,2,4)]
+
+
+  final_test_fixture_e0 <- test_fixture_e0[rep(seq_len(nrow(test_fixture_e0)), each = 4),]
+  final_test_fixture_inv_e0 <- test_fixture_inv_e0[rep(seq_len(nrow(test_fixture_inv_e0)), each = 4),]
+
+
+  final_test_fixture_e0 <- final_test_fixture_e0[,c(2,3)]
+  final_test_fixture_inv_e0 <- final_test_fixture_inv_e0[,c(2,3)]
+
+  final_first_column_e0 <- c(final_test_fixture_e0[,c(1)],final_test_fixture_inv_e0[,c(1)])
+  final_second_column_e0 <- c(final_test_fixture_e0[,c(2)],final_test_fixture_inv_e0[,c(2)])
+
+  mid_doublefixture_e0 <- cbind(final_first_column_e0,final_second_column_e0)
+
+  final_doublefixture_e0 <- rbind(final_doublefixture_e0,mid_doublefixture_e0)
+
+
+}
+unlink('finaldoublefixturee0.csv')
+write.csv(final_doublefixture_e0,"finaldoublefixturee0.csv")
+#############################################################################################################
+myfixturese1 <- subset(myfixtures,Div == "E1")
+#############################################################
+final_doublefixture_e1 <- c()
+final_first_column_e1 <- c()
+final_second_column_e1 <- c()
+
+for(dbfixture_e1 in 1:nrow(myfixturese1))
+{
+  test_fixture_e1 <- myfixturese1[dbfixture_e1,]
+  test_fixture_inv_e1 <- test_fixture_e1[,c(1,3,2,4)]
+
+
+  final_test_fixture_e1 <- test_fixture_e1[rep(seq_len(nrow(test_fixture_e1)), each = 7),]
+  final_test_fixture_inv_e1 <- test_fixture_inv_e1[rep(seq_len(nrow(test_fixture_inv_e1)), each = 7),]
+
+
+  final_test_fixture_e1 <- final_test_fixture_e1[,c(2,3)]
+  final_test_fixture_inv_e1 <- final_test_fixture_inv_e1[,c(2,3)]
+
+  final_first_column_e1 <- c(final_test_fixture_e1[,c(1)],final_test_fixture_inv_e1[,c(1)])
+  final_second_column_e1 <- c(final_test_fixture_e1[,c(2)],final_test_fixture_inv_e1[,c(2)])
+
+  mid_doublefixture_e1 <- cbind(final_first_column_e1,final_second_column_e1)
+
+  final_doublefixture_e1 <- rbind(final_doublefixture_e1,mid_doublefixture_e1)
+
+
+}
+unlink('finaldoublefixturee1.csv')
+write.csv(final_doublefixture_e1,"finaldoublefixturee1.csv")
+##################################################################################################################
+myfixturese2 <- subset(myfixtures,Div == "E2")
+#############################################################
+final_doublefixture_e2 <- c()
+final_first_column_e2 <- c()
+final_second_column_e2 <- c()
+
+for(dbfixture_e2 in 1:nrow(myfixturese2))
+{
+  test_fixture_e2 <- myfixturese2[dbfixture_e2,]
+  test_fixture_inv_e2 <- test_fixture_e2[,c(1,3,2,4)]
+
+
+  final_test_fixture_e2 <- test_fixture_e2[rep(seq_len(nrow(test_fixture_e2)), each = 5),]
+  final_test_fixture_inv_e2 <- test_fixture_inv_e2[rep(seq_len(nrow(test_fixture_inv_e2)), each = 5),]
+
+
+  final_test_fixture_e2 <- final_test_fixture_e2[,c(2,3)]
+  final_test_fixture_inv_e2 <- final_test_fixture_inv_e2[,c(2,3)]
+
+  final_first_column_e2 <- c(final_test_fixture_e2[,c(1)],final_test_fixture_inv_e2[,c(1)])
+  final_second_column_e2 <- c(final_test_fixture_e2[,c(2)],final_test_fixture_inv_e2[,c(2)])
+
+  mid_doublefixture_e2 <- cbind(final_first_column_e2,final_second_column_e2)
+
+  final_doublefixture_e2 <- rbind(final_doublefixture_e2,mid_doublefixture_e2)
+
+
+}
+unlink('finaldoublefixturee2.csv')
+write.csv(final_doublefixture_e2,"finaldoublefixturee2.csv")
+###########################################################################################################
+myfixturese3 <- subset(myfixtures,Div == "E3")
+#############################################################
+final_doublefixture_e3 <- c()
+final_first_column_e3 <- c()
+final_second_column_e3 <- c()
+
+for(dbfixture_e3 in 1:nrow(myfixturese3))
+{
+  test_fixture_e3 <- myfixturese3[dbfixture_e3,]
+  test_fixture_inv_e3 <- test_fixture_e3[,c(1,3,2,4)]
+
+
+  final_test_fixture_e3 <- test_fixture_e3[rep(seq_len(nrow(test_fixture_e3)), each = 5),]
+  final_test_fixture_inv_e3 <- test_fixture_inv_e3[rep(seq_len(nrow(test_fixture_inv_e3)), each = 5),]
+
+
+  final_test_fixture_e3 <- final_test_fixture_e3[,c(2,3)]
+  final_test_fixture_inv_e3 <- final_test_fixture_inv_e3[,c(2,3)]
+
+  final_first_column_e3 <- c(final_test_fixture_e3[,c(1)],final_test_fixture_inv_e3[,c(1)])
+  final_second_column_e3 <- c(final_test_fixture_e3[,c(2)],final_test_fixture_inv_e3[,c(2)])
+
+  mid_doublefixture_e3 <- cbind(final_first_column_e3,final_second_column_e3)
+
+  final_doublefixture_e3 <- rbind(final_doublefixture_e3,mid_doublefixture_e3)
+
+
+}
+unlink('finaldoublefixturee3.csv')
+write.csv(final_doublefixture_e3,"finaldoublefixturee3.csv")
+##########################################################################################################
+myfixturesec <- subset(myfixtures,Div == "EC")
+#############################################################
+final_doublefixture_ec <- c()
+final_first_column_ec <- c()
+final_second_column_ec <- c()
+
+for(dbfixture_ec in 1:nrow(myfixturesec))
+{
+  test_fixture_ec <- myfixturesec[dbfixture_ec,]
+  test_fixture_inv_ec <- test_fixture_ec[,c(1,3,2,4)]
+
+
+  final_test_fixture_ec <- test_fixture_ec[rep(seq_len(nrow(test_fixture_ec)), each = 5),]
+  final_test_fixture_inv_ec <- test_fixture_inv_ec[rep(seq_len(nrow(test_fixture_inv_ec)), each = 5),]
+
+
+  final_test_fixture_ec <- final_test_fixture_ec[,c(2,3)]
+  final_test_fixture_inv_ec <- final_test_fixture_inv_ec[,c(2,3)]
+
+  final_first_column_ec <- c(final_test_fixture_ec[,c(1)],final_test_fixture_inv_ec[,c(1)])
+  final_second_column_ec <- c(final_test_fixture_ec[,c(2)],final_test_fixture_inv_ec[,c(2)])
+
+  mid_doublefixture_ec <- cbind(final_first_column_ec,final_second_column_ec)
+
+  final_doublefixture_ec <- rbind(final_doublefixture_ec,mid_doublefixture_ec)
+
+
+}
+unlink('finaldoublefixtureec.csv')
+write.csv(final_doublefixture_ec,"finaldoublefixtureec.csv")
+##################################################################################################
+myfixturesf1 <- subset(myfixtures,Div == "F1")
+#############################################################
+final_doublefixture_f1 <- c()
+final_first_column_f1 <- c()
+final_second_column_f1 <- c()
+
+for(dbfixture_f1 in 1:nrow(myfixturesf1))
+{
+  test_fixture_f1 <- myfixturesf1[dbfixture_f1,]
+  test_fixture_inv_f1 <- test_fixture_f1[,c(1,3,2,4)]
+
+
+  final_test_fixture_f1 <- test_fixture_f1[rep(seq_len(nrow(test_fixture_f1)), each = 4),]
+  final_test_fixture_inv_f1 <- test_fixture_inv_f1[rep(seq_len(nrow(test_fixture_inv_f1)), each = 4),]
+
+
+  final_test_fixture_f1 <- final_test_fixture_f1[,c(2,3)]
+  final_test_fixture_inv_f1 <- final_test_fixture_inv_f1[,c(2,3)]
+
+  final_first_column_f1 <- c(final_test_fixture_f1[,c(1)],final_test_fixture_inv_f1[,c(1)])
+  final_second_column_f1 <- c(final_test_fixture_f1[,c(2)],final_test_fixture_inv_f1[,c(2)])
+
+  mid_doublefixture_f1 <- cbind(final_first_column_f1,final_second_column_f1)
+
+  final_doublefixture_f1 <- rbind(final_doublefixture_f1,mid_doublefixture_f1)
+
+
+}
+unlink('finaldoublefixturef1.csv')
+write.csv(final_doublefixture_f1,"finaldoublefixturef1.csv")
+################################################################################################################
+myfixturesf2 <- subset(myfixtures,Div == "F2")
+#############################################################
+final_doublefixture_f2 <- c()
+final_first_column_f2 <- c()
+final_second_column_f2 <- c()
+
+for(dbfixture_f2 in 1:nrow(myfixturesf2))
+{
+  test_fixture_f2 <- myfixturesf2[dbfixture_f2,]
+  test_fixture_inv_f2 <- test_fixture_f2[,c(1,3,2,4)]
+
+
+  final_test_fixture_f2 <- test_fixture_f2[rep(seq_len(nrow(test_fixture_f2)), each = 4),]
+  final_test_fixture_inv_f2 <- test_fixture_inv_f2[rep(seq_len(nrow(test_fixture_inv_f2)), each = 4),]
+
+
+  final_test_fixture_f2 <- final_test_fixture_f2[,c(2,3)]
+  final_test_fixture_inv_f2 <- final_test_fixture_inv_f2[,c(2,3)]
+
+  final_first_column_f2 <- c(final_test_fixture_f2[,c(1)],final_test_fixture_inv_f2[,c(1)])
+  final_second_column_f2 <- c(final_test_fixture_f2[,c(2)],final_test_fixture_inv_f2[,c(2)])
+
+  mid_doublefixture_f2 <- cbind(final_first_column_f2,final_second_column_f2)
+
+  final_doublefixture_f2 <- rbind(final_doublefixture_f2,mid_doublefixture_f2)
+
+
+}
+unlink('finaldoublefixturef2.csv')
+write.csv(final_doublefixture_f2,"finaldoublefixturef2.csv")
+##################################################################################################
+myfixturesi1 <- subset(myfixtures,Div == "I1")
+#############################################################
+final_doublefixture_i1 <- c()
+final_first_column_i1 <- c()
+final_second_column_i1 <- c()
+
+for(dbfixture_i1 in 1:nrow(myfixturesi1))
+{
+  test_fixture_i1 <- myfixturesi1[dbfixture_i1,]
+  test_fixture_inv_i1 <- test_fixture_i1[,c(1,3,2,4)]
+
+
+  final_test_fixture_i1 <- test_fixture_i1[rep(seq_len(nrow(test_fixture_i1)), each = 4),]
+  final_test_fixture_inv_i1 <- test_fixture_inv_i1[rep(seq_len(nrow(test_fixture_inv_i1)), each = 4),]
+
+
+  final_test_fixture_i1 <- final_test_fixture_i1[,c(2,3)]
+  final_test_fixture_inv_i1 <- final_test_fixture_inv_i1[,c(2,3)]
+
+  final_first_column_i1 <- c(final_test_fixture_i1[,c(1)],final_test_fixture_inv_i1[,c(1)])
+  final_second_column_i1 <- c(final_test_fixture_i1[,c(2)],final_test_fixture_inv_i1[,c(2)])
+
+  mid_doublefixture_i1 <- cbind(final_first_column_i1,final_second_column_i1)
+
+  final_doublefixture_i1 <- rbind(final_doublefixture_i1,mid_doublefixture_i1)
+
+
+}
+unlink('finaldoublefixturei1.csv')
+write.csv(final_doublefixture_i1,"finaldoublefixturei1.csv")
+#########################################################################################################
+myfixturesn1 <- subset(myfixtures,Div == "N1")
+#############################################################
+final_doublefixture_n1 <- c()
+final_first_column_n1 <- c()
+final_second_column_n1 <- c()
+
+for(dbfixture_n1 in 1:nrow(myfixturesn1))
+{
+  test_fixture_n1 <- myfixturesn1[dbfixture_n1,]
+  test_fixture_inv_n1 <- test_fixture_n1[,c(1,3,2,4)]
+
+
+  final_test_fixture_n1 <- test_fixture_n1[rep(seq_len(nrow(test_fixture_n1)), each = 4),]
+  final_test_fixture_inv_n1 <- test_fixture_inv_n1[rep(seq_len(nrow(test_fixture_inv_n1)), each = 4),]
+
+
+  final_test_fixture_n1 <- final_test_fixture_n1[,c(2,3)]
+  final_test_fixture_inv_n1 <- final_test_fixture_inv_n1[,c(2,3)]
+
+  final_first_column_n1 <- c(final_test_fixture_n1[,c(1)],final_test_fixture_inv_n1[,c(1)])
+  final_second_column_n1 <- c(final_test_fixture_n1[,c(2)],final_test_fixture_inv_n1[,c(2)])
+
+  mid_doublefixture_n1 <- cbind(final_first_column_n1,final_second_column_n1)
+
+  final_doublefixture_n1 <- rbind(final_doublefixture_n1,mid_doublefixture_n1)
+
+
+}
+unlink('finaldoublefixturen1.csv')
+write.csv(final_doublefixture_n1,"finaldoublefixturen1.csv")
+###############################################################################################################
+myfixturesp1 <- subset(myfixtures,Div == "P1")
+#############################################################
+final_doublefixture_p1 <- c()
+final_first_column_p1 <- c()
+final_second_column_p1 <- c()
+
+for(dbfixture_p1 in 1:nrow(myfixturesp1))
+{
+  test_fixture_p1 <- myfixturesp1[dbfixture_p1,]
+  test_fixture_inv_p1 <- test_fixture_p1[,c(1,3,2,4)]
+
+
+  final_test_fixture_p1 <- test_fixture_p1[rep(seq_len(nrow(test_fixture_p1)), each = 4),]
+  final_test_fixture_inv_p1 <- test_fixture_inv_p1[rep(seq_len(nrow(test_fixture_inv_p1)), each = 4),]
+
+
+  final_test_fixture_p1 <- final_test_fixture_p1[,c(2,3)]
+  final_test_fixture_inv_p1 <- final_test_fixture_inv_p1[,c(2,3)]
+
+  final_first_column_p1 <- c(final_test_fixture_p1[,c(1)],final_test_fixture_inv_p1[,c(1)])
+  final_second_column_p1 <- c(final_test_fixture_p1[,c(2)],final_test_fixture_inv_p1[,c(2)])
+
+  mid_doublefixture_p1 <- cbind(final_first_column_p1,final_second_column_p1)
+
+  final_doublefixture_p1 <- rbind(final_doublefixture_p1,mid_doublefixture_p1)
+
+
+}
+unlink('finaldoublefixturep1.csv')
+write.csv(final_doublefixture_p1,"finaldoublefixturep1.csv")
+#####################################################################################################
+myfixturessc0 <- subset(myfixtures,Div == "SC0")
+#############################################################
+final_doublefixture_sc0 <- c()
+final_first_column_sc0 <- c()
+final_second_column_sc0 <- c()
+
+for(dbfixture_sc0 in 1:nrow(myfixturessc0))
+{
+  test_fixture_sc0 <- myfixturessc0[dbfixture_sc0,]
+  test_fixture_inv_sc0 <- test_fixture_sc0[,c(1,3,2,4)]
+
+
+  final_test_fixture_sc0 <- test_fixture_sc0[rep(seq_len(nrow(test_fixture_sc0)), each = 4),]
+  final_test_fixture_inv_sc0 <- test_fixture_inv_sc0[rep(seq_len(nrow(test_fixture_inv_sc0)), each = 4),]
+
+
+  final_test_fixture_sc0 <- final_test_fixture_sc0[,c(2,3)]
+  final_test_fixture_inv_sc0 <- final_test_fixture_inv_sc0[,c(2,3)]
+
+  final_first_column_sc0 <- c(final_test_fixture_sc0[,c(1)],final_test_fixture_inv_sc0[,c(1)])
+  final_second_column_sc0 <- c(final_test_fixture_sc0[,c(2)],final_test_fixture_inv_sc0[,c(2)])
+
+  mid_doublefixture_sc0 <- cbind(final_first_column_sc0,final_second_column_sc0)
+
+  final_doublefixture_sc0 <- rbind(final_doublefixture_sc0,mid_doublefixture_sc0)
+
+
+}
+unlink('finaldoublefixturesc0.csv')
+write.csv(final_doublefixture_sc0,"finaldoublefixturesc0.csv")
+##############################################################################################################
+myfixturessc1 <- subset(myfixtures,Div == "SC1")
+#############################################################
+final_doublefixture_sc1 <- c()
+final_first_column_sc1 <- c()
+final_second_column_sc1 <- c()
+
+for(dbfixture_sc1 in 1:nrow(myfixturessc1))
+{
+  test_fixture_sc1 <- myfixturessc1[dbfixture_sc1,]
+  test_fixture_inv_sc1 <- test_fixture_sc1[,c(1,3,2,4)]
+
+
+  final_test_fixture_sc1 <- test_fixture_sc1[rep(seq_len(nrow(test_fixture_sc1)), each = 4),]
+  final_test_fixture_inv_sc1 <- test_fixture_inv_sc1[rep(seq_len(nrow(test_fixture_inv_sc1)), each = 4),]
+
+
+  final_test_fixture_sc1 <- final_test_fixture_sc1[,c(2,3)]
+  final_test_fixture_inv_sc1 <- final_test_fixture_inv_sc1[,c(2,3)]
+
+  final_first_column_sc1 <- c(final_test_fixture_sc1[,c(1)],final_test_fixture_inv_sc1[,c(1)])
+  final_second_column_sc1 <- c(final_test_fixture_sc1[,c(2)],final_test_fixture_inv_sc1[,c(2)])
+
+  mid_doublefixture_sc1 <- cbind(final_first_column_sc1,final_second_column_sc1)
+
+  final_doublefixture_sc1 <- rbind(final_doublefixture_sc1,mid_doublefixture_sc1)
+
+
+}
+unlink('finaldoublefixturesc1.csv')
+write.csv(final_doublefixture_sc1,"finaldoublefixturesc1.csv")
+##################################################################################################
+myfixturessp1 <- subset(myfixtures,Div == "SP1")
+#############################################################
+final_doublefixture_sp1 <- c()
+final_first_column_sp1 <- c()
+final_second_column_sp1 <- c()
+
+for(dbfixture_sp1 in 1:nrow(myfixturessp1))
+{
+  test_fixture_sp1 <- myfixturessp1[dbfixture_sp1,]
+  test_fixture_inv_sp1 <- test_fixture_sp1[,c(1,3,2,4)]
+
+
+  final_test_fixture_sp1 <- test_fixture_sp1[rep(seq_len(nrow(test_fixture_sp1)), each = 4),]
+  final_test_fixture_inv_sp1 <- test_fixture_inv_sp1[rep(seq_len(nrow(test_fixture_inv_sp1)), each = 4),]
+
+
+  final_test_fixture_sp1 <- final_test_fixture_sp1[,c(2,3)]
+  final_test_fixture_inv_sp1 <- final_test_fixture_inv_sp1[,c(2,3)]
+
+  final_first_column_sp1 <- c(final_test_fixture_sp1[,c(1)],final_test_fixture_inv_sp1[,c(1)])
+  final_second_column_sp1 <- c(final_test_fixture_sp1[,c(2)],final_test_fixture_inv_sp1[,c(2)])
+
+  mid_doublefixture_sp1 <- cbind(final_first_column_sp1,final_second_column_sp1)
+
+  final_doublefixture_sp1 <- rbind(final_doublefixture_sp1,mid_doublefixture_sp1)
+
+
+}
+unlink('finaldoublefixturesp1.csv')
+write.csv(final_doublefixture_sp1,"finaldoublefixturesp1.csv")
+######################################################################################################
+myfixturessp2 <- subset(myfixtures,Div == "SP2")
+#############################################################
+final_doublefixture_sp2 <- c()
+final_first_column_sp2 <- c()
+final_second_column_sp2 <- c()
+
+for(dbfixture_sp2 in 1:nrow(myfixturessp2))
+{
+  test_fixture_sp2 <- myfixturessp2[dbfixture_sp2,]
+  test_fixture_inv_sp2 <- test_fixture_sp2[,c(1,3,2,4)]
+
+
+  final_test_fixture_sp2 <- test_fixture_sp2[rep(seq_len(nrow(test_fixture_sp2)), each = 4),]
+  final_test_fixture_inv_sp2 <- test_fixture_inv_sp2[rep(seq_len(nrow(test_fixture_inv_sp2)), each = 4),]
+
+
+  final_test_fixture_sp2 <- final_test_fixture_sp2[,c(2,3)]
+  final_test_fixture_inv_sp2 <- final_test_fixture_inv_sp2[,c(2,3)]
+
+  final_first_column_sp2 <- c(final_test_fixture_sp2[,c(1)],final_test_fixture_inv_sp2[,c(1)])
+  final_second_column_sp2 <- c(final_test_fixture_sp2[,c(2)],final_test_fixture_inv_sp2[,c(2)])
+
+  mid_doublefixture_sp2 <- cbind(final_first_column_sp2,final_second_column_sp2)
+
+  final_doublefixture_sp2 <- rbind(final_doublefixture_sp2,mid_doublefixture_sp2)
+
+
+}
+unlink('finaldoublefixturesp2.csv')
+write.csv(final_doublefixture_sp2,"finaldoublefixturesp2.csv")
+##########################################################################################################
+myfixturest1 <- subset(myfixtures,Div == "T1")
+#############################################################
+final_doublefixture_t1 <- c()
+final_first_column_t1 <- c()
+final_second_column_t1 <- c()
+
+for(dbfixture_t1 in 1:nrow(myfixturest1))
+{
+  test_fixture_t1 <- myfixturest1[dbfixture_t1,]
+  test_fixture_inv_t1 <- test_fixture_t1[,c(1,3,2,4)]
+
+
+  final_test_fixture_t1 <- test_fixture_t1[rep(seq_len(nrow(test_fixture_t1)), each = 4),]
+  final_test_fixture_inv_t1 <- test_fixture_inv_t1[rep(seq_len(nrow(test_fixture_inv_t1)), each = 4),]
+
+
+  final_test_fixture_t1 <- final_test_fixture_t1[,c(2,3)]
+  final_test_fixture_inv_t1 <- final_test_fixture_inv_t1[,c(2,3)]
+
+  final_first_column_t1 <- c(final_test_fixture_t1[,c(1)],final_test_fixture_inv_t1[,c(1)])
+  final_second_column_t1 <- c(final_test_fixture_t1[,c(2)],final_test_fixture_inv_t1[,c(2)])
+
+  mid_doublefixture_t1 <- cbind(final_first_column_t1,final_second_column_t1)
+
+  final_doublefixture_t1 <- rbind(final_doublefixture_t1,mid_doublefixture_t1)
+
+
+}
+unlink('finaldoublefixturet1.csv')
+write.csv(final_doublefixture_t1,"finaldoublefixturet1.csv")
+##########################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+

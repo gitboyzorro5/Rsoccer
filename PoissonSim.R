@@ -4,7 +4,7 @@
 poisson_round <- 6
 allhomepoisson <- c()
 allawaypoisson <- c()
-while (poisson_round <= 30){
+while (poisson_round <= 42){
 ROUND_20212022 <- poisson_round
 
 #########################################################
@@ -102,17 +102,17 @@ T1$TG <- as.numeric(T1$TG)
 source("goaltotalsv2.R")
 source("ShotsAnalysis.R")
 source("PoissonModel.R")
-i2_totalgames_poiss <- c()
-i2_totalgames_poiss[1:length(i2_teams)] <- paste("no",poisson_round,sep = "")
-i2_home_poisson <- cbind(i2_home_poisson,i2_totalgames_poiss)
-i2_away_poisson <- cbind(i2_away_poisson,i2_totalgames_poiss)
+sp2_totalgames_poiss <- c()
+sp2_totalgames_poiss[1:length(sp2_teams)] <- paste("no",poisson_round,sep = "")
+sp2_home_poisson <- cbind(sp2_home_poisson,sp2_totalgames_poiss)
+sp2_away_poisson <- cbind(sp2_away_poisson,sp2_totalgames_poiss)
 
-write.csv(i2_home_poisson,paste("i2_home_poisson",ROUND_20212022,".csv",sep = "_"))
-write.csv(i2_away_poisson,paste("i2_away_poisson",ROUND_20212022,".csv",sep = "_"))
+write.csv(sp2_home_poisson,paste("sp2_home_poisson",ROUND_20212022,".csv",sep = "_"))
+write.csv(sp2_away_poisson,paste("sp2_away_poisson",ROUND_20212022,".csv",sep = "_"))
 
 
-allhomepoisson <- rbind(allhomepoisson,i2_home_poisson)
-allawaypoisson <- rbind(allawaypoisson,i2_away_poisson)
+allhomepoisson <- rbind(allhomepoisson,sp2_home_poisson)
+allawaypoisson <- rbind(allawaypoisson,sp2_away_poisson)
 # allhomepoisson <- rbind(b1_home_poisson,d1_home_poisson,d2_home_poisson,e0_home_poisson,e1_home_poisson,e2_home_poisson,
 #                          e3_home_poisson,ec_home_poisson,f1_home_poisson,f2_home_poisson,g1_home_poisson,i1_home_poisson,
 #                          i2_home_poisson,n1_home_poisson,p1_home_poisson,sp1_home_poisson,sp2_home_poisson,sc0_home_poisson,

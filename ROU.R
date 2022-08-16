@@ -20,12 +20,17 @@ ROU <- ROU[order(as.Date(ROU$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 ROU$CS <- paste(ROU$HG,ROU$AG, sep = "-")
 #ROU_qualificaton <- subset(ROU,tournament == "UEFA Euro qualification")
 ROU <- subset(ROU,Season == "2021/2022")
+ROU <- ROU[!ROU$Home =="U. Cluj",]
+ROU <- ROU[!ROU$Home =="Concordia",]
+ROU <- ROU[!ROU$Away =="U. Cluj",]
+ROU <- ROU[!ROU$Away =="Concordia",]
 #ROU <- ROU[ROU$Date > '2008-01-01',])
 ROU$TG <- ROU$HG + ROU$AG
 ROU$OV25 <- ifelse(ROU$TG >= 3,"Y","N")
 ROU$FTR <- with(ROU,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+sort(unique(ROU$Away))
 #####################################################################################
 rou_totalgoalsv2 <- tapply(ROU$TG, ROU[c("Home", "Away")],mean)
 rou_totalgoalsv2
@@ -60,7 +65,7 @@ rou_eachround <- rou_totalmatches / rou_totalrounds
 rou_matchesplayed <-  nrow(ROU)
 
 ROU_rounds <- ROU
-
+nrow(ROU)
 if(rou_matchesplayed %% rou_eachround == 0)
 {
   rou_currentround <- rou_matchesplayed / rou_eachround

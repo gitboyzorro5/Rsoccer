@@ -26,12 +26,13 @@ SWZ$OV25 <- ifelse(SWZ$TG >= 3,"Y","N")
 SWZ$FTR <- with(SWZ,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+sort(unique(SWZ$Away))
 ###################################################
 # SWZ <- mgsub(SWZ,c("Wolfsberger"),c("Wolfsberger AC"))
 # SWZ <- mgsub(SWZ,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
 SWZ <- SWZ[!SWZ$Away == "Schaffhausen",]
-sort(unique(SWZ$Away))
+
 swz_totalgoalsv2 <- tapply(SWZ$TG, SWZ[c("Home", "Away")],mean)
 swz_totalgoalsv2
 swz_hgtotals <- rowSums(swz_totalgoalsv2,na.rm = T)

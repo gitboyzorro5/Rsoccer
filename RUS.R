@@ -19,12 +19,20 @@ RUS <- RUS[order(as.Date(RUS$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 RUS$CS <- paste(RUS$HG,RUS$AG, sep = "-")
 #RUS_qualificaton <- subset(RUS,tournament == "UEFA Euro qualification")
 RUS <- subset(RUS,Season == "2021/2022")
+RUS <- RUS[!RUS$Home =="Orenburg",]
+RUS <- RUS[!RUS$Home =="SKA Khabarovsk",]
+RUS <- RUS[!RUS$Away =="Orenburg",]
+RUS <- RUS[!RUS$Away =="SKA Khabarovsk",]
 #RUS <- RUS[RUS$Date > '2008-01-01',])
 RUS$TG <- RUS$HG + RUS$AG
 RUS$OV25 <- ifelse(RUS$TG >= 3,"Y","N")
 RUS$FTR <- with(RUS,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
+
+sort(unique(RUS$Away))
+
+
 ###################################################
 # RUS <- mgsub(RUS,c("Wolfsberger"),c("Wolfsberger AC"))
 # RUS <- mgsub(RUS,c("Wolfsberger AC AC"),c("Wolfsberger AC"))

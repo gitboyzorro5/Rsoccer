@@ -19,7 +19,7 @@ ROU$Date <- dmy(ROU$Date)
 ROU <- ROU[order(as.Date(ROU$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 ROU$CS <- paste(ROU$HG,ROU$AG, sep = "-")
 #ROU_qualificaton <- subset(ROU,tournament == "UEFA Euro qualification")
-ROU <- subset(ROU,Season == "2021/2022")
+ROU <- subset(ROU,Season == "2022/2023")
 ROU <- ROU[!ROU$Home =="U. Cluj",]
 ROU <- ROU[!ROU$Home =="Concordia",]
 ROU <- ROU[!ROU$Away =="U. Cluj",]
@@ -30,7 +30,7 @@ ROU$OV25 <- ifelse(ROU$TG >= 3,"Y","N")
 ROU$FTR <- with(ROU,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-sort(unique(ROU$Away))
+sort(unique(ROU$Home))
 #####################################################################################
 rou_totalgoalsv2 <- tapply(ROU$TG, ROU[c("Home", "Away")],mean)
 rou_totalgoalsv2
@@ -57,10 +57,10 @@ rou_goaltotalsv2 <- cbind(rou_goaltotalsv2,rou_avg_totalgoals)
 write.xlsx(rou_goaltotalsv2,'NL/ROU.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
 ##############################################################################################
-ROU <- subset(ROU,Season == "2021/2022")
+ROU <- subset(ROU,Season == "2022/2023")
 rou_totalrounds <-  (length(rou_teams) - 1 )*2
 rou_totalmatches <- (length(rou_teams)*(length(rou_teams) - 1))
-rou_eachround <- rou_totalmatches / rou_totalrounds
+rou_eachround <- ceiling(rou_totalmatches / rou_totalrounds)
 
 rou_matchesplayed <-  nrow(ROU)
 
@@ -85,6 +85,8 @@ if(rou_matchesplayed %% rou_eachround == 0)
   rou_matchday <- append(rou_matchday_vec1,rou_matchday_vec2)
 }
 ROU_rounds <- cbind(ROU_rounds,rou_matchday)
+
+
 ##############################################################################################
 ##############################################################################################
 rou_goalscored_h <- tapply(ROU$HG, ROU[c("Home", "Date")],mean)
@@ -1158,6 +1160,9 @@ rou_ov25_summary <- tabyl(ROU,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(rou_ftr_summary,'NL/ROU.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(rou_ov25_summary,'NL/ROU.xlsx',sheetName = "OVUN25", append = TRUE)
+
+ROU <- subset(ROU,Season == "2022/2023")
+
 
 
 

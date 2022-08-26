@@ -18,7 +18,7 @@ MEX$Date <- dmy(MEX$Date)
 MEX <- MEX[order(as.Date(MEX$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 MEX$CS <- paste(MEX$HG,MEX$AG, sep = "-")
 #MEX_qualificaton <- subset(MEX,tournament == "UEFA Euro qualification")
-MEX <- subset(MEX,Season == "2021/2022")
+MEX <- subset(MEX,Season == "2022/2023")
 #MEX <- MEX[MEX$Date > '2008-01-01',])
 MEX$TG <- MEX$HG + MEX$AG
 MEX$OV25 <- ifelse(MEX$TG >= 3,"Y","N")
@@ -54,7 +54,7 @@ mex_goaltotalsv2 <- cbind(mex_goaltotalsv2,mex_avg_totalgoals)
 write.xlsx(mex_goaltotalsv2,'NL/MEX.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
 ##############################################################################################
-MEX <- subset(MEX,Season == "2021/2022")
+MEX <- subset(MEX,Season == "2022/2023")
 mex_totalrounds <-  (length(mex_teams) - 1 )*2
 mex_totalmatches <- (length(mex_teams)*(length(mex_teams) - 1))
 mex_eachround <- mex_totalmatches / mex_totalrounds
@@ -1154,6 +1154,6 @@ mex_ov25_summary <- tabyl(MEX,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(mex_ftr_summary,'NL/MEX.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(mex_ov25_summary,'NL/MEX.xlsx',sheetName = "OVUN25", append = TRUE)
-MEX <- subset(MEX,Season == "2021/2022")
+MEX <- subset(MEX,Season == "2022/2023")
 
 

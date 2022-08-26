@@ -8,7 +8,6 @@ library('lubridate')
 ################################
 ####delete current file#########
 unlink('finalscore.xlsx')
-unlink('finalscore_newleagues.xlsx')
 allteams20212022scores <- allteams20212022
 myoddscores <- readxl::read_excel('../FDAS/myodds_20212022.xlsx', sheet = '3way')
 myoddscores$Date <- dmy(myoddscores$Date)
@@ -81,12 +80,13 @@ allteams20212022scores_newleagues <- allteams20212022scores_newleagues[,c(6,7,23
 
 finalscore_newleagues <- dplyr::left_join(myoddscores_newleagues,allteams20212022scores_newleagues)
 
+unlink('finalscore_newleagues.xlsx')
 write.xlsx(finalscore_newleagues,'finalscore_newleagues.xlsx')
 
 rm(myoddscores_newleagues)
 rm(allteams20212022scores_newleagues)
 
-
+tail(SWZ)
 
 
 colnames(myoddscores_newleagues)

@@ -20,7 +20,7 @@ DNK <- DNK[order(as.Date(DNK$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 DNK$CS <- paste(DNK$HG,DNK$AG, sep = "-")
 
 #DNK_qualificaton <- subset(DNK,tournament == "UEFA Euro qualification")
-DNK <- subset(DNK,Season == "2021/2022")
+DNK <- subset(DNK,Season == "2022/2023")
 #DNK <- DNK[DNK$Date > '2008-01-01',])
 DNK$TG <- DNK$HG + DNK$AG
 DNK$OV25 <- ifelse(DNK$TG >= 3,"Y","N")
@@ -55,7 +55,7 @@ dnk_goaltotalsv2[is.na(dnk_goaltotalsv2)] <- ""
 dnk_goaltotalsv2 <- cbind(dnk_goaltotalsv2,dnk_avg_totalgoals)
 write.xlsx(dnk_goaltotalsv2,'NL/DNK.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-DNK <- subset(DNK,Season == "2021/2022")
+DNK <- subset(DNK,Season == "2022/2023")
 dnk_totalrounds <-  (length(dnk_teams) - 1 )*2
 dnk_totalmatches <- (length(dnk_teams)*(length(dnk_teams) - 1))
 dnk_eachround <- dnk_totalmatches / dnk_totalrounds
@@ -1159,6 +1159,6 @@ dnk_ov25_summary <- tabyl(DNK,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(dnk_ftr_summary,'NL/DNK.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(dnk_ov25_summary,'NL/DNK.xlsx',sheetName = "OVUN25", append = TRUE)
-DNK <- subset(DNK,Season == "2021/2022")
+DNK <- subset(DNK,Season == "2022/2023")
 
 

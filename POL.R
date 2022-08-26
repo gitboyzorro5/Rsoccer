@@ -19,7 +19,7 @@ POL$Date <- dmy(POL$Date)
 POL <- POL[order(as.Date(POL$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 POL$CS <- paste(POL$HG,POL$AG, sep = "-")
 #POL_qualificaton <- subset(POL,tournament == "UEFA Euro qualification")
-POL <- subset(POL,Season == "2021/2022")
+POL <- subset(POL,Season == "2022/2023")
 #POL <- POL[POL$Date > '2008-01-01',])
 POL$TG <- POL$HG + POL$AG
 POL$OV25 <- ifelse(POL$TG >= 3,"Y","N")
@@ -56,7 +56,7 @@ pol_goaltotalsv2[is.na(pol_goaltotalsv2)] <- ""
 pol_goaltotalsv2 <- cbind(pol_goaltotalsv2,pol_avg_totalgoals)
 write.xlsx(pol_goaltotalsv2,'NL/POL.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-POL <- subset(POL,Season == "2021/2022")
+POL <- subset(POL,Season == "2022/2023")
 pol_totalrounds <-  (length(pol_teams) - 1 )*2
 pol_totalmatches <- (length(pol_teams)*(length(pol_teams) - 1))
 pol_eachround <- pol_totalmatches / pol_totalrounds
@@ -1158,5 +1158,5 @@ ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(pol_ftr_summary,'NL/POL.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(pol_ov25_summary,'NL/POL.xlsx',sheetName = "OVUN25", append = TRUE)
 
-
+POL <- subset(POL,Season == "2022/2023")
 

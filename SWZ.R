@@ -18,7 +18,7 @@ SWZ$Date <- dmy(SWZ$Date)
 SWZ <- SWZ[order(as.Date(SWZ$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 SWZ$CS <- paste(SWZ$HG,SWZ$AG, sep = "-")
 #SWZ_qualificaton <- subset(SWZ,tournament == "UEFA Euro qualification")
-SWZ <- subset(SWZ,Season == "2021/2022")
+SWZ <- subset(SWZ,Season == "2022/2023")
 SWZ <- subset(SWZ,League == "Super League")
 #SWZ <- SWZ[SWZ$Date > '2008-01-01',])
 SWZ$TG <- SWZ$HG + SWZ$AG
@@ -26,12 +26,12 @@ SWZ$OV25 <- ifelse(SWZ$TG >= 3,"Y","N")
 SWZ$FTR <- with(SWZ,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-sort(unique(SWZ$Away))
+sort(unique(SWZ$Home))
 ###################################################
 # SWZ <- mgsub(SWZ,c("Wolfsberger"),c("Wolfsberger AC"))
 # SWZ <- mgsub(SWZ,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################
-SWZ <- SWZ[!SWZ$Away == "Schaffhausen",]
+#SWZ <- SWZ[!SWZ$Away == "Schaffhausen",]
 
 swz_totalgoalsv2 <- tapply(SWZ$TG, SWZ[c("Home", "Away")],mean)
 swz_totalgoalsv2
@@ -57,7 +57,7 @@ swz_goaltotalsv2[is.na(swz_goaltotalsv2)] <- ""
 swz_goaltotalsv2 <- cbind(swz_goaltotalsv2,swz_avg_totalgoals)
 write.xlsx(swz_goaltotalsv2,'NL/SWZ.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-SWZ <- subset(SWZ,Season == "2021/2022")
+SWZ <- subset(SWZ,Season == "2022/2023")
 swz_totalrounds <-  (length(swz_teams) - 1 )*2
 swz_totalmatches <- (length(swz_teams)*(length(swz_teams) - 1))
 swz_eachround <- swz_totalmatches / swz_totalrounds
@@ -1159,5 +1159,6 @@ ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(swz_ftr_summary,'NL/SWZ.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(swz_ov25_summary,'NL/SWZ.xlsx',sheetName = "OVUN25", append = TRUE)
 
+SWZ <- subset(SWZ,Season == "2022/2023")
 
 

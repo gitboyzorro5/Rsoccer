@@ -21,7 +21,7 @@ AUT <- AUT[order(as.Date(AUT$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 AUT$CS <- paste(AUT$HG,AUT$AG, sep = "-")
 
 #AUT_qualificaton <- subset(AUT,tournament == "UEFA Euro qualification")
-AUT <- subset(AUT,Season == "2021/2022")
+AUT <- subset(AUT,Season == "2022/2023")
 #AUT <- AUT[AUT$Date > '2008-01-01',])
 AUT$TG <- AUT$HG + AUT$AG
 AUT$OV25 <- ifelse(AUT$TG >= 3,"Y","N")
@@ -32,7 +32,7 @@ AUT$FTR <- with(AUT,
 # AUT <- mgsub(AUT,c("Wolfsberger"),c("Wolfsberger AC"))
 # AUT <- mgsub(AUT,c("Wolfsberger AC AC"),c("Wolfsberger AC"))
 ####GoalTotalsv2##################################################################
-
+sort(unique(AUT$Home))
 #####################################################################################################
 ##############################################################################################
 
@@ -60,7 +60,7 @@ aut_goaltotalsv2[is.na(aut_goaltotalsv2)] <- ""
 aut_goaltotalsv2 <- cbind(aut_goaltotalsv2,aut_avg_totalgoals)
 write.xlsx(aut_goaltotalsv2,'NL/AUT.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-#AUT <- subset(AUT,Season == "2021/2022")
+#AUT <- subset(AUT,Season == "2022/2023")
 aut_totalrounds <-  (length(aut_teams) - 1 )*2
 aut_totalmatches <- (length(aut_teams)*(length(aut_teams) - 1))
 aut_eachround <- aut_totalmatches / aut_totalrounds
@@ -1165,5 +1165,5 @@ aut_ov25_summary <- tabyl(AUT,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(aut_ftr_summary,'NL/AUT.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(aut_ov25_summary,'NL/AUT.xlsx',sheetName = "OVUN25", append = TRUE)
-AUT <- subset(AUT,Season == "2021/2022")
+AUT <- subset(AUT,Season == "2022/2023")
 

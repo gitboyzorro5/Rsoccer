@@ -1,10 +1,10 @@
-
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 library('lubridate')
 #############################################################
 myfixturesdiv <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')
 myfixturesdiv$Date <- dmy(myfixturesdiv$Date)
-myfixturesdiv <- myfixturesdiv[myfixturesdiv$Date >= '2022-08-19',]
+myfixturesdiv <- myfixturesdiv[myfixturesdiv$Date >= '2022-08-26',]
 
 ####################################################################
 myfixturesdivb1 <- subset(myfixturesdiv,Div == "B1")

@@ -4,7 +4,7 @@ library('lubridate')
 #############################################################
 myfixturesdiv <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')
 myfixturesdiv$Date <- dmy(myfixturesdiv$Date)
-myfixturesdiv <- myfixturesdiv[myfixturesdiv$Date >= '2022-08-26',]
+myfixturesdiv <- myfixturesdiv[myfixturesdiv$Date >= '2022-08-30',]
 
 ####################################################################
 myfixturesdivb1 <- subset(myfixturesdiv,Div == "B1")

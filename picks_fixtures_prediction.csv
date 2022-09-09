@@ -1,185 +1,173 @@
 "","X","Div","Home_Team","Away_Team","Date","matchid","picks_Div","picks_HomeTeam","picks_AwayTeam","prediction","HWM","AWM","HWMLM","AWMLM","AVGHY","AVGAY"
-"1",46,"B1","Charleroi","Club Brugge","2022-08-26","Charleroi-Club Brugge","B1","Charleroi","Club Brugge","2,ov25,BTTS-Y",5,16,"3","2","3.7059","4.3529"
-"2",47,"B1","Cercle Brugge","Waregem","2022-08-27","Cercle Brugge-Waregem","B1","Cercle Brugge","Waregem","1X,ov25,BTTS-N",-3,-3,"0","-3","4.4412","4.1471"
-"3",48,"B1","Oud-Heverlee Leuven","Oostende","2022-08-27","Oud-Heverlee Leuven-Oostende","B1","Oud-Heverlee Leuven","Oostende","2,un25,BTTS-N",-11,-3,"-5","2","4.5588","4.0588"
-"4",49,"B1","Seraing","Genk","2022-08-27","Seraing-Genk","B1","Seraing","Genk","2,un25,BTTS-N",-7,6,"-2","2","4","3.4706"
-"5",50,"B1","St Truiden","Mechelen","2022-08-27","St Truiden-Mechelen","B1","St Truiden","Mechelen","1X,un25,BTTS-Y",7,-1,"3","-2","4.2647","3.9118"
-"6",51,"B1","Gent","Antwerp","2022-08-28","Gent-Antwerp","B1","Gent","Antwerp","1X,un25,BTTS-Y",10,-1,"5","0","4.5294","4.6765"
-"7",52,"B1","Kortrijk","Standard","2022-08-28","Kortrijk-Standard","B1","Kortrijk","Standard","2,un25,BTTS-N",-8,-4,"-1","-3","4.7647","5.6471"
-"8",53,"B1","St. Gilloise","Anderlecht","2022-08-28","St. Gilloise-Anderlecht","B1","St. Gilloise","Anderlecht","1X,ov25,BTTS-Y",11,8,"5","1","4.5294","3.5588"
-"9",54,"B1","Westerlo","Eupen","2022-08-28","Westerlo-Eupen",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"10",334,"D1","Freiburg","Bochum","2022-08-26","Freiburg-Bochum","D1","Freiburg","Bochum","1X,ov25,BTTS-N",1,-4,"-1","-1","2.9412","3.6176"
-"11",335,"D1","Bayern Munich","Mgladbach","2022-08-27","Bayern Munich-Mgladbach","D1","Bayern Munich","Mgladbach","1X,ov25,BTTS-Y",4,6,"0","4","2.5","4.0882"
-"12",336,"D1","Hertha","Dortmund","2022-08-27","Hertha-Dortmund","D1","Hertha","Dortmund","2,ov25,BTTS-Y",-2,7,"-1","1","3.2059","3.8824"
-"13",337,"D1","Hoffenheim","Augsburg","2022-08-27","Hoffenheim-Augsburg","D1","Hoffenheim","Augsburg","2,ov25,BTTS-N",-10,-6,"-4","1","3.5882","3.9118"
-"14",338,"D1","Mainz","Leverkusen","2022-08-27","Mainz-Leverkusen","D1","Mainz","Leverkusen","2,ov25,BTTS-Y",-3,7,"0","1","3.8529","3.4118"
-"15",339,"D1","RB Leipzig","Wolfsburg","2022-08-27","RB Leipzig-Wolfsburg","D1","RB Leipzig","Wolfsburg","2,ov25,BTTS-Y",5,5,"0","0","3.4412","3.7059"
-"16",340,"D1","Schalke 04","Union Berlin","2022-08-27","Schalke 04-Union Berlin",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"17",341,"D1","FC Koln","Stuttgart","2022-08-28","FC Koln-Stuttgart","D1","FC Koln","Stuttgart","1X,ov25,BTTS-N",6,-3,"-1","1","3.9118","3.6176"
-"18",342,"D1","Werder Bremen","Ein Frankfurt","2022-08-28","Werder Bremen-Ein Frankfurt",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"19",658,"D2","Arminia Bielefeld","Braunschweig","2022-08-26","Arminia Bielefeld-Braunschweig",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"20",659,"D2","Fortuna Dusseldorf","Regensburg","2022-08-26","Fortuna Dusseldorf-Regensburg","D2","Fortuna Dusseldorf","Regensburg","1X,un25,BTTS-Y",4,-6,"-2","-2","3.7059","4"
-"21",660,"D2","Darmstadt","Heidenheim","2022-08-27","Darmstadt-Heidenheim","D2","Darmstadt","Heidenheim","1X,ov25,BTTS-Y",4,-3,"3","2","4.3529","3.3235"
-"22",661,"D2","Karlsruhe","Hansa Rostock","2022-08-27","Karlsruhe-Hansa Rostock","D2","Karlsruhe","Hansa Rostock","2,ov25,BTTS-N",-7,-4,"-2","-1","3.8235","4.3235"
-"23",662,"D2","Nurnberg","Hamburg","2022-08-27","Nurnberg-Hamburg","D2","Nurnberg","Hamburg","2,ov25,BTTS-Y",-4,10,"-1","1","3.9412","4.5"
-"24",663,"D2","St Pauli","Paderborn","2022-08-27","St Pauli-Paderborn","D2","St Pauli","Paderborn","2,un25,BTTS-Y",0,3,"2","-3","3.6765","4.2353"
-"25",664,"D2","Hannover","Greuther Furth","2022-08-28","Hannover-Greuther Furth",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"26",665,"D2","Holstein Kiel","Sandhausen","2022-08-28","Holstein Kiel-Sandhausen","D2","Holstein Kiel","Sandhausen","1X,ov25,BTTS-Y",3,2,"-2","2","4.4412","4.3529"
-"27",666,"D2","Kaiserslautern","Magdeburg","2022-08-28","Kaiserslautern-Magdeburg",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"28",949,"E0","Arsenal","Fulham","2022-08-27","Arsenal-Fulham",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"29",950,"E0","Brentford","Everton","2022-08-27","Brentford-Everton","E0","Brentford","Everton","1X,ov25,BTTS-Y",1,-2,"-1","-4","2.9211","3.8421"
-"30",951,"E0","Brighton","Leeds","2022-08-27","Brighton-Leeds","E0","Brighton","Leeds","1X,ov25,BTTS-N",6,-7,"2","1","3.9737","4.4211"
-"31",952,"E0","Chelsea","Leicester","2022-08-27","Chelsea-Leicester","E0","Chelsea","Leicester","2,ov25,BTTS-Y",3,7,"1","3","3.4211","2.9737"
-"32",953,"E0","Liverpool","Bournemouth","2022-08-27","Liverpool-Bournemouth",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"33",954,"E0","Manchester City","Crystal Palace","2022-08-27","Manchester City-Crystal Palace",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"34",955,"E0","Southampton","Man United","2022-08-27","Southampton-Man United","E0","Southampton","Man United","2,ov25,BTTS-N",-10,-8,"-3","-1","3.2632","3.2368"
-"35",956,"E0","Aston Villa","West Ham","2022-08-28","Aston Villa-West Ham","E0","Aston Villa","West Ham","1X,ov25,BTTS-Y",2,0,"-1","-2","4.2368","2.4474"
-"36",957,"E0","Nottingham","Tottenham","2022-08-28","Nottingham-Tottenham",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"37",958,"E0","Wolves","Newcastle","2022-08-28","Wolves-Newcastle","E0","Wolves","Newcastle","2,ov25,BTTS-Y",-10,1,"-2","1","3.7368","4.0526"
-"38",1359,"E1","Blackburn","Stoke","2022-08-27","Blackburn-Stoke","E1","Blackburn","Stoke","2,un25,BTTS-Y",-1,1,"1","0","4.3478","3.6304"
-"39",1360,"E1","Blackpool","Bristol City","2022-08-27","Blackpool-Bristol City","E1","Blackpool","Bristol City","2,un25,BTTS-Y",-1,6,"-5","-2","3.5","3.3478"
-"40",1361,"E1","Cardiff","Preston","2022-08-27","Cardiff-Preston","E1","Cardiff","Preston","2,un25,BTTS-N",-4,0,"1","3","3.6739","3.5217"
-"41",1362,"E1","Huddersfield","West Brom","2022-08-27","Huddersfield-West Brom","E1","Huddersfield","West Brom","1X,ov25,BTTS-Y",8,0,"2","4","3.5217","3.2609"
-"42",1363,"E1","Hull","Coventry","2022-08-27","Hull-Coventry","E1","Hull","Coventry","1X,ov25,BTTS-Y",-1,0,"0","0","3.2391","3.6304"
-"43",1364,"E1","Luton","Sheffield United","2022-08-27","Luton-Sheffield United","E1","Luton","Sheffield United","2,un25,BTTS-Y",-6,6,"1","4","3.8913","3.5435"
-"44",1365,"E1","Middlesbrough","Swansea","2022-08-27","Middlesbrough-Swansea","E1","Middlesbrough","Swansea","1X,un25,BTTS-Y",-1,-5,"-3","-1","4.4348","3.8043"
-"45",1366,"E1","Millwall","Reading","2022-08-27","Millwall-Reading","E1","Millwall","Reading","1X,ov25,BTTS-N",6,-5,"-1","-1","3.2391","3.7609"
-"46",1367,"E1","Rotherham","Birmingham","2022-08-27","Rotherham-Birmingham",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"47",1368,"E1","Sunderland","Norwich","2022-08-27","Sunderland-Norwich",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"48",1369,"E1","Watford","QPR","2022-08-27","Watford-QPR",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"49",1370,"E1","Wigan","Burnley","2022-08-27","Wigan-Burnley",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"50",1911,"E2","Accrington","Exeter","2022-08-27","Accrington-Exeter",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"51",1912,"E2","Bristol Rvs","Shrewsbury","2022-08-27","Bristol Rvs-Shrewsbury",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"52",1913,"E2","Cambridge","Burton","2022-08-27","Cambridge-Burton","E2","Cambridge","Burton","1X,un25,BTTS-N",-7,-1,"0","-1","3.3696","3.1522"
-"53",1914,"E2","Cheltenham","Oxford","2022-08-27","Cheltenham-Oxford","E2","Cheltenham","Oxford","2,ov25,BTTS-Y",-3,-1,"0","0","3.1522","3.6957"
-"54",1915,"E2","Derby","Peterborough","2022-08-27","Derby-Peterborough",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"55",1916,"E2","Ipswich","Barnsley","2022-08-27","Ipswich-Barnsley",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"56",1917,"E2","Lincoln","Fleetwood Town","2022-08-27","Lincoln-Fleetwood Town","E2","Lincoln","Fleetwood Town","1X,ov25,BTTS-Y",0,-5,"1","-2","3.5217","3.3913"
-"57",1918,"E2","Morecambe","Milton Keynes Dons","2022-08-27","Morecambe-Milton Keynes Dons","E2","Morecambe","Milton Keynes Dons","2,un25,BTTS-Y",-2,6,"-1","5","2.6957","3.3913"
-"58",1919,"E2","Plymouth","Bolton","2022-08-27","Plymouth-Bolton","E2","Plymouth","Bolton","2,un25,BTTS-N",-6,6,"-5","2","3.3478","3.3261"
-"59",1920,"E2","Port Vale","Portsmouth","2022-08-27","Port Vale-Portsmouth",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"60",1921,"E2","Sheffield Weds","Forest Green","2022-08-27","Sheffield Weds-Forest Green",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"61",1922,"E2","Wycombe","Charlton","2022-08-27","Wycombe-Charlton","E2","Wycombe","Charlton","1X,un25,BTTS-Y",7,0,"1","-4","3.4783","3.9783"
-"62",2463,"E3","AFC Wimbledon","Barrow","2022-08-27","AFC Wimbledon-Barrow",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"63",2464,"E3","Bradford","Crewe","2022-08-27","Bradford-Crewe",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"64",2465,"E3","Carlisle","Gillingham","2022-08-27","Carlisle-Gillingham",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"65",2466,"E3","Harrogate","Newport County","2022-08-27","Harrogate-Newport County","E3","Harrogate","Newport County","1X,ov25,BTTS-N",-5,-3,"-2","-2","2.9348","3.1739"
-"66",2467,"E3","Leyton Orient","Hartlepool","2022-08-27","Leyton Orient-Hartlepool","E3","Leyton Orient","Hartlepool","1X,un25,BTTS-N",2,-7,"-1","-2","4","2.7609"
-"67",2468,"E3","Northampton","Doncaster","2022-08-27","Northampton-Doncaster",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"68",2469,"E3","Rochdale","Crawley Town","2022-08-27","Rochdale-Crawley Town","E3","Rochdale","Crawley Town","1X,un25,BTTS-N",0,-5,"2","0","2.6957","3.0652"
-"69",2470,"E3","Salford","Stevenage","2022-08-27","Salford-Stevenage","E3","Salford","Stevenage","2,un25,BTTS-Y",0,2,"-2","2","3.413","2.8043"
-"70",2471,"E3","Stockport","Swindon","2022-08-27","Stockport-Swindon",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"71",2472,"E3","Sutton","Mansfield","2022-08-27","Sutton-Mansfield","E3","Sutton","Mansfield","1X,un25,BTTS-Y",3,2,"2","0","3.1522","3.4348"
-"72",2473,"E3","Tranmere","Colchester","2022-08-27","Tranmere-Colchester","E3","Tranmere","Colchester","1X,un25,BTTS-Y",3,2,"1","2","3.3478","3.3043"
-"73",2474,"E3","Walsall","Grimsby","2022-08-27","Walsall-Grimsby",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"74",3003,"EC","Boreham Wood","Altrincham","2022-08-27","Boreham Wood-Altrincham","EC","Boreham Wood","Altrincham","2,un25,BTTS-N",-4,-1,"-3","-1","2.9091","3.1364"
-"75",3004,"EC","Bromley","Scunthorpe","2022-08-27","Bromley-Scunthorpe",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"76",3005,"EC","Chesterfield","Barnet","2022-08-27","Chesterfield-Barnet","EC","Chesterfield","Barnet","2,ov25,BTTS-N",-6,-2,"0","-2","3.5227","3.3409"
-"77",3006,"EC","Eastleigh","Southend","2022-08-27","Eastleigh-Southend","EC","Eastleigh","Southend","2,un25,BTTS-Y",-1,3,"0","0","3.8182","3.5682"
-"78",3007,"EC","Halifax","Notts County","2022-08-27","Halifax-Notts County","EC","Halifax","Notts County","2,un25,BTTS-Y",1,8,"-2","1","3.25","4.1591"
-"79",3008,"EC","Gateshead","Wealdstone","2022-08-27","Gateshead-Wealdstone",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"80",3009,"EC","Maidenhead","York","2022-08-27","Maidenhead-York",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"81",3010,"EC","Maidstone","Torquay","2022-08-27","Maidstone-Torquay",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"82",3011,"EC","Oldham","Aldershot","2022-08-27","Oldham-Aldershot",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"83",3012,"EC","Solihull","Dorking","2022-08-27","Solihull-Dorking",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"84",3013,"EC","Woking","Wrexham","2022-08-27","Woking-Wrexham","EC","Woking","Wrexham","2,ov25,BTTS-N",-1,5,"0","-3","3.9091","3.0227"
-"85",3014,"EC","Yeovil","Dag and Red","2022-08-27","Yeovil-Dag and Red","EC","Yeovil","Dag and Red","2,un25,BTTS-N",1,4,"1","3","3.8864","2.8182"
-"86",3015,"EC","Aldershot","Maidstone","2022-08-29","Aldershot-Maidstone",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"87",3016,"EC","Altrincham","Chesterfield","2022-08-29","Altrincham-Chesterfield","EC","Altrincham","Chesterfield","1X,un25,BTTS-N",-1,-6,"-1","0","3.1364","3.5227"
-"88",3017,"EC","Barnet","Eastleigh","2022-08-29","Barnet-Eastleigh","EC","Barnet","Eastleigh","1X,ov25,BTTS-Y",-2,-1,"-2","0","3.3409","3.8182"
-"89",3018,"EC","Dag and Red","Bromley","2022-08-29","Dag and Red-Bromley","EC","Dag and Red","Bromley","1X,ov25,BTTS-Y",4,1,"3","2","2.8182","3.2955"
-"90",3019,"EC","Dorking","Boreham Wood","2022-08-29","Dorking-Boreham Wood",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"91",3020,"EC","Notts County","Solihull","2022-08-29","Notts County-Solihull","EC","Notts County","Solihull","1X,ov25,BTTS-Y",8,10,"1","3","4.1591","3.1136"
-"92",3021,"EC","Scunthorpe","Halifax","2022-08-29","Scunthorpe-Halifax",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"93",3022,"EC","Southend","Maidenhead","2022-08-29","Southend-Maidenhead","EC","Southend","Maidenhead","1X,un25,BTTS-Y",3,3,"0","-1","3.5682","2.9545"
-"94",3023,"EC","Torquay","Woking","2022-08-29","Torquay-Woking","EC","Torquay","Woking","2,un25,BTTS-N",0,-1,"0","0","3.25","3.9091"
-"95",3024,"EC","Wealdstone","Yeovil","2022-08-29","Wealdstone-Yeovil","EC","Wealdstone","Yeovil","1X,un25,BTTS-N",2,1,"2","1","3.25","3.8864"
-"96",3025,"EC","Wrexham","Gateshead","2022-08-29","Wrexham-Gateshead",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"97",3026,"EC","York","Oldham","2022-08-29","York-Oldham",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"98",3537,"F1","Ajaccio","Lille","2022-08-28","Ajaccio-Lille",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"99",3538,"F1","Auxerre","Strasbourg","2022-08-28","Auxerre-Strasbourg",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"100",3539,"F1","Brest","Montpellier","2022-08-28","Brest-Montpellier","F1","Brest","Montpellier","1X,ov25,BTTS-N",-1,-12,"-2","-2","3.7368","4.3158"
-"101",3540,"F1","Lens","Rennes","2022-08-28","Lens-Rennes","F1","Lens","Rennes","1X,ov25,BTTS-Y",5,7,"0","0","4.1316","3.4211"
-"102",3541,"F1","Lorient","Clermont","2022-08-28","Lorient-Clermont","F1","Lorient","Clermont","2,un25,BTTS-N",-8,-2,"0","-1","3.7105","3.7368"
-"103",3542,"F1","Nantes","Toulouse","2022-08-28","Nantes-Toulouse",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"104",3543,"F1","Nice","Marseille","2022-08-28","Nice-Marseille","F1","Nice","Marseille","1X,ov25,BTTS-Y",2,4,"1","4","3.5526","3.8158"
-"105",3544,"F1","Paris SG","Monaco","2022-08-28","Paris SG-Monaco","F1","Paris SG","Monaco","2,ov25,BTTS-Y",12,9,"5","0","4.1053","3.9737"
-"106",3545,"F1","Reims","Lyon","2022-08-28","Reims-Lyon","F1","Reims","Lyon","2,ov25,BTTS-Y",0,6,"-1","1","3.8158","3.3684"
-"107",3546,"F1","Troyes","Angers","2022-08-28","Troyes-Angers","F1","Troyes","Angers","2,un25,BTTS-N",-1,-1,"0","2","4.2895","4.0789"
-"108",3923,"F2","Annecy","Grenoble","2022-08-27","Annecy-Grenoble",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"109",3924,"F2","Bastia","Rodez","2022-08-27","Bastia-Rodez","F2","Bastia","Rodez","2,un25,BTTS-Y",0,2,"2","2","3.8158","3.8158"
-"110",3925,"F2","Le Havre","Amiens","2022-08-27","Le Havre-Amiens","F2","Le Havre","Amiens","1X,un25,BTTS-Y",-1,-4,"-1","-1","3.5526","3.6842"
-"111",3926,"F2","Metz","Dijon","2022-08-27","Metz-Dijon",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"112",3927,"F2","Nimes","Laval","2022-08-27","Nimes-Laval",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"113",3928,"F2","Paris FC","Caen","2022-08-27","Paris FC-Caen","F2","Paris FC","Caen","1X,un25,BTTS-Y",4,-2,"2","-2","2.7368","3.9737"
-"114",3929,"F2","Quevilly Rouen","Pau FC","2022-08-27","Quevilly Rouen-Pau FC","F2","Quevilly Rouen","Pau FC","2,ov25,BTTS-N",-1,-5,"2","1","3.5789","3.7105"
-"115",3930,"F2","Sochaux","Niort","2022-08-27","Sochaux-Niort","F2","Sochaux","Niort","1X,un25,BTTS-Y",3,-3,"0","-1","4.2105","3.1053"
-"116",3931,"F2","Valenciennes","St Etienne","2022-08-27","Valenciennes-St Etienne",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"117",4249,"I1","Lazio","Inter","2022-08-26","Lazio-Inter","I1","Lazio","Inter","2,ov25,BTTS-Y",3,14,"0","3","4.9474","3.9737"
-"118",4250,"I1","Monza","Udinese","2022-08-26","Monza-Udinese",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"119",4251,"I1","Milan","Bologna","2022-08-27","Milan-Bologna","I1","Milan","Bologna","1X,un25,BTTS-Y",6,0,"2","-2","4.3158","4.6053"
-"120",4252,"I1","Cremonese","Torino","2022-08-27","Cremonese-Torino",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"121",4253,"I1","Juventus","Roma","2022-08-27","Juventus-Roma","I1","Juventus","Roma","2,un25,BTTS-Y",3,5,"0","0","4.5263","5.6842"
-"122",4254,"I1","Spezia","Sassuolo","2022-08-27","Spezia-Sassuolo","I1","Spezia","Sassuolo","2,ov25,BTTS-Y",-5,1,"-3","-3","4.5789","4.5526"
-"123",4255,"I1","Fiorentina","Napoli","2022-08-28","Fiorentina-Napoli","I1","Fiorentina","Napoli","1X,un25,BTTS-Y",3,7,"2","3","5.0263","4.3158"
-"124",4256,"I1","Lecce","Empoli","2022-08-28","Lecce-Empoli",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"125",4257,"I1","Salernitana","Sampdoria","2022-08-28","Salernitana-Sampdoria","I1","Salernitana","Sampdoria","2,ov25,BTTS-Y",-3,2,"-4","3","5.0263","4.6053"
-"126",4258,"I1","Verona","Atalanta","2022-08-28","Verona-Atalanta","I1","Verona","Atalanta","1X,un25,BTTS-Y",-1,-4,"-1","-1","4.6316","4.7368"
-"127",4635,"N1","Nijmegen","Groningen","2022-08-26","Nijmegen-Groningen","N1","Nijmegen","Groningen","2,un25,BTTS-N",-5,-3,"-1","-1","3.2059","3.2647"
-"128",4636,"N1","Feyenoord","FC Emmen","2022-08-27","Feyenoord-FC Emmen",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"129",4637,"N1","Go Ahead Eagles","Sparta Rotterdam","2022-08-27","Go Ahead Eagles-Sparta Rotterdam","N1","Go Ahead Eagles","Sparta Rotterdam","2,un25,BTTS-Y",6,3,"-1","2","2.6765","2.8529"
-"130",4638,"N1","Heerenveen","Sittard","2022-08-27","Heerenveen-Sittard",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"131",4639,"N1","Vitesse","Waalwijk","2022-08-27","Vitesse-Waalwijk","N1","Vitesse","Waalwijk","2,un25,BTTS-Y",1,1,"0","2","3.5","2.8824"
-"132",4640,"N1","Cambuur","AZ Alkmaar","2022-08-28","Cambuur-AZ Alkmaar","N1","Cambuur","AZ Alkmaar","2,ov25,BTTS-Y",-2,1,"0","-2","3.0882","2.7647"
-"133",4641,"N1","Excelsior","PSV Eindhoven","2022-08-28","Excelsior-PSV Eindhoven",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"134",4642,"N1","FC Volendam","Twente","2022-08-28","FC Volendam-Twente",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"135",4643,"N1","Utrecht","Ajax","2022-08-28","Utrecht-Ajax","N1","Utrecht","Ajax","2,ov25,BTTS-Y",-2,16,"0","5","3.0588","2.6471"
-"136",4942,"P1","Arouca","Sp Braga","2022-08-28","Arouca-Sp Braga","P1","Arouca","Sp Braga","2,un25,BTTS-Y",1,3,"0","1","6.2353","5.2353"
-"137",4943,"P1","Boavista","Benfica","2022-08-28","Boavista-Benfica","P1","Boavista","Benfica","2,un25,BTTS-Y",-3,5,"0","-1","6.6176","5.4412"
-"138",4944,"P1","Famalicao","Santa Clara","2022-08-28","Famalicao-Santa Clara","P1","Famalicao","Santa Clara","2,ov25,BTTS-Y",3,6,"1","2","6.1176","5.4706"
-"139",4945,"P1","Maritimo","Portimonense","2022-08-28","Maritimo-Portimonense","P1","Maritimo","Portimonense","2,un25,BTTS-N",-1,-1,"-1","-1","6.2941","6.1471"
-"140",4946,"P1","Pacos Ferreira","Estoril","2022-08-28","Pacos Ferreira-Estoril","P1","Pacos Ferreira","Estoril","1X,un25,BTTS-Y",0,1,"-2","1","5.9706","5.5"
-"141",4947,"P1","Rio Ave","Porto","2022-08-28","Rio Ave-Porto",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"142",4948,"P1","Sp Lisbon","Chaves","2022-08-28","Sp Lisbon-Chaves",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"143",4949,"P1","Guimaraes","Casa Pia","2022-08-28","Guimaraes-Casa Pia",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"144",4950,"P1","Vizela","Gil Vicente","2022-08-28","Vizela-Gil Vicente","P1","Vizela","Gil Vicente","2,un25,BTTS-Y",-1,4,"0","3","5.7059","6.0588"
-"145",5245,"SC0","Aberdeen","Livingston","2022-08-27","Aberdeen-Livingston","SC0","Aberdeen","Livingston","2,un25,BTTS-Y",1,1,"0","1","2.6579","2.25"
-"146",5246,"SC0","Hearts","St Johnstone","2022-08-27","Hearts-St Johnstone","SC0","Hearts","St Johnstone","2,un25,BTTS-Y",3,2,"-2","1","2.4298","2.1974"
-"147",5247,"SC0","Kilmarnock","Motherwell","2022-08-27","Kilmarnock-Motherwell",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"148",5248,"SC0","Rangers","Ross County","2022-08-27","Rangers-Ross County","SC0","Rangers","Ross County","1X,un25,BTTS-Y",7,-1,"3","-1","2.4211","2.4079"
-"149",5249,"SC0","St. Mirren","Hibernian","2022-08-27","St. Mirren-Hibernian",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"150",5250,"SC0","Dundee United","Celtic","2022-08-28","Dundee United-Celtic","SC0","Dundee United","Celtic","2,ov25,BTTS-Y",0,22,"0","6","1.9868","1.7632"
-"151",5439,"SC1","Ayr","Dundee FC","2022-08-26","Ayr-Dundee FC",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"152",5440,"SC1","Hamilton","Arbroath","2022-08-27","Hamilton-Arbroath","SC1","Hamilton","Arbroath","2,un25,BTTS-Y",-1,9,"-2","3","1.8333","1.6111"
-"153",5441,"SC1","Inverness","Morton","2022-08-27","Inverness-Morton",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"154",5442,"SC1","Partick","Raith Rvs","2022-08-27","Partick-Raith Rvs","SC1","Partick","Raith Rvs","1X,un25,BTTS-N",-2,-6,"1","0","1.5278","1.75"
-"155",5443,"SC1","Queens Park","Cove Rangers","2022-08-27","Queens Park-Cove Rangers","SC2","Queens Park","Cove Rangers","2,un25,BTTS-Y",3,12,"0","1","1.7222","1.7361"
-"156",5619,"SP1","Betis","Osasuna","2022-08-26","Betis-Osasuna","SP1","Betis","Osasuna","2,un25,BTTS-Y",2,0,"2","-2","4.2632","4.1053"
-"157",5620,"SP1","Girona","Celta","2022-08-26","Girona-Celta",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"158",5621,"SP1","Almeria","Sevilla","2022-08-27","Almeria-Sevilla",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"159",5622,"SP1","Elche","Sociedad","2022-08-27","Elche-Sociedad","SP1","Elche","Sociedad","2,un25,BTTS-Y",1,3,"2","-1","4.8421","4.5526"
-"160",5623,"SP1","Rayo Vallecano","Mallorca","2022-08-27","Rayo Vallecano-Mallorca",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"161",5624,"SP1","Barcelona","Valladolid","2022-08-28","Barcelona-Valladolid",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"162",5625,"SP1","Espanol","Real Madrid","2022-08-28","Espanol-Real Madrid","SP1","Espanol","Real Madrid","2,un25,BTTS-Y",3,11,"0","0","5.8158","4.1842"
-"163",5626,"SP1","Getafe","Villarreal","2022-08-28","Getafe-Villarreal","SP1","Getafe","Villarreal","2,un25,BTTS-N",0,6,"0","-1","6","4.6316"
-"164",5627,"SP1","Cadiz","Ath Bilbao","2022-08-29","Cadiz-Ath Bilbao","SP1","Cadiz","Ath Bilbao","2,un25,BTTS-Y",4,3,"0","2","5.3421","5.0789"
-"165",5628,"SP1","Valencia","Ath Madrid","2022-08-29","Valencia-Ath Madrid","SP1","Valencia","Ath Madrid","2,un25,BTTS-Y",0,6,"2","0","6.9474","5.3158"
-"166",5999,"SP2","Betis","Osasuna","2022-08-26","Betis-Osasuna","SP1","Betis","Osasuna","2,un25,BTTS-Y",2,0,"2","-2","4.2632","4.1053"
-"167",6000,"SP2","Girona","Celta","2022-08-26","Girona-Celta",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"168",6001,"SP2","Almeria","Sevilla","2022-08-27","Almeria-Sevilla",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"169",6002,"SP2","Elche","Sociedad","2022-08-27","Elche-Sociedad","SP1","Elche","Sociedad","2,un25,BTTS-Y",1,3,"2","-1","4.8421","4.5526"
-"170",6003,"SP2","Rayo Vallecano","Mallorca","2022-08-27","Rayo Vallecano-Mallorca",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"171",6004,"SP2","Barcelona","Valladolid","2022-08-28","Barcelona-Valladolid",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"172",6005,"SP2","Espanol","Real Madrid","2022-08-28","Espanol-Real Madrid","SP1","Espanol","Real Madrid","2,un25,BTTS-Y",3,11,"0","0","5.8158","4.1842"
-"173",6006,"SP2","Getafe","Villarreal","2022-08-28","Getafe-Villarreal","SP1","Getafe","Villarreal","2,un25,BTTS-N",0,6,"0","-1","6","4.6316"
-"174",6007,"SP2","Cadiz","Ath Bilbao","2022-08-29","Cadiz-Ath Bilbao","SP1","Cadiz","Ath Bilbao","2,un25,BTTS-Y",4,3,"0","2","5.3421","5.0789"
-"175",6008,"SP2","Valencia","Ath Madrid","2022-08-29","Valencia-Ath Madrid","SP1","Valencia","Ath Madrid","2,un25,BTTS-Y",0,6,"2","0","6.9474","5.3158"
-"176",6386,"T1","Ad. Demirspor","Umraniyespor","2022-08-28","Ad. Demirspor-Umraniyespor",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"177",6387,"T1","Alanyaspor","Istanbulspor AS","2022-08-28","Alanyaspor-Istanbulspor AS",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"178",6388,"T1","Besiktas","Sivasspor","2022-08-28","Besiktas-Sivasspor","T1","Besiktas","Sivasspor","2,ov25,BTTS-Y",0,-2,"0","1","5.1579","4.5526"
-"179",6389,"T1","Gaziantep","Antalyaspor","2022-08-28","Gaziantep-Antalyaspor","T1","Gaziantep","Antalyaspor","2,un25,BTTS-Y",4,8,"2","0","4.1053","4.6579"
-"180",6390,"T1","Karagumruk","Ankaragucu","2022-08-28","Karagumruk-Ankaragucu",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"181",6391,"T1","Kasimpasa","Hatayspor","2022-08-28","Kasimpasa-Hatayspor","T1","Kasimpasa","Hatayspor","1X,ov25,BTTS-Y",3,5,"-2","3","4.5789","3.9737"
-"182",6392,"T1","Kayserispor","Giresunspor","2022-08-28","Kayserispor-Giresunspor","T1","Kayserispor","Giresunspor","2,ov25,BTTS-Y",-4,5,"3","0","3.8421","3.6579"
-"183",6393,"T1","Konyaspor","Fenerbahce","2022-08-28","Konyaspor-Fenerbahce","T1","Konyaspor","Fenerbahce","2,ov25,BTTS-Y",9,6,"2","0","4.0263","4.5526"
-"184",6394,"T1","Trabzonspor","Galatasaray","2022-08-28","Trabzonspor-Galatasaray","T1","Trabzonspor","Galatasaray","2,ov25,BTTS-Y",4,7,"1","1","4.0526","5.0789"
+"1",55,"B1","Anderlecht","Oud-Heverlee Leuven","2022-09-03","Anderlecht-Oud-Heverlee Leuven","B1","Anderlecht","Oud-Heverlee Leuven","1X,ov25,BTTS-N",8,-11,"1","-5","3.5588","4.5588"
+"2",56,"B1","Antwerp","Westerlo","2022-09-03","Antwerp-Westerlo",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"3",57,"B1","Charleroi","Gent","2022-09-03","Charleroi-Gent","B1","Charleroi","Gent","2,ov25,BTTS-Y",5,10,"3","5","3.7059","4.5294"
+"4",58,"B1","Club Brugge","Cercle Brugge","2022-09-03","Club Brugge-Cercle Brugge","B1","Club Brugge","Cercle Brugge","1X,ov25,BTTS-Y",16,-3,"2","0","4.3529","4.4412"
+"5",59,"B1","Eupen","Kortrijk","2022-09-03","Eupen-Kortrijk","B1","Eupen","Kortrijk","1X,un25,BTTS-N",-8,-8,"-2","-1","3.8824","4.7647"
+"6",60,"B1","Genk","St Truiden","2022-09-03","Genk-St Truiden","B1","Genk","St Truiden","2,un25,BTTS-Y",6,7,"2","3","3.4706","4.2647"
+"7",61,"B1","Mechelen","Seraing","2022-09-03","Mechelen-Seraing","B1","Mechelen","Seraing","1X,un25,BTTS-N",-1,-7,"-2","-2","3.9118","4"
+"8",62,"B1","Standard","Oostende","2022-09-03","Standard-Oostende","B1","Standard","Oostende","1X,un25,BTTS-N",-4,-3,"-3","2","5.6471","4.0588"
+"9",63,"B1","Waregem","St. Gilloise","2022-09-03","Waregem-St. Gilloise","B1","Waregem","St. Gilloise","2,ov25,BTTS-N",-3,11,"-3","5","4.1471","4.5294"
+"10",343,"D1","Dortmund","Hoffenheim","2022-09-02","Dortmund-Hoffenheim","D1","Dortmund","Hoffenheim","1X,ov25,BTTS-Y",7,-10,"1","-4","3.8824","3.5882"
+"11",344,"D1","Leverkusen","Freiburg","2022-09-03","Leverkusen-Freiburg","D1","Leverkusen","Freiburg","1X,ov25,BTTS-Y",7,1,"1","-1","3.4118","2.9412"
+"12",345,"D1","Bochum","Werder Bremen","2022-09-03","Bochum-Werder Bremen",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"13",346,"D1","Ein Frankfurt","RB Leipzig","2022-09-03","Ein Frankfurt-RB Leipzig","D1","Ein Frankfurt","RB Leipzig","2,ov25,BTTS-Y",-5,5,"0","0","3.5882","3.4412"
+"14",347,"D1","Stuttgart","Schalke 04","2022-09-03","Stuttgart-Schalke 04",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"15",348,"D1","Union Berlin","Bayern Munich","2022-09-03","Union Berlin-Bayern Munich","D1","Union Berlin","Bayern Munich","1X,ov25,BTTS-Y",10,4,"1","0","3.3824","2.5"
+"16",349,"D1","Wolfsburg","FC Koln","2022-09-03","Wolfsburg-FC Koln","D1","Wolfsburg","FC Koln","2,ov25,BTTS-Y",5,6,"0","-1","3.7059","3.9118"
+"17",350,"D1","Augsburg","Hertha","2022-09-04","Augsburg-Hertha","D1","Augsburg","Hertha","2,un25,BTTS-N",-6,-2,"1","-1","3.9118","3.2059"
+"18",351,"D1","Mgladbach","Mainz","2022-09-04","Mgladbach-Mainz","D1","Mgladbach","Mainz","1X,ov25,BTTS-Y",6,-3,"4","0","4.0882","3.8529"
+"19",667,"D2","Braunschweig","Nurnberg","2022-09-02","Braunschweig-Nurnberg",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"20",668,"D2","Heidenheim","Fortuna Dusseldorf","2022-09-02","Heidenheim-Fortuna Dusseldorf","D2","Heidenheim","Fortuna Dusseldorf","2,un25,BTTS-Y",-3,4,"2","-2","3.3235","3.7059"
+"21",669,"D2","Greuther Furth","St Pauli","2022-09-03","Greuther Furth-St Pauli",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"22",670,"D2","Hamburg","Karlsruhe","2022-09-03","Hamburg-Karlsruhe","D2","Hamburg","Karlsruhe","1X,ov25,BTTS-N",10,-7,"1","-2","4.5","3.8235"
+"23",671,"D2","Paderborn","Magdeburg","2022-09-03","Paderborn-Magdeburg",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"24",672,"D2","Regensburg","Holstein Kiel","2022-09-03","Regensburg-Holstein Kiel","D2","Regensburg","Holstein Kiel","2,un25,BTTS-Y",-6,3,"-2","-2","4","4.4412"
+"25",673,"D2","Darmstadt","Arminia Bielefeld","2022-09-04","Darmstadt-Arminia Bielefeld",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"26",674,"D2","Hansa Rostock","Hannover","2022-09-04","Hansa Rostock-Hannover","D2","Hansa Rostock","Hannover","2,ov25,BTTS-N",-4,1,"-1","1","4.3235","3.6176"
+"27",675,"D2","Sandhausen","Kaiserslautern","2022-09-04","Sandhausen-Kaiserslautern",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"28",968,"E0","Aston Villa","Manchester City","2022-09-03","Aston Villa-Manchester City",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"29",969,"E0","Brentford","Leeds","2022-09-03","Brentford-Leeds","E0","Brentford","Leeds","1X,ov25,BTTS-N",1,-7,"-1","1","2.9211","4.4211"
+"30",970,"E0","Everton","Liverpool","2022-09-03","Everton-Liverpool","E0","Everton","Liverpool","2,ov25,BTTS-Y",-2,7,"-4","2","3.8421","2.9737"
+"31",971,"E0","Newcastle","Crystal Palace","2022-09-03","Newcastle-Crystal Palace","E0","Newcastle","Crystal Palace","1X,un25,BTTS-Y",1,2,"1","1","4.0526","3.5789"
+"32",972,"E0","Nottingham","Bournemouth","2022-09-03","Nottingham-Bournemouth",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"33",973,"E0","Tottenham","Fulham","2022-09-03","Tottenham-Fulham",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"34",974,"E0","Wolves","Southampton","2022-09-03","Wolves-Southampton","E0","Wolves","Southampton","1X,ov25,BTTS-Y",-10,-10,"-2","-3","3.7368","3.2632"
+"35",975,"E0","Brighton","Leicester","2022-09-04","Brighton-Leicester","E0","Brighton","Leicester","1X,ov25,BTTS-Y",6,7,"2","3","3.9737","2.9737"
+"36",976,"E0","Chelsea","West Ham","2022-09-04","Chelsea-West Ham","E0","Chelsea","West Ham","1X,ov25,BTTS-Y",3,0,"1","-2","3.4211","2.4474"
+"37",977,"E0","Man United","Arsenal","2022-09-04","Man United-Arsenal","E0","Man United","Arsenal","2,ov25,BTTS-N",-8,3,"-1","4","3.2368","3.2895"
+"38",1383,"E1","Blackburn","Bristol City","2022-09-03","Blackburn-Bristol City","E1","Blackburn","Bristol City","2,un25,BTTS-Y",-1,6,"1","-2","4.3478","3.3478"
+"39",1384,"E1","Huddersfield","Blackpool","2022-09-03","Huddersfield-Blackpool","E1","Huddersfield","Blackpool","1X,un25,BTTS-Y",8,-1,"2","-5","3.5217","3.5"
+"40",1385,"E1","Hull","Sheffield United","2022-09-03","Hull-Sheffield United","E1","Hull","Sheffield United","2,ov25,BTTS-Y",-1,6,"0","4","3.2391","3.5435"
+"41",1386,"E1","Luton","Wigan","2022-09-03","Luton-Wigan",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"42",1387,"E1","Middlesbrough","Sunderland","2022-09-03","Middlesbrough-Sunderland",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"43",1388,"E1","Millwall","Cardiff","2022-09-03","Millwall-Cardiff","E1","Millwall","Cardiff","1X,un25,BTTS-N",6,-4,"-1","1","3.2391","3.6739"
+"44",1389,"E1","Norwich","Coventry","2022-09-03","Norwich-Coventry",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"45",1390,"E1","Preston","Birmingham","2022-09-03","Preston-Birmingham","E1","Preston","Birmingham","1X,ov25,BTTS-Y",0,-10,"3","-1","3.5217","3.1304"
+"46",1391,"E1","Reading","Stoke","2022-09-03","Reading-Stoke","E1","Reading","Stoke","2,un25,BTTS-N",-5,1,"-1","0","3.7609","3.6304"
+"47",1392,"E1","Rotherham","Watford","2022-09-03","Rotherham-Watford",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"48",1393,"E1","Swansea","QPR","2022-09-03","Swansea-QPR","E1","Swansea","QPR","2,un25,BTTS-Y",-5,-2,"-1","1","3.8043","3.3478"
+"49",1394,"E1","West Brom","Burnley","2022-09-03","West Brom-Burnley",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"50",1923,"E2","Accrington","Ipswich","2022-09-03","Accrington-Ipswich","E2","Accrington","Ipswich","1X,ov25,BTTS-Y",-2,2,"1","4","3.7174","3.6739"
+"51",1924,"E2","Bolton","Charlton","2022-09-03","Bolton-Charlton","E2","Bolton","Charlton","1X,un25,BTTS-Y",6,0,"2","-4","3.3261","3.9783"
+"52",1925,"E2","Bristol Rvs","Morecambe","2022-09-03","Bristol Rvs-Morecambe",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"53",1926,"E2","Cambridge","Lincoln","2022-09-03","Cambridge-Lincoln","E2","Cambridge","Lincoln","1X,ov25,BTTS-Y",-7,0,"0","1","3.3696","3.5217"
+"54",1927,"E2","Derby","Plymouth","2022-09-03","Derby-Plymouth",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"55",1928,"E2","Exeter","Milton Keynes Dons","2022-09-03","Exeter-Milton Keynes Dons",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"56",1929,"E2","Fleetwood Town","Wycombe","2022-09-03","Fleetwood Town-Wycombe","E2","Fleetwood Town","Wycombe","2,un25,BTTS-Y",-5,7,"-2","1","3.3913","3.4783"
+"57",1930,"E2","Forest Green","Shrewsbury","2022-09-03","Forest Green-Shrewsbury",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"58",1931,"E2","Oxford","Burton","2022-09-03","Oxford-Burton","E2","Oxford","Burton","1X,un25,BTTS-N",-1,-1,"0","-1","3.6957","3.1522"
+"59",1932,"E2","Port Vale","Cheltenham","2022-09-03","Port Vale-Cheltenham",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"60",1933,"E2","Portsmouth","Peterborough","2022-09-03","Portsmouth-Peterborough",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"61",1934,"E2","Sheffield Weds","Barnsley","2022-09-03","Sheffield Weds-Barnsley",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"62",2475,"E3","Bradford","Walsall","2022-09-03","Bradford-Walsall","E3","Bradford","Walsall","1X,un25,BTTS-N",3,-2,"2","-3","3.2391","3.2174"
+"63",2476,"E3","Carlisle","Rochdale","2022-09-03","Carlisle-Rochdale","E3","Carlisle","Rochdale","2,un25,BTTS-N",-5,0,"-2","2","3.3696","2.6957"
+"64",2477,"E3","Colchester","Hartlepool","2022-09-03","Colchester-Hartlepool","E3","Colchester","Hartlepool","1X,un25,BTTS-N",2,-7,"2","-2","3.3043","2.7609"
+"65",2478,"E3","Crewe","Stevenage","2022-09-03","Crewe-Stevenage",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"66",2479,"E3","Doncaster","Mansfield","2022-09-03","Doncaster-Mansfield",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"67",2480,"E3","Gillingham","Swindon","2022-09-03","Gillingham-Swindon",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"68",2481,"E3","Leyton Orient","Tranmere","2022-09-03","Leyton Orient-Tranmere","E3","Leyton Orient","Tranmere","2,un25,BTTS-Y",2,3,"-1","1","4","3.3478"
+"69",2482,"E3","Newport County","Grimsby","2022-09-03","Newport County-Grimsby",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"70",2483,"E3","Northampton","Barrow","2022-09-03","Northampton-Barrow","E3","Northampton","Barrow","1X,ov25,BTTS-Y",9,1,"2","-2","3.7391","4.1957"
+"71",2484,"E3","Salford","Crawley Town","2022-09-03","Salford-Crawley Town","E3","Salford","Crawley Town","1X,ov25,BTTS-N",0,-5,"-2","0","3.413","3.0652"
+"72",2485,"E3","Stockport","AFC Wimbledon","2022-09-03","Stockport-AFC Wimbledon",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"73",2486,"E3","Sutton","Harrogate","2022-09-03","Sutton-Harrogate","E3","Sutton","Harrogate","1X,ov25,BTTS-N",3,-5,"2","-2","3.1522","2.9348"
+"74",3027,"EC","Aldershot","Barnet","2022-09-03","Aldershot-Barnet","EC","Aldershot","Barnet","2,ov25,BTTS-Y",-1,-2,"-2","-2","4.1364","3.3409"
+"75",3028,"EC","Bromley","Eastleigh","2022-09-03","Bromley-Eastleigh","EC","Bromley","Eastleigh","1X,ov25,BTTS-Y",1,-1,"2","0","3.2955","3.8182"
+"76",3029,"EC","Dag and Red","Notts County","2022-09-03","Dag and Red-Notts County","EC","Dag and Red","Notts County","2,ov25,BTTS-Y",4,8,"3","1","2.8182","4.1591"
+"77",3030,"EC","Dorking","Wrexham","2022-09-03","Dorking-Wrexham",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"78",3031,"EC","Gateshead","Maidstone","2022-09-03","Gateshead-Maidstone",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"79",3032,"EC","Maidenhead","Halifax","2022-09-03","Maidenhead-Halifax","EC","Maidenhead","Halifax","2,un25,BTTS-Y",3,1,"-1","-2","2.9545","3.25"
+"80",3033,"EC","Oldham","Chesterfield","2022-09-03","Oldham-Chesterfield",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"81",3034,"EC","Scunthorpe","Boreham Wood","2022-09-03","Scunthorpe-Boreham Wood",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"82",3035,"EC","Solihull","Altrincham","2022-09-03","Solihull-Altrincham","EC","Solihull","Altrincham","1X,ov25,BTTS-Y",10,-1,"3","-1","3.1136","3.1364"
+"83",3036,"EC","Southend","Torquay","2022-09-03","Southend-Torquay","EC","Southend","Torquay","1X,un25,BTTS-Y",3,0,"0","0","3.5682","3.25"
+"84",3037,"EC","Wealdstone","Woking","2022-09-03","Wealdstone-Woking","EC","Wealdstone","Woking","1X,ov25,BTTS-N",2,-1,"2","0","3.25","3.9091"
+"85",3038,"EC","Yeovil","York","2022-09-03","Yeovil-York",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"86",3557,"F1","Ajaccio","Lorient","2022-09-04","Ajaccio-Lorient",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"87",3558,"F1","Auxerre","Marseille","2022-09-04","Auxerre-Marseille",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"88",3559,"F1","Brest","Strasbourg","2022-09-04","Brest-Strasbourg","F1","Brest","Strasbourg","2,un25,BTTS-Y",-1,-2,"-2","-4","3.7368","3.9474"
+"89",3560,"F1","Clermont","Toulouse","2022-09-04","Clermont-Toulouse",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"90",3561,"F1","Lyon","Angers","2022-09-04","Lyon-Angers","F1","Lyon","Angers","1X,ov25,BTTS-N",6,-1,"1","2","3.3684","4.0789"
+"91",3562,"F1","Montpellier","Lille","2022-09-04","Montpellier-Lille","F1","Montpellier","Lille","2,ov25,BTTS-N",-12,-2,"-2","0","4.3158","4.7895"
+"92",3563,"F1","Nantes","Paris SG","2022-09-04","Nantes-Paris SG","F1","Nantes","Paris SG","2,ov25,BTTS-Y",1,12,"0","5","3.7105","4.1053"
+"93",3564,"F1","Nice","Monaco","2022-09-04","Nice-Monaco","F1","Nice","Monaco","2,ov25,BTTS-Y",2,9,"1","0","3.5526","3.9737"
+"94",3565,"F1","Reims","Lens","2022-09-04","Reims-Lens","F1","Reims","Lens","2,ov25,BTTS-Y",0,5,"-1","0","3.8158","4.1316"
+"95",3566,"F1","Troyes","Rennes","2022-09-04","Troyes-Rennes","F1","Troyes","Rennes","2,ov25,BTTS-Y",-1,7,"0","0","4.2895","3.4211"
+"96",3941,"F2","Amiens","Grenoble","2022-09-02","Amiens-Grenoble","F2","Amiens","Grenoble","2,un25,BTTS-Y",-4,5,"-1","-2","3.6842","3.8421"
+"97",3942,"F2","Bastia","Dijon","2022-09-02","Bastia-Dijon","F2","Bastia","Dijon","1X,ov25,BTTS-Y",0,-3,"2","0","3.8158","3.7632"
+"98",3943,"F2","Guingamp","Rodez","2022-09-02","Guingamp-Rodez","F2","Guingamp","Rodez","1X,ov25,BTTS-Y",8,2,"1","2","4","3.8158"
+"99",3944,"F2","Le Havre","Caen","2022-09-02","Le Havre-Caen","F2","Le Havre","Caen","1X,un25,BTTS-Y",-1,-2,"-1","-2","3.5526","3.9737"
+"100",3945,"F2","Metz","Annecy","2022-09-02","Metz-Annecy",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"101",3946,"F2","Pau FC","St Etienne","2022-09-02","Pau FC-St Etienne",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"102",3947,"F2","Quevilly Rouen","Niort","2022-09-02","Quevilly Rouen-Niort","F2","Quevilly Rouen","Niort","1X,un25,BTTS-N",-1,-3,"2","-1","3.5789","3.1053"
+"103",3948,"F2","Sochaux","Laval","2022-09-02","Sochaux-Laval",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"104",3949,"F2","Valenciennes","Nimes","2022-09-02","Valenciennes-Nimes","F2","Valenciennes","Nimes","2,un25,BTTS-N",-2,-1,"1","-2","4.3421","3.6842"
+"105",4269,"I1","Milan","Inter","2022-09-03","Milan-Inter","I1","Milan","Inter","2,un25,BTTS-Y",6,14,"2","3","4.3158","3.9737"
+"106",4270,"I1","Fiorentina","Juventus","2022-09-03","Fiorentina-Juventus","I1","Fiorentina","Juventus","1X,un25,BTTS-Y",3,3,"2","0","5.0263","4.5263"
+"107",4271,"I1","Lazio","Napoli","2022-09-03","Lazio-Napoli","I1","Lazio","Napoli","1X,ov25,BTTS-Y",3,7,"0","3","4.9474","4.3158"
+"108",4272,"I1","Cremonese","Sassuolo","2022-09-04","Cremonese-Sassuolo",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"109",4273,"I1","Spezia","Bologna","2022-09-04","Spezia-Bologna","I1","Spezia","Bologna","2,ov25,BTTS-Y",-5,0,"-3","-2","4.5789","4.6053"
+"110",4274,"I1","Udinese","Roma","2022-09-04","Udinese-Roma","I1","Udinese","Roma","2,ov25,BTTS-Y",4,5,"-1","0","5.3158","5.6842"
+"111",4275,"I1","Verona","Sampdoria","2022-09-04","Verona-Sampdoria","I1","Verona","Sampdoria","2,un25,BTTS-Y",-1,2,"-1","3","4.6316","4.6053"
+"112",4276,"I1","Monza","Atalanta","2022-09-05","Monza-Atalanta",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"113",4277,"I1","Salernitana","Empoli","2022-09-05","Salernitana-Empoli","I1","Salernitana","Empoli","1X,ov25,BTTS-Y",-3,-2,"-4","0","5.0263","4.3947"
+"114",4278,"I1","Torino","Lecce","2022-09-05","Torino-Lecce",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"115",4645,"N1","Sittard","Utrecht","2022-09-02","Sittard-Utrecht",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"116",4646,"N1","Ajax","Cambuur","2022-09-03","Ajax-Cambuur","N1","Ajax","Cambuur","1X,ov25,BTTS-Y",16,-2,"5","0","2.6471","3.0882"
+"117",4647,"N1","Go Ahead Eagles","Feyenoord","2022-09-03","Go Ahead Eagles-Feyenoord","N1","Go Ahead Eagles","Feyenoord","2,ov25,BTTS-Y",6,4,"-1","-1","2.6765","2.9118"
+"118",4648,"N1","Sparta Rotterdam","FC Volendam","2022-09-03","Sparta Rotterdam-FC Volendam",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"119",4649,"N1","Twente","PSV Eindhoven","2022-09-03","Twente-PSV Eindhoven","N1","Twente","PSV Eindhoven","2,ov25,BTTS-Y",6,14,"3","1","3.7941","2.7647"
+"120",4650,"N1","FC Emmen","AZ Alkmaar","2022-09-04","FC Emmen-AZ Alkmaar",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"121",4651,"N1","Groningen","Vitesse","2022-09-04","Groningen-Vitesse","N1","Groningen","Vitesse","2,ov25,BTTS-Y",-3,1,"-1","0","3.2647","3.5"
+"122",4652,"N1","Heerenveen","Nijmegen","2022-09-04","Heerenveen-Nijmegen","N1","Heerenveen","Nijmegen","1X,un25,BTTS-N",4,-5,"2","-1","2.5294","3.2059"
+"123",4653,"N1","Waalwijk","Excelsior","2022-09-04","Waalwijk-Excelsior",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"124",4951,"P1","Benfica","Vizela","2022-09-04","Benfica-Vizela","P1","Benfica","Vizela","1X,un25,BTTS-Y",5,-1,"-1","0","5.4412","5.7059"
+"125",4952,"P1","Boavista","Pacos Ferreira","2022-09-04","Boavista-Pacos Ferreira","P1","Boavista","Pacos Ferreira","2,un25,BTTS-Y",-3,0,"0","-2","6.6176","5.9706"
+"126",4953,"P1","Sp Braga","Guimaraes","2022-09-04","Sp Braga-Guimaraes","P1","Sp Braga","Guimaraes","1X,un25,BTTS-Y",3,7,"1","5","5.2353","5.9412"
+"127",4954,"P1","Casa Pia","Arouca","2022-09-04","Casa Pia-Arouca",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"128",4955,"P1","Chaves","Rio Ave","2022-09-04","Chaves-Rio Ave",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"129",4956,"P1","Estoril","Sp Lisbon","2022-09-04","Estoril-Sp Lisbon","P1","Estoril","Sp Lisbon","2,un25,BTTS-Y",1,12,"1","4","5.5","6.0588"
+"130",4957,"P1","Gil Vicente","Porto","2022-09-04","Gil Vicente-Porto","P1","Gil Vicente","Porto","2,un25,BTTS-Y",4,18,"3","2","6.0588","6.0882"
+"131",4958,"P1","Portimonense","Famalicao","2022-09-04","Portimonense-Famalicao","P1","Portimonense","Famalicao","2,ov25,BTTS-Y",-1,3,"-1","1","6.1471","6.1176"
+"132",4959,"P1","Santa Clara","Maritimo","2022-09-04","Santa Clara-Maritimo","P1","Santa Clara","Maritimo","1X,un25,BTTS-N",6,-1,"2","-1","5.4706","6.2941"
+"133",5251,"SC0","Celtic","Rangers","2022-09-03","Celtic-Rangers","SC0","Celtic","Rangers","1X,ov25,BTTS-Y",22,7,"6","3","1.7632","2.4211"
+"134",5252,"SC0","Hibernian","Kilmarnock","2022-09-03","Hibernian-Kilmarnock",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"135",5253,"SC0","Livingston","Hearts","2022-09-03","Livingston-Hearts","SC0","Livingston","Hearts","1X,ov25,BTTS-Y",1,3,"1","-2","2.25","2.4298"
+"136",5254,"SC0","Motherwell","Dundee United","2022-09-03","Motherwell-Dundee United","SC0","Motherwell","Dundee United","1X,un25,BTTS-Y",0,0,"1","0","2.1886","1.9868"
+"137",5255,"SC0","Ross County","Aberdeen","2022-09-03","Ross County-Aberdeen","SC0","Ross County","Aberdeen","2,un25,BTTS-Y",-1,1,"-1","0","2.4079","2.6579"
+"138",5256,"SC0","St Johnstone","St. Mirren","2022-09-03","St Johnstone-St. Mirren",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"139",5444,"SC1","Arbroath","Partick","2022-09-03","Arbroath-Partick","SC1","Arbroath","Partick","1X,un25,BTTS-N",9,-2,"3","1","1.6111","1.5278"
+"140",5445,"SC1","Cove Rangers","Hamilton","2022-09-03","Cove Rangers-Hamilton",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"141",5446,"SC1","Dundee FC","Queens Park","2022-09-03","Dundee FC-Queens Park",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"142",5447,"SC1","Morton","Ayr","2022-09-03","Morton-Ayr","SC1","Morton","Ayr","1X,un25,BTTS-N",-1,-1,"-1","2","1.3472","1.6528"
+"143",5448,"SC1","Raith Rvs","Inverness","2022-09-03","Raith Rvs-Inverness",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"144",5629,"SP1","Ath Bilbao","Espanol","2022-09-04","Ath Bilbao-Espanol","SP1","Ath Bilbao","Espanol","1X,un25,BTTS-Y",3,3,"2","0","5.0789","5.8158"
+"145",5630,"SP1","Celta","Cadiz","2022-09-04","Celta-Cadiz","SP1","Celta","Cadiz","1X,un25,BTTS-Y",3,4,"1","0","5","5.3421"
+"146",5631,"SP1","Mallorca","Girona","2022-09-04","Mallorca-Girona",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"147",5632,"SP1","Osasuna","Rayo Vallecano","2022-09-04","Osasuna-Rayo Vallecano",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"148",5633,"SP1","Real Madrid","Betis","2022-09-04","Real Madrid-Betis","SP1","Real Madrid","Betis","1X,ov25,BTTS-Y",11,2,"0","2","4.1842","4.2632"
+"149",5634,"SP1","Sociedad","Ath Madrid","2022-09-04","Sociedad-Ath Madrid","SP1","Sociedad","Ath Madrid","2,un25,BTTS-Y",3,6,"-1","0","4.5526","5.3158"
+"150",5635,"SP1","Sevilla","Barcelona","2022-09-04","Sevilla-Barcelona","SP1","Sevilla","Barcelona","1X,un25,BTTS-N",2,0,"1","-2","5.0526","5"
+"151",5636,"SP1","Valencia","Getafe","2022-09-04","Valencia-Getafe","SP1","Valencia","Getafe","1X,un25,BTTS-N",0,0,"2","0","6.9474","6"
+"152",5637,"SP1","Valladolid","Almeria","2022-09-04","Valladolid-Almeria","SP2","Valladolid","Almeria","2,ov25,BTTS-Y",7,6,"2","0","4.9024","4.8537"
+"153",5638,"SP1","Villarreal","Elche","2022-09-04","Villarreal-Elche","SP1","Villarreal","Elche","1X,un25,BTTS-Y",6,1,"-1","2","4.6316","4.8421"
+"154",6009,"SP2","Ath Bilbao","Espanol","2022-09-04","Ath Bilbao-Espanol","SP1","Ath Bilbao","Espanol","1X,un25,BTTS-Y",3,3,"2","0","5.0789","5.8158"
+"155",6010,"SP2","Celta","Cadiz","2022-09-04","Celta-Cadiz","SP1","Celta","Cadiz","1X,un25,BTTS-Y",3,4,"1","0","5","5.3421"
+"156",6011,"SP2","Mallorca","Girona","2022-09-04","Mallorca-Girona",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"157",6012,"SP2","Osasuna","Rayo Vallecano","2022-09-04","Osasuna-Rayo Vallecano",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"158",6013,"SP2","Real Madrid","Betis","2022-09-04","Real Madrid-Betis","SP1","Real Madrid","Betis","1X,ov25,BTTS-Y",11,2,"0","2","4.1842","4.2632"
+"159",6014,"SP2","Sociedad","Ath Madrid","2022-09-04","Sociedad-Ath Madrid","SP1","Sociedad","Ath Madrid","2,un25,BTTS-Y",3,6,"-1","0","4.5526","5.3158"
+"160",6015,"SP2","Sevilla","Barcelona","2022-09-04","Sevilla-Barcelona","SP1","Sevilla","Barcelona","1X,un25,BTTS-N",2,0,"1","-2","5.0526","5"
+"161",6016,"SP2","Valencia","Getafe","2022-09-04","Valencia-Getafe","SP1","Valencia","Getafe","1X,un25,BTTS-N",0,0,"2","0","6.9474","6"
+"162",6017,"SP2","Valladolid","Almeria","2022-09-04","Valladolid-Almeria","SP2","Valladolid","Almeria","2,ov25,BTTS-Y",7,6,"2","0","4.9024","4.8537"
+"163",6018,"SP2","Villarreal","Elche","2022-09-04","Villarreal-Elche","SP1","Villarreal","Elche","1X,un25,BTTS-Y",6,1,"-1","2","4.6316","4.8421"
+"164",6395,"T1","Ankaragucu","Besiktas","2022-09-04","Ankaragucu-Besiktas",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"165",6396,"T1","Antalyaspor","Kasimpasa","2022-09-04","Antalyaspor-Kasimpasa","T1","Antalyaspor","Kasimpasa","1X,ov25,BTTS-Y",8,3,"0","-2","4.6579","4.5789"
+"166",6397,"T1","Buyuksehyr","Alanyaspor","2022-09-04","Buyuksehyr-Alanyaspor","T1","Buyuksehyr","Alanyaspor","2,ov25,BTTS-Y",4,4,"2","3","3.5263","4.0789"
+"167",6398,"T1","Fenerbahce","Kayserispor","2022-09-04","Fenerbahce-Kayserispor","T1","Fenerbahce","Kayserispor","1X,ov25,BTTS-Y",6,-4,"0","3","4.5526","3.8421"
+"168",6399,"T1","Galatasaray","Gaziantep","2022-09-04","Galatasaray-Gaziantep","T1","Galatasaray","Gaziantep","1X,un25,BTTS-Y",7,4,"1","2","5.0789","4.1053"
+"169",6400,"T1","Giresunspor","Konyaspor","2022-09-04","Giresunspor-Konyaspor","T1","Giresunspor","Konyaspor","2,ov25,BTTS-Y",5,9,"0","2","3.6579","4.0263"
+"170",6401,"T1","Hatayspor","Ad. Demirspor","2022-09-04","Hatayspor-Ad. Demirspor","T1","Hatayspor","Ad. Demirspor","1X,ov25,BTTS-Y",5,6,"3","7","3.9737","3.7895"
+"171",6402,"T1","Sivasspor","Karagumruk","2022-09-04","Sivasspor-Karagumruk","T1","Sivasspor","Karagumruk","2,ov25,BTTS-Y",-2,6,"1","-1","4.5526","4.2632"
+"172",6403,"T1","Umraniyespor","Trabzonspor","2022-09-04","Umraniyespor-Trabzonspor",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

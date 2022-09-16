@@ -1,211 +1,173 @@
 "","Div","Home_Team","Away_Team","Date"
-"64","B1","Cercle Brugge","Antwerp",2022-09-10
-"65","B1","Gent","Waregem",2022-09-10
-"66","B1","Kortrijk","Mechelen",2022-09-10
-"67","B1","Oud-Heverlee Leuven","Charleroi",2022-09-10
-"68","B1","Oostende","Eupen",2022-09-10
-"69","B1","St. Gilloise","Genk",2022-09-10
-"70","B1","Seraing","Club Brugge",2022-09-10
-"71","B1","St Truiden","Standard",2022-09-10
-"72","B1","Westerlo","Anderlecht",2022-09-10
-"353","D1","Bayern Munich","Stuttgart",2022-09-10
-"354","D1","Ein Frankfurt","Wolfsburg",2022-09-10
-"355","D1","Hertha","Leverkusen",2022-09-10
-"356","D1","Hoffenheim","Mainz",2022-09-10
-"357","D1","RB Leipzig","Dortmund",2022-09-10
-"358","D1","Schalke 04","Bochum",2022-09-10
-"359","D1","FC Koln","Union Berlin",2022-09-11
-"360","D1","Freiburg","Mgladbach",2022-09-11
-"678","D2","Fortuna Dusseldorf","Hansa Rostock",2022-09-10
-"679","D2","Hannover","Braunschweig",2022-09-10
-"680","D2","Karlsruhe","Heidenheim",2022-09-10
-"681","D2","Paderborn","Regensburg",2022-09-10
-"682","D2","Kaiserslautern","Darmstadt",2022-09-11
-"683","D2","Magdeburg","Greuther Furth",2022-09-11
-"684","D2","St Pauli","Sandhausen",2022-09-11
-"978","E0","Bournemouth","Brighton",2022-09-10
-"979","E0","Fulham","Chelsea",2022-09-10
-"980","E0","Leicester","Aston Villa",2022-09-10
-"981","E0","Liverpool","Wolves",2022-09-10
-"982","E0","Manchester City","Tottenham",2022-09-10
-"983","E0","Southampton","Brentford",2022-09-10
-"984","E0","Arsenal","Everton",2022-09-11
-"985","E0","Crystal Palace","Man United",2022-09-11
-"986","E0","West Ham","Newcastle",2022-09-11
-"987","E0","Leeds","Nottingham",2022-09-12
-"1395","E1","Birmingham","Swansea",2022-09-10
-"1396","E1","Blackpool","Middlesbrough",2022-09-10
-"1397","E1","Bristol City","Preston",2022-09-10
-"1398","E1","Burnley","Norwich",2022-09-10
-"1399","E1","Cardiff","Hull",2022-09-10
-"1400","E1","Coventry","West Brom",2022-09-10
-"1401","E1","QPR","Huddersfield",2022-09-10
-"1402","E1","Sheffield United","Rotherham",2022-09-10
-"1403","E1","Stoke","Luton",2022-09-10
-"1404","E1","Sunderland","Millwall",2022-09-10
-"1405","E1","Watford","Reading",2022-09-10
-"1406","E1","Wigan","Blackburn",2022-09-10
-"1407","E1","Blackburn","Watford",2022-09-13
-"1408","E1","Huddersfield","Wigan",2022-09-13
-"1409","E1","Hull","Stoke",2022-09-13
-"1410","E1","Middlesbrough","Cardiff",2022-09-13
-"1411","E1","Preston","Burnley",2022-09-13
-"1412","E1","Swansea","Sheffield United",2022-09-13
-"1935","E2","Barnsley","Portsmouth",2022-09-10
-"1936","E2","Burton","Fleetwood Town",2022-09-10
-"1937","E2","Charlton","Exeter",2022-09-10
-"1938","E2","Cheltenham","Bolton",2022-09-10
-"1939","E2","Ipswich","Cambridge",2022-09-10
-"1940","E2","Lincoln","Accrington",2022-09-10
-"1941","E2","Milton Keynes Dons","Bristol Rvs",2022-09-10
-"1942","E2","Morecambe","Derby",2022-09-10
-"1943","E2","Peterborough","Forest Green",2022-09-10
-"1944","E2","Plymouth","Sheffield Weds",2022-09-10
-"1945","E2","Shrewsbury","Oxford",2022-09-10
-"1946","E2","Wycombe","Port Vale",2022-09-10
-"1947","E2","Barnsley","Port Vale",2022-09-13
-"1948","E2","Burton","Portsmouth",2022-09-13
-"1949","E2","Charlton","Forest Green",2022-09-13
-"1950","E2","Cheltenham","Cambridge",2022-09-13
-"1951","E2","Ipswich","Bristol Rvs",2022-09-13
-"1952","E2","Lincoln","Derby",2022-09-13
-"1953","E2","Milton Keynes Dons","Bolton",2022-09-13
-"1954","E2","Morecambe","Sheffield Weds",2022-09-13
-"1955","E2","Peterborough","Fleetwood Town",2022-09-13
-"1956","E2","Plymouth","Oxford",2022-09-13
-"1957","E2","Shrewsbury","Exeter",2022-09-13
-"1958","E2","Wycombe","Accrington",2022-09-13
-"2487","E3","AFC Wimbledon","Leyton Orient",2022-09-10
-"2488","E3","Barrow","Colchester",2022-09-10
-"2489","E3","Crawley Town","Gillingham",2022-09-10
-"2490","E3","Grimsby","Crewe",2022-09-10
-"2491","E3","Harrogate","Carlisle",2022-09-10
-"2492","E3","Hartlepool","Doncaster",2022-09-10
-"2493","E3","Mansfield","Bradford",2022-09-10
-"2494","E3","Rochdale","Salford",2022-09-10
-"2495","E3","Stevenage","Sutton",2022-09-10
-"2496","E3","Swindon","Newport County",2022-09-10
-"2497","E3","Tranmere","Stockport",2022-09-10
-"2498","E3","Walsall","Northampton",2022-09-10
-"2499","E3","AFC Wimbledon","Northampton",2022-09-13
-"2500","E3","Barrow","Doncaster",2022-09-13
-"2501","E3","Crawley Town","Stockport",2022-09-13
-"2502","E3","Grimsby","Gillingham",2022-09-13
-"2503","E3","Harrogate","Salford",2022-09-13
-"2504","E3","Hartlepool","Crewe",2022-09-13
-"2505","E3","Mansfield","Carlisle",2022-09-13
-"2506","E3","Rochdale","Leyton Orient",2022-09-13
-"2507","E3","Stevenage","Newport County",2022-09-13
-"2508","E3","Swindon","Sutton",2022-09-13
-"2509","E3","Tranmere","Bradford",2022-09-13
-"2510","E3","Walsall","Colchester",2022-09-13
-"3039","EC","Altrincham","Wealdstone",2022-09-10
-"3040","EC","Barnet","Southend",2022-09-10
-"3041","EC","Boreham Wood","Oldham",2022-09-10
-"3042","EC","Chesterfield","Gateshead",2022-09-10
-"3043","EC","Eastleigh","Scunthorpe",2022-09-10
-"3044","EC","Halifax","Dorking",2022-09-10
-"3045","EC","Maidstone","Solihull",2022-09-10
-"3046","EC","Notts County","Bromley",2022-09-10
-"3047","EC","Torquay","Aldershot",2022-09-10
-"3048","EC","Woking","Yeovil",2022-09-10
-"3049","EC","Wrexham","Maidenhead",2022-09-10
-"3050","EC","York","Dag and Red",2022-09-10
-"3051","EC","Altrincham","Scunthorpe",2022-09-13
-"3052","EC","Barnet","Dorking",2022-09-13
-"3053","EC","Boreham Wood","Maidenhead",2022-09-13
-"3054","EC","Chesterfield","Southend",2022-09-13
-"3055","EC","Eastleigh","Yeovil",2022-09-13
-"3056","EC","Halifax","Gateshead",2022-09-13
-"3057","EC","Maidstone","Wealdstone",2022-09-13
-"3058","EC","Notts County","Aldershot",2022-09-13
-"3059","EC","Torquay","Solihull",2022-09-13
-"3060","EC","Woking","Oldham",2022-09-13
-"3061","EC","Wrexham","Dag and Red",2022-09-13
-"3062","EC","York","Bromley",2022-09-13
-"3567","F1","Ajaccio","Nice",2022-09-11
-"3568","F1","Angers","Montpellier",2022-09-11
-"3569","F1","Lens","Troyes",2022-09-11
-"3570","F1","Lorient","Nantes",2022-09-11
-"3571","F1","Marseille","Lille",2022-09-11
-"3572","F1","Monaco","Lyon",2022-09-11
-"3573","F1","Paris SG","Brest",2022-09-11
-"3574","F1","Rennes","Auxerre",2022-09-11
-"3575","F1","Strasbourg","Clermont",2022-09-11
-"3576","F1","Toulouse","Reims",2022-09-11
-"3950","F2","Annecy","Quevilly Rouen",2022-09-10
-"3951","F2","Caen","Amiens",2022-09-10
-"3952","F2","Dijon","Sochaux",2022-09-10
-"3953","F2","Grenoble","Paris FC",2022-09-10
-"3954","F2","Laval","Pau FC",2022-09-10
-"3955","F2","Metz","Guingamp",2022-09-10
-"3956","F2","Nimes","Bastia",2022-09-10
-"3957","F2","Niort","Le Havre",2022-09-10
-"3958","F2","Rodez","Valenciennes",2022-09-10
-"4279","I1","Atalanta","Cremonese",2022-09-11
-"4280","I1","Bologna","Fiorentina",2022-09-11
-"4281","I1","Empoli","Roma",2022-09-11
-"4282","I1","Inter","Torino",2022-09-11
-"4283","I1","Juventus","Salernitana",2022-09-11
-"4284","I1","Lazio","Verona",2022-09-11
-"4285","I1","Lecce","Monza",2022-09-11
-"4286","I1","Napoli","Spezia",2022-09-11
-"4287","I1","Sampdoria","Milan",2022-09-11
-"4288","I1","Sassuolo","Udinese",2022-09-11
-"4655","N1","Ajax","Heerenveen",2022-09-10
-"4656","N1","Excelsior","FC Emmen",2022-09-10
-"4657","N1","Nijmegen","Sittard",2022-09-10
-"4658","N1","PSV Eindhoven","Waalwijk",2022-09-10
-"4659","N1","AZ Alkmaar","Twente",2022-09-11
-"4660","N1","Cambuur","Groningen",2022-09-11
-"4661","N1","Feyenoord","Sparta Rotterdam",2022-09-11
-"4662","N1","Utrecht","Vitesse",2022-09-11
-"4960","P1","Arouca","Boavista",2022-09-11
-"4961","P1","Famalicao","Benfica",2022-09-11
-"4962","P1","Porto","Chaves",2022-09-11
-"4963","P1","Maritimo","Gil Vicente",2022-09-11
-"4964","P1","Pacos Ferreira","Casa Pia",2022-09-11
-"4965","P1","Rio Ave","Sp Braga",2022-09-11
-"4966","P1","Sp Lisbon","Portimonense",2022-09-11
-"4967","P1","Guimaraes","Santa Clara",2022-09-11
-"4968","P1","Vizela","Estoril",2022-09-11
-"5257","SC0","Aberdeen","Rangers",2022-09-10
-"5258","SC0","Celtic","Livingston",2022-09-10
-"5259","SC0","Dundee United","Hibernian",2022-09-10
-"5260","SC0","Hearts","St. Mirren",2022-09-10
-"5261","SC0","Kilmarnock","St Johnstone",2022-09-10
-"5262","SC0","Ross County","Motherwell",2022-09-10
-"5449","SC1","Arbroath","Raith Rvs",2022-09-10
-"5450","SC1","Ayr","Partick",2022-09-10
-"5451","SC1","Cove Rangers","Dundee FC",2022-09-10
-"5452","SC1","Inverness","Hamilton",2022-09-10
-"5453","SC1","Queens Park","Morton",2022-09-10
-"5639","SP1","Almeria","Osasuna",2022-09-11
-"5640","SP1","Ath Madrid","Celta",2022-09-11
-"5641","SP1","Betis","Villarreal",2022-09-11
-"5642","SP1","Cadiz","Barcelona",2022-09-11
-"5643","SP1","Elche","Ath Bilbao",2022-09-11
-"5644","SP1","Espanol","Sevilla",2022-09-11
-"5645","SP1","Getafe","Sociedad",2022-09-11
-"5646","SP1","Girona","Valladolid",2022-09-11
-"5647","SP1","Rayo Vallecano","Valencia",2022-09-11
-"5648","SP1","Real Madrid","Mallorca",2022-09-11
-"6019","SP2","Almeria","Osasuna",2022-09-11
-"6020","SP2","Ath Madrid","Celta",2022-09-11
-"6021","SP2","Betis","Villarreal",2022-09-11
-"6022","SP2","Cadiz","Barcelona",2022-09-11
-"6023","SP2","Elche","Ath Bilbao",2022-09-11
-"6024","SP2","Espanol","Sevilla",2022-09-11
-"6025","SP2","Getafe","Sociedad",2022-09-11
-"6026","SP2","Girona","Valladolid",2022-09-11
-"6027","SP2","Rayo Vallecano","Valencia",2022-09-11
-"6028","SP2","Real Madrid","Mallorca",2022-09-11
-"6404","T1","Ad. Demirspor","Trabzonspor",2022-09-11
-"6405","T1","Alanyaspor","Ankaragucu",2022-09-11
-"6406","T1","Besiktas","Buyuksehyr",2022-09-11
-"6407","T1","Gaziantep","Umraniyespor",2022-09-11
-"6408","T1","Karagumruk","Giresunspor",2022-09-11
-"6409","T1","Kasimpasa","Galatasaray",2022-09-11
-"6410","T1","Kayserispor","Antalyaspor",2022-09-11
-"6411","T1","Konyaspor","Hatayspor",2022-09-11
-"6412","T1","Sivasspor","Istanbulspor AS",2022-09-11
+"73","B1","Anderlecht","Kortrijk",2022-09-17
+"74","B1","Antwerp","Seraing",2022-09-17
+"75","B1","Cercle Brugge","Oostende",2022-09-17
+"76","B1","Charleroi","Westerlo",2022-09-17
+"77","B1","Eupen","St. Gilloise",2022-09-17
+"78","B1","Genk","Gent",2022-09-17
+"79","B1","Mechelen","Oud-Heverlee Leuven",2022-09-17
+"80","B1","Standard","Club Brugge",2022-09-17
+"81","B1","Waregem","St Truiden",2022-09-17
+"361","D1","Mainz","Hertha",2022-09-16
+"362","D1","Augsburg","Bayern Munich",2022-09-17
+"363","D1","Mgladbach","RB Leipzig",2022-09-17
+"364","D1","Leverkusen","Werder Bremen",2022-09-17
+"365","D1","Dortmund","Schalke 04",2022-09-17
+"366","D1","Stuttgart","Ein Frankfurt",2022-09-17
+"367","D1","Bochum","FC Koln",2022-09-18
+"368","D1","Hoffenheim","Freiburg",2022-09-18
+"369","D1","Union Berlin","Wolfsburg",2022-09-18
+"685","D2","Braunschweig","Karlsruhe",2022-09-16
+"686","D2","Sandhausen","Hannover",2022-09-16
+"687","D2","Arminia Bielefeld","Holstein Kiel",2022-09-17
+"688","D2","Darmstadt","Nurnberg",2022-09-17
+"689","D2","Hamburg","Fortuna Dusseldorf",2022-09-17
+"690","D2","Hansa Rostock","Magdeburg",2022-09-17
+"691","D2","Greuther Furth","Paderborn",2022-09-18
+"692","D2","Heidenheim","Kaiserslautern",2022-09-18
+"693","D2","Regensburg","St Pauli",2022-09-18
+"988","E0","Aston Villa","Southampton",2022-09-16
+"989","E0","Nottingham","Fulham",2022-09-16
+"990","E0","Brighton","Crystal Palace",2022-09-17
+"991","E0","Everton","West Ham",2022-09-17
+"992","E0","Newcastle","Bournemouth",2022-09-17
+"993","E0","Tottenham","Leicester",2022-09-17
+"994","E0","Wolves","Manchester City",2022-09-17
+"995","E0","Brentford","Arsenal",2022-09-18
+"996","E0","Chelsea","Liverpool",2022-09-18
+"997","E0","Man United","Leeds",2022-09-18
+"1419","E1","Birmingham","Coventry",2022-09-17
+"1420","E1","Burnley","Bristol City",2022-09-17
+"1421","E1","Huddersfield","Cardiff",2022-09-17
+"1422","E1","Luton","Blackburn",2022-09-17
+"1423","E1","Middlesbrough","Rotherham",2022-09-17
+"1424","E1","Millwall","Blackpool",2022-09-17
+"1425","E1","Norwich","West Brom",2022-09-17
+"1426","E1","Preston","Sheffield United",2022-09-17
+"1427","E1","QPR","Stoke",2022-09-17
+"1428","E1","Swansea","Hull",2022-09-17
+"1429","E1","Watford","Sunderland",2022-09-17
+"1430","E1","Wigan","Reading",2022-09-17
+"1959","E2","Accrington","Cheltenham",2022-09-17
+"1960","E2","Bolton","Peterborough",2022-09-17
+"1961","E2","Bristol Rvs","Lincoln",2022-09-17
+"1962","E2","Cambridge","Barnsley",2022-09-17
+"1963","E2","Derby","Wycombe",2022-09-17
+"1964","E2","Exeter","Burton",2022-09-17
+"1965","E2","Fleetwood Town","Charlton",2022-09-17
+"1966","E2","Forest Green","Morecambe",2022-09-17
+"1967","E2","Oxford","Milton Keynes Dons",2022-09-17
+"1968","E2","Port Vale","Shrewsbury",2022-09-17
+"1969","E2","Portsmouth","Plymouth",2022-09-17
+"1970","E2","Sheffield Weds","Ipswich",2022-09-17
+"2511","E3","Bradford","Stevenage",2022-09-17
+"2512","E3","Carlisle","AFC Wimbledon",2022-09-17
+"2513","E3","Colchester","Grimsby",2022-09-17
+"2514","E3","Crewe","Crawley Town",2022-09-17
+"2515","E3","Doncaster","Swindon",2022-09-17
+"2516","E3","Gillingham","Mansfield",2022-09-17
+"2517","E3","Leyton Orient","Walsall",2022-09-17
+"2518","E3","Newport County","Barrow",2022-09-17
+"2519","E3","Northampton","Rochdale",2022-09-17
+"2520","E3","Salford","Tranmere",2022-09-17
+"2521","E3","Stockport","Harrogate",2022-09-17
+"2522","E3","Sutton","Hartlepool",2022-09-17
+"3063","EC","Aldershot","Halifax",2022-09-17
+"3064","EC","Bromley","Maidstone",2022-09-17
+"3065","EC","Dag and Red","Altrincham",2022-09-17
+"3066","EC","Dorking","Notts County",2022-09-17
+"3067","EC","Gateshead","Boreham Wood",2022-09-17
+"3068","EC","Maidenhead","Woking",2022-09-17
+"3069","EC","Oldham","Eastleigh",2022-09-17
+"3070","EC","Scunthorpe","York",2022-09-17
+"3071","EC","Solihull","Barnet",2022-09-17
+"3072","EC","Southend","Wrexham",2022-09-17
+"3073","EC","Wealdstone","Torquay",2022-09-17
+"3074","EC","Yeovil","Chesterfield",2022-09-17
+"3577","F1","Auxerre","Lorient",2022-09-18
+"3578","F1","Brest","Ajaccio",2022-09-18
+"3579","F1","Clermont","Troyes",2022-09-18
+"3580","F1","Lille","Toulouse",2022-09-18
+"3581","F1","Lyon","Paris SG",2022-09-18
+"3582","F1","Marseille","Rennes",2022-09-18
+"3583","F1","Montpellier","Strasbourg",2022-09-18
+"3584","F1","Nantes","Lens",2022-09-18
+"3585","F1","Nice","Angers",2022-09-18
+"3586","F1","Reims","Monaco",2022-09-18
+"3959","F2","Amiens","Niort",2022-09-17
+"3960","F2","Bastia","Metz",2022-09-17
+"3961","F2","Grenoble","Caen",2022-09-17
+"3962","F2","Guingamp","St Etienne",2022-09-17
+"3963","F2","Le Havre","Annecy",2022-09-17
+"3964","F2","Paris FC","Rodez",2022-09-17
+"3965","F2","Pau FC","Valenciennes",2022-09-17
+"3966","F2","Quevilly Rouen","Laval",2022-09-17
+"3967","F2","Sochaux","Nimes",2022-09-17
+"4289","I1","Milan","Napoli",2022-09-18
+"4290","I1","Roma","Atalanta",2022-09-18
+"4291","I1","Bologna","Empoli",2022-09-18
+"4292","I1","Cremonese","Lazio",2022-09-18
+"4293","I1","Fiorentina","Verona",2022-09-18
+"4294","I1","Monza","Juventus",2022-09-18
+"4295","I1","Salernitana","Lecce",2022-09-18
+"4296","I1","Spezia","Sampdoria",2022-09-18
+"4297","I1","Torino","Sassuolo",2022-09-18
+"4298","I1","Udinese","Inter",2022-09-18
+"4663","N1","Utrecht","Nijmegen",2022-09-16
+"4664","N1","Sittard","Excelsior",2022-09-17
+"4665","N1","Sparta Rotterdam","Groningen",2022-09-17
+"4666","N1","Vitesse","FC Volendam",2022-09-17
+"4667","N1","Waalwijk","Cambuur",2022-09-17
+"4668","N1","AZ Alkmaar","Ajax",2022-09-18
+"4669","N1","Go Ahead Eagles","FC Emmen",2022-09-18
+"4670","N1","Heerenveen","Twente",2022-09-18
+"4671","N1","PSV Eindhoven","Feyenoord",2022-09-18
+"4969","P1","Arouca","Guimaraes",2022-09-18
+"4970","P1","Benfica","Maritimo",2022-09-18
+"4971","P1","Boavista","Sp Lisbon",2022-09-18
+"4972","P1","Sp Braga","Vizela",2022-09-18
+"4973","P1","Casa Pia","Famalicao",2022-09-18
+"4974","P1","Estoril","Porto",2022-09-18
+"4975","P1","Gil Vicente","Rio Ave",2022-09-18
+"4976","P1","Portimonense","Chaves",2022-09-18
+"4977","P1","Santa Clara","Pacos Ferreira",2022-09-18
+"5263","SC0","Hibernian","Aberdeen",2022-09-17
+"5264","SC0","Livingston","Kilmarnock",2022-09-17
+"5265","SC0","Motherwell","Hearts",2022-09-17
+"5266","SC0","Rangers","Dundee United",2022-09-17
+"5267","SC0","St Johnstone","Ross County",2022-09-17
+"5268","SC0","St. Mirren","Celtic",2022-09-17
+"5454","SC1","Dundee FC","Inverness",2022-09-17
+"5455","SC1","Hamilton","Queens Park",2022-09-17
+"5456","SC1","Morton","Arbroath",2022-09-17
+"5457","SC1","Partick","Cove Rangers",2022-09-17
+"5458","SC1","Raith Rvs","Ayr",2022-09-17
+"5649","SP1","Ath Bilbao","Rayo Vallecano",2022-09-18
+"5650","SP1","Ath Madrid","Real Madrid",2022-09-18
+"5651","SP1","Barcelona","Elche",2022-09-18
+"5652","SP1","Betis","Girona",2022-09-18
+"5653","SP1","Mallorca","Almeria",2022-09-18
+"5654","SP1","Osasuna","Getafe",2022-09-18
+"5655","SP1","Sociedad","Espanol",2022-09-18
+"5656","SP1","Valencia","Celta",2022-09-18
+"5657","SP1","Valladolid","Cadiz",2022-09-18
+"5658","SP1","Villarreal","Sevilla",2022-09-18
+"6029","SP2","Ath Bilbao","Rayo Vallecano",2022-09-18
+"6030","SP2","Ath Madrid","Real Madrid",2022-09-18
+"6031","SP2","Barcelona","Elche",2022-09-18
+"6032","SP2","Betis","Girona",2022-09-18
+"6033","SP2","Mallorca","Almeria",2022-09-18
+"6034","SP2","Osasuna","Getafe",2022-09-18
+"6035","SP2","Sociedad","Espanol",2022-09-18
+"6036","SP2","Valencia","Celta",2022-09-18
+"6037","SP2","Valladolid","Cadiz",2022-09-18
+"6038","SP2","Villarreal","Sevilla",2022-09-18
+"6413","T1","Ankaragucu","Sivasspor",2022-09-18
+"6414","T1","Antalyaspor","Ad. Demirspor",2022-09-18
+"6415","T1","Buyuksehyr","Karagumruk",2022-09-18
+"6416","T1","Fenerbahce","Alanyaspor",2022-09-18
+"6417","T1","Galatasaray","Konyaspor",2022-09-18
+"6418","T1","Hatayspor","Kayserispor",2022-09-18
+"6419","T1","Istanbulspor AS","Besiktas",2022-09-18
+"6420","T1","Trabzonspor","Gaziantep",2022-09-18
+"6421","T1","Umraniyespor","Kasimpasa",2022-09-18

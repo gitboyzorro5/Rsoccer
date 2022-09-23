@@ -11,18 +11,18 @@ library('sqldf')
 unlink('UEFANL.xlsx')
 ######################UEFANL START#######################################
 #####################################################################
-UEFANL <- read.csv('../../../Leonard.000/Downloads/IFootball/results.csv')
-UEFANL$date <- ymd(UEFANL$date)
-UEFANL <- UEFANL[order(as.Date(UEFANL$date, format = "%d/%m%Y"), decreasing = FALSE),]
+UEFANL <- read.csv('../../../Leonard/Downloads/results.csv')
+UEFANL$date <- mdy(UEFANL$date)
+UEFANL <- UEFANL[order(as.Date(UEFANL$date, format = "%m/%d%Y"), decreasing = FALSE),]
 UEFANL$CS <- paste(UEFANL$home_score,UEFANL$away_score, sep = "-")
 UEFANL <- subset(UEFANL,tournament == "UEFA Nations League")
-UEFANL <- UEFANL[UEFANL$date > '2020-01-01',]
+UEFANL <- UEFANL[UEFANL$date >= '2022-06-01',]
 UEFANL$TG <- UEFANL$home_score + UEFANL$away_score
 UEFANL$OV25 <- ifelse(UEFANL$TG >= 3,"Y","N")
 UEFANL$FTR <- with(UEFANL,
                  ifelse(home_score > away_score ,FTR <- "H" , ifelse(away_score > home_score,FTR <- "A", FTR <- "D"))
 )
-UEFANL
+
 ###################################################
 ####GoalTotalsv2##################################
 uefanl_totalgoalsv2 <- tapply(UEFANL$TG, UEFANL[c("home_team", "away_team")],mean)

@@ -431,7 +431,4 @@ for(t1_rowhys in 1:nrow(t1_yellowscored_h)) {
 # write.xlsx(sc3_yellowscored_h,'YCmatrix.xlsx',sheetName = "SC3", append = TRUE)
 # write.xlsx(sp1_yellowscored_h,'YCmatrix.xlsx',sheetName = "SP1", append = TRUE)
 # write.xlsx(sp2_yellowscored_h,'YCmatrix.xlsx',sheetName = "SP2", append = TRUE)
-# write.xlsx(t1_yellowscored_h,'YCmatrix.xlsx',sheetName = "T1", append = TRUE)
-
-
-allteams20202021
+# write.xlsx(t1_yellowscored_h,'YCmatrix.xlsx',sheetName = "T1", append = TRU

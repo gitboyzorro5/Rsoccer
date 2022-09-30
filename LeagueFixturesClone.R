@@ -1328,12 +1328,7 @@ picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$Home_Team,picks_fix
 picks_fixtures_prediction_cloned <- dplyr::left_join(picks_fixtures_cloned,allteams20212022_clonefixtures)
 write.xlsx(picks_fixtures_prediction_cloned,'picks_fixtures_prediction_cloned.xlsx')
 
-
-
-
-
-
-
+colnames(T1_fixtures_clone)
 
 
 

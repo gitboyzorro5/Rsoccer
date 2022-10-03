@@ -4,7 +4,7 @@ library('lubridate')
 #############################################################
 myfixturesnl <- readxl::read_excel('../FDAS/myodds_20212022_newleagues.xlsx', sheet = '3way')
 myfixturesnl$Date <- dmy(myfixturesnl$Date)
-myfixturesnl <- myfixturesnl[myfixturesnl$Date >= '2022-09-16',]
+myfixturesnl <- myfixturesnl[myfixturesnl$Date >= '2022-09-30',]
 
 ####################################################################
 myfixturesnlaut <- subset(myfixturesnl,Div == "Admiral Bundesliga")

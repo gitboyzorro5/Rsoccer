@@ -35,7 +35,7 @@ B1_fixtures_clone$Awinodds <-   B1_fixtures$b1_0_1 + B1_fixtures$b1_0_2 + B1_fix
   B1_fixtures$b1_5_6
 
 B1_fixtures_clone$Awinodds <- round(1/B1_fixtures_clone$Awinodds, digits = 3)
-
+d
 colnames(B1_fixtures_clone)[15] <- "CS_1-1"
 colnames(B1_fixtures_clone)[13] <- "CS_1-0"
 colnames(B1_fixtures_clone)[14] <- "CS_0-1"

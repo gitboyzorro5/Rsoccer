@@ -65,10 +65,10 @@ colnames(B1_fixtures_clone)[69] <- "BTTSN"
 colnames(B1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(B1_fixtures_clone)[71] <- "BTTSNodds"
 
-B1_fixtures_clone$matchid <- paste(B1_fixtures_clone$Hometeam,B1_fixtures_clone$Awayteam,sep = '-')
+
 
 B1_fixtures_clone <- B1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
-
+B1_fixtures_clone$matchid <- paste(B1_fixtures_clone$Hometeam,B1_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #######################################################################################################################
 #D1
@@ -126,9 +126,10 @@ colnames(D1_fixtures_clone)[69] <- "BTTSN"
 colnames(D1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(D1_fixtures_clone)[71] <- "BTTSNodds"
 
-D1_fixtures_clone$matchid <- paste(D1_fixtures_clone$Hometeam,D1_fixtures_clone$Awayteam,sep = '-')
+
 
 D1_fixtures_clone <- D1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+D1_fixtures_clone$matchid <- paste(D1_fixtures_clone$Hometeam,D1_fixtures_clone$Awayteam,sep = '-')
 ######################################################################################################################
 ######################################################################################################################
 #D2
@@ -186,10 +187,9 @@ colnames(D2_fixtures_clone)[69] <- "BTTSN"
 colnames(D2_fixtures_clone)[70] <- "BTTSYodds"
 colnames(D2_fixtures_clone)[71] <- "BTTSNodds"
 
-D2_fixtures_clone$matchid <- paste(D2_fixtures_clone$Hometeam,D2_fixtures_clone$Awayteam,sep = '-')
 
 D2_fixtures_clone <- D2_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
-
+D2_fixtures_clone$matchid <- paste(D2_fixtures_clone$Hometeam,D2_fixtures_clone$Awayteam,sep = '-')
 ######################################################################################################################
 ######################################################################################################################
 #E0
@@ -247,9 +247,10 @@ colnames(E0_fixtures_clone)[69] <- "BTTSN"
 colnames(E0_fixtures_clone)[70] <- "BTTSYodds"
 colnames(E0_fixtures_clone)[71] <- "BTTSNodds"
 
-E0_fixtures_clone$matchid <- paste(E0_fixtures_clone$Hometeam,E0_fixtures_clone$Awayteam,sep = '-')
+
 
 E0_fixtures_clone <- E0_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+E0_fixtures_clone$matchid <- paste(E0_fixtures_clone$Hometeam,E0_fixtures_clone$Awayteam,sep = '-')
 ######################################################################################################################
 #E1
 E1_fixtures_clone <- E1_fixtures
@@ -306,9 +307,10 @@ colnames(E1_fixtures_clone)[69] <- "BTTSN"
 colnames(E1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(E1_fixtures_clone)[71] <- "BTTSNodds"
 
-E1_fixtures_clone$matchid <- paste(E1_fixtures_clone$Hometeam,E1_fixtures_clone$Awayteam,sep = '-')
+
 
 E1_fixtures_clone <- E1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+E1_fixtures_clone$matchid <- paste(E1_fixtures_clone$Hometeam,E1_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #######################################################################################################################
 #E2
@@ -366,9 +368,10 @@ colnames(E2_fixtures_clone)[69] <- "BTTSN"
 colnames(E2_fixtures_clone)[70] <- "BTTSYodds"
 colnames(E2_fixtures_clone)[71] <- "BTTSNodds"
 
-E2_fixtures_clone$matchid <- paste(E2_fixtures_clone$Hometeam,E2_fixtures_clone$Awayteam,sep = '-')
+
 
 E2_fixtures_clone <- E2_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+E2_fixtures_clone$matchid <- paste(E2_fixtures_clone$Hometeam,E2_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #######################################################################################################################
 #E3
@@ -426,9 +429,10 @@ colnames(E3_fixtures_clone)[69] <- "BTTSN"
 colnames(E3_fixtures_clone)[70] <- "BTTSYodds"
 colnames(E3_fixtures_clone)[71] <- "BTTSNodds"
 
-E3_fixtures_clone$matchid <- paste(E3_fixtures_clone$Hometeam,E3_fixtures_clone$Awayteam,sep = '-')
+
 
 E3_fixtures_clone <- E3_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+E3_fixtures_clone$matchid <- paste(E3_fixtures_clone$Hometeam,E3_fixtures_clone$Awayteam,sep = '-')
 ########################################################################################################################
 #Ec
 EC_fixtures_clone <- EC_fixtures
@@ -485,9 +489,10 @@ colnames(EC_fixtures_clone)[69] <- "BTTSN"
 colnames(EC_fixtures_clone)[70] <- "BTTSYodds"
 colnames(EC_fixtures_clone)[71] <- "BTTSNodds"
 
-EC_fixtures_clone$matchid <- paste(EC_fixtures_clone$Hometeam,EC_fixtures_clone$Awayteam,sep = '-')
+
 
 EC_fixtures_clone <- EC_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+EC_fixtures_clone$matchid <- paste(EC_fixtures_clone$Hometeam,EC_fixtures_clone$Awayteam,sep = '-')
 ########################################################################################################################
 #F1
 F1_fixtures_clone <- F1_fixtures
@@ -544,9 +549,10 @@ colnames(F1_fixtures_clone)[69] <- "BTTSN"
 colnames(F1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(F1_fixtures_clone)[71] <- "BTTSNodds"
 
-F1_fixtures_clone$matchid <- paste(F1_fixtures_clone$Hometeam,F1_fixtures_clone$Awayteam,sep = '-')
+
 
 F1_fixtures_clone <- F1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+F1_fixtures_clone$matchid <- paste(F1_fixtures_clone$Hometeam,F1_fixtures_clone$Awayteam,sep = '-')
 ######################################################################################################################
 ######################################################################################################################
 #F2
@@ -604,9 +610,10 @@ colnames(F2_fixtures_clone)[69] <- "BTTSN"
 colnames(F2_fixtures_clone)[70] <- "BTTSYodds"
 colnames(F2_fixtures_clone)[71] <- "BTTSNodds"
 
-F2_fixtures_clone$matchid <- paste(F2_fixtures_clone$Hometeam,F2_fixtures_clone$Awayteam,sep = '-')
+
 
 F2_fixtures_clone <- F2_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+F2_fixtures_clone$matchid <- paste(F2_fixtures_clone$Hometeam,F2_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #G1
 G1_fixtures_clone <- G1_fixtures
@@ -663,9 +670,10 @@ colnames(G1_fixtures_clone)[69] <- "BTTSN"
 colnames(G1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(G1_fixtures_clone)[71] <- "BTTSNodds"
 
-G1_fixtures_clone$matchid <- paste(G1_fixtures_clone$Hometeam,G1_fixtures_clone$Awayteam,sep = '-')
+
 
 G1_fixtures_clone <- G1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+G1_fixtures_clone$matchid <- paste(G1_fixtures_clone$Hometeam,G1_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 I1_fixtures_clone <- I1_fixtures
 colnames(I1_fixtures_clone)[61] <- "Hwin"
@@ -721,9 +729,10 @@ colnames(I1_fixtures_clone)[69] <- "BTTSN"
 colnames(I1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(I1_fixtures_clone)[71] <- "BTTSNodds"
 
-I1_fixtures_clone$matchid <- paste(I1_fixtures_clone$Hometeam,I1_fixtures_clone$Awayteam,sep = '-')
+
 
 I1_fixtures_clone <- I1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+I1_fixtures_clone$matchid <- paste(I1_fixtures_clone$Hometeam,I1_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #I2
 I2_fixtures_clone <- I2_fixtures
@@ -780,9 +789,10 @@ colnames(I2_fixtures_clone)[69] <- "BTTSN"
 colnames(I2_fixtures_clone)[70] <- "BTTSYodds"
 colnames(I2_fixtures_clone)[71] <- "BTTSNodds"
 
-I2_fixtures_clone$matchid <- paste(I2_fixtures_clone$Hometeam,I2_fixtures_clone$Awayteam,sep = '-')
+
 
 I2_fixtures_clone <- I2_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+I2_fixtures_clone$matchid <- paste(I2_fixtures_clone$Hometeam,I2_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #N1
 N1_fixtures_clone <- N1_fixtures
@@ -839,9 +849,10 @@ colnames(N1_fixtures_clone)[69] <- "BTTSN"
 colnames(N1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(N1_fixtures_clone)[71] <- "BTTSNodds"
 
-N1_fixtures_clone$matchid <- paste(N1_fixtures_clone$Hometeam,N1_fixtures_clone$Awayteam,sep = '-')
+
 
 N1_fixtures_clone <- N1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+N1_fixtures_clone$matchid <- paste(N1_fixtures_clone$Hometeam,N1_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #P1
 P1_fixtures_clone <- P1_fixtures
@@ -898,9 +909,10 @@ colnames(P1_fixtures_clone)[69] <- "BTTSN"
 colnames(P1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(P1_fixtures_clone)[71] <- "BTTSNodds"
 
-P1_fixtures_clone$matchid <- paste(P1_fixtures_clone$Hometeam,P1_fixtures_clone$Awayteam,sep = '-')
+
 
 P1_fixtures_clone <- P1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+P1_fixtures_clone$matchid <- paste(P1_fixtures_clone$Hometeam,P1_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #SP1
 SP1_fixtures_clone <- SP1_fixtures
@@ -957,9 +969,10 @@ colnames(SP1_fixtures_clone)[69] <- "BTTSN"
 colnames(SP1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(SP1_fixtures_clone)[71] <- "BTTSNodds"
 
-SP1_fixtures_clone$matchid <- paste(SP1_fixtures_clone$Hometeam,SP1_fixtures_clone$Awayteam,sep = '-')
+
 
 SP1_fixtures_clone <- SP1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+SP1_fixtures_clone$matchid <- paste(SP1_fixtures_clone$Hometeam,SP1_fixtures_clone$Awayteam,sep = '-')
 ##########################################################################################################################
 #SP2
 SP2_fixtures_clone <- SP2_fixtures
@@ -1016,9 +1029,10 @@ colnames(SP2_fixtures_clone)[69] <- "BTTSN"
 colnames(SP2_fixtures_clone)[70] <- "BTTSYodds"
 colnames(SP2_fixtures_clone)[71] <- "BTTSNodds"
 
-SP2_fixtures_clone$matchid <- paste(SP2_fixtures_clone$Hometeam,SP2_fixtures_clone$Awayteam,sep = '-')
+
 
 SP2_fixtures_clone <- SP2_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+SP2_fixtures_clone$matchid <- paste(SP2_fixtures_clone$Hometeam,SP2_fixtures_clone$Awayteam,sep = '-')
 ##########################################################################################################################
 SC0_fixtures_clone <- SC0_fixtures
 colnames(SC0_fixtures_clone)[61] <- "Hwin"
@@ -1074,9 +1088,10 @@ colnames(SC0_fixtures_clone)[69] <- "BTTSN"
 colnames(SC0_fixtures_clone)[70] <- "BTTSYodds"
 colnames(SC0_fixtures_clone)[71] <- "BTTSNodds"
 
-SC0_fixtures_clone$matchid <- paste(SC0_fixtures_clone$Hometeam,SC0_fixtures_clone$Awayteam,sep = '-')
+
 
 SC0_fixtures_clone <- SC0_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+SC0_fixtures_clone$matchid <- paste(SC0_fixtures_clone$Hometeam,SC0_fixtures_clone$Awayteam,sep = '-')
 #########################################################################################################################
 #SC1
 SC1_fixtures_clone <- SC1_fixtures
@@ -1133,9 +1148,10 @@ colnames(SC1_fixtures_clone)[69] <- "BTTSN"
 colnames(SC1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(SC1_fixtures_clone)[71] <- "BTTSNodds"
 
-SC1_fixtures_clone$matchid <- paste(SC1_fixtures_clone$Hometeam,SC1_fixtures_clone$Awayteam,sep = '-')
+
 
 SC1_fixtures_clone <- SC1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+SC1_fixtures_clone$matchid <- paste(SC1_fixtures_clone$Hometeam,SC1_fixtures_clone$Awayteam,sep = '-')
 #########################################################################################################################
 #SC2
 SC2_fixtures_clone <- SC2_fixtures
@@ -1192,9 +1208,10 @@ colnames(SC2_fixtures_clone)[69] <- "BTTSN"
 colnames(SC2_fixtures_clone)[70] <- "BTTSYodds"
 colnames(SC2_fixtures_clone)[71] <- "BTTSNodds"
 
-SC2_fixtures_clone$matchid <- paste(SC2_fixtures_clone$Hometeam,SC2_fixtures_clone$Awayteam,sep = '-')
+View(SC2_fixtures_clone)
 
 SC2_fixtures_clone <- SC2_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+SC2_fixtures_clone$matchid <- paste(SC2_fixtures_clone$Hometeam,SC2_fixtures_clone$Awayteam,sep = '-')
 ##########################################################################################################################
 SC3_fixtures_clone <- SC3_fixtures
 colnames(SC3_fixtures_clone)[61] <- "Hwin"
@@ -1250,9 +1267,10 @@ colnames(SC3_fixtures_clone)[69] <- "BTTSN"
 colnames(SC3_fixtures_clone)[70] <- "BTTSYodds"
 colnames(SC3_fixtures_clone)[71] <- "BTTSNodds"
 
-SC3_fixtures_clone$matchid <- paste(SC3_fixtures_clone$Hometeam,SC3_fixtures_clone$Awayteam,sep = '-')
+
 
 SC3_fixtures_clone <- SC3_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+SC3_fixtures_clone$matchid <- paste(SC3_fixtures_clone$Hometeam,SC3_fixtures_clone$Awayteam,sep = '-')
 #############################################################################################################################
 T1_fixtures_clone <- T1_fixtures
 colnames(T1_fixtures_clone)[61] <- "Hwin"
@@ -1308,38 +1326,140 @@ colnames(T1_fixtures_clone)[69] <- "BTTSN"
 colnames(T1_fixtures_clone)[70] <- "BTTSYodds"
 colnames(T1_fixtures_clone)[71] <- "BTTSNodds"
 
-T1_fixtures_clone$matchid <- paste(T1_fixtures_clone$Hometeam,T1_fixtures_clone$Awayteam,sep = '-')
+
 
 T1_fixtures_clone <- T1_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+T1_fixtures_clone$matchid <- paste(T1_fixtures_clone$Hometeam,T1_fixtures_clone$Awayteam,sep = '-')
 #######################################################################################################################
 #######################################################################################################################
 
- allteams20212022_clonefixtures <- rbind(B1_fixtures_clone,D1_fixtures_clone,D2_fixtures_clone,E0_fixtures_clone,E1_fixtures_clone,E2_fixtures_clone,
+#################################################
+colnames(B1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(B1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(B1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(D1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(D1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(D1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(D2_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(D2_fixtures_clone)[9] <- "hometeamcloned"
+colnames(D2_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(E0_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(E0_fixtures_clone)[9] <- "hometeamcloned"
+colnames(E0_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(E1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(E1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(E1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(E2_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(E2_fixtures_clone)[9] <- "hometeamcloned"
+colnames(E2_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(E3_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(E3_fixtures_clone)[9] <- "hometeamcloned"
+colnames(E3_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(EC_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(EC_fixtures_clone)[9] <- "hometeamcloned"
+colnames(EC_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(F1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(F1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(F1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(F2_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(F2_fixtures_clone)[9] <- "hometeamcloned"
+colnames(F2_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(G1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(G1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(G1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(N1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(N1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(N1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(P1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(P1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(P1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(SP1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(SP1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(SP1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(SP2_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(SP2_fixtures_clone)[9] <- "hometeamcloned"
+colnames(SP2_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(SC0_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(SC0_fixtures_clone)[9] <- "hometeamcloned"
+colnames(SC0_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(SC1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(SC1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(SC1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(SC2_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(SC2_fixtures_clone)[4] <- "Hwinodds"
+colnames(SC2_fixtures_clone)[9] <- "hometeamcloned"
+colnames(SC2_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(SC3_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(SC3_fixtures_clone)[4] <- "Hwinodds"
+colnames(SC3_fixtures_clone)[9] <- "hometeamcloned"
+colnames(SC3_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(I1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(I1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(I1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(I2_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(I2_fixtures_clone)[9] <- "hometeamcloned"
+colnames(I2_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+#################################################
+colnames(T1_fixtures_clone)[8] <- "gamestatuscloned"
+colnames(T1_fixtures_clone)[9] <- "hometeamcloned"
+colnames(T1_fixtures_clone)[10] <- "awayteamcloned"
+###################################################
+
+
+ allteams20222023_clonefixtures <- rbind(B1_fixtures_clone,D1_fixtures_clone,D2_fixtures_clone,E0_fixtures_clone,E1_fixtures_clone,E2_fixtures_clone,
                                          E3_fixtures_clone,EC_fixtures_clone,F1_fixtures_clone,F2_fixtures_clone,G1_fixtures_clone,I1_fixtures_clone,I2_fixtures_clone,
                                          N1_fixtures_clone,P1_fixtures_clone,SP1_fixtures_clone,SP2_fixtures_clone,SC0_fixtures_clone,SC1_fixtures_clone,
                                          SC2_fixtures_clone,SC3_fixtures_clone,T1_fixtures_clone)
-# write.xlsx(allteams20212022_clonefixtures,'allteams20212022clonedfixtures.xlsx')
-mycloned_prediction <- dplyr::left_join(myodds_fixtures,allteams20212022_clonefixtures)
+# write.xlsx(allteams20222023_clonefixtures,'allteams20222023clonedfixtures.xlsx')
+mycloned_prediction <- dplyr::left_join(myodds_fixtures,allteams20222023_clonefixtures)
 write.xlsx(mycloned_prediction,'clonedprediction.xlsx')
 
 
 picks_fixtures_cloned <- read.csv('myfixtures.csv')
 picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$Home_Team,picks_fixtures_cloned$Away_Team, sep = "-")
-picks_fixtures_prediction_cloned <- dplyr::left_join(picks_fixtures_cloned,allteams20212022_clonefixtures)
+picks_fixtures_prediction_cloned <- dplyr::left_join(picks_fixtures_cloned,allteams20222023_clonefixtures)
 write.xlsx(picks_fixtures_prediction_cloned,'picks_fixtures_prediction_cloned.xlsx')
-
-colnames(T1_fixtures_clone)
-
-
-
-
-
-
-
-
-
-
-
 
 
 

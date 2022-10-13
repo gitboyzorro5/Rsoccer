@@ -1,7 +1,6 @@
 library('xlsx')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 
-tail(E1_rounds)
 ##############################################################################################
 b1_totalrounds <-  (length(b1_teams) - 1 )*2
 b1_totalmatches <- (length(b1_teams)*(length(b1_teams) - 1))
@@ -615,7 +614,7 @@ SC3_rounds <- cbind(SC3_rounds,sc3_matchday)
 ##############################################################################################
 t1_totalrounds <-  (length(t1_teams) - 1 )*2
 t1_totalmatches <- (length(t1_teams)*(length(t1_teams) - 1))
-t1_eachround <- t1_totalmatches / t1_totalrounds
+t1_eachround <- ceiling(t1_totalmatches / t1_totalrounds)
 
 t1_matchesplayed <-  nrow(T1)
 
@@ -641,15 +640,6 @@ if(t1_matchesplayed %% t1_eachround == 0)
 }
 T1_rounds <- cbind(T1_rounds,t1_matchday)
 #####################################################################################################
-
-
-
-
-
-
-
-
-
 
 
 

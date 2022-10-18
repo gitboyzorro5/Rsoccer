@@ -7,25 +7,25 @@ library('scales')
 library('lubridate')
 unlink('myfixtures.csv')
 #read the data
-B1_schedule20222023 <- read.csv('../../Downloads/B1_schedule20222023.csv')
-D1_schedule20222023 <- read.csv('../../Downloads/D1_schedule20222023.csv')
-D2_schedule20222023 <- read.csv('../../Downloads/D2_schedule20222023.csv')
-E0_schedule20222023 <- read.csv('../../Downloads/E0_schedule20222023.csv')
-E1_schedule20222023 <- read.csv('../../Downloads/E1_schedule20222023.csv')
-E2_schedule20222023 <- read.csv('../../Downloads/E2_schedule20222023.csv')
-E3_schedule20222023 <- read.csv('../../Downloads/E3_schedule20222023.csv')
-EC_schedule20222023 <- read.csv('../../Downloads/EC_schedule20222023.csv')
-F1_schedule20222023 <- read.csv('../../Downloads/F1_schedule20222023.csv')
-F2_schedule20222023 <- read.csv('../../Downloads/F2_schedule20222023.csv')
-#UCL_schedule20222023 <- read.csv('../Downloads/UCL_schedule20222023.csv')
-I1_schedule20222023 <- read.csv('../../Downloads/I1_schedule20222023.csv')
-N1_schedule20222023 <- read.csv('../../Downloads/N1_schedule20222023.csv')
-P1_schedule20222023 <- read.csv('../../Downloads/P1_schedule20222023.csv')
-SC0_schedule20222023 <- read.csv('../../Downloads/SC0_schedule20222023.csv')
-SC1_schedule20222023 <- read.csv('../../Downloads/SC1_schedule20222023.csv')
-SP1_schedule20222023 <- read.csv('../../Downloads/SP1_schedule20222023.csv')
-SP2_schedule20222023 <- read.csv('../../Downloads/SP2_schedule20222023.csv')
-T1_schedule20222023 <- read.csv('../../Downloads/T1_schedule20222023.csv')
+B1_schedule20222023 <- read.csv('../Downloads/B1_schedule20222023.csv')
+D1_schedule20222023 <- read.csv('../Downloads/D1_schedule20222023.csv')
+D2_schedule20222023 <- read.csv('../Downloads/D2_schedule20222023.csv')
+E0_schedule20222023 <- read.csv('../Downloads/E0_schedule20222023.csv')
+E1_schedule20222023 <- read.csv('../Downloads/E1_schedule20222023.csv')
+E2_schedule20222023 <- read.csv('../Downloads/E2_schedule20222023.csv')
+E3_schedule20222023 <- read.csv('../Downloads/E3_schedule20222023.csv')
+EC_schedule20222023 <- read.csv('../Downloads/EC_schedule20222023.csv')
+F1_schedule20222023 <- read.csv('../Downloads/F1_schedule20222023.csv')
+F2_schedule20222023 <- read.csv('../Downloads/F2_schedule20222023.csv')
+#UCL_schedule20222023 <- read.csv('Downloads/UCL_schedule20222023.csv')
+I1_schedule20222023 <- read.csv('../Downloads/I1_schedule20222023.csv')
+N1_schedule20222023 <- read.csv('../Downloads/N1_schedule20222023.csv')
+P1_schedule20222023 <- read.csv('../Downloads/P1_schedule20222023.csv')
+SC0_schedule20222023 <- read.csv('../Downloads/SC0_schedule20222023.csv')
+SC1_schedule20222023 <- read.csv('../Downloads/SC1_schedule20222023.csv')
+SP1_schedule20222023 <- read.csv('../Downloads/SP1_schedule20222023.csv')
+SP2_schedule20222023 <- read.csv('../Downloads/SP2_schedule20222023.csv')
+T1_schedule20222023 <- read.csv('../Downloads/T1_schedule20222023.csv')
 #UEL_schedule20222023 <- read.csv('../Downloads/UEL_schedule20222023.csv')
 #parse the dates
 B1_schedule20222023$Date <- mdy(B1_schedule20222023$Date)
@@ -72,7 +72,7 @@ all_schedule20222023 <- rbind(B1_schedule20222023,D1_schedule20222023,D2_schedul
 
 all_schedule20222023 <- all_schedule20222023[,c(9,6,7,8)]
 
-myfixtures <- all_schedule20222023[all_schedule20222023$Date >= '2022-09-30' & all_schedule20222023$Date <= '2022-10-03',]
+myfixtures <- all_schedule20222023[all_schedule20222023$Date >= '2022-10-14' & all_schedule20222023$Date <= '2022-10-18',]
 
 write.csv(myfixtures,'myfixtures.csv')
 

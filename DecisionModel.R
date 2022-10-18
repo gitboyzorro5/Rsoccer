@@ -4638,6 +4638,3 @@ write.csv(picks_fixtures_prediction,'picks_fixtures_prediction.csv')
 rm(allteams20222023picks)
 
 
-
-colnames(d1_picks)
-

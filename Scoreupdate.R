@@ -8,27 +8,27 @@ library('lubridate')
 ################################
 ####delete current file#########
 unlink('finalscore.xlsx')
-allteams20212022scores <- allteams20212022
-myoddscores <- readxl::read_excel('../FDAS/myodds_20212022.xlsx', sheet = '3way')
+allteams20222023scores <- allteams20222023
+myoddscores <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')
 myoddscores$Date <- dmy(myoddscores$Date)
-myoddscores <- myoddscores[myoddscores$Date >= "2021-12-31",]
+#myoddscores <- myoddscores[myoddscores$Date >= "2021-12-31",]
 
-
+tail(allteams20222023)
 
 myoddscores$matchid <- paste(myoddscores$HT,myoddscores$AT,myoddscores$Date, sep = "-")
-allteams20212022scores$matchid <- paste(allteams20212022scores$HomeTeam,allteams20212022scores$AwayTeam,allteams20212022scores$Date, sep = "-")
+allteams20222023scores$matchid <- paste(allteams20222023scores$HomeTeam,allteams20222023scores$AwayTeam,allteams20222023scores$Date, sep = "-")
 
-#allteams20212022scores$Date <- ymd(allteams20212022scores$Date)
+#allteams20222023scores$Date <- ymd(allteams20222023scores$Date)
 #myoddscores$Date <- ymd(myoddscores$Date)
-#allteams20212022scores <- allteams20212022scores[allteams20212022scores$Date >= '2021-08-28',]
+#allteams20222023scores <- allteams20222023scores[allteams20222023scores$Date >= '2021-08-28',]
 #myoddscores <- myoddscores[myoddscores$Date >= '2021-08-28',]
 myoddscores <- myoddscores[,c(24,25,34,29)]
-allteams20212022scores <- allteams20212022scores[,c(3,4,30,15,24)]
+allteams20222023scores <- allteams20222023scores[,c(3,4,30,15,24)]
 
-finalscore <- dplyr::left_join(myoddscores,allteams20212022scores)
+finalscore <- dplyr::left_join(myoddscores,allteams20222023scores)
 write.xlsx(finalscore,'finalscore.xlsx')
 rm(myoddscores)
-rm(allteams20212022scores)
+rm(allteams20222023scores)
 ####################################################################
 #########add correct scores########################################
 # AUT <- subset(AUT,Season == "2021/2022")

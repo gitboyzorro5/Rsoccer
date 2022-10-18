@@ -35,7 +35,7 @@ B1_fixtures_clone$Awinodds <-   B1_fixtures$b1_0_1 + B1_fixtures$b1_0_2 + B1_fix
   B1_fixtures$b1_5_6
 
 B1_fixtures_clone$Awinodds <- round(1/B1_fixtures_clone$Awinodds, digits = 3)
-d
+
 colnames(B1_fixtures_clone)[15] <- "CS_1-1"
 colnames(B1_fixtures_clone)[13] <- "CS_1-0"
 colnames(B1_fixtures_clone)[14] <- "CS_0-1"
@@ -1208,7 +1208,6 @@ colnames(SC2_fixtures_clone)[69] <- "BTTSN"
 colnames(SC2_fixtures_clone)[70] <- "BTTSYodds"
 colnames(SC2_fixtures_clone)[71] <- "BTTSNodds"
 
-View(SC2_fixtures_clone)
 
 SC2_fixtures_clone <- SC2_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
 SC2_fixtures_clone$matchid <- paste(SC2_fixtures_clone$Hometeam,SC2_fixtures_clone$Awayteam,sep = '-')
@@ -1420,13 +1419,13 @@ colnames(SC1_fixtures_clone)[10] <- "awayteamcloned"
 ###################################################
 #################################################
 colnames(SC2_fixtures_clone)[8] <- "gamestatuscloned"
-colnames(SC2_fixtures_clone)[4] <- "Hwinodds"
+#colnames(SC2_fixtures_clone)[4] <- "Hwinodds"
 colnames(SC2_fixtures_clone)[9] <- "hometeamcloned"
 colnames(SC2_fixtures_clone)[10] <- "awayteamcloned"
 ###################################################
 #################################################
 colnames(SC3_fixtures_clone)[8] <- "gamestatuscloned"
-colnames(SC3_fixtures_clone)[4] <- "Hwinodds"
+#colnames(SC3_fixtures_clone)[4] <- "Hwinodds"
 colnames(SC3_fixtures_clone)[9] <- "hometeamcloned"
 colnames(SC3_fixtures_clone)[10] <- "awayteamcloned"
 ###################################################
@@ -1461,5 +1460,5 @@ picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$Home_Team,picks_fix
 picks_fixtures_prediction_cloned <- dplyr::left_join(picks_fixtures_cloned,allteams20222023_clonefixtures)
 write.xlsx(picks_fixtures_prediction_cloned,'picks_fixtures_prediction_cloned.xlsx')
 
-
+colnames(E0_fixtures_clone)
 

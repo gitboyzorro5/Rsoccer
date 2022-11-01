@@ -956,9 +956,8 @@ swz_eachround
 
 allteams_2010present <- read.csv('../FDAS/allteams2010-present.csv')
 nrow(allteams_2010present[allteams_2010present$CS == "1-0",])
+#############################################################################################
 
-
-2**256
 
 
 

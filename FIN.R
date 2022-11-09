@@ -13,8 +13,8 @@ unlink('NL/FIN.xlsx')
 ######################FIN START#######################################
 #####################################################################
 FIN <- read.csv('../FDAS/FIN.csv')
-FIN <- FIN[!FIN$Home == "Rovaniemi",]
-FIN <- FIN[!FIN$Away == "Rovaniemi",]
+FIN <- FIN[!FIN$Home == "Jaro",]
+FIN <- FIN[!FIN$Away == "Jaro",]
 FIN <- within(FIN,rm(Res))
 FIN$Date <- dmy(FIN$Date)
 FIN <- FIN[order(as.Date(FIN$Date, format = "%d/%m%Y"), decreasing = FALSE),]
@@ -27,7 +27,6 @@ FIN$OV25 <- ifelse(FIN$TG >= 3,"Y","N")
 FIN$FTR <- with(FIN,
                 ifelse(HG > AG ,FTR <- "H" , ifelse(AG > HG,FTR <- "A", FTR <- "D"))
 )
-
 ###################################################
 # FIN <- mgsub(FIN,c("Wolfsberger"),c("Wolfsberger AC"))
 # FIN <- mgsub(FIN,c("Wolfsberger AC AC"),c("Wolfsberger AC"))

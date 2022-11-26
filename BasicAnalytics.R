@@ -959,8 +959,9 @@ nrow(allteams_2010present[allteams_2010present$CS == "1-0",])
 #############################################################################################
 
 
-
-
+currencis <- c(1:135)
+combinedcurrencis <- paste0(paste0("'", currencis, "'"), collapse = ", ")
+combinedcurrencis
 
 
 

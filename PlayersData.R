@@ -1,6 +1,7 @@
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
 library('xlsx')
 library(rvest)
+options(java.parameters = "-Xmx4g")
 unlink('Divisions/Scorers.xlsx')
 e0html <- paste(readLines("../FDAS/e0_scorers.html"), collapse="\n")
 e1html <- paste(readLines("../FDAS/e1_scorers.html"), collapse="\n")

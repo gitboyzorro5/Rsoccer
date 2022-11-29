@@ -8,26 +8,27 @@ library('scales')
 library('lubridate')
 library('sqldf')
 #delete current file
-unlink('FWCQ.xlsx')
+#unlink('FWCQ.xlsx')
 ######################FWCQ START#######################################
 #####################################################################
 FWCQ <- read.csv('results.csv')
 FWCQ$date <- ymd(FWCQ$date)
 FWCQ <- FWCQ[order(as.Date(FWCQ$date, format = "%d/%m%Y"), decreasing = FALSE),]
 FWCQ$CS <- paste(FWCQ$home_score,FWCQ$away_score, sep = "-")
-FWCQ <- subset(FWCQ,tournament == "FIFA World Cup qualification")
-FWCQ <- FWCQ[FWCQ$date >= '2019-06-06',]
+FWCQ <- subset(FWCQ,tournament == "FIFA World Cup")
+FWCQ <- FWCQ[FWCQ$date >= '2022-11-20' & FWCQ$date <= '2022-11-27',]
 FWCQ$TG <- FWCQ$home_score + FWCQ$away_score
 FWCQ$OV25 <- ifelse(FWCQ$TG >= 3,"Y","N")
 FWCQ$FTR <- with(FWCQ,
                    ifelse(home_score > away_score ,FTR <- "H" , ifelse(away_score > home_score,FTR <- "A", FTR <- "D"))
 )
 #############################################
-FWCQ <- dplyr::left_join(FIFA_conf,FWCQ)
+View(FWCQ)
+#FWCQ <- dplyr::left_join(FIFA_conf,FWCQ)
 ####  require('RH2')
 ##### FWCQ$confederation <- sqldf("SELECT FIFA_conf.div FROM FIFA_conf INNER JOIN FWCQ ON FIFA_conf.conf_team = FWCQ.home_team")
 #############################################
-FWCQ <- subset(FWCQ,div == "CAF")
+#FWCQ <- subset(FWCQ,div == "CAF")
 
 ###################################################
 ####GoalTotalsv2##################################

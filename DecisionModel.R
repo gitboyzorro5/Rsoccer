@@ -19,6 +19,10 @@ b1_HWMLM <- c()
 b1_AWMLM <- c()
 b1_HY <- c()
 b1_AY <- c()
+b1_HCO <- c()
+b1_ACO <- c()
+b1_HXSC <- c()
+b1_AXSC <- c()
 for(b1_row in 1:nrow(B1_fixtures))
 {
 
@@ -160,6 +164,32 @@ b1_yellowtotals_vec_at <- b1_yellowtotals_vec_at[b1_yellowtotals_vec_at != ""]
 b1_yellowtotals_vec_at  <-tail(b1_yellowtotals_vec_at,1)
 
 #################################################################################
+#pick average corners
+#hometeam
+b1_cornertotals_vec_ht <- as.vector(b1_cornertotalsv2[b1_hometeamindex,])
+b1_cornertotals_vec_ht[is.na(b1_cornertotals_vec_ht)] <- ""
+b1_cornertotals_vec_ht <- b1_cornertotals_vec_ht[b1_cornertotals_vec_ht != ""]
+b1_cornertotals_vec_ht  <-tail(b1_cornertotals_vec_ht,1)
+#awayteam
+b1_cornertotals_vec_at <- as.vector(b1_cornertotalsv2[b1_awayteamindex,])
+b1_cornertotals_vec_at[is.na(b1_cornertotals_vec_at)] <- ""
+b1_cornertotals_vec_at <- b1_cornertotals_vec_at[b1_cornertotals_vec_at != ""]
+b1_cornertotals_vec_at  <-tail(b1_cornertotals_vec_at,1)
+#################################################################################
+#pick xpected shots conversion
+#hometeam
+b1_xshotsconversion_vec_ht <- as.vector(b1_shots_analysis[b1_hometeamindex,])
+b1_xshotsconversion_vec_ht[is.na(b1_xshotsconversion_vec_ht)] <- ""
+b1_xshotsconversion_vec_ht <- b1_xshotsconversion_vec_ht[b1_xshotsconversion_vec_ht != ""]
+b1_xshotsconversion_vec_ht  <-tail(b1_xshotsconversion_vec_ht,1)
+#awayteam
+b1_xshotsconversion_vec_at <- as.vector(b1_shots_analysis[b1_awayteamindex,])
+b1_xshotsconversion_vec_at[is.na(b1_xshotsconversion_vec_at)] <- ""
+b1_xshotsconversion_vec_at <- b1_xshotsconversion_vec_at[b1_xshotsconversion_vec_at != ""]
+b1_xshotsconversion_vec_at  <-tail(b1_xshotsconversion_vec_at,1)
+#################################################################################
+
+
 ####we need to decide ############
 #winner goals
 b1_ht_last6points <- b1_ht_numberof_wins*3 + b1_ht_numberof_draws*1
@@ -186,6 +216,12 @@ b1_AWMLM[b1_row] <- b1_winmargin_vec_at_lm
 b1_HY[b1_row] <- b1_yellowtotals_vec_ht
 b1_AY[b1_row] <- b1_yellowtotals_vec_at
 
+b1_HCO[b1_row] <- b1_cornertotals_vec_ht
+b1_ACO[b1_row] <- b1_cornertotals_vec_at
+
+b1_HXSC[b1_row] <- b1_xshotsconversion_vec_ht
+b1_AXSC[b1_row] <- b1_xshotsconversion_vec_at
+
 }
 
 b1_prediction <- as.data.frame(b1_prediction)
@@ -209,7 +245,19 @@ colnames(b1_HY) <- "AVGHY"
 b1_AY <- as.data.frame(b1_AY)
 colnames(b1_AY) <- "AVGAY"
 
-b1_picks <- cbind(B1_fixtures$Div,B1_fixtures$HomeTeam_b1,B1_fixtures$AwayTeam_b1,b1_prediction,b1_HWM,b1_AWM,b1_HWMLM,b1_AWMLM,b1_HY,b1_AY)
+b1_HCO <- as.data.frame(b1_HCO)
+colnames(b1_HCO) <- "AVGHCO"
+
+b1_ACO <- as.data.frame(b1_ACO)
+colnames(b1_ACO) <- "AVGACO"
+
+b1_HXSC <- as.data.frame(b1_HXSC)
+colnames(b1_HXSC) <- "HXSC"
+
+b1_AXSC <- as.data.frame(b1_AXSC)
+colnames(b1_AXSC) <- "AXSC"
+
+b1_picks <- cbind(B1_fixtures$Div,B1_fixtures$HomeTeam_b1,B1_fixtures$AwayTeam_b1,b1_prediction,b1_HWM,b1_AWM,b1_HWMLM,b1_AWMLM,b1_HY,b1_AY,b1_HCO,b1_ACO,b1_HXSC,b1_AXSC)
 
 colnames(b1_picks)[1] <- "picks_Div"
 colnames(b1_picks)[2] <- "picks_HomeTeam"
@@ -229,6 +277,10 @@ d1_HWMLM <- c()
 d1_AWMLM <- c()
 d1_HY <- c()
 d1_AY <- c()
+d1_HCO <- c()
+d1_ACO <- c()
+d1_HXSC <- c()
+d1_AXSC <- c()
 for(d1_row in 1:nrow(D1_fixtures))
 {
 
@@ -370,6 +422,32 @@ for(d1_row in 1:nrow(D1_fixtures))
   d1_yellowtotals_vec_at  <-tail(d1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  d1_cornertotals_vec_ht <- as.vector(d1_cornertotalsv2[d1_hometeamindex,])
+  d1_cornertotals_vec_ht[is.na(d1_cornertotals_vec_ht)] <- ""
+  d1_cornertotals_vec_ht <- d1_cornertotals_vec_ht[d1_cornertotals_vec_ht != ""]
+  d1_cornertotals_vec_ht  <-tail(d1_cornertotals_vec_ht,1)
+  #awayteam
+  d1_cornertotals_vec_at <- as.vector(d1_cornertotalsv2[d1_awayteamindex,])
+  d1_cornertotals_vec_at[is.na(d1_cornertotals_vec_at)] <- ""
+  d1_cornertotals_vec_at <- d1_cornertotals_vec_at[d1_cornertotals_vec_at != ""]
+  d1_cornertotals_vec_at  <-tail(d1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  d1_xshotsconversion_vec_ht <- as.vector(d1_shots_analysis[d1_hometeamindex,])
+  d1_xshotsconversion_vec_ht[is.na(d1_xshotsconversion_vec_ht)] <- ""
+  d1_xshotsconversion_vec_ht <- d1_xshotsconversion_vec_ht[d1_xshotsconversion_vec_ht != ""]
+  d1_xshotsconversion_vec_ht  <-tail(d1_xshotsconversion_vec_ht,1)
+  #awayteam
+  d1_xshotsconversion_vec_at <- as.vector(d1_shots_analysis[d1_awayteamindex,])
+  d1_xshotsconversion_vec_at[is.na(d1_xshotsconversion_vec_at)] <- ""
+  d1_xshotsconversion_vec_at <- d1_xshotsconversion_vec_at[d1_xshotsconversion_vec_at != ""]
+  d1_xshotsconversion_vec_at  <-tail(d1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   d1_ht_last6points <- d1_ht_numberof_wins*3 + d1_ht_numberof_draws*1
@@ -396,6 +474,12 @@ for(d1_row in 1:nrow(D1_fixtures))
   d1_HY[d1_row] <- d1_yellowtotals_vec_ht
   d1_AY[d1_row] <- d1_yellowtotals_vec_at
 
+  d1_HCO[d1_row] <- d1_cornertotals_vec_ht
+  d1_ACO[d1_row] <- d1_cornertotals_vec_at
+
+  d1_HXSC[d1_row] <- d1_xshotsconversion_vec_ht
+  d1_AXSC[d1_row] <- d1_xshotsconversion_vec_at
+
 }
 
 d1_prediction <- as.data.frame(d1_prediction)
@@ -419,7 +503,19 @@ colnames(d1_HY) <- "AVGHY"
 d1_AY <- as.data.frame(d1_AY)
 colnames(d1_AY) <- "AVGAY"
 
-d1_picks <- cbind(D1_fixtures$Div,D1_fixtures$HomeTeam_d1,D1_fixtures$AwayTeam_d1,d1_prediction,d1_HWM,d1_AWM,d1_HWMLM,d1_AWMLM,d1_HY,d1_AY)
+d1_HCO <- as.data.frame(d1_HCO)
+colnames(d1_HCO) <- "AVGHCO"
+
+d1_ACO <- as.data.frame(d1_ACO)
+colnames(d1_ACO) <- "AVGACO"
+
+d1_HXSC <- as.data.frame(d1_HXSC)
+colnames(d1_HXSC) <- "HXSC"
+
+d1_AXSC <- as.data.frame(d1_AXSC)
+colnames(d1_AXSC) <- "AXSC"
+
+d1_picks <- cbind(D1_fixtures$Div,D1_fixtures$HomeTeam_d1,D1_fixtures$AwayTeam_d1,d1_prediction,d1_HWM,d1_AWM,d1_HWMLM,d1_AWMLM,d1_HY,d1_AY,d1_HCO,d1_ACO,d1_HXSC,d1_AXSC)
 
 colnames(d1_picks)[1] <- "picks_Div"
 colnames(d1_picks)[2] <- "picks_HomeTeam"
@@ -438,6 +534,10 @@ d2_HWMLM <- c()
 d2_AWMLM <- c()
 d2_HY <- c()
 d2_AY <- c()
+d2_HCO <- c()
+d2_ACO <- c()
+d2_HXSC <- c()
+d2_AXSC <- c()
 for(d2_row in 1:nrow(D2_fixtures))
 {
 
@@ -579,6 +679,32 @@ for(d2_row in 1:nrow(D2_fixtures))
   d2_yellowtotals_vec_at  <-tail(d2_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  d2_cornertotals_vec_ht <- as.vector(d2_cornertotalsv2[d2_hometeamindex,])
+  d2_cornertotals_vec_ht[is.na(d2_cornertotals_vec_ht)] <- ""
+  d2_cornertotals_vec_ht <- d2_cornertotals_vec_ht[d2_cornertotals_vec_ht != ""]
+  d2_cornertotals_vec_ht  <-tail(d2_cornertotals_vec_ht,1)
+  #awayteam
+  d2_cornertotals_vec_at <- as.vector(d2_cornertotalsv2[d2_awayteamindex,])
+  d2_cornertotals_vec_at[is.na(d2_cornertotals_vec_at)] <- ""
+  d2_cornertotals_vec_at <- d2_cornertotals_vec_at[d2_cornertotals_vec_at != ""]
+  d2_cornertotals_vec_at  <-tail(d2_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  d2_xshotsconversion_vec_ht <- as.vector(d2_shots_analysis[d2_hometeamindex,])
+  d2_xshotsconversion_vec_ht[is.na(d2_xshotsconversion_vec_ht)] <- ""
+  d2_xshotsconversion_vec_ht <- d2_xshotsconversion_vec_ht[d2_xshotsconversion_vec_ht != ""]
+  d2_xshotsconversion_vec_ht  <-tail(d2_xshotsconversion_vec_ht,1)
+  #awayteam
+  d2_xshotsconversion_vec_at <- as.vector(d2_shots_analysis[d2_awayteamindex,])
+  d2_xshotsconversion_vec_at[is.na(d2_xshotsconversion_vec_at)] <- ""
+  d2_xshotsconversion_vec_at <- d2_xshotsconversion_vec_at[d2_xshotsconversion_vec_at != ""]
+  d2_xshotsconversion_vec_at  <-tail(d2_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   d2_ht_last6points <- d2_ht_numberof_wins*3 + d2_ht_numberof_draws*1
@@ -605,6 +731,12 @@ for(d2_row in 1:nrow(D2_fixtures))
   d2_HY[d2_row] <- d2_yellowtotals_vec_ht
   d2_AY[d2_row] <- d2_yellowtotals_vec_at
 
+  d2_HCO[d2_row] <- d2_cornertotals_vec_ht
+  d2_ACO[d2_row] <- d2_cornertotals_vec_at
+
+  d2_HXSC[d2_row] <- d2_xshotsconversion_vec_ht
+  d2_AXSC[d2_row] <- d2_xshotsconversion_vec_at
+
 }
 
 d2_prediction <- as.data.frame(d2_prediction)
@@ -628,7 +760,19 @@ colnames(d2_HY) <- "AVGHY"
 d2_AY <- as.data.frame(d2_AY)
 colnames(d2_AY) <- "AVGAY"
 
-d2_picks <- cbind(D2_fixtures$Div,D2_fixtures$HomeTeam_d2,D2_fixtures$AwayTeam_d2,d2_prediction,d2_HWM,d2_AWM,d2_HWMLM,d2_AWMLM,d2_HY,d2_AY)
+d2_HCO <- as.data.frame(d2_HCO)
+colnames(d2_HCO) <- "AVGHCO"
+
+d2_ACO <- as.data.frame(d2_ACO)
+colnames(d2_ACO) <- "AVGACO"
+
+d2_HXSC <- as.data.frame(d2_HXSC)
+colnames(d2_HXSC) <- "HXSC"
+
+d2_AXSC <- as.data.frame(d2_AXSC)
+colnames(d2_AXSC) <- "AXSC"
+
+d2_picks <- cbind(D2_fixtures$Div,D2_fixtures$HomeTeam_d2,D2_fixtures$AwayTeam_d2,d2_prediction,d2_HWM,d2_AWM,d2_HWMLM,d2_AWMLM,d2_HY,d2_AY,d2_HCO,d2_ACO,d2_HXSC,d2_AXSC)
 
 colnames(d2_picks)[1] <- "picks_Div"
 colnames(d2_picks)[2] <- "picks_HomeTeam"
@@ -648,6 +792,10 @@ e0_HWMLM <- c()
 e0_AWMLM <- c()
 e0_HY <- c()
 e0_AY <- c()
+e0_HCO <- c()
+e0_ACO <- c()
+e0_HXSC <- c()
+e0_AXSC <- c()
 for(e0_row in 1:nrow(E0_fixtures))
 {
 
@@ -789,6 +937,32 @@ for(e0_row in 1:nrow(E0_fixtures))
   e0_yellowtotals_vec_at  <-tail(e0_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  e0_cornertotals_vec_ht <- as.vector(e0_cornertotalsv2[e0_hometeamindex,])
+  e0_cornertotals_vec_ht[is.na(e0_cornertotals_vec_ht)] <- ""
+  e0_cornertotals_vec_ht <- e0_cornertotals_vec_ht[e0_cornertotals_vec_ht != ""]
+  e0_cornertotals_vec_ht  <-tail(e0_cornertotals_vec_ht,1)
+  #awayteam
+  e0_cornertotals_vec_at <- as.vector(e0_cornertotalsv2[e0_awayteamindex,])
+  e0_cornertotals_vec_at[is.na(e0_cornertotals_vec_at)] <- ""
+  e0_cornertotals_vec_at <- e0_cornertotals_vec_at[e0_cornertotals_vec_at != ""]
+  e0_cornertotals_vec_at  <-tail(e0_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  e0_xshotsconversion_vec_ht <- as.vector(e0_shots_analysis[e0_hometeamindex,])
+  e0_xshotsconversion_vec_ht[is.na(e0_xshotsconversion_vec_ht)] <- ""
+  e0_xshotsconversion_vec_ht <- e0_xshotsconversion_vec_ht[e0_xshotsconversion_vec_ht != ""]
+  e0_xshotsconversion_vec_ht  <-tail(e0_xshotsconversion_vec_ht,1)
+  #awayteam
+  e0_xshotsconversion_vec_at <- as.vector(e0_shots_analysis[e0_awayteamindex,])
+  e0_xshotsconversion_vec_at[is.na(e0_xshotsconversion_vec_at)] <- ""
+  e0_xshotsconversion_vec_at <- e0_xshotsconversion_vec_at[e0_xshotsconversion_vec_at != ""]
+  e0_xshotsconversion_vec_at  <-tail(e0_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   e0_ht_last6points <- e0_ht_numberof_wins*3 + e0_ht_numberof_draws*1
@@ -815,6 +989,12 @@ for(e0_row in 1:nrow(E0_fixtures))
   e0_HY[e0_row] <- e0_yellowtotals_vec_ht
   e0_AY[e0_row] <- e0_yellowtotals_vec_at
 
+  e0_HCO[e0_row] <- e0_cornertotals_vec_ht
+  e0_ACO[e0_row] <- e0_cornertotals_vec_at
+
+  e0_HXSC[e0_row] <- e0_xshotsconversion_vec_ht
+  e0_AXSC[e0_row] <- e0_xshotsconversion_vec_at
+
 }
 
 e0_prediction <- as.data.frame(e0_prediction)
@@ -838,7 +1018,19 @@ colnames(e0_HY) <- "AVGHY"
 e0_AY <- as.data.frame(e0_AY)
 colnames(e0_AY) <- "AVGAY"
 
-e0_picks <- cbind(E0_fixtures$Div,E0_fixtures$HomeTeam_e0,E0_fixtures$AwayTeam_e0,e0_prediction,e0_HWM,e0_AWM,e0_HWMLM,e0_AWMLM,e0_HY,e0_AY)
+e0_HCO <- as.data.frame(e0_HCO)
+colnames(e0_HCO) <- "AVGHCO"
+
+e0_ACO <- as.data.frame(e0_ACO)
+colnames(e0_ACO) <- "AVGACO"
+
+e0_HXSC <- as.data.frame(e0_HXSC)
+colnames(e0_HXSC) <- "HXSC"
+
+e0_AXSC <- as.data.frame(e0_AXSC)
+colnames(e0_AXSC) <- "AXSC"
+
+e0_picks <- cbind(E0_fixtures$Div,E0_fixtures$HomeTeam_e0,E0_fixtures$AwayTeam_e0,e0_prediction,e0_HWM,e0_AWM,e0_HWMLM,e0_AWMLM,e0_HY,e0_AY,e0_HCO,e0_ACO,e0_HXSC,e0_AXSC)
 
 colnames(e0_picks)[1] <- "picks_Div"
 colnames(e0_picks)[2] <- "picks_HomeTeam"
@@ -857,6 +1049,10 @@ e1_HWMLM <- c()
 e1_AWMLM <- c()
 e1_HY <- c()
 e1_AY <- c()
+e1_HCO <- c()
+e1_ACO <- c()
+e1_HXSC <- c()
+e1_AXSC <- c()
 for(e1_row in 1:nrow(E1_fixtures))
 {
 
@@ -998,6 +1194,32 @@ for(e1_row in 1:nrow(E1_fixtures))
   e1_yellowtotals_vec_at  <-tail(e1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  e1_cornertotals_vec_ht <- as.vector(e1_cornertotalsv2[e1_hometeamindex,])
+  e1_cornertotals_vec_ht[is.na(e1_cornertotals_vec_ht)] <- ""
+  e1_cornertotals_vec_ht <- e1_cornertotals_vec_ht[e1_cornertotals_vec_ht != ""]
+  e1_cornertotals_vec_ht  <-tail(e1_cornertotals_vec_ht,1)
+  #awayteam
+  e1_cornertotals_vec_at <- as.vector(e1_cornertotalsv2[e1_awayteamindex,])
+  e1_cornertotals_vec_at[is.na(e1_cornertotals_vec_at)] <- ""
+  e1_cornertotals_vec_at <- e1_cornertotals_vec_at[e1_cornertotals_vec_at != ""]
+  e1_cornertotals_vec_at  <-tail(e1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  e1_xshotsconversion_vec_ht <- as.vector(e1_shots_analysis[e1_hometeamindex,])
+  e1_xshotsconversion_vec_ht[is.na(e1_xshotsconversion_vec_ht)] <- ""
+  e1_xshotsconversion_vec_ht <- e1_xshotsconversion_vec_ht[e1_xshotsconversion_vec_ht != ""]
+  e1_xshotsconversion_vec_ht  <-tail(e1_xshotsconversion_vec_ht,1)
+  #awayteam
+  e1_xshotsconversion_vec_at <- as.vector(e1_shots_analysis[e1_awayteamindex,])
+  e1_xshotsconversion_vec_at[is.na(e1_xshotsconversion_vec_at)] <- ""
+  e1_xshotsconversion_vec_at <- e1_xshotsconversion_vec_at[e1_xshotsconversion_vec_at != ""]
+  e1_xshotsconversion_vec_at  <-tail(e1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   e1_ht_last6points <- e1_ht_numberof_wins*3 + e1_ht_numberof_draws*1
@@ -1024,6 +1246,12 @@ for(e1_row in 1:nrow(E1_fixtures))
   e1_HY[e1_row] <- e1_yellowtotals_vec_ht
   e1_AY[e1_row] <- e1_yellowtotals_vec_at
 
+  e1_HCO[e1_row] <- e1_cornertotals_vec_ht
+  e1_ACO[e1_row] <- e1_cornertotals_vec_at
+
+  e1_HXSC[e1_row] <- e1_xshotsconversion_vec_ht
+  e1_AXSC[e1_row] <- e1_xshotsconversion_vec_at
+
 }
 
 e1_prediction <- as.data.frame(e1_prediction)
@@ -1047,7 +1275,19 @@ colnames(e1_HY) <- "AVGHY"
 e1_AY <- as.data.frame(e1_AY)
 colnames(e1_AY) <- "AVGAY"
 
-e1_picks <- cbind(E1_fixtures$Div,E1_fixtures$HomeTeam_e1,E1_fixtures$AwayTeam_e1,e1_prediction,e1_HWM,e1_AWM,e1_HWMLM,e1_AWMLM,e1_HY,e1_AY)
+e1_HCO <- as.data.frame(e1_HCO)
+colnames(e1_HCO) <- "AVGHCO"
+
+e1_ACO <- as.data.frame(e1_ACO)
+colnames(e1_ACO) <- "AVGACO"
+
+e1_HXSC <- as.data.frame(e1_HXSC)
+colnames(e1_HXSC) <- "HXSC"
+
+e1_AXSC <- as.data.frame(e1_AXSC)
+colnames(e1_AXSC) <- "AXSC"
+
+e1_picks <- cbind(E1_fixtures$Div,E1_fixtures$HomeTeam_e1,E1_fixtures$AwayTeam_e1,e1_prediction,e1_HWM,e1_AWM,e1_HWMLM,e1_AWMLM,e1_HY,e1_AY,e1_HCO,e1_ACO,e1_HXSC,e1_AXSC)
 
 colnames(e1_picks)[1] <- "picks_Div"
 colnames(e1_picks)[2] <- "picks_HomeTeam"
@@ -1066,6 +1306,10 @@ e2_HWMLM <- c()
 e2_AWMLM <- c()
 e2_HY <- c()
 e2_AY <- c()
+e2_HCO <- c()
+e2_ACO <- c()
+e2_HXSC <- c()
+e2_AXSC <- c()
 for(e2_row in 1:nrow(E2_fixtures))
 {
 
@@ -1207,6 +1451,32 @@ for(e2_row in 1:nrow(E2_fixtures))
   e2_yellowtotals_vec_at  <-tail(e2_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  e2_cornertotals_vec_ht <- as.vector(e2_cornertotalsv2[e2_hometeamindex,])
+  e2_cornertotals_vec_ht[is.na(e2_cornertotals_vec_ht)] <- ""
+  e2_cornertotals_vec_ht <- e2_cornertotals_vec_ht[e2_cornertotals_vec_ht != ""]
+  e2_cornertotals_vec_ht  <-tail(e2_cornertotals_vec_ht,1)
+  #awayteam
+  e2_cornertotals_vec_at <- as.vector(e2_cornertotalsv2[e2_awayteamindex,])
+  e2_cornertotals_vec_at[is.na(e2_cornertotals_vec_at)] <- ""
+  e2_cornertotals_vec_at <- e2_cornertotals_vec_at[e2_cornertotals_vec_at != ""]
+  e2_cornertotals_vec_at  <-tail(e2_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  e2_xshotsconversion_vec_ht <- as.vector(e2_shots_analysis[e2_hometeamindex,])
+  e2_xshotsconversion_vec_ht[is.na(e2_xshotsconversion_vec_ht)] <- ""
+  e2_xshotsconversion_vec_ht <- e2_xshotsconversion_vec_ht[e2_xshotsconversion_vec_ht != ""]
+  e2_xshotsconversion_vec_ht  <-tail(e2_xshotsconversion_vec_ht,1)
+  #awayteam
+  e2_xshotsconversion_vec_at <- as.vector(e2_shots_analysis[e2_awayteamindex,])
+  e2_xshotsconversion_vec_at[is.na(e2_xshotsconversion_vec_at)] <- ""
+  e2_xshotsconversion_vec_at <- e2_xshotsconversion_vec_at[e2_xshotsconversion_vec_at != ""]
+  e2_xshotsconversion_vec_at  <-tail(e2_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   e2_ht_last6points <- e2_ht_numberof_wins*3 + e2_ht_numberof_draws*1
@@ -1233,6 +1503,12 @@ for(e2_row in 1:nrow(E2_fixtures))
   e2_HY[e2_row] <- e2_yellowtotals_vec_ht
   e2_AY[e2_row] <- e2_yellowtotals_vec_at
 
+  e2_HCO[e2_row] <- e2_cornertotals_vec_ht
+  e2_ACO[e2_row] <- e2_cornertotals_vec_at
+
+  e2_HXSC[e2_row] <- e2_xshotsconversion_vec_ht
+  e2_AXSC[e2_row] <- e2_xshotsconversion_vec_at
+
 }
 
 e2_prediction <- as.data.frame(e2_prediction)
@@ -1256,7 +1532,19 @@ colnames(e2_HY) <- "AVGHY"
 e2_AY <- as.data.frame(e2_AY)
 colnames(e2_AY) <- "AVGAY"
 
-e2_picks <- cbind(E2_fixtures$Div,E2_fixtures$HomeTeam_e2,E2_fixtures$AwayTeam_e2,e2_prediction,e2_HWM,e2_AWM,e2_HWMLM,e2_AWMLM,e2_HY,e2_AY)
+e2_HCO <- as.data.frame(e2_HCO)
+colnames(e2_HCO) <- "AVGHCO"
+
+e2_ACO <- as.data.frame(e2_ACO)
+colnames(e2_ACO) <- "AVGACO"
+
+e2_HXSC <- as.data.frame(e2_HXSC)
+colnames(e2_HXSC) <- "HXSC"
+
+e2_AXSC <- as.data.frame(e2_AXSC)
+colnames(e2_AXSC) <- "AXSC"
+
+e2_picks <- cbind(E2_fixtures$Div,E2_fixtures$HomeTeam_e2,E2_fixtures$AwayTeam_e2,e2_prediction,e2_HWM,e2_AWM,e2_HWMLM,e2_AWMLM,e2_HY,e2_AY,e2_HCO,e2_ACO,e2_HXSC,e2_AXSC)
 
 colnames(e2_picks)[1] <- "picks_Div"
 colnames(e2_picks)[2] <- "picks_HomeTeam"
@@ -1275,6 +1563,10 @@ e3_HWMLM <- c()
 e3_AWMLM <- c()
 e3_HY <- c()
 e3_AY <- c()
+e3_HCO <- c()
+e3_ACO <- c()
+e3_HXSC <- c()
+e3_AXSC <- c()
 for(e3_row in 1:nrow(E3_fixtures))
 {
 
@@ -1416,6 +1708,32 @@ for(e3_row in 1:nrow(E3_fixtures))
   e3_yellowtotals_vec_at  <-tail(e3_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  e3_cornertotals_vec_ht <- as.vector(e3_cornertotalsv2[e3_hometeamindex,])
+  e3_cornertotals_vec_ht[is.na(e3_cornertotals_vec_ht)] <- ""
+  e3_cornertotals_vec_ht <- e3_cornertotals_vec_ht[e3_cornertotals_vec_ht != ""]
+  e3_cornertotals_vec_ht  <-tail(e3_cornertotals_vec_ht,1)
+  #awayteam
+  e3_cornertotals_vec_at <- as.vector(e3_cornertotalsv2[e3_awayteamindex,])
+  e3_cornertotals_vec_at[is.na(e3_cornertotals_vec_at)] <- ""
+  e3_cornertotals_vec_at <- e3_cornertotals_vec_at[e3_cornertotals_vec_at != ""]
+  e3_cornertotals_vec_at  <-tail(e3_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  e3_xshotsconversion_vec_ht <- as.vector(e3_shots_analysis[e3_hometeamindex,])
+  e3_xshotsconversion_vec_ht[is.na(e3_xshotsconversion_vec_ht)] <- ""
+  e3_xshotsconversion_vec_ht <- e3_xshotsconversion_vec_ht[e3_xshotsconversion_vec_ht != ""]
+  e3_xshotsconversion_vec_ht  <-tail(e3_xshotsconversion_vec_ht,1)
+  #awayteam
+  e3_xshotsconversion_vec_at <- as.vector(e3_shots_analysis[e3_awayteamindex,])
+  e3_xshotsconversion_vec_at[is.na(e3_xshotsconversion_vec_at)] <- ""
+  e3_xshotsconversion_vec_at <- e3_xshotsconversion_vec_at[e3_xshotsconversion_vec_at != ""]
+  e3_xshotsconversion_vec_at  <-tail(e3_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   e3_ht_last6points <- e3_ht_numberof_wins*3 + e3_ht_numberof_draws*1
@@ -1442,6 +1760,12 @@ for(e3_row in 1:nrow(E3_fixtures))
   e3_HY[e3_row] <- e3_yellowtotals_vec_ht
   e3_AY[e3_row] <- e3_yellowtotals_vec_at
 
+  e3_HCO[e3_row] <- e3_cornertotals_vec_ht
+  e3_ACO[e3_row] <- e3_cornertotals_vec_at
+
+  e3_HXSC[e3_row] <- e3_xshotsconversion_vec_ht
+  e3_AXSC[e3_row] <- e3_xshotsconversion_vec_at
+
 }
 
 e3_prediction <- as.data.frame(e3_prediction)
@@ -1465,7 +1789,19 @@ colnames(e3_HY) <- "AVGHY"
 e3_AY <- as.data.frame(e3_AY)
 colnames(e3_AY) <- "AVGAY"
 
-e3_picks <- cbind(E3_fixtures$Div,E3_fixtures$HomeTeam_e3,E3_fixtures$AwayTeam_e3,e3_prediction,e3_HWM,e3_AWM,e3_HWMLM,e3_AWMLM,e3_HY,e3_AY)
+e3_HCO <- as.data.frame(e3_HCO)
+colnames(e3_HCO) <- "AVGHCO"
+
+e3_ACO <- as.data.frame(e3_ACO)
+colnames(e3_ACO) <- "AVGACO"
+
+e3_HXSC <- as.data.frame(e3_HXSC)
+colnames(e3_HXSC) <- "HXSC"
+
+e3_AXSC <- as.data.frame(e3_AXSC)
+colnames(e3_AXSC) <- "AXSC"
+
+e3_picks <- cbind(E3_fixtures$Div,E3_fixtures$HomeTeam_e3,E3_fixtures$AwayTeam_e3,e3_prediction,e3_HWM,e3_AWM,e3_HWMLM,e3_AWMLM,e3_HY,e3_AY,e3_HCO,e3_ACO,e3_HXSC,e3_AXSC)
 
 colnames(e3_picks)[1] <- "picks_Div"
 colnames(e3_picks)[2] <- "picks_HomeTeam"
@@ -1484,6 +1820,10 @@ ec_HWMLM <- c()
 ec_AWMLM <- c()
 ec_HY <- c()
 ec_AY <- c()
+ec_HCO <- c()
+ec_ACO <- c()
+ec_HXSC <- c()
+ec_AXSC <- c()
 for(ec_row in 1:nrow(EC_fixtures))
 {
 
@@ -1625,6 +1965,32 @@ for(ec_row in 1:nrow(EC_fixtures))
   ec_yellowtotals_vec_at  <-tail(ec_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  ec_cornertotals_vec_ht <- as.vector(ec_cornertotalsv2[ec_hometeamindex,])
+  ec_cornertotals_vec_ht[is.na(ec_cornertotals_vec_ht)] <- ""
+  ec_cornertotals_vec_ht <- ec_cornertotals_vec_ht[ec_cornertotals_vec_ht != ""]
+  ec_cornertotals_vec_ht  <-tail(ec_cornertotals_vec_ht,1)
+  #awayteam
+  ec_cornertotals_vec_at <- as.vector(ec_cornertotalsv2[ec_awayteamindex,])
+  ec_cornertotals_vec_at[is.na(ec_cornertotals_vec_at)] <- ""
+  ec_cornertotals_vec_at <- ec_cornertotals_vec_at[ec_cornertotals_vec_at != ""]
+  ec_cornertotals_vec_at  <-tail(ec_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  ec_xshotsconversion_vec_ht <- as.vector(ec_shots_analysis[ec_hometeamindex,])
+  ec_xshotsconversion_vec_ht[is.na(ec_xshotsconversion_vec_ht)] <- ""
+  ec_xshotsconversion_vec_ht <- ec_xshotsconversion_vec_ht[ec_xshotsconversion_vec_ht != ""]
+  ec_xshotsconversion_vec_ht  <-tail(ec_xshotsconversion_vec_ht,1)
+  #awayteam
+  ec_xshotsconversion_vec_at <- as.vector(ec_shots_analysis[ec_awayteamindex,])
+  ec_xshotsconversion_vec_at[is.na(ec_xshotsconversion_vec_at)] <- ""
+  ec_xshotsconversion_vec_at <- ec_xshotsconversion_vec_at[ec_xshotsconversion_vec_at != ""]
+  ec_xshotsconversion_vec_at  <-tail(ec_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   ec_ht_last6points <- ec_ht_numberof_wins*3 + ec_ht_numberof_draws*1
@@ -1651,6 +2017,12 @@ for(ec_row in 1:nrow(EC_fixtures))
   ec_HY[ec_row] <- ec_yellowtotals_vec_ht
   ec_AY[ec_row] <- ec_yellowtotals_vec_at
 
+  ec_HCO[ec_row] <- ec_cornertotals_vec_ht
+  ec_ACO[ec_row] <- ec_cornertotals_vec_at
+
+  ec_HXSC[ec_row] <- ec_xshotsconversion_vec_ht
+  ec_AXSC[ec_row] <- ec_xshotsconversion_vec_at
+
 }
 
 ec_prediction <- as.data.frame(ec_prediction)
@@ -1674,7 +2046,19 @@ colnames(ec_HY) <- "AVGHY"
 ec_AY <- as.data.frame(ec_AY)
 colnames(ec_AY) <- "AVGAY"
 
-ec_picks <- cbind(EC_fixtures$Div,EC_fixtures$HomeTeam_ec,EC_fixtures$AwayTeam_ec,ec_prediction,ec_HWM,ec_AWM,ec_HWMLM,ec_AWMLM,ec_HY,ec_AY)
+ec_HCO <- as.data.frame(ec_HCO)
+colnames(ec_HCO) <- "AVGHCO"
+
+ec_ACO <- as.data.frame(ec_ACO)
+colnames(ec_ACO) <- "AVGACO"
+
+ec_HXSC <- as.data.frame(ec_HXSC)
+colnames(ec_HXSC) <- "HXSC"
+
+ec_AXSC <- as.data.frame(ec_AXSC)
+colnames(ec_AXSC) <- "AXSC"
+
+ec_picks <- cbind(EC_fixtures$Div,EC_fixtures$HomeTeam_ec,EC_fixtures$AwayTeam_ec,ec_prediction,ec_HWM,ec_AWM,ec_HWMLM,ec_AWMLM,ec_HY,ec_AY,ec_HCO,ec_ACO,ec_HXSC,ec_AXSC)
 
 colnames(ec_picks)[1] <- "picks_Div"
 colnames(ec_picks)[2] <- "picks_HomeTeam"
@@ -1693,6 +2077,10 @@ f1_HWMLM <- c()
 f1_AWMLM <- c()
 f1_HY <- c()
 f1_AY <- c()
+f1_HCO <- c()
+f1_ACO <- c()
+f1_HXSC <- c()
+f1_AXSC <- c()
 for(f1_row in 1:nrow(F1_fixtures))
 {
 
@@ -1834,6 +2222,32 @@ for(f1_row in 1:nrow(F1_fixtures))
   f1_yellowtotals_vec_at  <-tail(f1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  f1_cornertotals_vec_ht <- as.vector(f1_cornertotalsv2[f1_hometeamindex,])
+  f1_cornertotals_vec_ht[is.na(f1_cornertotals_vec_ht)] <- ""
+  f1_cornertotals_vec_ht <- f1_cornertotals_vec_ht[f1_cornertotals_vec_ht != ""]
+  f1_cornertotals_vec_ht  <-tail(f1_cornertotals_vec_ht,1)
+  #awayteam
+  f1_cornertotals_vec_at <- as.vector(f1_cornertotalsv2[f1_awayteamindex,])
+  f1_cornertotals_vec_at[is.na(f1_cornertotals_vec_at)] <- ""
+  f1_cornertotals_vec_at <- f1_cornertotals_vec_at[f1_cornertotals_vec_at != ""]
+  f1_cornertotals_vec_at  <-tail(f1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  f1_xshotsconversion_vec_ht <- as.vector(f1_shots_analysis[f1_hometeamindex,])
+  f1_xshotsconversion_vec_ht[is.na(f1_xshotsconversion_vec_ht)] <- ""
+  f1_xshotsconversion_vec_ht <- f1_xshotsconversion_vec_ht[f1_xshotsconversion_vec_ht != ""]
+  f1_xshotsconversion_vec_ht  <-tail(f1_xshotsconversion_vec_ht,1)
+  #awayteam
+  f1_xshotsconversion_vec_at <- as.vector(f1_shots_analysis[f1_awayteamindex,])
+  f1_xshotsconversion_vec_at[is.na(f1_xshotsconversion_vec_at)] <- ""
+  f1_xshotsconversion_vec_at <- f1_xshotsconversion_vec_at[f1_xshotsconversion_vec_at != ""]
+  f1_xshotsconversion_vec_at  <-tail(f1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   f1_ht_last6points <- f1_ht_numberof_wins*3 + f1_ht_numberof_draws*1
@@ -1860,6 +2274,12 @@ for(f1_row in 1:nrow(F1_fixtures))
   f1_HY[f1_row] <- f1_yellowtotals_vec_ht
   f1_AY[f1_row] <- f1_yellowtotals_vec_at
 
+  f1_HCO[f1_row] <- f1_cornertotals_vec_ht
+  f1_ACO[f1_row] <- f1_cornertotals_vec_at
+
+  f1_HXSC[f1_row] <- f1_xshotsconversion_vec_ht
+  f1_AXSC[f1_row] <- f1_xshotsconversion_vec_at
+
 }
 
 f1_prediction <- as.data.frame(f1_prediction)
@@ -1883,7 +2303,19 @@ colnames(f1_HY) <- "AVGHY"
 f1_AY <- as.data.frame(f1_AY)
 colnames(f1_AY) <- "AVGAY"
 
-f1_picks <- cbind(F1_fixtures$Div,F1_fixtures$HomeTeam_f1,F1_fixtures$AwayTeam_f1,f1_prediction,f1_HWM,f1_AWM,f1_HWMLM,f1_AWMLM,f1_HY,f1_AY)
+f1_HCO <- as.data.frame(f1_HCO)
+colnames(f1_HCO) <- "AVGHCO"
+
+f1_ACO <- as.data.frame(f1_ACO)
+colnames(f1_ACO) <- "AVGACO"
+
+f1_HXSC <- as.data.frame(f1_HXSC)
+colnames(f1_HXSC) <- "HXSC"
+
+f1_AXSC <- as.data.frame(f1_AXSC)
+colnames(f1_AXSC) <- "AXSC"
+
+f1_picks <- cbind(F1_fixtures$Div,F1_fixtures$HomeTeam_f1,F1_fixtures$AwayTeam_f1,f1_prediction,f1_HWM,f1_AWM,f1_HWMLM,f1_AWMLM,f1_HY,f1_AY,f1_HCO,f1_ACO,f1_HXSC,f1_AXSC)
 
 colnames(f1_picks)[1] <- "picks_Div"
 colnames(f1_picks)[2] <- "picks_HomeTeam"
@@ -1902,6 +2334,10 @@ f2_HWMLM <- c()
 f2_AWMLM <- c()
 f2_HY <- c()
 f2_AY <- c()
+f2_HCO <- c()
+f2_ACO <- c()
+f2_HXSC <- c()
+f2_AXSC <- c()
 for(f2_row in 1:nrow(F2_fixtures))
 {
 
@@ -2043,6 +2479,32 @@ for(f2_row in 1:nrow(F2_fixtures))
   f2_yellowtotals_vec_at  <-tail(f2_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  f2_cornertotals_vec_ht <- as.vector(f2_cornertotalsv2[f2_hometeamindex,])
+  f2_cornertotals_vec_ht[is.na(f2_cornertotals_vec_ht)] <- ""
+  f2_cornertotals_vec_ht <- f2_cornertotals_vec_ht[f2_cornertotals_vec_ht != ""]
+  f2_cornertotals_vec_ht  <-tail(f2_cornertotals_vec_ht,1)
+  #awayteam
+  f2_cornertotals_vec_at <- as.vector(f2_cornertotalsv2[f2_awayteamindex,])
+  f2_cornertotals_vec_at[is.na(f2_cornertotals_vec_at)] <- ""
+  f2_cornertotals_vec_at <- f2_cornertotals_vec_at[f2_cornertotals_vec_at != ""]
+  f2_cornertotals_vec_at  <-tail(f2_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  f2_xshotsconversion_vec_ht <- as.vector(f2_shots_analysis[f2_hometeamindex,])
+  f2_xshotsconversion_vec_ht[is.na(f2_xshotsconversion_vec_ht)] <- ""
+  f2_xshotsconversion_vec_ht <- f2_xshotsconversion_vec_ht[f2_xshotsconversion_vec_ht != ""]
+  f2_xshotsconversion_vec_ht  <-tail(f2_xshotsconversion_vec_ht,1)
+  #awayteam
+  f2_xshotsconversion_vec_at <- as.vector(f2_shots_analysis[f2_awayteamindex,])
+  f2_xshotsconversion_vec_at[is.na(f2_xshotsconversion_vec_at)] <- ""
+  f2_xshotsconversion_vec_at <- f2_xshotsconversion_vec_at[f2_xshotsconversion_vec_at != ""]
+  f2_xshotsconversion_vec_at  <-tail(f2_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   f2_ht_last6points <- f2_ht_numberof_wins*3 + f2_ht_numberof_draws*1
@@ -2069,6 +2531,12 @@ for(f2_row in 1:nrow(F2_fixtures))
   f2_HY[f2_row] <- f2_yellowtotals_vec_ht
   f2_AY[f2_row] <- f2_yellowtotals_vec_at
 
+  f2_HCO[f2_row] <- f2_cornertotals_vec_ht
+  f2_ACO[f2_row] <- f2_cornertotals_vec_at
+
+  f2_HXSC[f2_row] <- f2_xshotsconversion_vec_ht
+  f2_AXSC[f2_row] <- f2_xshotsconversion_vec_at
+
 }
 
 f2_prediction <- as.data.frame(f2_prediction)
@@ -2092,7 +2560,19 @@ colnames(f2_HY) <- "AVGHY"
 f2_AY <- as.data.frame(f2_AY)
 colnames(f2_AY) <- "AVGAY"
 
-f2_picks <- cbind(F2_fixtures$Div,F2_fixtures$HomeTeam_f2,F2_fixtures$AwayTeam_f2,f2_prediction,f2_HWM,f2_AWM,f2_HWMLM,f2_AWMLM,f2_HY,f2_AY)
+f2_HCO <- as.data.frame(f2_HCO)
+colnames(f2_HCO) <- "AVGHCO"
+
+f2_ACO <- as.data.frame(f2_ACO)
+colnames(f2_ACO) <- "AVGACO"
+
+f2_HXSC <- as.data.frame(f2_HXSC)
+colnames(f2_HXSC) <- "HXSC"
+
+f2_AXSC <- as.data.frame(f2_AXSC)
+colnames(f2_AXSC) <- "AXSC"
+
+f2_picks <- cbind(F2_fixtures$Div,F2_fixtures$HomeTeam_f2,F2_fixtures$AwayTeam_f2,f2_prediction,f2_HWM,f2_AWM,f2_HWMLM,f2_AWMLM,f2_HY,f2_AY,f2_HCO,f2_ACO,f2_HXSC,f2_AXSC)
 
 colnames(f2_picks)[1] <- "picks_Div"
 colnames(f2_picks)[2] <- "picks_HomeTeam"
@@ -2111,6 +2591,10 @@ g1_HWMLM <- c()
 g1_AWMLM <- c()
 g1_HY <- c()
 g1_AY <- c()
+g1_HCO <- c()
+g1_ACO <- c()
+g1_HXSC <- c()
+g1_AXSC <- c()
 for(g1_row in 1:nrow(G1_fixtures))
 {
 
@@ -2252,6 +2736,32 @@ for(g1_row in 1:nrow(G1_fixtures))
   g1_yellowtotals_vec_at  <-tail(g1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  g1_cornertotals_vec_ht <- as.vector(g1_cornertotalsv2[g1_hometeamindex,])
+  g1_cornertotals_vec_ht[is.na(g1_cornertotals_vec_ht)] <- ""
+  g1_cornertotals_vec_ht <- g1_cornertotals_vec_ht[g1_cornertotals_vec_ht != ""]
+  g1_cornertotals_vec_ht  <-tail(g1_cornertotals_vec_ht,1)
+  #awayteam
+  g1_cornertotals_vec_at <- as.vector(g1_cornertotalsv2[g1_awayteamindex,])
+  g1_cornertotals_vec_at[is.na(g1_cornertotals_vec_at)] <- ""
+  g1_cornertotals_vec_at <- g1_cornertotals_vec_at[g1_cornertotals_vec_at != ""]
+  g1_cornertotals_vec_at  <-tail(g1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  g1_xshotsconversion_vec_ht <- as.vector(g1_shots_analysis[g1_hometeamindex,])
+  g1_xshotsconversion_vec_ht[is.na(g1_xshotsconversion_vec_ht)] <- ""
+  g1_xshotsconversion_vec_ht <- g1_xshotsconversion_vec_ht[g1_xshotsconversion_vec_ht != ""]
+  g1_xshotsconversion_vec_ht  <-tail(g1_xshotsconversion_vec_ht,1)
+  #awayteam
+  g1_xshotsconversion_vec_at <- as.vector(g1_shots_analysis[g1_awayteamindex,])
+  g1_xshotsconversion_vec_at[is.na(g1_xshotsconversion_vec_at)] <- ""
+  g1_xshotsconversion_vec_at <- g1_xshotsconversion_vec_at[g1_xshotsconversion_vec_at != ""]
+  g1_xshotsconversion_vec_at  <-tail(g1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   g1_ht_last6points <- g1_ht_numberof_wins*3 + g1_ht_numberof_draws*1
@@ -2278,6 +2788,12 @@ for(g1_row in 1:nrow(G1_fixtures))
   g1_HY[g1_row] <- g1_yellowtotals_vec_ht
   g1_AY[g1_row] <- g1_yellowtotals_vec_at
 
+  g1_HCO[g1_row] <- g1_cornertotals_vec_ht
+  g1_ACO[g1_row] <- g1_cornertotals_vec_at
+
+  g1_HXSC[g1_row] <- g1_xshotsconversion_vec_ht
+  g1_AXSC[g1_row] <- g1_xshotsconversion_vec_at
+
 }
 
 g1_prediction <- as.data.frame(g1_prediction)
@@ -2301,7 +2817,19 @@ colnames(g1_HY) <- "AVGHY"
 g1_AY <- as.data.frame(g1_AY)
 colnames(g1_AY) <- "AVGAY"
 
-g1_picks <- cbind(G1_fixtures$Div,G1_fixtures$HomeTeam_g1,G1_fixtures$AwayTeam_g1,g1_prediction,g1_HWM,g1_AWM,g1_HWMLM,g1_AWMLM,g1_HY,g1_AY)
+g1_HCO <- as.data.frame(g1_HCO)
+colnames(g1_HCO) <- "AVGHCO"
+
+g1_ACO <- as.data.frame(g1_ACO)
+colnames(g1_ACO) <- "AVGACO"
+
+g1_HXSC <- as.data.frame(g1_HXSC)
+colnames(g1_HXSC) <- "HXSC"
+
+g1_AXSC <- as.data.frame(g1_AXSC)
+colnames(g1_AXSC) <- "AXSC"
+
+g1_picks <- cbind(G1_fixtures$Div,G1_fixtures$HomeTeam_g1,G1_fixtures$AwayTeam_g1,g1_prediction,g1_HWM,g1_AWM,g1_HWMLM,g1_AWMLM,g1_HY,g1_AY,g1_HCO,g1_ACO,g1_HXSC,g1_AXSC)
 
 colnames(g1_picks)[1] <- "picks_Div"
 colnames(g1_picks)[2] <- "picks_HomeTeam"
@@ -2320,6 +2848,10 @@ i1_HWMLM <- c()
 i1_AWMLM <- c()
 i1_HY <- c()
 i1_AY <- c()
+i1_HCO <- c()
+i1_ACO <- c()
+i1_HXSC <- c()
+i1_AXSC <- c()
 for(i1_row in 1:nrow(I1_fixtures))
 {
 
@@ -2461,6 +2993,32 @@ for(i1_row in 1:nrow(I1_fixtures))
   i1_yellowtotals_vec_at  <-tail(i1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  i1_cornertotals_vec_ht <- as.vector(i1_cornertotalsv2[i1_hometeamindex,])
+  i1_cornertotals_vec_ht[is.na(i1_cornertotals_vec_ht)] <- ""
+  i1_cornertotals_vec_ht <- i1_cornertotals_vec_ht[i1_cornertotals_vec_ht != ""]
+  i1_cornertotals_vec_ht  <-tail(i1_cornertotals_vec_ht,1)
+  #awayteam
+  i1_cornertotals_vec_at <- as.vector(i1_cornertotalsv2[i1_awayteamindex,])
+  i1_cornertotals_vec_at[is.na(i1_cornertotals_vec_at)] <- ""
+  i1_cornertotals_vec_at <- i1_cornertotals_vec_at[i1_cornertotals_vec_at != ""]
+  i1_cornertotals_vec_at  <-tail(i1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  i1_xshotsconversion_vec_ht <- as.vector(i1_shots_analysis[i1_hometeamindex,])
+  i1_xshotsconversion_vec_ht[is.na(i1_xshotsconversion_vec_ht)] <- ""
+  i1_xshotsconversion_vec_ht <- i1_xshotsconversion_vec_ht[i1_xshotsconversion_vec_ht != ""]
+  i1_xshotsconversion_vec_ht  <-tail(i1_xshotsconversion_vec_ht,1)
+  #awayteam
+  i1_xshotsconversion_vec_at <- as.vector(i1_shots_analysis[i1_awayteamindex,])
+  i1_xshotsconversion_vec_at[is.na(i1_xshotsconversion_vec_at)] <- ""
+  i1_xshotsconversion_vec_at <- i1_xshotsconversion_vec_at[i1_xshotsconversion_vec_at != ""]
+  i1_xshotsconversion_vec_at  <-tail(i1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   i1_ht_last6points <- i1_ht_numberof_wins*3 + i1_ht_numberof_draws*1
@@ -2487,6 +3045,12 @@ for(i1_row in 1:nrow(I1_fixtures))
   i1_HY[i1_row] <- i1_yellowtotals_vec_ht
   i1_AY[i1_row] <- i1_yellowtotals_vec_at
 
+  i1_HCO[i1_row] <- i1_cornertotals_vec_ht
+  i1_ACO[i1_row] <- i1_cornertotals_vec_at
+
+  i1_HXSC[i1_row] <- i1_xshotsconversion_vec_ht
+  i1_AXSC[i1_row] <- i1_xshotsconversion_vec_at
+
 }
 
 i1_prediction <- as.data.frame(i1_prediction)
@@ -2510,7 +3074,19 @@ colnames(i1_HY) <- "AVGHY"
 i1_AY <- as.data.frame(i1_AY)
 colnames(i1_AY) <- "AVGAY"
 
-i1_picks <- cbind(I1_fixtures$Div,I1_fixtures$HomeTeam_i1,I1_fixtures$AwayTeam_i1,i1_prediction,i1_HWM,i1_AWM,i1_HWMLM,i1_AWMLM,i1_HY,i1_AY)
+i1_HCO <- as.data.frame(i1_HCO)
+colnames(i1_HCO) <- "AVGHCO"
+
+i1_ACO <- as.data.frame(i1_ACO)
+colnames(i1_ACO) <- "AVGACO"
+
+i1_HXSC <- as.data.frame(i1_HXSC)
+colnames(i1_HXSC) <- "HXSC"
+
+i1_AXSC <- as.data.frame(i1_AXSC)
+colnames(i1_AXSC) <- "AXSC"
+
+i1_picks <- cbind(I1_fixtures$Div,I1_fixtures$HomeTeam_i1,I1_fixtures$AwayTeam_i1,i1_prediction,i1_HWM,i1_AWM,i1_HWMLM,i1_AWMLM,i1_HY,i1_AY,i1_HCO,i1_ACO,i1_HXSC,i1_AXSC)
 
 colnames(i1_picks)[1] <- "picks_Div"
 colnames(i1_picks)[2] <- "picks_HomeTeam"
@@ -2529,6 +3105,10 @@ i2_HWMLM <- c()
 i2_AWMLM <- c()
 i2_HY <- c()
 i2_AY <- c()
+i2_HCO <- c()
+i2_ACO <- c()
+i2_HXSC <- c()
+i2_AXSC <- c()
 for(i2_row in 1:nrow(I2_fixtures))
 {
 
@@ -2670,6 +3250,32 @@ for(i2_row in 1:nrow(I2_fixtures))
   i2_yellowtotals_vec_at  <-tail(i2_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  i2_cornertotals_vec_ht <- as.vector(i2_cornertotalsv2[i2_hometeamindex,])
+  i2_cornertotals_vec_ht[is.na(i2_cornertotals_vec_ht)] <- ""
+  i2_cornertotals_vec_ht <- i2_cornertotals_vec_ht[i2_cornertotals_vec_ht != ""]
+  i2_cornertotals_vec_ht  <-tail(i2_cornertotals_vec_ht,1)
+  #awayteam
+  i2_cornertotals_vec_at <- as.vector(i2_cornertotalsv2[i2_awayteamindex,])
+  i2_cornertotals_vec_at[is.na(i2_cornertotals_vec_at)] <- ""
+  i2_cornertotals_vec_at <- i2_cornertotals_vec_at[i2_cornertotals_vec_at != ""]
+  i2_cornertotals_vec_at  <-tail(i2_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  i2_xshotsconversion_vec_ht <- as.vector(i2_shots_analysis[i2_hometeamindex,])
+  i2_xshotsconversion_vec_ht[is.na(i2_xshotsconversion_vec_ht)] <- ""
+  i2_xshotsconversion_vec_ht <- i2_xshotsconversion_vec_ht[i2_xshotsconversion_vec_ht != ""]
+  i2_xshotsconversion_vec_ht  <-tail(i2_xshotsconversion_vec_ht,1)
+  #awayteam
+  i2_xshotsconversion_vec_at <- as.vector(i2_shots_analysis[i2_awayteamindex,])
+  i2_xshotsconversion_vec_at[is.na(i2_xshotsconversion_vec_at)] <- ""
+  i2_xshotsconversion_vec_at <- i2_xshotsconversion_vec_at[i2_xshotsconversion_vec_at != ""]
+  i2_xshotsconversion_vec_at  <-tail(i2_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   i2_ht_last6points <- i2_ht_numberof_wins*3 + i2_ht_numberof_draws*1
@@ -2696,6 +3302,12 @@ for(i2_row in 1:nrow(I2_fixtures))
   i2_HY[i2_row] <- i2_yellowtotals_vec_ht
   i2_AY[i2_row] <- i2_yellowtotals_vec_at
 
+  i2_HCO[i2_row] <- i2_cornertotals_vec_ht
+  i2_ACO[i2_row] <- i2_cornertotals_vec_at
+
+  i2_HXSC[i2_row] <- i2_xshotsconversion_vec_ht
+  i2_AXSC[i2_row] <- i2_xshotsconversion_vec_at
+
 }
 
 i2_prediction <- as.data.frame(i2_prediction)
@@ -2719,7 +3331,19 @@ colnames(i2_HY) <- "AVGHY"
 i2_AY <- as.data.frame(i2_AY)
 colnames(i2_AY) <- "AVGAY"
 
-i2_picks <- cbind(I2_fixtures$Div,I2_fixtures$HomeTeam_i2,I2_fixtures$AwayTeam_i2,i2_prediction,i2_HWM,i2_AWM,i2_HWMLM,i2_AWMLM,i2_HY,i2_AY)
+i2_HCO <- as.data.frame(i2_HCO)
+colnames(i2_HCO) <- "AVGHCO"
+
+i2_ACO <- as.data.frame(i2_ACO)
+colnames(i2_ACO) <- "AVGACO"
+
+i2_HXSC <- as.data.frame(i2_HXSC)
+colnames(i2_HXSC) <- "HXSC"
+
+i2_AXSC <- as.data.frame(i2_AXSC)
+colnames(i2_AXSC) <- "AXSC"
+
+i2_picks <- cbind(I2_fixtures$Div,I2_fixtures$HomeTeam_i2,I2_fixtures$AwayTeam_i2,i2_prediction,i2_HWM,i2_AWM,i2_HWMLM,i2_AWMLM,i2_HY,i2_AY,i2_HCO,i2_ACO,i2_HXSC,i2_AXSC)
 
 colnames(i2_picks)[1] <- "picks_Div"
 colnames(i2_picks)[2] <- "picks_HomeTeam"
@@ -2738,6 +3362,10 @@ n1_HWMLM <- c()
 n1_AWMLM <- c()
 n1_HY <- c()
 n1_AY <- c()
+n1_HCO <- c()
+n1_ACO <- c()
+n1_HXSC <- c()
+n1_AXSC <- c()
 for(n1_row in 1:nrow(N1_fixtures))
 {
 
@@ -2879,6 +3507,32 @@ for(n1_row in 1:nrow(N1_fixtures))
   n1_yellowtotals_vec_at  <-tail(n1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  n1_cornertotals_vec_ht <- as.vector(n1_cornertotalsv2[n1_hometeamindex,])
+  n1_cornertotals_vec_ht[is.na(n1_cornertotals_vec_ht)] <- ""
+  n1_cornertotals_vec_ht <- n1_cornertotals_vec_ht[n1_cornertotals_vec_ht != ""]
+  n1_cornertotals_vec_ht  <-tail(n1_cornertotals_vec_ht,1)
+  #awayteam
+  n1_cornertotals_vec_at <- as.vector(n1_cornertotalsv2[n1_awayteamindex,])
+  n1_cornertotals_vec_at[is.na(n1_cornertotals_vec_at)] <- ""
+  n1_cornertotals_vec_at <- n1_cornertotals_vec_at[n1_cornertotals_vec_at != ""]
+  n1_cornertotals_vec_at  <-tail(n1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  n1_xshotsconversion_vec_ht <- as.vector(n1_shots_analysis[n1_hometeamindex,])
+  n1_xshotsconversion_vec_ht[is.na(n1_xshotsconversion_vec_ht)] <- ""
+  n1_xshotsconversion_vec_ht <- n1_xshotsconversion_vec_ht[n1_xshotsconversion_vec_ht != ""]
+  n1_xshotsconversion_vec_ht  <-tail(n1_xshotsconversion_vec_ht,1)
+  #awayteam
+  n1_xshotsconversion_vec_at <- as.vector(n1_shots_analysis[n1_awayteamindex,])
+  n1_xshotsconversion_vec_at[is.na(n1_xshotsconversion_vec_at)] <- ""
+  n1_xshotsconversion_vec_at <- n1_xshotsconversion_vec_at[n1_xshotsconversion_vec_at != ""]
+  n1_xshotsconversion_vec_at  <-tail(n1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   n1_ht_last6points <- n1_ht_numberof_wins*3 + n1_ht_numberof_draws*1
@@ -2905,6 +3559,12 @@ for(n1_row in 1:nrow(N1_fixtures))
   n1_HY[n1_row] <- n1_yellowtotals_vec_ht
   n1_AY[n1_row] <- n1_yellowtotals_vec_at
 
+  n1_HCO[n1_row] <- n1_cornertotals_vec_ht
+  n1_ACO[n1_row] <- n1_cornertotals_vec_at
+
+  n1_HXSC[n1_row] <- n1_xshotsconversion_vec_ht
+  n1_AXSC[n1_row] <- n1_xshotsconversion_vec_at
+
 }
 
 n1_prediction <- as.data.frame(n1_prediction)
@@ -2928,7 +3588,19 @@ colnames(n1_HY) <- "AVGHY"
 n1_AY <- as.data.frame(n1_AY)
 colnames(n1_AY) <- "AVGAY"
 
-n1_picks <- cbind(N1_fixtures$Div,N1_fixtures$HomeTeam_n1,N1_fixtures$AwayTeam_n1,n1_prediction,n1_HWM,n1_AWM,n1_HWMLM,n1_AWMLM,n1_HY,n1_AY)
+n1_HCO <- as.data.frame(n1_HCO)
+colnames(n1_HCO) <- "AVGHCO"
+
+n1_ACO <- as.data.frame(n1_ACO)
+colnames(n1_ACO) <- "AVGACO"
+
+n1_HXSC <- as.data.frame(n1_HXSC)
+colnames(n1_HXSC) <- "HXSC"
+
+n1_AXSC <- as.data.frame(n1_AXSC)
+colnames(n1_AXSC) <- "AXSC"
+
+n1_picks <- cbind(N1_fixtures$Div,N1_fixtures$HomeTeam_n1,N1_fixtures$AwayTeam_n1,n1_prediction,n1_HWM,n1_AWM,n1_HWMLM,n1_AWMLM,n1_HY,n1_AY,n1_HCO,n1_ACO,n1_HXSC,n1_AXSC)
 
 colnames(n1_picks)[1] <- "picks_Div"
 colnames(n1_picks)[2] <- "picks_HomeTeam"
@@ -2947,6 +3619,10 @@ p1_HWMLM <- c()
 p1_AWMLM <- c()
 p1_HY <- c()
 p1_AY <- c()
+p1_HCO <- c()
+p1_ACO <- c()
+p1_HXSC <- c()
+p1_AXSC <- c()
 for(p1_row in 1:nrow(P1_fixtures))
 {
 
@@ -3088,6 +3764,32 @@ for(p1_row in 1:nrow(P1_fixtures))
   p1_yellowtotals_vec_at  <-tail(p1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  p1_cornertotals_vec_ht <- as.vector(p1_cornertotalsv2[p1_hometeamindex,])
+  p1_cornertotals_vec_ht[is.na(p1_cornertotals_vec_ht)] <- ""
+  p1_cornertotals_vec_ht <- p1_cornertotals_vec_ht[p1_cornertotals_vec_ht != ""]
+  p1_cornertotals_vec_ht  <-tail(p1_cornertotals_vec_ht,1)
+  #awayteam
+  p1_cornertotals_vec_at <- as.vector(p1_cornertotalsv2[p1_awayteamindex,])
+  p1_cornertotals_vec_at[is.na(p1_cornertotals_vec_at)] <- ""
+  p1_cornertotals_vec_at <- p1_cornertotals_vec_at[p1_cornertotals_vec_at != ""]
+  p1_cornertotals_vec_at  <-tail(p1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  p1_xshotsconversion_vec_ht <- as.vector(p1_shots_analysis[p1_hometeamindex,])
+  p1_xshotsconversion_vec_ht[is.na(p1_xshotsconversion_vec_ht)] <- ""
+  p1_xshotsconversion_vec_ht <- p1_xshotsconversion_vec_ht[p1_xshotsconversion_vec_ht != ""]
+  p1_xshotsconversion_vec_ht  <-tail(p1_xshotsconversion_vec_ht,1)
+  #awayteam
+  p1_xshotsconversion_vec_at <- as.vector(p1_shots_analysis[p1_awayteamindex,])
+  p1_xshotsconversion_vec_at[is.na(p1_xshotsconversion_vec_at)] <- ""
+  p1_xshotsconversion_vec_at <- p1_xshotsconversion_vec_at[p1_xshotsconversion_vec_at != ""]
+  p1_xshotsconversion_vec_at  <-tail(p1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   p1_ht_last6points <- p1_ht_numberof_wins*3 + p1_ht_numberof_draws*1
@@ -3114,6 +3816,12 @@ for(p1_row in 1:nrow(P1_fixtures))
   p1_HY[p1_row] <- p1_yellowtotals_vec_ht
   p1_AY[p1_row] <- p1_yellowtotals_vec_at
 
+  p1_HCO[p1_row] <- p1_cornertotals_vec_ht
+  p1_ACO[p1_row] <- p1_cornertotals_vec_at
+
+  p1_HXSC[p1_row] <- p1_xshotsconversion_vec_ht
+  p1_AXSC[p1_row] <- p1_xshotsconversion_vec_at
+
 }
 
 p1_prediction <- as.data.frame(p1_prediction)
@@ -3137,7 +3845,19 @@ colnames(p1_HY) <- "AVGHY"
 p1_AY <- as.data.frame(p1_AY)
 colnames(p1_AY) <- "AVGAY"
 
-p1_picks <- cbind(P1_fixtures$Div,P1_fixtures$HomeTeam_p1,P1_fixtures$AwayTeam_p1,p1_prediction,p1_HWM,p1_AWM,p1_HWMLM,p1_AWMLM,p1_HY,p1_AY)
+p1_HCO <- as.data.frame(p1_HCO)
+colnames(p1_HCO) <- "AVGHCO"
+
+p1_ACO <- as.data.frame(p1_ACO)
+colnames(p1_ACO) <- "AVGACO"
+
+p1_HXSC <- as.data.frame(p1_HXSC)
+colnames(p1_HXSC) <- "HXSC"
+
+p1_AXSC <- as.data.frame(p1_AXSC)
+colnames(p1_AXSC) <- "AXSC"
+
+p1_picks <- cbind(P1_fixtures$Div,P1_fixtures$HomeTeam_p1,P1_fixtures$AwayTeam_p1,p1_prediction,p1_HWM,p1_AWM,p1_HWMLM,p1_AWMLM,p1_HY,p1_AY,p1_HCO,p1_ACO,p1_HXSC,p1_AXSC)
 
 colnames(p1_picks)[1] <- "picks_Div"
 colnames(p1_picks)[2] <- "picks_HomeTeam"
@@ -3157,6 +3877,10 @@ sp1_HWMLM <- c()
 sp1_AWMLM <- c()
 sp1_HY <- c()
 sp1_AY <- c()
+sp1_HCO <- c()
+sp1_ACO <- c()
+sp1_HXSC <- c()
+sp1_AXSC <- c()
 for(sp1_row in 1:nrow(SP1_fixtures))
 {
 
@@ -3298,6 +4022,32 @@ for(sp1_row in 1:nrow(SP1_fixtures))
   sp1_yellowtotals_vec_at  <-tail(sp1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  sp1_cornertotals_vec_ht <- as.vector(sp1_cornertotalsv2[sp1_hometeamindex,])
+  sp1_cornertotals_vec_ht[is.na(sp1_cornertotals_vec_ht)] <- ""
+  sp1_cornertotals_vec_ht <- sp1_cornertotals_vec_ht[sp1_cornertotals_vec_ht != ""]
+  sp1_cornertotals_vec_ht  <-tail(sp1_cornertotals_vec_ht,1)
+  #awayteam
+  sp1_cornertotals_vec_at <- as.vector(sp1_cornertotalsv2[sp1_awayteamindex,])
+  sp1_cornertotals_vec_at[is.na(sp1_cornertotals_vec_at)] <- ""
+  sp1_cornertotals_vec_at <- sp1_cornertotals_vec_at[sp1_cornertotals_vec_at != ""]
+  sp1_cornertotals_vec_at  <-tail(sp1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  sp1_xshotsconversion_vec_ht <- as.vector(sp1_shots_analysis[sp1_hometeamindex,])
+  sp1_xshotsconversion_vec_ht[is.na(sp1_xshotsconversion_vec_ht)] <- ""
+  sp1_xshotsconversion_vec_ht <- sp1_xshotsconversion_vec_ht[sp1_xshotsconversion_vec_ht != ""]
+  sp1_xshotsconversion_vec_ht  <-tail(sp1_xshotsconversion_vec_ht,1)
+  #awayteam
+  sp1_xshotsconversion_vec_at <- as.vector(sp1_shots_analysis[sp1_awayteamindex,])
+  sp1_xshotsconversion_vec_at[is.na(sp1_xshotsconversion_vec_at)] <- ""
+  sp1_xshotsconversion_vec_at <- sp1_xshotsconversion_vec_at[sp1_xshotsconversion_vec_at != ""]
+  sp1_xshotsconversion_vec_at  <-tail(sp1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   sp1_ht_last6points <- sp1_ht_numberof_wins*3 + sp1_ht_numberof_draws*1
@@ -3324,6 +4074,12 @@ for(sp1_row in 1:nrow(SP1_fixtures))
   sp1_HY[sp1_row] <- sp1_yellowtotals_vec_ht
   sp1_AY[sp1_row] <- sp1_yellowtotals_vec_at
 
+  sp1_HCO[sp1_row] <- sp1_cornertotals_vec_ht
+  sp1_ACO[sp1_row] <- sp1_cornertotals_vec_at
+
+  sp1_HXSC[sp1_row] <- sp1_xshotsconversion_vec_ht
+  sp1_AXSC[sp1_row] <- sp1_xshotsconversion_vec_at
+
 }
 
 sp1_prediction <- as.data.frame(sp1_prediction)
@@ -3347,7 +4103,19 @@ colnames(sp1_HY) <- "AVGHY"
 sp1_AY <- as.data.frame(sp1_AY)
 colnames(sp1_AY) <- "AVGAY"
 
-sp1_picks <- cbind(SP1_fixtures$Div,SP1_fixtures$HomeTeam_sp1,SP1_fixtures$AwayTeam_sp1,sp1_prediction,sp1_HWM,sp1_AWM,sp1_HWMLM,sp1_AWMLM,sp1_HY,sp1_AY)
+sp1_HCO <- as.data.frame(sp1_HCO)
+colnames(sp1_HCO) <- "AVGHCO"
+
+sp1_ACO <- as.data.frame(sp1_ACO)
+colnames(sp1_ACO) <- "AVGACO"
+
+sp1_HXSC <- as.data.frame(sp1_HXSC)
+colnames(sp1_HXSC) <- "HXSC"
+
+sp1_AXSC <- as.data.frame(sp1_AXSC)
+colnames(sp1_AXSC) <- "AXSC"
+
+sp1_picks <- cbind(SP1_fixtures$Div,SP1_fixtures$HomeTeam_sp1,SP1_fixtures$AwayTeam_sp1,sp1_prediction,sp1_HWM,sp1_AWM,sp1_HWMLM,sp1_AWMLM,sp1_HY,sp1_AY,sp1_HCO,sp1_ACO,sp1_HXSC,sp1_AXSC)
 
 colnames(sp1_picks)[1] <- "picks_Div"
 colnames(sp1_picks)[2] <- "picks_HomeTeam"
@@ -3367,6 +4135,10 @@ sp2_HWMLM <- c()
 sp2_AWMLM <- c()
 sp2_HY <- c()
 sp2_AY <- c()
+sp2_HCO <- c()
+sp2_ACO <- c()
+sp2_HXSC <- c()
+sp2_AXSC <- c()
 for(sp2_row in 1:nrow(SP2_fixtures))
 {
 
@@ -3508,6 +4280,32 @@ for(sp2_row in 1:nrow(SP2_fixtures))
   sp2_yellowtotals_vec_at  <-tail(sp2_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  sp2_cornertotals_vec_ht <- as.vector(sp2_cornertotalsv2[sp2_hometeamindex,])
+  sp2_cornertotals_vec_ht[is.na(sp2_cornertotals_vec_ht)] <- ""
+  sp2_cornertotals_vec_ht <- sp2_cornertotals_vec_ht[sp2_cornertotals_vec_ht != ""]
+  sp2_cornertotals_vec_ht  <-tail(sp2_cornertotals_vec_ht,1)
+  #awayteam
+  sp2_cornertotals_vec_at <- as.vector(sp2_cornertotalsv2[sp2_awayteamindex,])
+  sp2_cornertotals_vec_at[is.na(sp2_cornertotals_vec_at)] <- ""
+  sp2_cornertotals_vec_at <- sp2_cornertotals_vec_at[sp2_cornertotals_vec_at != ""]
+  sp2_cornertotals_vec_at  <-tail(sp2_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  sp2_xshotsconversion_vec_ht <- as.vector(sp2_shots_analysis[sp2_hometeamindex,])
+  sp2_xshotsconversion_vec_ht[is.na(sp2_xshotsconversion_vec_ht)] <- ""
+  sp2_xshotsconversion_vec_ht <- sp2_xshotsconversion_vec_ht[sp2_xshotsconversion_vec_ht != ""]
+  sp2_xshotsconversion_vec_ht  <-tail(sp2_xshotsconversion_vec_ht,1)
+  #awayteam
+  sp2_xshotsconversion_vec_at <- as.vector(sp2_shots_analysis[sp2_awayteamindex,])
+  sp2_xshotsconversion_vec_at[is.na(sp2_xshotsconversion_vec_at)] <- ""
+  sp2_xshotsconversion_vec_at <- sp2_xshotsconversion_vec_at[sp2_xshotsconversion_vec_at != ""]
+  sp2_xshotsconversion_vec_at  <-tail(sp2_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   sp2_ht_last6points <- sp2_ht_numberof_wins*3 + sp2_ht_numberof_draws*1
@@ -3534,6 +4332,12 @@ for(sp2_row in 1:nrow(SP2_fixtures))
   sp2_HY[sp2_row] <- sp2_yellowtotals_vec_ht
   sp2_AY[sp2_row] <- sp2_yellowtotals_vec_at
 
+  sp2_HCO[sp2_row] <- sp2_cornertotals_vec_ht
+  sp2_ACO[sp2_row] <- sp2_cornertotals_vec_at
+
+  sp2_HXSC[sp2_row] <- sp2_xshotsconversion_vec_ht
+  sp2_AXSC[sp2_row] <- sp2_xshotsconversion_vec_at
+
 }
 
 sp2_prediction <- as.data.frame(sp2_prediction)
@@ -3557,7 +4361,19 @@ colnames(sp2_HY) <- "AVGHY"
 sp2_AY <- as.data.frame(sp2_AY)
 colnames(sp2_AY) <- "AVGAY"
 
-sp2_picks <- cbind(SP2_fixtures$Div,SP2_fixtures$HomeTeam_sp2,SP2_fixtures$AwayTeam_sp2,sp2_prediction,sp2_HWM,sp2_AWM,sp2_HWMLM,sp2_AWMLM,sp2_HY,sp2_AY)
+sp2_HCO <- as.data.frame(sp2_HCO)
+colnames(sp2_HCO) <- "AVGHCO"
+
+sp2_ACO <- as.data.frame(sp2_ACO)
+colnames(sp2_ACO) <- "AVGACO"
+
+sp2_HXSC <- as.data.frame(sp2_HXSC)
+colnames(sp2_HXSC) <- "HXSC"
+
+sp2_AXSC <- as.data.frame(sp2_AXSC)
+colnames(sp2_AXSC) <- "AXSC"
+
+sp2_picks <- cbind(SP2_fixtures$Div,SP2_fixtures$HomeTeam_sp2,SP2_fixtures$AwayTeam_sp2,sp2_prediction,sp2_HWM,sp2_AWM,sp2_HWMLM,sp2_AWMLM,sp2_HY,sp2_AY,sp2_HCO,sp2_ACO,sp2_HXSC,sp2_AXSC)
 
 colnames(sp2_picks)[1] <- "picks_Div"
 colnames(sp2_picks)[2] <- "picks_HomeTeam"
@@ -3577,6 +4393,10 @@ sc0_HWMLM <- c()
 sc0_AWMLM <- c()
 sc0_HY <- c()
 sc0_AY <- c()
+sc0_HCO <- c()
+sc0_ACO <- c()
+sc0_HXSC <- c()
+sc0_AXSC <- c()
 for(sc0_row in 1:nrow(SC0_fixtures))
 {
 
@@ -3718,6 +4538,32 @@ for(sc0_row in 1:nrow(SC0_fixtures))
   sc0_yellowtotals_vec_at  <-tail(sc0_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  sc0_cornertotals_vec_ht <- as.vector(sc0_cornertotalsv2[sc0_hometeamindex,])
+  sc0_cornertotals_vec_ht[is.na(sc0_cornertotals_vec_ht)] <- ""
+  sc0_cornertotals_vec_ht <- sc0_cornertotals_vec_ht[sc0_cornertotals_vec_ht != ""]
+  sc0_cornertotals_vec_ht  <-tail(sc0_cornertotals_vec_ht,1)
+  #awayteam
+  sc0_cornertotals_vec_at <- as.vector(sc0_cornertotalsv2[sc0_awayteamindex,])
+  sc0_cornertotals_vec_at[is.na(sc0_cornertotals_vec_at)] <- ""
+  sc0_cornertotals_vec_at <- sc0_cornertotals_vec_at[sc0_cornertotals_vec_at != ""]
+  sc0_cornertotals_vec_at  <-tail(sc0_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  sc0_xshotsconversion_vec_ht <- as.vector(sc0_shots_analysis[sc0_hometeamindex,])
+  sc0_xshotsconversion_vec_ht[is.na(sc0_xshotsconversion_vec_ht)] <- ""
+  sc0_xshotsconversion_vec_ht <- sc0_xshotsconversion_vec_ht[sc0_xshotsconversion_vec_ht != ""]
+  sc0_xshotsconversion_vec_ht  <-tail(sc0_xshotsconversion_vec_ht,1)
+  #awayteam
+  sc0_xshotsconversion_vec_at <- as.vector(sc0_shots_analysis[sc0_awayteamindex,])
+  sc0_xshotsconversion_vec_at[is.na(sc0_xshotsconversion_vec_at)] <- ""
+  sc0_xshotsconversion_vec_at <- sc0_xshotsconversion_vec_at[sc0_xshotsconversion_vec_at != ""]
+  sc0_xshotsconversion_vec_at  <-tail(sc0_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   sc0_ht_last6points <- sc0_ht_numberof_wins*3 + sc0_ht_numberof_draws*1
@@ -3744,6 +4590,12 @@ for(sc0_row in 1:nrow(SC0_fixtures))
   sc0_HY[sc0_row] <- sc0_yellowtotals_vec_ht
   sc0_AY[sc0_row] <- sc0_yellowtotals_vec_at
 
+  sc0_HCO[sc0_row] <- sc0_cornertotals_vec_ht
+  sc0_ACO[sc0_row] <- sc0_cornertotals_vec_at
+
+  sc0_HXSC[sc0_row] <- sc0_xshotsconversion_vec_ht
+  sc0_AXSC[sc0_row] <- sc0_xshotsconversion_vec_at
+
 }
 
 sc0_prediction <- as.data.frame(sc0_prediction)
@@ -3767,7 +4619,19 @@ colnames(sc0_HY) <- "AVGHY"
 sc0_AY <- as.data.frame(sc0_AY)
 colnames(sc0_AY) <- "AVGAY"
 
-sc0_picks <- cbind(SC0_fixtures$Div,SC0_fixtures$HomeTeam_sc0,SC0_fixtures$AwayTeam_sc0,sc0_prediction,sc0_HWM,sc0_AWM,sc0_HWMLM,sc0_AWMLM,sc0_HY,sc0_AY)
+sc0_HCO <- as.data.frame(sc0_HCO)
+colnames(sc0_HCO) <- "AVGHCO"
+
+sc0_ACO <- as.data.frame(sc0_ACO)
+colnames(sc0_ACO) <- "AVGACO"
+
+sc0_HXSC <- as.data.frame(sc0_HXSC)
+colnames(sc0_HXSC) <- "HXSC"
+
+sc0_AXSC <- as.data.frame(sc0_AXSC)
+colnames(sc0_AXSC) <- "AXSC"
+
+sc0_picks <- cbind(SC0_fixtures$Div,SC0_fixtures$HomeTeam_sc0,SC0_fixtures$AwayTeam_sc0,sc0_prediction,sc0_HWM,sc0_AWM,sc0_HWMLM,sc0_AWMLM,sc0_HY,sc0_AY,sc0_HCO,sc0_ACO,sc0_HXSC,sc0_AXSC)
 
 colnames(sc0_picks)[1] <- "picks_Div"
 colnames(sc0_picks)[2] <- "picks_HomeTeam"
@@ -3787,6 +4651,10 @@ sc1_HWMLM <- c()
 sc1_AWMLM <- c()
 sc1_HY <- c()
 sc1_AY <- c()
+sc1_HCO <- c()
+sc1_ACO <- c()
+sc1_HXSC <- c()
+sc1_AXSC <- c()
 for(sc1_row in 1:nrow(SC1_fixtures))
 {
 
@@ -3928,6 +4796,32 @@ for(sc1_row in 1:nrow(SC1_fixtures))
   sc1_yellowtotals_vec_at  <-tail(sc1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  sc1_cornertotals_vec_ht <- as.vector(sc1_cornertotalsv2[sc1_hometeamindex,])
+  sc1_cornertotals_vec_ht[is.na(sc1_cornertotals_vec_ht)] <- ""
+  sc1_cornertotals_vec_ht <- sc1_cornertotals_vec_ht[sc1_cornertotals_vec_ht != ""]
+  sc1_cornertotals_vec_ht  <-tail(sc1_cornertotals_vec_ht,1)
+  #awayteam
+  sc1_cornertotals_vec_at <- as.vector(sc1_cornertotalsv2[sc1_awayteamindex,])
+  sc1_cornertotals_vec_at[is.na(sc1_cornertotals_vec_at)] <- ""
+  sc1_cornertotals_vec_at <- sc1_cornertotals_vec_at[sc1_cornertotals_vec_at != ""]
+  sc1_cornertotals_vec_at  <-tail(sc1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  sc1_xshotsconversion_vec_ht <- as.vector(sc1_shots_analysis[sc1_hometeamindex,])
+  sc1_xshotsconversion_vec_ht[is.na(sc1_xshotsconversion_vec_ht)] <- ""
+  sc1_xshotsconversion_vec_ht <- sc1_xshotsconversion_vec_ht[sc1_xshotsconversion_vec_ht != ""]
+  sc1_xshotsconversion_vec_ht  <-tail(sc1_xshotsconversion_vec_ht,1)
+  #awayteam
+  sc1_xshotsconversion_vec_at <- as.vector(sc1_shots_analysis[sc1_awayteamindex,])
+  sc1_xshotsconversion_vec_at[is.na(sc1_xshotsconversion_vec_at)] <- ""
+  sc1_xshotsconversion_vec_at <- sc1_xshotsconversion_vec_at[sc1_xshotsconversion_vec_at != ""]
+  sc1_xshotsconversion_vec_at  <-tail(sc1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   sc1_ht_last6points <- sc1_ht_numberof_wins*3 + sc1_ht_numberof_draws*1
@@ -3954,6 +4848,12 @@ for(sc1_row in 1:nrow(SC1_fixtures))
   sc1_HY[sc1_row] <- sc1_yellowtotals_vec_ht
   sc1_AY[sc1_row] <- sc1_yellowtotals_vec_at
 
+  sc1_HCO[sc1_row] <- sc1_cornertotals_vec_ht
+  sc1_ACO[sc1_row] <- sc1_cornertotals_vec_at
+
+  sc1_HXSC[sc1_row] <- sc1_xshotsconversion_vec_ht
+  sc1_AXSC[sc1_row] <- sc1_xshotsconversion_vec_at
+
 }
 
 sc1_prediction <- as.data.frame(sc1_prediction)
@@ -3977,7 +4877,19 @@ colnames(sc1_HY) <- "AVGHY"
 sc1_AY <- as.data.frame(sc1_AY)
 colnames(sc1_AY) <- "AVGAY"
 
-sc1_picks <- cbind(SC1_fixtures$Div,SC1_fixtures$HomeTeam_sc1,SC1_fixtures$AwayTeam_sc1,sc1_prediction,sc1_HWM,sc1_AWM,sc1_HWMLM,sc1_AWMLM,sc1_HY,sc1_AY)
+sc1_HCO <- as.data.frame(sc1_HCO)
+colnames(sc1_HCO) <- "AVGHCO"
+
+sc1_ACO <- as.data.frame(sc1_ACO)
+colnames(sc1_ACO) <- "AVGACO"
+
+sc1_HXSC <- as.data.frame(sc1_HXSC)
+colnames(sc1_HXSC) <- "HXSC"
+
+sc1_AXSC <- as.data.frame(sc1_AXSC)
+colnames(sc1_AXSC) <- "AXSC"
+
+sc1_picks <- cbind(SC1_fixtures$Div,SC1_fixtures$HomeTeam_sc1,SC1_fixtures$AwayTeam_sc1,sc1_prediction,sc1_HWM,sc1_AWM,sc1_HWMLM,sc1_AWMLM,sc1_HY,sc1_AY,sc1_HCO,sc1_ACO,sc1_HXSC,sc1_AXSC)
 
 colnames(sc1_picks)[1] <- "picks_Div"
 colnames(sc1_picks)[2] <- "picks_HomeTeam"
@@ -3997,6 +4909,10 @@ sc2_HWMLM <- c()
 sc2_AWMLM <- c()
 sc2_HY <- c()
 sc2_AY <- c()
+sc2_HCO <- c()
+sc2_ACO <- c()
+sc2_HXSC <- c()
+sc2_AXSC <- c()
 for(sc2_row in 1:nrow(SC2_fixtures))
 {
 
@@ -4138,6 +5054,32 @@ for(sc2_row in 1:nrow(SC2_fixtures))
   sc2_yellowtotals_vec_at  <-tail(sc2_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  sc2_cornertotals_vec_ht <- as.vector(sc2_cornertotalsv2[sc2_hometeamindex,])
+  sc2_cornertotals_vec_ht[is.na(sc2_cornertotals_vec_ht)] <- ""
+  sc2_cornertotals_vec_ht <- sc2_cornertotals_vec_ht[sc2_cornertotals_vec_ht != ""]
+  sc2_cornertotals_vec_ht  <-tail(sc2_cornertotals_vec_ht,1)
+  #awayteam
+  sc2_cornertotals_vec_at <- as.vector(sc2_cornertotalsv2[sc2_awayteamindex,])
+  sc2_cornertotals_vec_at[is.na(sc2_cornertotals_vec_at)] <- ""
+  sc2_cornertotals_vec_at <- sc2_cornertotals_vec_at[sc2_cornertotals_vec_at != ""]
+  sc2_cornertotals_vec_at  <-tail(sc2_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  sc2_xshotsconversion_vec_ht <- as.vector(sc2_shots_analysis[sc2_hometeamindex,])
+  sc2_xshotsconversion_vec_ht[is.na(sc2_xshotsconversion_vec_ht)] <- ""
+  sc2_xshotsconversion_vec_ht <- sc2_xshotsconversion_vec_ht[sc2_xshotsconversion_vec_ht != ""]
+  sc2_xshotsconversion_vec_ht  <-tail(sc2_xshotsconversion_vec_ht,1)
+  #awayteam
+  sc2_xshotsconversion_vec_at <- as.vector(sc2_shots_analysis[sc2_awayteamindex,])
+  sc2_xshotsconversion_vec_at[is.na(sc2_xshotsconversion_vec_at)] <- ""
+  sc2_xshotsconversion_vec_at <- sc2_xshotsconversion_vec_at[sc2_xshotsconversion_vec_at != ""]
+  sc2_xshotsconversion_vec_at  <-tail(sc2_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   sc2_ht_last6points <- sc2_ht_numberof_wins*3 + sc2_ht_numberof_draws*1
@@ -4164,6 +5106,12 @@ for(sc2_row in 1:nrow(SC2_fixtures))
   sc2_HY[sc2_row] <- sc2_yellowtotals_vec_ht
   sc2_AY[sc2_row] <- sc2_yellowtotals_vec_at
 
+  sc2_HCO[sc2_row] <- sc2_cornertotals_vec_ht
+  sc2_ACO[sc2_row] <- sc2_cornertotals_vec_at
+
+  sc2_HXSC[sc2_row] <- sc2_xshotsconversion_vec_ht
+  sc2_AXSC[sc2_row] <- sc2_xshotsconversion_vec_at
+
 }
 
 sc2_prediction <- as.data.frame(sc2_prediction)
@@ -4187,7 +5135,19 @@ colnames(sc2_HY) <- "AVGHY"
 sc2_AY <- as.data.frame(sc2_AY)
 colnames(sc2_AY) <- "AVGAY"
 
-sc2_picks <- cbind(SC2_fixtures$Div,SC2_fixtures$HomeTeam_sc2,SC2_fixtures$AwayTeam_sc2,sc2_prediction,sc2_HWM,sc2_AWM,sc2_HWMLM,sc2_AWMLM,sc2_HY,sc2_AY)
+sc2_HCO <- as.data.frame(sc2_HCO)
+colnames(sc2_HCO) <- "AVGHCO"
+
+sc2_ACO <- as.data.frame(sc2_ACO)
+colnames(sc2_ACO) <- "AVGACO"
+
+sc2_HXSC <- as.data.frame(sc2_HXSC)
+colnames(sc2_HXSC) <- "HXSC"
+
+sc2_AXSC <- as.data.frame(sc2_AXSC)
+colnames(sc2_AXSC) <- "AXSC"
+
+sc2_picks <- cbind(SC2_fixtures$Div,SC2_fixtures$HomeTeam_sc2,SC2_fixtures$AwayTeam_sc2,sc2_prediction,sc2_HWM,sc2_AWM,sc2_HWMLM,sc2_AWMLM,sc2_HY,sc2_AY,sc2_HCO,sc2_ACO,sc2_HXSC,sc2_AXSC)
 
 colnames(sc2_picks)[1] <- "picks_Div"
 colnames(sc2_picks)[2] <- "picks_HomeTeam"
@@ -4207,6 +5167,10 @@ sc3_HWMLM <- c()
 sc3_AWMLM <- c()
 sc3_HY <- c()
 sc3_AY <- c()
+sc3_HCO <- c()
+sc3_ACO <- c()
+sc3_HXSC <- c()
+sc3_AXSC <- c()
 for(sc3_row in 1:nrow(SC3_fixtures))
 {
 
@@ -4348,6 +5312,32 @@ for(sc3_row in 1:nrow(SC3_fixtures))
   sc3_yellowtotals_vec_at  <-tail(sc3_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  sc3_cornertotals_vec_ht <- as.vector(sc3_cornertotalsv2[sc3_hometeamindex,])
+  sc3_cornertotals_vec_ht[is.na(sc3_cornertotals_vec_ht)] <- ""
+  sc3_cornertotals_vec_ht <- sc3_cornertotals_vec_ht[sc3_cornertotals_vec_ht != ""]
+  sc3_cornertotals_vec_ht  <-tail(sc3_cornertotals_vec_ht,1)
+  #awayteam
+  sc3_cornertotals_vec_at <- as.vector(sc3_cornertotalsv2[sc3_awayteamindex,])
+  sc3_cornertotals_vec_at[is.na(sc3_cornertotals_vec_at)] <- ""
+  sc3_cornertotals_vec_at <- sc3_cornertotals_vec_at[sc3_cornertotals_vec_at != ""]
+  sc3_cornertotals_vec_at  <-tail(sc3_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  sc3_xshotsconversion_vec_ht <- as.vector(sc3_shots_analysis[sc3_hometeamindex,])
+  sc3_xshotsconversion_vec_ht[is.na(sc3_xshotsconversion_vec_ht)] <- ""
+  sc3_xshotsconversion_vec_ht <- sc3_xshotsconversion_vec_ht[sc3_xshotsconversion_vec_ht != ""]
+  sc3_xshotsconversion_vec_ht  <-tail(sc3_xshotsconversion_vec_ht,1)
+  #awayteam
+  sc3_xshotsconversion_vec_at <- as.vector(sc3_shots_analysis[sc3_awayteamindex,])
+  sc3_xshotsconversion_vec_at[is.na(sc3_xshotsconversion_vec_at)] <- ""
+  sc3_xshotsconversion_vec_at <- sc3_xshotsconversion_vec_at[sc3_xshotsconversion_vec_at != ""]
+  sc3_xshotsconversion_vec_at  <-tail(sc3_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   sc3_ht_last6points <- sc3_ht_numberof_wins*3 + sc3_ht_numberof_draws*1
@@ -4374,6 +5364,12 @@ for(sc3_row in 1:nrow(SC3_fixtures))
   sc3_HY[sc3_row] <- sc3_yellowtotals_vec_ht
   sc3_AY[sc3_row] <- sc3_yellowtotals_vec_at
 
+  sc3_HCO[sc3_row] <- sc3_cornertotals_vec_ht
+  sc3_ACO[sc3_row] <- sc3_cornertotals_vec_at
+
+  sc3_HXSC[sc3_row] <- sc3_xshotsconversion_vec_ht
+  sc3_AXSC[sc3_row] <- sc3_xshotsconversion_vec_at
+
 }
 
 sc3_prediction <- as.data.frame(sc3_prediction)
@@ -4397,7 +5393,19 @@ colnames(sc3_HY) <- "AVGHY"
 sc3_AY <- as.data.frame(sc3_AY)
 colnames(sc3_AY) <- "AVGAY"
 
-sc3_picks <- cbind(SC3_fixtures$Div,SC3_fixtures$HomeTeam_sc3,SC3_fixtures$AwayTeam_sc3,sc3_prediction,sc3_HWM,sc3_AWM,sc3_HWMLM,sc3_AWMLM,sc3_HY,sc3_AY)
+sc3_HCO <- as.data.frame(sc3_HCO)
+colnames(sc3_HCO) <- "AVGHCO"
+
+sc3_ACO <- as.data.frame(sc3_ACO)
+colnames(sc3_ACO) <- "AVGACO"
+
+sc3_HXSC <- as.data.frame(sc3_HXSC)
+colnames(sc3_HXSC) <- "HXSC"
+
+sc3_AXSC <- as.data.frame(sc3_AXSC)
+colnames(sc3_AXSC) <- "AXSC"
+
+sc3_picks <- cbind(SC3_fixtures$Div,SC3_fixtures$HomeTeam_sc3,SC3_fixtures$AwayTeam_sc3,sc3_prediction,sc3_HWM,sc3_AWM,sc3_HWMLM,sc3_AWMLM,sc3_HY,sc3_AY,sc3_HCO,sc3_ACO,sc3_HXSC,sc3_AXSC)
 
 colnames(sc3_picks)[1] <- "picks_Div"
 colnames(sc3_picks)[2] <- "picks_HomeTeam"
@@ -4417,6 +5425,10 @@ t1_HWMLM <- c()
 t1_AWMLM <- c()
 t1_HY <- c()
 t1_AY <- c()
+t1_HCO <- c()
+t1_ACO <- c()
+t1_HXSC <- c()
+t1_AXSC <- c()
 for(t1_row in 1:nrow(T1_fixtures))
 {
 
@@ -4558,6 +5570,32 @@ for(t1_row in 1:nrow(T1_fixtures))
   t1_yellowtotals_vec_at  <-tail(t1_yellowtotals_vec_at,1)
 
   #################################################################################
+  #pick average corners
+  #hometeam
+  t1_cornertotals_vec_ht <- as.vector(t1_cornertotalsv2[t1_hometeamindex,])
+  t1_cornertotals_vec_ht[is.na(t1_cornertotals_vec_ht)] <- ""
+  t1_cornertotals_vec_ht <- t1_cornertotals_vec_ht[t1_cornertotals_vec_ht != ""]
+  t1_cornertotals_vec_ht  <-tail(t1_cornertotals_vec_ht,1)
+  #awayteam
+  t1_cornertotals_vec_at <- as.vector(t1_cornertotalsv2[t1_awayteamindex,])
+  t1_cornertotals_vec_at[is.na(t1_cornertotals_vec_at)] <- ""
+  t1_cornertotals_vec_at <- t1_cornertotals_vec_at[t1_cornertotals_vec_at != ""]
+  t1_cornertotals_vec_at  <-tail(t1_cornertotals_vec_at,1)
+  #################################################################################
+  #pick xpected shots conversion
+  #hometeam
+  t1_xshotsconversion_vec_ht <- as.vector(t1_shots_analysis[t1_hometeamindex,])
+  t1_xshotsconversion_vec_ht[is.na(t1_xshotsconversion_vec_ht)] <- ""
+  t1_xshotsconversion_vec_ht <- t1_xshotsconversion_vec_ht[t1_xshotsconversion_vec_ht != ""]
+  t1_xshotsconversion_vec_ht  <-tail(t1_xshotsconversion_vec_ht,1)
+  #awayteam
+  t1_xshotsconversion_vec_at <- as.vector(t1_shots_analysis[t1_awayteamindex,])
+  t1_xshotsconversion_vec_at[is.na(t1_xshotsconversion_vec_at)] <- ""
+  t1_xshotsconversion_vec_at <- t1_xshotsconversion_vec_at[t1_xshotsconversion_vec_at != ""]
+  t1_xshotsconversion_vec_at  <-tail(t1_xshotsconversion_vec_at,1)
+  #################################################################################
+
+
   ####we need to decide ############
   #winner goals
   t1_ht_last6points <- t1_ht_numberof_wins*3 + t1_ht_numberof_draws*1
@@ -4584,6 +5622,12 @@ for(t1_row in 1:nrow(T1_fixtures))
   t1_HY[t1_row] <- t1_yellowtotals_vec_ht
   t1_AY[t1_row] <- t1_yellowtotals_vec_at
 
+  t1_HCO[t1_row] <- t1_cornertotals_vec_ht
+  t1_ACO[t1_row] <- t1_cornertotals_vec_at
+
+  t1_HXSC[t1_row] <- t1_xshotsconversion_vec_ht
+  t1_AXSC[t1_row] <- t1_xshotsconversion_vec_at
+
 }
 
 t1_prediction <- as.data.frame(t1_prediction)
@@ -4607,7 +5651,19 @@ colnames(t1_HY) <- "AVGHY"
 t1_AY <- as.data.frame(t1_AY)
 colnames(t1_AY) <- "AVGAY"
 
-t1_picks <- cbind(T1_fixtures$Div,T1_fixtures$HomeTeam_t1,T1_fixtures$AwayTeam_t1,t1_prediction,t1_HWM,t1_AWM,t1_HWMLM,t1_AWMLM,t1_HY,t1_AY)
+t1_HCO <- as.data.frame(t1_HCO)
+colnames(t1_HCO) <- "AVGHCO"
+
+t1_ACO <- as.data.frame(t1_ACO)
+colnames(t1_ACO) <- "AVGACO"
+
+t1_HXSC <- as.data.frame(t1_HXSC)
+colnames(t1_HXSC) <- "HXSC"
+
+t1_AXSC <- as.data.frame(t1_AXSC)
+colnames(t1_AXSC) <- "AXSC"
+
+t1_picks <- cbind(T1_fixtures$Div,T1_fixtures$HomeTeam_t1,T1_fixtures$AwayTeam_t1,t1_prediction,t1_HWM,t1_AWM,t1_HWMLM,t1_AWMLM,t1_HY,t1_AY,t1_HCO,t1_ACO,t1_HXSC,t1_AXSC)
 
 colnames(t1_picks)[1] <- "picks_Div"
 colnames(t1_picks)[2] <- "picks_HomeTeam"
@@ -4636,5 +5692,4 @@ write.csv(picks_fixtures_prediction,'picks_fixtures_prediction.csv')
 ###########################
 #reset allteams20222023picks
 rm(allteams20222023picks)
-
 

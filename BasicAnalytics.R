@@ -958,10 +958,49 @@ allteams_2010present <- read.csv('../FDAS/allteams2010-present.csv')
 nrow(allteams_2010present[allteams_2010present$CS == "1-0",])
 #############################################################################################
 
+#spread analysis
+allteams20222023SOTSPREADS <- read.csv('../Documents/allteams20222023SOTSPREADS.csv')
 
-currencis <- c(1:135)
-combinedcurrencis <- paste0(paste0("'", currencis, "'"), collapse = ", ")
-combinedcurrencis
+df <- allteams20222023SOTSPREADS[allteams20222023SOTSPREADS$HomeTeam == "Alaves" | allteams20222023SOTSPREADS$AwayTeam == "Alaves",]
+df2 <- allteams20222023SOTSPREADS[allteams20222023SOTSPREADS$HomeTeam == "Levante" | allteams20222023SOTSPREADS$AwayTeam == "Levante",]
+
+mean(df2$GoalsXCorners)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

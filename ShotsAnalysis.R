@@ -67,10 +67,12 @@ b1_conceding_conversion <- merge(b1_tsc,b1_conceding,by='Group.1',all = T)
 b1_conceding_conversion$HSCC <- percent(b1_conceding_conversion$TFthc/b1_conceding_conversion$hsc, accuracy = 0.01)
 b1_conceding_conversion$ASCC <- percent(b1_conceding_conversion$TFtac/b1_conceding_conversion$asc, accuracy = 0.01)
 b1_conceding_conversion$TSCC <- percent(b1_conceding_conversion$TGC/b1_conceding_conversion$TSC, accuracy = 0.01)
+b1_conceding_conversion$XSTC <- round(b1_scoring$TGS/(b1_tst$TST - b1_scoring$TGS), digits = 2)
 
 #merge the two parts
 b1_shots_analysis <- merge(b1_scoring_conversion,b1_conceding_conversion,by='Group.1',all = T)
 ################################################################################################
+b1_shots_analysis
 #D1
 #home goals scored
 d1_home_gs <- aggregate(D1$FTHG, by = list(D1$HomeTeam), FUN = sum)
@@ -134,6 +136,7 @@ d1_conceding_conversion <- merge(d1_tsc,d1_conceding,by='Group.1',all = T)
 d1_conceding_conversion$HSCC <- percent(d1_conceding_conversion$TFthc/d1_conceding_conversion$hsc, accuracy = 0.01)
 d1_conceding_conversion$ASCC <- percent(d1_conceding_conversion$TFtac/d1_conceding_conversion$asc, accuracy = 0.01)
 d1_conceding_conversion$TSCC <- percent(d1_conceding_conversion$TGC/d1_conceding_conversion$TSC, accuracy = 0.01)
+d1_conceding_conversion$XSTC <- round(d1_scoring$TGS/(d1_tst$TST - d1_scoring$TGS), digits = 2)
 
 #merge the two parts
 d1_shots_analysis <- merge(d1_scoring_conversion,d1_conceding_conversion,by='Group.1',all = T)
@@ -267,10 +270,11 @@ d2_conceding_conversion <- merge(d2_tsc,d2_conceding,by='Group.1',all = T)
 d2_conceding_conversion$HSCC <- percent(d2_conceding_conversion$TFthc/d2_conceding_conversion$hsc, accuracy = 0.01)
 d2_conceding_conversion$ASCC <- percent(d2_conceding_conversion$TFtac/d2_conceding_conversion$asc, accuracy = 0.01)
 d2_conceding_conversion$TSCC <- percent(d2_conceding_conversion$TGC/d2_conceding_conversion$TSC, accuracy = 0.01)
+d2_conceding_conversion$XSTC <- round(d2_scoring$TGS/(d2_tst$TST - d2_scoring$TGS), digits = 2)
 
 #merge the two parts
 d2_shots_analysis <- merge(d2_scoring_conversion,d2_conceding_conversion,by='Group.1',all = T)
-
+##############################################################################################################################
 #E0
 #home goals scored
 e0_home_gs <- aggregate(E0$FTHG, by = list(E0$HomeTeam), FUN = sum)
@@ -400,9 +404,12 @@ e0_conceding_conversion <- merge(e0_tsc,e0_conceding,by='Group.1',all = T)
 e0_conceding_conversion$HSCC <- percent(e0_conceding_conversion$TFthc/e0_conceding_conversion$hsc, accuracy = 0.01)
 e0_conceding_conversion$ASCC <- percent(e0_conceding_conversion$TFtac/e0_conceding_conversion$asc, accuracy = 0.01)
 e0_conceding_conversion$TSCC <- percent(e0_conceding_conversion$TGC/e0_conceding_conversion$TSC, accuracy = 0.01)
+e0_conceding_conversion$XSTC <- round(e0_scoring$TGS/(e0_tst$TST - e0_scoring$TGS), digits = 2)
+
 
 #merge the two parts
 e0_shots_analysis <- merge(e0_scoring_conversion,e0_conceding_conversion,by='Group.1',all = T)
+#############################################################################################################################
 #E1
 #home goals scored
 e1_home_gs <- aggregate(E1$FTHG, by = list(E1$HomeTeam), FUN = sum)
@@ -532,10 +539,11 @@ e1_conceding_conversion <- merge(e1_tsc,e1_conceding,by='Group.1',all = T)
 e1_conceding_conversion$HSCC <- percent(e1_conceding_conversion$TFthc/e1_conceding_conversion$hsc, accuracy = 0.01)
 e1_conceding_conversion$ASCC <- percent(e1_conceding_conversion$TFtac/e1_conceding_conversion$asc, accuracy = 0.01)
 e1_conceding_conversion$TSCC <- percent(e1_conceding_conversion$TGC/e1_conceding_conversion$TSC, accuracy = 0.01)
+e1_conceding_conversion$XSTC <- round(e1_scoring$TGS/(e1_tst$TST - e1_scoring$TGS), digits = 2)
 
 #merge the two parts
 e1_shots_analysis <- merge(e1_scoring_conversion,e1_conceding_conversion,by='Group.1',all = T)
-
+#################################################################################################################################
 #E2
 #home goals scored
 e2_home_gs <- aggregate(E2$FTHG, by = list(E2$HomeTeam), FUN = sum)
@@ -665,10 +673,11 @@ e2_conceding_conversion <- merge(e2_tsc,e2_conceding,by='Group.1',all = T)
 e2_conceding_conversion$HSCC <- percent(e2_conceding_conversion$TFthc/e2_conceding_conversion$hsc, accuracy = 0.01)
 e2_conceding_conversion$ASCC <- percent(e2_conceding_conversion$TFtac/e2_conceding_conversion$asc, accuracy = 0.01)
 e2_conceding_conversion$TSCC <- percent(e2_conceding_conversion$TGC/e2_conceding_conversion$TSC, accuracy = 0.01)
+e2_conceding_conversion$XSTC <- round(e2_scoring$TGS/(e2_tst$TST - e2_scoring$TGS), digits = 2)
 
 #merge the two parts
 e2_shots_analysis <- merge(e2_scoring_conversion,e2_conceding_conversion,by='Group.1',all = T)
-
+###############################################################################################################################
 #E3
 #home goals scored
 e3_home_gs <- aggregate(E3$FTHG, by = list(E3$HomeTeam), FUN = sum)
@@ -798,10 +807,11 @@ e3_conceding_conversion <- merge(e3_tsc,e3_conceding,by='Group.1',all = T)
 e3_conceding_conversion$HSCC <- percent(e3_conceding_conversion$TFthc/e3_conceding_conversion$hsc, accuracy = 0.01)
 e3_conceding_conversion$ASCC <- percent(e3_conceding_conversion$TFtac/e3_conceding_conversion$asc, accuracy = 0.01)
 e3_conceding_conversion$TSCC <- percent(e3_conceding_conversion$TGC/e3_conceding_conversion$TSC, accuracy = 0.01)
+e3_conceding_conversion$XSTC <- round(e3_scoring$TGS/(e3_tst$TST - e3_scoring$TGS), digits = 2)
 
 #merge the two parts
 e3_shots_analysis <- merge(e3_scoring_conversion,e3_conceding_conversion,by='Group.1',all = T)
-
+################################################################################################################################
 #EC
 #home goals scored
 ec_home_gs <- aggregate(EC$FTHG, by = list(EC$HomeTeam), FUN = sum)
@@ -931,10 +941,11 @@ ec_conceding_conversion <- merge(ec_tsc,ec_conceding,by='Group.1',all = T)
 ec_conceding_conversion$HSCC <- percent(ec_conceding_conversion$TFthc/ec_conceding_conversion$hsc, accuracy = 0.01)
 ec_conceding_conversion$ASCC <- percent(ec_conceding_conversion$TFtac/ec_conceding_conversion$asc, accuracy = 0.01)
 ec_conceding_conversion$TSCC <- percent(ec_conceding_conversion$TGC/ec_conceding_conversion$TSC, accuracy = 0.01)
+ec_conceding_conversion$XSTC <- round(ec_scoring$TGS/(ec_tst$TST - ec_scoring$TGS), digits = 2)
 
 #merge the two parts
 ec_shots_analysis <- merge(ec_scoring_conversion,ec_conceding_conversion,by='Group.1',all = T)
-
+################################################################################################################################
 #F1
 #home goals scored
 f1_home_gs <- aggregate(F1$FTHG, by = list(F1$HomeTeam), FUN = sum)
@@ -1064,10 +1075,11 @@ f1_conceding_conversion <- merge(f1_tsc,f1_conceding,by='Group.1',all = T)
 f1_conceding_conversion$HSCC <- percent(f1_conceding_conversion$TFthc/f1_conceding_conversion$hsc, accuracy = 0.01)
 f1_conceding_conversion$ASCC <- percent(f1_conceding_conversion$TFtac/f1_conceding_conversion$asc, accuracy = 0.01)
 f1_conceding_conversion$TSCC <- percent(f1_conceding_conversion$TGC/f1_conceding_conversion$TSC, accuracy = 0.01)
+f1_conceding_conversion$XSTC <- round(f1_scoring$TGS/(f1_tst$TST - f1_scoring$TGS), digits = 2)
 
 #merge the two parts
 f1_shots_analysis <- merge(f1_scoring_conversion,f1_conceding_conversion,by='Group.1',all = T)
-
+#############################################################################################################################
 #F2
 #home goals scored
 f2_home_gs <- aggregate(F2$FTHG, by = list(F2$HomeTeam), FUN = sum)
@@ -1197,10 +1209,11 @@ f2_conceding_conversion <- merge(f2_tsc,f2_conceding,by='Group.1',all = T)
 f2_conceding_conversion$HSCC <- percent(f2_conceding_conversion$TFthc/f2_conceding_conversion$hsc, accuracy = 0.01)
 f2_conceding_conversion$ASCC <- percent(f2_conceding_conversion$TFtac/f2_conceding_conversion$asc, accuracy = 0.01)
 f2_conceding_conversion$TSCC <- percent(f2_conceding_conversion$TGC/f2_conceding_conversion$TSC, accuracy = 0.01)
+f2_conceding_conversion$XSTC <- round(f2_scoring$TGS/(f2_tst$TST - f2_scoring$TGS), digits = 2)
 
 #merge the two parts
 f2_shots_analysis <- merge(f2_scoring_conversion,f2_conceding_conversion,by='Group.1',all = T)
-
+###########################################################################################################################
 #G1
 #home goals scored
 g1_home_gs <- aggregate(G1$FTHG, by = list(G1$HomeTeam), FUN = sum)
@@ -1330,10 +1343,11 @@ g1_conceding_conversion <- merge(g1_tsc,g1_conceding,by='Group.1',all = T)
 g1_conceding_conversion$HSCC <- percent(g1_conceding_conversion$TFthc/g1_conceding_conversion$hsc, accuracy = 0.01)
 g1_conceding_conversion$ASCC <- percent(g1_conceding_conversion$TFtac/g1_conceding_conversion$asc, accuracy = 0.01)
 g1_conceding_conversion$TSCC <- percent(g1_conceding_conversion$TGC/g1_conceding_conversion$TSC, accuracy = 0.01)
+g1_conceding_conversion$XSTC <- round(g1_scoring$TGS/(g1_tst$TST - g1_scoring$TGS), digits = 2)
 
 #merge the two parts
 g1_shots_analysis <- merge(g1_scoring_conversion,g1_conceding_conversion,by='Group.1',all = T)
-
+###############################################################################################################################
 #I1
 #home goals scored
 i1_home_gs <- aggregate(I1$FTHG, by = list(I1$HomeTeam), FUN = sum)
@@ -1463,10 +1477,11 @@ i1_conceding_conversion <- merge(i1_tsc,i1_conceding,by='Group.1',all = T)
 i1_conceding_conversion$HSCC <- percent(i1_conceding_conversion$TFthc/i1_conceding_conversion$hsc, accuracy = 0.01)
 i1_conceding_conversion$ASCC <- percent(i1_conceding_conversion$TFtac/i1_conceding_conversion$asc, accuracy = 0.01)
 i1_conceding_conversion$TSCC <- percent(i1_conceding_conversion$TGC/i1_conceding_conversion$TSC, accuracy = 0.01)
+i1_conceding_conversion$XSTC <- round(i1_scoring$TGS/(i1_tst$TST - i1_scoring$TGS), digits = 2)
 
 #merge the two parts
 i1_shots_analysis <- merge(i1_scoring_conversion,i1_conceding_conversion,by='Group.1',all = T)
-
+#########################################################################################################################
 #I2
 #home goals scored
 i2_home_gs <- aggregate(I2$FTHG, by = list(I2$HomeTeam), FUN = sum)
@@ -1596,10 +1611,11 @@ i2_conceding_conversion <- merge(i2_tsc,i2_conceding,by='Group.1',all = T)
 i2_conceding_conversion$HSCC <- percent(i2_conceding_conversion$TFthc/i2_conceding_conversion$hsc, accuracy = 0.01)
 i2_conceding_conversion$ASCC <- percent(i2_conceding_conversion$TFtac/i2_conceding_conversion$asc, accuracy = 0.01)
 i2_conceding_conversion$TSCC <- percent(i2_conceding_conversion$TGC/i2_conceding_conversion$TSC, accuracy = 0.01)
+i2_conceding_conversion$XSTC <- round(i2_scoring$TGS/(i2_tst$TST - i2_scoring$TGS), digits = 2)
 
 #merge the two parts
 i2_shots_analysis <- merge(i2_scoring_conversion,i2_conceding_conversion,by='Group.1',all = T)
-
+###############################################################################################################################
 #N1
 #home goals scored
 n1_home_gs <- aggregate(N1$FTHG, by = list(N1$HomeTeam), FUN = sum)
@@ -1729,10 +1745,11 @@ n1_conceding_conversion <- merge(n1_tsc,n1_conceding,by='Group.1',all = T)
 n1_conceding_conversion$HSCC <- percent(n1_conceding_conversion$TFthc/n1_conceding_conversion$hsc, accuracy = 0.01)
 n1_conceding_conversion$ASCC <- percent(n1_conceding_conversion$TFtac/n1_conceding_conversion$asc, accuracy = 0.01)
 n1_conceding_conversion$TSCC <- percent(n1_conceding_conversion$TGC/n1_conceding_conversion$TSC, accuracy = 0.01)
+n1_conceding_conversion$XSTC <- round(n1_scoring$TGS/(n1_tst$TST - n1_scoring$TGS), digits = 2)
 
 #merge the two parts
 n1_shots_analysis <- merge(n1_scoring_conversion,n1_conceding_conversion,by='Group.1',all = T)
-
+################################################################################################################################
 #P1
 #home goals scored
 p1_home_gs <- aggregate(P1$FTHG, by = list(P1$HomeTeam), FUN = sum)
@@ -1862,10 +1879,11 @@ p1_conceding_conversion <- merge(p1_tsc,p1_conceding,by='Group.1',all = T)
 p1_conceding_conversion$HSCC <- percent(p1_conceding_conversion$TFthc/p1_conceding_conversion$hsc, accuracy = 0.01)
 p1_conceding_conversion$ASCC <- percent(p1_conceding_conversion$TFtac/p1_conceding_conversion$asc, accuracy = 0.01)
 p1_conceding_conversion$TSCC <- percent(p1_conceding_conversion$TGC/p1_conceding_conversion$TSC, accuracy = 0.01)
+p1_conceding_conversion$XSTC <- round(p1_scoring$TGS/(p1_tst$TST - p1_scoring$TGS), digits = 2)
 
 #merge the two parts
 p1_shots_analysis <- merge(p1_scoring_conversion,p1_conceding_conversion,by='Group.1',all = T)
-
+##########################################################################################################################
 #SC0
 #home goals scored
 sc0_home_gs <- aggregate(SC0$FTHG, by = list(SC0$HomeTeam), FUN = sum)
@@ -1995,10 +2013,11 @@ sc0_conceding_conversion <- merge(sc0_tsc,sc0_conceding,by='Group.1',all = T)
 sc0_conceding_conversion$HSCC <- percent(sc0_conceding_conversion$TFthc/sc0_conceding_conversion$hsc, accuracy = 0.01)
 sc0_conceding_conversion$ASCC <- percent(sc0_conceding_conversion$TFtac/sc0_conceding_conversion$asc, accuracy = 0.01)
 sc0_conceding_conversion$TSCC <- percent(sc0_conceding_conversion$TGC/sc0_conceding_conversion$TSC, accuracy = 0.01)
+sc0_conceding_conversion$XSTC <- round(sc0_scoring$TGS/(sc0_tst$TST - sc0_scoring$TGS), digits = 2)
 
 #merge the two parts
 sc0_shots_analysis <- merge(sc0_scoring_conversion,sc0_conceding_conversion,by='Group.1',all = T)
-
+#######################################################################################################################################
 #SC1
 #home goals scored
 sc1_home_gs <- aggregate(SC1$FTHG, by = list(SC1$HomeTeam), FUN = sum)
@@ -2128,10 +2147,11 @@ sc1_conceding_conversion <- merge(sc1_tsc,sc1_conceding,by='Group.1',all = T)
 sc1_conceding_conversion$HSCC <- percent(sc1_conceding_conversion$TFthc/sc1_conceding_conversion$hsc, accuracy = 0.01)
 sc1_conceding_conversion$ASCC <- percent(sc1_conceding_conversion$TFtac/sc1_conceding_conversion$asc, accuracy = 0.01)
 sc1_conceding_conversion$TSCC <- percent(sc1_conceding_conversion$TGC/sc1_conceding_conversion$TSC, accuracy = 0.01)
+sc1_conceding_conversion$XSTC <- round(sc1_scoring$TGS/(sc1_tst$TST - sc1_scoring$TGS), digits = 2)
 
 #merge the two parts
 sc1_shots_analysis <- merge(sc1_scoring_conversion,sc1_conceding_conversion,by='Group.1',all = T)
-
+########################################################################################################################################
 #SC2
 #home goals scored
 sc2_home_gs <- aggregate(SC2$FTHG, by = list(SC2$HomeTeam), FUN = sum)
@@ -2262,10 +2282,11 @@ sc2_conceding_conversion <- merge(sc2_tsc,sc2_conceding,by='Group.1',all = T)
 sc2_conceding_conversion$HSCC <- percent(sc2_conceding_conversion$TFthc/sc2_conceding_conversion$hsc, accuracy = 0.01)
 sc2_conceding_conversion$ASCC <- percent(sc2_conceding_conversion$TFtac/sc2_conceding_conversion$asc, accuracy = 0.01)
 sc2_conceding_conversion$TSCC <- percent(sc2_conceding_conversion$TGC/sc2_conceding_conversion$TSC, accuracy = 0.01)
+sc2_conceding_conversion$XSTC <- round(sc2_scoring$TGS/(sc2_tst$TST - sc2_scoring$TGS), digits = 2)
 
 #merge the two parts
 sc2_shots_analysis <- merge(sc2_scoring_conversion,sc2_conceding_conversion,by='Group.1',all = T)
-
+##############################################################################################################################
 #SC3
 #home goals scored
 sc3_home_gs <- aggregate(SC3$FTHG, by = list(SC3$HomeTeam), FUN = sum)
@@ -2395,10 +2416,11 @@ sc3_conceding_conversion <- merge(sc3_tsc,sc3_conceding,by='Group.1',all = T)
 sc3_conceding_conversion$HSCC <- percent(sc3_conceding_conversion$TFthc/sc3_conceding_conversion$hsc, accuracy = 0.01)
 sc3_conceding_conversion$ASCC <- percent(sc3_conceding_conversion$TFtac/sc3_conceding_conversion$asc, accuracy = 0.01)
 sc3_conceding_conversion$TSCC <- percent(sc3_conceding_conversion$TGC/sc3_conceding_conversion$TSC, accuracy = 0.01)
+sc3_conceding_conversion$XSTC <- round(sc3_scoring$TGS/(sc3_tst$TST - sc3_scoring$TGS), digits = 2)
 
 #merge the two parts
 sc3_shots_analysis <- merge(sc3_scoring_conversion,sc3_conceding_conversion,by='Group.1',all = T)
-
+#######################################################################################################################################
 #SP1
 #home goals scored
 sp1_home_gs <- aggregate(SP1$FTHG, by = list(SP1$HomeTeam), FUN = sum)
@@ -2528,10 +2550,11 @@ sp1_conceding_conversion <- merge(sp1_tsc,sp1_conceding,by='Group.1',all = T)
 sp1_conceding_conversion$HSCC <- percent(sp1_conceding_conversion$TFthc/sp1_conceding_conversion$hsc, accuracy = 0.01)
 sp1_conceding_conversion$ASCC <- percent(sp1_conceding_conversion$TFtac/sp1_conceding_conversion$asc, accuracy = 0.01)
 sp1_conceding_conversion$TSCC <- percent(sp1_conceding_conversion$TGC/sp1_conceding_conversion$TSC, accuracy = 0.01)
+sp1_conceding_conversion$XSTC <- round(sp1_scoring$TGS/(sp1_tst$TST - sp1_scoring$TGS), digits = 2)
 
 #merge the two parts
 sp1_shots_analysis <- merge(sp1_scoring_conversion,sp1_conceding_conversion,by='Group.1',all = T)
-
+###############################################################################################################################
 #SP2
 #home goals scored
 sp2_home_gs <- aggregate(SP2$FTHG, by = list(SP2$HomeTeam), FUN = sum)
@@ -2661,10 +2684,11 @@ sp2_conceding_conversion <- merge(sp2_tsc,sp2_conceding,by='Group.1',all = T)
 sp2_conceding_conversion$HSCC <- percent(sp2_conceding_conversion$TFthc/sp2_conceding_conversion$hsc, accuracy = 0.01)
 sp2_conceding_conversion$ASCC <- percent(sp2_conceding_conversion$TFtac/sp2_conceding_conversion$asc, accuracy = 0.01)
 sp2_conceding_conversion$TSCC <- percent(sp2_conceding_conversion$TGC/sp2_conceding_conversion$TSC, accuracy = 0.01)
+sp2_conceding_conversion$XSTC <- round(sp2_scoring$TGS/(sp2_tst$TST - sp2_scoring$TGS), digits = 2)
 
 #merge the two parts
 sp2_shots_analysis <- merge(sp2_scoring_conversion,sp2_conceding_conversion,by='Group.1',all = T)
-
+###################################################################################################################################
 #T1
 #home goals scored
 t1_home_gs <- aggregate(T1$FTHG, by = list(T1$HomeTeam), FUN = sum)
@@ -2794,6 +2818,7 @@ t1_conceding_conversion <- merge(t1_tsc,t1_conceding,by='Group.1',all = T)
 t1_conceding_conversion$HSCC <- percent(t1_conceding_conversion$TFthc/t1_conceding_conversion$hsc, accuracy = 0.01)
 t1_conceding_conversion$ASCC <- percent(t1_conceding_conversion$TFtac/t1_conceding_conversion$asc, accuracy = 0.01)
 t1_conceding_conversion$TSCC <- percent(t1_conceding_conversion$TGC/t1_conceding_conversion$TSC, accuracy = 0.01)
+t1_conceding_conversion$XSTC <- round(t1_scoring$TGS/(t1_tst$TST - t1_scoring$TGS), digits = 2)
 
 #merge the two parts
 t1_shots_analysis <- merge(t1_scoring_conversion,t1_conceding_conversion,by='Group.1',all = T)
@@ -2821,4 +2846,3 @@ t1_shots_analysis <- merge(t1_scoring_conversion,t1_conceding_conversion,by='Gro
 # write.xlsx(sp1_shots_analysis,'ShotsAnalysis.xlsx',sheetName = "SP1", append = TRUE)
 # write.xlsx(sp2_shots_analysis,'ShotsAnalysis.xlsx',sheetName = "SP2", append = TRUE)
 # write.xlsx(t1_shots_analysis,'ShotsAnalysis.xlsx',sheetName = "T1", append = TRUE)
-

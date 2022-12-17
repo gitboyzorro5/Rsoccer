@@ -2,8 +2,10 @@
 #load the data
 source("divisions.R")
 source("GoalTotalsV2.R")
+source("CornerTotalsV2.R")
 source("GSmatrix.R")
 source("GCmatrix.R")
+source("CornerMatrix.R")
 source("WinMargin.R")
 source("YCmatrix.R")
 source("RCmatrix.R")
@@ -31,4 +33,7 @@ source("RoundMatrix.R")
 source("LastSix.R")
 source("LeagueFixtures.R")
 source("TableSimulation.R")
+
+
+e1_totalgoa
 

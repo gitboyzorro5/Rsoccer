@@ -8,6 +8,7 @@ allteams20222023$Date <- dmy(allteams20222023$Date)
 allteams20222023 <- allteams20222023[order(as.Date(allteams20222023$Date, format = "%d/%m/%Y"), decreasing = FALSE),]
 #calculate total goals
 allteams20222023$TG <- allteams20222023$FTHG + allteams20222023$FTAG
+allteams20222023$TC <- allteams20222023$HCO + allteams20222023$ACO
 allteams20222023$OV15 <- ifelse(allteams20222023$TG >= 2,"Y","N")
 allteams20222023$OV25 <- ifelse(allteams20222023$TG >= 3,"Y","N")
 allteams20222023$OV35 <- ifelse(allteams20222023$TG >= 4,"Y","N")

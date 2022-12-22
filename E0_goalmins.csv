@@ -1,0 +1,147 @@
+,matchid,goalmins,n
+1,AFC Bournemouth-Arsenal,70,3
+2,AFC Bournemouth-Aston Villa,82,2
+3,AFC Bournemouth-Everton,112,3
+4,AFC Bournemouth-Leicester City,149,3
+5,AFC Bournemouth-Southampton,9,1
+6,AFC Bournemouth-Tottenham Hotspur,291,5
+7,Arsenal-Aston Villa,181,3
+8,Arsenal-Fulham,206,3
+9,Arsenal-Leicester City,315,6
+10,Arsenal-Liverpool,209,5
+11,Arsenal-Nottingham Forest,241,5
+12,Arsenal-Tottenham Hotspur,167,4
+13,Aston Villa-Brentford,82,4
+14,Aston Villa-Chelsea,71,2
+15,Aston Villa-Everton,204,3
+16,Aston Villa-Manchester City,124,2
+17,Aston Villa-Manchester United,112,4
+18,Aston Villa-Southampton,41,1
+19,Aston Villa-West Ham United,74,1
+20,Brentford-Arsenal,94,3
+21,Brentford-Brighton & Hove Albion,91,2
+22,Brentford-Everton,108,2
+23,Brentford-Leeds United,425,7
+24,Brentford-Manchester United,93,4
+25,Brentford-Wolverhampton Wanderers,102,2
+26,Brighton & Hove Albion-Aston Villa,75,3
+27,Brighton & Hove Albion-Chelsea,199,5
+28,Brighton & Hove Albion-Leeds United,66,1
+29,Brighton & Hove Albion-Leicester City,284,7
+30,Brighton & Hove Albion-Tottenham Hotspur,22,1
+31,Chelsea-Arsenal,63,1
+32,Chelsea-Leicester City,176,3
+33,Chelsea-Manchester United,177,2
+34,Chelsea-Tottenham Hotspur,254,4
+35,Chelsea-West Ham United,226,3
+36,Chelsea-Wolverhampton Wanderers,188,3
+37,Crystal Palace-Arsenal,105,2
+38,Crystal Palace-Aston Villa,141,4
+39,Crystal Palace-Brentford,147,2
+40,Crystal Palace-Chelsea,135,3
+41,Crystal Palace-Leeds United,110,3
+42,Crystal Palace-Southampton,38,1
+43,Crystal Palace-Wolverhampton Wanderers,148,3
+44,Everton-Chelsea,45,1
+45,Everton-Crystal Palace,158,3
+46,Everton-Leicester City,131,2
+47,Everton-Manchester United,64,3
+48,Everton-Nottingham Forest,169,2
+49,Everton-West Ham United,53,1
+50,Fulham-AFC Bournemouth,105,4
+51,Fulham-Aston Villa,188,3
+52,Fulham-Brentford,226,5
+53,Fulham-Brighton & Hove Albion,163,3
+54,Fulham-Liverpool,248,4
+55,Fulham-Manchester United,165,3
+56,Fulham-Newcastle United,232,5
+57,Leeds United-AFC Bournemouth,289,7
+58,Leeds United-Arsenal,35,1
+59,Leeds United-Chelsea,139,3
+60,Leeds United-Everton,72,2
+61,Leeds United-Fulham,294,5
+62,Leeds United-Wolverhampton Wanderers,104,3
+63,Leicester City-Brentford,227,4
+64,Leicester City-Leeds United,51,2
+65,Leicester City-Manchester City,49,1
+66,Leicester City-Manchester United,23,1
+67,Leicester City-Nottingham Forest,160,4
+68,Leicester City-Southampton,206,3
+69,Liverpool-AFC Bournemouth,386,9
+70,Liverpool-Brighton & Hove Albion,254,6
+71,Liverpool-Crystal Palace,93,2
+72,Liverpool-Leeds United,107,3
+73,Liverpool-Manchester City,76,1
+74,Liverpool-Newcastle United,189,3
+75,Liverpool-Southampton,78,4
+76,Liverpool-West Ham United,22,1
+77,Manchester City-AFC Bournemouth,166,4
+78,Manchester City-Brentford,151,3
+79,Manchester City-Brighton & Hove Albion,193,4
+80,Manchester City-Crystal Palace,291,6
+81,Manchester City-Fulham,134,3
+82,Manchester City-Manchester United,490,9
+83,Manchester City-Nottingham Forest,275,6
+84,Manchester City-Southampton,166,4
+85,Manchester United-Arsenal,236,4
+86,Manchester United-Brighton & Hove Albion,137,3
+87,Manchester United-Liverpool,150,3
+88,Manchester United-Tottenham Hotspur,116,2
+89,Manchester United-West Ham United,38,1
+90,Newcastle United-AFC Bournemouth,129,2
+91,Newcastle United-Aston Villa,227,4
+92,Newcastle United-Brentford,331,6
+93,Newcastle United-Chelsea,67,1
+94,Newcastle United-Everton,30,1
+95,Newcastle United-Manchester City,251,6
+96,Newcastle United-Nottingham Forest,136,2
+97,Nottingham Forest-AFC Bournemouth,279,5
+98,Nottingham Forest-Aston Villa,37,2
+99,Nottingham Forest-Brentford,230,4
+100,Nottingham Forest-Crystal Palace,54,1
+101,Nottingham Forest-Fulham,259,5
+102,Nottingham Forest-Liverpool,55,1
+103,Nottingham Forest-Tottenham Hotspur,86,2
+104,Nottingham Forest-West Ham United,45,1
+105,Southampton-Arsenal,76,2
+106,Southampton-Chelsea,96,3
+107,Southampton-Everton,155,3
+108,Southampton-Leeds United,259,4
+109,Southampton-Manchester United,55,1
+110,Southampton-Newcastle United,334,5
+111,Southampton-West Ham United,84,2
+112,Tottenham Hotspur-Everton,145,2
+113,Tottenham Hotspur-Fulham,198,3
+114,Tottenham Hotspur-Leeds United,369,7
+115,Tottenham Hotspur-Leicester City,366,8
+116,Tottenham Hotspur-Liverpool,121,3
+117,Tottenham Hotspur-Newcastle United,125,3
+118,Tottenham Hotspur-Southampton,188,5
+119,Tottenham Hotspur-Wolverhampton Wanderers,64,1
+120,West Ham United-AFC Bournemouth,135,2
+121,West Ham United-Brighton & Hove Albion,88,2
+122,West Ham United-Crystal Palace,151,3
+123,West Ham United-Fulham,186,4
+124,West Ham United-Leicester City,86,2
+125,West Ham United-Manchester City,101,2
+126,West Ham United-Tottenham Hotspur,89,2
+127,West Ham United-Wolverhampton Wanderers,83,2
+128,Wolverhampton Wanderers-Arsenal,129,2
+129,Wolverhampton Wanderers-Brighton & Hove Albion,184,5
+130,Wolverhampton Wanderers-Leicester City,171,4
+131,Wolverhampton Wanderers-Manchester City,86,3
+132,Wolverhampton Wanderers-Newcastle United,128,2
+133,Wolverhampton Wanderers-Nottingham Forest,56,1
+134,Wolverhampton Wanderers-Southampton,45,1
+135,Brighton-Newcastle,0,0
+136,Wolves-Fulham,0,0
+137,Bournemouth-Wolves,0,0
+138,Everton-Liverpool,0,0
+139,Newcastle-Crystal Palace,0,0
+140,Bournemouth-Brentford,0,0
+141,Leeds-Aston Villa,0,0
+142,Leicester-Crystal Palace,0,0
+143,Man United-Newcastle,0,0
+144,Brighton-Nottm Forest,0,0
+145,Brentford-Chelsea,0,0
+146,Fulham-Everton,0,0

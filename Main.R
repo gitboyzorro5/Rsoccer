@@ -35,5 +35,5 @@ source("LeagueFixtures.R")
 source("TableSimulation.R")
 
 
-e1_totalgoa
+
 

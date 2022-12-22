@@ -968,19 +968,23 @@ mean(df2$GoalsXCorners)
 
 
 
+allteams20222023SOTSPREADS %>%
+
+group_by(Div) %>%
+  summarise(sumofbookings = sum(Bookings, na.rm = T ))
 
 
+tapply(allteams20222023SOTSPREADS$Bookings, allteams20222023SOTSPREADS$Div, FUN = mean)
 
 
+b1_xshotsconversion_vec_ht <- as.vector(b1_shots_analysis[1,])
+b1_xshotsconversion_vec_ht[is.na(b1_xshotsconversion_vec_ht)] <- ""
+b1_xshotsconversion_vec_ht <- b1_xshotsconversion_vec_ht[b1_xshotsconversion_vec_ht != ""]
+b1_xshotsconversion_vec_ht  <-tail(b1_xshotsconversion_vec_ht,1)
 
+b1_shots_analysis[1,]
 
-
-
-
-
-
-
-
+b1_xshotsconversion_vec_ht
 
 
 

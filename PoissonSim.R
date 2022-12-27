@@ -111,8 +111,8 @@ write.csv(e1_home_poisson,paste("e1_home_poisson",ROUND_20212022,".csv",sep = "_
 write.csv(e1_away_poisson,paste("e1_away_poisson",ROUND_20212022,".csv",sep = "_"))
 
 
-allhomepoisson <- rbind(allhomepoisson,sp2_home_poisson)
-allawaypoisson <- rbind(allawaypoisson,sp2_away_poisson)
+allhomepoisson <- rbind(allhomepoisson,e1_home_poisson)
+allawaypoisson <- rbind(allawaypoisson,e1_away_poisson)
 # allhomepoisson <- rbind(b1_home_poisson,d1_home_poisson,d2_home_poisson,e0_home_poisson,e1_home_poisson,e2_home_poisson,
 #                          e3_home_poisson,ec_home_poisson,f1_home_poisson,f2_home_poisson,g1_home_poisson,i1_home_poisson,
 #                          i2_home_poisson,n1_home_poisson,p1_home_poisson,sp1_home_poisson,sp2_home_poisson,sc0_home_poisson,

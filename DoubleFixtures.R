@@ -120,8 +120,8 @@ for(dbfixture_e0div in 1:nrow(myfixturesdive0))
   test_fixture_e0div <- myfixturesdive0[dbfixture_e0div,]
   test_fixture_inv_e0div <- test_fixture_e0div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_e0div <- test_fixture_e0div[rep(seq_len(nrow(test_fixture_e0div)), each = 4),]
-  final_test_fixture_inv_e0div <- test_fixture_inv_e0div[rep(seq_len(nrow(test_fixture_inv_e0div)), each = 4),]
+  final_test_fixture_e0div <- test_fixture_e0div[rep(seq_len(nrow(test_fixture_e0div)), each = 3),]
+  final_test_fixture_inv_e0div <- test_fixture_inv_e0div[rep(seq_len(nrow(test_fixture_inv_e0div)), each = 3),]
 
 
   final_test_fixture_e0div <- final_test_fixture_e0div[,c(24,25)]

@@ -23,10 +23,15 @@ goal_mins <- epl_match_details %>% group_by(matchid) %>%
 
 write.csv(goal_mins,'E0_goalmins.csv')
 
-
+library('xlsx')
+write.xlsx(epl_match_details,'eplmatchdetails.xlsx')
 View(goal_mins)
 View(epl_match_details)
 
 epl0 <- E0[E0$TG == '0',]
 epl0$matchid <- paste(epl0$HomeTeam,epl0$AwayTeam, sep = "-")
 write.csv(epl0,'epl0.csv')
+
+colnames(epl_match_details)
+
+View(fotmob_get_league_ids())

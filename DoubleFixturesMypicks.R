@@ -324,8 +324,8 @@ for(dbfixture_i1 in 1:nrow(myfixturesi1))
   test_fixture_inv_i1 <- test_fixture_i1[,c(1,3,2,4)]
 
 
-  final_test_fixture_i1 <- test_fixture_i1[rep(seq_len(nrow(test_fixture_i1)), each = 4),]
-  final_test_fixture_inv_i1 <- test_fixture_inv_i1[rep(seq_len(nrow(test_fixture_inv_i1)), each = 4),]
+  final_test_fixture_i1 <- test_fixture_i1[rep(seq_len(nrow(test_fixture_i1)), each = 3),]
+  final_test_fixture_inv_i1 <- test_fixture_inv_i1[rep(seq_len(nrow(test_fixture_inv_i1)), each = 3),]
 
 
   final_test_fixture_i1 <- final_test_fixture_i1[,c(2,3)]

@@ -1,0 +1,378 @@
+,ccode,country,id,name,page_url
+1,INT,International,42,Champions League,/leagues/42/overview/champions-league
+2,INT,International,73,Europa League,/leagues/73/overview/europa-league
+3,INT,International,525,AFC Champions League,/leagues/525/overview/afc-champions-league
+4,INT,International,9469,AFC Cup,/leagues/9469/overview/afc-cup
+5,INT,International,9841,AFC U19,/leagues/9841/overview/afc-u19
+6,INT,International,9265,AFF Suzuki Cup,/leagues/9265/overview/aff-suzuki-cup
+7,INT,International,289,Africa Cup of Nations,/leagues/289/overview/africa-cup-of-nations
+8,INT,International,9428,African Nations Championship,/leagues/9428/overview/african-nations-championship
+9,INT,International,9579,Algarve Cup (W),/leagues/9579/overview/algarve-cup-(w)
+10,INT,International,290,Asian Cup,/leagues/290/overview/asian-cup
+11,INT,International,526,CAF Champions League,/leagues/526/overview/caf-champions-league
+12,INT,International,9468,CAF Confed Cup,/leagues/9468/overview/caf-confed-cup
+13,INT,International,9467,CAF Super Cup,/leagues/9467/overview/caf-super-cup
+14,INT,International,9875,Campeones Cup,/leagues/9875/overview/campeones-cup
+15,INT,International,9306,CECAFA Cup,/leagues/9306/overview/cecafa-cup
+16,INT,International,297,CONCACAF Champions League,/leagues/297/overview/concacaf-champions-league
+17,INT,International,298,CONCACAF Gold Cup,/leagues/298/overview/concacaf-gold-cup
+18,INT,International,9682,CONCACAF League,/leagues/9682/overview/concacaf-league
+19,INT,International,9821,CONCACAF Nations League,/leagues/9821/overview/concacaf-nations-league
+20,INT,International,44,Copa America,/leagues/44/overview/copa-america
+21,INT,International,45,Copa Libertadores,/leagues/45/overview/copa-libertadores
+22,INT,International,299,Copa Sudamericana,/leagues/299/overview/copa-sudamericana
+23,INT,International,50,EURO,/leagues/50/overview/euro
+24,INT,International,292,Euro Championship (Women),/leagues/292/overview/euro-championship-(women)
+25,INT,International,287,EURO U19,/leagues/287/overview/euro-u19
+26,INT,International,288,EURO U21,/leagues/288/overview/euro-u21
+27,INT,International,10216,Europa Conference League,/leagues/10216/overview/europa-conference-league
+28,INT,International,301,European Championship U-17,/leagues/301/overview/european-championship-u-17
+29,INT,International,10242,FIFA Arab Cup,/leagues/10242/overview/fifa-arab-cup
+30,INT,International,78,FIFA Club World Cup,/leagues/78/overview/fifa-club-world-cup
+31,INT,International,9408,International Champions Cup,/leagues/9408/overview/international-champions-cup
+32,INT,International,10043,Leagues Cup,/leagues/10043/overview/leagues-cup
+33,INT,International,491,Recopa Sudamericana,/leagues/491/overview/recopa-sudamericana
+34,INT,International,9876,SAFF Championship,/leagues/9876/overview/saff-championship
+35,INT,International,9921,SheBelieves Cup (W),/leagues/9921/overview/shebelieves-cup-(w)
+36,INT,International,66,Summer Olympics,/leagues/66/overview/summer-olympics
+37,INT,International,65,Summer Olympics (Women),/leagues/65/overview/summer-olympics-(women)
+38,INT,International,9514,The Atlantic Cup,/leagues/9514/overview/the-atlantic-cup
+39,INT,International,296,U-20 World Cup,/leagues/296/overview/u-20-world-cup
+40,INT,International,9806,UEFA Nations League A,/leagues/9806/overview/uefa-nations-league-a
+41,INT,International,9807,UEFA Nations League B,/leagues/9807/overview/uefa-nations-league-b
+42,INT,International,9808,UEFA Nations League C,/leagues/9808/overview/uefa-nations-league-c
+43,INT,International,9809,UEFA Nations League D,/leagues/9809/overview/uefa-nations-league-d
+44,INT,International,74,UEFA Super Cup,/leagues/74/overview/uefa-super-cup
+45,INT,International,9741,UEFA Youth League,/leagues/9741/overview/uefa-youth-league
+46,INT,International,10124,Ultimate Quaran-Team,/leagues/10124/overview/ultimate-quaran-team
+47,INT,International,9375,Women's Champions League,/leagues/9375/overview/womens-champions-league
+48,INT,International,10096,Women's Club Friendlies,/leagues/10096/overview/womens-club-friendlies
+49,INT,International,76,Women's World Cup Qualification,/leagues/76/overview/womens-world-cup-qualification
+50,INT,International,77,World Cup,/leagues/77/overview/world-cup
+51,INT,International,10197,World Cup Qualification AFC,/leagues/10197/overview/world-cup-qualification-afc
+52,INT,International,10196,World Cup Qualification CAF,/leagues/10196/overview/world-cup-qualification-caf
+53,INT,International,10198,World Cup Qualification CONCACAF,/leagues/10198/overview/world-cup-qualification-concacaf
+54,INT,International,10199,World Cup Qualification CONMEBOL,/leagues/10199/overview/world-cup-qualification-conmebol
+55,INT,International,10201,World Cup Qualification Inter-confederation,/leagues/10201/overview/world-cup-qualification-inter-confederation
+56,INT,International,10200,World Cup Qualification OFC,/leagues/10200/overview/world-cup-qualification-ofc
+57,INT,International,10195,World Cup Qualification UEFA,/leagues/10195/overview/world-cup-qualification-uefa
+58,INT,International,306,World Cup U17,/leagues/306/overview/world-cup-u17
+59,ALB,Albania,10175,Super Cup,/leagues/10175/overview/super-cup
+60,ALB,Albania,260,Superiore,/leagues/260/overview/superiore
+61,ALB,Albania,9173,Superiore Qualification,/leagues/9173/overview/superiore-qualification
+62,ALG,Algeria,516,Ligue 1,/leagues/516/overview/ligue-1
+63,ARG,Argentina,112,Liga Profesional,/leagues/112/overview/liga-profesional
+64,ARG,Argentina,8965,Primera B Nacional,/leagues/8965/overview/primera-b-nacional
+65,ARG,Argentina,9213,Primera B Metropolitana & Torneo Federal A,/leagues/9213/overview/primera-b-metropolitana-&-torneo-federal-a
+66,ARG,Argentina,9305,Copa Argentina,/leagues/9305/overview/copa-argentina
+67,ARG,Argentina,9381,Super Cup,/leagues/9381/overview/super-cup
+68,ARG,Argentina,10007,Copa de la Liga Profesional,/leagues/10007/overview/copa-de-la-liga-profesional
+69,ARG,Argentina,10075,Torneo de Verano,/leagues/10075/overview/torneo-de-verano
+70,ARG,Argentina,10053,Trofeo de Campeones,/leagues/10053/overview/trofeo-de-campeones
+71,ARM,Armenia,118,Premier League,/leagues/118/overview/premier-league
+72,AUS,Australia,113,A-League,/leagues/113/overview/a-league
+73,AUS,Australia,9495,A-League Women,/leagues/9495/overview/a-league-women
+74,AUS,Australia,9471,FFA Cup,/leagues/9471/overview/ffa-cup
+75,AUT,Austria,38,Bundesliga,/leagues/38/overview/bundesliga
+76,AUT,Austria,119,2. Liga,/leagues/119/overview/2.-liga
+77,AUT,Austria,278,Austrian Cup,/leagues/278/overview/austrian-cup
+78,AUT,Austria,9832,Bundesliga Qualification,/leagues/9832/overview/bundesliga-qualification
+79,AZE,Azerbaijan,262,Premier League,/leagues/262/overview/premier-league
+80,BLR,Belarus,263,Premier Division,/leagues/263/overview/premier-division
+81,BLR,Belarus,9255,Premier League qualification,/leagues/9255/overview/premier-league-qualification
+82,BLR,Belarus,9521,Cup,/leagues/9521/overview/cup
+83,BLR,Belarus,10189,Premier League qualification,/leagues/10189/overview/premier-league-qualification
+84,BLR,Belarus,9658,Super Cup,/leagues/9658/overview/super-cup
+85,BEL,Belgium,40,First Division A,/leagues/40/overview/first-division-a
+86,BEL,Belgium,264,2. Division,/leagues/264/overview/2.-division
+87,BEL,Belgium,149,Cup,/leagues/149/overview/cup
+88,BEL,Belgium,41,First Division A Qualification,/leagues/41/overview/first-division-a-qualification
+89,BEL,Belgium,266,Super Cup,/leagues/266/overview/super-cup
+90,BOL,Bolivia,144,Primera Division,/leagues/144/overview/primera-division
+91,BOL,Bolivia,9334,Primera Division Qualification,/leagues/9334/overview/primera-division-qualification
+92,BIH,Bosnia-Herzegovina,267,Premier League,/leagues/267/overview/premier-league
+93,BRA,Brazil,268,Serie A,/leagues/268/overview/serie-a
+94,BRA,Brazil,8814,Serie B,/leagues/8814/overview/serie-b
+95,BRA,Brazil,9067,Brazil Cup,/leagues/9067/overview/brazil-cup
+96,BRA,Brazil,9429,Copa de Nordeste,/leagues/9429/overview/copa-de-nordeste
+97,BRA,Brazil,10077,Super Cup,/leagues/10077/overview/super-cup
+98,BRA,Brazil,10290,Baiano,/leagues/10290/overview/baiano
+99,BRA,Brazil,10272,Carioca Taca Guanabara,/leagues/10272/overview/carioca-taca-guanabara
+100,BRA,Brazil,10274,Gaucho,/leagues/10274/overview/gaucho
+101,BRA,Brazil,10291,Goiano,/leagues/10291/overview/goiano
+102,BRA,Brazil,10273,Mineiro,/leagues/10273/overview/mineiro
+103,BRA,Brazil,10244,Paulista A1,/leagues/10244/overview/paulista-a1
+104,BRA,Brazil,10078,Recopa Gaucha,/leagues/10078/overview/recopa-gaucha
+105,BRA,Brazil,8971,Serie C,/leagues/8971/overview/serie-c
+106,BUL,Bulgaria,270,First Professional League,/leagues/270/overview/first-professional-league
+107,BUL,Bulgaria,271,Cup,/leagues/271/overview/cup
+108,BUL,Bulgaria,272,Super Cup,/leagues/272/overview/super-cup
+109,CAN,Canada,9986,Premier League,/leagues/9986/overview/premier-league
+110,CAN,Canada,9837,Canadian Championship,/leagues/9837/overview/canadian-championship
+111,CHI,Chile,273,Primera Division,/leagues/273/overview/primera-division
+112,CHI,Chile,9091,Cup,/leagues/9091/overview/cup
+113,CHI,Chile,9126,Primera B,/leagues/9126/overview/primera-b
+114,CHI,Chile,9761,Primera Division Qualification,/leagues/9761/overview/primera-division-qualification
+115,CHI,Chile,9407,Super Cup,/leagues/9407/overview/super-cup
+116,CHN,China,120,Super League,/leagues/120/overview/super-league
+117,CHN,China,9550,Cup,/leagues/9550/overview/cup
+118,CHN,China,9491,Super Cup,/leagues/9491/overview/super-cup
+119,CHN,China,9901,Super League Qualification,/leagues/9901/overview/super-league-qualification
+120,COL,Colombia,274,Primera A,/leagues/274/overview/primera-a
+121,COL,Colombia,9125,Primera B,/leagues/9125/overview/primera-b
+122,CRC,Costa Rica,121,Primera Division,/leagues/121/overview/primera-division
+123,CRC,Costa Rica,10223,Super cup,/leagues/10223/overview/super-cup
+124,CRO,Croatia,252,1. Division,/leagues/252/overview/1.-division
+125,CRO,Croatia,275,FA Cup,/leagues/275/overview/fa-cup
+126,CRO,Croatia,276,Super Cup,/leagues/276/overview/super-cup
+127,CYP,Cyprus,136,1. Division,/leagues/136/overview/1.-division
+128,CYP,Cyprus,330,Cup,/leagues/330/overview/cup
+129,CYP,Cyprus,521,Super Cup,/leagues/521/overview/super-cup
+130,CZE,Czech Republic,122,1. Liga,/leagues/122/overview/1.-liga
+131,CZE,Czech Republic,254,Cup,/leagues/254/overview/cup
+132,CZE,Czech Republic,253,FNL,/leagues/253/overview/fnl
+133,DEN,Denmark,46,Superligaen,/leagues/46/overview/superligaen
+134,DEN,Denmark,85,1. Division,/leagues/85/overview/1.-division
+135,DEN,Denmark,239,2. Division,/leagues/239/overview/2.-division
+136,DEN,Denmark,240,3. Division,/leagues/240/overview/3.-division
+137,DEN,Denmark,242,DBU Pokalen,/leagues/242/overview/dbu-pokalen
+138,DEN,Denmark,256,Kvindeligaen,/leagues/256/overview/kvindeligaen
+139,ECU,Ecuador,246,Serie A,/leagues/246/overview/serie-a
+140,EGY,Egypt,519,Premier League,/leagues/519/overview/premier-league
+141,EGY,Egypt,9941,Cup,/leagues/9941/overview/cup
+142,EGY,Egypt,10270,League Cup,/leagues/10270/overview/league-cup
+143,SLV,El Salvador,335,Primera Division,/leagues/335/overview/primera-division
+144,ENG,England,47,Premier League,/leagues/47/overview/premier-league
+145,ENG,England,48,Championship,/leagues/48/overview/championship
+146,ENG,England,108,League One,/leagues/108/overview/league-one
+147,ENG,England,109,League Two,/leagues/109/overview/league-two
+148,ENG,England,117,National League,/leagues/117/overview/national-league
+149,ENG,England,8944,National North & South,/leagues/8944/overview/national-north-&-south
+150,ENG,England,8947,Premier Division,/leagues/8947/overview/premier-division
+151,ENG,England,9084,Premier League 2 Div 1,/leagues/9084/overview/premier-league-2-div-1
+152,ENG,England,10176,Premier League 2 Div 2,/leagues/10176/overview/premier-league-2-div-2
+153,ENG,England,247,Community Shield,/leagues/247/overview/community-shield
+154,ENG,England,132,FA Cup,/leagues/132/overview/fa-cup
+155,ENG,England,133,EFL Cup,/leagues/133/overview/efl-cup
+156,ENG,England,142,EFL Trophy,/leagues/142/overview/efl-trophy
+157,ENG,England,9253,FA Trophy,/leagues/9253/overview/fa-trophy
+158,ENG,England,10068,Premier League U18,/leagues/10068/overview/premier-league-u18
+159,ENG,England,9227,WSL,/leagues/9227/overview/wsl
+160,ENG,England,10173,Women's Community Shield,/leagues/10173/overview/womens-community-shield
+161,ENG,England,10082,FA Cup (Women),/leagues/10082/overview/fa-cup-(women)
+162,ENG,England,9717,Women's League Cup,/leagues/9717/overview/womens-league-cup
+163,EST,Estonia,248,Meistriliiga,/leagues/248/overview/meistriliiga
+164,EST,Estonia,10034,Meistrilia Qualification,/leagues/10034/overview/meistrilia-qualification
+165,EST,Estonia,9069,Super Cup,/leagues/9069/overview/super-cup
+166,FRO,Faroe Islands,9523,Cup,/leagues/9523/overview/cup
+167,FRO,Faroe Islands,250,Premier League,/leagues/250/overview/premier-league
+168,FRO,Faroe Islands,10187,Premier League Qualification,/leagues/10187/overview/premier-league-qualification
+169,FIN,Finland,51,Veikkausliiga,/leagues/51/overview/veikkausliiga
+170,FIN,Finland,52,Finland Promotion/Relegation,/leagues/52/overview/finland-promotion%2frelegation
+171,FIN,Finland,251,Ykkönen,/leagues/251/overview/ykkönen
+172,FIN,Finland,143,Cup,/leagues/143/overview/cup
+173,FIN,Finland,8969,Kakkonen,/leagues/8969/overview/kakkonen
+174,FIN,Finland,10174,Kansallinen (Women),/leagues/10174/overview/kansallinen-(women)
+175,FIN,Finland,10186,Kansallinen Qualification (Women),/leagues/10186/overview/kansallinen-qualification-(women)
+176,FRA,France,53,Ligue 1,/leagues/53/overview/ligue-1
+177,FRA,France,110,Ligue 2,/leagues/110/overview/ligue-2
+178,FRA,France,8970,National,/leagues/8970/overview/national
+179,FRA,France,134,Coupe de France,/leagues/134/overview/coupe-de-france
+180,FRA,France,9677,Division 1 (W),/leagues/9677/overview/division-1-(w)
+181,FRA,France,9666,Ligue 1 Qualification,/leagues/9666/overview/ligue-1-qualification
+182,FRA,France,9667,Ligue 2 Qualification,/leagues/9667/overview/ligue-2-qualification
+183,FRA,France,207,Super Cup,/leagues/207/overview/super-cup
+184,GEO,Georgia,439,Erovnuli,/leagues/439/overview/erovnuli
+185,GEO,Georgia,9310,Erovnuli Qualification,/leagues/9310/overview/erovnuli-qualification
+186,GER,Germany,54,1. Bundesliga,/leagues/54/overview/1.-bundesliga
+187,GER,Germany,146,2. Bundesliga,/leagues/146/overview/2.-bundesliga
+188,GER,Germany,208,3. Liga,/leagues/208/overview/3.-liga
+189,GER,Germany,209,DFB Pokal,/leagues/209/overview/dfb-pokal
+190,GER,Germany,512,Regionalliga,/leagues/512/overview/regionalliga
+191,GER,Germany,9081,1. Bundesliga Promotion/Relegation,/leagues/9081/overview/1.-bundesliga-promotion%2frelegation
+192,GER,Germany,9734,2. Bundesliga Qualification,/leagues/9734/overview/2.-bundesliga-qualification
+193,GER,Germany,8924,Super Cup,/leagues/8924/overview/super-cup
+194,GER,Germany,9676,Frauen Bundesliga,/leagues/9676/overview/frauen-bundesliga
+195,GHA,Ghana,522,Premier League,/leagues/522/overview/premier-league
+196,GRE,Greece,135,Super League 1,/leagues/135/overview/super-league-1
+197,GRE,Greece,145,Greece Cup,/leagues/145/overview/greece-cup
+198,GRE,Greece,8815,Super League 2,/leagues/8815/overview/super-league-2
+199,GRE,Greece,10019,Super League Qualification,/leagues/10019/overview/super-league-qualification
+200,GUA,Guatemala,336,Liga Nacional,/leagues/336/overview/liga-nacional
+201,HON,Honduras,337,Liga Nacional,/leagues/337/overview/liga-nacional
+202,HUN,Hungary,212,NB I,/leagues/212/overview/nb-i
+203,HUN,Hungary,213,FA Cup,/leagues/213/overview/fa-cup
+204,ISL,Iceland,215,Besta deildin,/leagues/215/overview/besta-deildin
+205,ISL,Iceland,216,1. Deild,/leagues/216/overview/1.-deild
+206,ISL,Iceland,217,Cup,/leagues/217/overview/cup
+207,ISL,Iceland,10009,Super Cup,/leagues/10009/overview/super-cup
+208,ISL,Iceland,10226,2. Deild,/leagues/10226/overview/2.-deild
+209,IND,India,9478,Super League,/leagues/9478/overview/super-league
+210,IND,India,8982,I League,/leagues/8982/overview/i-league
+211,IDN,Indonesia,8983,Liga 1,/leagues/8983/overview/liga-1
+212,IDN,Indonesia,10056,Liga 2,/leagues/10056/overview/liga-2
+213,IRN,Iran,523,Persian Gulf,/leagues/523/overview/persian-gulf
+214,IRN,Iran,9372,Azadegan,/leagues/9372/overview/azadegan
+215,IRN,Iran,9487,Hazfi cup,/leagues/9487/overview/hazfi-cup
+216,IRL,Ireland,126,Premier Division,/leagues/126/overview/premier-division
+217,IRL,Ireland,221,Premier Division Qualification,/leagues/221/overview/premier-division-qualification
+218,IRL,Ireland,218,First Division,/leagues/218/overview/first-division
+219,IRL,Ireland,219,FAI Cup,/leagues/219/overview/fai-cup
+220,IRL,Ireland,220,League Cup,/leagues/220/overview/league-cup
+221,IRL,Ireland,9431,Super Cup,/leagues/9431/overview/super-cup
+222,ISR,Israel,127,Ligat HaAl,/leagues/127/overview/ligat-haal
+223,ISR,Israel,128,Leumit League,/leagues/128/overview/leumit-league
+224,ISR,Israel,9097,Cup,/leagues/9097/overview/cup
+225,ISR,Israel,9735,Leumit League Qualification,/leagues/9735/overview/leumit-league-qualification
+226,ISR,Israel,9862,Super Cup,/leagues/9862/overview/super-cup
+227,ISR,Israel,9098,Toto cup,/leagues/9098/overview/toto-cup
+228,ITA,Italy,55,Serie A,/leagues/55/overview/serie-a
+229,ITA,Italy,86,Serie B,/leagues/86/overview/serie-b
+230,ITA,Italy,141,Coppa Italia,/leagues/141/overview/coppa-italia
+231,ITA,Italy,147,Serie C,/leagues/147/overview/serie-c
+232,ITA,Italy,222,Supercoppa,/leagues/222/overview/supercoppa
+233,ITA,Italy,10178,Serie A Women,/leagues/10178/overview/serie-a-women
+234,JPN,Japan,223,J. League,/leagues/223/overview/j.-league
+235,JPN,Japan,8974,J. League 2,/leagues/8974/overview/j.-league-2
+236,JPN,Japan,9136,J. League 3,/leagues/9136/overview/j.-league-3
+237,JPN,Japan,9011,Cup,/leagues/9011/overview/cup
+238,JPN,Japan,224,League Cup,/leagues/224/overview/league-cup
+239,JPN,Japan,440,Super Cup,/leagues/440/overview/super-cup
+240,JOR,Jordan,528,Premier League,/leagues/528/overview/premier-league
+241,KAZ,Kazakhstan,225,Premier League,/leagues/225/overview/premier-league
+242,KAZ,Kazakhstan,9504,Super Cup,/leagues/9504/overview/super-cup
+243,LVA,Latvia,226,Virsliga,/leagues/226/overview/virsliga
+244,LTU,Lithuania,228,A Lyga,/leagues/228/overview/a-lyga
+245,LTU,Lithuania,9493,Super Cup,/leagues/9493/overview/super-cup
+246,LUX,Luxembourg,229,National Division,/leagues/229/overview/national-division
+247,LUX,Luxembourg,9527,Cup,/leagues/9527/overview/cup
+248,MAS,Malaysia,8985,Super Liga,/leagues/8985/overview/super-liga
+249,MEX,Mexico,230,Liga MX,/leagues/230/overview/liga-mx
+250,MEX,Mexico,8976,Liga de Expansión MX,/leagues/8976/overview/liga-de-expansión-mx
+251,MEX,Mexico,9345,Copa MX,/leagues/9345/overview/copa-mx
+252,MEX,Mexico,9906,Liga MX Femenil,/leagues/9906/overview/liga-mx-femenil
+253,MDA,Moldova,231,National Division,/leagues/231/overview/national-division
+254,MDA,Moldova,9530,Cup,/leagues/9530/overview/cup
+255,MDA,Moldova,9985,Super Cup,/leagues/9985/overview/super-cup
+256,MNE,Montenegro,232,1. CFL,/leagues/232/overview/1.-cfl
+257,MNE,Montenegro,9178,1. CFL Qualification,/leagues/9178/overview/1.-cfl-qualification
+258,MAR,Morocco,530,Botola Pro,/leagues/530/overview/botola-pro
+259,MYA,Myanmar,10088,National League,/leagues/10088/overview/national-league
+260,NED,Netherlands,57,Eredivisie,/leagues/57/overview/eredivisie
+261,NED,Netherlands,111,Eerste Divisie,/leagues/111/overview/eerste-divisie
+262,NED,Netherlands,9195,Tweede Divisie,/leagues/9195/overview/tweede-divisie
+263,NED,Netherlands,58,Eredivisie Qualification,/leagues/58/overview/eredivisie-qualification
+264,NED,Netherlands,10289,Eredivisie Vrouwen,/leagues/10289/overview/eredivisie-vrouwen
+265,NED,Netherlands,235,KNVB Cup,/leagues/235/overview/knvb-cup
+266,NED,Netherlands,237,Super Cup,/leagues/237/overview/super-cup
+267,NCA,Nicaragua,9015,Liga Primera,/leagues/9015/overview/liga-primera
+268,NCA,Nicaragua,10156,Liga Primera Qualification,/leagues/10156/overview/liga-primera-qualification
+269,NGA,Nigeria,533,Professional Football League,/leagues/533/overview/professional-football-league
+270,MKD,North Macedonia,249,Prva Liga,/leagues/249/overview/prva-liga
+271,MKD,North Macedonia,9528,Cup,/leagues/9528/overview/cup
+272,NIR,Northern Ireland,129,Premiership,/leagues/129/overview/premiership
+273,NOR,Norway,59,Eliteserien,/leagues/59/overview/eliteserien
+274,NOR,Norway,203,OBOS-ligaen,/leagues/203/overview/obos-ligaen
+275,NOR,Norway,204,2. Divisjon,/leagues/204/overview/2.-divisjon
+276,NOR,Norway,331,Toppserien (W),/leagues/331/overview/toppserien-(w)
+277,NOR,Norway,60,Eliteserien Qualification,/leagues/60/overview/eliteserien-qualification
+278,NOR,Norway,206,Norgesmesterskapet,/leagues/206/overview/norgesmesterskapet
+279,NOR,Norway,9754,OBOS-ligaen Qualification,/leagues/9754/overview/obos-ligaen-qualification
+280,PAR,Paraguay,10230,Cup,/leagues/10230/overview/cup
+281,PAR,Paraguay,199,Division Profesional,/leagues/199/overview/division-profesional
+282,PAR,Paraguay,10259,Supercopa,/leagues/10259/overview/supercopa
+283,PER,Peru,131,Primera Division,/leagues/131/overview/primera-division
+284,POL,Poland,196,Ekstraklasa,/leagues/196/overview/ekstraklasa
+285,POL,Poland,197,1 Liga,/leagues/197/overview/1-liga
+286,POL,Poland,198,Puchar Polski,/leagues/198/overview/puchar-polski
+287,POL,Poland,200,Superpuchar Polski,/leagues/200/overview/superpuchar-polski
+288,POL,Poland,8935,2. Division,/leagues/8935/overview/2.-division
+289,POR,Portugal,61,Liga Portugal,/leagues/61/overview/liga-portugal
+290,POR,Portugal,185,Liga Portugal 2,/leagues/185/overview/liga-portugal-2
+291,POR,Portugal,187,League Cup,/leagues/187/overview/league-cup
+292,POR,Portugal,9112,Liga 3,/leagues/9112/overview/liga-3
+293,POR,Portugal,10215,Liga Portugal Qualification,/leagues/10215/overview/liga-portugal-qualification
+294,POR,Portugal,186,Portugal Cup,/leagues/186/overview/portugal-cup
+295,POR,Portugal,188,Super Cup,/leagues/188/overview/super-cup
+296,QAT,Qatar,535,Qatar Stars League,/leagues/535/overview/qatar-stars-league
+297,ROU,Romania,189,Liga I,/leagues/189/overview/liga-i
+298,ROU,Romania,9587,Liga I Qualification,/leagues/9587/overview/liga-i-qualification
+299,ROU,Romania,9113,Liga II,/leagues/9113/overview/liga-ii
+300,ROU,Romania,190,Romania Cup,/leagues/190/overview/romania-cup
+301,ROU,Romania,192,Super Cup,/leagues/192/overview/super-cup
+302,RUS,Russia,63,Premier League,/leagues/63/overview/premier-league
+303,RUS,Russia,193,Cup,/leagues/193/overview/cup
+304,RUS,Russia,195,Super Cup,/leagues/195/overview/super-cup
+305,RUS,Russia,338,1. Division,/leagues/338/overview/1.-division
+306,RUS,Russia,9123,PFL,/leagues/9123/overview/pfl
+307,KSA,Saudi Arabia,536,Pro League,/leagues/536/overview/pro-league
+308,KSA,Saudi Arabia,9942,Cup,/leagues/9942/overview/cup
+309,KSA,Saudi Arabia,10074,Super Cup,/leagues/10074/overview/super-cup
+310,SCO,Scotland,64,Premiership,/leagues/64/overview/premiership
+311,SCO,Scotland,123,Championship,/leagues/123/overview/championship
+312,SCO,Scotland,124,League One,/leagues/124/overview/league-one
+313,SCO,Scotland,125,League Two,/leagues/125/overview/league-two
+314,SCO,Scotland,181,Premiership playoff,/leagues/181/overview/premiership-playoff
+315,SCO,Scotland,179,Challenge Cup,/leagues/179/overview/challenge-cup
+316,SCO,Scotland,9737,Championship playoff,/leagues/9737/overview/championship-playoff
+317,SCO,Scotland,180,League Cup,/leagues/180/overview/league-cup
+318,SCO,Scotland,9738,League One Playoff,/leagues/9738/overview/league-one-playoff
+319,SCO,Scotland,9739,League Two Playoff,/leagues/9739/overview/league-two-playoff
+320,SCO,Scotland,137,Scottish Cup,/leagues/137/overview/scottish-cup
+321,SRB,Serbia,182,Super Liga,/leagues/182/overview/super-liga
+322,SRB,Serbia,183,Cup,/leagues/183/overview/cup
+323,SIN,Singapore,461,Singapore Premier League,/leagues/461/overview/singapore-premier-league
+324,SVK,Slovakia,177,FA Cup,/leagues/177/overview/fa-cup
+325,SVK,Slovakia,176,Super Liga,/leagues/176/overview/super-liga
+326,SVK,Slovakia,9845,Super Liga Qualification,/leagues/9845/overview/super-liga-qualification
+327,SVN,Slovenia,173,Prva Liga,/leagues/173/overview/prva-liga
+328,SVN,Slovenia,174,Cup,/leagues/174/overview/cup
+329,RSA,South Africa,537,Premier Soccer League,/leagues/537/overview/premier-soccer-league
+330,KOR,South Korea,9080,K League 1,/leagues/9080/overview/k-league-1
+331,KOR,South Korea,9422,K League Qualification,/leagues/9422/overview/k-league-qualification
+332,KOR,South Korea,9551,Cup,/leagues/9551/overview/cup
+333,KOR,South Korea,9116,K League 2,/leagues/9116/overview/k-league-2
+334,ESP,Spain,87,LaLiga,/leagues/87/overview/laliga
+335,ESP,Spain,140,LaLiga2,/leagues/140/overview/laliga2
+336,ESP,Spain,8968,Primera Division RFEF,/leagues/8968/overview/primera-division-rfef
+337,ESP,Spain,9138,Segunda Division RFEF,/leagues/9138/overview/segunda-division-rfef
+338,ESP,Spain,9907,Primera Division Femenina,/leagues/9907/overview/primera-division-femenina
+339,ESP,Spain,138,Copa del Rey,/leagues/138/overview/copa-del-rey
+340,ESP,Spain,139,Super Cup,/leagues/139/overview/super-cup
+341,SWE,Sweden,67,Allsvenskan,/leagues/67/overview/allsvenskan
+342,SWE,Sweden,168,Superettan,/leagues/168/overview/superettan
+343,SWE,Sweden,9089,Damallsvenskan (W),/leagues/9089/overview/damallsvenskan-(w)
+344,SWE,Sweden,171,Cup,/leagues/171/overview/cup
+345,SWE,Sweden,169,Ettan,/leagues/169/overview/ettan
+346,SUI,Switzerland,69,Super League,/leagues/69/overview/super-league
+347,SUI,Switzerland,163,Challenge League,/leagues/163/overview/challenge-league
+348,SUI,Switzerland,164,Swiss Cup,/leagues/164/overview/swiss-cup
+349,TAN,Tanzania,9066,Premier League,/leagues/9066/overview/premier-league
+350,THA,Thailand,8984,Premier League,/leagues/8984/overview/premier-league
+351,TUN,Tunisia,544,Ligue I,/leagues/544/overview/ligue-i
+352,TUN,Tunisia,9669,Ligue I Qualification,/leagues/9669/overview/ligue-i-qualification
+353,TUR,Turkey,71,Super Lig,/leagues/71/overview/super-lig
+354,TUR,Turkey,165,1. Lig,/leagues/165/overview/1.-lig
+355,TUR,Turkey,166,Super Cup,/leagues/166/overview/super-cup
+356,TUR,Turkey,151,Turkish Cup,/leagues/151/overview/turkish-cup
+357,UKR,Ukraine,441,Premier League,/leagues/441/overview/premier-league
+358,UKR,Ukraine,10023,1. Division Qualification,/leagues/10023/overview/1.-division-qualification
+359,UKR,Ukraine,442,Cup,/leagues/442/overview/cup
+360,UKR,Ukraine,443,Super Cup,/leagues/443/overview/super-cup
+361,UAE,United Arab Emirates,538,Arabian Gulf League,/leagues/538/overview/arabian-gulf-league
+362,UAE,United Arab Emirates,9943,Cup,/leagues/9943/overview/cup
+363,USA,United States,130,MLS,/leagues/130/overview/mls
+364,USA,United States,8972,USL Championship,/leagues/8972/overview/usl-championship
+365,USA,United States,9296,USL League One,/leagues/9296/overview/usl-league-one
+366,USA,United States,9441,Open Cup,/leagues/9441/overview/open-cup
+367,USA,United States,9134,NWSL,/leagues/9134/overview/nwsl
+368,USA,United States,10282,MLS Next Pro,/leagues/10282/overview/mls-next-pro
+369,USA,United States,10084,NISA,/leagues/10084/overview/nisa
+370,USA,United States,10207,NISA Legends Cup,/leagues/10207/overview/nisa-legends-cup
+371,USA,United States,10167,NWSL Challenge Cup,/leagues/10167/overview/nwsl-challenge-cup
+372,URU,Uruguay,161,Primera Division,/leagues/161/overview/primera-division
+373,URU,Uruguay,9122,Segunda Division,/leagues/9122/overview/segunda-division
+374,VEN,Venezuela,339,Primera Division,/leagues/339/overview/primera-division
+375,VIE,Vietnam,9088,V-League,/leagues/9088/overview/v-league
+376,WAL,Wales,116,Premier League,/leagues/116/overview/premier-league
+377,WAL,Wales,9166,Welsh Cup,/leagues/9166/overview/welsh-cup

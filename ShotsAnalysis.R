@@ -2016,6 +2016,7 @@ sc0_conceding_conversion$TSCC <- percent(sc0_conceding_conversion$TGC/sc0_conced
 sc0_conceding_conversion$XSTC <- round(sc0_scoring$TGS/(sc0_tst$TST - sc0_scoring$TGS), digits = 2)
 
 #merge the two parts
+
 sc0_shots_analysis <- merge(sc0_scoring_conversion,sc0_conceding_conversion,by='Group.1',all = T)
 #######################################################################################################################################
 #SC1

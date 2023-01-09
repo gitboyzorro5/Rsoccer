@@ -4,7 +4,7 @@ library('lubridate')
 #############################################################
 myfixturesdiv <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')
 myfixturesdiv$Date <- dmy(myfixturesdiv$Date)
-myfixturesdiv <- myfixturesdiv[myfixturesdiv$Date >= '2022-12-02',]
+myfixturesdiv <- myfixturesdiv[myfixturesdiv$Date >= '2023-01-06',]
 
 ####################################################################
 myfixturesdivb1 <- subset(myfixturesdiv,Div == "B1")
@@ -392,8 +392,8 @@ for(dbfixture_i1div in 1:nrow(myfixturesdivi1))
   test_fixture_i1div <- myfixturesdivi1[dbfixture_i1div,]
   test_fixture_inv_i1div <- test_fixture_i1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_i1div <- test_fixture_i1div[rep(seq_len(nrow(test_fixture_i1div)), each = 5),]
-  final_test_fixture_inv_i1div <- test_fixture_inv_i1div[rep(seq_len(nrow(test_fixture_inv_i1div)), each = 5),]
+  final_test_fixture_i1div <- test_fixture_i1div[rep(seq_len(nrow(test_fixture_i1div)), each = 3),]
+  final_test_fixture_inv_i1div <- test_fixture_inv_i1div[rep(seq_len(nrow(test_fixture_inv_i1div)), each = 3),]
 
 
   final_test_fixture_i1div <- final_test_fixture_i1div[,c(24,25)]

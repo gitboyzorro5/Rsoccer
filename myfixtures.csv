@@ -1,139 +1,21 @@
-,Div,Home_Team,Away_Team,Date
-154,B1,Charleroi,Anderlecht,12/23/2022
-155,B1,Club Brugge,Oud-Heverlee Leuven,12/23/2022
-156,B1,Gent,Standard,12/23/2022
-157,B1,Kortrijk,Genk,12/23/2022
-158,B1,Mechelen,Cercle Brugge,12/23/2022
-159,B1,St. Gilloise,Oostende,12/23/2022
-160,B1,Seraing,Eupen,12/23/2022
-161,B1,St Truiden,Waregem,12/23/2022
-162,B1,Westerlo,Antwerp,12/23/2022
-1079,E0,Arsenal,West Ham,12/26/2022
-1080,E0,Aston Villa,Liverpool,12/26/2022
-1081,E0,Brentford,Tottenham,12/26/2022
-1082,E0,Chelsea,Bournemouth,12/26/2022
-1083,E0,Crystal Palace,Fulham,12/26/2022
-1084,E0,Everton,Wolves,12/26/2022
-1085,E0,Leeds,Man City,12/26/2022
-1086,E0,Leicester,Newcastle,12/26/2022
-1087,E0,Man United,Nottm Forest,12/26/2022
-1088,E0,Southampton,Brighton,12/26/2022
-1563,E1,Birmingham,Reading,12/17/2022
-1564,E1,Bristol City,Stoke,12/17/2022
-1565,E1,Burnley,Middlesbrough,12/17/2022
-1566,E1,Cardiff,Blackpool,12/17/2022
-1567,E1,Coventry,Swansea,12/17/2022
-1568,E1,Huddersfield,Watford,12/17/2022
-1569,E1,Hull,Sunderland,12/17/2022
-1570,E1,Luton,Millwall,12/17/2022
-1571,E1,Norwich,Blackburn,12/17/2022
-1572,E1,Preston,QPR,12/17/2022
-1573,E1,West Brom,Rotherham,12/17/2022
-1574,E1,Wigan,Sheffield United,12/17/2022
-1575,E1,Bristol City,West Brom,12/26/2022
-1576,E1,Burnley,Birmingham,12/26/2022
-1577,E1,Cardiff,QPR,12/26/2022
-1578,E1,Hull,Blackpool,12/26/2022
-1579,E1,Luton,Norwich,12/26/2022
-1580,E1,Middlesbrough,Wigan,12/26/2022
-1581,E1,Preston,Huddersfield,12/26/2022
-1582,E1,Reading,Swansea,12/26/2022
-1583,E1,Rotherham,Stoke,12/26/2022
-1584,E1,Sheffield United,Coventry,12/26/2022
-1585,E1,Sunderland,Blackburn,12/26/2022
-1586,E1,Watford,Millwall,12/26/2022
-2103,E2,Barnsley,Burton,12/17/2022
-2104,E2,Bolton,Exeter,12/17/2022
-2105,E2,Charlton,Bristol Rvs,12/17/2022
-2106,E2,Cheltenham,Lincoln,12/17/2022
-2107,E2,Derby,Forest Green,12/17/2022
-2108,E2,Fleetwood Town,Cambridge,12/17/2022
-2109,E2,Peterboro,Shrewsbury,12/17/2022
-2110,E2,Plymouth,Morecambe,12/17/2022
-2111,E2,Port Vale,Accrington,12/17/2022
-2112,E2,Portsmouth,Milton Keynes Dons,12/17/2022
-2113,E2,Sheffield Weds,Oxford,12/17/2022
-2114,E2,Wycombe,Ipswich,12/17/2022
-2115,E2,Accrington,Barnsley,12/26/2022
-2116,E2,Bolton,Derby,12/26/2022
-2117,E2,Burton,Lincoln,12/26/2022
-2118,E2,Cambridge,Shrewsbury,12/26/2022
-2119,E2,Charlton,Peterboro,12/26/2022
-2120,E2,Cheltenham,Plymouth,12/26/2022
-2121,E2,Exeter,Portsmouth,12/26/2022
-2122,E2,Fleetwood Town,Sheffield Weds,12/26/2022
-2123,E2,Ipswich,Oxford,12/26/2022
-2124,E2,Milton Keynes Dons,Forest Green,12/26/2022
-2125,E2,Port Vale,Morecambe,12/26/2022
-2126,E2,Wycombe,Bristol Rvs,12/26/2022
-2655,E3,AFC Wimbledon,Stevenage,12/17/2022
-2656,E3,Barrow,Swindon,12/17/2022
-2657,E3,Bradford,Rochdale,12/17/2022
-2658,E3,Colchester,Salford,12/17/2022
-2659,E3,Doncaster,Harrogate,12/17/2022
-2660,E3,Hartlepool,Newport County,12/17/2022
-2661,E3,Leyton Orient,Sutton,12/17/2022
-2662,E3,Mansfield,Grimsby,12/17/2022
-2663,E3,Northampton,Carlisle,12/17/2022
-2664,E3,Stockport,Gillingham,12/17/2022
-2665,E3,Tranmere,Crawley Town,12/17/2022
-2666,E3,Walsall,Crewe,12/17/2022
-2667,E3,AFC Wimbledon,Newport County,12/26/2022
-2668,E3,Carlisle,Bradford,12/26/2022
-2669,E3,Crawley Town,Sutton,12/26/2022
-2670,E3,Gillingham,Colchester,12/26/2022
-2671,E3,Harrogate,Grimsby,12/26/2022
-2672,E3,Leyton Orient,Stevenage,12/26/2022
-2673,E3,Mansfield,Northampton,12/26/2022
-2674,E3,Rochdale,Hartlepool,12/26/2022
-2675,E3,Salford,Barrow,12/26/2022
-2676,E3,Stockport,Crewe,12/26/2022
-2677,E3,Swindon,Walsall,12/26/2022
-2678,E3,Tranmere,Doncaster,12/26/2022
-3243,EC,Aldershot,Woking,12/26/2022
-3244,EC,Altrincham,Halifax,12/26/2022
-3245,EC,Barnet,Boreham Wood,12/26/2022
-3246,EC,Dag and Red,Maidstone,12/26/2022
-3247,EC,Dorking,Eastleigh,12/26/2022
-3248,EC,Notts County,Oldham,12/26/2022
-3249,EC,Scunthorpe,Chesterfield,12/26/2022
-3250,EC,Southend,Bromley,12/26/2022
-3251,EC,Torquay,Yeovil,12/26/2022
-3252,EC,Wealdstone,Maidenhead,12/26/2022
-3253,EC,Wrexham,Solihull,12/26/2022
-3254,EC,York,Gateshead,12/26/2022
-4022,F2,Annecy,St Etienne,12/26/2022
-4023,F2,Bastia,Caen,12/26/2022
-4024,F2,Dijon,Laval,12/26/2022
-4025,F2,Metz,Niort,12/26/2022
-4026,F2,Nimes,Guingamp,12/26/2022
-4027,F2,Pau FC,Paris FC,12/26/2022
-4028,F2,Quevilly Rouen,Grenoble,12/26/2022
-4029,F2,Sochaux,Rodez,12/26/2022
-4030,F2,Valenciennes,Amiens,12/26/2022
-5317,SC0,Aberdeen,Rangers,12/17/2022
-5323,SC0,Celtic,Livingston,12/24/2022
-5324,SC0,Dundee United,Hearts,12/24/2022
-5325,SC0,Hibernian,Livingston,12/24/2022
-5326,SC0,Motherwell,Kilmarnock,12/24/2022
-5327,SC0,Ross County,Rangers,12/24/2022
-5328,SC0,St Mirren,Aberdeen,12/24/2022
-5504,SC1,Dundee,Cove Rangers,12/17/2022
-5505,SC1,Hamilton,Inverness C,12/17/2022
-5506,SC1,Morton,Queens Park,12/17/2022
-5507,SC1,Partick,Ayr,12/17/2022
-5508,SC1,Raith Rvs,Arbroath,12/17/2022
-5509,SC1,Arbroath,Queens Park,12/24/2022
-5510,SC1,Ayr,Dundee,12/24/2022
-5511,SC1,Cove Rangers,Hamilton,12/24/2022
-5512,SC1,Partick,Inverness C,12/24/2022
-5513,SC1,Raith Rvs,Morton,12/24/2022
-6485,T1,Ad. Demirspor,Karagumruk,12/25/2022
-6486,T1,Antalyaspor,Ankaragucu,12/25/2022
-6487,T1,Galatasaray,Istanbulspor,12/25/2022
-6488,T1,Gaziantep,Besiktas,12/25/2022
-6489,T1,Hatayspor,Giresunspor,12/25/2022
-6490,T1,Kasimpasa,Sivasspor,12/25/2022
-6491,T1,Konyaspor,Alanyaspor,12/25/2022
-6492,T1,Trabzonspor,Fenerbahce,12/25/2022
-6493,T1,Umraniyespor,Buyuksehyr,12/25/2022
+"","Div","Home_Team","Away_Team","Date"
+"4379","I1","Roma","Bologna",2023-01-04
+"4380","I1","Cremonese","Juventus",2023-01-04
+"4381","I1","Fiorentina","Monza",2023-01-04
+"4382","I1","Inter","Napoli",2023-01-04
+"4383","I1","Lecce","Lazio",2023-01-04
+"4384","I1","Salernitana","Milan",2023-01-04
+"4385","I1","Sassuolo","Sampdoria",2023-01-04
+"4386","I1","Spezia","Atalanta",2023-01-04
+"4387","I1","Torino","Verona",2023-01-04
+"4388","I1","Udinese","Empoli",2023-01-04
+"4735","N1","Twente","FC Emmen",2023-01-06
+"6503","T1","Ad. Demirspor","Istanbulspor",2023-01-04
+"6504","T1","Antalyaspor","Fenerbahce",2023-01-04
+"6505","T1","Galatasaray","Ankaragucu",2023-01-04
+"6506","T1","Gaziantep","Buyuksehyr",2023-01-04
+"6507","T1","Kasimpasa","Alanyaspor",2023-01-04
+"6508","T1","Kayserispor","Karagumruk",2023-01-04
+"6509","T1","Konyaspor","Sivasspor",2023-01-04
+"6510","T1","Trabzonspor","Giresunspor",2023-01-04
+"6511","T1","Umraniyespor","Hatayspor",2023-01-04

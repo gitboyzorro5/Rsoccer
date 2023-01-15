@@ -1,21 +1,163 @@
-"","Div","Home_Team","Away_Team","Date"
-"4379","I1","Roma","Bologna",2023-01-04
-"4380","I1","Cremonese","Juventus",2023-01-04
-"4381","I1","Fiorentina","Monza",2023-01-04
-"4382","I1","Inter","Napoli",2023-01-04
-"4383","I1","Lecce","Lazio",2023-01-04
-"4384","I1","Salernitana","Milan",2023-01-04
-"4385","I1","Sassuolo","Sampdoria",2023-01-04
-"4386","I1","Spezia","Atalanta",2023-01-04
-"4387","I1","Torino","Verona",2023-01-04
-"4388","I1","Udinese","Empoli",2023-01-04
-"4735","N1","Twente","FC Emmen",2023-01-06
-"6503","T1","Ad. Demirspor","Istanbulspor",2023-01-04
-"6504","T1","Antalyaspor","Fenerbahce",2023-01-04
-"6505","T1","Galatasaray","Ankaragucu",2023-01-04
-"6506","T1","Gaziantep","Buyuksehyr",2023-01-04
-"6507","T1","Kasimpasa","Alanyaspor",2023-01-04
-"6508","T1","Kayserispor","Karagumruk",2023-01-04
-"6509","T1","Konyaspor","Sivasspor",2023-01-04
-"6510","T1","Trabzonspor","Giresunspor",2023-01-04
-"6511","T1","Umraniyespor","Hatayspor",2023-01-04
+,Div,Home_Team,Away_Team,Date
+172,B1,Charleroi,Cercle Brugge,1/14/2023
+173,B1,Club Brugge,Anderlecht,1/14/2023
+174,B1,Eupen,St Truiden,1/14/2023
+175,B1,Genk,Waregem,1/14/2023
+176,B1,Gent,Kortrijk,1/14/2023
+177,B1,Mechelen,Oostende,1/14/2023
+178,B1,St. Gilloise,Antwerp,1/14/2023
+179,B1,Seraing,Standard,1/14/2023
+180,B1,Westerlo,Oud-Heverlee Leuven,1/14/2023
+1109,E0,Aston Villa,Leeds,1/14/2023
+1102,E0,Fulham,Chelsea,1/14/2023
+1110,E0,Brentford,Bournemouth,1/14/2023
+1111,E0,Brighton,Liverpool,1/14/2023
+1112,E0,Chelsea,Crystal Palace,1/14/2023
+1113,E0,Everton,Southampton,1/14/2023
+1114,E0,Man United,Man City,1/14/2023
+1115,E0,Newcastle,Fulham,1/14/2023
+1116,E0,Nottm Forest,Leicester,1/14/2023
+1117,E0,Tottenham,Arsenal,1/14/2023
+1118,E0,Wolves,West Ham,1/14/2023
+1611,E1,Bristol City,Birmingham,1/14/2023
+1612,E1,Burnley,Coventry,1/14/2023
+1613,E1,Cardiff,Wigan,1/14/2023
+1614,E1,Hull,Huddersfield,1/14/2023
+1615,E1,Luton,West Brom,1/14/2023
+1616,E1,Middlesbrough,Millwall,1/14/2023
+1617,E1,Preston,Norwich,1/14/2023
+1618,E1,Reading,QPR,1/14/2023
+1619,E1,Rotherham,Blackburn,1/14/2023
+1620,E1,Sheffield United,Stoke,1/14/2023
+1621,E1,Sunderland,Swansea,1/14/2023
+1622,E1,Watford,Blackpool,1/14/2023
+2163,E2,Accrington,Bristol Rvs,1/14/2023
+2164,E2,Bolton,Portsmouth,1/14/2023
+2165,E2,Burton,Shrewsbury,1/14/2023
+2166,E2,Cambridge,Morecambe,1/14/2023
+2167,E2,Charlton,Barnsley,1/14/2023
+2168,E2,Cheltenham,Derby,1/14/2023
+2169,E2,Exeter,Forest Green,1/14/2023
+2170,E2,Fleetwood Town,Oxford,1/14/2023
+2171,E2,Ipswich,Plymouth,1/14/2023
+2172,E2,Milton Keynes Dons,Lincoln,1/14/2023
+2173,E2,Port Vale,Peterboro,1/14/2023
+2174,E2,Wycombe,Sheffield Weds,1/14/2023
+2715,E3,AFC Wimbledon,Bradford,1/14/2023
+2716,E3,Carlisle,Newport County,1/14/2023
+2717,E3,Crawley Town,Doncaster,1/14/2023
+2718,E3,Gillingham,Hartlepool,1/14/2023
+2719,E3,Harrogate,Stevenage,1/14/2023
+2720,E3,Leyton Orient,Barrow,1/14/2023
+2721,E3,Mansfield,Crewe,1/14/2023
+2722,E3,Rochdale,Colchester,1/14/2023
+2723,E3,Salford,Sutton,1/14/2023
+2724,E3,Stockport,Northampton,1/14/2023
+2725,E3,Swindon,Grimsby,1/14/2023
+2726,E3,Tranmere,Walsall,1/14/2023
+3677,F1,Ajaccio,Reims,1/11/2023
+3678,F1,Auxerre,Toulouse,1/11/2023
+3679,F1,Brest,Lille,1/11/2023
+3680,F1,Clermont,Rennes,1/11/2023
+3681,F1,Lorient,Monaco,1/11/2023
+3682,F1,Nantes,Lyon,1/11/2023
+3683,F1,Nice,Montpellier,1/11/2023
+3684,F1,Paris SG,Angers,1/11/2023
+3685,F1,Strasbourg,Lens,1/11/2023
+3686,F1,Troyes,Marseille,1/11/2023
+3687,F1,Angers,Clermont,1/15/2023
+3688,F1,Lens,Auxerre,1/15/2023
+3689,F1,Lille,Troyes,1/15/2023
+3690,F1,Lyon,Strasbourg,1/15/2023
+3691,F1,Marseille,Lorient,1/15/2023
+3692,F1,Monaco,Ajaccio,1/15/2023
+3693,F1,Montpellier,Nantes,1/15/2023
+3694,F1,Reims,Nice,1/15/2023
+3695,F1,Rennes,Paris SG,1/15/2023
+3696,F1,Toulouse,Brest,1/15/2023
+4040,F2,Amiens,Guingamp,1/10/2023
+4041,F2,Le Havre,Sochaux,1/10/2023
+4042,F2,Nimes,Metz,1/10/2023
+4043,F2,Paris FC,Dijon,1/10/2023
+4044,F2,Pau FC,Grenoble,1/10/2023
+4045,F2,Quevilly Rouen,Bastia,1/10/2023
+4046,F2,Rodez,Niort,1/10/2023
+4047,F2,St Etienne,Laval,1/10/2023
+4048,F2,Valenciennes,Annecy,1/10/2023
+4049,F2,Annecy,Paris FC,1/13/2023
+4050,F2,Bastia,Pau FC,1/13/2023
+4051,F2,Dijon,Valenciennes,1/13/2023
+4052,F2,Guingamp,Grenoble,1/13/2023
+4053,F2,Laval,Rodez,1/13/2023
+4054,F2,Le Havre,Nimes,1/13/2023
+4055,F2,Metz,Quevilly Rouen,1/13/2023
+4056,F2,Niort,St Etienne,1/13/2023
+4057,F2,Sochaux,Caen,1/13/2023
+4399,I1,Roma,Fiorentina,1/15/2023
+4400,I1,Atalanta,Salernitana,1/15/2023
+4401,I1,Cremonese,Monza,1/15/2023
+4402,I1,Empoli,Sampdoria,1/15/2023
+4403,I1,Inter,Verona,1/15/2023
+4404,I1,Lecce,Milan,1/15/2023
+4405,I1,Napoli,Juventus,1/15/2023
+4406,I1,Sassuolo,Lazio,1/15/2023
+4407,I1,Torino,Spezia,1/15/2023
+4408,I1,Udinese,Bologna,1/15/2023
+4744,N1,Heerenveen,AZ Alkmaar,1/13/2023
+4745,N1,Ajax,Twente,1/14/2023
+4746,N1,Volendam,Waalwijk,1/14/2023
+4747,N1,Groningen,Feyenoord,1/14/2023
+4748,N1,Sparta Rotterdam,Excelsior,1/14/2023
+4749,N1,FC Emmen,Cambuur,1/15/2023
+4750,N1,Go Ahead Eagles,Utrecht,1/15/2023
+4751,N1,For Sittard,PSV Eindhoven,1/15/2023
+4752,N1,Vitesse,Nijmegen,1/15/2023
+5050,P1,Benfica,Sp Lisbon,1/15/2023
+5051,P1,Sp Braga,Boavista,1/15/2023
+5052,P1,Chaves,Arouca,1/15/2023
+5053,P1,Estoril,Casa Pia,1/15/2023
+5054,P1,Porto,Famalicao,1/15/2023
+5055,P1,Gil Vicente,Guimaraes,1/15/2023
+5056,P1,Portimonense,Santa Clara,1/15/2023
+5057,P1,Rio Ave,Pacos Ferreira,1/15/2023
+5058,P1,Vizela,Maritimo,1/15/2023
+5347,SC0,Celtic,St Mirren,1/14/2023
+5348,SC0,Hearts,Aberdeen,1/14/2023
+5349,SC0,Hibernian,Dundee United,1/14/2023
+5350,SC0,Kilmarnock,Rangers,1/14/2023
+5351,SC0,Motherwell,Ross County,1/14/2023
+5352,SC0,St Johnstone,Livingston,1/14/2023
+5524,SC1,Ayr,Arbroath,1/14/2023
+5525,SC1,Cove Rangers,Raith Rvs,1/14/2023
+5526,SC1,Dundee,Partick,1/14/2023
+5527,SC1,Hamilton,Morton,1/14/2023
+5528,SC1,Inverness C,Queens Park,1/14/2023
+5759,SP1,Almeria,Ath Madrid,1/15/2023
+5760,SP1,Betis,Barcelona,1/15/2023
+5761,SP1,Cadiz,Elche,1/15/2023
+5762,SP1,Celta,Villarreal,1/15/2023
+5763,SP1,Getafe,Espanol,1/15/2023
+5764,SP1,Girona,Sevilla,1/15/2023
+5765,SP1,Osasuna,Mallorca,1/15/2023
+5766,SP1,Real Madrid,Valencia,1/15/2023
+5767,SP1,Sociedad,Ath Bilbao,1/15/2023
+5768,SP1,Valladolid,Vallecano,1/15/2023
+6139,SP2,Almeria,Ath Madrid,1/15/2023
+6140,SP2,Betis,Barcelona,1/15/2023
+6141,SP2,Cadiz,Elche,1/15/2023
+6142,SP2,Celta,Villarreal,1/15/2023
+6143,SP2,Getafe,Espanol,1/15/2023
+6144,SP2,Girona,Sevilla,1/15/2023
+6145,SP2,Osasuna,Mallorca,1/15/2023
+6146,SP2,Real Madrid,Valencia,1/15/2023
+6147,SP2,Sociedad,Ath Bilbao,1/15/2023
+6148,SP2,Valladolid,Vallecano,1/15/2023
+6521,T1,Ad. Demirspor,Ankaragucu,1/15/2023
+6522,T1,Antalyaspor,Giresunspor,1/15/2023
+6523,T1,Galatasaray,Hatayspor,1/15/2023
+6524,T1,Gaziantep,Fenerbahce,1/15/2023
+6525,T1,Kasimpasa,Karagumruk,1/15/2023
+6526,T1,Kayserispor,Sivasspor,1/15/2023
+6527,T1,Konyaspor,Besiktas,1/15/2023
+6528,T1,Trabzonspor,Buyuksehyr,1/15/2023
+6529,T1,Umraniyespor,Istanbulspor,1/15/2023

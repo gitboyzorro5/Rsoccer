@@ -41,10 +41,10 @@ ROUND_20212022 <- poisson_round
 # EC$FTAG <- as.numeric(EC$FTAG)
 #
 # EC$TG <- as.numeric(EC$TG)
-# F1 <- F1_rounds[F1_rounds$f1_matchday <= ROUND_20212022,]
-# F1$FTHG <- as.numeric(F1$FTHG)
-# F1$FTAG <- as.numeric(F1$FTAG)
-# F1$TG <- as.numeric(F1$TG)
+F1 <- F1_rounds[F1_rounds$f1_matchday <= ROUND_20212022,]
+F1$FTHG <- as.numeric(F1$FTHG)
+F1$FTAG <- as.numeric(F1$FTAG)
+F1$TG <- as.numeric(F1$TG)
 # F2 <- F2_rounds[F2_rounds$f2_matchday <= ROUND_20212022,]
 # F2$FTHG <- as.numeric(F2$FTHG)
 # F2$FTAG <- as.numeric(F2$FTAG)
@@ -52,11 +52,11 @@ ROUND_20212022 <- poisson_round
 # G1 <- G1_rounds[G1_rounds$g1_matchday <= ROUND_20212022,]
 # G1$FTHG <- as.numeric(G1$FTHG)
 # G1$FTAG <- as.numeric(G1$FTAG)
-# G1$TG <- as.numeric(G1$TG)
-I1 <- I1_rounds[I1_rounds$i1_matchday <= ROUND_20212022,]
-I1$FTHG <- as.numeric(I1$FTHG)
-I1$FTAG <- as.numeric(I1$FTAG)
-I1$TG <- as.numeric(I1$TG)
+# # G1$TG <- as.numeric(G1$TG)
+# I1 <- I1_rounds[I1_rounds$i1_matchday <= ROUND_20212022,]
+# I1$FTHG <- as.numeric(I1$FTHG)
+# I1$FTAG <- as.numeric(I1$FTAG)
+# I1$TG <- as.numeric(I1$TG)
 # I2 <- I2_rounds[I2_rounds$i2_matchday <= ROUND_20212022,]
 # I2$FTHG <- as.numeric(I2$FTHG)
 # I2$FTAG <- as.numeric(I2$FTAG)
@@ -102,17 +102,17 @@ I1$TG <- as.numeric(I1$TG)
 source("goaltotalsv2.R")
 source("ShotsAnalysis.R")
 source("PoissonModel.R")
-i1_totalgames_poiss <- c()
-i1_totalgames_poiss[1:length(i1_teams)] <- paste("no",poisson_round,sep = "")
-i1_home_poisson <- cbind(i1_home_poisson,i1_totalgames_poiss)
-i1_away_poisson <- cbind(i1_away_poisson,i1_totalgames_poiss)
+f1_totalgames_poiss <- c()
+f1_totalgames_poiss[1:length(f1_teams)] <- paste("no",poisson_round,sep = "")
+f1_home_poisson <- cbind(f1_home_poisson,f1_totalgames_poiss)
+f1_away_poisson <- cbind(f1_away_poisson,f1_totalgames_poiss)
 
-write.csv(i1_home_poisson,paste("i1_home_poisson",ROUND_20212022,".csv",sep = "_"))
-write.csv(i1_away_poisson,paste("i1_away_poisson",ROUND_20212022,".csv",sep = "_"))
+write.csv(f1_home_poisson,paste("f1_home_poisson",ROUND_20212022,".csv",sep = "_"))
+write.csv(f1_away_poisson,paste("f1_away_poisson",ROUND_20212022,".csv",sep = "_"))
 
 
-allhomepoisson <- rbind(allhomepoisson,i1_home_poisson)
-allawaypoisson <- rbind(allawaypoisson,i1_away_poisson)
+allhomepoisson <- rbind(allhomepoisson,f1_home_poisson)
+allawaypoisson <- rbind(allawaypoisson,f1_away_poisson)
 # allhomepoisson <- rbind(b1_home_poisson,d1_home_poisson,d2_home_poisson,e0_home_poisson,e1_home_poisson,e2_home_poisson,
 #                          e3_home_poisson,ec_home_poisson,f1_home_poisson,f2_home_poisson,g1_home_poisson,i1_home_poisson,
 #                          i2_home_poisson,n1_home_poisson,p1_home_poisson,sp1_home_poisson,sp2_home_poisson,sc0_home_poisson,

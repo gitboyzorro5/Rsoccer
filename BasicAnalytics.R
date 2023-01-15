@@ -961,18 +961,22 @@ nrow(allteams_2010present[allteams_2010present$CS == "1-0",])
 #spread analysis
 allteams20222023SOTSPREADS <- read.csv('../Documents/allteams20222023SOTSPREADS.csv')
 
-df <- allteams20222023SOTSPREADS[allteams20222023SOTSPREADS$HomeTeam == "Alaves" | allteams20222023SOTSPREADS$AwayTeam == "Alaves",]
-df2 <- allteams20222023SOTSPREADS[allteams20222023SOTSPREADS$HomeTeam == "Levante" | allteams20222023SOTSPREADS$AwayTeam == "Levante",]
 
-mean(df2$GoalsXCorners)
+#####################################################################################
 
-
-
+df <- I1_spread[I1_spread$HomeTeam == "Inter" | I1_spread$AwayTeam == "Inter",]
+df2 <- I1_spread[I1_spread$HomeTeam == "Verona" | I1_spread$AwayTeam == "Verona",]
+temp_analysis <- rbind(df,df2)
+unlink('temp_analysi.csv')
+write.csv(temp_analysis,'inerverona.csv')
+###################################################################################
 allteams20222023SOTSPREADS %>%
 
 group_by(Div) %>%
   summarise(sumofbookings = sum(Bookings, na.rm = T ))
 
+library('xlsx')
+write.xlsx(laliga_players,'laliga_players.xlsx',sheetName = "laligaplayers")
 
 tapply(allteams20222023SOTSPREADS$Bookings, allteams20222023SOTSPREADS$Div, FUN = mean)
 

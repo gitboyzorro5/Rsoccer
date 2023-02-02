@@ -21,7 +21,7 @@ epl_match_details <- epl_match_details[epl_match_details$event_type == "Goal",]
 
 
 epl_goal_mins <- epl_match_details %>% group_by(matchid) %>%
-  summarise(epl_goalmins = sum(min),
+  dplyr::summarise(epl_goalmins = sum(min),
             n = n()
 
             )
@@ -47,11 +47,10 @@ epl_players_and_match <- merge(epl_match_details,epl_players)
 epl_players_and_match$shirt <- as.integer(epl_players_and_match$shirt)
 
 epl_shirtnumbers <- epl_players_and_match %>% group_by(matchid) %>%
-  summarise(epl_shirts = sum(shirt),)
+  dplyr::summarise(epl_shirts = sum(shirt),)
 
 E0_spread <- left_join(E0_spread,epl_shirtnumbers)
 E0_spread <- E0_spread %>% replace(is.na(.),0)
-
 
 
 E0_spread$Bookings <- (E0_spread$HY *10 + E0_spread$HR *25) + (E0_spread$AY*10 + E0_spread$AR*25)
@@ -86,7 +85,7 @@ bundesliga_match_details <- bundesliga_match_details[bundesliga_match_details$ev
 
 
 bundesliga_goal_mins <- bundesliga_match_details %>% group_by(matchid) %>%
-  summarise(bundesliga_goalmins = sum(min),
+  dplyr::summarise(bundesliga_goalmins = sum(min),
             n = n()
   )
 
@@ -111,7 +110,7 @@ bundesliga_players_and_match <- merge(bundesliga_match_details,bundesliga_player
 bundesliga_players_and_match$shirt <- as.integer(bundesliga_players_and_match$shirt)
 
 bundesliga_shirtnumbers <- bundesliga_players_and_match %>% group_by(matchid) %>%
-  summarise(bundesliga_shirts = sum(shirt),)
+  dplyr::summarise(bundesliga_shirts = sum(shirt),)
 
 D1_spread <- left_join(D1_spread,bundesliga_shirtnumbers)
 D1_spread <- D1_spread %>% replace(is.na(.),0)
@@ -136,7 +135,7 @@ seriea_match_details <- load_fotmob_match_details(
   country = "ITA",
   league_name = "Serie A"
 )
-View(seriea_match_details)
+
 #select just the current season
 seriea_startdate <- which(seriea_match_details$match_time_utc == "Sat, Aug 13, 2022, 16:30 UTC")
 seriea_startindex <- nrow(seriea_match_details) - seriea_startdate[1]
@@ -150,7 +149,7 @@ seriea_match_details <- seriea_match_details[seriea_match_details$event_type == 
 
 
 seriea_goal_mins <- seriea_match_details %>% group_by(matchid) %>%
-  summarise(seriea_goalmins = sum(min),
+  dplyr::summarise(seriea_goalmins = sum(min),
             n = n()
   )
 
@@ -175,7 +174,7 @@ seriea_players_and_match <- merge(seriea_match_details,seriea_players)
 seriea_players_and_match$shirt <- as.integer(seriea_players_and_match$shirt)
 
 seriea_shirtnumbers <- seriea_players_and_match %>% group_by(matchid) %>%
-  summarise(seriea_shirts = sum(shirt),)
+  dplyr::summarise(seriea_shirts = sum(shirt),)
 
 I1_spread <- left_join(I1_spread,seriea_shirtnumbers)
 I1_spread <- I1_spread %>% replace(is.na(.),0)
@@ -200,7 +199,7 @@ laliga_match_details <- load_fotmob_match_details(
   country = "ESP",
   league_name = "LaLiga"
 )
-View(laliga_match_details)
+
 #select just the current season
 laliga_startdate <- which(laliga_match_details$match_time_utc == "Fri, Aug 12, 2022, 19:00 UTC")
 laliga_startindex <- nrow(laliga_match_details) - laliga_startdate[1]
@@ -214,7 +213,7 @@ laliga_match_details <- laliga_match_details[laliga_match_details$event_type == 
 
 
 laliga_goal_mins <- laliga_match_details %>% group_by(matchid) %>%
-  summarise(laliga_goalmins = sum(min),
+  dplyr::summarise(laliga_goalmins = sum(min),
             n = n()
   )
 
@@ -239,7 +238,7 @@ laliga_players_and_match <- merge(laliga_match_details,laliga_players)
 laliga_players_and_match$shirt <- as.integer(laliga_players_and_match$shirt)
 
 laliga_shirtnumbers <- laliga_players_and_match %>% group_by(matchid) %>%
-  summarise(laliga_shirts = sum(shirt),)
+  dplyr::summarise(laliga_shirts = sum(shirt),)
 
 SP1_spread <- left_join(SP1_spread,laliga_shirtnumbers)
 SP1_spread <- SP1_spread %>% replace(is.na(.),0)
@@ -259,10 +258,98 @@ SP1_spread$GoalsXcornerXbookings <- (SP1_spread$TG)*(SP1_spread$TC)*(SP1_spread$
 unlink('SP1_spread.csv')
 write.csv(SP1_spread,'SP1_spread.csv')
 ################################################################################################################
+#F1
+ligueone_match_details <- load_fotmob_match_details(
+  country = "FRA",
+  league_name = "Ligue 1"
+)
 
-dfulham <-
-epl_match_details[epl_match_details$home_team == "Fulham" & epl_match_details$event_type == "Goal",] %>%
-  group_by(player_name) %>%
-  summarise()
+#select just the current season
+ligueone_startdate <- which(ligueone_match_details$match_time_utc == "Fri, Aug 5, 2022, 19:00 UTC")
+ligueone_startindex <- nrow(ligueone_match_details) - ligueone_startdate[1]
+ligueone_match_details <- tail(ligueone_match_details,ligueone_startindex)
+
+ligueone_match_details$home_team <- mgsub(ligueone_match_details$home_team,c("AC Ajaccio","Clermont Foot","Paris Saint-Germain"),c("Ajaccio","Clermont","Paris SG"))
+ligueone_match_details$away_team <- mgsub(ligueone_match_details$away_team,c("AC Ajaccio","Clermont Foot","Paris Saint-Germain"),c("Ajaccio","Clermont","Paris SG"))
+
+ligueone_match_details$matchid <- paste(ligueone_match_details$home_team,ligueone_match_details$away_team,sep = "-")
+ligueone_match_details <- ligueone_match_details[ligueone_match_details$event_type == "Goal",]
+
+
+ligueone_goal_mins <- ligueone_match_details %>% group_by(matchid) %>%
+  dplyr::summarise(ligueone_goalmins = sum(min),
+                   n = n()
+  )
+
+F1_spread <- subset(allteams20222023,Div =="F1")
+F1_spread$matchid <- paste(F1$HomeTeam,F1$AwayTeam,sep = "-")
+F1_spread <- left_join(F1_spread,ligueone_goal_mins)
+F1_spread <- F1_spread %>% replace(is.na(.),0)
+
+ligueone_matchids <- as.vector(ligueone_match_details$match_id)
+ligueone_matchids <- unique(ligueone_matchids)
+ligueone_matchidslength <- length(ligueone_matchids)
+
+ligueone_matchids[1:ligueone_matchidslength]
+ligueone_players <- fotmob_get_match_players(ligueone_matchids[1:ligueone_matchidslength])
+
+
+names(ligueone_players)[names(ligueone_players) == "id"] <- "player_id"
+
+ligueone_players$player_id <- as.integer(ligueone_players$player_id)
+
+ligueone_players_and_match <- merge(ligueone_match_details,ligueone_players)
+ligueone_players_and_match$shirt <- as.integer(ligueone_players_and_match$shirt)
+
+ligueone_shirtnumbers <- ligueone_players_and_match %>% group_by(matchid) %>%
+  dplyr::summarise(ligueone_shirts = sum(shirt),)
+
+F1_spread <- left_join(F1_spread,ligueone_shirtnumbers)
+F1_spread <- F1_spread %>% replace(is.na(.),0)
+
+F1_spread$Bookings <- (F1_spread$HY *10 + F1_spread$HR *25) + (F1_spread$AY*10 + F1_spread$AR*25)
+F1_spread$Crossbookings <- (F1_spread$HY *10 + F1_spread$HR *25)*(F1_spread$AY*10 + F1_spread$AR*25)
+F1_spread$GoalsXbookings <- (F1_spread$Bookings)*(F1_spread$TG)
+F1_spread$CornersXbookings <- (F1_spread$TC)*(F1_spread$Bookings)
+F1_spread$ShirtsXbookings <- (F1_spread$ligueone_shirts)*(F1_spread$Bookings)
+F1_spread$GoalsXcorners <- (F1_spread$TG)*(F1_spread$TC)
+F1_spread$GoalsXshirts <- (F1_spread$TG)*(F1_spread$ligueone_shirts)
+F1_spread$ShirtsXcorners <- (F1_spread$ligueone_shirts)*(F1_spread$TC)
+F1_spread$TGMXcorners <- (F1_spread$ligueone_goalmins)*(F1_spread$TC)
+F1_spread$GoalsXcornerXbookings <- (F1_spread$TG)*(F1_spread$TC)*(F1_spread$Bookings)
+
+
+unlink('F1_spread.csv')
+write.csv(F1_spread,'F1_spread.csv')
+################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

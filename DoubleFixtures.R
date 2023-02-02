@@ -4,8 +4,26 @@ library('lubridate')
 #############################################################
 myfixturesdiv <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')
 myfixturesdiv$Date <- dmy(myfixturesdiv$Date)
-myfixturesdiv <- myfixturesdiv[myfixturesdiv$Date >= '2023-01-06',]
+myfixturesdiv <- myfixturesdiv[myfixturesdiv$Date >= '2023-01-31',]
 
+b1_df <- 1
+d1_df <- 1
+d2_df <- 1
+e0_df <- 1
+e1_df <- 1
+e2_df <- 1
+e3_df <- 1
+ec_df <- 1
+f1_df <- 1
+f2_df <- 1
+i1_df <- 1
+n1_df <- 1
+p1_df <- 1
+sp1_df <- 1
+sp2_df <- 1
+sc0_df <- 1
+sc1_df <- 1
+t1_df  <- 1
 ####################################################################
 myfixturesdivb1 <- subset(myfixturesdiv,Div == "B1")
 ####################################################################
@@ -18,8 +36,8 @@ for(dbfixture_b1div in 1:nrow(myfixturesdivb1))
   test_fixture_b1div <- myfixturesdivb1[dbfixture_b1div,]
   test_fixture_inv_b1div <- test_fixture_b1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_b1div <- test_fixture_b1div[rep(seq_len(nrow(test_fixture_b1div)), each = 4),]
-  final_test_fixture_inv_b1div <- test_fixture_inv_b1div[rep(seq_len(nrow(test_fixture_inv_b1div)), each = 4),]
+  final_test_fixture_b1div <- test_fixture_b1div[rep(seq_len(nrow(test_fixture_b1div)), each = b1_df),]
+  final_test_fixture_inv_b1div <- test_fixture_inv_b1div[rep(seq_len(nrow(test_fixture_inv_b1div)), each = b1_df),]
 
 
   final_test_fixture_b1div <- final_test_fixture_b1div[,c(24,25)]
@@ -35,7 +53,7 @@ for(dbfixture_b1div in 1:nrow(myfixturesdivb1))
 
   final_doublefixture_b1div <- rbind(final_doublefixture_b1div,mid_doublefixture_b1div)
 
-
+final_doublefixture_b1div[1,2]
 }
 unlink('finaldoublefixtureb1div.csv')
 write.csv(final_doublefixture_b1div,"finaldoublefixtureb1div.csv")
@@ -52,8 +70,8 @@ for(dbfixture_d1div in 1:nrow(myfixturesdivd1))
   test_fixture_d1div <- myfixturesdivd1[dbfixture_d1div,]
   test_fixture_inv_d1div <- test_fixture_d1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_d1div <- test_fixture_d1div[rep(seq_len(nrow(test_fixture_d1div)), each = 4),]
-  final_test_fixture_inv_d1div <- test_fixture_inv_d1div[rep(seq_len(nrow(test_fixture_inv_d1div)), each = 4),]
+  final_test_fixture_d1div <- test_fixture_d1div[rep(seq_len(nrow(test_fixture_d1div)), each = d1_df),]
+  final_test_fixture_inv_d1div <- test_fixture_inv_d1div[rep(seq_len(nrow(test_fixture_inv_d1div)), each = d1_df),]
 
 
   final_test_fixture_d1div <- final_test_fixture_d1div[,c(24,25)]
@@ -86,8 +104,8 @@ for(dbfixture_d2div in 1:nrow(myfixturesdivd2))
   test_fixture_d2div <- myfixturesdivd2[dbfixture_d2div,]
   test_fixture_inv_d2div <- test_fixture_d2div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_d2div <- test_fixture_d2div[rep(seq_len(nrow(test_fixture_d2div)), each = 4),]
-  final_test_fixture_inv_d2div <- test_fixture_inv_d2div[rep(seq_len(nrow(test_fixture_inv_d2div)), each = 4),]
+  final_test_fixture_d2div <- test_fixture_d2div[rep(seq_len(nrow(test_fixture_d2div)), each = d2_df),]
+  final_test_fixture_inv_d2div <- test_fixture_inv_d2div[rep(seq_len(nrow(test_fixture_inv_d2div)), each = d2_df),]
 
 
   final_test_fixture_d2div <- final_test_fixture_d2div[,c(24,25)]
@@ -120,8 +138,8 @@ for(dbfixture_e0div in 1:nrow(myfixturesdive0))
   test_fixture_e0div <- myfixturesdive0[dbfixture_e0div,]
   test_fixture_inv_e0div <- test_fixture_e0div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_e0div <- test_fixture_e0div[rep(seq_len(nrow(test_fixture_e0div)), each = 3),]
-  final_test_fixture_inv_e0div <- test_fixture_inv_e0div[rep(seq_len(nrow(test_fixture_inv_e0div)), each = 3),]
+  final_test_fixture_e0div <- test_fixture_e0div[rep(seq_len(nrow(test_fixture_e0div)), each = e0_df),]
+  final_test_fixture_inv_e0div <- test_fixture_inv_e0div[rep(seq_len(nrow(test_fixture_inv_e0div)), each = e0_df),]
 
 
   final_test_fixture_e0div <- final_test_fixture_e0div[,c(24,25)]
@@ -137,10 +155,11 @@ for(dbfixture_e0div in 1:nrow(myfixturesdive0))
 
   final_doublefixture_e0div <- rbind(final_doublefixture_e0div,mid_doublefixture_e0div)
 
-
+unique(final_doublefixture_e0div)
 }
 unlink('finaldoublefixturee0div.csv')
 write.csv(final_doublefixture_e0div,"finaldoublefixturee0div.csv")
+final_doublefixture_e0div
 ############################################################################################################################
 ####################################################################
 myfixturesdive1 <- subset(myfixturesdiv,Div == "E1")
@@ -154,8 +173,8 @@ for(dbfixture_e1div in 1:nrow(myfixturesdive1))
   test_fixture_e1div <- myfixturesdive1[dbfixture_e1div,]
   test_fixture_inv_e1div <- test_fixture_e1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_e1div <- test_fixture_e1div[rep(seq_len(nrow(test_fixture_e1div)), each = 7),]
-  final_test_fixture_inv_e1div <- test_fixture_inv_e1div[rep(seq_len(nrow(test_fixture_inv_e1div)), each = 7),]
+  final_test_fixture_e1div <- test_fixture_e1div[rep(seq_len(nrow(test_fixture_e1div)), each = e1_df),]
+  final_test_fixture_inv_e1div <- test_fixture_inv_e1div[rep(seq_len(nrow(test_fixture_inv_e1div)), each = e1_df),]
 
 
   final_test_fixture_e1div <- final_test_fixture_e1div[,c(24,25)]
@@ -188,8 +207,8 @@ for(dbfixture_e2div in 1:nrow(myfixturesdive2))
   test_fixture_e2div <- myfixturesdive2[dbfixture_e2div,]
   test_fixture_inv_e2div <- test_fixture_e2div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_e2div <- test_fixture_e2div[rep(seq_len(nrow(test_fixture_e2div)), each = 5),]
-  final_test_fixture_inv_e2div <- test_fixture_inv_e2div[rep(seq_len(nrow(test_fixture_inv_e2div)), each = 5),]
+  final_test_fixture_e2div <- test_fixture_e2div[rep(seq_len(nrow(test_fixture_e2div)), each = e2_df),]
+  final_test_fixture_inv_e2div <- test_fixture_inv_e2div[rep(seq_len(nrow(test_fixture_inv_e2div)), each = e2_df),]
 
 
   final_test_fixture_e2div <- final_test_fixture_e2div[,c(24,25)]
@@ -222,8 +241,8 @@ for(dbfixture_e3div in 1:nrow(myfixturesdive3))
   test_fixture_e3div <- myfixturesdive3[dbfixture_e3div,]
   test_fixture_inv_e3div <- test_fixture_e3div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_e3div <- test_fixture_e3div[rep(seq_len(nrow(test_fixture_e3div)), each = 5),]
-  final_test_fixture_inv_e3div <- test_fixture_inv_e3div[rep(seq_len(nrow(test_fixture_inv_e3div)), each = 5),]
+  final_test_fixture_e3div <- test_fixture_e3div[rep(seq_len(nrow(test_fixture_e3div)), each = e3_df),]
+  final_test_fixture_inv_e3div <- test_fixture_inv_e3div[rep(seq_len(nrow(test_fixture_inv_e3div)), each = e3_df),]
 
 
   final_test_fixture_e3div <- final_test_fixture_e3div[,c(24,25)]
@@ -256,8 +275,8 @@ for(dbfixture_ecdiv in 1:nrow(myfixturesdivec))
   test_fixture_ecdiv <- myfixturesdivec[dbfixture_ecdiv,]
   test_fixture_inv_ecdiv <- test_fixture_ecdiv[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_ecdiv <- test_fixture_ecdiv[rep(seq_len(nrow(test_fixture_ecdiv)), each = 5),]
-  final_test_fixture_inv_ecdiv <- test_fixture_inv_ecdiv[rep(seq_len(nrow(test_fixture_inv_ecdiv)), each = 5),]
+  final_test_fixture_ecdiv <- test_fixture_ecdiv[rep(seq_len(nrow(test_fixture_ecdiv)), each = ec_df),]
+  final_test_fixture_inv_ecdiv <- test_fixture_inv_ecdiv[rep(seq_len(nrow(test_fixture_inv_ecdiv)), each = ec_df),]
 
 
   final_test_fixture_ecdiv <- final_test_fixture_ecdiv[,c(24,25)]
@@ -290,8 +309,8 @@ for(dbfixture_f1div in 1:nrow(myfixturesdivf1))
   test_fixture_f1div <- myfixturesdivf1[dbfixture_f1div,]
   test_fixture_inv_f1div <- test_fixture_f1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_f1div <- test_fixture_f1div[rep(seq_len(nrow(test_fixture_f1div)), each = 4),]
-  final_test_fixture_inv_f1div <- test_fixture_inv_f1div[rep(seq_len(nrow(test_fixture_inv_f1div)), each = 4),]
+  final_test_fixture_f1div <- test_fixture_f1div[rep(seq_len(nrow(test_fixture_f1div)), each = f1_df),]
+  final_test_fixture_inv_f1div <- test_fixture_inv_f1div[rep(seq_len(nrow(test_fixture_inv_f1div)), each = f1_df),]
 
 
   final_test_fixture_f1div <- final_test_fixture_f1div[,c(24,25)]
@@ -324,8 +343,8 @@ for(dbfixture_f2div in 1:nrow(myfixturesdivf2))
   test_fixture_f2div <- myfixturesdivf2[dbfixture_f2div,]
   test_fixture_inv_f2div <- test_fixture_f2div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_f2div <- test_fixture_f2div[rep(seq_len(nrow(test_fixture_f2div)), each = 4),]
-  final_test_fixture_inv_f2div <- test_fixture_inv_f2div[rep(seq_len(nrow(test_fixture_inv_f2div)), each = 4),]
+  final_test_fixture_f2div <- test_fixture_f2div[rep(seq_len(nrow(test_fixture_f2div)), each = f2_df),]
+  final_test_fixture_inv_f2div <- test_fixture_inv_f2div[rep(seq_len(nrow(test_fixture_inv_f2div)), each = f2_df),]
 
 
   final_test_fixture_f2div <- final_test_fixture_f2div[,c(24,25)]
@@ -358,8 +377,8 @@ for(dbfixture_g1div in 1:nrow(myfixturesdivg1))
   test_fixture_g1div <- myfixturesdivg1[dbfixture_g1div,]
   test_fixture_inv_g1div <- test_fixture_g1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_g1div <- test_fixture_g1div[rep(seq_len(nrow(test_fixture_g1div)), each = 4),]
-  final_test_fixture_inv_g1div <- test_fixture_inv_g1div[rep(seq_len(nrow(test_fixture_inv_g1div)), each = 4),]
+  final_test_fixture_g1div <- test_fixture_g1div[rep(seq_len(nrow(test_fixture_g1div)), each = g1_df),]
+  final_test_fixture_inv_g1div <- test_fixture_inv_g1div[rep(seq_len(nrow(test_fixture_inv_g1div)), each = g1_df),]
 
 
   final_test_fixture_g1div <- final_test_fixture_g1div[,c(24,25)]
@@ -392,8 +411,8 @@ for(dbfixture_i1div in 1:nrow(myfixturesdivi1))
   test_fixture_i1div <- myfixturesdivi1[dbfixture_i1div,]
   test_fixture_inv_i1div <- test_fixture_i1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_i1div <- test_fixture_i1div[rep(seq_len(nrow(test_fixture_i1div)), each = 3),]
-  final_test_fixture_inv_i1div <- test_fixture_inv_i1div[rep(seq_len(nrow(test_fixture_inv_i1div)), each = 3),]
+  final_test_fixture_i1div <- test_fixture_i1div[rep(seq_len(nrow(test_fixture_i1div)), each = i1_df),]
+  final_test_fixture_inv_i1div <- test_fixture_inv_i1div[rep(seq_len(nrow(test_fixture_inv_i1div)), each = i1_df),]
 
 
   final_test_fixture_i1div <- final_test_fixture_i1div[,c(24,25)]
@@ -426,8 +445,8 @@ for(dbfixture_i2div in 1:nrow(myfixturesdivi2))
   test_fixture_i2div <- myfixturesdivi2[dbfixture_i2div,]
   test_fixture_inv_i2div <- test_fixture_i2div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_i2div <- test_fixture_i2div[rep(seq_len(nrow(test_fixture_i2div)), each = 5),]
-  final_test_fixture_inv_i2div <- test_fixture_inv_i2div[rep(seq_len(nrow(test_fixture_inv_i2div)), each = 5),]
+  final_test_fixture_i2div <- test_fixture_i2div[rep(seq_len(nrow(test_fixture_i2div)), each = i2_df),]
+  final_test_fixture_inv_i2div <- test_fixture_inv_i2div[rep(seq_len(nrow(test_fixture_inv_i2div)), each = i2_df),]
 
 
   final_test_fixture_i2div <- final_test_fixture_i2div[,c(24,25)]
@@ -460,8 +479,8 @@ for(dbfixture_n1div in 1:nrow(myfixturesdivn1))
   test_fixture_n1div <- myfixturesdivn1[dbfixture_n1div,]
   test_fixture_inv_n1div <- test_fixture_n1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_n1div <- test_fixture_n1div[rep(seq_len(nrow(test_fixture_n1div)), each = 4),]
-  final_test_fixture_inv_n1div <- test_fixture_inv_n1div[rep(seq_len(nrow(test_fixture_inv_n1div)), each = 4),]
+  final_test_fixture_n1div <- test_fixture_n1div[rep(seq_len(nrow(test_fixture_n1div)), each = n1_df),]
+  final_test_fixture_inv_n1div <- test_fixture_inv_n1div[rep(seq_len(nrow(test_fixture_inv_n1div)), each = n1_df),]
 
 
   final_test_fixture_n1div <- final_test_fixture_n1div[,c(24,25)]
@@ -494,8 +513,8 @@ for(dbfixture_p1div in 1:nrow(myfixturesdivp1))
   test_fixture_p1div <- myfixturesdivp1[dbfixture_p1div,]
   test_fixture_inv_p1div <- test_fixture_p1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_p1div <- test_fixture_p1div[rep(seq_len(nrow(test_fixture_p1div)), each = 4),]
-  final_test_fixture_inv_p1div <- test_fixture_inv_p1div[rep(seq_len(nrow(test_fixture_inv_p1div)), each = 4),]
+  final_test_fixture_p1div <- test_fixture_p1div[rep(seq_len(nrow(test_fixture_p1div)), each = p1_df),]
+  final_test_fixture_inv_p1div <- test_fixture_inv_p1div[rep(seq_len(nrow(test_fixture_inv_p1div)), each = p1_df),]
 
 
   final_test_fixture_p1div <- final_test_fixture_p1div[,c(24,25)]
@@ -528,8 +547,8 @@ for(dbfixture_sc0div in 1:nrow(myfixturesdivsc0))
   test_fixture_sc0div <- myfixturesdivsc0[dbfixture_sc0div,]
   test_fixture_inv_sc0div <- test_fixture_sc0div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_sc0div <- test_fixture_sc0div[rep(seq_len(nrow(test_fixture_sc0div)), each = 5),]
-  final_test_fixture_inv_sc0div <- test_fixture_inv_sc0div[rep(seq_len(nrow(test_fixture_inv_sc0div)), each = 5),]
+  final_test_fixture_sc0div <- test_fixture_sc0div[rep(seq_len(nrow(test_fixture_sc0div)), each = sc0_df),]
+  final_test_fixture_inv_sc0div <- test_fixture_inv_sc0div[rep(seq_len(nrow(test_fixture_inv_sc0div)), each = sc0_df),]
 
 
   final_test_fixture_sc0div <- final_test_fixture_sc0div[,c(24,25)]
@@ -562,8 +581,8 @@ for(dbfixture_sc1div in 1:nrow(myfixturesdivsc1))
   test_fixture_sc1div <- myfixturesdivsc1[dbfixture_sc1div,]
   test_fixture_inv_sc1div <- test_fixture_sc1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_sc1div <- test_fixture_sc1div[rep(seq_len(nrow(test_fixture_sc1div)), each = 5),]
-  final_test_fixture_inv_sc1div <- test_fixture_inv_sc1div[rep(seq_len(nrow(test_fixture_inv_sc1div)), each = 5),]
+  final_test_fixture_sc1div <- test_fixture_sc1div[rep(seq_len(nrow(test_fixture_sc1div)), each = sc1_df),]
+  final_test_fixture_inv_sc1div <- test_fixture_inv_sc1div[rep(seq_len(nrow(test_fixture_inv_sc1div)), sc1_df),]
 
 
   final_test_fixture_sc1div <- final_test_fixture_sc1div[,c(24,25)]
@@ -596,8 +615,8 @@ for(dbfixture_sc2div in 1:nrow(myfixturesdivsc2))
   test_fixture_sc2div <- myfixturesdivsc2[dbfixture_sc2div,]
   test_fixture_inv_sc2div <- test_fixture_sc2div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_sc2div <- test_fixture_sc2div[rep(seq_len(nrow(test_fixture_sc2div)), each = 5),]
-  final_test_fixture_inv_sc2div <- test_fixture_inv_sc2div[rep(seq_len(nrow(test_fixture_inv_sc2div)), each = 5),]
+  final_test_fixture_sc2div <- test_fixture_sc2div[rep(seq_len(nrow(test_fixture_sc2div)), each = sc2_df),]
+  final_test_fixture_inv_sc2div <- test_fixture_inv_sc2div[rep(seq_len(nrow(test_fixture_inv_sc2div)), each = sc2_df),]
 
 
   final_test_fixture_sc2div <- final_test_fixture_sc2div[,c(24,25)]
@@ -630,8 +649,8 @@ for(dbfixture_sc3div in 1:nrow(myfixturesdivsc3))
   test_fixture_sc3div <- myfixturesdivsc3[dbfixture_sc3div,]
   test_fixture_inv_sc3div <- test_fixture_sc3div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_sc3div <- test_fixture_sc3div[rep(seq_len(nrow(test_fixture_sc3div)), each = 5),]
-  final_test_fixture_inv_sc3div <- test_fixture_inv_sc3div[rep(seq_len(nrow(test_fixture_inv_sc3div)), each = 5),]
+  final_test_fixture_sc3div <- test_fixture_sc3div[rep(seq_len(nrow(test_fixture_sc3div)), each = sc3_df),]
+  final_test_fixture_inv_sc3div <- test_fixture_inv_sc3div[rep(seq_len(nrow(test_fixture_inv_sc3div)), each = sc3_df),]
 
 
   final_test_fixture_sc3div <- final_test_fixture_sc3div[,c(24,25)]
@@ -664,8 +683,8 @@ for(dbfixture_sp1div in 1:nrow(myfixturesdivsp1))
   test_fixture_sp1div <- myfixturesdivsp1[dbfixture_sp1div,]
   test_fixture_inv_sp1div <- test_fixture_sp1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_sp1div <- test_fixture_sp1div[rep(seq_len(nrow(test_fixture_sp1div)), each = 4),]
-  final_test_fixture_inv_sp1div <- test_fixture_inv_sp1div[rep(seq_len(nrow(test_fixture_inv_sp1div)), each = 4),]
+  final_test_fixture_sp1div <- test_fixture_sp1div[rep(seq_len(nrow(test_fixture_sp1div)), each = sp1_df),]
+  final_test_fixture_inv_sp1div <- test_fixture_inv_sp1div[rep(seq_len(nrow(test_fixture_inv_sp1div)), each = sp1_df),]
 
 
   final_test_fixture_sp1div <- final_test_fixture_sp1div[,c(24,25)]
@@ -698,8 +717,8 @@ for(dbfixture_sp2div in 1:nrow(myfixturesdivsp2))
   test_fixture_sp2div <- myfixturesdivsp2[dbfixture_sp2div,]
   test_fixture_inv_sp2div <- test_fixture_sp2div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_sp2div <- test_fixture_sp2div[rep(seq_len(nrow(test_fixture_sp2div)), each = 5),]
-  final_test_fixture_inv_sp2div <- test_fixture_inv_sp2div[rep(seq_len(nrow(test_fixture_inv_sp2div)), each = 5),]
+  final_test_fixture_sp2div <- test_fixture_sp2div[rep(seq_len(nrow(test_fixture_sp2div)), each = sp2_df),]
+  final_test_fixture_inv_sp2div <- test_fixture_inv_sp2div[rep(seq_len(nrow(test_fixture_inv_sp2div)), each = sp2_df),]
 
 
   final_test_fixture_sp2div <- final_test_fixture_sp2div[,c(24,25)]
@@ -732,8 +751,8 @@ for(dbfixture_t1div in 1:nrow(myfixturesdivt1))
   test_fixture_t1div <- myfixturesdivt1[dbfixture_t1div,]
   test_fixture_inv_t1div <- test_fixture_t1div[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,24,26,27,28,29,30,31,32,33)]
 
-  final_test_fixture_t1div <- test_fixture_t1div[rep(seq_len(nrow(test_fixture_t1div)), each = 4),]
-  final_test_fixture_inv_t1div <- test_fixture_inv_t1div[rep(seq_len(nrow(test_fixture_inv_t1div)), each = 4),]
+  final_test_fixture_t1div <- test_fixture_t1div[rep(seq_len(nrow(test_fixture_t1div)), each = t1_df),]
+  final_test_fixture_inv_t1div <- test_fixture_inv_t1div[rep(seq_len(nrow(test_fixture_inv_t1div)), each = t1_df),]
 
 
   final_test_fixture_t1div <- final_test_fixture_t1div[,c(24,25)]

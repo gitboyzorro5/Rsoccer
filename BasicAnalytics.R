@@ -898,18 +898,16 @@ for(i_b1_krounds in 1:b1_krounds)
 b1_winmarginmatrix <- cbind(b1_teams,b1_winmarginmatrix)
 ###############################################################################################
 
-b1_goalscoredmatrix - b1_goalconcededmatrix
-head(B1)
-b1_teams
+dftest <- SP1_spread[SP1_spread$HomeTeam == "Real Madrid" | SP1_spread$AwayTeam == "Real Madrid",]
+df2test <- SP1_spread[SP1_spread$HomeTeam == "Ath Madrid" |  SP1_spread$AwayTeam == "Ath Madrid",]
+temp_analysistest <- rbind(dftest,df2test)
+write.csv(temp_analysistest,'realath.csv')
 
 
-E0_rounds[E0_rounds$e0_matchday == 25,]
-
-object.size(EURO_fixtures)
-
-rm(teams)
-ls(pattern =".*")
-memory.profile()
+epl_FA_details <- load_fotmob_match_details(
+  country = "ENG",
+  league_name = "FA Cup"
+)
 ####################################################
 b1_away_gs[,2]
 hist((e0_away_gs[,2]))
@@ -963,12 +961,57 @@ allteams20222023SOTSPREADS <- read.csv('../Documents/allteams20222023SOTSPREADS.
 
 
 #####################################################################################
-
-df <- I1_spread[I1_spread$HomeTeam == "Inter" | I1_spread$AwayTeam == "Inter",]
-df2 <- I1_spread[I1_spread$HomeTeam == "Verona" | I1_spread$AwayTeam == "Verona",]
+#####################################################################################
+#spread printer
+#E0
+for(e0_sn in 1:19){
+df <- E0_spread[E0_spread$HomeTeam == final_doublefixture_e0div[e0_sn,1] | E0_spread$AwayTeam == final_doublefixture_e0div[e0_sn,1] ,]
+df2 <- E0_spread[E0_spread$HomeTeam == final_doublefixture_e0div[e0_sn + 1,1] | E0_spread$AwayTeam == final_doublefixture_e0div[e0_sn + 1,1],]
 temp_analysis <- rbind(df,df2)
-unlink('temp_analysi.csv')
-write.csv(temp_analysis,'inerverona.csv')
+path = "C:\\Users\\Kovan\\Rsoccer\\Spreads"
+write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e0div[e0_sn,1],final_doublefixture_e0div[e0_sn + 1,1],".csv",sep = "_")))
+
+}
+#D1
+for(d1_sn in 1:17){
+  df <- D1_spread[D1_spread$HomeTeam == final_doublefixture_d1div[d1_sn,1] | D1_spread$AwayTeam == final_doublefixture_d1div[d1_sn,1] ,]
+  df2 <- D1_spread[D1_spread$HomeTeam == final_doublefixture_d1div[d1_sn + 1,1] | D1_spread$AwayTeam == final_doublefixture_d1div[d1_sn + 1,1],]
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(34,35,36,37,38,39,40,41,42,43,44,45,46)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:33]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\Spreads"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_d1div[d1_sn,1],final_doublefixture_d1div[d1_sn + 1,1],".csv",sep = "_")))
+
+}
+
+#I1
+for(i1_sn in 1:19){
+  df <- I1_spread[I1_spread$HomeTeam == final_doublefixture_i1div[i1_sn,1] | I1_spread$AwayTeam == final_doublefixture_i1div[i1_sn,1] ,]
+  df2 <- I1_spread[I1_spread$HomeTeam == final_doublefixture_i1div[i1_sn + 1,1] | I1_spread$AwayTeam == final_doublefixture_i1div[i1_sn + 1,1],]
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(34,35,36,37,38,39,40,41,42,43,44,45,46)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:33]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\Spreads"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_i1div[i1_sn,1],final_doublefixture_i1div[i1_sn + 1,1],".csv",sep = "_")))
+
+}
+
+
+
 ###################################################################################
 allteams20222023SOTSPREADS %>%
 
@@ -990,8 +1033,35 @@ b1_shots_analysis[1,]
 
 b1_xshotsconversion_vec_ht
 
+###############################################
+####mean and standard deviations"
+library('dplyr')
+allteams2023means <- allteams20222023 %>%
+  group_by(Div) %>%
+   dplyr::summarise(avg_goals = mean(TG),
+             n = n())
+################################################
+allteams2023sd <- allteams20222023 %>%
+  group_by(Div) %>%
+  dplyr::summarise(sd_goals = sd(TG),
+                   n = n())
 
+allteams2023goalstats <- cbind(allteams2023means,allteams2023sd)
+write.csv(allteams2023goalstats,'goalstats.csv')
+####################################################################
+allteams2023meanscorners <- allteams20222023 %>%
+  group_by(Div) %>%
+  dplyr::summarise(avg_corners = mean(TC),
+                   n = n())
+################################################
+allteams2023sdcorners <- allteams20222023 %>%
+  group_by(Div) %>%
+  dplyr::summarise(sd_goals = sd(TC),
+                   n = n())
 
+allteams2023cornerstats <- cbind(allteams2023meanscorners,allteams2023sdcorners)
+write.csv(allteams2023cornerstats,'cornersstats.csv')
+##################################################################################
 
 
 

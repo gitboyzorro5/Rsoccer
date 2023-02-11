@@ -1047,6 +1047,7 @@ allteams2023sd <- allteams20222023 %>%
                    n = n())
 
 allteams2023goalstats <- cbind(allteams2023means,allteams2023sd)
+unlink('goalstats.csv')
 write.csv(allteams2023goalstats,'goalstats.csv')
 ####################################################################
 allteams2023meanscorners <- allteams20222023 %>%
@@ -1060,17 +1061,24 @@ allteams2023sdcorners <- allteams20222023 %>%
                    n = n())
 
 allteams2023cornerstats <- cbind(allteams2023meanscorners,allteams2023sdcorners)
+unlink('cornerstats.csv')
 write.csv(allteams2023cornerstats,'cornersstats.csv')
 ##################################################################################
 
+library('dplyr')
+
+allteams2023corneranalysis <- allteams20222023[allteams20222023$TC >= '10',] %>%
+
+  group_by(CS) %>%
+  dplyr::summarise(n = n(),)
 
 
-
-
-
-
-
-
+View(sort(allteams2023corneranalysis))
+write.csv(allteams2023corneranalysis,'corneranalysis.csv')
+##############################################################################################
+3900971
+sort(unique(epl_match_details$match_id))
+View(fotmob_get_match_team_stats(3901151))
 
 
 

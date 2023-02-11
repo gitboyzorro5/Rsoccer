@@ -184,6 +184,95 @@ final_b1_wm
 final_b1_wm <- as.data.frame(final_b1_wm)
 colnames(final_b1_wm) <- "Win Margin"
 #################################################
+##################################################
+#corners awarded
+#create final_b1_ca object
+final_b1_ca <- c()
+suml6_b1_ca <- c()
+for(index_b1_ca in 1:length(b1_teams))
+{
+  index_b1_ca <- row.names(b1_coawarded_h) == b1_teams[index_b1_ca]
+  form_b1_ca <- b1_coawarded_h[index_b1_ca]
+  deleted_form_b1_ca <- form_b1_ca[!form_b1_ca[] == ""]
+  l6_form_b1_ca <- tail(deleted_form_b1_ca,b1_last_n_games)
+  l6_form_b1_ca <- as.numeric(l6_form_b1_ca)
+  suml6_b1_ca[index_b1_ca] <- sum(l6_form_b1_ca)
+  suml6_b1_ca[index_b1_ca] <- paste("(",suml6_b1_ca[index_b1_ca],")",sep = "")
+  l6_form_b1_ca <- paste(l6_form_b1_ca,collapse = " ")
+  final_b1_ca[index_b1_ca] <- rbind(paste(b1_teams[index_b1_ca],l6_form_b1_ca,suml6_b1_ca[index_b1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
+
+}
+final_b1_ca
+#change column names
+final_b1_ca <- as.data.frame(final_b1_ca)
+colnames(final_b1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_b1_ca object
+final_b1_cc <- c()
+suml6_b1_cc <- c()
+for(index_b1_cc in 1:length(b1_teams))
+{
+  index_b1_cc <- row.names(b1_cornersconceded_h) == b1_teams[index_b1_cc]
+  form_b1_cc <- b1_cornersconceded_h[index_b1_cc]
+  deleted_form_b1_cc <- form_b1_cc[!form_b1_cc[] == ""]
+  l6_form_b1_cc <- tail(deleted_form_b1_cc,b1_last_n_games)
+  l6_form_b1_cc <- as.numeric(l6_form_b1_cc)
+  suml6_b1_cc[index_b1_cc] <- sum(l6_form_b1_cc)
+  suml6_b1_cc[index_b1_cc] <- paste("(",suml6_b1_cc[index_b1_cc],")",sep = "")
+  l6_form_b1_cc <- paste(l6_form_b1_cc,collapse = " ")
+  final_b1_cc[index_b1_cc] <- rbind(paste(b1_teams[index_b1_cc],l6_form_b1_cc,suml6_b1_cc[index_b1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
+
+}
+final_b1_cc
+#change column names
+final_b1_cc <- as.data.frame(final_b1_cc)
+colnames(final_b1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_b1_cosc <- c()
+for(index_b1_cosc in 1:length(b1_teams))
+{
+  index_b1_cosc <- row.names(b1_coscform_h) == b1_teams[index_b1_cosc]
+  coscform_b1_cosc <- b1_coscform_h[index_b1_cosc]
+  deleted_coscform_b1_cosc <- coscform_b1_cosc[!coscform_b1_cosc[] == ""]
+  l6_coscform_b1_cosc <- tail(deleted_coscform_b1_cosc,b1_last_n_games)
+  l6_coscform_b1_cosc <- paste(l6_coscform_b1_cosc,collapse = " ")
+  final_b1_cosc[index_b1_cosc] <- rbind(paste(b1_teams[index_b1_cosc],l6_coscform_b1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",b1_teams[index],l6_coscform)
+
+}
+final_b1_cosc
+#change column names
+final_b1_cosc <- as.data.frame(final_b1_cosc)
+colnames(final_b1_cosc) <- "CornersForm"
+##################################################
+#total corners
+#create final_b1_tcorners object
+final_b1_tcorners <- c()
+suml6_b1_tcorners <- c()
+for(index_b1_tcorners in 1:length(b1_teams))
+{
+  index_b1_tcorners <- row.names(b1_totalcorners_h) == b1_teams[index_b1_tcorners]
+  form_b1_tcorners <- b1_totalcorners_h[index_b1_tcorners]
+  deleted_form_b1_tcorners <- form_b1_tcorners[!form_b1_tcorners[] == ""]
+  l6_form_b1_tcorners <- tail(deleted_form_b1_tcorners,b1_last_n_games)
+  l6_form_b1_tcorners <- as.numeric(l6_form_b1_tcorners)
+  suml6_b1_tcorners[index_b1_tcorners] <- sum(l6_form_b1_tcorners)
+  suml6_b1_tcorners[index_b1_tcorners] <- paste("(",suml6_b1_tcorners[index_b1_tcorners],")",sep = "")
+  l6_form_b1_tcorners <- paste(l6_form_b1_tcorners,collapse = " ")
+  final_b1_tcorners[index_b1_tcorners] <- rbind(paste(b1_teams[index_b1_tcorners],l6_form_b1_tcorners,suml6_b1_tcorners[index_b1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
+
+}
+#change column names
+final_b1_tcorners <- as.data.frame(final_b1_tcorners)
+colnames(final_b1_tcorners) <- "TotalCorners"
+###################################################
 #Team against
 #create final_b1_hf_against
 final_b1_hf_against <- c()
@@ -201,7 +290,7 @@ for(index_b1_hf_against in 1:length(b1_teams))
 final_b1_hf_against <- as.data.frame(final_b1_hf_against)
 colnames(final_b1_hf_against) <- "Team against"
 #combine the columns
-final_b1_all <- cbind(final_b1_hf,final_b1_gs,final_b1_gc,final_b1_tg,final_b1_cs,final_b1_wm,final_b1_hf_against)
+final_b1_all <- cbind(final_b1_hf,final_b1_gs,final_b1_gc,final_b1_tg,final_b1_ca,final_b1_cc,final_b1_tcorners,final_b1_cosc,final_b1_hf_against)
 write.xlsx(final_b1_all,'Divisions/B1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #D1
@@ -333,6 +422,110 @@ final_d1_wm
 final_d1_wm <- as.data.frame(final_d1_wm)
 colnames(final_d1_wm) <- "Win Margin"
 #################################################
+#corners awarded
+#create final_d1_ca object
+final_d1_ca <- c()
+suml6_d1_ca <- c()
+for(index_d1_ca in 1:length(d1_teams))
+{
+  index_d1_ca <- row.names(d1_coawarded_h) == d1_teams[index_d1_ca]
+  form_d1_ca <- d1_coawarded_h[index_d1_ca]
+  deleted_form_d1_ca <- form_d1_ca[!form_d1_ca[] == ""]
+  l6_form_d1_ca <- tail(deleted_form_d1_ca,d1_last_n_games)
+  l6_form_d1_ca <- as.numeric(l6_form_d1_ca)
+  suml6_d1_ca[index_d1_ca] <- sum(l6_form_d1_ca)
+  suml6_d1_ca[index_d1_ca] <- paste("(",suml6_d1_ca[index_d1_ca],")",sep = "")
+  l6_form_d1_ca <- paste(l6_form_d1_ca,collapse = " ")
+  final_d1_ca[index_d1_ca] <- rbind(paste(d1_teams[index_d1_ca],l6_form_d1_ca,suml6_d1_ca[index_d1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d1_teams[index],l6_form)
+
+}
+final_d1_ca
+#change column names
+final_d1_ca <- as.data.frame(final_d1_ca)
+colnames(final_d1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_d1_ca object
+final_d1_cc <- c()
+suml6_d1_cc <- c()
+for(index_d1_cc in 1:length(d1_teams))
+{
+  index_d1_cc <- row.names(d1_cornersconceded_h) == d1_teams[index_d1_cc]
+  form_d1_cc <- d1_cornersconceded_h[index_d1_cc]
+  deleted_form_d1_cc <- form_d1_cc[!form_d1_cc[] == ""]
+  l6_form_d1_cc <- tail(deleted_form_d1_cc,d1_last_n_games)
+  l6_form_d1_cc <- as.numeric(l6_form_d1_cc)
+  suml6_d1_cc[index_d1_cc] <- sum(l6_form_d1_cc)
+  suml6_d1_cc[index_d1_cc] <- paste("(",suml6_d1_cc[index_d1_cc],")",sep = "")
+  l6_form_d1_cc <- paste(l6_form_d1_cc,collapse = " ")
+  final_d1_cc[index_d1_cc] <- rbind(paste(d1_teams[index_d1_cc],l6_form_d1_cc,suml6_d1_cc[index_d1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d1_teams[index],l6_form)
+
+}
+final_d1_cc
+#change column names
+final_d1_cc <- as.data.frame(final_d1_cc)
+colnames(final_d1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_d1_cosc <- c()
+for(index_d1_cosc in 1:length(d1_teams))
+{
+  index_d1_cosc <- row.names(d1_coscform_h) == d1_teams[index_d1_cosc]
+  coscform_d1_cosc <- d1_coscform_h[index_d1_cosc]
+  deleted_coscform_d1_cosc <- coscform_d1_cosc[!coscform_d1_cosc[] == ""]
+  l6_coscform_d1_cosc <- tail(deleted_coscform_d1_cosc,d1_last_n_games)
+  l6_coscform_d1_cosc <- paste(l6_coscform_d1_cosc,collapse = " ")
+  final_d1_cosc[index_d1_cosc] <- rbind(paste(d1_teams[index_d1_cosc],l6_coscform_d1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",d1_teams[index],l6_coscform)
+
+}
+final_d1_cosc
+#change column names
+final_d1_cosc <- as.data.frame(final_d1_cosc)
+colnames(final_d1_cosc) <- "CornersForm"
+##################################################
+#total corners
+#create final_d1_tcorners object
+final_d1_tcorners <- c()
+suml6_d1_tcorners <- c()
+for(index_d1_tcorners in 1:length(d1_teams))
+{
+  index_d1_tcorners <- row.names(d1_totalcorners_h) == d1_teams[index_d1_tcorners]
+  form_d1_tcorners <- d1_totalcorners_h[index_d1_tcorners]
+  deleted_form_d1_tcorners <- form_d1_tcorners[!form_d1_tcorners[] == ""]
+  l6_form_d1_tcorners <- tail(deleted_form_d1_tcorners,d1_last_n_games)
+  l6_form_d1_tcorners <- as.numeric(l6_form_d1_tcorners)
+  suml6_d1_tcorners[index_d1_tcorners] <- sum(l6_form_d1_tcorners)
+  suml6_d1_tcorners[index_d1_tcorners] <- paste("(",suml6_d1_tcorners[index_d1_tcorners],")",sep = "")
+  l6_form_d1_tcorners <- paste(l6_form_d1_tcorners,collapse = " ")
+  final_d1_tcorners[index_d1_tcorners] <- rbind(paste(d1_teams[index_d1_tcorners],l6_form_d1_tcorners,suml6_d1_tcorners[index_d1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d1_teams[index],l6_form)
+
+}
+#change column names
+final_d1_tcorners <- as.data.frame(final_d1_tcorners)
+colnames(final_d1_tcorners) <- "TotalCorners"
+###################################################
+##################################################
+#Team against
+#create final_d1_hf_against
+final_d1_hf_against <- c()
+for(index_d1_hf_against in 1:length(d1_teams))
+{
+  index_d1_hf_against <- row.names(d1_form_team_against_h) == d1_teams[index_d1_hf_against]
+  form_d1_hf_against <- d1_form_team_against_h[index_d1_hf_against]
+  deleted_form_d1_hf_against <- form_d1_hf_against[!form_d1_hf_against[] == ""]
+  l6_form_d1_hf_against <- tail(deleted_form_d1_hf_against,d1_last_n_games)
+  l6_form_d1_hf_against <- paste(l6_form_d1_hf_against,collapse = " ")
+  final_d1_hf_against[index_d1_hf_against] <- rbind(paste(d1_teams[index_d1_hf_against],l6_form_d1_hf_against, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d1_teams[index],l6_form)
+
+}
+#################################################
 #Team against
 #create final_d1_hf_against
 final_d1_hf_against <- c()
@@ -350,7 +543,7 @@ for(index_d1_hf_against in 1:length(d1_teams))
 final_d1_hf_against <- as.data.frame(final_d1_hf_against)
 colnames(final_d1_hf_against) <- "Team against"
 #combine the columns
-final_d1_all <- cbind(final_d1_hf,final_d1_gs,final_d1_gc,final_d1_tg,final_d1_cs,final_d1_wm,final_d1_hf_against)
+final_d1_all <- cbind(final_d1_hf,final_d1_gs,final_d1_gc,final_d1_tg,final_d1_ca,final_d1_cc,final_d1_tcorners,final_d1_cosc,final_d1_hf_against)
 write.xlsx(final_d1_all,'Divisions/D1.xlsx',sheetName = "L6", append = TRUE)
 ############################################################################
 #D2
@@ -482,6 +675,99 @@ final_d2_wm
 final_d2_wm <- as.data.frame(final_d2_wm)
 colnames(final_d2_wm) <- "Win Margin"
 #################################################
+#############################################################
+#corners awarded
+#create final_d2_ca object
+final_d2_ca <- c()
+suml6_d2_ca <- c()
+for(index_d2_ca in 1:length(d2_teams))
+{
+  index_d2_ca <- row.names(d2_coawarded_h) == d2_teams[index_d2_ca]
+  form_d2_ca <- d2_coawarded_h[index_d2_ca]
+  deleted_form_d2_ca <- form_d2_ca[!form_d2_ca[] == ""]
+  l6_form_d2_ca <- tail(deleted_form_d2_ca,d2_last_n_games)
+  l6_form_d2_ca <- as.numeric(l6_form_d2_ca)
+  suml6_d2_ca[index_d2_ca] <- sum(l6_form_d2_ca)
+  suml6_d2_ca[index_d2_ca] <- paste("(",suml6_d2_ca[index_d2_ca],")",sep = "")
+  l6_form_d2_ca <- paste(l6_form_d2_ca,collapse = " ")
+  final_d2_ca[index_d2_ca] <- rbind(paste(d2_teams[index_d2_ca],l6_form_d2_ca,suml6_d2_ca[index_d2_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d2_teams[index],l6_form)
+
+}
+final_d2_ca
+#change column names
+final_d2_ca <- as.data.frame(final_d2_ca)
+colnames(final_d2_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_d2_ca object
+final_d2_cc <- c()
+suml6_d2_cc <- c()
+for(index_d2_cc in 1:length(d2_teams))
+{
+  index_d2_cc <- row.names(d2_cornersconceded_h) == d2_teams[index_d2_cc]
+  form_d2_cc <- d2_cornersconceded_h[index_d2_cc]
+  deleted_form_d2_cc <- form_d2_cc[!form_d2_cc[] == ""]
+  l6_form_d2_cc <- tail(deleted_form_d2_cc,d2_last_n_games)
+  l6_form_d2_cc <- as.numeric(l6_form_d2_cc)
+  suml6_d2_cc[index_d2_cc] <- sum(l6_form_d2_cc)
+  suml6_d2_cc[index_d2_cc] <- paste("(",suml6_d2_cc[index_d2_cc],")",sep = "")
+  l6_form_d2_cc <- paste(l6_form_d2_cc,collapse = " ")
+  final_d2_cc[index_d2_cc] <- rbind(paste(d2_teams[index_d2_cc],l6_form_d2_cc,suml6_d2_cc[index_d2_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d2_teams[index],l6_form)
+
+}
+final_d2_cc
+#change column names
+final_d2_cc <- as.data.frame(final_d2_cc)
+colnames(final_d2_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_d2_cosc <- c()
+for(index_d2_cosc in 1:length(d2_teams))
+{
+  index_d2_cosc <- row.names(d2_coscform_h) == d2_teams[index_d2_cosc]
+  coscform_d2_cosc <- d2_coscform_h[index_d2_cosc]
+  deleted_coscform_d2_cosc <- coscform_d2_cosc[!coscform_d2_cosc[] == ""]
+  l6_coscform_d2_cosc <- tail(deleted_coscform_d2_cosc,d2_last_n_games)
+  l6_coscform_d2_cosc <- paste(l6_coscform_d2_cosc,collapse = " ")
+  final_d2_cosc[index_d2_cosc] <- rbind(paste(d2_teams[index_d2_cosc],l6_coscform_d2_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",d2_teams[index],l6_coscform)
+
+}
+final_d2_cosc
+#change column names
+final_d2_cosc <- as.data.frame(final_d2_cosc)
+colnames(final_d2_cosc) <- "CornersForm"
+##################################################
+#############################################################
+##################################################
+#total corners
+#create final_d2_tcorners object
+final_d2_tcorners <- c()
+suml6_d2_tcorners <- c()
+for(index_d2_tcorners in 1:length(d2_teams))
+{
+  index_d2_tcorners <- row.names(d2_totalcorners_h) == d2_teams[index_d2_tcorners]
+  form_d2_tcorners <- d2_totalcorners_h[index_d2_tcorners]
+  deleted_form_d2_tcorners <- form_d2_tcorners[!form_d2_tcorners[] == ""]
+  l6_form_d2_tcorners <- tail(deleted_form_d2_tcorners,d2_last_n_games)
+  l6_form_d2_tcorners <- as.numeric(l6_form_d2_tcorners)
+  suml6_d2_tcorners[index_d2_tcorners] <- sum(l6_form_d2_tcorners)
+  suml6_d2_tcorners[index_d2_tcorners] <- paste("(",suml6_d2_tcorners[index_d2_tcorners],")",sep = "")
+  l6_form_d2_tcorners <- paste(l6_form_d2_tcorners,collapse = " ")
+  final_d2_tcorners[index_d2_tcorners] <- rbind(paste(d2_teams[index_d2_tcorners],l6_form_d2_tcorners,suml6_d2_tcorners[index_d2_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",d2_teams[index],l6_form)
+
+}
+#change column names
+final_d2_tcorners <- as.data.frame(final_d2_tcorners)
+colnames(final_d2_tcorners) <- "TotalCorners"
+###########################################################
+############################################################
+
 #Team against
 #create final_d2_hf_against
 final_d2_hf_against <- c()
@@ -499,7 +785,7 @@ for(index_d2_hf_against in 1:length(d2_teams))
 final_d2_hf_against <- as.data.frame(final_d2_hf_against)
 colnames(final_d2_hf_against) <- "Team against"
 #combine the columns
-final_d2_all <- cbind(final_d2_hf,final_d2_gs,final_d2_gc,final_d2_tg,final_d2_cs,final_d2_wm,final_d2_hf_against)
+final_d2_all <- cbind(final_d2_hf,final_d2_gs,final_d2_gc,final_d2_tg,final_d2_ca,final_d2_cc,final_d2_tcorners,final_d2_cosc,final_d2_hf_against)
 write.xlsx(final_d2_all,'Divisions/D2.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #E0
@@ -631,6 +917,99 @@ final_e0_wm
 final_e0_wm <- as.data.frame(final_e0_wm)
 colnames(final_e0_wm) <- "Win Margin"
 #################################################
+
+#################################################
+#corners awarded
+#create final_e0_ca object
+final_e0_ca <- c()
+suml6_e0_ca <- c()
+for(index_e0_ca in 1:length(e0_teams))
+{
+  index_e0_ca <- row.names(e0_coawarded_h) == e0_teams[index_e0_ca]
+  form_e0_ca <- e0_coawarded_h[index_e0_ca]
+  deleted_form_e0_ca <- form_e0_ca[!form_e0_ca[] == ""]
+  l6_form_e0_ca <- tail(deleted_form_e0_ca,e0_last_n_games)
+  l6_form_e0_ca <- as.numeric(l6_form_e0_ca)
+  suml6_e0_ca[index_e0_ca] <- sum(l6_form_e0_ca)
+  suml6_e0_ca[index_e0_ca] <- paste("(",suml6_e0_ca[index_e0_ca],")",sep = "")
+  l6_form_e0_ca <- paste(l6_form_e0_ca,collapse = " ")
+  final_e0_ca[index_e0_ca] <- rbind(paste(e0_teams[index_e0_ca],l6_form_e0_ca,suml6_e0_ca[index_e0_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e0_teams[index],l6_form)
+
+}
+final_e0_ca
+#change column names
+final_e0_ca <- as.data.frame(final_e0_ca)
+colnames(final_e0_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_e0_ca object
+final_e0_cc <- c()
+suml6_e0_cc <- c()
+for(index_e0_cc in 1:length(e0_teams))
+{
+  index_e0_cc <- row.names(e0_cornersconceded_h) == e0_teams[index_e0_cc]
+  form_e0_cc <- e0_cornersconceded_h[index_e0_cc]
+  deleted_form_e0_cc <- form_e0_cc[!form_e0_cc[] == ""]
+  l6_form_e0_cc <- tail(deleted_form_e0_cc,e0_last_n_games)
+  l6_form_e0_cc <- as.numeric(l6_form_e0_cc)
+  suml6_e0_cc[index_e0_cc] <- sum(l6_form_e0_cc)
+  suml6_e0_cc[index_e0_cc] <- paste("(",suml6_e0_cc[index_e0_cc],")",sep = "")
+  l6_form_e0_cc <- paste(l6_form_e0_cc,collapse = " ")
+  final_e0_cc[index_e0_cc] <- rbind(paste(e0_teams[index_e0_cc],l6_form_e0_cc,suml6_e0_cc[index_e0_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e0_teams[index],l6_form)
+
+}
+final_e0_cc
+#change column names
+final_e0_cc <- as.data.frame(final_e0_cc)
+colnames(final_e0_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_e0_cosc <- c()
+for(index_e0_cosc in 1:length(e0_teams))
+{
+  index_e0_cosc <- row.names(e0_coscform_h) == e0_teams[index_e0_cosc]
+  coscform_e0_cosc <- e0_coscform_h[index_e0_cosc]
+  deleted_coscform_e0_cosc <- coscform_e0_cosc[!coscform_e0_cosc[] == ""]
+  l6_coscform_e0_cosc <- tail(deleted_coscform_e0_cosc,e0_last_n_games)
+  l6_coscform_e0_cosc <- paste(l6_coscform_e0_cosc,collapse = " ")
+  final_e0_cosc[index_e0_cosc] <- rbind(paste(e0_teams[index_e0_cosc],l6_coscform_e0_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",e0_teams[index],l6_coscform)
+
+}
+final_e0_cosc
+#change column names
+final_e0_cosc <- as.data.frame(final_e0_cosc)
+colnames(final_e0_cosc) <- "CornersForm"
+##################################################
+
+##################################################
+#total corners
+#create final_e0_tcorners object
+final_e0_tcorners <- c()
+suml6_e0_tcorners <- c()
+for(index_e0_tcorners in 1:length(e0_teams))
+{
+  index_e0_tcorners <- row.names(e0_totalcorners_h) == e0_teams[index_e0_tcorners]
+  form_e0_tcorners <- e0_totalcorners_h[index_e0_tcorners]
+  deleted_form_e0_tcorners <- form_e0_tcorners[!form_e0_tcorners[] == ""]
+  l6_form_e0_tcorners <- tail(deleted_form_e0_tcorners,e0_last_n_games)
+  l6_form_e0_tcorners <- as.numeric(l6_form_e0_tcorners)
+  suml6_e0_tcorners[index_e0_tcorners] <- sum(l6_form_e0_tcorners)
+  suml6_e0_tcorners[index_e0_tcorners] <- paste("(",suml6_e0_tcorners[index_e0_tcorners],")",sep = "")
+  l6_form_e0_tcorners <- paste(l6_form_e0_tcorners,collapse = " ")
+  final_e0_tcorners[index_e0_tcorners] <- rbind(paste(e0_teams[index_e0_tcorners],l6_form_e0_tcorners,suml6_e0_tcorners[index_e0_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e0_teams[index],l6_form)
+
+}
+#change column names
+final_e0_tcorners <- as.data.frame(final_e0_tcorners)
+colnames(final_e0_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_e0_hf_against
 final_e0_hf_against <- c()
@@ -648,7 +1027,7 @@ for(index_e0_hf_against in 1:length(e0_teams))
 final_e0_hf_against <- as.data.frame(final_e0_hf_against)
 colnames(final_e0_hf_against) <- "Team against"
 #combine the columns
-final_e0_all <- cbind(final_e0_hf,final_e0_gs,final_e0_gc,final_e0_tg,final_e0_cs,final_e0_wm,final_e0_hf_against)
+final_e0_all <- cbind(final_e0_hf,final_e0_gs,final_e0_gc,final_e0_tg,final_e0_ca,final_e0_cc,final_e0_tcorners,final_e0_cosc,final_e0_hf_against)
 write.xlsx(final_e0_all,'Divisions/E0.xlsx',sheetName = "L6", append = TRUE)
 ##################################################################################
 #E1
@@ -780,6 +1159,97 @@ final_e1_wm
 final_e1_wm <- as.data.frame(final_e1_wm)
 colnames(final_e1_wm) <- "Win Margin"
 #################################################
+#corners awarded
+#create final_e1_ca object
+final_e1_ca <- c()
+suml6_e1_ca <- c()
+for(index_e1_ca in 1:length(e1_teams))
+{
+  index_e1_ca <- row.names(e1_coawarded_h) == e1_teams[index_e1_ca]
+  form_e1_ca <- e1_coawarded_h[index_e1_ca]
+  deleted_form_e1_ca <- form_e1_ca[!form_e1_ca[] == ""]
+  l6_form_e1_ca <- tail(deleted_form_e1_ca,e1_last_n_games)
+  l6_form_e1_ca <- as.numeric(l6_form_e1_ca)
+  suml6_e1_ca[index_e1_ca] <- sum(l6_form_e1_ca)
+  suml6_e1_ca[index_e1_ca] <- paste("(",suml6_e1_ca[index_e1_ca],")",sep = "")
+  l6_form_e1_ca <- paste(l6_form_e1_ca,collapse = " ")
+  final_e1_ca[index_e1_ca] <- rbind(paste(e1_teams[index_e1_ca],l6_form_e1_ca,suml6_e1_ca[index_e1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e1_teams[index],l6_form)
+
+}
+final_e1_ca
+#change column names
+final_e1_ca <- as.data.frame(final_e1_ca)
+colnames(final_e1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_e1_ca object
+final_e1_cc <- c()
+suml6_e1_cc <- c()
+for(index_e1_cc in 1:length(e1_teams))
+{
+  index_e1_cc <- row.names(e1_cornersconceded_h) == e1_teams[index_e1_cc]
+  form_e1_cc <- e1_cornersconceded_h[index_e1_cc]
+  deleted_form_e1_cc <- form_e1_cc[!form_e1_cc[] == ""]
+  l6_form_e1_cc <- tail(deleted_form_e1_cc,e1_last_n_games)
+  l6_form_e1_cc <- as.numeric(l6_form_e1_cc)
+  suml6_e1_cc[index_e1_cc] <- sum(l6_form_e1_cc)
+  suml6_e1_cc[index_e1_cc] <- paste("(",suml6_e1_cc[index_e1_cc],")",sep = "")
+  l6_form_e1_cc <- paste(l6_form_e1_cc,collapse = " ")
+  final_e1_cc[index_e1_cc] <- rbind(paste(e1_teams[index_e1_cc],l6_form_e1_cc,suml6_e1_cc[index_e1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e1_teams[index],l6_form)
+
+}
+final_e1_cc
+#change column names
+final_e1_cc <- as.data.frame(final_e1_cc)
+colnames(final_e1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_e1_cosc <- c()
+for(index_e1_cosc in 1:length(e1_teams))
+{
+  index_e1_cosc <- row.names(e1_coscform_h) == e1_teams[index_e1_cosc]
+  coscform_e1_cosc <- e1_coscform_h[index_e1_cosc]
+  deleted_coscform_e1_cosc <- coscform_e1_cosc[!coscform_e1_cosc[] == ""]
+  l6_coscform_e1_cosc <- tail(deleted_coscform_e1_cosc,e1_last_n_games)
+  l6_coscform_e1_cosc <- paste(l6_coscform_e1_cosc,collapse = " ")
+  final_e1_cosc[index_e1_cosc] <- rbind(paste(e1_teams[index_e1_cosc],l6_coscform_e1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",e1_teams[index],l6_coscform)
+
+}
+final_e1_cosc
+#change column names
+final_e1_cosc <- as.data.frame(final_e1_cosc)
+colnames(final_e1_cosc) <- "CornersForm"
+##################################################
+
+##################################################
+#total corners
+#create final_e1_tcorners object
+final_e1_tcorners <- c()
+suml6_e1_tcorners <- c()
+for(index_e1_tcorners in 1:length(e1_teams))
+{
+  index_e1_tcorners <- row.names(e1_totalcorners_h) == e1_teams[index_e1_tcorners]
+  form_e1_tcorners <- e1_totalcorners_h[index_e1_tcorners]
+  deleted_form_e1_tcorners <- form_e1_tcorners[!form_e1_tcorners[] == ""]
+  l6_form_e1_tcorners <- tail(deleted_form_e1_tcorners,e1_last_n_games)
+  l6_form_e1_tcorners <- as.numeric(l6_form_e1_tcorners)
+  suml6_e1_tcorners[index_e1_tcorners] <- sum(l6_form_e1_tcorners)
+  suml6_e1_tcorners[index_e1_tcorners] <- paste("(",suml6_e1_tcorners[index_e1_tcorners],")",sep = "")
+  l6_form_e1_tcorners <- paste(l6_form_e1_tcorners,collapse = " ")
+  final_e1_tcorners[index_e1_tcorners] <- rbind(paste(e1_teams[index_e1_tcorners],l6_form_e1_tcorners,suml6_e1_tcorners[index_e1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e1_teams[index],l6_form)
+
+}
+#change column names
+final_e1_tcorners <- as.data.frame(final_e1_tcorners)
+colnames(final_e1_tcorners) <- "TotalCorners"
+###################################################
+###################################################
 #Team against
 #create final_e1_hf_against
 final_e1_hf_against <- c()
@@ -797,7 +1267,7 @@ for(index_e1_hf_against in 1:length(e1_teams))
 final_e1_hf_against <- as.data.frame(final_e1_hf_against)
 colnames(final_e1_hf_against) <- "Team against"
 #combine the columns
-final_e1_all <- cbind(final_e1_hf,final_e1_gs,final_e1_gc,final_e1_tg,final_e1_cs,final_e1_wm,final_e1_hf_against)
+final_e1_all <- cbind(final_e1_hf,final_e1_gs,final_e1_gc,final_e1_tg,final_e1_ca,final_e1_cc,final_e1_tcorners,final_e1_cosc,final_e1_hf_against)
 write.xlsx(final_e1_all,'Divisions/E1.xlsx',sheetName = "L6", append = TRUE)
 ###############################################################################
 #E2
@@ -929,6 +1399,97 @@ final_e2_wm
 final_e2_wm <- as.data.frame(final_e2_wm)
 colnames(final_e2_wm) <- "Win Margin"
 #################################################
+#corners awarded
+#create final_e2_ca object
+final_e2_ca <- c()
+suml6_e2_ca <- c()
+for(index_e2_ca in 1:length(e2_teams))
+{
+  index_e2_ca <- row.names(e2_coawarded_h) == e2_teams[index_e2_ca]
+  form_e2_ca <- e2_coawarded_h[index_e2_ca]
+  deleted_form_e2_ca <- form_e2_ca[!form_e2_ca[] == ""]
+  l6_form_e2_ca <- tail(deleted_form_e2_ca,e2_last_n_games)
+  l6_form_e2_ca <- as.numeric(l6_form_e2_ca)
+  suml6_e2_ca[index_e2_ca] <- sum(l6_form_e2_ca)
+  suml6_e2_ca[index_e2_ca] <- paste("(",suml6_e2_ca[index_e2_ca],")",sep = "")
+  l6_form_e2_ca <- paste(l6_form_e2_ca,collapse = " ")
+  final_e2_ca[index_e2_ca] <- rbind(paste(e2_teams[index_e2_ca],l6_form_e2_ca,suml6_e2_ca[index_e2_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e2_teams[index],l6_form)
+
+}
+final_e2_ca
+#change column names
+final_e2_ca <- as.data.frame(final_e2_ca)
+colnames(final_e2_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_e2_ca object
+final_e2_cc <- c()
+suml6_e2_cc <- c()
+for(index_e2_cc in 1:length(e2_teams))
+{
+  index_e2_cc <- row.names(e2_cornersconceded_h) == e2_teams[index_e2_cc]
+  form_e2_cc <- e2_cornersconceded_h[index_e2_cc]
+  deleted_form_e2_cc <- form_e2_cc[!form_e2_cc[] == ""]
+  l6_form_e2_cc <- tail(deleted_form_e2_cc,e2_last_n_games)
+  l6_form_e2_cc <- as.numeric(l6_form_e2_cc)
+  suml6_e2_cc[index_e2_cc] <- sum(l6_form_e2_cc)
+  suml6_e2_cc[index_e2_cc] <- paste("(",suml6_e2_cc[index_e2_cc],")",sep = "")
+  l6_form_e2_cc <- paste(l6_form_e2_cc,collapse = " ")
+  final_e2_cc[index_e2_cc] <- rbind(paste(e2_teams[index_e2_cc],l6_form_e2_cc,suml6_e2_cc[index_e2_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e2_teams[index],l6_form)
+
+}
+final_e2_cc
+#change column names
+final_e2_cc <- as.data.frame(final_e2_cc)
+colnames(final_e2_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_e2_cosc <- c()
+for(index_e2_cosc in 1:length(e2_teams))
+{
+  index_e2_cosc <- row.names(e2_coscform_h) == e2_teams[index_e2_cosc]
+  coscform_e2_cosc <- e2_coscform_h[index_e2_cosc]
+  deleted_coscform_e2_cosc <- coscform_e2_cosc[!coscform_e2_cosc[] == ""]
+  l6_coscform_e2_cosc <- tail(deleted_coscform_e2_cosc,e2_last_n_games)
+  l6_coscform_e2_cosc <- paste(l6_coscform_e2_cosc,collapse = " ")
+  final_e2_cosc[index_e2_cosc] <- rbind(paste(e2_teams[index_e2_cosc],l6_coscform_e2_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",e2_teams[index],l6_coscform)
+
+}
+final_e2_cosc
+#change column names
+final_e2_cosc <- as.data.frame(final_e2_cosc)
+colnames(final_e2_cosc) <- "CornersForm"
+##################################################
+
+##################################################
+#total corners
+#create final_e2_tcorners object
+final_e2_tcorners <- c()
+suml6_e2_tcorners <- c()
+for(index_e2_tcorners in 1:length(e2_teams))
+{
+  index_e2_tcorners <- row.names(e2_totalcorners_h) == e2_teams[index_e2_tcorners]
+  form_e2_tcorners <- e2_totalcorners_h[index_e2_tcorners]
+  deleted_form_e2_tcorners <- form_e2_tcorners[!form_e2_tcorners[] == ""]
+  l6_form_e2_tcorners <- tail(deleted_form_e2_tcorners,e2_last_n_games)
+  l6_form_e2_tcorners <- as.numeric(l6_form_e2_tcorners)
+  suml6_e2_tcorners[index_e2_tcorners] <- sum(l6_form_e2_tcorners)
+  suml6_e2_tcorners[index_e2_tcorners] <- paste("(",suml6_e2_tcorners[index_e2_tcorners],")",sep = "")
+  l6_form_e2_tcorners <- paste(l6_form_e2_tcorners,collapse = " ")
+  final_e2_tcorners[index_e2_tcorners] <- rbind(paste(e2_teams[index_e2_tcorners],l6_form_e2_tcorners,suml6_e2_tcorners[index_e2_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e2_teams[index],l6_form)
+
+}
+#change column names
+final_e2_tcorners <- as.data.frame(final_e2_tcorners)
+colnames(final_e2_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_e2_hf_against
 final_e2_hf_against <- c()
@@ -946,7 +1507,7 @@ for(index_e2_hf_against in 1:length(e2_teams))
 final_e2_hf_against <- as.data.frame(final_e2_hf_against)
 colnames(final_e2_hf_against) <- "Team against"
 #combine the columns
-final_e2_all <- cbind(final_e2_hf,final_e2_gs,final_e2_gc,final_e2_tg,final_e2_cs,final_e2_wm,final_e2_hf_against)
+final_e2_all <- cbind(final_e2_hf,final_e2_gs,final_e2_gc,final_e2_tg,final_e2_ca,final_e2_cc,final_e2_tcorners,final_e2_cosc,final_e2_hf_against)
 write.xlsx(final_e2_all,'Divisions/E2.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #E3
@@ -1078,6 +1639,96 @@ final_e3_wm
 final_e3_wm <- as.data.frame(final_e3_wm)
 colnames(final_e3_wm) <- "Win Margin"
 #################################################
+#corners awarded
+#create final_e3_ca object
+final_e3_ca <- c()
+suml6_e3_ca <- c()
+for(index_e3_ca in 1:length(e3_teams))
+{
+  index_e3_ca <- row.names(e3_coawarded_h) == e3_teams[index_e3_ca]
+  form_e3_ca <- e3_coawarded_h[index_e3_ca]
+  deleted_form_e3_ca <- form_e3_ca[!form_e3_ca[] == ""]
+  l6_form_e3_ca <- tail(deleted_form_e3_ca,e3_last_n_games)
+  l6_form_e3_ca <- as.numeric(l6_form_e3_ca)
+  suml6_e3_ca[index_e3_ca] <- sum(l6_form_e3_ca)
+  suml6_e3_ca[index_e3_ca] <- paste("(",suml6_e3_ca[index_e3_ca],")",sep = "")
+  l6_form_e3_ca <- paste(l6_form_e3_ca,collapse = " ")
+  final_e3_ca[index_e3_ca] <- rbind(paste(e3_teams[index_e3_ca],l6_form_e3_ca,suml6_e3_ca[index_e3_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e3_teams[index],l6_form)
+
+}
+final_e3_ca
+#change column names
+final_e3_ca <- as.data.frame(final_e3_ca)
+colnames(final_e3_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_e3_ca object
+final_e3_cc <- c()
+suml6_e3_cc <- c()
+for(index_e3_cc in 1:length(e3_teams))
+{
+  index_e3_cc <- row.names(e3_cornersconceded_h) == e3_teams[index_e3_cc]
+  form_e3_cc <- e3_cornersconceded_h[index_e3_cc]
+  deleted_form_e3_cc <- form_e3_cc[!form_e3_cc[] == ""]
+  l6_form_e3_cc <- tail(deleted_form_e3_cc,e3_last_n_games)
+  l6_form_e3_cc <- as.numeric(l6_form_e3_cc)
+  suml6_e3_cc[index_e3_cc] <- sum(l6_form_e3_cc)
+  suml6_e3_cc[index_e3_cc] <- paste("(",suml6_e3_cc[index_e3_cc],")",sep = "")
+  l6_form_e3_cc <- paste(l6_form_e3_cc,collapse = " ")
+  final_e3_cc[index_e3_cc] <- rbind(paste(e3_teams[index_e3_cc],l6_form_e3_cc,suml6_e3_cc[index_e3_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e3_teams[index],l6_form)
+
+}
+final_e3_cc
+#change column names
+final_e3_cc <- as.data.frame(final_e3_cc)
+colnames(final_e3_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_e3_cosc <- c()
+for(index_e3_cosc in 1:length(e3_teams))
+{
+  index_e3_cosc <- row.names(e3_coscform_h) == e3_teams[index_e3_cosc]
+  coscform_e3_cosc <- e3_coscform_h[index_e3_cosc]
+  deleted_coscform_e3_cosc <- coscform_e3_cosc[!coscform_e3_cosc[] == ""]
+  l6_coscform_e3_cosc <- tail(deleted_coscform_e3_cosc,e3_last_n_games)
+  l6_coscform_e3_cosc <- paste(l6_coscform_e3_cosc,collapse = " ")
+  final_e3_cosc[index_e3_cosc] <- rbind(paste(e3_teams[index_e3_cosc],l6_coscform_e3_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",e3_teams[index],l6_coscform)
+
+}
+final_e3_cosc
+#change column names
+final_e3_cosc <- as.data.frame(final_e3_cosc)
+colnames(final_e3_cosc) <- "CornersForm"
+##################################################
+##################################################
+#total corners
+#create final_e3_tcorners object
+final_e3_tcorners <- c()
+suml6_e3_tcorners <- c()
+for(index_e3_tcorners in 1:length(e3_teams))
+{
+  index_e3_tcorners <- row.names(e3_totalcorners_h) == e3_teams[index_e3_tcorners]
+  form_e3_tcorners <- e3_totalcorners_h[index_e3_tcorners]
+  deleted_form_e3_tcorners <- form_e3_tcorners[!form_e3_tcorners[] == ""]
+  l6_form_e3_tcorners <- tail(deleted_form_e3_tcorners,e3_last_n_games)
+  l6_form_e3_tcorners <- as.numeric(l6_form_e3_tcorners)
+  suml6_e3_tcorners[index_e3_tcorners] <- sum(l6_form_e3_tcorners)
+  suml6_e3_tcorners[index_e3_tcorners] <- paste("(",suml6_e3_tcorners[index_e3_tcorners],")",sep = "")
+  l6_form_e3_tcorners <- paste(l6_form_e3_tcorners,collapse = " ")
+  final_e3_tcorners[index_e3_tcorners] <- rbind(paste(e3_teams[index_e3_tcorners],l6_form_e3_tcorners,suml6_e3_tcorners[index_e3_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",e3_teams[index],l6_form)
+
+}
+#change column names
+final_e3_tcorners <- as.data.frame(final_e3_tcorners)
+colnames(final_e3_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_e3_hf_against
 final_e3_hf_against <- c()
@@ -1095,7 +1746,7 @@ for(index_e3_hf_against in 1:length(e3_teams))
 final_e3_hf_against <- as.data.frame(final_e3_hf_against)
 colnames(final_e3_hf_against) <- "Team against"
 #combine the columns
-final_e3_all <- cbind(final_e3_hf,final_e3_gs,final_e3_gc,final_e3_tg,final_e3_cs,final_e3_wm,final_e3_hf_against)
+final_e3_all <- cbind(final_e3_hf,final_e3_gs,final_e3_gc,final_e3_tg,final_e3_ca,final_e3_cc,final_e3_tcorners,final_e3_cosc,final_e3_hf_against)
 write.xlsx(final_e3_all,'Divisions/E3.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #EC
@@ -1376,6 +2027,97 @@ final_f1_wm
 final_f1_wm <- as.data.frame(final_f1_wm)
 colnames(final_f1_wm) <- "Win Margin"
 #################################################
+#corners awarded
+#create final_f1_ca object
+final_f1_ca <- c()
+suml6_f1_ca <- c()
+for(index_f1_ca in 1:length(f1_teams))
+{
+  index_f1_ca <- row.names(f1_coawarded_h) == f1_teams[index_f1_ca]
+  form_f1_ca <- f1_coawarded_h[index_f1_ca]
+  deleted_form_f1_ca <- form_f1_ca[!form_f1_ca[] == ""]
+  l6_form_f1_ca <- tail(deleted_form_f1_ca,f1_last_n_games)
+  l6_form_f1_ca <- as.numeric(l6_form_f1_ca)
+  suml6_f1_ca[index_f1_ca] <- sum(l6_form_f1_ca)
+  suml6_f1_ca[index_f1_ca] <- paste("(",suml6_f1_ca[index_f1_ca],")",sep = "")
+  l6_form_f1_ca <- paste(l6_form_f1_ca,collapse = " ")
+  final_f1_ca[index_f1_ca] <- rbind(paste(f1_teams[index_f1_ca],l6_form_f1_ca,suml6_f1_ca[index_f1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",f1_teams[index],l6_form)
+
+}
+final_f1_ca
+#change column names
+final_f1_ca <- as.data.frame(final_f1_ca)
+colnames(final_f1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_f1_ca object
+final_f1_cc <- c()
+suml6_f1_cc <- c()
+for(index_f1_cc in 1:length(f1_teams))
+{
+  index_f1_cc <- row.names(f1_cornersconceded_h) == f1_teams[index_f1_cc]
+  form_f1_cc <- f1_cornersconceded_h[index_f1_cc]
+  deleted_form_f1_cc <- form_f1_cc[!form_f1_cc[] == ""]
+  l6_form_f1_cc <- tail(deleted_form_f1_cc,f1_last_n_games)
+  l6_form_f1_cc <- as.numeric(l6_form_f1_cc)
+  suml6_f1_cc[index_f1_cc] <- sum(l6_form_f1_cc)
+  suml6_f1_cc[index_f1_cc] <- paste("(",suml6_f1_cc[index_f1_cc],")",sep = "")
+  l6_form_f1_cc <- paste(l6_form_f1_cc,collapse = " ")
+  final_f1_cc[index_f1_cc] <- rbind(paste(f1_teams[index_f1_cc],l6_form_f1_cc,suml6_f1_cc[index_f1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",f1_teams[index],l6_form)
+
+}
+final_f1_cc
+#change column names
+final_f1_cc <- as.data.frame(final_f1_cc)
+colnames(final_f1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_f1_cosc <- c()
+for(index_f1_cosc in 1:length(f1_teams))
+{
+  index_f1_cosc <- row.names(f1_coscform_h) == f1_teams[index_f1_cosc]
+  coscform_f1_cosc <- f1_coscform_h[index_f1_cosc]
+  deleted_coscform_f1_cosc <- coscform_f1_cosc[!coscform_f1_cosc[] == ""]
+  l6_coscform_f1_cosc <- tail(deleted_coscform_f1_cosc,f1_last_n_games)
+  l6_coscform_f1_cosc <- paste(l6_coscform_f1_cosc,collapse = " ")
+  final_f1_cosc[index_f1_cosc] <- rbind(paste(f1_teams[index_f1_cosc],l6_coscform_f1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",f1_teams[index],l6_coscform)
+
+}
+final_f1_cosc
+#change column names
+final_f1_cosc <- as.data.frame(final_f1_cosc)
+colnames(final_f1_cosc) <- "CornersForm"
+##################################################
+
+##################################################
+#total corners
+#create final_f1_tcorners object
+final_f1_tcorners <- c()
+suml6_f1_tcorners <- c()
+for(index_f1_tcorners in 1:length(f1_teams))
+{
+  index_f1_tcorners <- row.names(f1_totalcorners_h) == f1_teams[index_f1_tcorners]
+  form_f1_tcorners <- f1_totalcorners_h[index_f1_tcorners]
+  deleted_form_f1_tcorners <- form_f1_tcorners[!form_f1_tcorners[] == ""]
+  l6_form_f1_tcorners <- tail(deleted_form_f1_tcorners,f1_last_n_games)
+  l6_form_f1_tcorners <- as.numeric(l6_form_f1_tcorners)
+  suml6_f1_tcorners[index_f1_tcorners] <- sum(l6_form_f1_tcorners)
+  suml6_f1_tcorners[index_f1_tcorners] <- paste("(",suml6_f1_tcorners[index_f1_tcorners],")",sep = "")
+  l6_form_f1_tcorners <- paste(l6_form_f1_tcorners,collapse = " ")
+  final_f1_tcorners[index_f1_tcorners] <- rbind(paste(f1_teams[index_f1_tcorners],l6_form_f1_tcorners,suml6_f1_tcorners[index_f1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",f1_teams[index],l6_form)
+
+}
+#change column names
+final_f1_tcorners <- as.data.frame(final_f1_tcorners)
+colnames(final_f1_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_f1_hf_against
 final_f1_hf_against <- c()
@@ -1393,7 +2135,7 @@ for(index_f1_hf_against in 1:length(f1_teams))
 final_f1_hf_against <- as.data.frame(final_f1_hf_against)
 colnames(final_f1_hf_against) <- "Team against"
 #combine the columns
-final_f1_all <- cbind(final_f1_hf,final_f1_gs,final_f1_gc,final_f1_tg,final_f1_cs,final_f1_wm,final_f1_hf_against)
+final_f1_all <- cbind(final_f1_hf,final_f1_gs,final_f1_gc,final_f1_tg,final_f1_ca,final_f1_cc,final_f1_tcorners,final_f1_cosc,final_f1_hf_against)
 write.xlsx(final_f1_all,'Divisions/F1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 ################################################################################
@@ -1526,6 +2268,97 @@ final_f2_wm
 final_f2_wm <- as.data.frame(final_f2_wm)
 colnames(final_f2_wm) <- "Win Margin"
 #################################################
+#corners awarded
+#create final_f2_ca object
+final_f2_ca <- c()
+suml6_f2_ca <- c()
+for(index_f2_ca in 1:length(f2_teams))
+{
+  index_f2_ca <- row.names(f2_coawarded_h) == f2_teams[index_f2_ca]
+  form_f2_ca <- f2_coawarded_h[index_f2_ca]
+  deleted_form_f2_ca <- form_f2_ca[!form_f2_ca[] == ""]
+  l6_form_f2_ca <- tail(deleted_form_f2_ca,f2_last_n_games)
+  l6_form_f2_ca <- as.numeric(l6_form_f2_ca)
+  suml6_f2_ca[index_f2_ca] <- sum(l6_form_f2_ca)
+  suml6_f2_ca[index_f2_ca] <- paste("(",suml6_f2_ca[index_f2_ca],")",sep = "")
+  l6_form_f2_ca <- paste(l6_form_f2_ca,collapse = " ")
+  final_f2_ca[index_f2_ca] <- rbind(paste(f2_teams[index_f2_ca],l6_form_f2_ca,suml6_f2_ca[index_f2_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",f2_teams[index],l6_form)
+
+}
+final_f2_ca
+#change column names
+final_f2_ca <- as.data.frame(final_f2_ca)
+colnames(final_f2_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_f2_ca object
+final_f2_cc <- c()
+suml6_f2_cc <- c()
+for(index_f2_cc in 1:length(f2_teams))
+{
+  index_f2_cc <- row.names(f2_cornersconceded_h) == f2_teams[index_f2_cc]
+  form_f2_cc <- f2_cornersconceded_h[index_f2_cc]
+  deleted_form_f2_cc <- form_f2_cc[!form_f2_cc[] == ""]
+  l6_form_f2_cc <- tail(deleted_form_f2_cc,f2_last_n_games)
+  l6_form_f2_cc <- as.numeric(l6_form_f2_cc)
+  suml6_f2_cc[index_f2_cc] <- sum(l6_form_f2_cc)
+  suml6_f2_cc[index_f2_cc] <- paste("(",suml6_f2_cc[index_f2_cc],")",sep = "")
+  l6_form_f2_cc <- paste(l6_form_f2_cc,collapse = " ")
+  final_f2_cc[index_f2_cc] <- rbind(paste(f2_teams[index_f2_cc],l6_form_f2_cc,suml6_f2_cc[index_f2_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",f2_teams[index],l6_form)
+
+}
+final_f2_cc
+#change column names
+final_f2_cc <- as.data.frame(final_f2_cc)
+colnames(final_f2_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_f2_cosc <- c()
+for(index_f2_cosc in 1:length(f2_teams))
+{
+  index_f2_cosc <- row.names(f2_coscform_h) == f2_teams[index_f2_cosc]
+  coscform_f2_cosc <- f2_coscform_h[index_f2_cosc]
+  deleted_coscform_f2_cosc <- coscform_f2_cosc[!coscform_f2_cosc[] == ""]
+  l6_coscform_f2_cosc <- tail(deleted_coscform_f2_cosc,f2_last_n_games)
+  l6_coscform_f2_cosc <- paste(l6_coscform_f2_cosc,collapse = " ")
+  final_f2_cosc[index_f2_cosc] <- rbind(paste(f2_teams[index_f2_cosc],l6_coscform_f2_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",f2_teams[index],l6_coscform)
+
+}
+final_f2_cosc
+#change column names
+final_f2_cosc <- as.data.frame(final_f2_cosc)
+colnames(final_f2_cosc) <- "CornersForm"
+##################################################
+
+##################################################
+#total corners
+#create final_f2_tcorners object
+final_f2_tcorners <- c()
+suml6_f2_tcorners <- c()
+for(index_f2_tcorners in 1:length(f2_teams))
+{
+  index_f2_tcorners <- row.names(f2_totalcorners_h) == f2_teams[index_f2_tcorners]
+  form_f2_tcorners <- f2_totalcorners_h[index_f2_tcorners]
+  deleted_form_f2_tcorners <- form_f2_tcorners[!form_f2_tcorners[] == ""]
+  l6_form_f2_tcorners <- tail(deleted_form_f2_tcorners,f2_last_n_games)
+  l6_form_f2_tcorners <- as.numeric(l6_form_f2_tcorners)
+  suml6_f2_tcorners[index_f2_tcorners] <- sum(l6_form_f2_tcorners)
+  suml6_f2_tcorners[index_f2_tcorners] <- paste("(",suml6_f2_tcorners[index_f2_tcorners],")",sep = "")
+  l6_form_f2_tcorners <- paste(l6_form_f2_tcorners,collapse = " ")
+  final_f2_tcorners[index_f2_tcorners] <- rbind(paste(f2_teams[index_f2_tcorners],l6_form_f2_tcorners,suml6_f2_tcorners[index_f2_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",f2_teams[index],l6_form)
+
+}
+#change column names
+final_f2_tcorners <- as.data.frame(final_f2_tcorners)
+colnames(final_f2_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_f2_hf_against
 final_f2_hf_against <- c()
@@ -1543,7 +2376,7 @@ for(index_f2_hf_against in 1:length(f2_teams))
 final_f2_hf_against <- as.data.frame(final_f2_hf_against)
 colnames(final_f2_hf_against) <- "Team against"
 #combine the columns
-final_f2_all <- cbind(final_f2_hf,final_f2_gs,final_f2_gc,final_f2_tg,final_f2_cs,final_f2_wm,final_f2_hf_against)
+final_f2_all <- cbind(final_f2_hf,final_f2_gs,final_f2_gc,final_f2_tg,final_f2_ca,final_f2_cc,final_f2_tcorners,final_f2_cosc,final_f2_hf_against)
 write.xlsx(final_f2_all,'Divisions/F2.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #G1
@@ -1675,6 +2508,97 @@ final_g1_wm
 final_g1_wm <- as.data.frame(final_g1_wm)
 colnames(final_g1_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_g1_ca object
+final_g1_ca <- c()
+suml6_g1_ca <- c()
+for(index_g1_ca in 1:length(g1_teams))
+{
+  index_g1_ca <- row.names(g1_coawarded_h) == g1_teams[index_g1_ca]
+  form_g1_ca <- g1_coawarded_h[index_g1_ca]
+  deleted_form_g1_ca <- form_g1_ca[!form_g1_ca[] == ""]
+  l6_form_g1_ca <- tail(deleted_form_g1_ca,g1_last_n_games)
+  l6_form_g1_ca <- as.numeric(l6_form_g1_ca)
+  suml6_g1_ca[index_g1_ca] <- sum(l6_form_g1_ca)
+  suml6_g1_ca[index_g1_ca] <- paste("(",suml6_g1_ca[index_g1_ca],")",sep = "")
+  l6_form_g1_ca <- paste(l6_form_g1_ca,collapse = " ")
+  final_g1_ca[index_g1_ca] <- rbind(paste(g1_teams[index_g1_ca],l6_form_g1_ca,suml6_g1_ca[index_g1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",g1_teams[index],l6_form)
+
+}
+final_g1_ca
+#change column names
+final_g1_ca <- as.data.frame(final_g1_ca)
+colnames(final_g1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_g1_ca object
+final_g1_cc <- c()
+suml6_g1_cc <- c()
+for(index_g1_cc in 1:length(g1_teams))
+{
+  index_g1_cc <- row.names(g1_cornersconceded_h) == g1_teams[index_g1_cc]
+  form_g1_cc <- g1_cornersconceded_h[index_g1_cc]
+  deleted_form_g1_cc <- form_g1_cc[!form_g1_cc[] == ""]
+  l6_form_g1_cc <- tail(deleted_form_g1_cc,g1_last_n_games)
+  l6_form_g1_cc <- as.numeric(l6_form_g1_cc)
+  suml6_g1_cc[index_g1_cc] <- sum(l6_form_g1_cc)
+  suml6_g1_cc[index_g1_cc] <- paste("(",suml6_g1_cc[index_g1_cc],")",sep = "")
+  l6_form_g1_cc <- paste(l6_form_g1_cc,collapse = " ")
+  final_g1_cc[index_g1_cc] <- rbind(paste(g1_teams[index_g1_cc],l6_form_g1_cc,suml6_g1_cc[index_g1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",g1_teams[index],l6_form)
+
+}
+final_g1_cc
+#change column names
+final_g1_cc <- as.data.frame(final_g1_cc)
+colnames(final_g1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_g1_cosc <- c()
+for(index_g1_cosc in 1:length(g1_teams))
+{
+  index_g1_cosc <- row.names(g1_coscform_h) == g1_teams[index_g1_cosc]
+  coscform_g1_cosc <- g1_coscform_h[index_g1_cosc]
+  deleted_coscform_g1_cosc <- coscform_g1_cosc[!coscform_g1_cosc[] == ""]
+  l6_coscform_g1_cosc <- tail(deleted_coscform_g1_cosc,g1_last_n_games)
+  l6_coscform_g1_cosc <- paste(l6_coscform_g1_cosc,collapse = " ")
+  final_g1_cosc[index_g1_cosc] <- rbind(paste(g1_teams[index_g1_cosc],l6_coscform_g1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",g1_teams[index],l6_coscform)
+
+}
+final_g1_cosc
+#change column names
+final_g1_cosc <- as.data.frame(final_g1_cosc)
+colnames(final_g1_cosc) <- "CornersForm"
+#################################################
+##################################################
+#total corners
+#create final_g1_tcorners object
+final_g1_tcorners <- c()
+suml6_g1_tcorners <- c()
+for(index_g1_tcorners in 1:length(g1_teams))
+{
+  index_g1_tcorners <- row.names(g1_totalcorners_h) == g1_teams[index_g1_tcorners]
+  form_g1_tcorners <- g1_totalcorners_h[index_g1_tcorners]
+  deleted_form_g1_tcorners <- form_g1_tcorners[!form_g1_tcorners[] == ""]
+  l6_form_g1_tcorners <- tail(deleted_form_g1_tcorners,g1_last_n_games)
+  l6_form_g1_tcorners <- as.numeric(l6_form_g1_tcorners)
+  suml6_g1_tcorners[index_g1_tcorners] <- sum(l6_form_g1_tcorners)
+  suml6_g1_tcorners[index_g1_tcorners] <- paste("(",suml6_g1_tcorners[index_g1_tcorners],")",sep = "")
+  l6_form_g1_tcorners <- paste(l6_form_g1_tcorners,collapse = " ")
+  final_g1_tcorners[index_g1_tcorners] <- rbind(paste(g1_teams[index_g1_tcorners],l6_form_g1_tcorners,suml6_g1_tcorners[index_g1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",g1_teams[index],l6_form)
+
+}
+#change column names
+final_g1_tcorners <- as.data.frame(final_g1_tcorners)
+colnames(final_g1_tcorners) <- "TotalCorners"
+###################################################
+################################################
 #Team against
 #create final_g1_hf_against
 final_g1_hf_against <- c()
@@ -1692,7 +2616,7 @@ for(index_g1_hf_against in 1:length(g1_teams))
 final_g1_hf_against <- as.data.frame(final_g1_hf_against)
 colnames(final_g1_hf_against) <- "Team against"
 #combine the columns
-final_g1_all <- cbind(final_g1_hf,final_g1_gs,final_g1_gc,final_g1_tg,final_g1_cs,final_g1_wm,final_g1_hf_against)
+final_g1_all <- cbind(final_g1_hf,final_g1_gs,final_g1_gc,final_g1_tg,final_g1_ca,final_g1_cc,final_g1_tcorners,final_g1_cosc,final_g1_hf_against)
 write.xlsx(final_g1_all,'Divisions/G1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #I1
@@ -1824,6 +2748,97 @@ final_i1_wm
 final_i1_wm <- as.data.frame(final_i1_wm)
 colnames(final_i1_wm) <- "Win Margin"
 #################################################
+#corners awarded
+#create final_i1_ca object
+final_i1_ca <- c()
+suml6_i1_ca <- c()
+for(index_i1_ca in 1:length(i1_teams))
+{
+  index_i1_ca <- row.names(i1_coawarded_h) == i1_teams[index_i1_ca]
+  form_i1_ca <- i1_coawarded_h[index_i1_ca]
+  deleted_form_i1_ca <- form_i1_ca[!form_i1_ca[] == ""]
+  l6_form_i1_ca <- tail(deleted_form_i1_ca,i1_last_n_games)
+  l6_form_i1_ca <- as.numeric(l6_form_i1_ca)
+  suml6_i1_ca[index_i1_ca] <- sum(l6_form_i1_ca)
+  suml6_i1_ca[index_i1_ca] <- paste("(",suml6_i1_ca[index_i1_ca],")",sep = "")
+  l6_form_i1_ca <- paste(l6_form_i1_ca,collapse = " ")
+  final_i1_ca[index_i1_ca] <- rbind(paste(i1_teams[index_i1_ca],l6_form_i1_ca,suml6_i1_ca[index_i1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",i1_teams[index],l6_form)
+
+}
+final_i1_ca
+#change column names
+final_i1_ca <- as.data.frame(final_i1_ca)
+colnames(final_i1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_i1_ca object
+final_i1_cc <- c()
+suml6_i1_cc <- c()
+for(index_i1_cc in 1:length(i1_teams))
+{
+  index_i1_cc <- row.names(i1_cornersconceded_h) == i1_teams[index_i1_cc]
+  form_i1_cc <- i1_cornersconceded_h[index_i1_cc]
+  deleted_form_i1_cc <- form_i1_cc[!form_i1_cc[] == ""]
+  l6_form_i1_cc <- tail(deleted_form_i1_cc,i1_last_n_games)
+  l6_form_i1_cc <- as.numeric(l6_form_i1_cc)
+  suml6_i1_cc[index_i1_cc] <- sum(l6_form_i1_cc)
+  suml6_i1_cc[index_i1_cc] <- paste("(",suml6_i1_cc[index_i1_cc],")",sep = "")
+  l6_form_i1_cc <- paste(l6_form_i1_cc,collapse = " ")
+  final_i1_cc[index_i1_cc] <- rbind(paste(i1_teams[index_i1_cc],l6_form_i1_cc,suml6_i1_cc[index_i1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",i1_teams[index],l6_form)
+
+}
+final_i1_cc
+#change column names
+final_i1_cc <- as.data.frame(final_i1_cc)
+colnames(final_i1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_i1_cosc <- c()
+for(index_i1_cosc in 1:length(i1_teams))
+{
+  index_i1_cosc <- row.names(i1_coscform_h) == i1_teams[index_i1_cosc]
+  coscform_i1_cosc <- i1_coscform_h[index_i1_cosc]
+  deleted_coscform_i1_cosc <- coscform_i1_cosc[!coscform_i1_cosc[] == ""]
+  l6_coscform_i1_cosc <- tail(deleted_coscform_i1_cosc,i1_last_n_games)
+  l6_coscform_i1_cosc <- paste(l6_coscform_i1_cosc,collapse = " ")
+  final_i1_cosc[index_i1_cosc] <- rbind(paste(i1_teams[index_i1_cosc],l6_coscform_i1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",i1_teams[index],l6_coscform)
+
+}
+final_i1_cosc
+#change column names
+final_i1_cosc <- as.data.frame(final_i1_cosc)
+colnames(final_i1_cosc) <- "CornersForm"
+#################################################
+
+##################################################
+#total corners
+#create final_i1_tcorners object
+final_i1_tcorners <- c()
+suml6_i1_tcorners <- c()
+for(index_i1_tcorners in 1:length(i1_teams))
+{
+  index_i1_tcorners <- row.names(i1_totalcorners_h) == i1_teams[index_i1_tcorners]
+  form_i1_tcorners <- i1_totalcorners_h[index_i1_tcorners]
+  deleted_form_i1_tcorners <- form_i1_tcorners[!form_i1_tcorners[] == ""]
+  l6_form_i1_tcorners <- tail(deleted_form_i1_tcorners,i1_last_n_games)
+  l6_form_i1_tcorners <- as.numeric(l6_form_i1_tcorners)
+  suml6_i1_tcorners[index_i1_tcorners] <- sum(l6_form_i1_tcorners)
+  suml6_i1_tcorners[index_i1_tcorners] <- paste("(",suml6_i1_tcorners[index_i1_tcorners],")",sep = "")
+  l6_form_i1_tcorners <- paste(l6_form_i1_tcorners,collapse = " ")
+  final_i1_tcorners[index_i1_tcorners] <- rbind(paste(i1_teams[index_i1_tcorners],l6_form_i1_tcorners,suml6_i1_tcorners[index_i1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",i1_teams[index],l6_form)
+
+}
+#change column names
+final_i1_tcorners <- as.data.frame(final_i1_tcorners)
+colnames(final_i1_tcorners) <- "TotalCorners"
+###################################################
+###################################################
 #Team against
 #create final_i1_hf_against
 final_i1_hf_against <- c()
@@ -1841,7 +2856,7 @@ for(index_i1_hf_against in 1:length(i1_teams))
 final_i1_hf_against <- as.data.frame(final_i1_hf_against)
 colnames(final_i1_hf_against) <- "Team against"
 #combine the columns
-final_i1_all <- cbind(final_i1_hf,final_i1_gs,final_i1_gc,final_i1_tg,final_i1_cs,final_i1_wm,final_i1_hf_against)
+final_i1_all <- cbind(final_i1_hf,final_i1_gs,final_i1_gc,final_i1_tg,final_i1_ca,final_i1_cc,final_i1_tcorners,final_i1_cosc,final_i1_hf_against)
 write.xlsx(final_i1_all,'Divisions/I1.xlsx',sheetName = "L6", append = TRUE)
 ################################################################################
 #I2
@@ -1973,6 +2988,98 @@ final_i2_wm
 final_i2_wm <- as.data.frame(final_i2_wm)
 colnames(final_i2_wm) <- "Win Margin"
 #################################################
+
+#################################################
+#corners awarded
+#create final_i2_ca object
+final_i2_ca <- c()
+suml6_i2_ca <- c()
+for(index_i2_ca in 1:length(i2_teams))
+{
+  index_i2_ca <- row.names(i2_coawarded_h) == i2_teams[index_i2_ca]
+  form_i2_ca <- i2_coawarded_h[index_i2_ca]
+  deleted_form_i2_ca <- form_i2_ca[!form_i2_ca[] == ""]
+  l6_form_i2_ca <- tail(deleted_form_i2_ca,i2_last_n_games)
+  l6_form_i2_ca <- as.numeric(l6_form_i2_ca)
+  suml6_i2_ca[index_i2_ca] <- sum(l6_form_i2_ca)
+  suml6_i2_ca[index_i2_ca] <- paste("(",suml6_i2_ca[index_i2_ca],")",sep = "")
+  l6_form_i2_ca <- paste(l6_form_i2_ca,collapse = " ")
+  final_i2_ca[index_i2_ca] <- rbind(paste(i2_teams[index_i2_ca],l6_form_i2_ca,suml6_i2_ca[index_i2_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",i2_teams[index],l6_form)
+
+}
+final_i2_ca
+#change column names
+final_i2_ca <- as.data.frame(final_i2_ca)
+colnames(final_i2_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_i2_ca object
+final_i2_cc <- c()
+suml6_i2_cc <- c()
+for(index_i2_cc in 1:length(i2_teams))
+{
+  index_i2_cc <- row.names(i2_cornersconceded_h) == i2_teams[index_i2_cc]
+  form_i2_cc <- i2_cornersconceded_h[index_i2_cc]
+  deleted_form_i2_cc <- form_i2_cc[!form_i2_cc[] == ""]
+  l6_form_i2_cc <- tail(deleted_form_i2_cc,i2_last_n_games)
+  l6_form_i2_cc <- as.numeric(l6_form_i2_cc)
+  suml6_i2_cc[index_i2_cc] <- sum(l6_form_i2_cc)
+  suml6_i2_cc[index_i2_cc] <- paste("(",suml6_i2_cc[index_i2_cc],")",sep = "")
+  l6_form_i2_cc <- paste(l6_form_i2_cc,collapse = " ")
+  final_i2_cc[index_i2_cc] <- rbind(paste(i2_teams[index_i2_cc],l6_form_i2_cc,suml6_i2_cc[index_i2_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",i2_teams[index],l6_form)
+
+}
+final_i2_cc
+#change column names
+final_i2_cc <- as.data.frame(final_i2_cc)
+colnames(final_i2_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_i2_cosc <- c()
+for(index_i2_cosc in 1:length(i2_teams))
+{
+  index_i2_cosc <- row.names(i2_coscform_h) == i2_teams[index_i2_cosc]
+  coscform_i2_cosc <- i2_coscform_h[index_i2_cosc]
+  deleted_coscform_i2_cosc <- coscform_i2_cosc[!coscform_i2_cosc[] == ""]
+  l6_coscform_i2_cosc <- tail(deleted_coscform_i2_cosc,i2_last_n_games)
+  l6_coscform_i2_cosc <- paste(l6_coscform_i2_cosc,collapse = " ")
+  final_i2_cosc[index_i2_cosc] <- rbind(paste(i2_teams[index_i2_cosc],l6_coscform_i2_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",i2_teams[index],l6_coscform)
+
+}
+final_i2_cosc
+#change column names
+final_i2_cosc <- as.data.frame(final_i2_cosc)
+colnames(final_i2_cosc) <- "CornersForm"
+#################################################
+##################################################
+#total corners
+#create final_i2_tcorners object
+final_i2_tcorners <- c()
+suml6_i2_tcorners <- c()
+for(index_i2_tcorners in 1:length(i2_teams))
+{
+  index_i2_tcorners <- row.names(i2_totalcorners_h) == i2_teams[index_i2_tcorners]
+  form_i2_tcorners <- i2_totalcorners_h[index_i2_tcorners]
+  deleted_form_i2_tcorners <- form_i2_tcorners[!form_i2_tcorners[] == ""]
+  l6_form_i2_tcorners <- tail(deleted_form_i2_tcorners,i2_last_n_games)
+  l6_form_i2_tcorners <- as.numeric(l6_form_i2_tcorners)
+  suml6_i2_tcorners[index_i2_tcorners] <- sum(l6_form_i2_tcorners)
+  suml6_i2_tcorners[index_i2_tcorners] <- paste("(",suml6_i2_tcorners[index_i2_tcorners],")",sep = "")
+  l6_form_i2_tcorners <- paste(l6_form_i2_tcorners,collapse = " ")
+  final_i2_tcorners[index_i2_tcorners] <- rbind(paste(i2_teams[index_i2_tcorners],l6_form_i2_tcorners,suml6_i2_tcorners[index_i2_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",i2_teams[index],l6_form)
+
+}
+#change column names
+final_i2_tcorners <- as.data.frame(final_i2_tcorners)
+colnames(final_i2_tcorners) <- "TotalCorners"
+###################################################
+################################################
 #Team against
 #create final_i2_hf_against
 final_i2_hf_against <- c()
@@ -1990,7 +3097,7 @@ for(index_i2_hf_against in 1:length(i2_teams))
 final_i2_hf_against <- as.data.frame(final_i2_hf_against)
 colnames(final_i2_hf_against) <- "Team against"
 #combine the columns
-final_i2_all <- cbind(final_i2_hf,final_i2_gs,final_i2_gc,final_i2_tg,final_i2_cs,final_i2_wm,final_i2_hf_against)
+final_i2_all <- cbind(final_i2_hf,final_i2_gs,final_i2_gc,final_i2_tg,final_i2_ca,final_i2_cc,final_i2_tcorners,final_i2_cosc,final_i2_hf_against)
 write.xlsx(final_i2_all,'Divisions/I2.xlsx',sheetName = "L6", append = TRUE)
 ###############################################################################
 #N1
@@ -2122,6 +3229,96 @@ final_n1_wm
 final_n1_wm <- as.data.frame(final_n1_wm)
 colnames(final_n1_wm) <- "Win Margin"
 #################################################
+#corners awarded
+#create final_n1_ca object
+final_n1_ca <- c()
+suml6_n1_ca <- c()
+for(index_n1_ca in 1:length(n1_teams))
+{
+  index_n1_ca <- row.names(n1_coawarded_h) == n1_teams[index_n1_ca]
+  form_n1_ca <- n1_coawarded_h[index_n1_ca]
+  deleted_form_n1_ca <- form_n1_ca[!form_n1_ca[] == ""]
+  l6_form_n1_ca <- tail(deleted_form_n1_ca,n1_last_n_games)
+  l6_form_n1_ca <- as.numeric(l6_form_n1_ca)
+  suml6_n1_ca[index_n1_ca] <- sum(l6_form_n1_ca)
+  suml6_n1_ca[index_n1_ca] <- paste("(",suml6_n1_ca[index_n1_ca],")",sep = "")
+  l6_form_n1_ca <- paste(l6_form_n1_ca,collapse = " ")
+  final_n1_ca[index_n1_ca] <- rbind(paste(n1_teams[index_n1_ca],l6_form_n1_ca,suml6_n1_ca[index_n1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",n1_teams[index],l6_form)
+
+}
+final_n1_ca
+#change column names
+final_n1_ca <- as.data.frame(final_n1_ca)
+colnames(final_n1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_n1_ca object
+final_n1_cc <- c()
+suml6_n1_cc <- c()
+for(index_n1_cc in 1:length(n1_teams))
+{
+  index_n1_cc <- row.names(n1_cornersconceded_h) == n1_teams[index_n1_cc]
+  form_n1_cc <- n1_cornersconceded_h[index_n1_cc]
+  deleted_form_n1_cc <- form_n1_cc[!form_n1_cc[] == ""]
+  l6_form_n1_cc <- tail(deleted_form_n1_cc,n1_last_n_games)
+  l6_form_n1_cc <- as.numeric(l6_form_n1_cc)
+  suml6_n1_cc[index_n1_cc] <- sum(l6_form_n1_cc)
+  suml6_n1_cc[index_n1_cc] <- paste("(",suml6_n1_cc[index_n1_cc],")",sep = "")
+  l6_form_n1_cc <- paste(l6_form_n1_cc,collapse = " ")
+  final_n1_cc[index_n1_cc] <- rbind(paste(n1_teams[index_n1_cc],l6_form_n1_cc,suml6_n1_cc[index_n1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",n1_teams[index],l6_form)
+
+}
+final_n1_cc
+#change column names
+final_n1_cc <- as.data.frame(final_n1_cc)
+colnames(final_n1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_n1_cosc <- c()
+for(index_n1_cosc in 1:length(n1_teams))
+{
+  index_n1_cosc <- row.names(n1_coscform_h) == n1_teams[index_n1_cosc]
+  coscform_n1_cosc <- n1_coscform_h[index_n1_cosc]
+  deleted_coscform_n1_cosc <- coscform_n1_cosc[!coscform_n1_cosc[] == ""]
+  l6_coscform_n1_cosc <- tail(deleted_coscform_n1_cosc,n1_last_n_games)
+  l6_coscform_n1_cosc <- paste(l6_coscform_n1_cosc,collapse = " ")
+  final_n1_cosc[index_n1_cosc] <- rbind(paste(n1_teams[index_n1_cosc],l6_coscform_n1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",n1_teams[index],l6_coscform)
+
+}
+final_n1_cosc
+#change column names
+final_n1_cosc <- as.data.frame(final_n1_cosc)
+colnames(final_n1_cosc) <- "CornersForm"
+################################################################
+##################################################
+#total corners
+#create final_n1_tcorners object
+final_n1_tcorners <- c()
+suml6_n1_tcorners <- c()
+for(index_n1_tcorners in 1:length(n1_teams))
+{
+  index_n1_tcorners <- row.names(n1_totalcorners_h) == n1_teams[index_n1_tcorners]
+  form_n1_tcorners <- n1_totalcorners_h[index_n1_tcorners]
+  deleted_form_n1_tcorners <- form_n1_tcorners[!form_n1_tcorners[] == ""]
+  l6_form_n1_tcorners <- tail(deleted_form_n1_tcorners,n1_last_n_games)
+  l6_form_n1_tcorners <- as.numeric(l6_form_n1_tcorners)
+  suml6_n1_tcorners[index_n1_tcorners] <- sum(l6_form_n1_tcorners)
+  suml6_n1_tcorners[index_n1_tcorners] <- paste("(",suml6_n1_tcorners[index_n1_tcorners],")",sep = "")
+  l6_form_n1_tcorners <- paste(l6_form_n1_tcorners,collapse = " ")
+  final_n1_tcorners[index_n1_tcorners] <- rbind(paste(n1_teams[index_n1_tcorners],l6_form_n1_tcorners,suml6_n1_tcorners[index_n1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",n1_teams[index],l6_form)
+
+}
+#change column names
+final_n1_tcorners <- as.data.frame(final_n1_tcorners)
+colnames(final_n1_tcorners) <- "TotalCorners"
+###################################################
+################################################################
 #Team against
 #create final_n1_hf_against
 final_n1_hf_against <- c()
@@ -2139,7 +3336,7 @@ for(index_n1_hf_against in 1:length(n1_teams))
 final_n1_hf_against <- as.data.frame(final_n1_hf_against)
 colnames(final_n1_hf_against) <- "Team against"
 #combine the columns
-final_n1_all <- cbind(final_n1_hf,final_n1_gs,final_n1_gc,final_n1_tg,final_n1_cs,final_n1_wm,final_n1_hf_against)
+final_n1_all <- cbind(final_n1_hf,final_n1_gs,final_n1_gc,final_n1_tg,final_n1_ca,final_n1_cc,final_n1_tcorners,final_n1_cosc,final_n1_hf_against)
 write.xlsx(final_n1_all,'Divisions/N1.xlsx',sheetName = "L6", append = TRUE)
 #################################################################################
 #P1
@@ -2271,6 +3468,98 @@ final_p1_wm
 final_p1_wm <- as.data.frame(final_p1_wm)
 colnames(final_p1_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_p1_ca object
+final_p1_ca <- c()
+suml6_p1_ca <- c()
+for(index_p1_ca in 1:length(p1_teams))
+{
+  index_p1_ca <- row.names(p1_coawarded_h) == p1_teams[index_p1_ca]
+  form_p1_ca <- p1_coawarded_h[index_p1_ca]
+  deleted_form_p1_ca <- form_p1_ca[!form_p1_ca[] == ""]
+  l6_form_p1_ca <- tail(deleted_form_p1_ca,p1_last_n_games)
+  l6_form_p1_ca <- as.numeric(l6_form_p1_ca)
+  suml6_p1_ca[index_p1_ca] <- sum(l6_form_p1_ca)
+  suml6_p1_ca[index_p1_ca] <- paste("(",suml6_p1_ca[index_p1_ca],")",sep = "")
+  l6_form_p1_ca <- paste(l6_form_p1_ca,collapse = " ")
+  final_p1_ca[index_p1_ca] <- rbind(paste(p1_teams[index_p1_ca],l6_form_p1_ca,suml6_p1_ca[index_p1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",p1_teams[index],l6_form)
+
+}
+final_p1_ca
+#change column names
+final_p1_ca <- as.data.frame(final_p1_ca)
+colnames(final_p1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_p1_ca object
+final_p1_cc <- c()
+suml6_p1_cc <- c()
+for(index_p1_cc in 1:length(p1_teams))
+{
+  index_p1_cc <- row.names(p1_cornersconceded_h) == p1_teams[index_p1_cc]
+  form_p1_cc <- p1_cornersconceded_h[index_p1_cc]
+  deleted_form_p1_cc <- form_p1_cc[!form_p1_cc[] == ""]
+  l6_form_p1_cc <- tail(deleted_form_p1_cc,p1_last_n_games)
+  l6_form_p1_cc <- as.numeric(l6_form_p1_cc)
+  suml6_p1_cc[index_p1_cc] <- sum(l6_form_p1_cc)
+  suml6_p1_cc[index_p1_cc] <- paste("(",suml6_p1_cc[index_p1_cc],")",sep = "")
+  l6_form_p1_cc <- paste(l6_form_p1_cc,collapse = " ")
+  final_p1_cc[index_p1_cc] <- rbind(paste(p1_teams[index_p1_cc],l6_form_p1_cc,suml6_p1_cc[index_p1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",p1_teams[index],l6_form)
+
+}
+final_p1_cc
+#change column names
+final_p1_cc <- as.data.frame(final_p1_cc)
+colnames(final_p1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_p1_cosc <- c()
+for(index_p1_cosc in 1:length(p1_teams))
+{
+  index_p1_cosc <- row.names(p1_coscform_h) == p1_teams[index_p1_cosc]
+  coscform_p1_cosc <- p1_coscform_h[index_p1_cosc]
+  deleted_coscform_p1_cosc <- coscform_p1_cosc[!coscform_p1_cosc[] == ""]
+  l6_coscform_p1_cosc <- tail(deleted_coscform_p1_cosc,p1_last_n_games)
+  l6_coscform_p1_cosc <- paste(l6_coscform_p1_cosc,collapse = " ")
+  final_p1_cosc[index_p1_cosc] <- rbind(paste(p1_teams[index_p1_cosc],l6_coscform_p1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",p1_teams[index],l6_coscform)
+
+}
+final_p1_cosc
+#change column names
+final_p1_cosc <- as.data.frame(final_p1_cosc)
+colnames(final_p1_cosc) <- "CornersForm"
+#################################################
+
+##################################################
+#total corners
+#create final_p1_tcorners object
+final_p1_tcorners <- c()
+suml6_p1_tcorners <- c()
+for(index_p1_tcorners in 1:length(p1_teams))
+{
+  index_p1_tcorners <- row.names(p1_totalcorners_h) == p1_teams[index_p1_tcorners]
+  form_p1_tcorners <- p1_totalcorners_h[index_p1_tcorners]
+  deleted_form_p1_tcorners <- form_p1_tcorners[!form_p1_tcorners[] == ""]
+  l6_form_p1_tcorners <- tail(deleted_form_p1_tcorners,p1_last_n_games)
+  l6_form_p1_tcorners <- as.numeric(l6_form_p1_tcorners)
+  suml6_p1_tcorners[index_p1_tcorners] <- sum(l6_form_p1_tcorners)
+  suml6_p1_tcorners[index_p1_tcorners] <- paste("(",suml6_p1_tcorners[index_p1_tcorners],")",sep = "")
+  l6_form_p1_tcorners <- paste(l6_form_p1_tcorners,collapse = " ")
+  final_p1_tcorners[index_p1_tcorners] <- rbind(paste(p1_teams[index_p1_tcorners],l6_form_p1_tcorners,suml6_p1_tcorners[index_p1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",p1_teams[index],l6_form)
+
+}
+#change column names
+final_p1_tcorners <- as.data.frame(final_p1_tcorners)
+colnames(final_p1_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_p1_hf_against
 final_p1_hf_against <- c()
@@ -2288,7 +3577,7 @@ for(index_p1_hf_against in 1:length(p1_teams))
 final_p1_hf_against <- as.data.frame(final_p1_hf_against)
 colnames(final_p1_hf_against) <- "Team against"
 #combine the columns
-final_p1_all <- cbind(final_p1_hf,final_p1_gs,final_p1_gc,final_p1_tg,final_p1_cs,final_p1_wm,final_p1_hf_against)
+final_p1_all <- cbind(final_p1_hf,final_p1_gs,final_p1_gc,final_p1_tg,final_p1_ca,final_p1_cc,final_p1_tcorners,final_p1_cosc,final_p1_hf_against)
 write.xlsx(final_p1_all,'Divisions/P1.xlsx',sheetName = "L6", append = TRUE)
 ########################################################################################
 #SC0
@@ -2420,6 +3709,97 @@ final_sc0_wm
 final_sc0_wm <- as.data.frame(final_sc0_wm)
 colnames(final_sc0_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_sc0_ca object
+final_sc0_ca <- c()
+suml6_sc0_ca <- c()
+for(index_sc0_ca in 1:length(sc0_teams))
+{
+  index_sc0_ca <- row.names(sc0_coawarded_h) == sc0_teams[index_sc0_ca]
+  form_sc0_ca <- sc0_coawarded_h[index_sc0_ca]
+  deleted_form_sc0_ca <- form_sc0_ca[!form_sc0_ca[] == ""]
+  l6_form_sc0_ca <- tail(deleted_form_sc0_ca,sc0_last_n_games)
+  l6_form_sc0_ca <- as.numeric(l6_form_sc0_ca)
+  suml6_sc0_ca[index_sc0_ca] <- sum(l6_form_sc0_ca)
+  suml6_sc0_ca[index_sc0_ca] <- paste("(",suml6_sc0_ca[index_sc0_ca],")",sep = "")
+  l6_form_sc0_ca <- paste(l6_form_sc0_ca,collapse = " ")
+  final_sc0_ca[index_sc0_ca] <- rbind(paste(sc0_teams[index_sc0_ca],l6_form_sc0_ca,suml6_sc0_ca[index_sc0_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc0_teams[index],l6_form)
+
+}
+final_sc0_ca
+#change column names
+final_sc0_ca <- as.data.frame(final_sc0_ca)
+colnames(final_sc0_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_sc0_ca object
+final_sc0_cc <- c()
+suml6_sc0_cc <- c()
+for(index_sc0_cc in 1:length(sc0_teams))
+{
+  index_sc0_cc <- row.names(sc0_cornersconceded_h) == sc0_teams[index_sc0_cc]
+  form_sc0_cc <- sc0_cornersconceded_h[index_sc0_cc]
+  deleted_form_sc0_cc <- form_sc0_cc[!form_sc0_cc[] == ""]
+  l6_form_sc0_cc <- tail(deleted_form_sc0_cc,sc0_last_n_games)
+  l6_form_sc0_cc <- as.numeric(l6_form_sc0_cc)
+  suml6_sc0_cc[index_sc0_cc] <- sum(l6_form_sc0_cc)
+  suml6_sc0_cc[index_sc0_cc] <- paste("(",suml6_sc0_cc[index_sc0_cc],")",sep = "")
+  l6_form_sc0_cc <- paste(l6_form_sc0_cc,collapse = " ")
+  final_sc0_cc[index_sc0_cc] <- rbind(paste(sc0_teams[index_sc0_cc],l6_form_sc0_cc,suml6_sc0_cc[index_sc0_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc0_teams[index],l6_form)
+
+}
+final_sc0_cc
+#change column names
+final_sc0_cc <- as.data.frame(final_sc0_cc)
+colnames(final_sc0_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_sc0_cosc <- c()
+for(index_sc0_cosc in 1:length(sc0_teams))
+{
+  index_sc0_cosc <- row.names(sc0_coscform_h) == sc0_teams[index_sc0_cosc]
+  coscform_sc0_cosc <- sc0_coscform_h[index_sc0_cosc]
+  deleted_coscform_sc0_cosc <- coscform_sc0_cosc[!coscform_sc0_cosc[] == ""]
+  l6_coscform_sc0_cosc <- tail(deleted_coscform_sc0_cosc,sc0_last_n_games)
+  l6_coscform_sc0_cosc <- paste(l6_coscform_sc0_cosc,collapse = " ")
+  final_sc0_cosc[index_sc0_cosc] <- rbind(paste(sc0_teams[index_sc0_cosc],l6_coscform_sc0_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",sc0_teams[index],l6_coscform)
+
+}
+final_sc0_cosc
+#change column names
+final_sc0_cosc <- as.data.frame(final_sc0_cosc)
+colnames(final_sc0_cosc) <- "CornersForm"
+#################################################
+##################################################
+#total corners
+#create final_sc0_tcorners object
+final_sc0_tcorners <- c()
+suml6_sc0_tcorners <- c()
+for(index_sc0_tcorners in 1:length(sc0_teams))
+{
+  index_sc0_tcorners <- row.names(sc0_totalcorners_h) == sc0_teams[index_sc0_tcorners]
+  form_sc0_tcorners <- sc0_totalcorners_h[index_sc0_tcorners]
+  deleted_form_sc0_tcorners <- form_sc0_tcorners[!form_sc0_tcorners[] == ""]
+  l6_form_sc0_tcorners <- tail(deleted_form_sc0_tcorners,sc0_last_n_games)
+  l6_form_sc0_tcorners <- as.numeric(l6_form_sc0_tcorners)
+  suml6_sc0_tcorners[index_sc0_tcorners] <- sum(l6_form_sc0_tcorners)
+  suml6_sc0_tcorners[index_sc0_tcorners] <- paste("(",suml6_sc0_tcorners[index_sc0_tcorners],")",sep = "")
+  l6_form_sc0_tcorners <- paste(l6_form_sc0_tcorners,collapse = " ")
+  final_sc0_tcorners[index_sc0_tcorners] <- rbind(paste(sc0_teams[index_sc0_tcorners],l6_form_sc0_tcorners,suml6_sc0_tcorners[index_sc0_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc0_teams[index],l6_form)
+
+}
+#change column names
+final_sc0_tcorners <- as.data.frame(final_sc0_tcorners)
+colnames(final_sc0_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_sc0_hf_against
 final_sc0_hf_against <- c()
@@ -2437,7 +3817,7 @@ for(index_sc0_hf_against in 1:length(sc0_teams))
 final_sc0_hf_against <- as.data.frame(final_sc0_hf_against)
 colnames(final_sc0_hf_against) <- "Team against"
 #combine the columns
-final_sc0_all <- cbind(final_sc0_hf,final_sc0_gs,final_sc0_gc,final_sc0_tg,final_sc0_cs,final_sc0_wm,final_sc0_hf_against)
+final_sc0_all <- cbind(final_sc0_hf,final_sc0_gs,final_sc0_gc,final_sc0_tg,final_sc0_ca,final_sc0_cc,final_sc0_tcorners,final_sc0_cosc,final_sc0_hf_against)
 write.xlsx(final_sc0_all,'Divisions/SC0.xlsx',sheetName = "L6", append = TRUE)
 ######################################################################################
 #SC1
@@ -2569,6 +3949,98 @@ final_sc1_wm
 final_sc1_wm <- as.data.frame(final_sc1_wm)
 colnames(final_sc1_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_sc1_ca object
+final_sc1_ca <- c()
+suml6_sc1_ca <- c()
+for(index_sc1_ca in 1:length(sc1_teams))
+{
+  index_sc1_ca <- row.names(sc1_coawarded_h) == sc1_teams[index_sc1_ca]
+  form_sc1_ca <- sc1_coawarded_h[index_sc1_ca]
+  deleted_form_sc1_ca <- form_sc1_ca[!form_sc1_ca[] == ""]
+  l6_form_sc1_ca <- tail(deleted_form_sc1_ca,sc1_last_n_games)
+  l6_form_sc1_ca <- as.numeric(l6_form_sc1_ca)
+  suml6_sc1_ca[index_sc1_ca] <- sum(l6_form_sc1_ca)
+  suml6_sc1_ca[index_sc1_ca] <- paste("(",suml6_sc1_ca[index_sc1_ca],")",sep = "")
+  l6_form_sc1_ca <- paste(l6_form_sc1_ca,collapse = " ")
+  final_sc1_ca[index_sc1_ca] <- rbind(paste(sc1_teams[index_sc1_ca],l6_form_sc1_ca,suml6_sc1_ca[index_sc1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc1_teams[index],l6_form)
+
+}
+final_sc1_ca
+#change column names
+final_sc1_ca <- as.data.frame(final_sc1_ca)
+colnames(final_sc1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_sc1_ca object
+final_sc1_cc <- c()
+suml6_sc1_cc <- c()
+for(index_sc1_cc in 1:length(sc1_teams))
+{
+  index_sc1_cc <- row.names(sc1_cornersconceded_h) == sc1_teams[index_sc1_cc]
+  form_sc1_cc <- sc1_cornersconceded_h[index_sc1_cc]
+  deleted_form_sc1_cc <- form_sc1_cc[!form_sc1_cc[] == ""]
+  l6_form_sc1_cc <- tail(deleted_form_sc1_cc,sc1_last_n_games)
+  l6_form_sc1_cc <- as.numeric(l6_form_sc1_cc)
+  suml6_sc1_cc[index_sc1_cc] <- sum(l6_form_sc1_cc)
+  suml6_sc1_cc[index_sc1_cc] <- paste("(",suml6_sc1_cc[index_sc1_cc],")",sep = "")
+  l6_form_sc1_cc <- paste(l6_form_sc1_cc,collapse = " ")
+  final_sc1_cc[index_sc1_cc] <- rbind(paste(sc1_teams[index_sc1_cc],l6_form_sc1_cc,suml6_sc1_cc[index_sc1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc1_teams[index],l6_form)
+
+}
+final_sc1_cc
+#change column names
+final_sc1_cc <- as.data.frame(final_sc1_cc)
+colnames(final_sc1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_sc1_cosc <- c()
+for(index_sc1_cosc in 1:length(sc1_teams))
+{
+  index_sc1_cosc <- row.names(sc1_coscform_h) == sc1_teams[index_sc1_cosc]
+  coscform_sc1_cosc <- sc1_coscform_h[index_sc1_cosc]
+  deleted_coscform_sc1_cosc <- coscform_sc1_cosc[!coscform_sc1_cosc[] == ""]
+  l6_coscform_sc1_cosc <- tail(deleted_coscform_sc1_cosc,sc1_last_n_games)
+  l6_coscform_sc1_cosc <- paste(l6_coscform_sc1_cosc,collapse = " ")
+  final_sc1_cosc[index_sc1_cosc] <- rbind(paste(sc1_teams[index_sc1_cosc],l6_coscform_sc1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",sc1_teams[index],l6_coscform)
+
+}
+final_sc1_cosc
+#change column names
+final_sc1_cosc <- as.data.frame(final_sc1_cosc)
+colnames(final_sc1_cosc) <- "CornersForm"
+#################################################
+
+##################################################
+#total corners
+#create final_sc1_tcorners object
+final_sc1_tcorners <- c()
+suml6_sc1_tcorners <- c()
+for(index_sc1_tcorners in 1:length(sc1_teams))
+{
+  index_sc1_tcorners <- row.names(sc1_totalcorners_h) == sc1_teams[index_sc1_tcorners]
+  form_sc1_tcorners <- sc1_totalcorners_h[index_sc1_tcorners]
+  deleted_form_sc1_tcorners <- form_sc1_tcorners[!form_sc1_tcorners[] == ""]
+  l6_form_sc1_tcorners <- tail(deleted_form_sc1_tcorners,sc1_last_n_games)
+  l6_form_sc1_tcorners <- as.numeric(l6_form_sc1_tcorners)
+  suml6_sc1_tcorners[index_sc1_tcorners] <- sum(l6_form_sc1_tcorners)
+  suml6_sc1_tcorners[index_sc1_tcorners] <- paste("(",suml6_sc1_tcorners[index_sc1_tcorners],")",sep = "")
+  l6_form_sc1_tcorners <- paste(l6_form_sc1_tcorners,collapse = " ")
+  final_sc1_tcorners[index_sc1_tcorners] <- rbind(paste(sc1_teams[index_sc1_tcorners],l6_form_sc1_tcorners,suml6_sc1_tcorners[index_sc1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc1_teams[index],l6_form)
+
+}
+#change column names
+final_sc1_tcorners <- as.data.frame(final_sc1_tcorners)
+colnames(final_sc1_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_sc1_hf_against
 final_sc1_hf_against <- c()
@@ -2586,7 +4058,7 @@ for(index_sc1_hf_against in 1:length(sc1_teams))
 final_sc1_hf_against <- as.data.frame(final_sc1_hf_against)
 colnames(final_sc1_hf_against) <- "Team against"
 #combine the columns
-final_sc1_all <- cbind(final_sc1_hf,final_sc1_gs,final_sc1_gc,final_sc1_tg,final_sc1_cs,final_sc1_wm,final_sc1_hf_against)
+final_sc1_all <- cbind(final_sc1_hf,final_sc1_gs,final_sc1_gc,final_sc1_tg,final_sc1_ca,final_sc1_cc,final_sc1_tcorners,final_sc1_cosc,final_sc1_hf_against)
 write.xlsx(final_sc1_all,'Divisions/SC1.xlsx',sheetName = "L6", append = TRUE)
 ###################################################################################
 #SC2
@@ -2718,6 +4190,98 @@ final_sc2_wm
 final_sc2_wm <- as.data.frame(final_sc2_wm)
 colnames(final_sc2_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_sc2_ca object
+final_sc2_ca <- c()
+suml6_sc2_ca <- c()
+for(index_sc2_ca in 1:length(sc2_teams))
+{
+  index_sc2_ca <- row.names(sc2_coawarded_h) == sc2_teams[index_sc2_ca]
+  form_sc2_ca <- sc2_coawarded_h[index_sc2_ca]
+  deleted_form_sc2_ca <- form_sc2_ca[!form_sc2_ca[] == ""]
+  l6_form_sc2_ca <- tail(deleted_form_sc2_ca,sc2_last_n_games)
+  l6_form_sc2_ca <- as.numeric(l6_form_sc2_ca)
+  suml6_sc2_ca[index_sc2_ca] <- sum(l6_form_sc2_ca)
+  suml6_sc2_ca[index_sc2_ca] <- paste("(",suml6_sc2_ca[index_sc2_ca],")",sep = "")
+  l6_form_sc2_ca <- paste(l6_form_sc2_ca,collapse = " ")
+  final_sc2_ca[index_sc2_ca] <- rbind(paste(sc2_teams[index_sc2_ca],l6_form_sc2_ca,suml6_sc2_ca[index_sc2_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc2_teams[index],l6_form)
+
+}
+final_sc2_ca
+#change column names
+final_sc2_ca <- as.data.frame(final_sc2_ca)
+colnames(final_sc2_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_sc2_ca object
+final_sc2_cc <- c()
+suml6_sc2_cc <- c()
+for(index_sc2_cc in 1:length(sc2_teams))
+{
+  index_sc2_cc <- row.names(sc2_cornersconceded_h) == sc2_teams[index_sc2_cc]
+  form_sc2_cc <- sc2_cornersconceded_h[index_sc2_cc]
+  deleted_form_sc2_cc <- form_sc2_cc[!form_sc2_cc[] == ""]
+  l6_form_sc2_cc <- tail(deleted_form_sc2_cc,sc2_last_n_games)
+  l6_form_sc2_cc <- as.numeric(l6_form_sc2_cc)
+  suml6_sc2_cc[index_sc2_cc] <- sum(l6_form_sc2_cc)
+  suml6_sc2_cc[index_sc2_cc] <- paste("(",suml6_sc2_cc[index_sc2_cc],")",sep = "")
+  l6_form_sc2_cc <- paste(l6_form_sc2_cc,collapse = " ")
+  final_sc2_cc[index_sc2_cc] <- rbind(paste(sc2_teams[index_sc2_cc],l6_form_sc2_cc,suml6_sc2_cc[index_sc2_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc2_teams[index],l6_form)
+
+}
+final_sc2_cc
+#change column names
+final_sc2_cc <- as.data.frame(final_sc2_cc)
+colnames(final_sc2_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_sc2_cosc <- c()
+for(index_sc2_cosc in 1:length(sc2_teams))
+{
+  index_sc2_cosc <- row.names(sc2_coscform_h) == sc2_teams[index_sc2_cosc]
+  coscform_sc2_cosc <- sc2_coscform_h[index_sc2_cosc]
+  deleted_coscform_sc2_cosc <- coscform_sc2_cosc[!coscform_sc2_cosc[] == ""]
+  l6_coscform_sc2_cosc <- tail(deleted_coscform_sc2_cosc,sc2_last_n_games)
+  l6_coscform_sc2_cosc <- paste(l6_coscform_sc2_cosc,collapse = " ")
+  final_sc2_cosc[index_sc2_cosc] <- rbind(paste(sc2_teams[index_sc2_cosc],l6_coscform_sc2_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",sc2_teams[index],l6_coscform)
+
+}
+final_sc2_cosc
+#change column names
+final_sc2_cosc <- as.data.frame(final_sc2_cosc)
+colnames(final_sc2_cosc) <- "CornersForm"
+#################################################
+
+##################################################
+#total corners
+#create final_sc2_tcorners object
+final_sc2_tcorners <- c()
+suml6_sc2_tcorners <- c()
+for(index_sc2_tcorners in 1:length(sc2_teams))
+{
+  index_sc2_tcorners <- row.names(sc2_totalcorners_h) == sc2_teams[index_sc2_tcorners]
+  form_sc2_tcorners <- sc2_totalcorners_h[index_sc2_tcorners]
+  deleted_form_sc2_tcorners <- form_sc2_tcorners[!form_sc2_tcorners[] == ""]
+  l6_form_sc2_tcorners <- tail(deleted_form_sc2_tcorners,sc2_last_n_games)
+  l6_form_sc2_tcorners <- as.numeric(l6_form_sc2_tcorners)
+  suml6_sc2_tcorners[index_sc2_tcorners] <- sum(l6_form_sc2_tcorners)
+  suml6_sc2_tcorners[index_sc2_tcorners] <- paste("(",suml6_sc2_tcorners[index_sc2_tcorners],")",sep = "")
+  l6_form_sc2_tcorners <- paste(l6_form_sc2_tcorners,collapse = " ")
+  final_sc2_tcorners[index_sc2_tcorners] <- rbind(paste(sc2_teams[index_sc2_tcorners],l6_form_sc2_tcorners,suml6_sc2_tcorners[index_sc2_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc2_teams[index],l6_form)
+
+}
+#change column names
+final_sc2_tcorners <- as.data.frame(final_sc2_tcorners)
+colnames(final_sc2_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_sc2_hf_against
 final_sc2_hf_against <- c()
@@ -2735,7 +4299,7 @@ for(index_sc2_hf_against in 1:length(sc2_teams))
 final_sc2_hf_against <- as.data.frame(final_sc2_hf_against)
 colnames(final_sc2_hf_against) <- "Team against"
 #combine the columns
-final_sc2_all <- cbind(final_sc2_hf,final_sc2_gs,final_sc2_gc,final_sc2_tg,final_sc2_cs,final_sc2_wm,final_sc2_hf_against)
+final_sc2_all <- cbind(final_sc2_hf,final_sc2_gs,final_sc2_gc,final_sc2_tg,final_sc2_ca,final_sc2_cc,final_sc2_tcorners,final_sc2_cosc,final_sc2_hf_against)
 write.xlsx(final_sc2_all,'Divisions/SC2.xlsx',sheetName = "L6", append = TRUE)
 #####################################################################################
 #SC3
@@ -2867,6 +4431,98 @@ final_sc3_wm
 final_sc3_wm <- as.data.frame(final_sc3_wm)
 colnames(final_sc3_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_sc3_ca object
+final_sc3_ca <- c()
+suml6_sc3_ca <- c()
+for(index_sc3_ca in 1:length(sc3_teams))
+{
+  index_sc3_ca <- row.names(sc3_coawarded_h) == sc3_teams[index_sc3_ca]
+  form_sc3_ca <- sc3_coawarded_h[index_sc3_ca]
+  deleted_form_sc3_ca <- form_sc3_ca[!form_sc3_ca[] == ""]
+  l6_form_sc3_ca <- tail(deleted_form_sc3_ca,sc3_last_n_games)
+  l6_form_sc3_ca <- as.numeric(l6_form_sc3_ca)
+  suml6_sc3_ca[index_sc3_ca] <- sum(l6_form_sc3_ca)
+  suml6_sc3_ca[index_sc3_ca] <- paste("(",suml6_sc3_ca[index_sc3_ca],")",sep = "")
+  l6_form_sc3_ca <- paste(l6_form_sc3_ca,collapse = " ")
+  final_sc3_ca[index_sc3_ca] <- rbind(paste(sc3_teams[index_sc3_ca],l6_form_sc3_ca,suml6_sc3_ca[index_sc3_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc3_teams[index],l6_form)
+
+}
+final_sc3_ca
+#change column names
+final_sc3_ca <- as.data.frame(final_sc3_ca)
+colnames(final_sc3_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_sc3_ca object
+final_sc3_cc <- c()
+suml6_sc3_cc <- c()
+for(index_sc3_cc in 1:length(sc3_teams))
+{
+  index_sc3_cc <- row.names(sc3_cornersconceded_h) == sc3_teams[index_sc3_cc]
+  form_sc3_cc <- sc3_cornersconceded_h[index_sc3_cc]
+  deleted_form_sc3_cc <- form_sc3_cc[!form_sc3_cc[] == ""]
+  l6_form_sc3_cc <- tail(deleted_form_sc3_cc,sc3_last_n_games)
+  l6_form_sc3_cc <- as.numeric(l6_form_sc3_cc)
+  suml6_sc3_cc[index_sc3_cc] <- sum(l6_form_sc3_cc)
+  suml6_sc3_cc[index_sc3_cc] <- paste("(",suml6_sc3_cc[index_sc3_cc],")",sep = "")
+  l6_form_sc3_cc <- paste(l6_form_sc3_cc,collapse = " ")
+  final_sc3_cc[index_sc3_cc] <- rbind(paste(sc3_teams[index_sc3_cc],l6_form_sc3_cc,suml6_sc3_cc[index_sc3_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc3_teams[index],l6_form)
+
+}
+final_sc3_cc
+#change column names
+final_sc3_cc <- as.data.frame(final_sc3_cc)
+colnames(final_sc3_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_sc3_cosc <- c()
+for(index_sc3_cosc in 1:length(sc3_teams))
+{
+  index_sc3_cosc <- row.names(sc3_coscform_h) == sc3_teams[index_sc3_cosc]
+  coscform_sc3_cosc <- sc3_coscform_h[index_sc3_cosc]
+  deleted_coscform_sc3_cosc <- coscform_sc3_cosc[!coscform_sc3_cosc[] == ""]
+  l6_coscform_sc3_cosc <- tail(deleted_coscform_sc3_cosc,sc3_last_n_games)
+  l6_coscform_sc3_cosc <- paste(l6_coscform_sc3_cosc,collapse = " ")
+  final_sc3_cosc[index_sc3_cosc] <- rbind(paste(sc3_teams[index_sc3_cosc],l6_coscform_sc3_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",sc3_teams[index],l6_coscform)
+
+}
+final_sc3_cosc
+#change column names
+final_sc3_cosc <- as.data.frame(final_sc3_cosc)
+colnames(final_sc3_cosc) <- "CornersForm"
+#################################################
+
+##################################################
+#total corners
+#create final_sc3_tcorners object
+final_sc3_tcorners <- c()
+suml6_sc3_tcorners <- c()
+for(index_sc3_tcorners in 1:length(sc3_teams))
+{
+  index_sc3_tcorners <- row.names(sc3_totalcorners_h) == sc3_teams[index_sc3_tcorners]
+  form_sc3_tcorners <- sc3_totalcorners_h[index_sc3_tcorners]
+  deleted_form_sc3_tcorners <- form_sc3_tcorners[!form_sc3_tcorners[] == ""]
+  l6_form_sc3_tcorners <- tail(deleted_form_sc3_tcorners,sc3_last_n_games)
+  l6_form_sc3_tcorners <- as.numeric(l6_form_sc3_tcorners)
+  suml6_sc3_tcorners[index_sc3_tcorners] <- sum(l6_form_sc3_tcorners)
+  suml6_sc3_tcorners[index_sc3_tcorners] <- paste("(",suml6_sc3_tcorners[index_sc3_tcorners],")",sep = "")
+  l6_form_sc3_tcorners <- paste(l6_form_sc3_tcorners,collapse = " ")
+  final_sc3_tcorners[index_sc3_tcorners] <- rbind(paste(sc3_teams[index_sc3_tcorners],l6_form_sc3_tcorners,suml6_sc3_tcorners[index_sc3_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sc3_teams[index],l6_form)
+
+}
+#change column names
+final_sc3_tcorners <- as.data.frame(final_sc3_tcorners)
+colnames(final_sc3_tcorners) <- "TotalCorners"
+###################################################
+##################################################
 #Team against
 #create final_sc3_hf_against
 final_sc3_hf_against <- c()
@@ -2884,7 +4540,7 @@ for(index_sc3_hf_against in 1:length(sc3_teams))
 final_sc3_hf_against <- as.data.frame(final_sc3_hf_against)
 colnames(final_sc3_hf_against) <- "Team against"
 #combine the columns
-final_sc3_all <- cbind(final_sc3_hf,final_sc3_gs,final_sc3_gc,final_sc3_tg,final_sc3_cs,final_sc3_wm,final_sc3_hf_against)
+final_sc3_all <- cbind(final_sc3_hf,final_sc3_gs,final_sc3_gc,final_sc3_tg,final_sc3_ca,final_sc3_cc,final_sc3_tcorners,final_sc3_cosc,final_sc3_hf_against)
 write.xlsx(final_sc3_all,'Divisions/SC3.xlsx',sheetName = "L6", append = TRUE)
 ######################################################################################
 #SP1
@@ -3016,6 +4672,98 @@ final_sp1_wm
 final_sp1_wm <- as.data.frame(final_sp1_wm)
 colnames(final_sp1_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_sp1_ca object
+final_sp1_ca <- c()
+suml6_sp1_ca <- c()
+for(index_sp1_ca in 1:length(sp1_teams))
+{
+  index_sp1_ca <- row.names(sp1_coawarded_h) == sp1_teams[index_sp1_ca]
+  form_sp1_ca <- sp1_coawarded_h[index_sp1_ca]
+  deleted_form_sp1_ca <- form_sp1_ca[!form_sp1_ca[] == ""]
+  l6_form_sp1_ca <- tail(deleted_form_sp1_ca,sp1_last_n_games)
+  l6_form_sp1_ca <- as.numeric(l6_form_sp1_ca)
+  suml6_sp1_ca[index_sp1_ca] <- sum(l6_form_sp1_ca)
+  suml6_sp1_ca[index_sp1_ca] <- paste("(",suml6_sp1_ca[index_sp1_ca],")",sep = "")
+  l6_form_sp1_ca <- paste(l6_form_sp1_ca,collapse = " ")
+  final_sp1_ca[index_sp1_ca] <- rbind(paste(sp1_teams[index_sp1_ca],l6_form_sp1_ca,suml6_sp1_ca[index_sp1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sp1_teams[index],l6_form)
+
+}
+final_sp1_ca
+#change column names
+final_sp1_ca <- as.data.frame(final_sp1_ca)
+colnames(final_sp1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_sp1_ca object
+final_sp1_cc <- c()
+suml6_sp1_cc <- c()
+for(index_sp1_cc in 1:length(sp1_teams))
+{
+  index_sp1_cc <- row.names(sp1_cornersconceded_h) == sp1_teams[index_sp1_cc]
+  form_sp1_cc <- sp1_cornersconceded_h[index_sp1_cc]
+  deleted_form_sp1_cc <- form_sp1_cc[!form_sp1_cc[] == ""]
+  l6_form_sp1_cc <- tail(deleted_form_sp1_cc,sp1_last_n_games)
+  l6_form_sp1_cc <- as.numeric(l6_form_sp1_cc)
+  suml6_sp1_cc[index_sp1_cc] <- sum(l6_form_sp1_cc)
+  suml6_sp1_cc[index_sp1_cc] <- paste("(",suml6_sp1_cc[index_sp1_cc],")",sep = "")
+  l6_form_sp1_cc <- paste(l6_form_sp1_cc,collapse = " ")
+  final_sp1_cc[index_sp1_cc] <- rbind(paste(sp1_teams[index_sp1_cc],l6_form_sp1_cc,suml6_sp1_cc[index_sp1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sp1_teams[index],l6_form)
+
+}
+final_sp1_cc
+#change column names
+final_sp1_cc <- as.data.frame(final_sp1_cc)
+colnames(final_sp1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_sp1_cosc <- c()
+for(index_sp1_cosc in 1:length(sp1_teams))
+{
+  index_sp1_cosc <- row.names(sp1_coscform_h) == sp1_teams[index_sp1_cosc]
+  coscform_sp1_cosc <- sp1_coscform_h[index_sp1_cosc]
+  deleted_coscform_sp1_cosc <- coscform_sp1_cosc[!coscform_sp1_cosc[] == ""]
+  l6_coscform_sp1_cosc <- tail(deleted_coscform_sp1_cosc,sp1_last_n_games)
+  l6_coscform_sp1_cosc <- paste(l6_coscform_sp1_cosc,collapse = " ")
+  final_sp1_cosc[index_sp1_cosc] <- rbind(paste(sp1_teams[index_sp1_cosc],l6_coscform_sp1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",sp1_teams[index],l6_coscform)
+
+}
+final_sp1_cosc
+#change column names
+final_sp1_cosc <- as.data.frame(final_sp1_cosc)
+colnames(final_sp1_cosc) <- "CornersForm"
+#################################################
+
+##################################################
+#total corners
+#create final_sp1_tcorners object
+final_sp1_tcorners <- c()
+suml6_sp1_tcorners <- c()
+for(index_sp1_tcorners in 1:length(sp1_teams))
+{
+  index_sp1_tcorners <- row.names(sp1_totalcorners_h) == sp1_teams[index_sp1_tcorners]
+  form_sp1_tcorners <- sp1_totalcorners_h[index_sp1_tcorners]
+  deleted_form_sp1_tcorners <- form_sp1_tcorners[!form_sp1_tcorners[] == ""]
+  l6_form_sp1_tcorners <- tail(deleted_form_sp1_tcorners,sp1_last_n_games)
+  l6_form_sp1_tcorners <- as.numeric(l6_form_sp1_tcorners)
+  suml6_sp1_tcorners[index_sp1_tcorners] <- sum(l6_form_sp1_tcorners)
+  suml6_sp1_tcorners[index_sp1_tcorners] <- paste("(",suml6_sp1_tcorners[index_sp1_tcorners],")",sep = "")
+  l6_form_sp1_tcorners <- paste(l6_form_sp1_tcorners,collapse = " ")
+  final_sp1_tcorners[index_sp1_tcorners] <- rbind(paste(sp1_teams[index_sp1_tcorners],l6_form_sp1_tcorners,suml6_sp1_tcorners[index_sp1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sp1_teams[index],l6_form)
+
+}
+#change column names
+final_sp1_tcorners <- as.data.frame(final_sp1_tcorners)
+colnames(final_sp1_tcorners) <- "TotalCorners"
+###################################################
+##################################################
 #Team against
 #create final_sp1_hf_against
 final_sp1_hf_against <- c()
@@ -3033,7 +4781,7 @@ for(index_sp1_hf_against in 1:length(sp1_teams))
 final_sp1_hf_against <- as.data.frame(final_sp1_hf_against)
 colnames(final_sp1_hf_against) <- "Team against"
 #combine the columns
-final_sp1_all <- cbind(final_sp1_hf,final_sp1_gs,final_sp1_gc,final_sp1_tg,final_sp1_cs,final_sp1_wm,final_sp1_hf_against)
+final_sp1_all <- cbind(final_sp1_hf,final_sp1_gs,final_sp1_gc,final_sp1_tg,final_sp1_ca,final_sp1_cc,final_sp1_tcorners,final_sp1_cosc,final_sp1_hf_against)
 write.xlsx(final_sp1_all,'Divisions/SP1.xlsx',sheetName = "L6", append = TRUE)
 #####################################################################################
 #SP2
@@ -3165,6 +4913,97 @@ final_sp2_wm
 final_sp2_wm <- as.data.frame(final_sp2_wm)
 colnames(final_sp2_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_sp2_ca object
+final_sp2_ca <- c()
+suml6_sp2_ca <- c()
+for(index_sp2_ca in 1:length(sp2_teams))
+{
+  index_sp2_ca <- row.names(sp2_coawarded_h) == sp2_teams[index_sp2_ca]
+  form_sp2_ca <- sp2_coawarded_h[index_sp2_ca]
+  deleted_form_sp2_ca <- form_sp2_ca[!form_sp2_ca[] == ""]
+  l6_form_sp2_ca <- tail(deleted_form_sp2_ca,sp2_last_n_games)
+  l6_form_sp2_ca <- as.numeric(l6_form_sp2_ca)
+  suml6_sp2_ca[index_sp2_ca] <- sum(l6_form_sp2_ca)
+  suml6_sp2_ca[index_sp2_ca] <- paste("(",suml6_sp2_ca[index_sp2_ca],")",sep = "")
+  l6_form_sp2_ca <- paste(l6_form_sp2_ca,collapse = " ")
+  final_sp2_ca[index_sp2_ca] <- rbind(paste(sp2_teams[index_sp2_ca],l6_form_sp2_ca,suml6_sp2_ca[index_sp2_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sp2_teams[index],l6_form)
+
+}
+final_sp2_ca
+#change column names
+final_sp2_ca <- as.data.frame(final_sp2_ca)
+colnames(final_sp2_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_sp2_ca object
+final_sp2_cc <- c()
+suml6_sp2_cc <- c()
+for(index_sp2_cc in 1:length(sp2_teams))
+{
+  index_sp2_cc <- row.names(sp2_cornersconceded_h) == sp2_teams[index_sp2_cc]
+  form_sp2_cc <- sp2_cornersconceded_h[index_sp2_cc]
+  deleted_form_sp2_cc <- form_sp2_cc[!form_sp2_cc[] == ""]
+  l6_form_sp2_cc <- tail(deleted_form_sp2_cc,sp2_last_n_games)
+  l6_form_sp2_cc <- as.numeric(l6_form_sp2_cc)
+  suml6_sp2_cc[index_sp2_cc] <- sum(l6_form_sp2_cc)
+  suml6_sp2_cc[index_sp2_cc] <- paste("(",suml6_sp2_cc[index_sp2_cc],")",sep = "")
+  l6_form_sp2_cc <- paste(l6_form_sp2_cc,collapse = " ")
+  final_sp2_cc[index_sp2_cc] <- rbind(paste(sp2_teams[index_sp2_cc],l6_form_sp2_cc,suml6_sp2_cc[index_sp2_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sp2_teams[index],l6_form)
+
+}
+final_sp2_cc
+#change column names
+final_sp2_cc <- as.data.frame(final_sp2_cc)
+colnames(final_sp2_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_sp2_cosc <- c()
+for(index_sp2_cosc in 1:length(sp2_teams))
+{
+  index_sp2_cosc <- row.names(sp2_coscform_h) == sp2_teams[index_sp2_cosc]
+  coscform_sp2_cosc <- sp2_coscform_h[index_sp2_cosc]
+  deleted_coscform_sp2_cosc <- coscform_sp2_cosc[!coscform_sp2_cosc[] == ""]
+  l6_coscform_sp2_cosc <- tail(deleted_coscform_sp2_cosc,sp2_last_n_games)
+  l6_coscform_sp2_cosc <- paste(l6_coscform_sp2_cosc,collapse = " ")
+  final_sp2_cosc[index_sp2_cosc] <- rbind(paste(sp2_teams[index_sp2_cosc],l6_coscform_sp2_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",sp2_teams[index],l6_coscform)
+
+}
+final_sp2_cosc
+#change column names
+final_sp2_cosc <- as.data.frame(final_sp2_cosc)
+colnames(final_sp2_cosc) <- "CornersForm"
+##########################################################
+##################################################
+#total corners
+#create final_sp2_tcorners object
+final_sp2_tcorners <- c()
+suml6_sp2_tcorners <- c()
+for(index_sp2_tcorners in 1:length(sp2_teams))
+{
+  index_sp2_tcorners <- row.names(sp2_totalcorners_h) == sp2_teams[index_sp2_tcorners]
+  form_sp2_tcorners <- sp2_totalcorners_h[index_sp2_tcorners]
+  deleted_form_sp2_tcorners <- form_sp2_tcorners[!form_sp2_tcorners[] == ""]
+  l6_form_sp2_tcorners <- tail(deleted_form_sp2_tcorners,sp2_last_n_games)
+  l6_form_sp2_tcorners <- as.numeric(l6_form_sp2_tcorners)
+  suml6_sp2_tcorners[index_sp2_tcorners] <- sum(l6_form_sp2_tcorners)
+  suml6_sp2_tcorners[index_sp2_tcorners] <- paste("(",suml6_sp2_tcorners[index_sp2_tcorners],")",sep = "")
+  l6_form_sp2_tcorners <- paste(l6_form_sp2_tcorners,collapse = " ")
+  final_sp2_tcorners[index_sp2_tcorners] <- rbind(paste(sp2_teams[index_sp2_tcorners],l6_form_sp2_tcorners,suml6_sp2_tcorners[index_sp2_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",sp2_teams[index],l6_form)
+
+}
+#change column names
+final_sp2_tcorners <- as.data.frame(final_sp2_tcorners)
+colnames(final_sp2_tcorners) <- "TotalCorners"
+###################################################
+##########################################################
 #Team against
 #create final_sp2_hf_against
 final_sp2_hf_against <- c()
@@ -3182,7 +5021,7 @@ for(index_sp2_hf_against in 1:length(sp2_teams))
 final_sp2_hf_against <- as.data.frame(final_sp2_hf_against)
 colnames(final_sp2_hf_against) <- "Team against"
 #combine the columns
-final_sp2_all <- cbind(final_sp2_hf,final_sp2_gs,final_sp2_gc,final_sp2_tg,final_sp2_cs,final_sp2_wm,final_sp2_hf_against)
+final_sp2_all <- cbind(final_sp2_hf,final_sp2_gs,final_sp2_gc,final_sp2_tg,final_sp2_ca,final_sp2_cc,final_sp2_tcorners,final_sp2_cosc,final_sp2_hf_against)
 write.xlsx(final_sp2_all,'Divisions/SP2.xlsx',sheetName = "L6", append = TRUE)
 ####################################################################################################
 #T1
@@ -3314,6 +5153,97 @@ final_t1_wm
 final_t1_wm <- as.data.frame(final_t1_wm)
 colnames(final_t1_wm) <- "Win Margin"
 #################################################
+#################################################
+#corners awarded
+#create final_t1_ca object
+final_t1_ca <- c()
+suml6_t1_ca <- c()
+for(index_t1_ca in 1:length(t1_teams))
+{
+  index_t1_ca <- row.names(t1_coawarded_h) == t1_teams[index_t1_ca]
+  form_t1_ca <- t1_coawarded_h[index_t1_ca]
+  deleted_form_t1_ca <- form_t1_ca[!form_t1_ca[] == ""]
+  l6_form_t1_ca <- tail(deleted_form_t1_ca,t1_last_n_games)
+  l6_form_t1_ca <- as.numeric(l6_form_t1_ca)
+  suml6_t1_ca[index_t1_ca] <- sum(l6_form_t1_ca)
+  suml6_t1_ca[index_t1_ca] <- paste("(",suml6_t1_ca[index_t1_ca],")",sep = "")
+  l6_form_t1_ca <- paste(l6_form_t1_ca,collapse = " ")
+  final_t1_ca[index_t1_ca] <- rbind(paste(t1_teams[index_t1_ca],l6_form_t1_ca,suml6_t1_ca[index_t1_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",t1_teams[index],l6_form)
+
+}
+final_t1_ca
+#change column names
+final_t1_ca <- as.data.frame(final_t1_ca)
+colnames(final_t1_ca) <- "CornersAwarded"
+##################################################
+##################################################
+#corners awarded
+#create final_t1_ca object
+final_t1_cc <- c()
+suml6_t1_cc <- c()
+for(index_t1_cc in 1:length(t1_teams))
+{
+  index_t1_cc <- row.names(t1_cornersconceded_h) == t1_teams[index_t1_cc]
+  form_t1_cc <- t1_cornersconceded_h[index_t1_cc]
+  deleted_form_t1_cc <- form_t1_cc[!form_t1_cc[] == ""]
+  l6_form_t1_cc <- tail(deleted_form_t1_cc,t1_last_n_games)
+  l6_form_t1_cc <- as.numeric(l6_form_t1_cc)
+  suml6_t1_cc[index_t1_cc] <- sum(l6_form_t1_cc)
+  suml6_t1_cc[index_t1_cc] <- paste("(",suml6_t1_cc[index_t1_cc],")",sep = "")
+  l6_form_t1_cc <- paste(l6_form_t1_cc,collapse = " ")
+  final_t1_cc[index_t1_cc] <- rbind(paste(t1_teams[index_t1_cc],l6_form_t1_cc,suml6_t1_cc[index_t1_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",t1_teams[index],l6_form)
+
+}
+final_t1_cc
+#change column names
+final_t1_cc <- as.data.frame(final_t1_cc)
+colnames(final_t1_cc) <- "CornersConceded"
+##################################################
+##################################################
+#corners form
+final_t1_cosc <- c()
+for(index_t1_cosc in 1:length(t1_teams))
+{
+  index_t1_cosc <- row.names(t1_coscform_h) == t1_teams[index_t1_cosc]
+  coscform_t1_cosc <- t1_coscform_h[index_t1_cosc]
+  deleted_coscform_t1_cosc <- coscform_t1_cosc[!coscform_t1_cosc[] == ""]
+  l6_coscform_t1_cosc <- tail(deleted_coscform_t1_cosc,t1_last_n_games)
+  l6_coscform_t1_cosc <- paste(l6_coscform_t1_cosc,collapse = " ")
+  final_t1_cosc[index_t1_cosc] <- rbind(paste(t1_teams[index_t1_cosc],l6_coscform_t1_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",t1_teams[index],l6_coscform)
+
+}
+final_t1_cosc
+#change column names
+final_t1_cosc <- as.data.frame(final_t1_cosc)
+colnames(final_t1_cosc) <- "CornersForm"
+#################################################
+##################################################
+#total corners
+#create final_t1_tcorners object
+final_t1_tcorners <- c()
+suml6_t1_tcorners <- c()
+for(index_t1_tcorners in 1:length(t1_teams))
+{
+  index_t1_tcorners <- row.names(t1_totalcorners_h) == t1_teams[index_t1_tcorners]
+  form_t1_tcorners <- t1_totalcorners_h[index_t1_tcorners]
+  deleted_form_t1_tcorners <- form_t1_tcorners[!form_t1_tcorners[] == ""]
+  l6_form_t1_tcorners <- tail(deleted_form_t1_tcorners,t1_last_n_games)
+  l6_form_t1_tcorners <- as.numeric(l6_form_t1_tcorners)
+  suml6_t1_tcorners[index_t1_tcorners] <- sum(l6_form_t1_tcorners)
+  suml6_t1_tcorners[index_t1_tcorners] <- paste("(",suml6_t1_tcorners[index_t1_tcorners],")",sep = "")
+  l6_form_t1_tcorners <- paste(l6_form_t1_tcorners,collapse = " ")
+  final_t1_tcorners[index_t1_tcorners] <- rbind(paste(t1_teams[index_t1_tcorners],l6_form_t1_tcorners,suml6_t1_tcorners[index_t1_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",t1_teams[index],l6_form)
+
+}
+#change column names
+final_t1_tcorners <- as.data.frame(final_t1_tcorners)
+colnames(final_t1_tcorners) <- "TotalCorners"
+###################################################
+#################################################
 #Team against
 #create final_t1_hf_against
 final_t1_hf_against <- c()
@@ -3331,7 +5261,7 @@ for(index_t1_hf_against in 1:length(t1_teams))
 final_t1_hf_against <- as.data.frame(final_t1_hf_against)
 colnames(final_t1_hf_against) <- "Team against"
 #combine the columns
-final_t1_all <- cbind(final_t1_hf,final_t1_gs,final_t1_gc,final_t1_tg,final_t1_cs,final_t1_wm,final_t1_hf_against)
+final_t1_all <- cbind(final_t1_hf,final_t1_gs,final_t1_gc,final_t1_tg,final_t1_ca,final_t1_cc,final_t1_tcorners,final_t1_cosc,final_t1_hf_against)
 write.xlsx(final_t1_all,'Divisions/T1.xlsx',sheetName = "L6", append = TRUE)
 
 

@@ -1,0 +1,192 @@
+"","matchid","epl_firstgoalmin"
+"1","Arsenal-Aston Villa",30
+"2","Arsenal-Fulham",56
+"3","Arsenal-Leicester",23
+"4","Arsenal-Liverpool",1
+"5","Arsenal-Man United",17
+"6","Arsenal-Nottm Forest",5
+"7","Arsenal-Tottenham",20
+"8","Arsenal-West Ham",27
+"9","Aston Villa-Brentford",2
+"10","Aston Villa-Chelsea",6
+"11","Aston Villa-Everton",31
+"12","Aston Villa-Leeds",3
+"13","Aston Villa-Leicester",9
+"14","Aston Villa-Liverpool",5
+"15","Aston Villa-Man City",50
+"16","Aston Villa-Man United",7
+"17","Aston Villa-Southampton",41
+"18","Aston Villa-West Ham",74
+"19","Aston Villa-Wolves",12
+"20","Bournemouth-Arsenal",5
+"21","Bournemouth-Aston Villa",2
+"22","Bournemouth-Crystal Palace",19
+"23","Bournemouth-Everton",18
+"24","Bournemouth-Leicester",10
+"25","Bournemouth-Nottm Forest",28
+"26","Bournemouth-Southampton",9
+"27","Bournemouth-Tottenham",22
+"28","Brentford-Arsenal",17
+"29","Brentford-Bournemouth",39
+"30","Brentford-Brighton",27
+"31","Brentford-Everton",24
+"32","Brentford-Leeds",30
+"33","Brentford-Liverpool",19
+"34","Brentford-Man United",10
+"35","Brentford-Southampton",41
+"36","Brentford-Tottenham",15
+"37","Brentford-Wolves",50
+"38","Brighton-Arsenal",2
+"39","Brighton-Aston Villa",1
+"40","Brighton-Bournemouth",87
+"41","Brighton-Chelsea",5
+"42","Brighton-Leeds",66
+"43","Brighton-Leicester",1
+"44","Brighton-Liverpool",47
+"45","Brighton-Tottenham",22
+"46","Chelsea-Arsenal",63
+"47","Chelsea-Bournemouth",16
+"48","Chelsea-Crystal Palace",64
+"49","Chelsea-Leicester",47
+"50","Chelsea-Man City",63
+"51","Chelsea-Man United",87
+"52","Chelsea-Tottenham",19
+"53","Chelsea-West Ham",62
+"54","Chelsea-Wolves",45
+"55","Crystal Palace-Arsenal",20
+"56","Crystal Palace-Aston Villa",5
+"57","Crystal Palace-Brentford",59
+"58","Crystal Palace-Chelsea",7
+"59","Crystal Palace-Fulham",31
+"60","Crystal Palace-Leeds",10
+"61","Crystal Palace-Man United",44
+"62","Crystal Palace-Southampton",38
+"63","Crystal Palace-Tottenham",48
+"64","Crystal Palace-Wolves",31
+"65","Everton-Arsenal",60
+"66","Everton-Brighton",14
+"67","Everton-Chelsea",45
+"68","Everton-Crystal Palace",11
+"69","Everton-Leicester",45
+"70","Everton-Man United",5
+"71","Everton-Nottm Forest",81
+"72","Everton-Southampton",39
+"73","Everton-West Ham",53
+"74","Everton-Wolves",7
+"75","Fulham-Aston Villa",36
+"76","Fulham-Bournemouth",2
+"77","Fulham-Brentford",1
+"78","Fulham-Brighton",48
+"79","Fulham-Chelsea",25
+"80","Fulham-Liverpool",32
+"81","Fulham-Man United",14
+"82","Fulham-Newcastle",11
+"83","Fulham-Southampton",32
+"84","Fulham-Tottenham",45
+"85","Leeds-Arsenal",35
+"86","Leeds-Bournemouth",3
+"87","Leeds-Chelsea",33
+"88","Leeds-Everton",17
+"89","Leeds-Fulham",20
+"90","Leeds-Man City",45
+"91","Leeds-West Ham",27
+"92","Leeds-Wolves",6
+"93","Leicester-Brentford",33
+"94","Leicester-Brighton",27
+"95","Leicester-Fulham",17
+"96","Leicester-Leeds",16
+"97","Leicester-Man City",49
+"98","Leicester-Man United",23
+"99","Leicester-Newcastle",3
+"100","Leicester-Nottm Forest",25
+"101","Leicester-Southampton",54
+"102","Liverpool-Bournemouth",3
+"103","Liverpool-Brighton",4
+"104","Liverpool-Crystal Palace",32
+"105","Liverpool-Leeds",4
+"106","Liverpool-Leicester",4
+"107","Liverpool-Man City",76
+"108","Liverpool-Newcastle",38
+"109","Liverpool-Southampton",6
+"110","Liverpool-West Ham",22
+"111","Man City-Bournemouth",19
+"112","Man City-Brentford",16
+"113","Man City-Brighton",22
+"114","Man City-Crystal Palace",4
+"115","Man City-Everton",24
+"116","Man City-Fulham",16
+"117","Man City-Man United",8
+"118","Man City-Nottm Forest",12
+"119","Man City-Southampton",20
+"120","Man City-Tottenham",44
+"121","Man City-Wolves",40
+"122","Man United-Arsenal",35
+"123","Man United-Bournemouth",23
+"124","Man United-Brighton",30
+"125","Man United-Crystal Palace",7
+"126","Man United-Liverpool",16
+"127","Man United-Man City",60
+"128","Man United-Nottm Forest",19
+"129","Man United-Tottenham",47
+"130","Man United-West Ham",38
+"131","Newcastle-Aston Villa",45
+"132","Newcastle-Bournemouth",62
+"133","Newcastle-Brentford",21
+"134","Newcastle-Chelsea",67
+"135","Newcastle-Everton",30
+"136","Newcastle-Fulham",89
+"137","Newcastle-Man City",5
+"138","Newcastle-Nottm Forest",58
+"139","Newcastle-West Ham",3
+"140","Nottm Forest-Aston Villa",15
+"141","Nottm Forest-Bournemouth",33
+"142","Nottm Forest-Brentford",20
+"143","Nottm Forest-Chelsea",16
+"144","Nottm Forest-Crystal Palace",54
+"145","Nottm Forest-Fulham",11
+"146","Nottm Forest-Leeds",14
+"147","Nottm Forest-Leicester",56
+"148","Nottm Forest-Liverpool",55
+"149","Nottm Forest-Tottenham",5
+"150","Nottm Forest-West Ham",45
+"151","Southampton-Arsenal",11
+"152","Southampton-Aston Villa",77
+"153","Southampton-Brighton",14
+"154","Southampton-Chelsea",23
+"155","Southampton-Everton",49
+"156","Southampton-Leeds",46
+"157","Southampton-Man United",55
+"158","Southampton-Newcastle",35
+"159","Southampton-Nottm Forest",27
+"160","Southampton-West Ham",20
+"161","Tottenham-Arsenal",14
+"162","Tottenham-Aston Villa",50
+"163","Tottenham-Everton",59
+"164","Tottenham-Fulham",40
+"165","Tottenham-Leeds",10
+"166","Tottenham-Leicester",6
+"167","Tottenham-Liverpool",11
+"168","Tottenham-Man City",15
+"169","Tottenham-Newcastle",31
+"170","Tottenham-Southampton",12
+"171","Tottenham-Wolves",64
+"172","West Ham-Bournemouth",45
+"173","West Ham-Brentford",18
+"174","West Ham-Brighton",22
+"175","West Ham-Crystal Palace",20
+"176","West Ham-Everton",34
+"177","West Ham-Fulham",5
+"178","West Ham-Leicester",8
+"179","West Ham-Man City",36
+"180","West Ham-Tottenham",34
+"181","West Ham-Wolves",29
+"182","Wolves-Arsenal",54
+"183","Wolves-Brighton",10
+"184","Wolves-Leicester",8
+"185","Wolves-Liverpool",5
+"186","Wolves-Man City",1
+"187","Wolves-Man United",76
+"188","Wolves-Newcastle",38
+"189","Wolves-Nottm Forest",56
+"190","Wolves-Southampton",45
+"191","Wolves-West Ham",48

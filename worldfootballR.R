@@ -13,7 +13,7 @@ epl_startdate <- which(epl_match_details$match_time_utc == "Fri, Aug 5, 2022, 19
 epl_startindex <- nrow(epl_match_details) - epl_startdate[1]
 epl_match_details <- tail(epl_match_details,epl_startindex)
 
-
+View(epl_match_details)
 epl_match_details$home_team <- mgsub(epl_match_details$home_team,c("AFC Bournemouth","Brighton & Hove Albion","Leeds United","Leicester City","Manchester United","Manchester City","Newcastle United","Nottingham Forest","Tottenham Hotspur","West Ham United","Wolverhampton Wanderers"),c("Bournemouth","Brighton","Leeds","Leicester","Man United","Man City","Newcastle","Nottm Forest","Tottenham","West Ham","Wolves"))
 epl_match_details$away_team <- mgsub(epl_match_details$away_team,c("AFC Bournemouth","Brighton & Hove Albion","Leeds United","Leicester City","Manchester United","Manchester City","Newcastle United","Nottingham Forest","Tottenham Hotspur","West Ham United","Wolverhampton Wanderers"),c("Bournemouth","Brighton","Leeds","Leicester","Man United","Man City","Newcastle","Nottm Forest","Tottenham","West Ham","Wolves"))
 epl_match_details$matchid <- paste(epl_match_details$home_team,epl_match_details$away_team,sep = "-")
@@ -78,11 +78,11 @@ bundesliga_startdate <- which(bundesliga_match_details$match_time_utc == "Fri, A
 bundesliga_startindex <- nrow(bundesliga_match_details) - bundesliga_startdate[1]
 bundesliga_match_details <- tail(bundesliga_match_details,bundesliga_startindex)
 
-bundesliga_match_details$home_team <- mgsub(bundesliga_match_details$home_team,c("1. FC Köln","FC Augsburg","Bayer Leverkusen","Bayern München","Borussia Dortmund","Borussia M'Gladbach","Eintracht Frankfurt","Hertha BSC","Mainz 05","TSG Hoffenheim","VfB Stuttgart"),c("FC Koln","Augsburg","Leverkusen","Bayern Munich","Dortmund","Mgladbach","Ein Frankfurt","Hertha","Mainz","Hoffenheim","Stuttgart"))
-bundesliga_match_details$away_team <- mgsub(bundesliga_match_details$away_team,c("1. FC Köln","FC Augsburg","Bayer Leverkusen","Bayern München","Borussia Dortmund","Borussia M'Gladbach","Eintracht Frankfurt","Hertha BSC","Mainz 05","TSG Hoffenheim","VfB Stuttgart"),c("FC Koln","Augsburg","Leverkusen","Bayern Munich","Dortmund","Mgladbach","Ein Frankfurt","Hertha","Mainz","Hoffenheim","Stuttgart"))
+bundesliga_match_details$home_team <- mgsub(bundesliga_match_details$home_team,c("1. FC Köln","FC Augsburg","Bayer Leverkusen","Bayern München","Borussia Dortmund","Borussia M'Gladbach","Eintracht Frankfurt","Hertha BSC","Mainz 05","TSG Hoffenheim","VfB Stuttgart","VfL Bochum","SC Freiburg"),c("FC Koln","Augsburg","Leverkusen","Bayern Munich","Dortmund","Mgladbach","Ein Frankfurt","Hertha","Mainz","Hoffenheim","Stuttgart","Bochum","Freiburg"))
+bundesliga_match_details$away_team <- mgsub(bundesliga_match_details$away_team,c("1. FC Köln","FC Augsburg","Bayer Leverkusen","Bayern München","Borussia Dortmund","Borussia M'Gladbach","Eintracht Frankfurt","Hertha BSC","Mainz 05","TSG Hoffenheim","VfB Stuttgart","VfL Bochum","SC Freiburg"),c("FC Koln","Augsburg","Leverkusen","Bayern Munich","Dortmund","Mgladbach","Ein Frankfurt","Hertha","Mainz","Hoffenheim","Stuttgart","Bochum","Freiburg"))
 bundesliga_match_details$matchid <- paste(bundesliga_match_details$home_team,bundesliga_match_details$away_team,sep = "-")
 bundesliga_match_details <- bundesliga_match_details[bundesliga_match_details$event_type == "Goal",]
-
+d1_teams
 
 bundesliga_goal_mins <- bundesliga_match_details %>% group_by(matchid) %>%
   dplyr::summarise(bundesliga_goalmins = sum(min),
@@ -322,14 +322,7 @@ F1_spread$GoalsXcornerXbookings <- (F1_spread$TG)*(F1_spread$TC)*(F1_spread$Book
 unlink('F1_spread.csv')
 write.csv(F1_spread,'F1_spread.csv')
 ################################################################################################################
-
-
-
-
-
-
-
-
+sort(unique(bundesliga_match_details$home_team))
 
 
 

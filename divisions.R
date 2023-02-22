@@ -9,6 +9,7 @@ allteams20222023 <- allteams20222023[order(as.Date(allteams20222023$Date, format
 #calculate total goals
 allteams20222023$TG <- allteams20222023$FTHG + allteams20222023$FTAG
 allteams20222023$TC <- allteams20222023$HCO + allteams20222023$ACO
+allteams20222023$TF <- allteams20222023$HF + allteams20222023$AF
 allteams20222023$COSC <- paste(allteams20222023$HCO,allteams20222023$ACO,sep = "-")
 allteams20222023$OV15 <- ifelse(allteams20222023$TG >= 2,"Y","N")
 allteams20222023$OV25 <- ifelse(allteams20222023$TG >= 3,"Y","N")
@@ -39,4 +40,5 @@ SC3 <- subset(allteams20222023, Div == "SC3")
 SP1 <- subset(allteams20222023, Div == "SP1")
 SP2 <- subset(allteams20222023, Div == "SP2")
 T1 <- subset(allteams20222023, Div == "T1")
+
 

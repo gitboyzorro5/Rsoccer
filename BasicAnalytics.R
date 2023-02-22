@@ -1076,9 +1076,74 @@ allteams2023corneranalysis <- allteams20222023[allteams20222023$TC >= '10',] %>%
 View(sort(allteams2023corneranalysis))
 write.csv(allteams2023corneranalysis,'corneranalysis.csv')
 ##############################################################################################
-3900971
-sort(unique(epl_match_details$match_id))
-View(fotmob_get_match_team_stats(3901151))
+allteams20222023[allteams20222023$TC == '2',]
+###############################################################################################################################
+B1_fixtures_clone_final <- B1_fixtures_clone[,-c(8,9,10,27)]
+B1_fixtures_clone_final[,'sep'] <- ''
+
+b1_dmprediction <-  b1_picks[,c(4,5,6,7,8)]
+b1_dmprediction[,'sep2'] <- ''
+
+b1_avgyellow <- b1_picks[,c(9,10)]
+b1_avgyellow[,'sep3'] <- ''
+
+b1_avgcorners <- b1_picks[,c(11,12)]
+b1_avgcorners[,'sep4'] <- ''
+
+b1_goals <- B1_fixtures[,c(10,11)]
+b1_goals$b1_xGH <- round(b1_goals$b1_xGH, digits = 2)
+b1_goals$b1_xGA <- round(b1_goals$b1_xGA, digits = 2)
+b1_goals$b1_TxG <- b1_goals$b1_xGH + b1_goals$b1_xGA
+b1_goals[,'sep5'] <- ''
+
+b1_shots <- B1_fixtures_sot[,c(10,11)]
+b1_shots$b1_xHST <- round(b1_shots$b1_xHST, digits = 2)
+b1_shots$b1_xAST <- round(b1_shots$b1_xAST, digits = 2)
+b1_shots$TxSOT <- b1_shots$b1_xHST + b1_shots$b1_xAST
+b1_shots[,'sep6'] <- ''
+
+b1_fouls <- B1_fixtures_fo[,c(10,11)]
+b1_fouls$b1_xHF <- round(b1_fouls$b1_xHF, digits = 2)
+b1_fouls$b1_xAF <- round(b1_fouls$b1_xAF, digits = 2)
+b1_fouls$b1_TxF <- b1_fouls$b1_xHF + b1_fouls$b1_xAF
+
+b1_ycpf <- b1_picks[,c(15,16)]
+b1_fouls <- cbind(b1_fouls,b1_ycpf)
+b1_fouls$HYCPF <- as.numeric(b1_fouls$HYCPF)
+b1_fouls$AYCPF <- as.numeric(b1_fouls$AYCPF)
+b1_fouls$x_hyc <- (b1_fouls$b1_xHF) * (b1_fouls$HYCPF)
+b1_fouls$x_ayc <- (b1_fouls$b1_xAF) * (b1_fouls$AYCPF)
+b1_fouls$x_TYC <- round((b1_fouls$x_hyc + b1_fouls$x_ayc),digits = 2)
+b1_fouls[,'sep7'] <- ''
+
+b1_bookings <- B1_fixtures_yc[,c(10,11)]
+b1_bookings$b1_xHYC <- round(b1_bookings$b1_xHYC, digits = 2)
+b1_bookings$b1_xAYC <- round(b1_bookings$b1_xAYC, digits = 2)
+b1_bookings$b1_TYcards <- b1_bookings$b1_xHYC + b1_bookings$b1_xAYC
+b1_bookings[,'sep8'] <- ''
+
+b1_corners <- B1_fixtures_co[,c(10,11)]
+b1_corners$b1_xHCOC <- round(b1_corners$b1_xHCOC, digits = 2)
+b1_corners$b1_xACOC <- round(b1_corners$b1_xACOC, digits = 2)
+b1_corners$b1_TCOs <- b1_corners$b1_xHCOC + b1_corners$b1_xACOC
+b1_corners[,'sep9'] <- ''
+
+b1_shotsconversion <- b1_picks[,c(13,14)]
+b1_shotsconversion <- cbind(b1_shotsconversion,b1_shots)
+b1_shotsconversion$HXSC <- as.numeric(b1_shotsconversion$HXSC)
+b1_shotsconversion$AXSC <- as.numeric(b1_shotsconversion$AXSC)
+b1_shotsconversion$b1_hXgoals <- round((b1_shotsconversion$HXSC * b1_shotsconversion$b1_xHST), digits = 2)
+b1_shotsconversion$b1_aXgoals <- round((b1_shotsconversion$AXSC * b1_shotsconversion$b1_xAST), digits = 2)
+b1_shotsconversion$Xgoals <- b1_shotsconversion$b1_hXgoals + b1_shotsconversion$b1_aXgoals
+
+B1_all <- cbind(B1_fixtures_clone_final,b1_dmprediction,b1_avgyellow,b1_avgcorners,b1_goals,b1_shots,b1_fouls,b1_bookings,b1_corners,b1_shotsconversion)
+write.csv(B1_all,'B1_all.csv')
+####################################################################################################################################################################################
+
+
+
+
+
 
 
 

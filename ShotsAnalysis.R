@@ -52,7 +52,7 @@ names(b1_away_conceding)[names(b1_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
 b1_conceding <- merge(b1_home_conceding,b1_away_conceding,by='Group.1',all = T)
 b1_conceding$TGC <- b1_conceding$TFthc + b1_conceding$TFtac
-
+b1_home_hst
 #Home shots conceded
 b1_home_hsc <- aggregate(B1$AST, by = list(B1$HomeTeam), FUN = sum)
 b1_away_asc <- aggregate(B1$HST, by = list(B1$AwayTeam), FUN = sum)

@@ -20,6 +20,11 @@ source("TGmatrix.R")
 source("Totalgoals.R")
 source("TeamAgainst.R")
 source("ShotsAnalysis.R")
+source("FoulsAnalysis.R")
+source("PoissonCards.R")
+source("PoissonCorners.R")
+source("PoissonFouls.R")
+source("PoissonShots.R")
 source("LeagueTables.R")
 source("PoissonModel.R")
 unlink("Divisions/*",recursive = T,force = T)
@@ -36,7 +41,8 @@ source("RoundMatrix.R")
 source("LastSix.R")
 source("LeagueFixtures.R")
 source("TableSimulation.R")
-
+source("DecisionModel.R")
+source("AllEvents.R")
 
 
 

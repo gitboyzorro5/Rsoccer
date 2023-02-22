@@ -23,6 +23,8 @@ b1_HCO <- c()
 b1_ACO <- c()
 b1_HXSC <- c()
 b1_AXSC <- c()
+b1_HYCPF <- c()
+b1_AYCPF <- c()
 for(b1_row in 1:nrow(B1_fixtures))
 {
 
@@ -188,7 +190,18 @@ b1_xshotsconversion_vec_at[is.na(b1_xshotsconversion_vec_at)] <- ""
 b1_xshotsconversion_vec_at <- b1_xshotsconversion_vec_at[b1_xshotsconversion_vec_at != ""]
 b1_xshotsconversion_vec_at  <-tail(b1_xshotsconversion_vec_at,1)
 #################################################################################
-
+#pick yellow cards per foul
+#hometeam
+b1_fouls_conversion_vec_ht <- as.vector(b1_fouls_conversion[b1_hometeamindex,])
+b1_fouls_conversion_vec_ht[is.na(b1_fouls_conversion_vec_ht)] <- ""
+b1_fouls_conversion_vec_ht <- b1_fouls_conversion_vec_ht[b1_fouls_conversion_vec_ht != ""]
+b1_fouls_conversion_vec_ht  <-tail(b1_fouls_conversion_vec_ht,1)
+#awayteam
+b1_fouls_conversion_vec_at <- as.vector(b1_fouls_conversion[b1_awayteamindex,])
+b1_fouls_conversion_vec_at[is.na(b1_fouls_conversion_vec_at)] <- ""
+b1_fouls_conversion_vec_at <- b1_fouls_conversion_vec_at[b1_fouls_conversion_vec_at != ""]
+b1_fouls_conversion_vec_at  <-tail(b1_fouls_conversion_vec_at,1)
+#################################################################################
 
 ####we need to decide ############
 #winner goals
@@ -222,6 +235,8 @@ b1_ACO[b1_row] <- b1_cornertotals_vec_at
 b1_HXSC[b1_row] <- b1_xshotsconversion_vec_ht
 b1_AXSC[b1_row] <- b1_xshotsconversion_vec_at
 
+b1_HYCPF[b1_row] <- b1_fouls_conversion_vec_ht
+b1_AYCPF[b1_row] <- b1_fouls_conversion_vec_at
 }
 
 b1_prediction <- as.data.frame(b1_prediction)
@@ -257,7 +272,13 @@ colnames(b1_HXSC) <- "HXSC"
 b1_AXSC <- as.data.frame(b1_AXSC)
 colnames(b1_AXSC) <- "AXSC"
 
-b1_picks <- cbind(B1_fixtures$Div,B1_fixtures$HomeTeam_b1,B1_fixtures$AwayTeam_b1,b1_prediction,b1_HWM,b1_AWM,b1_HWMLM,b1_AWMLM,b1_HY,b1_AY,b1_HCO,b1_ACO,b1_HXSC,b1_AXSC)
+b1_HYCPF <- as.data.frame(b1_HYCPF)
+colnames(b1_HYCPF) <- "HYCPF"
+
+b1_AYCPF <- as.data.frame(b1_AYCPF)
+colnames(b1_AYCPF) <- "AYCPF"
+
+b1_picks <- cbind(B1_fixtures$Div,B1_fixtures$HomeTeam_b1,B1_fixtures$AwayTeam_b1,b1_prediction,b1_HWM,b1_AWM,b1_HWMLM,b1_AWMLM,b1_HY,b1_AY,b1_HCO,b1_ACO,b1_HXSC,b1_AXSC,b1_HYCPF,b1_AYCPF)
 
 colnames(b1_picks)[1] <- "picks_Div"
 colnames(b1_picks)[2] <- "picks_HomeTeam"
@@ -281,6 +302,8 @@ d1_HCO <- c()
 d1_ACO <- c()
 d1_HXSC <- c()
 d1_AXSC <- c()
+d1_HYCPF <- c()
+d1_AYCPF <- c()
 for(d1_row in 1:nrow(D1_fixtures))
 {
 
@@ -446,7 +469,18 @@ for(d1_row in 1:nrow(D1_fixtures))
   d1_xshotsconversion_vec_at <- d1_xshotsconversion_vec_at[d1_xshotsconversion_vec_at != ""]
   d1_xshotsconversion_vec_at  <-tail(d1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  d1_fouls_conversion_vec_ht <- as.vector(d1_fouls_conversion[d1_hometeamindex,])
+  d1_fouls_conversion_vec_ht[is.na(d1_fouls_conversion_vec_ht)] <- ""
+  d1_fouls_conversion_vec_ht <- d1_fouls_conversion_vec_ht[d1_fouls_conversion_vec_ht != ""]
+  d1_fouls_conversion_vec_ht  <-tail(d1_fouls_conversion_vec_ht,1)
+  #awayteam
+  d1_fouls_conversion_vec_at <- as.vector(d1_fouls_conversion[d1_awayteamindex,])
+  d1_fouls_conversion_vec_at[is.na(d1_fouls_conversion_vec_at)] <- ""
+  d1_fouls_conversion_vec_at <- d1_fouls_conversion_vec_at[d1_fouls_conversion_vec_at != ""]
+  d1_fouls_conversion_vec_at  <-tail(d1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -480,6 +514,8 @@ for(d1_row in 1:nrow(D1_fixtures))
   d1_HXSC[d1_row] <- d1_xshotsconversion_vec_ht
   d1_AXSC[d1_row] <- d1_xshotsconversion_vec_at
 
+  d1_HYCPF[d1_row] <- d1_fouls_conversion_vec_ht
+  d1_AYCPF[d1_row] <- d1_fouls_conversion_vec_at
 }
 
 d1_prediction <- as.data.frame(d1_prediction)
@@ -515,7 +551,13 @@ colnames(d1_HXSC) <- "HXSC"
 d1_AXSC <- as.data.frame(d1_AXSC)
 colnames(d1_AXSC) <- "AXSC"
 
-d1_picks <- cbind(D1_fixtures$Div,D1_fixtures$HomeTeam_d1,D1_fixtures$AwayTeam_d1,d1_prediction,d1_HWM,d1_AWM,d1_HWMLM,d1_AWMLM,d1_HY,d1_AY,d1_HCO,d1_ACO,d1_HXSC,d1_AXSC)
+d1_HYCPF <- as.data.frame(d1_HYCPF)
+colnames(d1_HYCPF) <- "HYCPF"
+
+d1_AYCPF <- as.data.frame(d1_AYCPF)
+colnames(d1_AYCPF) <- "AYCPF"
+
+d1_picks <- cbind(D1_fixtures$Div,D1_fixtures$HomeTeam_d1,D1_fixtures$AwayTeam_d1,d1_prediction,d1_HWM,d1_AWM,d1_HWMLM,d1_AWMLM,d1_HY,d1_AY,d1_HCO,d1_ACO,d1_HXSC,d1_AXSC,d1_HYCPF,d1_AYCPF)
 
 colnames(d1_picks)[1] <- "picks_Div"
 colnames(d1_picks)[2] <- "picks_HomeTeam"
@@ -538,6 +580,8 @@ d2_HCO <- c()
 d2_ACO <- c()
 d2_HXSC <- c()
 d2_AXSC <- c()
+d2_HYCPF <- c()
+d2_AYCPF <- c()
 for(d2_row in 1:nrow(D2_fixtures))
 {
 
@@ -703,7 +747,18 @@ for(d2_row in 1:nrow(D2_fixtures))
   d2_xshotsconversion_vec_at <- d2_xshotsconversion_vec_at[d2_xshotsconversion_vec_at != ""]
   d2_xshotsconversion_vec_at  <-tail(d2_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  d2_fouls_conversion_vec_ht <- as.vector(d2_fouls_conversion[d2_hometeamindex,])
+  d2_fouls_conversion_vec_ht[is.na(d2_fouls_conversion_vec_ht)] <- ""
+  d2_fouls_conversion_vec_ht <- d2_fouls_conversion_vec_ht[d2_fouls_conversion_vec_ht != ""]
+  d2_fouls_conversion_vec_ht  <-tail(d2_fouls_conversion_vec_ht,1)
+  #awayteam
+  d2_fouls_conversion_vec_at <- as.vector(d2_fouls_conversion[d2_awayteamindex,])
+  d2_fouls_conversion_vec_at[is.na(d2_fouls_conversion_vec_at)] <- ""
+  d2_fouls_conversion_vec_at <- d2_fouls_conversion_vec_at[d2_fouls_conversion_vec_at != ""]
+  d2_fouls_conversion_vec_at  <-tail(d2_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -737,6 +792,8 @@ for(d2_row in 1:nrow(D2_fixtures))
   d2_HXSC[d2_row] <- d2_xshotsconversion_vec_ht
   d2_AXSC[d2_row] <- d2_xshotsconversion_vec_at
 
+  d2_HYCPF[d2_row] <- d2_fouls_conversion_vec_ht
+  d2_AYCPF[d2_row] <- d2_fouls_conversion_vec_at
 }
 
 d2_prediction <- as.data.frame(d2_prediction)
@@ -772,7 +829,13 @@ colnames(d2_HXSC) <- "HXSC"
 d2_AXSC <- as.data.frame(d2_AXSC)
 colnames(d2_AXSC) <- "AXSC"
 
-d2_picks <- cbind(D2_fixtures$Div,D2_fixtures$HomeTeam_d2,D2_fixtures$AwayTeam_d2,d2_prediction,d2_HWM,d2_AWM,d2_HWMLM,d2_AWMLM,d2_HY,d2_AY,d2_HCO,d2_ACO,d2_HXSC,d2_AXSC)
+d2_HYCPF <- as.data.frame(d2_HYCPF)
+colnames(d2_HYCPF) <- "HYCPF"
+
+d2_AYCPF <- as.data.frame(d2_AYCPF)
+colnames(d2_AYCPF) <- "AYCPF"
+
+d2_picks <- cbind(D2_fixtures$Div,D2_fixtures$HomeTeam_d2,D2_fixtures$AwayTeam_d2,d2_prediction,d2_HWM,d2_AWM,d2_HWMLM,d2_AWMLM,d2_HY,d2_AY,d2_HCO,d2_ACO,d2_HXSC,d2_AXSC,d2_HYCPF,d2_AYCPF)
 
 colnames(d2_picks)[1] <- "picks_Div"
 colnames(d2_picks)[2] <- "picks_HomeTeam"
@@ -796,6 +859,8 @@ e0_HCO <- c()
 e0_ACO <- c()
 e0_HXSC <- c()
 e0_AXSC <- c()
+e0_HYCPF <- c()
+e0_AYCPF <- c()
 for(e0_row in 1:nrow(E0_fixtures))
 {
 
@@ -961,7 +1026,18 @@ for(e0_row in 1:nrow(E0_fixtures))
   e0_xshotsconversion_vec_at <- e0_xshotsconversion_vec_at[e0_xshotsconversion_vec_at != ""]
   e0_xshotsconversion_vec_at  <-tail(e0_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  e0_fouls_conversion_vec_ht <- as.vector(e0_fouls_conversion[e0_hometeamindex,])
+  e0_fouls_conversion_vec_ht[is.na(e0_fouls_conversion_vec_ht)] <- ""
+  e0_fouls_conversion_vec_ht <- e0_fouls_conversion_vec_ht[e0_fouls_conversion_vec_ht != ""]
+  e0_fouls_conversion_vec_ht  <-tail(e0_fouls_conversion_vec_ht,1)
+  #awayteam
+  e0_fouls_conversion_vec_at <- as.vector(e0_fouls_conversion[e0_awayteamindex,])
+  e0_fouls_conversion_vec_at[is.na(e0_fouls_conversion_vec_at)] <- ""
+  e0_fouls_conversion_vec_at <- e0_fouls_conversion_vec_at[e0_fouls_conversion_vec_at != ""]
+  e0_fouls_conversion_vec_at  <-tail(e0_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -995,6 +1071,8 @@ for(e0_row in 1:nrow(E0_fixtures))
   e0_HXSC[e0_row] <- e0_xshotsconversion_vec_ht
   e0_AXSC[e0_row] <- e0_xshotsconversion_vec_at
 
+  e0_HYCPF[e0_row] <- e0_fouls_conversion_vec_ht
+  e0_AYCPF[e0_row] <- e0_fouls_conversion_vec_at
 }
 
 e0_prediction <- as.data.frame(e0_prediction)
@@ -1030,7 +1108,13 @@ colnames(e0_HXSC) <- "HXSC"
 e0_AXSC <- as.data.frame(e0_AXSC)
 colnames(e0_AXSC) <- "AXSC"
 
-e0_picks <- cbind(E0_fixtures$Div,E0_fixtures$HomeTeam_e0,E0_fixtures$AwayTeam_e0,e0_prediction,e0_HWM,e0_AWM,e0_HWMLM,e0_AWMLM,e0_HY,e0_AY,e0_HCO,e0_ACO,e0_HXSC,e0_AXSC)
+e0_HYCPF <- as.data.frame(e0_HYCPF)
+colnames(e0_HYCPF) <- "HYCPF"
+
+e0_AYCPF <- as.data.frame(e0_AYCPF)
+colnames(e0_AYCPF) <- "AYCPF"
+
+e0_picks <- cbind(E0_fixtures$Div,E0_fixtures$HomeTeam_e0,E0_fixtures$AwayTeam_e0,e0_prediction,e0_HWM,e0_AWM,e0_HWMLM,e0_AWMLM,e0_HY,e0_AY,e0_HCO,e0_ACO,e0_HXSC,e0_AXSC,e0_HYCPF,e0_AYCPF)
 
 colnames(e0_picks)[1] <- "picks_Div"
 colnames(e0_picks)[2] <- "picks_HomeTeam"
@@ -1053,6 +1137,8 @@ e1_HCO <- c()
 e1_ACO <- c()
 e1_HXSC <- c()
 e1_AXSC <- c()
+e1_HYCPF <- c()
+e1_AYCPF <- c()
 for(e1_row in 1:nrow(E1_fixtures))
 {
 
@@ -1218,7 +1304,18 @@ for(e1_row in 1:nrow(E1_fixtures))
   e1_xshotsconversion_vec_at <- e1_xshotsconversion_vec_at[e1_xshotsconversion_vec_at != ""]
   e1_xshotsconversion_vec_at  <-tail(e1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  e1_fouls_conversion_vec_ht <- as.vector(e1_fouls_conversion[e1_hometeamindex,])
+  e1_fouls_conversion_vec_ht[is.na(e1_fouls_conversion_vec_ht)] <- ""
+  e1_fouls_conversion_vec_ht <- e1_fouls_conversion_vec_ht[e1_fouls_conversion_vec_ht != ""]
+  e1_fouls_conversion_vec_ht  <-tail(e1_fouls_conversion_vec_ht,1)
+  #awayteam
+  e1_fouls_conversion_vec_at <- as.vector(e1_fouls_conversion[e1_awayteamindex,])
+  e1_fouls_conversion_vec_at[is.na(e1_fouls_conversion_vec_at)] <- ""
+  e1_fouls_conversion_vec_at <- e1_fouls_conversion_vec_at[e1_fouls_conversion_vec_at != ""]
+  e1_fouls_conversion_vec_at  <-tail(e1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -1252,6 +1349,8 @@ for(e1_row in 1:nrow(E1_fixtures))
   e1_HXSC[e1_row] <- e1_xshotsconversion_vec_ht
   e1_AXSC[e1_row] <- e1_xshotsconversion_vec_at
 
+  e1_HYCPF[e1_row] <- e1_fouls_conversion_vec_ht
+  e1_AYCPF[e1_row] <- e1_fouls_conversion_vec_at
 }
 
 e1_prediction <- as.data.frame(e1_prediction)
@@ -1287,7 +1386,13 @@ colnames(e1_HXSC) <- "HXSC"
 e1_AXSC <- as.data.frame(e1_AXSC)
 colnames(e1_AXSC) <- "AXSC"
 
-e1_picks <- cbind(E1_fixtures$Div,E1_fixtures$HomeTeam_e1,E1_fixtures$AwayTeam_e1,e1_prediction,e1_HWM,e1_AWM,e1_HWMLM,e1_AWMLM,e1_HY,e1_AY,e1_HCO,e1_ACO,e1_HXSC,e1_AXSC)
+e1_HYCPF <- as.data.frame(e1_HYCPF)
+colnames(e1_HYCPF) <- "HYCPF"
+
+e1_AYCPF <- as.data.frame(e1_AYCPF)
+colnames(e1_AYCPF) <- "AYCPF"
+
+e1_picks <- cbind(E1_fixtures$Div,E1_fixtures$HomeTeam_e1,E1_fixtures$AwayTeam_e1,e1_prediction,e1_HWM,e1_AWM,e1_HWMLM,e1_AWMLM,e1_HY,e1_AY,e1_HCO,e1_ACO,e1_HXSC,e1_AXSC,e1_HYCPF,e1_AYCPF)
 
 colnames(e1_picks)[1] <- "picks_Div"
 colnames(e1_picks)[2] <- "picks_HomeTeam"
@@ -1310,6 +1415,8 @@ e2_HCO <- c()
 e2_ACO <- c()
 e2_HXSC <- c()
 e2_AXSC <- c()
+e2_HYCPF <- c()
+e2_AYCPF <- c()
 for(e2_row in 1:nrow(E2_fixtures))
 {
 
@@ -1475,7 +1582,18 @@ for(e2_row in 1:nrow(E2_fixtures))
   e2_xshotsconversion_vec_at <- e2_xshotsconversion_vec_at[e2_xshotsconversion_vec_at != ""]
   e2_xshotsconversion_vec_at  <-tail(e2_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  e2_fouls_conversion_vec_ht <- as.vector(e2_fouls_conversion[e2_hometeamindex,])
+  e2_fouls_conversion_vec_ht[is.na(e2_fouls_conversion_vec_ht)] <- ""
+  e2_fouls_conversion_vec_ht <- e2_fouls_conversion_vec_ht[e2_fouls_conversion_vec_ht != ""]
+  e2_fouls_conversion_vec_ht  <-tail(e2_fouls_conversion_vec_ht,1)
+  #awayteam
+  e2_fouls_conversion_vec_at <- as.vector(e2_fouls_conversion[e2_awayteamindex,])
+  e2_fouls_conversion_vec_at[is.na(e2_fouls_conversion_vec_at)] <- ""
+  e2_fouls_conversion_vec_at <- e2_fouls_conversion_vec_at[e2_fouls_conversion_vec_at != ""]
+  e2_fouls_conversion_vec_at  <-tail(e2_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -1509,6 +1627,8 @@ for(e2_row in 1:nrow(E2_fixtures))
   e2_HXSC[e2_row] <- e2_xshotsconversion_vec_ht
   e2_AXSC[e2_row] <- e2_xshotsconversion_vec_at
 
+  e2_HYCPF[e2_row] <- e2_fouls_conversion_vec_ht
+  e2_AYCPF[e2_row] <- e2_fouls_conversion_vec_at
 }
 
 e2_prediction <- as.data.frame(e2_prediction)
@@ -1544,7 +1664,13 @@ colnames(e2_HXSC) <- "HXSC"
 e2_AXSC <- as.data.frame(e2_AXSC)
 colnames(e2_AXSC) <- "AXSC"
 
-e2_picks <- cbind(E2_fixtures$Div,E2_fixtures$HomeTeam_e2,E2_fixtures$AwayTeam_e2,e2_prediction,e2_HWM,e2_AWM,e2_HWMLM,e2_AWMLM,e2_HY,e2_AY,e2_HCO,e2_ACO,e2_HXSC,e2_AXSC)
+e2_HYCPF <- as.data.frame(e2_HYCPF)
+colnames(e2_HYCPF) <- "HYCPF"
+
+e2_AYCPF <- as.data.frame(e2_AYCPF)
+colnames(e2_AYCPF) <- "AYCPF"
+
+e2_picks <- cbind(E2_fixtures$Div,E2_fixtures$HomeTeam_e2,E2_fixtures$AwayTeam_e2,e2_prediction,e2_HWM,e2_AWM,e2_HWMLM,e2_AWMLM,e2_HY,e2_AY,e2_HCO,e2_ACO,e2_HXSC,e2_AXSC,e2_HYCPF,e2_AYCPF)
 
 colnames(e2_picks)[1] <- "picks_Div"
 colnames(e2_picks)[2] <- "picks_HomeTeam"
@@ -1567,6 +1693,8 @@ e3_HCO <- c()
 e3_ACO <- c()
 e3_HXSC <- c()
 e3_AXSC <- c()
+e3_HYCPF <- c()
+e3_AYCPF <- c()
 for(e3_row in 1:nrow(E3_fixtures))
 {
 
@@ -1732,7 +1860,18 @@ for(e3_row in 1:nrow(E3_fixtures))
   e3_xshotsconversion_vec_at <- e3_xshotsconversion_vec_at[e3_xshotsconversion_vec_at != ""]
   e3_xshotsconversion_vec_at  <-tail(e3_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  e3_fouls_conversion_vec_ht <- as.vector(e3_fouls_conversion[e3_hometeamindex,])
+  e3_fouls_conversion_vec_ht[is.na(e3_fouls_conversion_vec_ht)] <- ""
+  e3_fouls_conversion_vec_ht <- e3_fouls_conversion_vec_ht[e3_fouls_conversion_vec_ht != ""]
+  e3_fouls_conversion_vec_ht  <-tail(e3_fouls_conversion_vec_ht,1)
+  #awayteam
+  e3_fouls_conversion_vec_at <- as.vector(e3_fouls_conversion[e3_awayteamindex,])
+  e3_fouls_conversion_vec_at[is.na(e3_fouls_conversion_vec_at)] <- ""
+  e3_fouls_conversion_vec_at <- e3_fouls_conversion_vec_at[e3_fouls_conversion_vec_at != ""]
+  e3_fouls_conversion_vec_at  <-tail(e3_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -1766,6 +1905,8 @@ for(e3_row in 1:nrow(E3_fixtures))
   e3_HXSC[e3_row] <- e3_xshotsconversion_vec_ht
   e3_AXSC[e3_row] <- e3_xshotsconversion_vec_at
 
+  e3_HYCPF[e3_row] <- e3_fouls_conversion_vec_ht
+  e3_AYCPF[e3_row] <- e3_fouls_conversion_vec_at
 }
 
 e3_prediction <- as.data.frame(e3_prediction)
@@ -1801,7 +1942,13 @@ colnames(e3_HXSC) <- "HXSC"
 e3_AXSC <- as.data.frame(e3_AXSC)
 colnames(e3_AXSC) <- "AXSC"
 
-e3_picks <- cbind(E3_fixtures$Div,E3_fixtures$HomeTeam_e3,E3_fixtures$AwayTeam_e3,e3_prediction,e3_HWM,e3_AWM,e3_HWMLM,e3_AWMLM,e3_HY,e3_AY,e3_HCO,e3_ACO,e3_HXSC,e3_AXSC)
+e3_HYCPF <- as.data.frame(e3_HYCPF)
+colnames(e3_HYCPF) <- "HYCPF"
+
+e3_AYCPF <- as.data.frame(e3_AYCPF)
+colnames(e3_AYCPF) <- "AYCPF"
+
+e3_picks <- cbind(E3_fixtures$Div,E3_fixtures$HomeTeam_e3,E3_fixtures$AwayTeam_e3,e3_prediction,e3_HWM,e3_AWM,e3_HWMLM,e3_AWMLM,e3_HY,e3_AY,e3_HCO,e3_ACO,e3_HXSC,e3_AXSC,e3_HYCPF,e3_AYCPF)
 
 colnames(e3_picks)[1] <- "picks_Div"
 colnames(e3_picks)[2] <- "picks_HomeTeam"
@@ -1824,6 +1971,8 @@ ec_HCO <- c()
 ec_ACO <- c()
 ec_HXSC <- c()
 ec_AXSC <- c()
+ec_HYCPF <- c()
+ec_AYCPF <- c()
 for(ec_row in 1:nrow(EC_fixtures))
 {
 
@@ -1989,7 +2138,18 @@ for(ec_row in 1:nrow(EC_fixtures))
   ec_xshotsconversion_vec_at <- ec_xshotsconversion_vec_at[ec_xshotsconversion_vec_at != ""]
   ec_xshotsconversion_vec_at  <-tail(ec_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  ec_fouls_conversion_vec_ht <- as.vector(ec_fouls_conversion[ec_hometeamindex,])
+  ec_fouls_conversion_vec_ht[is.na(ec_fouls_conversion_vec_ht)] <- ""
+  ec_fouls_conversion_vec_ht <- ec_fouls_conversion_vec_ht[ec_fouls_conversion_vec_ht != ""]
+  ec_fouls_conversion_vec_ht  <-tail(ec_fouls_conversion_vec_ht,1)
+  #awayteam
+  ec_fouls_conversion_vec_at <- as.vector(ec_fouls_conversion[ec_awayteamindex,])
+  ec_fouls_conversion_vec_at[is.na(ec_fouls_conversion_vec_at)] <- ""
+  ec_fouls_conversion_vec_at <- ec_fouls_conversion_vec_at[ec_fouls_conversion_vec_at != ""]
+  ec_fouls_conversion_vec_at  <-tail(ec_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -2023,6 +2183,8 @@ for(ec_row in 1:nrow(EC_fixtures))
   ec_HXSC[ec_row] <- ec_xshotsconversion_vec_ht
   ec_AXSC[ec_row] <- ec_xshotsconversion_vec_at
 
+  ec_HYCPF[ec_row] <- ec_fouls_conversion_vec_ht
+  ec_AYCPF[ec_row] <- ec_fouls_conversion_vec_at
 }
 
 ec_prediction <- as.data.frame(ec_prediction)
@@ -2058,7 +2220,13 @@ colnames(ec_HXSC) <- "HXSC"
 ec_AXSC <- as.data.frame(ec_AXSC)
 colnames(ec_AXSC) <- "AXSC"
 
-ec_picks <- cbind(EC_fixtures$Div,EC_fixtures$HomeTeam_ec,EC_fixtures$AwayTeam_ec,ec_prediction,ec_HWM,ec_AWM,ec_HWMLM,ec_AWMLM,ec_HY,ec_AY,ec_HCO,ec_ACO,ec_HXSC,ec_AXSC)
+ec_HYCPF <- as.data.frame(ec_HYCPF)
+colnames(ec_HYCPF) <- "HYCPF"
+
+ec_AYCPF <- as.data.frame(ec_AYCPF)
+colnames(ec_AYCPF) <- "AYCPF"
+
+ec_picks <- cbind(EC_fixtures$Div,EC_fixtures$HomeTeam_ec,EC_fixtures$AwayTeam_ec,ec_prediction,ec_HWM,ec_AWM,ec_HWMLM,ec_AWMLM,ec_HY,ec_AY,ec_HCO,ec_ACO,ec_HXSC,ec_AXSC,ec_HYCPF,ec_AYCPF)
 
 colnames(ec_picks)[1] <- "picks_Div"
 colnames(ec_picks)[2] <- "picks_HomeTeam"
@@ -2081,6 +2249,8 @@ f1_HCO <- c()
 f1_ACO <- c()
 f1_HXSC <- c()
 f1_AXSC <- c()
+f1_HYCPF <- c()
+f1_AYCPF <- c()
 for(f1_row in 1:nrow(F1_fixtures))
 {
 
@@ -2246,7 +2416,18 @@ for(f1_row in 1:nrow(F1_fixtures))
   f1_xshotsconversion_vec_at <- f1_xshotsconversion_vec_at[f1_xshotsconversion_vec_at != ""]
   f1_xshotsconversion_vec_at  <-tail(f1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  f1_fouls_conversion_vec_ht <- as.vector(f1_fouls_conversion[f1_hometeamindex,])
+  f1_fouls_conversion_vec_ht[is.na(f1_fouls_conversion_vec_ht)] <- ""
+  f1_fouls_conversion_vec_ht <- f1_fouls_conversion_vec_ht[f1_fouls_conversion_vec_ht != ""]
+  f1_fouls_conversion_vec_ht  <-tail(f1_fouls_conversion_vec_ht,1)
+  #awayteam
+  f1_fouls_conversion_vec_at <- as.vector(f1_fouls_conversion[f1_awayteamindex,])
+  f1_fouls_conversion_vec_at[is.na(f1_fouls_conversion_vec_at)] <- ""
+  f1_fouls_conversion_vec_at <- f1_fouls_conversion_vec_at[f1_fouls_conversion_vec_at != ""]
+  f1_fouls_conversion_vec_at  <-tail(f1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -2280,6 +2461,8 @@ for(f1_row in 1:nrow(F1_fixtures))
   f1_HXSC[f1_row] <- f1_xshotsconversion_vec_ht
   f1_AXSC[f1_row] <- f1_xshotsconversion_vec_at
 
+  f1_HYCPF[f1_row] <- f1_fouls_conversion_vec_ht
+  f1_AYCPF[f1_row] <- f1_fouls_conversion_vec_at
 }
 
 f1_prediction <- as.data.frame(f1_prediction)
@@ -2315,7 +2498,13 @@ colnames(f1_HXSC) <- "HXSC"
 f1_AXSC <- as.data.frame(f1_AXSC)
 colnames(f1_AXSC) <- "AXSC"
 
-f1_picks <- cbind(F1_fixtures$Div,F1_fixtures$HomeTeam_f1,F1_fixtures$AwayTeam_f1,f1_prediction,f1_HWM,f1_AWM,f1_HWMLM,f1_AWMLM,f1_HY,f1_AY,f1_HCO,f1_ACO,f1_HXSC,f1_AXSC)
+f1_HYCPF <- as.data.frame(f1_HYCPF)
+colnames(f1_HYCPF) <- "HYCPF"
+
+f1_AYCPF <- as.data.frame(f1_AYCPF)
+colnames(f1_AYCPF) <- "AYCPF"
+
+f1_picks <- cbind(F1_fixtures$Div,F1_fixtures$HomeTeam_f1,F1_fixtures$AwayTeam_f1,f1_prediction,f1_HWM,f1_AWM,f1_HWMLM,f1_AWMLM,f1_HY,f1_AY,f1_HCO,f1_ACO,f1_HXSC,f1_AXSC,f1_HYCPF,f1_AYCPF)
 
 colnames(f1_picks)[1] <- "picks_Div"
 colnames(f1_picks)[2] <- "picks_HomeTeam"
@@ -2338,6 +2527,8 @@ f2_HCO <- c()
 f2_ACO <- c()
 f2_HXSC <- c()
 f2_AXSC <- c()
+f2_HYCPF <- c()
+f2_AYCPF <- c()
 for(f2_row in 1:nrow(F2_fixtures))
 {
 
@@ -2503,7 +2694,18 @@ for(f2_row in 1:nrow(F2_fixtures))
   f2_xshotsconversion_vec_at <- f2_xshotsconversion_vec_at[f2_xshotsconversion_vec_at != ""]
   f2_xshotsconversion_vec_at  <-tail(f2_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  f2_fouls_conversion_vec_ht <- as.vector(f2_fouls_conversion[f2_hometeamindex,])
+  f2_fouls_conversion_vec_ht[is.na(f2_fouls_conversion_vec_ht)] <- ""
+  f2_fouls_conversion_vec_ht <- f2_fouls_conversion_vec_ht[f2_fouls_conversion_vec_ht != ""]
+  f2_fouls_conversion_vec_ht  <-tail(f2_fouls_conversion_vec_ht,1)
+  #awayteam
+  f2_fouls_conversion_vec_at <- as.vector(f2_fouls_conversion[f2_awayteamindex,])
+  f2_fouls_conversion_vec_at[is.na(f2_fouls_conversion_vec_at)] <- ""
+  f2_fouls_conversion_vec_at <- f2_fouls_conversion_vec_at[f2_fouls_conversion_vec_at != ""]
+  f2_fouls_conversion_vec_at  <-tail(f2_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -2537,6 +2739,8 @@ for(f2_row in 1:nrow(F2_fixtures))
   f2_HXSC[f2_row] <- f2_xshotsconversion_vec_ht
   f2_AXSC[f2_row] <- f2_xshotsconversion_vec_at
 
+  f2_HYCPF[f2_row] <- f2_fouls_conversion_vec_ht
+  f2_AYCPF[f2_row] <- f2_fouls_conversion_vec_at
 }
 
 f2_prediction <- as.data.frame(f2_prediction)
@@ -2572,7 +2776,13 @@ colnames(f2_HXSC) <- "HXSC"
 f2_AXSC <- as.data.frame(f2_AXSC)
 colnames(f2_AXSC) <- "AXSC"
 
-f2_picks <- cbind(F2_fixtures$Div,F2_fixtures$HomeTeam_f2,F2_fixtures$AwayTeam_f2,f2_prediction,f2_HWM,f2_AWM,f2_HWMLM,f2_AWMLM,f2_HY,f2_AY,f2_HCO,f2_ACO,f2_HXSC,f2_AXSC)
+f2_HYCPF <- as.data.frame(f2_HYCPF)
+colnames(f2_HYCPF) <- "HYCPF"
+
+f2_AYCPF <- as.data.frame(f2_AYCPF)
+colnames(f2_AYCPF) <- "AYCPF"
+
+f2_picks <- cbind(F2_fixtures$Div,F2_fixtures$HomeTeam_f2,F2_fixtures$AwayTeam_f2,f2_prediction,f2_HWM,f2_AWM,f2_HWMLM,f2_AWMLM,f2_HY,f2_AY,f2_HCO,f2_ACO,f2_HXSC,f2_AXSC,f2_HYCPF,f2_AYCPF)
 
 colnames(f2_picks)[1] <- "picks_Div"
 colnames(f2_picks)[2] <- "picks_HomeTeam"
@@ -2595,6 +2805,8 @@ g1_HCO <- c()
 g1_ACO <- c()
 g1_HXSC <- c()
 g1_AXSC <- c()
+g1_HYCPF <- c()
+g1_AYCPF <- c()
 for(g1_row in 1:nrow(G1_fixtures))
 {
 
@@ -2760,7 +2972,18 @@ for(g1_row in 1:nrow(G1_fixtures))
   g1_xshotsconversion_vec_at <- g1_xshotsconversion_vec_at[g1_xshotsconversion_vec_at != ""]
   g1_xshotsconversion_vec_at  <-tail(g1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  g1_fouls_conversion_vec_ht <- as.vector(g1_fouls_conversion[g1_hometeamindex,])
+  g1_fouls_conversion_vec_ht[is.na(g1_fouls_conversion_vec_ht)] <- ""
+  g1_fouls_conversion_vec_ht <- g1_fouls_conversion_vec_ht[g1_fouls_conversion_vec_ht != ""]
+  g1_fouls_conversion_vec_ht  <-tail(g1_fouls_conversion_vec_ht,1)
+  #awayteam
+  g1_fouls_conversion_vec_at <- as.vector(g1_fouls_conversion[g1_awayteamindex,])
+  g1_fouls_conversion_vec_at[is.na(g1_fouls_conversion_vec_at)] <- ""
+  g1_fouls_conversion_vec_at <- g1_fouls_conversion_vec_at[g1_fouls_conversion_vec_at != ""]
+  g1_fouls_conversion_vec_at  <-tail(g1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -2794,6 +3017,8 @@ for(g1_row in 1:nrow(G1_fixtures))
   g1_HXSC[g1_row] <- g1_xshotsconversion_vec_ht
   g1_AXSC[g1_row] <- g1_xshotsconversion_vec_at
 
+  g1_HYCPF[g1_row] <- g1_fouls_conversion_vec_ht
+  g1_AYCPF[g1_row] <- g1_fouls_conversion_vec_at
 }
 
 g1_prediction <- as.data.frame(g1_prediction)
@@ -2829,7 +3054,13 @@ colnames(g1_HXSC) <- "HXSC"
 g1_AXSC <- as.data.frame(g1_AXSC)
 colnames(g1_AXSC) <- "AXSC"
 
-g1_picks <- cbind(G1_fixtures$Div,G1_fixtures$HomeTeam_g1,G1_fixtures$AwayTeam_g1,g1_prediction,g1_HWM,g1_AWM,g1_HWMLM,g1_AWMLM,g1_HY,g1_AY,g1_HCO,g1_ACO,g1_HXSC,g1_AXSC)
+g1_HYCPF <- as.data.frame(g1_HYCPF)
+colnames(g1_HYCPF) <- "HYCPF"
+
+g1_AYCPF <- as.data.frame(g1_AYCPF)
+colnames(g1_AYCPF) <- "AYCPF"
+
+g1_picks <- cbind(G1_fixtures$Div,G1_fixtures$HomeTeam_g1,G1_fixtures$AwayTeam_g1,g1_prediction,g1_HWM,g1_AWM,g1_HWMLM,g1_AWMLM,g1_HY,g1_AY,g1_HCO,g1_ACO,g1_HXSC,g1_AXSC,g1_HYCPF,g1_AYCPF)
 
 colnames(g1_picks)[1] <- "picks_Div"
 colnames(g1_picks)[2] <- "picks_HomeTeam"
@@ -2852,6 +3083,8 @@ i1_HCO <- c()
 i1_ACO <- c()
 i1_HXSC <- c()
 i1_AXSC <- c()
+i1_HYCPF <- c()
+i1_AYCPF <- c()
 for(i1_row in 1:nrow(I1_fixtures))
 {
 
@@ -3017,7 +3250,18 @@ for(i1_row in 1:nrow(I1_fixtures))
   i1_xshotsconversion_vec_at <- i1_xshotsconversion_vec_at[i1_xshotsconversion_vec_at != ""]
   i1_xshotsconversion_vec_at  <-tail(i1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  i1_fouls_conversion_vec_ht <- as.vector(i1_fouls_conversion[i1_hometeamindex,])
+  i1_fouls_conversion_vec_ht[is.na(i1_fouls_conversion_vec_ht)] <- ""
+  i1_fouls_conversion_vec_ht <- i1_fouls_conversion_vec_ht[i1_fouls_conversion_vec_ht != ""]
+  i1_fouls_conversion_vec_ht  <-tail(i1_fouls_conversion_vec_ht,1)
+  #awayteam
+  i1_fouls_conversion_vec_at <- as.vector(i1_fouls_conversion[i1_awayteamindex,])
+  i1_fouls_conversion_vec_at[is.na(i1_fouls_conversion_vec_at)] <- ""
+  i1_fouls_conversion_vec_at <- i1_fouls_conversion_vec_at[i1_fouls_conversion_vec_at != ""]
+  i1_fouls_conversion_vec_at  <-tail(i1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -3051,6 +3295,8 @@ for(i1_row in 1:nrow(I1_fixtures))
   i1_HXSC[i1_row] <- i1_xshotsconversion_vec_ht
   i1_AXSC[i1_row] <- i1_xshotsconversion_vec_at
 
+  i1_HYCPF[i1_row] <- i1_fouls_conversion_vec_ht
+  i1_AYCPF[i1_row] <- i1_fouls_conversion_vec_at
 }
 
 i1_prediction <- as.data.frame(i1_prediction)
@@ -3086,7 +3332,13 @@ colnames(i1_HXSC) <- "HXSC"
 i1_AXSC <- as.data.frame(i1_AXSC)
 colnames(i1_AXSC) <- "AXSC"
 
-i1_picks <- cbind(I1_fixtures$Div,I1_fixtures$HomeTeam_i1,I1_fixtures$AwayTeam_i1,i1_prediction,i1_HWM,i1_AWM,i1_HWMLM,i1_AWMLM,i1_HY,i1_AY,i1_HCO,i1_ACO,i1_HXSC,i1_AXSC)
+i1_HYCPF <- as.data.frame(i1_HYCPF)
+colnames(i1_HYCPF) <- "HYCPF"
+
+i1_AYCPF <- as.data.frame(i1_AYCPF)
+colnames(i1_AYCPF) <- "AYCPF"
+
+i1_picks <- cbind(I1_fixtures$Div,I1_fixtures$HomeTeam_i1,I1_fixtures$AwayTeam_i1,i1_prediction,i1_HWM,i1_AWM,i1_HWMLM,i1_AWMLM,i1_HY,i1_AY,i1_HCO,i1_ACO,i1_HXSC,i1_AXSC,i1_HYCPF,i1_AYCPF)
 
 colnames(i1_picks)[1] <- "picks_Div"
 colnames(i1_picks)[2] <- "picks_HomeTeam"
@@ -3109,6 +3361,8 @@ i2_HCO <- c()
 i2_ACO <- c()
 i2_HXSC <- c()
 i2_AXSC <- c()
+i2_HYCPF <- c()
+i2_AYCPF <- c()
 for(i2_row in 1:nrow(I2_fixtures))
 {
 
@@ -3274,7 +3528,18 @@ for(i2_row in 1:nrow(I2_fixtures))
   i2_xshotsconversion_vec_at <- i2_xshotsconversion_vec_at[i2_xshotsconversion_vec_at != ""]
   i2_xshotsconversion_vec_at  <-tail(i2_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  i2_fouls_conversion_vec_ht <- as.vector(i2_fouls_conversion[i2_hometeamindex,])
+  i2_fouls_conversion_vec_ht[is.na(i2_fouls_conversion_vec_ht)] <- ""
+  i2_fouls_conversion_vec_ht <- i2_fouls_conversion_vec_ht[i2_fouls_conversion_vec_ht != ""]
+  i2_fouls_conversion_vec_ht  <-tail(i2_fouls_conversion_vec_ht,1)
+  #awayteam
+  i2_fouls_conversion_vec_at <- as.vector(i2_fouls_conversion[i2_awayteamindex,])
+  i2_fouls_conversion_vec_at[is.na(i2_fouls_conversion_vec_at)] <- ""
+  i2_fouls_conversion_vec_at <- i2_fouls_conversion_vec_at[i2_fouls_conversion_vec_at != ""]
+  i2_fouls_conversion_vec_at  <-tail(i2_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -3308,6 +3573,8 @@ for(i2_row in 1:nrow(I2_fixtures))
   i2_HXSC[i2_row] <- i2_xshotsconversion_vec_ht
   i2_AXSC[i2_row] <- i2_xshotsconversion_vec_at
 
+  i2_HYCPF[i2_row] <- i2_fouls_conversion_vec_ht
+  i2_AYCPF[i2_row] <- i2_fouls_conversion_vec_at
 }
 
 i2_prediction <- as.data.frame(i2_prediction)
@@ -3343,7 +3610,13 @@ colnames(i2_HXSC) <- "HXSC"
 i2_AXSC <- as.data.frame(i2_AXSC)
 colnames(i2_AXSC) <- "AXSC"
 
-i2_picks <- cbind(I2_fixtures$Div,I2_fixtures$HomeTeam_i2,I2_fixtures$AwayTeam_i2,i2_prediction,i2_HWM,i2_AWM,i2_HWMLM,i2_AWMLM,i2_HY,i2_AY,i2_HCO,i2_ACO,i2_HXSC,i2_AXSC)
+i2_HYCPF <- as.data.frame(i2_HYCPF)
+colnames(i2_HYCPF) <- "HYCPF"
+
+i2_AYCPF <- as.data.frame(i2_AYCPF)
+colnames(i2_AYCPF) <- "AYCPF"
+
+i2_picks <- cbind(I2_fixtures$Div,I2_fixtures$HomeTeam_i2,I2_fixtures$AwayTeam_i2,i2_prediction,i2_HWM,i2_AWM,i2_HWMLM,i2_AWMLM,i2_HY,i2_AY,i2_HCO,i2_ACO,i2_HXSC,i2_AXSC,i2_HYCPF,i2_AYCPF)
 
 colnames(i2_picks)[1] <- "picks_Div"
 colnames(i2_picks)[2] <- "picks_HomeTeam"
@@ -3366,6 +3639,8 @@ n1_HCO <- c()
 n1_ACO <- c()
 n1_HXSC <- c()
 n1_AXSC <- c()
+n1_HYCPF <- c()
+n1_AYCPF <- c()
 for(n1_row in 1:nrow(N1_fixtures))
 {
 
@@ -3531,7 +3806,18 @@ for(n1_row in 1:nrow(N1_fixtures))
   n1_xshotsconversion_vec_at <- n1_xshotsconversion_vec_at[n1_xshotsconversion_vec_at != ""]
   n1_xshotsconversion_vec_at  <-tail(n1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  n1_fouls_conversion_vec_ht <- as.vector(n1_fouls_conversion[n1_hometeamindex,])
+  n1_fouls_conversion_vec_ht[is.na(n1_fouls_conversion_vec_ht)] <- ""
+  n1_fouls_conversion_vec_ht <- n1_fouls_conversion_vec_ht[n1_fouls_conversion_vec_ht != ""]
+  n1_fouls_conversion_vec_ht  <-tail(n1_fouls_conversion_vec_ht,1)
+  #awayteam
+  n1_fouls_conversion_vec_at <- as.vector(n1_fouls_conversion[n1_awayteamindex,])
+  n1_fouls_conversion_vec_at[is.na(n1_fouls_conversion_vec_at)] <- ""
+  n1_fouls_conversion_vec_at <- n1_fouls_conversion_vec_at[n1_fouls_conversion_vec_at != ""]
+  n1_fouls_conversion_vec_at  <-tail(n1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -3565,6 +3851,8 @@ for(n1_row in 1:nrow(N1_fixtures))
   n1_HXSC[n1_row] <- n1_xshotsconversion_vec_ht
   n1_AXSC[n1_row] <- n1_xshotsconversion_vec_at
 
+  n1_HYCPF[n1_row] <- n1_fouls_conversion_vec_ht
+  n1_AYCPF[n1_row] <- n1_fouls_conversion_vec_at
 }
 
 n1_prediction <- as.data.frame(n1_prediction)
@@ -3600,7 +3888,13 @@ colnames(n1_HXSC) <- "HXSC"
 n1_AXSC <- as.data.frame(n1_AXSC)
 colnames(n1_AXSC) <- "AXSC"
 
-n1_picks <- cbind(N1_fixtures$Div,N1_fixtures$HomeTeam_n1,N1_fixtures$AwayTeam_n1,n1_prediction,n1_HWM,n1_AWM,n1_HWMLM,n1_AWMLM,n1_HY,n1_AY,n1_HCO,n1_ACO,n1_HXSC,n1_AXSC)
+n1_HYCPF <- as.data.frame(n1_HYCPF)
+colnames(n1_HYCPF) <- "HYCPF"
+
+n1_AYCPF <- as.data.frame(n1_AYCPF)
+colnames(n1_AYCPF) <- "AYCPF"
+
+n1_picks <- cbind(N1_fixtures$Div,N1_fixtures$HomeTeam_n1,N1_fixtures$AwayTeam_n1,n1_prediction,n1_HWM,n1_AWM,n1_HWMLM,n1_AWMLM,n1_HY,n1_AY,n1_HCO,n1_ACO,n1_HXSC,n1_AXSC,n1_HYCPF,n1_AYCPF)
 
 colnames(n1_picks)[1] <- "picks_Div"
 colnames(n1_picks)[2] <- "picks_HomeTeam"
@@ -3623,6 +3917,8 @@ p1_HCO <- c()
 p1_ACO <- c()
 p1_HXSC <- c()
 p1_AXSC <- c()
+p1_HYCPF <- c()
+p1_AYCPF <- c()
 for(p1_row in 1:nrow(P1_fixtures))
 {
 
@@ -3788,7 +4084,18 @@ for(p1_row in 1:nrow(P1_fixtures))
   p1_xshotsconversion_vec_at <- p1_xshotsconversion_vec_at[p1_xshotsconversion_vec_at != ""]
   p1_xshotsconversion_vec_at  <-tail(p1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  p1_fouls_conversion_vec_ht <- as.vector(p1_fouls_conversion[p1_hometeamindex,])
+  p1_fouls_conversion_vec_ht[is.na(p1_fouls_conversion_vec_ht)] <- ""
+  p1_fouls_conversion_vec_ht <- p1_fouls_conversion_vec_ht[p1_fouls_conversion_vec_ht != ""]
+  p1_fouls_conversion_vec_ht  <-tail(p1_fouls_conversion_vec_ht,1)
+  #awayteam
+  p1_fouls_conversion_vec_at <- as.vector(p1_fouls_conversion[p1_awayteamindex,])
+  p1_fouls_conversion_vec_at[is.na(p1_fouls_conversion_vec_at)] <- ""
+  p1_fouls_conversion_vec_at <- p1_fouls_conversion_vec_at[p1_fouls_conversion_vec_at != ""]
+  p1_fouls_conversion_vec_at  <-tail(p1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -3822,6 +4129,8 @@ for(p1_row in 1:nrow(P1_fixtures))
   p1_HXSC[p1_row] <- p1_xshotsconversion_vec_ht
   p1_AXSC[p1_row] <- p1_xshotsconversion_vec_at
 
+  p1_HYCPF[p1_row] <- p1_fouls_conversion_vec_ht
+  p1_AYCPF[p1_row] <- p1_fouls_conversion_vec_at
 }
 
 p1_prediction <- as.data.frame(p1_prediction)
@@ -3857,7 +4166,13 @@ colnames(p1_HXSC) <- "HXSC"
 p1_AXSC <- as.data.frame(p1_AXSC)
 colnames(p1_AXSC) <- "AXSC"
 
-p1_picks <- cbind(P1_fixtures$Div,P1_fixtures$HomeTeam_p1,P1_fixtures$AwayTeam_p1,p1_prediction,p1_HWM,p1_AWM,p1_HWMLM,p1_AWMLM,p1_HY,p1_AY,p1_HCO,p1_ACO,p1_HXSC,p1_AXSC)
+p1_HYCPF <- as.data.frame(p1_HYCPF)
+colnames(p1_HYCPF) <- "HYCPF"
+
+p1_AYCPF <- as.data.frame(p1_AYCPF)
+colnames(p1_AYCPF) <- "AYCPF"
+
+p1_picks <- cbind(P1_fixtures$Div,P1_fixtures$HomeTeam_p1,P1_fixtures$AwayTeam_p1,p1_prediction,p1_HWM,p1_AWM,p1_HWMLM,p1_AWMLM,p1_HY,p1_AY,p1_HCO,p1_ACO,p1_HXSC,p1_AXSC,p1_HYCPF,p1_AYCPF)
 
 colnames(p1_picks)[1] <- "picks_Div"
 colnames(p1_picks)[2] <- "picks_HomeTeam"
@@ -3881,6 +4196,8 @@ sp1_HCO <- c()
 sp1_ACO <- c()
 sp1_HXSC <- c()
 sp1_AXSC <- c()
+sp1_HYCPF <- c()
+sp1_AYCPF <- c()
 for(sp1_row in 1:nrow(SP1_fixtures))
 {
 
@@ -4046,7 +4363,18 @@ for(sp1_row in 1:nrow(SP1_fixtures))
   sp1_xshotsconversion_vec_at <- sp1_xshotsconversion_vec_at[sp1_xshotsconversion_vec_at != ""]
   sp1_xshotsconversion_vec_at  <-tail(sp1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  sp1_fouls_conversion_vec_ht <- as.vector(sp1_fouls_conversion[sp1_hometeamindex,])
+  sp1_fouls_conversion_vec_ht[is.na(sp1_fouls_conversion_vec_ht)] <- ""
+  sp1_fouls_conversion_vec_ht <- sp1_fouls_conversion_vec_ht[sp1_fouls_conversion_vec_ht != ""]
+  sp1_fouls_conversion_vec_ht  <-tail(sp1_fouls_conversion_vec_ht,1)
+  #awayteam
+  sp1_fouls_conversion_vec_at <- as.vector(sp1_fouls_conversion[sp1_awayteamindex,])
+  sp1_fouls_conversion_vec_at[is.na(sp1_fouls_conversion_vec_at)] <- ""
+  sp1_fouls_conversion_vec_at <- sp1_fouls_conversion_vec_at[sp1_fouls_conversion_vec_at != ""]
+  sp1_fouls_conversion_vec_at  <-tail(sp1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -4080,6 +4408,8 @@ for(sp1_row in 1:nrow(SP1_fixtures))
   sp1_HXSC[sp1_row] <- sp1_xshotsconversion_vec_ht
   sp1_AXSC[sp1_row] <- sp1_xshotsconversion_vec_at
 
+  sp1_HYCPF[sp1_row] <- sp1_fouls_conversion_vec_ht
+  sp1_AYCPF[sp1_row] <- sp1_fouls_conversion_vec_at
 }
 
 sp1_prediction <- as.data.frame(sp1_prediction)
@@ -4115,7 +4445,13 @@ colnames(sp1_HXSC) <- "HXSC"
 sp1_AXSC <- as.data.frame(sp1_AXSC)
 colnames(sp1_AXSC) <- "AXSC"
 
-sp1_picks <- cbind(SP1_fixtures$Div,SP1_fixtures$HomeTeam_sp1,SP1_fixtures$AwayTeam_sp1,sp1_prediction,sp1_HWM,sp1_AWM,sp1_HWMLM,sp1_AWMLM,sp1_HY,sp1_AY,sp1_HCO,sp1_ACO,sp1_HXSC,sp1_AXSC)
+sp1_HYCPF <- as.data.frame(sp1_HYCPF)
+colnames(sp1_HYCPF) <- "HYCPF"
+
+sp1_AYCPF <- as.data.frame(sp1_AYCPF)
+colnames(sp1_AYCPF) <- "AYCPF"
+
+sp1_picks <- cbind(SP1_fixtures$Div,SP1_fixtures$HomeTeam_sp1,SP1_fixtures$AwayTeam_sp1,sp1_prediction,sp1_HWM,sp1_AWM,sp1_HWMLM,sp1_AWMLM,sp1_HY,sp1_AY,sp1_HCO,sp1_ACO,sp1_HXSC,sp1_AXSC,sp1_HYCPF,sp1_AYCPF)
 
 colnames(sp1_picks)[1] <- "picks_Div"
 colnames(sp1_picks)[2] <- "picks_HomeTeam"
@@ -4139,6 +4475,8 @@ sp2_HCO <- c()
 sp2_ACO <- c()
 sp2_HXSC <- c()
 sp2_AXSC <- c()
+sp2_HYCPF <- c()
+sp2_AYCPF <- c()
 for(sp2_row in 1:nrow(SP2_fixtures))
 {
 
@@ -4304,7 +4642,18 @@ for(sp2_row in 1:nrow(SP2_fixtures))
   sp2_xshotsconversion_vec_at <- sp2_xshotsconversion_vec_at[sp2_xshotsconversion_vec_at != ""]
   sp2_xshotsconversion_vec_at  <-tail(sp2_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  sp2_fouls_conversion_vec_ht <- as.vector(sp2_fouls_conversion[sp2_hometeamindex,])
+  sp2_fouls_conversion_vec_ht[is.na(sp2_fouls_conversion_vec_ht)] <- ""
+  sp2_fouls_conversion_vec_ht <- sp2_fouls_conversion_vec_ht[sp2_fouls_conversion_vec_ht != ""]
+  sp2_fouls_conversion_vec_ht  <-tail(sp2_fouls_conversion_vec_ht,1)
+  #awayteam
+  sp2_fouls_conversion_vec_at <- as.vector(sp2_fouls_conversion[sp2_awayteamindex,])
+  sp2_fouls_conversion_vec_at[is.na(sp2_fouls_conversion_vec_at)] <- ""
+  sp2_fouls_conversion_vec_at <- sp2_fouls_conversion_vec_at[sp2_fouls_conversion_vec_at != ""]
+  sp2_fouls_conversion_vec_at  <-tail(sp2_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -4338,6 +4687,8 @@ for(sp2_row in 1:nrow(SP2_fixtures))
   sp2_HXSC[sp2_row] <- sp2_xshotsconversion_vec_ht
   sp2_AXSC[sp2_row] <- sp2_xshotsconversion_vec_at
 
+  sp2_HYCPF[sp2_row] <- sp2_fouls_conversion_vec_ht
+  sp2_AYCPF[sp2_row] <- sp2_fouls_conversion_vec_at
 }
 
 sp2_prediction <- as.data.frame(sp2_prediction)
@@ -4373,7 +4724,13 @@ colnames(sp2_HXSC) <- "HXSC"
 sp2_AXSC <- as.data.frame(sp2_AXSC)
 colnames(sp2_AXSC) <- "AXSC"
 
-sp2_picks <- cbind(SP2_fixtures$Div,SP2_fixtures$HomeTeam_sp2,SP2_fixtures$AwayTeam_sp2,sp2_prediction,sp2_HWM,sp2_AWM,sp2_HWMLM,sp2_AWMLM,sp2_HY,sp2_AY,sp2_HCO,sp2_ACO,sp2_HXSC,sp2_AXSC)
+sp2_HYCPF <- as.data.frame(sp2_HYCPF)
+colnames(sp2_HYCPF) <- "HYCPF"
+
+sp2_AYCPF <- as.data.frame(sp2_AYCPF)
+colnames(sp2_AYCPF) <- "AYCPF"
+
+sp2_picks <- cbind(SP2_fixtures$Div,SP2_fixtures$HomeTeam_sp2,SP2_fixtures$AwayTeam_sp2,sp2_prediction,sp2_HWM,sp2_AWM,sp2_HWMLM,sp2_AWMLM,sp2_HY,sp2_AY,sp2_HCO,sp2_ACO,sp2_HXSC,sp2_AXSC,sp2_HYCPF,sp2_AYCPF)
 
 colnames(sp2_picks)[1] <- "picks_Div"
 colnames(sp2_picks)[2] <- "picks_HomeTeam"
@@ -4397,6 +4754,8 @@ sc0_HCO <- c()
 sc0_ACO <- c()
 sc0_HXSC <- c()
 sc0_AXSC <- c()
+sc0_HYCPF <- c()
+sc0_AYCPF <- c()
 for(sc0_row in 1:nrow(SC0_fixtures))
 {
 
@@ -4562,7 +4921,18 @@ for(sc0_row in 1:nrow(SC0_fixtures))
   sc0_xshotsconversion_vec_at <- sc0_xshotsconversion_vec_at[sc0_xshotsconversion_vec_at != ""]
   sc0_xshotsconversion_vec_at  <-tail(sc0_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  sc0_fouls_conversion_vec_ht <- as.vector(sc0_fouls_conversion[sc0_hometeamindex,])
+  sc0_fouls_conversion_vec_ht[is.na(sc0_fouls_conversion_vec_ht)] <- ""
+  sc0_fouls_conversion_vec_ht <- sc0_fouls_conversion_vec_ht[sc0_fouls_conversion_vec_ht != ""]
+  sc0_fouls_conversion_vec_ht  <-tail(sc0_fouls_conversion_vec_ht,1)
+  #awayteam
+  sc0_fouls_conversion_vec_at <- as.vector(sc0_fouls_conversion[sc0_awayteamindex,])
+  sc0_fouls_conversion_vec_at[is.na(sc0_fouls_conversion_vec_at)] <- ""
+  sc0_fouls_conversion_vec_at <- sc0_fouls_conversion_vec_at[sc0_fouls_conversion_vec_at != ""]
+  sc0_fouls_conversion_vec_at  <-tail(sc0_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -4596,6 +4966,8 @@ for(sc0_row in 1:nrow(SC0_fixtures))
   sc0_HXSC[sc0_row] <- sc0_xshotsconversion_vec_ht
   sc0_AXSC[sc0_row] <- sc0_xshotsconversion_vec_at
 
+  sc0_HYCPF[sc0_row] <- sc0_fouls_conversion_vec_ht
+  sc0_AYCPF[sc0_row] <- sc0_fouls_conversion_vec_at
 }
 
 sc0_prediction <- as.data.frame(sc0_prediction)
@@ -4631,7 +5003,13 @@ colnames(sc0_HXSC) <- "HXSC"
 sc0_AXSC <- as.data.frame(sc0_AXSC)
 colnames(sc0_AXSC) <- "AXSC"
 
-sc0_picks <- cbind(SC0_fixtures$Div,SC0_fixtures$HomeTeam_sc0,SC0_fixtures$AwayTeam_sc0,sc0_prediction,sc0_HWM,sc0_AWM,sc0_HWMLM,sc0_AWMLM,sc0_HY,sc0_AY,sc0_HCO,sc0_ACO,sc0_HXSC,sc0_AXSC)
+sc0_HYCPF <- as.data.frame(sc0_HYCPF)
+colnames(sc0_HYCPF) <- "HYCPF"
+
+sc0_AYCPF <- as.data.frame(sc0_AYCPF)
+colnames(sc0_AYCPF) <- "AYCPF"
+
+sc0_picks <- cbind(SC0_fixtures$Div,SC0_fixtures$HomeTeam_sc0,SC0_fixtures$AwayTeam_sc0,sc0_prediction,sc0_HWM,sc0_AWM,sc0_HWMLM,sc0_AWMLM,sc0_HY,sc0_AY,sc0_HCO,sc0_ACO,sc0_HXSC,sc0_AXSC,sc0_HYCPF,sc0_AYCPF)
 
 colnames(sc0_picks)[1] <- "picks_Div"
 colnames(sc0_picks)[2] <- "picks_HomeTeam"
@@ -4655,6 +5033,8 @@ sc1_HCO <- c()
 sc1_ACO <- c()
 sc1_HXSC <- c()
 sc1_AXSC <- c()
+sc1_HYCPF <- c()
+sc1_AYCPF <- c()
 for(sc1_row in 1:nrow(SC1_fixtures))
 {
 
@@ -4820,7 +5200,18 @@ for(sc1_row in 1:nrow(SC1_fixtures))
   sc1_xshotsconversion_vec_at <- sc1_xshotsconversion_vec_at[sc1_xshotsconversion_vec_at != ""]
   sc1_xshotsconversion_vec_at  <-tail(sc1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  sc1_fouls_conversion_vec_ht <- as.vector(sc1_fouls_conversion[sc1_hometeamindex,])
+  sc1_fouls_conversion_vec_ht[is.na(sc1_fouls_conversion_vec_ht)] <- ""
+  sc1_fouls_conversion_vec_ht <- sc1_fouls_conversion_vec_ht[sc1_fouls_conversion_vec_ht != ""]
+  sc1_fouls_conversion_vec_ht  <-tail(sc1_fouls_conversion_vec_ht,1)
+  #awayteam
+  sc1_fouls_conversion_vec_at <- as.vector(sc1_fouls_conversion[sc1_awayteamindex,])
+  sc1_fouls_conversion_vec_at[is.na(sc1_fouls_conversion_vec_at)] <- ""
+  sc1_fouls_conversion_vec_at <- sc1_fouls_conversion_vec_at[sc1_fouls_conversion_vec_at != ""]
+  sc1_fouls_conversion_vec_at  <-tail(sc1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -4854,6 +5245,8 @@ for(sc1_row in 1:nrow(SC1_fixtures))
   sc1_HXSC[sc1_row] <- sc1_xshotsconversion_vec_ht
   sc1_AXSC[sc1_row] <- sc1_xshotsconversion_vec_at
 
+  sc1_HYCPF[sc1_row] <- sc1_fouls_conversion_vec_ht
+  sc1_AYCPF[sc1_row] <- sc1_fouls_conversion_vec_at
 }
 
 sc1_prediction <- as.data.frame(sc1_prediction)
@@ -4889,7 +5282,13 @@ colnames(sc1_HXSC) <- "HXSC"
 sc1_AXSC <- as.data.frame(sc1_AXSC)
 colnames(sc1_AXSC) <- "AXSC"
 
-sc1_picks <- cbind(SC1_fixtures$Div,SC1_fixtures$HomeTeam_sc1,SC1_fixtures$AwayTeam_sc1,sc1_prediction,sc1_HWM,sc1_AWM,sc1_HWMLM,sc1_AWMLM,sc1_HY,sc1_AY,sc1_HCO,sc1_ACO,sc1_HXSC,sc1_AXSC)
+sc1_HYCPF <- as.data.frame(sc1_HYCPF)
+colnames(sc1_HYCPF) <- "HYCPF"
+
+sc1_AYCPF <- as.data.frame(sc1_AYCPF)
+colnames(sc1_AYCPF) <- "AYCPF"
+
+sc1_picks <- cbind(SC1_fixtures$Div,SC1_fixtures$HomeTeam_sc1,SC1_fixtures$AwayTeam_sc1,sc1_prediction,sc1_HWM,sc1_AWM,sc1_HWMLM,sc1_AWMLM,sc1_HY,sc1_AY,sc1_HCO,sc1_ACO,sc1_HXSC,sc1_AXSC,sc1_HYCPF,sc1_AYCPF)
 
 colnames(sc1_picks)[1] <- "picks_Div"
 colnames(sc1_picks)[2] <- "picks_HomeTeam"
@@ -4913,6 +5312,8 @@ sc2_HCO <- c()
 sc2_ACO <- c()
 sc2_HXSC <- c()
 sc2_AXSC <- c()
+sc2_HYCPF <- c()
+sc2_AYCPF <- c()
 for(sc2_row in 1:nrow(SC2_fixtures))
 {
 
@@ -5078,7 +5479,18 @@ for(sc2_row in 1:nrow(SC2_fixtures))
   sc2_xshotsconversion_vec_at <- sc2_xshotsconversion_vec_at[sc2_xshotsconversion_vec_at != ""]
   sc2_xshotsconversion_vec_at  <-tail(sc2_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  sc2_fouls_conversion_vec_ht <- as.vector(sc2_fouls_conversion[sc2_hometeamindex,])
+  sc2_fouls_conversion_vec_ht[is.na(sc2_fouls_conversion_vec_ht)] <- ""
+  sc2_fouls_conversion_vec_ht <- sc2_fouls_conversion_vec_ht[sc2_fouls_conversion_vec_ht != ""]
+  sc2_fouls_conversion_vec_ht  <-tail(sc2_fouls_conversion_vec_ht,1)
+  #awayteam
+  sc2_fouls_conversion_vec_at <- as.vector(sc2_fouls_conversion[sc2_awayteamindex,])
+  sc2_fouls_conversion_vec_at[is.na(sc2_fouls_conversion_vec_at)] <- ""
+  sc2_fouls_conversion_vec_at <- sc2_fouls_conversion_vec_at[sc2_fouls_conversion_vec_at != ""]
+  sc2_fouls_conversion_vec_at  <-tail(sc2_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -5112,6 +5524,8 @@ for(sc2_row in 1:nrow(SC2_fixtures))
   sc2_HXSC[sc2_row] <- sc2_xshotsconversion_vec_ht
   sc2_AXSC[sc2_row] <- sc2_xshotsconversion_vec_at
 
+  sc2_HYCPF[sc2_row] <- sc2_fouls_conversion_vec_ht
+  sc2_AYCPF[sc2_row] <- sc2_fouls_conversion_vec_at
 }
 
 sc2_prediction <- as.data.frame(sc2_prediction)
@@ -5147,7 +5561,13 @@ colnames(sc2_HXSC) <- "HXSC"
 sc2_AXSC <- as.data.frame(sc2_AXSC)
 colnames(sc2_AXSC) <- "AXSC"
 
-sc2_picks <- cbind(SC2_fixtures$Div,SC2_fixtures$HomeTeam_sc2,SC2_fixtures$AwayTeam_sc2,sc2_prediction,sc2_HWM,sc2_AWM,sc2_HWMLM,sc2_AWMLM,sc2_HY,sc2_AY,sc2_HCO,sc2_ACO,sc2_HXSC,sc2_AXSC)
+sc2_HYCPF <- as.data.frame(sc2_HYCPF)
+colnames(sc2_HYCPF) <- "HYCPF"
+
+sc2_AYCPF <- as.data.frame(sc2_AYCPF)
+colnames(sc2_AYCPF) <- "AYCPF"
+
+sc2_picks <- cbind(SC2_fixtures$Div,SC2_fixtures$HomeTeam_sc2,SC2_fixtures$AwayTeam_sc2,sc2_prediction,sc2_HWM,sc2_AWM,sc2_HWMLM,sc2_AWMLM,sc2_HY,sc2_AY,sc2_HCO,sc2_ACO,sc2_HXSC,sc2_AXSC,sc2_HYCPF,sc2_AYCPF)
 
 colnames(sc2_picks)[1] <- "picks_Div"
 colnames(sc2_picks)[2] <- "picks_HomeTeam"
@@ -5171,6 +5591,8 @@ sc3_HCO <- c()
 sc3_ACO <- c()
 sc3_HXSC <- c()
 sc3_AXSC <- c()
+sc3_HYCPF <- c()
+sc3_AYCPF <- c()
 for(sc3_row in 1:nrow(SC3_fixtures))
 {
 
@@ -5336,7 +5758,18 @@ for(sc3_row in 1:nrow(SC3_fixtures))
   sc3_xshotsconversion_vec_at <- sc3_xshotsconversion_vec_at[sc3_xshotsconversion_vec_at != ""]
   sc3_xshotsconversion_vec_at  <-tail(sc3_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  sc3_fouls_conversion_vec_ht <- as.vector(sc3_fouls_conversion[sc3_hometeamindex,])
+  sc3_fouls_conversion_vec_ht[is.na(sc3_fouls_conversion_vec_ht)] <- ""
+  sc3_fouls_conversion_vec_ht <- sc3_fouls_conversion_vec_ht[sc3_fouls_conversion_vec_ht != ""]
+  sc3_fouls_conversion_vec_ht  <-tail(sc3_fouls_conversion_vec_ht,1)
+  #awayteam
+  sc3_fouls_conversion_vec_at <- as.vector(sc3_fouls_conversion[sc3_awayteamindex,])
+  sc3_fouls_conversion_vec_at[is.na(sc3_fouls_conversion_vec_at)] <- ""
+  sc3_fouls_conversion_vec_at <- sc3_fouls_conversion_vec_at[sc3_fouls_conversion_vec_at != ""]
+  sc3_fouls_conversion_vec_at  <-tail(sc3_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -5370,6 +5803,8 @@ for(sc3_row in 1:nrow(SC3_fixtures))
   sc3_HXSC[sc3_row] <- sc3_xshotsconversion_vec_ht
   sc3_AXSC[sc3_row] <- sc3_xshotsconversion_vec_at
 
+  sc3_HYCPF[sc3_row] <- sc3_fouls_conversion_vec_ht
+  sc3_AYCPF[sc3_row] <- sc3_fouls_conversion_vec_at
 }
 
 sc3_prediction <- as.data.frame(sc3_prediction)
@@ -5405,7 +5840,13 @@ colnames(sc3_HXSC) <- "HXSC"
 sc3_AXSC <- as.data.frame(sc3_AXSC)
 colnames(sc3_AXSC) <- "AXSC"
 
-sc3_picks <- cbind(SC3_fixtures$Div,SC3_fixtures$HomeTeam_sc3,SC3_fixtures$AwayTeam_sc3,sc3_prediction,sc3_HWM,sc3_AWM,sc3_HWMLM,sc3_AWMLM,sc3_HY,sc3_AY,sc3_HCO,sc3_ACO,sc3_HXSC,sc3_AXSC)
+sc3_HYCPF <- as.data.frame(sc3_HYCPF)
+colnames(sc3_HYCPF) <- "HYCPF"
+
+sc3_AYCPF <- as.data.frame(sc3_AYCPF)
+colnames(sc3_AYCPF) <- "AYCPF"
+
+sc3_picks <- cbind(SC3_fixtures$Div,SC3_fixtures$HomeTeam_sc3,SC3_fixtures$AwayTeam_sc3,sc3_prediction,sc3_HWM,sc3_AWM,sc3_HWMLM,sc3_AWMLM,sc3_HY,sc3_AY,sc3_HCO,sc3_ACO,sc3_HXSC,sc3_AXSC,sc3_HYCPF,sc3_AYCPF)
 
 colnames(sc3_picks)[1] <- "picks_Div"
 colnames(sc3_picks)[2] <- "picks_HomeTeam"
@@ -5429,6 +5870,8 @@ t1_HCO <- c()
 t1_ACO <- c()
 t1_HXSC <- c()
 t1_AXSC <- c()
+t1_HYCPF <- c()
+t1_AYCPF <- c()
 for(t1_row in 1:nrow(T1_fixtures))
 {
 
@@ -5594,7 +6037,18 @@ for(t1_row in 1:nrow(T1_fixtures))
   t1_xshotsconversion_vec_at <- t1_xshotsconversion_vec_at[t1_xshotsconversion_vec_at != ""]
   t1_xshotsconversion_vec_at  <-tail(t1_xshotsconversion_vec_at,1)
   #################################################################################
-
+  #pick yellow cards per foul
+  #hometeam
+  t1_fouls_conversion_vec_ht <- as.vector(t1_fouls_conversion[t1_hometeamindex,])
+  t1_fouls_conversion_vec_ht[is.na(t1_fouls_conversion_vec_ht)] <- ""
+  t1_fouls_conversion_vec_ht <- t1_fouls_conversion_vec_ht[t1_fouls_conversion_vec_ht != ""]
+  t1_fouls_conversion_vec_ht  <-tail(t1_fouls_conversion_vec_ht,1)
+  #awayteam
+  t1_fouls_conversion_vec_at <- as.vector(t1_fouls_conversion[t1_awayteamindex,])
+  t1_fouls_conversion_vec_at[is.na(t1_fouls_conversion_vec_at)] <- ""
+  t1_fouls_conversion_vec_at <- t1_fouls_conversion_vec_at[t1_fouls_conversion_vec_at != ""]
+  t1_fouls_conversion_vec_at  <-tail(t1_fouls_conversion_vec_at,1)
+  #################################################################################
 
   ####we need to decide ############
   #winner goals
@@ -5628,6 +6082,8 @@ for(t1_row in 1:nrow(T1_fixtures))
   t1_HXSC[t1_row] <- t1_xshotsconversion_vec_ht
   t1_AXSC[t1_row] <- t1_xshotsconversion_vec_at
 
+  t1_HYCPF[t1_row] <- t1_fouls_conversion_vec_ht
+  t1_AYCPF[t1_row] <- t1_fouls_conversion_vec_at
 }
 
 t1_prediction <- as.data.frame(t1_prediction)
@@ -5663,7 +6119,13 @@ colnames(t1_HXSC) <- "HXSC"
 t1_AXSC <- as.data.frame(t1_AXSC)
 colnames(t1_AXSC) <- "AXSC"
 
-t1_picks <- cbind(T1_fixtures$Div,T1_fixtures$HomeTeam_t1,T1_fixtures$AwayTeam_t1,t1_prediction,t1_HWM,t1_AWM,t1_HWMLM,t1_AWMLM,t1_HY,t1_AY,t1_HCO,t1_ACO,t1_HXSC,t1_AXSC)
+t1_HYCPF <- as.data.frame(t1_HYCPF)
+colnames(t1_HYCPF) <- "HYCPF"
+
+t1_AYCPF <- as.data.frame(t1_AYCPF)
+colnames(t1_AYCPF) <- "AYCPF"
+
+t1_picks <- cbind(T1_fixtures$Div,T1_fixtures$HomeTeam_t1,T1_fixtures$AwayTeam_t1,t1_prediction,t1_HWM,t1_AWM,t1_HWMLM,t1_AWMLM,t1_HY,t1_AY,t1_HCO,t1_ACO,t1_HXSC,t1_AXSC,t1_HYCPF,t1_AYCPF)
 
 colnames(t1_picks)[1] <- "picks_Div"
 colnames(t1_picks)[2] <- "picks_HomeTeam"

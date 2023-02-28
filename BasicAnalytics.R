@@ -1140,6 +1140,121 @@ B1_all <- cbind(B1_fixtures_clone_final,b1_dmprediction,b1_avgyellow,b1_avgcorne
 write.csv(B1_all,'B1_all.csv')
 ####################################################################################################################################################################################
 
+library('worldfootballR')
+library('dplyr')
+library('mgsub')
+
+#E0
+epl_match_details_adv <- load_fotmob_match_details(
+  country = "ENG",
+  league_name = "Premier League"
+)
+#select just the current season
+epl_startdate_adv <- which(epl_match_details_adv$match_time_utc == "Fri, Aug 5, 2022, 19:00 UTC")
+epl_startindex_adv <- nrow(epl_match_details_adv) - epl_startdate[1]
+epl_match_details_adv <- tail(epl_match_details_adv,epl_startindex_adv)
+
+View(epl_match_details_adv)
+epl_match_details_adv$home_team <- mgsub(epl_match_details_adv$home_team,c("AFC Bournemouth","Brighton & Hove Albion","Leeds United","Leicester City","Manchester United","Manchester City","Newcastle United","Nottingham Forest","Tottenham Hotspur","West Ham United","Wolverhampton Wanderers"),c("Bournemouth","Brighton","Leeds","Leicester","Man United","Man City","Newcastle","Nottm Forest","Tottenham","West Ham","Wolves"))
+epl_match_details_adv$away_team <- mgsub(epl_match_details_adv$away_team,c("AFC Bournemouth","Brighton & Hove Albion","Leeds United","Leicester City","Manchester United","Manchester City","Newcastle United","Nottingham Forest","Tottenham Hotspur","West Ham United","Wolverhampton Wanderers"),c("Bournemouth","Brighton","Leeds","Leicester","Man United","Man City","Newcastle","Nottm Forest","Tottenham","West Ham","Wolves"))
+epl_match_details_adv$matchid <- paste(epl_match_details_adv$home_team,epl_match_details_adv$away_team,sep = "-")
+
+unique(epl_match_details_adv$match_id)
+
+View(fotmob_get_match_team_stats(3901170))
+sd(allteams20222023$ACO)
+###########################################################################################################################
+library(stringr)
+library(stringi)
+final_b1_cor <- matrix(nrow = length(b1_teams),ncol = b1_totalrounds )
+suml6_b1_cor <- c()
+avg_b1_cor <- c()
+sd_b1_one_cor <- c()
+sum_b1_fivemore_cor <- c()
+sum_b1_fourless_cor <- c()
+l6_form_b1_corsplitted <- c()
+form_b1_cor <- c()
+for(index_b1_cor in 1:length(b1_teams))
+{
+  for(index_b1_cor_cols in 1:b1_totalrounds)
+  {
+    index_b1_cor  <- row.names(b1_coawarded_h) == b1_teams[index_b1_cor]
+    form_b1_cor <- b1_coawarded_h[index_b1_cor]
+    deleted_form_b1_cor <- form_b1_cor[!form_b1_cor[] == ""]
+    l6_form_b1_cor <- deleted_form_b1_cor #tail(deleted_form_b1_cor,b1_last_n_games)
+    l6_form_b1_cor <- as.numeric(l6_form_b1_cor)
+    suml6_b1_cor[index_b1_cor] <- sum(l6_form_b1_cor)
+    suml6_b1_cor[index_b1_cor] <- paste(suml6_b1_cor[index_b1_cor],sep = "")
+    avg_b1_cor[index_b1_cor] <- mean(l6_form_b1_cor)
+    avg_b1_cor[index_b1_cor] <- paste(avg_b1_cor[index_b1_cor],sep = "")
+    sd_b1_one_cor[index_b1_cor] <- sd(l6_form_b1_cor)
+    sd_b1_one_cor[index_b1_cor] <- paste(sd_b1_one_cor[index_b1_cor],sep = "")
+    sum_b1_fivemore_cor[index_b1_cor] <- length(which(l6_form_b1_cor >= 5))
+    sum_b1_fivemore_cor[index_b1_cor] <- paste(sum_b1_fivemore_cor[index_b1_cor],sep = "")
+    sum_b1_fourless_cor[index_b1_cor] <- length(which(l6_form_b1_cor <= 4))
+    sum_b1_fourless_cor[index_b1_cor] <- paste(sum_b1_fourless_cor[index_b1_cor],sep = "")
+    #l6_form_b1_cor <- as.character(l6_form_b1_cor)
+    #l6_form_b1_cor_flattened <- stri_paste(l6_form_b1_cor,collapse = '')
+    #l6_form_b1_corsplitted <- as.numeric(strsplit(as.character(l6_form_b1_cor_flattened),"")[[1]])
+    final_b1_cor[index_b1_cor,index_b1_cor_cols] <- l6_form_b1_cor[index_b1_cor_cols]
+  }
+}
+
+
+final_b1_cor[is.na(final_b1_cor)] <- ""
+b1_coawardedmatrix <- cbind(b1_teams,final_b1_cor,suml6_b1_cor,avg_b1_cor,sd_b1_one_cor,sum_b1_fivemore_cor,sum_b1_fourless_cor)
+#############################################################################################################################################
+#############################################################################################################################################
+
+
+final_b1_ycards <- matrix(nrow = length(b1_teams),ncol = b1_totalrounds )
+suml6_b1_ycards <- c()
+avg_b1_ycards <- c()
+sd_b1_one_ycards <- c()
+sum_b1_threemore_ycards <- c()
+sum_b1_twoless_ycards <- c()
+l6_form_b1_ycardssplitted <- c()
+form_b1_ycards <- c()
+for(index_b1_ycards in 1:length(b1_teams))
+{
+  for(index_b1_ycards_cols in 1:b1_totalrounds)
+  {
+    index_b1_ycards  <- row.names(b1_yellowscored_h) == b1_teams[index_b1_ycards]
+    form_b1_ycards <- b1_yellowscored_h[index_b1_ycards]
+    deleted_form_b1_ycards <- form_b1_ycards[!form_b1_ycards[] == ""]
+    l6_form_b1_ycards <- deleted_form_b1_ycards #tail(deleted_form_b1_ycards,b1_last_n_games)
+    l6_form_b1_ycards <- as.numeric(l6_form_b1_ycards)
+    suml6_b1_ycards[index_b1_ycards] <- sum(l6_form_b1_ycards)
+    suml6_b1_ycards[index_b1_ycards] <- paste(suml6_b1_ycards[index_b1_ycards],sep = "")
+    avg_b1_ycards[index_b1_ycards] <- mean(l6_form_b1_ycards)
+    avg_b1_ycards[index_b1_ycards] <- paste(avg_b1_ycards[index_b1_ycards],sep = "")
+    sd_b1_one_ycards[index_b1_ycards] <- sd(l6_form_b1_ycards)
+    sd_b1_one_ycards[index_b1_ycards] <- paste(sd_b1_one_ycards[index_b1_ycards],sep = "")
+    sum_b1_threemore_ycards[index_b1_ycards] <- length(which(l6_form_b1_ycards >= 3))
+    sum_b1_threemore_ycards[index_b1_ycards] <- paste(sum_b1_threemore_ycards[index_b1_ycards],sep = "")
+    sum_b1_twoless_ycards[index_b1_ycards] <- length(which(l6_form_b1_ycards <= 2))
+    sum_b1_twoless_ycards[index_b1_ycards] <- paste(sum_b1_twoless_ycards[index_b1_ycards],sep = "")
+    #l6_form_b1_ycards <- as.character(l6_form_b1_ycards)
+    #l6_form_b1_ycards_flattened <- stri_paste(l6_form_b1_ycards,collapse = '')
+    #l6_form_b1_ycardssplitted <- as.numeric(strsplit(as.character(l6_form_b1_ycards_flattened),"")[[1]])
+    final_b1_ycards[index_b1_ycards,index_b1_ycards_cols] <- l6_form_b1_ycards[index_b1_ycards_cols]
+  }
+}
+
+
+final_b1_ycards[is.na(final_b1_ycards)] <- ""
+b1_yellowscoredmatrix <- cbind(b1_teams,final_b1_ycards,suml6_b1_ycards,avg_b1_ycards,sd_b1_one_ycards,sum_b1_threemore_ycards,sum_b1_twoless_ycards)
+
+
+
+
+
+
+
+
+
+
+
 
 
 

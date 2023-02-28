@@ -288,8 +288,8 @@ F1_spread <- F1_spread %>% replace(is.na(.),0)
 
 ligueone_matchids <- as.vector(ligueone_match_details$match_id)
 ligueone_matchids <- unique(ligueone_matchids)
+ligueone_matchids <- na.omit(ligueone_matchids)
 ligueone_matchidslength <- length(ligueone_matchids)
-
 ligueone_matchids[1:ligueone_matchidslength]
 ligueone_players <- fotmob_get_match_players(ligueone_matchids[1:ligueone_matchidslength])
 

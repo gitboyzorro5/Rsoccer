@@ -34,8 +34,8 @@ UCL <- rbind(E0_ucl,D1_ucl,SP1_ucl,I1_ucl,F1_ucl)
 unlink('UCL.csv')
 write.csv(UCL,'UCL.csv')
 ###############################################################################
-df <- tail(F1_ucl[F1_ucl$HomeTeam =="Monaco" | F1_ucl$AwayTeam =="Monaco",],6)
-df2 <- tail(D1_ucl[D1_ucl$HomeTeam == "Leverkusen" | D1_ucl$AwayTeam == "Leverkusen",],6)
+df <- SP1_ucl[SP1_ucl$HomeTeam =="Real Madrid" | SP1_ucl$AwayTeam =="Real Madrid",]
+df2 <- SP1_ucl[SP1_ucl$HomeTeam == "Barcelona" | SP1_ucl$AwayTeam == "Barcelona",]
 temp_analysis <- rbind(df,df2)
 
 temp_analysis <- as.data.frame(temp_analysis)
@@ -44,5 +44,5 @@ temp_sliced <- tail(temp_analysis,1)
 temp_sliced <- temp_sliced[1:37]
 temp_analyis_combined <- c(temp_sliced,temp_colmeans)
 temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
-write.csv(temp_analysis,'monacolev6.csv')
+write.csv(temp_analysis,'elclassicoall.csv')
 

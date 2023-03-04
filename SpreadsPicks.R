@@ -3,8 +3,8 @@
 #D1
 unlink('Spreads/D1/*')
 for(d1_sn in 1:17){
-  df <- D1_spread[D1_spread$HomeTeam == final_doublefixture_d1[d1_sn,1] | D1_spread$AwayTeam == final_doublefixture_d1[d1_sn,1] ,]
-  df2 <- D1_spread[D1_spread$HomeTeam == final_doublefixture_d1[d1_sn + 1,1] | D1_spread$AwayTeam == final_doublefixture_d1[d1_sn + 1,1],]
+  df <- tail(D1_spread[D1_spread$HomeTeam == final_doublefixture_d1[d1_sn,1] | D1_spread$AwayTeam == final_doublefixture_d1[d1_sn,1] ,],7)
+  df2 <- tail(D1_spread[D1_spread$HomeTeam == final_doublefixture_d1[d1_sn + 1,1] | D1_spread$AwayTeam == final_doublefixture_d1[d1_sn + 1,1],],7)
   temp_analysis <- rbind(df,df2)
 
   temp_analysis <- as.data.frame(temp_analysis)
@@ -23,9 +23,9 @@ for(d1_sn in 1:17){
 #E0
 unlink('Spreads/E0/*')
 for(e0_sn in 1:19){
-  df <- tail(E0_spread[E0_spread$HomeTeam == final_doublefixture_e0[e0_sn,1] | E0_spread$AwayTeam == final_doublefixture_e0[e0_sn,1] ,],8)
+  df <- tail(E0_spread[E0_spread$HomeTeam == final_doublefixture_e0[e0_sn,1] | E0_spread$AwayTeam == final_doublefixture_e0[e0_sn,1] ,],7)
 
-  df2 <- tail(E0_spread[E0_spread$HomeTeam == final_doublefixture_e0[e0_sn + 1,1] | E0_spread$AwayTeam == final_doublefixture_e0[e0_sn + 1,1],],8)
+  df2 <- tail(E0_spread[E0_spread$HomeTeam == final_doublefixture_e0[e0_sn + 1,1] | E0_spread$AwayTeam == final_doublefixture_e0[e0_sn + 1,1],],7)
 
   temp_analysis <- rbind(df,df2)
 
@@ -45,8 +45,8 @@ for(e0_sn in 1:19){
 #I1
 unlink('Spreads/I1/*')
 for(i1_sn in 1:19){
-  df <- I1_spread[I1_spread$HomeTeam == final_doublefixture_i1[i1_sn,1] | I1_spread$AwayTeam == final_doublefixture_i1[i1_sn,1],]
-  df2 <- I1_spread[I1_spread$HomeTeam == final_doublefixture_i1[i1_sn + 1,1] | I1_spread$AwayTeam == final_doublefixture_i1[i1_sn + 1,1],]
+  df <- tail(I1_spread[I1_spread$HomeTeam == final_doublefixture_i1[i1_sn,1] | I1_spread$AwayTeam == final_doublefixture_i1[i1_sn,1],],7)
+  df2 <- tail(I1_spread[I1_spread$HomeTeam == final_doublefixture_i1[i1_sn + 1,1] | I1_spread$AwayTeam == final_doublefixture_i1[i1_sn + 1,1],],7)
   temp_analysis <- rbind(df,df2)
 
   temp_analysis <- as.data.frame(temp_analysis)
@@ -66,8 +66,8 @@ for(i1_sn in 1:19){
 #SP1
 unlink('Spreads/SP1/*')
 for(sp1_sn in 1:19){
-  df <- SP1_spread[SP1_spread$HomeTeam == final_doublefixture_sp1[sp1_sn,1] | SP1_spread$AwayTeam == final_doublefixture_sp1[sp1_sn,1] ,]
-  df2 <- SP1_spread[SP1_spread$HomeTeam == final_doublefixture_sp1[sp1_sn + 1,1] | SP1_spread$AwayTeam == final_doublefixture_sp1[sp1_sn + 1,1],]
+  df <- tail(SP1_spread[SP1_spread$HomeTeam == final_doublefixture_sp1[sp1_sn,1] | SP1_spread$AwayTeam == final_doublefixture_sp1[sp1_sn,1] ,],7)
+  df2 <- tail(SP1_spread[SP1_spread$HomeTeam == final_doublefixture_sp1[sp1_sn + 1,1] | SP1_spread$AwayTeam == final_doublefixture_sp1[sp1_sn + 1,1],],7)
   temp_analysis <- rbind(df,df2)
 
   temp_analysis <- as.data.frame(temp_analysis)
@@ -86,8 +86,8 @@ for(sp1_sn in 1:19){
 #F1
 unlink('Spreads/F1/*')
 for(f1_sn in 1:19){
-  df <- F1_spread[F1_spread$HomeTeam == final_doublefixture_f1[f1_sn,1] | F1_spread$AwayTeam == final_doublefixture_f1[f1_sn,1] ,]
-  df2 <- F1_spread[F1_spread$HomeTeam == final_doublefixture_f1[f1_sn + 1,1] | F1_spread$AwayTeam == final_doublefixture_f1[f1_sn + 1,1],]
+  df <- tail(F1_spread[F1_spread$HomeTeam == final_doublefixture_f1[f1_sn,1] | F1_spread$AwayTeam == final_doublefixture_f1[f1_sn,1] ,],7)
+  df2 <- tail(F1_spread[F1_spread$HomeTeam == final_doublefixture_f1[f1_sn + 1,1] | F1_spread$AwayTeam == final_doublefixture_f1[f1_sn + 1,1],],7)
   temp_analysis <- rbind(df,df2)
 
   temp_analysis <- as.data.frame(temp_analysis)

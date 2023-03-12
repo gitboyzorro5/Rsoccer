@@ -1,185 +1,173 @@
-"","X","Div","Home_Team","Away_Team","Date","matchid","picks_Div","picks_HomeTeam","picks_AwayTeam","prediction","HWM","AWM","HWMLM","AWMLM","AVGHY","AVGAY","AVGHCO","AVGACO","HXSC","AXSC","HYCPF","AYCPF"
-"1",244,"B1","Antwerp","Mechelen","3/4/2023","Antwerp-Mechelen","B1","Antwerp","Mechelen","1X,un25,BTTS-Y",6,0,"0","2","4.1852","4.0385","9.1111","11.1538","0.68","0.44","0.16","0.2"
-"2",245,"B1","Cercle Brugge","Seraing","3/4/2023","Cercle Brugge-Seraing","B1","Cercle Brugge","Seraing","1X,ov25,BTTS-N",2,-9,"0","-2","3.9259","4.3333","10.5556","10.037","0.46","0.59","0.16","0.21"
-"3",246,"B1","Gent","Anderlecht","3/4/2023","Gent-Anderlecht","B1","Gent","Anderlecht","2,ov25,BTTS-Y",1,5,"-2","0","3.8148","4.5","10.0741","9.5769","0.52","0.54","0.13","0.17"
-"4",247,"B1","Kortrijk","Charleroi","3/4/2023","Kortrijk-Charleroi","B1","Kortrijk","Charleroi","2,ov25,BTTS-Y",0,3,"0","1","4.3704","3.3077","10.8889","9.3846","0.44","0.47","0.18","0.18"
-"5",248,"B1","Oud-Heverlee Leuven","Waregem","3/4/2023","Oud-Heverlee Leuven-Waregem","B1","Oud-Heverlee Leuven","Waregem","2,un25,BTTS-N",-4,-5,"0","0","4.3704","4.4815","11.8519","9.7037","0.45","0.51","0.17","0.2"
-"6",249,"B1","Oostende","Club Brugge","3/4/2023","Oostende-Club Brugge","B1","Oostende","Club Brugge","2,un25,BTTS-N",-6,3,"-3","2","3.8519","4.4074","10.1111","9.5185","0.3","0.48","0.2","0.21"
-"7",250,"B1","St. Gilloise","Eupen","3/4/2023","St. Gilloise-Eupen","B1","St. Gilloise","Eupen","1X,un25,BTTS-Y",2,-3,"-2","0","4.9259","4.4444","9.7407","10.6296","0.65","0.48","0.21","0.19"
-"8",251,"B1","Standard","Westerlo","3/4/2023","Standard-Westerlo","B1","Standard","Westerlo","2,un25,BTTS-Y",-1,5,"0","2","4.8462","3.3333","10.2308","10.4074","0.65","0.72","0.22","0.17"
-"9",252,"B1","St Truiden","Genk","3/4/2023","St Truiden-Genk","B1","St Truiden","Genk","2,un25,BTTS-N",-6,7,"-1","3","3.4815","4","8.2593","10.4074","0.37","0.75","0.15","0.15"
-"10",505,"D1","Augsburg","Werder Bremen","3/4/2023","Augsburg-Werder Bremen","D1","Augsburg","Werder Bremen","1X,un25,BTTS-Y",-3,1,"-2","3","4.5909","3.8636","9.4091","8.3636","0.49","0.57","0.24","0.17"
-"11",506,"D1","Mgladbach","Freiburg","3/4/2023","Mgladbach-Freiburg","D1","Mgladbach","Freiburg","2,ov25,BTTS-N",-4,1,"-4","0","3.9545","3.9545","9.2727","8.6364","0.49","0.44","0.14","0.15"
-"12",507,"D1","Leverkusen","Hertha","3/4/2023","Leverkusen-Hertha","D1","Leverkusen","Hertha","1X,un25,BTTS-N",0,-8,"0","2","4.8182","3.5455","7.6364","9.1818","0.49","0.41","0.18","0.17"
-"13",508,"D1","Bochum","Schalke 04","3/4/2023","Bochum-Schalke 04","D1","Bochum","Schalke 04","2,un25,BTTS-N",-10,-4,"-3","1","3.2273","4.2273","8.6818","10.6364","0.39","0.29","0.14","0.16"
-"14",509,"D1","Dortmund","RB Leipzig","3/4/2023","Dortmund-RB Leipzig","D1","Dortmund","RB Leipzig","1X,ov25,BTTS-Y",13,9,"1","1","4.5455","4.1818","11.5455","8.5455","0.47","0.62","0.18","0.13"
-"15",510,"D1","Mainz","Hoffenheim","3/4/2023","Mainz-Hoffenheim","D1","Mainz","Hoffenheim","1X,ov25,BTTS-Y",8,-10,"4","-1","4.0909","4.1364","8.6364","9.9091","0.55","0.37","0.16","0.19"
-"16",511,"D1","Stuttgart","Bayern Munich","3/4/2023","Stuttgart-Bayern Munich","D1","Stuttgart","Bayern Munich","2,ov25,BTTS-Y",-2,7,"-1","3","4.5455","3.0455","9.4545","10.2727","0.39","0.56","0.22","0.15"
-"17",512,"D1","Union Berlin","FC Koln","3/4/2023","Union Berlin-FC Koln","D1","Union Berlin","FC Koln","1X,un25,BTTS-N",2,-2,"-3","-2","3.4091","3.8636","9.7273","10.8182","0.64","0.56","0.13","0.19"
-"18",513,"D1","Wolfsburg","Ein Frankfurt","3/4/2023","Wolfsburg-Ein Frankfurt","D1","Wolfsburg","Ein Frankfurt","2,ov25,BTTS-Y",1,1,"2","-1","4.2727","4","10.6364","9.6364","0.71","0.77","0.15","0.13"
-"19",811,"D2","Braunschweig","Bielefeld","3/4/2023","Braunschweig-Bielefeld","D2","Braunschweig","Bielefeld","2,ov25,BTTS-Y",-5,0,"-2","-1","4.7727","4.2273","10.4545","9.6364","0.37","0.42","0.22","0.21"
-"20",812,"D2","Greuther Furth","Hannover","3/4/2023","Greuther Furth-Hannover","D2","Greuther Furth","Hannover","1X,ov25,BTTS-Y",-2,-6,"-2","-1","5.3636","5.3182","9.8182","9.9091","0.39","0.41","0.17","0.18"
-"21",813,"D2","Hamburg","Nurnberg","3/4/2023","Hamburg-Nurnberg","D2","Hamburg","Nurnberg","1X,un25,BTTS-N",7,-4,"0","1","4.3636","4.4545","10.6364","9.5455","0.48","0.25","0.18","0.18"
-"22",814,"D2","Hansa Rostock","Karlsruhe","3/4/2023","Hansa Rostock-Karlsruhe","D2","Hansa Rostock","Karlsruhe","2,un25,BTTS-N",-4,4,"-1","1","4.5909","3.7273","10.7727","10.2273","0.33","0.4","0.23","0.17"
-"23",815,"D2","Heidenheim","Darmstadt","3/4/2023","Heidenheim-Darmstadt","D2","Heidenheim","Darmstadt","2,un25,BTTS-Y",7,8,"1","0","3.3182","5.3182","9.5","10.1818","0.68","0.54","0.17","0.2"
-"24",816,"D2","Magdeburg","Kaiserslautern","3/4/2023","Magdeburg-Kaiserslautern","D2","Magdeburg","Kaiserslautern","2,ov25,BTTS-Y",-2,4,"1","2","5.4091","4.3182","10.9091","9.7273","0.45","0.54","0.21","0.2"
-"25",817,"D2","Paderborn","St Pauli","3/4/2023","Paderborn-St Pauli","D2","Paderborn","St Pauli","2,un25,BTTS-Y",5,6,"0","1","4.3182","4.4545","9.5","9.5909","0.51","0.41","0.17","0.21"
-"26",818,"D2","Regensburg","Fortuna Dusseldorf","3/4/2023","Regensburg-Fortuna Dusseldorf","D2","Regensburg","Fortuna Dusseldorf","2,ov25,BTTS-N",-7,0,"-1","2","4.5455","4.8636","9.2727","10.0455","0.37","0.42","0.2","0.21"
-"27",819,"D2","Sandhausen","Holstein Kiel","3/4/2023","Sandhausen-Holstein Kiel","D2","Sandhausen","Holstein Kiel","2,ov25,BTTS-N",-11,0,"-1","0","4.7273","4.4545","9.1364","11.4091","0.39","0.51","0.23","0.2"
-"28",1169,"E0","Arsenal","Bournemouth","3/4/2023","Arsenal-Bournemouth","E0","Arsenal","Bournemouth","1X,un25,BTTS-Y",4,-5,"4","-3","3.72","3.25","9.48","10.625","0.76","0.4","0.14","0.16"
-"29",1170,"E0","Aston Villa","Crystal Palace","3/4/2023","Aston Villa-Crystal Palace","E0","Aston Villa","Crystal Palace","1X,un25,BTTS-Y",-2,-1,"2","0","3.75","4.25","9.4583","9.4583","0.43","0.34","0.17","0.18"
-"30",1171,"E0","Brentford","Fulham","3/4/2023","Brentford-Fulham","E0","Brentford","Fulham","1X,un25,BTTS-N",7,1,"0","0","3","3.76","10","10.28","0.62","0.54","0.15","0.25"
-"31",1172,"E0","Brighton","West Ham","3/4/2023","Brighton-West Ham","E0","Brighton","West Ham","1X,un25,BTTS-Y",6,3,"-1","4","3.8636","2.8333","9.9545","10.0833","0.44","0.36","0.14","0.13"
-"32",1173,"E0","Chelsea","Leeds","3/4/2023","Chelsea-Leeds","E0","Chelsea","Leeds","1X,un25,BTTS-N",-2,-3,"-2","1","3.9583","4.0417","10.375","9.9167","0.33","0.46","0.17","0.18"
-"33",1174,"E0","Liverpool","Man United","3/4/2023","Liverpool-Man United","E0","Liverpool","Man United","1X,un25,BTTS-N",3,5,"2","3","2.7917","3.5833","10.0417","10","0.4","0.47","0.14","0.24"
-"34",1175,"E0","Man City","Newcastle","3/4/2023","Man City-Newcastle","E0","Man City","Newcastle","1X,un25,BTTS-N",9,-1,"3","-2","3.32","3.8696","9.04","11.2174","0.76","0.44","0.11","0.16"
-"35",1176,"E0","Nottm Forest","Everton","3/4/2023","Nottm Forest-Everton","E0","Nottm Forest","Everton","1X,un25,BTTS-N",-3,-8,"-4","-4","3.7083","4.2","9.5833","10.64","0.34","0.23","0.19","0.23"
-"36",1177,"E0","Southampton","Leicester","3/4/2023","Southampton-Leicester","E0","Southampton","Leicester","2,ov25,BTTS-N",-4,-1,"-1","-1","3.625","2.7917","9.4167","9.8333","0.27","0.61","0.18","0.13"
-"37",1178,"E0","Wolves","Tottenham","3/4/2023","Wolves-Tottenham","E0","Wolves","Tottenham","2,un25,BTTS-N",-2,1,"-2","2","3.84","4.16","9.8","10.28","0.3","0.52","0.19","0.18"
-"38",1707,"E1","Blackburn","Sheffield United","3/4/2023","Blackburn-Sheffield United","E1","Blackburn","Sheffield United","1X,un25,BTTS-Y",4,2,"2","1","4.0588","4.303","9.5588","10.9091","0.53","0.45","0.21","0.22"
-"39",1708,"E1","Blackpool","Burnley","3/4/2023","Blackpool-Burnley","E1","Blackpool","Burnley","2,un25,BTTS-Y",-3,11,"-2","4","3.6471","3.9412","10.3824","9.8824","0.47","0.72","0.16","0.18"
-"40",1709,"E1","Cardiff","Bristol City","3/4/2023","Cardiff-Bristol City","E1","Cardiff","Bristol City","2,un25,BTTS-N",-3,3,"-2","1","4.1471","3.6364","9.7353","10.7879","0.31","0.75","0.19","0.17"
-"41",1710,"E1","Huddersfield","Coventry","3/4/2023","Huddersfield-Coventry","E1","Huddersfield","Coventry","2,un25,BTTS-N",-7,3,"-4","0","3.5152","4.1176","9.1515","9.8529","0.34","0.36","0.21","0.2"
-"42",1711,"E1","Hull","West Brom","3/4/2023","Hull-West Brom","E1","Hull","West Brom","1X,un25,BTTS-N",1,-1,"-1","2","3.3235","3.4545","10.2059","11.4848","0.58","0.45","0.19","0.16"
-"43",1712,"E1","Luton","Swansea","3/4/2023","Luton-Swansea","E1","Luton","Swansea","1X,un25,BTTS-Y",1,-6,"0","0","3.5882","4.2647","11.1471","9.9118","0.49","0.42","0.17","0.21"
-"44",1713,"E1","Middlesbrough","Reading","3/4/2023","Middlesbrough-Reading","E1","Middlesbrough","Reading","1X,ov25,BTTS-N",9,-3,"-2","2","3.8235","3.5758","10.5588","9.6364","0.64","0.55","0.2","0.19"
-"45",1714,"E1","Millwall","Norwich","3/4/2023","Millwall-Norwich","E1","Millwall","Norwich","1X,un25,BTTS-N",2,2,"0","2","3.2941","4","8.7647","10.4706","0.45","0.45","0.18","0.17"
-"46",1715,"E1","Rotherham","QPR","3/4/2023","Rotherham-QPR","E1","Rotherham","QPR","1X,ov25,BTTS-N",-2,-11,"0","-2","3.5882","3.7941","9.6176","10.1765","0.63","0.38","0.22","0.15"
-"47",1716,"E1","Sunderland","Stoke","3/4/2023","Sunderland-Stoke","E1","Sunderland","Stoke","1X,un25,BTTS-N",2,2,"-1","-1","4.4706","4.1176","9.7059","10.9118","0.53","0.36","0.19","0.16"
-"48",1717,"E1","Watford","Preston","3/4/2023","Watford-Preston","E1","Watford","Preston","1X,un25,BTTS-N",-2,-3,"-1","0","4.5294","4.3824","10.3529","9.5294","0.46","0.37","0.18","0.2"
-"49",1718,"E1","Wigan","Birmingham","3/4/2023","Wigan-Birmingham","E1","Wigan","Birmingham","1X,un25,BTTS-N",-2,-3,"-1","-1","3.697","3.9706","9","9.6471","0.48","0.57","0.18","0.18"
-"50",2259,"E2","Accrington","Forest Green","3/4/2023","Accrington-Forest Green","E2","Accrington","Forest Green","1X,un25,BTTS-N",-4,-8,"0","0","4.4516","3.9706","10.5161","10.6471","0.33","0.33","0.2","0.2"
-"51",2260,"E2","Bristol Rvs","Barnsley","3/4/2023","Bristol Rvs-Barnsley","E2","Bristol Rvs","Barnsley","2,ov25,BTTS-N",-5,12,"3","3","4","3.6452","11.0606","10.2903","0.56","0.7","0.17","0.18"
-"52",2261,"E2","Cambridge","Portsmouth","3/4/2023","Cambridge-Portsmouth","E2","Cambridge","Portsmouth","2,un25,BTTS-N",-5,5,"-2","2","3.8485","3.9688","9.5758","10.0625","0.37","0.5","0.17","0.13"
-"53",2262,"E2","Cheltenham","Fleetwood Town","3/4/2023","Cheltenham-Fleetwood Town","E2","Cheltenham","Fleetwood Town","2,un25,BTTS-N",-10,3,"-2","1","3.4848","4.4545","8.9091","10.3939","0.34","0.46","0.22","0.19"
-"54",2263,"E2","Derby","Shrewsbury","3/4/2023","Derby-Shrewsbury","E2","Derby","Shrewsbury","2,un25,BTTS-Y",5,4,"2","2","3.6364","3.8182","10.3636","10.697","0.45","0.68","0.17","0.18"
-"55",2264,"E2","Ipswich","Burton","3/4/2023","Ipswich-Burton","E2","Ipswich","Burton","2,un25,BTTS-Y",9,4,"1","0","3.2424","2.4688","10.6667","11.2188","0.42","0.49","0.15","0.14"
-"56",2265,"E2","Lincoln","Oxford","3/4/2023","Lincoln-Oxford","E2","Lincoln","Oxford","1X,un25,BTTS-N",4,-8,"0","-3","3.6562","4.3824","9.5938","10.5588","0.41","0.33","0.17","0.15"
-"57",2266,"E2","Morecambe","Bolton","3/4/2023","Morecambe-Bolton","E2","Morecambe","Bolton","2,ov25,BTTS-N",-11,9,"-1","-2","3.3636","3.6","10.4848","10","0.47","0.63","0.19","0.15"
-"58",2267,"E2","Plymouth","Charlton","3/4/2023","Plymouth-Charlton","E2","Plymouth","Charlton","1X,un25,BTTS-N",2,-2,"-3","0","3.2424","3.1818","10.2727","10.2121","0.54","0.53","0.15","0.13"
-"59",2268,"E2","Port Vale","Milton Keynes Dons","3/4/2023","Port Vale-Milton Keynes Dons","E2","Port Vale","Milton Keynes Dons","2,un25,BTTS-Y",-4,-7,"-1","0","3.2353","3.2941","10.1765","9","0.38","0.36","0.16","0.18"
-"60",2269,"E2","Sheffield Weds","Peterboro","3/4/2023","Sheffield Weds-Peterboro","E2","Sheffield Weds","Peterboro","1X,un25,BTTS-N",9,2,"1","0","3.1562","3.3125","8.8438","10.25","0.63","0.48","0.14","0.11"
-"61",2270,"E2","Wycombe","Exeter","3/4/2023","Wycombe-Exeter","E2","Wycombe","Exeter","1X,un25,BTTS-N",7,1,"-2","2","3.125","3.0909","12.125","11.7576","0.41","0.56","0.17","0.18"
-"62",2811,"E3","AFC Wimbledon","Mansfield","3/4/2023","AFC Wimbledon-Mansfield","E3","AFC Wimbledon","Mansfield","2,un25,BTTS-N",-3,8,"-1","-3","4.697","3.6875","9.8485","9.5938","0.41","0.51","0.18","0.15"
-"63",2812,"E3","Bradford","Colchester","3/4/2023","Bradford-Colchester","E3","Bradford","Colchester","1X,un25,BTTS-N",5,0,"2","-1","3.25","3.9706","10.5312","9.6765","0.45","0.41","0.16","0.16"
-"64",2813,"E3","Carlisle","Grimsby","3/4/2023","Carlisle-Grimsby","E3","Carlisle","Grimsby","1X,ov25,BTTS-N",3,2,"3","0","2.9697","3.1333","9.6061","9.4","0.57","0.32","0.16","0.16"
-"65",2814,"E3","Harrogate","Gillingham","3/4/2023","Harrogate-Gillingham","E3","Harrogate","Gillingham","2,un25,BTTS-Y",-5,1,"0","-2","2.9394","3.2812","10.2424","8.6875","0.49","0.31","0.16","0.15"
-"66",2815,"E3","Leyton Orient","Swindon","3/4/2023","Leyton Orient-Swindon","E3","Leyton Orient","Swindon","1X,ov25,BTTS-Y",5,0,"0","3","3.4412","3.6875","8.6765","10.5312","0.53","0.41","0.17","0.18"
-"67",2816,"E3","Northampton","Crawley Town","3/4/2023","Northampton-Crawley Town","E3","Northampton","Crawley Town","1X,un25,BTTS-N",0,-7,"0","-1","3.7576","2.5806","9.0909","9.9677","0.49","0.61","0.16","0.13"
-"68",2817,"E3","Rochdale","Stevenage","3/4/2023","Rochdale-Stevenage","E3","Rochdale","Stevenage","2,un25,BTTS-N",-5,-3,"0","1","3.4412","3.4375","9.3529","8.4062","0.34","0.47","0.18","0.16"
-"69",2818,"E3","Salford","Newport County","3/4/2023","Salford-Newport County","E3","Salford","Newport County","2,un25,BTTS-Y",2,1,"0","-2","3.3529","3.4062","9.5","8.625","0.56","0.34","0.15","0.17"
-"70",2819,"E3","Stockport","Doncaster","3/4/2023","Stockport-Doncaster","E3","Stockport","Doncaster","1X,un25,BTTS-N",6,1,"-1","-1","2.8182","2.9062","9.1818","8.9062","0.52","0.53","0.08","0.13"
-"71",2820,"E3","Sutton","Crewe","3/4/2023","Sutton-Crewe","E3","Sutton","Crewe","1X,un25,BTTS-Y",6,0,"2","0","3.4848","2.9688","9.8485","10.6562","0.37","0.5","0.15","0.14"
-"72",2821,"E3","Tranmere","Hartlepool","3/4/2023","Tranmere-Hartlepool","E3","Tranmere","Hartlepool","1X,un25,BTTS-N",-3,-2,"1","0","2.8235","2.8824","9.7059","9.0294","0.36","0.55","0.14","0.18"
-"73",2822,"E3","Walsall","Barrow","3/4/2023","Walsall-Barrow","E3","Walsall","Barrow","2,un25,BTTS-N",0,0,"0","0","3.2258","3.9118","8.9032","9.0882","0.46","0.47","0.18","0.15"
-"74",3375,"EC","Aldershot","Torquay","3/4/2023","Aldershot-Torquay","EC","Aldershot","Torquay","1X,ov25,BTTS-Y",-4,-3,"-3","-1","3","3.7576","0","0","-1","-1","Inf","Inf"
-"75",3376,"EC","Bromley","Notts County","3/4/2023","Bromley-Notts County","EC","Bromley","Notts County","2,ov25,BTTS-Y",3,11,"1","-1","3.5","3.3429","0","0","-1","-1","Inf","Inf"
-"76",3377,"EC","Dag and Red","York","3/4/2023","Dag and Red-York","EC","Dag and Red","York","1X,ov25,BTTS-Y",0,-5,"-1","-1","2.9412","3.3235","0","0","-1","-1","Inf","Inf"
-"77",3378,"EC","Dorking","Halifax","3/4/2023","Dorking-Halifax","EC","Dorking","Halifax","2,un25,BTTS-N",-9,1,"-1","5","3.3636","3.6471","0","0","-1","-1","Inf","Inf"
-"78",3379,"EC","Gateshead","Chesterfield","3/4/2023","Gateshead-Chesterfield","EC","Gateshead","Chesterfield","1X,un25,BTTS-Y",3,-3,"0","-1","3.0312","3.8485","0","0","-1","-1","Inf","Inf"
-"79",3380,"EC","Maidenhead","Wrexham","3/4/2023","Maidenhead-Wrexham","EC","Maidenhead","Wrexham","2,ov25,BTTS-Y",2,8,"1","1","3.2353","2.5294","0","0","-1","-1","Inf","Inf"
-"80",3381,"EC","Oldham","Boreham Wood","3/4/2023","Oldham-Boreham Wood","EC","Oldham","Boreham Wood","1X,un25,BTTS-Y",6,3,"2","1","3.4242","3.2121","0","0","-1","-1","Inf","Inf"
-"81",3382,"EC","Scunthorpe","Eastleigh","3/4/2023","Scunthorpe-Eastleigh","EC","Scunthorpe","Eastleigh","2,un25,BTTS-Y",-5,6,"0","1","3.1765","3.7059","0","0","-1","-1","Inf","Inf"
-"82",3383,"EC","Solihull","Maidstone","3/4/2023","Solihull-Maidstone","EC","Solihull","Maidstone","1X,un25,BTTS-Y",-3,-5,"-3","0","3.3824","2.8571","0","0","-1","-1","Inf","Inf"
-"83",3384,"EC","Southend","Barnet","3/4/2023","Southend-Barnet","EC","Southend","Barnet","1X,ov25,BTTS-Y",2,-3,"1","-2","3.875","3.2424","0","0","-1","-1","Inf","Inf"
-"84",3385,"EC","Wealdstone","Altrincham","3/4/2023","Wealdstone-Altrincham","EC","Wealdstone","Altrincham","2,ov25,BTTS-Y",-4,5,"-5","0","4","2.7059","0","0","-1","-1","Inf","Inf"
-"85",3386,"EC","Yeovil","Woking","3/4/2023","Yeovil-Woking","EC","Yeovil","Woking","2,ov25,BTTS-Y",-6,1,"0","0","3.5312","3.9706","0","0","-1","-1","Inf","Inf"
-"86",4112,"F2","Amiens","Pau FC","3/4/2023","Amiens-Pau FC","F2","Amiens","Pau FC","1X,un25,BTTS-N",-3,-4,"-1","-2","3.4583","3.76","10.125","8.76","0.4","0.36","0.14","0.16"
-"87",4113,"F2","Annecy","Metz","3/4/2023","Annecy-Metz","F2","Annecy","Metz","2,un25,BTTS-Y",-1,4,"-4","2","4.36","3.48","7.56","9.04","0.56","0.51","0.18","0.16"
-"88",4114,"F2","Bastia","Nimes","3/4/2023","Bastia-Nimes","F2","Bastia","Nimes","1X,un25,BTTS-Y",2,-3,"2","-2","4.44","3.24","9.16","8.36","0.3","0.34","0.17","0.13"
-"89",4115,"F2","Caen","Sochaux","3/4/2023","Caen-Sochaux","F2","Caen","Sochaux","2,ov25,BTTS-N",2,10,"1","4","4.6","4.48","8.24","8.56","0.49","0.51","0.14","0.15"
-"90",4116,"F2","Dijon","Grenoble","3/4/2023","Dijon-Grenoble","F2","Dijon","Grenoble","2,un25,BTTS-N",-7,1,"0","0","4.76","3.72","9.16","8.4","0.4","0.45","0.17","0.14"
-"91",4117,"F2","Le Havre","Laval","3/4/2023","Le Havre-Laval","F2","Le Havre","Laval","1X,un25,BTTS-Y",2,-1,"0","-1","5","3.8","8.52","8.8","0.61","0.48","0.15","0.16"
-"92",4118,"F2","Niort","Rodez","3/4/2023","Niort-Rodez","F2","Niort","Rodez","1X,un25,BTTS-N",-4,-4,"-3","-2","3.16","4.2","8.72","9","0.33","0.35","0.14","0.15"
-"93",4119,"F2","Paris FC","Guingamp","3/4/2023","Paris FC-Guingamp","F2","Paris FC","Guingamp","2,un25,BTTS-N",-3,-1,"3","-1","3.3333","4.2","9","7.76","0.31","0.43","0.14","0.13"
-"94",4120,"F2","Quevilly Rouen","Valenciennes","3/4/2023","Quevilly Rouen-Valenciennes","F2","Quevilly Rouen","Valenciennes","1X,un25,BTTS-Y",5,-4,"1","0","4.08","3.4","7.52","8.08","0.41","0.36","0.12","0.12"
-"95",5383,"SC0","Dundee United","Aberdeen","3/4/2023","Dundee United-Aberdeen","SC0","Dundee United","Aberdeen","2,ov25,BTTS-N",-10,-14,"-4","1","2.8269","3.2593","8.0962","8.5","0.42","0.63","0.18","0.15"
-"96",5384,"SC0","Hearts","St Johnstone","3/4/2023","Hearts-St Johnstone","SC0","Hearts","St Johnstone","1X,un25,BTTS-N",3,-4,"-2","0","3.4038","3.6296","8.6538","7.8519","0.68","0.67","0.13","0.21"
-"97",5385,"SC0","Livingston","Hibernian","3/4/2023","Livingston-Hibernian","SC0","Livingston","Hibernian","2,ov25,BTTS-N",-3,10,"-1","2","3.1731","3.6538","8.4231","8.9808","0.45","0.41","0.17","0.17"
-"98",5386,"SC0","Rangers","Kilmarnock","3/4/2023","Rangers-Kilmarnock","SC0","Rangers","Kilmarnock","1X,ov25,BTTS-Y",12,-7,"3","0","3.6538","3.0556","8.9423","7.6852","0.5","0.38","0.17","0.14"
-"99",5387,"SC0","Ross County","Motherwell","3/4/2023","Ross County-Motherwell","SC0","Ross County","Motherwell","1X,un25,BTTS-Y",5,-2,"4","0","3.0556","3.5556","7.6296","8.2037","0.5","0.55","0.19","0.19"
-"100",5388,"SC0","St Mirren","Celtic","3/4/2023","St Mirren-Celtic","SC0","St Mirren","Celtic","2,un25,BTTS-Y",2,18,"0","4","3.4074","2.7115","8.9444","8.5962","0.48","0.76","0.21","0.12"
-"101",5549,"SC1","Ayr","Inverness C","3/4/2023","Ayr-Inverness C","SC1","Ayr","Inverness C","1X,un25,BTTS-N",3,-4,"0","0","2.3","2.1346","8.18","7.8846","0.53","0.53","0.16","0.17"
-"102",5550,"SC1","Cove Rangers","Dundee","3/4/2023","Cove Rangers-Dundee","SC1","Cove Rangers","Dundee","2,ov25,BTTS-Y",-8,3,"-1","-2","2.8846","2.4808","6.9038","8.2692","0.52","0.55","0.24","0.13"
-"103",5551,"SC1","Hamilton","Arbroath","3/4/2023","Hamilton-Arbroath","SC1","Hamilton","Arbroath","1X,ov25,BTTS-Y",3,-3,"-3","0","2.9423","2.6346","8.0385","7.0962","0.33","0.42","0.17","0.22"
-"104",5552,"SC1","Partick","Raith Rvs","3/4/2023","Partick-Raith Rvs","SC1","Partick","Raith Rvs","1X,un25,BTTS-N",2,1,"2","0","2.3462","2.6538","7.0192","6.7692","0.61","0.38","0.16","0.19"
-"105",5553,"SC1","Queens Park","Morton","3/4/2023","Queens Park-Morton","SC1","Queens Park","Morton","2,ov25,BTTS-Y",1,1,"3","1","2","3.5","8.9231","8.28","0.6","0.6","0.14","0.22"
-"106",3757,"F1","Lens","Lille","3/5/2023","Lens-Lille","F1","Lens","Lille","2,un25,BTTS-Y",0,3,"0","1","3.92","3.96","9.48","9.16","0.49","0.43","0.12","0.16"
-"107",3758,"F1","Lyon","Lorient","3/5/2023","Lyon-Lorient","F1","Lyon","Lorient","1X,ov25,BTTS-N",6,0,"2","-1","3.08","3.44","9.48","9.56","0.39","0.5","0.12","0.1"
-"108",3759,"F1","Montpellier","Angers","3/5/2023","Montpellier-Angers","F1","Montpellier","Angers","1X,un25,BTTS-Y",2,-8,"0","-2","4.04","3.8","9.64","9.08","0.56","0.31","0.15","0.15"
-"109",3760,"F1","Nice","Auxerre","3/5/2023","Nice-Auxerre","F1","Nice","Auxerre","1X,un25,BTTS-Y",10,-1,"3","1","2.76","2.96","8.76","9.08","0.42","0.37","0.16","0.14"
-"110",3761,"F1","Paris SG","Nantes","3/5/2023","Paris SG-Nantes","F1","Paris SG","Nantes","1X,un25,BTTS-N",5,-2,"3","-1","3.08","3.6","8.8","9.88","0.57","0.34","0.16","0.14"
-"111",3762,"F1","Reims","Ajaccio","3/5/2023","Reims-Ajaccio","F1","Reims","Ajaccio","1X,ov25,BTTS-N",9,-8,"3","1","3.8","4.12","9.08","7.88","0.38","0.37","0.16","0.16"
-"112",3763,"F1","Rennes","Marseille","3/5/2023","Rennes-Marseille","F1","Rennes","Marseille","2,ov25,BTTS-Y",1,0,"1","-3","2.8","3.36","8.48","10.16","0.5","0.57","0.15","0.14"
-"113",3764,"F1","Strasbourg","Brest","3/5/2023","Strasbourg-Brest","F1","Strasbourg","Brest","1X,ov25,BTTS-Y",-3,-1,"0","-1","3.72","3.72","8.48","10.64","0.45","0.41","0.16","0.14"
-"114",3765,"F1","Toulouse","Clermont","3/5/2023","Toulouse-Clermont","F1","Toulouse","Clermont","1X,un25,BTTS-N",1,-6,"-3","0","3.24","3.88","10.16","7.64","0.49","0.38","0.12","0.17"
-"115",3766,"F1","Troyes","Monaco","3/5/2023","Troyes-Monaco","F1","Troyes","Monaco","2,ov25,BTTS-Y",-11,3,"-1","-3","3.12","3.36","9.92","8.72","0.53","0.6","0.16","0.15"
-"116",4469,"I1","Roma","Juventus","3/5/2023","Roma-Juventus","I1","Roma","Juventus","2,un25,BTTS-Y",3,6,"-1","2","5.2083","3.9583","8.5","9.625","0.41","0.53","0.14","0.17"
-"117",4470,"I1","Atalanta","Udinese","3/5/2023","Atalanta-Udinese","I1","Atalanta","Udinese","1X,un25,BTTS-Y",0,-2,"-2","0","4.7917","4.5417","8.5417","10.4167","0.58","0.5","0.21","0.18"
-"118",4471,"I1","Fiorentina","Milan","3/5/2023","Fiorentina-Milan","I1","Fiorentina","Milan","2,un25,BTTS-Y",0,-4,"3","2","5.2083","6.0833","9.5833","8.7083","0.3","0.52","0.2","0.2"
-"119",4472,"I1","Inter","Lecce","3/5/2023","Inter-Lecce","I1","Inter","Lecce","1X,un25,BTTS-N",2,-1,"-1","-1","4.4583","4.7917","9.125","10.125","0.57","0.56","0.16","0.18"
-"120",4473,"I1","Monza","Empoli","3/5/2023","Monza-Empoli","I1","Monza","Empoli","1X,un25,BTTS-Y",-1,-3,"-3","-2","4.2083","4.7917","9.125","10.7083","0.49","0.33","0.18","0.21"
-"121",4474,"I1","Napoli","Lazio","3/5/2023","Napoli-Lazio","I1","Napoli","Lazio","1X,un25,BTTS-Y",13,5,"2","1","4.125","4.5833","9.9167","9.5833","0.65","0.65","0.12","0.17"
-"122",4475,"I1","Sampdoria","Salernitana","3/5/2023","Sampdoria-Salernitana","I1","Sampdoria","Salernitana","2,un25,BTTS-N",-5,-4,"-1","3","5.2917","4.375","8.375","8.2917","0.17","0.56","0.23","0.2"
-"123",4476,"I1","Sassuolo","Cremonese","3/5/2023","Sassuolo-Cremonese","I1","Sassuolo","Cremonese","1X,un25,BTTS-Y",3,-5,"1","1","4.75","4.0417","8.9167","9.3333","0.35","0.32","0.2","0.2"
-"124",4477,"I1","Spezia","Verona","3/5/2023","Spezia-Verona","I1","Spezia","Verona","2,un25,BTTS-N",-9,-1,"0","-3","4.5833","4.875","10.0417","10.125","0.36","0.38","0.23","0.24"
-"125",4478,"I1","Torino","Bologna","3/5/2023","Torino-Bologna","I1","Torino","Bologna","2,un25,BTTS-Y",-1,4,"-2","1","4.0417","4.7917","8.625","8.5","0.39","0.49","0.22","0.22"
-"126",4816,"N1","Ajax","Nijmegen","3/5/2023","Ajax-Nijmegen","N1","Ajax","Nijmegen","1X,ov25,BTTS-N",15,3,"1","3","3.2609","3.6087","10.6957","11.5652","0.67","0.37","0.15","0.14"
-"127",4817,"N1","Cambuur","Go Ahead Eagles","3/5/2023","Cambuur-Go Ahead Eagles","N1","Cambuur","Go Ahead Eagles","2,ov25,BTTS-Y",-7,-2,"-1","0","3.3478","3.4783","11.087","10.5652","0.18","0.61","0.15","0.14"
-"128",4818,"N1","Excelsior","Sparta Rotterdam","3/5/2023","Excelsior-Sparta Rotterdam","N1","Excelsior","Sparta Rotterdam","2,ov25,BTTS-N",-15,-6,"-3","-3","2.6087","2.3913","10.3478","9.3043","0.42","0.52","0.15","0.12"
-"129",4819,"N1","Volendam","FC Emmen","3/5/2023","Volendam-FC Emmen","N1","Volendam","FC Emmen","1X,un25,BTTS-Y",-3,-2,"-3","0","2.4348","3.0435","12","10.0435","0.36","0.33","0.14","0.15"
-"130",4820,"N1","Feyenoord","Groningen","3/5/2023","Feyenoord-Groningen","N1","Feyenoord","Groningen","1X,ov25,BTTS-Y",6,-5,"2","3","3.2174","2.5652","11.7391","10.7826","0.43","0.47","0.14","0.16"
-"131",4821,"N1","Twente","Heerenveen","3/5/2023","Twente-Heerenveen","N1","Twente","Heerenveen","1X,ov25,BTTS-Y",-1,-8,"-2","-3","2.7826","2.9565","10.8261","9.8261","0.44","0.32","0.13","0.17"
-"132",4822,"N1","Utrecht","For Sittard","3/5/2023","Utrecht-For Sittard","N1","Utrecht","For Sittard","1X,un25,BTTS-Y",3,0,"3","-2","2.8261","3.2609","10.4783","11.3913","0.44","0.47","0.17","0.2"
-"133",4823,"N1","Vitesse","AZ Alkmaar","3/5/2023","Vitesse-AZ Alkmaar","N1","Vitesse","AZ Alkmaar","2,ov25,BTTS-Y",1,8,"-1","1","2.6087","2.913","11.3913","8.9565","0.32","0.53","0.14","0.19"
-"134",4824,"N1","Waalwijk","PSV Eindhoven","3/5/2023","Waalwijk-PSV Eindhoven","N1","Waalwijk","PSV Eindhoven","1X,ov25,BTTS-Y",7,9,"3","2","3.1739","2.7391","10.913","10.9565","0.59","0.55","0.19","0.15"
-"135",5113,"P1","Benfica","Famalicao","3/5/2023","Benfica-Famalicao","P1","Benfica","Famalicao","1X,un25,BTTS-Y",15,0,"2","1","4.7273","5.5909","11.2727","9.5","0.65","0.39","0.16","0.15"
-"136",5114,"P1","Boavista","Arouca","3/5/2023","Boavista-Arouca","P1","Boavista","Arouca","2,ov25,BTTS-Y",1,2,"2","2","6","5","11","9.6818","0.6","0.42","0.25","0.2"
-"137",5115,"P1","Sp Braga","Rio Ave","3/5/2023","Sp Braga-Rio Ave","P1","Sp Braga","Rio Ave","1X,un25,BTTS-N",1,-1,"-1","1","5.7273","5.6818","10.1818","9.8636","0.49","0.46","0.2","0.2"
-"138",5116,"P1","Casa Pia","Pacos Ferreira","3/5/2023","Casa Pia-Pacos Ferreira","P1","Casa Pia","Pacos Ferreira","2,ov25,BTTS-N",-6,-3,"-2","-2","5.0909","6.4091","9.5455","12.5","0.35","0.22","0.23","0.21"
-"139",5117,"P1","Chaves","Porto","3/5/2023","Chaves-Porto","P1","Chaves","Porto","2,un25,BTTS-Y",-2,6,"-1","-1","6.7273","5.9545","11.5455","9.3182","0.3","0.61","0.21","0.14"
-"140",5118,"P1","Estoril","Vizela","3/5/2023","Estoril-Vizela","P1","Estoril","Vizela","2,un25,BTTS-N",-7,-3,"-2","-2","5.9091","7.2273","11.2727","11.6364","0.31","0.26","0.18","0.28"
-"141",5119,"P1","Gil Vicente","Maritimo","3/5/2023","Gil Vicente-Maritimo","P1","Gil Vicente","Maritimo","1X,ov25,BTTS-Y",3,-2,"1","2","5.5455","5.5455","10.9545","10.7727","0.3","0.3","0.18","0.18"
-"142",5120,"P1","Portimonense","Sp Lisbon","3/5/2023","Portimonense-Sp Lisbon","P1","Portimonense","Sp Lisbon","2,ov25,BTTS-N",-6,9,"-1","2","5.5","5.6818","11.2273","10","0.26","0.55","0.2","0.22"
-"143",5121,"P1","Santa Clara","Guimaraes","3/5/2023","Santa Clara-Guimaraes","P1","Santa Clara","Guimaraes","2,ov25,BTTS-Y",-9,3,"-2","1","6.1364","7.2727","10.3182","9.4091","0.31","0.41","0.22","0.24"
-"144",5829,"SP1","Almeria","Villarreal","3/5/2023","Almeria-Villarreal","SP1","Almeria","Villarreal","1X,ov25,BTTS-Y",-4,-4,"1","1","5.1739","4.9565","10","10.3478","0.39","0.33","0.23","0.17"
-"145",5830,"SP1","Ath Madrid","Sevilla","3/5/2023","Ath Madrid-Sevilla","SP1","Ath Madrid","Sevilla","1X,un25,BTTS-Y",6,2,"0","-1","5.4783","6.1304","9.6087","9.3478","0.39","0.38","0.23","0.28"
-"146",5831,"SP1","Barcelona","Valencia","3/5/2023","Barcelona-Valencia","SP1","Barcelona","Valencia","1X,un25,BTTS-N",7,-5,"-1","1","5.1739","6.3478","9.0435","10.6087","0.57","0.39","0.19","0.22"
-"147",5832,"SP1","Betis","Real Madrid","3/5/2023","Betis-Real Madrid","SP1","Betis","Real Madrid","1X,un25,BTTS-Y",2,7,"1","0","5.2174","4.5217","9.1739","10.3043","0.48","0.53","0.17","0.15"
-"148",5833,"SP1","Getafe","Girona","3/5/2023","Getafe-Girona","SP1","Getafe","Girona","2,un25,BTTS-N",-2,2,"-1","1","5.7826","5.2609","8.4348","8.2609","0.42","0.53","0.23","0.18"
-"149",5834,"SP1","Mallorca","Elche","3/5/2023","Mallorca-Elche","SP1","Mallorca","Elche","1X,un25,BTTS-N",-1,-7,"-1","-1","6.4348","5.1304","8.3913","10.0435","0.39","0.33","0.24","0.25"
-"150",5835,"SP1","Osasuna","Celta","3/5/2023","Osasuna-Celta","SP1","Osasuna","Celta","2,un25,BTTS-N",-2,3,"1","3","5","5.087","8.9565","8.913","0.34","0.37","0.23","0.16"
-"151",5836,"SP1","Vallecano","Ath Bilbao","3/5/2023","Vallecano-Ath Bilbao","SP1","Vallecano","Ath Bilbao","1X,un25,BTTS-N",0,-1,"-1","-1","5.6957","4.7391","9.7391","9.087","0.41","0.52","0.19","0.14"
-"152",5837,"SP1","Sociedad","Cadiz","3/5/2023","Sociedad-Cadiz","SP1","Sociedad","Cadiz","2,un25,BTTS-N",1,-1,"-1","1","5.3478","5.4783","9.0435","8.913","0.38","0.4","0.19","0.22"
-"153",5838,"SP1","Valladolid","Espanol","3/5/2023","Valladolid-Espanol","SP1","Valladolid","Espanol","2,un25,BTTS-N",-5,0,"-3","1","4.1304","5.5217","10.4348","9.1739","0.22","0.54","0.17","0.18"
-"154",6209,"SP2","Almeria","Villarreal","3/5/2023","Almeria-Villarreal","SP1","Almeria","Villarreal","1X,ov25,BTTS-Y",-4,-4,"1","1","5.1739","4.9565","10","10.3478","0.39","0.33","0.23","0.17"
-"155",6210,"SP2","Ath Madrid","Sevilla","3/5/2023","Ath Madrid-Sevilla","SP1","Ath Madrid","Sevilla","1X,un25,BTTS-Y",6,2,"0","-1","5.4783","6.1304","9.6087","9.3478","0.39","0.38","0.23","0.28"
-"156",6211,"SP2","Barcelona","Valencia","3/5/2023","Barcelona-Valencia","SP1","Barcelona","Valencia","1X,un25,BTTS-N",7,-5,"-1","1","5.1739","6.3478","9.0435","10.6087","0.57","0.39","0.19","0.22"
-"157",6212,"SP2","Betis","Real Madrid","3/5/2023","Betis-Real Madrid","SP1","Betis","Real Madrid","1X,un25,BTTS-Y",2,7,"1","0","5.2174","4.5217","9.1739","10.3043","0.48","0.53","0.17","0.15"
-"158",6213,"SP2","Getafe","Girona","3/5/2023","Getafe-Girona","SP1","Getafe","Girona","2,un25,BTTS-N",-2,2,"-1","1","5.7826","5.2609","8.4348","8.2609","0.42","0.53","0.23","0.18"
-"159",6214,"SP2","Mallorca","Elche","3/5/2023","Mallorca-Elche","SP1","Mallorca","Elche","1X,un25,BTTS-N",-1,-7,"-1","-1","6.4348","5.1304","8.3913","10.0435","0.39","0.33","0.24","0.25"
-"160",6215,"SP2","Osasuna","Celta","3/5/2023","Osasuna-Celta","SP1","Osasuna","Celta","2,un25,BTTS-N",-2,3,"1","3","5","5.087","8.9565","8.913","0.34","0.37","0.23","0.16"
-"161",6216,"SP2","Vallecano","Ath Bilbao","3/5/2023","Vallecano-Ath Bilbao","SP1","Vallecano","Ath Bilbao","1X,un25,BTTS-N",0,-1,"-1","-1","5.6957","4.7391","9.7391","9.087","0.41","0.52","0.19","0.14"
-"162",6217,"SP2","Sociedad","Cadiz","3/5/2023","Sociedad-Cadiz","SP1","Sociedad","Cadiz","2,un25,BTTS-N",1,-1,"-1","1","5.3478","5.4783","9.0435","8.913","0.38","0.4","0.19","0.22"
-"163",6218,"SP2","Valladolid","Espanol","3/5/2023","Valladolid-Espanol","SP1","Valladolid","Espanol","2,un25,BTTS-N",-5,0,"-3","1","4.1304","5.5217","10.4348","9.1739","0.22","0.54","0.17","0.18"
-"164",6593,"T1","Buyuksehyr","Ankaragucu","3/5/2023","Buyuksehyr-Ankaragucu","T1","Buyuksehyr","Ankaragucu","1X,un25,BTTS-Y",3,-5,"-1","-2","4.1429","4.0952","9","9.7143","0.55","0.41","0.16","0.17"
-"165",6594,"T1","Fenerbahce","Besiktas","3/5/2023","Fenerbahce-Besiktas","T1","Fenerbahce","Besiktas","1X,ov25,BTTS-Y",7,5,"4","0","5.5909","4.9545","8.0909","9.8636","0.77","0.53","0.16","0.15"
-"166",6595,"T1","Galatasaray","Ad. Demirspor","3/5/2023","Galatasaray-Ad. Demirspor","T1","Galatasaray","Ad. Demirspor","1X,ov25,BTTS-Y",14,2,"1","0","5.2273","4.9091","11.8636","9.6364","0.41","0.45","0.18","0.15"
-"167",6596,"T1","Gaziantep","Kasimpasa","3/5/2023","Gaziantep-Kasimpasa","T1","Gaziantep","Kasimpasa","1X,ov25,BTTS-Y",2,-4,"-1","-1","5.3182","4.9545","9.6818","11.0455","0.49","0.42","0.26","0.22"
-"168",6597,"T1","Giresunspor","Alanyaspor","3/5/2023","Giresunspor-Alanyaspor","T1","Giresunspor","Alanyaspor","2,ov25,BTTS-Y",-10,-5,"-1","-1","5.4091","4.1818","10.8182","9.7727","0.28","0.57","0.21","0.17"
-"169",6598,"T1","Hatayspor","Sivasspor","3/5/2023","Hatayspor-Sivasspor","T1","Hatayspor","Sivasspor","2,ov25,BTTS-Y",-5,1,"1","1","4.6667","4.5","9.7619","9.1364","0.42","0.35","0.24","0.15"
-"170",6599,"T1","Istanbulspor","Karagumruk","3/5/2023","Istanbulspor-Karagumruk","T1","Istanbulspor","Karagumruk","1X,ov25,BTTS-Y",-2,4,"1","2","4.3636","4.1429","9.7273","9.9048","0.51","0.84","0.19","0.19"
-"171",6600,"T1","Trabzonspor","Kayserispor","3/5/2023","Trabzonspor-Kayserispor","T1","Trabzonspor","Kayserispor","2,ov25,BTTS-Y",0,4,"-1","1","4.8182","4.9545","9.4091","10.2727","0.38","0.6","0.17","0.17"
-"172",6601,"T1","Umraniyespor","Konyaspor","3/5/2023","Umraniyespor-Konyaspor","T1","Umraniyespor","Konyaspor","1X,un25,BTTS-N",-4,-9,"0","-4","4.4545","5.0455","10.5","8.6364","0.42","0.34","0.17","0.22"
-"173",3387,"EC","Aldershot","Notts County","3/7/2023","Aldershot-Notts County","EC","Aldershot","Notts County","2,ov25,BTTS-Y",-4,11,"-3","-1","3","3.3429","0","0","-1","-1","Inf","Inf"
-"174",3388,"EC","Bromley","York","3/7/2023","Bromley-York","EC","Bromley","York","1X,un25,BTTS-Y",3,-5,"1","-1","3.5","3.3235","0","0","-1","-1","Inf","Inf"
-"175",3389,"EC","Dag and Red","Wrexham","3/7/2023","Dag and Red-Wrexham","EC","Dag and Red","Wrexham","2,ov25,BTTS-Y",0,8,"-1","1","2.9412","2.5294","0","0","-1","-1","Inf","Inf"
-"176",3390,"EC","Dorking","Barnet","3/7/2023","Dorking-Barnet","EC","Dorking","Barnet","2,ov25,BTTS-N",-9,-3,"-1","-2","3.3636","3.2424","0","0","-1","-1","Inf","Inf"
-"177",3391,"EC","Gateshead","Halifax","3/7/2023","Gateshead-Halifax","EC","Gateshead","Halifax","1X,un25,BTTS-Y",3,1,"0","5","3.0312","3.6471","0","0","-1","-1","Inf","Inf"
-"178",3392,"EC","Maidenhead","Boreham Wood","3/7/2023","Maidenhead-Boreham Wood","EC","Maidenhead","Boreham Wood","1X,un25,BTTS-Y",2,3,"1","1","3.2353","3.2121","0","0","-1","-1","Inf","Inf"
-"179",3393,"EC","Oldham","Woking","3/7/2023","Oldham-Woking","EC","Oldham","Woking","1X,ov25,BTTS-Y",6,1,"2","0","3.4242","3.9706","0","0","-1","-1","Inf","Inf"
-"180",3394,"EC","Scunthorpe","Altrincham","3/7/2023","Scunthorpe-Altrincham","EC","Scunthorpe","Altrincham","2,ov25,BTTS-Y",-5,5,"0","0","3.1765","2.7059","0","0","-1","-1","Inf","Inf"
-"181",3395,"EC","Solihull","Torquay","3/7/2023","Solihull-Torquay","EC","Solihull","Torquay","1X,ov25,BTTS-Y",-3,-3,"-3","-1","3.3824","3.7576","0","0","-1","-1","Inf","Inf"
-"182",3396,"EC","Southend","Chesterfield","3/7/2023","Southend-Chesterfield","EC","Southend","Chesterfield","1X,un25,BTTS-Y",2,-3,"1","-1","3.875","3.8485","0","0","-1","-1","Inf","Inf"
-"183",3397,"EC","Wealdstone","Maidstone","3/7/2023","Wealdstone-Maidstone","EC","Wealdstone","Maidstone","1X,un25,BTTS-Y",-4,-5,"-5","0","4","2.8571","0","0","-1","-1","Inf","Inf"
-"184",3398,"EC","Yeovil","Eastleigh","3/7/2023","Yeovil-Eastleigh","EC","Yeovil","Eastleigh","2,un25,BTTS-Y",-6,6,"0","1","3.5312","3.7059","0","0","-1","-1","Inf","Inf"
+,X,Div,Home_Team,Away_Team,Date,matchid,picks_Div,picks_HomeTeam,picks_AwayTeam,prediction,HWM,AWM,HWMLM,AWMLM,AVGHY,AVGAY,AVGHCO,AVGACO,HXSC,AXSC,HYCPF,AYCPF
+1,253,B1,Anderlecht,Cercle Brugge,3/11/2023,Anderlecht-Cercle Brugge,B1,Anderlecht,Cercle Brugge,"1X,ov25,BTTS-Y",5,2,0,0,4.5,3.9259,9.5769,10.5556,0.54,0.46,0.17,0.16
+2,254,B1,Charleroi,Oud-Heverlee Leuven,3/11/2023,Charleroi-Oud-Heverlee Leuven,B1,Charleroi,Oud-Heverlee Leuven,"1X,un25,BTTS-N",3,-4,1,0,3.3077,4.3704,9.3846,11.8519,0.47,0.45,0.18,0.17
+3,255,B1,Club Brugge,Standard,3/11/2023,Club Brugge-Standard,B1,Club Brugge,Standard,"1X,ov25,BTTS-Y",3,-1,2,0,4.4074,4.8462,9.5185,10.2308,0.48,0.65,0.21,0.22
+4,256,B1,Eupen,Oostende,3/11/2023,Eupen-Oostende,B1,Eupen,Oostende,"1X,un25,BTTS-N",-3,-6,0,-3,4.4444,3.8519,10.6296,10.1111,0.48,0.3,0.19,0.2
+5,257,B1,Genk,St. Gilloise,3/11/2023,Genk-St. Gilloise,B1,Genk,St. Gilloise,"1X,ov25,BTTS-Y",7,2,3,-2,4,4.9259,10.4074,9.7407,0.75,0.65,0.15,0.21
+6,258,B1,Mechelen,St Truiden,3/11/2023,Mechelen-St Truiden,B1,Mechelen,St Truiden,"1X,un25,BTTS-N",0,-6,2,-1,4.0385,3.4815,11.1538,8.2593,0.44,0.37,0.2,0.15
+7,259,B1,Seraing,Antwerp,3/11/2023,Seraing-Antwerp,B1,Seraing,Antwerp,"2,un25,BTTS-N",-9,6,-2,0,4.3333,4.1852,10.037,9.1111,0.59,0.68,0.21,0.16
+8,260,B1,Waregem,Gent,3/11/2023,Waregem-Gent,B1,Waregem,Gent,"2,ov25,BTTS-Y",-5,1,0,-2,4.4815,3.8148,9.7037,10.0741,0.51,0.52,0.2,0.13
+9,261,B1,Westerlo,Kortrijk,3/11/2023,Westerlo-Kortrijk,B1,Westerlo,Kortrijk,"1X,un25,BTTS-Y",5,0,2,0,3.3333,4.3704,10.4074,10.8889,0.72,0.44,0.17,0.18
+10,514,D1,Bayern Munich,Augsburg,3/11/2023,Bayern Munich-Augsburg,D1,Bayern Munich,Augsburg,"1X,un25,BTTS-Y",7,-3,3,-2,3.0455,4.5909,10.2727,9.4091,0.56,0.49,0.15,0.24
+11,515,D1,Ein Frankfurt,Stuttgart,3/11/2023,Ein Frankfurt-Stuttgart,D1,Ein Frankfurt,Stuttgart,"1X,ov25,BTTS-Y",1,-2,-1,-1,4,4.5455,9.6364,9.4545,0.77,0.39,0.13,0.22
+12,516,D1,FC Koln,Bochum,3/11/2023,FC Koln-Bochum,D1,FC Koln,Bochum,"1X,un25,BTTS-N",-2,-10,-2,-3,3.8636,3.2273,10.8182,8.6818,0.56,0.39,0.19,0.14
+13,517,D1,Freiburg,Hoffenheim,3/11/2023,Freiburg-Hoffenheim,D1,Freiburg,Hoffenheim,"1X,ov25,BTTS-Y",1,-10,0,-1,3.9545,4.1364,8.6364,9.9091,0.44,0.37,0.15,0.19
+14,518,D1,Hertha,Mainz,3/11/2023,Hertha-Mainz,D1,Hertha,Mainz,"2,ov25,BTTS-N",-8,8,2,4,3.5455,4.0909,9.1818,8.6364,0.41,0.55,0.17,0.16
+15,519,D1,RB Leipzig,Mgladbach,3/11/2023,RB Leipzig-Mgladbach,D1,RB Leipzig,Mgladbach,"1X,ov25,BTTS-N",9,-4,1,-4,4.1818,3.9545,8.5455,9.2727,0.62,0.49,0.13,0.14
+16,520,D1,Schalke 04,Dortmund,3/11/2023,Schalke 04-Dortmund,D1,Schalke 04,Dortmund,"2,un25,BTTS-N",-4,13,1,1,4.2273,4.5455,10.6364,11.5455,0.29,0.47,0.16,0.18
+17,521,D1,Werder Bremen,Leverkusen,3/11/2023,Werder Bremen-Leverkusen,D1,Werder Bremen,Leverkusen,"1X,un25,BTTS-Y",1,0,3,0,3.8636,4.8182,8.3636,7.6364,0.57,0.49,0.17,0.18
+18,522,D1,Wolfsburg,Union Berlin,3/11/2023,Wolfsburg-Union Berlin,D1,Wolfsburg,Union Berlin,"2,ov25,BTTS-Y",1,2,2,-3,4.2727,3.4091,10.6364,9.7273,0.71,0.64,0.15,0.13
+19,820,D2,Bielefeld,Darmstadt,3/11/2023,Bielefeld-Darmstadt,D2,Bielefeld,Darmstadt,"2,un25,BTTS-Y",0,8,-1,0,4.2273,5.3182,9.6364,10.1818,0.42,0.54,0.21,0.2
+20,821,D2,Fortuna Dusseldorf,Heidenheim,3/11/2023,Fortuna Dusseldorf-Heidenheim,D2,Fortuna Dusseldorf,Heidenheim,"2,ov25,BTTS-Y",0,7,2,1,4.8636,3.3182,10.0455,9.5,0.42,0.68,0.21,0.17
+21,822,D2,Hannover,Hansa Rostock,3/11/2023,Hannover-Hansa Rostock,D2,Hannover,Hansa Rostock,"2,un25,BTTS-N",-6,-4,-1,-1,5.3182,4.5909,9.9091,10.7727,0.41,0.33,0.18,0.23
+22,823,D2,Holstein Kiel,Regensburg,3/11/2023,Holstein Kiel-Regensburg,D2,Holstein Kiel,Regensburg,"1X,un25,BTTS-N",0,-7,0,-1,4.4545,4.5455,11.4091,9.2727,0.51,0.37,0.2,0.2
+23,824,D2,Kaiserslautern,Sandhausen,3/11/2023,Kaiserslautern-Sandhausen,D2,Kaiserslautern,Sandhausen,"1X,ov25,BTTS-N",4,-11,2,-1,4.3182,4.7273,9.7273,9.1364,0.54,0.39,0.2,0.23
+24,825,D2,Karlsruhe,Hamburg,3/11/2023,Karlsruhe-Hamburg,D2,Karlsruhe,Hamburg,"2,ov25,BTTS-Y",4,7,1,0,3.7273,4.3636,10.2273,10.6364,0.4,0.48,0.17,0.18
+25,826,D2,Magdeburg,Paderborn,3/11/2023,Magdeburg-Paderborn,D2,Magdeburg,Paderborn,"2,ov25,BTTS-Y",-2,5,1,0,5.4091,4.3182,10.9091,9.5,0.45,0.51,0.21,0.17
+26,827,D2,Nurnberg,Braunschweig,3/11/2023,Nurnberg-Braunschweig,D2,Nurnberg,Braunschweig,"1X,un25,BTTS-N",-4,-5,1,-2,4.4545,4.7727,9.5455,10.4545,0.25,0.37,0.18,0.22
+27,828,D2,St Pauli,Greuther Furth,3/11/2023,St Pauli-Greuther Furth,D2,St Pauli,Greuther Furth,"1X,un25,BTTS-Y",6,-2,1,-2,4.4545,5.3636,9.5909,9.8182,0.41,0.39,0.21,0.17
+28,1179,E0,Bournemouth,Liverpool,3/11/2023,Bournemouth-Liverpool,E0,Bournemouth,Liverpool,"2,un25,BTTS-N",-5,3,-3,2,3.25,2.7917,10.625,10.0417,0.4,0.4,0.16,0.14
+29,1180,E0,Crystal Palace,Man City,3/11/2023,Crystal Palace-Man City,E0,Crystal Palace,Man City,"2,un25,BTTS-Y",-1,9,0,3,4.25,3.32,9.4583,9.04,0.34,0.76,0.18,0.11
+30,1181,E0,Everton,Brentford,3/11/2023,Everton-Brentford,E0,Everton,Brentford,"2,un25,BTTS-N",-8,7,-4,0,4.2,3,10.64,10,0.23,0.62,0.23,0.15
+31,1182,E0,Fulham,Arsenal,3/11/2023,Fulham-Arsenal,E0,Fulham,Arsenal,"2,un25,BTTS-N",1,4,0,4,3.76,3.72,10.28,9.48,0.54,0.76,0.25,0.14
+32,1183,E0,Leeds,Brighton,3/11/2023,Leeds-Brighton,E0,Leeds,Brighton,"2,un25,BTTS-N",-3,6,1,-1,4.0417,3.8636,9.9167,9.9545,0.46,0.44,0.18,0.14
+33,1184,E0,Leicester,Chelsea,3/11/2023,Leicester-Chelsea,E0,Leicester,Chelsea,"1X,un25,BTTS-N",-1,-2,-1,-2,2.7917,3.9583,9.8333,10.375,0.61,0.33,0.13,0.17
+34,1185,E0,Man United,Southampton,3/11/2023,Man United-Southampton,E0,Man United,Southampton,"1X,ov25,BTTS-N",5,-4,3,-1,3.5833,3.625,10,9.4167,0.47,0.27,0.24,0.18
+35,1186,E0,Newcastle,Wolves,3/11/2023,Newcastle-Wolves,E0,Newcastle,Wolves,"1X,un25,BTTS-N",-1,-2,-2,-2,3.8696,3.84,11.2174,9.8,0.44,0.3,0.16,0.19
+36,1187,E0,Tottenham,Nottm Forest,3/11/2023,Tottenham-Nottm Forest,E0,Tottenham,Nottm Forest,"1X,un25,BTTS-Y",1,-3,2,-4,4.16,3.7083,10.28,9.5833,0.52,0.34,0.18,0.19
+37,1188,E0,West Ham,Aston Villa,3/11/2023,West Ham-Aston Villa,E0,West Ham,Aston Villa,"2,un25,BTTS-Y",3,-2,4,2,2.8333,3.75,10.0833,9.4583,0.36,0.43,0.13,0.17
+38,1719,E1,Birmingham,Rotherham,3/11/2023,Birmingham-Rotherham,E1,Birmingham,Rotherham,"1X,un25,BTTS-N",-3,-2,-1,0,3.9706,3.5882,9.6471,9.6176,0.57,0.63,0.18,0.22
+39,1720,E1,Bristol City,Blackpool,3/11/2023,Bristol City-Blackpool,E1,Bristol City,Blackpool,"1X,un25,BTTS-Y",3,-3,1,-2,3.6364,3.6471,10.7879,10.3824,0.75,0.47,0.17,0.16
+40,1721,E1,Burnley,Wigan,3/11/2023,Burnley-Wigan,E1,Burnley,Wigan,"1X,un25,BTTS-N",11,-2,4,-1,3.9412,3.697,9.8824,9,0.72,0.48,0.18,0.18
+41,1722,E1,Coventry,Hull,3/11/2023,Coventry-Hull,E1,Coventry,Hull,"1X,un25,BTTS-N",3,1,0,-1,4.1176,3.3235,9.8529,10.2059,0.36,0.58,0.2,0.19
+42,1723,E1,Norwich,Sunderland,3/11/2023,Norwich-Sunderland,E1,Norwich,Sunderland,"1X,un25,BTTS-N",2,2,2,-1,4,4.4706,10.4706,9.7059,0.45,0.53,0.17,0.19
+43,1724,E1,Preston,Cardiff,3/11/2023,Preston-Cardiff,E1,Preston,Cardiff,"1X,un25,BTTS-N",-3,-3,0,-2,4.3824,4.1471,9.5294,9.7353,0.37,0.31,0.2,0.19
+44,1725,E1,QPR,Watford,3/11/2023,QPR-Watford,E1,QPR,Watford,"2,ov25,BTTS-Y",-11,-2,-2,-1,3.7941,4.5294,10.1765,10.3529,0.38,0.46,0.15,0.18
+45,1726,E1,Reading,Millwall,3/11/2023,Reading-Millwall,E1,Reading,Millwall,"2,ov25,BTTS-N",-3,2,2,0,3.5758,3.2941,9.6364,8.7647,0.55,0.45,0.19,0.18
+46,1727,E1,Sheffield United,Luton,3/11/2023,Sheffield United-Luton,E1,Sheffield United,Luton,"1X,un25,BTTS-Y",2,1,1,0,4.303,3.5882,10.9091,11.1471,0.45,0.49,0.22,0.17
+47,1728,E1,Stoke,Blackburn,3/11/2023,Stoke-Blackburn,E1,Stoke,Blackburn,"2,un25,BTTS-N",2,4,-1,2,4.1176,4.0588,10.9118,9.5588,0.36,0.53,0.16,0.21
+48,1729,E1,Swansea,Middlesbrough,3/11/2023,Swansea-Middlesbrough,E1,Swansea,Middlesbrough,"2,ov25,BTTS-Y",-6,9,0,-2,4.2647,3.8235,9.9118,10.5588,0.42,0.64,0.21,0.2
+49,1730,E1,West Brom,Huddersfield,3/11/2023,West Brom-Huddersfield,E1,West Brom,Huddersfield,"1X,un25,BTTS-N",-1,-7,2,-4,3.4545,3.5152,11.4848,9.1515,0.45,0.34,0.16,0.21
+50,2271,E2,Barnsley,Plymouth,3/11/2023,Barnsley-Plymouth,E2,Barnsley,Plymouth,"1X,ov25,BTTS-Y",12,2,3,-3,3.6452,3.2424,10.2903,10.2727,0.7,0.54,0.18,0.15
+51,2272,E2,Bolton,Ipswich,3/11/2023,Bolton-Ipswich,E2,Bolton,Ipswich,"1X,ov25,BTTS-Y",9,9,-2,1,3.6,3.2424,10,10.6667,0.63,0.42,0.15,0.15
+52,2273,E2,Burton,Wycombe,3/11/2023,Burton-Wycombe,E2,Burton,Wycombe,"2,un25,BTTS-Y",4,7,0,-2,2.4688,3.125,11.2188,12.125,0.49,0.41,0.14,0.17
+53,2274,E2,Charlton,Accrington,3/11/2023,Charlton-Accrington,E2,Charlton,Accrington,"1X,un25,BTTS-N",-2,-4,0,0,3.1818,4.4516,10.2121,10.5161,0.53,0.33,0.13,0.2
+54,2275,E2,Exeter,Lincoln,3/11/2023,Exeter-Lincoln,E2,Exeter,Lincoln,"2,un25,BTTS-N",1,4,2,0,3.0909,3.6562,11.7576,9.5938,0.56,0.41,0.18,0.17
+55,2276,E2,Fleetwood Town,Port Vale,3/11/2023,Fleetwood Town-Port Vale,E2,Fleetwood Town,Port Vale,"1X,un25,BTTS-Y",3,-4,1,-1,4.4545,3.2353,10.3939,10.1765,0.46,0.38,0.19,0.16
+56,2277,E2,Forest Green,Bristol Rvs,3/11/2023,Forest Green-Bristol Rvs,E2,Forest Green,Bristol Rvs,"2,un25,BTTS-N",-8,-5,0,3,3.9706,4,10.6471,11.0606,0.33,0.56,0.2,0.17
+57,2278,E2,Milton Keynes Dons,Cambridge,3/11/2023,Milton Keynes Dons-Cambridge,E2,Milton Keynes Dons,Cambridge,"1X,un25,BTTS-N",-7,-5,0,-2,3.2941,3.8485,9,9.5758,0.36,0.37,0.18,0.17
+58,2279,E2,Oxford,Derby,3/11/2023,Oxford-Derby,E2,Oxford,Derby,"2,un25,BTTS-N",-8,5,-3,2,4.3824,3.6364,10.5588,10.3636,0.33,0.45,0.15,0.17
+59,2280,E2,Peterboro,Cheltenham,3/11/2023,Peterboro-Cheltenham,E2,Peterboro,Cheltenham,"1X,un25,BTTS-N",2,-10,0,-2,3.3125,3.4848,10.25,8.9091,0.48,0.34,0.11,0.22
+60,2281,E2,Portsmouth,Sheffield Weds,3/11/2023,Portsmouth-Sheffield Weds,E2,Portsmouth,Sheffield Weds,"2,un25,BTTS-Y",5,9,2,1,3.9688,3.1562,10.0625,8.8438,0.5,0.63,0.13,0.14
+61,2282,E2,Shrewsbury,Morecambe,3/11/2023,Shrewsbury-Morecambe,E2,Shrewsbury,Morecambe,"1X,un25,BTTS-N",4,-11,2,-1,3.8182,3.3636,10.697,10.4848,0.68,0.47,0.18,0.19
+62,2823,E3,Barrow,Sutton,3/11/2023,Barrow-Sutton,E3,Barrow,Sutton,"2,un25,BTTS-Y",0,6,0,2,3.9118,3.4848,9.0882,9.8485,0.47,0.37,0.15,0.15
+63,2824,E3,Colchester,Stockport,3/11/2023,Colchester-Stockport,E3,Colchester,Stockport,"2,un25,BTTS-N",0,6,-1,-1,3.9706,2.8182,9.6765,9.1818,0.41,0.52,0.16,0.08
+64,2825,E3,Crawley Town,Harrogate,3/11/2023,Crawley Town-Harrogate,E3,Crawley Town,Harrogate,"2,un25,BTTS-N",-7,-5,-1,0,2.5806,2.9394,9.9677,10.2424,0.61,0.49,0.13,0.16
+65,2826,E3,Crewe,Salford,3/11/2023,Crewe-Salford,E3,Crewe,Salford,"2,un25,BTTS-Y",0,2,0,0,2.9688,3.3529,10.6562,9.5,0.5,0.56,0.14,0.15
+66,2827,E3,Doncaster,AFC Wimbledon,3/11/2023,Doncaster-AFC Wimbledon,E3,Doncaster,AFC Wimbledon,"1X,un25,BTTS-N",1,-3,-1,-1,2.9062,4.697,8.9062,9.8485,0.53,0.41,0.13,0.18
+67,2828,E3,Gillingham,Tranmere,3/11/2023,Gillingham-Tranmere,E3,Gillingham,Tranmere,"1X,un25,BTTS-N",1,-3,-2,1,3.2812,2.8235,8.6875,9.7059,0.31,0.36,0.15,0.14
+68,2829,E3,Grimsby,Rochdale,3/11/2023,Grimsby-Rochdale,E3,Grimsby,Rochdale,"1X,ov25,BTTS-Y",2,-5,0,0,3.1333,3.4412,9.4,9.3529,0.32,0.34,0.16,0.18
+69,2830,E3,Hartlepool,Northampton,3/11/2023,Hartlepool-Northampton,E3,Hartlepool,Northampton,"2,un25,BTTS-Y",-2,0,0,0,2.8824,3.7576,9.0294,9.0909,0.55,0.49,0.18,0.16
+70,2831,E3,Mansfield,Leyton Orient,3/11/2023,Mansfield-Leyton Orient,E3,Mansfield,Leyton Orient,"2,un25,BTTS-Y",8,5,-3,0,3.6875,3.4412,9.5938,8.6765,0.51,0.53,0.15,0.17
+71,2832,E3,Newport County,Bradford,3/11/2023,Newport County-Bradford,E3,Newport County,Bradford,"2,un25,BTTS-Y",1,5,-2,2,3.4062,3.25,8.625,10.5312,0.34,0.45,0.17,0.16
+72,2833,E3,Stevenage,Walsall,3/11/2023,Stevenage-Walsall,E3,Stevenage,Walsall,"2,un25,BTTS-N",-3,0,1,0,3.4375,3.2258,8.4062,8.9032,0.47,0.46,0.16,0.18
+73,2834,E3,Swindon,Carlisle,3/11/2023,Swindon-Carlisle,E3,Swindon,Carlisle,"2,ov25,BTTS-N",0,3,3,3,3.6875,2.9697,10.5312,9.6061,0.41,0.57,0.18,0.16
+74,3399,EC,Altrincham,Dag and Red,3/11/2023,Altrincham-Dag and Red,EC,Altrincham,Dag and Red,"1X,ov25,BTTS-Y",5,0,0,-1,2.7059,2.9412,0,0,-1,-1,Inf,Inf
+75,3400,EC,Barnet,Solihull,3/11/2023,Barnet-Solihull,EC,Barnet,Solihull,"1X,ov25,BTTS-Y",-3,-3,-2,-3,3.2424,3.3824,0,0,-1,-1,Inf,Inf
+76,3401,EC,Boreham Wood,Gateshead,3/11/2023,Boreham Wood-Gateshead,EC,Boreham Wood,Gateshead,"2,un25,BTTS-Y",3,3,1,0,3.2121,3.0312,0,0,-1,-1,Inf,Inf
+77,3402,EC,Chesterfield,Yeovil,3/11/2023,Chesterfield-Yeovil,EC,Chesterfield,Yeovil,"1X,un25,BTTS-Y",-3,-6,-1,0,3.8485,3.5312,0,0,-1,-1,Inf,Inf
+78,3403,EC,Eastleigh,Oldham,3/11/2023,Eastleigh-Oldham,EC,Eastleigh,Oldham,"1X,un25,BTTS-Y",6,6,1,2,3.7059,3.4242,0,0,-1,-1,Inf,Inf
+79,3404,EC,Halifax,Aldershot,3/11/2023,Halifax-Aldershot,EC,Halifax,Aldershot,"1X,un25,BTTS-Y",1,-4,5,-3,3.6471,3,0,0,-1,-1,Inf,Inf
+80,3405,EC,Maidstone,Bromley,3/11/2023,Maidstone-Bromley,EC,Maidstone,Bromley,"2,un25,BTTS-Y",-5,3,0,1,2.8571,3.5,0,0,-1,-1,Inf,Inf
+81,3406,EC,Notts County,Dorking,3/11/2023,Notts County-Dorking,EC,Notts County,Dorking,"1X,ov25,BTTS-N",11,-9,-1,-1,3.3429,3.3636,0,0,-1,-1,Inf,Inf
+82,3407,EC,Torquay,Wealdstone,3/11/2023,Torquay-Wealdstone,EC,Torquay,Wealdstone,"2,ov25,BTTS-Y",-3,-4,-1,-5,3.7576,4,0,0,-1,-1,Inf,Inf
+83,3408,EC,Woking,Maidenhead,3/11/2023,Woking-Maidenhead,EC,Woking,Maidenhead,"2,ov25,BTTS-Y",1,2,0,1,3.9706,3.2353,0,0,-1,-1,Inf,Inf
+84,3409,EC,Wrexham,Southend,3/11/2023,Wrexham-Southend,EC,Wrexham,Southend,"1X,ov25,BTTS-Y",8,2,1,1,2.5294,3.875,0,0,-1,-1,Inf,Inf
+85,3410,EC,York,Scunthorpe,3/11/2023,York-Scunthorpe,EC,York,Scunthorpe,"2,un25,BTTS-Y",-5,-5,-1,0,3.3235,3.1765,0,0,-1,-1,Inf,Inf
+86,4121,F2,Grenoble,Annecy,3/11/2023,Grenoble-Annecy,F2,Grenoble,Annecy,"1X,un25,BTTS-Y",1,-1,0,-4,3.72,4.36,8.4,7.56,0.45,0.56,0.14,0.18
+87,4122,F2,Guingamp,Dijon,3/11/2023,Guingamp-Dijon,F2,Guingamp,Dijon,"1X,un25,BTTS-N",-1,-7,-1,0,4.2,4.76,7.76,9.16,0.43,0.4,0.13,0.17
+88,4123,F2,Laval,Paris FC,3/11/2023,Laval-Paris FC,F2,Laval,Paris FC,"1X,un25,BTTS-N",-1,-3,-1,3,3.8,3.3333,8.8,9,0.48,0.31,0.16,0.14
+89,4124,F2,Metz,Le Havre,3/11/2023,Metz-Le Havre,F2,Metz,Le Havre,"1X,un25,BTTS-Y",4,2,2,0,3.48,5,9.04,8.52,0.51,0.61,0.16,0.15
+90,4125,F2,Nimes,Quevilly Rouen,3/11/2023,Nimes-Quevilly Rouen,F2,Nimes,Quevilly Rouen,"2,un25,BTTS-Y",-3,5,-2,1,3.24,4.08,8.36,7.52,0.34,0.41,0.13,0.12
+91,4126,F2,Pau FC,Niort,3/11/2023,Pau FC-Niort,F2,Pau FC,Niort,"2,un25,BTTS-N",-4,-4,-2,-3,3.76,3.16,8.76,8.72,0.36,0.33,0.16,0.14
+92,4127,F2,Rodez,Caen,3/11/2023,Rodez-Caen,F2,Rodez,Caen,"2,un25,BTTS-N",-4,2,-2,1,4.2,4.6,9,8.24,0.35,0.49,0.15,0.14
+93,4128,F2,St Etienne,Amiens,3/11/2023,St Etienne-Amiens,F2,St Etienne,Amiens,"1X,un25,BTTS-Y",3,-3,2,-1,4.76,3.4583,10.44,10.125,0.48,0.4,0.16,0.14
+94,4129,F2,Valenciennes,Bastia,3/11/2023,Valenciennes-Bastia,F2,Valenciennes,Bastia,"2,un25,BTTS-Y",-4,2,0,2,3.4,4.44,8.08,9.16,0.36,0.3,0.12,0.17
+95,5554,SC1,Cove Rangers,Queens Park,3/11/2023,Cove Rangers-Queens Park,SC1,Cove Rangers,Queens Park,"2,ov25,BTTS-Y",-8,1,-1,3,2.8846,2,6.9038,8.9231,0.52,0.6,0.24,0.14
+96,5555,SC1,Dundee,Ayr,3/11/2023,Dundee-Ayr,SC1,Dundee,Ayr,"1X,un25,BTTS-N",3,3,-2,0,2.4808,2.3,8.2692,8.18,0.55,0.53,0.13,0.16
+97,5556,SC1,Inverness C,Arbroath,3/11/2023,Inverness C-Arbroath,SC1,Inverness C,Arbroath,"2,ov25,BTTS-Y",-4,-3,0,0,2.1346,2.6346,7.8846,7.0962,0.53,0.42,0.17,0.22
+98,5557,SC1,Morton,Partick,3/11/2023,Morton-Partick,SC1,Morton,Partick,"1X,un25,BTTS-N",1,2,1,2,3.5,2.3462,8.28,7.0192,0.6,0.61,0.22,0.16
+99,5558,SC1,Raith Rvs,Hamilton,3/11/2023,Raith Rvs-Hamilton,SC1,Raith Rvs,Hamilton,"2,un25,BTTS-Y",1,3,0,-3,2.6538,2.9423,6.7692,8.0385,0.38,0.33,0.19,0.17
+100,3767,F1,Ajaccio,Montpellier,3/12/2023,Ajaccio-Montpellier,F1,Ajaccio,Montpellier,"2,un25,BTTS-N",-8,2,1,0,4.12,4.04,7.88,9.64,0.37,0.56,0.16,0.15
+101,3768,F1,Angers,Toulouse,3/12/2023,Angers-Toulouse,F1,Angers,Toulouse,"2,ov25,BTTS-Y",-8,1,-2,-3,3.8,3.24,9.08,10.16,0.31,0.49,0.15,0.12
+102,3769,F1,Auxerre,Rennes,3/12/2023,Auxerre-Rennes,F1,Auxerre,Rennes,"2,un25,BTTS-Y",-1,1,1,1,2.96,2.8,9.08,8.48,0.37,0.5,0.14,0.15
+103,3770,F1,Brest,Paris SG,3/12/2023,Brest-Paris SG,F1,Brest,Paris SG,"2,ov25,BTTS-Y",-1,5,-1,3,3.72,3.08,10.64,8.8,0.41,0.57,0.14,0.16
+104,3771,F1,Clermont,Lens,3/12/2023,Clermont-Lens,F1,Clermont,Lens,"2,un25,BTTS-N",-6,0,0,0,3.88,3.92,7.64,9.48,0.38,0.49,0.17,0.12
+105,3772,F1,Lille,Lyon,3/12/2023,Lille-Lyon,F1,Lille,Lyon,"2,ov25,BTTS-Y",3,6,1,2,3.96,3.08,9.16,9.48,0.43,0.39,0.16,0.12
+106,3773,F1,Lorient,Troyes,3/12/2023,Lorient-Troyes,F1,Lorient,Troyes,"1X,ov25,BTTS-N",0,-11,-1,-1,3.44,3.12,9.56,9.92,0.5,0.53,0.1,0.16
+107,3774,F1,Marseille,Strasbourg,3/12/2023,Marseille-Strasbourg,F1,Marseille,Strasbourg,"1X,un25,BTTS-Y",0,-3,-3,0,3.36,3.72,10.16,8.48,0.57,0.45,0.14,0.16
+108,3775,F1,Monaco,Reims,3/12/2023,Monaco-Reims,F1,Monaco,Reims,"1X,ov25,BTTS-Y",3,9,-3,3,3.36,3.8,8.72,9.08,0.6,0.38,0.15,0.16
+109,3776,F1,Nantes,Nice,3/12/2023,Nantes-Nice,F1,Nantes,Nice,"2,un25,BTTS-N",-2,10,-1,3,3.6,2.76,9.88,8.76,0.34,0.42,0.14,0.16
+110,4479,I1,Milan,Salernitana,3/12/2023,Milan-Salernitana,I1,Milan,Salernitana,"1X,un25,BTTS-N",-4,-4,2,3,6.0833,4.375,8.7083,8.2917,0.52,0.56,0.2,0.2
+111,4480,I1,Roma,Sassuolo,3/12/2023,Roma-Sassuolo,I1,Roma,Sassuolo,"2,un25,BTTS-Y",3,3,-1,1,5.2083,4.75,8.5,8.9167,0.41,0.35,0.14,0.2
+112,4481,I1,Bologna,Lazio,3/12/2023,Bologna-Lazio,I1,Bologna,Lazio,"1X,un25,BTTS-Y",4,5,1,1,4.7917,4.5833,8.5,9.5833,0.49,0.65,0.22,0.17
+113,4482,I1,Cremonese,Fiorentina,3/12/2023,Cremonese-Fiorentina,I1,Cremonese,Fiorentina,"1X,un25,BTTS-Y",-5,0,1,3,4.0417,5.2083,9.3333,9.5833,0.32,0.3,0.2,0.2
+114,4483,I1,Empoli,Udinese,3/12/2023,Empoli-Udinese,I1,Empoli,Udinese,"1X,un25,BTTS-Y",-3,-2,-2,0,4.7917,4.5417,10.7083,10.4167,0.33,0.5,0.21,0.18
+115,4484,I1,Juventus,Sampdoria,3/12/2023,Juventus-Sampdoria,I1,Juventus,Sampdoria,"1X,un25,BTTS-N",6,-5,2,-1,3.9583,5.2917,9.625,8.375,0.53,0.17,0.17,0.23
+116,4485,I1,Lecce,Torino,3/12/2023,Lecce-Torino,I1,Lecce,Torino,"2,un25,BTTS-Y",-1,-1,-1,-2,4.7917,4.0417,10.125,8.625,0.56,0.39,0.18,0.22
+117,4486,I1,Napoli,Atalanta,3/12/2023,Napoli-Atalanta,I1,Napoli,Atalanta,"1X,un25,BTTS-Y",13,0,2,-2,4.125,4.7917,9.9167,8.5417,0.65,0.58,0.12,0.21
+118,4487,I1,Spezia,Inter,3/12/2023,Spezia-Inter,I1,Spezia,Inter,"2,un25,BTTS-N",-9,2,0,-1,4.5833,4.4583,10.0417,9.125,0.36,0.57,0.23,0.16
+119,4488,I1,Verona,Monza,3/12/2023,Verona-Monza,I1,Verona,Monza,"1X,un25,BTTS-Y",-1,-1,-3,-3,4.875,4.2083,10.125,9.125,0.38,0.49,0.24,0.18
+120,4825,N1,AZ Alkmaar,Groningen,3/12/2023,AZ Alkmaar-Groningen,N1,AZ Alkmaar,Groningen,"1X,ov25,BTTS-Y",8,-5,1,3,2.913,2.5652,8.9565,10.7826,0.53,0.47,0.19,0.16
+121,4826,N1,FC Emmen,Excelsior,3/12/2023,FC Emmen-Excelsior,N1,FC Emmen,Excelsior,"1X,un25,BTTS-N",-2,-15,0,-3,3.0435,2.6087,10.0435,10.3478,0.33,0.42,0.15,0.15
+122,4827,N1,Feyenoord,Volendam,3/12/2023,Feyenoord-Volendam,N1,Feyenoord,Volendam,"1X,ov25,BTTS-Y",6,-3,2,-3,3.2174,2.4348,11.7391,12,0.43,0.36,0.14,0.14
+123,4828,N1,Go Ahead Eagles,Waalwijk,3/12/2023,Go Ahead Eagles-Waalwijk,N1,Go Ahead Eagles,Waalwijk,"2,ov25,BTTS-Y",-2,7,0,3,3.4783,3.1739,10.5652,10.913,0.61,0.59,0.14,0.19
+124,4829,N1,Heerenveen,Ajax,3/12/2023,Heerenveen-Ajax,N1,Heerenveen,Ajax,"2,ov25,BTTS-Y",-8,15,-3,1,2.9565,3.2609,9.8261,10.6957,0.32,0.67,0.17,0.15
+125,4830,N1,Nijmegen,Utrecht,3/12/2023,Nijmegen-Utrecht,N1,Nijmegen,Utrecht,"2,un25,BTTS-N",3,3,3,3,3.6087,2.8261,11.5652,10.4783,0.37,0.44,0.14,0.17
+126,4831,N1,PSV Eindhoven,Cambuur,3/12/2023,PSV Eindhoven-Cambuur,N1,PSV Eindhoven,Cambuur,"1X,ov25,BTTS-Y",9,-7,2,-1,2.7391,3.3478,10.9565,11.087,0.55,0.18,0.15,0.15
+127,4832,N1,For Sittard,Twente,3/12/2023,For Sittard-Twente,N1,For Sittard,Twente,"1X,un25,BTTS-Y",0,-1,-2,-2,3.2609,2.7826,11.3913,10.8261,0.47,0.44,0.2,0.13
+128,4833,N1,Sparta Rotterdam,Vitesse,3/12/2023,Sparta Rotterdam-Vitesse,N1,Sparta Rotterdam,Vitesse,"2,ov25,BTTS-N",-6,1,-3,-1,2.3913,2.6087,9.3043,11.3913,0.52,0.32,0.12,0.14
+129,5122,P1,Chaves,Portimonense,3/12/2023,Chaves-Portimonense,P1,Chaves,Portimonense,"2,un25,BTTS-N",-2,-6,-1,-1,6.7273,5.5,11.5455,11.2273,0.3,0.26,0.21,0.2
+130,5123,P1,Famalicao,Casa Pia,3/12/2023,Famalicao-Casa Pia,P1,Famalicao,Casa Pia,"1X,un25,BTTS-N",0,-6,1,-2,5.5909,5.0909,9.5,9.5455,0.39,0.35,0.15,0.23
+131,5124,P1,Porto,Estoril,3/12/2023,Porto-Estoril,P1,Porto,Estoril,"1X,un25,BTTS-N",6,-7,-1,-2,5.9545,5.9091,9.3182,11.2727,0.61,0.31,0.14,0.18
+132,5125,P1,Maritimo,Benfica,3/12/2023,Maritimo-Benfica,P1,Maritimo,Benfica,"2,ov25,BTTS-Y",-2,15,2,2,5.5455,4.7273,10.7727,11.2727,0.3,0.65,0.18,0.16
+133,5126,P1,Pacos Ferreira,Santa Clara,3/12/2023,Pacos Ferreira-Santa Clara,P1,Pacos Ferreira,Santa Clara,"1X,ov25,BTTS-Y",-3,-9,-2,-2,6.4091,6.1364,12.5,10.3182,0.22,0.31,0.21,0.22
+134,5127,P1,Rio Ave,Gil Vicente,3/12/2023,Rio Ave-Gil Vicente,P1,Rio Ave,Gil Vicente,"2,un25,BTTS-N",-1,3,1,1,5.6818,5.5455,9.8636,10.9545,0.46,0.3,0.2,0.18
+135,5128,P1,Sp Lisbon,Boavista,3/12/2023,Sp Lisbon-Boavista,P1,Sp Lisbon,Boavista,"1X,ov25,BTTS-Y",9,1,2,2,5.6818,6,10,11,0.55,0.6,0.22,0.25
+136,5129,P1,Guimaraes,Arouca,3/12/2023,Guimaraes-Arouca,P1,Guimaraes,Arouca,"1X,un25,BTTS-Y",3,2,1,2,7.2727,5,9.4091,9.6818,0.41,0.42,0.24,0.2
+137,5130,P1,Vizela,Sp Braga,3/12/2023,Vizela-Sp Braga,P1,Vizela,Sp Braga,"2,ov25,BTTS-N",-3,1,-2,-1,7.2273,5.7273,11.6364,10.1818,0.26,0.49,0.28,0.2
+138,5839,SP1,Ath Bilbao,Barcelona,3/12/2023,Ath Bilbao-Barcelona,SP1,Ath Bilbao,Barcelona,"2,un25,BTTS-N",-1,7,-1,-1,4.7391,5.1739,9.087,9.0435,0.52,0.57,0.14,0.19
+139,5840,SP1,Cadiz,Getafe,3/12/2023,Cadiz-Getafe,SP1,Cadiz,Getafe,"1X,un25,BTTS-Y",-1,-2,1,-1,5.4783,5.7826,8.913,8.4348,0.4,0.42,0.22,0.23
+140,5841,SP1,Celta,Vallecano,3/12/2023,Celta-Vallecano,SP1,Celta,Vallecano,"1X,un25,BTTS-Y",3,0,3,-1,5.087,5.6957,8.913,9.7391,0.37,0.41,0.16,0.19
+141,5842,SP1,Elche,Valladolid,3/12/2023,Elche-Valladolid,SP1,Elche,Valladolid,"2,ov25,BTTS-N",-7,-5,-1,-3,5.1304,4.1304,10.0435,10.4348,0.33,0.22,0.25,0.17
+142,5843,SP1,Girona,Ath Madrid,3/12/2023,Girona-Ath Madrid,SP1,Girona,Ath Madrid,"2,un25,BTTS-N",2,6,1,0,5.2609,5.4783,8.2609,9.6087,0.53,0.39,0.18,0.23
+143,5844,SP1,Mallorca,Sociedad,3/12/2023,Mallorca-Sociedad,SP1,Mallorca,Sociedad,"1X,un25,BTTS-N",-1,1,-1,-1,6.4348,5.3478,8.3913,9.0435,0.39,0.38,0.24,0.19
+144,5845,SP1,Real Madrid,Espanol,3/12/2023,Real Madrid-Espanol,SP1,Real Madrid,Espanol,"1X,un25,BTTS-Y",7,0,0,1,4.5217,5.5217,10.3043,9.1739,0.53,0.54,0.15,0.18
+145,5846,SP1,Sevilla,Almeria,3/12/2023,Sevilla-Almeria,SP1,Sevilla,Almeria,"1X,ov25,BTTS-Y",2,-4,-1,1,6.1304,5.1739,9.3478,10,0.38,0.39,0.28,0.23
+146,5847,SP1,Valencia,Osasuna,3/12/2023,Valencia-Osasuna,SP1,Valencia,Osasuna,"2,un25,BTTS-N",-5,-2,1,1,6.3478,5,10.6087,8.9565,0.39,0.34,0.22,0.23
+147,5848,SP1,Villarreal,Betis,3/12/2023,Villarreal-Betis,SP1,Villarreal,Betis,"2,ov25,BTTS-Y",-4,2,1,1,4.9565,5.2174,10.3478,9.1739,0.33,0.48,0.17,0.17
+148,6219,SP2,Ath Bilbao,Barcelona,3/12/2023,Ath Bilbao-Barcelona,SP1,Ath Bilbao,Barcelona,"2,un25,BTTS-N",-1,7,-1,-1,4.7391,5.1739,9.087,9.0435,0.52,0.57,0.14,0.19
+149,6220,SP2,Cadiz,Getafe,3/12/2023,Cadiz-Getafe,SP1,Cadiz,Getafe,"1X,un25,BTTS-Y",-1,-2,1,-1,5.4783,5.7826,8.913,8.4348,0.4,0.42,0.22,0.23
+150,6221,SP2,Celta,Vallecano,3/12/2023,Celta-Vallecano,SP1,Celta,Vallecano,"1X,un25,BTTS-Y",3,0,3,-1,5.087,5.6957,8.913,9.7391,0.37,0.41,0.16,0.19
+151,6222,SP2,Elche,Valladolid,3/12/2023,Elche-Valladolid,SP1,Elche,Valladolid,"2,ov25,BTTS-N",-7,-5,-1,-3,5.1304,4.1304,10.0435,10.4348,0.33,0.22,0.25,0.17
+152,6223,SP2,Girona,Ath Madrid,3/12/2023,Girona-Ath Madrid,SP1,Girona,Ath Madrid,"2,un25,BTTS-N",2,6,1,0,5.2609,5.4783,8.2609,9.6087,0.53,0.39,0.18,0.23
+153,6224,SP2,Mallorca,Sociedad,3/12/2023,Mallorca-Sociedad,SP1,Mallorca,Sociedad,"1X,un25,BTTS-N",-1,1,-1,-1,6.4348,5.3478,8.3913,9.0435,0.39,0.38,0.24,0.19
+154,6225,SP2,Real Madrid,Espanol,3/12/2023,Real Madrid-Espanol,SP1,Real Madrid,Espanol,"1X,un25,BTTS-Y",7,0,0,1,4.5217,5.5217,10.3043,9.1739,0.53,0.54,0.15,0.18
+155,6226,SP2,Sevilla,Almeria,3/12/2023,Sevilla-Almeria,SP1,Sevilla,Almeria,"1X,ov25,BTTS-Y",2,-4,-1,1,6.1304,5.1739,9.3478,10,0.38,0.39,0.28,0.23
+156,6227,SP2,Valencia,Osasuna,3/12/2023,Valencia-Osasuna,SP1,Valencia,Osasuna,"2,un25,BTTS-N",-5,-2,1,1,6.3478,5,10.6087,8.9565,0.39,0.34,0.22,0.23
+157,6228,SP2,Villarreal,Betis,3/12/2023,Villarreal-Betis,SP1,Villarreal,Betis,"2,ov25,BTTS-Y",-4,2,1,1,4.9565,5.2174,10.3478,9.1739,0.33,0.48,0.17,0.17
+158,6602,T1,Ad. Demirspor,Gaziantep,3/12/2023,Ad. Demirspor-Gaziantep,T1,Ad. Demirspor,Gaziantep,"1X,un25,BTTS-Y",2,2,0,-1,4.9091,5.3182,9.6364,9.6818,0.45,0.49,0.15,0.26
+159,6603,T1,Alanyaspor,Hatayspor,3/12/2023,Alanyaspor-Hatayspor,T1,Alanyaspor,Hatayspor,"2,ov25,BTTS-Y",-5,-5,-1,1,4.1818,4.6667,9.7727,9.7619,0.57,0.42,0.17,0.24
+160,6604,T1,Ankaragucu,Istanbulspor,3/12/2023,Ankaragucu-Istanbulspor,T1,Ankaragucu,Istanbulspor,"2,un25,BTTS-Y",-5,-2,-2,1,4.0952,4.3636,9.7143,9.7273,0.41,0.51,0.17,0.19
+161,6605,T1,Besiktas,Giresunspor,3/12/2023,Besiktas-Giresunspor,T1,Besiktas,Giresunspor,"1X,un25,BTTS-Y",5,-10,0,-1,4.9545,5.4091,9.8636,10.8182,0.53,0.28,0.15,0.21
+162,6606,T1,Karagumruk,Fenerbahce,3/12/2023,Karagumruk-Fenerbahce,T1,Karagumruk,Fenerbahce,"2,ov25,BTTS-Y",4,7,2,4,4.1429,5.5909,9.9048,8.0909,0.84,0.77,0.19,0.16
+163,6607,T1,Kasimpasa,Trabzonspor,3/12/2023,Kasimpasa-Trabzonspor,T1,Kasimpasa,Trabzonspor,"2,ov25,BTTS-Y",-4,0,-1,-1,4.9545,4.8182,11.0455,9.4091,0.42,0.38,0.22,0.17
+164,6608,T1,Kayserispor,Umraniyespor,3/12/2023,Kayserispor-Umraniyespor,T1,Kayserispor,Umraniyespor,"1X,ov25,BTTS-Y",4,-4,1,0,4.9545,4.4545,10.2727,10.5,0.6,0.42,0.17,0.17
+165,6609,T1,Konyaspor,Antalyaspor,3/12/2023,Konyaspor-Antalyaspor,T1,Konyaspor,Antalyaspor,"2,un25,BTTS-N",-9,-1,-4,0,5.0455,4.9545,8.6364,8.6364,0.34,0.44,0.22,0.18
+166,6610,T1,Sivasspor,Buyuksehyr,3/12/2023,Sivasspor-Buyuksehyr,T1,Sivasspor,Buyuksehyr,"1X,ov25,BTTS-Y",1,3,1,-1,4.5,4.1429,9.1364,9,0.35,0.55,0.15,0.16
+167,1731,E1,Blackpool,QPR,3/14/2023,Blackpool-QPR,E1,Blackpool,QPR,"1X,ov25,BTTS-Y",-3,-11,-2,-2,3.6471,3.7941,10.3824,10.1765,0.47,0.38,0.16,0.15
+168,1732,E1,Middlesbrough,Stoke,3/14/2023,Middlesbrough-Stoke,E1,Middlesbrough,Stoke,"1X,un25,BTTS-N",9,2,-2,-1,3.8235,4.1176,10.5588,10.9118,0.64,0.36,0.2,0.16
+169,1733,E1,Millwall,Swansea,3/14/2023,Millwall-Swansea,E1,Millwall,Swansea,"1X,ov25,BTTS-Y",2,-6,0,0,3.2941,4.2647,8.7647,9.9118,0.45,0.42,0.18,0.21
+170,1734,E1,Rotherham,Preston,3/14/2023,Rotherham-Preston,E1,Rotherham,Preston,"1X,un25,BTTS-N",-2,-3,0,0,3.5882,4.3824,9.6176,9.5294,0.63,0.37,0.22,0.2
+171,1735,E1,Watford,Birmingham,3/14/2023,Watford-Birmingham,E1,Watford,Birmingham,"1X,un25,BTTS-Y",-2,-3,-1,-1,4.5294,3.9706,10.3529,9.6471,0.46,0.57,0.18,0.18
+172,1736,E1,Wigan,Coventry,3/14/2023,Wigan-Coventry,E1,Wigan,Coventry,"2,un25,BTTS-N",-2,3,-1,0,3.697,4.1176,9,9.8529,0.48,0.36,0.18,0.2

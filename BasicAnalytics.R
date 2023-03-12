@@ -1050,6 +1050,7 @@ allteams2023goalstats <- cbind(allteams2023means,allteams2023sd)
 unlink('goalstats.csv')
 write.csv(allteams2023goalstats,'goalstats.csv')
 ####################################################################
+library('dplyr')
 allteams2023meanscorners <- allteams20222023 %>%
   group_by(Div) %>%
   dplyr::summarise(avg_corners = mean(TC),
@@ -1244,8 +1245,38 @@ for(index_b1_ycards in 1:length(b1_teams))
 
 final_b1_ycards[is.na(final_b1_ycards)] <- ""
 b1_yellowscoredmatrix <- cbind(b1_teams,final_b1_ycards,suml6_b1_ycards,avg_b1_ycards,sd_b1_one_ycards,sum_b1_threemore_ycards,sum_b1_twoless_ycards)
+##########################################################################################################################################################
 
 
+E1_spread <- subset(allteams20222023,Div =="E1")
+E1_spread$n <- E1_spread$TG * 1
+E1_spread$Bookings <- (E1_spread$HY *10 + E1_spread$HR *25) + (E1_spread$AY*10 + E1_spread$AR*25)
+E1_spread$Crossbookings <- (E1_spread$HY *10 + E1_spread$HR *25)*(E1_spread$AY*10 + E1_spread$AR*25)
+E1_spread$GoalsXbookings <- (E1_spread$Bookings)*(E1_spread$TG)
+E1_spread$CornersXbookings <- (E1_spread$TC)*(E1_spread$Bookings)
+E1_spread$GoalsXcorners <- (E1_spread$TG)*(E1_spread$TC)
+E1_spread$GoalsXcornerXbookings <- (E1_spread$TG)*(E1_spread$TC)*(E1_spread$Bookings)
+
+unlink('SpreadsN/E1/*')
+for(e1_sn in 1:23){
+  df <- tail(E1_spread[E1_spread$HomeTeam == final_doublefixture_e1[e1_sn,1] | E1_spread$AwayTeam == final_doublefixture_e1[e1_sn,1] ,],spreadn)
+
+  df2 <- tail(E1_spread[E1_spread$HomeTeam == final_doublefixture_e1[e1_sn + 1,1] | E1_spread$AwayTeam == final_doublefixture_e1[e1_sn + 1,1],],spreadn)
+
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:36]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\E1"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e1[e1_sn,1],final_doublefixture_e1[e1_sn + 1,1],".csv",sep = "_")))
+
+}
 
 
 

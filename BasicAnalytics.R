@@ -1276,17 +1276,37 @@ for(e1_sn in 1:23){
   path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\E1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e1[e1_sn,1],final_doublefixture_e1[e1_sn + 1,1],".csv",sep = "_")))
 
-}
+
+View(fotmob_get_season_stats(country ="ESP",league_name ="LaLiga",season_name = "2022/2023",team_or_player = "player",stat_name = "Accurate passes per 90","Assists"))
 
 
+epl_team_xg_2021 <- fotmob_get_season_stats(
+  country = "ENG",
+  league_name = "Premier League",
+  season = "2022/2023",
+  stat_name = "Expected goals",
+  team_or_player = "team"
+)
+#################################################
+Homeshirts <- aggregate(I1_spread$ShirtsXbookings, by = list(I1_spread$HomeTeam), FUN = mean)
+Homeshirtsavg <- aggregate(B1$FTHG, by = list(B1$HomeTeam),mean)
 
-
-
-
-
-
-
-
+##################################################################
+UCONFL <- rbind(B1_spread,T1_spread)
+#UCL <- read.csv('UCL.csv')
+unlink('UCONFL.csv')
+write.csv(UCONFL,'UCONFL.csv')
+###############################################################################
+df <- tail(UCONFL[UCONFL$HomeTeam =="Buyuksehyr" | UCONFL$AwayTeam =="Buyuksehyr",],6)
+df2 <- tail(UCONFL[UCONFL$HomeTeam == "Gent" | UCONFL$AwayTeam == "Gent",],6)
+temp_analysis <- rbind(df,df2)
+temp_analysis <- as.data.frame(temp_analysis)
+temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+temp_sliced <- tail(temp_analysis,1)
+temp_sliced <- temp_sliced[1:36]
+temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+write.csv(temp_analysis,'Temp/BasakhesirvsGent.csv')
 
 
 

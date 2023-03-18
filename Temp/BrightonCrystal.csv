@@ -1,0 +1,14 @@
+,Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,PSH,PSD,PSA,HTCS,CS,HS,HST,AS,AST,HY,AY,HR,AR,HCO,ACO,HF,AF,TG,TC,TF,COSC,OV15,OV25,OV35,TY,TR,matchid,epl_goalmins,n,epl_shirts,Bookings,Crossbookings,GoalsXbookings,CornersXbookings,ShirtsXbookings,GoalsXcorners,GoalsXshirts,ShirtsXcorners,TGMXcorners,GoalsXcornerXbookings
+192,E0,1/21/2023,Leicester,Brighton,2,2,D,1,1,D,3.61,3.71,2.1,1-Jan,2-Feb,9,2,13,4,0,1,0,0,5,6,9,9,4,11,18,6-May,Y,Y,Y,1,0,Leicester-Brighton,216,4,68,10,0,40,110,680,44,272,748,2376,440
+204,E0,2/4/2023,Brighton,Bournemouth,1,0,H,0,0,D,1.35,5.42,9.88,0-0,Jan-00,20,6,12,2,3,1,0,0,7,3,14,7,1,10,21,3-Jul,N,N,N,4,0,Brighton-Bournemouth,87,1,22,40,300,40,400,880,10,22,220,870,400
+213,E0,2/11/2023,Crystal Palace,Brighton,1,1,D,0,0,D,3.9,3.56,2.06,0-0,1-Jan,6,1,17,7,4,1,0,0,1,6,10,11,2,7,21,6-Jan,Y,N,N,5,0,Crystal Palace-Brighton,132,2,12,50,400,100,350,600,14,24,84,924,700
+224,E0,2/18/2023,Brighton,Fulham,0,1,A,0,0,D,1.66,4.16,5.46,0-0,0-1,21,7,5,2,0,5,0,0,10,2,12,14,1,12,26,2-Oct,N,N,N,5,0,Brighton-Fulham,88,1,11,50,0,50,600,550,12,11,132,1056,600
+245,E0,3/4/2023,Brighton,West Ham,4,0,H,1,0,H,1.78,3.88,4.75,Jan-00,Apr-00,20,9,3,2,0,3,0,0,7,3,6,8,4,10,14,3-Jul,Y,Y,Y,3,0,Brighton-West Ham,228,4,84,30,0,120,300,2520,40,336,840,2280,1200
+254,E0,3/11/2023,Leeds,Brighton,2,2,D,1,1,D,3.94,3.76,1.96,1-Jan,2-Feb,12,4,14,2,1,1,0,0,4,7,12,9,4,11,21,7-Apr,Y,Y,Y,2,0,Leeds-Brighton,212,4,41,20,100,80,220,820,44,164,451,2332,880
+205,E0,2/4/2023,Man United,Crystal Palace,2,1,H,1,0,H,1.41,4.91,8.97,Jan-00,1-Feb,14,5,10,3,1,2,1,0,5,5,9,9,3,10,18,5-May,Y,Y,N,3,1,Man United-Crystal Palace,145,3,33,55,700,165,550,1815,30,99,330,1450,1650
+2131,E0,2/11/2023,Crystal Palace,Brighton,1,1,D,0,0,D,3.9,3.56,2.06,0-0,1-Jan,6,1,17,7,4,1,0,0,1,6,10,11,2,7,21,6-Jan,Y,N,N,5,0,Crystal Palace-Brighton,132,2,12,50,400,100,350,600,14,24,84,924,700
+223,E0,2/18/2023,Brentford,Crystal Palace,1,1,D,0,0,D,1.85,3.62,4.84,0-0,1-Jan,12,5,10,4,2,2,0,0,2,6,10,8,2,8,18,6-Feb,Y,N,N,4,0,Brentford-Crystal Palace,159,2,37,40,400,80,320,1480,16,74,296,1272,640
+238,E0,2/25/2023,Crystal Palace,Liverpool,0,0,D,0,0,D,4.86,3.99,1.76,0-0,0-0,6,0,12,4,2,5,0,0,5,3,11,14,0,8,25,3-May,N,N,N,7,0,Crystal Palace-Liverpool,0,0,0,70,1000,0,560,0,0,0,0,0,0
+244,E0,3/4/2023,Aston Villa,Crystal Palace,1,0,H,1,0,H,2.08,3.37,3.99,Jan-00,Jan-00,8,1,3,0,2,3,0,1,2,4,14,17,1,6,31,4-Feb,N,N,N,5,1,Aston Villa-Crystal Palace,27,1,16,75,1100,75,450,1200,6,16,96,162,450
+257,E0,3/11/2023,Crystal Palace,Man City,0,1,A,0,0,D,9.18,5.2,1.37,0-0,0-1,4,0,14,4,2,2,0,0,2,6,11,17,1,8,28,6-Feb,N,N,N,4,0,Crystal Palace-Man City,78,1,9,40,400,40,320,360,8,9,72,624,320
+13,E0,3/11/2023,Crystal Palace,Man City,0,1,A,0,0,D,9.18,5.2,1.37,0-0,0-1,4,0,14,4,2,2,0,0,2,6,11,17,1,8,28,6-Feb,N,N,N,4,0,Crystal Palace-Man City,125.3333333,2.083333333,28.75,44.16666667,400,74.16666667,377.5,958.75,19.83333333,87.58333333,279.4166667,1189.166667,665

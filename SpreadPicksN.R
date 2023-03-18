@@ -199,6 +199,22 @@ for(e1_sn in 1:23){
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e1[e1_sn,1],final_doublefixture_e1[e1_sn + 1,1],".csv",sep = "_")))
 
 }
+
+df <- tail(E1_spread[E1_spread$HomeTeam == "Blackburn" | E1_spread$AwayTeam == "Blackburn" ,],spreadn)
+
+df2 <- tail(E1_spread[E1_spread$HomeTeam == "Reading" | E1_spread$AwayTeam == "Reading",],spreadn)
+
+temp_analysis <- rbind(df,df2)
+
+temp_analysis <- as.data.frame(temp_analysis)
+temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+temp_sliced <- tail(temp_analysis,1)
+temp_sliced <- temp_sliced[1:36]
+
+temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+write.csv(temp_analysis,'Temp/BlackREading.csv')
+
 #############################################################################################################################################
 E2_spread <- subset(allteams20222023,Div =="E2")
 E2_spread$n <- E2_spread$TG * 1

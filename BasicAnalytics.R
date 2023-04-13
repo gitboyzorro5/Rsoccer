@@ -1308,7 +1308,7 @@ temp_analyis_combined <- c(temp_sliced,temp_colmeans)
 temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 write.csv(temp_analysis,'Temp/BasakhesirvsGent.csv')
 
-
+write.xlsx(final_b1_cs,'CSFORM.xlsx',sheetName = "L6", append = TRUE)
 
 
 

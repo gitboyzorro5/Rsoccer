@@ -200,20 +200,20 @@ for(e1_sn in 1:23){
 
 }
 
-df <- tail(E1_spread[E1_spread$HomeTeam == "Blackburn" | E1_spread$AwayTeam == "Blackburn" ,],spreadn)
-
-df2 <- tail(E1_spread[E1_spread$HomeTeam == "Reading" | E1_spread$AwayTeam == "Reading",],spreadn)
-
-temp_analysis <- rbind(df,df2)
-
-temp_analysis <- as.data.frame(temp_analysis)
-temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
-temp_sliced <- tail(temp_analysis,1)
-temp_sliced <- temp_sliced[1:36]
-
-temp_analyis_combined <- c(temp_sliced,temp_colmeans)
-temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
-write.csv(temp_analysis,'Temp/BlackREading.csv')
+# df <- tail(E1_spread[E1_spread$HomeTeam == "Blackburn" | E1_spread$AwayTeam == "Blackburn" ,],spreadn)
+#
+# df2 <- tail(E1_spread[E1_spread$HomeTeam == "Reading" | E1_spread$AwayTeam == "Reading",],spreadn)
+#
+# temp_analysis <- rbind(df,df2)
+#
+# temp_analysis <- as.data.frame(temp_analysis)
+# temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+# temp_sliced <- tail(temp_analysis,1)
+# temp_sliced <- temp_sliced[1:36]
+#
+# temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+# temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+# write.csv(temp_analysis,'Temp/BlackREading.csv')
 
 #############################################################################################################################################
 E2_spread <- subset(allteams20222023,Div =="E2")
@@ -335,6 +335,26 @@ for(f2_sn in 1:17){
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_f2[f2_sn,1],final_doublefixture_f2[f2_sn + 1,1],".csv",sep = "_")))
 
 }
+################################################################################################################################################
+#G1
+G1_spread <- subset(allteams20222023,Div =="G1")
+G1_spread$n <- G1_spread$TG * 1
+G1_spread$Bookings <- (G1_spread$HY *10 + G1_spread$HR *25) + (G1_spread$AY*10 + G1_spread$AR*25)
+G1_spread$Crossbookings <- (G1_spread$HY *10 + G1_spread$HR *25)*(G1_spread$AY*10 + G1_spread$AR*25)
+G1_spread$GoalsXbookings <- (G1_spread$Bookings)*(G1_spread$TG)
+G1_spread$CornersXbookings <- (G1_spread$TC)*(G1_spread$Bookings)
+G1_spread$GoalsXcorners <- (G1_spread$TG)*(G1_spread$TC)
+G1_spread$GoalsXcornerXbookings <- (G1_spread$TG)*(G1_spread$TC)*(G1_spread$Bookings)
+############################################################################################################################################
+#I2
+I2_spread <- subset(allteams20222023,Div =="I2")
+I2_spread$n <- I2_spread$TG * 1
+I2_spread$Bookings <- (I2_spread$HY *10 + I2_spread$HR *25) + (I2_spread$AY*10 + I2_spread$AR*25)
+I2_spread$Crossbookings <- (I2_spread$HY *10 + I2_spread$HR *25)*(I2_spread$AY*10 + I2_spread$AR*25)
+I2_spread$GoalsXbookings <- (I2_spread$Bookings)*(I2_spread$TG)
+I2_spread$CornersXbookings <- (I2_spread$TC)*(I2_spread$Bookings)
+I2_spread$GoalsXcorners <- (I2_spread$TG)*(I2_spread$TC)
+I2_spread$GoalsXcornerXbookings <- (I2_spread$TG)*(I2_spread$TC)*(I2_spread$Bookings)
 ############################################################################################################################################
 N1_spread <- subset(allteams20222023,Div =="N1")
 N1_spread$n <- N1_spread$TG * 1
@@ -396,6 +416,16 @@ for(p1_sn in 1:17){
 
 }
 ########################################################################################################################################
+#SC0
+SC0_spread <- subset(allteams20222023,Div =="SC0")
+SC0_spread$n <- SC0_spread$TG * 1
+SC0_spread$Bookings <- (SC0_spread$HY *10 + SC0_spread$HR *25) + (SC0_spread$AY*10 + SC0_spread$AR*25)
+SC0_spread$Crossbookings <- (SC0_spread$HY *10 + SC0_spread$HR *25)*(SC0_spread$AY*10 + SC0_spread$AR*25)
+SC0_spread$GoalsXbookings <- (SC0_spread$Bookings)*(SC0_spread$TG)
+SC0_spread$CornersXbookings <- (SC0_spread$TC)*(SC0_spread$Bookings)
+SC0_spread$GoalsXcorners <- (SC0_spread$TG)*(SC0_spread$TC)
+SC0_spread$GoalsXcornerXbookings <- (SC0_spread$TG)*(SC0_spread$TC)*(SC0_spread$Bookings)
+########################################################################################################################################
 SC1_spread <- subset(allteams20222023,Div =="SC1")
 SC1_spread$n <- SC1_spread$TG * 1
 SC1_spread$Bookings <- (SC1_spread$HY *10 + SC1_spread$HR *25) + (SC1_spread$AY*10 + SC1_spread$AR*25)
@@ -425,6 +455,36 @@ for(sc1_sn in 1:9){
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sc1[sc1_sn,1],final_doublefixture_sc1[sc1_sn + 1,1],".csv",sep = "_")))
 
 }
+###################################################################################################################################################
+#SC2
+SC2_spread <- subset(allteams20222023,Div =="SC2")
+SC2_spread$n <- SC2_spread$TG * 1
+SC2_spread$Bookings <- (SC2_spread$HY *10 + SC2_spread$HR *25) + (SC2_spread$AY*10 + SC2_spread$AR*25)
+SC2_spread$Crossbookings <- (SC2_spread$HY *10 + SC2_spread$HR *25)*(SC2_spread$AY*10 + SC2_spread$AR*25)
+SC2_spread$GoalsXbookings <- (SC2_spread$Bookings)*(SC2_spread$TG)
+SC2_spread$CornersXbookings <- (SC2_spread$TC)*(SC2_spread$Bookings)
+SC2_spread$GoalsXcorners <- (SC2_spread$TG)*(SC2_spread$TC)
+SC2_spread$GoalsXcornerXbookings <- (SC2_spread$TG)*(SC2_spread$TC)*(SC2_spread$Bookings)
+##################################################################################################################################################
+#SC3
+SC3_spread <- subset(allteams20222023,Div =="SC3")
+SC3_spread$n <- SC3_spread$TG * 1
+SC3_spread$Bookings <- (SC3_spread$HY *10 + SC3_spread$HR *25) + (SC3_spread$AY*10 + SC3_spread$AR*25)
+SC3_spread$Crossbookings <- (SC3_spread$HY *10 + SC3_spread$HR *25)*(SC3_spread$AY*10 + SC3_spread$AR*25)
+SC3_spread$GoalsXbookings <- (SC3_spread$Bookings)*(SC3_spread$TG)
+SC3_spread$CornersXbookings <- (SC3_spread$TC)*(SC3_spread$Bookings)
+SC3_spread$GoalsXcorners <- (SC3_spread$TG)*(SC3_spread$TC)
+SC3_spread$GoalsXcornerXbookings <- (SC3_spread$TG)*(SC3_spread$TC)*(SC3_spread$Bookings)
+##################################################################################################################################################
+#SP2
+SP2_spread <- subset(allteams20222023,Div =="SP2")
+SP2_spread$n <- SP2_spread$TG * 1
+SP2_spread$Bookings <- (SP2_spread$HY *10 + SP2_spread$HR *25) + (SP2_spread$AY*10 + SP2_spread$AR*25)
+SP2_spread$Crossbookings <- (SP2_spread$HY *10 + SP2_spread$HR *25)*(SP2_spread$AY*10 + SP2_spread$AR*25)
+SP2_spread$GoalsXbookings <- (SP2_spread$Bookings)*(SP2_spread$TG)
+SP2_spread$CornersXbookings <- (SP2_spread$TC)*(SP2_spread$Bookings)
+SP2_spread$GoalsXcorners <- (SP2_spread$TG)*(SP2_spread$TC)
+SP2_spread$GoalsXcornerXbookings <- (SP2_spread$TG)*(SP2_spread$TC)*(SP2_spread$Bookings)
 ##################################################################################################################################################
 T1_spread <- subset(allteams20222023,Div =="T1")
 T1_spread$n <- T1_spread$TG * 1
@@ -456,8 +516,9 @@ for(t1_sn in 1:18){
 
 }
 
+Europe_spread <- rbind(B1_spread,D2_spread,E1_spread,E2_spread,E3_spread,EC_spread,F2_spread,G1_spread,I2_spread,SC0_spread,SC1_spread,SC2_spread,SC3_spread,SP2_spread,T1_spread)
 
-
+write.csv(Europe_spread,'Europespread.csv')
 
 
 

@@ -37,7 +37,6 @@ epl_matchidslength <- length(epl_matchids)
 epl_matchids[1:epl_matchidslength]
 epl_players <- fotmob_get_match_players(epl_matchids[1:epl_matchidslength])
 
-
 names(epl_players)[names(epl_players) == "id"] <- "player_id"
 
 epl_players$player_id <- as.integer(epl_players$player_id)

@@ -1,0 +1,14 @@
+"","Div","Date","HomeTeam","AwayTeam","FTHG","FTAG","FTR","HTHG","HTAG","HTR","PSH","PSD","PSA","HTCS","CS","HS","HST","AS","AST","HY","AY","HR","AR","HCO","ACO","HF","AF","TG","TC","TF","COSC","OV15","OV25","OV35","TY","TR","n","Bookings","Crossbookings","GoalsXbookings","CornersXbookings","GoalsXcorners","GoalsXcornerXbookings"
+"5374","T1",2023-01-31,"Karagumruk","Besiktas",1,1,"D",0,1,"A",3.92,4.06,1.89,"0-1","1-1",9,2,11,2,1,1,0,0,6,8,12,10,2,14,22,"6-8","Y","N","N",2,0,2,20,100,40,280,28,560
+"5382","T1",2023-02-04,"Ankaragucu","Karagumruk",0,2,"A",0,1,"A",2.16,3.79,3.32,"0-1","0-2",14,4,17,4,0,1,0,0,10,2,12,12,2,12,24,"10-2","Y","N","N",1,0,2,10,0,20,120,24,240
+"5394","T1",2023-03-04,"Karagumruk","Sivasspor",4,3,"H",1,1,"D",2.26,3.53,3.32,"1-1","4-3",16,9,20,7,3,1,0,0,4,5,18,8,7,9,26,"4-5","Y","Y","Y",4,0,7,40,300,280,360,63,2520
+"5402","T1",2023-03-10,"Giresunspor","Karagumruk",2,2,"D",2,1,"H",2.45,3.69,2.83,"2-1","2-2",5,3,12,5,2,2,0,0,2,2,18,16,4,4,34,"2-2","Y","Y","Y",4,0,4,40,400,160,160,16,640
+"5414","T1",2023-03-19,"Karagumruk","Buyuksehyr",2,2,"D",1,1,"D",2.95,3.46,2.51,"1-1","2-2",12,5,14,5,2,1,0,0,2,7,14,11,4,9,25,"2-7","Y","Y","Y",3,0,4,30,200,120,270,36,1080
+"5427","T1",2023-04-03,"Istanbulspor","Karagumruk",0,1,"A",0,1,"A",3.19,3.66,2.24,"0-1","0-1",11,3,11,5,5,3,0,1,8,3,11,19,1,11,30,"8-3","N","N","N",8,1,1,105,2750,105,1155,11,1155
+"5375","T1",2023-02-01,"Gaziantep","Hatayspor",4,1,"H",1,1,"D",2.09,3.5,3.79,"1-1","4-1",12,5,12,2,4,2,0,0,4,2,15,13,5,6,28,"4-2","Y","Y","Y",6,0,5,60,800,300,360,30,1800
+"5384","T1",2023-02-04,"Antalyaspor","Gaziantep",1,0,"H",1,0,"H",1.96,3.84,3.87,"1-0","1-0",10,2,12,3,3,5,0,1,5,7,14,8,1,12,22,"5-7","N","N","N",8,1,1,105,2250,105,1260,12,1260
+"5388","T1",2023-02-25,"Umraniyespor","Gaziantep",3,0,"H",NA,NA,"",NA,NA,NA,"0-0","3-0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"5398","T1",2023-03-05,"Gaziantep","Galatasaray",0,3,"A",NA,NA,"",NA,NA,NA,"0-0","0-3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"5417","T1",2023-03-19,"Gaziantep","Trabzonspor",0,3,"A",NA,NA,"",NA,NA,NA,"0-0","0-3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"5424","T1",2023-04-02,"Gaziantep","Kasimpasa",0,3,"A",NA,NA,"",NA,NA,NA,"0-0","0-3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"13","T1",2023-04-02,"Gaziantep","Kasimpasa",0,3,"A",NA,NA,"",NA,NA,NA,"0-0","0-3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3.16666666666667,NA,NA,NA,NA,NA,NA

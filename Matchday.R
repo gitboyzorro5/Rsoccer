@@ -640,6 +640,82 @@ if(t1_matchesplayed %% t1_eachround == 0)
 }
 T1_rounds <- cbind(T1_rounds,t1_matchday)
 #####################################################################################################
+#print for future sue
+#############
+B1_roundsclone <- B1_rounds
+colnames(B1_roundsclone)[37] <- "all_matchday"
+D1_roundsclone <- D1_rounds
+colnames(D1_roundsclone)[37] <- "all_matchday"
+D2_roundsclone <- D2_rounds
+colnames(D2_roundsclone)[37] <- "all_matchday"
+E0_roundsclone <- E0_rounds
+colnames(E0_roundsclone)[37] <- "all_matchday"
+E1_roundsclone <- E1_rounds
+colnames(E1_roundsclone)[37] <- "all_matchday"
+E2_roundsclone <- E2_rounds
+colnames(E2_roundsclone)[37] <- "all_matchday"
+E3_roundsclone <- E3_rounds
+colnames(E3_roundsclone)[37] <- "all_matchday"
+EC_roundsclone <- EC_rounds
+colnames(EC_roundsclone)[37] <- "all_matchday"
+F1_roundsclone <- F1_rounds
+colnames(F1_roundsclone)[37] <- "all_matchday"
+F2_roundsclone <- F2_rounds
+colnames(F2_roundsclone)[37] <- "all_matchday"
+G1_roundsclone <- G1_rounds
+colnames(G1_roundsclone)[37] <- "all_matchday"
+I1_roundsclone <- I1_rounds
+colnames(I1_roundsclone)[37] <- "all_matchday"
+I2_roundsclone <- I2_rounds
+colnames(I2_roundsclone)[37] <- "all_matchday"
+N1_roundsclone <- N1_rounds
+colnames(N1_roundsclone)[37] <- "all_matchday"
+P1_roundsclone <- P1_rounds
+colnames(P1_roundsclone)[37] <- "all_matchday"
+SC0_roundsclone <- SC0_rounds
+colnames(SC0_roundsclone)[37] <- "all_matchday"
+SC1_roundsclone <- SC1_rounds
+colnames(SC1_roundsclone)[37] <- "all_matchday"
+SC2_roundsclone <- SC2_rounds
+colnames(SC2_roundsclone)[37] <- "all_matchday"
+SC3_roundsclone <- SC3_rounds
+colnames(SC3_roundsclone)[37] <- "all_matchday"
+SP1_roundsclone <- SP1_rounds
+colnames(SP1_roundsclone)[37] <- "all_matchday"
+SP2_roundsclone <- SP2_rounds
+colnames(SP2_roundsclone)[37] <- "all_matchday"
+T1_roundsclone <- T1_rounds
+colnames(T1_roundsclone)[37] <- "all_matchday"
+
+allteams20222023SOTMatchday <- rbind(B1_roundsclone,D1_roundsclone,D2_roundsclone,E0_roundsclone,E1_roundsclone,E2_roundsclone,E3_roundsclone,EC_roundsclone,F1_roundsclone,F2_roundsclone,
+      G1_roundsclone,I1_roundsclone,I2_roundsclone,N1_roundsclone,P1_roundsclone,SC0_roundsclone,SC1_roundsclone,SC2_roundsclone,SC3_roundsclone,SP1_roundsclone,
+      SP2_roundsclone,T1_roundsclone)
+unlink("allteams20222023SOTMatchday.csv")
+write.csv(allteams20222023SOTMatchday,"allteams20222023SOTMatchday.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

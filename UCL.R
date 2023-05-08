@@ -1,6 +1,7 @@
 ###############
 E0_spread <- read.csv('E0_spread.csv')
 E0_spread <- E0_spread[,-1]
+E0_ucl <- E0_spread
 colnames(E0_ucl)[38] <- "goalmins"
 colnames(E0_ucl)[40] <- "shirts"
 #########################################
@@ -34,8 +35,8 @@ UCL <- rbind(E0_ucl,D1_ucl,SP1_ucl,I1_ucl,F1_ucl)
 unlink('UCL.csv')
 write.csv(UCL,'UCL.csv')
 ###############################################################################
-df <- tail(UCL[UCL$HomeTeam =="Man United" | UCL$AwayTeam =="Man United",],6)
-df2 <- tail(UCL[UCL$HomeTeam == "Sevilla" | UCL$AwayTeam == "Sevilla",],6)
+df <- tail(UCL[UCL$HomeTeam =="Sociedad" | UCL$AwayTeam =="Sociedad",],6)
+df2 <- tail(UCL[UCL$HomeTeam == "Real Madrid" | UCL$AwayTeam == "Real Madrid",],6)
 temp_analysis <- rbind(df,df2)
 
 temp_analysis <- as.data.frame(temp_analysis)
@@ -44,5 +45,5 @@ temp_sliced <- tail(temp_analysis,1)
 temp_sliced <- temp_sliced[1:37]
 temp_analyis_combined <- c(temp_sliced,temp_colmeans)
 temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
-write.csv(temp_analysis,'Temp/unitedsevilla.csv')
+write.csv(temp_analysis,'Temp/sociedadmadrid.csv')
 

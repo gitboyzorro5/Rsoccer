@@ -1,203 +1,117 @@
 "","Div","Home_Team","Away_Team","Date"
-"289","B1","Antwerp","Kortrijk",2023-04-15
-"290","B1","Cercle Brugge","St Truiden",2023-04-15
-"291","B1","Eupen","Waregem",2023-04-15
-"292","B1","Genk","Anderlecht",2023-04-15
-"293","B1","Mechelen","Gent",2023-04-15
-"294","B1","Oostende","Oud-Heverlee Leuven",2023-04-15
-"295","B1","St. Gilloise","Seraing",2023-04-15
-"296","B1","Standard","Charleroi",2023-04-15
-"297","B1","Westerlo","Club Brugge",2023-04-15
-"550","D1","Bayern Munich","Hoffenheim",2023-04-15
-"551","D1","Ein Frankfurt","Mgladbach",2023-04-15
-"552","D1","FC Koln","Mainz",2023-04-15
-"553","D1","RB Leipzig","Augsburg",2023-04-15
-"554","D1","Schalke 04","Hertha",2023-04-15
-"555","D1","Stuttgart","Dortmund",2023-04-15
-"556","D1","Union Berlin","Bochum",2023-04-15
-"557","D1","Werder Bremen","Freiburg",2023-04-15
-"558","D1","Wolfsburg","Leverkusen",2023-04-15
-"856","D2","Fortuna Dusseldorf","Darmstadt",2023-04-15
-"857","D2","Greuther Furth","Regensburg",2023-04-15
-"858","D2","Hannover","Heidenheim",2023-04-15
-"859","D2","Holstein Kiel","Nurnberg",2023-04-15
-"860","D2","Kaiserslautern","Hamburg",2023-04-15
-"861","D2","Karlsruhe","Bielefeld",2023-04-15
-"862","D2","Magdeburg","Sandhausen",2023-04-15
-"863","D2","Paderborn","Hansa Rostock",2023-04-15
-"864","D2","St Pauli","Braunschweig",2023-04-15
-"1219","E0","Aston Villa","Newcastle",2023-04-15
-"1220","E0","Chelsea","Brighton",2023-04-15
-"1221","E0","Everton","Fulham",2023-04-15
-"1222","E0","Leeds","Liverpool",2023-04-15
-"1223","E0","Man City","Leicester",2023-04-15
-"1224","E0","Nottm Forest","Man United",2023-04-15
-"1225","E0","Southampton","Crystal Palace",2023-04-15
-"1226","E0","Tottenham","Bournemouth",2023-04-15
-"1227","E0","West Ham","Arsenal",2023-04-15
-"1228","E0","Wolves","Brentford",2023-04-15
-"1791","E1","Blackburn","Hull",2023-04-15
-"1792","E1","Blackpool","Wigan",2023-04-15
-"1793","E1","Middlesbrough","Norwich",2023-04-15
-"1794","E1","Millwall","Preston",2023-04-15
-"1795","E1","QPR","Coventry",2023-04-15
-"1796","E1","Reading","Burnley",2023-04-15
-"1797","E1","Rotherham","Luton",2023-04-15
-"1798","E1","Sheffield United","Cardiff",2023-04-15
-"1799","E1","Stoke","West Brom",2023-04-15
-"1800","E1","Sunderland","Birmingham",2023-04-15
-"1801","E1","Swansea","Huddersfield",2023-04-15
-"1802","E1","Watford","Bristol City",2023-04-15
-"1803","E1","Blackpool","West Brom",2023-04-18
-"1804","E1","Millwall","Birmingham",2023-04-18
-"1805","E1","Rotherham","Burnley",2023-04-18
-"1806","E1","Sheffield United","Bristol City",2023-04-18
-"1807","E1","Stoke","Wigan",2023-04-18
-"1808","E1","Sunderland","Huddersfield",2023-04-18
-"2343","E2","Accrington","Fleetwood Town",2023-04-15
-"2344","E2","Bristol Rvs","Derby",2023-04-15
-"2345","E2","Burton","Sheffield Weds",2023-04-15
-"2346","E2","Cambridge","Peterboro",2023-04-15
-"2347","E2","Exeter","Plymouth",2023-04-15
-"2348","E2","Forest Green","Barnsley",2023-04-15
-"2349","E2","Ipswich","Charlton",2023-04-15
-"2350","E2","Lincoln","Port Vale",2023-04-15
-"2351","E2","Milton Keynes Dons","Cheltenham",2023-04-15
-"2352","E2","Morecambe","Wycombe",2023-04-15
-"2353","E2","Oxford","Bolton",2023-04-15
-"2354","E2","Shrewsbury","Portsmouth",2023-04-15
-"2355","E2","Accrington","Peterboro",2023-04-18
-"2356","E2","Bristol Rvs","Sheffield Weds",2023-04-18
-"2357","E2","Burton","Bolton",2023-04-18
-"2358","E2","Cambridge","Wycombe",2023-04-18
-"2359","E2","Exeter","Derby",2023-04-18
-"2360","E2","Forest Green","Fleetwood Town",2023-04-18
-"2361","E2","Ipswich","Port Vale",2023-04-18
-"2362","E2","Lincoln","Barnsley",2023-04-18
-"2363","E2","Milton Keynes Dons","Charlton",2023-04-18
-"2364","E2","Morecambe","Cheltenham",2023-04-18
-"2365","E2","Oxford","Portsmouth",2023-04-18
-"2366","E2","Shrewsbury","Plymouth",2023-04-18
-"2895","E3","Carlisle","Northampton",2023-04-15
-"2896","E3","Crawley Town","Tranmere",2023-04-15
-"2897","E3","Crewe","Walsall",2023-04-15
-"2898","E3","Gillingham","Stockport",2023-04-15
-"2899","E3","Grimsby","Mansfield",2023-04-15
-"2900","E3","Harrogate","Doncaster",2023-04-15
-"2901","E3","Newport County","Hartlepool",2023-04-15
-"2902","E3","Rochdale","Bradford",2023-04-15
-"2903","E3","Salford","Colchester",2023-04-15
-"2904","E3","Stevenage","AFC Wimbledon",2023-04-15
-"2905","E3","Sutton","Leyton Orient",2023-04-15
-"2906","E3","Swindon","Barrow",2023-04-15
-"2907","E3","Carlisle","Stockport",2023-04-18
-"2908","E3","Crawley Town","Colchester",2023-04-18
-"2909","E3","Crewe","AFC Wimbledon",2023-04-18
-"2910","E3","Gillingham","Leyton Orient",2023-04-18
-"2911","E3","Grimsby","Barrow",2023-04-18
-"2912","E3","Harrogate","Walsall",2023-04-18
-"2913","E3","Newport County","Mansfield",2023-04-18
-"2914","E3","Rochdale","Tranmere",2023-04-18
-"2915","E3","Salford","Hartlepool",2023-04-18
-"2916","E3","Stevenage","Doncaster",2023-04-18
-"2917","E3","Sutton","Northampton",2023-04-18
-"2918","E3","Swindon","Bradford",2023-04-18
-"3471","EC","Aldershot","Scunthorpe",2023-04-15
-"3472","EC","Barnet","Wrexham",2023-04-15
-"3473","EC","Boreham Wood","Wealdstone",2023-04-15
-"3474","EC","Chesterfield","Eastleigh",2023-04-15
-"3475","EC","Dorking","Altrincham",2023-04-15
-"3476","EC","Halifax","Maidstone",2023-04-15
-"3477","EC","Gateshead","Bromley",2023-04-15
-"3478","EC","Notts County","Woking",2023-04-15
-"3479","EC","Oldham","Maidenhead",2023-04-15
-"3480","EC","Solihull","Yeovil",2023-04-15
-"3481","EC","Southend","Dag and Red",2023-04-15
-"3482","EC","Torquay","York",2023-04-15
-"3807","F1","Auxerre","Nantes",2023-04-16
-"3808","F1","Brest","Nice",2023-04-16
-"3809","F1","Clermont","Angers",2023-04-16
-"3810","F1","Lille","Montpellier",2023-04-16
-"3811","F1","Marseille","Troyes",2023-04-16
-"3812","F1","Monaco","Lorient",2023-04-16
-"3813","F1","Paris SG","Lens",2023-04-16
-"3814","F1","Rennes","Reims",2023-04-16
-"3815","F1","Strasbourg","Ajaccio",2023-04-16
-"3816","F1","Toulouse","Lyon",2023-04-16
-"4157","F2","Bastia","Annecy",2023-04-15
-"4158","F2","Caen","Paris FC",2023-04-15
-"4159","F2","Grenoble","St Etienne",2023-04-15
-"4160","F2","Guingamp","Amiens",2023-04-15
-"4161","F2","Nimes","Le Havre",2023-04-15
-"4162","F2","Quevilly Rouen","Dijon",2023-04-15
-"4163","F2","Rodez","Laval",2023-04-15
-"4164","F2","Sochaux","Pau FC",2023-04-15
-"4165","F2","Valenciennes","Niort",2023-04-15
-"4519","I1","Roma","Udinese",2023-04-16
-"4520","I1","Bologna","Milan",2023-04-16
-"4521","I1","Cremonese","Empoli",2023-04-16
-"4522","I1","Fiorentina","Atalanta",2023-04-16
-"4523","I1","Inter","Monza",2023-04-16
-"4524","I1","Lecce","Sampdoria",2023-04-16
-"4525","I1","Napoli","Verona",2023-04-16
-"4526","I1","Sassuolo","Juventus",2023-04-16
-"4527","I1","Spezia","Lazio",2023-04-16
-"4528","I1","Torino","Salernitana",2023-04-16
-"4870","N1","AZ Alkmaar","Waalwijk",2023-04-16
-"4871","N1","Volendam","Cambuur",2023-04-16
-"4872","N1","Feyenoord","Utrecht",2023-04-16
-"4873","N1","Go Ahead Eagles","For Sittard",2023-04-16
-"4874","N1","Groningen","Nijmegen",2023-04-16
-"4875","N1","Heerenveen","FC Emmen",2023-04-16
-"4876","N1","PSV Eindhoven","Ajax",2023-04-16
-"4877","N1","Twente","Sparta Rotterdam",2023-04-16
-"4878","N1","Vitesse","Excelsior",2023-04-16
-"5158","P1","Sp Braga","Gil Vicente",2023-04-16
-"5159","P1","Chaves","Benfica",2023-04-16
-"5160","P1","Estoril","Portimonense",2023-04-16
-"5161","P1","Famalicao","Guimaraes",2023-04-16
-"5162","P1","Porto","Santa Clara",2023-04-16
-"5163","P1","Maritimo","Pacos Ferreira",2023-04-16
-"5164","P1","Rio Ave","Casa Pia",2023-04-16
-"5165","P1","Sp Lisbon","Arouca",2023-04-16
-"5166","P1","Vizela","Boavista",2023-04-16
-"5407","SC0","Hibernian","Hearts",2023-04-15
-"5408","SC0","Kilmarnock","Celtic",2023-04-15
-"5409","SC0","Livingston","St Johnstone",2023-04-15
-"5410","SC0","Motherwell","Dundee United",2023-04-15
-"5411","SC0","Rangers","St Mirren",2023-04-15
-"5412","SC0","Ross County","Aberdeen",2023-04-15
-"5579","SC1","Cove Rangers","Inverness C",2023-04-15
-"5580","SC1","Dundee","Morton",2023-04-15
-"5581","SC1","Partick","Ayr",2023-04-15
-"5582","SC1","Queens Park","Hamilton",2023-04-15
-"5583","SC1","Raith Rvs","Arbroath",2023-04-15
-"5879","SP1","Ath Bilbao","Sociedad",2023-04-16
-"5880","SP1","Ath Madrid","Almeria",2023-04-16
-"5881","SP1","Betis","Espanol",2023-04-16
-"5882","SP1","Cadiz","Real Madrid",2023-04-16
-"5883","SP1","Celta","Mallorca",2023-04-16
-"5884","SP1","Getafe","Barcelona",2023-04-16
-"5885","SP1","Girona","Elche",2023-04-16
-"5886","SP1","Vallecano","Osasuna",2023-04-16
-"5887","SP1","Valencia","Sevilla",2023-04-16
-"5888","SP1","Villarreal","Valladolid",2023-04-16
-"6259","SP2","Ath Bilbao","Sociedad",2023-04-16
-"6260","SP2","Ath Madrid","Almeria",2023-04-16
-"6261","SP2","Betis","Espanol",2023-04-16
-"6262","SP2","Cadiz","Real Madrid",2023-04-16
-"6263","SP2","Celta","Mallorca",2023-04-16
-"6264","SP2","Getafe","Barcelona",2023-04-16
-"6265","SP2","Girona","Elche",2023-04-16
-"6266","SP2","Vallecano","Osasuna",2023-04-16
-"6267","SP2","Valencia","Sevilla",2023-04-16
-"6268","SP2","Villarreal","Valladolid",2023-04-16
-"6638","T1","Alanyaspor","Umraniyespor",2023-04-16
-"6639","T1","Ankaragucu","Kasimpasa",2023-04-16
-"6640","T1","Buyuksehyr","Hatayspor",2023-04-16
-"6641","T1","Besiktas","Galatasaray",2023-04-16
-"6642","T1","Istanbulspor","Giresunspor",2023-04-16
-"6643","T1","Karagumruk","Antalyaspor",2023-04-16
-"6644","T1","Kayserispor","Gaziantep",2023-04-16
-"6645","T1","Konyaspor","Trabzonspor",2023-04-16
-"6646","T1","Sivasspor","Fenerbahce",2023-04-16
+"577","D1","Augsburg","Union Berlin",2023-05-06
+"578","D1","Mgladbach","Bochum",2023-05-06
+"579","D1","Leverkusen","FC Koln",2023-05-06
+"580","D1","Dortmund","Wolfsburg",2023-05-06
+"581","D1","Freiburg","RB Leipzig",2023-05-06
+"582","D1","Hertha","Stuttgart",2023-05-06
+"583","D1","Hoffenheim","Ein Frankfurt",2023-05-06
+"584","D1","Mainz","Schalke 04",2023-05-06
+"585","D1","Werder Bremen","Bayern Munich",2023-05-06
+"883","D2","Bielefeld","Greuther Furth",2023-05-06
+"884","D2","Braunschweig","Sandhausen",2023-05-06
+"885","D2","Darmstadt","St Pauli",2023-05-06
+"886","D2","Fortuna Dusseldorf","Holstein Kiel",2023-05-06
+"887","D2","Hamburg","Paderborn",2023-05-06
+"888","D2","Hansa Rostock","Regensburg",2023-05-06
+"889","D2","Heidenheim","Magdeburg",2023-05-06
+"890","D2","Karlsruhe","Hannover",2023-05-06
+"891","D2","Nurnberg","Kaiserslautern",2023-05-06
+"1259","E0","Bournemouth","Chelsea",2023-05-06
+"1260","E0","Brighton","Everton",2023-05-06
+"1261","E0","Fulham","Leicester",2023-05-06
+"1262","E0","Liverpool","Brentford",2023-05-06
+"1263","E0","Man City","Leeds",2023-05-06
+"1264","E0","Newcastle","Arsenal",2023-05-06
+"1265","E0","Nottm Forest","Southampton",2023-05-06
+"1266","E0","Tottenham","Crystal Palace",2023-05-06
+"1267","E0","West Ham","Man United",2023-05-06
+"1268","E0","Wolves","Aston Villa",2023-05-06
+"1839","E1","Birmingham","Sheffield United",2023-05-06
+"1840","E1","Burnley","Cardiff",2023-05-06
+"1841","E1","Huddersfield","Reading",2023-05-06
+"1842","E1","Luton","Hull",2023-05-06
+"1843","E1","Middlesbrough","Coventry",2023-05-06
+"1844","E1","Millwall","Blackburn",2023-05-06
+"1845","E1","Norwich","Blackpool",2023-05-06
+"1846","E1","Preston","Sunderland",2023-05-06
+"1847","E1","QPR","Bristol City",2023-05-06
+"1848","E1","Swansea","West Brom",2023-05-06
+"1849","E1","Watford","Stoke",2023-05-06
+"1850","E1","Wigan","Rotherham",2023-05-06
+"2391","E2","Barnsley","Peterboro",2023-05-06
+"2392","E2","Bristol Rvs","Bolton",2023-05-06
+"2393","E2","Burton","Milton Keynes Dons",2023-05-06
+"2394","E2","Cambridge","Forest Green",2023-05-06
+"2395","E2","Cheltenham","Charlton",2023-05-06
+"2396","E2","Exeter","Morecambe",2023-05-06
+"2397","E2","Fleetwood Town","Ipswich",2023-05-06
+"2398","E2","Lincoln","Shrewsbury",2023-05-06
+"2399","E2","Oxford","Accrington",2023-05-06
+"2400","E2","Port Vale","Plymouth",2023-05-06
+"2401","E2","Portsmouth","Wycombe",2023-05-06
+"2402","E2","Sheffield Weds","Derby",2023-05-06
+"2943","E3","Barrow","Stevenage",2023-05-06
+"2944","E3","Bradford","Leyton Orient",2023-05-06
+"2945","E3","Colchester","Mansfield",2023-05-06
+"2946","E3","Grimsby","AFC Wimbledon",2023-05-06
+"2947","E3","Harrogate","Rochdale",2023-05-06
+"2948","E3","Newport County","Crewe",2023-05-06
+"2949","E3","Salford","Gillingham",2023-05-06
+"2950","E3","Stockport","Hartlepool",2023-05-06
+"2951","E3","Sutton","Carlisle",2023-05-06
+"2952","E3","Swindon","Crawley Town",2023-05-06
+"2953","E3","Tranmere","Northampton",2023-05-06
+"2954","E3","Walsall","Doncaster",2023-05-06
+"3837","F1","Ajaccio","Toulouse",2023-05-07
+"3838","F1","Angers","Monaco",2023-05-07
+"3839","F1","Auxerre","Clermont",2023-05-07
+"3840","F1","Lens","Marseille",2023-05-07
+"3841","F1","Lorient","Brest",2023-05-07
+"3842","F1","Lyon","Montpellier",2023-05-07
+"3843","F1","Nantes","Strasbourg",2023-05-07
+"3844","F1","Nice","Rennes",2023-05-07
+"3845","F1","Reims","Lille",2023-05-07
+"3846","F1","Troyes","Paris SG",2023-05-07
+"4184","F2","Amiens","Sochaux",2023-05-06
+"4185","F2","Annecy","Dijon",2023-05-06
+"4186","F2","Laval","Bastia",2023-05-06
+"4187","F2","Le Havre","Rodez",2023-05-06
+"4188","F2","Nimes","Valenciennes",2023-05-06
+"4189","F2","Niort","Metz",2023-05-06
+"4190","F2","Paris FC","Grenoble",2023-05-06
+"4191","F2","Pau FC","Quevilly Rouen",2023-05-06
+"4192","F2","St Etienne","Guingamp",2023-05-06
+"4559","I1","Milan","Lazio",2023-05-07
+"4560","I1","Roma","Inter",2023-05-07
+"4561","I1","Atalanta","Juventus",2023-05-07
+"4562","I1","Cremonese","Spezia",2023-05-07
+"4563","I1","Empoli","Salernitana",2023-05-07
+"4564","I1","Lecce","Verona",2023-05-07
+"4565","I1","Napoli","Fiorentina",2023-05-07
+"4566","I1","Sassuolo","Bologna",2023-05-07
+"4567","I1","Torino","Monza",2023-05-07
+"4568","I1","Udinese","Sampdoria",2023-05-07
+"5185","P1","Arouca","Porto",2023-05-07
+"5186","P1","Benfica","Sp Braga",2023-05-07
+"5187","P1","Boavista","Estoril",2023-05-07
+"5188","P1","Casa Pia","Portimonense",2023-05-07
+"5189","P1","Famalicao","Chaves",2023-05-07
+"5190","P1","Maritimo","Rio Ave",2023-05-07
+"5191","P1","Pacos Ferreira","Sp Lisbon",2023-05-07
+"5192","P1","Santa Clara","Gil Vicente",2023-05-07
+"5193","P1","Guimaraes","Vizela",2023-05-07
+"5594","SC1","Arbroath","Hamilton",2023-05-05
+"5595","SC1","Cove Rangers","Morton",2023-05-05
+"5596","SC1","Inverness C","Ayr",2023-05-05
+"5597","SC1","Queens Park","Dundee",2023-05-05
+"5598","SC1","Raith Rvs","Partick",2023-05-05
+"6665","T1","Ad. Demirspor","Besiktas",2023-05-07
+"6666","T1","Antalyaspor","Buyuksehyr",2023-05-07
+"6667","T1","Galatasaray","Sivasspor",2023-05-07
+"6668","T1","Gaziantep","Giresunspor",2023-05-07
+"6669","T1","Hatayspor","Fenerbahce",2023-05-07
+"6670","T1","Kasimpasa","Istanbulspor",2023-05-07
+"6671","T1","Kayserispor","Alanyaspor",2023-05-07
+"6672","T1","Trabzonspor","Karagumruk",2023-05-07
+"6673","T1","Umraniyespor","Ankaragucu",2023-05-07

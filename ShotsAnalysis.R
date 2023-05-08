@@ -2690,74 +2690,141 @@ sp2_conceding_conversion$XSTC <- round(sp2_scoring$TGS/(sp2_tst$TST - sp2_scorin
 #merge the two parts
 sp2_shots_analysis <- merge(sp2_scoring_conversion,sp2_conceding_conversion,by='Group.1',all = T)
 ###################################################################################################################################
+# #T1 version 1
+# #home goals scored
+# t1_home_gs <- aggregate(T1$FTHG, by = list(T1$HomeTeam), FUN = sum)
+# t1_home_gs_avg <- aggregate(T1$FTHG, by = list(T1$HomeTeam),mean)
+# t1_home_scoring <- merge(t1_home_gs,t1_home_gs_avg, by='Group.1',all = T)
+# names(t1_home_scoring)[names(t1_home_scoring) == "x.x"] <- "TFthg"
+# names(t1_home_scoring)[names(t1_home_scoring) == "x.y"] <- "Avg_Fthg"
+# #away goals scored
+# t1_away_gs <- aggregate(T1$FTAG, by = list(T1$AwayTeam), FUN = sum)
+# t1_away_gs_avg <- aggregate(T1$FTAG, by = list(T1$AwayTeam),mean)
+# t1_away_scoring <- merge(t1_away_gs,t1_away_gs_avg, by='Group.1',all = T)
+# names(t1_away_scoring)[names(t1_away_scoring) == "x.x"] <- "TFtag"
+# names(t1_away_scoring)[names(t1_away_scoring) == "x.y"] <- "Avg_Ftag"
+# #total goals scored
+# t1_scoring <- merge(t1_home_scoring,t1_away_scoring,by='Group.1',all = T)
+# t1_scoring$TGS <- t1_scoring$TFthg + t1_scoring$TFtag
+#
+# #Home shots on target
+# t1_home_hst <- aggregate(T1$HST, by = list(T1$HomeTeam), FUN = sum)
+# t1_away_ast <- aggregate(T1$AST, by = list(T1$AwayTeam), FUN = sum)
+# t1_tst <- merge(t1_home_hst,t1_away_ast, by='Group.1',all = T)
+# names(t1_tst)[names(t1_tst) == "x.x"] <- "hst"
+# names(t1_tst)[names(t1_tst) == "x.y"] <- "ast"
+# t1_tst$TST <- t1_tst$hst + t1_tst$ast
+# #merge goals scored and shots on target
+# t1_scoring_conversion <- merge(t1_tst,t1_scoring,by='Group.1',all = T)
+# #add HSC ASC TSC
+# t1_scoring_conversion$HSTC <- percent(t1_scoring_conversion$TFthg/t1_scoring_conversion$hst, accuracy = 0.01)
+# t1_scoring_conversion$ASTC <- percent(t1_scoring_conversion$TFtag/t1_scoring_conversion$ast, accuracy = 0.01)
+# t1_scoring_conversion$TSTC <- percent(t1_scoring_conversion$TGS/t1_scoring_conversion$TST, accuracy = 0.01)
+# #merge games played
+# t1_scoring_conversion <- cbind(t1_scoring_conversion,t1_games_played)
+# #create the second part
+# #home goals conceded
+# t1_home_gc <- aggregate(T1$FTAG, by = list(T1$HomeTeam), FUN = sum)
+# t1_home_gc_avg <- aggregate(T1$FTAG, by = list(T1$HomeTeam),mean)
+# t1_home_conceding <- merge(t1_home_gc,t1_home_gc_avg, by='Group.1',all = T)
+# names(t1_home_conceding)[names(t1_home_conceding) == "x.x"] <- "TFthc"
+# names(t1_home_conceding)[names(t1_home_conceding) == "x.y"] <- "Avg_Fthc"
+# #away goals conceded
+# t1_away_gc <- aggregate(T1$FTHG, by = list(T1$AwayTeam), FUN = sum)
+# t1_away_gc_avg <- aggregate(T1$FTHG, by = list(T1$AwayTeam),mean)
+# t1_away_conceding <- merge(t1_away_gc,t1_away_gc_avg, by='Group.1',all = T)
+# names(t1_away_conceding)[names(t1_away_conceding) == "x.x"] <- "TFtac"
+# names(t1_away_conceding)[names(t1_away_conceding) == "x.y"] <- "Avg_Ftac"
+# #total goals conceded
+# t1_conceding <- merge(t1_home_conceding,t1_away_conceding,by='Group.1',all = T)
+# t1_conceding$TGC <- t1_conceding$TFthc + t1_conceding$TFtac
+#
+# #Home shots conceded
+# t1_home_hsc <- aggregate(T1$AST, by = list(T1$HomeTeam), FUN = sum)
+# t1_away_asc <- aggregate(T1$HST, by = list(T1$AwayTeam), FUN = sum)
+# t1_tsc <- merge(t1_home_hsc,t1_away_asc, by='Group.1',all = T)
+# names(t1_tsc)[names(t1_tsc) == "x.x"] <- "hsc"
+# names(t1_tsc)[names(t1_tsc) == "x.y"] <- "asc"
+# t1_tsc$TSC <- t1_tsc$hsc + t1_tsc$asc
+# #merge goals conceded and shots conceded
+# t1_conceding_conversion <- merge(t1_tsc,t1_conceding,by='Group.1',all = T)
+#
+# #add HSC ASC TSC
+# t1_conceding_conversion$HSCC <- percent(t1_conceding_conversion$TFthc/t1_conceding_conversion$hsc, accuracy = 0.01)
+# t1_conceding_conversion$ASCC <- percent(t1_conceding_conversion$TFtac/t1_conceding_conversion$asc, accuracy = 0.01)
+# t1_conceding_conversion$TSCC <- percent(t1_conceding_conversion$TGC/t1_conceding_conversion$TSC, accuracy = 0.01)
+#
+# #merge the two parts
+# t1_shots_analysis <- merge(t1_scoring_conversion,t1_conceding_conversion,by='Group.1',all = T)
+# #T1
+# #home goals scored
+# t1_home_gs <- aggregate(T1$FTHG, by = list(T1$HomeTeam), FUN = sum)
+# t1_home_gs_avg <- aggregate(T1$FTHG, by = list(T1$HomeTeam),mean)
+# t1_home_scoring <- merge(t1_home_gs,t1_home_gs_avg, by='Group.1',all = T)
+# names(t1_home_scoring)[names(t1_home_scoring) == "x.x"] <- "TFthg"
+# names(t1_home_scoring)[names(t1_home_scoring) == "x.y"] <- "Avg_Fthg"
+# #away goals scored
+# t1_away_gs <- aggregate(T1$FTAG, by = list(T1$AwayTeam), FUN = sum)
+# t1_away_gs_avg <- aggregate(T1$FTAG, by = list(T1$AwayTeam),mean)
+# t1_away_scoring <- merge(t1_away_gs,t1_away_gs_avg, by='Group.1',all = T)
+# names(t1_away_scoring)[names(t1_away_scoring) == "x.x"] <- "TFtag"
+# names(t1_away_scoring)[names(t1_away_scoring) == "x.y"] <- "Avg_Ftag"
+# #total goals scored
+# t1_scoring <- merge(t1_home_scoring,t1_away_scoring,by='Group.1',all = T)
+# t1_scoring$TGS <- t1_scoring$TFthg + t1_scoring$TFtag
+#
+# #Home shots on target
+# t1_home_hst <- aggregate(T1$HST, by = list(T1$HomeTeam), FUN = sum)
+# t1_away_ast <- aggregate(T1$AST, by = list(T1$AwayTeam), FUN = sum)
+# t1_tst <- merge(t1_home_hst,t1_away_ast, by='Group.1',all = T)
+# names(t1_tst)[names(t1_tst) == "x.x"] <- "hst"
+# names(t1_tst)[names(t1_tst) == "x.y"] <- "ast"
+# t1_tst$TST <- t1_tst$hst + t1_tst$ast
+# #merge goals scored and shots on target
+# t1_scoring_conversion <- merge(t1_tst,t1_scoring,by='Group.1',all = T)
+# #add HSC ASC TSC
+# t1_scoring_conversion$HSTC <- percent(t1_scoring_conversion$TFthg/t1_scoring_conversion$hst, accuracy = 0.01)
+# t1_scoring_conversion$ASTC <- percent(t1_scoring_conversion$TFtag/t1_scoring_conversion$ast, accuracy = 0.01)
+# t1_scoring_conversion$TSTC <- percent(t1_scoring_conversion$TGS/t1_scoring_conversion$TST, accuracy = 0.01)
+# #merge games played
+# t1_scoring_conversion <- cbind(t1_scoring_conversion,t1_games_played)
+# #create the second part
+# #home goals conceded
+# t1_home_gc <- aggregate(T1$FTAG, by = list(T1$HomeTeam), FUN = sum)
+# t1_home_gc_avg <- aggregate(T1$FTAG, by = list(T1$HomeTeam),mean)
+# t1_home_conceding <- merge(t1_home_gc,t1_home_gc_avg, by='Group.1',all = T)
+# names(t1_home_conceding)[names(t1_home_conceding) == "x.x"] <- "TFthc"
+# names(t1_home_conceding)[names(t1_home_conceding) == "x.y"] <- "Avg_Fthc"
+# #away goals conceded
+# t1_away_gc <- aggregate(T1$FTHG, by = list(T1$AwayTeam), FUN = sum)
+# t1_away_gc_avg <- aggregate(T1$FTHG, by = list(T1$AwayTeam),mean)
+# t1_away_conceding <- merge(t1_away_gc,t1_away_gc_avg, by='Group.1',all = T)
+# names(t1_away_conceding)[names(t1_away_conceding) == "x.x"] <- "TFtac"
+# names(t1_away_conceding)[names(t1_away_conceding) == "x.y"] <- "Avg_Ftac"
+# #total goals conceded
+# t1_conceding <- merge(t1_home_conceding,t1_away_conceding,by='Group.1',all = T)
+# t1_conceding$TGC <- t1_conceding$TFthc + t1_conceding$TFtac
+#
+# #Home shots conceded
+# t1_home_hsc <- aggregate(T1$AST, by = list(T1$HomeTeam), FUN = sum)
+# t1_away_asc <- aggregate(T1$HST, by = list(T1$AwayTeam), FUN = sum)
+# t1_tsc <- merge(t1_home_hsc,t1_away_asc, by='Group.1',all = T)
+# names(t1_tsc)[names(t1_tsc) == "x.x"] <- "hsc"
+# names(t1_tsc)[names(t1_tsc) == "x.y"] <- "asc"
+# t1_tsc$TSC <- t1_tsc$hsc + t1_tsc$asc
+# #merge goals conceded and shots conceded
+# t1_conceding_conversion <- merge(t1_tsc,t1_conceding,by='Group.1',all = T)
+#
+# #add HSC ASC TSC
+# t1_conceding_conversion$HSCC <- percent(t1_conceding_conversion$TFthc/t1_conceding_conversion$hsc, accuracy = 0.01)
+# t1_conceding_conversion$ASCC <- percent(t1_conceding_conversion$TFtac/t1_conceding_conversion$asc, accuracy = 0.01)
+# t1_conceding_conversion$TSCC <- percent(t1_conceding_conversion$TGC/t1_conceding_conversion$TSC, accuracy = 0.01)
+# t1_conceding_conversion$XSTC <- round(t1_scoring$TGS/(t1_tst$TST - t1_scoring$TGS), digits = 2)
+#
+# #merge the two parts
+# t1_shots_analysis <- merge(t1_scoring_conversion,t1_conceding_conversion,by='Group.1',all = T)
+
 #T1
-#home goals scored
-t1_home_gs <- aggregate(T1$FTHG, by = list(T1$HomeTeam), FUN = sum)
-t1_home_gs_avg <- aggregate(T1$FTHG, by = list(T1$HomeTeam),mean)
-t1_home_scoring <- merge(t1_home_gs,t1_home_gs_avg, by='Group.1',all = T)
-names(t1_home_scoring)[names(t1_home_scoring) == "x.x"] <- "TFthg"
-names(t1_home_scoring)[names(t1_home_scoring) == "x.y"] <- "Avg_Fthg"
-#away goals scored
-t1_away_gs <- aggregate(T1$FTAG, by = list(T1$AwayTeam), FUN = sum)
-t1_away_gs_avg <- aggregate(T1$FTAG, by = list(T1$AwayTeam),mean)
-t1_away_scoring <- merge(t1_away_gs,t1_away_gs_avg, by='Group.1',all = T)
-names(t1_away_scoring)[names(t1_away_scoring) == "x.x"] <- "TFtag"
-names(t1_away_scoring)[names(t1_away_scoring) == "x.y"] <- "Avg_Ftag"
-#total goals scored
-t1_scoring <- merge(t1_home_scoring,t1_away_scoring,by='Group.1',all = T)
-t1_scoring$TGS <- t1_scoring$TFthg + t1_scoring$TFtag
-
-#Home shots on target
-t1_home_hst <- aggregate(T1$HST, by = list(T1$HomeTeam), FUN = sum)
-t1_away_ast <- aggregate(T1$AST, by = list(T1$AwayTeam), FUN = sum)
-t1_tst <- merge(t1_home_hst,t1_away_ast, by='Group.1',all = T)
-names(t1_tst)[names(t1_tst) == "x.x"] <- "hst"
-names(t1_tst)[names(t1_tst) == "x.y"] <- "ast"
-t1_tst$TST <- t1_tst$hst + t1_tst$ast
-#merge goals scored and shots on target
-t1_scoring_conversion <- merge(t1_tst,t1_scoring,by='Group.1',all = T)
-#add HSC ASC TSC
-t1_scoring_conversion$HSTC <- percent(t1_scoring_conversion$TFthg/t1_scoring_conversion$hst, accuracy = 0.01)
-t1_scoring_conversion$ASTC <- percent(t1_scoring_conversion$TFtag/t1_scoring_conversion$ast, accuracy = 0.01)
-t1_scoring_conversion$TSTC <- percent(t1_scoring_conversion$TGS/t1_scoring_conversion$TST, accuracy = 0.01)
-#merge games played
-t1_scoring_conversion <- cbind(t1_scoring_conversion,t1_games_played)
-#create the second part
-#home goals conceded
-t1_home_gc <- aggregate(T1$FTAG, by = list(T1$HomeTeam), FUN = sum)
-t1_home_gc_avg <- aggregate(T1$FTAG, by = list(T1$HomeTeam),mean)
-t1_home_conceding <- merge(t1_home_gc,t1_home_gc_avg, by='Group.1',all = T)
-names(t1_home_conceding)[names(t1_home_conceding) == "x.x"] <- "TFthc"
-names(t1_home_conceding)[names(t1_home_conceding) == "x.y"] <- "Avg_Fthc"
-#away goals conceded
-t1_away_gc <- aggregate(T1$FTHG, by = list(T1$AwayTeam), FUN = sum)
-t1_away_gc_avg <- aggregate(T1$FTHG, by = list(T1$AwayTeam),mean)
-t1_away_conceding <- merge(t1_away_gc,t1_away_gc_avg, by='Group.1',all = T)
-names(t1_away_conceding)[names(t1_away_conceding) == "x.x"] <- "TFtac"
-names(t1_away_conceding)[names(t1_away_conceding) == "x.y"] <- "Avg_Ftac"
-#total goals conceded
-t1_conceding <- merge(t1_home_conceding,t1_away_conceding,by='Group.1',all = T)
-t1_conceding$TGC <- t1_conceding$TFthc + t1_conceding$TFtac
-
-#Home shots conceded
-t1_home_hsc <- aggregate(T1$AST, by = list(T1$HomeTeam), FUN = sum)
-t1_away_asc <- aggregate(T1$HST, by = list(T1$AwayTeam), FUN = sum)
-t1_tsc <- merge(t1_home_hsc,t1_away_asc, by='Group.1',all = T)
-names(t1_tsc)[names(t1_tsc) == "x.x"] <- "hsc"
-names(t1_tsc)[names(t1_tsc) == "x.y"] <- "asc"
-t1_tsc$TSC <- t1_tsc$hsc + t1_tsc$asc
-#merge goals conceded and shots conceded
-t1_conceding_conversion <- merge(t1_tsc,t1_conceding,by='Group.1',all = T)
-
-#add HSC ASC TSC
-t1_conceding_conversion$HSCC <- percent(t1_conceding_conversion$TFthc/t1_conceding_conversion$hsc, accuracy = 0.01)
-t1_conceding_conversion$ASCC <- percent(t1_conceding_conversion$TFtac/t1_conceding_conversion$asc, accuracy = 0.01)
-t1_conceding_conversion$TSCC <- percent(t1_conceding_conversion$TGC/t1_conceding_conversion$TSC, accuracy = 0.01)
-
-#merge the two parts
-t1_shots_analysis <- merge(t1_scoring_conversion,t1_conceding_conversion,by='Group.1',all = T)
-#T1
-#home goals scored
 t1_home_gs <- aggregate(T1$FTHG, by = list(T1$HomeTeam), FUN = sum)
 t1_home_gs_avg <- aggregate(T1$FTHG, by = list(T1$HomeTeam),mean)
 t1_home_scoring <- merge(t1_home_gs,t1_home_gs_avg, by='Group.1',all = T)
@@ -2823,6 +2890,8 @@ t1_conceding_conversion$XSTC <- round(t1_scoring$TGS/(t1_tst$TST - t1_scoring$TG
 
 #merge the two parts
 t1_shots_analysis <- merge(t1_scoring_conversion,t1_conceding_conversion,by='Group.1',all = T)
+
+
 
 # #Write out the data to excel
 # write.xlsx(b1_shots_analysis,'ShotsAnalysis.xlsx',sheetName = "B1")

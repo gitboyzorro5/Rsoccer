@@ -1,0 +1,14 @@
+"","Div","Date","HomeTeam","AwayTeam","FTHG","FTAG","FTR","HTHG","HTAG","HTR","PSH","PSD","PSA","HTCS","CS","HS","HST","AS","AST","HY","AY","HR","AR","HCO","ACO","HF","AF","TG","TC","TF","COSC","OV15","OV25","OV35","TY","TR","n","Bookings","Crossbookings","GoalsXbookings","CornersXbookings","GoalsXcorners","GoalsXcornerXbookings"
+"6352","T1",2023-04-01,"Trabzonspor","Kayserispor",3,4,"A",1,2,"A",1.53,4.44,6.59,"1-2","3-4",21,6,14,4,0,1,0,0,4,2,11,12,7,6,23,"4-2","Y","Y","Y",1,0,7,10,0,70,60,42,420
+"6362","T1",2023-04-08,"Kasimpasa","Trabzonspor",2,0,"H",1,0,"H",3,3.89,2.29,"1-0","2-0",15,7,11,3,0,0,0,0,5,5,17,10,2,10,27,"5-5","Y","N","N",0,0,2,0,0,0,0,20,0
+"6377","T1",2023-04-16,"Trabzonspor","Besiktas",0,0,"D",0,0,"D",2.97,3.52,2.46,"0-0","0-0",12,4,12,5,4,2,0,0,6,8,11,18,0,14,29,"6-8","N","N","N",6,0,0,60,800,0,840,0,0
+"6386","T1",2023-04-20,"Sivasspor","Trabzonspor",4,1,"H",2,1,"H",2.82,3.36,2.67,"2-1","4-1",18,10,4,2,1,1,0,1,6,1,10,11,5,7,21,"6-1","Y","Y","Y",2,1,5,45,350,225,315,35,1575
+"6398","T1",2023-04-29,"Konyaspor","Trabzonspor",2,1,"H",1,1,"D",2.6,3.44,2.84,"1-1","2-1",12,5,8,3,2,2,0,1,6,5,13,17,3,11,30,"6-5","Y","Y","N",4,1,3,65,900,195,715,33,2145
+"6413","T1",2023-05-08,"Trabzonspor","Ankaragucu",2,0,"H",1,0,"H",1.83,3.88,4.32,"1-0","2-0",14,5,3,0,1,1,0,1,5,4,11,5,2,9,16,"5-4","Y","N","N",2,1,2,45,350,90,405,18,810
+"6365","T1",2023-04-09,"Alanyaspor","Hatayspor",3,0,"H",NA,NA,"",NA,NA,NA,"0-0","3-0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"6376","T1",2023-04-16,"Hatayspor","Karagumruk",0,3,"A",NA,NA,"",NA,NA,NA,"0-0","0-3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"6382","T1",2023-04-19,"Besiktas","Hatayspor",3,0,"H",NA,NA,"",NA,NA,NA,"0-0","3-0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"6392","T1",2023-04-23,"Hatayspor","Ankaragucu",0,3,"A",NA,NA,"",NA,NA,NA,"0-0","0-3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"6402","T1",2023-04-30,"Buyuksehyr","Hatayspor",3,0,"H",NA,NA,"",NA,NA,NA,"0-0","3-0",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"6411","T1",2023-05-07,"Hatayspor","Istanbulspor",0,3,"A",NA,NA,"",NA,NA,NA,"0-0","0-3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3,NA,NA,NA,NA,NA,NA
+"13","T1",2023-05-07,"Hatayspor","Istanbulspor",0,3,"A",NA,NA,"",NA,NA,NA,"0-0","0-3",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,"NA-NA","Y","Y","N",NA,NA,3.08333333333333,NA,NA,NA,NA,NA,NA

@@ -20,7 +20,7 @@ CHN <- CHN[order(as.Date(CHN$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 CHN$CS <- paste(CHN$HG,CHN$AG, sep = "-")
 
 #CHN_qualificaton <- subset(CHN,tournament == "UEFA Euro qualification")
-CHN <- subset(CHN,Season == "2022")
+CHN <- subset(CHN,Season == "2023")
 #CHN <- CHN[CHN$Date > '2008-01-01',])
 CHN$TG <- CHN$HG + CHN$AG
 CHN$OV25 <- ifelse(CHN$TG >= 3,"Y","N")
@@ -55,7 +55,7 @@ chn_goaltotalsv2[is.na(chn_goaltotalsv2)] <- ""
 chn_goaltotalsv2 <- cbind(chn_goaltotalsv2,chn_avg_totalgoals)
 write.xlsx(chn_goaltotalsv2,'NL/CHN.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-CHN <- subset(CHN,Season == "2022")
+CHN <- subset(CHN,Season == "2023")
 chn_totalrounds <-  (length(chn_teams) - 1 )*2
 chn_totalmatches <- (length(chn_teams)*(length(chn_teams) - 1))
 chn_eachround <- chn_totalmatches / chn_totalrounds
@@ -1156,6 +1156,6 @@ chn_ov25_summary <- tabyl(CHN,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(chn_ftr_summary,'NL/CHN.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(chn_ov25_summary,'NL/CHN.xlsx',sheetName = "OVUN25", append = TRUE)
-CHN <- subset(CHN,Season == "2022")
+CHN <- subset(CHN,Season == "2023")
 
 

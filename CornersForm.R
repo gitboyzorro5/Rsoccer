@@ -1,6 +1,6 @@
 #Create Home and Away Form
 library('dplyr')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 library('xlsx')
 #create home and away coscform matrices
 b1_coscform_h <- tapply(B1$COSC, B1[c("HomeTeam", "Date")],median)

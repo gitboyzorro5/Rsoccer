@@ -578,6 +578,7 @@ for(dbfixture_t1 in 1:nrow(myfixturest1))
 
 
 }
+
 unlink('finaldoublefixturet1.csv')
 write.csv(final_doublefixture_t1,"finaldoublefixturet1.csv")
 ##########################################################################################################

@@ -19,7 +19,7 @@ NOR$Date <- dmy(NOR$Date)
 NOR <- NOR[order(as.Date(NOR$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 NOR$CS <- paste(NOR$HG,NOR$AG, sep = "-")
 #NOR_qualificaton <- subset(NOR,tournament == "UEFA Euro qualification")
-NOR <- subset(NOR,Season == "2022")
+NOR <- subset(NOR,Season == "2023")
 #NOR <- NOR[NOR$Date > '2008-01-01',])
 NOR$TG <- NOR$HG + NOR$AG
 NOR$OV25 <- ifelse(NOR$TG >= 3,"Y","N")
@@ -54,7 +54,7 @@ write.xlsx(nor_goaltotalsv2,'NL/NOR.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
 #####################################################################################################
 ##############################################################################################
-NOR <- subset(NOR,Season == "2022")
+NOR <- subset(NOR,Season == "2023")
 nor_totalrounds <-  (length(nor_teams) - 1 )*2
 nor_totalmatches <- (length(nor_teams)*(length(nor_teams) - 1))
 nor_eachround <- nor_totalmatches / nor_totalrounds
@@ -1156,7 +1156,7 @@ nor_ov25_summary <- tabyl(NOR,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(nor_ftr_summary,'NL/NOR.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(nor_ov25_summary,'NL/NOR.xlsx',sheetName = "OVUN25", append = TRUE)
-NOR <- subset(NOR,Season == "2022")
+NOR <- subset(NOR,Season == "2023")
 
 
 

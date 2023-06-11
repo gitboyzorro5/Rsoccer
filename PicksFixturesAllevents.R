@@ -1,7 +1,7 @@
 #this file picks data from allevents and combines it with picks fixtures
 library('xlsx')
 library('lubridate')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 options(java.parameters = "-Xmx4g")
 
 B1_fixtures_clone_final <- B1_fixtures_clone[,-c(8,9,10,27)]
@@ -1868,15 +1868,10 @@ unlink('clonedprediction_events.xlsx')
 myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')
 myodds_fixtures$matchid <- paste(myodds_fixtures$HT,myodds_fixtures$AT, sep = "-")
 myodds_fixtures$Date <- dmy(myodds_fixtures$Date)
-myodds_fixtures <- myodds_fixtures[myodds_fixtures$Date >= '2023-04-21',]
+myodds_fixtures <- myodds_fixtures[myodds_fixtures$Date >= '2023-06-02',]
 mycloned_prediction_events <- dplyr::left_join(myodds_fixtures,alldivisions_clonedevents)
 write.xlsx(mycloned_prediction_events,'clonedprediction_events.xlsx')
 
-
-
-
-
-View(myodds_fixtures)
 
 
 

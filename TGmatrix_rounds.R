@@ -1,5 +1,5 @@
 library('dplyr')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 library('xlsx')
 library(stringr)
 library(stringi)

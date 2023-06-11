@@ -1,6 +1,6 @@
 #create Goals Scored form since start of season
 library('dplyr')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 library('xlsx')
 #tgv2 <- with(B1, tapply(TG, list(HomeTeam, AwarTeam), FUN = mean))
 #with(sorted_B1, tapply(TG, list(HomeTeam, Date), FUN = mean))

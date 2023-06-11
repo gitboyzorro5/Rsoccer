@@ -1,11 +1,11 @@
 library('dplyr')
 library('janitor')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 library('xlsx')
 library('scales')
 library('R.utils')
 ############################
-#create last n games
+# #create last n games
 b1_last_n_games <- 6
 d1_last_n_games <- 6
 d2_last_n_games <- 6
@@ -29,7 +29,7 @@ sp1_last_n_games <- 6
 sp2_last_n_games <- 6
 t1_last_n_games <- 6
 #create last total games
-# b1_last_n_games <- b1_games_played[1]
+ b1_last_n_games <- b1_games_played[1]
 # d1_last_n_games <- d1_games_played[1]
 # d2_last_n_games <- d2_games_played[1]
 # e0_last_n_games <- e0_games_played[1]

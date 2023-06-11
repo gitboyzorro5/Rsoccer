@@ -1,5 +1,5 @@
 library('xlsx')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 options(java.parameters = "-Xmx4g")
 
 B1_fixtures_clone_final <- B1_fixtures_clone[,-c(8,9,10,27)]

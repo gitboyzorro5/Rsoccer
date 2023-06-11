@@ -1,18 +1,21 @@
+
+remotes::install_github("JaseZiv/worldfootballR")
 library('worldfootballR')
 library('dplyr')
 library('mgsub')
+packageVersion('worldfootballR')
 
 #E0
 epl_match_details <- load_fotmob_match_details(
   country = "ENG",
-  league_name = "Premier League"
+  league_name = "Premier League",
 )
 #select just the current season
 epl_startdate <- which(epl_match_details$match_time_utc == "Fri, Aug 5, 2022, 19:00 UTC")
 epl_startindex <- nrow(epl_match_details) - epl_startdate[1]
 epl_match_details <- tail(epl_match_details,epl_startindex)
 
-
+epl_matchids
 epl_match_details$home_team <- mgsub(epl_match_details$home_team,c("AFC Bournemouth","Brighton & Hove Albion","Leeds United","Leicester City","Manchester United","Manchester City","Newcastle United","Nottingham Forest","Tottenham Hotspur","West Ham United","Wolverhampton Wanderers"),c("Bournemouth","Brighton","Leeds","Leicester","Man United","Man City","Newcastle","Nottm Forest","Tottenham","West Ham","Wolves"))
 epl_match_details$away_team <- mgsub(epl_match_details$away_team,c("AFC Bournemouth","Brighton & Hove Albion","Leeds United","Leicester City","Manchester United","Manchester City","Newcastle United","Nottingham Forest","Tottenham Hotspur","West Ham United","Wolverhampton Wanderers"),c("Bournemouth","Brighton","Leeds","Leicester","Man United","Man City","Newcastle","Nottm Forest","Tottenham","West Ham","Wolves"))
 epl_match_details$matchid <- paste(epl_match_details$home_team,epl_match_details$away_team,sep = "-")
@@ -320,9 +323,6 @@ F1_spread$GoalsXcornerXbookings <- (F1_spread$TG)*(F1_spread$TC)*(F1_spread$Book
 unlink('F1_spread.csv')
 write.csv(F1_spread,'F1_spread.csv')
 ################################################################################################################
-
-
-
 
 
 

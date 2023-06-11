@@ -496,7 +496,7 @@ T1_spread$GoalsXcorners <- (T1_spread$TG)*(T1_spread$TC)
 T1_spread$GoalsXcornerXbookings <- (T1_spread$TG)*(T1_spread$TC)*(T1_spread$Bookings)
 
 unlink('SpreadsN/T1/*')
-for(t1_sn in 1:18){
+for(t1_sn in 1:17){
   df <- tail(T1_spread[T1_spread$HomeTeam == final_doublefixture_t1[t1_sn,1] | T1_spread$AwayTeam == final_doublefixture_t1[t1_sn,1] ,],spreadn)
 
   df2 <- tail(T1_spread[T1_spread$HomeTeam == final_doublefixture_t1[t1_sn + 1,1] | T1_spread$AwayTeam == final_doublefixture_t1[t1_sn + 1,1],],spreadn)
@@ -515,7 +515,7 @@ for(t1_sn in 1:18){
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_t1[t1_sn,1],final_doublefixture_t1[t1_sn + 1,1],".csv",sep = "_")))
 
 }
-
+nrow(T1_spread)
 Europe_spread <- rbind(B1_spread,D2_spread,E1_spread,E2_spread,E3_spread,EC_spread,F2_spread,G1_spread,I2_spread,SC0_spread,SC1_spread,SC2_spread,SC3_spread,SP2_spread,T1_spread)
 
 write.csv(Europe_spread,'Europespread.csv')

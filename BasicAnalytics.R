@@ -1309,6 +1309,75 @@ temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 write.csv(temp_analysis,'Temp/BasakhesirvsGent.csv')
 
 write.xlsx(final_b1_cs,'CSFORM.xlsx',sheetName = "L6", append = TRUE)
+#####################################################################################################################
+#test team against writable to excel
+
+final_b1_hf_against <- c()
+for(index_b1_hf_against in 1:length(b1_teams))
+{
+  index_b1_hf_against <- row.names(b1_form_team_against_h) == b1_teams[index_b1_hf_against]
+  form_b1_hf_against <- b1_form_team_against_h[index_b1_hf_against]
+  deleted_form_b1_hf_against <- form_b1_hf_against[!form_b1_hf_against[] == ""]
+  l6_form_b1_hf_against <- tail(deleted_form_b1_hf_against,b1_last_n_games)
+  l6_form_b1_hf_against <- paste(l6_form_b1_hf_against,collapse = " ")
+  final_b1_hf_against[index_b1_hf_against] <- rbind(paste(b1_teams[index_b1_hf_against],l6_form_b1_hf_against, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",b1_teams[index],l6_form)
+
+}
+
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
+library('xlsx')
+library(stringr)
+library(stringi)
+final_b1_teamagainst <- matrix(nrow = length(b1_teams),ncol = b1_totalrounds )
+l6_form_b1_teamagainstsplitted <- c()
+form_b1_teamagainst <- c()
+for(index_b1_teamagainst in 1:length(b1_teams))
+{
+  for(index_b1_teamagainst_cols in 1:b1_totalrounds)
+  {
+    index_b1_teamagainst  <- row.names(b1_form_team_against_h) == b1_teams[index_b1_teamagainst]
+    form_b1_teamagainst <- b1_form_team_against_h[index_b1_teamagainst ]
+    deleted_form_b1_teamagainst <- form_b1_teamagainst[!form_b1_teamagainst[] == ""]
+    l6_form_b1_teamagainst <- tail(deleted_form_b1_teamagainst,b1_last_n_games)
+    l6_form_b1_teamagainst <- as.character(l6_form_b1_teamagainst)
+    #l6_form_b1_teamagainst_flattened <- stri_paste(l6_form_b1_teamagainst,collapse = '')
+    #l6_form_b1_teamagainstsplitted <- strsplit(l6_form_b1_teamagainst_flattened,"")[[1]]
+    final_b1_teamagainst[index_b1_teamagainst,index_b1_teamagainst_cols] <- l6_form_b1_teamagainst[index_b1_teamagainst_cols]
+  }
+}
+
+b1_teamagainst <- cbind(b1_teams,final_b1_teamagainst)
+write.xlsx(final_b1_teamagainst,"Divisions/B1.xlsx",append = T , sheetName = "Teamagainst")
+########################################################################################################################################
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
+library('xlsx')
+library(stringr)
+library(stringi)
+final_b1_correctscoreform <- matrix(nrow = length(b1_teams),ncol = b1_totalrounds )
+l6_form_b1_correctscoreformsplitted <- c()
+form_b1_correctscoreform <- c()
+for(index_b1_correctscoreform in 1:length(b1_teams))
+{
+  for(index_b1_correctscoreform_cols in 1:b1_totalrounds)
+  {
+    index_b1_correctscoreform  <- row.names(b1_csform_h) == b1_teams[index_b1_correctscoreform]
+    form_b1_correctscoreform <- b1_csform_h[index_b1_correctscoreform ]
+    deleted_form_b1_correctscoreform <- form_b1_correctscoreform[!form_b1_correctscoreform[] == ""]
+    l6_form_b1_correctscoreform <- tail(deleted_form_b1_correctscoreform,b1_last_n_games)
+    l6_form_b1_correctscoreform <- as.character(l6_form_b1_correctscoreform)
+    #l6_form_b1_correctscoreform_flattened <- stri_paste(l6_form_b1_correctscoreform,collapse = '')
+    #l6_form_b1_correctscoreformsplitted <- strsplit(l6_form_b1_correctscoreform_flattened,"")[[1]]
+    final_b1_correctscoreform[index_b1_correctscoreform,index_b1_correctscoreform_cols] <- l6_form_b1_correctscoreform[index_b1_correctscoreform_cols]
+  }
+}
+
+b1_correctscoreform <- cbind(b1_teams,final_b1_correctscoreform)
+write.xlsx(b1_correctscoreform,"Divisions/B1.xlsx",append = T , sheetName = "CSform")
+
+
+
+b1_correctscoreform
 
 
 

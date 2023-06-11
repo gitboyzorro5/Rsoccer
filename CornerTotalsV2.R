@@ -1,6 +1,6 @@
 # Goal totals V2
 library('dplyr')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 library('xlsx')
 #Create the home and awag team matrix
 b1_cornertotalsv2 <- tapply(B1$TC, B1[c("HomeTeam", "AwayTeam")],mean)

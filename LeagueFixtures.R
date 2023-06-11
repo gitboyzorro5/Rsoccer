@@ -1,7 +1,7 @@
 library('plyr')
 library('dplyr')
 library('janitor')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 options(java.parameters = "-Xmx2048m")
 library('xlsx')
 library('scales')

@@ -1,34 +1,34 @@
+library('xlsx')
 ###############
-E0_spread <- read.csv('E0_spread.csv')
-E0_spread <- E0_spread[,-1]
-E0_ucl <- E0_spread
+E0_spreaducl <- readxl::read_excel('E0_spread.xlsx')
+E0_spreaducl <- E0_spreaducl[,c(-1)]
+E0_ucl <- E0_spreaducl
 colnames(E0_ucl)[38] <- "goalmins"
 colnames(E0_ucl)[40] <- "shirts"
 #########################################
-D1_spread <- read.csv('D1_spread.csv')
-D1_spread <- D1_spread[,-1]
-D1_ucl <- D1_spread
+D1_spreaducl <- readxl::read_excel('D1_spread.xlsx')
+D1_spreaducl <- D1_spreaducl[,c(-1)]
+D1_ucl <- D1_spreaducl
 colnames(D1_ucl)[38] <- "goalmins"
 colnames(D1_ucl)[40] <- "shirts"
 ###########################################
-SP1_spread <- read.csv('SP1_spread.csv')
-SP1_spread <- SP1_spread[,-1]
-SP1_ucl <- SP1_spread
+SP1_spreaducl <- readxl::read_excel('SP1_spread.xlsx')
+SP1_spreaducl <- SP1_spreaducl[,c(-1)]
+SP1_ucl <- SP1_spreaducl
 colnames(SP1_ucl)[38] <- "goalmins"
 colnames(SP1_ucl)[40] <- "shirts"
 ###########################################
-I1_spread <- read.csv('I1_spread.csv')
-I1_spread <- I1_spread[,-1]
-I1_ucl <- I1_spread
+I1_spreaducl <- readxl::read_excel('I1_spread.xlsx')
+I1_spreaducl <- I1_spreaducl[,c(-1)]
+I1_ucl <- I1_spreaducl
 colnames(I1_ucl)[38] <- "goalmins"
 colnames(I1_ucl)[40] <- "shirts"
 ###########################################
-F1_spread <- read.csv('F1_spread.csv')
-F1_spread <- F1_spread[,-1]
-F1_ucl <- F1_spread
+F1_spreaducl <- readxl::read_excel('F1_spread.xlsx')
+F1_spreaducl <- F1_spreaducl[,c(-1)]
+F1_ucl <- F1_spreaducl
 colnames(F1_ucl)[38] <- "goalmins"
 colnames(F1_ucl)[40] <- "shirts"
-
 ##################################
 UCL <- rbind(E0_ucl,D1_ucl,SP1_ucl,I1_ucl,F1_ucl)
 #UCL <- read.csv('UCL.csv')

@@ -1374,11 +1374,10 @@ for(index_b1_correctscoreform in 1:length(b1_teams))
 
 b1_correctscoreform <- cbind(b1_teams,final_b1_correctscoreform)
 write.xlsx(b1_correctscoreform,"Divisions/B1.xlsx",append = T , sheetName = "CSform")
-
-
-
-b1_correctscoreform
-
+#######################################################################################################################################################
+library('xlsx')
+UCL20222023 <- read.csv('UCL20222023.csv')
+write.xlsx(UCL20222023,'UCL2023.xlsx')
 
 
 

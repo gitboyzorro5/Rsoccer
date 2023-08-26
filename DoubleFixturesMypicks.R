@@ -1,21 +1,21 @@
 
-b1_df_picks <- 1
+#b1_df_picks <- 1
 d1_df_picks <- 1
-d2_df_picks <- 1
+#d2_df_picks <- 1
 e0_df_picks <- 1
 e1_df_picks <- 1
-e2_df_picks <- 1
-e3_df_picks <- 1
-ec_df_picks <- 1
+#e2_df_picks <- 1
+#e3_df_picks <- 1
+#ec_df_picks <- 1
 f1_df_picks <- 1
-f2_df_picks <- 1
+#f2_df_picks <- 1
 i1_df_picks <- 1
 n1_df_picks <- 1
-p1_df_picks <- 1
+#p1_df_picks <- 1
 sp1_df_picks <- 1
-sp2_df_picks <- 1
-sc0_df_picks <- 1
-sc1_df_picks <- 1
+#sp2_df_picks <- 1
+#sc0_df_picks <- 1
+#sc1_df_picks <- 1
 t1_df_picks  <- 1
 
 
@@ -45,7 +45,7 @@ for(dbfixture_b1 in 1:nrow(myfixturesb1))
   mid_doublefixture_b1 <- cbind(final_first_column_b1,final_second_column_b1)
 
   final_doublefixture_b1 <- rbind(final_doublefixture_b1,mid_doublefixture_b1)
-
+  final_doublefixture_b1
 
 }
 unlink('finaldoublefixtureb1.csv')

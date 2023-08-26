@@ -1,7 +1,7 @@
 library('plyr')
 library('dplyr')
 library('janitor')
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_281")
+Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 library('xlsx')
 library('scales')
 library('lubridate')
@@ -19,7 +19,7 @@ BRA$Date <- dmy(BRA$Date)
 BRA <- BRA[order(as.Date(BRA$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 BRA$CS <- paste(BRA$HG,BRA$AG, sep = "-")
 #BRA_qualificaton <- subset(BRA,tournament == "UEFA Euro qualification")
-BRA <- subset(BRA,Season == "2022")
+BRA <- subset(BRA,Season == "2023")
 # BRA <- BRA[!BRA$Home =="Coritiba",]
 # BRA <- BRA[!BRA$Away == "Coritiba",]
 # BRA <- BRA[!BRA$Home =="Vasco",]
@@ -72,6 +72,7 @@ bra_matchesplayed <-  nrow(BRA)
 
 BRA_rounds <- BRA
 
+View(BRA_rounds)
 if(bra_matchesplayed %% bra_eachround == 0)
 {
   bra_currentround <- bra_matchesplayed / bra_eachround
@@ -1167,6 +1168,6 @@ bra_ov25_summary <- tabyl(BRA,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(bra_ftr_summary,'NL/BRA.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(bra_ov25_summary,'NL/BRA.xlsx',sheetName = "OVUN25", append = TRUE)
-BRA <- subset(BRA,Season == "2022")
+BRA <- subset(BRA,Season == "2023")
 
 

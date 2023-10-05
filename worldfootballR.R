@@ -55,8 +55,8 @@ library('xlsx')
 
 E0_spread <- subset(allteams20232024,Div =="E0")
 E0_spread$matchid <- paste(E0$HomeTeam,E0$AwayTeam,sep = "-")
-#eplnrows <- nrow(E0_spread) - nrow(readxl::read_excel('E0_spread.xlsx'))
-#E0_spread <- tail(E0_spread,eplnrows)
+eplnrows <- nrow(E0_spread) - nrow(readxl::read_excel('E0_spread.xlsx'))
+E0_spread <- tail(E0_spread,eplnrows)
 E0_spread$epl_goalmins <- 0
 E0_spread$n <- E0_spread$TG
 E0_spread$epl_shirts <- 0
@@ -70,11 +70,11 @@ E0_spread$GoalsXshirts <- (E0_spread$TG)*(E0_spread$epl_shirts)
 E0_spread$ShirtsXcorners <- (E0_spread$epl_shirts)*(E0_spread$TC)
 E0_spread$TGMXcorners <- (E0_spread$epl_goalmins)*(E0_spread$TC)
 E0_spread$GoalsXcornerXbookings <- (E0_spread$TG)*(E0_spread$TC)*(E0_spread$Bookings)
-#E0_spread_prev <- readxl::read_excel('E0_spread.xlsx')
-#E0_spread_final <- rbind(E0_spread_prev,E0_spread)
+E0_spread_prev <- readxl::read_excel('E0_spread.xlsx')
+E0_spread_final <- rbind(E0_spread_prev,E0_spread)
 
 unlink('E0_spread.xlsx')
-write.xlsx(E0_spread,'E0_spread.xlsx')
+write.xlsx(E0_spread_final,'E0_spread.xlsx')
 
 #############################################################################################################
 # #D1
@@ -127,8 +127,8 @@ write.xlsx(E0_spread,'E0_spread.xlsx')
 
 D1_spread <- subset(allteams20232024,Div =="D1")
 D1_spread$matchid <- paste(D1$HomeTeam,D1$AwayTeam,sep = "-")
-#bundesliganrows <- nrow(D1_spread) - nrow(readxl::read_excel('D1_spread.xlsx'))
-#D1_spread <- tail(D1_spread,bundesliganrows)
+bundesliganrows <- nrow(D1_spread) - nrow(readxl::read_excel('D1_spread.xlsx'))
+D1_spread <- tail(D1_spread,bundesliganrows)
 D1_spread$bundesliga_goalmins <- 0
 D1_spread$n <- D1_spread$TG
 D1_spread$bundesliga_shirts <- 0
@@ -142,11 +142,11 @@ D1_spread$GoalsXshirts <- (D1_spread$TG)*(D1_spread$bundesliga_shirts)
 D1_spread$ShirtsXcorners <- (D1_spread$bundesliga_shirts)*(D1_spread$TC)
 D1_spread$TGMXcorners <- (D1_spread$bundesliga_goalmins)*(D1_spread$TC)
 D1_spread$GoalsXcornerXbookings <- (D1_spread$TG)*(D1_spread$TC)*(D1_spread$Bookings)
-#D1_spread_prev <- readxl::read_excel('D1_spread.xlsx')
-#D1_spread_final <- rbind(D1_spread_prev,D1_spread)
+D1_spread_prev <- readxl::read_excel('D1_spread.xlsx')
+D1_spread_final <- rbind(D1_spread_prev,D1_spread)
 
 unlink('D1_spread.xlsx')
-write.xlsx(D1_spread,'D1_spread.xlsx')
+write.xlsx(D1_spread_final,'D1_spread.xlsx')
 ##################################################################################################
 # #I1
 # seriea_match_details <- load_fotmob_match_details(
@@ -272,8 +272,8 @@ write.xlsx(I1_spread_final,'I1_spread.xlsx')
 
 SP1_spread <- subset(allteams20232024,Div =="SP1")
 SP1_spread$matchid <- paste(SP1$HomeTeam,SP1$AwayTeam,sep = "-")
-#laliganrows <- nrow(SP1_spread) - nrow(readxl::read_excel('SP1_spread.xlsx'))
-#SP1_spread <- tail(SP1_spread,laliganrows)
+laliganrows <- nrow(SP1_spread) - nrow(readxl::read_excel('SP1_spread.xlsx'))
+SP1_spread <- tail(SP1_spread,laliganrows)
 SP1_spread$laliga_goalmins <- 0
 SP1_spread$n <- SP1_spread$TG
 SP1_spread$laliga_shirts <- 0
@@ -287,11 +287,11 @@ SP1_spread$GoalsXshirts <- (SP1_spread$TG)*(SP1_spread$laliga_shirts)
 SP1_spread$ShirtsXcorners <- (SP1_spread$laliga_shirts)*(SP1_spread$TC)
 SP1_spread$TGMXcorners <- (SP1_spread$laliga_goalmins)*(SP1_spread$TC)
 SP1_spread$GoalsXcornerXbookings <- (SP1_spread$TG)*(SP1_spread$TC)*(SP1_spread$Bookings)
-#SP1_spread_prev <- readxl::read_excel('SP1_spread.xlsx')
-#SP1_spread_final <- rbind(SP1_spread_prev,SP1_spread)
+SP1_spread_prev <- readxl::read_excel('SP1_spread.xlsx')
+SP1_spread_final <- rbind(SP1_spread_prev,SP1_spread)
 
 unlink('SP1_spread.xlsx')
-write.xlsx(SP1_spread,'SP1_spread.xlsx')
+write.xlsx(SP1_spread_final,'SP1_spread.xlsx')
 
 ################################################################################################################
 # #F1
@@ -345,8 +345,8 @@ write.xlsx(SP1_spread,'SP1_spread.xlsx')
 
 F1_spread <- subset(allteams20232024,Div =="F1")
 F1_spread$matchid <- paste(F1$HomeTeam,F1$AwayTeam,sep = "-")
-#ligueonerows <- nrow(F1_spread) - nrow(readxl::read_excel('F1_spread.xlsx'))
-#F1_spread <- tail(F1_spread,leagueonerows)
+ligueonerows <- nrow(F1_spread) - nrow(readxl::read_excel('F1_spread.xlsx'))
+F1_spread <- tail(F1_spread,ligueonerows)
 F1_spread$ligueone_goalmins <- 0
 F1_spread$n <- F1_spread$TG
 F1_spread$ligueone_shirts <- 0
@@ -360,11 +360,11 @@ F1_spread$GoalsXshirts <- (F1_spread$TG)*(F1_spread$ligueone_shirts)
 F1_spread$ShirtsXcorners <- (F1_spread$ligueone_shirts)*(F1_spread$TC)
 F1_spread$TGMXcorners <- (F1_spread$ligueone_goalmins)*(F1_spread$TC)
 F1_spread$GoalsXcornerXbookings <- (F1_spread$TG)*(F1_spread$TC)*(F1_spread$Bookings)
-#F1_spread_prev <- readxl::read_excel('F1_spread.xlsx')
-#F1_spread_final <- rbind(F1_spread_prev,F1_spread)
+F1_spread_prev <- readxl::read_excel('F1_spread.xlsx')
+F1_spread_final <- rbind(F1_spread_prev,F1_spread)
 
 unlink('F1_spread.xlsx')
-write.xlsx(F1_spread,'F1_spread.xlsx')
+write.xlsx(F1_spread_final,'F1_spread.xlsx')
 
 ################################################################################################################
 

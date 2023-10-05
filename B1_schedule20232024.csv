@@ -1,0 +1,241 @@
+MatchNumber,RoundNumber,Date,Location,Home_Team,Away_Team
+1,1,6/8/2023,location,Anderlecht,Antwerp
+2,1,26/12/2023,location,Anderlecht,Cercle Brugge
+3,1,27/08//2023,location,Anderlecht,Charleroi
+4,1,23/09/2023,location,Anderlecht,Club Brugge
+5,1,2/3/2024,location,Anderlecht,Eupen
+6,1,22/12/2023,location,Anderlecht,Genk
+7,1,3/2/2024,location,Anderlecht,Gent
+8,1,16/03/2024,location,Anderlecht,Kortrijk
+9,1,7/10/2023,location,Anderlecht,Mechelen
+10,1,28/10/2023,location,Anderlecht,Oud-Heverlee Leuven
+11,1,25/11/2023,location,Anderlecht,RWD Molenbeek
+12,1,17/02/2024,location,Anderlecht,St Truiden
+13,1,27/01/2024,location,Anderlecht,St. Gilloise
+14,1,9/12/2023,location,Anderlecht,Standard
+15,1,20/08/2023,location,Anderlecht,Westerlo
+16,1,16/12/2023,location,Antwerp,Anderlecht
+17,1,30/07/2023,location,Antwerp,Cercle Brugge
+18,1,20/01/2024,location,Antwerp,Charleroi
+19,1,3/2/2024,location,Antwerp,Club Brugge
+20,1,7/10/2023,location,Antwerp,Eupen
+21,1,4/11/2023,location,Antwerp,Genk
+22,1,28/08/2023,location,Antwerp,Gent
+23,1,11/8/2023,location,Antwerp,Kortrijk
+24,1,17/02/2024,location,Antwerp,Mechelen
+25,1,2/12/2023,location,Antwerp,Oud-Heverlee Leuven
+26,1,23/09/2023,location,Antwerp,RWD Molenbeek
+27,1,2/3/2024,location,Antwerp,St Truiden
+28,1,16/03/2024,location,Antwerp,St. Gilloise
+29,1,11/11/2023,location,Antwerp,Standard
+30,1,22/12/2023,location,Antwerp,Westerlo
+31,1,4/11/2023,location,Cercle Brugge,Anderlecht
+32,1,9/12/2023,location,Cercle Brugge,Antwerp
+33,1,5/8/2023,location,Cercle Brugge,Charleroi
+34,1,17/02/2024,location,Cercle Brugge,Club Brugge
+35,1,25/11/2023,location,Cercle Brugge,Eupen
+36,1,13/08/2023,location,Cercle Brugge,Genk
+37,1,21/10/2023,location,Cercle Brugge,Gent
+38,1,22/12/2023,location,Cercle Brugge,Kortrijk
+39,1,2/3/2024,location,Cercle Brugge,Mechelen
+40,1,7/10/2023,location,Cercle Brugge,Oud-Heverlee Leuven
+41,1,16/03/2024,location,Cercle Brugge,RWD Molenbeek
+42,1,3/2/2024,location,Cercle Brugge,St Truiden
+43,1,23/09/2023,location,Cercle Brugge,St. Gilloise
+44,1,2/9/2023,location,Cercle Brugge,Standard
+45,1,2/9/2023,location,Cercle Brugge,Westerlo
+46,1,10/2/2024,location,Charleroi,Anderlecht
+47,1,21/10/2023,location,Charleroi,Antwerp
+48,1,9/3/2024,location,Charleroi,Cercle Brugge
+49,1,27/01/2024,location,Charleroi,Club Brugge
+50,1,31/01/2024,location,Charleroi,Eupen
+51,1,24/02/2024,location,Charleroi,Genk
+52,1,4/11/2023,location,Charleroi,Gent
+53,1,23/09/2023,location,Charleroi,Kortrijk
+54,1,26/12/2023,location,Charleroi,Mechelen
+55,1,29/07/2023,location,Charleroi,Oud-Heverlee Leuven
+56,1,7/10/2023,location,Charleroi,RWD Molenbeek
+57,1,3/9/2023,location,Charleroi,St Truiden
+58,1,9/12/2023,location,Charleroi,St. Gilloise
+59,1,13/08/2023,location,Charleroi,Standard
+60,1,25/11/2023,location,Charleroi,Westerlo
+61,1,24/02/2024,location,Club Brugge,Anderlecht
+62,1,28/10/2023,location,Club Brugge,Antwerp
+63,1,11/11/2023,location,Club Brugge,Cercle Brugge
+64,1,16/09/2023,location,Club Brugge,Charleroi
+65,1,10/2/2024,location,Club Brugge,Eupen
+66,1,27/08/2023,location,Club Brugge,Genk
+67,1,16/09/2023,location,Club Brugge,Gent
+68,1,31/01/2024,location,Club Brugge,Kortrijk
+69,1,30/07/2023,location,Club Brugge,Mechelen
+70,1,9/3/2024,location,Club Brugge,Oud-Heverlee Leuven
+71,1,20/08/2023,location,Club Brugge,RWD Molenbeek
+72,1,30/09/2023,location,Club Brugge,St Truiden
+73,1,23/12/2023,location,Club Brugge,St. Gilloise
+74,1,2/12/2023,location,Club Brugge,Standard
+75,1,20/01/2024,location,Club Brugge,Westerlo
+76,1,30/09/2023,location,Eupen,Anderlecht
+77,1,27/01/2024,location,Eupen,Antwerp
+78,1,24/02/2024,location,Eupen,Cercle Brugge
+79,1,28/10/2023,location,Eupen,Charleroi
+80,1,13/08/2023,location,Eupen,Club Brugge
+81,1,9/12/2023,location,Eupen,Genk
+82,1,17/02/2024,location,Eupen,Gent
+83,1,2/12/2023,location,Eupen,Kortrijk
+84,1,3/2/2023,location,Eupen,Mechelen
+85,1,26/08/2023,location,Eupen,Oud-Heverlee Leuven
+86,1,11/11/2023,location,Eupen,RWD Molenbeek
+87,1,9/3/2023,location,Eupen,St Truiden
+88,1,22/12/2023,location,Eupen,St. Gilloise
+89,1,17/09/2023,location,Eupen,Standard
+90,1,29/07/2023,location,Eupen,Westerlo
+91,1,3/9/2023,location,Genk,Anderlecht
+92,1,26/12/2023,location,Genk,Antwerp
+93,1,20/01/2024,location,Genk,Cercle Brugge
+94,1,20/08/2023,location,Genk,Charleroi
+95,1,2/3/2024,location,Genk,Club Brugge
+96,1,5/8/2023,location,Genk,Eupen
+97,1,2/12/2023,location,Genk,Gent
+98,1,16/09/2023,location,Genk,Kortrijk
+99,1,21/10/2023,location,Genk,Mechelen
+100,1,11/11/2023,location,Genk,Oud-Heverlee Leuven
+101,1,17/02/2024,location,Genk,RWD Molenbeek
+102,1,23/09/2023,location,Genk,St Truiden
+103,1,3/2/2024,location,Genk,St. Gilloise
+104,1,9/3/2024,location,Genk,Standard
+105,1,30/09/2023,location,Genk,Westerlo
+106,1,11/11/2023,location,Gent,Anderlecht
+107,1,24/02/2024,location,Gent,Antwerp
+108,1,10/2/2024,location,Gent,Cercle Brugge
+109,1,16/03/2024,location,Gent,Charleroi
+110,1,3/9/2023,location,Gent,Club Brugge
+111,1,23/09/2023,location,Gent,Eupen
+112,1,7/10/2023,location,Gent,Genk
+113,1,30/07/2023,location,Gent,Kortrijk
+114,1,20/01/2024,location,Gent,Mechelen
+115,1,22/12/2023,location,Gent,Oud-Heverlee Leuven
+116,1,9/12/2023,location,Gent,RWD Molenbeek
+117,1,20/08/2023,location,Gent,St Truiden
+118,1,25/11/2023,location,Gent,St. Gilloise
+119,1,28/10/2023,location,Gent,Standard
+120,1,27/01/2024,location,Gent,Westerlo
+121,1,17/09/2023,location,Kortrijk,Anderlecht
+122,1,9/3/2024,location,Kortrijk,Antwerp
+123,1,30/09/2023,location,Kortrijk,Cercle Brugge
+124,1,3/2/2024,location,Kortrijk,Charleroi
+125,1,21/10/2023,location,Kortrijk,Club Brugge
+126,1,20/08/2023,location,Kortrijk,Eupen
+127,1,28/10/2023,location,Kortrijk,Genk
+128,1,26/12/2023,location,Kortrijk,Gent
+129,1,25/11/2023,location,Kortrijk,Mechelen
+130,1,27/01/2024,location,Kortrijk,Oud-Heverlee Leuven
+131,1,2/3/2024,location,Kortrijk,RWD Molenbeek
+132,1,6/8/2023,location,Kortrijk,St Truiden
+133,1,17/02/2024,location,Kortrijk,St. Gilloise
+134,1,26/08/2023,location,Kortrijk,Standard
+135,1,9/12/2023,location,Kortrijk,Westerlo
+136,1,31/01/2024,location,Mechelen,Anderlecht
+137,1,30/09/2023,location,Mechelen,Antwerp
+138,1,28/10/2023,location,Mechelen,Cercle Brugge
+139,1,11/11/2023,location,Mechelen,Charleroi
+140,1,9/12/2023,location,Mechelen,Club Brugge
+141,1,2/9/2023,location,Mechelen,Eupen
+142,1,10/2/2024,location,Mechelen,Genk
+143,1,6/8/2023,location,Mechelen,Gent
+144,1,24/02/2024,location,Mechelen,Kortrijk
+145,1,23/09/2023,location,Mechelen,Oud-Heverlee Leuven
+146,1,27/01/2024,location,Mechelen,RWD Molenbeek
+147,1,2/12/2023,location,Mechelen,St Truiden
+148,1,19/08/2023,location,Mechelen,St. Gilloise
+149,1,22/12/2023,location,Mechelen,Standard
+150,1,9/3/2024,location,Mechelen,Westerlo
+151,1,20/01/2024,location,Oud-Heverlee Leuven,Anderlecht
+152,1,18/08/2023,location,Oud-Heverlee Leuven,Antwerp
+153,1,16/12/2023,location,Oud-Heverlee Leuven,Cercle Brugge
+154,1,17/02/2024,location,Oud-Heverlee Leuven,Charleroi
+155,1,25/11/2023,location,Oud-Heverlee Leuven,Club Brugge
+156,1,26/12/2023,location,Oud-Heverlee Leuven,Eupen
+157,1,31/01/2024,location,Oud-Heverlee Leuven,Genk
+158,1,17/09/2023,location,Oud-Heverlee Leuven,Gent
+159,1,1/9/2023,location,Oud-Heverlee Leuven,Kortrijk
+160,1,16/03/2024,location,Oud-Heverlee Leuven,Mechelen
+161,1,5/8/2023,location,Oud-Heverlee Leuven,RWD Molenbeek
+162,1,21/10/2023,location,Oud-Heverlee Leuven,St Truiden
+163,1,2/3/2024,location,Oud-Heverlee Leuven,St. Gilloise
+164,1,30/09/2023,location,Oud-Heverlee Leuven,Standard
+165,1,4/11/2023,location,Oud-Heverlee Leuven,Westerlo
+166,1,9/3/2024,location,RWD Molenbeek,Anderlecht
+167,1,10/2/2024,location,RWD Molenbeek,Antwerp
+168,1,16/09/2023,location,RWD Molenbeek,Cercle Brugge
+169,1,2/12/2023,location,RWD Molenbeek,Charleroi
+170,1,22/12/2023,location,RWD Molenbeek,Club Brugge
+171,1,20/01/2024,location,RWD Molenbeek,Eupen
+172,1,29/07/2023,location,RWD Molenbeek,Genk
+173,1,30/09/2023,location,RWD Molenbeek,Gent
+174,1,4/11/2023,location,RWD Molenbeek,Kortrijk
+175,1,12/8/2023,location,RWD Molenbeek,Mechelen
+176,1,24/02/2024,location,RWD Molenbeek,Oud-Heverlee Leuven
+177,1,16/12/2023,location,RWD Molenbeek,St Truiden
+178,1,28/08/2023,location,RWD Molenbeek,St. Gilloise
+179,1,3/2/2024,location,RWD Molenbeek,Standard
+180,1,21/10/2023,location,RWD Molenbeek,Westerlo
+181,1,13/08/2023,location,St Truiden,Anderlecht
+182,1,25/11/2023,location,St Truiden,Antwerp
+183,1,27/08/2023,location,St Truiden,Cercle Brugge
+184,1,22/12/2023,location,St Truiden,Charleroi
+185,1,16/03/2024,location,St Truiden,Club Brugge
+186,1,4/11/2023,location,St Truiden,Eupen
+187,1,27/01/2024,location,St Truiden,Genk
+188,1,31/01/2024,location,St Truiden,Gent
+189,1,10/2/2024,location,St Truiden,Kortrijk
+190,1,17/09/2023,location,St Truiden,Mechelen
+191,1,9/12/2023,location,St Truiden,Oud-Heverlee Leuven
+192,1,28/10/2023,location,St Truiden,RWD Molenbeek
+193,1,7/10/2023,location,St Truiden,St. Gilloise
+194,1,30/07/2023,location,St Truiden,Standard
+195,1,24/02/2024,location,St Truiden,Westerlo
+196,1,28/07/2023,location,St. Gilloise,Anderlecht
+197,1,3/9/2023,location,St. Gilloise,Antwerp
+198,1,2/12/2023,location,St. Gilloise,Cercle Brugge
+199,1,30/09/2023,location,St. Gilloise,Charleroi
+200,1,4/11/2023,location,St. Gilloise,Club Brugge
+201,1,21/10/2023,location,St. Gilloise,Eupen
+202,1,16/09/2023,location,St. Gilloise,Genk
+203,1,9/3/2024,location,St. Gilloise,Gent
+204,1,11/11/2023,location,St. Gilloise,Kortrijk
+205,1,16/12/2023,location,St. Gilloise,Mechelen
+206,1,12/8/2023,location,St. Gilloise,Oud-Heverlee Leuven
+207,1,31/01/2024,location,St. Gilloise,RWD Molenbeek
+208,1,20/01/2024,location,St. Gilloise,St Truiden
+209,1,24/02/2024,location,St. Gilloise,Standard
+210,1,10/2/2024,location,St. Gilloise,Westerlo
+211,1,21/10/2023,location,Standard,Anderlecht
+212,1,31/01/2024,location,Standard,Antwerp
+213,1,19/08/2023,location,Standard,Cercle Brugge
+214,1,16/12/2023,location,Standard,Charleroi
+215,1,7/10/2023,location,Standard,Club Brugge
+216,1,16/03/2024,location,Standard,Eupen
+217,1,25/11/2023,location,Standard,Genk
+218,1,2/3/2024,location,Standard,Gent
+219,1,20/01/2024,location,Standard,Kortrijk
+220,1,4/11/2023,location,Standard,Mechelen
+221,1,10/2/2024,location,Standard,Oud-Heverlee Leuven
+222,1,2/9/2023,location,Standard,RWD Molenbeek
+223,1,26/12/2023,location,Standard,St Truiden
+224,1,4/8/2023,location,Standard,St. Gilloise
+225,1,23/09/2023,location,Standard,Westerlo
+226,1,2/12/2023,location,Westerlo,Anderlecht
+227,1,15/09/2023,location,Westerlo,Antwerp
+228,1,31/01/2024,location,Westerlo,Cercle Brugge
+229,1,2/3/2024,location,Westerlo,Charleroi
+230,1,6/8/2023,location,Westerlo,Club Brugge
+231,1,16/12/2023,location,Westerlo,Eupen
+232,1,16/03/2024,location,Westerlo,Genk
+233,1,13/08/2023,location,Westerlo,Gent
+234,1,7/10/2023,location,Westerlo,Kortrijk
+235,1,26/08/2023,location,Westerlo,Mechelen
+236,1,3/2/2024,location,Westerlo,Oud-Heverlee Leuven
+237,1,26/12/2023,location,Westerlo,RWD Molenbeek
+238,1,11/11/2023,location,Westerlo,St Truiden
+239,1,28/10/2023,location,Westerlo,St. Gilloise
+240,1,17/02/2024,location,Westerlo,Standard

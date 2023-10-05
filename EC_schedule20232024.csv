@@ -1,0 +1,553 @@
+MatchNumber,RoundNumber,Date,Location,Home_Team,Away_Team
+1,1,17/02/2024,england,Aldershot,Altrincham
+2,1,20/02/2024,england,Aldershot,Barnet
+3,1,13/04/2024,england,Aldershot,Boreham Wood
+4,1,23/01/2024,england,Aldershot,Bromley
+5,1,2/9/2023,england,Aldershot,Chesterfield
+6,1,30/09/2023,england,Aldershot,Dag and Red
+7,1,1/4/2024,england,Aldershot,Dorking
+8,1,16/12/2023,england,Aldershot,Eastleigh
+9,1,12/3/2024,england,Aldershot,Ebbsfleet
+10,1,6/1/2024,england,Aldershot,Fylde
+11,1,16/09/2023,england,Aldershot,Gateshead
+12,1,25/11/2023,england,Aldershot,Halifax
+13,1,21/10/2023,england,Aldershot,Hartlepool
+14,1,11/11/2023,england,Aldershot,Kidderminster
+15,1,24/10/2023,england,Aldershot,Maidenhead
+16,1,9/3/2024,england,Aldershot,Oldham
+17,1,5/8/2023,england,Aldershot,Oxford City
+18,1,27/01/2024,england,Aldershot,Rochdale
+19,1,23/03/2024,england,Aldershot,Solihull
+20,1,26/09/2023,england,Aldershot,Southend
+21,1,26/08/2023,england,Aldershot,Wealdstone
+22,1,26/12/2023,england,Aldershot,Woking
+23,1,19/08/2023,england,Aldershot,York
+24,1,3/10/2023,england,Altrincham,Aldershot
+25,1,6/1/2024,england,Altrincham,Barnet
+26,1,19/08/2023,england,Altrincham,Boreham Wood
+27,1,2/9/2023,england,Altrincham,Bromley
+28,1,26/08/2023,england,Altrincham,Chesterfield
+29,1,5/8/2023,england,Altrincham,Dag and Red
+30,1,21/10/2023,england,Altrincham,Dorking
+31,1,27/01/2024,england,Altrincham,Eastleigh
+32,1,23/09/2023,england,Altrincham,Ebbsfleet
+33,1,16/12/2023,england,Altrincham,Fylde
+34,1,23/03/2024,england,Altrincham,Gateshead
+35,1,26/12/2023,england,Altrincham,Halifax
+36,1,19/09/2023,england,Altrincham,Hartlepool
+37,1,24/10/2023,england,Altrincham,Kidderminster
+38,1,24/02/2024,england,Altrincham,Maidenhead
+39,1,1/4/2024,england,Altrincham,Oldham
+40,1,20/04/2024,england,Altrincham,Oxford City
+41,1,23/01/2024,england,Altrincham,Rochdale
+42,1,25/11/2023,england,Altrincham,Solihull
+43,1,11/11/2023,england,Altrincham,Southend
+44,1,10/2/2024,england,Altrincham,Wealdstone
+45,1,9/3/2024,england,Altrincham,Woking
+46,1,12/3/2024,england,Altrincham,York
+47,1,19/09/2023,england,Barnet,Aldershot
+48,1,9/9/2023,england,Barnet,Altrincham
+49,1,23/12/2023,england,Barnet,Boreham Wood
+50,1,9/3/2024,england,Barnet,Bromley
+51,1,20/01/2024,england,Barnet,Chesterfield
+52,1,2/12/2023,england,Barnet,Dag and Red
+53,1,23/03/2024,england,Barnet,Dorking
+54,1,12/3/2024,england,Barnet,Eastleigh
+55,1,28/08/2023,england,Barnet,Ebbsfleet
+56,1,3/10/2023,england,Barnet,Fylde
+57,1,18/11/2023,england,Barnet,Gateshead
+58,1,23/09/2023,england,Barnet,Halifax
+59,1,5/8/2023,england,Barnet,Hartlepool
+60,1,20/04/2024,england,Barnet,Kidderminster
+61,1,21/10/2023,england,Barnet,Maidenhead
+62,1,22/11/2023,england,Barnet,Oldham
+63,1,1/4/2024,england,Barnet,Oxford City
+64,1,10/2/2024,england,Barnet,Rochdale
+65,1,24/10/2023,england,Barnet,Solihull
+66,1,30/12/2023,england,Barnet,Southend
+67,1,3/2/2024,england,Barnet,Wealdstone
+68,1,19/08/2023,england,Barnet,Woking
+69,1,24/02/2024,england,Barnet,York
+70,1,23/09/2023,england,Boreham Wood,Aldershot
+71,1,16/03/2024,england,Boreham Wood,Altrincham
+72,1,2/9/2023,england,Boreham Wood,Barnet
+73,1,11/11/2023,england,Boreham Wood,Bromley
+74,1,7/10/2023,england,Boreham Wood,Chesterfield
+75,1,29/03/2024,england,Boreham Wood,Dag and Red
+76,1,27/01/2024,england,Boreham Wood,Dorking
+77,1,24/01/2024,england,Boreham Wood,Eastleigh
+78,1,20/04/2024,england,Boreham Wood,Ebbsfleet
+79,1,24/02/2024,england,Boreham Wood,Fylde
+80,1,2/3/2024,england,Boreham Wood,Gateshead
+81,1,12/5/2023,england,Boreham Wood,Halifax
+82,1,4/10/2023,england,Boreham Wood,Hartlepool
+83,1,26/12/2023,england,Boreham Wood,Kidderminster
+84,1,10/2/2024,england,Boreham Wood,Maidenhead
+85,1,26/08/2023,england,Boreham Wood,Oldham
+86,1,16/12/2023,england,Boreham Wood,Oxford City
+87,1,19/09/2023,england,Boreham Wood,Rochdale
+88,1,16/08/2023,england,Boreham Wood,Solihull
+89,1,28/10/2023,england,Boreham Wood,Southend
+90,1,6/4/2024,england,Boreham Wood,Wealdstone
+91,1,25/11/2023,england,Boreham Wood,Woking
+92,1,6/1/2024,england,Boreham Wood,York
+93,1,21/11/2023,england,Bromley,Aldershot
+94,1,23/12/2023,england,Bromley,Altrincham
+95,1,12/5/2023,england,Bromley,Barnet
+96,1,20/01/2024,england,Bromley,Boreham Wood
+97,1,17/02/2024,england,Bromley,Chesterfield
+98,1,20/02/2024,england,Bromley,Dag and Red
+99,1,24/10/2023,england,Bromley,Dorking
+100,1,26/09/2023,england,Bromley,Eastleigh
+101,1,30/12/2023,england,Bromley,Ebbsfleet
+102,1,18/11/2023,england,Bromley,Fylde
+103,1,30/09/2023,england,Bromley,Gateshead
+104,1,2/3/2024,england,Bromley,Halifax
+105,1,3/2/2024,england,Bromley,Hartlepool
+106,1,16/03/2024,england,Bromley,Kidderminster
+107,1,9/9/2023,england,Bromley,Maidenhead
+108,1,16/09/2023,england,Bromley,Oldham
+109,1,21/10/2023,england,Bromley,Oxford City
+110,1,2/12/2023,england,Bromley,Rochdale
+111,1,13/04/2024,england,Bromley,Solihull
+112,1,28/08/2023,england,Bromley,Southend
+113,1,15/08/2023,england,Bromley,Wealdstone
+114,1,1/4/2024,england,Bromley,Woking
+115,1,23/03/2024,england,Bromley,York
+116,1,23/12/2023,england,Chesterfield,Aldershot
+117,1,2/12/2023,england,Chesterfield,Altrincham
+118,1,11/11/2023,england,Chesterfield,Barnet
+119,1,23/03/2024,england,Chesterfield,Boreham Wood
+120,1,3/10/2023,england,Chesterfield,Bromley
+121,1,9/9/2023,england,Chesterfield,Dag and Red
+122,1,5/8/2023,england,Chesterfield,Dorking
+123,1,25/11/2023,england,Chesterfield,Eastleigh
+124,1,10/2/2024,england,Chesterfield,Ebbsfleet
+125,1,9/3/2024,england,Chesterfield,Fylde
+126,1,21/10/2023,england,Chesterfield,Gateshead
+127,1,19/09/2023,england,Chesterfield,Halifax
+128,1,28/08/2023,england,Chesterfield,Hartlepool
+129,1,1/4/2024,england,Chesterfield,Kidderminster
+130,1,20/04/2024,england,Chesterfield,Maidenhead
+131,1,19/08/2023,england,Chesterfield,Oldham
+132,1,12/3/2024,england,Chesterfield,Oxford City
+133,1,24/02/2024,england,Chesterfield,Rochdale
+134,1,1/1/2024,england,Chesterfield,Solihull
+135,1,27/01/2024,england,Chesterfield,Southend
+136,1,23/09/2023,england,Chesterfield,Wealdstone
+137,1,23/01/2024,england,Chesterfield,Woking
+138,1,24/10/2023,england,Chesterfield,York
+139,1,20/04/2024,england,Dag and Red,Aldershot
+140,1,2/3/2024,england,Dag and Red,Altrincham
+141,1,26/08/2023,england,Dag and Red,Barnet
+142,1,24/10/2023,england,Dag and Red,Boreham Wood
+143,1,19/09/2023,england,Dag and Red,Bromley
+144,1,6/1/2024,england,Dag and Red,Chesterfield
+145,1,23/01/2024,england,Dag and Red,Dorking
+146,1,26/12/2023,england,Dag and Red,Eastleigh
+147,1,1/4/2024,england,Dag and Red,Ebbsfleet
+148,1,2/9/2023,england,Dag and Red,Fylde
+149,1,15/08/2023,england,Dag and Red,Gateshead
+150,1,24/02/2024,england,Dag and Red,Halifax
+151,1,23/09/2023,england,Dag and Red,Hartlepool
+152,1,27/01/2024,england,Dag and Red,Kidderminster
+153,1,16/03/2024,england,Dag and Red,Maidenhead
+154,1,23/03/2024,england,Dag and Red,Oldham
+155,1,10/2/2024,england,Dag and Red,Oxford City
+156,1,25/11/2023,england,Dag and Red,Rochdale
+157,1,11/11/2023,england,Dag and Red,Solihull
+158,1,12/5/2023,england,Dag and Red,Southend
+159,1,16/12/2023,england,Dag and Red,Wealdstone
+160,1,21/10/2023,england,Dag and Red,Woking
+161,1,3/10/2023,england,Dag and Red,York
+162,1,28/10/2023,england,Dorking,Aldershot
+163,1,6/4/2024,england,Dorking,Altrincham
+164,1,7/10/2023,england,Dorking,Barnet
+165,1,18/11/2023,england,Dorking,Boreham Wood
+166,1,29/03/2024,england,Dorking,Bromley
+167,1,2/3/2024,england,Dorking,Chesterfield
+168,1,21/11/2023,england,Dorking,Dag and Red
+169,1,2/9/2023,england,Dorking,Eastleigh
+170,1,24/02/2024,england,Dorking,Ebbsfleet
+171,1,3/2/2024,england,Dorking,Fylde
+172,1,20/01/2024,england,Dorking,Gateshead
+173,1,10/2/2024,england,Dorking,Halifax
+174,1,20/04/2024,england,Dorking,Hartlepool
+175,1,3/10/2023,england,Dorking,Kidderminster
+176,1,12/5/2023,england,Dorking,Maidenhead
+177,1,6/1/2024,england,Dorking,Oldham
+178,1,26/12/2023,england,Dorking,Oxford City
+179,1,23/09/2023,england,Dorking,Rochdale
+180,1,16/03/2024,england,Dorking,Solihull
+181,1,15/08/2023,england,Dorking,Southend
+182,1,19/09/2023,england,Dorking,Wealdstone
+183,1,16/12/2023,england,Dorking,Woking
+184,1,26/08/2023,england,Dorking,York
+185,1,28/08/2023,england,Eastleigh,Aldershot
+186,1,18/11/2023,england,Eastleigh,Altrincham
+187,1,15/08/2023,england,Eastleigh,Barnet
+188,1,21/11/2023,england,Eastleigh,Boreham Wood
+189,1,24/02/2024,england,Eastleigh,Bromley
+190,1,3/2/2024,england,Eastleigh,Chesterfield
+191,1,1/1/2024,england,Eastleigh,Dag and Red
+192,1,23/12/2023,england,Eastleigh,Dorking
+193,1,3/10/2023,england,Eastleigh,Ebbsfleet
+194,1,10/2/2024,england,Eastleigh,Fylde
+195,1,9/9/2023,england,Eastleigh,Gateshead
+196,1,20/04/2024,england,Eastleigh,Halifax
+197,1,23/03/2024,england,Eastleigh,Hartlepool
+198,1,23/09/2023,england,Eastleigh,Kidderminster
+199,1,1/4/2024,england,Eastleigh,Maidenhead
+200,1,20/01/2024,england,Eastleigh,Oldham
+201,1,19/09/2023,england,Eastleigh,Oxford City
+202,1,16/03/2024,england,Eastleigh,Rochdale
+203,1,2/3/2024,england,Eastleigh,Solihull
+204,1,2/12/2023,england,Eastleigh,Southend
+205,1,12/5/2023,england,Eastleigh,Wealdstone
+206,1,24/10/2023,england,Eastleigh,Woking
+207,1,21/10/2023,england,Eastleigh,York
+208,1,15/08/2023,england,Ebbsfleet,Aldershot
+209,1,13/04/2024,england,Ebbsfleet,Altrincham
+210,1,16/12/2023,england,Ebbsfleet,Barnet
+211,1,30/09/2023,england,Ebbsfleet,Boreham Wood
+212,1,26/12/2023,england,Ebbsfleet,Bromley
+213,1,16/09/2023,england,Ebbsfleet,Chesterfield
+214,1,28/10/2023,england,Ebbsfleet,Dag and Red
+215,1,26/09/2023,england,Ebbsfleet,Dorking
+216,1,17/02/2024,england,Ebbsfleet,Eastleigh
+217,1,6/4/2024,england,Ebbsfleet,Fylde
+218,1,16/03/2024,england,Ebbsfleet,Gateshead
+219,1,7/10/2023,england,Ebbsfleet,Halifax
+220,1,20/01/2024,england,Ebbsfleet,Hartlepool
+221,1,26/08/2023,england,Ebbsfleet,Kidderminster
+222,1,21/11/2023,england,Ebbsfleet,Maidenhead
+223,1,3/2/2024,england,Ebbsfleet,Oldham
+224,1,18/11/2023,england,Ebbsfleet,Oxford City
+225,1,2/3/2024,england,Ebbsfleet,Rochdale
+226,1,12/5/2023,england,Ebbsfleet,Solihull
+227,1,29/03/2024,england,Ebbsfleet,Southend
+228,1,6/1/2024,england,Ebbsfleet,Wealdstone
+229,1,20/02/2024,england,Ebbsfleet,Woking
+230,1,2/9/2023,england,Ebbsfleet,York
+231,1,9/9/2023,england,Fylde,Aldershot
+232,1,28/08/2023,england,Fylde,Altrincham
+233,1,17/02/2024,england,Fylde,Barnet
+234,1,26/09/2023,england,Fylde,Boreham Wood
+235,1,27/01/2024,england,Fylde,Bromley
+236,1,12/5/2023,england,Fylde,Chesterfield
+237,1,23/12/2023,england,Fylde,Dag and Red
+238,1,25/11/2023,england,Fylde,Dorking
+239,1,16/09/2023,england,Fylde,Eastleigh
+240,1,21/10/2023,england,Fylde,Ebbsfleet
+241,1,1/4/2024,england,Fylde,Gateshead
+242,1,23/01/2024,england,Fylde,Halifax
+243,1,2/12/2023,england,Fylde,Hartlepool
+244,1,15/08/2023,england,Fylde,Kidderminster
+245,1,2/3/2024,england,Fylde,Maidenhead
+246,1,24/10/2023,england,Fylde,Oldham
+247,1,23/03/2024,england,Fylde,Oxford City
+248,1,1/1/2024,england,Fylde,Rochdale
+249,1,20/02/2024,england,Fylde,Solihull
+250,1,13/04/2024,england,Fylde,Southend
+251,1,16/03/2024,england,Fylde,Wealdstone
+252,1,30/09/2023,england,Fylde,Woking
+253,1,11/11/2023,england,Fylde,York
+254,1,10/2/2024,england,Gateshead,Aldershot
+255,1,7/10/2023,england,Gateshead,Altrincham
+256,1,27/01/2024,england,Gateshead,Barnet
+257,1,5/8/2023,england,Gateshead,Boreham Wood
+258,1,20/04/2024,england,Gateshead,Bromley
+259,1,6/4/2024,england,Gateshead,Chesterfield
+260,1,12/3/2024,england,Gateshead,Dag and Red
+261,1,11/11/2023,england,Gateshead,Dorking
+262,1,6/1/2024,england,Gateshead,Eastleigh
+263,1,19/08/2023,england,Gateshead,Ebbsfleet
+264,1,28/10/2023,england,Gateshead,Fylde
+265,1,16/12/2023,england,Gateshead,Halifax
+266,1,9/3/2024,england,Gateshead,Hartlepool
+267,1,19/09/2023,england,Gateshead,Kidderminster
+268,1,23/09/2023,england,Gateshead,Maidenhead
+269,1,2/9/2023,england,Gateshead,Oldham
+270,1,24/02/2024,england,Gateshead,Oxford City
+271,1,29/03/2024,england,Gateshead,Rochdale
+272,1,23/01/2024,england,Gateshead,Solihull
+273,1,25/11/2023,england,Gateshead,Southend
+274,1,3/10/2023,england,Gateshead,Wealdstone
+275,1,26/08/2023,england,Gateshead,Woking
+276,1,26/12/2023,england,Gateshead,York
+277,1,3/2/2024,england,Halifax,Aldershot
+278,1,1/1/2024,england,Halifax,Altrincham
+279,1,13/04/2024,england,Halifax,Barnet
+280,1,9/3/2024,england,Halifax,Boreham Wood
+281,1,5/8/2023,england,Halifax,Bromley
+282,1,20/02/2024,england,Halifax,Chesterfield
+283,1,26/09/2023,england,Halifax,Dag and Red
+284,1,16/09/2023,england,Halifax,Dorking
+285,1,30/09/2023,england,Halifax,Eastleigh
+286,1,23/03/2024,england,Halifax,Ebbsfleet
+287,1,21/11/2023,england,Halifax,Fylde
+288,1,28/08/2023,england,Halifax,Gateshead
+289,1,24/10/2023,england,Halifax,Hartlepool
+290,1,21/10/2023,england,Halifax,Kidderminster
+291,1,20/01/2024,england,Halifax,Maidenhead
+292,1,12/3/2024,england,Halifax,Oldham
+293,1,19/08/2023,england,Halifax,Oxford City
+294,1,23/12/2023,england,Halifax,Rochdale
+295,1,2/12/2023,england,Halifax,Solihull
+296,1,9/9/2023,england,Halifax,Southend
+297,1,18/11/2023,england,Halifax,Wealdstone
+298,1,17/02/2024,england,Halifax,Woking
+299,1,1/4/2024,england,Halifax,York
+300,1,6/4/2024,england,Hartlepool,Aldershot
+301,1,20/02/2024,england,Hartlepool,Altrincham
+302,1,2/3/2024,england,Hartlepool,Barnet
+303,1,17/02/2024,england,Hartlepool,Boreham Wood
+304,1,25/11/2023,england,Hartlepool,Bromley
+305,1,16/12/2023,england,Hartlepool,Chesterfield
+306,1,13/04/2024,england,Hartlepool,Dag and Red
+307,1,30/09/2023,england,Hartlepool,Dorking
+308,1,7/10/2023,england,Hartlepool,Eastleigh
+309,1,11/11/2023,england,Hartlepool,Ebbsfleet
+310,1,26/08/2023,england,Hartlepool,Fylde
+311,1,12/5/2023,england,Hartlepool,Gateshead
+312,1,29/03/2024,england,Hartlepool,Halifax
+313,1,23/01/2024,england,Hartlepool,Kidderminster
+314,1,15/08/2023,england,Hartlepool,Maidenhead
+315,1,26/12/2023,england,Hartlepool,Oldham
+316,1,6/1/2024,england,Hartlepool,Oxford City
+317,1,28/10/2023,england,Hartlepool,Rochdale
+318,1,26/09/2023,england,Hartlepool,Solihull
+319,1,16/03/2024,england,Hartlepool,Southend
+320,1,2/9/2023,england,Hartlepool,Wealdstone
+321,1,16/09/2023,england,Hartlepool,Woking
+322,1,27/01/2024,england,Hartlepool,York
+323,1,20/01/2024,england,Kidderminster,Aldershot
+324,1,29/03/2024,england,Kidderminster,Altrincham
+325,1,30/09/2023,england,Kidderminster,Barnet
+326,1,30/12/2023,england,Kidderminster,Boreham Wood
+327,1,19/08/2023,england,Kidderminster,Bromley
+328,1,28/10/2023,england,Kidderminster,Chesterfield
+329,1,18/11/2023,england,Kidderminster,Dag and Red
+330,1,17/02/2024,england,Kidderminster,Dorking
+331,1,13/04/2024,england,Kidderminster,Eastleigh
+332,1,2/12/2023,england,Kidderminster,Ebbsfleet
+333,1,12/3/2024,england,Kidderminster,Fylde
+334,1,20/02/2024,england,Kidderminster,Gateshead
+335,1,6/4/2024,england,Kidderminster,Halifax
+336,1,21/11/2023,england,Kidderminster,Hartlepool
+337,1,28/08/2023,england,Kidderminster,Maidenhead
+338,1,26/09/2023,england,Kidderminster,Oldham
+339,1,3/2/2024,england,Kidderminster,Oxford City
+340,1,9/9/2023,england,Kidderminster,Rochdale
+341,1,16/09/2023,england,Kidderminster,Solihull
+342,1,23/12/2023,england,Kidderminster,Southend
+343,1,7/10/2023,england,Kidderminster,Wealdstone
+344,1,5/8/2023,england,Kidderminster,Woking
+345,1,9/3/2024,england,Kidderminster,York
+346,1,29/03/2024,england,Maidenhead,Aldershot
+347,1,26/09/2023,england,Maidenhead,Altrincham
+348,1,6/4/2024,england,Maidenhead,Barnet
+349,1,16/09/2023,england,Maidenhead,Boreham Wood
+350,1,6/1/2024,england,Maidenhead,Bromley
+351,1,30/09/2023,england,Maidenhead,Chesterfield
+352,1,19/08/2023,england,Maidenhead,Dag and Red
+353,1,9/3/2024,england,Maidenhead,Dorking
+354,1,28/10/2023,england,Maidenhead,Eastleigh
+355,1,23/01/2024,england,Maidenhead,Ebbsfleet
+356,1,5/8/2023,england,Maidenhead,Fylde
+357,1,13/04/2024,england,Maidenhead,Gateshead
+358,1,11/11/2023,england,Maidenhead,Halifax
+359,1,12/3/2024,england,Maidenhead,Hartlepool
+360,1,16/12/2023,england,Maidenhead,Kidderminster
+361,1,17/02/2024,england,Maidenhead,Oldham
+362,1,26/08/2023,england,Maidenhead,Oxford City
+363,1,7/10/2023,england,Maidenhead,Rochdale
+364,1,27/01/2024,england,Maidenhead,Solihull
+365,1,20/02/2024,england,Maidenhead,Southend
+366,1,26/12/2023,england,Maidenhead,Wealdstone
+367,1,2/9/2023,england,Maidenhead,Woking
+368,1,25/11/2023,england,Maidenhead,York
+369,1,12/5/2023,england,Oldham,Aldershot
+370,1,28/10/2023,england,Oldham,Altrincham
+371,1,23/01/2024,england,Oldham,Barnet
+372,1,2/12/2023,england,Oldham,Boreham Wood
+373,1,10/2/2024,england,Oldham,Bromley
+374,1,16/03/2024,england,Oldham,Chesterfield
+375,1,7/10/2023,england,Oldham,Dag and Red
+376,1,9/9/2023,england,Oldham,Dorking
+377,1,11/11/2023,england,Oldham,Eastleigh
+378,1,25/11/2023,england,Oldham,Ebbsfleet
+379,1,29/03/2024,england,Oldham,Fylde
+380,1,23/12/2023,england,Oldham,Gateshead
+381,1,15/08/2023,england,Oldham,Halifax
+382,1,30/12/2023,england,Oldham,Hartlepool
+383,1,24/02/2024,england,Oldham,Kidderminster
+384,1,3/10/2023,england,Oldham,Maidenhead
+385,1,23/09/2023,england,Oldham,Oxford City
+386,1,6/4/2024,england,Oldham,Rochdale
+387,1,28/08/2023,england,Oldham,Solihull
+388,1,2/3/2024,england,Oldham,Southend
+389,1,20/04/2024,england,Oldham,Wealdstone
+390,1,27/01/2024,england,Oldham,Woking
+391,1,19/09/2023,england,Oldham,York
+392,1,2/3/2024,england,Oxford City,Aldershot
+393,1,30/09/2023,england,Oxford City,Altrincham
+394,1,28/10/2023,england,Oxford City,Barnet
+395,1,28/08/2023,england,Oxford City,Boreham Wood
+396,1,6/4/2024,england,Oxford City,Bromley
+397,1,15/08/2023,england,Oxford City,Chesterfield
+398,1,16/09/2023,england,Oxford City,Dag and Red
+399,1,1/1/2024,england,Oxford City,Dorking
+400,1,20/02/2024,england,Oxford City,Eastleigh
+401,1,27/01/2024,england,Oxford City,Ebbsfleet
+402,1,7/10/2023,england,Oxford City,Fylde
+403,1,26/09/2023,england,Oxford City,Gateshead
+404,1,16/03/2024,england,Oxford City,Halifax
+405,1,9/9/2023,england,Oxford City,Hartlepool
+406,1,25/11/2023,england,Oxford City,Kidderminster
+407,1,2/12/2023,england,Oxford City,Maidenhead
+408,1,13/04/2024,england,Oxford City,Oldham
+409,1,12/5/2023,england,Oxford City,Rochdale
+410,1,23/12/2023,england,Oxford City,Solihull
+411,1,17/02/2024,england,Oxford City,Southend
+412,1,29/03/2024,england,Oxford City,Wealdstone
+413,1,11/11/2023,england,Oxford City,Woking
+414,1,23/01/2024,england,Oxford City,York
+415,1,18/11/2023,england,Rochdale,Aldershot
+416,1,21/11/2023,england,Rochdale,Altrincham
+417,1,16/09/2023,england,Rochdale,Barnet
+418,1,20/02/2024,england,Rochdale,Boreham Wood
+419,1,25/08/2023,england,Rochdale,Bromley
+420,1,26/09/2023,england,Rochdale,Chesterfield
+421,1,3/2/2024,england,Rochdale,Dag and Red
+422,1,13/04/2024,england,Rochdale,Dorking
+423,1,19/08/2023,england,Rochdale,Eastleigh
+424,1,5/8/2023,england,Rochdale,Ebbsfleet
+425,1,26/12/2023,england,Rochdale,Fylde
+426,1,24/10/2023,england,Rochdale,Gateshead
+427,1,2/9/2023,england,Rochdale,Halifax
+428,1,1/4/2024,england,Rochdale,Hartlepool
+429,1,6/1/2024,england,Rochdale,Kidderminster
+430,1,23/03/2024,england,Rochdale,Maidenhead
+431,1,21/10/2023,england,Rochdale,Oldham
+432,1,9/3/2024,england,Rochdale,Oxford City
+433,1,17/02/2024,england,Rochdale,Solihull
+434,1,30/09/2023,england,Rochdale,Southend
+435,1,20/01/2024,england,Rochdale,Wealdstone
+436,1,12/3/2024,england,Rochdale,Woking
+437,1,16/12/2023,england,Rochdale,York
+438,1,7/10/2023,england,Solihull,Aldershot
+439,1,3/2/2024,england,Solihull,Altrincham
+440,1,29/03/2024,england,Solihull,Barnet
+441,1,12/3/2024,england,Solihull,Boreham Wood
+442,1,23/09/2023,england,Solihull,Bromley
+443,1,26/12/2023,england,Solihull,Chesterfield
+444,1,20/01/2024,england,Solihull,Dag and Red
+445,1,19/08/2023,england,Solihull,Dorking
+446,1,5/8/2023,england,Solihull,Eastleigh
+447,1,9/3/2024,england,Solihull,Ebbsfleet
+448,1,19/09/2023,england,Solihull,Fylde
+449,1,21/11/2023,england,Solihull,Gateshead
+450,1,25/08/2023,england,Solihull,Halifax
+451,1,24/02/2024,england,Solihull,Hartlepool
+452,1,10/2/2024,england,Solihull,Kidderminster
+453,1,18/11/2023,england,Solihull,Maidenhead
+454,1,16/12/2023,england,Solihull,Oldham
+455,1,2/9/2023,england,Solihull,Oxford City
+456,1,3/10/2023,england,Solihull,Rochdale
+457,1,6/4/2024,england,Solihull,Southend
+458,1,28/10/2023,england,Solihull,Wealdstone
+459,1,6/1/2024,england,Solihull,Woking
+460,1,20/04/2024,england,Solihull,York
+461,1,24/02/2024,england,Southend,Aldershot
+462,1,20/01/2024,england,Southend,Altrincham
+463,1,26/12/2023,england,Southend,Barnet
+464,1,1/4/2024,england,Southend,Boreham Wood
+465,1,16/12/2023,england,Southend,Bromley
+466,1,18/11/2023,england,Southend,Chesterfield
+467,1,9/3/2024,england,Southend,Dag and Red
+468,1,12/3/2024,england,Southend,Dorking
+469,1,25/08/2023,england,Southend,Eastleigh
+470,1,24/10/2023,england,Southend,Ebbsfleet
+471,1,23/09/2023,england,Southend,Fylde
+472,1,3/2/2024,england,Southend,Gateshead
+473,1,6/1/2024,england,Southend,Halifax
+474,1,19/08/2023,england,Southend,Hartlepool
+475,1,2/9/2023,england,Southend,Kidderminster
+476,1,19/09/2023,england,Southend,Maidenhead
+477,1,5/8/2023,england,Southend,Oldham
+478,1,3/10/2023,england,Southend,Oxford City
+479,1,20/04/2024,england,Southend,Rochdale
+480,1,21/10/2023,england,Southend,Solihull
+481,1,21/11/2023,england,Southend,Wealdstone
+482,1,23/03/2024,england,Southend,Woking
+483,1,10/2/2024,england,Southend,York
+484,1,2/12/2023,england,Wealdstone,Aldershot
+485,1,16/09/2023,england,Wealdstone,Altrincham
+486,1,25/11/2023,england,Wealdstone,Barnet
+487,1,21/10/2023,england,Wealdstone,Boreham Wood
+488,1,12/3/2024,england,Wealdstone,Bromley
+489,1,13/04/2024,england,Wealdstone,Chesterfield
+490,1,28/08/2023,england,Wealdstone,Dag and Red
+491,1,20/02/2024,england,Wealdstone,Dorking
+492,1,9/3/2024,england,Wealdstone,Eastleigh
+493,1,9/9/2023,england,Wealdstone,Ebbsfleet
+494,1,19/08/2023,england,Wealdstone,Fylde
+495,1,17/02/2024,england,Wealdstone,Gateshead
+496,1,27/01/2024,england,Wealdstone,Halifax
+497,1,23/12/2023,england,Wealdstone,Hartlepool
+498,1,23/03/2024,england,Wealdstone,Kidderminster
+499,1,1/1/2024,england,Wealdstone,Maidenhead
+500,1,30/09/2023,england,Wealdstone,Oldham
+501,1,24/10/2023,england,Wealdstone,Oxford City
+502,1,11/11/2023,england,Wealdstone,Rochdale
+503,1,1/4/2024,england,Wealdstone,Solihull
+504,1,23/01/2024,england,Wealdstone,Southend
+505,1,26/09/2023,england,Wealdstone,Woking
+506,1,5/8/2023,england,Wealdstone,York
+507,1,1/1/2024,england,Woking,Aldershot
+508,1,12/5/2023,england,Woking,Altrincham
+509,1,16/03/2024,england,Woking,Barnet
+510,1,3/2/2024,england,Woking,Boreham Wood
+511,1,28/10/2023,england,Woking,Bromley
+512,1,21/11/2023,england,Woking,Chesterfield
+513,1,6/4/2024,england,Woking,Dag and Red
+514,1,28/08/2023,england,Woking,Dorking
+515,1,29/03/2024,england,Woking,Eastleigh
+516,1,19/09/2023,england,Woking,Ebbsfleet
+517,1,20/04/2024,england,Woking,Fylde
+518,1,2/12/2023,england,Woking,Gateshead
+519,1,3/10/2023,england,Woking,Halifax
+520,1,10/2/2024,england,Woking,Hartlepool
+521,1,2/3/2024,england,Woking,Kidderminster
+522,1,23/12/2023,england,Woking,Maidenhead
+523,1,18/11/2023,england,Woking,Oldham
+524,1,20/01/2024,england,Woking,Oxford City
+525,1,15/08/2023,england,Woking,Rochdale
+526,1,9/9/2023,england,Woking,Solihull
+527,1,7/10/2023,england,Woking,Southend
+528,1,24/02/2024,england,Woking,Wealdstone
+529,1,23/09/2023,england,Woking,York
+530,1,16/03/2024,england,York,Aldershot
+531,1,15/08/2023,england,York,Altrincham
+532,1,26/09/2023,england,York,Barnet
+533,1,9/9/2023,england,York,Boreham Wood
+534,1,7/10/2023,england,York,Bromley
+535,1,29/03/2024,england,York,Chesterfield
+536,1,17/02/2024,england,York,Dag and Red
+537,1,2/12/2023,england,York,Dorking
+538,1,6/4/2024,england,York,Eastleigh
+539,1,23/12/2023,england,York,Ebbsfleet
+540,1,20/01/2024,england,York,Fylde
+541,1,1/1/2024,england,York,Gateshead
+542,1,28/10/2023,england,York,Halifax
+543,1,18/11/2023,england,York,Hartlepool
+544,1,12/5/2023,england,York,Kidderminster
+545,1,3/2/2024,england,York,Maidenhead
+546,1,20/02/2024,england,York,Oldham
+547,1,21/11/2023,england,York,Oxford City
+548,1,28/08/2023,england,York,Rochdale
+549,1,30/09/2023,england,York,Solihull
+550,1,16/09/2023,england,York,Southend
+551,1,2/3/2024,england,York,Wealdstone
+552,1,13/04/2024,england,York,Woking

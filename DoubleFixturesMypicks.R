@@ -1,11 +1,11 @@
 
-#b1_df_picks <- 1
+b1_df_picks <- 1
 d1_df_picks <- 1
-#d2_df_picks <- 1
+d2_df_picks <- 1
 e0_df_picks <- 1
 e1_df_picks <- 1
-#e2_df_picks <- 1
-#e3_df_picks <- 1
+e2_df_picks <- 1
+e3_df_picks <- 1
 #ec_df_picks <- 1
 f1_df_picks <- 1
 #f2_df_picks <- 1

@@ -285,7 +285,7 @@ colnames(E1_fixtures_clone)[16] <- "CS_2-0"
 colnames(E1_fixtures_clone)[17] <- "CS_0-2"
 colnames(E1_fixtures_clone)[19] <- "CS_2-1"
 colnames(E1_fixtures_clone)[20] <- "CS_1-2"
-
+colnames(E0_fixtures)
 E1_fixtures_clone$`CS_1-1` <- round(1/E1_fixtures_clone$`CS_1-1`, digits = 3)
 E1_fixtures_clone$`CS_1-0` <- round(1/E1_fixtures_clone$`CS_1-0`, digits = 3)
 E1_fixtures_clone$`CS_0-1` <- round(1/E1_fixtures_clone$`CS_0-1`, digits = 3)
@@ -1446,19 +1446,17 @@ colnames(T1_fixtures_clone)[10] <- "awayteamcloned"
 ###################################################
 
 
- allteams20222023_clonefixtures <- rbind(B1_fixtures_clone,D1_fixtures_clone,D2_fixtures_clone,E0_fixtures_clone,E1_fixtures_clone,E2_fixtures_clone,
+ allteams20232024_clonefixtures <- rbind(B1_fixtures_clone,D1_fixtures_clone,D2_fixtures_clone,E0_fixtures_clone,E1_fixtures_clone,E2_fixtures_clone,
                                          E3_fixtures_clone,EC_fixtures_clone,F1_fixtures_clone,F2_fixtures_clone,G1_fixtures_clone,I1_fixtures_clone,I2_fixtures_clone,
                                          N1_fixtures_clone,P1_fixtures_clone,SP1_fixtures_clone,SP2_fixtures_clone,SC0_fixtures_clone,SC1_fixtures_clone,
                                          SC2_fixtures_clone,SC3_fixtures_clone,T1_fixtures_clone)
 # write.xlsx(allteams20222023_clonefixtures,'allteams20222023clonedfixtures.xlsx')
-mycloned_prediction <- dplyr::left_join(myodds_fixtures,allteams20222023_clonefixtures)
-write.xlsx(mycloned_prediction,'clonedprediction.xlsx')
+#mycloned_prediction <- dplyr::left_join(myodds_fixtures,allteams20222023_clonefixtures)
+#write.xlsx(mycloned_prediction,'clonedprediction.xlsx')
 
 
-picks_fixtures_cloned <- read.csv('myfixtures.csv')
-picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$Home_Team,picks_fixtures_cloned$Away_Team, sep = "-")
-picks_fixtures_prediction_cloned <- dplyr::left_join(picks_fixtures_cloned,allteams20222023_clonefixtures)
-write.xlsx(picks_fixtures_prediction_cloned,'picks_fixtures_prediction_cloned.xlsx')
-
-colnames(SC2_fixtures_clone)
+#picks_fixtures_cloned <- read.csv('myfixtures.csv')
+#picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$Home_Team,picks_fixtures_cloned$Away_Team, sep = "-")
+#picks_fixtures_prediction_cloned <- dplyr::left_join(picks_fixtures_cloned,allteams20222023_clonefixtures)
+#write.xlsx(picks_fixtures_prediction_cloned,'picks_fixtures_prediction_cloned.xlsx')
 

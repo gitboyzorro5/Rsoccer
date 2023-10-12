@@ -88,6 +88,7 @@ colnames(B1_allclone)[70] <- "all_Xgoals"
 
 B1_allclone$matchid <- paste(B1_allclone$Hometeam,B1_allclone$Awayteam,sep = "-")
 
+
 #######################################################################################################################################################################
 D1_fixtures_clone_final <- D1_fixtures_clone[,-c(8,9,10,27)]
 D1_fixtures_clone_final[,'sep'] <- ''
@@ -1868,12 +1869,11 @@ unlink('clonedprediction_events.xlsx')
 myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20232024.xlsx', sheet = '3way')
 myodds_fixtures$matchid <- paste(myodds_fixtures$HT,myodds_fixtures$AT, sep = "-")
 myodds_fixtures$Date <- dmy(myodds_fixtures$Date)
-myodds_fixtures <- myodds_fixtures[myodds_fixtures$Date >= '2023-09-29',]
+myodds_fixtures <- myodds_fixtures[myodds_fixtures$Date >= '2023-10-06',]
 mycloned_prediction_events <- dplyr::left_join(myodds_fixtures,alldivisions_clonedevents)
 write.xlsx(mycloned_prediction_events,'clonedprediction_events.xlsx')
 
 
-View(myodds_fixtures)
 
 
 

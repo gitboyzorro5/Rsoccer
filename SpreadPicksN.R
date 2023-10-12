@@ -146,7 +146,7 @@ for(b1_sn in 1:17){
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_b1[b1_sn,1],final_doublefixture_b1[b1_sn + 1,1],".csv",sep = "_")))
 
 }
-final_doublefixture_b1
+
 ###############################################################################################################
 #D2
 D2_spread <- subset(allteams20232024,Div =="D2")
@@ -179,7 +179,6 @@ for(d2_sn in 1:17){
 
 }
 
-
 ###############################################################################################################
 E1_spread <- subset(allteams20232024,Div =="E1")
 E1_spread$n <- E1_spread$TG * 1
@@ -210,21 +209,21 @@ for(e1_sn in 1:23){
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e1[e1_sn,1],final_doublefixture_e1[e1_sn + 1,1],".csv",sep = "_")))
 
 }
-#umiversal single
-df <- tail(B1_spread[B1_spread$HomeTeam == "Standard" | B1_spread$AwayTeam == "Standard" ,],spreadn)
-
-df2 <- tail(B1_spread[B1_spread$HomeTeam == "St. Gilloise" | B1_spread$AwayTeam == "St. Gilloise",],spreadn)
-
-temp_analysis <- rbind(df,df2)
-
-temp_analysis <- as.data.frame(temp_analysis)
-temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
-temp_sliced <- tail(temp_analysis,1)
-temp_sliced <- temp_sliced[1:36]
-
-temp_analyis_combined <- c(temp_sliced,temp_colmeans)
-temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
-write.csv(temp_analysis,'Temp/standardgilloise.csv')
+# #umiversal single
+# df <- tail(B1_spread[B1_spread$HomeTeam == "Standard" | B1_spread$AwayTeam == "Standard" ,],spreadn)
+#
+# df2 <- tail(B1_spread[B1_spread$HomeTeam == "St. Gilloise" | B1_spread$AwayTeam == "St. Gilloise",],spreadn)
+#
+# temp_analysis <- rbind(df,df2)
+#
+# temp_analysis <- as.data.frame(temp_analysis)
+# temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+# temp_sliced <- tail(temp_analysis,1)
+# temp_sliced <- temp_sliced[1:36]
+#
+# temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+# temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+# write.csv(temp_analysis,'Temp/standardgilloise.csv')
 
 #############################################################################################################################################
 E2_spread <- subset(allteams20232024,Div =="E2")
@@ -267,7 +266,7 @@ E3_spread$GoalsXcorners <- (E3_spread$TG)*(E3_spread$TC)
 E3_spread$GoalsXcornerXbookings <- (E3_spread$TG)*(E3_spread$TC)*(E3_spread$Bookings)
 
 unlink('SpreadsN/E3/*')
-for(e3_sn in 1:17){
+for(e3_sn in 1:23){
   df <- tail(E3_spread[E3_spread$HomeTeam == final_doublefixture_e3[e3_sn,1] | E3_spread$AwayTeam == final_doublefixture_e3[e3_sn,1] ,],spreadn)
 
   df2 <- tail(E3_spread[E3_spread$HomeTeam == final_doublefixture_e3[e3_sn + 1,1] | E3_spread$AwayTeam == final_doublefixture_e3[e3_sn + 1,1],],spreadn)
@@ -327,7 +326,7 @@ F2_spread$GoalsXcorners <- (F2_spread$TG)*(F2_spread$TC)
 F2_spread$GoalsXcornerXbookings <- (F2_spread$TG)*(F2_spread$TC)*(F2_spread$Bookings)
 
 unlink('SpreadsN/F2/*')
-for(f2_sn in 1:17){
+for(f2_sn in 1:19){
   df <- tail(F2_spread[F2_spread$HomeTeam == final_doublefixture_f2[f2_sn,1] | F2_spread$AwayTeam == final_doublefixture_f2[f2_sn,1] ,],spreadn)
 
   df2 <- tail(F2_spread[F2_spread$HomeTeam == final_doublefixture_f2[f2_sn + 1,1] | F2_spread$AwayTeam == final_doublefixture_f2[f2_sn + 1,1],],spreadn)
@@ -356,6 +355,27 @@ G1_spread$GoalsXbookings <- (G1_spread$Bookings)*(G1_spread$TG)
 G1_spread$CornersXbookings <- (G1_spread$TC)*(G1_spread$Bookings)
 G1_spread$GoalsXcorners <- (G1_spread$TG)*(G1_spread$TC)
 G1_spread$GoalsXcornerXbookings <- (G1_spread$TG)*(G1_spread$TC)*(G1_spread$Bookings)
+
+unlink('SpreadsN/G1/*')
+for(g1_sn in 1:19){
+  df <- tail(G1_spread[G1_spread$HomeTeam == final_doublefixture_g1[g1_sn,1] | G1_spread$AwayTeam == final_doublefixture_g1[g1_sn,1] ,],spreadn)
+
+  df2 <- tail(G1_spread[G1_spread$HomeTeam == final_doublefixture_g1[g1_sn + 1,1] | G1_spread$AwayTeam == final_doublefixture_g1[g1_sn + 1,1],],spreadn)
+
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:36]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\G1"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_g1[g1_sn,1],final_doublefixture_g1[g1_sn + 1,1],".csv",sep = "_")))
+
+}
 ############################################################################################################################################
 #I2
 I2_spread <- subset(allteams20232024,Div =="I2")
@@ -366,6 +386,28 @@ I2_spread$GoalsXbookings <- (I2_spread$Bookings)*(I2_spread$TG)
 I2_spread$CornersXbookings <- (I2_spread$TC)*(I2_spread$Bookings)
 I2_spread$GoalsXcorners <- (I2_spread$TG)*(I2_spread$TC)
 I2_spread$GoalsXcornerXbookings <- (I2_spread$TG)*(I2_spread$TC)*(I2_spread$Bookings)
+
+unlink('SpreadsN/I2/*')
+for(i2_sn in 1:19){
+  df <- tail(I2_spread[I2_spread$HomeTeam == final_doublefixture_i2[i2_sn,1] | I2_spread$AwayTeam == final_doublefixture_i2[i2_sn,1] ,],spreadn)
+
+  df2 <- tail(I2_spread[I2_spread$HomeTeam == final_doublefixture_i2[i2_sn + 1,1] | I2_spread$AwayTeam == final_doublefixture_i2[i2_sn + 1,1],],spreadn)
+
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:36]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\I2"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_i2[i2_sn,1],final_doublefixture_i2[i2_sn + 1,1],".csv",sep = "_")))
+
+}
+
 ############################################################################################################################################
 N1_spread <- subset(allteams20232024,Div =="N1")
 N1_spread$n <- N1_spread$TG * 1
@@ -436,6 +478,27 @@ SC0_spread$GoalsXbookings <- (SC0_spread$Bookings)*(SC0_spread$TG)
 SC0_spread$CornersXbookings <- (SC0_spread$TC)*(SC0_spread$Bookings)
 SC0_spread$GoalsXcorners <- (SC0_spread$TG)*(SC0_spread$TC)
 SC0_spread$GoalsXcornerXbookings <- (SC0_spread$TG)*(SC0_spread$TC)*(SC0_spread$Bookings)
+
+unlink('SpreadsN/SC0/*')
+for(sc0_sn in 1:11){
+  df <- tail(SC0_spread[SC0_spread$HomeTeam == final_doublefixture_sc0[sc0_sn,1] | SC0_spread$AwayTeam == final_doublefixture_sc0[sc0_sn,1] ,],spreadn)
+
+  df2 <- tail(SC0_spread[SC0_spread$HomeTeam == final_doublefixture_sc0[sc0_sn + 1,1] | SC0_spread$AwayTeam == final_doublefixture_sc0[sc0_sn + 1,1],],spreadn)
+
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:36]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SC0"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sc0[sc0_sn,1],final_doublefixture_sc0[sc0_sn + 1,1],".csv",sep = "_")))
+
+}
 ########################################################################################################################################
 SC1_spread <- subset(allteams20232024,Div =="SC1")
 SC1_spread$n <- SC1_spread$TG * 1
@@ -476,6 +539,28 @@ SC2_spread$GoalsXbookings <- (SC2_spread$Bookings)*(SC2_spread$TG)
 SC2_spread$CornersXbookings <- (SC2_spread$TC)*(SC2_spread$Bookings)
 SC2_spread$GoalsXcorners <- (SC2_spread$TG)*(SC2_spread$TC)
 SC2_spread$GoalsXcornerXbookings <- (SC2_spread$TG)*(SC2_spread$TC)*(SC2_spread$Bookings)
+
+unlink('SpreadsN/SC2/*')
+for(sc2_sn in 1:9){
+  df <- tail(SC2_spread[SC2_spread$HomeTeam == final_doublefixture_sc2[sc2_sn,1] | SC2_spread$AwayTeam == final_doublefixture_sc2[sc2_sn,1] ,],spreadn)
+
+  df2 <- tail(SC2_spread[SC2_spread$HomeTeam == final_doublefixture_sc2[sc2_sn + 1,1] | SC2_spread$AwayTeam == final_doublefixture_sc2[sc2_sn + 1,1],],spreadn)
+
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:36]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SC2"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sc2[sc2_sn,1],final_doublefixture_sc2[sc2_sn + 1,1],".csv",sep = "_")))
+
+}
+
 ##################################################################################################################################################
 #SC3
 SC3_spread <- subset(allteams20232024,Div =="SC3")
@@ -486,6 +571,27 @@ SC3_spread$GoalsXbookings <- (SC3_spread$Bookings)*(SC3_spread$TG)
 SC3_spread$CornersXbookings <- (SC3_spread$TC)*(SC3_spread$Bookings)
 SC3_spread$GoalsXcorners <- (SC3_spread$TG)*(SC3_spread$TC)
 SC3_spread$GoalsXcornerXbookings <- (SC3_spread$TG)*(SC3_spread$TC)*(SC3_spread$Bookings)
+
+unlink('SpreadsN/SC3/*')
+for(sc3_sn in 1:9){
+  df <- tail(SC3_spread[SC3_spread$HomeTeam == final_doublefixture_sc3[sc3_sn,1] | SC3_spread$AwayTeam == final_doublefixture_sc3[sc3_sn,1] ,],spreadn)
+
+  df2 <- tail(SC3_spread[SC3_spread$HomeTeam == final_doublefixture_sc3[sc3_sn + 1,1] | SC3_spread$AwayTeam == final_doublefixture_sc3[sc3_sn + 1,1],],spreadn)
+
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:36]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SC3"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sc3[sc3_sn,1],final_doublefixture_sc3[sc3_sn + 1,1],".csv",sep = "_")))
+
+}
 ##################################################################################################################################################
 #SP2
 SP2_spread <- subset(allteams20232024,Div =="SP2")
@@ -496,6 +602,27 @@ SP2_spread$GoalsXbookings <- (SP2_spread$Bookings)*(SP2_spread$TG)
 SP2_spread$CornersXbookings <- (SP2_spread$TC)*(SP2_spread$Bookings)
 SP2_spread$GoalsXcorners <- (SP2_spread$TG)*(SP2_spread$TC)
 SP2_spread$GoalsXcornerXbookings <- (SP2_spread$TG)*(SP2_spread$TC)*(SP2_spread$Bookings)
+
+unlink('SpreadsN/SP2/*')
+for(sp2_sn in 1:21){
+  df <- tail(SP2_spread[SP2_spread$HomeTeam == final_doublefixture_sp2[sp2_sn,1] | SP2_spread$AwayTeam == final_doublefixture_sp2[sp2_sn,1] ,],spreadn)
+
+  df2 <- tail(SP2_spread[SP2_spread$HomeTeam == final_doublefixture_sp2[sp2_sn + 1,1] | SP2_spread$AwayTeam == final_doublefixture_sp2[sp2_sn + 1,1],],spreadn)
+
+  temp_analysis <- rbind(df,df2)
+
+  temp_analysis <- as.data.frame(temp_analysis)
+  temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+  temp_sliced <- tail(temp_analysis,1)
+  temp_sliced <- temp_sliced[1:36]
+
+  temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+  temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SP2"
+  write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sp2[sp2_sn,1],final_doublefixture_sp2[sp2_sn + 1,1],".csv",sep = "_")))
+
+}
 ##################################################################################################################################################
 T1_spread <- subset(allteams20232024,Div =="T1")
 T1_spread$n <- T1_spread$TG * 1
@@ -507,7 +634,7 @@ T1_spread$GoalsXcorners <- (T1_spread$TG)*(T1_spread$TC)
 T1_spread$GoalsXcornerXbookings <- (T1_spread$TG)*(T1_spread$TC)*(T1_spread$Bookings)
 
 unlink('SpreadsN/T1/*')
-for(t1_sn in 1:17){
+for(t1_sn in 1:19){
   df <- tail(T1_spread[T1_spread$HomeTeam == final_doublefixture_t1[t1_sn,1] | T1_spread$AwayTeam == final_doublefixture_t1[t1_sn,1] ,],spreadn)
 
   df2 <- tail(T1_spread[T1_spread$HomeTeam == final_doublefixture_t1[t1_sn + 1,1] | T1_spread$AwayTeam == final_doublefixture_t1[t1_sn + 1,1],],spreadn)
@@ -526,7 +653,7 @@ for(t1_sn in 1:17){
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_t1[t1_sn,1],final_doublefixture_t1[t1_sn + 1,1],".csv",sep = "_")))
 
 }
-nrow(T1_spread)
+
 Europe_spread <- rbind(B1_spread,D2_spread,E1_spread,E2_spread,E3_spread,EC_spread,F2_spread,G1_spread,I2_spread,SC0_spread,SC1_spread,SC2_spread,SC3_spread,SP2_spread,T1_spread)
 
 write.csv(Europe_spread,'Europespread.csv')

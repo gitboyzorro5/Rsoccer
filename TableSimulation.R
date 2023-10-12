@@ -310,8 +310,6 @@ points_e0_sim <-  e0_league_table_simfinal[order(as.numeric(e0_league_table_simf
 
 E0_notplayed <- E0_fixtures[E0_fixtures$e0_gamestatus == "notplayed",]
 
-write.xlsx(E0_notplayed,'E0nop.xlsx')
-
 write.xlsx(points_e0,'Divisions/Simulations.xlsx', sheetName = "E0_table",append = TRUE)
 write.xlsx(e0_league_table_sim,'Divisions/Simulations.xlsx', sheetName = "E0_sim",append = TRUE)
 write.xlsx(points_e0_sim,'Divisions/Simulations.xlsx', sheetName = "E0_simfinal",append = TRUE)

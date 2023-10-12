@@ -46,8 +46,8 @@ source("LastSix.R")
 source("LeagueFixtures.R")
 source("TableSimulation.R")
 source("DecisionModel.R")
+source("LeagueFixturesClone.R")
 source("AllEvents.R")
-
 
 
 

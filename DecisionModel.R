@@ -6139,20 +6139,21 @@ t1_picks
 #end of T1
 ############################################################################################
 #combine picks from divisions
-allteams20222023picks <- rbind(b1_picks,d1_picks,d2_picks,e0_picks,e1_picks,e2_picks,e3_picks,ec_picks,f1_picks,f2_picks,g1_picks,i1_picks,i2_picks,n1_picks,p1_picks,sp1_picks,sp2_picks,sc0_picks,sc1_picks,sc2_picks,sc3_picks,t1_picks)
+allteams20232024picks <- rbind(b1_picks,d1_picks,d2_picks,e0_picks,e1_picks,e2_picks,e3_picks,ec_picks,f1_picks,f2_picks,g1_picks,i1_picks,i2_picks,n1_picks,p1_picks,sp1_picks,sp2_picks,sc0_picks,sc1_picks,sc2_picks,sc3_picks,t1_picks)
 #join the data
 #######myodds file##########
-myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')
-myodds_fixtures$matchid <- paste(myodds_fixtures$HT,myodds_fixtures$AT, sep = "-")
-myodds_fixtures_prediction <- dplyr::left_join(myodds_fixtures,allteams20222023picks)
-write.xlsx(myodds_fixtures_prediction,'myodds_fixtures_prediction.xlsx')
+#myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')
+#myodds_fixtures$matchid <- paste(myodds_fixtures$HT,myodds_fixtures$AT, sep = "-")
+#myodds_fixtures_prediction <- dplyr::left_join(myodds_fixtures,allteams20222023picks)
+#write.xlsx(myodds_fixtures_prediction,'myodds_fixtures_prediction.xlsx')
 ############################
-picks_fixtures <- read.csv('myfixtures.csv')
-picks_fixtures$matchid <- paste(picks_fixtures$Home_Team,picks_fixtures$Away_Team, sep = "-")
+#picks_fixtures <- read.csv('myfixtures.csv')
+#picks_fixtures$matchid <- paste(picks_fixtures$Home_Team,picks_fixtures$Away_Team, sep = "-")
 
-picks_fixtures_prediction <- dplyr::left_join(picks_fixtures,allteams20222023picks)
-write.csv(picks_fixtures_prediction,'picks_fixtures_prediction.csv')
+#picks_fixtures_prediction <- dplyr::left_join(picks_fixtures,allteams20222023picks)
+#write.csv(picks_fixtures_prediction,'picks_fixtures_prediction.csv')
 ###########################
 #reset allteams20222023picks
-rm(allteams20222023picks)
+#rm(allteams20222023picks)
+
 

@@ -1,4 +1,4 @@
-spreadn <- 5
+spreadn <- 6
 library('xlsx')
 #D1
 D1_spread <- subset(readxl::read_excel('UCL20232024.xlsx'), Div == "D1")

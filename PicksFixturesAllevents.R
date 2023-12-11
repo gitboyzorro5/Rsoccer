@@ -1865,13 +1865,13 @@ picks_fixtures_prediction_cloned_events <- dplyr::left_join(picks_fixtures_clone
 unlink('picks_fixtures_prediction_cloned_events.xlsx')
 write.xlsx(picks_fixtures_prediction_cloned_events,'picks_fixtures_prediction_cloned_events.xlsx')
 
-unlink('clonedprediction_events.xlsx')
-myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20232024.xlsx', sheet = '3way')
-myodds_fixtures$matchid <- paste(myodds_fixtures$HT,myodds_fixtures$AT, sep = "-")
-myodds_fixtures$Date <- dmy(myodds_fixtures$Date)
-myodds_fixtures <- myodds_fixtures[myodds_fixtures$Date >= '2023-10-06',]
-mycloned_prediction_events <- dplyr::left_join(myodds_fixtures,alldivisions_clonedevents)
-write.xlsx(mycloned_prediction_events,'clonedprediction_events.xlsx')
+#unlink('clonedprediction_events.xlsx')
+#myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20232024.xlsx', sheet = '3way')
+#myodds_fixtures$matchid <- paste(myodds_fixtures$HT,myodds_fixtures$AT, sep = "-")
+#myodds_fixtures$Date <- dmy(myodds_fixtures$Date)
+#myodds_fixtures <- myodds_fixtures[myodds_fixtures$Date >= '2023-10-06',]
+#mycloned_prediction_events <- dplyr::left_join(myodds_fixtures,alldivisions_clonedevents)
+#write.xlsx(mycloned_prediction_events,'clonedprediction_events.xlsx')
 
 
 

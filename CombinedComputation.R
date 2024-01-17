@@ -5,15 +5,15 @@ library('sqldf')
 library('scales')
 source('divisions.R')
 source('Matchday.R')
-sc0_currentround
-first_df <- I1_rounds[I1_rounds$i1_matchday > 7,]
-second_df <- SC0_rounds[SC0_rounds$sc0_matchday > 7,]
+e0_currentround
+#first_df <- I1_rounds[I1_rounds$i1_matchday > 7,]
+#second_df <- SC0_rounds[SC0_rounds$sc0_matchday > 7,]
 #third_df <- E2_rounds[E2_rounds$e2_matchday > 40,]
-first_df <- first_df[,-37]
-second_df <- second_df[,-37]
+#first_df <- first_df[,-37]
+#second_df <- second_df[,-37]
 #third_df <- third_df[,-37]
-EPL <- rbind(first_df,second_df)
-#EPL <- E1_rounds[E1_rounds$e1_matchday > 10,]
+#EPL <- rbind(first_df,second_df)
+EPL <- E0_rounds[E0_rounds$e0_matchday >= 13,]
 #EPL <- na.omit(EPL)
 #goaltotals v2
 epl_goaltotalsv2 <- tapply(EPL$TG, EPL[c("HomeTeam", "AwayTeam")],mean)

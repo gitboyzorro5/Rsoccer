@@ -209,21 +209,6 @@ for(e1_sn in 1:23){
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e1[e1_sn,1],final_doublefixture_e1[e1_sn + 1,1],".csv",sep = "_")))
 
 }
-# #umiversal single
-# df <- tail(B1_spread[B1_spread$HomeTeam == "Standard" | B1_spread$AwayTeam == "Standard" ,],spreadn)
-#
-# df2 <- tail(B1_spread[B1_spread$HomeTeam == "St. Gilloise" | B1_spread$AwayTeam == "St. Gilloise",],spreadn)
-#
-# temp_analysis <- rbind(df,df2)
-#
-# temp_analysis <- as.data.frame(temp_analysis)
-# temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
-# temp_sliced <- tail(temp_analysis,1)
-# temp_sliced <- temp_sliced[1:36]
-#
-# temp_analyis_combined <- c(temp_sliced,temp_colmeans)
-# temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
-# write.csv(temp_analysis,'Temp/standardgilloise.csv')
 
 #############################################################################################################################################
 E2_spread <- subset(allteams20232024,Div =="E2")
@@ -657,9 +642,22 @@ for(t1_sn in 1:19){
 Europe_spread <- rbind(B1_spread,D2_spread,E1_spread,E2_spread,E3_spread,EC_spread,F2_spread,G1_spread,I2_spread,SC0_spread,SC1_spread,SC2_spread,SC3_spread,SP2_spread,T1_spread)
 
 write.csv(Europe_spread,'Europespread.csv')
-
-
-
+# ##################################################################################################
+# df <- tail(I1_spread[I1_spread$HomeTeam == "Bologna" | I1_spread$AwayTeam == "Bologna" ,],spreadn)
+#
+# df2 <- tail(I1_spread[I1_spread$HomeTeam == "Fiorentina" | I1_spread$AwayTeam == "Fiorentina",],spreadn)
+#
+# temp_analysis <- rbind(df,df2)
+#
+# temp_analysis <- as.data.frame(temp_analysis)
+# temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+# temp_sliced <- tail(temp_analysis,1)
+# temp_sliced <- temp_sliced[1:36]
+#
+# temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+# temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+# write.csv(temp_analysis,'Temp/BolognaVFio.csv')
+#####################################################################################################
 
 
 

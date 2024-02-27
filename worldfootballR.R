@@ -4,6 +4,9 @@
 library('dplyr')
 library('mgsub')
 library('xlsx')
+
+#E0_spread <- subset(readxl::read_excel('UCL20232024.xlsx'), Div == "E0")
+#write.xlsx(E0_spread,'E0_spread.xlsx')
 #packageVersion('worldfootballR')
 
 #E0
@@ -367,9 +370,6 @@ unlink('F1_spread.xlsx')
 write.xlsx(F1_spread_final,'F1_spread.xlsx')
 
 ################################################################################################################
-
-
-
 
 
 

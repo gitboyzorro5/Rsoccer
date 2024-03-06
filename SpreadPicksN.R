@@ -643,20 +643,20 @@ Europe_spread <- rbind(B1_spread,D2_spread,E1_spread,E2_spread,E3_spread,EC_spre
 
 write.csv(Europe_spread,'Europespread.csv')
 # ##################################################################################################
-# df <- tail(I1_spread[I1_spread$HomeTeam == "Bologna" | I1_spread$AwayTeam == "Bologna" ,],spreadn)
-#
-# df2 <- tail(I1_spread[I1_spread$HomeTeam == "Fiorentina" | I1_spread$AwayTeam == "Fiorentina",],spreadn)
-#
-# temp_analysis <- rbind(df,df2)
-#
-# temp_analysis <- as.data.frame(temp_analysis)
-# temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
-# temp_sliced <- tail(temp_analysis,1)
-# temp_sliced <- temp_sliced[1:36]
-#
-# temp_analyis_combined <- c(temp_sliced,temp_colmeans)
-# temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
-# write.csv(temp_analysis,'Temp/BolognaVFio.csv')
+df <- tail(D2_spread[D2_spread$HomeTeam == "Hertha" | D2_spread$AwayTeam == "Hertha" ,],spreadn)
+
+df2 <- tail(D2_spread[D2_spread$HomeTeam == "Holstein Kiel" | D2_spread$AwayTeam == "Holstein Kiel",],spreadn)
+
+temp_analysis <- rbind(df,df2)
+
+temp_analysis <- as.data.frame(temp_analysis)
+temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+temp_sliced <- tail(temp_analysis,1)
+temp_sliced <- temp_sliced[1:36]
+
+temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+write.csv(temp_analysis,'Temp/herthakiel.csv')
 #####################################################################################################
 
 

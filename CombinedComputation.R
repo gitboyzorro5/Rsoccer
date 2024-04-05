@@ -5,64 +5,65 @@ library('sqldf')
 library('scales')
 source('divisions.R')
 source('Matchday.R')
-d2_currentround
-#first_df <- I1_rounds[I1_rounds$i1_matchday > 18,]
-#second_df <- N1_rounds[N1_rounds$n1_matchday > 16,]
+e0_currentround
+
+#first_df <- SP1_rounds[SP1_rounds$sp1_matchday > 21,]
+#second_df <- I1_rounds[I1_rounds$i1_matchday > 22,]
 #third_df <- E2_rounds[E2_rounds$e2_matchday > 40,]
 #first_df <- first_df[,-37]
 #second_df <- second_df[,-37]
 #third_df <- third_df[,-37]
-#BUNDESLIGATWO <- rbind(first_df,second_df)
-BUNDESLIGATWO <- D2_rounds[D2_rounds$d2_matchday > 17,]
-#BUNDESLIGATWO <- na.omit(BUNDESLIGATWO)
+#EPL <- rbind(first_df,second_df)
+EPL <- E0_rounds[E0_rounds$e0_matchday > 20,]
+#EPL <- na.omit(EPL)
 #goaltotals v2
-bundesligatwo_goaltotalsv2 <- tapply(BUNDESLIGATWO$TG, BUNDESLIGATWO[c("HomeTeam", "AwayTeam")],mean)
-bundesligatwo_hgtotals <- rowSums(bundesligatwo_goaltotalsv2, na.rm = T)
-bundesligatwo_agtotals <- colSums(bundesligatwo_goaltotalsv2, na.rm = T)
-bundesligatwo_goaltotalsv2 <- cbind(bundesligatwo_goaltotalsv2,bundesligatwo_hgtotals,bundesligatwo_agtotals)
-bundesligatwo_totalgoals <- bundesligatwo_hgtotals + bundesligatwo_agtotals
-bundesligatwo_goaltotalsv2 <- cbind(bundesligatwo_goaltotalsv2,bundesligatwo_totalgoals)
-bundesligatwo_teams <- sort(unique(BUNDESLIGATWO$HomeTeam))
-bundesligatwo_home_games <- c()
-bundesligatwo_away_games <-c()
-for (i_bundesligatwo in 1:length(bundesligatwo_teams))
+epl_goaltotalsv2 <- tapply(EPL$TG, EPL[c("HomeTeam", "AwayTeam")],mean)
+epl_hgtotals <- rowSums(epl_goaltotalsv2, na.rm = T)
+epl_agtotals <- colSums(epl_goaltotalsv2, na.rm = T)
+epl_goaltotalsv2 <- cbind(epl_goaltotalsv2,epl_hgtotals,epl_agtotals)
+epl_totalgoals <- epl_hgtotals + epl_agtotals
+epl_goaltotalsv2 <- cbind(epl_goaltotalsv2,epl_totalgoals)
+epl_teams <- sort(unique(EPL$HomeTeam))
+epl_home_games <- c()
+epl_away_games <-c()
+for (i_epl in 1:length(epl_teams))
 {
 
-  bundesligatwo_home_games[i_bundesligatwo] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo],])
-  bundesligatwo_away_games[i_bundesligatwo]  <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo],])
+  epl_home_games[i_epl] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl],])
+  epl_away_games[i_epl]  <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl],])
 
 }
-bundesligatwo_games_played <- bundesligatwo_home_games + bundesligatwo_away_games
-bundesligatwo_goaltotalsv2 <- cbind(bundesligatwo_goaltotalsv2,bundesligatwo_games_played)
-bundesligatwo_avg_totalgoals <- round((bundesligatwo_totalgoals/ bundesligatwo_games_played), digits = 4)
-bundesligatwo_goaltotalsv2[is.na(bundesligatwo_goaltotalsv2)] <- ""
-bundesligatwo_goaltotalsv2 <- cbind(bundesligatwo_goaltotalsv2,bundesligatwo_avg_totalgoals)
+epl_games_played <- epl_home_games + epl_away_games
+epl_goaltotalsv2 <- cbind(epl_goaltotalsv2,epl_games_played)
+epl_avg_totalgoals <- round((epl_totalgoals/ epl_games_played), digits = 4)
+epl_goaltotalsv2[is.na(epl_goaltotalsv2)] <- ""
+epl_goaltotalsv2 <- cbind(epl_goaltotalsv2,epl_avg_totalgoals)
 
 ############################################################################################################
 #Cornertotals v2
-bundesligatwo_cornertotalsv2 <- tapply(BUNDESLIGATWO$TC, BUNDESLIGATWO[c("HomeTeam", "AwayTeam")],mean)
-bundesligatwo_hcototals <- rowSums(bundesligatwo_cornertotalsv2, na.rm = T)
-bundesligatwo_acototals <- colSums(bundesligatwo_cornertotalsv2, na.rm = T)
-bundesligatwo_cornertotalsv2 <- cbind(bundesligatwo_cornertotalsv2,bundesligatwo_hcototals,bundesligatwo_acototals)
-bundesligatwo_totalcorners <- bundesligatwo_hcototals + bundesligatwo_acototals
-bundesligatwo_cornertotalsv2 <- cbind(bundesligatwo_cornertotalsv2,bundesligatwo_totalcorners)
-bundesligatwo_cornertotalsv2 <- cbind(bundesligatwo_cornertotalsv2,bundesligatwo_games_played)
-bundesligatwo_avg_totalcorners <- round((bundesligatwo_totalcorners/ bundesligatwo_games_played), digits = 4)
-bundesligatwo_cornertotalsv2[is.na(bundesligatwo_cornertotalsv2)] <- ""
-bundesligatwo_cornertotalsv2 <- cbind(bundesligatwo_cornertotalsv2,bundesligatwo_avg_totalcorners)
+epl_cornertotalsv2 <- tapply(EPL$TC, EPL[c("HomeTeam", "AwayTeam")],mean)
+epl_hcototals <- rowSums(epl_cornertotalsv2, na.rm = T)
+epl_acototals <- colSums(epl_cornertotalsv2, na.rm = T)
+epl_cornertotalsv2 <- cbind(epl_cornertotalsv2,epl_hcototals,epl_acototals)
+epl_totalcorners <- epl_hcototals + epl_acototals
+epl_cornertotalsv2 <- cbind(epl_cornertotalsv2,epl_totalcorners)
+epl_cornertotalsv2 <- cbind(epl_cornertotalsv2,epl_games_played)
+epl_avg_totalcorners <- round((epl_totalcorners/ epl_games_played), digits = 4)
+epl_cornertotalsv2[is.na(epl_cornertotalsv2)] <- ""
+epl_cornertotalsv2 <- cbind(epl_cornertotalsv2,epl_avg_totalcorners)
 ############################################################################################################
 #GS matrix
-bundesligatwo_goalscored_h <- tapply(BUNDESLIGATWO$FTHG, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_goalscored_a <- tapply(BUNDESLIGATWO$FTAG, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_goalscored_h[is.na(bundesligatwo_goalscored_h)] <- ""
-bundesligatwo_goalscored_a[is.na(bundesligatwo_goalscored_a)] <- ""
-for(bundesligatwo_rowhgs in 1:nrow(bundesligatwo_goalscored_h)) {
-  for(bundesligatwo_colhgs in 1:ncol(bundesligatwo_goalscored_h)) {
+epl_goalscored_h <- tapply(EPL$FTHG, EPL[c("HomeTeam", "Date")],mean)
+epl_goalscored_a <- tapply(EPL$FTAG, EPL[c("AwayTeam", "Date")],mean)
+epl_goalscored_h[is.na(epl_goalscored_h)] <- ""
+epl_goalscored_a[is.na(epl_goalscored_a)] <- ""
+for(epl_rowhgs in 1:nrow(epl_goalscored_h)) {
+  for(epl_colhgs in 1:ncol(epl_goalscored_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowags in 1:nrow(bundesligatwo_goalscored_a)) {
-      for(bundesligatwo_colags in 1:ncol(bundesligatwo_goalscored_a)) {
-        ifelse(!bundesligatwo_goalscored_a[bundesligatwo_rowags,bundesligatwo_colags]=="",bundesligatwo_goalscored_h[bundesligatwo_rowags,bundesligatwo_colags] <- bundesligatwo_goalscored_a[bundesligatwo_rowags,bundesligatwo_colags],next)
+    for(epl_rowags in 1:nrow(epl_goalscored_a)) {
+      for(epl_colags in 1:ncol(epl_goalscored_a)) {
+        ifelse(!epl_goalscored_a[epl_rowags,epl_colags]=="",epl_goalscored_h[epl_rowags,epl_colags] <- epl_goalscored_a[epl_rowags,epl_colags],next)
         #print(my_matrix[row, col])
       }
     }
@@ -71,17 +72,17 @@ for(bundesligatwo_rowhgs in 1:nrow(bundesligatwo_goalscored_h)) {
 }
 #############################################################################################################
 #Goal conceded matrix
-bundesligatwo_goalconceded_h <- tapply(BUNDESLIGATWO$FTAG, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_goalconceded_a <- tapply(BUNDESLIGATWO$FTHG, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_goalconceded_h[is.na(bundesligatwo_goalconceded_h)] <- ""
-bundesligatwo_goalconceded_a[is.na(bundesligatwo_goalconceded_a)] <- ""
-for(bundesligatwo_rowhgc in 1:nrow(bundesligatwo_goalconceded_h)) {
-  for(bundesligatwo_colhgc in 1:ncol(bundesligatwo_goalconceded_h)) {
+epl_goalconceded_h <- tapply(EPL$FTAG, EPL[c("HomeTeam", "Date")],mean)
+epl_goalconceded_a <- tapply(EPL$FTHG, EPL[c("AwayTeam", "Date")],mean)
+epl_goalconceded_h[is.na(epl_goalconceded_h)] <- ""
+epl_goalconceded_a[is.na(epl_goalconceded_a)] <- ""
+for(epl_rowhgc in 1:nrow(epl_goalconceded_h)) {
+  for(epl_colhgc in 1:ncol(epl_goalconceded_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowagc in 1:nrow(bundesligatwo_goalconceded_a)) {
-      for(bundesligatwo_colagc in 1:ncol(bundesligatwo_goalconceded_a)) {
-        ifelse(!bundesligatwo_goalconceded_a[bundesligatwo_rowagc,bundesligatwo_colagc]=="",bundesligatwo_goalconceded_h[bundesligatwo_rowagc,bundesligatwo_colagc] <- bundesligatwo_goalconceded_a[bundesligatwo_rowagc,bundesligatwo_colagc],next)
+    for(epl_rowagc in 1:nrow(epl_goalconceded_a)) {
+      for(epl_colagc in 1:ncol(epl_goalconceded_a)) {
+        ifelse(!epl_goalconceded_a[epl_rowagc,epl_colagc]=="",epl_goalconceded_h[epl_rowagc,epl_colagc] <- epl_goalconceded_a[epl_rowagc,epl_colagc],next)
         #print(my_matrix[row, col])
       }
     }
@@ -90,18 +91,18 @@ for(bundesligatwo_rowhgc in 1:nrow(bundesligatwo_goalconceded_h)) {
 }
 ###############################################################################################################
 #corner matrix
-bundesligatwo_totalcorners_h <- tapply(BUNDESLIGATWO$TC, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_totalcorners_a <- tapply(BUNDESLIGATWO$TC, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_totalcorners_h[is.na(bundesligatwo_totalcorners_h)] <- ""
-bundesligatwo_totalcorners_a[is.na(bundesligatwo_totalcorners_a)] <- ""
-#BUNDESLIGATWO
-for(bundesligatwo_rowTC in 1:nrow(bundesligatwo_totalcorners_h)) {
-  for(bundesligatwo_colTC in 1:ncol(bundesligatwo_totalcorners_h)) {
+epl_totalcorners_h <- tapply(EPL$TC, EPL[c("HomeTeam", "Date")],mean)
+epl_totalcorners_a <- tapply(EPL$TC, EPL[c("AwayTeam", "Date")],mean)
+epl_totalcorners_h[is.na(epl_totalcorners_h)] <- ""
+epl_totalcorners_a[is.na(epl_totalcorners_a)] <- ""
+#EPL
+for(epl_rowTC in 1:nrow(epl_totalcorners_h)) {
+  for(epl_colTC in 1:ncol(epl_totalcorners_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowTC in 1:nrow(bundesligatwo_totalcorners_a)) {
-      for(bundesligatwo_colTC in 1:ncol(bundesligatwo_totalcorners_a)) {
-        ifelse(!bundesligatwo_totalcorners_a[bundesligatwo_rowTC,bundesligatwo_colTC]=="",bundesligatwo_totalcorners_h[bundesligatwo_rowTC,bundesligatwo_colTC] <- bundesligatwo_totalcorners_a[bundesligatwo_rowTC,bundesligatwo_colTC],next)
+    for(epl_rowTC in 1:nrow(epl_totalcorners_a)) {
+      for(epl_colTC in 1:ncol(epl_totalcorners_a)) {
+        ifelse(!epl_totalcorners_a[epl_rowTC,epl_colTC]=="",epl_totalcorners_h[epl_rowTC,epl_colTC] <- epl_totalcorners_a[epl_rowTC,epl_colTC],next)
         #print(my_matrix[row, col])
       }
     }
@@ -110,18 +111,18 @@ for(bundesligatwo_rowTC in 1:nrow(bundesligatwo_totalcorners_h)) {
 }
 ###################################################################################################################################
 #corners awarded
-bundesligatwo_coawarded_h <- tapply(BUNDESLIGATWO$HCO, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_coawarded_a <- tapply(BUNDESLIGATWO$ACO, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_coawarded_h[is.na(bundesligatwo_coawarded_h)] <- ""
-bundesligatwo_coawarded_a[is.na(bundesligatwo_coawarded_a)] <- ""
-#BUNDESLIGATWO
-for(bundesligatwo_rowhco in 1:nrow(bundesligatwo_coawarded_h)) {
-  for(bundesligatwo_colhco in 1:ncol(bundesligatwo_coawarded_h)) {
+epl_coawarded_h <- tapply(EPL$HCO, EPL[c("HomeTeam", "Date")],mean)
+epl_coawarded_a <- tapply(EPL$ACO, EPL[c("AwayTeam", "Date")],mean)
+epl_coawarded_h[is.na(epl_coawarded_h)] <- ""
+epl_coawarded_a[is.na(epl_coawarded_a)] <- ""
+#EPL
+for(epl_rowhco in 1:nrow(epl_coawarded_h)) {
+  for(epl_colhco in 1:ncol(epl_coawarded_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowaco in 1:nrow(bundesligatwo_coawarded_a)) {
-      for(bundesligatwo_colaco in 1:ncol(bundesligatwo_coawarded_a)) {
-        ifelse(!bundesligatwo_coawarded_a[bundesligatwo_rowaco,bundesligatwo_colaco]=="",bundesligatwo_coawarded_h[bundesligatwo_rowaco,bundesligatwo_colaco] <- bundesligatwo_coawarded_a[bundesligatwo_rowaco,bundesligatwo_colaco],next)
+    for(epl_rowaco in 1:nrow(epl_coawarded_a)) {
+      for(epl_colaco in 1:ncol(epl_coawarded_a)) {
+        ifelse(!epl_coawarded_a[epl_rowaco,epl_colaco]=="",epl_coawarded_h[epl_rowaco,epl_colaco] <- epl_coawarded_a[epl_rowaco,epl_colaco],next)
         #print(my_matrix[row, col])
       }
     }
@@ -131,18 +132,18 @@ for(bundesligatwo_rowhco in 1:nrow(bundesligatwo_coawarded_h)) {
 
 #######################################################################################################################################
 #corners conceded
-bundesligatwo_cornersconceded_h <- tapply(BUNDESLIGATWO$ACO, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_cornersconceded_a <- tapply(BUNDESLIGATWO$HCO, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_cornersconceded_h[is.na(bundesligatwo_cornersconceded_h)] <- ""
-bundesligatwo_cornersconceded_a[is.na(bundesligatwo_cornersconceded_a)] <- ""
-#BUNDESLIGATWO
-for(bundesligatwo_rowhcc in 1:nrow(bundesligatwo_cornersconceded_h)) {
-  for(bundesligatwo_colhcc in 1:ncol(bundesligatwo_cornersconceded_h)) {
+epl_cornersconceded_h <- tapply(EPL$ACO, EPL[c("HomeTeam", "Date")],mean)
+epl_cornersconceded_a <- tapply(EPL$HCO, EPL[c("AwayTeam", "Date")],mean)
+epl_cornersconceded_h[is.na(epl_cornersconceded_h)] <- ""
+epl_cornersconceded_a[is.na(epl_cornersconceded_a)] <- ""
+#EPL
+for(epl_rowhcc in 1:nrow(epl_cornersconceded_h)) {
+  for(epl_colhcc in 1:ncol(epl_cornersconceded_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowacc in 1:nrow(bundesligatwo_cornersconceded_a)) {
-      for(bundesligatwo_colacc in 1:ncol(bundesligatwo_cornersconceded_a)) {
-        ifelse(!bundesligatwo_cornersconceded_a[bundesligatwo_rowacc,bundesligatwo_colacc]=="",bundesligatwo_cornersconceded_h[bundesligatwo_rowacc,bundesligatwo_colacc] <- bundesligatwo_cornersconceded_a[bundesligatwo_rowacc,bundesligatwo_colacc],next)
+    for(epl_rowacc in 1:nrow(epl_cornersconceded_a)) {
+      for(epl_colacc in 1:ncol(epl_cornersconceded_a)) {
+        ifelse(!epl_cornersconceded_a[epl_rowacc,epl_colacc]=="",epl_cornersconceded_h[epl_rowacc,epl_colacc] <- epl_cornersconceded_a[epl_rowacc,epl_colacc],next)
         #print(my_matrix[row, col])
       }
     }
@@ -152,18 +153,18 @@ for(bundesligatwo_rowhcc in 1:nrow(bundesligatwo_cornersconceded_h)) {
 ############################################################################################################################################
 #corners form
 #create home and away coscform matrices
-bundesligatwo_coscform_h <- tapply(BUNDESLIGATWO$COSC, BUNDESLIGATWO[c("HomeTeam", "Date")],median)
-bundesligatwo_coscform_a <- tapply(BUNDESLIGATWO$COSC, BUNDESLIGATWO[c("AwayTeam", "Date")],median)
-bundesligatwo_coscform_h[is.na(bundesligatwo_coscform_h)] <- ""
-bundesligatwo_coscform_a[is.na(bundesligatwo_coscform_a)] <- ""
-#BUNDESLIGATWO
-for(bundesligatwo_rowh_f_cosc in 1:nrow(bundesligatwo_coscform_h)) {
-  for(bundesligatwo_colh_f_cosc in 1:ncol(bundesligatwo_coscform_h)) {
+epl_coscform_h <- tapply(EPL$COSC, EPL[c("HomeTeam", "Date")],median)
+epl_coscform_a <- tapply(EPL$COSC, EPL[c("AwayTeam", "Date")],median)
+epl_coscform_h[is.na(epl_coscform_h)] <- ""
+epl_coscform_a[is.na(epl_coscform_a)] <- ""
+#EPL
+for(epl_rowh_f_cosc in 1:nrow(epl_coscform_h)) {
+  for(epl_colh_f_cosc in 1:ncol(epl_coscform_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowa_f_cosc in 1:nrow(bundesligatwo_coscform_a)) {
-      for(bundesligatwo_cola_f_cosc in 1:ncol(bundesligatwo_coscform_a)) {
-        ifelse(!bundesligatwo_coscform_a[bundesligatwo_rowa_f_cosc,bundesligatwo_cola_f_cosc]=="",bundesligatwo_coscform_h[bundesligatwo_rowa_f_cosc,bundesligatwo_cola_f_cosc] <- bundesligatwo_coscform_a[bundesligatwo_rowa_f_cosc,bundesligatwo_cola_f_cosc],next)
+    for(epl_rowa_f_cosc in 1:nrow(epl_coscform_a)) {
+      for(epl_cola_f_cosc in 1:ncol(epl_coscform_a)) {
+        ifelse(!epl_coscform_a[epl_rowa_f_cosc,epl_cola_f_cosc]=="",epl_coscform_h[epl_rowa_f_cosc,epl_cola_f_cosc] <- epl_coscform_a[epl_rowa_f_cosc,epl_cola_f_cosc],next)
         #print(my_matrix[row, col])
       }
     }
@@ -172,18 +173,18 @@ for(bundesligatwo_rowh_f_cosc in 1:nrow(bundesligatwo_coscform_h)) {
 }
 ################################################################################################################################################
 #winmargin
-bundesligatwo_winmargin_h <- tapply(BUNDESLIGATWO$FTHG - BUNDESLIGATWO$FTAG, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_winmargin_a <- tapply(BUNDESLIGATWO$FTAG - BUNDESLIGATWO$FTHG, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_winmargin_h[is.na(bundesligatwo_winmargin_h)] <- ""
-bundesligatwo_winmargin_a[is.na(bundesligatwo_winmargin_a)] <- ""
-#BUNDESLIGATWO
-for(bundesligatwo_rowhwm in 1:nrow(bundesligatwo_winmargin_h)) {
-  for(bundesligatwo_colhwm in 1:ncol(bundesligatwo_winmargin_h)) {
+epl_winmargin_h <- tapply(EPL$FTHG - EPL$FTAG, EPL[c("HomeTeam", "Date")],mean)
+epl_winmargin_a <- tapply(EPL$FTAG - EPL$FTHG, EPL[c("AwayTeam", "Date")],mean)
+epl_winmargin_h[is.na(epl_winmargin_h)] <- ""
+epl_winmargin_a[is.na(epl_winmargin_a)] <- ""
+#EPL
+for(epl_rowhwm in 1:nrow(epl_winmargin_h)) {
+  for(epl_colhwm in 1:ncol(epl_winmargin_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowawm in 1:nrow(bundesligatwo_winmargin_a)) {
-      for(bundesligatwo_colawm in 1:ncol(bundesligatwo_winmargin_a)) {
-        ifelse(!bundesligatwo_winmargin_a[bundesligatwo_rowawm,bundesligatwo_colawm]=="",bundesligatwo_winmargin_h[bundesligatwo_rowawm,bundesligatwo_colawm] <- bundesligatwo_winmargin_a[bundesligatwo_rowawm,bundesligatwo_colawm],next)
+    for(epl_rowawm in 1:nrow(epl_winmargin_a)) {
+      for(epl_colawm in 1:ncol(epl_winmargin_a)) {
+        ifelse(!epl_winmargin_a[epl_rowawm,epl_colawm]=="",epl_winmargin_h[epl_rowawm,epl_colawm] <- epl_winmargin_a[epl_rowawm,epl_colawm],next)
         #print(my_matrix[row, col])
       }
     }
@@ -192,18 +193,18 @@ for(bundesligatwo_rowhwm in 1:nrow(bundesligatwo_winmargin_h)) {
 }
 #################################################################################################################################################
 #yellow card matrix
-bundesligatwo_yellowscored_h <- tapply(BUNDESLIGATWO$HY, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_yellowscored_a <- tapply(BUNDESLIGATWO$AY, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_yellowscored_h[is.na(bundesligatwo_yellowscored_h)] <- ""
-bundesligatwo_yellowscored_a[is.na(bundesligatwo_yellowscored_a)] <- ""
-#BUNDESLIGATWO
-for(bundesligatwo_rowhys in 1:nrow(bundesligatwo_yellowscored_h)) {
-  for(bundesligatwo_colhys in 1:ncol(bundesligatwo_yellowscored_h)) {
+epl_yellowscored_h <- tapply(EPL$HY, EPL[c("HomeTeam", "Date")],mean)
+epl_yellowscored_a <- tapply(EPL$AY, EPL[c("AwayTeam", "Date")],mean)
+epl_yellowscored_h[is.na(epl_yellowscored_h)] <- ""
+epl_yellowscored_a[is.na(epl_yellowscored_a)] <- ""
+#EPL
+for(epl_rowhys in 1:nrow(epl_yellowscored_h)) {
+  for(epl_colhys in 1:ncol(epl_yellowscored_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_roways in 1:nrow(bundesligatwo_yellowscored_a)) {
-      for(bundesligatwo_colays in 1:ncol(bundesligatwo_yellowscored_a)) {
-        ifelse(!bundesligatwo_yellowscored_a[bundesligatwo_roways,bundesligatwo_colays]=="",bundesligatwo_yellowscored_h[bundesligatwo_roways,bundesligatwo_colays] <- bundesligatwo_yellowscored_a[bundesligatwo_roways,bundesligatwo_colays],next)
+    for(epl_roways in 1:nrow(epl_yellowscored_a)) {
+      for(epl_colays in 1:ncol(epl_yellowscored_a)) {
+        ifelse(!epl_yellowscored_a[epl_roways,epl_colays]=="",epl_yellowscored_h[epl_roways,epl_colays] <- epl_yellowscored_a[epl_roways,epl_colays],next)
         #print(my_matrix[row, col])
       }
     }
@@ -212,17 +213,17 @@ for(bundesligatwo_rowhys in 1:nrow(bundesligatwo_yellowscored_h)) {
 }
 ###############################################################################################################################################
 #red card matrix
-bundesligatwo_redscored_h <- tapply(BUNDESLIGATWO$HR, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_redscored_a <- tapply(BUNDESLIGATWO$AR, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_redscored_h[is.na(bundesligatwo_redscored_h)] <- ""
-bundesligatwo_redscored_a[is.na(bundesligatwo_redscored_a)] <- ""
-for(bundesligatwo_rowhrs in 1:nrow(bundesligatwo_redscored_h)) {
-  for(bundesligatwo_colhrs in 1:ncol(bundesligatwo_redscored_h)) {
+epl_redscored_h <- tapply(EPL$HR, EPL[c("HomeTeam", "Date")],mean)
+epl_redscored_a <- tapply(EPL$AR, EPL[c("AwayTeam", "Date")],mean)
+epl_redscored_h[is.na(epl_redscored_h)] <- ""
+epl_redscored_a[is.na(epl_redscored_a)] <- ""
+for(epl_rowhrs in 1:nrow(epl_redscored_h)) {
+  for(epl_colhrs in 1:ncol(epl_redscored_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowars in 1:nrow(bundesligatwo_redscored_a)) {
-      for(bundesligatwo_colars in 1:ncol(bundesligatwo_redscored_a)) {
-        ifelse(!bundesligatwo_redscored_a[bundesligatwo_rowars,bundesligatwo_colars]=="",bundesligatwo_redscored_h[bundesligatwo_rowars,bundesligatwo_colars] <- bundesligatwo_redscored_a[bundesligatwo_rowars,bundesligatwo_colars],next)
+    for(epl_rowars in 1:nrow(epl_redscored_a)) {
+      for(epl_colars in 1:ncol(epl_redscored_a)) {
+        ifelse(!epl_redscored_a[epl_rowars,epl_colars]=="",epl_redscored_h[epl_rowars,epl_colars] <- epl_redscored_a[epl_rowars,epl_colars],next)
         #print(my_matrix[row, col])
       }
     }
@@ -231,45 +232,45 @@ for(bundesligatwo_rowhrs in 1:nrow(bundesligatwo_redscored_h)) {
 }
 ####################################################################################################################################################
 #red totals
-bundesligatwo_redtotalsv2 <- tapply(BUNDESLIGATWO$TR, BUNDESLIGATWO[c("HomeTeam", "AwayTeam")],mean)
-bundesligatwo_hrtotals <- rowSums(bundesligatwo_redtotalsv2, na.rm = T)
-bundesligatwo_artotals <- colSums(bundesligatwo_redtotalsv2, na.rm = T)
-bundesligatwo_redtotalsv2 <- cbind(bundesligatwo_redtotalsv2,bundesligatwo_hrtotals,bundesligatwo_artotals)
-bundesligatwo_totalreds <- bundesligatwo_hrtotals + bundesligatwo_artotals
-bundesligatwo_redtotalsv2 <- cbind(bundesligatwo_redtotalsv2,bundesligatwo_totalreds)
-bundesligatwo_redtotalsv2 <- cbind(bundesligatwo_redtotalsv2,bundesligatwo_games_played)
-bundesligatwo_avg_totalreds <- round((bundesligatwo_totalreds/ bundesligatwo_games_played), digits = 4)
-bundesligatwo_redtotalsv2[is.na(bundesligatwo_redtotalsv2)] <- ""
-bundesligatwo_redtotalsv2 <- cbind(bundesligatwo_redtotalsv2,bundesligatwo_avg_totalreds)
+epl_redtotalsv2 <- tapply(EPL$TR, EPL[c("HomeTeam", "AwayTeam")],mean)
+epl_hrtotals <- rowSums(epl_redtotalsv2, na.rm = T)
+epl_artotals <- colSums(epl_redtotalsv2, na.rm = T)
+epl_redtotalsv2 <- cbind(epl_redtotalsv2,epl_hrtotals,epl_artotals)
+epl_totalreds <- epl_hrtotals + epl_artotals
+epl_redtotalsv2 <- cbind(epl_redtotalsv2,epl_totalreds)
+epl_redtotalsv2 <- cbind(epl_redtotalsv2,epl_games_played)
+epl_avg_totalreds <- round((epl_totalreds/ epl_games_played), digits = 4)
+epl_redtotalsv2[is.na(epl_redtotalsv2)] <- ""
+epl_redtotalsv2 <- cbind(epl_redtotalsv2,epl_avg_totalreds)
 ############################################################################################################################################################
 #yellowtotals
-bundesligatwo_yellowtotalsv2 <- tapply(BUNDESLIGATWO$TY, BUNDESLIGATWO[c("HomeTeam", "AwayTeam")],mean)
-bundesligatwo_hytotals <- rowSums(bundesligatwo_yellowtotalsv2, na.rm = T)
-bundesligatwo_aytotals <- colSums(bundesligatwo_yellowtotalsv2, na.rm = T)
-bundesligatwo_yellowtotalsv2 <- cbind(bundesligatwo_yellowtotalsv2,bundesligatwo_hytotals,bundesligatwo_aytotals)
-bundesligatwo_totalyellows <- bundesligatwo_hytotals + bundesligatwo_aytotals
-bundesligatwo_yellowtotalsv2 <- cbind(bundesligatwo_yellowtotalsv2,bundesligatwo_totalyellows)
-bundesligatwo_yellowtotalsv2 <- cbind(bundesligatwo_yellowtotalsv2,bundesligatwo_games_played)
-bundesligatwo_avg_totalyellows <- round((bundesligatwo_totalyellows/ bundesligatwo_games_played), digits = 4)
-bundesligatwo_yellowtotalsv2[is.na(bundesligatwo_yellowtotalsv2)] <- ""
-bundesligatwo_yellowtotalsv2 <- cbind(bundesligatwo_yellowtotalsv2,bundesligatwo_avg_totalyellows)
+epl_yellowtotalsv2 <- tapply(EPL$TY, EPL[c("HomeTeam", "AwayTeam")],mean)
+epl_hytotals <- rowSums(epl_yellowtotalsv2, na.rm = T)
+epl_aytotals <- colSums(epl_yellowtotalsv2, na.rm = T)
+epl_yellowtotalsv2 <- cbind(epl_yellowtotalsv2,epl_hytotals,epl_aytotals)
+epl_totalyellows <- epl_hytotals + epl_aytotals
+epl_yellowtotalsv2 <- cbind(epl_yellowtotalsv2,epl_totalyellows)
+epl_yellowtotalsv2 <- cbind(epl_yellowtotalsv2,epl_games_played)
+epl_avg_totalyellows <- round((epl_totalyellows/ epl_games_played), digits = 4)
+epl_yellowtotalsv2[is.na(epl_yellowtotalsv2)] <- ""
+epl_yellowtotalsv2 <- cbind(epl_yellowtotalsv2,epl_avg_totalyellows)
 ##################################################################################################################################################
 #team form
-bundesligatwo_form_h <- tapply(BUNDESLIGATWO$FTR, BUNDESLIGATWO[c("HomeTeam", "Date")],median)
-bundesligatwo_form_a <- tapply(BUNDESLIGATWO$FTR, BUNDESLIGATWO[c("AwayTeam", "Date")],median)
-bundesligatwo_form_h[is.na(bundesligatwo_form_h)] <- ""
-bundesligatwo_form_a[is.na(bundesligatwo_form_a)] <- ""
-bundesligatwo_form_h <- sub("A","L",bundesligatwo_form_h)
-bundesligatwo_form_h <- sub("H","W",bundesligatwo_form_h)
-bundesligatwo_form_a <- sub("A","W",bundesligatwo_form_a)
-bundesligatwo_form_a <- sub("H","L",bundesligatwo_form_a)
-for(bundesligatwo_rowh_f in 1:nrow(bundesligatwo_form_h)) {
-  for(bundesligatwo_colh_f in 1:ncol(bundesligatwo_form_h)) {
+epl_form_h <- tapply(EPL$FTR, EPL[c("HomeTeam", "Date")],median)
+epl_form_a <- tapply(EPL$FTR, EPL[c("AwayTeam", "Date")],median)
+epl_form_h[is.na(epl_form_h)] <- ""
+epl_form_a[is.na(epl_form_a)] <- ""
+epl_form_h <- sub("A","L",epl_form_h)
+epl_form_h <- sub("H","W",epl_form_h)
+epl_form_a <- sub("A","W",epl_form_a)
+epl_form_a <- sub("H","L",epl_form_a)
+for(epl_rowh_f in 1:nrow(epl_form_h)) {
+  for(epl_colh_f in 1:ncol(epl_form_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowa_f in 1:nrow(bundesligatwo_form_a)) {
-      for(bundesligatwo_cola_f in 1:ncol(bundesligatwo_form_a)) {
-        ifelse(!bundesligatwo_form_a[bundesligatwo_rowa_f,bundesligatwo_cola_f]=="",bundesligatwo_form_h[bundesligatwo_rowa_f,bundesligatwo_cola_f] <- bundesligatwo_form_a[bundesligatwo_rowa_f,bundesligatwo_cola_f],next)
+    for(epl_rowa_f in 1:nrow(epl_form_a)) {
+      for(epl_cola_f in 1:ncol(epl_form_a)) {
+        ifelse(!epl_form_a[epl_rowa_f,epl_cola_f]=="",epl_form_h[epl_rowa_f,epl_cola_f] <- epl_form_a[epl_rowa_f,epl_cola_f],next)
         #print(my_matrix[row, col])
       }
     }
@@ -278,18 +279,18 @@ for(bundesligatwo_rowh_f in 1:nrow(bundesligatwo_form_h)) {
 }
 ###########################################################################################################################################
 #CS form
-bundesligatwo_csform_h <- tapply(BUNDESLIGATWO$CS, BUNDESLIGATWO[c("HomeTeam", "Date")],median)
-bundesligatwo_csform_a <- tapply(BUNDESLIGATWO$CS, BUNDESLIGATWO[c("AwayTeam", "Date")],median)
-bundesligatwo_csform_h[is.na(bundesligatwo_csform_h)] <- ""
-bundesligatwo_csform_a[is.na(bundesligatwo_csform_a)] <- ""
-#BUNDESLIGATWO
-for(bundesligatwo_rowh_f_cs in 1:nrow(bundesligatwo_csform_h)) {
-  for(bundesligatwo_colh_f_cs in 1:ncol(bundesligatwo_csform_h)) {
+epl_csform_h <- tapply(EPL$CS, EPL[c("HomeTeam", "Date")],median)
+epl_csform_a <- tapply(EPL$CS, EPL[c("AwayTeam", "Date")],median)
+epl_csform_h[is.na(epl_csform_h)] <- ""
+epl_csform_a[is.na(epl_csform_a)] <- ""
+#EPL
+for(epl_rowh_f_cs in 1:nrow(epl_csform_h)) {
+  for(epl_colh_f_cs in 1:ncol(epl_csform_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowa_f_cs in 1:nrow(bundesligatwo_csform_a)) {
-      for(bundesligatwo_cola_f_cs in 1:ncol(bundesligatwo_csform_a)) {
-        ifelse(!bundesligatwo_csform_a[bundesligatwo_rowa_f_cs,bundesligatwo_cola_f_cs]=="",bundesligatwo_csform_h[bundesligatwo_rowa_f_cs,bundesligatwo_cola_f_cs] <- bundesligatwo_csform_a[bundesligatwo_rowa_f_cs,bundesligatwo_cola_f_cs],next)
+    for(epl_rowa_f_cs in 1:nrow(epl_csform_a)) {
+      for(epl_cola_f_cs in 1:ncol(epl_csform_a)) {
+        ifelse(!epl_csform_a[epl_rowa_f_cs,epl_cola_f_cs]=="",epl_csform_h[epl_rowa_f_cs,epl_cola_f_cs] <- epl_csform_a[epl_rowa_f_cs,epl_cola_f_cs],next)
         #print(my_matrix[row, col])
       }
     }
@@ -298,17 +299,17 @@ for(bundesligatwo_rowh_f_cs in 1:nrow(bundesligatwo_csform_h)) {
 }
 ####################################################################################################################################
 #TG matrix
-bundesligatwo_totalgoals_h <- tapply(BUNDESLIGATWO$TG, BUNDESLIGATWO[c("HomeTeam", "Date")],mean)
-bundesligatwo_totalgoals_a <- tapply(BUNDESLIGATWO$TG, BUNDESLIGATWO[c("AwayTeam", "Date")],mean)
-bundesligatwo_totalgoals_h[is.na(bundesligatwo_totalgoals_h)] <- ""
-bundesligatwo_totalgoals_a[is.na(bundesligatwo_totalgoals_a)] <- ""
-for(bundesligatwo_rowh in 1:nrow(bundesligatwo_totalgoals_h)) {
-  for(bundesligatwo_colh in 1:ncol(bundesligatwo_totalgoals_h)) {
+epl_totalgoals_h <- tapply(EPL$TG, EPL[c("HomeTeam", "Date")],mean)
+epl_totalgoals_a <- tapply(EPL$TG, EPL[c("AwayTeam", "Date")],mean)
+epl_totalgoals_h[is.na(epl_totalgoals_h)] <- ""
+epl_totalgoals_a[is.na(epl_totalgoals_a)] <- ""
+for(epl_rowh in 1:nrow(epl_totalgoals_h)) {
+  for(epl_colh in 1:ncol(epl_totalgoals_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowa in 1:nrow(bundesligatwo_totalgoals_a)) {
-      for(bundesligatwo_cola in 1:ncol(bundesligatwo_totalgoals_a)) {
-        ifelse(!bundesligatwo_totalgoals_a[bundesligatwo_rowa,bundesligatwo_cola]=="",bundesligatwo_totalgoals_h[bundesligatwo_rowa,bundesligatwo_cola] <- bundesligatwo_totalgoals_a[bundesligatwo_rowa,bundesligatwo_cola],next)
+    for(epl_rowa in 1:nrow(epl_totalgoals_a)) {
+      for(epl_cola in 1:ncol(epl_totalgoals_a)) {
+        ifelse(!epl_totalgoals_a[epl_rowa,epl_cola]=="",epl_totalgoals_h[epl_rowa,epl_cola] <- epl_totalgoals_a[epl_rowa,epl_cola],next)
         #print(my_matrix[row, col])
       }
     }
@@ -317,112 +318,112 @@ for(bundesligatwo_rowh in 1:nrow(bundesligatwo_totalgoals_h)) {
 }
 ##############################################################################################################
 #Totalgoals
-#BUNDESLIGATWO
-bundesligatwo_un05_home <- c()
-bundesligatwo_un05_away <- c()
-bundesligatwo_ov05_home <- c()
-bundesligatwo_ov05_away <- c()
+#EPL
+epl_un05_home <- c()
+epl_un05_away <- c()
+epl_ov05_home <- c()
+epl_ov05_away <- c()
 
-bundesligatwo_un15_home <- c()
-bundesligatwo_un15_away <- c()
-bundesligatwo_ov15_home <- c()
-bundesligatwo_ov15_away <- c()
+epl_un15_home <- c()
+epl_un15_away <- c()
+epl_ov15_home <- c()
+epl_ov15_away <- c()
 
-bundesligatwo_un25_home <- c()
-bundesligatwo_un25_away <- c()
-bundesligatwo_ov25_home <- c()
-bundesligatwo_ov25_away <- c()
+epl_un25_home <- c()
+epl_un25_away <- c()
+epl_ov25_home <- c()
+epl_ov25_away <- c()
 
-bundesligatwo_un35_home <- c()
-bundesligatwo_un35_away <- c()
-bundesligatwo_ov35_home <- c()
-bundesligatwo_ov35_away <- c()
+epl_un35_home <- c()
+epl_un35_away <- c()
+epl_ov35_home <- c()
+epl_ov35_away <- c()
 
-bundesligatwo_un45_home <- c()
-bundesligatwo_un45_away <- c()
-bundesligatwo_ov45_home <- c()
-bundesligatwo_ov45_away <- c()
+epl_un45_home <- c()
+epl_un45_away <- c()
+epl_ov45_home <- c()
+epl_ov45_away <- c()
 
-bundesligatwo_un55_home <- c()
-bundesligatwo_un55_away <- c()
-bundesligatwo_ov55_home <- c()
-bundesligatwo_ov55_away <- c()
+epl_un55_home <- c()
+epl_un55_away <- c()
+epl_ov55_home <- c()
+epl_ov55_away <- c()
 
-for (i_bundesligatwo_tg in 1:length(bundesligatwo_teams))
+for (i_epl_tg in 1:length(epl_teams))
 {
 
-  bundesligatwo_un05_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG == 0,])
-  bundesligatwo_un05_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG == 0,])
+  epl_un05_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG == 0,])
+  epl_un05_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG == 0,])
 
-  bundesligatwo_ov05_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG > 0,])
-  bundesligatwo_ov05_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG > 0,])
+  epl_ov05_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG > 0,])
+  epl_ov05_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG > 0,])
 
-  bundesligatwo_un15_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 1,])
-  bundesligatwo_un15_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 1,])
+  epl_un15_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG <= 1,])
+  epl_un15_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG <= 1,])
 
-  bundesligatwo_ov15_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >= 2,])
-  bundesligatwo_ov15_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >= 2,])
+  epl_ov15_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG >= 2,])
+  epl_ov15_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG >= 2,])
 
-  bundesligatwo_un25_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 2,])
-  bundesligatwo_un25_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 2,])
+  epl_un25_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG <= 2,])
+  epl_un25_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG <= 2,])
 
-  bundesligatwo_ov25_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >=3,])
-  bundesligatwo_ov25_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >=3,])
+  epl_ov25_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG >=3,])
+  epl_ov25_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG >=3,])
 
-  bundesligatwo_un35_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 3,])
-  bundesligatwo_un35_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 3,])
+  epl_un35_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG <= 3,])
+  epl_un35_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG <= 3,])
 
-  bundesligatwo_ov35_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >= 4,])
-  bundesligatwo_ov35_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >= 4,])
+  epl_ov35_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG >= 4,])
+  epl_ov35_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG >= 4,])
 
-  bundesligatwo_un45_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 4,])
-  bundesligatwo_un45_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 4,])
+  epl_un45_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG <= 4,])
+  epl_un45_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG <= 4,])
 
-  bundesligatwo_ov45_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >= 5,])
-  bundesligatwo_ov45_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >= 5,])
+  epl_ov45_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG >= 5,])
+  epl_ov45_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG >= 5,])
 
-  bundesligatwo_un55_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 5,])
-  bundesligatwo_un55_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG <= 5,])
+  epl_un55_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG <= 5,])
+  epl_un55_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG <= 5,])
 
-  bundesligatwo_ov55_home[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >= 6,])
-  bundesligatwo_ov55_away[i_bundesligatwo_tg] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_tg] & BUNDESLIGATWO$TG >= 6,])
+  epl_ov55_home[i_epl_tg] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_tg] & EPL$TG >= 6,])
+  epl_ov55_away[i_epl_tg] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_tg] & EPL$TG >= 6,])
 
 
 }
 
-bundesligatwo_un05 <- bundesligatwo_un05_home + bundesligatwo_un05_away
-bundesligatwo_ov05 <- bundesligatwo_ov05_home + bundesligatwo_ov05_away
+epl_un05 <- epl_un05_home + epl_un05_away
+epl_ov05 <- epl_ov05_home + epl_ov05_away
 
-bundesligatwo_un15 <- bundesligatwo_un15_home + bundesligatwo_un15_away
-bundesligatwo_ov15 <- bundesligatwo_ov15_home + bundesligatwo_ov15_away
+epl_un15 <- epl_un15_home + epl_un15_away
+epl_ov15 <- epl_ov15_home + epl_ov15_away
 
-bundesligatwo_un25 <- bundesligatwo_un25_home + bundesligatwo_un25_away
-bundesligatwo_ov25 <- bundesligatwo_ov25_home + bundesligatwo_ov25_away
+epl_un25 <- epl_un25_home + epl_un25_away
+epl_ov25 <- epl_ov25_home + epl_ov25_away
 
-bundesligatwo_un35 <- bundesligatwo_un35_home + bundesligatwo_un35_away
-bundesligatwo_ov35 <- bundesligatwo_ov35_home + bundesligatwo_ov35_away
+epl_un35 <- epl_un35_home + epl_un35_away
+epl_ov35 <- epl_ov35_home + epl_ov35_away
 
-bundesligatwo_un45 <- bundesligatwo_un45_home + bundesligatwo_un45_away
-bundesligatwo_ov45 <- bundesligatwo_ov45_home + bundesligatwo_ov45_away
+epl_un45 <- epl_un45_home + epl_un45_away
+epl_ov45 <- epl_ov45_home + epl_ov45_away
 
-bundesligatwo_un55 <- bundesligatwo_un55_home + bundesligatwo_un55_away
-bundesligatwo_ov55 <- bundesligatwo_ov55_home + bundesligatwo_ov55_away
+epl_un55 <- epl_un55_home + epl_un55_away
+epl_ov55 <- epl_ov55_home + epl_ov55_away
 
-bundesligatwo_ovundata <- cbind(bundesligatwo_teams,bundesligatwo_un05,bundesligatwo_ov05,bundesligatwo_un15,bundesligatwo_ov15,bundesligatwo_un25,bundesligatwo_ov25,bundesligatwo_un35,bundesligatwo_ov35,bundesligatwo_un45,bundesligatwo_ov45,bundesligatwo_un55,bundesligatwo_ov55)
+epl_ovundata <- cbind(epl_teams,epl_un05,epl_ov05,epl_un15,epl_ov15,epl_un25,epl_ov25,epl_un35,epl_ov35,epl_un45,epl_ov45,epl_un55,epl_ov55)
 #################################################################################################################################################################
 #team against
-bundesligatwo_form_team_against_h <- tapply(BUNDESLIGATWO$AwayTeam, BUNDESLIGATWO[c("HomeTeam", "Date")],median)
-bundesligatwo_form_team_against_a <- tapply(BUNDESLIGATWO$HomeTeam, BUNDESLIGATWO[c("AwayTeam", "Date")],median)
-bundesligatwo_form_team_against_h[is.na(bundesligatwo_form_team_against_h)] <- ""
-bundesligatwo_form_team_against_a[is.na(bundesligatwo_form_team_against_a)] <- ""
-#BUNDESLIGATWO
-for(bundesligatwo_rowh_f_against in 1:nrow(bundesligatwo_form_team_against_h)) {
-  for(bundesligatwo_colh_f_against in 1:ncol(bundesligatwo_form_team_against_h)) {
+epl_form_team_against_h <- tapply(EPL$AwayTeam, EPL[c("HomeTeam", "Date")],median)
+epl_form_team_against_a <- tapply(EPL$HomeTeam, EPL[c("AwayTeam", "Date")],median)
+epl_form_team_against_h[is.na(epl_form_team_against_h)] <- ""
+epl_form_team_against_a[is.na(epl_form_team_against_a)] <- ""
+#EPL
+for(epl_rowh_f_against in 1:nrow(epl_form_team_against_h)) {
+  for(epl_colh_f_against in 1:ncol(epl_form_team_against_h)) {
 
     # print(my_matrix[row, col])
-    for(bundesligatwo_rowa_f_against in 1:nrow(bundesligatwo_form_team_against_a)) {
-      for(bundesligatwo_cola_f_against in 1:ncol(bundesligatwo_form_team_against_a)) {
-        ifelse(!bundesligatwo_form_team_against_a[bundesligatwo_rowa_f_against,bundesligatwo_cola_f_against]=="",bundesligatwo_form_team_against_h[bundesligatwo_rowa_f_against,bundesligatwo_cola_f_against] <- bundesligatwo_form_team_against_a[bundesligatwo_rowa_f_against,bundesligatwo_cola_f_against],next)
+    for(epl_rowa_f_against in 1:nrow(epl_form_team_against_a)) {
+      for(epl_cola_f_against in 1:ncol(epl_form_team_against_a)) {
+        ifelse(!epl_form_team_against_a[epl_rowa_f_against,epl_cola_f_against]=="",epl_form_team_against_h[epl_rowa_f_against,epl_cola_f_against] <- epl_form_team_against_a[epl_rowa_f_against,epl_cola_f_against],next)
         #print(my_matrix[row, col])
       }
     }
@@ -431,968 +432,968 @@ for(bundesligatwo_rowh_f_against in 1:nrow(bundesligatwo_form_team_against_h)) {
 }
 ###############################################################################################################################################3
 #shotsanalysis
-#BUNDESLIGATWO
+#EPL
 #home goals scored
-bundesligatwo_home_gs <- aggregate(BUNDESLIGATWO$FTHG, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_home_gs_avg <- aggregate(BUNDESLIGATWO$FTHG, by = list(BUNDESLIGATWO$HomeTeam),mean)
-bundesligatwo_home_scoring <- merge(bundesligatwo_home_gs,bundesligatwo_home_gs_avg, by='Group.1',all = T)
-names(bundesligatwo_home_scoring)[names(bundesligatwo_home_scoring) == "x.x"] <- "TFthg"
-names(bundesligatwo_home_scoring)[names(bundesligatwo_home_scoring) == "x.y"] <- "Avg_Fthg"
+epl_home_gs <- aggregate(EPL$FTHG, by = list(EPL$HomeTeam), FUN = sum)
+epl_home_gs_avg <- aggregate(EPL$FTHG, by = list(EPL$HomeTeam),mean)
+epl_home_scoring <- merge(epl_home_gs,epl_home_gs_avg, by='Group.1',all = T)
+names(epl_home_scoring)[names(epl_home_scoring) == "x.x"] <- "TFthg"
+names(epl_home_scoring)[names(epl_home_scoring) == "x.y"] <- "Avg_Fthg"
 #away goals scored
-bundesligatwo_away_gs <- aggregate(BUNDESLIGATWO$FTAG, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
-bundesligatwo_away_gs_avg <- aggregate(BUNDESLIGATWO$FTAG, by = list(BUNDESLIGATWO$AwayTeam),mean)
-bundesligatwo_away_scoring <- merge(bundesligatwo_away_gs,bundesligatwo_away_gs_avg, by='Group.1',all = T)
-names(bundesligatwo_away_scoring)[names(bundesligatwo_away_scoring) == "x.x"] <- "TFtag"
-names(bundesligatwo_away_scoring)[names(bundesligatwo_away_scoring) == "x.y"] <- "Avg_Ftag"
+epl_away_gs <- aggregate(EPL$FTAG, by = list(EPL$AwayTeam), FUN = sum)
+epl_away_gs_avg <- aggregate(EPL$FTAG, by = list(EPL$AwayTeam),mean)
+epl_away_scoring <- merge(epl_away_gs,epl_away_gs_avg, by='Group.1',all = T)
+names(epl_away_scoring)[names(epl_away_scoring) == "x.x"] <- "TFtag"
+names(epl_away_scoring)[names(epl_away_scoring) == "x.y"] <- "Avg_Ftag"
 #total goals scored
-bundesligatwo_scoring <- merge(bundesligatwo_home_scoring,bundesligatwo_away_scoring,by='Group.1',all = T)
-bundesligatwo_scoring$TGS <- bundesligatwo_scoring$TFthg + bundesligatwo_scoring$TFtag
+epl_scoring <- merge(epl_home_scoring,epl_away_scoring,by='Group.1',all = T)
+epl_scoring$TGS <- epl_scoring$TFthg + epl_scoring$TFtag
 
 #Home shots on target
-bundesligatwo_home_hst <- aggregate(BUNDESLIGATWO$HST, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_away_ast <- aggregate(BUNDESLIGATWO$AST, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
-bundesligatwo_tst <- merge(bundesligatwo_home_hst,bundesligatwo_away_ast, by='Group.1',all = T)
-names(bundesligatwo_tst)[names(bundesligatwo_tst) == "x.x"] <- "hst"
-names(bundesligatwo_tst)[names(bundesligatwo_tst) == "x.y"] <- "ast"
-bundesligatwo_tst$TST <- bundesligatwo_tst$hst + bundesligatwo_tst$ast
+epl_home_hst <- aggregate(EPL$HST, by = list(EPL$HomeTeam), FUN = sum)
+epl_away_ast <- aggregate(EPL$AST, by = list(EPL$AwayTeam), FUN = sum)
+epl_tst <- merge(epl_home_hst,epl_away_ast, by='Group.1',all = T)
+names(epl_tst)[names(epl_tst) == "x.x"] <- "hst"
+names(epl_tst)[names(epl_tst) == "x.y"] <- "ast"
+epl_tst$TST <- epl_tst$hst + epl_tst$ast
 #merge goals scored and shots on target
-bundesligatwo_scoring_conversion <- merge(bundesligatwo_tst,bundesligatwo_scoring,by='Group.1',all = T)
+epl_scoring_conversion <- merge(epl_tst,epl_scoring,by='Group.1',all = T)
 #add HSC ASC TSC
-bundesligatwo_scoring_conversion$HSTC <- percent(bundesligatwo_scoring_conversion$TFthg/bundesligatwo_scoring_conversion$hst, accuracy = 0.01)
-bundesligatwo_scoring_conversion$ASTC <- percent(bundesligatwo_scoring_conversion$TFtag/bundesligatwo_scoring_conversion$ast, accuracy = 0.01)
-bundesligatwo_scoring_conversion$TSTC <- percent(bundesligatwo_scoring_conversion$TGS/bundesligatwo_scoring_conversion$TST, accuracy = 0.01)
+epl_scoring_conversion$HSTC <- percent(epl_scoring_conversion$TFthg/epl_scoring_conversion$hst, accuracy = 0.01)
+epl_scoring_conversion$ASTC <- percent(epl_scoring_conversion$TFtag/epl_scoring_conversion$ast, accuracy = 0.01)
+epl_scoring_conversion$TSTC <- percent(epl_scoring_conversion$TGS/epl_scoring_conversion$TST, accuracy = 0.01)
 #merge games played
-bundesligatwo_scoring_conversion <- cbind(bundesligatwo_scoring_conversion,bundesligatwo_games_played)
+epl_scoring_conversion <- cbind(epl_scoring_conversion,epl_games_played)
 #create the second part
 #home goals conceded
-bundesligatwo_home_gc <- aggregate(BUNDESLIGATWO$FTAG, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_home_gc_avg <- aggregate(BUNDESLIGATWO$FTAG, by = list(BUNDESLIGATWO$HomeTeam),mean)
-bundesligatwo_home_conceding <- merge(bundesligatwo_home_gc,bundesligatwo_home_gc_avg, by='Group.1',all = T)
-names(bundesligatwo_home_conceding)[names(bundesligatwo_home_conceding) == "x.x"] <- "TFthc"
-names(bundesligatwo_home_conceding)[names(bundesligatwo_home_conceding) == "x.y"] <- "Avg_Fthc"
+epl_home_gc <- aggregate(EPL$FTAG, by = list(EPL$HomeTeam), FUN = sum)
+epl_home_gc_avg <- aggregate(EPL$FTAG, by = list(EPL$HomeTeam),mean)
+epl_home_conceding <- merge(epl_home_gc,epl_home_gc_avg, by='Group.1',all = T)
+names(epl_home_conceding)[names(epl_home_conceding) == "x.x"] <- "TFthc"
+names(epl_home_conceding)[names(epl_home_conceding) == "x.y"] <- "Avg_Fthc"
 #away goals conceded
-bundesligatwo_away_gc <- aggregate(BUNDESLIGATWO$FTHG, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
-bundesligatwo_away_gc_avg <- aggregate(BUNDESLIGATWO$FTHG, by = list(BUNDESLIGATWO$AwayTeam),mean)
-bundesligatwo_away_conceding <- merge(bundesligatwo_away_gc,bundesligatwo_away_gc_avg, by='Group.1',all = T)
-names(bundesligatwo_away_conceding)[names(bundesligatwo_away_conceding) == "x.x"] <- "TFtac"
-names(bundesligatwo_away_conceding)[names(bundesligatwo_away_conceding) == "x.y"] <- "Avg_Ftac"
+epl_away_gc <- aggregate(EPL$FTHG, by = list(EPL$AwayTeam), FUN = sum)
+epl_away_gc_avg <- aggregate(EPL$FTHG, by = list(EPL$AwayTeam),mean)
+epl_away_conceding <- merge(epl_away_gc,epl_away_gc_avg, by='Group.1',all = T)
+names(epl_away_conceding)[names(epl_away_conceding) == "x.x"] <- "TFtac"
+names(epl_away_conceding)[names(epl_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
-bundesligatwo_conceding <- merge(bundesligatwo_home_conceding,bundesligatwo_away_conceding,by='Group.1',all = T)
-bundesligatwo_conceding$TGC <- bundesligatwo_conceding$TFthc + bundesligatwo_conceding$TFtac
-bundesligatwo_home_hst
+epl_conceding <- merge(epl_home_conceding,epl_away_conceding,by='Group.1',all = T)
+epl_conceding$TGC <- epl_conceding$TFthc + epl_conceding$TFtac
+epl_home_hst
 #Home shots conceded
-bundesligatwo_home_hsc <- aggregate(BUNDESLIGATWO$AST, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_away_asc <- aggregate(BUNDESLIGATWO$HST, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
-bundesligatwo_tsc <- merge(bundesligatwo_home_hsc,bundesligatwo_away_asc, by='Group.1',all = T)
-names(bundesligatwo_tsc)[names(bundesligatwo_tsc) == "x.x"] <- "hsc"
-names(bundesligatwo_tsc)[names(bundesligatwo_tsc) == "x.y"] <- "asc"
-bundesligatwo_tsc$TSC <- bundesligatwo_tsc$hsc + bundesligatwo_tsc$asc
+epl_home_hsc <- aggregate(EPL$AST, by = list(EPL$HomeTeam), FUN = sum)
+epl_away_asc <- aggregate(EPL$HST, by = list(EPL$AwayTeam), FUN = sum)
+epl_tsc <- merge(epl_home_hsc,epl_away_asc, by='Group.1',all = T)
+names(epl_tsc)[names(epl_tsc) == "x.x"] <- "hsc"
+names(epl_tsc)[names(epl_tsc) == "x.y"] <- "asc"
+epl_tsc$TSC <- epl_tsc$hsc + epl_tsc$asc
 #merge goals conceded and shots conceded
-bundesligatwo_conceding_conversion <- merge(bundesligatwo_tsc,bundesligatwo_conceding,by='Group.1',all = T)
+epl_conceding_conversion <- merge(epl_tsc,epl_conceding,by='Group.1',all = T)
 
 #add HSC ASC TSC
-bundesligatwo_conceding_conversion$HSCC <- percent(bundesligatwo_conceding_conversion$TFthc/bundesligatwo_conceding_conversion$hsc, accuracy = 0.01)
-bundesligatwo_conceding_conversion$ASCC <- percent(bundesligatwo_conceding_conversion$TFtac/bundesligatwo_conceding_conversion$asc, accuracy = 0.01)
-bundesligatwo_conceding_conversion$TSCC <- percent(bundesligatwo_conceding_conversion$TGC/bundesligatwo_conceding_conversion$TSC, accuracy = 0.01)
-bundesligatwo_conceding_conversion$XSTC <- round(bundesligatwo_scoring$TGS/(bundesligatwo_tst$TST - bundesligatwo_scoring$TGS), digits = 2)
+epl_conceding_conversion$HSCC <- percent(epl_conceding_conversion$TFthc/epl_conceding_conversion$hsc, accuracy = 0.01)
+epl_conceding_conversion$ASCC <- percent(epl_conceding_conversion$TFtac/epl_conceding_conversion$asc, accuracy = 0.01)
+epl_conceding_conversion$TSCC <- percent(epl_conceding_conversion$TGC/epl_conceding_conversion$TSC, accuracy = 0.01)
+epl_conceding_conversion$XSTC <- round(epl_scoring$TGS/(epl_tst$TST - epl_scoring$TGS), digits = 2)
 
 #merge the two parts
-bundesligatwo_shots_analysis <- merge(bundesligatwo_scoring_conversion,bundesligatwo_conceding_conversion,by='Group.1',all = T)
+epl_shots_analysis <- merge(epl_scoring_conversion,epl_conceding_conversion,by='Group.1',all = T)
 #####################################################################################################################################
 #fouls analysis
-#BUNDESLIGATWO
+#EPL
 #home fouls for
-bundesligatwo_home_fouls <- aggregate(BUNDESLIGATWO$HF, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_home_fouls_avg <- aggregate(BUNDESLIGATWO$HF, by = list(BUNDESLIGATWO$HomeTeam),mean)
-bundesligatwo_home_foulsdata <- merge(bundesligatwo_home_fouls,bundesligatwo_home_fouls_avg, by='Group.1',all = T)
-names(bundesligatwo_home_foulsdata)[names(bundesligatwo_home_foulsdata) == "x.x"] <- "THfouls"
-names(bundesligatwo_home_foulsdata)[names(bundesligatwo_home_foulsdata) == "x.y"] <- "Avg_FTHfouls"
+epl_home_fouls <- aggregate(EPL$HF, by = list(EPL$HomeTeam), FUN = sum)
+epl_home_fouls_avg <- aggregate(EPL$HF, by = list(EPL$HomeTeam),mean)
+epl_home_foulsdata <- merge(epl_home_fouls,epl_home_fouls_avg, by='Group.1',all = T)
+names(epl_home_foulsdata)[names(epl_home_foulsdata) == "x.x"] <- "THfouls"
+names(epl_home_foulsdata)[names(epl_home_foulsdata) == "x.y"] <- "Avg_FTHfouls"
 #away fouls for
-bundesligatwo_away_fouls <- aggregate(BUNDESLIGATWO$HF, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
-bundesligatwo_away_fouls_avg <- aggregate(BUNDESLIGATWO$HF, by = list(BUNDESLIGATWO$AwayTeam),mean)
-bundesligatwo_away_foulsdata <- merge(bundesligatwo_away_fouls,bundesligatwo_away_fouls_avg, by='Group.1',all = T)
-names(bundesligatwo_away_foulsdata)[names(bundesligatwo_away_foulsdata) == "x.x"] <- "TAfouls"
-names(bundesligatwo_away_foulsdata)[names(bundesligatwo_away_foulsdata) == "x.y"] <- "Avg_FTAfouls"
+epl_away_fouls <- aggregate(EPL$HF, by = list(EPL$AwayTeam), FUN = sum)
+epl_away_fouls_avg <- aggregate(EPL$HF, by = list(EPL$AwayTeam),mean)
+epl_away_foulsdata <- merge(epl_away_fouls,epl_away_fouls_avg, by='Group.1',all = T)
+names(epl_away_foulsdata)[names(epl_away_foulsdata) == "x.x"] <- "TAfouls"
+names(epl_away_foulsdata)[names(epl_away_foulsdata) == "x.y"] <- "Avg_FTAfouls"
 #total fouls for
-bundesligatwo_fouls <- merge(bundesligatwo_home_foulsdata,bundesligatwo_away_foulsdata,by='Group.1',all = T)
-bundesligatwo_fouls$TotalFouls <- bundesligatwo_fouls$THfouls + bundesligatwo_fouls$TAfouls
+epl_fouls <- merge(epl_home_foulsdata,epl_away_foulsdata,by='Group.1',all = T)
+epl_fouls$TotalFouls <- epl_fouls$THfouls + epl_fouls$TAfouls
 
 #yellow cards
-bundesligatwo_home_hyc <- aggregate(BUNDESLIGATWO$HY, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_away_ayc <- aggregate(BUNDESLIGATWO$AY, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
-bundesligatwo_tyc <- merge(bundesligatwo_home_hyc,bundesligatwo_away_ayc, by='Group.1',all = T)
-names(bundesligatwo_tyc)[names(bundesligatwo_tyc) == "x.x"] <- "hyc"
-names(bundesligatwo_tyc)[names(bundesligatwo_tyc) == "x.y"] <- "ayc"
-bundesligatwo_tyc$TotalYellows <- bundesligatwo_tyc$hyc + bundesligatwo_tyc$ayc
+epl_home_hyc <- aggregate(EPL$HY, by = list(EPL$HomeTeam), FUN = sum)
+epl_away_ayc <- aggregate(EPL$AY, by = list(EPL$AwayTeam), FUN = sum)
+epl_tyc <- merge(epl_home_hyc,epl_away_ayc, by='Group.1',all = T)
+names(epl_tyc)[names(epl_tyc) == "x.x"] <- "hyc"
+names(epl_tyc)[names(epl_tyc) == "x.y"] <- "ayc"
+epl_tyc$TotalYellows <- epl_tyc$hyc + epl_tyc$ayc
 
 #merge fouls for and yellow cards
-bundesligatwo_fouls_conversion <- merge(bundesligatwo_tyc,bundesligatwo_fouls,by='Group.1',all = T)
-bundesligatwo_fouls_conversion$YcPerfoul <- round((bundesligatwo_fouls_conversion$TotalYellows/bundesligatwo_fouls_conversion$TotalFouls), digits = 2)
+epl_fouls_conversion <- merge(epl_tyc,epl_fouls,by='Group.1',all = T)
+epl_fouls_conversion$YcPerfoul <- round((epl_fouls_conversion$TotalYellows/epl_fouls_conversion$TotalFouls), digits = 2)
 ##################################################################################################################################################
 ##
 #make div form uniform in entire data frame
-BUNDESLIGATWO$Div <- "BUNDESLIGATWO"
+EPL$Div <- "EPL"
 ##
 ###################################################################################################################################################
 #poisson cards
-bundesligatwo_GP <- nrow(BUNDESLIGATWO)
+epl_GP <- nrow(EPL)
 #Calculate total home goals for each division
-bundesligatwo_T_HY <- sum(bundesligatwo_home_hyc$x)
+epl_T_HY <- sum(epl_home_hyc$x)
 #calculate average home goal
-bundesligatwo_avg_HY <- round(bundesligatwo_T_HY /bundesligatwo_GP, digits = 4)
+epl_avg_HY <- round(epl_T_HY /epl_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-bundesligatwo_T_AY <- sum(bundesligatwo_away_ayc$x)
+epl_T_AY <- sum(epl_away_ayc$x)
 #calculate average away goal
-bundesligatwo_avg_AY <- round(bundesligatwo_T_AY /bundesligatwo_GP, digits = 4)
+epl_avg_AY <- round(epl_T_AY /epl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-bundesligatwo_home_yas <- round(((bundesligatwo_home_hyc$x/bundesligatwo_home_games))/bundesligatwo_avg_HY, digits = 4)
+epl_home_yas <- round(((epl_home_hyc$x/epl_home_games))/epl_avg_HY, digits = 4)
 #calculate away attack strength
-bundesligatwo_away_yas <- round(((bundesligatwo_away_ayc$x/bundesligatwo_away_games))/bundesligatwo_avg_AY, digits = 4)
+epl_away_yas <- round(((epl_away_ayc$x/epl_away_games))/epl_avg_AY, digits = 4)
 ################################################################################
 #get average home concede and away concede
-bundesligatwo_avg_HYC <- round(bundesligatwo_T_AY /bundesligatwo_GP, digits = 4)
+epl_avg_HYC <- round(epl_T_AY /epl_GP, digits = 4)
 #avg away concede
-bundesligatwo_avg_AYC <- round(bundesligatwo_T_HY /bundesligatwo_GP, digits = 4)
+epl_avg_AYC <- round(epl_T_HY /epl_GP, digits = 4)
 #calculate home and away defense strength
 #home yellow cards conceded
-bundesligatwo_home_ycc <- aggregate(BUNDESLIGATWO$AY, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_away_ycc <- aggregate(BUNDESLIGATWO$HY, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
+epl_home_ycc <- aggregate(EPL$AY, by = list(EPL$HomeTeam), FUN = sum)
+epl_away_ycc <- aggregate(EPL$HY, by = list(EPL$AwayTeam), FUN = sum)
 #home defense strength
-bundesligatwo_home_yds <- round(((bundesligatwo_home_ycc$x/bundesligatwo_home_games))/bundesligatwo_avg_HYC, digits = 4)
+epl_home_yds <- round(((epl_home_ycc$x/epl_home_games))/epl_avg_HYC, digits = 4)
 #away defense strength
-bundesligatwo_away_yds <- round(((bundesligatwo_away_ycc$x/bundesligatwo_away_games))/bundesligatwo_avg_AYC, digits = 4)
+epl_away_yds <- round(((epl_away_ycc$x/epl_away_games))/epl_avg_AYC, digits = 4)
 #############################################################################
 #home poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_home_poisson_yc <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_HY,bundesligatwo_home_yas,bundesligatwo_home_yds)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_home_poisson_yc <- cbind(epl_division,epl_teams,epl_avg_HY,epl_home_yas,epl_home_yds)
 #away poisson data
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_away_poisson_yc <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_AY,bundesligatwo_away_yas,bundesligatwo_away_yds)
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_away_poisson_yc <- cbind(epl_division,epl_teams,epl_avg_AY,epl_away_yas,epl_away_yds)
 ###
-HomeTeam_bundesligatwo_yc <- rep(bundesligatwo_teams, each = length(bundesligatwo_teams))
-AwayTeam_bundesligatwo_yc <- rep(bundesligatwo_teams, length(bundesligatwo_teams))
-BUNDESLIGATWO_fixtures_yc <- cbind(HomeTeam_bundesligatwo_yc,AwayTeam_bundesligatwo_yc)
-BUNDESLIGATWO_fixtures_yc <- as.data.frame(BUNDESLIGATWO_fixtures_yc)
-BUNDESLIGATWO_fixtures_yc <- BUNDESLIGATWO_fixtures_yc[!BUNDESLIGATWO_fixtures_yc$HomeTeam_bundesligatwo_yc == BUNDESLIGATWO_fixtures_yc$AwayTeam_bundesligatwo_yc,]
-rownames(BUNDESLIGATWO_fixtures_yc) <- NULL
-BUNDESLIGATWO_fixtures_yc$Div <- "BUNDESLIGATWO"
-BUNDESLIGATWO_fixtures_yc <- BUNDESLIGATWO_fixtures_yc[,c(3,1,2)]
+HomeTeam_epl_yc <- rep(epl_teams, each = length(epl_teams))
+AwayTeam_epl_yc <- rep(epl_teams, length(epl_teams))
+EPL_fixtures_yc <- cbind(HomeTeam_epl_yc,AwayTeam_epl_yc)
+EPL_fixtures_yc <- as.data.frame(EPL_fixtures_yc)
+EPL_fixtures_yc <- EPL_fixtures_yc[!EPL_fixtures_yc$HomeTeam_epl_yc == EPL_fixtures_yc$AwayTeam_epl_yc,]
+rownames(EPL_fixtures_yc) <- NULL
+EPL_fixtures_yc$Div <- "EPL"
+EPL_fixtures_yc <- EPL_fixtures_yc[,c(3,1,2)]
 
-BUNDESLIGATWO_fixtures_yc$avg_HY_bundesligatwo <- bundesligatwo_avg_HY
+EPL_fixtures_yc$avg_HY_epl <- epl_avg_HY
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_homeyas <- rep(bundesligatwo_home_yas,each = length(bundesligatwo_teams)-1)
+EPL_fixtures_yc$epl_homeyas <- rep(epl_home_yas,each = length(epl_teams)-1)
 
-bundesligatwo_awayyds_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_yds)
+epl_awayyds_lookup <- cbind(epl_teams,epl_away_yds)
 
-bundesligatwo_awayyds_lookup <- as.data.frame(bundesligatwo_awayyds_lookup)
+epl_awayyds_lookup <- as.data.frame(epl_awayyds_lookup)
 
-colnames(bundesligatwo_awayyds_lookup) <- c("AwayTeam_bundesligatwo_yc","bundesligatwo_awayyds")
+colnames(epl_awayyds_lookup) <- c("AwayTeam_epl_yc","epl_awayyds")
 
 
 require('RH2')
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_awayyds <- sqldf("SELECT bundesligatwo_awayyds_lookup.bundesligatwo_awayyds FROM bundesligatwo_awayyds_lookup INNER JOIN BUNDESLIGATWO_fixtures_yc ON bundesligatwo_awayyds_lookup.AwayTeam_bundesligatwo_yc = BUNDESLIGATWO_fixtures_yc.AwayTeam_bundesligatwo_yc")
+EPL_fixtures_yc$epl_awayyds <- sqldf("SELECT epl_awayyds_lookup.epl_awayyds FROM epl_awayyds_lookup INNER JOIN EPL_fixtures_yc ON epl_awayyds_lookup.AwayTeam_epl_yc = EPL_fixtures_yc.AwayTeam_epl_yc")
 
-BUNDESLIGATWO_fixtures_yc$avg_AY_bundesligatwo <- bundesligatwo_avg_AY
+EPL_fixtures_yc$avg_AY_epl <- epl_avg_AY
 
-bundesligatwo_awayyas_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_yas)
+epl_awayyas_lookup <- cbind(epl_teams,epl_away_yas)
 
-bundesligatwo_awayyas_lookup <- as.data.frame(bundesligatwo_awayyas_lookup)
+epl_awayyas_lookup <- as.data.frame(epl_awayyas_lookup)
 
-colnames(bundesligatwo_awayyas_lookup) <- c("AwayTeam_bundesligatwo_yc","bundesligatwo_awayyas")
+colnames(epl_awayyas_lookup) <- c("AwayTeam_epl_yc","epl_awayyas")
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_awayyas <- sqldf("SELECT bundesligatwo_awayyas_lookup.bundesligatwo_awayyas FROM bundesligatwo_awayyas_lookup INNER JOIN BUNDESLIGATWO_fixtures_yc ON bundesligatwo_awayyas_lookup.AwayTeam_bundesligatwo_yc = BUNDESLIGATWO_fixtures_yc.AwayTeam_bundesligatwo_yc")
+EPL_fixtures_yc$epl_awayyas <- sqldf("SELECT epl_awayyas_lookup.epl_awayyas FROM epl_awayyas_lookup INNER JOIN EPL_fixtures_yc ON epl_awayyas_lookup.AwayTeam_epl_yc = EPL_fixtures_yc.AwayTeam_epl_yc")
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_homeyds <- rep(bundesligatwo_home_yds,each = length(bundesligatwo_teams)-1)
+EPL_fixtures_yc$epl_homeyds <- rep(epl_home_yds,each = length(epl_teams)-1)
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_awayyds <- as.numeric(unlist(BUNDESLIGATWO_fixtures_yc$bundesligatwo_awayyds))
+EPL_fixtures_yc$epl_awayyds <- as.numeric(unlist(EPL_fixtures_yc$epl_awayyds))
 #xGH
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC <- BUNDESLIGATWO_fixtures_yc$avg_HY_bundesligatwo * BUNDESLIGATWO_fixtures_yc$bundesligatwo_homeyas * BUNDESLIGATWO_fixtures_yc$bundesligatwo_awayyds
+EPL_fixtures_yc$epl_xHYC <- EPL_fixtures_yc$avg_HY_epl * EPL_fixtures_yc$epl_homeyas * EPL_fixtures_yc$epl_awayyds
 #xGA
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_awayyas <- as.numeric(unlist(BUNDESLIGATWO_fixtures_yc$bundesligatwo_awayyas))
+EPL_fixtures_yc$epl_awayyas <- as.numeric(unlist(EPL_fixtures_yc$epl_awayyas))
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC <- BUNDESLIGATWO_fixtures_yc$avg_AY_bundesligatwo * BUNDESLIGATWO_fixtures_yc$bundesligatwo_awayyas * BUNDESLIGATWO_fixtures_yc$bundesligatwo_homeyds
+EPL_fixtures_yc$epl_xAYC <- EPL_fixtures_yc$avg_AY_epl * EPL_fixtures_yc$epl_awayyas * EPL_fixtures_yc$epl_homeyds
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_0 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_0 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_1 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_1 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_0 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_2 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_2 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_1 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_2 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_3 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_0 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_1 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_2 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_3 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_3 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_3 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_4 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_0 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_1 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_2 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_3 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_4 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_4 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_4 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_4 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_5 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_0 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_1 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_2 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_3 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_4 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_5 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_5 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_5 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_5 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_5 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_6 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_0 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_1 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_2 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_3 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_4 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_5 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_6 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_6 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_6 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_6 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_6 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_6 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC) * stats::dpois(6,BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC), digits = 4)
+EPL_fixtures_yc$epl_0_0 <- round(stats::dpois(0,EPL_fixtures_yc$epl_xHYC) * stats::dpois(0,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_1_0 <- round(stats::dpois(1,EPL_fixtures_yc$epl_xHYC) * stats::dpois(0,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_0_1 <- round(stats::dpois(0,EPL_fixtures_yc$epl_xHYC) * stats::dpois(1,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_1_1 <- round(stats::dpois(1,EPL_fixtures_yc$epl_xHYC) * stats::dpois(1,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_2_0 <- round(stats::dpois(2,EPL_fixtures_yc$epl_xHYC) * stats::dpois(0,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_0_2 <- round(stats::dpois(0,EPL_fixtures_yc$epl_xHYC) * stats::dpois(2,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_2_2 <- round(stats::dpois(2,EPL_fixtures_yc$epl_xHYC) * stats::dpois(2,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_2_1 <- round(stats::dpois(2,EPL_fixtures_yc$epl_xHYC) * stats::dpois(1,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_1_2 <- round(stats::dpois(1,EPL_fixtures_yc$epl_xHYC) * stats::dpois(2,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_3_3 <- round(stats::dpois(3,EPL_fixtures_yc$epl_xHYC) * stats::dpois(3,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_3_0 <- round(stats::dpois(3,EPL_fixtures_yc$epl_xHYC) * stats::dpois(0,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_3_1 <- round(stats::dpois(3,EPL_fixtures_yc$epl_xHYC) * stats::dpois(1,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_3_2 <- round(stats::dpois(3,EPL_fixtures_yc$epl_xHYC) * stats::dpois(2,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_0_3 <- round(stats::dpois(0,EPL_fixtures_yc$epl_xHYC) * stats::dpois(3,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_1_3 <- round(stats::dpois(1,EPL_fixtures_yc$epl_xHYC) * stats::dpois(3,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_2_3 <- round(stats::dpois(2,EPL_fixtures_yc$epl_xHYC) * stats::dpois(3,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_4_4 <- round(stats::dpois(4,EPL_fixtures_yc$epl_xHYC) * stats::dpois(4,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_4_0 <- round(stats::dpois(4,EPL_fixtures_yc$epl_xHYC) * stats::dpois(0,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_4_1 <- round(stats::dpois(4,EPL_fixtures_yc$epl_xHYC) * stats::dpois(1,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_4_2 <- round(stats::dpois(4,EPL_fixtures_yc$epl_xHYC) * stats::dpois(2,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_4_3 <- round(stats::dpois(4,EPL_fixtures_yc$epl_xHYC) * stats::dpois(3,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_0_4 <- round(stats::dpois(0,EPL_fixtures_yc$epl_xHYC) * stats::dpois(4,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_1_4 <- round(stats::dpois(1,EPL_fixtures_yc$epl_xHYC) * stats::dpois(4,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_2_4 <- round(stats::dpois(2,EPL_fixtures_yc$epl_xHYC) * stats::dpois(4,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_3_4 <- round(stats::dpois(3,EPL_fixtures_yc$epl_xHYC) * stats::dpois(4,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_5_5 <- round(stats::dpois(5,EPL_fixtures_yc$epl_xHYC) * stats::dpois(5,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_5_0 <- round(stats::dpois(5,EPL_fixtures_yc$epl_xHYC) * stats::dpois(0,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_5_1 <- round(stats::dpois(5,EPL_fixtures_yc$epl_xHYC) * stats::dpois(1,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_5_2 <- round(stats::dpois(5,EPL_fixtures_yc$epl_xHYC) * stats::dpois(2,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_5_3 <- round(stats::dpois(5,EPL_fixtures_yc$epl_xHYC) * stats::dpois(3,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_5_4 <- round(stats::dpois(5,EPL_fixtures_yc$epl_xHYC) * stats::dpois(4,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_0_5 <- round(stats::dpois(0,EPL_fixtures_yc$epl_xHYC) * stats::dpois(5,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_1_5 <- round(stats::dpois(1,EPL_fixtures_yc$epl_xHYC) * stats::dpois(5,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_2_5 <- round(stats::dpois(2,EPL_fixtures_yc$epl_xHYC) * stats::dpois(5,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_3_5 <- round(stats::dpois(3,EPL_fixtures_yc$epl_xHYC) * stats::dpois(5,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_4_5 <- round(stats::dpois(4,EPL_fixtures_yc$epl_xHYC) * stats::dpois(5,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_6_6 <- round(stats::dpois(6,EPL_fixtures_yc$epl_xHYC) * stats::dpois(6,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_6_0 <- round(stats::dpois(6,EPL_fixtures_yc$epl_xHYC) * stats::dpois(0,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_6_1 <- round(stats::dpois(6,EPL_fixtures_yc$epl_xHYC) * stats::dpois(1,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_6_2 <- round(stats::dpois(6,EPL_fixtures_yc$epl_xHYC) * stats::dpois(2,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_6_3 <- round(stats::dpois(6,EPL_fixtures_yc$epl_xHYC) * stats::dpois(3,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_6_4 <- round(stats::dpois(6,EPL_fixtures_yc$epl_xHYC) * stats::dpois(4,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_6_5 <- round(stats::dpois(6,EPL_fixtures_yc$epl_xHYC) * stats::dpois(5,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_0_6 <- round(stats::dpois(0,EPL_fixtures_yc$epl_xHYC) * stats::dpois(6,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_1_6 <- round(stats::dpois(1,EPL_fixtures_yc$epl_xHYC) * stats::dpois(6,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_2_6 <- round(stats::dpois(2,EPL_fixtures_yc$epl_xHYC) * stats::dpois(6,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_3_6 <- round(stats::dpois(3,EPL_fixtures_yc$epl_xHYC) * stats::dpois(6,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_4_6 <- round(stats::dpois(4,EPL_fixtures_yc$epl_xHYC) * stats::dpois(6,EPL_fixtures_yc$epl_xAYC), digits = 4)
+EPL_fixtures_yc$epl_5_6 <- round(stats::dpois(5,EPL_fixtures_yc$epl_xHYC) * stats::dpois(6,EPL_fixtures_yc$epl_xAYC), digits = 4)
 #Home win
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_H <- (
-  BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_5
+EPL_fixtures_yc$epl_H <- (
+  EPL_fixtures_yc$epl_1_0 + EPL_fixtures_yc$epl_2_0 + EPL_fixtures_yc$epl_2_1 + EPL_fixtures_yc$epl_3_0 + EPL_fixtures_yc$epl_3_1 +
+    EPL_fixtures_yc$epl_3_2 + EPL_fixtures_yc$epl_4_0 + EPL_fixtures_yc$epl_4_1 + EPL_fixtures_yc$epl_4_2 + EPL_fixtures_yc$epl_4_3 +
+    EPL_fixtures_yc$epl_5_0 + EPL_fixtures_yc$epl_5_1 + EPL_fixtures_yc$epl_5_2 + EPL_fixtures_yc$epl_5_3 + EPL_fixtures_yc$epl_5_4 +
+    EPL_fixtures_yc$epl_6_0 + EPL_fixtures_yc$epl_6_1 + EPL_fixtures_yc$epl_6_2 + EPL_fixtures_yc$epl_6_3 + EPL_fixtures_yc$epl_6_4 +
+    EPL_fixtures_yc$epl_6_5
 )
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_H <- percent(BUNDESLIGATWO_fixtures_yc$bundesligatwo_H, accuracy = 0.1)
+EPL_fixtures_yc$epl_H <- percent(EPL_fixtures_yc$epl_H, accuracy = 0.1)
 
 #Draw
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_D <- (
+EPL_fixtures_yc$epl_D <- (
 
-  BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_4 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_6
+  EPL_fixtures_yc$epl_0_0 + EPL_fixtures_yc$epl_1_1 + EPL_fixtures_yc$epl_2_2 + EPL_fixtures_yc$epl_3_3 + EPL_fixtures_yc$epl_4_4 +
+    EPL_fixtures_yc$epl_5_5 + EPL_fixtures_yc$epl_6_6
 )
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_D <- percent(BUNDESLIGATWO_fixtures_yc$bundesligatwo_D, accuracy = 0.1)
+EPL_fixtures_yc$epl_D <- percent(EPL_fixtures_yc$epl_D, accuracy = 0.1)
 
 #Away
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_A <- (
-  BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_6
+EPL_fixtures_yc$epl_A <- (
+  EPL_fixtures_yc$epl_0_1 + EPL_fixtures_yc$epl_0_2 + EPL_fixtures_yc$epl_1_2 + EPL_fixtures_yc$epl_0_3 + EPL_fixtures_yc$epl_1_3 +
+    EPL_fixtures_yc$epl_2_3 + EPL_fixtures_yc$epl_0_4 + EPL_fixtures_yc$epl_1_4 + EPL_fixtures_yc$epl_2_4 + EPL_fixtures_yc$epl_3_4 +
+    EPL_fixtures_yc$epl_0_5 + EPL_fixtures_yc$epl_1_5 + EPL_fixtures_yc$epl_2_5 + EPL_fixtures_yc$epl_3_5 + EPL_fixtures_yc$epl_4_5 +
+    EPL_fixtures_yc$epl_0_6 + EPL_fixtures_yc$epl_1_6 + EPL_fixtures_yc$epl_2_6 + EPL_fixtures_yc$epl_3_6 + EPL_fixtures_yc$epl_4_6 +
+    EPL_fixtures_yc$epl_5_6
 )
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_A <- percent(BUNDESLIGATWO_fixtures_yc$bundesligatwo_A, accuracy = 0.1)
+EPL_fixtures_yc$epl_A <- percent(EPL_fixtures_yc$epl_A, accuracy = 0.1)
 
 #ov25
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_ov25 <- (
-  BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_4 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_4 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_0 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_4 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_5 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_5 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_3_6 +
-    BUNDESLIGATWO_fixtures_yc$bundesligatwo_4_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_5_6 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_6_6
+EPL_fixtures_yc$epl_ov25 <- (
+  EPL_fixtures_yc$epl_2_1 + EPL_fixtures_yc$epl_1_2 + EPL_fixtures_yc$epl_2_2 + EPL_fixtures_yc$epl_3_0 + EPL_fixtures_yc$epl_3_1 +
+    EPL_fixtures_yc$epl_3_2 + EPL_fixtures_yc$epl_0_3 + EPL_fixtures_yc$epl_1_3 + EPL_fixtures_yc$epl_2_3 + EPL_fixtures_yc$epl_3_3 +
+    EPL_fixtures_yc$epl_4_0 + EPL_fixtures_yc$epl_4_1 + EPL_fixtures_yc$epl_4_2 + EPL_fixtures_yc$epl_4_3 + EPL_fixtures_yc$epl_0_4 +
+    EPL_fixtures_yc$epl_1_4 + EPL_fixtures_yc$epl_2_4 + EPL_fixtures_yc$epl_3_4 + EPL_fixtures_yc$epl_4_4 + EPL_fixtures_yc$epl_5_0 +
+    EPL_fixtures_yc$epl_5_1 + EPL_fixtures_yc$epl_5_2 + EPL_fixtures_yc$epl_5_3 + EPL_fixtures_yc$epl_5_4 + EPL_fixtures_yc$epl_0_5 +
+    EPL_fixtures_yc$epl_1_5 + EPL_fixtures_yc$epl_2_5 + EPL_fixtures_yc$epl_3_5 + EPL_fixtures_yc$epl_4_5 + EPL_fixtures_yc$epl_5_5 +
+    EPL_fixtures_yc$epl_6_0 + EPL_fixtures_yc$epl_6_1 + EPL_fixtures_yc$epl_6_2 + EPL_fixtures_yc$epl_6_3 + EPL_fixtures_yc$epl_6_4 +
+    EPL_fixtures_yc$epl_6_5 + EPL_fixtures_yc$epl_0_6 + EPL_fixtures_yc$epl_1_6 + EPL_fixtures_yc$epl_2_6 + EPL_fixtures_yc$epl_3_6 +
+    EPL_fixtures_yc$epl_4_6 + EPL_fixtures_yc$epl_5_6 + EPL_fixtures_yc$epl_6_6
 )
 #un25
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_un25 <- (
-  BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures_yc$bundesligatwo_0_2
+EPL_fixtures_yc$epl_un25 <- (
+  EPL_fixtures_yc$epl_0_0 + EPL_fixtures_yc$epl_1_0 + EPL_fixtures_yc$epl_0_1 + EPL_fixtures_yc$epl_1_1 + EPL_fixtures_yc$epl_2_0 + EPL_fixtures_yc$epl_0_2
 )
 #odds
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_ov25_odds <- round((1/BUNDESLIGATWO_fixtures_yc$bundesligatwo_ov25),digits = 2)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_un25_odds <- round((1/BUNDESLIGATWO_fixtures_yc$bundesligatwo_un25),digits = 2)
+EPL_fixtures_yc$epl_ov25_odds <- round((1/EPL_fixtures_yc$epl_ov25),digits = 2)
+EPL_fixtures_yc$epl_un25_odds <- round((1/EPL_fixtures_yc$epl_un25),digits = 2)
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_ov25_odds
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_un25_odds
+EPL_fixtures_yc$epl_ov25_odds
+EPL_fixtures_yc$epl_un25_odds
 ###############################################################################
 
 ########Asian Handicaps######################################################################################################
 #percentages
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_ov25 <- percent(BUNDESLIGATWO_fixtures_yc$bundesligatwo_ov25, accuracy = 0.1)
+EPL_fixtures_yc$epl_ov25 <- percent(EPL_fixtures_yc$epl_ov25, accuracy = 0.1)
 
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_un25 <- percent(BUNDESLIGATWO_fixtures_yc$bundesligatwo_un25, accuracy = 0.1)
-BUNDESLIGATWO_fixtures_yc$bundesligatwo_pscore <- paste(round(BUNDESLIGATWO_fixtures_yc$bundesligatwo_xHYC,digits = 0),round(BUNDESLIGATWO_fixtures_yc$bundesligatwo_xAYC,digits = 0),sep = "-")
+EPL_fixtures_yc$epl_un25 <- percent(EPL_fixtures_yc$epl_un25, accuracy = 0.1)
+EPL_fixtures_yc$epl_pscore <- paste(round(EPL_fixtures_yc$epl_xHYC,digits = 0),round(EPL_fixtures_yc$epl_xAYC,digits = 0),sep = "-")
 
 ################################################################################################################################################################################
 #poisson corners
-bundesligatwo_GP <- nrow(BUNDESLIGATWO)
+epl_GP <- nrow(EPL)
 #Calculate total home corners for each division
-bundesligatwo_home_corners <- aggregate(BUNDESLIGATWO$HCO, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_away_corners <- aggregate(BUNDESLIGATWO$ACO, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
+epl_home_corners <- aggregate(EPL$HCO, by = list(EPL$HomeTeam), FUN = sum)
+epl_away_corners <- aggregate(EPL$ACO, by = list(EPL$AwayTeam), FUN = sum)
 ###############################################################################
-bundesligatwo_T_HCO <- sum(bundesligatwo_home_corners$x)
+epl_T_HCO <- sum(epl_home_corners$x)
 #calculate average home corners
-bundesligatwo_avg_HCO <- round(bundesligatwo_T_HCO /bundesligatwo_GP, digits = 4)
+epl_avg_HCO <- round(epl_T_HCO /epl_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-bundesligatwo_T_ACO <- sum(bundesligatwo_away_corners$x)
+epl_T_ACO <- sum(epl_away_corners$x)
 #calculate average away goal
-bundesligatwo_avg_ACO <- round(bundesligatwo_T_ACO /bundesligatwo_GP, digits = 4)
+epl_avg_ACO <- round(epl_T_ACO /epl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-bundesligatwo_home_coas <- round(((bundesligatwo_home_corners$x/bundesligatwo_home_games))/bundesligatwo_avg_HCO, digits = 4)
+epl_home_coas <- round(((epl_home_corners$x/epl_home_games))/epl_avg_HCO, digits = 4)
 #calculate away attack strength
-bundesligatwo_away_coas <- round(((bundesligatwo_away_corners$x/bundesligatwo_away_games))/bundesligatwo_avg_ACO, digits = 4)
+epl_away_coas <- round(((epl_away_corners$x/epl_away_games))/epl_avg_ACO, digits = 4)
 ################################################################################
 #get average home concede and away concede
-bundesligatwo_avg_HCOC <- round(bundesligatwo_T_ACO /bundesligatwo_GP, digits = 4)
+epl_avg_HCOC <- round(epl_T_ACO /epl_GP, digits = 4)
 #avg away concede
-bundesligatwo_avg_ACOC <- round(bundesligatwo_T_HCO /bundesligatwo_GP, digits = 4)
+epl_avg_ACOC <- round(epl_T_HCO /epl_GP, digits = 4)
 #calculate home and away defense strength
 #home corners conceded
-bundesligatwo_home_coc <- aggregate(BUNDESLIGATWO$ACO, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_away_coc <- aggregate(BUNDESLIGATWO$HCO, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
+epl_home_coc <- aggregate(EPL$ACO, by = list(EPL$HomeTeam), FUN = sum)
+epl_away_coc <- aggregate(EPL$HCO, by = list(EPL$AwayTeam), FUN = sum)
 #home defense strength
-bundesligatwo_home_cods <- round(((bundesligatwo_home_coc$x/bundesligatwo_home_games))/bundesligatwo_avg_HCOC, digits = 4)
+epl_home_cods <- round(((epl_home_coc$x/epl_home_games))/epl_avg_HCOC, digits = 4)
 #away defense strength
-bundesligatwo_away_cods <- round(((bundesligatwo_away_coc$x/bundesligatwo_away_games))/bundesligatwo_avg_ACOC, digits = 4)
+epl_away_cods <- round(((epl_away_coc$x/epl_away_games))/epl_avg_ACOC, digits = 4)
 #############################################################################
 #home poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_home_poisson_corners <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_HCO,bundesligatwo_home_coas,bundesligatwo_home_cods)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_home_poisson_corners <- cbind(epl_division,epl_teams,epl_avg_HCO,epl_home_coas,epl_home_cods)
 #################################################################################
 #away poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_away_poisson_corners <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_ACO,bundesligatwo_away_coas,bundesligatwo_away_cods)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_away_poisson_corners <- cbind(epl_division,epl_teams,epl_avg_ACO,epl_away_coas,epl_away_cods)
 
-#BUNDESLIGATWO
-HomeTeam_bundesligatwo_co <- rep(bundesligatwo_teams, each = length(bundesligatwo_teams))
-AwayTeam_bundesligatwo_co <- rep(bundesligatwo_teams, length(bundesligatwo_teams))
-BUNDESLIGATWO_fixtures_co <- cbind(HomeTeam_bundesligatwo_co,AwayTeam_bundesligatwo_co)
-BUNDESLIGATWO_fixtures_co <- as.data.frame(BUNDESLIGATWO_fixtures_co)
-BUNDESLIGATWO_fixtures_co <- BUNDESLIGATWO_fixtures_co[!BUNDESLIGATWO_fixtures_co$HomeTeam_bundesligatwo_co == BUNDESLIGATWO_fixtures_co$AwayTeam_bundesligatwo_co,]
-rownames(BUNDESLIGATWO_fixtures_co) <- NULL
-BUNDESLIGATWO_fixtures_co$Div <- "BUNDESLIGATWO"
-BUNDESLIGATWO_fixtures_co <- BUNDESLIGATWO_fixtures_co[,c(3,1,2)]
+#EPL
+HomeTeam_epl_co <- rep(epl_teams, each = length(epl_teams))
+AwayTeam_epl_co <- rep(epl_teams, length(epl_teams))
+EPL_fixtures_co <- cbind(HomeTeam_epl_co,AwayTeam_epl_co)
+EPL_fixtures_co <- as.data.frame(EPL_fixtures_co)
+EPL_fixtures_co <- EPL_fixtures_co[!EPL_fixtures_co$HomeTeam_epl_co == EPL_fixtures_co$AwayTeam_epl_co,]
+rownames(EPL_fixtures_co) <- NULL
+EPL_fixtures_co$Div <- "EPL"
+EPL_fixtures_co <- EPL_fixtures_co[,c(3,1,2)]
 
-BUNDESLIGATWO_fixtures_co$avg_HCO_bundesligatwo <- bundesligatwo_avg_HCO
+EPL_fixtures_co$avg_HCO_epl <- epl_avg_HCO
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_homecoas <- rep(bundesligatwo_home_coas,each = length(bundesligatwo_teams)-1)
+EPL_fixtures_co$epl_homecoas <- rep(epl_home_coas,each = length(epl_teams)-1)
 
-bundesligatwo_awaycods_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_cods)
+epl_awaycods_lookup <- cbind(epl_teams,epl_away_cods)
 
-bundesligatwo_awaycods_lookup <- as.data.frame(bundesligatwo_awaycods_lookup)
+epl_awaycods_lookup <- as.data.frame(epl_awaycods_lookup)
 
-colnames(bundesligatwo_awaycods_lookup) <- c("AwayTeam_bundesligatwo_co","bundesligatwo_awaycods")
+colnames(epl_awaycods_lookup) <- c("AwayTeam_epl_co","epl_awaycods")
 
 
 require('RH2')
-BUNDESLIGATWO_fixtures_co$bundesligatwo_awaycods <- sqldf("SELECT bundesligatwo_awaycods_lookup.bundesligatwo_awaycods FROM bundesligatwo_awaycods_lookup INNER JOIN BUNDESLIGATWO_fixtures_co ON bundesligatwo_awaycods_lookup.AwayTeam_bundesligatwo_co = BUNDESLIGATWO_fixtures_co.AwayTeam_bundesligatwo_co")
+EPL_fixtures_co$epl_awaycods <- sqldf("SELECT epl_awaycods_lookup.epl_awaycods FROM epl_awaycods_lookup INNER JOIN EPL_fixtures_co ON epl_awaycods_lookup.AwayTeam_epl_co = EPL_fixtures_co.AwayTeam_epl_co")
 
-BUNDESLIGATWO_fixtures_co$avg_ACO_bundesligatwo <- bundesligatwo_avg_ACO
+EPL_fixtures_co$avg_ACO_epl <- epl_avg_ACO
 
-bundesligatwo_awaycoas_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_coas)
+epl_awaycoas_lookup <- cbind(epl_teams,epl_away_coas)
 
-bundesligatwo_awaycoas_lookup <- as.data.frame(bundesligatwo_awaycoas_lookup)
+epl_awaycoas_lookup <- as.data.frame(epl_awaycoas_lookup)
 
-colnames(bundesligatwo_awaycoas_lookup) <- c("AwayTeam_bundesligatwo_co","bundesligatwo_awaycoas")
+colnames(epl_awaycoas_lookup) <- c("AwayTeam_epl_co","epl_awaycoas")
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_awaycoas <- sqldf("SELECT bundesligatwo_awaycoas_lookup.bundesligatwo_awaycoas FROM bundesligatwo_awaycoas_lookup INNER JOIN BUNDESLIGATWO_fixtures_co ON bundesligatwo_awaycoas_lookup.AwayTeam_bundesligatwo_co = BUNDESLIGATWO_fixtures_co.AwayTeam_bundesligatwo_co")
+EPL_fixtures_co$epl_awaycoas <- sqldf("SELECT epl_awaycoas_lookup.epl_awaycoas FROM epl_awaycoas_lookup INNER JOIN EPL_fixtures_co ON epl_awaycoas_lookup.AwayTeam_epl_co = EPL_fixtures_co.AwayTeam_epl_co")
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_homecods <- rep(bundesligatwo_home_cods,each = length(bundesligatwo_teams)-1)
+EPL_fixtures_co$epl_homecods <- rep(epl_home_cods,each = length(epl_teams)-1)
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_awaycods <- as.numeric(unlist(BUNDESLIGATWO_fixtures_co$bundesligatwo_awaycods))
+EPL_fixtures_co$epl_awaycods <- as.numeric(unlist(EPL_fixtures_co$epl_awaycods))
 #xGH
-BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC <- BUNDESLIGATWO_fixtures_co$avg_HCO_bundesligatwo * BUNDESLIGATWO_fixtures_co$bundesligatwo_homecoas * BUNDESLIGATWO_fixtures_co$bundesligatwo_awaycods
+EPL_fixtures_co$epl_xHCOC <- EPL_fixtures_co$avg_HCO_epl * EPL_fixtures_co$epl_homecoas * EPL_fixtures_co$epl_awaycods
 #xGA
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_awaycoas <- as.numeric(unlist(BUNDESLIGATWO_fixtures_co$bundesligatwo_awaycoas))
+EPL_fixtures_co$epl_awaycoas <- as.numeric(unlist(EPL_fixtures_co$epl_awaycoas))
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC <- BUNDESLIGATWO_fixtures_co$avg_ACO_bundesligatwo * BUNDESLIGATWO_fixtures_co$bundesligatwo_awaycoas * BUNDESLIGATWO_fixtures_co$bundesligatwo_homecods
+EPL_fixtures_co$epl_xACOC <- EPL_fixtures_co$avg_ACO_epl * EPL_fixtures_co$epl_awaycoas * EPL_fixtures_co$epl_homecods
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_0_0 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_1_0 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_0_1 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_1_1 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_2_0 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_0_2 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_2_2 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_2_1 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_1_2 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_3_3 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_3_0 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_3_1 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_3_2 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_0_3 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_1_3 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_2_3 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_4_4 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_4_0 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_4_1 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_4_2 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_4_3 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_0_4 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_1_4 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_2_4 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_3_4 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_5_5 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_5_0 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_5_1 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_5_2 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_5_3 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_5_4 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_0_5 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_1_5 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_2_5 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_3_5 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_4_5 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_6_6 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_6_0 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_6_1 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_6_2 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_6_3 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_6_4 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_6_5 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_0_6 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_1_6 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_2_6 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_3_6 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_4_6 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_5_6 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC) * stats::dpois(6,BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC), digits = 4)
+EPL_fixtures_co$epl_0_0 <- round(stats::dpois(0,EPL_fixtures_co$epl_xHCOC) * stats::dpois(0,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_1_0 <- round(stats::dpois(1,EPL_fixtures_co$epl_xHCOC) * stats::dpois(0,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_0_1 <- round(stats::dpois(0,EPL_fixtures_co$epl_xHCOC) * stats::dpois(1,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_1_1 <- round(stats::dpois(1,EPL_fixtures_co$epl_xHCOC) * stats::dpois(1,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_2_0 <- round(stats::dpois(2,EPL_fixtures_co$epl_xHCOC) * stats::dpois(0,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_0_2 <- round(stats::dpois(0,EPL_fixtures_co$epl_xHCOC) * stats::dpois(2,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_2_2 <- round(stats::dpois(2,EPL_fixtures_co$epl_xHCOC) * stats::dpois(2,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_2_1 <- round(stats::dpois(2,EPL_fixtures_co$epl_xHCOC) * stats::dpois(1,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_1_2 <- round(stats::dpois(1,EPL_fixtures_co$epl_xHCOC) * stats::dpois(2,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_3_3 <- round(stats::dpois(3,EPL_fixtures_co$epl_xHCOC) * stats::dpois(3,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_3_0 <- round(stats::dpois(3,EPL_fixtures_co$epl_xHCOC) * stats::dpois(0,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_3_1 <- round(stats::dpois(3,EPL_fixtures_co$epl_xHCOC) * stats::dpois(1,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_3_2 <- round(stats::dpois(3,EPL_fixtures_co$epl_xHCOC) * stats::dpois(2,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_0_3 <- round(stats::dpois(0,EPL_fixtures_co$epl_xHCOC) * stats::dpois(3,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_1_3 <- round(stats::dpois(1,EPL_fixtures_co$epl_xHCOC) * stats::dpois(3,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_2_3 <- round(stats::dpois(2,EPL_fixtures_co$epl_xHCOC) * stats::dpois(3,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_4_4 <- round(stats::dpois(4,EPL_fixtures_co$epl_xHCOC) * stats::dpois(4,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_4_0 <- round(stats::dpois(4,EPL_fixtures_co$epl_xHCOC) * stats::dpois(0,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_4_1 <- round(stats::dpois(4,EPL_fixtures_co$epl_xHCOC) * stats::dpois(1,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_4_2 <- round(stats::dpois(4,EPL_fixtures_co$epl_xHCOC) * stats::dpois(2,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_4_3 <- round(stats::dpois(4,EPL_fixtures_co$epl_xHCOC) * stats::dpois(3,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_0_4 <- round(stats::dpois(0,EPL_fixtures_co$epl_xHCOC) * stats::dpois(4,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_1_4 <- round(stats::dpois(1,EPL_fixtures_co$epl_xHCOC) * stats::dpois(4,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_2_4 <- round(stats::dpois(2,EPL_fixtures_co$epl_xHCOC) * stats::dpois(4,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_3_4 <- round(stats::dpois(3,EPL_fixtures_co$epl_xHCOC) * stats::dpois(4,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_5_5 <- round(stats::dpois(5,EPL_fixtures_co$epl_xHCOC) * stats::dpois(5,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_5_0 <- round(stats::dpois(5,EPL_fixtures_co$epl_xHCOC) * stats::dpois(0,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_5_1 <- round(stats::dpois(5,EPL_fixtures_co$epl_xHCOC) * stats::dpois(1,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_5_2 <- round(stats::dpois(5,EPL_fixtures_co$epl_xHCOC) * stats::dpois(2,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_5_3 <- round(stats::dpois(5,EPL_fixtures_co$epl_xHCOC) * stats::dpois(3,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_5_4 <- round(stats::dpois(5,EPL_fixtures_co$epl_xHCOC) * stats::dpois(4,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_0_5 <- round(stats::dpois(0,EPL_fixtures_co$epl_xHCOC) * stats::dpois(5,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_1_5 <- round(stats::dpois(1,EPL_fixtures_co$epl_xHCOC) * stats::dpois(5,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_2_5 <- round(stats::dpois(2,EPL_fixtures_co$epl_xHCOC) * stats::dpois(5,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_3_5 <- round(stats::dpois(3,EPL_fixtures_co$epl_xHCOC) * stats::dpois(5,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_4_5 <- round(stats::dpois(4,EPL_fixtures_co$epl_xHCOC) * stats::dpois(5,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_6_6 <- round(stats::dpois(6,EPL_fixtures_co$epl_xHCOC) * stats::dpois(6,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_6_0 <- round(stats::dpois(6,EPL_fixtures_co$epl_xHCOC) * stats::dpois(0,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_6_1 <- round(stats::dpois(6,EPL_fixtures_co$epl_xHCOC) * stats::dpois(1,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_6_2 <- round(stats::dpois(6,EPL_fixtures_co$epl_xHCOC) * stats::dpois(2,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_6_3 <- round(stats::dpois(6,EPL_fixtures_co$epl_xHCOC) * stats::dpois(3,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_6_4 <- round(stats::dpois(6,EPL_fixtures_co$epl_xHCOC) * stats::dpois(4,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_6_5 <- round(stats::dpois(6,EPL_fixtures_co$epl_xHCOC) * stats::dpois(5,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_0_6 <- round(stats::dpois(0,EPL_fixtures_co$epl_xHCOC) * stats::dpois(6,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_1_6 <- round(stats::dpois(1,EPL_fixtures_co$epl_xHCOC) * stats::dpois(6,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_2_6 <- round(stats::dpois(2,EPL_fixtures_co$epl_xHCOC) * stats::dpois(6,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_3_6 <- round(stats::dpois(3,EPL_fixtures_co$epl_xHCOC) * stats::dpois(6,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_4_6 <- round(stats::dpois(4,EPL_fixtures_co$epl_xHCOC) * stats::dpois(6,EPL_fixtures_co$epl_xACOC), digits = 4)
+EPL_fixtures_co$epl_5_6 <- round(stats::dpois(5,EPL_fixtures_co$epl_xHCOC) * stats::dpois(6,EPL_fixtures_co$epl_xACOC), digits = 4)
 #Home win
-BUNDESLIGATWO_fixtures_co$bundesligatwo_H <- (
-  BUNDESLIGATWO_fixtures_co$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_5_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_6_5
+EPL_fixtures_co$epl_H <- (
+  EPL_fixtures_co$epl_1_0 + EPL_fixtures_co$epl_2_0 + EPL_fixtures_co$epl_2_1 + EPL_fixtures_co$epl_3_0 + EPL_fixtures_co$epl_3_1 +
+    EPL_fixtures_co$epl_3_2 + EPL_fixtures_co$epl_4_0 + EPL_fixtures_co$epl_4_1 + EPL_fixtures_co$epl_4_2 + EPL_fixtures_co$epl_4_3 +
+    EPL_fixtures_co$epl_5_0 + EPL_fixtures_co$epl_5_1 + EPL_fixtures_co$epl_5_2 + EPL_fixtures_co$epl_5_3 + EPL_fixtures_co$epl_5_4 +
+    EPL_fixtures_co$epl_6_0 + EPL_fixtures_co$epl_6_1 + EPL_fixtures_co$epl_6_2 + EPL_fixtures_co$epl_6_3 + EPL_fixtures_co$epl_6_4 +
+    EPL_fixtures_co$epl_6_5
 )
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_H <- percent(BUNDESLIGATWO_fixtures_co$bundesligatwo_H, accuracy = 0.1)
+EPL_fixtures_co$epl_H <- percent(EPL_fixtures_co$epl_H, accuracy = 0.1)
 
 #Draw
-BUNDESLIGATWO_fixtures_co$bundesligatwo_D <- (
+EPL_fixtures_co$epl_D <- (
 
-  BUNDESLIGATWO_fixtures_co$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_4 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_6
+  EPL_fixtures_co$epl_0_0 + EPL_fixtures_co$epl_1_1 + EPL_fixtures_co$epl_2_2 + EPL_fixtures_co$epl_3_3 + EPL_fixtures_co$epl_4_4 +
+    EPL_fixtures_co$epl_5_5 + EPL_fixtures_co$epl_6_6
 )
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_D <- percent(BUNDESLIGATWO_fixtures_co$bundesligatwo_D, accuracy = 0.1)
+EPL_fixtures_co$epl_D <- percent(EPL_fixtures_co$epl_D, accuracy = 0.1)
 
 #Away
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_A <- (
-  BUNDESLIGATWO_fixtures_co$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_0_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_5_6
+EPL_fixtures_co$epl_A <- (
+  EPL_fixtures_co$epl_0_1 + EPL_fixtures_co$epl_0_2 + EPL_fixtures_co$epl_1_2 + EPL_fixtures_co$epl_0_3 + EPL_fixtures_co$epl_1_3 +
+    EPL_fixtures_co$epl_2_3 + EPL_fixtures_co$epl_0_4 + EPL_fixtures_co$epl_1_4 + EPL_fixtures_co$epl_2_4 + EPL_fixtures_co$epl_3_4 +
+    EPL_fixtures_co$epl_0_5 + EPL_fixtures_co$epl_1_5 + EPL_fixtures_co$epl_2_5 + EPL_fixtures_co$epl_3_5 + EPL_fixtures_co$epl_4_5 +
+    EPL_fixtures_co$epl_0_6 + EPL_fixtures_co$epl_1_6 + EPL_fixtures_co$epl_2_6 + EPL_fixtures_co$epl_3_6 + EPL_fixtures_co$epl_4_6 +
+    EPL_fixtures_co$epl_5_6
 )
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_A <- percent(BUNDESLIGATWO_fixtures_co$bundesligatwo_A, accuracy = 0.1)
+EPL_fixtures_co$epl_A <- percent(EPL_fixtures_co$epl_A, accuracy = 0.1)
 
 #ov25
-BUNDESLIGATWO_fixtures_co$bundesligatwo_ov25 <- (
-  BUNDESLIGATWO_fixtures_co$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_4 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_4 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_0 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_4 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_5 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_4_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_5 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_3_6 +
-    BUNDESLIGATWO_fixtures_co$bundesligatwo_4_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_5_6 + BUNDESLIGATWO_fixtures_co$bundesligatwo_6_6
+EPL_fixtures_co$epl_ov25 <- (
+  EPL_fixtures_co$epl_2_1 + EPL_fixtures_co$epl_1_2 + EPL_fixtures_co$epl_2_2 + EPL_fixtures_co$epl_3_0 + EPL_fixtures_co$epl_3_1 +
+    EPL_fixtures_co$epl_3_2 + EPL_fixtures_co$epl_0_3 + EPL_fixtures_co$epl_1_3 + EPL_fixtures_co$epl_2_3 + EPL_fixtures_co$epl_3_3 +
+    EPL_fixtures_co$epl_4_0 + EPL_fixtures_co$epl_4_1 + EPL_fixtures_co$epl_4_2 + EPL_fixtures_co$epl_4_3 + EPL_fixtures_co$epl_0_4 +
+    EPL_fixtures_co$epl_1_4 + EPL_fixtures_co$epl_2_4 + EPL_fixtures_co$epl_3_4 + EPL_fixtures_co$epl_4_4 + EPL_fixtures_co$epl_5_0 +
+    EPL_fixtures_co$epl_5_1 + EPL_fixtures_co$epl_5_2 + EPL_fixtures_co$epl_5_3 + EPL_fixtures_co$epl_5_4 + EPL_fixtures_co$epl_0_5 +
+    EPL_fixtures_co$epl_1_5 + EPL_fixtures_co$epl_2_5 + EPL_fixtures_co$epl_3_5 + EPL_fixtures_co$epl_4_5 + EPL_fixtures_co$epl_5_5 +
+    EPL_fixtures_co$epl_6_0 + EPL_fixtures_co$epl_6_1 + EPL_fixtures_co$epl_6_2 + EPL_fixtures_co$epl_6_3 + EPL_fixtures_co$epl_6_4 +
+    EPL_fixtures_co$epl_6_5 + EPL_fixtures_co$epl_0_6 + EPL_fixtures_co$epl_1_6 + EPL_fixtures_co$epl_2_6 + EPL_fixtures_co$epl_3_6 +
+    EPL_fixtures_co$epl_4_6 + EPL_fixtures_co$epl_5_6 + EPL_fixtures_co$epl_6_6
 )
 #un25
-BUNDESLIGATWO_fixtures_co$bundesligatwo_un25 <- (
-  BUNDESLIGATWO_fixtures_co$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures_co$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures_co$bundesligatwo_0_2
+EPL_fixtures_co$epl_un25 <- (
+  EPL_fixtures_co$epl_0_0 + EPL_fixtures_co$epl_1_0 + EPL_fixtures_co$epl_0_1 + EPL_fixtures_co$epl_1_1 + EPL_fixtures_co$epl_2_0 + EPL_fixtures_co$epl_0_2
 )
 #odds
-BUNDESLIGATWO_fixtures_co$bundesligatwo_ov25_odds <- round((1/BUNDESLIGATWO_fixtures_co$bundesligatwo_ov25),digits = 2)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_un25_odds <- round((1/BUNDESLIGATWO_fixtures_co$bundesligatwo_un25),digits = 2)
+EPL_fixtures_co$epl_ov25_odds <- round((1/EPL_fixtures_co$epl_ov25),digits = 2)
+EPL_fixtures_co$epl_un25_odds <- round((1/EPL_fixtures_co$epl_un25),digits = 2)
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_ov25_odds
-BUNDESLIGATWO_fixtures_co$bundesligatwo_un25_odds
+EPL_fixtures_co$epl_ov25_odds
+EPL_fixtures_co$epl_un25_odds
 ###############################################################################
 
 ########Asian Handicaps######################################################################################################
 #percentages
-BUNDESLIGATWO_fixtures_co$bundesligatwo_ov25 <- percent(BUNDESLIGATWO_fixtures_co$bundesligatwo_ov25, accuracy = 0.1)
+EPL_fixtures_co$epl_ov25 <- percent(EPL_fixtures_co$epl_ov25, accuracy = 0.1)
 
-BUNDESLIGATWO_fixtures_co$bundesligatwo_un25 <- percent(BUNDESLIGATWO_fixtures_co$bundesligatwo_un25, accuracy = 0.1)
-BUNDESLIGATWO_fixtures_co$bundesligatwo_pscore <- paste(round(BUNDESLIGATWO_fixtures_co$bundesligatwo_xHCOC,digits = 0),round(BUNDESLIGATWO_fixtures_co$bundesligatwo_xACOC,digits = 0),sep = "-")
+EPL_fixtures_co$epl_un25 <- percent(EPL_fixtures_co$epl_un25, accuracy = 0.1)
+EPL_fixtures_co$epl_pscore <- paste(round(EPL_fixtures_co$epl_xHCOC,digits = 0),round(EPL_fixtures_co$epl_xACOC,digits = 0),sep = "-")
 ######################################################################################################################################################################
 #poisson fouls
-bundesligatwo_GP <- nrow(BUNDESLIGATWO)
+epl_GP <- nrow(EPL)
 #Calculate total home goals for each division
-bundesligatwo_T_HF <- sum(bundesligatwo_home_fouls$x)
+epl_T_HF <- sum(epl_home_fouls$x)
 #calculate average home goal
-bundesligatwo_avg_HF <- round(bundesligatwo_T_HF /bundesligatwo_GP, digits = 4)
+epl_avg_HF <- round(epl_T_HF /epl_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-bundesligatwo_T_AF <- sum(bundesligatwo_away_fouls$x)
+epl_T_AF <- sum(epl_away_fouls$x)
 #calculate average away goal
-bundesligatwo_avg_AF <- round(bundesligatwo_T_AF /bundesligatwo_GP, digits = 4)
+epl_avg_AF <- round(epl_T_AF /epl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-bundesligatwo_home_fas <- round(((bundesligatwo_home_fouls$x/bundesligatwo_home_games))/bundesligatwo_avg_HF, digits = 4)
+epl_home_fas <- round(((epl_home_fouls$x/epl_home_games))/epl_avg_HF, digits = 4)
 #calculate away attack strength
-bundesligatwo_away_fas <- round(((bundesligatwo_away_fouls$x/bundesligatwo_away_games))/bundesligatwo_avg_AF, digits = 4)
+epl_away_fas <- round(((epl_away_fouls$x/epl_away_games))/epl_avg_AF, digits = 4)
 
 ################################################################################
 #get average home concede and away concede
-bundesligatwo_avg_HFC <- round(bundesligatwo_T_AF /bundesligatwo_GP, digits = 4)
+epl_avg_HFC <- round(epl_T_AF /epl_GP, digits = 4)
 #avg away concede
-bundesligatwo_avg_AFC <- round(bundesligatwo_T_HF /bundesligatwo_GP, digits = 4)
+epl_avg_AFC <- round(epl_T_HF /epl_GP, digits = 4)
 #calculate home and away defense strength
 #home yellow cards conceded
-bundesligatwo_home_fcc <- aggregate(BUNDESLIGATWO$AF, by = list(BUNDESLIGATWO$HomeTeam), FUN = sum)
-bundesligatwo_away_fcc <- aggregate(BUNDESLIGATWO$HF, by = list(BUNDESLIGATWO$AwayTeam), FUN = sum)
+epl_home_fcc <- aggregate(EPL$AF, by = list(EPL$HomeTeam), FUN = sum)
+epl_away_fcc <- aggregate(EPL$HF, by = list(EPL$AwayTeam), FUN = sum)
 
 #home defense strength
-bundesligatwo_home_fds <- round(((bundesligatwo_home_fcc$x/bundesligatwo_home_games))/bundesligatwo_avg_HFC, digits = 4)
+epl_home_fds <- round(((epl_home_fcc$x/epl_home_games))/epl_avg_HFC, digits = 4)
 
 #away defense strength
-bundesligatwo_away_fds <- round(((bundesligatwo_away_fcc$x/bundesligatwo_away_games))/bundesligatwo_avg_AFC, digits = 4)
+epl_away_fds <- round(((epl_away_fcc$x/epl_away_games))/epl_avg_AFC, digits = 4)
 
 #############################################################################
 #home poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_home_poisson_fo <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_HF,bundesligatwo_home_fas,bundesligatwo_home_fds)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_home_poisson_fo <- cbind(epl_division,epl_teams,epl_avg_HF,epl_home_fas,epl_home_fds)
 
 #################################################################################
 #away poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_away_poisson_fo <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_AF,bundesligatwo_away_fas,bundesligatwo_away_fds)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_away_poisson_fo <- cbind(epl_division,epl_teams,epl_avg_AF,epl_away_fas,epl_away_fds)
 
-#BUNDESLIGATWO
-HomeTeam_bundesligatwo_fo <- rep(bundesligatwo_teams, each = length(bundesligatwo_teams))
-AwayTeam_bundesligatwo_fo <- rep(bundesligatwo_teams, length(bundesligatwo_teams))
-BUNDESLIGATWO_fixtures_fo <- cbind(HomeTeam_bundesligatwo_fo,AwayTeam_bundesligatwo_fo)
-BUNDESLIGATWO_fixtures_fo <- as.data.frame(BUNDESLIGATWO_fixtures_fo)
-BUNDESLIGATWO_fixtures_fo <- BUNDESLIGATWO_fixtures_fo[!BUNDESLIGATWO_fixtures_fo$HomeTeam_bundesligatwo_fo == BUNDESLIGATWO_fixtures_fo$AwayTeam_bundesligatwo_fo,]
-rownames(BUNDESLIGATWO_fixtures_fo) <- NULL
-BUNDESLIGATWO_fixtures_fo$Div <- "BUNDESLIGATWO"
-BUNDESLIGATWO_fixtures_fo <- BUNDESLIGATWO_fixtures_fo[,c(3,1,2)]
+#EPL
+HomeTeam_epl_fo <- rep(epl_teams, each = length(epl_teams))
+AwayTeam_epl_fo <- rep(epl_teams, length(epl_teams))
+EPL_fixtures_fo <- cbind(HomeTeam_epl_fo,AwayTeam_epl_fo)
+EPL_fixtures_fo <- as.data.frame(EPL_fixtures_fo)
+EPL_fixtures_fo <- EPL_fixtures_fo[!EPL_fixtures_fo$HomeTeam_epl_fo == EPL_fixtures_fo$AwayTeam_epl_fo,]
+rownames(EPL_fixtures_fo) <- NULL
+EPL_fixtures_fo$Div <- "EPL"
+EPL_fixtures_fo <- EPL_fixtures_fo[,c(3,1,2)]
 
-BUNDESLIGATWO_fixtures_fo$avg_HF_bundesligatwo <- bundesligatwo_avg_HF
+EPL_fixtures_fo$avg_HF_epl <- epl_avg_HF
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_homefas <- rep(bundesligatwo_home_fas,each = length(bundesligatwo_teams)-1)
+EPL_fixtures_fo$epl_homefas <- rep(epl_home_fas,each = length(epl_teams)-1)
 
-bundesligatwo_awayfds_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_fds)
+epl_awayfds_lookup <- cbind(epl_teams,epl_away_fds)
 
-bundesligatwo_awayfds_lookup <- as.data.frame(bundesligatwo_awayfds_lookup)
+epl_awayfds_lookup <- as.data.frame(epl_awayfds_lookup)
 
-colnames(bundesligatwo_awayfds_lookup) <- c("AwayTeam_bundesligatwo_fo","bundesligatwo_awayfds")
+colnames(epl_awayfds_lookup) <- c("AwayTeam_epl_fo","epl_awayfds")
 
 
 require('RH2')
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_awayfds <- sqldf("SELECT bundesligatwo_awayfds_lookup.bundesligatwo_awayfds FROM bundesligatwo_awayfds_lookup INNER JOIN BUNDESLIGATWO_fixtures_fo ON bundesligatwo_awayfds_lookup.AwayTeam_bundesligatwo_fo = BUNDESLIGATWO_fixtures_fo.AwayTeam_bundesligatwo_fo")
+EPL_fixtures_fo$epl_awayfds <- sqldf("SELECT epl_awayfds_lookup.epl_awayfds FROM epl_awayfds_lookup INNER JOIN EPL_fixtures_fo ON epl_awayfds_lookup.AwayTeam_epl_fo = EPL_fixtures_fo.AwayTeam_epl_fo")
 
-BUNDESLIGATWO_fixtures_fo$avg_AF_bundesligatwo <- bundesligatwo_avg_AF
+EPL_fixtures_fo$avg_AF_epl <- epl_avg_AF
 
-bundesligatwo_awayfas_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_fas)
+epl_awayfas_lookup <- cbind(epl_teams,epl_away_fas)
 
-bundesligatwo_awayfas_lookup <- as.data.frame(bundesligatwo_awayfas_lookup)
+epl_awayfas_lookup <- as.data.frame(epl_awayfas_lookup)
 
-colnames(bundesligatwo_awayfas_lookup) <- c("AwayTeam_bundesligatwo_fo","bundesligatwo_awayfas")
+colnames(epl_awayfas_lookup) <- c("AwayTeam_epl_fo","epl_awayfas")
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_awayfas <- sqldf("SELECT bundesligatwo_awayfas_lookup.bundesligatwo_awayfas FROM bundesligatwo_awayfas_lookup INNER JOIN BUNDESLIGATWO_fixtures_fo ON bundesligatwo_awayfas_lookup.AwayTeam_bundesligatwo_fo = BUNDESLIGATWO_fixtures_fo.AwayTeam_bundesligatwo_fo")
+EPL_fixtures_fo$epl_awayfas <- sqldf("SELECT epl_awayfas_lookup.epl_awayfas FROM epl_awayfas_lookup INNER JOIN EPL_fixtures_fo ON epl_awayfas_lookup.AwayTeam_epl_fo = EPL_fixtures_fo.AwayTeam_epl_fo")
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_homefds <- rep(bundesligatwo_home_fds,each = length(bundesligatwo_teams)-1)
+EPL_fixtures_fo$epl_homefds <- rep(epl_home_fds,each = length(epl_teams)-1)
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_awayfds <- as.numeric(unlist(BUNDESLIGATWO_fixtures_fo$bundesligatwo_awayfds))
+EPL_fixtures_fo$epl_awayfds <- as.numeric(unlist(EPL_fixtures_fo$epl_awayfds))
 #xGH
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF <- BUNDESLIGATWO_fixtures_fo$avg_HF_bundesligatwo * BUNDESLIGATWO_fixtures_fo$bundesligatwo_homefas * BUNDESLIGATWO_fixtures_fo$bundesligatwo_awayfds
+EPL_fixtures_fo$epl_xHF <- EPL_fixtures_fo$avg_HF_epl * EPL_fixtures_fo$epl_homefas * EPL_fixtures_fo$epl_awayfds
 #xGA
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_awayfas <- as.numeric(unlist(BUNDESLIGATWO_fixtures_fo$bundesligatwo_awayfas))
+EPL_fixtures_fo$epl_awayfas <- as.numeric(unlist(EPL_fixtures_fo$epl_awayfas))
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF <- BUNDESLIGATWO_fixtures_fo$avg_AF_bundesligatwo * BUNDESLIGATWO_fixtures_fo$bundesligatwo_awayfas * BUNDESLIGATWO_fixtures_fo$bundesligatwo_homefds
+EPL_fixtures_fo$epl_xAF <- EPL_fixtures_fo$avg_AF_epl * EPL_fixtures_fo$epl_awayfas * EPL_fixtures_fo$epl_homefds
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_0 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_0 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_1 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_1 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_0 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_2 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_2 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_1 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_2 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_3 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_0 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_1 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_2 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_3 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_3 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_3 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_4 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_0 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_1 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_2 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_3 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_4 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_4 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_4 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_4 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_5 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_0 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_1 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_2 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_3 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_4 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_5 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_5 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_5 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_5 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_5 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_6 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_0 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_1 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_2 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_3 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_4 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_5 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_6 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_6 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_6 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_6 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_6 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_6 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF) * stats::dpois(6,BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF), digits = 4)
+EPL_fixtures_fo$epl_0_0 <- round(stats::dpois(0,EPL_fixtures_fo$epl_xHF) * stats::dpois(0,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_1_0 <- round(stats::dpois(1,EPL_fixtures_fo$epl_xHF) * stats::dpois(0,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_0_1 <- round(stats::dpois(0,EPL_fixtures_fo$epl_xHF) * stats::dpois(1,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_1_1 <- round(stats::dpois(1,EPL_fixtures_fo$epl_xHF) * stats::dpois(1,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_2_0 <- round(stats::dpois(2,EPL_fixtures_fo$epl_xHF) * stats::dpois(0,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_0_2 <- round(stats::dpois(0,EPL_fixtures_fo$epl_xHF) * stats::dpois(2,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_2_2 <- round(stats::dpois(2,EPL_fixtures_fo$epl_xHF) * stats::dpois(2,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_2_1 <- round(stats::dpois(2,EPL_fixtures_fo$epl_xHF) * stats::dpois(1,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_1_2 <- round(stats::dpois(1,EPL_fixtures_fo$epl_xHF) * stats::dpois(2,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_3_3 <- round(stats::dpois(3,EPL_fixtures_fo$epl_xHF) * stats::dpois(3,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_3_0 <- round(stats::dpois(3,EPL_fixtures_fo$epl_xHF) * stats::dpois(0,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_3_1 <- round(stats::dpois(3,EPL_fixtures_fo$epl_xHF) * stats::dpois(1,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_3_2 <- round(stats::dpois(3,EPL_fixtures_fo$epl_xHF) * stats::dpois(2,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_0_3 <- round(stats::dpois(0,EPL_fixtures_fo$epl_xHF) * stats::dpois(3,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_1_3 <- round(stats::dpois(1,EPL_fixtures_fo$epl_xHF) * stats::dpois(3,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_2_3 <- round(stats::dpois(2,EPL_fixtures_fo$epl_xHF) * stats::dpois(3,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_4_4 <- round(stats::dpois(4,EPL_fixtures_fo$epl_xHF) * stats::dpois(4,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_4_0 <- round(stats::dpois(4,EPL_fixtures_fo$epl_xHF) * stats::dpois(0,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_4_1 <- round(stats::dpois(4,EPL_fixtures_fo$epl_xHF) * stats::dpois(1,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_4_2 <- round(stats::dpois(4,EPL_fixtures_fo$epl_xHF) * stats::dpois(2,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_4_3 <- round(stats::dpois(4,EPL_fixtures_fo$epl_xHF) * stats::dpois(3,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_0_4 <- round(stats::dpois(0,EPL_fixtures_fo$epl_xHF) * stats::dpois(4,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_1_4 <- round(stats::dpois(1,EPL_fixtures_fo$epl_xHF) * stats::dpois(4,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_2_4 <- round(stats::dpois(2,EPL_fixtures_fo$epl_xHF) * stats::dpois(4,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_3_4 <- round(stats::dpois(3,EPL_fixtures_fo$epl_xHF) * stats::dpois(4,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_5_5 <- round(stats::dpois(5,EPL_fixtures_fo$epl_xHF) * stats::dpois(5,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_5_0 <- round(stats::dpois(5,EPL_fixtures_fo$epl_xHF) * stats::dpois(0,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_5_1 <- round(stats::dpois(5,EPL_fixtures_fo$epl_xHF) * stats::dpois(1,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_5_2 <- round(stats::dpois(5,EPL_fixtures_fo$epl_xHF) * stats::dpois(2,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_5_3 <- round(stats::dpois(5,EPL_fixtures_fo$epl_xHF) * stats::dpois(3,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_5_4 <- round(stats::dpois(5,EPL_fixtures_fo$epl_xHF) * stats::dpois(4,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_0_5 <- round(stats::dpois(0,EPL_fixtures_fo$epl_xHF) * stats::dpois(5,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_1_5 <- round(stats::dpois(1,EPL_fixtures_fo$epl_xHF) * stats::dpois(5,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_2_5 <- round(stats::dpois(2,EPL_fixtures_fo$epl_xHF) * stats::dpois(5,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_3_5 <- round(stats::dpois(3,EPL_fixtures_fo$epl_xHF) * stats::dpois(5,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_4_5 <- round(stats::dpois(4,EPL_fixtures_fo$epl_xHF) * stats::dpois(5,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_6_6 <- round(stats::dpois(6,EPL_fixtures_fo$epl_xHF) * stats::dpois(6,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_6_0 <- round(stats::dpois(6,EPL_fixtures_fo$epl_xHF) * stats::dpois(0,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_6_1 <- round(stats::dpois(6,EPL_fixtures_fo$epl_xHF) * stats::dpois(1,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_6_2 <- round(stats::dpois(6,EPL_fixtures_fo$epl_xHF) * stats::dpois(2,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_6_3 <- round(stats::dpois(6,EPL_fixtures_fo$epl_xHF) * stats::dpois(3,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_6_4 <- round(stats::dpois(6,EPL_fixtures_fo$epl_xHF) * stats::dpois(4,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_6_5 <- round(stats::dpois(6,EPL_fixtures_fo$epl_xHF) * stats::dpois(5,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_0_6 <- round(stats::dpois(0,EPL_fixtures_fo$epl_xHF) * stats::dpois(6,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_1_6 <- round(stats::dpois(1,EPL_fixtures_fo$epl_xHF) * stats::dpois(6,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_2_6 <- round(stats::dpois(2,EPL_fixtures_fo$epl_xHF) * stats::dpois(6,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_3_6 <- round(stats::dpois(3,EPL_fixtures_fo$epl_xHF) * stats::dpois(6,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_4_6 <- round(stats::dpois(4,EPL_fixtures_fo$epl_xHF) * stats::dpois(6,EPL_fixtures_fo$epl_xAF), digits = 4)
+EPL_fixtures_fo$epl_5_6 <- round(stats::dpois(5,EPL_fixtures_fo$epl_xHF) * stats::dpois(6,EPL_fixtures_fo$epl_xAF), digits = 4)
 #Home win
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_H <- (
-  BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_5
+EPL_fixtures_fo$epl_H <- (
+  EPL_fixtures_fo$epl_1_0 + EPL_fixtures_fo$epl_2_0 + EPL_fixtures_fo$epl_2_1 + EPL_fixtures_fo$epl_3_0 + EPL_fixtures_fo$epl_3_1 +
+    EPL_fixtures_fo$epl_3_2 + EPL_fixtures_fo$epl_4_0 + EPL_fixtures_fo$epl_4_1 + EPL_fixtures_fo$epl_4_2 + EPL_fixtures_fo$epl_4_3 +
+    EPL_fixtures_fo$epl_5_0 + EPL_fixtures_fo$epl_5_1 + EPL_fixtures_fo$epl_5_2 + EPL_fixtures_fo$epl_5_3 + EPL_fixtures_fo$epl_5_4 +
+    EPL_fixtures_fo$epl_6_0 + EPL_fixtures_fo$epl_6_1 + EPL_fixtures_fo$epl_6_2 + EPL_fixtures_fo$epl_6_3 + EPL_fixtures_fo$epl_6_4 +
+    EPL_fixtures_fo$epl_6_5
 )
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_H <- percent(BUNDESLIGATWO_fixtures_fo$bundesligatwo_H, accuracy = 0.1)
+EPL_fixtures_fo$epl_H <- percent(EPL_fixtures_fo$epl_H, accuracy = 0.1)
 
 #Draw
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_D <- (
+EPL_fixtures_fo$epl_D <- (
 
-  BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_4 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_6
+  EPL_fixtures_fo$epl_0_0 + EPL_fixtures_fo$epl_1_1 + EPL_fixtures_fo$epl_2_2 + EPL_fixtures_fo$epl_3_3 + EPL_fixtures_fo$epl_4_4 +
+    EPL_fixtures_fo$epl_5_5 + EPL_fixtures_fo$epl_6_6
 )
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_D <- percent(BUNDESLIGATWO_fixtures_fo$bundesligatwo_D, accuracy = 0.1)
+EPL_fixtures_fo$epl_D <- percent(EPL_fixtures_fo$epl_D, accuracy = 0.1)
 
 #Away
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_A <- (
-  BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_6
+EPL_fixtures_fo$epl_A <- (
+  EPL_fixtures_fo$epl_0_1 + EPL_fixtures_fo$epl_0_2 + EPL_fixtures_fo$epl_1_2 + EPL_fixtures_fo$epl_0_3 + EPL_fixtures_fo$epl_1_3 +
+    EPL_fixtures_fo$epl_2_3 + EPL_fixtures_fo$epl_0_4 + EPL_fixtures_fo$epl_1_4 + EPL_fixtures_fo$epl_2_4 + EPL_fixtures_fo$epl_3_4 +
+    EPL_fixtures_fo$epl_0_5 + EPL_fixtures_fo$epl_1_5 + EPL_fixtures_fo$epl_2_5 + EPL_fixtures_fo$epl_3_5 + EPL_fixtures_fo$epl_4_5 +
+    EPL_fixtures_fo$epl_0_6 + EPL_fixtures_fo$epl_1_6 + EPL_fixtures_fo$epl_2_6 + EPL_fixtures_fo$epl_3_6 + EPL_fixtures_fo$epl_4_6 +
+    EPL_fixtures_fo$epl_5_6
 )
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_A <- percent(BUNDESLIGATWO_fixtures_fo$bundesligatwo_A, accuracy = 0.1)
+EPL_fixtures_fo$epl_A <- percent(EPL_fixtures_fo$epl_A, accuracy = 0.1)
 
 #ov25
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_ov25 <- (
-  BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_4 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_4 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_0 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_4 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_5 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_5 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_3_6 +
-    BUNDESLIGATWO_fixtures_fo$bundesligatwo_4_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_5_6 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_6_6
+EPL_fixtures_fo$epl_ov25 <- (
+  EPL_fixtures_fo$epl_2_1 + EPL_fixtures_fo$epl_1_2 + EPL_fixtures_fo$epl_2_2 + EPL_fixtures_fo$epl_3_0 + EPL_fixtures_fo$epl_3_1 +
+    EPL_fixtures_fo$epl_3_2 + EPL_fixtures_fo$epl_0_3 + EPL_fixtures_fo$epl_1_3 + EPL_fixtures_fo$epl_2_3 + EPL_fixtures_fo$epl_3_3 +
+    EPL_fixtures_fo$epl_4_0 + EPL_fixtures_fo$epl_4_1 + EPL_fixtures_fo$epl_4_2 + EPL_fixtures_fo$epl_4_3 + EPL_fixtures_fo$epl_0_4 +
+    EPL_fixtures_fo$epl_1_4 + EPL_fixtures_fo$epl_2_4 + EPL_fixtures_fo$epl_3_4 + EPL_fixtures_fo$epl_4_4 + EPL_fixtures_fo$epl_5_0 +
+    EPL_fixtures_fo$epl_5_1 + EPL_fixtures_fo$epl_5_2 + EPL_fixtures_fo$epl_5_3 + EPL_fixtures_fo$epl_5_4 + EPL_fixtures_fo$epl_0_5 +
+    EPL_fixtures_fo$epl_1_5 + EPL_fixtures_fo$epl_2_5 + EPL_fixtures_fo$epl_3_5 + EPL_fixtures_fo$epl_4_5 + EPL_fixtures_fo$epl_5_5 +
+    EPL_fixtures_fo$epl_6_0 + EPL_fixtures_fo$epl_6_1 + EPL_fixtures_fo$epl_6_2 + EPL_fixtures_fo$epl_6_3 + EPL_fixtures_fo$epl_6_4 +
+    EPL_fixtures_fo$epl_6_5 + EPL_fixtures_fo$epl_0_6 + EPL_fixtures_fo$epl_1_6 + EPL_fixtures_fo$epl_2_6 + EPL_fixtures_fo$epl_3_6 +
+    EPL_fixtures_fo$epl_4_6 + EPL_fixtures_fo$epl_5_6 + EPL_fixtures_fo$epl_6_6
 )
 #un25
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_un25 <- (
-  BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures_fo$bundesligatwo_0_2
+EPL_fixtures_fo$epl_un25 <- (
+  EPL_fixtures_fo$epl_0_0 + EPL_fixtures_fo$epl_1_0 + EPL_fixtures_fo$epl_0_1 + EPL_fixtures_fo$epl_1_1 + EPL_fixtures_fo$epl_2_0 + EPL_fixtures_fo$epl_0_2
 )
 #odds
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_ov25_odds <- round((1/BUNDESLIGATWO_fixtures_fo$bundesligatwo_ov25),digits = 2)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_un25_odds <- round((1/BUNDESLIGATWO_fixtures_fo$bundesligatwo_un25),digits = 2)
+EPL_fixtures_fo$epl_ov25_odds <- round((1/EPL_fixtures_fo$epl_ov25),digits = 2)
+EPL_fixtures_fo$epl_un25_odds <- round((1/EPL_fixtures_fo$epl_un25),digits = 2)
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_ov25_odds
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_un25_odds
+EPL_fixtures_fo$epl_ov25_odds
+EPL_fixtures_fo$epl_un25_odds
 ###############################################################################
 
 ########Asian Handicaps######################################################################################################
 #percentages
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_ov25 <- percent(BUNDESLIGATWO_fixtures_fo$bundesligatwo_ov25, accuracy = 0.1)
+EPL_fixtures_fo$epl_ov25 <- percent(EPL_fixtures_fo$epl_ov25, accuracy = 0.1)
 
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_un25 <- percent(BUNDESLIGATWO_fixtures_fo$bundesligatwo_un25, accuracy = 0.1)
-BUNDESLIGATWO_fixtures_fo$bundesligatwo_psfore <- paste(round(BUNDESLIGATWO_fixtures_fo$bundesligatwo_xHF,digits = 0),round(BUNDESLIGATWO_fixtures_fo$bundesligatwo_xAF,digits = 0),sep = "-")
+EPL_fixtures_fo$epl_un25 <- percent(EPL_fixtures_fo$epl_un25, accuracy = 0.1)
+EPL_fixtures_fo$epl_psfore <- paste(round(EPL_fixtures_fo$epl_xHF,digits = 0),round(EPL_fixtures_fo$epl_xAF,digits = 0),sep = "-")
 ####################################################################################################################################################################
 #poisson shots
-bundesligatwo_GP <- nrow(BUNDESLIGATWO)
+epl_GP <- nrow(EPL)
 
 #Calculate total home goals for each division
-bundesligatwo_T_HST <- sum(bundesligatwo_home_hst$x)
+epl_T_HST <- sum(epl_home_hst$x)
 #calculate average home goal
 
-bundesligatwo_avg_HST <- round(bundesligatwo_T_HST /bundesligatwo_GP, digits = 4)
+epl_avg_HST <- round(epl_T_HST /epl_GP, digits = 4)
 
 ############################################################
 #Calculate total away goals for each division
-bundesligatwo_T_AST <- sum(bundesligatwo_away_ast$x)
+epl_T_AST <- sum(epl_away_ast$x)
 #calculate average away goal
-bundesligatwo_avg_AST <- round(bundesligatwo_T_AST /bundesligatwo_GP, digits = 4)
+epl_avg_AST <- round(epl_T_AST /epl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-bundesligatwo_home_sotas <- round(((bundesligatwo_home_hst$x/bundesligatwo_home_games))/bundesligatwo_avg_HST, digits = 4)
+epl_home_sotas <- round(((epl_home_hst$x/epl_home_games))/epl_avg_HST, digits = 4)
 #calculate away attack strength
-bundesligatwo_away_sotas <- round(((bundesligatwo_away_ast$x/bundesligatwo_away_games))/bundesligatwo_avg_AST, digits = 4)
+epl_away_sotas <- round(((epl_away_ast$x/epl_away_games))/epl_avg_AST, digits = 4)
 
 ################################################################################
 #get average home concede and away concede
-bundesligatwo_avg_HSC <- round(bundesligatwo_T_AST /bundesligatwo_GP, digits = 4)
+epl_avg_HSC <- round(epl_T_AST /epl_GP, digits = 4)
 
 #avg away concede
-bundesligatwo_avg_ASC <- round(bundesligatwo_T_HST /bundesligatwo_GP, digits = 4)
+epl_avg_ASC <- round(epl_T_HST /epl_GP, digits = 4)
 #home defense strength
-bundesligatwo_home_sods <- round(((bundesligatwo_home_hsc$x/bundesligatwo_home_games))/bundesligatwo_avg_HSC, digits = 4)
+epl_home_sods <- round(((epl_home_hsc$x/epl_home_games))/epl_avg_HSC, digits = 4)
 
 #away defense strength
-bundesligatwo_away_sods <- round(((bundesligatwo_away_ast$x/bundesligatwo_away_games))/bundesligatwo_avg_ASC, digits = 4)
+epl_away_sods <- round(((epl_away_ast$x/epl_away_games))/epl_avg_ASC, digits = 4)
 
 #############################################################################
 #home poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_home_poisson_sot <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_HST,bundesligatwo_home_sotas,bundesligatwo_home_sods)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_home_poisson_sot <- cbind(epl_division,epl_teams,epl_avg_HST,epl_home_sotas,epl_home_sods)
 
 #################################################################################
 #away poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_away_poisson_sot <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_AST,bundesligatwo_away_sotas,bundesligatwo_away_sods)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_away_poisson_sot <- cbind(epl_division,epl_teams,epl_avg_AST,epl_away_sotas,epl_away_sods)
 
-#BUNDESLIGATWO
-HomeTeam_bundesligatwo_sot <- rep(bundesligatwo_teams, each = length(bundesligatwo_teams))
-AwayTeam_bundesligatwo_sot <- rep(bundesligatwo_teams, length(bundesligatwo_teams))
-BUNDESLIGATWO_fixtures_sot <- cbind(HomeTeam_bundesligatwo_sot,AwayTeam_bundesligatwo_sot)
-BUNDESLIGATWO_fixtures_sot <- as.data.frame(BUNDESLIGATWO_fixtures_sot)
-BUNDESLIGATWO_fixtures_sot <- BUNDESLIGATWO_fixtures_sot[!BUNDESLIGATWO_fixtures_sot$HomeTeam_bundesligatwo_sot == BUNDESLIGATWO_fixtures_sot$AwayTeam_bundesligatwo_sot,]
-rownames(BUNDESLIGATWO_fixtures_sot) <- NULL
-BUNDESLIGATWO_fixtures_sot$Div <- "BUNDESLIGATWO"
-BUNDESLIGATWO_fixtures_sot <- BUNDESLIGATWO_fixtures_sot[,c(3,1,2)]
+#EPL
+HomeTeam_epl_sot <- rep(epl_teams, each = length(epl_teams))
+AwayTeam_epl_sot <- rep(epl_teams, length(epl_teams))
+EPL_fixtures_sot <- cbind(HomeTeam_epl_sot,AwayTeam_epl_sot)
+EPL_fixtures_sot <- as.data.frame(EPL_fixtures_sot)
+EPL_fixtures_sot <- EPL_fixtures_sot[!EPL_fixtures_sot$HomeTeam_epl_sot == EPL_fixtures_sot$AwayTeam_epl_sot,]
+rownames(EPL_fixtures_sot) <- NULL
+EPL_fixtures_sot$Div <- "EPL"
+EPL_fixtures_sot <- EPL_fixtures_sot[,c(3,1,2)]
 
-BUNDESLIGATWO_fixtures_sot$avg_HST_bundesligatwo <- bundesligatwo_avg_HST
+EPL_fixtures_sot$avg_HST_epl <- epl_avg_HST
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_homesotas <- rep(bundesligatwo_home_sotas,each = length(bundesligatwo_teams)-1)
+EPL_fixtures_sot$epl_homesotas <- rep(epl_home_sotas,each = length(epl_teams)-1)
 
-bundesligatwo_awaysods_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_sods)
+epl_awaysods_lookup <- cbind(epl_teams,epl_away_sods)
 
-bundesligatwo_awaysods_lookup <- as.data.frame(bundesligatwo_awaysods_lookup)
+epl_awaysods_lookup <- as.data.frame(epl_awaysods_lookup)
 
-colnames(bundesligatwo_awaysods_lookup) <- c("AwayTeam_bundesligatwo_sot","bundesligatwo_awaysods")
+colnames(epl_awaysods_lookup) <- c("AwayTeam_epl_sot","epl_awaysods")
 
 
 require('RH2')
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_awaysods <- sqldf("SELECT bundesligatwo_awaysods_lookup.bundesligatwo_awaysods FROM bundesligatwo_awaysods_lookup INNER JOIN BUNDESLIGATWO_fixtures_sot ON bundesligatwo_awaysods_lookup.AwayTeam_bundesligatwo_sot = BUNDESLIGATWO_fixtures_sot.AwayTeam_bundesligatwo_sot")
+EPL_fixtures_sot$epl_awaysods <- sqldf("SELECT epl_awaysods_lookup.epl_awaysods FROM epl_awaysods_lookup INNER JOIN EPL_fixtures_sot ON epl_awaysods_lookup.AwayTeam_epl_sot = EPL_fixtures_sot.AwayTeam_epl_sot")
 
-BUNDESLIGATWO_fixtures_sot$avg_AST_bundesligatwo <- bundesligatwo_avg_AST
+EPL_fixtures_sot$avg_AST_epl <- epl_avg_AST
 
-bundesligatwo_awaysotas_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_sotas)
+epl_awaysotas_lookup <- cbind(epl_teams,epl_away_sotas)
 
-bundesligatwo_awaysotas_lookup <- as.data.frame(bundesligatwo_awaysotas_lookup)
+epl_awaysotas_lookup <- as.data.frame(epl_awaysotas_lookup)
 
-colnames(bundesligatwo_awaysotas_lookup) <- c("AwayTeam_bundesligatwo_sot","bundesligatwo_awaysotas")
+colnames(epl_awaysotas_lookup) <- c("AwayTeam_epl_sot","epl_awaysotas")
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_awaysotas <- sqldf("SELECT bundesligatwo_awaysotas_lookup.bundesligatwo_awaysotas FROM bundesligatwo_awaysotas_lookup INNER JOIN BUNDESLIGATWO_fixtures_sot ON bundesligatwo_awaysotas_lookup.AwayTeam_bundesligatwo_sot = BUNDESLIGATWO_fixtures_sot.AwayTeam_bundesligatwo_sot")
+EPL_fixtures_sot$epl_awaysotas <- sqldf("SELECT epl_awaysotas_lookup.epl_awaysotas FROM epl_awaysotas_lookup INNER JOIN EPL_fixtures_sot ON epl_awaysotas_lookup.AwayTeam_epl_sot = EPL_fixtures_sot.AwayTeam_epl_sot")
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_homesods <- rep(bundesligatwo_home_sods,each = length(bundesligatwo_teams)-1)
+EPL_fixtures_sot$epl_homesods <- rep(epl_home_sods,each = length(epl_teams)-1)
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_awaysods <- as.numeric(unlist(BUNDESLIGATWO_fixtures_sot$bundesligatwo_awaysods))
+EPL_fixtures_sot$epl_awaysods <- as.numeric(unlist(EPL_fixtures_sot$epl_awaysods))
 #xGH
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST <- BUNDESLIGATWO_fixtures_sot$avg_HST_bundesligatwo * BUNDESLIGATWO_fixtures_sot$bundesligatwo_homesotas * BUNDESLIGATWO_fixtures_sot$bundesligatwo_awaysods
+EPL_fixtures_sot$epl_xHST <- EPL_fixtures_sot$avg_HST_epl * EPL_fixtures_sot$epl_homesotas * EPL_fixtures_sot$epl_awaysods
 #xGA
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_awaysotas <- as.numeric(unlist(BUNDESLIGATWO_fixtures_sot$bundesligatwo_awaysotas))
+EPL_fixtures_sot$epl_awaysotas <- as.numeric(unlist(EPL_fixtures_sot$epl_awaysotas))
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST <- BUNDESLIGATWO_fixtures_sot$avg_AST_bundesligatwo * BUNDESLIGATWO_fixtures_sot$bundesligatwo_awaysotas * BUNDESLIGATWO_fixtures_sot$bundesligatwo_homesods
+EPL_fixtures_sot$epl_xAST <- EPL_fixtures_sot$avg_AST_epl * EPL_fixtures_sot$epl_awaysotas * EPL_fixtures_sot$epl_homesods
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_0 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_0 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_1 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_1 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_0 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_2 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_2 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_1 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_2 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_3 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_0 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_1 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_2 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_3 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_3 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_3 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_4 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_0 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_1 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_2 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_3 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_4 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_4 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_4 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_4 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_5 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_0 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_1 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_2 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_3 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_4 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_5 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_5 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_5 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_5 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_5 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_6 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_0 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_1 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_2 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_3 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_4 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_5 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_6 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_6 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_6 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_6 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_6 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_6 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST) * stats::dpois(6,BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST), digits = 4)
+EPL_fixtures_sot$epl_0_0 <- round(stats::dpois(0,EPL_fixtures_sot$epl_xHST) * stats::dpois(0,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_1_0 <- round(stats::dpois(1,EPL_fixtures_sot$epl_xHST) * stats::dpois(0,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_0_1 <- round(stats::dpois(0,EPL_fixtures_sot$epl_xHST) * stats::dpois(1,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_1_1 <- round(stats::dpois(1,EPL_fixtures_sot$epl_xHST) * stats::dpois(1,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_2_0 <- round(stats::dpois(2,EPL_fixtures_sot$epl_xHST) * stats::dpois(0,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_0_2 <- round(stats::dpois(0,EPL_fixtures_sot$epl_xHST) * stats::dpois(2,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_2_2 <- round(stats::dpois(2,EPL_fixtures_sot$epl_xHST) * stats::dpois(2,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_2_1 <- round(stats::dpois(2,EPL_fixtures_sot$epl_xHST) * stats::dpois(1,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_1_2 <- round(stats::dpois(1,EPL_fixtures_sot$epl_xHST) * stats::dpois(2,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_3_3 <- round(stats::dpois(3,EPL_fixtures_sot$epl_xHST) * stats::dpois(3,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_3_0 <- round(stats::dpois(3,EPL_fixtures_sot$epl_xHST) * stats::dpois(0,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_3_1 <- round(stats::dpois(3,EPL_fixtures_sot$epl_xHST) * stats::dpois(1,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_3_2 <- round(stats::dpois(3,EPL_fixtures_sot$epl_xHST) * stats::dpois(2,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_0_3 <- round(stats::dpois(0,EPL_fixtures_sot$epl_xHST) * stats::dpois(3,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_1_3 <- round(stats::dpois(1,EPL_fixtures_sot$epl_xHST) * stats::dpois(3,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_2_3 <- round(stats::dpois(2,EPL_fixtures_sot$epl_xHST) * stats::dpois(3,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_4_4 <- round(stats::dpois(4,EPL_fixtures_sot$epl_xHST) * stats::dpois(4,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_4_0 <- round(stats::dpois(4,EPL_fixtures_sot$epl_xHST) * stats::dpois(0,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_4_1 <- round(stats::dpois(4,EPL_fixtures_sot$epl_xHST) * stats::dpois(1,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_4_2 <- round(stats::dpois(4,EPL_fixtures_sot$epl_xHST) * stats::dpois(2,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_4_3 <- round(stats::dpois(4,EPL_fixtures_sot$epl_xHST) * stats::dpois(3,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_0_4 <- round(stats::dpois(0,EPL_fixtures_sot$epl_xHST) * stats::dpois(4,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_1_4 <- round(stats::dpois(1,EPL_fixtures_sot$epl_xHST) * stats::dpois(4,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_2_4 <- round(stats::dpois(2,EPL_fixtures_sot$epl_xHST) * stats::dpois(4,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_3_4 <- round(stats::dpois(3,EPL_fixtures_sot$epl_xHST) * stats::dpois(4,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_5_5 <- round(stats::dpois(5,EPL_fixtures_sot$epl_xHST) * stats::dpois(5,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_5_0 <- round(stats::dpois(5,EPL_fixtures_sot$epl_xHST) * stats::dpois(0,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_5_1 <- round(stats::dpois(5,EPL_fixtures_sot$epl_xHST) * stats::dpois(1,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_5_2 <- round(stats::dpois(5,EPL_fixtures_sot$epl_xHST) * stats::dpois(2,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_5_3 <- round(stats::dpois(5,EPL_fixtures_sot$epl_xHST) * stats::dpois(3,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_5_4 <- round(stats::dpois(5,EPL_fixtures_sot$epl_xHST) * stats::dpois(4,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_0_5 <- round(stats::dpois(0,EPL_fixtures_sot$epl_xHST) * stats::dpois(5,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_1_5 <- round(stats::dpois(1,EPL_fixtures_sot$epl_xHST) * stats::dpois(5,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_2_5 <- round(stats::dpois(2,EPL_fixtures_sot$epl_xHST) * stats::dpois(5,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_3_5 <- round(stats::dpois(3,EPL_fixtures_sot$epl_xHST) * stats::dpois(5,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_4_5 <- round(stats::dpois(4,EPL_fixtures_sot$epl_xHST) * stats::dpois(5,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_6_6 <- round(stats::dpois(6,EPL_fixtures_sot$epl_xHST) * stats::dpois(6,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_6_0 <- round(stats::dpois(6,EPL_fixtures_sot$epl_xHST) * stats::dpois(0,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_6_1 <- round(stats::dpois(6,EPL_fixtures_sot$epl_xHST) * stats::dpois(1,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_6_2 <- round(stats::dpois(6,EPL_fixtures_sot$epl_xHST) * stats::dpois(2,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_6_3 <- round(stats::dpois(6,EPL_fixtures_sot$epl_xHST) * stats::dpois(3,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_6_4 <- round(stats::dpois(6,EPL_fixtures_sot$epl_xHST) * stats::dpois(4,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_6_5 <- round(stats::dpois(6,EPL_fixtures_sot$epl_xHST) * stats::dpois(5,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_0_6 <- round(stats::dpois(0,EPL_fixtures_sot$epl_xHST) * stats::dpois(6,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_1_6 <- round(stats::dpois(1,EPL_fixtures_sot$epl_xHST) * stats::dpois(6,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_2_6 <- round(stats::dpois(2,EPL_fixtures_sot$epl_xHST) * stats::dpois(6,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_3_6 <- round(stats::dpois(3,EPL_fixtures_sot$epl_xHST) * stats::dpois(6,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_4_6 <- round(stats::dpois(4,EPL_fixtures_sot$epl_xHST) * stats::dpois(6,EPL_fixtures_sot$epl_xAST), digits = 4)
+EPL_fixtures_sot$epl_5_6 <- round(stats::dpois(5,EPL_fixtures_sot$epl_xHST) * stats::dpois(6,EPL_fixtures_sot$epl_xAST), digits = 4)
 #Home win
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_H <- (
-  BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_5
+EPL_fixtures_sot$epl_H <- (
+  EPL_fixtures_sot$epl_1_0 + EPL_fixtures_sot$epl_2_0 + EPL_fixtures_sot$epl_2_1 + EPL_fixtures_sot$epl_3_0 + EPL_fixtures_sot$epl_3_1 +
+    EPL_fixtures_sot$epl_3_2 + EPL_fixtures_sot$epl_4_0 + EPL_fixtures_sot$epl_4_1 + EPL_fixtures_sot$epl_4_2 + EPL_fixtures_sot$epl_4_3 +
+    EPL_fixtures_sot$epl_5_0 + EPL_fixtures_sot$epl_5_1 + EPL_fixtures_sot$epl_5_2 + EPL_fixtures_sot$epl_5_3 + EPL_fixtures_sot$epl_5_4 +
+    EPL_fixtures_sot$epl_6_0 + EPL_fixtures_sot$epl_6_1 + EPL_fixtures_sot$epl_6_2 + EPL_fixtures_sot$epl_6_3 + EPL_fixtures_sot$epl_6_4 +
+    EPL_fixtures_sot$epl_6_5
 )
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_H <- percent(BUNDESLIGATWO_fixtures_sot$bundesligatwo_H, accuracy = 0.1)
+EPL_fixtures_sot$epl_H <- percent(EPL_fixtures_sot$epl_H, accuracy = 0.1)
 
 #Draw
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_D <- (
+EPL_fixtures_sot$epl_D <- (
 
-  BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_4 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_6
+  EPL_fixtures_sot$epl_0_0 + EPL_fixtures_sot$epl_1_1 + EPL_fixtures_sot$epl_2_2 + EPL_fixtures_sot$epl_3_3 + EPL_fixtures_sot$epl_4_4 +
+    EPL_fixtures_sot$epl_5_5 + EPL_fixtures_sot$epl_6_6
 )
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_D <- percent(BUNDESLIGATWO_fixtures_sot$bundesligatwo_D, accuracy = 0.1)
+EPL_fixtures_sot$epl_D <- percent(EPL_fixtures_sot$epl_D, accuracy = 0.1)
 
 #Away
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_A <- (
-  BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_6
+EPL_fixtures_sot$epl_A <- (
+  EPL_fixtures_sot$epl_0_1 + EPL_fixtures_sot$epl_0_2 + EPL_fixtures_sot$epl_1_2 + EPL_fixtures_sot$epl_0_3 + EPL_fixtures_sot$epl_1_3 +
+    EPL_fixtures_sot$epl_2_3 + EPL_fixtures_sot$epl_0_4 + EPL_fixtures_sot$epl_1_4 + EPL_fixtures_sot$epl_2_4 + EPL_fixtures_sot$epl_3_4 +
+    EPL_fixtures_sot$epl_0_5 + EPL_fixtures_sot$epl_1_5 + EPL_fixtures_sot$epl_2_5 + EPL_fixtures_sot$epl_3_5 + EPL_fixtures_sot$epl_4_5 +
+    EPL_fixtures_sot$epl_0_6 + EPL_fixtures_sot$epl_1_6 + EPL_fixtures_sot$epl_2_6 + EPL_fixtures_sot$epl_3_6 + EPL_fixtures_sot$epl_4_6 +
+    EPL_fixtures_sot$epl_5_6
 )
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_A <- percent(BUNDESLIGATWO_fixtures_sot$bundesligatwo_A, accuracy = 0.1)
+EPL_fixtures_sot$epl_A <- percent(EPL_fixtures_sot$epl_A, accuracy = 0.1)
 
 #ov25
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_ov25 <- (
-  BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_4 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_4 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_0 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_4 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_5 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_5 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_3_6 +
-    BUNDESLIGATWO_fixtures_sot$bundesligatwo_4_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_5_6 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_6_6
+EPL_fixtures_sot$epl_ov25 <- (
+  EPL_fixtures_sot$epl_2_1 + EPL_fixtures_sot$epl_1_2 + EPL_fixtures_sot$epl_2_2 + EPL_fixtures_sot$epl_3_0 + EPL_fixtures_sot$epl_3_1 +
+    EPL_fixtures_sot$epl_3_2 + EPL_fixtures_sot$epl_0_3 + EPL_fixtures_sot$epl_1_3 + EPL_fixtures_sot$epl_2_3 + EPL_fixtures_sot$epl_3_3 +
+    EPL_fixtures_sot$epl_4_0 + EPL_fixtures_sot$epl_4_1 + EPL_fixtures_sot$epl_4_2 + EPL_fixtures_sot$epl_4_3 + EPL_fixtures_sot$epl_0_4 +
+    EPL_fixtures_sot$epl_1_4 + EPL_fixtures_sot$epl_2_4 + EPL_fixtures_sot$epl_3_4 + EPL_fixtures_sot$epl_4_4 + EPL_fixtures_sot$epl_5_0 +
+    EPL_fixtures_sot$epl_5_1 + EPL_fixtures_sot$epl_5_2 + EPL_fixtures_sot$epl_5_3 + EPL_fixtures_sot$epl_5_4 + EPL_fixtures_sot$epl_0_5 +
+    EPL_fixtures_sot$epl_1_5 + EPL_fixtures_sot$epl_2_5 + EPL_fixtures_sot$epl_3_5 + EPL_fixtures_sot$epl_4_5 + EPL_fixtures_sot$epl_5_5 +
+    EPL_fixtures_sot$epl_6_0 + EPL_fixtures_sot$epl_6_1 + EPL_fixtures_sot$epl_6_2 + EPL_fixtures_sot$epl_6_3 + EPL_fixtures_sot$epl_6_4 +
+    EPL_fixtures_sot$epl_6_5 + EPL_fixtures_sot$epl_0_6 + EPL_fixtures_sot$epl_1_6 + EPL_fixtures_sot$epl_2_6 + EPL_fixtures_sot$epl_3_6 +
+    EPL_fixtures_sot$epl_4_6 + EPL_fixtures_sot$epl_5_6 + EPL_fixtures_sot$epl_6_6
 )
 #un25
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_un25 <- (
-  BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures_sot$bundesligatwo_0_2
+EPL_fixtures_sot$epl_un25 <- (
+  EPL_fixtures_sot$epl_0_0 + EPL_fixtures_sot$epl_1_0 + EPL_fixtures_sot$epl_0_1 + EPL_fixtures_sot$epl_1_1 + EPL_fixtures_sot$epl_2_0 + EPL_fixtures_sot$epl_0_2
 )
 #odds
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_ov25_odds <- round((1/BUNDESLIGATWO_fixtures_sot$bundesligatwo_ov25),digits = 2)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_un25_odds <- round((1/BUNDESLIGATWO_fixtures_sot$bundesligatwo_un25),digits = 2)
+EPL_fixtures_sot$epl_ov25_odds <- round((1/EPL_fixtures_sot$epl_ov25),digits = 2)
+EPL_fixtures_sot$epl_un25_odds <- round((1/EPL_fixtures_sot$epl_un25),digits = 2)
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_ov25_odds
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_un25_odds
+EPL_fixtures_sot$epl_ov25_odds
+EPL_fixtures_sot$epl_un25_odds
 ###############################################################################
 
 ########Asian Handicaps######################################################################################################
 #percentages
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_ov25 <- percent(BUNDESLIGATWO_fixtures_sot$bundesligatwo_ov25, accuracy = 0.1)
+EPL_fixtures_sot$epl_ov25 <- percent(EPL_fixtures_sot$epl_ov25, accuracy = 0.1)
 
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_un25 <- percent(BUNDESLIGATWO_fixtures_sot$bundesligatwo_un25, accuracy = 0.1)
-BUNDESLIGATWO_fixtures_sot$bundesligatwo_pssotre <- paste(round(BUNDESLIGATWO_fixtures_sot$bundesligatwo_xHST,digits = 0),round(BUNDESLIGATWO_fixtures_sot$bundesligatwo_xAST,digits = 0),sep = "-")
+EPL_fixtures_sot$epl_un25 <- percent(EPL_fixtures_sot$epl_un25, accuracy = 0.1)
+EPL_fixtures_sot$epl_pssotre <- paste(round(EPL_fixtures_sot$epl_xHST,digits = 0),round(EPL_fixtures_sot$epl_xAST,digits = 0),sep = "-")
 ######################################################################################################################################################
 #league table
 #B1
 #hwins and away wins
-bundesligatwo_home_wins <- c()
-bundesligatwo_away_wins <- c()
-bundesligatwo_home_draws <- c()
-bundesligatwo_away_draws <- c()
-bundesligatwo_home_loss <- c()
-bundesligatwo_away_loss <- c()
+epl_home_wins <- c()
+epl_away_wins <- c()
+epl_home_draws <- c()
+epl_away_draws <- c()
+epl_home_loss <- c()
+epl_away_loss <- c()
 
 
 
-for (i_bundesligatwo_wins in 1:length(bundesligatwo_teams))
+for (i_epl_wins in 1:length(epl_teams))
 {
 
-  bundesligatwo_home_wins[i_bundesligatwo_wins] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_wins] & BUNDESLIGATWO$FTR == "H",])
-  bundesligatwo_away_wins[i_bundesligatwo_wins] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_wins] & BUNDESLIGATWO$FTR == "A",])
-  bundesligatwo_home_draws[i_bundesligatwo_wins] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_wins] & BUNDESLIGATWO$FTR == "D",])
-  bundesligatwo_away_draws[i_bundesligatwo_wins] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_wins] & BUNDESLIGATWO$FTR == "D",])
-  bundesligatwo_home_loss[i_bundesligatwo_wins] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$HomeTeam == bundesligatwo_teams[i_bundesligatwo_wins] & BUNDESLIGATWO$FTR == "A",])
-  bundesligatwo_away_loss[i_bundesligatwo_wins] <- nrow(BUNDESLIGATWO[BUNDESLIGATWO$AwayTeam == bundesligatwo_teams[i_bundesligatwo_wins] & BUNDESLIGATWO$FTR == "H",])
+  epl_home_wins[i_epl_wins] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_wins] & EPL$FTR == "H",])
+  epl_away_wins[i_epl_wins] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_wins] & EPL$FTR == "A",])
+  epl_home_draws[i_epl_wins] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_wins] & EPL$FTR == "D",])
+  epl_away_draws[i_epl_wins] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_wins] & EPL$FTR == "D",])
+  epl_home_loss[i_epl_wins] <- nrow(EPL[EPL$HomeTeam == epl_teams[i_epl_wins] & EPL$FTR == "A",])
+  epl_away_loss[i_epl_wins] <- nrow(EPL[EPL$AwayTeam == epl_teams[i_epl_wins] & EPL$FTR == "H",])
 
 }
 
-bundesligatwo_total_wins <- bundesligatwo_home_wins + bundesligatwo_away_wins
-bundesligatwo_total_draws <- bundesligatwo_home_draws + bundesligatwo_away_draws
-bundesligatwo_total_loss <- bundesligatwo_home_loss + bundesligatwo_away_loss
+epl_total_wins <- epl_home_wins + epl_away_wins
+epl_total_draws <- epl_home_draws + epl_away_draws
+epl_total_loss <- epl_home_loss + epl_away_loss
 
-bundesligatwo_league_table <- cbind(bundesligatwo_teams,bundesligatwo_games_played,bundesligatwo_total_wins,bundesligatwo_total_draws,bundesligatwo_total_loss)
-bundesligatwo_GS <- bundesligatwo_scoring$TGS
-bundesligatwo_GC <-bundesligatwo_conceding$TGC
-bundesligatwo_GD <- bundesligatwo_scoring$TGS - bundesligatwo_conceding$TGC
-bundesligatwo_PTS <- (bundesligatwo_total_wins*3) + (bundesligatwo_total_draws*1)
-bundesligatwo_league_table <- cbind(bundesligatwo_league_table,bundesligatwo_GS,bundesligatwo_GC,bundesligatwo_GD,bundesligatwo_PTS)
-bundesligatwo_league_table <- as.data.frame(bundesligatwo_league_table)
+epl_league_table <- cbind(epl_teams,epl_games_played,epl_total_wins,epl_total_draws,epl_total_loss)
+epl_GS <- epl_scoring$TGS
+epl_GC <-epl_conceding$TGC
+epl_GD <- epl_scoring$TGS - epl_conceding$TGC
+epl_PTS <- (epl_total_wins*3) + (epl_total_draws*1)
+epl_league_table <- cbind(epl_league_table,epl_GS,epl_GC,epl_GD,epl_PTS)
+epl_league_table <- as.data.frame(epl_league_table)
 #rename the columns
-names(bundesligatwo_league_table)[names(bundesligatwo_league_table) == "bundesligatwo_teams"] <- "Team"
-names(bundesligatwo_league_table)[names(bundesligatwo_league_table) == "bundesligatwo_games_played"] <- "P"
-names(bundesligatwo_league_table)[names(bundesligatwo_league_table) == "bundesligatwo_total_wins"] <- "W"
-names(bundesligatwo_league_table)[names(bundesligatwo_league_table) == "bundesligatwo_total_draws"] <- "D"
-names(bundesligatwo_league_table)[names(bundesligatwo_league_table) == "bundesligatwo_total_loss"] <- "L"
-names(bundesligatwo_league_table)[names(bundesligatwo_league_table) == "bundesligatwo_GS"] <- "F"
-names(bundesligatwo_league_table)[names(bundesligatwo_league_table) == "bundesligatwo_GC"] <- "A"
-points_bundesligatwo <- bundesligatwo_league_table[order(as.numeric(bundesligatwo_league_table$bundesligatwo_PTS), decreasing = TRUE),]
-points_bundesligatwo$bundesligatwo_rank <- 1:length(bundesligatwo_teams)
-row.names(points_bundesligatwo) <- points_bundesligatwo$bundesligatwo_rank
-#create final_bundesligatwo_hf_against with team ranks in brackets
-for(bundesligatwo_rowhrank in 1:nrow(bundesligatwo_form_team_against_h)) {
-  for(bundesligatwo_colhrank in 1:ncol(bundesligatwo_form_team_against_h)) {
+names(epl_league_table)[names(epl_league_table) == "epl_teams"] <- "Team"
+names(epl_league_table)[names(epl_league_table) == "epl_games_played"] <- "P"
+names(epl_league_table)[names(epl_league_table) == "epl_total_wins"] <- "W"
+names(epl_league_table)[names(epl_league_table) == "epl_total_draws"] <- "D"
+names(epl_league_table)[names(epl_league_table) == "epl_total_loss"] <- "L"
+names(epl_league_table)[names(epl_league_table) == "epl_GS"] <- "F"
+names(epl_league_table)[names(epl_league_table) == "epl_GC"] <- "A"
+points_epl <- epl_league_table[order(as.numeric(epl_league_table$epl_PTS), decreasing = TRUE),]
+points_epl$epl_rank <- 1:length(epl_teams)
+row.names(points_epl) <- points_epl$epl_rank
+#create final_epl_hf_against with team ranks in brackets
+for(epl_rowhrank in 1:nrow(epl_form_team_against_h)) {
+  for(epl_colhrank in 1:ncol(epl_form_team_against_h)) {
 
     # print(my_matrix[row, col])
 
-    ifelse(!bundesligatwo_form_team_against_h[bundesligatwo_rowhrank,bundesligatwo_colhrank]=="",bundesligatwo_form_team_against_h[bundesligatwo_rowhrank,bundesligatwo_colhrank] <- paste(bundesligatwo_form_team_against_h[bundesligatwo_rowhrank,bundesligatwo_colhrank],"(",points_bundesligatwo$bundesligatwo_rank[points_bundesligatwo$Team ==bundesligatwo_form_team_against_h[bundesligatwo_rowhrank,bundesligatwo_colhrank]],")",sep = ""),next)
+    ifelse(!epl_form_team_against_h[epl_rowhrank,epl_colhrank]=="",epl_form_team_against_h[epl_rowhrank,epl_colhrank] <- paste(epl_form_team_against_h[epl_rowhrank,epl_colhrank],"(",points_epl$epl_rank[points_epl$Team ==epl_form_team_against_h[epl_rowhrank,epl_colhrank]],")",sep = ""),next)
     #print(my_matrix[row, col])
 
 
@@ -1402,1101 +1403,1101 @@ for(bundesligatwo_rowhrank in 1:nrow(bundesligatwo_form_team_against_h)) {
 #################################################################################################################################################
 #################################################################################################################################################
 #poisson model
-bundesligatwo_GP <- nrow(BUNDESLIGATWO)
+epl_GP <- nrow(EPL)
 
 #Calculate total home goals for each division
-bundesligatwo_T_HG <- sum(bundesligatwo_home_gs$x)
+epl_T_HG <- sum(epl_home_gs$x)
 
 #calculate average home goal
-bundesligatwo_avg_HG <- round(bundesligatwo_T_HG /bundesligatwo_GP, digits = 4)
+epl_avg_HG <- round(epl_T_HG /epl_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-bundesligatwo_T_AG <- sum(bundesligatwo_away_gs$x)
+epl_T_AG <- sum(epl_away_gs$x)
 #calculate average away goal
-bundesligatwo_avg_AG <- round(bundesligatwo_T_AG /bundesligatwo_GP, digits = 4)
+epl_avg_AG <- round(epl_T_AG /epl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-bundesligatwo_home_as <- round(((bundesligatwo_home_gs$x/bundesligatwo_home_games))/bundesligatwo_avg_HG, digits = 4)
+epl_home_as <- round(((epl_home_gs$x/epl_home_games))/epl_avg_HG, digits = 4)
 #calculate away attack strength
-bundesligatwo_away_as <- round(((bundesligatwo_away_gs$x/bundesligatwo_away_games))/bundesligatwo_avg_AG, digits = 4)
+epl_away_as <- round(((epl_away_gs$x/epl_away_games))/epl_avg_AG, digits = 4)
 ################################################################################
 #get average home concede and away concede
-bundesligatwo_avg_HC <- round(bundesligatwo_T_AG /bundesligatwo_GP, digits = 4)
+epl_avg_HC <- round(epl_T_AG /epl_GP, digits = 4)
 #avg away concede
-bundesligatwo_avg_AC <- round(bundesligatwo_T_HG /bundesligatwo_GP, digits = 4)
+epl_avg_AC <- round(epl_T_HG /epl_GP, digits = 4)
 #calculate home and away defense strength
 #home defense strength
-bundesligatwo_home_ds <- round(((bundesligatwo_home_gc$x/bundesligatwo_home_games))/bundesligatwo_avg_HC, digits = 4)
+epl_home_ds <- round(((epl_home_gc$x/epl_home_games))/epl_avg_HC, digits = 4)
 #away defense strength
-bundesligatwo_away_ds <- round(((bundesligatwo_away_gc$x/bundesligatwo_away_games))/bundesligatwo_avg_AC, digits = 4)
+epl_away_ds <- round(((epl_away_gc$x/epl_away_games))/epl_avg_AC, digits = 4)
 #############################################################################
 #home poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_home_poisson <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_HG,bundesligatwo_home_as,bundesligatwo_home_ds)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_home_poisson <- cbind(epl_division,epl_teams,epl_avg_HG,epl_home_as,epl_home_ds)
 #################################################################################
 #away poisson data
-#bundesligatwo
-bundesligatwo_division <- c()
-bundesligatwo_division[1:length(bundesligatwo_teams)] <- "BUNDESLIGATWO"
-bundesligatwo_away_poisson <- cbind(bundesligatwo_division,bundesligatwo_teams,bundesligatwo_avg_AG,bundesligatwo_away_as,bundesligatwo_away_ds)
+#epl
+epl_division <- c()
+epl_division[1:length(epl_teams)] <- "EPL"
+epl_away_poisson <- cbind(epl_division,epl_teams,epl_avg_AG,epl_away_as,epl_away_ds)
 
-#BUNDESLIGATWO
-HomeTeam_bundesligatwo <- rep(bundesligatwo_teams, each = length(bundesligatwo_teams))
-AwayTeam_bundesligatwo <- rep(bundesligatwo_teams, length(bundesligatwo_teams))
-BUNDESLIGATWO_fixtures <- cbind(HomeTeam_bundesligatwo,AwayTeam_bundesligatwo)
-BUNDESLIGATWO_fixtures <- as.data.frame(BUNDESLIGATWO_fixtures)
-BUNDESLIGATWO_fixtures <- BUNDESLIGATWO_fixtures[!BUNDESLIGATWO_fixtures$HomeTeam_bundesligatwo == BUNDESLIGATWO_fixtures$AwayTeam_bundesligatwo,]
-rownames(BUNDESLIGATWO_fixtures) <- NULL
-BUNDESLIGATWO_fixtures$Div <- "BUNDESLIGATWO"
-BUNDESLIGATWO_fixtures <- BUNDESLIGATWO_fixtures[,c(3,1,2)]
+#EPL
+HomeTeam_epl <- rep(epl_teams, each = length(epl_teams))
+AwayTeam_epl <- rep(epl_teams, length(epl_teams))
+EPL_fixtures <- cbind(HomeTeam_epl,AwayTeam_epl)
+EPL_fixtures <- as.data.frame(EPL_fixtures)
+EPL_fixtures <- EPL_fixtures[!EPL_fixtures$HomeTeam_epl == EPL_fixtures$AwayTeam_epl,]
+rownames(EPL_fixtures) <- NULL
+EPL_fixtures$Div <- "EPL"
+EPL_fixtures <- EPL_fixtures[,c(3,1,2)]
 
-BUNDESLIGATWO_fixtures$avg_HG_bundesligatwo <- bundesligatwo_avg_HG
+EPL_fixtures$avg_HG_epl <- epl_avg_HG
 
-BUNDESLIGATWO_fixtures$bundesligatwo_homeas <- rep(bundesligatwo_home_as,each = length(bundesligatwo_teams)-1)
+EPL_fixtures$epl_homeas <- rep(epl_home_as,each = length(epl_teams)-1)
 
-bundesligatwo_awayds_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_ds)
+epl_awayds_lookup <- cbind(epl_teams,epl_away_ds)
 
-bundesligatwo_awayds_lookup <- as.data.frame(bundesligatwo_awayds_lookup)
+epl_awayds_lookup <- as.data.frame(epl_awayds_lookup)
 
-colnames(bundesligatwo_awayds_lookup) <- c("AwayTeam_bundesligatwo","bundesligatwo_awayds")
+colnames(epl_awayds_lookup) <- c("AwayTeam_epl","epl_awayds")
 
 
 require('RH2')
-BUNDESLIGATWO_fixtures$bundesligatwo_awayds <- sqldf("SELECT bundesligatwo_awayds_lookup.bundesligatwo_awayds FROM bundesligatwo_awayds_lookup INNER JOIN BUNDESLIGATWO_fixtures ON bundesligatwo_awayds_lookup.AwayTeam_bundesligatwo = BUNDESLIGATWO_fixtures.AwayTeam_bundesligatwo")
+EPL_fixtures$epl_awayds <- sqldf("SELECT epl_awayds_lookup.epl_awayds FROM epl_awayds_lookup INNER JOIN EPL_fixtures ON epl_awayds_lookup.AwayTeam_epl = EPL_fixtures.AwayTeam_epl")
 
-BUNDESLIGATWO_fixtures$avg_AG_bundesligatwo <- bundesligatwo_avg_AG
+EPL_fixtures$avg_AG_epl <- epl_avg_AG
 
-bundesligatwo_awayas_lookup <- cbind(bundesligatwo_teams,bundesligatwo_away_as)
+epl_awayas_lookup <- cbind(epl_teams,epl_away_as)
 
-bundesligatwo_awayas_lookup <- as.data.frame(bundesligatwo_awayas_lookup)
+epl_awayas_lookup <- as.data.frame(epl_awayas_lookup)
 
-colnames(bundesligatwo_awayas_lookup) <- c("AwayTeam_bundesligatwo","bundesligatwo_awayas")
+colnames(epl_awayas_lookup) <- c("AwayTeam_epl","epl_awayas")
 
 
-BUNDESLIGATWO_fixtures$bundesligatwo_awayas <- sqldf("SELECT bundesligatwo_awayas_lookup.bundesligatwo_awayas FROM bundesligatwo_awayas_lookup INNER JOIN BUNDESLIGATWO_fixtures ON bundesligatwo_awayas_lookup.AwayTeam_bundesligatwo = BUNDESLIGATWO_fixtures.AwayTeam_bundesligatwo")
+EPL_fixtures$epl_awayas <- sqldf("SELECT epl_awayas_lookup.epl_awayas FROM epl_awayas_lookup INNER JOIN EPL_fixtures ON epl_awayas_lookup.AwayTeam_epl = EPL_fixtures.AwayTeam_epl")
 
-BUNDESLIGATWO_fixtures$bundesligatwo_homeds <- rep(bundesligatwo_home_ds,each = length(bundesligatwo_teams)-1)
+EPL_fixtures$epl_homeds <- rep(epl_home_ds,each = length(epl_teams)-1)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_awayds <- as.numeric(unlist(BUNDESLIGATWO_fixtures$bundesligatwo_awayds))
+EPL_fixtures$epl_awayds <- as.numeric(unlist(EPL_fixtures$epl_awayds))
 #xGH
-BUNDESLIGATWO_fixtures$bundesligatwo_xGH <- BUNDESLIGATWO_fixtures$avg_HG_bundesligatwo * BUNDESLIGATWO_fixtures$bundesligatwo_homeas * BUNDESLIGATWO_fixtures$bundesligatwo_awayds
+EPL_fixtures$epl_xGH <- EPL_fixtures$avg_HG_epl * EPL_fixtures$epl_homeas * EPL_fixtures$epl_awayds
 
 #xGA
 
-BUNDESLIGATWO_fixtures$bundesligatwo_awayas <- as.numeric(unlist(BUNDESLIGATWO_fixtures$bundesligatwo_awayas))
+EPL_fixtures$epl_awayas <- as.numeric(unlist(EPL_fixtures$epl_awayas))
 
-BUNDESLIGATWO_fixtures$bundesligatwo_xGA <- BUNDESLIGATWO_fixtures$avg_AG_bundesligatwo * BUNDESLIGATWO_fixtures$bundesligatwo_awayas * BUNDESLIGATWO_fixtures$bundesligatwo_homeds
+EPL_fixtures$epl_xGA <- EPL_fixtures$avg_AG_epl * EPL_fixtures$epl_awayas * EPL_fixtures$epl_homeds
 
-BUNDESLIGATWO_fixtures$bundesligatwo_0_0 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_1_0 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_0_1 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_1_1 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_2_0 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_0_2 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_2_2 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_2_1 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_1_2 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_3_3 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_3_0 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_3_1 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_3_2 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_0_3 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_1_3 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_2_3 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_4_4 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_4_0 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_4_1 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_4_2 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_4_3 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_0_4 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_1_4 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_2_4 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_3_4 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_5_5 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_5_0 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_5_1 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_5_2 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_5_3 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_5_4 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_0_5 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_1_5 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_2_5 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_3_5 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_4_5 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_6_6 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_6_0 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_6_1 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_6_2 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_6_3 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_6_4 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_6_5 <- round(stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_0_6 <- round(stats::dpois(0,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_1_6 <- round(stats::dpois(1,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_2_6 <- round(stats::dpois(2,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_3_6 <- round(stats::dpois(3,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_4_6 <- round(stats::dpois(4,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
-BUNDESLIGATWO_fixtures$bundesligatwo_5_6 <- round(stats::dpois(5,BUNDESLIGATWO_fixtures$bundesligatwo_xGH) * stats::dpois(6,BUNDESLIGATWO_fixtures$bundesligatwo_xGA), digits = 4)
+EPL_fixtures$epl_0_0 <- round(stats::dpois(0,EPL_fixtures$epl_xGH) * stats::dpois(0,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_1_0 <- round(stats::dpois(1,EPL_fixtures$epl_xGH) * stats::dpois(0,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_0_1 <- round(stats::dpois(0,EPL_fixtures$epl_xGH) * stats::dpois(1,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_1_1 <- round(stats::dpois(1,EPL_fixtures$epl_xGH) * stats::dpois(1,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_2_0 <- round(stats::dpois(2,EPL_fixtures$epl_xGH) * stats::dpois(0,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_0_2 <- round(stats::dpois(0,EPL_fixtures$epl_xGH) * stats::dpois(2,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_2_2 <- round(stats::dpois(2,EPL_fixtures$epl_xGH) * stats::dpois(2,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_2_1 <- round(stats::dpois(2,EPL_fixtures$epl_xGH) * stats::dpois(1,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_1_2 <- round(stats::dpois(1,EPL_fixtures$epl_xGH) * stats::dpois(2,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_3_3 <- round(stats::dpois(3,EPL_fixtures$epl_xGH) * stats::dpois(3,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_3_0 <- round(stats::dpois(3,EPL_fixtures$epl_xGH) * stats::dpois(0,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_3_1 <- round(stats::dpois(3,EPL_fixtures$epl_xGH) * stats::dpois(1,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_3_2 <- round(stats::dpois(3,EPL_fixtures$epl_xGH) * stats::dpois(2,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_0_3 <- round(stats::dpois(0,EPL_fixtures$epl_xGH) * stats::dpois(3,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_1_3 <- round(stats::dpois(1,EPL_fixtures$epl_xGH) * stats::dpois(3,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_2_3 <- round(stats::dpois(2,EPL_fixtures$epl_xGH) * stats::dpois(3,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_4_4 <- round(stats::dpois(4,EPL_fixtures$epl_xGH) * stats::dpois(4,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_4_0 <- round(stats::dpois(4,EPL_fixtures$epl_xGH) * stats::dpois(0,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_4_1 <- round(stats::dpois(4,EPL_fixtures$epl_xGH) * stats::dpois(1,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_4_2 <- round(stats::dpois(4,EPL_fixtures$epl_xGH) * stats::dpois(2,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_4_3 <- round(stats::dpois(4,EPL_fixtures$epl_xGH) * stats::dpois(3,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_0_4 <- round(stats::dpois(0,EPL_fixtures$epl_xGH) * stats::dpois(4,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_1_4 <- round(stats::dpois(1,EPL_fixtures$epl_xGH) * stats::dpois(4,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_2_4 <- round(stats::dpois(2,EPL_fixtures$epl_xGH) * stats::dpois(4,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_3_4 <- round(stats::dpois(3,EPL_fixtures$epl_xGH) * stats::dpois(4,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_5_5 <- round(stats::dpois(5,EPL_fixtures$epl_xGH) * stats::dpois(5,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_5_0 <- round(stats::dpois(5,EPL_fixtures$epl_xGH) * stats::dpois(0,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_5_1 <- round(stats::dpois(5,EPL_fixtures$epl_xGH) * stats::dpois(1,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_5_2 <- round(stats::dpois(5,EPL_fixtures$epl_xGH) * stats::dpois(2,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_5_3 <- round(stats::dpois(5,EPL_fixtures$epl_xGH) * stats::dpois(3,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_5_4 <- round(stats::dpois(5,EPL_fixtures$epl_xGH) * stats::dpois(4,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_0_5 <- round(stats::dpois(0,EPL_fixtures$epl_xGH) * stats::dpois(5,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_1_5 <- round(stats::dpois(1,EPL_fixtures$epl_xGH) * stats::dpois(5,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_2_5 <- round(stats::dpois(2,EPL_fixtures$epl_xGH) * stats::dpois(5,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_3_5 <- round(stats::dpois(3,EPL_fixtures$epl_xGH) * stats::dpois(5,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_4_5 <- round(stats::dpois(4,EPL_fixtures$epl_xGH) * stats::dpois(5,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_6_6 <- round(stats::dpois(6,EPL_fixtures$epl_xGH) * stats::dpois(6,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_6_0 <- round(stats::dpois(6,EPL_fixtures$epl_xGH) * stats::dpois(0,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_6_1 <- round(stats::dpois(6,EPL_fixtures$epl_xGH) * stats::dpois(1,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_6_2 <- round(stats::dpois(6,EPL_fixtures$epl_xGH) * stats::dpois(2,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_6_3 <- round(stats::dpois(6,EPL_fixtures$epl_xGH) * stats::dpois(3,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_6_4 <- round(stats::dpois(6,EPL_fixtures$epl_xGH) * stats::dpois(4,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_6_5 <- round(stats::dpois(6,EPL_fixtures$epl_xGH) * stats::dpois(5,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_0_6 <- round(stats::dpois(0,EPL_fixtures$epl_xGH) * stats::dpois(6,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_1_6 <- round(stats::dpois(1,EPL_fixtures$epl_xGH) * stats::dpois(6,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_2_6 <- round(stats::dpois(2,EPL_fixtures$epl_xGH) * stats::dpois(6,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_3_6 <- round(stats::dpois(3,EPL_fixtures$epl_xGH) * stats::dpois(6,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_4_6 <- round(stats::dpois(4,EPL_fixtures$epl_xGH) * stats::dpois(6,EPL_fixtures$epl_xGA), digits = 4)
+EPL_fixtures$epl_5_6 <- round(stats::dpois(5,EPL_fixtures$epl_xGH) * stats::dpois(6,EPL_fixtures$epl_xGA), digits = 4)
 #Home win
-BUNDESLIGATWO_fixtures$bundesligatwo_H <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_0 + BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_5
+EPL_fixtures$epl_H <- (
+  EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_2_1 + EPL_fixtures$epl_3_0 + EPL_fixtures$epl_3_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_0 + EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_4_3 +
+    EPL_fixtures$epl_5_0 + EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 + EPL_fixtures$epl_5_4 +
+    EPL_fixtures$epl_6_0 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+    EPL_fixtures$epl_6_5
 )
 
-BUNDESLIGATWO_fixtures$bundesligatwo_H <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_H, accuracy = 0.1)
+EPL_fixtures$epl_H <- percent(EPL_fixtures$epl_H, accuracy = 0.1)
 
 #Draw
-BUNDESLIGATWO_fixtures$bundesligatwo_D <- (
+EPL_fixtures$epl_D <- (
 
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 + BUNDESLIGATWO_fixtures$bundesligatwo_4_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6
+  EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_3 + EPL_fixtures$epl_4_4 +
+    EPL_fixtures$epl_5_5 + EPL_fixtures$epl_6_6
 )
 
-BUNDESLIGATWO_fixtures$bundesligatwo_D <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_D, accuracy = 0.1)
+EPL_fixtures$epl_D <- percent(EPL_fixtures$epl_D, accuracy = 0.1)
 
 #Away
 
-BUNDESLIGATWO_fixtures$bundesligatwo_A <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_5 + BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_6
+EPL_fixtures$epl_A <- (
+  EPL_fixtures$epl_0_1 + EPL_fixtures$epl_0_2 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_1_3 +
+    EPL_fixtures$epl_2_3 + EPL_fixtures$epl_0_4 + EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 + EPL_fixtures$epl_3_4 +
+    EPL_fixtures$epl_0_5 + EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 +
+    EPL_fixtures$epl_0_6 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 + EPL_fixtures$epl_4_6 +
+    EPL_fixtures$epl_5_6
 )
 
-BUNDESLIGATWO_fixtures$bundesligatwo_A <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_A, accuracy = 0.1)
+EPL_fixtures$epl_A <- percent(EPL_fixtures$epl_A, accuracy = 0.1)
 
 #ov25
-BUNDESLIGATWO_fixtures$bundesligatwo_ov25 <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 + BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 + BUNDESLIGATWO_fixtures$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_0 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 + BUNDESLIGATWO_fixtures$bundesligatwo_0_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 + BUNDESLIGATWO_fixtures$bundesligatwo_5_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_6 + BUNDESLIGATWO_fixtures$bundesligatwo_5_6 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6
+EPL_fixtures$epl_ov25 <- (
+  EPL_fixtures$epl_2_1 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_0 + EPL_fixtures$epl_3_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_1_3 + EPL_fixtures$epl_2_3 + EPL_fixtures$epl_3_3 +
+    EPL_fixtures$epl_4_0 + EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_4_3 + EPL_fixtures$epl_0_4 +
+    EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 + EPL_fixtures$epl_3_4 + EPL_fixtures$epl_4_4 + EPL_fixtures$epl_5_0 +
+    EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 + EPL_fixtures$epl_5_4 + EPL_fixtures$epl_0_5 +
+    EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 + EPL_fixtures$epl_5_5 +
+    EPL_fixtures$epl_6_0 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+    EPL_fixtures$epl_6_5 + EPL_fixtures$epl_0_6 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 +
+    EPL_fixtures$epl_4_6 + EPL_fixtures$epl_5_6 + EPL_fixtures$epl_6_6
 )
 #un25
-BUNDESLIGATWO_fixtures$bundesligatwo_un25 <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2
+EPL_fixtures$epl_un25 <- (
+  EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_0 + EPL_fixtures$epl_0_1 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_0_2
 )
 #odds
-BUNDESLIGATWO_fixtures$bundesligatwo_ov25_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_ov25),digits = 2)
-BUNDESLIGATWO_fixtures$bundesligatwo_un25_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_un25),digits = 2)
+EPL_fixtures$epl_ov25_odds <- round((1/EPL_fixtures$epl_ov25),digits = 2)
+EPL_fixtures$epl_un25_odds <- round((1/EPL_fixtures$epl_un25),digits = 2)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_ov25_odds
-BUNDESLIGATWO_fixtures$bundesligatwo_un25_odds
+EPL_fixtures$epl_ov25_odds
+EPL_fixtures$epl_un25_odds
 ###############################################################################
 ###BTTS########################################################################
 #BTTSY
-BUNDESLIGATWO_fixtures$bundesligatwo_BTTSY <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 + BUNDESLIGATWO_fixtures$bundesligatwo_3_2 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 + BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 + BUNDESLIGATWO_fixtures$bundesligatwo_4_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_4 + BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_6 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_6
+EPL_fixtures$epl_BTTSY <- (
+  EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_1 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_3_1 + EPL_fixtures$epl_3_2 +
+    EPL_fixtures$epl_2_2 + EPL_fixtures$epl_1_3 + EPL_fixtures$epl_2_3 + EPL_fixtures$epl_3_3 + EPL_fixtures$epl_4_4 +
+    EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_3 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 +
+    EPL_fixtures$epl_3_4 + EPL_fixtures$epl_5_5 + EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 +
+    EPL_fixtures$epl_5_4 + EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 +
+    EPL_fixtures$epl_6_6 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+    EPL_fixtures$epl_6_5 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 + EPL_fixtures$epl_4_6 +
+    EPL_fixtures$epl_5_6
 )
 #BTTSN
-BUNDESLIGATWO_fixtures$bundesligatwo_BTTSN <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_0 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_0_6
+EPL_fixtures$epl_BTTSN <- (
+  EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_0 + EPL_fixtures$epl_0_1 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_0_2 +
+    EPL_fixtures$epl_3_0 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_4_0 + EPL_fixtures$epl_0_4 + EPL_fixtures$epl_5_0 +
+    EPL_fixtures$epl_0_5 + EPL_fixtures$epl_6_0 + EPL_fixtures$epl_0_6
 )
 
-BUNDESLIGATWO_fixtures$bundesligatwo_BTTSY_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_BTTSY),digits = 2)
-BUNDESLIGATWO_fixtures$bundesligatwo_BTTSN_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_BTTSN),digits = 2)
+EPL_fixtures$epl_BTTSY_odds <- round((1/EPL_fixtures$epl_BTTSY),digits = 2)
+EPL_fixtures$epl_BTTSN_odds <- round((1/EPL_fixtures$epl_BTTSN),digits = 2)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_BTTSY <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_BTTSY, accuracy = 0.1)
-BUNDESLIGATWO_fixtures$bundesligatwo_BTTSN <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_BTTSN, accuracy = 0.1)
+EPL_fixtures$epl_BTTSY <- percent(EPL_fixtures$epl_BTTSY, accuracy = 0.1)
+EPL_fixtures$epl_BTTSN <- percent(EPL_fixtures$epl_BTTSN, accuracy = 0.1)
 #odds
-BUNDESLIGATWO_fixtures$bundesligatwo_BTTSY_odds
-BUNDESLIGATWO_fixtures$bundesligatwo_BTTSN_odds
+EPL_fixtures$epl_BTTSY_odds
+EPL_fixtures$epl_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
 #AH_0_H
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_H <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_0 +BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6
+EPL_fixtures$epl_AH_0_H <- (
+  EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_2_1 + EPL_fixtures$epl_3_0 + EPL_fixtures$epl_3_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_0 + EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_4_3 +
+    EPL_fixtures$epl_5_0 +EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 + EPL_fixtures$epl_5_4 +
+    EPL_fixtures$epl_6_0 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+    EPL_fixtures$epl_6_5 + EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_3 +
+    EPL_fixtures$epl_4_4 + EPL_fixtures$epl_5_5 + EPL_fixtures$epl_6_6
 )
 #AH_0_A
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_A <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_5 +BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_6 + BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6
+EPL_fixtures$epl_AH_0_A <- (
+  EPL_fixtures$epl_0_1 + EPL_fixtures$epl_0_2 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_1_3 +
+    EPL_fixtures$epl_2_3 + EPL_fixtures$epl_0_4 + EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 + EPL_fixtures$epl_3_4 +
+    EPL_fixtures$epl_0_5 +EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 +
+    EPL_fixtures$epl_0_6 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 + EPL_fixtures$epl_4_6 +
+    EPL_fixtures$epl_5_6 + EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_3 +
+    EPL_fixtures$epl_4_4 + EPL_fixtures$epl_5_5 + EPL_fixtures$epl_6_6
 )
 
 #odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_H_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_H),digits = 2)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_A_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_A),digits = 2)
+EPL_fixtures$epl_AH_0_H_odds <- round((1/EPL_fixtures$epl_AH_0_H),digits = 2)
+EPL_fixtures$epl_AH_0_A_odds <- round((1/EPL_fixtures$epl_AH_0_A),digits = 2)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_H_odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_A_odds
+EPL_fixtures$epl_AH_0_H_odds
+EPL_fixtures$epl_AH_0_A_odds
 #percentages
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_H <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_H, accuracy = 0.1)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_A <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_0_A, accuracy = 0.1)
+EPL_fixtures$epl_AH_0_H <- percent(EPL_fixtures$epl_AH_0_H, accuracy = 0.1)
+EPL_fixtures$epl_AH_0_A <- percent(EPL_fixtures$epl_AH_0_A, accuracy = 0.1)
 ####################################################################################
 ##########################################################################
 #AH(-0.75)
 #AH_n075_H
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_H <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_0 +BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_5
+EPL_fixtures$epl_AH_n075_H <- (
+  EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_2_1 + EPL_fixtures$epl_3_0 + EPL_fixtures$epl_3_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_0 + EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_4_3 +
+    EPL_fixtures$epl_5_0 +EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 + EPL_fixtures$epl_5_4 +
+    EPL_fixtures$epl_6_0 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+    EPL_fixtures$epl_6_5
 )
 #AH_n075_A
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_A <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_5 +BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_6
+EPL_fixtures$epl_AH_n075_A <- (
+  EPL_fixtures$epl_0_1 + EPL_fixtures$epl_0_2 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_1_3 +
+    EPL_fixtures$epl_2_3 + EPL_fixtures$epl_0_4 + EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 + EPL_fixtures$epl_3_4 +
+    EPL_fixtures$epl_0_5 +EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 +
+    EPL_fixtures$epl_0_6 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 + EPL_fixtures$epl_4_6 +
+    EPL_fixtures$epl_5_6
 )
 
 #odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_H_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_H),digits = 2)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_A_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_A),digits = 2)
+EPL_fixtures$epl_AH_n075_H_odds <- round((1/EPL_fixtures$epl_AH_n075_H),digits = 2)
+EPL_fixtures$epl_AH_n075_A_odds <- round((1/EPL_fixtures$epl_AH_n075_A),digits = 2)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_H_odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_A_odds
+EPL_fixtures$epl_AH_n075_H_odds
+EPL_fixtures$epl_AH_n075_A_odds
 #percentages
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_H <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_H, accuracy = 0.1)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_A <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_n075_A, accuracy = 0.1)
+EPL_fixtures$epl_AH_n075_H <- percent(EPL_fixtures$epl_AH_n075_H, accuracy = 0.1)
+EPL_fixtures$epl_AH_n075_A <- percent(EPL_fixtures$epl_AH_n075_A, accuracy = 0.1)
 ##########################################################################
 #AH(0.75)
 #AH_075_H
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_H <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_0 +BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6 + BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 + BUNDESLIGATWO_fixtures$bundesligatwo_5_6
+EPL_fixtures$epl_AH_075_H <- (
+  EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_2_1 + EPL_fixtures$epl_3_0 + EPL_fixtures$epl_3_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_0 + EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_4_3 +
+    EPL_fixtures$epl_5_0 +EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 + EPL_fixtures$epl_5_4 +
+    EPL_fixtures$epl_6_0 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+    EPL_fixtures$epl_6_5 + EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_3 +
+    EPL_fixtures$epl_4_4 + EPL_fixtures$epl_5_5 + EPL_fixtures$epl_6_6 + EPL_fixtures$epl_0_1 + EPL_fixtures$epl_1_2 +
+    EPL_fixtures$epl_2_3 + EPL_fixtures$epl_3_4 + EPL_fixtures$epl_4_5 + EPL_fixtures$epl_5_6
 )
 #AH_075_A
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_A <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_5 +BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_6 + BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 + BUNDESLIGATWO_fixtures$bundesligatwo_6_5
+EPL_fixtures$epl_AH_075_A <- (
+  EPL_fixtures$epl_0_1 + EPL_fixtures$epl_0_2 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_1_3 +
+    EPL_fixtures$epl_2_3 + EPL_fixtures$epl_0_4 + EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 + EPL_fixtures$epl_3_4 +
+    EPL_fixtures$epl_0_5 +EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 +
+    EPL_fixtures$epl_0_6 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 + EPL_fixtures$epl_4_6 +
+    EPL_fixtures$epl_5_6 + EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_3 +
+    EPL_fixtures$epl_4_4 + EPL_fixtures$epl_5_5 + EPL_fixtures$epl_6_6 + EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_3 + EPL_fixtures$epl_5_4 + EPL_fixtures$epl_6_5
 )
 
 #odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_H_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_H),digits = 2)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_A_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_A),digits = 2)
+EPL_fixtures$epl_AH_075_H_odds <- round((1/EPL_fixtures$epl_AH_075_H),digits = 2)
+EPL_fixtures$epl_AH_075_A_odds <- round((1/EPL_fixtures$epl_AH_075_A),digits = 2)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_H_odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_A_odds
+EPL_fixtures$epl_AH_075_H_odds
+EPL_fixtures$epl_AH_075_A_odds
 #percentages
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_H <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_H, accuracy = 0.1)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_A <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_075_A, accuracy = 0.1)
+EPL_fixtures$epl_AH_075_H <- percent(EPL_fixtures$epl_AH_075_H, accuracy = 0.1)
+EPL_fixtures$epl_AH_075_A <- percent(EPL_fixtures$epl_AH_075_A, accuracy = 0.1)
 ####################################################################################
 #AH(-1.25)
 #AH_n125_H
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_H <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_0 +BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_5
+EPL_fixtures$epl_AH_n125_H <- (
+  EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_2_1 + EPL_fixtures$epl_3_0 + EPL_fixtures$epl_3_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_0 + EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_4_3 +
+    EPL_fixtures$epl_5_0 +EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 + EPL_fixtures$epl_5_4 +
+    EPL_fixtures$epl_6_0 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+    EPL_fixtures$epl_6_5
 )
 #AH_n125_A
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_A <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_5 +BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_6
+EPL_fixtures$epl_AH_n125_A <- (
+  EPL_fixtures$epl_0_1 + EPL_fixtures$epl_0_2 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_1_3 +
+    EPL_fixtures$epl_2_3 + EPL_fixtures$epl_0_4 + EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 + EPL_fixtures$epl_3_4 +
+    EPL_fixtures$epl_0_5 +EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 +
+    EPL_fixtures$epl_0_6 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 + EPL_fixtures$epl_4_6 +
+    EPL_fixtures$epl_5_6
 )
 
 #odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_H_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_H),digits = 2)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_A_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_A),digits = 2)
+EPL_fixtures$epl_AH_n125_H_odds <- round((1/EPL_fixtures$epl_AH_n125_H),digits = 2)
+EPL_fixtures$epl_AH_n125_A_odds <- round((1/EPL_fixtures$epl_AH_n125_A),digits = 2)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_H_odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_A_odds
+EPL_fixtures$epl_AH_n125_H_odds
+EPL_fixtures$epl_AH_n125_A_odds
 #percentages
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_H <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_H, accuracy = 0.1)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_A <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_n125_A, accuracy = 0.1)
+EPL_fixtures$epl_AH_n125_H <- percent(EPL_fixtures$epl_AH_n125_H, accuracy = 0.1)
+EPL_fixtures$epl_AH_n125_A <- percent(EPL_fixtures$epl_AH_n125_A, accuracy = 0.1)
 
 ####################################################################################
 ##########################################################################
 #AH(1.25)
 #AH_125_H
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_H <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_0 +BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_6_5 + BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6 + BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 + BUNDESLIGATWO_fixtures$bundesligatwo_5_6
+EPL_fixtures$epl_AH_125_H <- (
+  EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_2_1 + EPL_fixtures$epl_3_0 + EPL_fixtures$epl_3_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_0 + EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_4_3 +
+    EPL_fixtures$epl_5_0 +EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 + EPL_fixtures$epl_5_4 +
+    EPL_fixtures$epl_6_0 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+    EPL_fixtures$epl_6_5 + EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_3 +
+    EPL_fixtures$epl_4_4 + EPL_fixtures$epl_5_5 + EPL_fixtures$epl_6_6 + EPL_fixtures$epl_0_1 + EPL_fixtures$epl_1_2 +
+    EPL_fixtures$epl_2_3 + EPL_fixtures$epl_3_4 + EPL_fixtures$epl_4_5 + EPL_fixtures$epl_5_6
 )
 #AH_125_A
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_A <- (
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_5 +BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures$bundesligatwo_4_6 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_5_6 + BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_4_4 + BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 +
-    BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 + BUNDESLIGATWO_fixtures$bundesligatwo_6_5
+EPL_fixtures$epl_AH_125_A <- (
+  EPL_fixtures$epl_0_1 + EPL_fixtures$epl_0_2 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_1_3 +
+    EPL_fixtures$epl_2_3 + EPL_fixtures$epl_0_4 + EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 + EPL_fixtures$epl_3_4 +
+    EPL_fixtures$epl_0_5 +EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 +
+    EPL_fixtures$epl_0_6 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 + EPL_fixtures$epl_4_6 +
+    EPL_fixtures$epl_5_6 + EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_3 +
+    EPL_fixtures$epl_4_4 + EPL_fixtures$epl_5_5 + EPL_fixtures$epl_6_6 + EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_1 +
+    EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_3 + EPL_fixtures$epl_5_4 + EPL_fixtures$epl_6_5
 )
 
 #odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_H_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_H),digits = 2)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_A_odds <- round((1/BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_A),digits = 2)
+EPL_fixtures$epl_AH_125_H_odds <- round((1/EPL_fixtures$epl_AH_125_H),digits = 2)
+EPL_fixtures$epl_AH_125_A_odds <- round((1/EPL_fixtures$epl_AH_125_A),digits = 2)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_H_odds
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_A_odds
+EPL_fixtures$epl_AH_125_H_odds
+EPL_fixtures$epl_AH_125_A_odds
 #percentages
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_H <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_H, accuracy = 0.1)
-BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_A <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_AH_125_A, accuracy = 0.1)
+EPL_fixtures$epl_AH_125_H <- percent(EPL_fixtures$epl_AH_125_H, accuracy = 0.1)
+EPL_fixtures$epl_AH_125_A <- percent(EPL_fixtures$epl_AH_125_A, accuracy = 0.1)
 ####################################################################################
 ########Asian Handicaps######################################################################################################
 #percentages
-BUNDESLIGATWO_fixtures$bundesligatwo_ov25 <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_ov25, accuracy = 0.1)
+EPL_fixtures$epl_ov25 <- percent(EPL_fixtures$epl_ov25, accuracy = 0.1)
 
-BUNDESLIGATWO_fixtures$bundesligatwo_un25 <- percent(BUNDESLIGATWO_fixtures$bundesligatwo_un25, accuracy = 0.1)
-BUNDESLIGATWO_fixtures$bundesligatwo_pscore <- paste(round(BUNDESLIGATWO_fixtures$bundesligatwo_xGH,digits = 0),round(BUNDESLIGATWO_fixtures$bundesligatwo_xGA,digits = 0),sep = "-")
+EPL_fixtures$epl_un25 <- percent(EPL_fixtures$epl_un25, accuracy = 0.1)
+EPL_fixtures$epl_pscore <- paste(round(EPL_fixtures$epl_xGH,digits = 0),round(EPL_fixtures$epl_xGA,digits = 0),sep = "-")
 ############################################################################################################################################################
 #Last six
-bundesligatwo_last_n_games <- 6
+epl_last_n_games <- 6
 
-#create final_bundesligatwo_hf object
-final_bundesligatwo_hf <- c()
-for(index_bundesligatwo_hf in 1:length(bundesligatwo_teams))
+#create final_epl_hf object
+final_epl_hf <- c()
+for(index_epl_hf in 1:length(epl_teams))
 {
-  index_bundesligatwo_hf <- row.names(bundesligatwo_form_h) == bundesligatwo_teams[index_bundesligatwo_hf]
-  form_bundesligatwo_hf <- bundesligatwo_form_h[index_bundesligatwo_hf]
-  deleted_form_bundesligatwo_hf <- form_bundesligatwo_hf[!form_bundesligatwo_hf[] == ""]
-  l6_form_bundesligatwo_hf <- tail(deleted_form_bundesligatwo_hf,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_hf <- paste(l6_form_bundesligatwo_hf,collapse = " ")
-  final_bundesligatwo_hf[index_bundesligatwo_hf] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_hf],l6_form_bundesligatwo_hf, sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_hf <- row.names(epl_form_h) == epl_teams[index_epl_hf]
+  form_epl_hf <- epl_form_h[index_epl_hf]
+  deleted_form_epl_hf <- form_epl_hf[!form_epl_hf[] == ""]
+  l6_form_epl_hf <- tail(deleted_form_epl_hf,epl_last_n_games)
+  l6_form_epl_hf <- paste(l6_form_epl_hf,collapse = " ")
+  final_epl_hf[index_epl_hf] <- rbind(paste(epl_teams[index_epl_hf],l6_form_epl_hf, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
 
 #change column nam
-final_bundesligatwo_hf <- as.data.frame(final_bundesligatwo_hf)
-colnames(final_bundesligatwo_hf) <- "Form"
+final_epl_hf <- as.data.frame(final_epl_hf)
+colnames(final_epl_hf) <- "Form"
 #goals scored
-#create final_bundesligatwo_gs object
-final_bundesligatwo_gs <- c()
-suml6_bundesligatwo_gs <- c()
-for(index_bundesligatwo_gs in 1:length(bundesligatwo_teams))
+#create final_epl_gs object
+final_epl_gs <- c()
+suml6_epl_gs <- c()
+for(index_epl_gs in 1:length(epl_teams))
 {
-  index_bundesligatwo_gs <- row.names(bundesligatwo_goalscored_h) == bundesligatwo_teams[index_bundesligatwo_gs]
-  form_bundesligatwo_gs <- bundesligatwo_goalscored_h[index_bundesligatwo_gs]
-  deleted_form_bundesligatwo_gs <- form_bundesligatwo_gs[!form_bundesligatwo_gs[] == ""]
-  l6_form_bundesligatwo_gs <- tail(deleted_form_bundesligatwo_gs,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_gs <- as.numeric(l6_form_bundesligatwo_gs)
-  suml6_bundesligatwo_gs[index_bundesligatwo_gs] <- sum(l6_form_bundesligatwo_gs)
-  suml6_bundesligatwo_gs[index_bundesligatwo_gs] <- paste("(",suml6_bundesligatwo_gs[index_bundesligatwo_gs],")",sep = "")
-  l6_form_bundesligatwo_gs <- paste(l6_form_bundesligatwo_gs,collapse = " ")
-  final_bundesligatwo_gs[index_bundesligatwo_gs] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_gs],l6_form_bundesligatwo_gs,suml6_bundesligatwo_gs[index_bundesligatwo_gs], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_gs <- row.names(epl_goalscored_h) == epl_teams[index_epl_gs]
+  form_epl_gs <- epl_goalscored_h[index_epl_gs]
+  deleted_form_epl_gs <- form_epl_gs[!form_epl_gs[] == ""]
+  l6_form_epl_gs <- tail(deleted_form_epl_gs,epl_last_n_games)
+  l6_form_epl_gs <- as.numeric(l6_form_epl_gs)
+  suml6_epl_gs[index_epl_gs] <- sum(l6_form_epl_gs)
+  suml6_epl_gs[index_epl_gs] <- paste("(",suml6_epl_gs[index_epl_gs],")",sep = "")
+  l6_form_epl_gs <- paste(l6_form_epl_gs,collapse = " ")
+  final_epl_gs[index_epl_gs] <- rbind(paste(epl_teams[index_epl_gs],l6_form_epl_gs,suml6_epl_gs[index_epl_gs], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
-final_bundesligatwo_gs
+final_epl_gs
 #change column names
-final_bundesligatwo_gs <- as.data.frame(final_bundesligatwo_gs)
-colnames(final_bundesligatwo_gs) <- "Goals scored"
+final_epl_gs <- as.data.frame(final_epl_gs)
+colnames(final_epl_gs) <- "Goals scored"
 #goal conceded
-#create final_bundesligatwo_gc object
-final_bundesligatwo_gc <- c()
-suml6_bundesligatwo_gc <- c()
-for(index_bundesligatwo_gc in 1:length(bundesligatwo_teams))
+#create final_epl_gc object
+final_epl_gc <- c()
+suml6_epl_gc <- c()
+for(index_epl_gc in 1:length(epl_teams))
 {
-  index_bundesligatwo_gc <- row.names(bundesligatwo_goalconceded_h) == bundesligatwo_teams[index_bundesligatwo_gc]
-  form_bundesligatwo_gc <- bundesligatwo_goalconceded_h[index_bundesligatwo_gc]
-  deleted_form_bundesligatwo_gc <- form_bundesligatwo_gc[!form_bundesligatwo_gc[] == ""]
-  l6_form_bundesligatwo_gc <- tail(deleted_form_bundesligatwo_gc,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_gc <- as.numeric(l6_form_bundesligatwo_gc)
-  suml6_bundesligatwo_gc[index_bundesligatwo_gc] <- sum(l6_form_bundesligatwo_gc)
-  suml6_bundesligatwo_gc[index_bundesligatwo_gc] <- paste("(",suml6_bundesligatwo_gc[index_bundesligatwo_gc],")",sep = "")
-  l6_form_bundesligatwo_gc <- paste(l6_form_bundesligatwo_gc,collapse = " ")
-  final_bundesligatwo_gc[index_bundesligatwo_gc] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_gc],l6_form_bundesligatwo_gc,suml6_bundesligatwo_gc[index_bundesligatwo_gc], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_gc <- row.names(epl_goalconceded_h) == epl_teams[index_epl_gc]
+  form_epl_gc <- epl_goalconceded_h[index_epl_gc]
+  deleted_form_epl_gc <- form_epl_gc[!form_epl_gc[] == ""]
+  l6_form_epl_gc <- tail(deleted_form_epl_gc,epl_last_n_games)
+  l6_form_epl_gc <- as.numeric(l6_form_epl_gc)
+  suml6_epl_gc[index_epl_gc] <- sum(l6_form_epl_gc)
+  suml6_epl_gc[index_epl_gc] <- paste("(",suml6_epl_gc[index_epl_gc],")",sep = "")
+  l6_form_epl_gc <- paste(l6_form_epl_gc,collapse = " ")
+  final_epl_gc[index_epl_gc] <- rbind(paste(epl_teams[index_epl_gc],l6_form_epl_gc,suml6_epl_gc[index_epl_gc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
 #change column names
-final_bundesligatwo_gc <- as.data.frame(final_bundesligatwo_gc)
-colnames(final_bundesligatwo_gc) <- "Goals conceded"
+final_epl_gc <- as.data.frame(final_epl_gc)
+colnames(final_epl_gc) <- "Goals conceded"
 
 
-toString(l6_form_bundesligatwo_gc)
+toString(l6_form_epl_gc)
 #total goals
-#create final_bundesligatwo_tg object
-final_bundesligatwo_tg <- c()
-suml6_bundesligatwo_tg <- c()
-for(index_bundesligatwo_tg in 1:length(bundesligatwo_teams))
+#create final_epl_tg object
+final_epl_tg <- c()
+suml6_epl_tg <- c()
+for(index_epl_tg in 1:length(epl_teams))
 {
-  index_bundesligatwo_tg <- row.names(bundesligatwo_totalgoals_h) == bundesligatwo_teams[index_bundesligatwo_tg]
-  form_bundesligatwo_tg <- bundesligatwo_totalgoals_h[index_bundesligatwo_tg]
-  deleted_form_bundesligatwo_tg <- form_bundesligatwo_tg[!form_bundesligatwo_tg[] == ""]
-  l6_form_bundesligatwo_tg <- tail(deleted_form_bundesligatwo_tg,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_tg <- as.numeric(l6_form_bundesligatwo_tg)
-  suml6_bundesligatwo_tg[index_bundesligatwo_tg] <- sum(l6_form_bundesligatwo_tg)
-  suml6_bundesligatwo_tg[index_bundesligatwo_tg] <- paste("(",suml6_bundesligatwo_tg[index_bundesligatwo_tg],")",sep = "")
-  l6_form_bundesligatwo_tg <- paste(l6_form_bundesligatwo_tg,collapse = " ")
-  final_bundesligatwo_tg[index_bundesligatwo_tg] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_tg],l6_form_bundesligatwo_tg,suml6_bundesligatwo_tg[index_bundesligatwo_tg], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_tg <- row.names(epl_totalgoals_h) == epl_teams[index_epl_tg]
+  form_epl_tg <- epl_totalgoals_h[index_epl_tg]
+  deleted_form_epl_tg <- form_epl_tg[!form_epl_tg[] == ""]
+  l6_form_epl_tg <- tail(deleted_form_epl_tg,epl_last_n_games)
+  l6_form_epl_tg <- as.numeric(l6_form_epl_tg)
+  suml6_epl_tg[index_epl_tg] <- sum(l6_form_epl_tg)
+  suml6_epl_tg[index_epl_tg] <- paste("(",suml6_epl_tg[index_epl_tg],")",sep = "")
+  l6_form_epl_tg <- paste(l6_form_epl_tg,collapse = " ")
+  final_epl_tg[index_epl_tg] <- rbind(paste(epl_teams[index_epl_tg],l6_form_epl_tg,suml6_epl_tg[index_epl_tg], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
 #change column names
-final_bundesligatwo_tg <- as.data.frame(final_bundesligatwo_tg)
-colnames(final_bundesligatwo_tg) <- "Total Goals"
+final_epl_tg <- as.data.frame(final_epl_tg)
+colnames(final_epl_tg) <- "Total Goals"
 ###############################################
 #Csfrom
-#create final_bundesligatwo_hf object
-final_bundesligatwo_cs <- c()
-for(index_bundesligatwo_cs in 1:length(bundesligatwo_teams))
+#create final_epl_hf object
+final_epl_cs <- c()
+for(index_epl_cs in 1:length(epl_teams))
 {
-  index_bundesligatwo_cs <- row.names(bundesligatwo_csform_h) == bundesligatwo_teams[index_bundesligatwo_cs]
-  csform_bundesligatwo_cs <- bundesligatwo_csform_h[index_bundesligatwo_cs]
-  deleted_csform_bundesligatwo_cs <- csform_bundesligatwo_cs[!csform_bundesligatwo_cs[] == ""]
-  l6_csform_bundesligatwo_cs <- tail(deleted_csform_bundesligatwo_cs,bundesligatwo_last_n_games)
-  l6_csform_bundesligatwo_cs <- paste(l6_csform_bundesligatwo_cs,collapse = " ")
-  final_bundesligatwo_cs[index_bundesligatwo_cs] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_cs],l6_csform_bundesligatwo_cs, sep = ",",collapse = ""))
-  #bundescsform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_csform)
+  index_epl_cs <- row.names(epl_csform_h) == epl_teams[index_epl_cs]
+  csform_epl_cs <- epl_csform_h[index_epl_cs]
+  deleted_csform_epl_cs <- csform_epl_cs[!csform_epl_cs[] == ""]
+  l6_csform_epl_cs <- tail(deleted_csform_epl_cs,epl_last_n_games)
+  l6_csform_epl_cs <- paste(l6_csform_epl_cs,collapse = " ")
+  final_epl_cs[index_epl_cs] <- rbind(paste(epl_teams[index_epl_cs],l6_csform_epl_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",epl_teams[index],l6_csform)
 
 }
 
 #change column names
-final_bundesligatwo_cs <- as.data.frame(final_bundesligatwo_cs)
-colnames(final_bundesligatwo_cs) <- "CSForm"
+final_epl_cs <- as.data.frame(final_epl_cs)
+colnames(final_epl_cs) <- "CSForm"
 #################################################
 #Win Margin
 #goals scored
-#create final_bundesligatwo_wm object
-final_bundesligatwo_wm <- c()
-suml6_bundesligatwo_wm <- c()
-for(index_bundesligatwo_wm in 1:length(bundesligatwo_teams))
+#create final_epl_wm object
+final_epl_wm <- c()
+suml6_epl_wm <- c()
+for(index_epl_wm in 1:length(epl_teams))
 {
-  index_bundesligatwo_wm <- row.names(bundesligatwo_winmargin_h) == bundesligatwo_teams[index_bundesligatwo_wm]
-  form_bundesligatwo_wm <- bundesligatwo_winmargin_h[index_bundesligatwo_wm]
-  deleted_form_bundesligatwo_wm <- form_bundesligatwo_wm[!form_bundesligatwo_wm[] == ""]
-  l6_form_bundesligatwo_wm <- tail(deleted_form_bundesligatwo_wm,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_wm <- as.numeric(l6_form_bundesligatwo_wm)
-  suml6_bundesligatwo_wm[index_bundesligatwo_wm] <- sum(l6_form_bundesligatwo_wm)
-  suml6_bundesligatwo_wm[index_bundesligatwo_wm] <- paste("(",suml6_bundesligatwo_wm[index_bundesligatwo_wm],")",sep = "")
-  l6_form_bundesligatwo_wm <- paste(l6_form_bundesligatwo_wm,collapse = " ")
-  final_bundesligatwo_wm[index_bundesligatwo_wm] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_wm],l6_form_bundesligatwo_wm,suml6_bundesligatwo_wm[index_bundesligatwo_wm], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_wm <- row.names(epl_winmargin_h) == epl_teams[index_epl_wm]
+  form_epl_wm <- epl_winmargin_h[index_epl_wm]
+  deleted_form_epl_wm <- form_epl_wm[!form_epl_wm[] == ""]
+  l6_form_epl_wm <- tail(deleted_form_epl_wm,epl_last_n_games)
+  l6_form_epl_wm <- as.numeric(l6_form_epl_wm)
+  suml6_epl_wm[index_epl_wm] <- sum(l6_form_epl_wm)
+  suml6_epl_wm[index_epl_wm] <- paste("(",suml6_epl_wm[index_epl_wm],")",sep = "")
+  l6_form_epl_wm <- paste(l6_form_epl_wm,collapse = " ")
+  final_epl_wm[index_epl_wm] <- rbind(paste(epl_teams[index_epl_wm],l6_form_epl_wm,suml6_epl_wm[index_epl_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
-final_bundesligatwo_wm
+final_epl_wm
 #change column names
-final_bundesligatwo_wm <- as.data.frame(final_bundesligatwo_wm)
-colnames(final_bundesligatwo_wm) <- "Win Margin"
+final_epl_wm <- as.data.frame(final_epl_wm)
+colnames(final_epl_wm) <- "Win Margin"
 #################################################
 ##################################################
 #corners awarded
-#create final_bundesligatwo_ca object
-final_bundesligatwo_ca <- c()
-suml6_bundesligatwo_ca <- c()
-for(index_bundesligatwo_ca in 1:length(bundesligatwo_teams))
+#create final_epl_ca object
+final_epl_ca <- c()
+suml6_epl_ca <- c()
+for(index_epl_ca in 1:length(epl_teams))
 {
-  index_bundesligatwo_ca <- row.names(bundesligatwo_coawarded_h) == bundesligatwo_teams[index_bundesligatwo_ca]
-  form_bundesligatwo_ca <- bundesligatwo_coawarded_h[index_bundesligatwo_ca]
-  deleted_form_bundesligatwo_ca <- form_bundesligatwo_ca[!form_bundesligatwo_ca[] == ""]
-  l6_form_bundesligatwo_ca <- tail(deleted_form_bundesligatwo_ca,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_ca <- as.numeric(l6_form_bundesligatwo_ca)
-  suml6_bundesligatwo_ca[index_bundesligatwo_ca] <- sum(l6_form_bundesligatwo_ca)
-  suml6_bundesligatwo_ca[index_bundesligatwo_ca] <- paste("(",suml6_bundesligatwo_ca[index_bundesligatwo_ca],")",sep = "")
-  l6_form_bundesligatwo_ca <- paste(l6_form_bundesligatwo_ca,collapse = " ")
-  final_bundesligatwo_ca[index_bundesligatwo_ca] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_ca],l6_form_bundesligatwo_ca,suml6_bundesligatwo_ca[index_bundesligatwo_ca], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_ca <- row.names(epl_coawarded_h) == epl_teams[index_epl_ca]
+  form_epl_ca <- epl_coawarded_h[index_epl_ca]
+  deleted_form_epl_ca <- form_epl_ca[!form_epl_ca[] == ""]
+  l6_form_epl_ca <- tail(deleted_form_epl_ca,epl_last_n_games)
+  l6_form_epl_ca <- as.numeric(l6_form_epl_ca)
+  suml6_epl_ca[index_epl_ca] <- sum(l6_form_epl_ca)
+  suml6_epl_ca[index_epl_ca] <- paste("(",suml6_epl_ca[index_epl_ca],")",sep = "")
+  l6_form_epl_ca <- paste(l6_form_epl_ca,collapse = " ")
+  final_epl_ca[index_epl_ca] <- rbind(paste(epl_teams[index_epl_ca],l6_form_epl_ca,suml6_epl_ca[index_epl_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
-final_bundesligatwo_ca
+final_epl_ca
 #change column names
-final_bundesligatwo_ca <- as.data.frame(final_bundesligatwo_ca)
-colnames(final_bundesligatwo_ca) <- "CornersAwarded"
+final_epl_ca <- as.data.frame(final_epl_ca)
+colnames(final_epl_ca) <- "CornersAwarded"
 ##################################################
 ##################################################
 #corners awarded
-#create final_bundesligatwo_ca object
-final_bundesligatwo_cc <- c()
-suml6_bundesligatwo_cc <- c()
-for(index_bundesligatwo_cc in 1:length(bundesligatwo_teams))
+#create final_epl_ca object
+final_epl_cc <- c()
+suml6_epl_cc <- c()
+for(index_epl_cc in 1:length(epl_teams))
 {
-  index_bundesligatwo_cc <- row.names(bundesligatwo_cornersconceded_h) == bundesligatwo_teams[index_bundesligatwo_cc]
-  form_bundesligatwo_cc <- bundesligatwo_cornersconceded_h[index_bundesligatwo_cc]
-  deleted_form_bundesligatwo_cc <- form_bundesligatwo_cc[!form_bundesligatwo_cc[] == ""]
-  l6_form_bundesligatwo_cc <- tail(deleted_form_bundesligatwo_cc,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_cc <- as.numeric(l6_form_bundesligatwo_cc)
-  suml6_bundesligatwo_cc[index_bundesligatwo_cc] <- sum(l6_form_bundesligatwo_cc)
-  suml6_bundesligatwo_cc[index_bundesligatwo_cc] <- paste("(",suml6_bundesligatwo_cc[index_bundesligatwo_cc],")",sep = "")
-  l6_form_bundesligatwo_cc <- paste(l6_form_bundesligatwo_cc,collapse = " ")
-  final_bundesligatwo_cc[index_bundesligatwo_cc] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_cc],l6_form_bundesligatwo_cc,suml6_bundesligatwo_cc[index_bundesligatwo_cc], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_cc <- row.names(epl_cornersconceded_h) == epl_teams[index_epl_cc]
+  form_epl_cc <- epl_cornersconceded_h[index_epl_cc]
+  deleted_form_epl_cc <- form_epl_cc[!form_epl_cc[] == ""]
+  l6_form_epl_cc <- tail(deleted_form_epl_cc,epl_last_n_games)
+  l6_form_epl_cc <- as.numeric(l6_form_epl_cc)
+  suml6_epl_cc[index_epl_cc] <- sum(l6_form_epl_cc)
+  suml6_epl_cc[index_epl_cc] <- paste("(",suml6_epl_cc[index_epl_cc],")",sep = "")
+  l6_form_epl_cc <- paste(l6_form_epl_cc,collapse = " ")
+  final_epl_cc[index_epl_cc] <- rbind(paste(epl_teams[index_epl_cc],l6_form_epl_cc,suml6_epl_cc[index_epl_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
-final_bundesligatwo_cc
+final_epl_cc
 #change column names
-final_bundesligatwo_cc <- as.data.frame(final_bundesligatwo_cc)
-colnames(final_bundesligatwo_cc) <- "CornersConceded"
+final_epl_cc <- as.data.frame(final_epl_cc)
+colnames(final_epl_cc) <- "CornersConceded"
 ##################################################
 ##################################################
 #corners form
-final_bundesligatwo_cosc <- c()
-for(index_bundesligatwo_cosc in 1:length(bundesligatwo_teams))
+final_epl_cosc <- c()
+for(index_epl_cosc in 1:length(epl_teams))
 {
-  index_bundesligatwo_cosc <- row.names(bundesligatwo_coscform_h) == bundesligatwo_teams[index_bundesligatwo_cosc]
-  coscform_bundesligatwo_cosc <- bundesligatwo_coscform_h[index_bundesligatwo_cosc]
-  deleted_coscform_bundesligatwo_cosc <- coscform_bundesligatwo_cosc[!coscform_bundesligatwo_cosc[] == ""]
-  l6_coscform_bundesligatwo_cosc <- tail(deleted_coscform_bundesligatwo_cosc,bundesligatwo_last_n_games)
-  l6_coscform_bundesligatwo_cosc <- paste(l6_coscform_bundesligatwo_cosc,collapse = " ")
-  final_bundesligatwo_cosc[index_bundesligatwo_cosc] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_cosc],l6_coscform_bundesligatwo_cosc, sep = ",",collapse = ""))
-  #bundescoscform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_coscform)
+  index_epl_cosc <- row.names(epl_coscform_h) == epl_teams[index_epl_cosc]
+  coscform_epl_cosc <- epl_coscform_h[index_epl_cosc]
+  deleted_coscform_epl_cosc <- coscform_epl_cosc[!coscform_epl_cosc[] == ""]
+  l6_coscform_epl_cosc <- tail(deleted_coscform_epl_cosc,epl_last_n_games)
+  l6_coscform_epl_cosc <- paste(l6_coscform_epl_cosc,collapse = " ")
+  final_epl_cosc[index_epl_cosc] <- rbind(paste(epl_teams[index_epl_cosc],l6_coscform_epl_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",epl_teams[index],l6_coscform)
 
 }
-final_bundesligatwo_cosc
+final_epl_cosc
 #change column names
-final_bundesligatwo_cosc <- as.data.frame(final_bundesligatwo_cosc)
-colnames(final_bundesligatwo_cosc) <- "CornersForm"
+final_epl_cosc <- as.data.frame(final_epl_cosc)
+colnames(final_epl_cosc) <- "CornersForm"
 ##################################################
 #total corners
-#create final_bundesligatwo_tcorners object
-final_bundesligatwo_tcorners <- c()
-suml6_bundesligatwo_tcorners <- c()
-for(index_bundesligatwo_tcorners in 1:length(bundesligatwo_teams))
+#create final_epl_tcorners object
+final_epl_tcorners <- c()
+suml6_epl_tcorners <- c()
+for(index_epl_tcorners in 1:length(epl_teams))
 {
-  index_bundesligatwo_tcorners <- row.names(bundesligatwo_totalcorners_h) == bundesligatwo_teams[index_bundesligatwo_tcorners]
-  form_bundesligatwo_tcorners <- bundesligatwo_totalcorners_h[index_bundesligatwo_tcorners]
-  deleted_form_bundesligatwo_tcorners <- form_bundesligatwo_tcorners[!form_bundesligatwo_tcorners[] == ""]
-  l6_form_bundesligatwo_tcorners <- tail(deleted_form_bundesligatwo_tcorners,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_tcorners <- as.numeric(l6_form_bundesligatwo_tcorners)
-  suml6_bundesligatwo_tcorners[index_bundesligatwo_tcorners] <- sum(l6_form_bundesligatwo_tcorners)
-  suml6_bundesligatwo_tcorners[index_bundesligatwo_tcorners] <- paste("(",suml6_bundesligatwo_tcorners[index_bundesligatwo_tcorners],")",sep = "")
-  l6_form_bundesligatwo_tcorners <- paste(l6_form_bundesligatwo_tcorners,collapse = " ")
-  final_bundesligatwo_tcorners[index_bundesligatwo_tcorners] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_tcorners],l6_form_bundesligatwo_tcorners,suml6_bundesligatwo_tcorners[index_bundesligatwo_tcorners], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_tcorners <- row.names(epl_totalcorners_h) == epl_teams[index_epl_tcorners]
+  form_epl_tcorners <- epl_totalcorners_h[index_epl_tcorners]
+  deleted_form_epl_tcorners <- form_epl_tcorners[!form_epl_tcorners[] == ""]
+  l6_form_epl_tcorners <- tail(deleted_form_epl_tcorners,epl_last_n_games)
+  l6_form_epl_tcorners <- as.numeric(l6_form_epl_tcorners)
+  suml6_epl_tcorners[index_epl_tcorners] <- sum(l6_form_epl_tcorners)
+  suml6_epl_tcorners[index_epl_tcorners] <- paste("(",suml6_epl_tcorners[index_epl_tcorners],")",sep = "")
+  l6_form_epl_tcorners <- paste(l6_form_epl_tcorners,collapse = " ")
+  final_epl_tcorners[index_epl_tcorners] <- rbind(paste(epl_teams[index_epl_tcorners],l6_form_epl_tcorners,suml6_epl_tcorners[index_epl_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
 #change column names
-final_bundesligatwo_tcorners <- as.data.frame(final_bundesligatwo_tcorners)
-colnames(final_bundesligatwo_tcorners) <- "TotalCorners"
+final_epl_tcorners <- as.data.frame(final_epl_tcorners)
+colnames(final_epl_tcorners) <- "TotalCorners"
 ###################################################
 #Team against
-#create final_bundesligatwo_hf_against
-final_bundesligatwo_hf_against <- c()
-for(index_bundesligatwo_hf_against in 1:length(bundesligatwo_teams))
+#create final_epl_hf_against
+final_epl_hf_against <- c()
+for(index_epl_hf_against in 1:length(epl_teams))
 {
-  index_bundesligatwo_hf_against <- row.names(bundesligatwo_form_team_against_h) == bundesligatwo_teams[index_bundesligatwo_hf_against]
-  form_bundesligatwo_hf_against <- bundesligatwo_form_team_against_h[index_bundesligatwo_hf_against]
-  deleted_form_bundesligatwo_hf_against <- form_bundesligatwo_hf_against[!form_bundesligatwo_hf_against[] == ""]
-  l6_form_bundesligatwo_hf_against <- tail(deleted_form_bundesligatwo_hf_against,bundesligatwo_last_n_games)
-  l6_form_bundesligatwo_hf_against <- paste(l6_form_bundesligatwo_hf_against,collapse = " ")
-  final_bundesligatwo_hf_against[index_bundesligatwo_hf_against] <- rbind(paste(bundesligatwo_teams[index_bundesligatwo_hf_against],l6_form_bundesligatwo_hf_against, sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",bundesligatwo_teams[index],l6_form)
+  index_epl_hf_against <- row.names(epl_form_team_against_h) == epl_teams[index_epl_hf_against]
+  form_epl_hf_against <- epl_form_team_against_h[index_epl_hf_against]
+  deleted_form_epl_hf_against <- form_epl_hf_against[!form_epl_hf_against[] == ""]
+  l6_form_epl_hf_against <- tail(deleted_form_epl_hf_against,epl_last_n_games)
+  l6_form_epl_hf_against <- paste(l6_form_epl_hf_against,collapse = " ")
+  final_epl_hf_against[index_epl_hf_against] <- rbind(paste(epl_teams[index_epl_hf_against],l6_form_epl_hf_against, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",epl_teams[index],l6_form)
 
 }
-final_bundesligatwo_hf_against <- as.data.frame(final_bundesligatwo_hf_against)
-colnames(final_bundesligatwo_hf_against) <- "Team against"
+final_epl_hf_against <- as.data.frame(final_epl_hf_against)
+colnames(final_epl_hf_against) <- "Team against"
 #combine the columns
-final_bundesligatwo_all <- cbind(final_bundesligatwo_hf,final_bundesligatwo_gs,final_bundesligatwo_gc,final_bundesligatwo_tg,final_bundesligatwo_ca,final_bundesligatwo_cc,final_bundesligatwo_tcorners,final_bundesligatwo_cosc,final_bundesligatwo_hf_against)
+final_epl_all <- cbind(final_epl_hf,final_epl_gs,final_epl_gc,final_epl_tg,final_epl_ca,final_epl_cc,final_epl_tcorners,final_epl_cosc,final_epl_hf_against)
 ###################################################################################################################################################################################
 #TABLE SIMULATION
-#BUNDESLIGATWO
-BUNDESLIGATWO_sim <- BUNDESLIGATWO
-BUNDESLIGATWO_sim$matchid <- paste(BUNDESLIGATWO_sim$HomeTeam,BUNDESLIGATWO_sim$AwayTeam,sep = "-")
-BUNDESLIGATWO_fixtures$matchid <- paste(BUNDESLIGATWO_fixtures$HomeTeam_bundesligatwo,BUNDESLIGATWO_fixtures$AwayTeam_bundesligatwo,sep = "-")
-BUNDESLIGATWO_fixtures$bundesligatwo_FTR <- sapply(BUNDESLIGATWO_fixtures$bundesligatwo_pscore,switch,
+#EPL
+EPL_sim <- EPL
+EPL_sim$matchid <- paste(EPL_sim$HomeTeam,EPL_sim$AwayTeam,sep = "-")
+EPL_fixtures$matchid <- paste(EPL_fixtures$HomeTeam_epl,EPL_fixtures$AwayTeam_epl,sep = "-")
+EPL_fixtures$epl_FTR <- sapply(EPL_fixtures$epl_pscore,switch,
                              '1-0' = 'H','2-0'='H','2-1'= 'H','3-0'= 'H','3-1'= 'H','3-2'= 'H','4-0'= 'H','4-1'= 'H','4-2'= 'H','4-3'= 'H','5-0'= 'H','5-1'= 'H','5-2'= 'H','5-3'= 'H','5-4'= 'H','6-0'= 'H','6-1'= 'H','6-2'= 'H','6-3'= 'H','6-4'= 'H','6-5'= 'H','7-0'= 'H','7-2'= 'H','9-0'= 'H',
                              '0-0' = 'D','1-1' = 'D','2-2' = 'D','3-3' = 'D','4-4' = 'D','5-5' = 'D',
                              '0-1'= 'A','0-2' = 'A','1-2'= 'A','0-3'= 'A','1-3'= 'A','2-3'= 'A','0-4'= 'A','1-4'= 'A','2-4'= 'A','3-4'= 'A','0-5'= 'A','1-5'= 'A','2-5'= 'A','3-5'= 'A','4-5'= 'A','0-6'= 'A','1-6'= 'A','2-6'= 'A','3-6'= 'A','4-6'= 'A','3-8'= 'A','5-6'= 'A')
 
-BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus <- ifelse(BUNDESLIGATWO_fixtures$matchid %in% BUNDESLIGATWO_sim$matchid,"played","notplayed")
+EPL_fixtures$epl_gamestatus <- ifelse(EPL_fixtures$matchid %in% EPL_sim$matchid,"played","notplayed")
 
-bundesligatwo_home_wins_sim <- c()
-bundesligatwo_away_wins_sim <- c()
-bundesligatwo_home_draws_sim <- c()
-bundesligatwo_away_draws_sim <- c()
-bundesligatwo_home_loss_sim <- c()
-bundesligatwo_away_loss_sim <- c()
+epl_home_wins_sim <- c()
+epl_away_wins_sim <- c()
+epl_home_draws_sim <- c()
+epl_away_draws_sim <- c()
+epl_home_loss_sim <- c()
+epl_away_loss_sim <- c()
 
 
 
-for (i_bundesligatwo_wins_sim in 1:length(bundesligatwo_teams))
+for (i_epl_wins_sim in 1:length(epl_teams))
 {
 
-  bundesligatwo_home_wins_sim[i_bundesligatwo_wins_sim] <- nrow(BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$HomeTeam_bundesligatwo == bundesligatwo_teams[i_bundesligatwo_wins_sim] & BUNDESLIGATWO_fixtures$bundesligatwo_FTR == "H" & BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus =="notplayed",])
-  bundesligatwo_away_wins_sim[i_bundesligatwo_wins_sim] <- nrow(BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$AwayTeam_bundesligatwo == bundesligatwo_teams[i_bundesligatwo_wins_sim] & BUNDESLIGATWO_fixtures$bundesligatwo_FTR == "A" & BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus == "notplayed",])
-  bundesligatwo_home_draws_sim[i_bundesligatwo_wins_sim] <- nrow(BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$HomeTeam_bundesligatwo == bundesligatwo_teams[i_bundesligatwo_wins_sim] & BUNDESLIGATWO_fixtures$bundesligatwo_FTR == "D" & BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus == "notplayed",])
-  bundesligatwo_away_draws_sim[i_bundesligatwo_wins_sim] <- nrow(BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$AwayTeam_bundesligatwo == bundesligatwo_teams[i_bundesligatwo_wins_sim] & BUNDESLIGATWO_fixtures$bundesligatwo_FTR == "D" & BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus == "notplayed",])
-  bundesligatwo_home_loss_sim[i_bundesligatwo_wins_sim] <- nrow(BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$HomeTeam_bundesligatwo == bundesligatwo_teams[i_bundesligatwo_wins_sim] & BUNDESLIGATWO_fixtures$bundesligatwo_FTR == "A" & BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus == "notplayed",])
-  bundesligatwo_away_loss_sim[i_bundesligatwo_wins_sim] <- nrow(BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$AwayTeam_bundesligatwo == bundesligatwo_teams[i_bundesligatwo_wins_sim] & BUNDESLIGATWO_fixtures$bundesligatwo_FTR == "H" & BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus == "notplayed", ])
+  epl_home_wins_sim[i_epl_wins_sim] <- nrow(EPL_fixtures[EPL_fixtures$HomeTeam_epl == epl_teams[i_epl_wins_sim] & EPL_fixtures$epl_FTR == "H" & EPL_fixtures$epl_gamestatus =="notplayed",])
+  epl_away_wins_sim[i_epl_wins_sim] <- nrow(EPL_fixtures[EPL_fixtures$AwayTeam_epl == epl_teams[i_epl_wins_sim] & EPL_fixtures$epl_FTR == "A" & EPL_fixtures$epl_gamestatus == "notplayed",])
+  epl_home_draws_sim[i_epl_wins_sim] <- nrow(EPL_fixtures[EPL_fixtures$HomeTeam_epl == epl_teams[i_epl_wins_sim] & EPL_fixtures$epl_FTR == "D" & EPL_fixtures$epl_gamestatus == "notplayed",])
+  epl_away_draws_sim[i_epl_wins_sim] <- nrow(EPL_fixtures[EPL_fixtures$AwayTeam_epl == epl_teams[i_epl_wins_sim] & EPL_fixtures$epl_FTR == "D" & EPL_fixtures$epl_gamestatus == "notplayed",])
+  epl_home_loss_sim[i_epl_wins_sim] <- nrow(EPL_fixtures[EPL_fixtures$HomeTeam_epl == epl_teams[i_epl_wins_sim] & EPL_fixtures$epl_FTR == "A" & EPL_fixtures$epl_gamestatus == "notplayed",])
+  epl_away_loss_sim[i_epl_wins_sim] <- nrow(EPL_fixtures[EPL_fixtures$AwayTeam_epl == epl_teams[i_epl_wins_sim] & EPL_fixtures$epl_FTR == "H" & EPL_fixtures$epl_gamestatus == "notplayed", ])
 
 }
 
-bundesligatwo_total_wins_sim <- bundesligatwo_home_wins_sim + bundesligatwo_away_wins_sim
-bundesligatwo_total_draws_sim <- bundesligatwo_home_draws_sim + bundesligatwo_away_draws_sim
-bundesligatwo_total_loss_sim <- bundesligatwo_home_loss_sim + bundesligatwo_away_loss_sim
+epl_total_wins_sim <- epl_home_wins_sim + epl_away_wins_sim
+epl_total_draws_sim <- epl_home_draws_sim + epl_away_draws_sim
+epl_total_loss_sim <- epl_home_loss_sim + epl_away_loss_sim
 
-bundesligatwo_home_games_sim <- c()
-bundesligatwo_away_games_sim <-c()
+epl_home_games_sim <- c()
+epl_away_games_sim <-c()
 
-for (i_bundesligatwo_sim in 1:length(bundesligatwo_teams))
+for (i_epl_sim in 1:length(epl_teams))
 {
 
-  bundesligatwo_home_games_sim[i_bundesligatwo_sim] <- nrow(BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$HomeTeam_bundesligatwo == bundesligatwo_teams[i_bundesligatwo_sim] & BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus == "notplayed",])
-  bundesligatwo_away_games_sim[i_bundesligatwo_sim]  <- nrow(BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$AwayTeam_bundesligatwo == bundesligatwo_teams[i_bundesligatwo_sim] & BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus == "notplayed",])
+  epl_home_games_sim[i_epl_sim] <- nrow(EPL_fixtures[EPL_fixtures$HomeTeam_epl == epl_teams[i_epl_sim] & EPL_fixtures$epl_gamestatus == "notplayed",])
+  epl_away_games_sim[i_epl_sim]  <- nrow(EPL_fixtures[EPL_fixtures$AwayTeam_epl == epl_teams[i_epl_sim] & EPL_fixtures$epl_gamestatus == "notplayed",])
 
 }
 
-bundesligatwo_games_played_sim <- bundesligatwo_home_games_sim + bundesligatwo_away_games_sim
+epl_games_played_sim <- epl_home_games_sim + epl_away_games_sim
 
-bundesligatwo_league_table_sim <- cbind(bundesligatwo_teams,bundesligatwo_games_played_sim,bundesligatwo_total_wins_sim,bundesligatwo_total_draws_sim,bundesligatwo_total_loss_sim)
-bundesligatwo_PTS_sim <- (bundesligatwo_total_wins_sim*3) + (bundesligatwo_total_draws_sim*1)
-bundesligatwo_league_table_sim <- cbind(bundesligatwo_league_table_sim,bundesligatwo_PTS_sim)
+epl_league_table_sim <- cbind(epl_teams,epl_games_played_sim,epl_total_wins_sim,epl_total_draws_sim,epl_total_loss_sim)
+epl_PTS_sim <- (epl_total_wins_sim*3) + (epl_total_draws_sim*1)
+epl_league_table_sim <- cbind(epl_league_table_sim,epl_PTS_sim)
 
-bundesligatwo_games_played_simfinal <- bundesligatwo_games_played + bundesligatwo_games_played_sim
-bundesligatwo_total_wins_simfinal <- bundesligatwo_total_wins + bundesligatwo_total_wins_sim
-bundesligatwo_total_draws_simfinal <- bundesligatwo_total_draws + bundesligatwo_total_draws_sim
-bundesligatwo_total_loss_simfinal <- bundesligatwo_total_loss + bundesligatwo_total_loss_sim
-bundesligatwo_PTS_simfinal <- bundesligatwo_PTS + bundesligatwo_PTS_sim
+epl_games_played_simfinal <- epl_games_played + epl_games_played_sim
+epl_total_wins_simfinal <- epl_total_wins + epl_total_wins_sim
+epl_total_draws_simfinal <- epl_total_draws + epl_total_draws_sim
+epl_total_loss_simfinal <- epl_total_loss + epl_total_loss_sim
+epl_PTS_simfinal <- epl_PTS + epl_PTS_sim
 
-bundesligatwo_league_table_simfinal <- cbind(bundesligatwo_teams,bundesligatwo_games_played_simfinal,bundesligatwo_total_wins_simfinal,bundesligatwo_total_draws_simfinal,bundesligatwo_total_loss_simfinal,bundesligatwo_PTS_simfinal)
-bundesligatwo_league_table_simfinal <- as.data.frame(bundesligatwo_league_table_simfinal)
-names(bundesligatwo_league_table_simfinal)[names(bundesligatwo_league_table_simfinal) == "bundesligatwo_teams"] <- "Team_f"
-names(bundesligatwo_league_table_simfinal)[names(bundesligatwo_league_table_simfinal) == "bundesligatwo_games_played_simfinal"] <- "P_f"
-names(bundesligatwo_league_table_simfinal)[names(bundesligatwo_league_table_simfinal) == "bundesligatwo_total_wins_simfinal"] <- "W_f"
-names(bundesligatwo_league_table_simfinal)[names(bundesligatwo_league_table_simfinal) == "bundesligatwo_total_draws_simfinal"] <- "D_f"
-names(bundesligatwo_league_table_simfinal)[names(bundesligatwo_league_table_simfinal) == "bundesligatwo_total_loss_simfinal"] <- "L_f"
-names(bundesligatwo_league_table_simfinal)[names(bundesligatwo_league_table_simfinal) == "bundesligatwo_PTS_simfinal"] <- "PTS_f"
-points_bundesligatwo_sim <-  bundesligatwo_league_table_simfinal[order(as.numeric(bundesligatwo_league_table_simfinal$PTS_f), decreasing = TRUE),]
+epl_league_table_simfinal <- cbind(epl_teams,epl_games_played_simfinal,epl_total_wins_simfinal,epl_total_draws_simfinal,epl_total_loss_simfinal,epl_PTS_simfinal)
+epl_league_table_simfinal <- as.data.frame(epl_league_table_simfinal)
+names(epl_league_table_simfinal)[names(epl_league_table_simfinal) == "epl_teams"] <- "Team_f"
+names(epl_league_table_simfinal)[names(epl_league_table_simfinal) == "epl_games_played_simfinal"] <- "P_f"
+names(epl_league_table_simfinal)[names(epl_league_table_simfinal) == "epl_total_wins_simfinal"] <- "W_f"
+names(epl_league_table_simfinal)[names(epl_league_table_simfinal) == "epl_total_draws_simfinal"] <- "D_f"
+names(epl_league_table_simfinal)[names(epl_league_table_simfinal) == "epl_total_loss_simfinal"] <- "L_f"
+names(epl_league_table_simfinal)[names(epl_league_table_simfinal) == "epl_PTS_simfinal"] <- "PTS_f"
+points_epl_sim <-  epl_league_table_simfinal[order(as.numeric(epl_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
-BUNDESLIGATWO_notplayed <- BUNDESLIGATWO_fixtures[BUNDESLIGATWO_fixtures$bundesligatwo_gamestatus == "notplayed",]
+EPL_notplayed <- EPL_fixtures[EPL_fixtures$epl_gamestatus == "notplayed",]
 ###########################################################################################################################################################
 #decision model
-#BUNDESLIGATWO
-BUNDESLIGATWO_fixtures$Hometeam_bundesligatwo_index <- match(BUNDESLIGATWO_fixtures$HomeTeam_bundesligatwo,bundesligatwo_teams)
-BUNDESLIGATWO_fixtures$Awayteam_bundesligatwo_index <- match(BUNDESLIGATWO_fixtures$AwayTeam_bundesligatwo,bundesligatwo_teams)
-bundesligatwo_prediction <- c()
-bundesligatwo_HWM <- c()
-bundesligatwo_AWM <- c()
-bundesligatwo_HWMLM <- c()
-bundesligatwo_AWMLM <- c()
-bundesligatwo_HY <- c()
-bundesligatwo_AY <- c()
-bundesligatwo_HCO <- c()
-bundesligatwo_ACO <- c()
-bundesligatwo_HXSC <- c()
-bundesligatwo_AXSC <- c()
-bundesligatwo_HYCPF <- c()
-bundesligatwo_AYCPF <- c()
-for(bundesligatwo_row in 1:nrow(BUNDESLIGATWO_fixtures))
+#EPL
+EPL_fixtures$Hometeam_epl_index <- match(EPL_fixtures$HomeTeam_epl,epl_teams)
+EPL_fixtures$Awayteam_epl_index <- match(EPL_fixtures$AwayTeam_epl,epl_teams)
+epl_prediction <- c()
+epl_HWM <- c()
+epl_AWM <- c()
+epl_HWMLM <- c()
+epl_AWMLM <- c()
+epl_HY <- c()
+epl_AY <- c()
+epl_HCO <- c()
+epl_ACO <- c()
+epl_HXSC <- c()
+epl_AXSC <- c()
+epl_HYCPF <- c()
+epl_AYCPF <- c()
+for(epl_row in 1:nrow(EPL_fixtures))
 {
 
-  bundesligatwo_hometeamindex <- BUNDESLIGATWO_fixtures[bundesligatwo_row,"Hometeam_bundesligatwo_index"]
-  bundesligatwo_awayteamindex <- BUNDESLIGATWO_fixtures[bundesligatwo_row,"Awayteam_bundesligatwo_index"]
+  epl_hometeamindex <- EPL_fixtures[epl_row,"Hometeam_epl_index"]
+  epl_awayteamindex <- EPL_fixtures[epl_row,"Awayteam_epl_index"]
   #analyse team form
   #home team
-  bundesligatwo_form_vec_ht <- as.vector(bundesligatwo_form_h[bundesligatwo_hometeamindex,])
-  bundesligatwo_form_vec_ht[is.na(bundesligatwo_form_vec_ht)] <- ""
-  bundesligatwo_form_vec_ht <- bundesligatwo_form_vec_ht[bundesligatwo_form_vec_ht != ""]
-  bundesligatwo_form_vec_ht  <-tail(bundesligatwo_form_vec_ht,6)
-  bundesligatwo_ht_numberof_wins <- length(which(bundesligatwo_form_vec_ht == "W"))
-  bundesligatwo_ht_numberof_draws <- length(which(bundesligatwo_form_vec_ht == "D"))
-  bundesligatwo_ht_numberof_loss <- length(which(bundesligatwo_form_vec_ht == "L"))
+  epl_form_vec_ht <- as.vector(epl_form_h[epl_hometeamindex,])
+  epl_form_vec_ht[is.na(epl_form_vec_ht)] <- ""
+  epl_form_vec_ht <- epl_form_vec_ht[epl_form_vec_ht != ""]
+  epl_form_vec_ht  <-tail(epl_form_vec_ht,6)
+  epl_ht_numberof_wins <- length(which(epl_form_vec_ht == "W"))
+  epl_ht_numberof_draws <- length(which(epl_form_vec_ht == "D"))
+  epl_ht_numberof_loss <- length(which(epl_form_vec_ht == "L"))
   #awayteam
-  bundesligatwo_form_vec_at <- as.vector(bundesligatwo_form_h[bundesligatwo_awayteamindex,])
-  bundesligatwo_form_vec_at[is.na(bundesligatwo_form_vec_at)] <- ""
-  bundesligatwo_form_vec_at <- bundesligatwo_form_vec_at[bundesligatwo_form_vec_at != ""]
-  bundesligatwo_form_vec_at  <-tail(bundesligatwo_form_vec_at,6)
-  bundesligatwo_at_numberof_wins <- length(which(bundesligatwo_form_vec_at == "W"))
-  bundesligatwo_at_numberof_draws <- length(which(bundesligatwo_form_vec_at == "D"))
-  bundesligatwo_at_numberof_loss <- length(which(bundesligatwo_form_vec_at == "L"))
+  epl_form_vec_at <- as.vector(epl_form_h[epl_awayteamindex,])
+  epl_form_vec_at[is.na(epl_form_vec_at)] <- ""
+  epl_form_vec_at <- epl_form_vec_at[epl_form_vec_at != ""]
+  epl_form_vec_at  <-tail(epl_form_vec_at,6)
+  epl_at_numberof_wins <- length(which(epl_form_vec_at == "W"))
+  epl_at_numberof_draws <- length(which(epl_form_vec_at == "D"))
+  epl_at_numberof_loss <- length(which(epl_form_vec_at == "L"))
 
   ######################################################################
   #analyse goals scored
   #hometeam
-  bundesligatwo_goalscored_vec_ht <- as.vector(bundesligatwo_goalscored_h[bundesligatwo_hometeamindex,])
-  bundesligatwo_goalscored_vec_ht[is.na(bundesligatwo_goalscored_vec_ht)] <- ""
-  bundesligatwo_goalscored_vec_ht <- bundesligatwo_goalscored_vec_ht[bundesligatwo_goalscored_vec_ht != ""]
-  bundesligatwo_goalscored_vec_ht  <-tail(bundesligatwo_goalscored_vec_ht,6)
-  bundesligatwo_goalscored_vec_ht  <- as.numeric(bundesligatwo_goalscored_vec_ht)
-  bundesligatwo_ht_totalgoalscored <- sum(bundesligatwo_goalscored_vec_ht)
-  bundesligatwo_ht_matches_scoring <- length(which(bundesligatwo_goalscored_vec_ht > 0))
-  bundesligatwo_ht_matches_without_scoring <- length(which(bundesligatwo_goalscored_vec_ht == "0"))
+  epl_goalscored_vec_ht <- as.vector(epl_goalscored_h[epl_hometeamindex,])
+  epl_goalscored_vec_ht[is.na(epl_goalscored_vec_ht)] <- ""
+  epl_goalscored_vec_ht <- epl_goalscored_vec_ht[epl_goalscored_vec_ht != ""]
+  epl_goalscored_vec_ht  <-tail(epl_goalscored_vec_ht,6)
+  epl_goalscored_vec_ht  <- as.numeric(epl_goalscored_vec_ht)
+  epl_ht_totalgoalscored <- sum(epl_goalscored_vec_ht)
+  epl_ht_matches_scoring <- length(which(epl_goalscored_vec_ht > 0))
+  epl_ht_matches_without_scoring <- length(which(epl_goalscored_vec_ht == "0"))
   #awayteam
-  bundesligatwo_goalscored_vec_at <- as.vector(bundesligatwo_goalscored_h[bundesligatwo_awayteamindex,])
-  bundesligatwo_goalscored_vec_at[is.na(bundesligatwo_goalscored_vec_at)] <- ""
-  bundesligatwo_goalscored_vec_at <- bundesligatwo_goalscored_vec_at[bundesligatwo_goalscored_vec_at != ""]
-  bundesligatwo_goalscored_vec_at  <-tail(bundesligatwo_goalscored_vec_at,6)
-  bundesligatwo_goalscored_vec_at  <- as.numeric(bundesligatwo_goalscored_vec_at)
-  bundesligatwo_at_totalgoalscored <- sum(bundesligatwo_goalscored_vec_at)
-  bundesligatwo_at_matches_scoring <- length(which(bundesligatwo_goalscored_vec_at > 0))
-  bundesligatwo_at_matches_without_scoring <- length(which(bundesligatwo_goalscored_vec_at == "0"))
+  epl_goalscored_vec_at <- as.vector(epl_goalscored_h[epl_awayteamindex,])
+  epl_goalscored_vec_at[is.na(epl_goalscored_vec_at)] <- ""
+  epl_goalscored_vec_at <- epl_goalscored_vec_at[epl_goalscored_vec_at != ""]
+  epl_goalscored_vec_at  <-tail(epl_goalscored_vec_at,6)
+  epl_goalscored_vec_at  <- as.numeric(epl_goalscored_vec_at)
+  epl_at_totalgoalscored <- sum(epl_goalscored_vec_at)
+  epl_at_matches_scoring <- length(which(epl_goalscored_vec_at > 0))
+  epl_at_matches_without_scoring <- length(which(epl_goalscored_vec_at == "0"))
   #####################################################################################
   #analyse goals conceded
   #hometeam
-  bundesligatwo_goalconceded_vec_ht <- as.vector(bundesligatwo_goalconceded_h[bundesligatwo_hometeamindex,])
-  bundesligatwo_goalconceded_vec_ht[is.na(bundesligatwo_goalconceded_vec_ht)] <- ""
-  bundesligatwo_goalconceded_vec_ht <- bundesligatwo_goalconceded_vec_ht[bundesligatwo_goalconceded_vec_ht != ""]
-  bundesligatwo_goalconceded_vec_ht  <-tail(bundesligatwo_goalconceded_vec_ht,6)
-  bundesligatwo_goalconceded_vec_ht  <- as.numeric(bundesligatwo_goalconceded_vec_ht)
-  bundesligatwo_goalconceded_vec_ht
-  bundesligatwo_ht_totalgoalconceded <- sum(bundesligatwo_goalconceded_vec_ht)
-  bundesligatwo_ht_matches_concede <- length(which(bundesligatwo_goalconceded_vec_ht > 0))
-  bundesligatwo_ht_matches_without_concede <- length(which(bundesligatwo_goalconceded_vec_ht == "0"))
+  epl_goalconceded_vec_ht <- as.vector(epl_goalconceded_h[epl_hometeamindex,])
+  epl_goalconceded_vec_ht[is.na(epl_goalconceded_vec_ht)] <- ""
+  epl_goalconceded_vec_ht <- epl_goalconceded_vec_ht[epl_goalconceded_vec_ht != ""]
+  epl_goalconceded_vec_ht  <-tail(epl_goalconceded_vec_ht,6)
+  epl_goalconceded_vec_ht  <- as.numeric(epl_goalconceded_vec_ht)
+  epl_goalconceded_vec_ht
+  epl_ht_totalgoalconceded <- sum(epl_goalconceded_vec_ht)
+  epl_ht_matches_concede <- length(which(epl_goalconceded_vec_ht > 0))
+  epl_ht_matches_without_concede <- length(which(epl_goalconceded_vec_ht == "0"))
   #awayteam
-  bundesligatwo_goalconceded_vec_at <- as.vector(bundesligatwo_goalconceded_h[bundesligatwo_awayteamindex,])
-  bundesligatwo_goalconceded_vec_at[is.na(bundesligatwo_goalconceded_vec_at)] <- ""
-  bundesligatwo_goalconceded_vec_at <- bundesligatwo_goalconceded_vec_at[bundesligatwo_goalconceded_vec_at != ""]
-  bundesligatwo_goalconceded_vec_at  <-tail(bundesligatwo_goalconceded_vec_at,6)
-  bundesligatwo_goalconceded_vec_at  <- as.numeric(bundesligatwo_goalconceded_vec_at)
-  bundesligatwo_at_totalgoalconceded <- sum(bundesligatwo_goalconceded_vec_at)
-  bundesligatwo_at_matches_concede <- length(which(bundesligatwo_goalconceded_vec_at > 0))
-  bundesligatwo_at_matches_without_concede <- length(which(bundesligatwo_goalconceded_vec_at == "0"))
+  epl_goalconceded_vec_at <- as.vector(epl_goalconceded_h[epl_awayteamindex,])
+  epl_goalconceded_vec_at[is.na(epl_goalconceded_vec_at)] <- ""
+  epl_goalconceded_vec_at <- epl_goalconceded_vec_at[epl_goalconceded_vec_at != ""]
+  epl_goalconceded_vec_at  <-tail(epl_goalconceded_vec_at,6)
+  epl_goalconceded_vec_at  <- as.numeric(epl_goalconceded_vec_at)
+  epl_at_totalgoalconceded <- sum(epl_goalconceded_vec_at)
+  epl_at_matches_concede <- length(which(epl_goalconceded_vec_at > 0))
+  epl_at_matches_without_concede <- length(which(epl_goalconceded_vec_at == "0"))
 
   ####################################################################################
   #analyse total combined goals
   #hometeam
-  bundesligatwo_totalgoals_vec_ht <- as.vector(bundesligatwo_totalgoals_h[bundesligatwo_hometeamindex,])
-  bundesligatwo_totalgoals_vec_ht[is.na(bundesligatwo_totalgoals_vec_ht)] <- ""
-  bundesligatwo_totalgoals_vec_ht <- bundesligatwo_totalgoals_vec_ht[bundesligatwo_totalgoals_vec_ht != ""]
-  bundesligatwo_totalgoals_vec_ht  <-tail(bundesligatwo_totalgoals_vec_ht,6)
-  bundesligatwo_totalgoals_vec_ht  <- as.numeric(bundesligatwo_totalgoals_vec_ht)
-  bundesligatwo_totalgoals_vec_ht
-  bundesligatwo_ht_totalgoals <- sum(bundesligatwo_totalgoals_vec_ht)
-  bundesligatwo_ht_avgtotalgoals <- (bundesligatwo_ht_totalgoals/6)
-  bundesligatwo_ht_no_of_ov25 <- length(which(bundesligatwo_totalgoals_vec_ht >= 3))
-  bundesligatwo_ht_no_of_un25 <- length(which(bundesligatwo_totalgoals_vec_ht <= 2))
+  epl_totalgoals_vec_ht <- as.vector(epl_totalgoals_h[epl_hometeamindex,])
+  epl_totalgoals_vec_ht[is.na(epl_totalgoals_vec_ht)] <- ""
+  epl_totalgoals_vec_ht <- epl_totalgoals_vec_ht[epl_totalgoals_vec_ht != ""]
+  epl_totalgoals_vec_ht  <-tail(epl_totalgoals_vec_ht,6)
+  epl_totalgoals_vec_ht  <- as.numeric(epl_totalgoals_vec_ht)
+  epl_totalgoals_vec_ht
+  epl_ht_totalgoals <- sum(epl_totalgoals_vec_ht)
+  epl_ht_avgtotalgoals <- (epl_ht_totalgoals/6)
+  epl_ht_no_of_ov25 <- length(which(epl_totalgoals_vec_ht >= 3))
+  epl_ht_no_of_un25 <- length(which(epl_totalgoals_vec_ht <= 2))
   #awayteam
-  bundesligatwo_totalgoals_vec_at <- as.vector(bundesligatwo_totalgoals_h[bundesligatwo_awayteamindex,])
-  bundesligatwo_totalgoals_vec_at[is.na(bundesligatwo_totalgoals_vec_at)] <- ""
-  bundesligatwo_totalgoals_vec_at <- bundesligatwo_totalgoals_vec_at[bundesligatwo_totalgoals_vec_at != ""]
-  bundesligatwo_totalgoals_vec_at  <-tail(bundesligatwo_totalgoals_vec_at,6)
-  bundesligatwo_totalgoals_vec_at  <- as.numeric(bundesligatwo_totalgoals_vec_at)
-  bundesligatwo_totalgoals_vec_at
-  bundesligatwo_at_totalgoals <- sum(bundesligatwo_totalgoals_vec_at)
-  bundesligatwo_at_avgtotalgoals <- (bundesligatwo_at_totalgoals/6)
-  bundesligatwo_at_no_of_ov25 <- length(which(bundesligatwo_totalgoals_vec_at >= 3))
-  bundesligatwo_at_no_of_un25 <- length(which(bundesligatwo_totalgoals_vec_at <= 2))
+  epl_totalgoals_vec_at <- as.vector(epl_totalgoals_h[epl_awayteamindex,])
+  epl_totalgoals_vec_at[is.na(epl_totalgoals_vec_at)] <- ""
+  epl_totalgoals_vec_at <- epl_totalgoals_vec_at[epl_totalgoals_vec_at != ""]
+  epl_totalgoals_vec_at  <-tail(epl_totalgoals_vec_at,6)
+  epl_totalgoals_vec_at  <- as.numeric(epl_totalgoals_vec_at)
+  epl_totalgoals_vec_at
+  epl_at_totalgoals <- sum(epl_totalgoals_vec_at)
+  epl_at_avgtotalgoals <- (epl_at_totalgoals/6)
+  epl_at_no_of_ov25 <- length(which(epl_totalgoals_vec_at >= 3))
+  epl_at_no_of_un25 <- length(which(epl_totalgoals_vec_at <= 2))
   ################################################################################
   #analyse win margin
   #hometeam
-  bundesligatwo_winmargin_vec_ht <- as.vector(bundesligatwo_winmargin_h[bundesligatwo_hometeamindex,])
-  bundesligatwo_winmargin_vec_ht[is.na(bundesligatwo_winmargin_vec_ht)] <- ""
-  bundesligatwo_winmargin_vec_ht <- bundesligatwo_winmargin_vec_ht[bundesligatwo_winmargin_vec_ht != ""]
-  bundesligatwo_winmargin_vec_ht  <-tail(bundesligatwo_winmargin_vec_ht,6)
-  bundesligatwo_winmargin_vec_ht  <- as.numeric(bundesligatwo_winmargin_vec_ht)
+  epl_winmargin_vec_ht <- as.vector(epl_winmargin_h[epl_hometeamindex,])
+  epl_winmargin_vec_ht[is.na(epl_winmargin_vec_ht)] <- ""
+  epl_winmargin_vec_ht <- epl_winmargin_vec_ht[epl_winmargin_vec_ht != ""]
+  epl_winmargin_vec_ht  <-tail(epl_winmargin_vec_ht,6)
+  epl_winmargin_vec_ht  <- as.numeric(epl_winmargin_vec_ht)
 
-  bundesligatwo_ht_totalwinmargin <- sum(bundesligatwo_winmargin_vec_ht)
-  bundesligatwo_ht_no_of_winmargin_ov0 <- length(which(bundesligatwo_winmargin_vec_ht >= 0))
-  bundesligatwo_ht_no_of_winmargin_ov1 <- length(which(bundesligatwo_winmargin_vec_ht >= 1))
-  bundesligatwo_ht_no_of_winmargin_un0 <- length(which(bundesligatwo_winmargin_vec_ht <= 0))
-  bundesligatwo_ht_no_of_winmargin_un1 <- length(which(bundesligatwo_winmargin_vec_ht <= 1))
+  epl_ht_totalwinmargin <- sum(epl_winmargin_vec_ht)
+  epl_ht_no_of_winmargin_ov0 <- length(which(epl_winmargin_vec_ht >= 0))
+  epl_ht_no_of_winmargin_ov1 <- length(which(epl_winmargin_vec_ht >= 1))
+  epl_ht_no_of_winmargin_un0 <- length(which(epl_winmargin_vec_ht <= 0))
+  epl_ht_no_of_winmargin_un1 <- length(which(epl_winmargin_vec_ht <= 1))
   #awayteam
-  bundesligatwo_winmargin_vec_at <- as.vector(bundesligatwo_winmargin_h[bundesligatwo_awayteamindex,])
-  bundesligatwo_winmargin_vec_at[is.na(bundesligatwo_winmargin_vec_at)] <- ""
-  bundesligatwo_winmargin_vec_at <- bundesligatwo_winmargin_vec_at[bundesligatwo_winmargin_vec_at != ""]
-  bundesligatwo_winmargin_vec_at  <-tail(bundesligatwo_winmargin_vec_at,6)
-  bundesligatwo_winmargin_vec_at  <- as.numeric(bundesligatwo_winmargin_vec_at)
+  epl_winmargin_vec_at <- as.vector(epl_winmargin_h[epl_awayteamindex,])
+  epl_winmargin_vec_at[is.na(epl_winmargin_vec_at)] <- ""
+  epl_winmargin_vec_at <- epl_winmargin_vec_at[epl_winmargin_vec_at != ""]
+  epl_winmargin_vec_at  <-tail(epl_winmargin_vec_at,6)
+  epl_winmargin_vec_at  <- as.numeric(epl_winmargin_vec_at)
 
-  bundesligatwo_at_totalwinmargin <- sum(bundesligatwo_winmargin_vec_at)
-  bundesligatwo_at_no_of_winmargin_ov0 <- length(which(bundesligatwo_winmargin_vec_at >= 0))
-  bundesligatwo_at_no_of_winmargin_ov1 <- length(which(bundesligatwo_winmargin_vec_at >= 1))
-  bundesligatwo_at_no_of_winmargin_un0 <- length(which(bundesligatwo_winmargin_vec_at <= 0))
-  bundesligatwo_at_no_of_winmargin_un1 <- length(which(bundesligatwo_winmargin_vec_at <= 1))
+  epl_at_totalwinmargin <- sum(epl_winmargin_vec_at)
+  epl_at_no_of_winmargin_ov0 <- length(which(epl_winmargin_vec_at >= 0))
+  epl_at_no_of_winmargin_ov1 <- length(which(epl_winmargin_vec_at >= 1))
+  epl_at_no_of_winmargin_un0 <- length(which(epl_winmargin_vec_at <= 0))
+  epl_at_no_of_winmargin_un1 <- length(which(epl_winmargin_vec_at <= 1))
   ##################################################################################
   #very last win margin
   #hometeam
-  bundesligatwo_winmargin_vec_ht_lm <- as.vector(bundesligatwo_winmargin_h[bundesligatwo_hometeamindex,])
-  bundesligatwo_winmargin_vec_ht_lm[is.na(bundesligatwo_winmargin_vec_ht_lm)] <- ""
-  bundesligatwo_winmargin_vec_ht_lm <- bundesligatwo_winmargin_vec_ht_lm[bundesligatwo_winmargin_vec_ht_lm != ""]
-  bundesligatwo_winmargin_vec_ht_lm  <-tail(bundesligatwo_winmargin_vec_ht_lm,1)
+  epl_winmargin_vec_ht_lm <- as.vector(epl_winmargin_h[epl_hometeamindex,])
+  epl_winmargin_vec_ht_lm[is.na(epl_winmargin_vec_ht_lm)] <- ""
+  epl_winmargin_vec_ht_lm <- epl_winmargin_vec_ht_lm[epl_winmargin_vec_ht_lm != ""]
+  epl_winmargin_vec_ht_lm  <-tail(epl_winmargin_vec_ht_lm,1)
   #awayteam
-  bundesligatwo_winmargin_vec_at_lm <- as.vector(bundesligatwo_winmargin_h[bundesligatwo_awayteamindex,])
-  bundesligatwo_winmargin_vec_at_lm[is.na(bundesligatwo_winmargin_vec_at_lm)] <- ""
-  bundesligatwo_winmargin_vec_at_lm <- bundesligatwo_winmargin_vec_at_lm[bundesligatwo_winmargin_vec_at_lm != ""]
-  bundesligatwo_winmargin_vec_at_lm  <-tail(bundesligatwo_winmargin_vec_at_lm,1)
+  epl_winmargin_vec_at_lm <- as.vector(epl_winmargin_h[epl_awayteamindex,])
+  epl_winmargin_vec_at_lm[is.na(epl_winmargin_vec_at_lm)] <- ""
+  epl_winmargin_vec_at_lm <- epl_winmargin_vec_at_lm[epl_winmargin_vec_at_lm != ""]
+  epl_winmargin_vec_at_lm  <-tail(epl_winmargin_vec_at_lm,1)
   #################################################################################
   #pick average yellow cards
   #hometeam
-  bundesligatwo_yellowtotals_vec_ht <- as.vector(bundesligatwo_yellowtotalsv2[bundesligatwo_hometeamindex,])
-  bundesligatwo_yellowtotals_vec_ht[is.na(bundesligatwo_yellowtotals_vec_ht)] <- ""
-  bundesligatwo_yellowtotals_vec_ht <- bundesligatwo_yellowtotals_vec_ht[bundesligatwo_yellowtotals_vec_ht != ""]
-  bundesligatwo_yellowtotals_vec_ht  <-tail(bundesligatwo_yellowtotals_vec_ht,1)
+  epl_yellowtotals_vec_ht <- as.vector(epl_yellowtotalsv2[epl_hometeamindex,])
+  epl_yellowtotals_vec_ht[is.na(epl_yellowtotals_vec_ht)] <- ""
+  epl_yellowtotals_vec_ht <- epl_yellowtotals_vec_ht[epl_yellowtotals_vec_ht != ""]
+  epl_yellowtotals_vec_ht  <-tail(epl_yellowtotals_vec_ht,1)
   #awayteam
-  bundesligatwo_yellowtotals_vec_at <- as.vector(bundesligatwo_yellowtotalsv2[bundesligatwo_awayteamindex,])
-  bundesligatwo_yellowtotals_vec_at[is.na(bundesligatwo_yellowtotals_vec_at)] <- ""
-  bundesligatwo_yellowtotals_vec_at <- bundesligatwo_yellowtotals_vec_at[bundesligatwo_yellowtotals_vec_at != ""]
-  bundesligatwo_yellowtotals_vec_at  <-tail(bundesligatwo_yellowtotals_vec_at,1)
+  epl_yellowtotals_vec_at <- as.vector(epl_yellowtotalsv2[epl_awayteamindex,])
+  epl_yellowtotals_vec_at[is.na(epl_yellowtotals_vec_at)] <- ""
+  epl_yellowtotals_vec_at <- epl_yellowtotals_vec_at[epl_yellowtotals_vec_at != ""]
+  epl_yellowtotals_vec_at  <-tail(epl_yellowtotals_vec_at,1)
 
   #################################################################################
   #pick average corners
   #hometeam
-  bundesligatwo_cornertotals_vec_ht <- as.vector(bundesligatwo_cornertotalsv2[bundesligatwo_hometeamindex,])
-  bundesligatwo_cornertotals_vec_ht[is.na(bundesligatwo_cornertotals_vec_ht)] <- ""
-  bundesligatwo_cornertotals_vec_ht <- bundesligatwo_cornertotals_vec_ht[bundesligatwo_cornertotals_vec_ht != ""]
-  bundesligatwo_cornertotals_vec_ht  <-tail(bundesligatwo_cornertotals_vec_ht,1)
+  epl_cornertotals_vec_ht <- as.vector(epl_cornertotalsv2[epl_hometeamindex,])
+  epl_cornertotals_vec_ht[is.na(epl_cornertotals_vec_ht)] <- ""
+  epl_cornertotals_vec_ht <- epl_cornertotals_vec_ht[epl_cornertotals_vec_ht != ""]
+  epl_cornertotals_vec_ht  <-tail(epl_cornertotals_vec_ht,1)
   #awayteam
-  bundesligatwo_cornertotals_vec_at <- as.vector(bundesligatwo_cornertotalsv2[bundesligatwo_awayteamindex,])
-  bundesligatwo_cornertotals_vec_at[is.na(bundesligatwo_cornertotals_vec_at)] <- ""
-  bundesligatwo_cornertotals_vec_at <- bundesligatwo_cornertotals_vec_at[bundesligatwo_cornertotals_vec_at != ""]
-  bundesligatwo_cornertotals_vec_at  <-tail(bundesligatwo_cornertotals_vec_at,1)
+  epl_cornertotals_vec_at <- as.vector(epl_cornertotalsv2[epl_awayteamindex,])
+  epl_cornertotals_vec_at[is.na(epl_cornertotals_vec_at)] <- ""
+  epl_cornertotals_vec_at <- epl_cornertotals_vec_at[epl_cornertotals_vec_at != ""]
+  epl_cornertotals_vec_at  <-tail(epl_cornertotals_vec_at,1)
   #################################################################################
   #pick xpected shots conversion
   #hometeam
-  bundesligatwo_xshotsconversion_vec_ht <- as.vector(bundesligatwo_shots_analysis[bundesligatwo_hometeamindex,])
-  bundesligatwo_xshotsconversion_vec_ht[is.na(bundesligatwo_xshotsconversion_vec_ht)] <- ""
-  bundesligatwo_xshotsconversion_vec_ht <- bundesligatwo_xshotsconversion_vec_ht[bundesligatwo_xshotsconversion_vec_ht != ""]
-  bundesligatwo_xshotsconversion_vec_ht  <-tail(bundesligatwo_xshotsconversion_vec_ht,1)
+  epl_xshotsconversion_vec_ht <- as.vector(epl_shots_analysis[epl_hometeamindex,])
+  epl_xshotsconversion_vec_ht[is.na(epl_xshotsconversion_vec_ht)] <- ""
+  epl_xshotsconversion_vec_ht <- epl_xshotsconversion_vec_ht[epl_xshotsconversion_vec_ht != ""]
+  epl_xshotsconversion_vec_ht  <-tail(epl_xshotsconversion_vec_ht,1)
   #awayteam
-  bundesligatwo_xshotsconversion_vec_at <- as.vector(bundesligatwo_shots_analysis[bundesligatwo_awayteamindex,])
-  bundesligatwo_xshotsconversion_vec_at[is.na(bundesligatwo_xshotsconversion_vec_at)] <- ""
-  bundesligatwo_xshotsconversion_vec_at <- bundesligatwo_xshotsconversion_vec_at[bundesligatwo_xshotsconversion_vec_at != ""]
-  bundesligatwo_xshotsconversion_vec_at  <-tail(bundesligatwo_xshotsconversion_vec_at,1)
+  epl_xshotsconversion_vec_at <- as.vector(epl_shots_analysis[epl_awayteamindex,])
+  epl_xshotsconversion_vec_at[is.na(epl_xshotsconversion_vec_at)] <- ""
+  epl_xshotsconversion_vec_at <- epl_xshotsconversion_vec_at[epl_xshotsconversion_vec_at != ""]
+  epl_xshotsconversion_vec_at  <-tail(epl_xshotsconversion_vec_at,1)
   #################################################################################
   #pick yellow cards per foul
   #hometeam
-  bundesligatwo_fouls_conversion_vec_ht <- as.vector(bundesligatwo_fouls_conversion[bundesligatwo_hometeamindex,])
-  bundesligatwo_fouls_conversion_vec_ht[is.na(bundesligatwo_fouls_conversion_vec_ht)] <- ""
-  bundesligatwo_fouls_conversion_vec_ht <- bundesligatwo_fouls_conversion_vec_ht[bundesligatwo_fouls_conversion_vec_ht != ""]
-  bundesligatwo_fouls_conversion_vec_ht  <-tail(bundesligatwo_fouls_conversion_vec_ht,1)
+  epl_fouls_conversion_vec_ht <- as.vector(epl_fouls_conversion[epl_hometeamindex,])
+  epl_fouls_conversion_vec_ht[is.na(epl_fouls_conversion_vec_ht)] <- ""
+  epl_fouls_conversion_vec_ht <- epl_fouls_conversion_vec_ht[epl_fouls_conversion_vec_ht != ""]
+  epl_fouls_conversion_vec_ht  <-tail(epl_fouls_conversion_vec_ht,1)
   #awayteam
-  bundesligatwo_fouls_conversion_vec_at <- as.vector(bundesligatwo_fouls_conversion[bundesligatwo_awayteamindex,])
-  bundesligatwo_fouls_conversion_vec_at[is.na(bundesligatwo_fouls_conversion_vec_at)] <- ""
-  bundesligatwo_fouls_conversion_vec_at <- bundesligatwo_fouls_conversion_vec_at[bundesligatwo_fouls_conversion_vec_at != ""]
-  bundesligatwo_fouls_conversion_vec_at  <-tail(bundesligatwo_fouls_conversion_vec_at,1)
+  epl_fouls_conversion_vec_at <- as.vector(epl_fouls_conversion[epl_awayteamindex,])
+  epl_fouls_conversion_vec_at[is.na(epl_fouls_conversion_vec_at)] <- ""
+  epl_fouls_conversion_vec_at <- epl_fouls_conversion_vec_at[epl_fouls_conversion_vec_at != ""]
+  epl_fouls_conversion_vec_at  <-tail(epl_fouls_conversion_vec_at,1)
   #################################################################################
 
   ####we need to decide ############
   #winner goals
-  bundesligatwo_ht_last6points <- bundesligatwo_ht_numberof_wins*3 + bundesligatwo_ht_numberof_draws*1
-  bundesligatwo_at_last6points <- bundesligatwo_at_numberof_wins*3 + bundesligatwo_at_numberof_draws*1
+  epl_ht_last6points <- epl_ht_numberof_wins*3 + epl_ht_numberof_draws*1
+  epl_at_last6points <- epl_at_numberof_wins*3 + epl_at_numberof_draws*1
 
-  if(bundesligatwo_ht_last6points > bundesligatwo_at_last6points) {bundesligatwo_3waypick <- "1"}  else {bundesligatwo_3waypick <- "X2"}
+  if(epl_ht_last6points > epl_at_last6points) {epl_3waypick <- "1"}  else {epl_3waypick <- "X2"}
 
-  if(bundesligatwo_at_last6points > bundesligatwo_ht_last6points ) {bundesligatwo_3waypick <- "2"} else {bundesligatwo_3waypick <- "1X"}
+  if(epl_at_last6points > epl_ht_last6points ) {epl_3waypick <- "2"} else {epl_3waypick <- "1X"}
 
-  if(bundesligatwo_ht_no_of_ov25 + bundesligatwo_at_no_of_ov25 >= 6) {bundesligatwo_goalspick <- "ov25"} else {bundesligatwo_goalspick <- "un25"}
+  if(epl_ht_no_of_ov25 + epl_at_no_of_ov25 >= 6) {epl_goalspick <- "ov25"} else {epl_goalspick <- "un25"}
 
-  if(bundesligatwo_ht_no_of_un25 + bundesligatwo_at_no_of_un25 >= 6) {bundesligatwo_goalspick <- "un25"} else {bundesligatwo_goalspick <- "ov25"}
+  if(epl_ht_no_of_un25 + epl_at_no_of_un25 >= 6) {epl_goalspick <- "un25"} else {epl_goalspick <- "ov25"}
 
-  if(bundesligatwo_ht_matches_scoring >= 4 && bundesligatwo_at_matches_scoring >=4) {bundesligatwo_btts <- "BTTS-Y"} else {bundesligatwo_btts <- "BTTS-N"}
+  if(epl_ht_matches_scoring >= 4 && epl_at_matches_scoring >=4) {epl_btts <- "BTTS-Y"} else {epl_btts <- "BTTS-N"}
 
 
-  bundesligatwo_prediction[bundesligatwo_row] <- rbind(paste(bundesligatwo_3waypick,bundesligatwo_goalspick,bundesligatwo_btts,sep = ","))
-  bundesligatwo_HWM[bundesligatwo_row] <- bundesligatwo_ht_totalwinmargin
-  bundesligatwo_AWM[bundesligatwo_row] <- bundesligatwo_at_totalwinmargin
+  epl_prediction[epl_row] <- rbind(paste(epl_3waypick,epl_goalspick,epl_btts,sep = ","))
+  epl_HWM[epl_row] <- epl_ht_totalwinmargin
+  epl_AWM[epl_row] <- epl_at_totalwinmargin
 
-  bundesligatwo_HWMLM[bundesligatwo_row] <- bundesligatwo_winmargin_vec_ht_lm
-  bundesligatwo_AWMLM[bundesligatwo_row] <- bundesligatwo_winmargin_vec_at_lm
+  epl_HWMLM[epl_row] <- epl_winmargin_vec_ht_lm
+  epl_AWMLM[epl_row] <- epl_winmargin_vec_at_lm
 
-  bundesligatwo_HY[bundesligatwo_row] <- bundesligatwo_yellowtotals_vec_ht
-  bundesligatwo_AY[bundesligatwo_row] <- bundesligatwo_yellowtotals_vec_at
+  epl_HY[epl_row] <- epl_yellowtotals_vec_ht
+  epl_AY[epl_row] <- epl_yellowtotals_vec_at
 
-  bundesligatwo_HCO[bundesligatwo_row] <- bundesligatwo_cornertotals_vec_ht
-  bundesligatwo_ACO[bundesligatwo_row] <- bundesligatwo_cornertotals_vec_at
+  epl_HCO[epl_row] <- epl_cornertotals_vec_ht
+  epl_ACO[epl_row] <- epl_cornertotals_vec_at
 
-  bundesligatwo_HXSC[bundesligatwo_row] <- bundesligatwo_xshotsconversion_vec_ht
-  bundesligatwo_AXSC[bundesligatwo_row] <- bundesligatwo_xshotsconversion_vec_at
+  epl_HXSC[epl_row] <- epl_xshotsconversion_vec_ht
+  epl_AXSC[epl_row] <- epl_xshotsconversion_vec_at
 
-  bundesligatwo_HYCPF[bundesligatwo_row] <- bundesligatwo_fouls_conversion_vec_ht
-  bundesligatwo_AYCPF[bundesligatwo_row] <- bundesligatwo_fouls_conversion_vec_at
+  epl_HYCPF[epl_row] <- epl_fouls_conversion_vec_ht
+  epl_AYCPF[epl_row] <- epl_fouls_conversion_vec_at
 }
 
-bundesligatwo_prediction <- as.data.frame(bundesligatwo_prediction)
-colnames(bundesligatwo_prediction) <- "prediction"
+epl_prediction <- as.data.frame(epl_prediction)
+colnames(epl_prediction) <- "prediction"
 
-bundesligatwo_HWM <- as.data.frame(bundesligatwo_HWM)
-colnames(bundesligatwo_HWM) <- "HWM"
+epl_HWM <- as.data.frame(epl_HWM)
+colnames(epl_HWM) <- "HWM"
 
-bundesligatwo_AWM <- as.data.frame(bundesligatwo_AWM)
-colnames(bundesligatwo_AWM) <- "AWM"
+epl_AWM <- as.data.frame(epl_AWM)
+colnames(epl_AWM) <- "AWM"
 
-bundesligatwo_HWMLM <- as.data.frame(bundesligatwo_HWMLM)
-colnames(bundesligatwo_HWMLM) <- "HWMLM"
+epl_HWMLM <- as.data.frame(epl_HWMLM)
+colnames(epl_HWMLM) <- "HWMLM"
 
-bundesligatwo_AWMLM <- as.data.frame(bundesligatwo_AWMLM)
-colnames(bundesligatwo_AWMLM) <- "AWMLM"
+epl_AWMLM <- as.data.frame(epl_AWMLM)
+colnames(epl_AWMLM) <- "AWMLM"
 
-bundesligatwo_HY <- as.data.frame(bundesligatwo_HY)
-colnames(bundesligatwo_HY) <- "AVGHY"
+epl_HY <- as.data.frame(epl_HY)
+colnames(epl_HY) <- "AVGHY"
 
-bundesligatwo_AY <- as.data.frame(bundesligatwo_AY)
-colnames(bundesligatwo_AY) <- "AVGAY"
+epl_AY <- as.data.frame(epl_AY)
+colnames(epl_AY) <- "AVGAY"
 
-bundesligatwo_HCO <- as.data.frame(bundesligatwo_HCO)
-colnames(bundesligatwo_HCO) <- "AVGHCO"
+epl_HCO <- as.data.frame(epl_HCO)
+colnames(epl_HCO) <- "AVGHCO"
 
-bundesligatwo_ACO <- as.data.frame(bundesligatwo_ACO)
-colnames(bundesligatwo_ACO) <- "AVGACO"
+epl_ACO <- as.data.frame(epl_ACO)
+colnames(epl_ACO) <- "AVGACO"
 
-bundesligatwo_HXSC <- as.data.frame(bundesligatwo_HXSC)
-colnames(bundesligatwo_HXSC) <- "HXSC"
+epl_HXSC <- as.data.frame(epl_HXSC)
+colnames(epl_HXSC) <- "HXSC"
 
-bundesligatwo_AXSC <- as.data.frame(bundesligatwo_AXSC)
-colnames(bundesligatwo_AXSC) <- "AXSC"
+epl_AXSC <- as.data.frame(epl_AXSC)
+colnames(epl_AXSC) <- "AXSC"
 
-bundesligatwo_HYCPF <- as.data.frame(bundesligatwo_HYCPF)
-colnames(bundesligatwo_HYCPF) <- "HYCPF"
+epl_HYCPF <- as.data.frame(epl_HYCPF)
+colnames(epl_HYCPF) <- "HYCPF"
 
-bundesligatwo_AYCPF <- as.data.frame(bundesligatwo_AYCPF)
-colnames(bundesligatwo_AYCPF) <- "AYCPF"
+epl_AYCPF <- as.data.frame(epl_AYCPF)
+colnames(epl_AYCPF) <- "AYCPF"
 
-bundesligatwo_picks <- cbind(BUNDESLIGATWO_fixtures$Div,BUNDESLIGATWO_fixtures$HomeTeam_bundesligatwo,BUNDESLIGATWO_fixtures$AwayTeam_bundesligatwo,bundesligatwo_prediction,bundesligatwo_HWM,bundesligatwo_AWM,bundesligatwo_HWMLM,bundesligatwo_AWMLM,bundesligatwo_HY,bundesligatwo_AY,bundesligatwo_HCO,bundesligatwo_ACO,bundesligatwo_HXSC,bundesligatwo_AXSC,bundesligatwo_HYCPF,bundesligatwo_AYCPF)
+epl_picks <- cbind(EPL_fixtures$Div,EPL_fixtures$HomeTeam_epl,EPL_fixtures$AwayTeam_epl,epl_prediction,epl_HWM,epl_AWM,epl_HWMLM,epl_AWMLM,epl_HY,epl_AY,epl_HCO,epl_ACO,epl_HXSC,epl_AXSC,epl_HYCPF,epl_AYCPF)
 
-colnames(bundesligatwo_picks)[1] <- "picks_Div"
-colnames(bundesligatwo_picks)[2] <- "picks_HomeTeam"
-colnames(bundesligatwo_picks)[3] <- "picks_AwayTeam"
-bundesligatwo_picks$matchid <- paste(bundesligatwo_picks$picks_HomeTeam,bundesligatwo_picks$picks_AwayTeam,sep = "-")
+colnames(epl_picks)[1] <- "picks_Div"
+colnames(epl_picks)[2] <- "picks_HomeTeam"
+colnames(epl_picks)[3] <- "picks_AwayTeam"
+epl_picks$matchid <- paste(epl_picks$picks_HomeTeam,epl_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
-#end of BUNDESLIGATWO
-bundesligatwo_picks
+#end of EPL
+epl_picks
 #############################################################################################################################################################################
 #clone fixtures
-BUNDESLIGATWO_fixtures_clone <- BUNDESLIGATWO_fixtures
-colnames(BUNDESLIGATWO_fixtures_clone)[61] <- "Hwin"
-colnames(BUNDESLIGATWO_fixtures_clone)[62] <- "Draw"
-colnames(BUNDESLIGATWO_fixtures_clone)[63] <- "Awin"
+EPL_fixtures_clone <- EPL_fixtures
+colnames(EPL_fixtures_clone)[61] <- "Hwin"
+colnames(EPL_fixtures_clone)[62] <- "Draw"
+colnames(EPL_fixtures_clone)[63] <- "Awin"
 
-BUNDESLIGATWO_fixtures_clone$Hwinodds <-   BUNDESLIGATWO_fixtures$bundesligatwo_1_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_0 + BUNDESLIGATWO_fixtures$bundesligatwo_2_1 + BUNDESLIGATWO_fixtures$bundesligatwo_3_0 + BUNDESLIGATWO_fixtures$bundesligatwo_3_1 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_3_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_0 + BUNDESLIGATWO_fixtures$bundesligatwo_4_1 + BUNDESLIGATWO_fixtures$bundesligatwo_4_2 + BUNDESLIGATWO_fixtures$bundesligatwo_4_3 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_5_0 + BUNDESLIGATWO_fixtures$bundesligatwo_5_1 + BUNDESLIGATWO_fixtures$bundesligatwo_5_2 + BUNDESLIGATWO_fixtures$bundesligatwo_5_3 + BUNDESLIGATWO_fixtures$bundesligatwo_5_4 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_6_0 + BUNDESLIGATWO_fixtures$bundesligatwo_6_1 + BUNDESLIGATWO_fixtures$bundesligatwo_6_2 + BUNDESLIGATWO_fixtures$bundesligatwo_6_3 + BUNDESLIGATWO_fixtures$bundesligatwo_6_4 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_6_5
-BUNDESLIGATWO_fixtures_clone$Hwinodds <- round(1/BUNDESLIGATWO_fixtures_clone$Hwinodds, digits = 3)
+EPL_fixtures_clone$Hwinodds <-   EPL_fixtures$epl_1_0 + EPL_fixtures$epl_2_0 + EPL_fixtures$epl_2_1 + EPL_fixtures$epl_3_0 + EPL_fixtures$epl_3_1 +
+  EPL_fixtures$epl_3_2 + EPL_fixtures$epl_4_0 + EPL_fixtures$epl_4_1 + EPL_fixtures$epl_4_2 + EPL_fixtures$epl_4_3 +
+  EPL_fixtures$epl_5_0 + EPL_fixtures$epl_5_1 + EPL_fixtures$epl_5_2 + EPL_fixtures$epl_5_3 + EPL_fixtures$epl_5_4 +
+  EPL_fixtures$epl_6_0 + EPL_fixtures$epl_6_1 + EPL_fixtures$epl_6_2 + EPL_fixtures$epl_6_3 + EPL_fixtures$epl_6_4 +
+  EPL_fixtures$epl_6_5
+EPL_fixtures_clone$Hwinodds <- round(1/EPL_fixtures_clone$Hwinodds, digits = 3)
 
-BUNDESLIGATWO_fixtures_clone$Drawodds <-  BUNDESLIGATWO_fixtures$bundesligatwo_0_0 + BUNDESLIGATWO_fixtures$bundesligatwo_1_1 + BUNDESLIGATWO_fixtures$bundesligatwo_2_2 + BUNDESLIGATWO_fixtures$bundesligatwo_3_3 + BUNDESLIGATWO_fixtures$bundesligatwo_4_4 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_5_5 + BUNDESLIGATWO_fixtures$bundesligatwo_6_6
+EPL_fixtures_clone$Drawodds <-  EPL_fixtures$epl_0_0 + EPL_fixtures$epl_1_1 + EPL_fixtures$epl_2_2 + EPL_fixtures$epl_3_3 + EPL_fixtures$epl_4_4 +
+  EPL_fixtures$epl_5_5 + EPL_fixtures$epl_6_6
 
-BUNDESLIGATWO_fixtures_clone$Drawodds <- round(1/BUNDESLIGATWO_fixtures_clone$Drawodds, digits = 3)
+EPL_fixtures_clone$Drawodds <- round(1/EPL_fixtures_clone$Drawodds, digits = 3)
 
-BUNDESLIGATWO_fixtures_clone$Awinodds <-   BUNDESLIGATWO_fixtures$bundesligatwo_0_1 + BUNDESLIGATWO_fixtures$bundesligatwo_0_2 + BUNDESLIGATWO_fixtures$bundesligatwo_1_2 + BUNDESLIGATWO_fixtures$bundesligatwo_0_3 + BUNDESLIGATWO_fixtures$bundesligatwo_1_3 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_2_3 + BUNDESLIGATWO_fixtures$bundesligatwo_0_4 + BUNDESLIGATWO_fixtures$bundesligatwo_1_4 + BUNDESLIGATWO_fixtures$bundesligatwo_2_4 + BUNDESLIGATWO_fixtures$bundesligatwo_3_4 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_5 + BUNDESLIGATWO_fixtures$bundesligatwo_1_5 + BUNDESLIGATWO_fixtures$bundesligatwo_2_5 + BUNDESLIGATWO_fixtures$bundesligatwo_3_5 + BUNDESLIGATWO_fixtures$bundesligatwo_4_5 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_0_6 + BUNDESLIGATWO_fixtures$bundesligatwo_1_6 + BUNDESLIGATWO_fixtures$bundesligatwo_2_6 + BUNDESLIGATWO_fixtures$bundesligatwo_3_6 + BUNDESLIGATWO_fixtures$bundesligatwo_4_6 +
-  BUNDESLIGATWO_fixtures$bundesligatwo_5_6
+EPL_fixtures_clone$Awinodds <-   EPL_fixtures$epl_0_1 + EPL_fixtures$epl_0_2 + EPL_fixtures$epl_1_2 + EPL_fixtures$epl_0_3 + EPL_fixtures$epl_1_3 +
+  EPL_fixtures$epl_2_3 + EPL_fixtures$epl_0_4 + EPL_fixtures$epl_1_4 + EPL_fixtures$epl_2_4 + EPL_fixtures$epl_3_4 +
+  EPL_fixtures$epl_0_5 + EPL_fixtures$epl_1_5 + EPL_fixtures$epl_2_5 + EPL_fixtures$epl_3_5 + EPL_fixtures$epl_4_5 +
+  EPL_fixtures$epl_0_6 + EPL_fixtures$epl_1_6 + EPL_fixtures$epl_2_6 + EPL_fixtures$epl_3_6 + EPL_fixtures$epl_4_6 +
+  EPL_fixtures$epl_5_6
 
-BUNDESLIGATWO_fixtures_clone$Awinodds <- round(1/BUNDESLIGATWO_fixtures_clone$Awinodds, digits = 3)
+EPL_fixtures_clone$Awinodds <- round(1/EPL_fixtures_clone$Awinodds, digits = 3)
 
-colnames(BUNDESLIGATWO_fixtures_clone)[15] <- "CS_1-1"
-colnames(BUNDESLIGATWO_fixtures_clone)[13] <- "CS_1-0"
-colnames(BUNDESLIGATWO_fixtures_clone)[14] <- "CS_0-1"
-colnames(BUNDESLIGATWO_fixtures_clone)[16] <- "CS_2-0"
-colnames(BUNDESLIGATWO_fixtures_clone)[17] <- "CS_0-2"
-colnames(BUNDESLIGATWO_fixtures_clone)[19] <- "CS_2-1"
-colnames(BUNDESLIGATWO_fixtures_clone)[20] <- "CS_1-2"
+colnames(EPL_fixtures_clone)[15] <- "CS_1-1"
+colnames(EPL_fixtures_clone)[13] <- "CS_1-0"
+colnames(EPL_fixtures_clone)[14] <- "CS_0-1"
+colnames(EPL_fixtures_clone)[16] <- "CS_2-0"
+colnames(EPL_fixtures_clone)[17] <- "CS_0-2"
+colnames(EPL_fixtures_clone)[19] <- "CS_2-1"
+colnames(EPL_fixtures_clone)[20] <- "CS_1-2"
 
-BUNDESLIGATWO_fixtures_clone$`CS_1-1` <- round(1/BUNDESLIGATWO_fixtures_clone$`CS_1-1`, digits = 3)
-BUNDESLIGATWO_fixtures_clone$`CS_1-0` <- round(1/BUNDESLIGATWO_fixtures_clone$`CS_1-0`, digits = 3)
-BUNDESLIGATWO_fixtures_clone$`CS_0-1` <- round(1/BUNDESLIGATWO_fixtures_clone$`CS_0-1`, digits = 3)
-BUNDESLIGATWO_fixtures_clone$`CS_2-0` <- round(1/BUNDESLIGATWO_fixtures_clone$`CS_2-0`, digits = 3)
-BUNDESLIGATWO_fixtures_clone$`CS_0-2` <- round(1/BUNDESLIGATWO_fixtures_clone$`CS_0-2`, digits = 3)
-BUNDESLIGATWO_fixtures_clone$`CS_2-1` <- round(1/BUNDESLIGATWO_fixtures_clone$`CS_2-1`, digits = 3)
-BUNDESLIGATWO_fixtures_clone$`CS_1-2` <- round(1/BUNDESLIGATWO_fixtures_clone$`CS_1-2`, digits = 3)
+EPL_fixtures_clone$`CS_1-1` <- round(1/EPL_fixtures_clone$`CS_1-1`, digits = 3)
+EPL_fixtures_clone$`CS_1-0` <- round(1/EPL_fixtures_clone$`CS_1-0`, digits = 3)
+EPL_fixtures_clone$`CS_0-1` <- round(1/EPL_fixtures_clone$`CS_0-1`, digits = 3)
+EPL_fixtures_clone$`CS_2-0` <- round(1/EPL_fixtures_clone$`CS_2-0`, digits = 3)
+EPL_fixtures_clone$`CS_0-2` <- round(1/EPL_fixtures_clone$`CS_0-2`, digits = 3)
+EPL_fixtures_clone$`CS_2-1` <- round(1/EPL_fixtures_clone$`CS_2-1`, digits = 3)
+EPL_fixtures_clone$`CS_1-2` <- round(1/EPL_fixtures_clone$`CS_1-2`, digits = 3)
 
-colnames(BUNDESLIGATWO_fixtures_clone)[1] <- "league"
-colnames(BUNDESLIGATWO_fixtures_clone)[2] <- "Hometeam"
-colnames(BUNDESLIGATWO_fixtures_clone)[3] <- "Awayteam"
-colnames(BUNDESLIGATWO_fixtures_clone)[92] <- "predscore"
-colnames(BUNDESLIGATWO_fixtures_clone)[64] <- "ov25"
-colnames(BUNDESLIGATWO_fixtures_clone)[66] <- "ov25odds"
-colnames(BUNDESLIGATWO_fixtures_clone)[65] <- "un25"
-colnames(BUNDESLIGATWO_fixtures_clone)[67] <- "un25odds"
-colnames(BUNDESLIGATWO_fixtures_clone)[68] <- "BTTSY"
-colnames(BUNDESLIGATWO_fixtures_clone)[69] <- "BTTSN"
-colnames(BUNDESLIGATWO_fixtures_clone)[70] <- "BTTSYodds"
-colnames(BUNDESLIGATWO_fixtures_clone)[71] <- "BTTSNodds"
+colnames(EPL_fixtures_clone)[1] <- "league"
+colnames(EPL_fixtures_clone)[2] <- "Hometeam"
+colnames(EPL_fixtures_clone)[3] <- "Awayteam"
+colnames(EPL_fixtures_clone)[92] <- "predscore"
+colnames(EPL_fixtures_clone)[64] <- "ov25"
+colnames(EPL_fixtures_clone)[66] <- "ov25odds"
+colnames(EPL_fixtures_clone)[65] <- "un25"
+colnames(EPL_fixtures_clone)[67] <- "un25odds"
+colnames(EPL_fixtures_clone)[68] <- "BTTSY"
+colnames(EPL_fixtures_clone)[69] <- "BTTSN"
+colnames(EPL_fixtures_clone)[70] <- "BTTSYodds"
+colnames(EPL_fixtures_clone)[71] <- "BTTSNodds"
 
-BUNDESLIGATWO_fixtures_clone <- BUNDESLIGATWO_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
-BUNDESLIGATWO_fixtures_clone$matchid <- paste(BUNDESLIGATWO_fixtures_clone$Hometeam,BUNDESLIGATWO_fixtures_clone$Awayteam,sep = '-')
+EPL_fixtures_clone <- EPL_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+EPL_fixtures_clone$matchid <- paste(EPL_fixtures_clone$Hometeam,EPL_fixtures_clone$Awayteam,sep = '-')
 ####################################################################################################################################################
 #all events
-BUNDESLIGATWO_fixtures_clone_final <- BUNDESLIGATWO_fixtures_clone[,-c(8,9,10,27)]
-BUNDESLIGATWO_fixtures_clone_final[,'sep'] <- ''
+EPL_fixtures_clone_final <- EPL_fixtures_clone[,-c(8,9,10,27)]
+EPL_fixtures_clone_final[,'sep'] <- ''
 
-bundesligatwo_dmprediction <-  bundesligatwo_picks[,c(4,5,6,7,8)]
-bundesligatwo_dmprediction[,'sep2'] <- ''
+epl_dmprediction <-  epl_picks[,c(4,5,6,7,8)]
+epl_dmprediction[,'sep2'] <- ''
 
-bundesligatwo_avgyellow <- bundesligatwo_picks[,c(9,10)]
-bundesligatwo_avgyellow[,'sep3'] <- ''
+epl_avgyellow <- epl_picks[,c(9,10)]
+epl_avgyellow[,'sep3'] <- ''
 
-bundesligatwo_avgcorners <- bundesligatwo_picks[,c(11,12)]
-bundesligatwo_avgcorners[,'sep4'] <- ''
+epl_avgcorners <- epl_picks[,c(11,12)]
+epl_avgcorners[,'sep4'] <- ''
 
-bundesligatwo_goals <- BUNDESLIGATWO_fixtures[,c(10,11)]
-bundesligatwo_goals$bundesligatwo_xGH <- round(bundesligatwo_goals$bundesligatwo_xGH, digits = 2)
-bundesligatwo_goals$bundesligatwo_xGA <- round(bundesligatwo_goals$bundesligatwo_xGA, digits = 2)
-bundesligatwo_goals$bundesligatwo_TxG <- bundesligatwo_goals$bundesligatwo_xGH + bundesligatwo_goals$bundesligatwo_xGA
-bundesligatwo_goals[,'sep5'] <- ''
+epl_goals <- EPL_fixtures[,c(10,11)]
+epl_goals$epl_xGH <- round(epl_goals$epl_xGH, digits = 2)
+epl_goals$epl_xGA <- round(epl_goals$epl_xGA, digits = 2)
+epl_goals$epl_TxG <- epl_goals$epl_xGH + epl_goals$epl_xGA
+epl_goals[,'sep5'] <- ''
 
-bundesligatwo_shots <- BUNDESLIGATWO_fixtures_sot[,c(10,11)]
-bundesligatwo_shots$bundesligatwo_xHST <- round(bundesligatwo_shots$bundesligatwo_xHST, digits = 2)
-bundesligatwo_shots$bundesligatwo_xAST <- round(bundesligatwo_shots$bundesligatwo_xAST, digits = 2)
-bundesligatwo_shots$TxSOT <- bundesligatwo_shots$bundesligatwo_xHST + bundesligatwo_shots$bundesligatwo_xAST
-bundesligatwo_shots[,'sep6'] <- ''
+epl_shots <- EPL_fixtures_sot[,c(10,11)]
+epl_shots$epl_xHST <- round(epl_shots$epl_xHST, digits = 2)
+epl_shots$epl_xAST <- round(epl_shots$epl_xAST, digits = 2)
+epl_shots$TxSOT <- epl_shots$epl_xHST + epl_shots$epl_xAST
+epl_shots[,'sep6'] <- ''
 
-bundesligatwo_fouls <- BUNDESLIGATWO_fixtures_fo[,c(10,11)]
-bundesligatwo_fouls$bundesligatwo_xHF <- round(bundesligatwo_fouls$bundesligatwo_xHF, digits = 2)
-bundesligatwo_fouls$bundesligatwo_xAF <- round(bundesligatwo_fouls$bundesligatwo_xAF, digits = 2)
-bundesligatwo_fouls$bundesligatwo_TxF <- bundesligatwo_fouls$bundesligatwo_xHF + bundesligatwo_fouls$bundesligatwo_xAF
+epl_fouls <- EPL_fixtures_fo[,c(10,11)]
+epl_fouls$epl_xHF <- round(epl_fouls$epl_xHF, digits = 2)
+epl_fouls$epl_xAF <- round(epl_fouls$epl_xAF, digits = 2)
+epl_fouls$epl_TxF <- epl_fouls$epl_xHF + epl_fouls$epl_xAF
 
-bundesligatwo_ycpf <- bundesligatwo_picks[,c(15,16)]
-bundesligatwo_fouls <- cbind(bundesligatwo_fouls,bundesligatwo_ycpf)
-bundesligatwo_fouls$HYCPF <- as.numeric(bundesligatwo_fouls$HYCPF)
-bundesligatwo_fouls$AYCPF <- as.numeric(bundesligatwo_fouls$AYCPF)
-bundesligatwo_fouls$x_hyc <- (bundesligatwo_fouls$bundesligatwo_xHF) * (bundesligatwo_fouls$HYCPF)
-bundesligatwo_fouls$x_ayc <- (bundesligatwo_fouls$bundesligatwo_xAF) * (bundesligatwo_fouls$AYCPF)
-bundesligatwo_fouls$x_TYC <- round((bundesligatwo_fouls$x_hyc + bundesligatwo_fouls$x_ayc),digits = 2)
-bundesligatwo_fouls[,'sep7'] <- ''
+epl_ycpf <- epl_picks[,c(15,16)]
+epl_fouls <- cbind(epl_fouls,epl_ycpf)
+epl_fouls$HYCPF <- as.numeric(epl_fouls$HYCPF)
+epl_fouls$AYCPF <- as.numeric(epl_fouls$AYCPF)
+epl_fouls$x_hyc <- (epl_fouls$epl_xHF) * (epl_fouls$HYCPF)
+epl_fouls$x_ayc <- (epl_fouls$epl_xAF) * (epl_fouls$AYCPF)
+epl_fouls$x_TYC <- round((epl_fouls$x_hyc + epl_fouls$x_ayc),digits = 2)
+epl_fouls[,'sep7'] <- ''
 
-bundesligatwo_bookings <- BUNDESLIGATWO_fixtures_yc[,c(10,11)]
-bundesligatwo_bookings$bundesligatwo_xHYC <- round(bundesligatwo_bookings$bundesligatwo_xHYC, digits = 2)
-bundesligatwo_bookings$bundesligatwo_xAYC <- round(bundesligatwo_bookings$bundesligatwo_xAYC, digits = 2)
-bundesligatwo_bookings$bundesligatwo_TYcards <- bundesligatwo_bookings$bundesligatwo_xHYC + bundesligatwo_bookings$bundesligatwo_xAYC
-bundesligatwo_bookings[,'sep8'] <- ''
+epl_bookings <- EPL_fixtures_yc[,c(10,11)]
+epl_bookings$epl_xHYC <- round(epl_bookings$epl_xHYC, digits = 2)
+epl_bookings$epl_xAYC <- round(epl_bookings$epl_xAYC, digits = 2)
+epl_bookings$epl_TYcards <- epl_bookings$epl_xHYC + epl_bookings$epl_xAYC
+epl_bookings[,'sep8'] <- ''
 
-bundesligatwo_corners <- BUNDESLIGATWO_fixtures_co[,c(10,11)]
-bundesligatwo_corners$bundesligatwo_xHCOC <- round(bundesligatwo_corners$bundesligatwo_xHCOC, digits = 2)
-bundesligatwo_corners$bundesligatwo_xACOC <- round(bundesligatwo_corners$bundesligatwo_xACOC, digits = 2)
-bundesligatwo_corners$bundesligatwo_TCOs <- bundesligatwo_corners$bundesligatwo_xHCOC + bundesligatwo_corners$bundesligatwo_xACOC
-bundesligatwo_corners[,'sep9'] <- ''
+epl_corners <- EPL_fixtures_co[,c(10,11)]
+epl_corners$epl_xHCOC <- round(epl_corners$epl_xHCOC, digits = 2)
+epl_corners$epl_xACOC <- round(epl_corners$epl_xACOC, digits = 2)
+epl_corners$epl_TCOs <- epl_corners$epl_xHCOC + epl_corners$epl_xACOC
+epl_corners[,'sep9'] <- ''
 
-bundesligatwo_shotsconversion <- bundesligatwo_picks[,c(13,14)]
-bundesligatwo_shotsconversion <- cbind(bundesligatwo_shotsconversion,bundesligatwo_shots)
-bundesligatwo_shotsconversion$HXSC <- as.numeric(bundesligatwo_shotsconversion$HXSC)
-bundesligatwo_shotsconversion$AXSC <- as.numeric(bundesligatwo_shotsconversion$AXSC)
-bundesligatwo_shotsconversion$bundesligatwo_hXgoals <- round((bundesligatwo_shotsconversion$HXSC * bundesligatwo_shotsconversion$bundesligatwo_xHST), digits = 2)
-bundesligatwo_shotsconversion$bundesligatwo_aXgoals <- round((bundesligatwo_shotsconversion$AXSC * bundesligatwo_shotsconversion$bundesligatwo_xAST), digits = 2)
-bundesligatwo_shotsconversion$Xgoals <- bundesligatwo_shotsconversion$bundesligatwo_hXgoals + bundesligatwo_shotsconversion$bundesligatwo_aXgoals
+epl_shotsconversion <- epl_picks[,c(13,14)]
+epl_shotsconversion <- cbind(epl_shotsconversion,epl_shots)
+epl_shotsconversion$HXSC <- as.numeric(epl_shotsconversion$HXSC)
+epl_shotsconversion$AXSC <- as.numeric(epl_shotsconversion$AXSC)
+epl_shotsconversion$epl_hXgoals <- round((epl_shotsconversion$HXSC * epl_shotsconversion$epl_xHST), digits = 2)
+epl_shotsconversion$epl_aXgoals <- round((epl_shotsconversion$AXSC * epl_shotsconversion$epl_xAST), digits = 2)
+epl_shotsconversion$Xgoals <- epl_shotsconversion$epl_hXgoals + epl_shotsconversion$epl_aXgoals
 options(java.parameters = "-Xmx4g")
-BUNDESLIGATWO_all <- cbind(BUNDESLIGATWO_fixtures_clone_final,bundesligatwo_dmprediction,bundesligatwo_avgyellow,bundesligatwo_avgcorners,bundesligatwo_goals,bundesligatwo_shots,bundesligatwo_fouls,bundesligatwo_bookings,bundesligatwo_corners,bundesligatwo_shotsconversion)
-unlink('Divisions/BUNDESLIGATWO.xlsx')
-write.xlsx(BUNDESLIGATWO_all,'Divisions/BUNDESLIGATWO.xlsx', sheetName = "BUNDESLIGATWO_all", append = TRUE)
-write.xlsx(points_bundesligatwo,'Divisions/BUNDESLIGATWO.xlsx', sheetName = "Table", append = TRUE)
-write.xlsx(bundesligatwo_cornertotalsv2,'Divisions/BUNDESLIGATWO.xlsx', sheetName = "Cornertotals", append = TRUE)
-write.xlsx(bundesligatwo_goaltotalsv2,'Divisions/BUNDESLIGATWO.xlsx', sheetName = "Goaltotals", append = TRUE)
-write.xlsx(bundesligatwo_yellowtotalsv2,'Divisions/BUNDESLIGATWO.xlsx', sheetName = "Yellowtotals", append = TRUE)
+EPL_all <- cbind(EPL_fixtures_clone_final,epl_dmprediction,epl_avgyellow,epl_avgcorners,epl_goals,epl_shots,epl_fouls,epl_bookings,epl_corners,epl_shotsconversion)
+unlink('Divisions/EPL.xlsx')
+write.xlsx(EPL_all,'Divisions/EPL.xlsx', sheetName = "EPL_all", append = TRUE)
+write.xlsx(points_epl,'Divisions/EPL.xlsx', sheetName = "Table", append = TRUE)
+write.xlsx(epl_cornertotalsv2,'Divisions/EPL.xlsx', sheetName = "Cornertotals", append = TRUE)
+write.xlsx(epl_goaltotalsv2,'Divisions/EPL.xlsx', sheetName = "Goaltotals", append = TRUE)
+write.xlsx(epl_yellowtotalsv2,'Divisions/EPL.xlsx', sheetName = "Yellowtotals", append = TRUE)
 
 
-##write.csv(BUNDESLIGATWO_fixtures[,c(1,2,3,4,5,6)],'SP2_schedule20232024.csv')
+##write.csv(EPL_fixtures[,c(1,2,3,4,5,6)],'SP2_schedule20232024.csv')

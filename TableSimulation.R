@@ -1710,7 +1710,9 @@ write.xlsx(points_t1_sim,'Divisions/Simulations.xlsx', sheetName = "T1_simfinal"
 ######################################################################################################################################
 
 
-
+library('xlsx')
+write.xlsx(E0_notplayed,"Divisions/Notplayed.xlsx", sheetName = "E0")
+write.xlsx(D1_notplayed,"Divisions/Notplayed.xlsx", sheetName = "D1", append = TRUE)
 
 
 

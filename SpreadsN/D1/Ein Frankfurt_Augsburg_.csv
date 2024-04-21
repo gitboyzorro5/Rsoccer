@@ -1,0 +1,16 @@
+,Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,PSH,PSD,PSA,HTCS,CS,HS,HST,AS,AST,HY,AY,HR,AR,HCO,ACO,HF,AF,TG,TC,TF,COSC,OV15,OV25,OV35,TY,TR,matchid,goalmins,n,shirts,Bookings,Crossbookings,GoalsXbookings,CornersXbookings,ShirtsXbookings,GoalsXcorners,GoalsXshirts,ShirtsXcorners,TGMXcorners,GoalsXcornerXbookings
+1,D1,3/2/2024,Heidenheim,Ein Frankfurt,1,2,A,0,1,A,2.84,3.39,2.59,0-1,2-Jan,16,3,11,6,1,4,0,0,7,3,6,10,3,10,16,3-Jul,Y,Y,N,5,0,Heidenheim-Ein Frankfurt,147,3,52,50,400,150,500,2600,30,156,520,1470,1500
+2,D1,3/10/2024,Ein Frankfurt,Hoffenheim,3,1,H,1,1,D,2.06,3.9,3.43,1-Jan,1-Mar,17,7,6,2,2,3,0,2,5,1,11,10,4,6,21,1-May,Y,Y,Y,5,2,Ein Frankfurt-Hoffenheim,152,4,80,100,1600,400,600,8000,24,320,480,912,2400
+3,D1,3/17/2024,Dortmund,Ein Frankfurt,3,1,H,1,1,D,1.63,4.47,5.01,1-Jan,1-Mar,16,6,8,6,1,2,0,0,8,3,5,9,4,11,14,3-Aug,Y,Y,Y,3,0,Dortmund-Ein Frankfurt,217,4,92,30,200,120,330,2760,44,368,1012,2387,1320
+4,D1,3/30/2024,Ein Frankfurt,Union Berlin,0,0,D,0,0,D,2.07,3.41,3.88,0-0,0-0,18,4,10,2,3,1,0,0,6,2,8,14,0,8,22,2-Jun,N,N,N,4,0,Ein Frankfurt-Union Berlin,0,0,0,40,300,0,320,0,0,0,0,0,0
+5,D1,4/5/2024,Ein Frankfurt,Werder Bremen,1,1,D,0,0,D,1.78,4.02,4.56,0-0,1-Jan,19,5,10,7,3,2,1,1,9,0,10,14,2,9,24,Sep-00,Y,N,N,5,2,Ein Frankfurt-Werder Bremen,139,2,48,100,2475,200,900,4800,18,96,432,1251,1800
+6,D1,4/13/2024,Stuttgart,Ein Frankfurt,3,0,H,3,0,H,1.51,4.76,6.01,Mar-00,Mar-00,9,6,10,3,1,3,0,0,4,5,4,15,3,9,19,5-Apr,Y,Y,N,4,0,Stuttgart-Ein Frankfurt,65,3,53,40,300,120,360,2120,27,159,318,585,1080
+7,D1,3/2/2024,Darmstadt,Augsburg,0,6,A,0,5,A,2.93,3.47,2.48,0-5,0-6,10,5,21,6,2,0,0,0,3,6,4,12,6,9,16,6-Mar,Y,Y,Y,2,0,Darmstadt-Augsburg,172,6,100,20,0,120,180,2000,54,600,900,1548,1080
+8,D1,3/9/2024,Augsburg,Heidenheim,1,0,H,1,0,H,1.88,3.89,4.07,Jan-00,Jan-00,8,4,6,1,1,3,0,0,5,2,14,20,1,7,34,2-May,N,N,N,4,0,Augsburg-Heidenheim,22,1,6,40,300,40,280,240,7,6,42,154,280
+9,D1,3/16/2024,Wolfsburg,Augsburg,1,3,A,1,1,D,2.12,3.65,3.46,1-Jan,3-Jan,15,4,14,5,1,3,1,0,8,6,12,19,4,14,31,6-Aug,Y,Y,Y,4,1,Wolfsburg-Augsburg,194,4,83,65,1050,260,910,5395,56,332,1162,2716,3640
+10,D1,3/31/2024,Augsburg,FC Koln,1,1,D,1,1,D,1.81,3.84,4.51,1-Jan,1-Jan,24,6,12,2,0,3,0,0,12,6,9,13,2,18,22,6-Dec,Y,N,N,3,0,Augsburg-FC Koln,51,2,37,30,0,60,540,1110,36,74,666,918,1080
+11,D1,4/7/2024,Hoffenheim,Augsburg,3,1,H,2,0,H,2.29,3.94,2.92,Feb-00,1-Mar,17,6,14,7,3,1,0,0,11,6,8,14,4,17,22,6-Nov,Y,Y,Y,4,0,Hoffenheim-Augsburg,188,4,55,40,300,160,680,2200,68,220,935,3196,2720
+12,D1,4/12/2024,Augsburg,Union Berlin,2,0,H,0,0,D,2.15,3.52,3.59,0-0,Feb-00,12,4,17,4,1,1,0,0,5,4,15,14,2,9,29,4-May,Y,N,N,2,0,Augsburg-Union Berlin,128,2,41,20,100,40,180,820,18,82,697,1152,360
+13,D1,4/12/2024,Augsburg,Union Berlin,2,0,H,0,0,D,2.15,3.52,3.59,0-0,Feb-00,12,4,17,4,1,1,0,0,5,4,15,14,2,9,29,4-May,Y,N,N,2,0,Augsburg-Union Berlin,122.9166667,2.916666667,53.91666667,47.91666667,585.4166667,139.1666667,481.6666667,2670.416667,31.83333333,201.0833333,597,1357.416667,1438.333333
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,petersen 4.1,,,,,,,,,,,,,

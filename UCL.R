@@ -36,8 +36,8 @@ UCL20232024 <- rbind(E0_ucl,D1_ucl,SP1_ucl,I1_ucl,F1_ucl)
 unlink('UCL20232024.xlsx')
 write.xlsx(UCL20232024,'UCL20232024.xlsx')
 ###############################################################################
-df <- tail(UCL20232024[UCL20232024$HomeTeam =="Bournemouth" | UCL20232024$AwayTeam =="Bournemouth",],6)
-df2 <- tail(UCL20232024[UCL20232024$HomeTeam == "Luton" | UCL20232024$AwayTeam == "Luton",],6)
+df <- tail(UCL20232024[UCL20232024$HomeTeam =="Liverpool" | UCL20232024$AwayTeam =="Liverpool",],6)
+df2 <- tail(UCL20232024[UCL20232024$HomeTeam == "Atalanta" | UCL20232024$AwayTeam == "Atalanta",],6)
 temp_analysis <- rbind(df,df2)
 
 temp_analysis <- as.data.frame(temp_analysis)
@@ -46,7 +46,7 @@ temp_sliced <- tail(temp_analysis,1)
 temp_sliced <- temp_sliced[1:37]
 temp_analyis_combined <- c(temp_sliced,temp_colmeans)
 temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
-write.xlsx(temp_analysis,'Temp/bournemouthvluton.xlsx')
+write.xlsx(temp_analysis,'Temp/atalantavliverpool.xlsx')
 
 #write.xlsx(UCL20232024[UCL20232024$Div == "D1",],"D1_spread.xlsx")
 e1_teams

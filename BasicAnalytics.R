@@ -1379,7 +1379,17 @@ library('xlsx')
 UCL20222023 <- read.csv('UCL20222023.csv')
 write.xlsx(UCL20222023,'UCL2023.xlsx')
 
+#########################################################################################
 
+remotes::install_github("JaseZiv/worldfootballR")
+library('worldfootballR')
+library('dplyr')
+library('mgsub')
+library('xlsx')
+
+# function to extract match report data
+Fronapoli <- fb_match_summary(match_url = "https://fbref.com/en/matches/305afcf5/Frosinone-Napoli-August-19-2023-Serie-A")
+View(Fronapoli)
 
 
 

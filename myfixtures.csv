@@ -1,117 +1,32 @@
 "","Div","Home_Team","Away_Team","Date"
-"257","D2","Braunschweig","Wehen",2024-05-12
-"368","D2","Hertha","Kaiserslautern",2024-05-12
-"379","D2","Holstein Kiel","Fortuna Dusseldorf",2024-05-12
-"416","D2","Karlsruhe","Hannover",2024-05-12
-"431","D2","Magdeburg","Greuther Furth",2024-05-12
-"446","D2","Nurnberg","Elversberg",2024-05-12
-"483","D2","Paderborn","Hamburg",2024-05-12
-"502","D2","Schalke 04","Hansa Rostock",2024-05-12
-"526","D2","St Pauli","Osnabruck",2024-05-12
-"835","D1","Darmstadt","Hoffenheim",2024-05-11
-"836","D1","Augsburg","Stuttgart",2024-05-11
-"837","D1","Bochum","Leverkusen",2024-05-11
-"838","D1","FC Koln","Union Berlin",2024-05-11
-"839","D1","Mgladbach","Ein Frankfurt",2024-05-11
-"840","D1","Mainz","Dortmund",2024-05-11
-"841","D1","Freiburg","Heidenheim",2024-05-11
-"842","D1","RB Leipzig","Werder Bremen",2024-05-11
-"843","D1","Bayern Munich","Wolfsburg",2024-05-11
-"1213","E0","Aston Villa","Liverpool",2024-05-11
-"1214","E0","Bournemouth","Brentford",2024-05-11
-"1215","E0","Everton","Sheffield United",2024-05-11
-"1216","E0","Fulham","Man City",2024-05-11
-"1217","E0","Man United","Arsenal",2024-05-11
-"1218","E0","Newcastle","Brighton",2024-05-11
-"1219","E0","Nottm Forest","Chelsea",2024-05-11
-"1220","E0","Tottenham","Burnley",2024-05-11
-"1221","E0","West Ham","Luton",2024-05-11
-"1222","E0","Wolves","Crystal Palace",2024-05-11
-"3729","F1","Brest","Reims",2024-05-11
-"3730","F1","Clermont","Lyon",2024-05-11
-"3731","F1","Marseille","Lorient",2024-05-11
-"3732","F1","Montpellier","Monaco",2024-05-11
-"3733","F1","Nantes","Lille",2024-05-11
-"3734","F1","Nice","Le Havre",2024-05-11
-"3735","F1","Paris SG","Toulouse",2024-05-11
-"3736","F1","Rennes","Lens",2024-05-11
-"3737","F1","Strasbourg","Metz",2024-05-11
-"3756","F2","Ajaccio","Grenoble",2024-05-11
-"3769","F2","Amiens","Auxerre",2024-05-11
-"3806","F2","Annecy","Angers",2024-05-11
-"3905","F2","Concarneau","Bordeaux",2024-05-11
-"3925","F2","Dunkerque","Caen",2024-05-11
-"3992","F2","Laval","Troyes",2024-05-11
-"4005","F2","Paris FC","Guingamp",2024-05-11
-"4018","F2","Pau FC","Bastia",2024-05-11
-"4086","F2","St Etienne","Rodez",2024-05-11
-"4123","F2","Valenciennes","Quevilly Rouen",2024-05-11
-"4659","I1","Atalanta","Roma",2024-05-12
-"4660","I1","Fiorentina","Monza",2024-05-12
-"4661","I1","Frosinone","Inter",2024-05-12
-"4662","I1","Genoa","Sassuolo",2024-05-12
-"4663","I1","Juventus","Salernitana",2024-05-12
-"4664","I1","Lazio","Empoli",2024-05-12
-"4665","I1","Lecce","Udinese",2024-05-12
-"4666","I1","Milan","Cagliari",2024-05-12
-"4667","I1","Napoli","Bologna",2024-05-12
-"4668","I1","Verona","Torino",2024-05-12
-"4701","I2","Ascoli","Pisa",2024-05-10
-"4709","I2","Bari","Brescia",2024-05-10
-"4760","I2","Catanzaro","Sampdoria",2024-05-10
-"4789","I2","Como","Cosenza",2024-05-10
-"4826","I2","Cremonese","Cittadella",2024-05-10
-"4858","I2","FeralpiSalo","Ternana",2024-05-10
-"4869","I2","Lecco","Modena",2024-05-10
-"4967","I2","Reggiana","Parma",2024-05-10
-"5011","I2","Spezia","Venezia",2024-05-10
-"5023","I2","Sudtirol","Palermo",2024-05-10
-"5357","N1","Nijmegen","Feyenoord",2024-05-12
-"5358","N1","Utrecht","Sparta Rotterdam",2024-05-12
-"5359","N1","Sittard","PSV Eindhoven",2024-05-12
-"5360","N1","FC Twente","Volendam",2024-05-12
-"5361","N1","Ajax","Almere City",2024-05-12
-"5362","N1","Go Ahead Eagles","AZ Alkmaar",2024-05-12
-"5363","N1","Waalwijk","Zwolle",2024-05-12
-"5364","N1","Excelsior","Heracles",2024-05-12
-"5365","N1","Heerenveen","Vitesse",2024-05-12
-"5392","P1","Benfica","Arouca",2024-05-12
-"5436","P1","Casa Pia","Moreirense",2024-05-12
-"5449","P1","Chaves","Famalicao",2024-05-12
-"5475","P1","Estoril","Sp Lisbon",2024-05-12
-"5536","P1","Gil Vicente","Farense",2024-05-12
-"5559","P1","Guimaraes","Sp Braga",2024-05-12
-"5592","P1","Portimonense","Rio Ave",2024-05-12
-"5598","P1","Porto","Boavista",2024-05-12
-"5670","P1","Vizela","Estrela",2024-05-12
-"6755","SP1","Ath Bilbao","Osasuna",2024-05-12
-"6756","SP1","Ath Madrid","Celta",2024-05-12
-"6757","SP1","Barcelona","Sociedad",2024-05-12
-"6758","SP1","Cadiz","Getafe",2024-05-12
-"6759","SP1","Granada","Real Madrid",2024-05-12
-"6760","SP1","Alaves","Girona",2024-05-12
-"6761","SP1","Betis","Almeria",2024-05-12
-"6762","SP1","Valencia","Vallecano",2024-05-12
-"6763","SP1","Villarreal","Sevilla",2024-05-12
-"6764","SP1","Mallorca","Las Palmas",2024-05-12
-"6806","SP2","Albacete","Leganes",2024-05-12
-"6856","SP2","Amorebieta","Villarreal B",2024-05-12
-"6886","SP2","Burgos","Eldense",2024-05-12
-"6917","SP2","Cartagena","Tenerife",2024-05-12
-"6952","SP2","Elche","Huesca",2024-05-12
-"7006","SP2","Ferrol","Alcorcon",2024-05-12
-"7074","SP2","Levante","Eibar",2024-05-12
-"7130","SP2","Oviedo","Zaragoza",2024-05-12
-"7145","SP2","Santander","Mirandes",2024-05-12
-"7155","SP2","Sp Gijon","Andorra",2024-05-12
-"7203","SP2","Valladolid","Espanol",2024-05-12
-"7617","T1","Besiktas","Hatayspor",2024-05-12
-"7618","T1","Ankaragucu","Pendikspor",2024-05-12
-"7619","T1","Rizespor","Kasimpasa",2024-05-12
-"7620","T1","Samsunspor","Alanyaspor",2024-05-12
-"7621","T1","Antalyaspor","Ad. Demirspor",2024-05-12
-"7622","T1","Gaziantep","Karagumruk",2024-05-12
-"7623","T1","Istanbul Basaksehir","Trabzonspor",2024-05-12
-"7624","T1","Galatasaray","Fenerbahce",2024-05-12
-"7625","T1","Istanbulspor","Sivasspor",2024-05-12
-"7626","T1","Kayserispor","Konyaspor",2024-05-12
+"4679","I1","Juventus","Monza",2024-05-26
+"4680","I1","Lazio","Sassuolo",2024-05-26
+"4681","I1","Milan","Salernitana",2024-05-26
+"4682","I1","Napoli","Lecce",2024-05-26
+"4683","I1","Verona","Inter",2024-05-26
+"4684","I1","Atalanta","Torino",2024-05-26
+"4685","I1","Cagliari","Fiorentina",2024-05-26
+"4686","I1","Empoli","Roma",2024-05-26
+"4687","I1","Frosinone","Udinese",2024-05-26
+"4688","I1","Genoa","Bologna",2024-05-26
+"6785","SP1","Almeria","Cadiz",2024-05-26
+"6786","SP1","Celta","Valencia",2024-05-26
+"6787","SP1","Getafe","Mallorca",2024-05-26
+"6788","SP1","Girona","Granada",2024-05-26
+"6789","SP1","Osasuna","Villarreal",2024-05-26
+"6790","SP1","Vallecano","Ath Bilbao",2024-05-26
+"6791","SP1","Sociedad","Ath Madrid",2024-05-26
+"6792","SP1","Sevilla","Barcelona",2024-05-26
+"6793","SP1","Real Madrid","Betis",2024-05-26
+"6794","SP1","Las Palmas","Alaves",2024-05-26
+"6808","SP2","Albacete","Mirandes",2024-05-26
+"6845","SP2","Amorebieta","Espanol",2024-05-26
+"6896","SP2","Burgos","Tenerife",2024-05-26
+"6910","SP2","Cartagena","Huesca",2024-05-26
+"6949","SP2","Elche","Eldense",2024-05-26
+"7016","SP2","Ferrol","Leganes",2024-05-26
+"7069","SP2","Levante","Alcorcon",2024-05-26
+"7113","SP2","Oviedo","Andorra",2024-05-26
+"7151","SP2","Santander","Zaragoza",2024-05-26
+"7158","SP2","Sp Gijon","Eibar",2024-05-26
+"7213","SP2","Valladolid","Villarreal B",2024-05-26

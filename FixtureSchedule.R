@@ -10,7 +10,8 @@ unlink('myfixtures.csv')
 B1_schedule20232024 <- read.csv('../Downloads/B1_schedule20232024.csv')
 D1_schedule20232024 <- read.csv('../Downloads/D1_schedule20232024.csv')
 D2_schedule20232024 <- read.csv('../Downloads/D2_schedule20232024.csv')
-E0_schedule20232024 <- read.csv('../Downloads/E0_schedule20232024.csv')
+E0_schedule20242025 <- read.csv('../Downloads/E0_schedule20242025.csv')
+E0_schedule20242025 <- E0_schedule20242025[,c(-1)]
 E1_schedule20232024 <- read.csv('../Downloads/E1_schedule20232024.csv')
 E2_schedule20232024 <- read.csv('../Downloads/E2_schedule20232024.csv')
 E3_schedule20232024 <- read.csv('../Downloads/E3_schedule20232024.csv')
@@ -35,7 +36,7 @@ T1_schedule20232024 <- read.csv('../Downloads/T1_schedule20232024.csv')
 B1_schedule20232024$Date <- dmy(B1_schedule20232024$Date)
 D1_schedule20232024$Date <- dmy(D1_schedule20232024$Date)
 D2_schedule20232024$Date <- dmy(D2_schedule20232024$Date)
-E0_schedule20232024$Date <- dmy(E0_schedule20232024$Date)
+E0_schedule20242025$Date <- ymd(E0_schedule20242025$Date)
 E1_schedule20232024$Date <- dmy(E1_schedule20232024$Date)
 E2_schedule20232024$Date <- dmy(E2_schedule20232024$Date)
 E3_schedule20232024$Date <- dmy(E3_schedule20232024$Date)
@@ -60,7 +61,7 @@ T1_schedule20232024$Date <- dmy(T1_schedule20232024$Date)
 B1_schedule20232024$Div <- "B1"
 D1_schedule20232024$Div <- "D1"
 D2_schedule20232024$Div <- "D2"
-E0_schedule20232024$Div <- "E0"
+#E0_schedule20232024$Div <- "E0"
 E1_schedule20232024$Div <- "E1"
 E2_schedule20232024$Div <- "E2"
 E3_schedule20232024$Div <- "E3"
@@ -81,11 +82,12 @@ SP2_schedule20232024$Div <- "SP2"
 T1_schedule20232024$Div <- "T1"
 #bind the fixtures
 
-all_schedule20232024 <- rbind(B1_schedule20232024,D2_schedule20232024,D1_schedule20232024,E0_schedule20232024,E1_schedule20232024,E2_schedule20232024,E3_schedule20232024,EC_schedule20232024,F1_schedule20232024,F2_schedule20232024,G1_schedule20232024,I1_schedule20232024,I2_schedule20232024,N1_schedule20232024,P1_schedule20232024,SC0_schedule20232024,SC1_schedule20232024,SC2_schedule20232024,SC3_schedule20232024,SP1_schedule20232024,SP2_schedule20232024,T1_schedule20232024)
+#all_schedule20232024 <- rbind(B1_schedule20232024,D2_schedule20232024,D1_schedule20232024,E0_schedule20232024,E1_schedule20232024,E2_schedule20232024,E3_schedule20232024,EC_schedule20232024,F1_schedule20232024,F2_schedule20232024,G1_schedule20232024,I1_schedule20232024,I2_schedule20232024,N1_schedule20232024,P1_schedule20232024,SC0_schedule20232024,SC1_schedule20232024,SC2_schedule20232024,SC3_schedule20232024,SP1_schedule20232024,SP2_schedule20232024,T1_schedule20232024)
+all_schedule20232024 <- E0_schedule20242025
 
-all_schedule20232024 <- all_schedule20232024[,c(7,5,6,3)]
+#all_schedule20232024 <- all_schedule20232024[,c(7,5,6,3)]
 
-myfixtures <- all_schedule20232024[all_schedule20232024$Date >= '2024-05-24' & all_schedule20232024$Date <= '2024-05-27',]
+myfixtures <- all_schedule20232024[all_schedule20232024$Date >= '2024-08-16' & all_schedule20232024$Date <= '2024-08-19',]
 
 write.csv(myfixtures,'myfixtures.csv')
 View(myfixtures)

@@ -1,0 +1,381 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","E0","Man United","Fulham",2024-08-16
+"2","E0","Ipswich","Liverpool",2024-08-17
+"3","E0","Newcastle","Southampton",2024-08-17
+"4","E0","Nottm Forest","Bournemouth",2024-08-17
+"5","E0","Everton","Brighton",2024-08-17
+"6","E0","Arsenal","Wolves",2024-08-17
+"7","E0","West Ham","Aston Villa",2024-08-17
+"8","E0","Brentford","Crystal Palace",2024-08-18
+"9","E0","Chelsea","Man City",2024-08-18
+"10","E0","Leicester","Tottenham",2024-08-19
+"11","E0","Man United","Chelsea",2024-11-02
+"12","E0","Southampton","Everton",2024-11-02
+"13","E0","Liverpool","Brighton",2024-11-02
+"14","E0","Tottenham","Aston Villa",2024-11-02
+"15","E0","Wolves","Crystal Palace",2024-11-02
+"16","E0","Nottm Forest","West Ham",2024-11-02
+"17","E0","Newcastle","Arsenal",2024-11-02
+"18","E0","Fulham","Brentford",2024-11-02
+"19","E0","Ipswich","Leicester",2024-11-02
+"20","E0","Bournemouth","Man City",2024-11-02
+"21","E0","Brentford","Bournemouth",2024-11-09
+"22","E0","Chelsea","Arsenal",2024-11-09
+"23","E0","Man United","Leicester",2024-11-09
+"24","E0","Brighton","Man City",2024-11-09
+"25","E0","Liverpool","Aston Villa",2024-11-09
+"26","E0","Nottm Forest","Newcastle",2024-11-09
+"27","E0","West Ham","Everton",2024-11-09
+"28","E0","Crystal Palace","Fulham",2024-11-09
+"29","E0","Wolves","Southampton",2024-11-09
+"30","E0","Tottenham","Ipswich",2024-11-09
+"31","E0","Arsenal","Nottm Forest",2024-11-23
+"32","E0","Bournemouth","Brighton",2024-11-23
+"33","E0","Newcastle","West Ham",2024-11-23
+"34","E0","Leicester","Chelsea",2024-11-23
+"35","E0","Aston Villa","Crystal Palace",2024-11-23
+"36","E0","Man City","Tottenham",2024-11-23
+"37","E0","Ipswich","Man United",2024-11-23
+"38","E0","Everton","Brentford",2024-11-23
+"39","E0","Southampton","Liverpool",2024-11-23
+"40","E0","Fulham","Wolves",2024-11-23
+"41","E0","Chelsea","Aston Villa",2024-11-30
+"42","E0","Liverpool","Man City",2024-11-30
+"43","E0","Tottenham","Fulham",2024-11-30
+"44","E0","Crystal Palace","Newcastle",2024-11-30
+"45","E0","Wolves","Bournemouth",2024-11-30
+"46","E0","Brighton","Southampton",2024-11-30
+"47","E0","Nottm Forest","Ipswich",2024-11-30
+"48","E0","Man United","Everton",2024-11-30
+"49","E0","Brentford","Leicester",2024-11-30
+"50","E0","West Ham","Arsenal",2024-11-30
+"51","E0","Fulham","Brighton",2024-12-03
+"52","E0","Leicester","West Ham",2024-12-03
+"53","E0","Everton","Wolves",2024-12-03
+"54","E0","Arsenal","Man United",2024-12-03
+"55","E0","Aston Villa","Brentford",2024-12-03
+"56","E0","Bournemouth","Tottenham",2024-12-03
+"57","E0","Ipswich","Crystal Palace",2024-12-03
+"58","E0","Newcastle","Liverpool",2024-12-04
+"59","E0","Man City","Nottm Forest",2024-12-04
+"60","E0","Southampton","Chelsea",2024-12-04
+"61","E0","Fulham","Arsenal",2024-12-07
+"62","E0","Man United","Nottm Forest",2024-12-07
+"63","E0","Brentford","Newcastle",2024-12-07
+"64","E0","Ipswich","Bournemouth",2024-12-07
+"65","E0","West Ham","Wolves",2024-12-07
+"66","E0","Crystal Palace","Man City",2024-12-07
+"67","E0","Leicester","Brighton",2024-12-07
+"68","E0","Everton","Liverpool",2024-12-07
+"69","E0","Aston Villa","Southampton",2024-12-07
+"70","E0","Tottenham","Chelsea",2024-12-07
+"71","E0","Newcastle","Leicester",2024-12-14
+"72","E0","Nottm Forest","Aston Villa",2024-12-14
+"73","E0","Arsenal","Everton",2024-12-14
+"74","E0","Southampton","Tottenham",2024-12-14
+"75","E0","Man City","Man United",2024-12-14
+"76","E0","Wolves","Ipswich",2024-12-14
+"77","E0","Bournemouth","West Ham",2024-12-14
+"78","E0","Chelsea","Brentford",2024-12-14
+"79","E0","Liverpool","Fulham",2024-12-14
+"80","E0","Brighton","Crystal Palace",2024-12-14
+"81","E0","West Ham","Brighton",2024-12-21
+"82","E0","Brentford","Nottm Forest",2024-12-21
+"83","E0","Tottenham","Liverpool",2024-12-21
+"84","E0","Crystal Palace","Arsenal",2024-12-21
+"85","E0","Ipswich","Newcastle",2024-12-21
+"86","E0","Man United","Bournemouth",2024-12-21
+"87","E0","Fulham","Southampton",2024-12-21
+"88","E0","Aston Villa","Man City",2024-12-21
+"89","E0","Everton","Chelsea",2024-12-21
+"90","E0","Leicester","Wolves",2024-12-21
+"91","E0","Chelsea","Fulham",2024-12-26
+"92","E0","Brighton","Brentford",2024-12-26
+"93","E0","Liverpool","Leicester",2024-12-26
+"94","E0","Arsenal","Ipswich",2024-12-26
+"95","E0","Wolves","Man United",2024-12-26
+"96","E0","Southampton","West Ham",2024-12-26
+"97","E0","Man City","Everton",2024-12-26
+"98","E0","Bournemouth","Crystal Palace",2024-12-26
+"99","E0","Newcastle","Aston Villa",2024-12-26
+"100","E0","Nottm Forest","Tottenham",2024-12-26
+"101","E0","Tottenham","Wolves",2024-12-29
+"102","E0","Fulham","Bournemouth",2024-12-29
+"103","E0","Aston Villa","Brighton",2024-12-29
+"104","E0","Everton","Nottm Forest",2024-12-29
+"105","E0","Crystal Palace","Southampton",2024-12-29
+"106","E0","Brentford","Arsenal",2024-12-29
+"107","E0","Ipswich","Chelsea",2024-12-29
+"108","E0","Leicester","Man City",2024-12-29
+"109","E0","Man United","Newcastle",2024-12-29
+"110","E0","West Ham","Liverpool",2024-12-29
+"111","E0","Brighton","Man United",2024-08-24
+"112","E0","Tottenham","Everton",2024-08-24
+"113","E0","Fulham","Leicester",2024-08-24
+"114","E0","Crystal Palace","West Ham",2024-08-24
+"115","E0","Man City","Ipswich",2024-08-24
+"116","E0","Southampton","Nottm Forest",2024-08-24
+"117","E0","Aston Villa","Arsenal",2024-08-24
+"118","E0","Bournemouth","Newcastle",2024-08-25
+"119","E0","Wolves","Chelsea",2024-08-25
+"120","E0","Liverpool","Brentford",2024-08-25
+"121","E0","Southampton","Brentford",2025-01-04
+"122","E0","Bournemouth","Everton",2025-01-04
+"123","E0","Liverpool","Man United",2025-01-04
+"124","E0","Brighton","Arsenal",2025-01-04
+"125","E0","Wolves","Nottm Forest",2025-01-04
+"126","E0","Fulham","Ipswich",2025-01-04
+"127","E0","Tottenham","Newcastle",2025-01-04
+"128","E0","Crystal Palace","Chelsea",2025-01-04
+"129","E0","Man City","West Ham",2025-01-04
+"130","E0","Aston Villa","Leicester",2025-01-04
+"131","E0","Nottm Forest","Liverpool",2025-01-14
+"132","E0","Everton","Aston Villa",2025-01-14
+"133","E0","Brentford","Man City",2025-01-14
+"134","E0","Leicester","Crystal Palace",2025-01-14
+"135","E0","Ipswich","Brighton",2025-01-14
+"136","E0","West Ham","Fulham",2025-01-14
+"137","E0","Arsenal","Tottenham",2025-01-14
+"138","E0","Newcastle","Wolves",2025-01-15
+"139","E0","Chelsea","Bournemouth",2025-01-15
+"140","E0","Man United","Southampton",2025-01-15
+"141","E0","West Ham","Crystal Palace",2025-01-18
+"142","E0","Arsenal","Aston Villa",2025-01-18
+"143","E0","Man United","Brighton",2025-01-18
+"144","E0","Brentford","Liverpool",2025-01-18
+"145","E0","Ipswich","Man City",2025-01-18
+"146","E0","Newcastle","Bournemouth",2025-01-18
+"147","E0","Leicester","Fulham",2025-01-18
+"148","E0","Nottm Forest","Southampton",2025-01-18
+"149","E0","Chelsea","Wolves",2025-01-18
+"150","E0","Everton","Tottenham",2025-01-18
+"151","E0","Wolves","Arsenal",2025-01-25
+"152","E0","Crystal Palace","Brentford",2025-01-25
+"153","E0","Southampton","Newcastle",2025-01-25
+"154","E0","Tottenham","Leicester",2025-01-25
+"155","E0","Brighton","Everton",2025-01-25
+"156","E0","Aston Villa","West Ham",2025-01-25
+"157","E0","Man City","Chelsea",2025-01-25
+"158","E0","Fulham","Man United",2025-01-25
+"159","E0","Liverpool","Ipswich",2025-01-25
+"160","E0","Bournemouth","Nottm Forest",2025-01-25
+"161","E0","Ipswich","Southampton",2025-02-01
+"162","E0","Arsenal","Man City",2025-02-01
+"163","E0","Everton","Leicester",2025-02-01
+"164","E0","Newcastle","Fulham",2025-02-01
+"165","E0","Wolves","Aston Villa",2025-02-01
+"166","E0","Brentford","Tottenham",2025-02-01
+"167","E0","Man United","Crystal Palace",2025-02-01
+"168","E0","Bournemouth","Liverpool",2025-02-01
+"169","E0","Nottm Forest","Brighton",2025-02-01
+"170","E0","Chelsea","West Ham",2025-02-01
+"171","E0","Aston Villa","Ipswich",2025-02-15
+"172","E0","Tottenham","Man United",2025-02-15
+"173","E0","Crystal Palace","Everton",2025-02-15
+"174","E0","Fulham","Nottm Forest",2025-02-15
+"175","E0","Liverpool","Wolves",2025-02-15
+"176","E0","West Ham","Brentford",2025-02-15
+"177","E0","Man City","Newcastle",2025-02-15
+"178","E0","Leicester","Arsenal",2025-02-15
+"179","E0","Southampton","Bournemouth",2025-02-15
+"180","E0","Brighton","Chelsea",2025-02-15
+"181","E0","Aston Villa","Chelsea",2025-02-22
+"182","E0","Fulham","Crystal Palace",2025-02-22
+"183","E0","Ipswich","Tottenham",2025-02-22
+"184","E0","Newcastle","Nottm Forest",2025-02-22
+"185","E0","Bournemouth","Wolves",2025-02-22
+"186","E0","Leicester","Brentford",2025-02-22
+"187","E0","Arsenal","West Ham",2025-02-22
+"188","E0","Man City","Liverpool",2025-02-22
+"189","E0","Everton","Man United",2025-02-22
+"190","E0","Southampton","Brighton",2025-02-22
+"191","E0","West Ham","Leicester",2025-02-25
+"192","E0","Brentford","Everton",2025-02-25
+"193","E0","Tottenham","Man City",2025-02-25
+"194","E0","Wolves","Fulham",2025-02-25
+"195","E0","Nottm Forest","Arsenal",2025-02-25
+"196","E0","Brighton","Bournemouth",2025-02-25
+"197","E0","Crystal Palace","Aston Villa",2025-02-25
+"198","E0","Chelsea","Southampton",2025-02-26
+"199","E0","Liverpool","Newcastle",2025-02-26
+"200","E0","Man United","Ipswich",2025-02-26
+"201","E0","Liverpool","Southampton",2025-03-08
+"202","E0","Chelsea","Leicester",2025-03-08
+"203","E0","Wolves","Everton",2025-03-08
+"204","E0","West Ham","Newcastle",2025-03-08
+"205","E0","Tottenham","Bournemouth",2025-03-08
+"206","E0","Man United","Arsenal",2025-03-08
+"207","E0","Crystal Palace","Ipswich",2025-03-08
+"208","E0","Nottm Forest","Man City",2025-03-08
+"209","E0","Brighton","Fulham",2025-03-08
+"210","E0","Brentford","Aston Villa",2025-03-08
+"211","E0","Arsenal","Chelsea",2025-03-15
+"212","E0","Aston Villa","Liverpool",2025-03-15
+"213","E0","Fulham","Tottenham",2025-03-15
+"214","E0","Newcastle","Crystal Palace",2025-03-15
+"215","E0","Leicester","Man United",2025-03-15
+"216","E0","Man City","Brighton",2025-03-15
+"217","E0","Ipswich","Nottm Forest",2025-03-15
+"218","E0","Everton","West Ham",2025-03-15
+"219","E0","Southampton","Wolves",2025-03-15
+"220","E0","Bournemouth","Brentford",2025-03-15
+"221","E0","Arsenal","Brighton",2024-08-31
+"222","E0","Everton","Bournemouth",2024-08-31
+"223","E0","Leicester","Aston Villa",2024-08-31
+"224","E0","Nottm Forest","Wolves",2024-08-31
+"225","E0","Ipswich","Fulham",2024-08-31
+"226","E0","Brentford","Southampton",2024-08-31
+"227","E0","West Ham","Man City",2024-08-31
+"228","E0","Newcastle","Tottenham",2024-09-01
+"229","E0","Chelsea","Crystal Palace",2024-09-01
+"230","E0","Man United","Liverpool",2024-09-01
+"231","E0","Brighton","Aston Villa",2025-04-01
+"232","E0","Bournemouth","Ipswich",2025-04-01
+"233","E0","Wolves","West Ham",2025-04-01
+"234","E0","Arsenal","Fulham",2025-04-01
+"235","E0","Nottm Forest","Man United",2025-04-01
+"236","E0","Southampton","Crystal Palace",2025-04-02
+"237","E0","Chelsea","Tottenham",2025-04-02
+"238","E0","Man City","Leicester",2025-04-02
+"239","E0","Newcastle","Brentford",2025-04-02
+"240","E0","Liverpool","Everton",2025-04-02
+"241","E0","West Ham","Bournemouth",2025-04-05
+"242","E0","Man United","Man City",2025-04-05
+"243","E0","Brentford","Chelsea",2025-04-05
+"244","E0","Aston Villa","Nottm Forest",2025-04-05
+"245","E0","Everton","Arsenal",2025-04-05
+"246","E0","Fulham","Liverpool",2025-04-05
+"247","E0","Ipswich","Wolves",2025-04-05
+"248","E0","Leicester","Newcastle",2025-04-05
+"249","E0","Crystal Palace","Brighton",2025-04-05
+"250","E0","Tottenham","Southampton",2025-04-05
+"251","E0","Bournemouth","Fulham",2025-04-12
+"252","E0","Newcastle","Man United",2025-04-12
+"253","E0","Arsenal","Brentford",2025-04-12
+"254","E0","Liverpool","West Ham",2025-04-12
+"255","E0","Wolves","Tottenham",2025-04-12
+"256","E0","Brighton","Leicester",2025-04-12
+"257","E0","Man City","Crystal Palace",2025-04-12
+"258","E0","Nottm Forest","Everton",2025-04-12
+"259","E0","Chelsea","Ipswich",2025-04-12
+"260","E0","Southampton","Aston Villa",2025-04-12
+"261","E0","Leicester","Liverpool",2025-04-19
+"262","E0","Ipswich","Arsenal",2025-04-19
+"263","E0","Brentford","Brighton",2025-04-19
+"264","E0","Aston Villa","Newcastle",2025-04-19
+"265","E0","Tottenham","Nottm Forest",2025-04-19
+"266","E0","West Ham","Southampton",2025-04-19
+"267","E0","Crystal Palace","Bournemouth",2025-04-19
+"268","E0","Everton","Man City",2025-04-19
+"269","E0","Fulham","Chelsea",2025-04-19
+"270","E0","Man United","Wolves",2025-04-19
+"271","E0","Chelsea","Everton",2025-04-26
+"272","E0","Wolves","Leicester",2025-04-26
+"273","E0","Newcastle","Ipswich",2025-04-26
+"274","E0","Man City","Aston Villa",2025-04-26
+"275","E0","Liverpool","Tottenham",2025-04-26
+"276","E0","Arsenal","Crystal Palace",2025-04-26
+"277","E0","Bournemouth","Man United",2025-04-26
+"278","E0","Southampton","Fulham",2025-04-26
+"279","E0","Nottm Forest","Brentford",2025-04-26
+"280","E0","Brighton","West Ham",2025-04-26
+"281","E0","Chelsea","Liverpool",2025-05-03
+"282","E0","Brentford","Man United",2025-05-03
+"283","E0","Man City","Wolves",2025-05-03
+"284","E0","West Ham","Tottenham",2025-05-03
+"285","E0","Crystal Palace","Nottm Forest",2025-05-03
+"286","E0","Arsenal","Bournemouth",2025-05-03
+"287","E0","Everton","Ipswich",2025-05-03
+"288","E0","Aston Villa","Fulham",2025-05-03
+"289","E0","Brighton","Newcastle",2025-05-03
+"290","E0","Leicester","Southampton",2025-05-03
+"291","E0","Liverpool","Arsenal",2025-05-10
+"292","E0","Southampton","Man City",2025-05-10
+"293","E0","Tottenham","Crystal Palace",2025-05-10
+"294","E0","Fulham","Everton",2025-05-10
+"295","E0","Newcastle","Chelsea",2025-05-10
+"296","E0","Nottm Forest","Leicester",2025-05-10
+"297","E0","Man United","West Ham",2025-05-10
+"298","E0","Bournemouth","Aston Villa",2025-05-10
+"299","E0","Ipswich","Brentford",2025-05-10
+"300","E0","Wolves","Brighton",2025-05-10
+"301","E0","Brentford","Fulham",2025-05-18
+"302","E0","Arsenal","Newcastle",2025-05-18
+"303","E0","Brighton","Liverpool",2025-05-18
+"304","E0","Leicester","Ipswich",2025-05-18
+"305","E0","West Ham","Nottm Forest",2025-05-18
+"306","E0","Everton","Southampton",2025-05-18
+"307","E0","Aston Villa","Tottenham",2025-05-18
+"308","E0","Chelsea","Man United",2025-05-18
+"309","E0","Man City","Bournemouth",2025-05-18
+"310","E0","Crystal Palace","Wolves",2025-05-18
+"311","E0","Southampton","Arsenal",2025-05-25
+"312","E0","Liverpool","Crystal Palace",2025-05-25
+"313","E0","Ipswich","West Ham",2025-05-25
+"314","E0","Bournemouth","Leicester",2025-05-25
+"315","E0","Newcastle","Everton",2025-05-25
+"316","E0","Fulham","Man City",2025-05-25
+"317","E0","Nottm Forest","Chelsea",2025-05-25
+"318","E0","Man United","Aston Villa",2025-05-25
+"319","E0","Wolves","Brentford",2025-05-25
+"320","E0","Tottenham","Brighton",2025-05-25
+"321","E0","Southampton","Man United",2024-09-14
+"322","E0","Brighton","Ipswich",2024-09-14
+"323","E0","Crystal Palace","Leicester",2024-09-14
+"324","E0","Man City","Brentford",2024-09-14
+"325","E0","Liverpool","Nottm Forest",2024-09-14
+"326","E0","Fulham","West Ham",2024-09-14
+"327","E0","Aston Villa","Everton",2024-09-14
+"328","E0","Bournemouth","Chelsea",2024-09-14
+"329","E0","Tottenham","Arsenal",2024-09-15
+"330","E0","Wolves","Newcastle",2024-09-15
+"331","E0","West Ham","Chelsea",2024-09-21
+"332","E0","Liverpool","Bournemouth",2024-09-21
+"333","E0","Leicester","Everton",2024-09-21
+"334","E0","Southampton","Ipswich",2024-09-21
+"335","E0","Tottenham","Brentford",2024-09-21
+"336","E0","Fulham","Newcastle",2024-09-21
+"337","E0","Aston Villa","Wolves",2024-09-21
+"338","E0","Crystal Palace","Man United",2024-09-21
+"339","E0","Brighton","Nottm Forest",2024-09-22
+"340","E0","Man City","Arsenal",2024-09-22
+"341","E0","Newcastle","Man City",2024-09-28
+"342","E0","Chelsea","Brighton",2024-09-28
+"343","E0","Arsenal","Leicester",2024-09-28
+"344","E0","Brentford","West Ham",2024-09-28
+"345","E0","Everton","Crystal Palace",2024-09-28
+"346","E0","Nottm Forest","Fulham",2024-09-28
+"347","E0","Wolves","Liverpool",2024-09-28
+"348","E0","Ipswich","Aston Villa",2024-09-29
+"349","E0","Man United","Tottenham",2024-09-29
+"350","E0","Bournemouth","Southampton",2024-09-30
+"351","E0","Crystal Palace","Liverpool",2024-10-05
+"352","E0","Man City","Fulham",2024-10-05
+"353","E0","Brentford","Wolves",2024-10-05
+"354","E0","West Ham","Ipswich",2024-10-05
+"355","E0","Aston Villa","Man United",2024-10-05
+"356","E0","Chelsea","Nottm Forest",2024-10-05
+"357","E0","Arsenal","Southampton",2024-10-05
+"358","E0","Leicester","Bournemouth",2024-10-05
+"359","E0","Brighton","Tottenham",2024-10-05
+"360","E0","Everton","Newcastle",2024-10-05
+"361","E0","Bournemouth","Arsenal",2024-10-19
+"362","E0","Southampton","Leicester",2024-10-19
+"363","E0","Ipswich","Everton",2024-10-19
+"364","E0","Newcastle","Brighton",2024-10-19
+"365","E0","Nottm Forest","Crystal Palace",2024-10-19
+"366","E0","Fulham","Aston Villa",2024-10-19
+"367","E0","Man United","Brentford",2024-10-19
+"368","E0","Wolves","Man City",2024-10-19
+"369","E0","Tottenham","West Ham",2024-10-19
+"370","E0","Liverpool","Chelsea",2024-10-19
+"371","E0","Everton","Fulham",2024-10-26
+"372","E0","Brentford","Ipswich",2024-10-26
+"373","E0","Leicester","Nottm Forest",2024-10-26
+"374","E0","Chelsea","Newcastle",2024-10-26
+"375","E0","West Ham","Man United",2024-10-26
+"376","E0","Arsenal","Liverpool",2024-10-26
+"377","E0","Brighton","Wolves",2024-10-26
+"378","E0","Man City","Southampton",2024-10-26
+"379","E0","Aston Villa","Bournemouth",2024-10-26
+"380","E0","Crystal Palace","Tottenham",2024-10-26

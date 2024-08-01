@@ -1,0 +1,307 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","D1","Mgladbach","Leverkusen",2024-08-23
+"2","D1","Mainz","Union Berlin",2024-08-24
+"3","D1","Augsburg","Werder Bremen",2024-08-24
+"4","D1","Freiburg","Stuttgart",2024-08-24
+"5","D1","Hoffenheim","Holstein Kiel",2024-08-24
+"6","D1","RB Leipzig","Bochum",2024-08-24
+"7","D1","Dortmund","Ein Frankfurt",2024-08-24
+"8","D1","Wolfsburg","Bayern Munich",2024-08-25
+"9","D1","St Pauli","Heidenheim",2024-08-25
+"10","D1","Union Berlin","Freiburg",2024-11-09
+"11","D1","St Pauli","Bayern Munich",2024-11-09
+"12","D1","Stuttgart","Ein Frankfurt",2024-11-09
+"13","D1","Heidenheim","Wolfsburg",2024-11-09
+"14","D1","Bochum","Leverkusen",2024-11-09
+"15","D1","Werder Bremen","Holstein Kiel",2024-11-09
+"16","D1","RB Leipzig","Mgladbach",2024-11-09
+"17","D1","Augsburg","Hoffenheim",2024-11-09
+"18","D1","Mainz","Dortmund",2024-11-09
+"19","D1","Wolfsburg","Union Berlin",2024-11-23
+"20","D1","Leverkusen","Heidenheim",2024-11-23
+"21","D1","Dortmund","Freiburg",2024-11-23
+"22","D1","Bayern Munich","Augsburg",2024-11-23
+"23","D1","Stuttgart","Bochum",2024-11-23
+"24","D1","Mgladbach","St Pauli",2024-11-23
+"25","D1","Ein Frankfurt","Werder Bremen",2024-11-23
+"26","D1","Hoffenheim","RB Leipzig",2024-11-23
+"27","D1","Holstein Kiel","Mainz",2024-11-23
+"28","D1","Heidenheim","Ein Frankfurt",2024-11-30
+"29","D1","Mainz","Hoffenheim",2024-11-30
+"30","D1","Union Berlin","Leverkusen",2024-11-30
+"31","D1","Freiburg","Mgladbach",2024-11-30
+"32","D1","St Pauli","Holstein Kiel",2024-11-30
+"33","D1","Werder Bremen","Stuttgart",2024-11-30
+"34","D1","Dortmund","Bayern Munich",2024-11-30
+"35","D1","RB Leipzig","Wolfsburg",2024-11-30
+"36","D1","Augsburg","Bochum",2024-11-30
+"37","D1","Leverkusen","St Pauli",2024-12-07
+"38","D1","Hoffenheim","Freiburg",2024-12-07
+"39","D1","Stuttgart","Union Berlin",2024-12-07
+"40","D1","Ein Frankfurt","Augsburg",2024-12-07
+"41","D1","Wolfsburg","Mainz",2024-12-07
+"42","D1","Holstein Kiel","RB Leipzig",2024-12-07
+"43","D1","Bochum","Werder Bremen",2024-12-07
+"44","D1","Mgladbach","Dortmund",2024-12-07
+"45","D1","Bayern Munich","Heidenheim",2024-12-07
+"46","D1","Union Berlin","Bochum",2024-12-14
+"47","D1","Freiburg","Wolfsburg",2024-12-14
+"48","D1","Heidenheim","Stuttgart",2024-12-14
+"49","D1","RB Leipzig","Ein Frankfurt",2024-12-14
+"50","D1","Mgladbach","Holstein Kiel",2024-12-14
+"51","D1","Augsburg","Leverkusen",2024-12-14
+"52","D1","Dortmund","Hoffenheim",2024-12-14
+"53","D1","Mainz","Bayern Munich",2024-12-14
+"54","D1","St Pauli","Werder Bremen",2024-12-14
+"55","D1","Hoffenheim","Mgladbach",2024-12-21
+"56","D1","Ein Frankfurt","Mainz",2024-12-21
+"57","D1","Werder Bremen","Union Berlin",2024-12-21
+"58","D1","Stuttgart","St Pauli",2024-12-21
+"59","D1","Wolfsburg","Dortmund",2024-12-21
+"60","D1","Holstein Kiel","Augsburg",2024-12-21
+"61","D1","Leverkusen","Freiburg",2024-12-21
+"62","D1","Bochum","Heidenheim",2024-12-21
+"63","D1","Bayern Munich","RB Leipzig",2024-12-21
+"64","D1","Mainz","Bochum",2025-01-11
+"65","D1","Freiburg","Holstein Kiel",2025-01-11
+"66","D1","Dortmund","Leverkusen",2025-01-11
+"67","D1","Hoffenheim","Wolfsburg",2025-01-11
+"68","D1","St Pauli","Ein Frankfurt",2025-01-11
+"69","D1","Mgladbach","Bayern Munich",2025-01-11
+"70","D1","RB Leipzig","Werder Bremen",2025-01-11
+"71","D1","Augsburg","Stuttgart",2025-01-11
+"72","D1","Heidenheim","Union Berlin",2025-01-11
+"73","D1","Stuttgart","RB Leipzig",2025-01-15
+"74","D1","Holstein Kiel","Dortmund",2025-01-15
+"75","D1","Bochum","St Pauli",2025-01-15
+"76","D1","Wolfsburg","Mgladbach",2025-01-15
+"77","D1","Bayern Munich","Hoffenheim",2025-01-15
+"78","D1","Werder Bremen","Heidenheim",2025-01-15
+"79","D1","Ein Frankfurt","Freiburg",2025-01-15
+"80","D1","Leverkusen","Mainz",2025-01-15
+"81","D1","Union Berlin","Augsburg",2025-01-15
+"82","D1","Ein Frankfurt","Dortmund",2025-01-18
+"83","D1","Bayern Munich","Wolfsburg",2025-01-18
+"84","D1","Werder Bremen","Augsburg",2025-01-18
+"85","D1","Heidenheim","St Pauli",2025-01-18
+"86","D1","Leverkusen","Mgladbach",2025-01-18
+"87","D1","Union Berlin","Mainz",2025-01-18
+"88","D1","Stuttgart","Freiburg",2025-01-18
+"89","D1","Bochum","RB Leipzig",2025-01-18
+"90","D1","Holstein Kiel","Hoffenheim",2025-01-18
+"91","D1","Dortmund","Werder Bremen",2025-01-25
+"92","D1","Mainz","Stuttgart",2025-01-25
+"93","D1","Hoffenheim","Ein Frankfurt",2025-01-25
+"94","D1","St Pauli","Union Berlin",2025-01-25
+"95","D1","Augsburg","Heidenheim",2025-01-25
+"96","D1","RB Leipzig","Leverkusen",2025-01-25
+"97","D1","Mgladbach","Bochum",2025-01-25
+"98","D1","Freiburg","Bayern Munich",2025-01-25
+"99","D1","Wolfsburg","Holstein Kiel",2025-01-25
+"100","D1","Union Berlin","St Pauli",2024-08-30
+"101","D1","Werder Bremen","Dortmund",2024-08-31
+"102","D1","Ein Frankfurt","Hoffenheim",2024-08-31
+"103","D1","Stuttgart","Mainz",2024-08-31
+"104","D1","Holstein Kiel","Wolfsburg",2024-08-31
+"105","D1","Bochum","Mgladbach",2024-08-31
+"106","D1","Leverkusen","RB Leipzig",2024-08-31
+"107","D1","Heidenheim","Augsburg",2024-09-01
+"108","D1","Bayern Munich","Freiburg",2024-09-01
+"109","D1","Stuttgart","Mgladbach",2025-02-01
+"110","D1","Ein Frankfurt","Wolfsburg",2025-02-01
+"111","D1","Heidenheim","Dortmund",2025-02-01
+"112","D1","Bayern Munich","Holstein Kiel",2025-02-01
+"113","D1","Werder Bremen","Mainz",2025-02-01
+"114","D1","Union Berlin","RB Leipzig",2025-02-01
+"115","D1","St Pauli","Augsburg",2025-02-01
+"116","D1","Leverkusen","Hoffenheim",2025-02-01
+"117","D1","Bochum","Freiburg",2025-02-01
+"118","D1","Freiburg","Heidenheim",2025-02-08
+"119","D1","Dortmund","Stuttgart",2025-02-08
+"120","D1","Holstein Kiel","Bochum",2025-02-08
+"121","D1","RB Leipzig","St Pauli",2025-02-08
+"122","D1","Wolfsburg","Leverkusen",2025-02-08
+"123","D1","Mgladbach","Ein Frankfurt",2025-02-08
+"124","D1","Hoffenheim","Union Berlin",2025-02-08
+"125","D1","Mainz","Augsburg",2025-02-08
+"126","D1","Bayern Munich","Werder Bremen",2025-02-08
+"127","D1","Bochum","Dortmund",2025-02-15
+"128","D1","Augsburg","RB Leipzig",2025-02-15
+"129","D1","Leverkusen","Bayern Munich",2025-02-15
+"130","D1","Union Berlin","Mgladbach",2025-02-15
+"131","D1","St Pauli","Freiburg",2025-02-15
+"132","D1","Ein Frankfurt","Holstein Kiel",2025-02-15
+"133","D1","Stuttgart","Wolfsburg",2025-02-15
+"134","D1","Werder Bremen","Hoffenheim",2025-02-15
+"135","D1","Heidenheim","Mainz",2025-02-15
+"136","D1","Hoffenheim","Stuttgart",2025-02-22
+"137","D1","Freiburg","Werder Bremen",2025-02-22
+"138","D1","Mgladbach","Augsburg",2025-02-22
+"139","D1","Dortmund","Union Berlin",2025-02-22
+"140","D1","RB Leipzig","Heidenheim",2025-02-22
+"141","D1","Holstein Kiel","Leverkusen",2025-02-22
+"142","D1","Bayern Munich","Ein Frankfurt",2025-02-22
+"143","D1","Mainz","St Pauli",2025-02-22
+"144","D1","Wolfsburg","Bochum",2025-02-22
+"145","D1","Stuttgart","Bayern Munich",2025-03-01
+"146","D1","Ein Frankfurt","Leverkusen",2025-03-01
+"147","D1","Werder Bremen","Wolfsburg",2025-03-01
+"148","D1","Bochum","Hoffenheim",2025-03-01
+"149","D1","Augsburg","Freiburg",2025-03-01
+"150","D1","Heidenheim","Mgladbach",2025-03-01
+"151","D1","RB Leipzig","Mainz",2025-03-01
+"152","D1","St Pauli","Dortmund",2025-03-01
+"153","D1","Union Berlin","Holstein Kiel",2025-03-01
+"154","D1","Freiburg","RB Leipzig",2025-03-08
+"155","D1","Wolfsburg","St Pauli",2025-03-08
+"156","D1","Dortmund","Augsburg",2025-03-08
+"157","D1","Holstein Kiel","Stuttgart",2025-03-08
+"158","D1","Leverkusen","Werder Bremen",2025-03-08
+"159","D1","Mgladbach","Mainz",2025-03-08
+"160","D1","Ein Frankfurt","Union Berlin",2025-03-08
+"161","D1","Bayern Munich","Bochum",2025-03-08
+"162","D1","Hoffenheim","Heidenheim",2025-03-08
+"163","D1","Augsburg","Wolfsburg",2025-03-15
+"164","D1","St Pauli","Hoffenheim",2025-03-15
+"165","D1","Union Berlin","Bayern Munich",2025-03-15
+"166","D1","RB Leipzig","Dortmund",2025-03-15
+"167","D1","Mainz","Freiburg",2025-03-15
+"168","D1","Bochum","Ein Frankfurt",2025-03-15
+"169","D1","Heidenheim","Holstein Kiel",2025-03-15
+"170","D1","Werder Bremen","Mgladbach",2025-03-15
+"171","D1","Stuttgart","Leverkusen",2025-03-15
+"172","D1","Dortmund","Mainz",2025-03-29
+"173","D1","Bayern Munich","St Pauli",2025-03-29
+"174","D1","Wolfsburg","Heidenheim",2025-03-29
+"175","D1","Holstein Kiel","Werder Bremen",2025-03-29
+"176","D1","Hoffenheim","Augsburg",2025-03-29
+"177","D1","Leverkusen","Bochum",2025-03-29
+"178","D1","Mgladbach","RB Leipzig",2025-03-29
+"179","D1","Ein Frankfurt","Stuttgart",2025-03-29
+"180","D1","Freiburg","Union Berlin",2025-03-29
+"181","D1","Heidenheim","Leverkusen",2025-04-05
+"182","D1","Werder Bremen","Ein Frankfurt",2025-04-05
+"183","D1","Union Berlin","Wolfsburg",2025-04-05
+"184","D1","RB Leipzig","Hoffenheim",2025-04-05
+"185","D1","St Pauli","Mgladbach",2025-04-05
+"186","D1","Freiburg","Dortmund",2025-04-05
+"187","D1","Augsburg","Bayern Munich",2025-04-05
+"188","D1","Bochum","Stuttgart",2025-04-05
+"189","D1","Mainz","Holstein Kiel",2025-04-05
+"190","D1","Leverkusen","Union Berlin",2025-04-12
+"191","D1","Wolfsburg","RB Leipzig",2025-04-12
+"192","D1","Hoffenheim","Mainz",2025-04-12
+"193","D1","Bayern Munich","Dortmund",2025-04-12
+"194","D1","Ein Frankfurt","Heidenheim",2025-04-12
+"195","D1","Mgladbach","Freiburg",2025-04-12
+"196","D1","Bochum","Augsburg",2025-04-12
+"197","D1","Holstein Kiel","St Pauli",2025-04-12
+"198","D1","Stuttgart","Werder Bremen",2025-04-12
+"199","D1","Dortmund","Heidenheim",2024-09-13
+"200","D1","RB Leipzig","Union Berlin",2024-09-14
+"201","D1","Mgladbach","Stuttgart",2024-09-14
+"202","D1","Freiburg","Bochum",2024-09-14
+"203","D1","Wolfsburg","Ein Frankfurt",2024-09-14
+"204","D1","Hoffenheim","Leverkusen",2024-09-14
+"205","D1","Holstein Kiel","Bayern Munich",2024-09-14
+"206","D1","Augsburg","St Pauli",2024-09-15
+"207","D1","Mainz","Werder Bremen",2024-09-15
+"208","D1","RB Leipzig","Holstein Kiel",2025-04-19
+"209","D1","Heidenheim","Bayern Munich",2025-04-19
+"210","D1","Freiburg","Hoffenheim",2025-04-19
+"211","D1","Union Berlin","Stuttgart",2025-04-19
+"212","D1","St Pauli","Leverkusen",2025-04-19
+"213","D1","Werder Bremen","Bochum",2025-04-19
+"214","D1","Dortmund","Mgladbach",2025-04-19
+"215","D1","Augsburg","Ein Frankfurt",2025-04-19
+"216","D1","Mainz","Wolfsburg",2025-04-19
+"217","D1","Werder Bremen","St Pauli",2025-04-26
+"218","D1","Stuttgart","Heidenheim",2025-04-26
+"219","D1","Bochum","Union Berlin",2025-04-26
+"220","D1","Holstein Kiel","Mgladbach",2025-04-26
+"221","D1","Ein Frankfurt","RB Leipzig",2025-04-26
+"222","D1","Hoffenheim","Dortmund",2025-04-26
+"223","D1","Bayern Munich","Mainz",2025-04-26
+"224","D1","Wolfsburg","Freiburg",2025-04-26
+"225","D1","Leverkusen","Augsburg",2025-04-26
+"226","D1","Union Berlin","Werder Bremen",2025-05-03
+"227","D1","RB Leipzig","Bayern Munich",2025-05-03
+"228","D1","Mainz","Ein Frankfurt",2025-05-03
+"229","D1","Mgladbach","Hoffenheim",2025-05-03
+"230","D1","St Pauli","Stuttgart",2025-05-03
+"231","D1","Freiburg","Leverkusen",2025-05-03
+"232","D1","Heidenheim","Bochum",2025-05-03
+"233","D1","Augsburg","Holstein Kiel",2025-05-03
+"234","D1","Dortmund","Wolfsburg",2025-05-03
+"235","D1","Ein Frankfurt","St Pauli",2025-05-10
+"236","D1","Holstein Kiel","Freiburg",2025-05-10
+"237","D1","Bochum","Mainz",2025-05-10
+"238","D1","Wolfsburg","Hoffenheim",2025-05-10
+"239","D1","Union Berlin","Heidenheim",2025-05-10
+"240","D1","Werder Bremen","RB Leipzig",2025-05-10
+"241","D1","Bayern Munich","Mgladbach",2025-05-10
+"242","D1","Leverkusen","Dortmund",2025-05-10
+"243","D1","Stuttgart","Augsburg",2025-05-10
+"244","D1","Hoffenheim","Bayern Munich",2025-05-17
+"245","D1","Dortmund","Holstein Kiel",2025-05-17
+"246","D1","Mainz","Leverkusen",2025-05-17
+"247","D1","Augsburg","Union Berlin",2025-05-17
+"248","D1","Heidenheim","Werder Bremen",2025-05-17
+"249","D1","Mgladbach","Wolfsburg",2025-05-17
+"250","D1","Freiburg","Ein Frankfurt",2025-05-17
+"251","D1","RB Leipzig","Stuttgart",2025-05-17
+"252","D1","St Pauli","Bochum",2025-05-17
+"253","D1","Augsburg","Mainz",2024-09-20
+"254","D1","Heidenheim","Freiburg",2024-09-21
+"255","D1","Union Berlin","Hoffenheim",2024-09-21
+"256","D1","Bochum","Holstein Kiel",2024-09-21
+"257","D1","Werder Bremen","Bayern Munich",2024-09-21
+"258","D1","Ein Frankfurt","Mgladbach",2024-09-21
+"259","D1","Leverkusen","Wolfsburg",2024-09-22
+"260","D1","Stuttgart","Dortmund",2024-09-22
+"261","D1","St Pauli","RB Leipzig",2024-09-22
+"262","D1","Dortmund","Bochum",2024-09-27
+"263","D1","RB Leipzig","Augsburg",2024-09-28
+"264","D1","Mgladbach","Union Berlin",2024-09-28
+"265","D1","Freiburg","St Pauli",2024-09-28
+"266","D1","Wolfsburg","Stuttgart",2024-09-28
+"267","D1","Mainz","Heidenheim",2024-09-28
+"268","D1","Bayern Munich","Leverkusen",2024-09-28
+"269","D1","Holstein Kiel","Ein Frankfurt",2024-09-29
+"270","D1","Hoffenheim","Werder Bremen",2024-09-29
+"271","D1","Stuttgart","Hoffenheim",2024-10-05
+"272","D1","Ein Frankfurt","Bayern Munich",2024-10-05
+"273","D1","St Pauli","Mainz",2024-10-05
+"274","D1","Union Berlin","Dortmund",2024-10-05
+"275","D1","Heidenheim","RB Leipzig",2024-10-05
+"276","D1","Werder Bremen","Freiburg",2024-10-05
+"277","D1","Leverkusen","Holstein Kiel",2024-10-05
+"278","D1","Augsburg","Mgladbach",2024-10-05
+"279","D1","Bochum","Wolfsburg",2024-10-05
+"280","D1","Mainz","RB Leipzig",2024-10-19
+"281","D1","Leverkusen","Ein Frankfurt",2024-10-19
+"282","D1","Freiburg","Augsburg",2024-10-19
+"283","D1","Dortmund","St Pauli",2024-10-19
+"284","D1","Holstein Kiel","Union Berlin",2024-10-19
+"285","D1","Hoffenheim","Bochum",2024-10-19
+"286","D1","Bayern Munich","Stuttgart",2024-10-19
+"287","D1","Wolfsburg","Werder Bremen",2024-10-19
+"288","D1","Mgladbach","Heidenheim",2024-10-19
+"289","D1","Stuttgart","Holstein Kiel",2024-10-26
+"290","D1","Bochum","Bayern Munich",2024-10-26
+"291","D1","Augsburg","Dortmund",2024-10-26
+"292","D1","St Pauli","Wolfsburg",2024-10-26
+"293","D1","Werder Bremen","Leverkusen",2024-10-26
+"294","D1","Union Berlin","Ein Frankfurt",2024-10-26
+"295","D1","Mainz","Mgladbach",2024-10-26
+"296","D1","RB Leipzig","Freiburg",2024-10-26
+"297","D1","Heidenheim","Hoffenheim",2024-10-26
+"298","D1","Hoffenheim","St Pauli",2024-11-02
+"299","D1","Wolfsburg","Augsburg",2024-11-02
+"300","D1","Bayern Munich","Union Berlin",2024-11-02
+"301","D1","Dortmund","RB Leipzig",2024-11-02
+"302","D1","Freiburg","Mainz",2024-11-02
+"303","D1","Holstein Kiel","Heidenheim",2024-11-02
+"304","D1","Mgladbach","Werder Bremen",2024-11-02
+"305","D1","Leverkusen","Stuttgart",2024-11-02
+"306","D1","Ein Frankfurt","Bochum",2024-11-02

@@ -1,0 +1,241 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","B1","Club Brugge","Mechelen",2024-07-26
+"2","B1","Dender","St. Gilloise",2024-07-27
+"3","B1","Beerschot VA","Oud-Heverlee Leuven",2024-07-27
+"4","B1","Anderlecht","St Truiden",2024-07-27
+"5","B1","Genk","Standard",2024-07-28
+"6","B1","Kortrijk","Gent",2024-07-28
+"7","B1","Charleroi","Antwerp",2024-07-28
+"8","B1","Westerlo","Cercle Brugge",2024-07-28
+"9","B1","Mechelen","Oud-Heverlee Leuven",2024-10-05
+"10","B1","St Truiden","Gent",2024-10-05
+"11","B1","Club Brugge","St. Gilloise",2024-10-05
+"12","B1","Anderlecht","Standard",2024-10-05
+"13","B1","Kortrijk","Genk",2024-10-05
+"14","B1","Dender","Charleroi",2024-10-05
+"15","B1","Antwerp","Cercle Brugge",2024-10-05
+"16","B1","Westerlo","Beerschot VA",2024-10-05
+"17","B1","Standard","Charleroi",2024-10-19
+"18","B1","Cercle Brugge","Dender",2024-10-19
+"19","B1","Mechelen","Kortrijk",2024-10-19
+"20","B1","Westerlo","Club Brugge",2024-10-19
+"21","B1","Oud-Heverlee Leuven","Antwerp",2024-10-19
+"22","B1","Genk","St Truiden",2024-10-19
+"23","B1","Beerschot VA","Anderlecht",2024-10-19
+"24","B1","St. Gilloise","Gent",2024-10-19
+"25","B1","Club Brugge","Anderlecht",2024-10-26
+"26","B1","Antwerp","Standard",2024-10-26
+"27","B1","St Truiden","Westerlo",2024-10-26
+"28","B1","Charleroi","Oud-Heverlee Leuven",2024-10-26
+"29","B1","Dender","Mechelen",2024-10-26
+"30","B1","Kortrijk","Beerschot VA",2024-10-26
+"31","B1","Gent","Genk",2024-10-26
+"32","B1","St. Gilloise","Cercle Brugge",2024-10-26
+"33","B1","Oud-Heverlee Leuven","Club Brugge",2024-11-02
+"34","B1","Genk","Antwerp",2024-11-02
+"35","B1","Westerlo","Dender",2024-11-02
+"36","B1","Mechelen","St. Gilloise",2024-11-02
+"37","B1","Standard","St Truiden",2024-11-02
+"38","B1","Cercle Brugge","Charleroi",2024-11-02
+"39","B1","Beerschot VA","Gent",2024-11-02
+"40","B1","Anderlecht","Kortrijk",2024-11-02
+"41","B1","Gent","Standard",2024-11-09
+"42","B1","St Truiden","Mechelen",2024-11-09
+"43","B1","St. Gilloise","Genk",2024-11-09
+"44","B1","Cercle Brugge","Anderlecht",2024-11-09
+"45","B1","Beerschot VA","Club Brugge",2024-11-09
+"46","B1","Dender","Oud-Heverlee Leuven",2024-11-09
+"47","B1","Kortrijk","Antwerp",2024-11-09
+"48","B1","Charleroi","Westerlo",2024-11-09
+"49","B1","Westerlo","Kortrijk",2024-11-23
+"50","B1","Antwerp","Dender",2024-11-23
+"51","B1","Anderlecht","Gent",2024-11-23
+"52","B1","Oud-Heverlee Leuven","St. Gilloise",2024-11-23
+"53","B1","Standard","Cercle Brugge",2024-11-23
+"54","B1","Club Brugge","St Truiden",2024-11-23
+"55","B1","Mechelen","Beerschot VA",2024-11-23
+"56","B1","Genk","Charleroi",2024-11-23
+"57","B1","Charleroi","Standard",2024-11-30
+"58","B1","Club Brugge","Dender",2024-11-30
+"59","B1","Beerschot VA","Cercle Brugge",2024-11-30
+"60","B1","Kortrijk","Mechelen",2024-11-30
+"61","B1","St. Gilloise","Antwerp",2024-11-30
+"62","B1","St Truiden","Genk",2024-11-30
+"63","B1","Westerlo","Gent",2024-11-30
+"64","B1","Oud-Heverlee Leuven","Anderlecht",2024-11-30
+"65","B1","Standard","Oud-Heverlee Leuven",2024-12-07
+"66","B1","Gent","St Truiden",2024-12-07
+"67","B1","Cercle Brugge","St. Gilloise",2024-12-07
+"68","B1","Antwerp","Charleroi",2024-12-07
+"69","B1","Anderlecht","Beerschot VA",2024-12-07
+"70","B1","Genk","Kortrijk",2024-12-07
+"71","B1","Mechelen","Club Brugge",2024-12-07
+"72","B1","Dender","Westerlo",2024-12-07
+"73","B1","Mechelen","Antwerp",2024-12-14
+"74","B1","St. Gilloise","Westerlo",2024-12-14
+"75","B1","St Truiden","Anderlecht",2024-12-14
+"76","B1","Oud-Heverlee Leuven","Charleroi",2024-12-14
+"77","B1","Club Brugge","Genk",2024-12-14
+"78","B1","Gent","Cercle Brugge",2024-12-14
+"79","B1","Beerschot VA","Standard",2024-12-14
+"80","B1","Kortrijk","Dender",2024-12-14
+"81","B1","Charleroi","St Truiden",2024-12-21
+"82","B1","Westerlo","Mechelen",2024-12-21
+"83","B1","Cercle Brugge","Oud-Heverlee Leuven",2024-12-21
+"84","B1","Beerschot VA","Kortrijk",2024-12-21
+"85","B1","St. Gilloise","Club Brugge",2024-12-21
+"86","B1","Genk","Anderlecht",2024-12-21
+"87","B1","Standard","Gent",2024-12-21
+"88","B1","Dender","Antwerp",2024-12-21
+"89","B1","St. Gilloise","Beerschot VA",2024-08-02
+"90","B1","Mechelen","Westerlo",2024-08-03
+"91","B1","Oud-Heverlee Leuven","Genk",2024-08-03
+"92","B1","St Truiden","Charleroi",2024-08-03
+"93","B1","Antwerp","Anderlecht",2024-08-04
+"94","B1","Cercle Brugge","Kortrijk",2024-08-04
+"95","B1","Standard","Club Brugge",2024-08-04
+"96","B1","Gent","Dender",2024-08-04
+"97","B1","Oud-Heverlee Leuven","Beerschot VA",2024-12-26
+"98","B1","Anderlecht","Dender",2024-12-26
+"99","B1","Club Brugge","Westerlo",2024-12-26
+"100","B1","Mechelen","Standard",2024-12-26
+"101","B1","Kortrijk","Charleroi",2024-12-26
+"102","B1","Antwerp","Genk",2024-12-26
+"103","B1","Gent","St. Gilloise",2024-12-26
+"104","B1","St Truiden","Cercle Brugge",2024-12-26
+"105","B1","Standard","Kortrijk",2025-01-11
+"106","B1","Beerschot VA","Antwerp",2025-01-11
+"107","B1","Charleroi","St. Gilloise",2025-01-11
+"108","B1","Dender","Gent",2025-01-11
+"109","B1","Cercle Brugge","Mechelen",2025-01-11
+"110","B1","Anderlecht","Club Brugge",2025-01-11
+"111","B1","Genk","Oud-Heverlee Leuven",2025-01-11
+"112","B1","Westerlo","St Truiden",2025-01-11
+"113","B1","Dender","Cercle Brugge",2025-01-18
+"114","B1","St Truiden","Standard",2025-01-18
+"115","B1","St. Gilloise","Oud-Heverlee Leuven",2025-01-18
+"116","B1","Mechelen","Genk",2025-01-18
+"117","B1","Gent","Charleroi",2025-01-18
+"118","B1","Kortrijk","Anderlecht",2025-01-18
+"119","B1","Antwerp","Westerlo",2025-01-18
+"120","B1","Club Brugge","Beerschot VA",2025-01-18
+"121","B1","Anderlecht","Mechelen",2025-01-25
+"122","B1","Charleroi","Cercle Brugge",2025-01-25
+"123","B1","Club Brugge","Kortrijk",2025-01-25
+"124","B1","Beerschot VA","St. Gilloise",2025-01-25
+"125","B1","St Truiden","Antwerp",2025-01-25
+"126","B1","Oud-Heverlee Leuven","Gent",2025-01-25
+"127","B1","Westerlo","Genk",2025-01-25
+"128","B1","Standard","Dender",2025-01-25
+"129","B1","Charleroi","Dender",2025-02-01
+"130","B1","Gent","Anderlecht",2025-02-01
+"131","B1","St. Gilloise","St Truiden",2025-02-01
+"132","B1","Cercle Brugge","Standard",2025-02-01
+"133","B1","Genk","Beerschot VA",2025-02-01
+"134","B1","Kortrijk","Westerlo",2025-02-01
+"135","B1","Oud-Heverlee Leuven","Mechelen",2025-02-01
+"136","B1","Antwerp","Club Brugge",2025-02-01
+"137","B1","Dender","St Truiden",2025-02-08
+"138","B1","Westerlo","Standard",2025-02-08
+"139","B1","Club Brugge","Oud-Heverlee Leuven",2025-02-08
+"140","B1","Kortrijk","St. Gilloise",2025-02-08
+"141","B1","Mechelen","Gent",2025-02-08
+"142","B1","Beerschot VA","Charleroi",2025-02-08
+"143","B1","Genk","Cercle Brugge",2025-02-08
+"144","B1","Anderlecht","Antwerp",2025-02-08
+"145","B1","Charleroi","Anderlecht",2025-02-15
+"146","B1","Gent","Beerschot VA",2025-02-15
+"147","B1","St. Gilloise","Mechelen",2025-02-15
+"148","B1","St Truiden","Club Brugge",2025-02-15
+"149","B1","Cercle Brugge","Westerlo",2025-02-15
+"150","B1","Antwerp","Kortrijk",2025-02-15
+"151","B1","Oud-Heverlee Leuven","Dender",2025-02-15
+"152","B1","Standard","Genk",2025-02-15
+"153","B1","Dender","Beerschot VA",2025-02-22
+"154","B1","Westerlo","Charleroi",2025-02-22
+"155","B1","Antwerp","Oud-Heverlee Leuven",2025-02-22
+"156","B1","Anderlecht","St. Gilloise",2025-02-22
+"157","B1","Mechelen","St Truiden",2025-02-22
+"158","B1","Club Brugge","Standard",2025-02-22
+"159","B1","Kortrijk","Cercle Brugge",2025-02-22
+"160","B1","Genk","Gent",2025-02-22
+"161","B1","Cercle Brugge","Antwerp",2025-03-01
+"162","B1","Beerschot VA","Mechelen",2025-03-01
+"163","B1","Standard","Anderlecht",2025-03-01
+"164","B1","Charleroi","Genk",2025-03-01
+"165","B1","St Truiden","Kortrijk",2025-03-01
+"166","B1","Oud-Heverlee Leuven","Westerlo",2025-03-01
+"167","B1","St. Gilloise","Dender",2025-03-01
+"168","B1","Gent","Club Brugge",2025-03-01
+"169","B1","Charleroi","Mechelen",2025-03-08
+"170","B1","St. Gilloise","Standard",2025-03-08
+"171","B1","Antwerp","Gent",2025-03-08
+"172","B1","Cercle Brugge","Club Brugge",2025-03-08
+"173","B1","Kortrijk","Oud-Heverlee Leuven",2025-03-08
+"174","B1","Westerlo","Anderlecht",2025-03-08
+"175","B1","St Truiden","Beerschot VA",2025-03-08
+"176","B1","Dender","Genk",2025-03-08
+"177","B1","Standard","Mechelen",2024-08-09
+"178","B1","Dender","Kortrijk",2024-08-10
+"179","B1","Westerlo","St. Gilloise",2024-08-10
+"180","B1","Anderlecht","Oud-Heverlee Leuven",2024-08-10
+"181","B1","Genk","Club Brugge",2024-08-11
+"182","B1","Antwerp","St Truiden",2024-08-11
+"183","B1","Charleroi","Gent",2024-08-11
+"184","B1","Cercle Brugge","Beerschot VA",2024-08-11
+"185","B1","Gent","Kortrijk",2025-03-15
+"186","B1","Beerschot VA","Westerlo",2025-03-15
+"187","B1","Oud-Heverlee Leuven","St Truiden",2025-03-15
+"188","B1","Genk","St. Gilloise",2025-03-15
+"189","B1","Club Brugge","Charleroi",2025-03-15
+"190","B1","Standard","Antwerp",2025-03-15
+"191","B1","Anderlecht","Cercle Brugge",2025-03-15
+"192","B1","Mechelen","Dender",2025-03-15
+"193","B1","St. Gilloise","Charleroi",2024-08-16
+"194","B1","Beerschot VA","Genk",2024-08-17
+"195","B1","St Truiden","Dender",2024-08-17
+"196","B1","Mechelen","Anderlecht",2024-08-17
+"197","B1","Club Brugge","Antwerp",2024-08-18
+"198","B1","Oud-Heverlee Leuven","Cercle Brugge",2024-08-18
+"199","B1","Kortrijk","Standard",2024-08-18
+"200","B1","Gent","Westerlo",2024-08-18
+"201","B1","Anderlecht","Genk",2024-08-24
+"202","B1","Cercle Brugge","Gent",2024-08-24
+"203","B1","Westerlo","Oud-Heverlee Leuven",2024-08-24
+"204","B1","Antwerp","Mechelen",2024-08-24
+"205","B1","Dender","Club Brugge",2024-08-25
+"206","B1","St Truiden","St. Gilloise",2024-08-25
+"207","B1","Standard","Beerschot VA",2024-08-25
+"208","B1","Charleroi","Kortrijk",2024-08-25
+"209","B1","Genk","Westerlo",2024-08-30
+"210","B1","Mechelen","Charleroi",2024-08-31
+"211","B1","Beerschot VA","Dender",2024-08-31
+"212","B1","Oud-Heverlee Leuven","Standard",2024-08-31
+"213","B1","Club Brugge","Cercle Brugge",2024-09-01
+"214","B1","Gent","Antwerp",2024-09-01
+"215","B1","St. Gilloise","Anderlecht",2024-09-01
+"216","B1","Kortrijk","St Truiden",2024-09-01
+"217","B1","Dender","Standard",2024-09-13
+"218","B1","Cercle Brugge","Genk",2024-09-14
+"219","B1","Kortrijk","Club Brugge",2024-09-14
+"220","B1","Antwerp","St. Gilloise",2024-09-14
+"221","B1","Anderlecht","Westerlo",2024-09-15
+"222","B1","St Truiden","Oud-Heverlee Leuven",2024-09-15
+"223","B1","Charleroi","Beerschot VA",2024-09-15
+"224","B1","Gent","Mechelen",2024-09-15
+"225","B1","Beerschot VA","St Truiden",2024-09-21
+"226","B1","Westerlo","Antwerp",2024-09-21
+"227","B1","Oud-Heverlee Leuven","Kortrijk",2024-09-21
+"228","B1","Mechelen","Cercle Brugge",2024-09-21
+"229","B1","Anderlecht","Charleroi",2024-09-21
+"230","B1","Standard","St. Gilloise",2024-09-21
+"231","B1","Genk","Dender",2024-09-21
+"232","B1","Club Brugge","Gent",2024-09-21
+"233","B1","Cercle Brugge","St Truiden",2024-09-28
+"234","B1","Gent","Oud-Heverlee Leuven",2024-09-28
+"235","B1","Genk","Mechelen",2024-09-28
+"236","B1","Charleroi","Club Brugge",2024-09-28
+"237","B1","Standard","Westerlo",2024-09-28
+"238","B1","Antwerp","Beerschot VA",2024-09-28
+"239","B1","St. Gilloise","Kortrijk",2024-09-28
+"240","B1","Dender","Anderlecht",2024-09-28

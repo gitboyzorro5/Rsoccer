@@ -1,0 +1,381 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","SP1","Ath Bilbao","Getafe",2024-08-15
+"2","SP1","Betis","Girona",2024-08-15
+"3","SP1","Celta","Alaves",2024-08-16
+"4","SP1","Las Palmas","Sevilla",2024-08-16
+"5","SP1","Osasuna","Leganes",2024-08-17
+"6","SP1","Valencia","Barcelona",2024-08-17
+"7","SP1","Sociedad","Vallecano",2024-08-18
+"8","SP1","Mallorca","Real Madrid",2024-08-18
+"9","SP1","Valladolid","Espanol",2024-08-19
+"10","SP1","Villarreal","Ath Madrid",2024-08-19
+"11","SP1","Ath Bilbao","Espanol",2024-10-20
+"12","SP1","Mallorca","Vallecano",2024-10-20
+"13","SP1","Celta","Real Madrid",2024-10-20
+"14","SP1","Osasuna","Betis",2024-10-20
+"15","SP1","Barcelona","Sevilla",2024-10-20
+"16","SP1","Valencia","Las Palmas",2024-10-20
+"17","SP1","Alaves","Valladolid",2024-10-20
+"18","SP1","Villarreal","Getafe",2024-10-20
+"19","SP1","Ath Madrid","Leganes",2024-10-20
+"20","SP1","Girona","Sociedad",2024-10-20
+"21","SP1","Espanol","Sevilla",2024-10-27
+"22","SP1","Mallorca","Ath Bilbao",2024-10-27
+"23","SP1","Vallecano","Alaves",2024-10-27
+"24","SP1","Valladolid","Villarreal",2024-10-27
+"25","SP1","Leganes","Celta",2024-10-27
+"26","SP1","Sociedad","Osasuna",2024-10-27
+"27","SP1","Las Palmas","Girona",2024-10-27
+"28","SP1","Real Madrid","Barcelona",2024-10-27
+"29","SP1","Getafe","Valencia",2024-10-27
+"30","SP1","Betis","Ath Madrid",2024-10-27
+"31","SP1","Girona","Leganes",2024-11-03
+"32","SP1","Valencia","Real Madrid",2024-11-03
+"33","SP1","Osasuna","Valladolid",2024-11-03
+"34","SP1","Alaves","Mallorca",2024-11-03
+"35","SP1","Ath Madrid","Las Palmas",2024-11-03
+"36","SP1","Celta","Getafe",2024-11-03
+"37","SP1","Sevilla","Sociedad",2024-11-03
+"38","SP1","Barcelona","Espanol",2024-11-03
+"39","SP1","Villarreal","Vallecano",2024-11-03
+"40","SP1","Ath Bilbao","Betis",2024-11-03
+"41","SP1","Betis","Celta",2024-11-10
+"42","SP1","Getafe","Girona",2024-11-10
+"43","SP1","Villarreal","Alaves",2024-11-10
+"44","SP1","Valladolid","Ath Bilbao",2024-11-10
+"45","SP1","Sociedad","Barcelona",2024-11-10
+"46","SP1","Leganes","Sevilla",2024-11-10
+"47","SP1","Real Madrid","Osasuna",2024-11-10
+"48","SP1","Espanol","Valencia",2024-11-10
+"49","SP1","Vallecano","Las Palmas",2024-11-10
+"50","SP1","Mallorca","Ath Madrid",2024-11-10
+"51","SP1","Las Palmas","Mallorca",2024-11-24
+"52","SP1","Ath Madrid","Alaves",2024-11-24
+"53","SP1","Getafe","Valladolid",2024-11-24
+"54","SP1","Valencia","Betis",2024-11-24
+"55","SP1","Girona","Espanol",2024-11-24
+"56","SP1","Leganes","Real Madrid",2024-11-24
+"57","SP1","Osasuna","Villarreal",2024-11-24
+"58","SP1","Sevilla","Vallecano",2024-11-24
+"59","SP1","Ath Bilbao","Sociedad",2024-11-24
+"60","SP1","Celta","Barcelona",2024-11-24
+"61","SP1","Barcelona","Las Palmas",2024-12-01
+"62","SP1","Sevilla","Osasuna",2024-12-01
+"63","SP1","Villarreal","Girona",2024-12-01
+"64","SP1","Sociedad","Betis",2024-12-01
+"65","SP1","Espanol","Celta",2024-12-01
+"66","SP1","Valladolid","Ath Madrid",2024-12-01
+"67","SP1","Alaves","Leganes",2024-12-01
+"68","SP1","Real Madrid","Getafe",2024-12-01
+"69","SP1","Vallecano","Ath Bilbao",2024-12-01
+"70","SP1","Mallorca","Valencia",2024-12-01
+"71","SP1","Las Palmas","Valladolid",2024-12-08
+"72","SP1","Valencia","Vallecano",2024-12-08
+"73","SP1","Leganes","Sociedad",2024-12-08
+"74","SP1","Girona","Real Madrid",2024-12-08
+"75","SP1","Getafe","Espanol",2024-12-08
+"76","SP1","Ath Madrid","Sevilla",2024-12-08
+"77","SP1","Ath Bilbao","Villarreal",2024-12-08
+"78","SP1","Celta","Mallorca",2024-12-08
+"79","SP1","Osasuna","Alaves",2024-12-08
+"80","SP1","Betis","Barcelona",2024-12-08
+"81","SP1","Sociedad","Las Palmas",2024-12-15
+"82","SP1","Alaves","Ath Bilbao",2024-12-15
+"83","SP1","Ath Madrid","Getafe",2024-12-15
+"84","SP1","Villarreal","Betis",2024-12-15
+"85","SP1","Espanol","Osasuna",2024-12-15
+"86","SP1","Vallecano","Real Madrid",2024-12-15
+"87","SP1","Mallorca","Girona",2024-12-15
+"88","SP1","Sevilla","Celta",2024-12-15
+"89","SP1","Valladolid","Valencia",2024-12-15
+"90","SP1","Barcelona","Leganes",2024-12-15
+"91","SP1","Leganes","Villarreal",2024-12-22
+"92","SP1","Girona","Valladolid",2024-12-22
+"93","SP1","Valencia","Alaves",2024-12-22
+"94","SP1","Getafe","Mallorca",2024-12-22
+"95","SP1","Osasuna","Ath Bilbao",2024-12-22
+"96","SP1","Barcelona","Ath Madrid",2024-12-22
+"97","SP1","Betis","Vallecano",2024-12-22
+"98","SP1","Real Madrid","Sevilla",2024-12-22
+"99","SP1","Celta","Sociedad",2024-12-22
+"100","SP1","Las Palmas","Espanol",2024-12-22
+"101","SP1","Ath Madrid","Osasuna",2025-01-11
+"102","SP1","Espanol","Leganes",2025-01-11
+"103","SP1","Alaves","Girona",2025-01-11
+"104","SP1","Sevilla","Valencia",2025-01-11
+"105","SP1","Ath Bilbao","Real Madrid",2025-01-11
+"106","SP1","Las Palmas","Getafe",2025-01-11
+"107","SP1","Vallecano","Celta",2025-01-11
+"108","SP1","Valladolid","Betis",2025-01-11
+"109","SP1","Sociedad","Villarreal",2025-01-11
+"110","SP1","Mallorca","Barcelona",2025-01-11
+"111","SP1","Celta","Valencia",2024-08-23
+"112","SP1","Sevilla","Villarreal",2024-08-23
+"113","SP1","Osasuna","Mallorca",2024-08-24
+"114","SP1","Barcelona","Ath Bilbao",2024-08-24
+"115","SP1","Espanol","Sociedad",2024-08-24
+"116","SP1","Getafe","Vallecano",2024-08-24
+"117","SP1","Real Madrid","Valladolid",2024-08-25
+"118","SP1","Leganes","Las Palmas",2024-08-25
+"119","SP1","Alaves","Betis",2024-08-25
+"120","SP1","Ath Madrid","Girona",2024-08-25
+"121","SP1","Girona","Sevilla",2025-01-19
+"122","SP1","Espanol","Valladolid",2025-01-19
+"123","SP1","Leganes","Ath Madrid",2025-01-19
+"124","SP1","Celta","Ath Bilbao",2025-01-19
+"125","SP1","Getafe","Barcelona",2025-01-19
+"126","SP1","Valencia","Sociedad",2025-01-19
+"127","SP1","Osasuna","Vallecano",2025-01-19
+"128","SP1","Real Madrid","Las Palmas",2025-01-19
+"129","SP1","Villarreal","Mallorca",2025-01-19
+"130","SP1","Betis","Alaves",2025-01-19
+"131","SP1","Sevilla","Espanol",2025-01-26
+"132","SP1","Mallorca","Betis",2025-01-26
+"133","SP1","Sociedad","Getafe",2025-01-26
+"134","SP1","Las Palmas","Osasuna",2025-01-26
+"135","SP1","Valladolid","Real Madrid",2025-01-26
+"136","SP1","Ath Madrid","Villarreal",2025-01-26
+"137","SP1","Barcelona","Valencia",2025-01-26
+"138","SP1","Vallecano","Girona",2025-01-26
+"139","SP1","Alaves","Celta",2025-01-26
+"140","SP1","Ath Bilbao","Leganes",2025-01-26
+"141","SP1","Villarreal","Valladolid",2025-02-02
+"142","SP1","Girona","Las Palmas",2025-02-02
+"143","SP1","Ath Madrid","Mallorca",2025-02-02
+"144","SP1","Osasuna","Sociedad",2025-02-02
+"145","SP1","Leganes","Vallecano",2025-02-02
+"146","SP1","Barcelona","Alaves",2025-02-02
+"147","SP1","Valencia","Celta",2025-02-02
+"148","SP1","Getafe","Sevilla",2025-02-02
+"149","SP1","Espanol","Real Madrid",2025-02-02
+"150","SP1","Betis","Ath Bilbao",2025-02-02
+"151","SP1","Las Palmas","Villarreal",2025-02-09
+"152","SP1","Sociedad","Espanol",2025-02-09
+"153","SP1","Alaves","Getafe",2025-02-09
+"154","SP1","Real Madrid","Ath Madrid",2025-02-09
+"155","SP1","Sevilla","Barcelona",2025-02-09
+"156","SP1","Mallorca","Osasuna",2025-02-09
+"157","SP1","Vallecano","Valladolid",2025-02-09
+"158","SP1","Celta","Betis",2025-02-09
+"159","SP1","Ath Bilbao","Girona",2025-02-09
+"160","SP1","Valencia","Leganes",2025-02-09
+"161","SP1","Mallorca","Las Palmas",2025-02-16
+"162","SP1","Girona","Getafe",2025-02-16
+"163","SP1","Leganes","Alaves",2025-02-16
+"164","SP1","Villarreal","Valencia",2025-02-16
+"165","SP1","Barcelona","Vallecano",2025-02-16
+"166","SP1","Osasuna","Real Madrid",2025-02-16
+"167","SP1","Espanol","Ath Bilbao",2025-02-16
+"168","SP1","Ath Madrid","Celta",2025-02-16
+"169","SP1","Betis","Sociedad",2025-02-16
+"170","SP1","Valladolid","Sevilla",2025-02-16
+"171","SP1","Sociedad","Leganes",2025-02-23
+"172","SP1","Celta","Osasuna",2025-02-23
+"173","SP1","Sevilla","Mallorca",2025-02-23
+"174","SP1","Vallecano","Villarreal",2025-02-23
+"175","SP1","Las Palmas","Barcelona",2025-02-23
+"176","SP1","Getafe","Betis",2025-02-23
+"177","SP1","Alaves","Espanol",2025-02-23
+"178","SP1","Real Madrid","Girona",2025-02-23
+"179","SP1","Valencia","Ath Madrid",2025-02-23
+"180","SP1","Ath Bilbao","Valladolid",2025-02-23
+"181","SP1","Osasuna","Valencia",2025-03-02
+"182","SP1","Barcelona","Sociedad",2025-03-02
+"183","SP1","Ath Madrid","Ath Bilbao",2025-03-02
+"184","SP1","Vallecano","Sevilla",2025-03-02
+"185","SP1","Girona","Celta",2025-03-02
+"186","SP1","Villarreal","Espanol",2025-03-02
+"187","SP1","Mallorca","Alaves",2025-03-02
+"188","SP1","Valladolid","Las Palmas",2025-03-02
+"189","SP1","Leganes","Getafe",2025-03-02
+"190","SP1","Betis","Real Madrid",2025-03-02
+"191","SP1","Getafe","Ath Madrid",2025-03-09
+"192","SP1","Espanol","Girona",2025-03-09
+"193","SP1","Ath Bilbao","Mallorca",2025-03-09
+"194","SP1","Valencia","Valladolid",2025-03-09
+"195","SP1","Betis","Las Palmas",2025-03-09
+"196","SP1","Barcelona","Osasuna",2025-03-09
+"197","SP1","Celta","Leganes",2025-03-09
+"198","SP1","Real Madrid","Vallecano",2025-03-09
+"199","SP1","Sociedad","Sevilla",2025-03-09
+"200","SP1","Alaves","Villarreal",2025-03-09
+"201","SP1","Valladolid","Celta",2025-03-16
+"202","SP1","Leganes","Betis",2025-03-16
+"203","SP1","Villarreal","Real Madrid",2025-03-16
+"204","SP1","Vallecano","Sociedad",2025-03-16
+"205","SP1","Ath Madrid","Barcelona",2025-03-16
+"206","SP1","Las Palmas","Alaves",2025-03-16
+"207","SP1","Mallorca","Espanol",2025-03-16
+"208","SP1","Sevilla","Ath Bilbao",2025-03-16
+"209","SP1","Osasuna","Getafe",2025-03-16
+"210","SP1","Girona","Valencia",2025-03-16
+"211","SP1","Real Madrid","Leganes",2025-03-30
+"212","SP1","Celta","Las Palmas",2025-03-30
+"213","SP1","Valencia","Mallorca",2025-03-30
+"214","SP1","Betis","Sevilla",2025-03-30
+"215","SP1","Espanol","Ath Madrid",2025-03-30
+"216","SP1","Barcelona","Girona",2025-03-30
+"217","SP1","Ath Bilbao","Osasuna",2025-03-30
+"218","SP1","Sociedad","Valladolid",2025-03-30
+"219","SP1","Getafe","Villarreal",2025-03-30
+"220","SP1","Alaves","Vallecano",2025-03-30
+"221","SP1","Villarreal","Celta",2024-08-26
+"222","SP1","Mallorca","Sevilla",2024-08-27
+"223","SP1","Vallecano","Barcelona",2024-08-27
+"224","SP1","Betis","Getafe",2024-08-28
+"225","SP1","Valladolid","Leganes",2024-08-28
+"226","SP1","Ath Bilbao","Valencia",2024-08-28
+"227","SP1","Sociedad","Alaves",2024-08-28
+"228","SP1","Ath Madrid","Espanol",2024-08-28
+"229","SP1","Girona","Osasuna",2024-08-29
+"230","SP1","Las Palmas","Real Madrid",2024-08-29
+"231","SP1","Sevilla","Ath Madrid",2025-04-06
+"232","SP1","Real Madrid","Valencia",2025-04-06
+"233","SP1","Leganes","Osasuna",2025-04-06
+"234","SP1","Villarreal","Ath Bilbao",2025-04-06
+"235","SP1","Barcelona","Betis",2025-04-06
+"236","SP1","Las Palmas","Sociedad",2025-04-06
+"237","SP1","Mallorca","Celta",2025-04-06
+"238","SP1","Valladolid","Getafe",2025-04-06
+"239","SP1","Girona","Alaves",2025-04-06
+"240","SP1","Vallecano","Espanol",2025-04-06
+"241","SP1","Betis","Villarreal",2025-04-13
+"242","SP1","Valencia","Sevilla",2025-04-13
+"243","SP1","Celta","Espanol",2025-04-13
+"244","SP1","Leganes","Barcelona",2025-04-13
+"245","SP1","Osasuna","Girona",2025-04-13
+"246","SP1","Getafe","Las Palmas",2025-04-13
+"247","SP1","Ath Bilbao","Vallecano",2025-04-13
+"248","SP1","Alaves","Real Madrid",2025-04-13
+"249","SP1","Sociedad","Mallorca",2025-04-13
+"250","SP1","Ath Madrid","Valladolid",2025-04-13
+"251","SP1","Girona","Betis",2025-04-20
+"252","SP1","Mallorca","Leganes",2025-04-20
+"253","SP1","Espanol","Getafe",2025-04-20
+"254","SP1","Villarreal","Sociedad",2025-04-20
+"255","SP1","Valladolid","Osasuna",2025-04-20
+"256","SP1","Vallecano","Valencia",2025-04-20
+"257","SP1","Las Palmas","Ath Madrid",2025-04-20
+"258","SP1","Barcelona","Celta",2025-04-20
+"259","SP1","Real Madrid","Ath Bilbao",2025-04-20
+"260","SP1","Sevilla","Alaves",2025-04-20
+"261","SP1","Leganes","Girona",2025-04-23
+"262","SP1","Alaves","Sociedad",2025-04-23
+"263","SP1","Valencia","Espanol",2025-04-23
+"264","SP1","Celta","Villarreal",2025-04-23
+"265","SP1","Osasuna","Sevilla",2025-04-23
+"266","SP1","Getafe","Real Madrid",2025-04-23
+"267","SP1","Ath Bilbao","Las Palmas",2025-04-23
+"268","SP1","Ath Madrid","Vallecano",2025-04-23
+"269","SP1","Barcelona","Mallorca",2025-04-23
+"270","SP1","Betis","Valladolid",2025-04-23
+"271","SP1","Real Madrid","Celta",2025-05-04
+"272","SP1","Vallecano","Getafe",2025-05-04
+"273","SP1","Sevilla","Leganes",2025-05-04
+"274","SP1","Girona","Mallorca",2025-05-04
+"275","SP1","Villarreal","Osasuna",2025-05-04
+"276","SP1","Alaves","Ath Madrid",2025-05-04
+"277","SP1","Valladolid","Barcelona",2025-05-04
+"278","SP1","Las Palmas","Valencia",2025-05-04
+"279","SP1","Espanol","Betis",2025-05-04
+"280","SP1","Sociedad","Ath Bilbao",2025-05-04
+"281","SP1","Betis","Osasuna",2025-05-11
+"282","SP1","Celta","Sevilla",2025-05-11
+"283","SP1","Girona","Villarreal",2025-05-11
+"284","SP1","Ath Bilbao","Alaves",2025-05-11
+"285","SP1","Las Palmas","Vallecano",2025-05-11
+"286","SP1","Ath Madrid","Sociedad",2025-05-11
+"287","SP1","Mallorca","Valladolid",2025-05-11
+"288","SP1","Valencia","Getafe",2025-05-11
+"289","SP1","Barcelona","Real Madrid",2025-05-11
+"290","SP1","Leganes","Espanol",2025-05-11
+"291","SP1","Sevilla","Las Palmas",2025-05-14
+"292","SP1","Real Madrid","Mallorca",2025-05-14
+"293","SP1","Valladolid","Girona",2025-05-14
+"294","SP1","Espanol","Barcelona",2025-05-14
+"295","SP1","Getafe","Ath Bilbao",2025-05-14
+"296","SP1","Vallecano","Betis",2025-05-14
+"297","SP1","Alaves","Valencia",2025-05-14
+"298","SP1","Osasuna","Ath Madrid",2025-05-14
+"299","SP1","Villarreal","Leganes",2025-05-14
+"300","SP1","Sociedad","Celta",2025-05-14
+"301","SP1","Mallorca","Getafe",2025-05-18
+"302","SP1","Ath Madrid","Betis",2025-05-18
+"303","SP1","Celta","Vallecano",2025-05-18
+"304","SP1","Sociedad","Girona",2025-05-18
+"305","SP1","Las Palmas","Leganes",2025-05-18
+"306","SP1","Valladolid","Alaves",2025-05-18
+"307","SP1","Sevilla","Real Madrid",2025-05-18
+"308","SP1","Barcelona","Villarreal",2025-05-18
+"309","SP1","Osasuna","Espanol",2025-05-18
+"310","SP1","Valencia","Ath Bilbao",2025-05-18
+"311","SP1","Leganes","Valladolid",2025-05-25
+"312","SP1","Real Madrid","Sociedad",2025-05-25
+"313","SP1","Ath Bilbao","Barcelona",2025-05-25
+"314","SP1","Getafe","Celta",2025-05-25
+"315","SP1","Espanol","Las Palmas",2025-05-25
+"316","SP1","Betis","Valencia",2025-05-25
+"317","SP1","Villarreal","Sevilla",2025-05-25
+"318","SP1","Girona","Ath Madrid",2025-05-25
+"319","SP1","Alaves","Osasuna",2025-05-25
+"320","SP1","Vallecano","Mallorca",2025-05-25
+"321","SP1","Barcelona","Valladolid",2024-08-31
+"322","SP1","Espanol","Vallecano",2024-08-31
+"323","SP1","Ath Bilbao","Ath Madrid",2024-08-31
+"324","SP1","Leganes","Mallorca",2024-08-31
+"325","SP1","Valencia","Villarreal",2024-08-31
+"326","SP1","Alaves","Las Palmas",2024-09-01
+"327","SP1","Osasuna","Celta",2024-09-01
+"328","SP1","Sevilla","Girona",2024-09-01
+"329","SP1","Getafe","Sociedad",2024-09-01
+"330","SP1","Real Madrid","Betis",2024-09-01
+"331","SP1","Espanol","Alaves",2024-09-15
+"332","SP1","Betis","Leganes",2024-09-15
+"333","SP1","Mallorca","Villarreal",2024-09-15
+"334","SP1","Sociedad","Real Madrid",2024-09-15
+"335","SP1","Celta","Valladolid",2024-09-15
+"336","SP1","Sevilla","Getafe",2024-09-15
+"337","SP1","Vallecano","Osasuna",2024-09-15
+"338","SP1","Las Palmas","Ath Bilbao",2024-09-15
+"339","SP1","Ath Madrid","Valencia",2024-09-15
+"340","SP1","Girona","Barcelona",2024-09-15
+"341","SP1","Valencia","Girona",2024-09-22
+"342","SP1","Vallecano","Ath Madrid",2024-09-22
+"343","SP1","Villarreal","Barcelona",2024-09-22
+"344","SP1","Osasuna","Las Palmas",2024-09-22
+"345","SP1","Real Madrid","Espanol",2024-09-22
+"346","SP1","Betis","Mallorca",2024-09-22
+"347","SP1","Valladolid","Sociedad",2024-09-22
+"348","SP1","Ath Bilbao","Celta",2024-09-22
+"349","SP1","Alaves","Sevilla",2024-09-22
+"350","SP1","Getafe","Leganes",2024-09-22
+"351","SP1","Celta","Ath Madrid",2024-09-25
+"352","SP1","Girona","Vallecano",2024-09-25
+"353","SP1","Barcelona","Getafe",2024-09-25
+"354","SP1","Sevilla","Valladolid",2024-09-25
+"355","SP1","Leganes","Ath Bilbao",2024-09-25
+"356","SP1","Real Madrid","Alaves",2024-09-25
+"357","SP1","Mallorca","Sociedad",2024-09-25
+"358","SP1","Las Palmas","Betis",2024-09-25
+"359","SP1","Espanol","Villarreal",2024-09-25
+"360","SP1","Valencia","Osasuna",2024-09-25
+"361","SP1","Ath Madrid","Real Madrid",2024-09-29
+"362","SP1","Villarreal","Las Palmas",2024-09-29
+"363","SP1","Celta","Girona",2024-09-29
+"364","SP1","Betis","Espanol",2024-09-29
+"365","SP1","Sociedad","Valencia",2024-09-29
+"366","SP1","Ath Bilbao","Sevilla",2024-09-29
+"367","SP1","Getafe","Alaves",2024-09-29
+"368","SP1","Valladolid","Mallorca",2024-09-29
+"369","SP1","Osasuna","Barcelona",2024-09-29
+"370","SP1","Vallecano","Leganes",2024-09-29
+"371","SP1","Sociedad","Ath Madrid",2024-10-06
+"372","SP1","Leganes","Valencia",2024-10-06
+"373","SP1","Valladolid","Vallecano",2024-10-06
+"374","SP1","Girona","Ath Bilbao",2024-10-06
+"375","SP1","Las Palmas","Celta",2024-10-06
+"376","SP1","Real Madrid","Villarreal",2024-10-06
+"377","SP1","Alaves","Barcelona",2024-10-06
+"378","SP1","Sevilla","Betis",2024-10-06
+"379","SP1","Espanol","Mallorca",2024-10-06
+"380","SP1","Getafe","Osasuna",2024-10-06

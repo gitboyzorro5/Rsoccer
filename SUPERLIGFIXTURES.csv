@@ -1,0 +1,343 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","T1","Sivasspor","Trabzonspor",2024-08-11
+"2","T1","Fenerbahce","Ad. Demirspor",2024-08-11
+"3","T1","Rizespor","Buyuksehyr",2024-08-11
+"4","T1","Kasimpasa","Konyaspor",2024-08-11
+"5","T1","Galatasaray","Hatayspor",2024-08-11
+"6","T1","Alanyaspor","Eyupsporr",2024-08-11
+"7","T1","Antalyaspor","Goztep",2024-08-11
+"8","T1","Samsunspor","Besiktas",2024-08-11
+"9","T1","Bodrum","Gaziantep",2024-08-11
+"10","T1","Ad. Demirspor","Rizespor",2024-08-18
+"11","T1","Hatayspor","Kasimpasa",2024-08-18
+"12","T1","Kayserispor","Sivasspor",2024-08-18
+"13","T1","Eyupsporr","Bodrum",2024-08-18
+"14","T1","Besiktas","Antalyaspor",2024-08-18
+"15","T1","Konyaspor","Galatasaray",2024-08-18
+"16","T1","Gaziantep","Samsunspor",2024-08-18
+"17","T1","Goztep","Fenerbahce",2024-08-18
+"18","T1","Buyuksehyr","Alanyaspor",2024-08-18
+"19","T1","Sivasspor","Eyupsporr",2024-08-25
+"20","T1","Trabzonspor","Kayserispor",2024-08-25
+"21","T1","Rizespor","Fenerbahce",2024-08-25
+"22","T1","Kasimpasa","Ad. Demirspor",2024-08-25
+"23","T1","Galatasaray","Gaziantep",2024-08-25
+"24","T1","Alanyaspor","Goztep",2024-08-25
+"25","T1","Antalyaspor","Hatayspor",2024-08-25
+"26","T1","Samsunspor","Buyuksehyr",2024-08-25
+"27","T1","Bodrum","Konyaspor",2024-08-25
+"28","T1","Ad. Demirspor","Galatasaray",2024-09-01
+"29","T1","Fenerbahce","Alanyaspor",2024-09-01
+"30","T1","Rizespor","Kasimpasa",2024-09-01
+"31","T1","Eyupsporr","Trabzonspor",2024-09-01
+"32","T1","Besiktas","Sivasspor",2024-09-01
+"33","T1","Konyaspor","Kayserispor",2024-09-01
+"34","T1","Hatayspor","Samsunspor",2024-09-01
+"35","T1","Goztep","Bodrum",2024-09-01
+"36","T1","Buyuksehyr","Antalyaspor",2024-09-01
+"37","T1","Sivasspor","Gaziantep",2024-09-15
+"38","T1","Trabzonspor","Besiktas",2024-09-15
+"39","T1","Kayserispor","Eyupsporr",2024-09-15
+"40","T1","Kasimpasa","Fenerbahce",2024-09-15
+"41","T1","Galatasaray","Rizespor",2024-09-15
+"42","T1","Alanyaspor","Hatayspor",2024-09-15
+"43","T1","Antalyaspor","Ad. Demirspor",2024-09-15
+"44","T1","Samsunspor","Konyaspor",2024-09-15
+"45","T1","Bodrum","Buyuksehyr",2024-09-15
+"46","T1","Ad. Demirspor","Alanyaspor",2024-09-22
+"47","T1","Fenerbahce","Galatasaray",2024-09-22
+"48","T1","Rizespor","Samsunspor",2024-09-22
+"49","T1","Kasimpasa","Antalyaspor",2024-09-22
+"50","T1","Besiktas","Eyupsporr",2024-09-22
+"51","T1","Konyaspor","Sivasspor",2024-09-22
+"52","T1","Gaziantep","Trabzonspor",2024-09-22
+"53","T1","Goztep","Kayserispor",2024-09-22
+"54","T1","Hatayspor","Bodrum",2024-09-22
+"55","T1","Sivasspor","Buyuksehyr",2024-09-29
+"56","T1","Trabzonspor","Konyaspor",2024-09-29
+"57","T1","Kayserispor","Besiktas",2024-09-29
+"58","T1","Eyupsporr","Gaziantep",2024-09-29
+"59","T1","Galatasaray","Kasimpasa",2024-09-29
+"60","T1","Alanyaspor","Rizespor",2024-09-29
+"61","T1","Antalyaspor","Fenerbahce",2024-09-29
+"62","T1","Samsunspor","Goztep",2024-09-29
+"63","T1","Bodrum","Ad. Demirspor",2024-09-29
+"64","T1","Ad. Demirspor","Samsunspor",2024-10-06
+"65","T1","Hatayspor","Trabzonspor",2024-10-06
+"66","T1","Rizespor","Antalyaspor",2024-10-06
+"67","T1","Kasimpasa","Bodrum",2024-10-06
+"68","T1","Galatasaray","Alanyaspor",2024-10-06
+"69","T1","Konyaspor","Eyupsporr",2024-10-06
+"70","T1","Gaziantep","Besiktas",2024-10-06
+"71","T1","Goztep","Sivasspor",2024-10-06
+"72","T1","Buyuksehyr","Kayserispor",2024-10-06
+"73","T1","Sivasspor","Hatayspor",2024-10-20
+"74","T1","Trabzonspor","Buyuksehyr",2024-10-20
+"75","T1","Kayserispor","Gaziantep",2024-10-20
+"76","T1","Eyupsporr","Goztep",2024-10-20
+"77","T1","Besiktas","Konyaspor",2024-10-20
+"78","T1","Alanyaspor","Kasimpasa",2024-10-20
+"79","T1","Antalyaspor","Galatasaray",2024-10-20
+"80","T1","Samsunspor","Fenerbahce",2024-10-20
+"81","T1","Bodrum","Rizespor",2024-10-20
+"82","T1","Ad. Demirspor","Sivasspor",2024-10-27
+"83","T1","Fenerbahce","Bodrum",2024-10-27
+"84","T1","Hatayspor","Kayserispor",2024-10-27
+"85","T1","Kasimpasa","Samsunspor",2024-10-27
+"86","T1","Galatasaray","Besiktas",2024-10-27
+"87","T1","Alanyaspor","Antalyaspor",2024-10-27
+"88","T1","Gaziantep","Konyaspor",2024-10-27
+"89","T1","Goztep","Trabzonspor",2024-10-27
+"90","T1","Buyuksehyr","Eyupsporr",2024-10-27
+"91","T1","Sivasspor","Rizespor",2024-11-03
+"92","T1","Trabzonspor","Fenerbahce",2024-11-03
+"93","T1","Kayserispor","Ad. Demirspor",2024-11-03
+"94","T1","Eyupsporr","Hatayspor",2024-11-03
+"95","T1","Besiktas","Kasimpasa",2024-11-03
+"96","T1","Konyaspor","Buyuksehyr",2024-11-03
+"97","T1","Gaziantep","Goztep",2024-11-03
+"98","T1","Samsunspor","Antalyaspor",2024-11-03
+"99","T1","Bodrum","Alanyaspor",2024-11-03
+"100","T1","Ad. Demirspor","Eyupsporr",2024-11-10
+"101","T1","Fenerbahce","Sivasspor",2024-11-10
+"102","T1","Rizespor","Trabzonspor",2024-11-10
+"103","T1","Kasimpasa","Kayserispor",2024-11-10
+"104","T1","Galatasaray","Samsunspor",2024-11-10
+"105","T1","Hatayspor","Gaziantep",2024-11-10
+"106","T1","Antalyaspor","Bodrum",2024-11-10
+"107","T1","Goztep","Konyaspor",2024-11-10
+"108","T1","Buyuksehyr","Besiktas",2024-11-10
+"109","T1","Sivasspor","Kasimpasa",2024-11-24
+"110","T1","Trabzonspor","Ad. Demirspor",2024-11-24
+"111","T1","Kayserispor","Fenerbahce",2024-11-24
+"112","T1","Eyupsporr","Rizespor",2024-11-24
+"113","T1","Besiktas","Goztep",2024-11-24
+"114","T1","Konyaspor","Hatayspor",2024-11-24
+"115","T1","Gaziantep","Buyuksehyr",2024-11-24
+"116","T1","Samsunspor","Alanyaspor",2024-11-24
+"117","T1","Bodrum","Galatasaray",2024-11-24
+"118","T1","Ad. Demirspor","Konyaspor",2024-12-01
+"119","T1","Fenerbahce","Gaziantep",2024-12-01
+"120","T1","Rizespor","Kayserispor",2024-12-01
+"121","T1","Hatayspor","Besiktas",2024-12-01
+"122","T1","Galatasaray","Eyupsporr",2024-12-01
+"123","T1","Alanyaspor","Trabzonspor",2024-12-01
+"124","T1","Antalyaspor","Sivasspor",2024-12-01
+"125","T1","Samsunspor","Bodrum",2024-12-01
+"126","T1","Buyuksehyr","Goztep",2024-12-01
+"127","T1","Sivasspor","Galatasaray",2024-12-08
+"128","T1","Trabzonspor","Kasimpasa",2024-12-08
+"129","T1","Kayserispor","Alanyaspor",2024-12-08
+"130","T1","Eyupsporr","Samsunspor",2024-12-08
+"131","T1","Besiktas","Fenerbahce",2024-12-08
+"132","T1","Konyaspor","Antalyaspor",2024-12-08
+"133","T1","Gaziantep","Rizespor",2024-12-08
+"134","T1","Goztep","Ad. Demirspor",2024-12-08
+"135","T1","Buyuksehyr","Hatayspor",2024-12-08
+"136","T1","Ad. Demirspor","Besiktas",2024-12-15
+"137","T1","Fenerbahce","Buyuksehyr",2024-12-15
+"138","T1","Rizespor","Konyaspor",2024-12-15
+"139","T1","Kasimpasa","Eyupsporr",2024-12-15
+"140","T1","Galatasaray","Trabzonspor",2024-12-15
+"141","T1","Alanyaspor","Gaziantep",2024-12-15
+"142","T1","Antalyaspor","Kayserispor",2024-12-15
+"143","T1","Hatayspor","Goztep",2024-12-15
+"144","T1","Bodrum","Sivasspor",2024-12-15
+"145","T1","Sivasspor","Samsunspor",2024-12-22
+"146","T1","Trabzonspor","Bodrum",2024-12-22
+"147","T1","Kayserispor","Galatasaray",2024-12-22
+"148","T1","Eyupsporr","Fenerbahce",2024-12-22
+"149","T1","Besiktas","Alanyaspor",2024-12-22
+"150","T1","Hatayspor","Ad. Demirspor",2024-12-22
+"151","T1","Gaziantep","Antalyaspor",2024-12-22
+"152","T1","Goztep","Rizespor",2024-12-22
+"153","T1","Buyuksehyr","Kasimpasa",2024-12-22
+"154","T1","Ad. Demirspor","Buyuksehyr",2025-01-05
+"155","T1","Fenerbahce","Hatayspor",2025-01-05
+"156","T1","Rizespor","Besiktas",2025-01-05
+"157","T1","Kasimpasa","Gaziantep",2025-01-05
+"158","T1","Galatasaray","Goztep",2025-01-05
+"159","T1","Alanyaspor","Konyaspor",2025-01-05
+"160","T1","Antalyaspor","Eyupsporr",2025-01-05
+"161","T1","Samsunspor","Trabzonspor",2025-01-05
+"162","T1","Bodrum","Kayserispor",2025-01-05
+"163","T1","Sivasspor","Alanyaspor",2025-01-12
+"164","T1","Trabzonspor","Antalyaspor",2025-01-12
+"165","T1","Kayserispor","Samsunspor",2025-01-12
+"166","T1","Hatayspor","Rizespor",2025-01-12
+"167","T1","Besiktas","Bodrum",2025-01-12
+"168","T1","Konyaspor","Fenerbahce",2025-01-12
+"169","T1","Gaziantep","Ad. Demirspor",2025-01-12
+"170","T1","Goztep","Kasimpasa",2025-01-12
+"171","T1","Buyuksehyr","Galatasaray",2025-01-12
+"172","T1","Trabzonspor","Sivasspor",2025-01-19
+"173","T1","Ad. Demirspor","Fenerbahce",2025-01-19
+"174","T1","Buyuksehyr","Rizespor",2025-01-19
+"175","T1","Konyaspor","Kasimpasa",2025-01-19
+"176","T1","Hatayspor","Galatasaray",2025-01-19
+"177","T1","Eyupsporr","Alanyaspor",2025-01-19
+"178","T1","Goztep","Antalyaspor",2025-01-19
+"179","T1","Besiktas","Samsunspor",2025-01-19
+"180","T1","Gaziantep","Bodrum",2025-01-19
+"181","T1","Rizespor","Ad. Demirspor",2025-01-26
+"182","T1","Kasimpasa","Hatayspor",2025-01-26
+"183","T1","Sivasspor","Kayserispor",2025-01-26
+"184","T1","Bodrum","Eyupsporr",2025-01-26
+"185","T1","Antalyaspor","Besiktas",2025-01-26
+"186","T1","Galatasaray","Konyaspor",2025-01-26
+"187","T1","Samsunspor","Gaziantep",2025-01-26
+"188","T1","Fenerbahce","Goztep",2025-01-26
+"189","T1","Alanyaspor","Buyuksehyr",2025-01-26
+"190","T1","Eyupsporr","Sivasspor",2025-02-02
+"191","T1","Kayserispor","Trabzonspor",2025-02-02
+"192","T1","Fenerbahce","Rizespor",2025-02-02
+"193","T1","Ad. Demirspor","Kasimpasa",2025-02-02
+"194","T1","Gaziantep","Galatasaray",2025-02-02
+"195","T1","Goztep","Alanyaspor",2025-02-02
+"196","T1","Hatayspor","Antalyaspor",2025-02-02
+"197","T1","Buyuksehyr","Samsunspor",2025-02-02
+"198","T1","Konyaspor","Bodrum",2025-02-02
+"199","T1","Galatasaray","Ad. Demirspor",2025-02-09
+"200","T1","Alanyaspor","Fenerbahce",2025-02-09
+"201","T1","Kasimpasa","Rizespor",2025-02-09
+"202","T1","Trabzonspor","Eyupsporr",2025-02-09
+"203","T1","Sivasspor","Besiktas",2025-02-09
+"204","T1","Kayserispor","Konyaspor",2025-02-09
+"205","T1","Samsunspor","Hatayspor",2025-02-09
+"206","T1","Bodrum","Goztep",2025-02-09
+"207","T1","Antalyaspor","Buyuksehyr",2025-02-09
+"208","T1","Gaziantep","Sivasspor",2025-02-16
+"209","T1","Besiktas","Trabzonspor",2025-02-16
+"210","T1","Eyupsporr","Kayserispor",2025-02-16
+"211","T1","Fenerbahce","Kasimpasa",2025-02-16
+"212","T1","Rizespor","Galatasaray",2025-02-16
+"213","T1","Hatayspor","Alanyaspor",2025-02-16
+"214","T1","Ad. Demirspor","Antalyaspor",2025-02-16
+"215","T1","Konyaspor","Samsunspor",2025-02-16
+"216","T1","Buyuksehyr","Bodrum",2025-02-16
+"217","T1","Alanyaspor","Ad. Demirspor",2025-02-23
+"218","T1","Galatasaray","Fenerbahce",2025-02-23
+"219","T1","Samsunspor","Rizespor",2025-02-23
+"220","T1","Antalyaspor","Kasimpasa",2025-02-23
+"221","T1","Eyupsporr","Besiktas",2025-02-23
+"222","T1","Sivasspor","Konyaspor",2025-02-23
+"223","T1","Trabzonspor","Gaziantep",2025-02-23
+"224","T1","Kayserispor","Goztep",2025-02-23
+"225","T1","Bodrum","Hatayspor",2025-02-23
+"226","T1","Buyuksehyr","Sivasspor",2025-03-02
+"227","T1","Konyaspor","Trabzonspor",2025-03-02
+"228","T1","Besiktas","Kayserispor",2025-03-02
+"229","T1","Gaziantep","Eyupsporr",2025-03-02
+"230","T1","Kasimpasa","Galatasaray",2025-03-02
+"231","T1","Rizespor","Alanyaspor",2025-03-02
+"232","T1","Fenerbahce","Antalyaspor",2025-03-02
+"233","T1","Goztep","Samsunspor",2025-03-02
+"234","T1","Ad. Demirspor","Bodrum",2025-03-02
+"235","T1","Samsunspor","Ad. Demirspor",2025-03-09
+"236","T1","Trabzonspor","Hatayspor",2025-03-09
+"237","T1","Antalyaspor","Rizespor",2025-03-09
+"238","T1","Bodrum","Kasimpasa",2025-03-09
+"239","T1","Alanyaspor","Galatasaray",2025-03-09
+"240","T1","Eyupsporr","Konyaspor",2025-03-09
+"241","T1","Besiktas","Gaziantep",2025-03-09
+"242","T1","Sivasspor","Goztep",2025-03-09
+"243","T1","Kayserispor","Buyuksehyr",2025-03-09
+"244","T1","Hatayspor","Sivasspor",2025-03-16
+"245","T1","Buyuksehyr","Trabzonspor",2025-03-16
+"246","T1","Gaziantep","Kayserispor",2025-03-16
+"247","T1","Goztep","Eyupsporr",2025-03-16
+"248","T1","Konyaspor","Besiktas",2025-03-16
+"249","T1","Kasimpasa","Alanyaspor",2025-03-16
+"250","T1","Galatasaray","Antalyaspor",2025-03-16
+"251","T1","Fenerbahce","Samsunspor",2025-03-16
+"252","T1","Rizespor","Bodrum",2025-03-16
+"253","T1","Sivasspor","Ad. Demirspor",2025-03-30
+"254","T1","Bodrum","Fenerbahce",2025-03-30
+"255","T1","Kayserispor","Hatayspor",2025-03-30
+"256","T1","Samsunspor","Kasimpasa",2025-03-30
+"257","T1","Besiktas","Galatasaray",2025-03-30
+"258","T1","Antalyaspor","Alanyaspor",2025-03-30
+"259","T1","Konyaspor","Gaziantep",2025-03-30
+"260","T1","Trabzonspor","Goztep",2025-03-30
+"261","T1","Eyupsporr","Buyuksehyr",2025-03-30
+"262","T1","Rizespor","Sivasspor",2025-04-06
+"263","T1","Fenerbahce","Trabzonspor",2025-04-06
+"264","T1","Ad. Demirspor","Kayserispor",2025-04-06
+"265","T1","Hatayspor","Eyupsporr",2025-04-06
+"266","T1","Kasimpasa","Besiktas",2025-04-06
+"267","T1","Buyuksehyr","Konyaspor",2025-04-06
+"268","T1","Goztep","Gaziantep",2025-04-06
+"269","T1","Antalyaspor","Samsunspor",2025-04-06
+"270","T1","Alanyaspor","Bodrum",2025-04-06
+"271","T1","Eyupsporr","Ad. Demirspor",2025-04-13
+"272","T1","Sivasspor","Fenerbahce",2025-04-13
+"273","T1","Trabzonspor","Rizespor",2025-04-13
+"274","T1","Kayserispor","Kasimpasa",2025-04-13
+"275","T1","Samsunspor","Galatasaray",2025-04-13
+"276","T1","Gaziantep","Hatayspor",2025-04-13
+"277","T1","Bodrum","Antalyaspor",2025-04-13
+"278","T1","Konyaspor","Goztep",2025-04-13
+"279","T1","Besiktas","Buyuksehyr",2025-04-13
+"280","T1","Kasimpasa","Sivasspor",2025-04-20
+"281","T1","Ad. Demirspor","Trabzonspor",2025-04-20
+"282","T1","Fenerbahce","Kayserispor",2025-04-20
+"283","T1","Rizespor","Eyupsporr",2025-04-20
+"284","T1","Goztep","Besiktas",2025-04-20
+"285","T1","Hatayspor","Konyaspor",2025-04-20
+"286","T1","Buyuksehyr","Gaziantep",2025-04-20
+"287","T1","Alanyaspor","Samsunspor",2025-04-20
+"288","T1","Galatasaray","Bodrum",2025-04-20
+"289","T1","Konyaspor","Ad. Demirspor",2025-04-27
+"290","T1","Gaziantep","Fenerbahce",2025-04-27
+"291","T1","Kayserispor","Rizespor",2025-04-27
+"292","T1","Besiktas","Hatayspor",2025-04-27
+"293","T1","Eyupsporr","Galatasaray",2025-04-27
+"294","T1","Trabzonspor","Alanyaspor",2025-04-27
+"295","T1","Sivasspor","Antalyaspor",2025-04-27
+"296","T1","Bodrum","Samsunspor",2025-04-27
+"297","T1","Goztep","Buyuksehyr",2025-04-27
+"298","T1","Galatasaray","Sivasspor",2025-05-04
+"299","T1","Kasimpasa","Trabzonspor",2025-05-04
+"300","T1","Alanyaspor","Kayserispor",2025-05-04
+"301","T1","Samsunspor","Eyupsporr",2025-05-04
+"302","T1","Fenerbahce","Besiktas",2025-05-04
+"303","T1","Antalyaspor","Konyaspor",2025-05-04
+"304","T1","Rizespor","Gaziantep",2025-05-04
+"305","T1","Ad. Demirspor","Goztep",2025-05-04
+"306","T1","Hatayspor","Buyuksehyr",2025-05-04
+"307","T1","Besiktas","Ad. Demirspor",2025-05-11
+"308","T1","Buyuksehyr","Fenerbahce",2025-05-11
+"309","T1","Konyaspor","Rizespor",2025-05-11
+"310","T1","Eyupsporr","Kasimpasa",2025-05-11
+"311","T1","Trabzonspor","Galatasaray",2025-05-11
+"312","T1","Gaziantep","Alanyaspor",2025-05-11
+"313","T1","Kayserispor","Antalyaspor",2025-05-11
+"314","T1","Goztep","Hatayspor",2025-05-11
+"315","T1","Sivasspor","Bodrum",2025-05-11
+"316","T1","Samsunspor","Sivasspor",2025-05-18
+"317","T1","Bodrum","Trabzonspor",2025-05-18
+"318","T1","Galatasaray","Kayserispor",2025-05-18
+"319","T1","Fenerbahce","Eyupsporr",2025-05-18
+"320","T1","Alanyaspor","Besiktas",2025-05-18
+"321","T1","Ad. Demirspor","Hatayspor",2025-05-18
+"322","T1","Antalyaspor","Gaziantep",2025-05-18
+"323","T1","Rizespor","Goztep",2025-05-18
+"324","T1","Kasimpasa","Buyuksehyr",2025-05-18
+"325","T1","Buyuksehyr","Ad. Demirspor",2025-05-25
+"326","T1","Hatayspor","Fenerbahce",2025-05-25
+"327","T1","Besiktas","Rizespor",2025-05-25
+"328","T1","Gaziantep","Kasimpasa",2025-05-25
+"329","T1","Goztep","Galatasaray",2025-05-25
+"330","T1","Konyaspor","Alanyaspor",2025-05-25
+"331","T1","Eyupsporr","Antalyaspor",2025-05-25
+"332","T1","Trabzonspor","Samsunspor",2025-05-25
+"333","T1","Kayserispor","Bodrum",2025-05-25
+"334","T1","Alanyaspor","Sivasspor",2025-06-01
+"335","T1","Antalyaspor","Trabzonspor",2025-06-01
+"336","T1","Samsunspor","Kayserispor",2025-06-01
+"337","T1","Rizespor","Hatayspor",2025-06-01
+"338","T1","Bodrum","Besiktas",2025-06-01
+"339","T1","Fenerbahce","Konyaspor",2025-06-01
+"340","T1","Ad. Demirspor","Gaziantep",2025-06-01
+"341","T1","Kasimpasa","Goztep",2025-06-01
+"342","T1","Galatasaray","Buyuksehyr",2025-06-01

@@ -1,0 +1,307 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","N1","Groningen","NAC Breda",2024-08-09
+"2","N1","Feyenoord","Willem II",2024-08-10
+"3","N1","Nijmegen","Twente",2024-08-10
+"4","N1","Almere City","AZ Alkmaar",2024-08-10
+"5","N1","PSV Eindhoven","Waalwijk",2024-08-10
+"6","N1","Sparta Rotterdam","Heracles",2024-08-11
+"7","N1","Utrecht","Zwolle",2024-08-11
+"8","N1","Go Ahead Eagles","For Sittard",2024-08-11
+"9","N1","Ajax","Heerenveen",2024-08-11
+"10","N1","Almere City","Nijmegen",2024-10-25
+"11","N1","For Sittard","Groningen",2024-10-26
+"12","N1","NAC Breda","Waalwijk",2024-10-26
+"13","N1","PSV Eindhoven","Zwolle",2024-10-26
+"14","N1","Heerenveen","Sparta Rotterdam",2024-10-26
+"15","N1","Utrecht","Feyenoord",2024-10-27
+"16","N1","Twente","Heracles",2024-10-27
+"17","N1","AZ Alkmaar","Go Ahead Eagles",2024-10-27
+"18","N1","Ajax","Willem II",2024-10-27
+"19","N1","Feyenoord","AZ Alkmaar",2024-11-02
+"20","N1","Heracles","NAC Breda",2024-11-02
+"21","N1","Willem II","Twente",2024-11-02
+"22","N1","Ajax","PSV Eindhoven",2024-11-02
+"23","N1","For Sittard","Heerenveen",2024-11-02
+"24","N1","Go Ahead Eagles","Zwolle",2024-11-03
+"25","N1","Sparta Rotterdam","Utrecht",2024-11-03
+"26","N1","Nijmegen","Groningen",2024-11-03
+"27","N1","Waalwijk","Almere City",2024-11-03
+"28","N1","Utrecht","Heracles",2024-11-08
+"29","N1","Groningen","Sparta Rotterdam",2024-11-09
+"30","N1","Zwolle","For Sittard",2024-11-09
+"31","N1","NAC Breda","PSV Eindhoven",2024-11-09
+"32","N1","Waalwijk","Nijmegen",2024-11-09
+"33","N1","Almere City","Feyenoord",2024-11-10
+"34","N1","Twente","Ajax",2024-11-10
+"35","N1","Heerenveen","Go Ahead Eagles",2024-11-10
+"36","N1","AZ Alkmaar","Willem II",2024-11-10
+"37","N1","PSV Eindhoven","Groningen",2024-11-23
+"38","N1","Go Ahead Eagles","Almere City",2024-11-23
+"39","N1","Feyenoord","Heerenveen",2024-11-23
+"40","N1","Heracles","Waalwijk",2024-11-23
+"41","N1","For Sittard","Twente",2024-11-23
+"42","N1","Nijmegen","Utrecht",2024-11-24
+"43","N1","Willem II","NAC Breda",2024-11-24
+"44","N1","Sparta Rotterdam","AZ Alkmaar",2024-11-24
+"45","N1","Ajax","Zwolle",2024-11-24
+"46","N1","Heerenveen","Waalwijk",2024-11-29
+"47","N1","NAC Breda","Almere City",2024-11-30
+"48","N1","Groningen","Willem II",2024-11-30
+"49","N1","Feyenoord","For Sittard",2024-11-30
+"50","N1","Zwolle","Sparta Rotterdam",2024-11-30
+"51","N1","Utrecht","PSV Eindhoven",2024-12-01
+"52","N1","Twente","Go Ahead Eagles",2024-12-01
+"53","N1","AZ Alkmaar","Heracles",2024-12-01
+"54","N1","Nijmegen","Ajax",2024-12-01
+"55","N1","Almere City","Utrecht",2024-12-08
+"56","N1","Waalwijk","Feyenoord",2024-12-08
+"57","N1","Sparta Rotterdam","NAC Breda",2024-12-08
+"58","N1","PSV Eindhoven","Twente",2024-12-08
+"59","N1","Go Ahead Eagles","Nijmegen",2024-12-08
+"60","N1","Groningen","Zwolle",2024-12-08
+"61","N1","Willem II","Heerenveen",2024-12-08
+"62","N1","Heracles","For Sittard",2024-12-08
+"63","N1","AZ Alkmaar","Ajax",2024-12-08
+"64","N1","Utrecht","Go Ahead Eagles",2024-12-15
+"65","N1","For Sittard","Waalwijk",2024-12-15
+"66","N1","NAC Breda","AZ Alkmaar",2024-12-15
+"67","N1","Nijmegen","Sparta Rotterdam",2024-12-15
+"68","N1","Heerenveen","PSV Eindhoven",2024-12-15
+"69","N1","Ajax","Almere City",2024-12-15
+"70","N1","Feyenoord","Heracles",2024-12-15
+"71","N1","Twente","Groningen",2024-12-15
+"72","N1","Zwolle","Willem II",2024-12-15
+"73","N1","AZ Alkmaar","Twente",2024-12-22
+"74","N1","Utrecht","For Sittard",2024-12-22
+"75","N1","Almere City","Heerenveen",2024-12-22
+"76","N1","Go Ahead Eagles","NAC Breda",2024-12-22
+"77","N1","Willem II","Nijmegen",2024-12-22
+"78","N1","Sparta Rotterdam","Ajax",2024-12-22
+"79","N1","Waalwijk","Zwolle",2024-12-22
+"80","N1","PSV Eindhoven","Feyenoord",2024-12-22
+"81","N1","Heracles","Groningen",2024-12-22
+"82","N1","PSV Eindhoven","AZ Alkmaar",2025-01-12
+"83","N1","For Sittard","Go Ahead Eagles",2025-01-12
+"84","N1","Zwolle","Nijmegen",2025-01-12
+"85","N1","Feyenoord","Utrecht",2025-01-12
+"86","N1","Groningen","Almere City",2025-01-12
+"87","N1","Twente","Willem II",2025-01-12
+"88","N1","Heracles","Sparta Rotterdam",2025-01-12
+"89","N1","NAC Breda","Heerenveen",2025-01-12
+"90","N1","Ajax","Waalwijk",2025-01-12
+"91","N1","Sparta Rotterdam","Waalwijk",2025-01-19
+"92","N1","Willem II","Feyenoord",2025-01-19
+"93","N1","Almere City","Heracles",2025-01-19
+"94","N1","Zwolle","PSV Eindhoven",2025-01-19
+"95","N1","Utrecht","AZ Alkmaar",2025-01-19
+"96","N1","Heerenveen","Ajax",2025-01-19
+"97","N1","Go Ahead Eagles","Groningen",2025-01-19
+"98","N1","NAC Breda","Twente",2025-01-19
+"99","N1","Nijmegen","For Sittard",2025-01-19
+"100","N1","For Sittard","Almere City",2024-08-16
+"101","N1","Heerenveen","Utrecht",2024-08-17
+"102","N1","Twente","Sparta Rotterdam",2024-08-17
+"103","N1","AZ Alkmaar","Nijmegen",2024-08-17
+"104","N1","Waalwijk","Groningen",2024-08-17
+"105","N1","Heracles","PSV Eindhoven",2024-08-18
+"106","N1","Willem II","Go Ahead Eagles",2024-08-18
+"107","N1","Zwolle","Feyenoord",2024-08-18
+"108","N1","NAC Breda","Ajax",2024-08-18
+"109","N1","AZ Alkmaar","Sparta Rotterdam",2025-01-26
+"110","N1","Groningen","Heerenveen",2025-01-26
+"111","N1","For Sittard","Zwolle",2025-01-26
+"112","N1","Waalwijk","Willem II",2025-01-26
+"113","N1","Heracles","Utrecht",2025-01-26
+"114","N1","Feyenoord","Almere City",2025-01-26
+"115","N1","PSV Eindhoven","NAC Breda",2025-01-26
+"116","N1","Twente","Nijmegen",2025-01-26
+"117","N1","Ajax","Go Ahead Eagles",2025-01-26
+"118","N1","Almere City","Waalwijk",2025-02-02
+"119","N1","Go Ahead Eagles","Twente",2025-02-02
+"120","N1","Heerenveen","For Sittard",2025-02-02
+"121","N1","Zwolle","Utrecht",2025-02-02
+"122","N1","Sparta Rotterdam","Groningen",2025-02-02
+"123","N1","Willem II","AZ Alkmaar",2025-02-02
+"124","N1","Ajax","Feyenoord",2025-02-02
+"125","N1","Nijmegen","PSV Eindhoven",2025-02-02
+"126","N1","NAC Breda","Heracles",2025-02-02
+"127","N1","Waalwijk","NAC Breda",2025-02-09
+"128","N1","Heracles","Go Ahead Eagles",2025-02-09
+"129","N1","Heerenveen","Twente",2025-02-09
+"130","N1","For Sittard","Ajax",2025-02-09
+"131","N1","PSV Eindhoven","Willem II",2025-02-09
+"132","N1","Feyenoord","Sparta Rotterdam",2025-02-09
+"133","N1","Groningen","Nijmegen",2025-02-09
+"134","N1","AZ Alkmaar","Zwolle",2025-02-09
+"135","N1","Utrecht","Almere City",2025-02-09
+"136","N1","Zwolle","Heerenveen",2025-02-16
+"137","N1","Willem II","Groningen",2025-02-16
+"138","N1","Nijmegen","Almere City",2025-02-16
+"139","N1","Go Ahead Eagles","Sparta Rotterdam",2025-02-16
+"140","N1","PSV Eindhoven","Utrecht",2025-02-16
+"141","N1","NAC Breda","Feyenoord",2025-02-16
+"142","N1","Twente","Waalwijk",2025-02-16
+"143","N1","AZ Alkmaar","For Sittard",2025-02-16
+"144","N1","Ajax","Heracles",2025-02-16
+"145","N1","Heerenveen","AZ Alkmaar",2025-03-02
+"146","N1","Almere City","Ajax",2025-03-02
+"147","N1","Heracles","Zwolle",2025-03-02
+"148","N1","Waalwijk","For Sittard",2025-03-02
+"149","N1","Feyenoord","Nijmegen",2025-03-02
+"150","N1","Groningen","Twente",2025-03-02
+"151","N1","Utrecht","NAC Breda",2025-03-02
+"152","N1","Go Ahead Eagles","PSV Eindhoven",2025-03-02
+"153","N1","Sparta Rotterdam","Willem II",2025-03-02
+"154","N1","Willem II","Utrecht",2025-03-09
+"155","N1","Zwolle","Ajax",2025-03-09
+"156","N1","NAC Breda","Sparta Rotterdam",2025-03-09
+"157","N1","PSV Eindhoven","Heerenveen",2025-03-09
+"158","N1","For Sittard","Heracles",2025-03-09
+"159","N1","AZ Alkmaar","Waalwijk",2025-03-09
+"160","N1","Feyenoord","Groningen",2025-03-09
+"161","N1","Nijmegen","Go Ahead Eagles",2025-03-09
+"162","N1","Twente","Almere City",2025-03-09
+"163","N1","Heerenveen","Heracles",2025-03-16
+"164","N1","Ajax","AZ Alkmaar",2025-03-16
+"165","N1","Groningen","For Sittard",2025-03-16
+"166","N1","Waalwijk","PSV Eindhoven",2025-03-16
+"167","N1","Go Ahead Eagles","Willem II",2025-03-16
+"168","N1","Utrecht","Nijmegen",2025-03-16
+"169","N1","Almere City","NAC Breda",2025-03-16
+"170","N1","Sparta Rotterdam","Zwolle",2025-03-16
+"171","N1","Twente","Feyenoord",2025-03-16
+"172","N1","Nijmegen","AZ Alkmaar",2025-03-30
+"173","N1","Heracles","Twente",2025-03-30
+"174","N1","Willem II","Almere City",2025-03-30
+"175","N1","Zwolle","Waalwijk",2025-03-30
+"176","N1","NAC Breda","Groningen",2025-03-30
+"177","N1","Feyenoord","Go Ahead Eagles",2025-03-30
+"178","N1","PSV Eindhoven","Ajax",2025-03-30
+"179","N1","Utrecht","Heerenveen",2025-03-30
+"180","N1","For Sittard","Sparta Rotterdam",2025-03-30
+"181","N1","Ajax","NAC Breda",2025-04-06
+"182","N1","Twente","For Sittard",2025-04-06
+"183","N1","Sparta Rotterdam","Nijmegen",2025-04-06
+"184","N1","Heerenveen","Willem II",2025-04-06
+"185","N1","Almere City","Zwolle",2025-04-06
+"186","N1","Groningen","PSV Eindhoven",2025-04-06
+"187","N1","Go Ahead Eagles","Utrecht",2025-04-06
+"188","N1","Waalwijk","Heracles",2025-04-06
+"189","N1","AZ Alkmaar","Feyenoord",2025-04-06
+"190","N1","NAC Breda","Go Ahead Eagles",2025-04-13
+"191","N1","Zwolle","Twente",2025-04-13
+"192","N1","Willem II","Ajax",2025-04-13
+"193","N1","Heracles","AZ Alkmaar",2025-04-13
+"194","N1","Nijmegen","Waalwijk",2025-04-13
+"195","N1","Sparta Rotterdam","Heerenveen",2025-04-13
+"196","N1","Utrecht","Groningen",2025-04-13
+"197","N1","PSV Eindhoven","Almere City",2025-04-13
+"198","N1","For Sittard","Feyenoord",2025-04-13
+"199","N1","Nijmegen","Zwolle",2024-08-24
+"200","N1","Almere City","PSV Eindhoven",2024-08-24
+"201","N1","NAC Breda","Utrecht",2024-08-24
+"202","N1","Twente","Heerenveen",2024-08-25
+"203","N1","Ajax","For Sittard",2024-08-25
+"204","N1","Groningen","AZ Alkmaar",2024-08-25
+"205","N1","Sparta Rotterdam","Feyenoord",2024-08-25
+"206","N1","Heracles","Willem II",2024-08-25
+"207","N1","Go Ahead Eagles","Waalwijk",2024-08-25
+"208","N1","Feyenoord","Zwolle",2025-04-27
+"209","N1","Heerenveen","Nijmegen",2025-04-27
+"210","N1","Waalwijk","Utrecht",2025-04-27
+"211","N1","Almere City","Go Ahead Eagles",2025-04-27
+"212","N1","Groningen","Heracles",2025-04-27
+"213","N1","AZ Alkmaar","NAC Breda",2025-04-27
+"214","N1","Ajax","Sparta Rotterdam",2025-04-27
+"215","N1","Twente","PSV Eindhoven",2025-04-27
+"216","N1","For Sittard","Willem II",2025-04-27
+"217","N1","Sparta Rotterdam","Twente",2025-05-04
+"218","N1","Heracles","Feyenoord",2025-05-04
+"219","N1","Groningen","Waalwijk",2025-05-04
+"220","N1","PSV Eindhoven","For Sittard",2025-05-04
+"221","N1","Nijmegen","Willem II",2025-05-04
+"222","N1","Utrecht","Ajax",2025-05-04
+"223","N1","NAC Breda","Zwolle",2025-05-04
+"224","N1","Go Ahead Eagles","AZ Alkmaar",2025-05-04
+"225","N1","Heerenveen","Almere City",2025-05-04
+"226","N1","Willem II","Heracles",2025-05-11
+"227","N1","For Sittard","NAC Breda",2025-05-11
+"228","N1","AZ Alkmaar","Groningen",2025-05-11
+"229","N1","Twente","Utrecht",2025-05-11
+"230","N1","Ajax","Nijmegen",2025-05-11
+"231","N1","Waalwijk","Heerenveen",2025-05-11
+"232","N1","Zwolle","Go Ahead Eagles",2025-05-11
+"233","N1","Feyenoord","PSV Eindhoven",2025-05-11
+"234","N1","Almere City","Sparta Rotterdam",2025-05-11
+"235","N1","Twente","AZ Alkmaar",2025-05-14
+"236","N1","PSV Eindhoven","Heracles",2025-05-14
+"237","N1","Feyenoord","Waalwijk",2025-05-14
+"238","N1","Nijmegen","NAC Breda",2025-05-14
+"239","N1","Go Ahead Eagles","Heerenveen",2025-05-14
+"240","N1","Willem II","Zwolle",2025-05-14
+"241","N1","Groningen","Ajax",2025-05-14
+"242","N1","Almere City","For Sittard",2025-05-14
+"243","N1","Utrecht","Sparta Rotterdam",2025-05-14
+"244","N1","Zwolle","Groningen",2025-05-18
+"245","N1","AZ Alkmaar","Almere City",2025-05-18
+"246","N1","Heerenveen","Feyenoord",2025-05-18
+"247","N1","Sparta Rotterdam","PSV Eindhoven",2025-05-18
+"248","N1","Ajax","Twente",2025-05-18
+"249","N1","Waalwijk","Go Ahead Eagles",2025-05-18
+"250","N1","For Sittard","Utrecht",2025-05-18
+"251","N1","Heracles","Nijmegen",2025-05-18
+"252","N1","NAC Breda","Willem II",2025-05-18
+"253","N1","Waalwijk","AZ Alkmaar",2024-08-30
+"254","N1","Almere City","Groningen",2024-08-31
+"255","N1","For Sittard","Nijmegen",2024-08-31
+"256","N1","Heerenveen","NAC Breda",2024-08-31
+"257","N1","Willem II","Sparta Rotterdam",2024-08-31
+"258","N1","Utrecht","Twente",2024-09-01
+"259","N1","Zwolle","Heracles",2024-09-01
+"260","N1","Feyenoord","Ajax",2024-09-01
+"261","N1","PSV Eindhoven","Go Ahead Eagles",2024-09-01
+"262","N1","Twente","Zwolle",2024-09-14
+"263","N1","NAC Breda","For Sittard",2024-09-14
+"264","N1","Groningen","Feyenoord",2024-09-14
+"265","N1","AZ Alkmaar","Heerenveen",2024-09-14
+"266","N1","PSV Eindhoven","Nijmegen",2024-09-14
+"267","N1","Sparta Rotterdam","Go Ahead Eagles",2024-09-15
+"268","N1","Ajax","Utrecht",2024-09-15
+"269","N1","Willem II","Waalwijk",2024-09-15
+"270","N1","Heracles","Almere City",2024-09-15
+"271","N1","Zwolle","AZ Alkmaar",2024-09-20
+"272","N1","Utrecht","Willem II",2024-09-21
+"273","N1","Waalwijk","Sparta Rotterdam",2024-09-21
+"274","N1","Go Ahead Eagles","Ajax",2024-09-21
+"275","N1","Nijmegen","Heracles",2024-09-21
+"276","N1","Heerenveen","Groningen",2024-09-22
+"277","N1","Feyenoord","NAC Breda",2024-09-22
+"278","N1","Almere City","Twente",2024-09-22
+"279","N1","For Sittard","PSV Eindhoven",2024-09-22
+"280","N1","Heracles","Heerenveen",2024-09-27
+"281","N1","Twente","NAC Breda",2024-09-28
+"282","N1","Nijmegen","Feyenoord",2024-09-28
+"283","N1","Sparta Rotterdam","For Sittard",2024-09-28
+"284","N1","Willem II","PSV Eindhoven",2024-09-28
+"285","N1","Zwolle","Almere City",2024-09-29
+"286","N1","Waalwijk","Ajax",2024-09-29
+"287","N1","Groningen","Go Ahead Eagles",2024-09-29
+"288","N1","AZ Alkmaar","Utrecht",2024-09-29
+"289","N1","Almere City","Willem II",2024-10-04
+"290","N1","Heerenveen","Zwolle",2024-10-05
+"291","N1","PSV Eindhoven","Sparta Rotterdam",2024-10-05
+"292","N1","NAC Breda","Nijmegen",2024-10-05
+"293","N1","Utrecht","Waalwijk",2024-10-05
+"294","N1","Feyenoord","Twente",2024-10-06
+"295","N1","Go Ahead Eagles","Heracles",2024-10-06
+"296","N1","Ajax","Groningen",2024-10-06
+"297","N1","For Sittard","AZ Alkmaar",2024-10-06
+"298","N1","Sparta Rotterdam","Almere City",2024-10-19
+"299","N1","AZ Alkmaar","PSV Eindhoven",2024-10-19
+"300","N1","Waalwijk","Twente",2024-10-19
+"301","N1","Nijmegen","Heerenveen",2024-10-19
+"302","N1","Go Ahead Eagles","Feyenoord",2024-10-19
+"303","N1","Willem II","For Sittard",2024-10-20
+"304","N1","Heracles","Ajax",2024-10-20
+"305","N1","Groningen","Utrecht",2024-10-20
+"306","N1","Zwolle","NAC Breda",2024-10-20

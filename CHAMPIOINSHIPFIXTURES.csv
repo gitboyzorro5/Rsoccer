@@ -1,0 +1,181 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","SC1","Falkirk","Queens Park",2024-08-02
+"2","SC1","Partick","Morton",2024-08-03
+"3","SC1","Hamilton","Ayr",2024-08-03
+"4","SC1","Airdrie Utd","Raith Rvs",2024-08-03
+"5","SC1","Livingston","Dunfermline",2024-08-03
+"6","SC1","Livingston","Raith Rvs",2024-10-26
+"7","SC1","Hamilton","Morton",2024-10-26
+"8","SC1","Falkirk","Dunfermline",2024-10-26
+"9","SC1","Queens Park","Partick",2024-10-26
+"10","SC1","Airdrie Utd","Ayr",2024-10-26
+"11","SC1","Partick","Falkirk",2024-10-29
+"12","SC1","Ayr","Hamilton",2024-10-29
+"13","SC1","Morton","Queens Park",2024-10-29
+"14","SC1","Raith Rvs","Airdrie Utd",2024-10-29
+"15","SC1","Dunfermline","Livingston",2024-10-29
+"16","SC1","Airdrie Utd","Hamilton",2024-11-02
+"17","SC1","Dunfermline","Partick",2024-11-02
+"18","SC1","Raith Rvs","Ayr",2024-11-02
+"19","SC1","Falkirk","Morton",2024-11-02
+"20","SC1","Livingston","Queens Park",2024-11-02
+"21","SC1","Morton","Ayr",2024-11-09
+"22","SC1","Queens Park","Dunfermline",2024-11-09
+"23","SC1","Hamilton","Livingston",2024-11-09
+"24","SC1","Falkirk","Airdrie Utd",2024-11-09
+"25","SC1","Partick","Raith Rvs",2024-11-09
+"26","SC1","Ayr","Queens Park",2024-11-16
+"27","SC1","Partick","Hamilton",2024-11-16
+"28","SC1","Raith Rvs","Morton",2024-11-16
+"29","SC1","Dunfermline","Airdrie Utd",2024-11-16
+"30","SC1","Livingston","Falkirk",2024-11-16
+"31","SC1","Airdrie Utd","Livingston",2024-11-23
+"32","SC1","Ayr","Dunfermline",2024-11-23
+"33","SC1","Queens Park","Falkirk",2024-11-23
+"34","SC1","Hamilton","Raith Rvs",2024-11-23
+"35","SC1","Morton","Partick",2024-11-23
+"36","SC1","Queens Park","Airdrie Utd",2024-12-07
+"37","SC1","Dunfermline","Hamilton",2024-12-07
+"38","SC1","Falkirk","Raith Rvs",2024-12-07
+"39","SC1","Morton","Livingston",2024-12-07
+"40","SC1","Partick","Ayr",2024-12-07
+"41","SC1","Airdrie Utd","Morton",2024-12-14
+"42","SC1","Hamilton","Queens Park",2024-12-14
+"43","SC1","Livingston","Partick",2024-12-14
+"44","SC1","Raith Rvs","Dunfermline",2024-12-14
+"45","SC1","Ayr","Falkirk",2024-12-14
+"46","SC1","Falkirk","Hamilton",2024-12-21
+"47","SC1","Airdrie Utd","Partick",2024-12-21
+"48","SC1","Morton","Dunfermline",2024-12-21
+"49","SC1","Livingston","Ayr",2024-12-21
+"50","SC1","Queens Park","Raith Rvs",2024-12-21
+"51","SC1","Hamilton","Airdrie Utd",2024-12-28
+"52","SC1","Raith Rvs","Livingston",2024-12-28
+"53","SC1","Ayr","Morton",2024-12-28
+"54","SC1","Dunfermline","Falkirk",2024-12-28
+"55","SC1","Partick","Queens Park",2024-12-28
+"56","SC1","Ayr","Airdrie Utd",2024-08-09
+"57","SC1","Queens Park","Livingston",2024-08-09
+"58","SC1","Dunfermline","Falkirk",2024-08-10
+"59","SC1","Morton","Hamilton",2024-08-10
+"60","SC1","Raith Rvs","Partick",2024-08-10
+"61","SC1","Partick","Dunfermline",2025-01-04
+"62","SC1","Queens Park","Livingston",2025-01-04
+"63","SC1","Morton","Hamilton",2025-01-04
+"64","SC1","Ayr","Raith Rvs",2025-01-04
+"65","SC1","Airdrie Utd","Falkirk",2025-01-04
+"66","SC1","Morton","Raith Rvs",2025-01-11
+"67","SC1","Livingston","Airdrie Utd",2025-01-11
+"68","SC1","Dunfermline","Ayr",2025-01-11
+"69","SC1","Hamilton","Partick",2025-01-11
+"70","SC1","Falkirk","Queens Park",2025-01-11
+"71","SC1","Queens Park","Morton",2025-01-25
+"72","SC1","Ayr","Partick",2025-01-25
+"73","SC1","Livingston","Hamilton",2025-01-25
+"74","SC1","Airdrie Utd","Dunfermline",2025-01-25
+"75","SC1","Raith Rvs","Falkirk",2025-01-25
+"76","SC1","Hamilton","Ayr",2025-02-01
+"77","SC1","Airdrie Utd","Queens Park",2025-02-01
+"78","SC1","Dunfermline","Raith Rvs",2025-02-01
+"79","SC1","Partick","Morton",2025-02-01
+"80","SC1","Falkirk","Livingston",2025-02-01
+"81","SC1","Raith Rvs","Partick",2025-02-15
+"82","SC1","Queens Park","Hamilton",2025-02-15
+"83","SC1","Morton","Airdrie Utd",2025-02-15
+"84","SC1","Livingston","Dunfermline",2025-02-15
+"85","SC1","Falkirk","Ayr",2025-02-15
+"86","SC1","Raith Rvs","Hamilton",2025-02-22
+"87","SC1","Ayr","Livingston",2025-02-22
+"88","SC1","Morton","Falkirk",2025-02-22
+"89","SC1","Dunfermline","Queens Park",2025-02-22
+"90","SC1","Partick","Airdrie Utd",2025-02-22
+"91","SC1","Airdrie Utd","Raith Rvs",2025-02-25
+"92","SC1","Falkirk","Partick",2025-02-25
+"93","SC1","Queens Park","Ayr",2025-02-25
+"94","SC1","Hamilton","Dunfermline",2025-02-25
+"95","SC1","Livingston","Morton",2025-02-25
+"96","SC1","Hamilton","Falkirk",2025-03-01
+"97","SC1","Dunfermline","Morton",2025-03-01
+"98","SC1","Raith Rvs","Queens Park",2025-03-01
+"99","SC1","Partick","Livingston",2025-03-01
+"100","SC1","Ayr","Airdrie Utd",2025-03-01
+"101","SC1","Falkirk","Dunfermline",2025-03-08
+"102","SC1","Queens Park","Partick",2025-03-08
+"103","SC1","Livingston","Raith Rvs",2025-03-08
+"104","SC1","Airdrie Utd","Hamilton",2025-03-08
+"105","SC1","Morton","Ayr",2025-03-08
+"106","SC1","Airdrie Utd","Livingston",2025-03-15
+"107","SC1","Raith Rvs","Dunfermline",2025-03-15
+"108","SC1","Partick","Ayr",2025-03-15
+"109","SC1","Hamilton","Morton",2025-03-15
+"110","SC1","Queens Park","Falkirk",2025-03-15
+"111","SC1","Livingston","Morton",2024-08-24
+"112","SC1","Ayr","Raith Rvs",2024-08-24
+"113","SC1","Hamilton","Dunfermline",2024-08-24
+"114","SC1","Airdrie Utd","Queens Park",2024-08-24
+"115","SC1","Falkirk","Partick",2024-08-24
+"116","SC1","Morton","Queens Park",2025-03-22
+"117","SC1","Dunfermline","Livingston",2025-03-22
+"118","SC1","Partick","Raith Rvs",2025-03-22
+"119","SC1","Ayr","Hamilton",2025-03-22
+"120","SC1","Falkirk","Airdrie Utd",2025-03-22
+"121","SC1","Ayr","Dunfermline",2025-03-29
+"122","SC1","Queens Park","Airdrie Utd",2025-03-29
+"123","SC1","Hamilton","Raith Rvs",2025-03-29
+"124","SC1","Morton","Partick",2025-03-29
+"125","SC1","Livingston","Falkirk",2025-03-29
+"126","SC1","Falkirk","Morton",2025-04-05
+"127","SC1","Dunfermline","Hamilton",2025-04-05
+"128","SC1","Airdrie Utd","Partick",2025-04-05
+"129","SC1","Livingston","Queens Park",2025-04-05
+"130","SC1","Raith Rvs","Ayr",2025-04-05
+"131","SC1","Partick","Hamilton",2025-04-12
+"132","SC1","Raith Rvs","Airdrie Utd",2025-04-12
+"133","SC1","Ayr","Falkirk",2025-04-12
+"134","SC1","Queens Park","Dunfermline",2025-04-12
+"135","SC1","Morton","Livingston",2025-04-12
+"136","SC1","Livingston","Ayr",2025-04-19
+"137","SC1","Dunfermline","Partick",2025-04-19
+"138","SC1","Falkirk","Raith Rvs",2025-04-19
+"139","SC1","Airdrie Utd","Morton",2025-04-19
+"140","SC1","Hamilton","Queens Park",2025-04-19
+"141","SC1","Ayr","Queens Park",2025-04-26
+"142","SC1","Partick","Falkirk",2025-04-26
+"143","SC1","Raith Rvs","Morton",2025-04-26
+"144","SC1","Dunfermline","Airdrie Utd",2025-04-26
+"145","SC1","Hamilton","Livingston",2025-04-26
+"146","SC1","Queens Park","Raith Rvs",2025-05-02
+"147","SC1","Morton","Dunfermline",2025-05-02
+"148","SC1","Livingston","Partick",2025-05-02
+"149","SC1","Airdrie Utd","Ayr",2025-05-02
+"150","SC1","Falkirk","Hamilton",2025-05-02
+"151","SC1","Partick","Queens Park",2024-08-31
+"152","SC1","Hamilton","Airdrie Utd",2024-08-31
+"153","SC1","Raith Rvs","Livingston",2024-08-31
+"154","SC1","Dunfermline","Ayr",2024-08-31
+"155","SC1","Morton","Falkirk",2024-08-31
+"156","SC1","Queens Park","Morton",2024-09-14
+"157","SC1","Ayr","Partick",2024-09-14
+"158","SC1","Airdrie Utd","Falkirk",2024-09-14
+"159","SC1","Dunfermline","Raith Rvs",2024-09-14
+"160","SC1","Livingston","Hamilton",2024-09-14
+"161","SC1","Morton","Airdrie Utd",2024-09-21
+"162","SC1","Queens Park","Ayr",2024-09-21
+"163","SC1","Partick","Dunfermline",2024-09-21
+"164","SC1","Falkirk","Livingston",2024-09-21
+"165","SC1","Raith Rvs","Hamilton",2024-09-21
+"166","SC1","Livingston","Airdrie Utd",2024-09-28
+"167","SC1","Dunfermline","Queens Park",2024-09-28
+"168","SC1","Ayr","Morton",2024-09-28
+"169","SC1","Raith Rvs","Falkirk",2024-09-28
+"170","SC1","Hamilton","Partick",2024-09-28
+"171","SC1","Morton","Raith Rvs",2024-10-05
+"172","SC1","Falkirk","Ayr",2024-10-05
+"173","SC1","Partick","Livingston",2024-10-05
+"174","SC1","Airdrie Utd","Dunfermline",2024-10-05
+"175","SC1","Queens Park","Hamilton",2024-10-05
+"176","SC1","Dunfermline","Morton",2024-10-19
+"177","SC1","Raith Rvs","Queens Park",2024-10-19
+"178","SC1","Hamilton","Falkirk",2024-10-19
+"179","SC1","Partick","Airdrie Utd",2024-10-19
+"180","SC1","Ayr","Livingston",2024-10-19

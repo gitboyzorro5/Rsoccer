@@ -1,0 +1,553 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","E1","Blackburn","Derby",2024-08-09
+"2","E1","Preston","Sheffield United",2024-08-09
+"3","E1","Oxford","Norwich",2024-08-10
+"4","E1","Middlesbrough","Swansea",2024-08-10
+"5","E1","Hull","Bristol City",2024-08-10
+"6","E1","Stoke","Coventry",2024-08-10
+"7","E1","Millwall","Watford",2024-08-10
+"8","E1","Cardiff","Sunderland",2024-08-10
+"9","E1","Leeds","Portsmouth",2024-08-10
+"10","E1","QPR","West Brom",2024-08-10
+"11","E1","Sheffield Weds","Plymouth",2024-08-11
+"12","E1","Luton","Burnley",2024-08-12
+"13","E1","Preston","Coventry",2024-10-19
+"14","E1","Hull","Sunderland",2024-10-19
+"15","E1","Oxford","West Brom",2024-10-19
+"16","E1","Blackburn","Swansea",2024-10-19
+"17","E1","Leeds","Sheffield United",2024-10-19
+"18","E1","Millwall","Derby",2024-10-19
+"19","E1","Stoke","Norwich",2024-10-19
+"20","E1","Sheffield Weds","Burnley",2024-10-19
+"21","E1","QPR","Portsmouth",2024-10-19
+"22","E1","Luton","Watford",2024-10-19
+"23","E1","Middlesbrough","Bristol City",2024-10-19
+"24","E1","Cardiff","Plymouth",2024-10-19
+"25","E1","Leeds","Watford",2024-10-22
+"26","E1","Preston","Norwich",2024-10-22
+"27","E1","QPR","Coventry",2024-10-22
+"28","E1","Hull","Burnley",2024-10-22
+"29","E1","Sheffield Weds","Swansea",2024-10-22
+"30","E1","Cardiff","Portsmouth",2024-10-22
+"31","E1","Oxford","Derby",2024-10-22
+"32","E1","Stoke","Bristol City",2024-10-22
+"33","E1","Millwall","Plymouth",2024-10-23
+"34","E1","Middlesbrough","Sheffield United",2024-10-23
+"35","E1","Luton","Sunderland",2024-10-23
+"36","E1","Blackburn","West Brom",2024-10-23
+"37","E1","Bristol City","Leeds",2024-10-26
+"38","E1","Coventry","Luton",2024-10-26
+"39","E1","West Brom","Cardiff",2024-10-26
+"40","E1","Swansea","Millwall",2024-10-26
+"41","E1","Sheffield United","Stoke",2024-10-26
+"42","E1","Norwich","Middlesbrough",2024-10-26
+"43","E1","Burnley","QPR",2024-10-26
+"44","E1","Watford","Blackburn",2024-10-26
+"45","E1","Plymouth","Preston",2024-10-26
+"46","E1","Sunderland","Oxford",2024-10-26
+"47","E1","Portsmouth","Sheffield Weds",2024-10-26
+"48","E1","Derby","Hull",2024-10-26
+"49","E1","Oxford","Swansea",2024-11-02
+"50","E1","Cardiff","Norwich",2024-11-02
+"51","E1","Sheffield Weds","Watford",2024-11-02
+"52","E1","Stoke","Derby",2024-11-02
+"53","E1","Blackburn","Sheffield United",2024-11-02
+"54","E1","Hull","Portsmouth",2024-11-02
+"55","E1","Preston","Bristol City",2024-11-02
+"56","E1","Leeds","Plymouth",2024-11-02
+"57","E1","Millwall","Burnley",2024-11-02
+"58","E1","Middlesbrough","Coventry",2024-11-02
+"59","E1","Luton","West Brom",2024-11-02
+"60","E1","QPR","Sunderland",2024-11-02
+"61","E1","Swansea","Watford",2024-11-05
+"62","E1","Sheffield Weds","Norwich",2024-11-05
+"63","E1","Millwall","Leeds",2024-11-05
+"64","E1","Plymouth","Portsmouth",2024-11-05
+"65","E1","Bristol City","Sheffield United",2024-11-05
+"66","E1","West Brom","Burnley",2024-11-05
+"67","E1","Oxford","Hull",2024-11-05
+"68","E1","QPR","Middlesbrough",2024-11-05
+"69","E1","Luton","Cardiff",2024-11-06
+"70","E1","Coventry","Derby",2024-11-06
+"71","E1","Preston","Sunderland",2024-11-06
+"72","E1","Blackburn","Stoke",2024-11-06
+"73","E1","Portsmouth","Preston",2024-11-09
+"74","E1","Hull","West Brom",2024-11-09
+"75","E1","Leeds","QPR",2024-11-09
+"76","E1","Cardiff","Blackburn",2024-11-09
+"77","E1","Derby","Plymouth",2024-11-09
+"78","E1","Norwich","Bristol City",2024-11-09
+"79","E1","Stoke","Millwall",2024-11-09
+"80","E1","Sunderland","Coventry",2024-11-09
+"81","E1","Sheffield United","Sheffield Weds",2024-11-09
+"82","E1","Watford","Oxford",2024-11-09
+"83","E1","Middlesbrough","Luton",2024-11-09
+"84","E1","Burnley","Swansea",2024-11-09
+"85","E1","Luton","Hull",2024-11-23
+"86","E1","Blackburn","Portsmouth",2024-11-23
+"87","E1","West Brom","Norwich",2024-11-23
+"88","E1","Millwall","Sunderland",2024-11-23
+"89","E1","Swansea","Leeds",2024-11-23
+"90","E1","Coventry","Sheffield United",2024-11-23
+"91","E1","Preston","Derby",2024-11-23
+"92","E1","Sheffield Weds","Cardiff",2024-11-23
+"93","E1","Bristol City","Burnley",2024-11-23
+"94","E1","Plymouth","Watford",2024-11-23
+"95","E1","Oxford","Middlesbrough",2024-11-23
+"96","E1","QPR","Stoke",2024-11-23
+"97","E1","Hull","Sheffield Weds",2024-11-26
+"98","E1","Norwich","Plymouth",2024-11-26
+"99","E1","Leeds","Luton",2024-11-26
+"100","E1","Watford","Bristol City",2024-11-26
+"101","E1","Stoke","Preston",2024-11-26
+"102","E1","Sunderland","West Brom",2024-11-26
+"103","E1","Sheffield United","Oxford",2024-11-26
+"104","E1","Burnley","Coventry",2024-11-26
+"105","E1","Derby","Swansea",2024-11-27
+"106","E1","Cardiff","QPR",2024-11-27
+"107","E1","Portsmouth","Millwall",2024-11-27
+"108","E1","Middlesbrough","Blackburn",2024-11-27
+"109","E1","Norwich","Luton",2024-11-30
+"110","E1","Stoke","Burnley",2024-11-30
+"111","E1","Blackburn","Leeds",2024-11-30
+"112","E1","Coventry","Cardiff",2024-11-30
+"113","E1","Watford","QPR",2024-11-30
+"114","E1","Bristol City","Plymouth",2024-11-30
+"115","E1","Sheffield United","Sunderland",2024-11-30
+"116","E1","Swansea","Portsmouth",2024-11-30
+"117","E1","Derby","Sheffield Weds",2024-11-30
+"118","E1","Preston","West Brom",2024-11-30
+"119","E1","Middlesbrough","Hull",2024-11-30
+"120","E1","Oxford","Millwall",2024-11-30
+"121","E1","Luton","Swansea",2024-12-07
+"122","E1","Portsmouth","Bristol City",2024-12-07
+"123","E1","West Brom","Sheffield United",2024-12-07
+"124","E1","Plymouth","Oxford",2024-12-07
+"125","E1","Cardiff","Watford",2024-12-07
+"126","E1","Sheffield Weds","Preston",2024-12-07
+"127","E1","Millwall","Coventry",2024-12-07
+"128","E1","Hull","Blackburn",2024-12-07
+"129","E1","QPR","Norwich",2024-12-07
+"130","E1","Sunderland","Stoke",2024-12-07
+"131","E1","Burnley","Middlesbrough",2024-12-07
+"132","E1","Leeds","Derby",2024-12-07
+"133","E1","Coventry","Oxford",2024-08-16
+"134","E1","West Brom","Leeds",2024-08-17
+"135","E1","Derby","Middlesbrough",2024-08-17
+"136","E1","Portsmouth","Luton",2024-08-17
+"137","E1","Sheffield United","QPR",2024-08-17
+"138","E1","Norwich","Blackburn",2024-08-17
+"139","E1","Watford","Stoke",2024-08-17
+"140","E1","Plymouth","Hull",2024-08-17
+"141","E1","Swansea","Preston",2024-08-17
+"142","E1","Bristol City","Millwall",2024-08-17
+"143","E1","Burnley","Cardiff",2024-08-17
+"144","E1","Sunderland","Sheffield Weds",2024-08-18
+"145","E1","Sheffield Weds","Blackburn",2024-12-10
+"146","E1","Sunderland","Bristol City",2024-12-10
+"147","E1","Burnley","Derby",2024-12-10
+"148","E1","Millwall","Sheffield United",2024-12-10
+"149","E1","Luton","Stoke",2024-12-10
+"150","E1","Leeds","Middlesbrough",2024-12-10
+"151","E1","Portsmouth","Norwich",2024-12-10
+"152","E1","Plymouth","Swansea",2024-12-10
+"153","E1","Cardiff","Preston",2024-12-11
+"154","E1","West Brom","Coventry",2024-12-11
+"155","E1","QPR","Oxford",2024-12-11
+"156","E1","Hull","Watford",2024-12-11
+"157","E1","Coventry","Hull",2024-12-14
+"158","E1","Norwich","Burnley",2024-12-14
+"159","E1","Sheffield United","Plymouth",2024-12-14
+"160","E1","Blackburn","Luton",2024-12-14
+"161","E1","Derby","Portsmouth",2024-12-14
+"162","E1","Swansea","Sunderland",2024-12-14
+"163","E1","Preston","Leeds",2024-12-14
+"164","E1","Bristol City","QPR",2024-12-14
+"165","E1","Stoke","Cardiff",2024-12-14
+"166","E1","Watford","West Brom",2024-12-14
+"167","E1","Middlesbrough","Millwall",2024-12-14
+"168","E1","Oxford","Sheffield Weds",2024-12-14
+"169","E1","West Brom","Bristol City",2024-12-21
+"170","E1","Luton","Derby",2024-12-21
+"171","E1","Sheffield Weds","Stoke",2024-12-21
+"172","E1","Leeds","Oxford",2024-12-21
+"173","E1","Portsmouth","Coventry",2024-12-21
+"174","E1","Cardiff","Sheffield United",2024-12-21
+"175","E1","Plymouth","Middlesbrough",2024-12-21
+"176","E1","Sunderland","Norwich",2024-12-21
+"177","E1","Burnley","Watford",2024-12-21
+"178","E1","Hull","Swansea",2024-12-21
+"179","E1","Millwall","Blackburn",2024-12-21
+"180","E1","QPR","Preston",2024-12-21
+"181","E1","Oxford","Cardiff",2024-12-26
+"182","E1","Watford","Portsmouth",2024-12-26
+"183","E1","Coventry","Plymouth",2024-12-26
+"184","E1","Bristol City","Luton",2024-12-26
+"185","E1","Sheffield United","Burnley",2024-12-26
+"186","E1","Derby","West Brom",2024-12-26
+"187","E1","Norwich","Millwall",2024-12-26
+"188","E1","Middlesbrough","Sheffield Weds",2024-12-26
+"189","E1","Blackburn","Sunderland",2024-12-26
+"190","E1","Stoke","Leeds",2024-12-26
+"191","E1","Preston","Hull",2024-12-26
+"192","E1","Swansea","QPR",2024-12-26
+"193","E1","Coventry","Millwall",2024-12-29
+"194","E1","Swansea","Luton",2024-12-29
+"195","E1","Preston","Sheffield Weds",2024-12-29
+"196","E1","Watford","Cardiff",2024-12-29
+"197","E1","Oxford","Plymouth",2024-12-29
+"198","E1","Middlesbrough","Burnley",2024-12-29
+"199","E1","Blackburn","Hull",2024-12-29
+"200","E1","Sheffield United","West Brom",2024-12-29
+"201","E1","Norwich","QPR",2024-12-29
+"202","E1","Derby","Leeds",2024-12-29
+"203","E1","Stoke","Sunderland",2024-12-29
+"204","E1","Bristol City","Portsmouth",2024-12-29
+"205","E1","West Brom","Preston",2025-01-01
+"206","E1","Portsmouth","Swansea",2025-01-01
+"207","E1","Hull","Middlesbrough",2025-01-01
+"208","E1","QPR","Watford",2025-01-01
+"209","E1","Leeds","Blackburn",2025-01-01
+"210","E1","Millwall","Oxford",2025-01-01
+"211","E1","Cardiff","Coventry",2025-01-01
+"212","E1","Sunderland","Sheffield United",2025-01-01
+"213","E1","Luton","Norwich",2025-01-01
+"214","E1","Burnley","Stoke",2025-01-01
+"215","E1","Sheffield Weds","Derby",2025-01-01
+"216","E1","Plymouth","Bristol City",2025-01-01
+"217","E1","Hull","Leeds",2025-01-04
+"218","E1","Blackburn","Burnley",2025-01-04
+"219","E1","Sunderland","Portsmouth",2025-01-04
+"220","E1","Watford","Sheffield United",2025-01-04
+"221","E1","Sheffield Weds","Millwall",2025-01-04
+"222","E1","Norwich","Coventry",2025-01-04
+"223","E1","Stoke","Plymouth",2025-01-04
+"224","E1","Swansea","West Brom",2025-01-04
+"225","E1","QPR","Luton",2025-01-04
+"226","E1","Middlesbrough","Cardiff",2025-01-04
+"227","E1","Bristol City","Derby",2025-01-04
+"228","E1","Preston","Oxford",2025-01-04
+"229","E1","Luton","Preston",2025-01-18
+"230","E1","Burnley","Sunderland",2025-01-18
+"231","E1","Millwall","Hull",2025-01-18
+"232","E1","Portsmouth","Middlesbrough",2025-01-18
+"233","E1","Sheffield United","Norwich",2025-01-18
+"234","E1","Plymouth","QPR",2025-01-18
+"235","E1","Coventry","Bristol City",2025-01-18
+"236","E1","Cardiff","Swansea",2025-01-18
+"237","E1","Leeds","Sheffield Weds",2025-01-18
+"238","E1","Derby","Watford",2025-01-18
+"239","E1","Oxford","Blackburn",2025-01-18
+"240","E1","West Brom","Stoke",2025-01-18
+"241","E1","Millwall","Cardiff",2025-01-21
+"242","E1","Swansea","Sheffield United",2025-01-21
+"243","E1","Blackburn","Coventry",2025-01-21
+"244","E1","Oxford","Luton",2025-01-21
+"245","E1","Derby","Sunderland",2025-01-21
+"246","E1","Watford","Preston",2025-01-21
+"247","E1","Hull","QPR",2025-01-21
+"248","E1","Middlesbrough","West Brom",2025-01-21
+"249","E1","Sheffield Weds","Bristol City",2025-01-22
+"250","E1","Portsmouth","Stoke",2025-01-22
+"251","E1","Leeds","Norwich",2025-01-22
+"252","E1","Plymouth","Burnley",2025-01-22
+"253","E1","Coventry","Watford",2025-01-25
+"254","E1","West Brom","Portsmouth",2025-01-25
+"255","E1","Burnley","Leeds",2025-01-25
+"256","E1","QPR","Sheffield Weds",2025-01-25
+"257","E1","Cardiff","Derby",2025-01-25
+"258","E1","Stoke","Oxford",2025-01-25
+"259","E1","Sheffield United","Hull",2025-01-25
+"260","E1","Luton","Millwall",2025-01-25
+"261","E1","Bristol City","Blackburn",2025-01-25
+"262","E1","Preston","Middlesbrough",2025-01-25
+"263","E1","Norwich","Swansea",2025-01-25
+"264","E1","Sunderland","Plymouth",2025-01-25
+"265","E1","Sheffield Weds","Leeds",2024-08-23
+"266","E1","Bristol City","Coventry",2024-08-24
+"267","E1","QPR","Plymouth",2024-08-24
+"268","E1","Hull","Millwall",2024-08-24
+"269","E1","Norwich","Sheffield United",2024-08-24
+"270","E1","Middlesbrough","Portsmouth",2024-08-24
+"271","E1","Sunderland","Burnley",2024-08-24
+"272","E1","Watford","Derby",2024-08-24
+"273","E1","Preston","Luton",2024-08-24
+"274","E1","Blackburn","Oxford",2024-08-24
+"275","E1","Stoke","West Brom",2024-08-24
+"276","E1","Swansea","Cardiff",2024-08-25
+"277","E1","Leeds","Cardiff",2025-02-01
+"278","E1","Plymouth","West Brom",2025-02-01
+"279","E1","Portsmouth","Burnley",2025-02-01
+"280","E1","Middlesbrough","Sunderland",2025-02-01
+"281","E1","Sheffield Weds","Luton",2025-02-01
+"282","E1","Derby","Sheffield United",2025-02-01
+"283","E1","Blackburn","Preston",2025-02-01
+"284","E1","Swansea","Coventry",2025-02-01
+"285","E1","Oxford","Bristol City",2025-02-01
+"286","E1","Hull","Stoke",2025-02-01
+"287","E1","Watford","Norwich",2025-02-01
+"288","E1","Millwall","QPR",2025-02-01
+"289","E1","Norwich","Derby",2025-02-08
+"290","E1","Coventry","Leeds",2025-02-08
+"291","E1","Preston","Millwall",2025-02-08
+"292","E1","West Brom","Sheffield Weds",2025-02-08
+"293","E1","Luton","Plymouth",2025-02-08
+"294","E1","Sunderland","Watford",2025-02-08
+"295","E1","Bristol City","Swansea",2025-02-08
+"296","E1","Cardiff","Hull",2025-02-08
+"297","E1","QPR","Blackburn",2025-02-08
+"298","E1","Burnley","Oxford",2025-02-08
+"299","E1","Stoke","Middlesbrough",2025-02-08
+"300","E1","Sheffield United","Portsmouth",2025-02-08
+"301","E1","Portsmouth","Cardiff",2025-02-11
+"302","E1","Plymouth","Millwall",2025-02-11
+"303","E1","Watford","Leeds",2025-02-11
+"304","E1","Bristol City","Stoke",2025-02-11
+"305","E1","Norwich","Preston",2025-02-11
+"306","E1","Swansea","Sheffield Weds",2025-02-11
+"307","E1","Coventry","QPR",2025-02-11
+"308","E1","Derby","Oxford",2025-02-11
+"309","E1","Sheffield United","Middlesbrough",2025-02-12
+"310","E1","West Brom","Blackburn",2025-02-12
+"311","E1","Sunderland","Luton",2025-02-12
+"312","E1","Burnley","Hull",2025-02-12
+"313","E1","Hull","Norwich",2025-02-15
+"314","E1","Millwall","West Brom",2025-02-15
+"315","E1","QPR","Derby",2025-02-15
+"316","E1","Leeds","Sunderland",2025-02-15
+"317","E1","Preston","Burnley",2025-02-15
+"318","E1","Sheffield Weds","Coventry",2025-02-15
+"319","E1","Blackburn","Plymouth",2025-02-15
+"320","E1","Middlesbrough","Watford",2025-02-15
+"321","E1","Luton","Sheffield United",2025-02-15
+"322","E1","Stoke","Swansea",2025-02-15
+"323","E1","Cardiff","Bristol City",2025-02-15
+"324","E1","Oxford","Portsmouth",2025-02-15
+"325","E1","Portsmouth","QPR",2025-02-22
+"326","E1","Watford","Luton",2025-02-22
+"327","E1","Bristol City","Middlesbrough",2025-02-22
+"328","E1","Coventry","Preston",2025-02-22
+"329","E1","Swansea","Blackburn",2025-02-22
+"330","E1","Sunderland","Hull",2025-02-22
+"331","E1","Derby","Millwall",2025-02-22
+"332","E1","Plymouth","Cardiff",2025-02-22
+"333","E1","Burnley","Sheffield Weds",2025-02-22
+"334","E1","West Brom","Oxford",2025-02-22
+"335","E1","Sheffield United","Leeds",2025-02-22
+"336","E1","Norwich","Stoke",2025-02-22
+"337","E1","Sheffield Weds","Sunderland",2025-03-01
+"338","E1","Stoke","Watford",2025-03-01
+"339","E1","Luton","Portsmouth",2025-03-01
+"340","E1","Middlesbrough","Derby",2025-03-01
+"341","E1","Blackburn","Norwich",2025-03-01
+"342","E1","Millwall","Bristol City",2025-03-01
+"343","E1","Leeds","West Brom",2025-03-01
+"344","E1","Oxford","Coventry",2025-03-01
+"345","E1","QPR","Sheffield United",2025-03-01
+"346","E1","Preston","Swansea",2025-03-01
+"347","E1","Hull","Plymouth",2025-03-01
+"348","E1","Cardiff","Burnley",2025-03-01
+"349","E1","Watford","Millwall",2025-03-08
+"350","E1","West Brom","QPR",2025-03-08
+"351","E1","Bristol City","Hull",2025-03-08
+"352","E1","Burnley","Luton",2025-03-08
+"353","E1","Portsmouth","Leeds",2025-03-08
+"354","E1","Swansea","Middlesbrough",2025-03-08
+"355","E1","Sunderland","Cardiff",2025-03-08
+"356","E1","Coventry","Stoke",2025-03-08
+"357","E1","Sheffield United","Preston",2025-03-08
+"358","E1","Derby","Blackburn",2025-03-08
+"359","E1","Plymouth","Sheffield Weds",2025-03-08
+"360","E1","Norwich","Oxford",2025-03-08
+"361","E1","Burnley","West Brom",2025-03-11
+"362","E1","Stoke","Blackburn",2025-03-11
+"363","E1","Portsmouth","Plymouth",2025-03-11
+"364","E1","Cardiff","Luton",2025-03-11
+"365","E1","Derby","Coventry",2025-03-11
+"366","E1","Middlesbrough","QPR",2025-03-11
+"367","E1","Sunderland","Preston",2025-03-11
+"368","E1","Watford","Swansea",2025-03-12
+"369","E1","Norwich","Sheffield Weds",2025-03-12
+"370","E1","Sheffield United","Bristol City",2025-03-12
+"371","E1","Hull","Oxford",2025-03-12
+"372","E1","Leeds","Millwall",2025-03-12
+"373","E1","Swansea","Burnley",2025-03-15
+"374","E1","Plymouth","Derby",2025-03-15
+"375","E1","Oxford","Watford",2025-03-15
+"376","E1","Millwall","Stoke",2025-03-15
+"377","E1","Bristol City","Norwich",2025-03-15
+"378","E1","Sheffield Weds","Sheffield United",2025-03-15
+"379","E1","QPR","Leeds",2025-03-15
+"380","E1","Coventry","Sunderland",2025-03-15
+"381","E1","Blackburn","Cardiff",2025-03-15
+"382","E1","West Brom","Hull",2025-03-15
+"383","E1","Luton","Middlesbrough",2025-03-15
+"384","E1","Preston","Portsmouth",2025-03-15
+"385","E1","Cardiff","Sheffield Weds",2025-03-29
+"386","E1","Watford","Plymouth",2025-03-29
+"387","E1","Sheffield United","Coventry",2025-03-29
+"388","E1","Leeds","Swansea",2025-03-29
+"389","E1","Portsmouth","Blackburn",2025-03-29
+"390","E1","Sunderland","Millwall",2025-03-29
+"391","E1","Middlesbrough","Oxford",2025-03-29
+"392","E1","Burnley","Bristol City",2025-03-29
+"393","E1","Norwich","West Brom",2025-03-29
+"394","E1","Stoke","QPR",2025-03-29
+"395","E1","Derby","Preston",2025-03-29
+"396","E1","Hull","Luton",2025-03-29
+"397","E1","Luton","QPR",2024-08-30
+"398","E1","Cardiff","Middlesbrough",2024-08-31
+"399","E1","Burnley","Blackburn",2024-08-31
+"400","E1","Coventry","Norwich",2024-08-31
+"401","E1","Oxford","Preston",2024-08-31
+"402","E1","Portsmouth","Sunderland",2024-08-31
+"403","E1","West Brom","Swansea",2024-08-31
+"404","E1","Leeds","Hull",2024-08-31
+"405","E1","Plymouth","Stoke",2024-08-31
+"406","E1","Millwall","Sheffield Weds",2024-08-31
+"407","E1","Derby","Bristol City",2024-08-31
+"408","E1","Sheffield United","Watford",2024-09-01
+"409","E1","QPR","Cardiff",2025-04-05
+"410","E1","Plymouth","Norwich",2025-04-05
+"411","E1","Millwall","Portsmouth",2025-04-05
+"412","E1","Swansea","Derby",2025-04-05
+"413","E1","Bristol City","Watford",2025-04-05
+"414","E1","West Brom","Sunderland",2025-04-05
+"415","E1","Blackburn","Middlesbrough",2025-04-05
+"416","E1","Coventry","Burnley",2025-04-05
+"417","E1","Sheffield Weds","Hull",2025-04-05
+"418","E1","Oxford","Sheffield United",2025-04-05
+"419","E1","Preston","Stoke",2025-04-05
+"420","E1","Luton","Leeds",2025-04-05
+"421","E1","Stoke","Luton",2025-04-08
+"422","E1","Preston","Cardiff",2025-04-08
+"423","E1","Norwich","Sunderland",2025-04-08
+"424","E1","Watford","Hull",2025-04-08
+"425","E1","Middlesbrough","Leeds",2025-04-08
+"426","E1","Sheffield United","Millwall",2025-04-08
+"427","E1","Bristol City","West Brom",2025-04-08
+"428","E1","Blackburn","Sheffield Weds",2025-04-08
+"429","E1","Oxford","QPR",2025-04-09
+"430","E1","Swansea","Plymouth",2025-04-09
+"431","E1","Derby","Burnley",2025-04-09
+"432","E1","Coventry","Portsmouth",2025-04-09
+"433","E1","Plymouth","Sheffield United",2025-04-12
+"434","E1","Millwall","Middlesbrough",2025-04-12
+"435","E1","Leeds","Preston",2025-04-12
+"436","E1","Sunderland","Swansea",2025-04-12
+"437","E1","Cardiff","Stoke",2025-04-12
+"438","E1","Sheffield Weds","Oxford",2025-04-12
+"439","E1","West Brom","Watford",2025-04-12
+"440","E1","Burnley","Norwich",2025-04-12
+"441","E1","Luton","Blackburn",2025-04-12
+"442","E1","QPR","Bristol City",2025-04-12
+"443","E1","Hull","Coventry",2025-04-12
+"444","E1","Portsmouth","Derby",2025-04-12
+"445","E1","Bristol City","Sunderland",2025-04-18
+"446","E1","Preston","QPR",2025-04-18
+"447","E1","Coventry","West Brom",2025-04-18
+"448","E1","Sheffield United","Cardiff",2025-04-18
+"449","E1","Middlesbrough","Plymouth",2025-04-18
+"450","E1","Watford","Burnley",2025-04-18
+"451","E1","Oxford","Leeds",2025-04-18
+"452","E1","Norwich","Portsmouth",2025-04-18
+"453","E1","Derby","Luton",2025-04-18
+"454","E1","Blackburn","Millwall",2025-04-18
+"455","E1","Stoke","Sheffield Weds",2025-04-18
+"456","E1","Swansea","Hull",2025-04-18
+"457","E1","Luton","Bristol City",2025-04-21
+"458","E1","Burnley","Sheffield United",2025-04-21
+"459","E1","Millwall","Norwich",2025-04-21
+"460","E1","Portsmouth","Watford",2025-04-21
+"461","E1","Cardiff","Oxford",2025-04-21
+"462","E1","Leeds","Stoke",2025-04-21
+"463","E1","West Brom","Derby",2025-04-21
+"464","E1","Hull","Preston",2025-04-21
+"465","E1","QPR","Swansea",2025-04-21
+"466","E1","Sunderland","Blackburn",2025-04-21
+"467","E1","Sheffield Weds","Middlesbrough",2025-04-21
+"468","E1","Plymouth","Coventry",2025-04-21
+"469","E1","Stoke","Sheffield United",2025-04-26
+"470","E1","Hull","Derby",2025-04-26
+"471","E1","QPR","Burnley",2025-04-26
+"472","E1","Oxford","Sunderland",2025-04-26
+"473","E1","Blackburn","Watford",2025-04-26
+"474","E1","Preston","Plymouth",2025-04-26
+"475","E1","Sheffield Weds","Portsmouth",2025-04-26
+"476","E1","Leeds","Bristol City",2025-04-26
+"477","E1","Middlesbrough","Norwich",2025-04-26
+"478","E1","Cardiff","West Brom",2025-04-26
+"479","E1","Luton","Coventry",2025-04-26
+"480","E1","Millwall","Swansea",2025-04-26
+"481","E1","Portsmouth","Hull",2025-05-03
+"482","E1","Watford","Sheffield Weds",2025-05-03
+"483","E1","Sunderland","QPR",2025-05-03
+"484","E1","Plymouth","Leeds",2025-05-03
+"485","E1","Sheffield United","Blackburn",2025-05-03
+"486","E1","Derby","Stoke",2025-05-03
+"487","E1","Bristol City","Preston",2025-05-03
+"488","E1","Coventry","Middlesbrough",2025-05-03
+"489","E1","Norwich","Cardiff",2025-05-03
+"490","E1","Swansea","Oxford",2025-05-03
+"491","E1","West Brom","Luton",2025-05-03
+"492","E1","Burnley","Millwall",2025-05-03
+"493","E1","Hull","Sheffield United",2024-09-13
+"494","E1","Leeds","Burnley",2024-09-14
+"495","E1","Millwall","Luton",2024-09-14
+"496","E1","Oxford","Stoke",2024-09-14
+"497","E1","Swansea","Norwich",2024-09-14
+"498","E1","Sheffield Weds","QPR",2024-09-14
+"499","E1","Derby","Cardiff",2024-09-14
+"500","E1","Watford","Coventry",2024-09-14
+"501","E1","Plymouth","Sunderland",2024-09-14
+"502","E1","Middlesbrough","Preston",2024-09-14
+"503","E1","Blackburn","Bristol City",2024-09-14
+"504","E1","Portsmouth","West Brom",2024-09-15
+"505","E1","Stoke","Hull",2024-09-20
+"506","E1","Sunderland","Middlesbrough",2024-09-21
+"507","E1","Norwich","Watford",2024-09-21
+"508","E1","QPR","Millwall",2024-09-21
+"509","E1","Bristol City","Oxford",2024-09-21
+"510","E1","Luton","Sheffield Weds",2024-09-21
+"511","E1","Cardiff","Leeds",2024-09-21
+"512","E1","Sheffield United","Derby",2024-09-21
+"513","E1","Coventry","Swansea",2024-09-21
+"514","E1","Burnley","Portsmouth",2024-09-21
+"515","E1","West Brom","Plymouth",2024-09-21
+"516","E1","Preston","Blackburn",2024-09-22
+"517","E1","Plymouth","Luton",2024-09-27
+"518","E1","Derby","Norwich",2024-09-28
+"519","E1","Blackburn","QPR",2024-09-28
+"520","E1","Sheffield Weds","West Brom",2024-09-28
+"521","E1","Middlesbrough","Stoke",2024-09-28
+"522","E1","Watford","Sunderland",2024-09-28
+"523","E1","Leeds","Coventry",2024-09-28
+"524","E1","Millwall","Preston",2024-09-28
+"525","E1","Hull","Cardiff",2024-09-28
+"526","E1","Oxford","Burnley",2024-09-28
+"527","E1","Portsmouth","Sheffield United",2024-09-28
+"528","E1","Swansea","Bristol City",2024-09-29
+"529","E1","Coventry","Blackburn",2024-10-01
+"530","E1","Burnley","Plymouth",2024-10-01
+"531","E1","Sunderland","Derby",2024-10-01
+"532","E1","QPR","Hull",2024-10-01
+"533","E1","Sheffield United","Swansea",2024-10-01
+"534","E1","West Brom","Middlesbrough",2024-10-01
+"535","E1","Cardiff","Millwall",2024-10-01
+"536","E1","Luton","Oxford",2024-10-01
+"537","E1","Stoke","Portsmouth",2024-10-02
+"538","E1","Preston","Watford",2024-10-02
+"539","E1","Bristol City","Sheffield Weds",2024-10-02
+"540","E1","Norwich","Leeds",2024-10-02
+"541","E1","Plymouth","Blackburn",2024-10-05
+"542","E1","Sheffield United","Luton",2024-10-05
+"543","E1","Swansea","Stoke",2024-10-05
+"544","E1","Burnley","Preston",2024-10-05
+"545","E1","Portsmouth","Oxford",2024-10-05
+"546","E1","West Brom","Millwall",2024-10-05
+"547","E1","Bristol City","Cardiff",2024-10-05
+"548","E1","Norwich","Hull",2024-10-05
+"549","E1","Coventry","Sheffield Weds",2024-10-05
+"550","E1","Sunderland","Leeds",2024-10-05
+"551","E1","Watford","Middlesbrough",2024-10-05
+"552","E1","Derby","QPR",2024-10-05

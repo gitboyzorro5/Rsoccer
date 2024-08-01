@@ -1,0 +1,381 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","I2","Brescia","Palermo",2024-08-16
+"2","I2","Sudtirol","Modena",2024-08-17
+"3","I2","Pisa","Spezia",2024-08-17
+"4","I2","Salernitana","Cittadella",2024-08-17
+"5","I2","Bari","Juve Stabia",2024-08-17
+"6","I2","Catanzaro","Sassuolo",2024-08-18
+"7","I2","Reggiana","Mantova",2024-08-18
+"8","I2","Cosenza","Cremonese",2024-08-18
+"9","I2","Frosinone","Sampdoria",2024-08-18
+"10","I2","Cesena","Carrarese",2024-08-18
+"11","I2","Palermo","Reggiana",2024-10-26
+"12","I2","Sassuolo","Modena",2024-10-26
+"13","I2","Cesena","Brescia",2024-10-26
+"14","I2","Catanzaro","Sudtirol",2024-10-26
+"15","I2","Cosenza","Juve Stabia",2024-10-26
+"16","I2","Cremonese","Salernitana",2024-10-26
+"17","I2","Carrarese","Cittadella",2024-10-26
+"18","I2","Spezia","Bari",2024-10-26
+"19","I2","Sampdoria","Mantova",2024-10-26
+"20","I2","Frosinone","Pisa",2024-10-26
+"21","I2","Brescia","Spezia",2024-10-29
+"22","I2","Juve Stabia","Sassuolo",2024-10-29
+"23","I2","Bari","Carrarese",2024-10-29
+"24","I2","Pisa","Catanzaro",2024-10-29
+"25","I2","Reggiana","Cosenza",2024-10-29
+"26","I2","Cittadella","Sampdoria",2024-10-29
+"27","I2","Mantova","Palermo",2024-10-29
+"28","I2","Modena","Cremonese",2024-10-29
+"29","I2","Salernitana","Cesena",2024-10-29
+"30","I2","Sudtirol","Frosinone",2024-10-29
+"31","I2","Palermo","Cittadella",2024-11-02
+"32","I2","Sassuolo","Mantova",2024-11-02
+"33","I2","Catanzaro","Frosinone",2024-11-02
+"34","I2","Cosenza","Salernitana",2024-11-02
+"35","I2","Cesena","Sudtirol",2024-11-02
+"36","I2","Bari","Reggiana",2024-11-02
+"37","I2","Spezia","Modena",2024-11-02
+"38","I2","Cremonese","Pisa",2024-11-02
+"39","I2","Sampdoria","Brescia",2024-11-02
+"40","I2","Carrarese","Juve Stabia",2024-11-02
+"41","I2","Mantova","Cremonese",2024-11-09
+"42","I2","Juve Stabia","Spezia",2024-11-09
+"43","I2","Salernitana","Bari",2024-11-09
+"44","I2","Reggiana","Catanzaro",2024-11-09
+"45","I2","Brescia","Cosenza",2024-11-09
+"46","I2","Modena","Carrarese",2024-11-09
+"47","I2","Frosinone","Palermo",2024-11-09
+"48","I2","Sudtirol","Sassuolo",2024-11-09
+"49","I2","Cittadella","Cesena",2024-11-09
+"50","I2","Pisa","Sampdoria",2024-11-09
+"51","I2","Palermo","Sampdoria",2024-11-23
+"52","I2","Spezia","Sudtirol",2024-11-23
+"53","I2","Bari","Cittadella",2024-11-23
+"54","I2","Cremonese","Frosinone",2024-11-23
+"55","I2","Cesena","Reggiana",2024-11-23
+"56","I2","Catanzaro","Mantova",2024-11-23
+"57","I2","Carrarese","Pisa",2024-11-23
+"58","I2","Cosenza","Modena",2024-11-23
+"59","I2","Juve Stabia","Brescia",2024-11-23
+"60","I2","Sassuolo","Salernitana",2024-11-23
+"61","I2","Sampdoria","Catanzaro",2024-11-30
+"62","I2","Cittadella","Juve Stabia",2024-11-30
+"63","I2","Frosinone","Cesena",2024-11-30
+"64","I2","Mantova","Modena",2024-11-30
+"65","I2","Pisa","Cosenza",2024-11-30
+"66","I2","Reggiana","Sassuolo",2024-11-30
+"67","I2","Palermo","Spezia",2024-11-30
+"68","I2","Sudtirol","Cremonese",2024-11-30
+"69","I2","Brescia","Bari",2024-11-30
+"70","I2","Salernitana","Carrarese",2024-11-30
+"71","I2","Mantova","Pisa",2024-12-07
+"72","I2","Catanzaro","Brescia",2024-12-07
+"73","I2","Carrarese","Palermo",2024-12-07
+"74","I2","Cosenza","Frosinone",2024-12-07
+"75","I2","Cremonese","Reggiana",2024-12-07
+"76","I2","Sassuolo","Sampdoria",2024-12-07
+"77","I2","Bari","Cesena",2024-12-07
+"78","I2","Juve Stabia","Sudtirol",2024-12-07
+"79","I2","Modena","Salernitana",2024-12-07
+"80","I2","Spezia","Cittadella",2024-12-07
+"81","I2","Brescia","Carrarese",2024-12-14
+"82","I2","Reggiana","Modena",2024-12-14
+"83","I2","Salernitana","Juve Stabia",2024-12-14
+"84","I2","Pisa","Bari",2024-12-14
+"85","I2","Cesena","Cosenza",2024-12-14
+"86","I2","Frosinone","Sassuolo",2024-12-14
+"87","I2","Sudtirol","Mantova",2024-12-14
+"88","I2","Sampdoria","Spezia",2024-12-14
+"89","I2","Palermo","Catanzaro",2024-12-14
+"90","I2","Cittadella","Cremonese",2024-12-14
+"91","I2","Mantova","Frosinone",2024-12-21
+"92","I2","Salernitana","Brescia",2024-12-21
+"93","I2","Juve Stabia","Cesena",2024-12-21
+"94","I2","Sassuolo","Palermo",2024-12-21
+"95","I2","Carrarese","Cosenza",2024-12-21
+"96","I2","Cittadella","Reggiana",2024-12-21
+"97","I2","Catanzaro","Spezia",2024-12-21
+"98","I2","Bari","Sudtirol",2024-12-21
+"99","I2","Cremonese","Sampdoria",2024-12-21
+"100","I2","Modena","Pisa",2024-12-21
+"101","I2","Sudtirol","Cittadella",2024-12-26
+"102","I2","Pisa","Sassuolo",2024-12-26
+"103","I2","Reggiana","Juve Stabia",2024-12-26
+"104","I2","Brescia","Modena",2024-12-26
+"105","I2","Cesena","Cremonese",2024-12-26
+"106","I2","Spezia","Mantova",2024-12-26
+"107","I2","Sampdoria","Carrarese",2024-12-26
+"108","I2","Palermo","Bari",2024-12-26
+"109","I2","Frosinone","Salernitana",2024-12-26
+"110","I2","Cosenza","Catanzaro",2024-12-26
+"111","I2","Modena","Bari",2024-08-23
+"112","I2","Sudtirol","Salernitana",2024-08-24
+"113","I2","Sampdoria","Reggiana",2024-08-24
+"114","I2","Brescia","Cittadella",2024-08-24
+"115","I2","Cremonese","Carrarese",2024-08-24
+"116","I2","Spezia","Frosinone",2024-08-24
+"117","I2","Pisa","Palermo",2024-08-24
+"118","I2","Sassuolo","Cesena",2024-08-24
+"119","I2","Catanzaro","Juve Stabia",2024-08-25
+"120","I2","Mantova","Cosenza",2024-08-25
+"121","I2","Cremonese","Brescia",2024-12-29
+"122","I2","Catanzaro","Salernitana",2024-12-29
+"123","I2","Juve Stabia","Frosinone",2024-12-29
+"124","I2","Sassuolo","Cosenza",2024-12-29
+"125","I2","Carrarese","Cesena",2024-12-29
+"126","I2","Sampdoria","Pisa",2024-12-29
+"127","I2","Bari","Spezia",2024-12-29
+"128","I2","Modena","Sudtirol",2024-12-29
+"129","I2","Mantova","Reggiana",2024-12-29
+"130","I2","Cittadella","Palermo",2024-12-29
+"131","I2","Salernitana","Sassuolo",2025-01-12
+"132","I2","Spezia","Juve Stabia",2025-01-12
+"133","I2","Frosinone","Cremonese",2025-01-12
+"134","I2","Sudtirol","Catanzaro",2025-01-12
+"135","I2","Cesena","Cittadella",2025-01-12
+"136","I2","Pisa","Carrarese",2025-01-12
+"137","I2","Reggiana","Bari",2025-01-12
+"138","I2","Cosenza","Mantova",2025-01-12
+"139","I2","Palermo","Modena",2025-01-12
+"140","I2","Brescia","Sampdoria",2025-01-12
+"141","I2","Sassuolo","Sudtirol",2025-01-18
+"142","I2","Cittadella","Mantova",2025-01-18
+"143","I2","Cremonese","Cosenza",2025-01-18
+"144","I2","Salernitana","Reggiana",2025-01-18
+"145","I2","Sampdoria","Cesena",2025-01-18
+"146","I2","Carrarese","Spezia",2025-01-18
+"147","I2","Modena","Frosinone",2025-01-18
+"148","I2","Catanzaro","Pisa",2025-01-18
+"149","I2","Palermo","Juve Stabia",2025-01-18
+"150","I2","Bari","Brescia",2025-01-18
+"151","I2","Cremonese","Modena",2025-01-25
+"152","I2","Cosenza","Cittadella",2025-01-25
+"153","I2","Brescia","Catanzaro",2025-01-25
+"154","I2","Spezia","Sassuolo",2025-01-25
+"155","I2","Mantova","Sampdoria",2025-01-25
+"156","I2","Pisa","Salernitana",2025-01-25
+"157","I2","Juve Stabia","Carrarese",2025-01-25
+"158","I2","Reggiana","Palermo",2025-01-25
+"159","I2","Cesena","Bari",2025-01-25
+"160","I2","Frosinone","Sudtirol",2025-01-25
+"161","I2","Bari","Frosinone",2025-02-01
+"162","I2","Sassuolo","Juve Stabia",2025-02-01
+"163","I2","Sudtirol","Reggiana",2025-02-01
+"164","I2","Cittadella","Spezia",2025-02-01
+"165","I2","Catanzaro","Cesena",2025-02-01
+"166","I2","Salernitana","Cremonese",2025-02-01
+"167","I2","Palermo","Pisa",2025-02-01
+"168","I2","Sampdoria","Cosenza",2025-02-01
+"169","I2","Carrarese","Brescia",2025-02-01
+"170","I2","Modena","Mantova",2025-02-01
+"171","I2","Reggiana","Cesena",2025-02-08
+"172","I2","Brescia","Salernitana",2025-02-08
+"173","I2","Cremonese","Sudtirol",2025-02-08
+"174","I2","Frosinone","Catanzaro",2025-02-08
+"175","I2","Pisa","Cittadella",2025-02-08
+"176","I2","Mantova","Sassuolo",2025-02-08
+"177","I2","Spezia","Palermo",2025-02-08
+"178","I2","Cosenza","Carrarese",2025-02-08
+"179","I2","Sampdoria","Modena",2025-02-08
+"180","I2","Juve Stabia","Bari",2025-02-08
+"181","I2","Carrarese","Salernitana",2025-02-15
+"182","I2","Modena","Spezia",2025-02-15
+"183","I2","Sassuolo","Brescia",2025-02-15
+"184","I2","Palermo","Mantova",2025-02-15
+"185","I2","Sudtirol","Sampdoria",2025-02-15
+"186","I2","Catanzaro","Cittadella",2025-02-15
+"187","I2","Juve Stabia","Cosenza",2025-02-15
+"188","I2","Bari","Cremonese",2025-02-15
+"189","I2","Cesena","Pisa",2025-02-15
+"190","I2","Frosinone","Reggiana",2025-02-15
+"191","I2","Sampdoria","Sassuolo",2025-02-22
+"192","I2","Salernitana","Frosinone",2025-02-22
+"193","I2","Cremonese","Cesena",2025-02-22
+"194","I2","Mantova","Bari",2025-02-22
+"195","I2","Brescia","Sudtirol",2025-02-22
+"196","I2","Reggiana","Carrarese",2025-02-22
+"197","I2","Spezia","Catanzaro",2025-02-22
+"198","I2","Pisa","Juve Stabia",2025-02-22
+"199","I2","Cittadella","Modena",2025-02-22
+"200","I2","Cosenza","Palermo",2025-02-22
+"201","I2","Catanzaro","Reggiana",2025-03-01
+"202","I2","Palermo","Brescia",2025-03-01
+"203","I2","Juve Stabia","Cittadella",2025-03-01
+"204","I2","Frosinone","Mantova",2025-03-01
+"205","I2","Sudtirol","Spezia",2025-03-01
+"206","I2","Cesena","Salernitana",2025-03-01
+"207","I2","Sassuolo","Pisa",2025-03-01
+"208","I2","Modena","Cosenza",2025-03-01
+"209","I2","Carrarese","Cremonese",2025-03-01
+"210","I2","Bari","Sampdoria",2025-03-01
+"211","I2","Cosenza","Reggiana",2025-03-08
+"212","I2","Sampdoria","Palermo",2025-03-08
+"213","I2","Brescia","Cesena",2025-03-08
+"214","I2","Sassuolo","Bari",2025-03-08
+"215","I2","Salernitana","Modena",2025-03-08
+"216","I2","Cremonese","Catanzaro",2025-03-08
+"217","I2","Spezia","Pisa",2025-03-08
+"218","I2","Carrarese","Frosinone",2025-03-08
+"219","I2","Cittadella","Sudtirol",2025-03-08
+"220","I2","Mantova","Juve Stabia",2025-03-08
+"221","I2","Frosinone","Modena",2024-08-27
+"222","I2","Cremonese","Palermo",2024-08-27
+"223","I2","Reggiana","Brescia",2024-08-27
+"224","I2","Cittadella","Pisa",2024-08-27
+"225","I2","Carrarese","Sudtirol",2024-08-27
+"226","I2","Bari","Sassuolo",2024-08-27
+"227","I2","Salernitana","Sampdoria",2024-08-27
+"228","I2","Cosenza","Spezia",2024-08-28
+"229","I2","Juve Stabia","Mantova",2024-08-28
+"230","I2","Cesena","Catanzaro",2024-08-28
+"231","I2","Cesena","Spezia",2025-03-15
+"232","I2","Reggiana","Sampdoria",2025-03-15
+"233","I2","Cittadella","Sassuolo",2025-03-15
+"234","I2","Frosinone","Brescia",2025-03-15
+"235","I2","Catanzaro","Cosenza",2025-03-15
+"236","I2","Juve Stabia","Modena",2025-03-15
+"237","I2","Sudtirol","Carrarese",2025-03-15
+"238","I2","Palermo","Cremonese",2025-03-15
+"239","I2","Bari","Salernitana",2025-03-15
+"240","I2","Pisa","Mantova",2025-03-15
+"241","I2","Sassuolo","Reggiana",2025-03-29
+"242","I2","Cosenza","Pisa",2025-03-29
+"243","I2","Cremonese","Cittadella",2025-03-29
+"244","I2","Mantova","Sudtirol",2025-03-29
+"245","I2","Carrarese","Bari",2025-03-29
+"246","I2","Modena","Catanzaro",2025-03-29
+"247","I2","Sampdoria","Frosinone",2025-03-29
+"248","I2","Salernitana","Palermo",2025-03-29
+"249","I2","Cesena","Juve Stabia",2025-03-29
+"250","I2","Spezia","Brescia",2025-03-29
+"251","I2","Frosinone","Cosenza",2025-04-05
+"252","I2","Catanzaro","Bari",2025-04-05
+"253","I2","Reggiana","Cremonese",2025-04-05
+"254","I2","Brescia","Mantova",2025-04-05
+"255","I2","Cittadella","Carrarese",2025-04-05
+"256","I2","Palermo","Sassuolo",2025-04-05
+"257","I2","Juve Stabia","Salernitana",2025-04-05
+"258","I2","Spezia","Sampdoria",2025-04-05
+"259","I2","Pisa","Modena",2025-04-05
+"260","I2","Sudtirol","Cesena",2025-04-05
+"261","I2","Cesena","Frosinone",2025-04-12
+"262","I2","Sampdoria","Cittadella",2025-04-12
+"263","I2","Reggiana","Pisa",2025-04-12
+"264","I2","Cosenza","Brescia",2025-04-12
+"265","I2","Bari","Palermo",2025-04-12
+"266","I2","Carrarese","Catanzaro",2025-04-12
+"267","I2","Mantova","Spezia",2025-04-12
+"268","I2","Modena","Sassuolo",2025-04-12
+"269","I2","Salernitana","Sudtirol",2025-04-12
+"270","I2","Cremonese","Juve Stabia",2025-04-12
+"271","I2","Spezia","Cosenza",2025-04-21
+"272","I2","Juve Stabia","Sampdoria",2025-04-21
+"273","I2","Sassuolo","Frosinone",2025-04-21
+"274","I2","Brescia","Reggiana",2025-04-21
+"275","I2","Modena","Cesena",2025-04-21
+"276","I2","Cittadella","Salernitana",2025-04-21
+"277","I2","Mantova","Catanzaro",2025-04-21
+"278","I2","Sudtirol","Bari",2025-04-21
+"279","I2","Palermo","Carrarese",2025-04-21
+"280","I2","Pisa","Cremonese",2025-04-21
+"281","I2","Brescia","Pisa",2025-04-25
+"282","I2","Sudtirol","Juve Stabia",2025-04-25
+"283","I2","Frosinone","Spezia",2025-04-25
+"284","I2","Cremonese","Mantova",2025-04-25
+"285","I2","Carrarese","Sampdoria",2025-04-25
+"286","I2","Catanzaro","Palermo",2025-04-25
+"287","I2","Reggiana","Cittadella",2025-04-25
+"288","I2","Salernitana","Cosenza",2025-04-25
+"289","I2","Cesena","Sassuolo",2025-04-25
+"290","I2","Bari","Modena",2025-04-25
+"291","I2","Mantova","Cesena",2025-05-01
+"292","I2","Spezia","Salernitana",2025-05-01
+"293","I2","Palermo","Sudtirol",2025-05-01
+"294","I2","Juve Stabia","Catanzaro",2025-05-01
+"295","I2","Cosenza","Bari",2025-05-01
+"296","I2","Cittadella","Brescia",2025-05-01
+"297","I2","Sassuolo","Carrarese",2025-05-01
+"298","I2","Modena","Reggiana",2025-05-01
+"299","I2","Pisa","Frosinone",2025-05-01
+"300","I2","Sampdoria","Cremonese",2025-05-01
+"301","I2","Cesena","Palermo",2025-05-04
+"302","I2","Carrarese","Modena",2025-05-04
+"303","I2","Sudtirol","Cosenza",2025-05-04
+"304","I2","Cremonese","Sassuolo",2025-05-04
+"305","I2","Salernitana","Mantova",2025-05-04
+"306","I2","Bari","Pisa",2025-05-04
+"307","I2","Brescia","Juve Stabia",2025-05-04
+"308","I2","Frosinone","Cittadella",2025-05-04
+"309","I2","Reggiana","Spezia",2025-05-04
+"310","I2","Catanzaro","Sampdoria",2025-05-04
+"311","I2","Modena","Brescia",2025-05-09
+"312","I2","Spezia","Cremonese",2025-05-09
+"313","I2","Sassuolo","Catanzaro",2025-05-09
+"314","I2","Mantova","Carrarese",2025-05-09
+"315","I2","Cosenza","Cesena",2025-05-09
+"316","I2","Sampdoria","Salernitana",2025-05-09
+"317","I2","Cittadella","Bari",2025-05-09
+"318","I2","Palermo","Frosinone",2025-05-09
+"319","I2","Juve Stabia","Reggiana",2025-05-09
+"320","I2","Pisa","Sudtirol",2025-05-09
+"321","I2","Sampdoria","Bari",2024-08-31
+"322","I2","Modena","Cittadella",2024-08-31
+"323","I2","Sassuolo","Cremonese",2024-08-31
+"324","I2","Sudtirol","Brescia",2024-08-31
+"325","I2","Pisa","Reggiana",2024-08-31
+"326","I2","Frosinone","Juve Stabia",2024-09-01
+"327","I2","Catanzaro","Carrarese",2024-09-01
+"328","I2","Spezia","Cesena",2024-09-01
+"329","I2","Mantova","Salernitana",2024-09-01
+"330","I2","Palermo","Cosenza",2024-09-01
+"331","I2","Cittadella","Catanzaro",2024-09-14
+"332","I2","Cesena","Modena",2024-09-14
+"333","I2","Carrarese","Sassuolo",2024-09-14
+"334","I2","Salernitana","Pisa",2024-09-14
+"335","I2","Juve Stabia","Palermo",2024-09-14
+"336","I2","Bari","Mantova",2024-09-14
+"337","I2","Cosenza","Sampdoria",2024-09-14
+"338","I2","Brescia","Frosinone",2024-09-14
+"339","I2","Reggiana","Sudtirol",2024-09-14
+"340","I2","Cremonese","Spezia",2024-09-14
+"341","I2","Modena","Juve Stabia",2024-09-21
+"342","I2","Cosenza","Sassuolo",2024-09-21
+"343","I2","Catanzaro","Cremonese",2024-09-21
+"344","I2","Pisa","Brescia",2024-09-21
+"345","I2","Sampdoria","Sudtirol",2024-09-21
+"346","I2","Palermo","Cesena",2024-09-21
+"347","I2","Reggiana","Salernitana",2024-09-21
+"348","I2","Frosinone","Bari",2024-09-21
+"349","I2","Spezia","Carrarese",2024-09-21
+"350","I2","Mantova","Cittadella",2024-09-21
+"351","I2","Cittadella","Frosinone",2024-09-28
+"352","I2","Carrarese","Reggiana",2024-09-28
+"353","I2","Sudtirol","Palermo",2024-09-28
+"354","I2","Brescia","Cremonese",2024-09-28
+"355","I2","Juve Stabia","Pisa",2024-09-28
+"356","I2","Sassuolo","Spezia",2024-09-28
+"357","I2","Salernitana","Catanzaro",2024-09-28
+"358","I2","Cesena","Mantova",2024-09-28
+"359","I2","Modena","Sampdoria",2024-09-28
+"360","I2","Bari","Cosenza",2024-09-28
+"361","I2","Palermo","Salernitana",2024-10-05
+"362","I2","Spezia","Reggiana",2024-10-05
+"363","I2","Cremonese","Bari",2024-10-05
+"364","I2","Sassuolo","Cittadella",2024-10-05
+"365","I2","Pisa","Cesena",2024-10-05
+"366","I2","Catanzaro","Modena",2024-10-05
+"367","I2","Mantova","Brescia",2024-10-05
+"368","I2","Frosinone","Carrarese",2024-10-05
+"369","I2","Cosenza","Sudtirol",2024-10-05
+"370","I2","Sampdoria","Juve Stabia",2024-10-05
+"371","I2","Modena","Palermo",2024-10-19
+"372","I2","Reggiana","Frosinone",2024-10-19
+"373","I2","Salernitana","Spezia",2024-10-19
+"374","I2","Carrarese","Mantova",2024-10-19
+"375","I2","Cesena","Sampdoria",2024-10-19
+"376","I2","Brescia","Sassuolo",2024-10-19
+"377","I2","Cittadella","Cosenza",2024-10-19
+"378","I2","Juve Stabia","Cremonese",2024-10-19
+"379","I2","Sudtirol","Pisa",2024-10-19
+"380","I2","Bari","Catanzaro",2024-10-19

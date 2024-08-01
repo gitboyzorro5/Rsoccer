@@ -1,0 +1,199 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","SC0","Hearts","Rangers",2024-08-03
+"2","SC0","Motherwell","Ross County",2024-08-03
+"3","SC0","Dundee United","Dundee",2024-08-04
+"4","SC0","St Mirren","Hibernian",2024-08-04
+"5","SC0","Celtic","Kilmarnock",2024-08-04
+"6","SC0","St Johnstone","Aberdeen",2024-08-05
+"7","SC0","Hearts","Kilmarnock",2024-10-30
+"8","SC0","Aberdeen","Rangers",2024-10-30
+"9","SC0","Celtic","Dundee",2024-10-30
+"10","SC0","Ross County","Hibernian",2024-10-30
+"11","SC0","St Mirren","St Johnstone",2024-10-30
+"12","SC0","Dundee United","Motherwell",2024-10-30
+"13","SC0","Kilmarnock","Motherwell",2024-11-02
+"14","SC0","Celtic","Dundee United",2024-11-02
+"15","SC0","Hibernian","Aberdeen",2024-11-02
+"16","SC0","St Johnstone","Hearts",2024-11-02
+"17","SC0","Dundee","Rangers",2024-11-02
+"18","SC0","St Mirren","Ross County",2024-11-02
+"19","SC0","Motherwell","St Johnstone",2024-11-09
+"20","SC0","Dundee United","Ross County",2024-11-09
+"21","SC0","Kilmarnock","Celtic",2024-11-09
+"22","SC0","Hibernian","St Mirren",2024-11-09
+"23","SC0","Rangers","Hearts",2024-11-09
+"24","SC0","Aberdeen","Dundee",2024-11-09
+"25","SC0","St Mirren","Aberdeen",2024-11-23
+"26","SC0","Rangers","Dundee United",2024-11-23
+"27","SC0","St Johnstone","Kilmarnock",2024-11-23
+"28","SC0","Hearts","Celtic",2024-11-23
+"29","SC0","Ross County","Motherwell",2024-11-23
+"30","SC0","Dundee","Hibernian",2024-11-23
+"31","SC0","Kilmarnock","Dundee",2024-11-30
+"32","SC0","St Johnstone","Rangers",2024-11-30
+"33","SC0","Celtic","Ross County",2024-11-30
+"34","SC0","Motherwell","Hibernian",2024-11-30
+"35","SC0","Hearts","Aberdeen",2024-11-30
+"36","SC0","Dundee United","St Mirren",2024-11-30
+"37","SC0","Aberdeen","Celtic",2024-12-04
+"38","SC0","Hibernian","Dundee United",2024-12-04
+"39","SC0","Ross County","St Johnstone",2024-12-04
+"40","SC0","Dundee","Motherwell",2024-12-04
+"41","SC0","St Mirren","Hearts",2024-12-04
+"42","SC0","Rangers","Kilmarnock",2024-12-04
+"43","SC0","Hearts","Dundee",2024-12-07
+"44","SC0","Ross County","Rangers",2024-12-07
+"45","SC0","Dundee United","Kilmarnock",2024-12-07
+"46","SC0","St Mirren","Motherwell",2024-12-07
+"47","SC0","Aberdeen","St Johnstone",2024-12-07
+"48","SC0","Celtic","Hibernian",2024-12-07
+"49","SC0","St Johnstone","St Mirren",2024-12-14
+"50","SC0","Dundee","Celtic",2024-12-14
+"51","SC0","Kilmarnock","Hearts",2024-12-14
+"52","SC0","Hibernian","Ross County",2024-12-14
+"53","SC0","Motherwell","Dundee United",2024-12-14
+"54","SC0","Rangers","Aberdeen",2024-12-14
+"55","SC0","Dundee United","Celtic",2024-12-21
+"56","SC0","Motherwell","Kilmarnock",2024-12-21
+"57","SC0","Aberdeen","Hibernian",2024-12-21
+"58","SC0","Rangers","Dundee",2024-12-21
+"59","SC0","Ross County","St Mirren",2024-12-21
+"60","SC0","Hearts","St Johnstone",2024-12-21
+"61","SC0","Hearts","Hibernian",2024-12-26
+"62","SC0","St Johnstone","Dundee United",2024-12-26
+"63","SC0","Kilmarnock","Aberdeen",2024-12-26
+"64","SC0","Celtic","Motherwell",2024-12-26
+"65","SC0","St Mirren","Rangers",2024-12-26
+"66","SC0","Dundee","Ross County",2024-12-26
+"67","SC0","Ross County","Dundee United",2024-08-10
+"68","SC0","Rangers","Motherwell",2024-08-10
+"69","SC0","Kilmarnock","St Johnstone",2024-08-10
+"70","SC0","Aberdeen","St Mirren",2024-08-10
+"71","SC0","Dundee","Hearts",2024-08-10
+"72","SC0","Hibernian","Celtic",2024-08-11
+"73","SC0","Celtic","St Johnstone",2024-12-29
+"74","SC0","St Mirren","Dundee",2024-12-29
+"75","SC0","Ross County","Hearts",2024-12-29
+"76","SC0","Motherwell","Rangers",2024-12-29
+"77","SC0","Hibernian","Kilmarnock",2024-12-29
+"78","SC0","Dundee United","Aberdeen",2024-12-29
+"79","SC0","Rangers","Celtic",2025-01-02
+"80","SC0","St Johnstone","Hibernian",2025-01-02
+"81","SC0","Hearts","Motherwell",2025-01-02
+"82","SC0","Aberdeen","Ross County",2025-01-02
+"83","SC0","Kilmarnock","St Mirren",2025-01-02
+"84","SC0","Dundee","Dundee United",2025-01-02
+"85","SC0","Celtic","St Mirren",2025-01-05
+"86","SC0","Dundee United","Hearts",2025-01-05
+"87","SC0","St Johnstone","Dundee",2025-01-05
+"88","SC0","Motherwell","Aberdeen",2025-01-05
+"89","SC0","Hibernian","Rangers",2025-01-05
+"90","SC0","Kilmarnock","Ross County",2025-01-05
+"91","SC0","Ross County","Celtic",2025-01-11
+"92","SC0","Aberdeen","Hearts",2025-01-11
+"93","SC0","Rangers","St Johnstone",2025-01-11
+"94","SC0","St Mirren","Dundee United",2025-01-11
+"95","SC0","Dundee","Kilmarnock",2025-01-11
+"96","SC0","Hibernian","Motherwell",2025-01-11
+"97","SC0","Dundee United","Rangers",2025-01-25
+"98","SC0","Ross County","Hibernian",2025-01-25
+"99","SC0","Celtic","Dundee",2025-01-25
+"100","SC0","St Johnstone","Motherwell",2025-01-25
+"101","SC0","Aberdeen","St Mirren",2025-01-25
+"102","SC0","Hearts","Kilmarnock",2025-01-25
+"103","SC0","St Mirren","St Johnstone",2025-02-01
+"104","SC0","Dundee","Hearts",2025-02-01
+"105","SC0","Hibernian","Aberdeen",2025-02-01
+"106","SC0","Kilmarnock","Dundee United",2025-02-01
+"107","SC0","Motherwell","Celtic",2025-02-01
+"108","SC0","Rangers","Ross County",2025-02-01
+"109","SC0","Celtic","Dundee United",2025-02-15
+"110","SC0","Dundee","Aberdeen",2025-02-15
+"111","SC0","St Mirren","Hibernian",2025-02-15
+"112","SC0","Motherwell","Ross County",2025-02-15
+"113","SC0","Kilmarnock","St Johnstone",2025-02-15
+"114","SC0","Hearts","Rangers",2025-02-15
+"115","SC0","Hibernian","Celtic",2025-02-22
+"116","SC0","Rangers","St Mirren",2025-02-22
+"117","SC0","Ross County","Dundee",2025-02-22
+"118","SC0","St Johnstone","Hearts",2025-02-22
+"119","SC0","Dundee United","Motherwell",2025-02-22
+"120","SC0","Aberdeen","Kilmarnock",2025-02-22
+"121","SC0","Kilmarnock","Rangers",2025-02-26
+"122","SC0","Hearts","St Mirren",2025-02-26
+"123","SC0","Celtic","Aberdeen",2025-02-26
+"124","SC0","St Johnstone","Ross County",2025-02-26
+"125","SC0","Dundee United","Hibernian",2025-02-26
+"126","SC0","Motherwell","Dundee",2025-02-26
+"127","SC0","Hibernian","Hearts",2025-03-01
+"128","SC0","Rangers","Motherwell",2025-03-01
+"129","SC0","St Mirren","Celtic",2025-03-01
+"130","SC0","Aberdeen","Dundee United",2025-03-01
+"131","SC0","Dundee","St Johnstone",2025-03-01
+"132","SC0","Ross County","Kilmarnock",2025-03-01
+"133","SC0","Aberdeen","Kilmarnock",2024-08-24
+"134","SC0","Hibernian","Dundee",2024-08-24
+"135","SC0","Motherwell","Hearts",2024-08-24
+"136","SC0","Dundee United","St Johnstone",2024-08-24
+"137","SC0","Rangers","Ross County",2024-08-24
+"138","SC0","St Mirren","Celtic",2024-08-25
+"139","SC0","Motherwell","St Mirren",2025-03-15
+"140","SC0","St Johnstone","Aberdeen",2025-03-15
+"141","SC0","Celtic","Rangers",2025-03-15
+"142","SC0","Kilmarnock","Hibernian",2025-03-15
+"143","SC0","Hearts","Ross County",2025-03-15
+"144","SC0","Dundee United","Dundee",2025-03-15
+"145","SC0","Hibernian","St Johnstone",2025-03-29
+"146","SC0","Ross County","Dundee United",2025-03-29
+"147","SC0","St Mirren","Kilmarnock",2025-03-29
+"148","SC0","Aberdeen","Motherwell",2025-03-29
+"149","SC0","Dundee","Rangers",2025-03-29
+"150","SC0","Celtic","Hearts",2025-03-29
+"151","SC0","Rangers","Hibernian",2025-04-05
+"152","SC0","St Johnstone","Celtic",2025-04-05
+"153","SC0","Ross County","Aberdeen",2025-04-05
+"154","SC0","Hearts","Dundee United",2025-04-05
+"155","SC0","Dundee","St Mirren",2025-04-05
+"156","SC0","Kilmarnock","Motherwell",2025-04-05
+"157","SC0","Hibernian","Dundee",2025-04-12
+"158","SC0","Aberdeen","Rangers",2025-04-12
+"159","SC0","Motherwell","Hearts",2025-04-12
+"160","SC0","Dundee United","St Johnstone",2025-04-12
+"161","SC0","Celtic","Kilmarnock",2025-04-12
+"162","SC0","St Mirren","Ross County",2025-04-12
+"163","SC0","Dundee","St Mirren",2024-08-31
+"164","SC0","Hearts","Dundee United",2024-08-31
+"165","SC0","St Johnstone","Motherwell",2024-08-31
+"166","SC0","Kilmarnock","Hibernian",2024-08-31
+"167","SC0","Ross County","Aberdeen",2024-08-31
+"168","SC0","Celtic","Rangers",2024-09-01
+"169","SC0","St Mirren","Kilmarnock",2024-09-14
+"170","SC0","Aberdeen","Motherwell",2024-09-14
+"171","SC0","Ross County","Dundee",2024-09-14
+"172","SC0","Hibernian","St Johnstone",2024-09-14
+"173","SC0","Dundee United","Rangers",2024-09-14
+"174","SC0","Celtic","Hearts",2024-09-14
+"175","SC0","Hearts","Ross County",2024-09-28
+"176","SC0","St Johnstone","Celtic",2024-09-28
+"177","SC0","Kilmarnock","Dundee United",2024-09-28
+"178","SC0","Motherwell","St Mirren",2024-09-28
+"179","SC0","Dundee","Aberdeen",2024-09-28
+"180","SC0","Rangers","Hibernian",2024-09-28
+"181","SC0","Rangers","St Johnstone",2024-10-05
+"182","SC0","St Mirren","Dundee United",2024-10-05
+"183","SC0","Aberdeen","Hearts",2024-10-05
+"184","SC0","Ross County","Celtic",2024-10-05
+"185","SC0","Hibernian","Motherwell",2024-10-05
+"186","SC0","Dundee","Kilmarnock",2024-10-05
+"187","SC0","Motherwell","Dundee",2024-10-19
+"188","SC0","St Johnstone","Ross County",2024-10-19
+"189","SC0","Hearts","St Mirren",2024-10-19
+"190","SC0","Kilmarnock","Rangers",2024-10-19
+"191","SC0","Celtic","Aberdeen",2024-10-19
+"192","SC0","Dundee United","Hibernian",2024-10-19
+"193","SC0","Rangers","St Mirren",2024-10-26
+"194","SC0","Dundee","St Johnstone",2024-10-26
+"195","SC0","Aberdeen","Dundee United",2024-10-26
+"196","SC0","Motherwell","Celtic",2024-10-26
+"197","SC0","Ross County","Kilmarnock",2024-10-26
+"198","SC0","Hibernian","Hearts",2024-10-26

@@ -1,0 +1,307 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","F1","Reims","Lille",2024-08-18
+"2","F1","Auxerre","Nice",2024-08-18
+"3","F1","Brest","Marseille",2024-08-18
+"4","F1","Montpellier","Strasbourg",2024-08-18
+"5","F1","Toulouse","Nantes",2024-08-18
+"6","F1","Le Havre","Paris SG",2024-08-18
+"7","F1","Rennes","Lyon",2024-08-18
+"8","F1","Angers","Lens",2024-08-18
+"9","F1","Monaco","St Etienne",2024-08-18
+"10","F1","Brest","Nice",2024-11-03
+"11","F1","Monaco","Angers",2024-11-03
+"12","F1","Paris SG","Lens",2024-11-03
+"13","F1","St Etienne","Strasbourg",2024-11-03
+"14","F1","Nantes","Marseille",2024-11-03
+"15","F1","Le Havre","Montpellier",2024-11-03
+"16","F1","Auxerre","Rennes",2024-11-03
+"17","F1","Lille","Lyon",2024-11-03
+"18","F1","Toulouse","Reims",2024-11-03
+"19","F1","Lens","Nantes",2024-11-10
+"20","F1","Marseille","Auxerre",2024-11-10
+"21","F1","Le Havre","Reims",2024-11-10
+"22","F1","Montpellier","Brest",2024-11-10
+"23","F1","Rennes","Toulouse",2024-11-10
+"24","F1","Strasbourg","Monaco",2024-11-10
+"25","F1","Angers","Paris SG",2024-11-10
+"26","F1","Nice","Lille",2024-11-10
+"27","F1","Lyon","St Etienne",2024-11-10
+"28","F1","Lens","Marseille",2024-11-24
+"29","F1","Lille","Rennes",2024-11-24
+"30","F1","Monaco","Brest",2024-11-24
+"31","F1","Reims","Lyon",2024-11-24
+"32","F1","Nice","Strasbourg",2024-11-24
+"33","F1","Paris SG","Toulouse",2024-11-24
+"34","F1","St Etienne","Montpellier",2024-11-24
+"35","F1","Nantes","Le Havre",2024-11-24
+"36","F1","Auxerre","Angers",2024-11-24
+"37","F1","Brest","Strasbourg",2024-12-01
+"38","F1","Lyon","Nice",2024-12-01
+"39","F1","Rennes","St Etienne",2024-12-01
+"40","F1","Montpellier","Lille",2024-12-01
+"41","F1","Reims","Lens",2024-12-01
+"42","F1","Paris SG","Nantes",2024-12-01
+"43","F1","Le Havre","Angers",2024-12-01
+"44","F1","Marseille","Monaco",2024-12-01
+"45","F1","Toulouse","Auxerre",2024-12-01
+"46","F1","Nice","Le Havre",2024-12-08
+"47","F1","Lille","Brest",2024-12-08
+"48","F1","Monaco","Toulouse",2024-12-08
+"49","F1","Strasbourg","Reims",2024-12-08
+"50","F1","Angers","Lyon",2024-12-08
+"51","F1","Auxerre","Paris SG",2024-12-08
+"52","F1","Lens","Montpellier",2024-12-08
+"53","F1","St Etienne","Marseille",2024-12-08
+"54","F1","Nantes","Rennes",2024-12-08
+"55","F1","Montpellier","Nice",2024-12-15
+"56","F1","Brest","Nantes",2024-12-15
+"57","F1","Marseille","Lille",2024-12-15
+"58","F1","Toulouse","St Etienne",2024-12-15
+"59","F1","Paris SG","Lyon",2024-12-15
+"60","F1","Le Havre","Strasbourg",2024-12-15
+"61","F1","Reims","Monaco",2024-12-15
+"62","F1","Rennes","Angers",2024-12-15
+"63","F1","Auxerre","Lens",2024-12-15
+"64","F1","Nice","Rennes",2025-01-05
+"65","F1","St Etienne","Reims",2025-01-05
+"66","F1","Lille","Nantes",2025-01-05
+"67","F1","Lens","Toulouse",2025-01-05
+"68","F1","Marseille","Le Havre",2025-01-05
+"69","F1","Lyon","Montpellier",2025-01-05
+"70","F1","Monaco","Paris SG",2025-01-05
+"71","F1","Angers","Brest",2025-01-05
+"72","F1","Strasbourg","Auxerre",2025-01-05
+"73","F1","Auxerre","Lille",2025-01-12
+"74","F1","Montpellier","Angers",2025-01-12
+"75","F1","Brest","Lyon",2025-01-12
+"76","F1","Le Havre","Lens",2025-01-12
+"77","F1","Paris SG","St Etienne",2025-01-12
+"78","F1","Reims","Nice",2025-01-12
+"79","F1","Nantes","Monaco",2025-01-12
+"80","F1","Rennes","Marseille",2025-01-12
+"81","F1","Toulouse","Strasbourg",2025-01-12
+"82","F1","Rennes","Brest",2025-01-19
+"83","F1","Lille","Nice",2025-01-19
+"84","F1","Lyon","Toulouse",2025-01-19
+"85","F1","Angers","Auxerre",2025-01-19
+"86","F1","Reims","Le Havre",2025-01-19
+"87","F1","St Etienne","Nantes",2025-01-19
+"88","F1","Lens","Paris SG",2025-01-19
+"89","F1","Montpellier","Monaco",2025-01-19
+"90","F1","Marseille","Strasbourg",2025-01-19
+"91","F1","Lens","Angers",2025-01-26
+"92","F1","Monaco","Rennes",2025-01-26
+"93","F1","Le Havre","Brest",2025-01-26
+"94","F1","Auxerre","St Etienne",2025-01-26
+"95","F1","Toulouse","Montpellier",2025-01-26
+"96","F1","Nantes","Lyon",2025-01-26
+"97","F1","Paris SG","Reims",2025-01-26
+"98","F1","Nice","Marseille",2025-01-26
+"99","F1","Strasbourg","Lille",2025-01-26
+"100","F1","Lyon","Monaco",2024-08-25
+"101","F1","Nice","Toulouse",2024-08-25
+"102","F1","Marseille","Reims",2024-08-25
+"103","F1","Nantes","Auxerre",2024-08-25
+"104","F1","Lille","Angers",2024-08-25
+"105","F1","Lens","Brest",2024-08-25
+"106","F1","Paris SG","Montpellier",2024-08-25
+"107","F1","Strasbourg","Rennes",2024-08-25
+"108","F1","St Etienne","Le Havre",2024-08-25
+"109","F1","Montpellier","Lens",2025-02-02
+"110","F1","Marseille","Lyon",2025-02-02
+"111","F1","Lille","St Etienne",2025-02-02
+"112","F1","Toulouse","Nice",2025-02-02
+"113","F1","Brest","Paris SG",2025-02-02
+"114","F1","Angers","Le Havre",2025-02-02
+"115","F1","Monaco","Auxerre",2025-02-02
+"116","F1","Rennes","Strasbourg",2025-02-02
+"117","F1","Reims","Nantes",2025-02-02
+"118","F1","Auxerre","Toulouse",2025-02-09
+"119","F1","Strasbourg","Montpellier",2025-02-09
+"120","F1","Lyon","Reims",2025-02-09
+"121","F1","Nice","Lens",2025-02-09
+"122","F1","Nantes","Brest",2025-02-09
+"123","F1","Angers","Marseille",2025-02-09
+"124","F1","Lille","Le Havre",2025-02-09
+"125","F1","Paris SG","Monaco",2025-02-09
+"126","F1","St Etienne","Rennes",2025-02-09
+"127","F1","Marseille","St Etienne",2025-02-16
+"128","F1","Montpellier","Lyon",2025-02-16
+"129","F1","Monaco","Nantes",2025-02-16
+"130","F1","Toulouse","Paris SG",2025-02-16
+"131","F1","Brest","Auxerre",2025-02-16
+"132","F1","Reims","Angers",2025-02-16
+"133","F1","Lens","Strasbourg",2025-02-16
+"134","F1","Le Havre","Nice",2025-02-16
+"135","F1","Rennes","Lille",2025-02-16
+"136","F1","Nantes","Lens",2025-02-23
+"137","F1","Rennes","Reims",2025-02-23
+"138","F1","Lyon","Paris SG",2025-02-23
+"139","F1","Strasbourg","Brest",2025-02-23
+"140","F1","St Etienne","Angers",2025-02-23
+"141","F1","Le Havre","Toulouse",2025-02-23
+"142","F1","Nice","Montpellier",2025-02-23
+"143","F1","Lille","Monaco",2025-02-23
+"144","F1","Auxerre","Marseille",2025-02-23
+"145","F1","Paris SG","Lille",2025-03-02
+"146","F1","Auxerre","Strasbourg",2025-03-02
+"147","F1","Montpellier","Rennes",2025-03-02
+"148","F1","St Etienne","Nice",2025-03-02
+"149","F1","Lyon","Brest",2025-03-02
+"150","F1","Angers","Toulouse",2025-03-02
+"151","F1","Marseille","Nantes",2025-03-02
+"152","F1","Lens","Le Havre",2025-03-02
+"153","F1","Monaco","Reims",2025-03-02
+"154","F1","Nantes","Strasbourg",2025-03-09
+"155","F1","Brest","Angers",2025-03-09
+"156","F1","Rennes","Paris SG",2025-03-09
+"157","F1","Nice","Lyon",2025-03-09
+"158","F1","Lille","Montpellier",2025-03-09
+"159","F1","Reims","Auxerre",2025-03-09
+"160","F1","Le Havre","St Etienne",2025-03-09
+"161","F1","Toulouse","Monaco",2025-03-09
+"162","F1","Marseille","Lens",2025-03-09
+"163","F1","Montpellier","St Etienne",2025-03-16
+"164","F1","Brest","Reims",2025-03-16
+"165","F1","Strasbourg","Toulouse",2025-03-16
+"166","F1","Lyon","Le Havre",2025-03-16
+"167","F1","Angers","Monaco",2025-03-16
+"168","F1","Lens","Rennes",2025-03-16
+"169","F1","Nice","Auxerre",2025-03-16
+"170","F1","Nantes","Lille",2025-03-16
+"171","F1","Paris SG","Marseille",2025-03-16
+"172","F1","Lille","Lens",2025-03-30
+"173","F1","Le Havre","Nantes",2025-03-30
+"174","F1","Toulouse","Brest",2025-03-30
+"175","F1","Monaco","Nice",2025-03-30
+"176","F1","Auxerre","Montpellier",2025-03-30
+"177","F1","Reims","Marseille",2025-03-30
+"178","F1","Strasbourg","Lyon",2025-03-30
+"179","F1","Angers","Rennes",2025-03-30
+"180","F1","St Etienne","Paris SG",2025-03-30
+"181","F1","Montpellier","Le Havre",2025-04-06
+"182","F1","Marseille","Toulouse",2025-04-06
+"183","F1","Nice","Nantes",2025-04-06
+"184","F1","Brest","Monaco",2025-04-06
+"185","F1","Reims","Strasbourg",2025-04-06
+"186","F1","Lyon","Lille",2025-04-06
+"187","F1","Lens","St Etienne",2025-04-06
+"188","F1","Paris SG","Angers",2025-04-06
+"189","F1","Rennes","Auxerre",2025-04-06
+"190","F1","Toulouse","Lille",2025-04-13
+"191","F1","Nantes","Paris SG",2025-04-13
+"192","F1","Lens","Reims",2025-04-13
+"193","F1","Angers","Montpellier",2025-04-13
+"194","F1","Strasbourg","Nice",2025-04-13
+"195","F1","St Etienne","Brest",2025-04-13
+"196","F1","Le Havre","Rennes",2025-04-13
+"197","F1","Monaco","Marseille",2025-04-13
+"198","F1","Auxerre","Lyon",2025-04-13
+"199","F1","Lyon","Strasbourg",2024-09-01
+"200","F1","Le Havre","Auxerre",2024-09-01
+"201","F1","Lille","Paris SG",2024-09-01
+"202","F1","Reims","Rennes",2024-09-01
+"203","F1","Montpellier","Nantes",2024-09-01
+"204","F1","Brest","St Etienne",2024-09-01
+"205","F1","Angers","Nice",2024-09-01
+"206","F1","Monaco","Lens",2024-09-01
+"207","F1","Toulouse","Marseille",2024-09-01
+"208","F1","St Etienne","Lyon",2025-04-20
+"209","F1","Brest","Lens",2025-04-20
+"210","F1","Nice","Angers",2025-04-20
+"211","F1","Marseille","Montpellier",2025-04-20
+"212","F1","Rennes","Nantes",2025-04-20
+"213","F1","Reims","Toulouse",2025-04-20
+"214","F1","Paris SG","Le Havre",2025-04-20
+"215","F1","Monaco","Strasbourg",2025-04-20
+"216","F1","Lille","Auxerre",2025-04-20
+"217","F1","Lens","Auxerre",2025-04-27
+"218","F1","Lyon","Rennes",2025-04-27
+"219","F1","Le Havre","Monaco",2025-04-27
+"220","F1","Montpellier","Reims",2025-04-27
+"221","F1","Nantes","Toulouse",2025-04-27
+"222","F1","Paris SG","Nice",2025-04-27
+"223","F1","Angers","Lille",2025-04-27
+"224","F1","Strasbourg","St Etienne",2025-04-27
+"225","F1","Marseille","Brest",2025-04-27
+"226","F1","Brest","Montpellier",2025-05-04
+"227","F1","Nice","Reims",2025-05-04
+"228","F1","Lille","Marseille",2025-05-04
+"229","F1","St Etienne","Monaco",2025-05-04
+"230","F1","Lyon","Lens",2025-05-04
+"231","F1","Auxerre","Le Havre",2025-05-04
+"232","F1","Strasbourg","Paris SG",2025-05-04
+"233","F1","Nantes","Angers",2025-05-04
+"234","F1","Toulouse","Rennes",2025-05-04
+"235","F1","Brest","Lille",2025-05-11
+"236","F1","Monaco","Lyon",2025-05-11
+"237","F1","Auxerre","Nantes",2025-05-11
+"238","F1","Toulouse","Lens",2025-05-11
+"239","F1","Le Havre","Marseille",2025-05-11
+"240","F1","Montpellier","Paris SG",2025-05-11
+"241","F1","Rennes","Nice",2025-05-11
+"242","F1","Reims","St Etienne",2025-05-11
+"243","F1","Angers","Strasbourg",2025-05-11
+"244","F1","St Etienne","Toulouse",2025-05-18
+"245","F1","Marseille","Rennes",2025-05-18
+"246","F1","Nice","Brest",2025-05-18
+"247","F1","Lyon","Angers",2025-05-18
+"248","F1","Strasbourg","Le Havre",2025-05-18
+"249","F1","Paris SG","Auxerre",2025-05-18
+"250","F1","Lille","Reims",2025-05-18
+"251","F1","Nantes","Montpellier",2025-05-18
+"252","F1","Lens","Monaco",2025-05-18
+"253","F1","Strasbourg","Angers",2024-09-15
+"254","F1","Nantes","Reims",2024-09-15
+"255","F1","Marseille","Nice",2024-09-15
+"256","F1","St Etienne","Lille",2024-09-15
+"257","F1","Lens","Lyon",2024-09-15
+"258","F1","Rennes","Montpellier",2024-09-15
+"259","F1","Auxerre","Monaco",2024-09-15
+"260","F1","Paris SG","Brest",2024-09-15
+"261","F1","Toulouse","Le Havre",2024-09-15
+"262","F1","Monaco","Le Havre",2024-09-22
+"263","F1","Lille","Strasbourg",2024-09-22
+"264","F1","Lyon","Marseille",2024-09-22
+"265","F1","Angers","Nantes",2024-09-22
+"266","F1","Reims","Paris SG",2024-09-22
+"267","F1","Rennes","Lens",2024-09-22
+"268","F1","Brest","Toulouse",2024-09-22
+"269","F1","Nice","St Etienne",2024-09-22
+"270","F1","Montpellier","Auxerre",2024-09-22
+"271","F1","Angers","Reims",2024-09-29
+"272","F1","Lens","Nice",2024-09-29
+"273","F1","Nantes","St Etienne",2024-09-29
+"274","F1","Monaco","Montpellier",2024-09-29
+"275","F1","Auxerre","Brest",2024-09-29
+"276","F1","Toulouse","Lyon",2024-09-29
+"277","F1","Paris SG","Rennes",2024-09-29
+"278","F1","Le Havre","Lille",2024-09-29
+"279","F1","Strasbourg","Marseille",2024-09-29
+"280","F1","Lyon","Nantes",2024-10-06
+"281","F1","Strasbourg","Lens",2024-10-06
+"282","F1","Nice","Paris SG",2024-10-06
+"283","F1","St Etienne","Auxerre",2024-10-06
+"284","F1","Reims","Montpellier",2024-10-06
+"285","F1","Lille","Toulouse",2024-10-06
+"286","F1","Marseille","Angers",2024-10-06
+"287","F1","Brest","Le Havre",2024-10-06
+"288","F1","Rennes","Monaco",2024-10-06
+"289","F1","St Etienne","Lens",2024-10-20
+"290","F1","Montpellier","Marseille",2024-10-20
+"291","F1","Monaco","Lille",2024-10-20
+"292","F1","Auxerre","Reims",2024-10-20
+"293","F1","Nantes","Nice",2024-10-20
+"294","F1","Paris SG","Strasbourg",2024-10-20
+"295","F1","Toulouse","Angers",2024-10-20
+"296","F1","Le Havre","Lyon",2024-10-20
+"297","F1","Brest","Rennes",2024-10-20
+"298","F1","Montpellier","Toulouse",2024-10-27
+"299","F1","Nice","Monaco",2024-10-27
+"300","F1","Rennes","Le Havre",2024-10-27
+"301","F1","Angers","St Etienne",2024-10-27
+"302","F1","Reims","Brest",2024-10-27
+"303","F1","Strasbourg","Nantes",2024-10-27
+"304","F1","Lens","Lille",2024-10-27
+"305","F1","Lyon","Auxerre",2024-10-27
+"306","F1","Marseille","Paris SG",2024-10-27

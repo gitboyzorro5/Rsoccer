@@ -1,32 +1,29 @@
-"","Div","Home_Team","Away_Team","Date"
-"4679","I1","Juventus","Monza",2024-05-26
-"4680","I1","Lazio","Sassuolo",2024-05-26
-"4681","I1","Milan","Salernitana",2024-05-26
-"4682","I1","Napoli","Lecce",2024-05-26
-"4683","I1","Verona","Inter",2024-05-26
-"4684","I1","Atalanta","Torino",2024-05-26
-"4685","I1","Cagliari","Fiorentina",2024-05-26
-"4686","I1","Empoli","Roma",2024-05-26
-"4687","I1","Frosinone","Udinese",2024-05-26
-"4688","I1","Genoa","Bologna",2024-05-26
-"6785","SP1","Almeria","Cadiz",2024-05-26
-"6786","SP1","Celta","Valencia",2024-05-26
-"6787","SP1","Getafe","Mallorca",2024-05-26
-"6788","SP1","Girona","Granada",2024-05-26
-"6789","SP1","Osasuna","Villarreal",2024-05-26
-"6790","SP1","Vallecano","Ath Bilbao",2024-05-26
-"6791","SP1","Sociedad","Ath Madrid",2024-05-26
-"6792","SP1","Sevilla","Barcelona",2024-05-26
-"6793","SP1","Real Madrid","Betis",2024-05-26
-"6794","SP1","Las Palmas","Alaves",2024-05-26
-"6808","SP2","Albacete","Mirandes",2024-05-26
-"6845","SP2","Amorebieta","Espanol",2024-05-26
-"6896","SP2","Burgos","Tenerife",2024-05-26
-"6910","SP2","Cartagena","Huesca",2024-05-26
-"6949","SP2","Elche","Eldense",2024-05-26
-"7016","SP2","Ferrol","Leganes",2024-05-26
-"7069","SP2","Levante","Alcorcon",2024-05-26
-"7113","SP2","Oviedo","Andorra",2024-05-26
-"7151","SP2","Santander","Zaragoza",2024-05-26
-"7158","SP2","Sp Gijon","Eibar",2024-05-26
-"7213","SP2","Valladolid","Villarreal B",2024-05-26
+"","Div","HomeTeam","AwayTeam","Date"
+"89","B1","St. Gilloise","Beerschot VA",2024-08-02
+"90","B1","Mechelen","Westerlo",2024-08-03
+"91","B1","Oud-Heverlee Leuven","Genk",2024-08-03
+"92","B1","St Truiden","Charleroi",2024-08-03
+"93","B1","Antwerp","Anderlecht",2024-08-04
+"94","B1","Cercle Brugge","Kortrijk",2024-08-04
+"95","B1","Standard","Club Brugge",2024-08-04
+"96","B1","Gent","Dender",2024-08-04
+"927","D2","FC Koln","Hamburg",2024-08-02
+"928","D2","Hertha","Paderborn",2024-08-03
+"929","D2","Karlsruher","Nurnberg",2024-08-03
+"930","D2","Hannover","Regensburg",2024-08-03
+"931","D2","Magdeburg","Elversberg",2024-08-03
+"932","D2","Schalke 04","Braunschweig",2024-08-03
+"933","D2","Darmstadt","Fortuna Dusseldorf",2024-08-04
+"934","D2","Ulm","Kaiserslautern",2024-08-04
+"935","D2","Greuther Furth","Preußen Münster",2024-08-04
+"4947","SC0","Hearts","Rangers",2024-08-03
+"4948","SC0","Motherwell","Ross County",2024-08-03
+"4949","SC0","Dundee United","Dundee",2024-08-04
+"4950","SC0","St Mirren","Hibernian",2024-08-04
+"4951","SC0","Celtic","Kilmarnock",2024-08-04
+"4952","SC0","St Johnstone","Aberdeen",2024-08-05
+"5145","SC1","Falkirk","Queens Park",2024-08-02
+"5146","SC1","Partick","Morton",2024-08-03
+"5147","SC1","Hamilton","Ayr",2024-08-03
+"5148","SC1","Airdrie Utd","Raith Rvs",2024-08-03
+"5149","SC1","Livingston","Dunfermline",2024-08-03

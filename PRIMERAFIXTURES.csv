@@ -1,0 +1,307 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","P1","Sp Lisbon","Rio Ave",2024-08-09
+"2","P1","AVS Futebol","Nacional",2024-08-10
+"3","P1","Casa Pia","Boavista",2024-08-10
+"4","P1","Porto","Gil Vicente",2024-08-10
+"5","P1","Estoril","Santa Clara",2024-08-11
+"6","P1","Farense","Moreirense",2024-08-11
+"7","P1","Famalicao","Benfica",2024-08-11
+"8","P1","Sp Braga","Estrela",2024-08-11
+"9","P1","Arouca","Vitoria",2024-08-12
+"10","P1","AVS Futebol","Famalicao",2024-11-03
+"11","P1","Nacional","Santa Clara",2024-11-03
+"12","P1","Porto","Estoril",2024-11-03
+"13","P1","Sp Lisbon","Estrela",2024-11-03
+"14","P1","Gil Vicente","Boavista",2024-11-03
+"15","P1","Vitoria","Moreirense",2024-11-03
+"16","P1","Rio Ave","Casa Pia",2024-11-03
+"17","P1","Farense","Benfica",2024-11-03
+"18","P1","Arouca","Sp Braga",2024-11-03
+"19","P1","Boavista","Rio Ave",2024-11-10
+"20","P1","Estoril","AVS Futebol",2024-11-10
+"21","P1","Estrela","Nacional",2024-11-10
+"22","P1","Famalicao","Arouca",2024-11-10
+"23","P1","Casa Pia","Farense",2024-11-10
+"24","P1","Moreirense","Gil Vicente",2024-11-10
+"25","P1","Sp Braga","Sp Lisbon",2024-11-10
+"26","P1","Santa Clara","Vitoria",2024-11-10
+"27","P1","Benfica","Porto",2024-11-10
+"28","P1","Vitoria","Gil Vicente",2024-12-01
+"29","P1","AVS Futebol","Sp Braga",2024-12-01
+"30","P1","Estoril","Famalicao",2024-12-01
+"31","P1","Nacional","Boavista",2024-12-01
+"32","P1","Porto","Casa Pia",2024-12-01
+"33","P1","Arouca","Benfica",2024-12-01
+"34","P1","Rio Ave","Moreirense",2024-12-01
+"35","P1","Sp Lisbon","Santa Clara",2024-12-01
+"36","P1","Farense","Estrela",2024-12-01
+"37","P1","Gil Vicente","Nacional",2024-12-08
+"38","P1","Benfica","Vitoria",2024-12-08
+"39","P1","Sp Braga","Estoril",2024-12-08
+"40","P1","Boavista","Farense",2024-12-08
+"41","P1","Famalicao","Porto",2024-12-08
+"42","P1","Casa Pia","AVS Futebol",2024-12-08
+"43","P1","Santa Clara","Rio Ave",2024-12-08
+"44","P1","Estrela","Arouca",2024-12-08
+"45","P1","Moreirense","Sp Lisbon",2024-12-08
+"46","P1","Porto","Estrela",2024-12-15
+"47","P1","Estoril","Casa Pia",2024-12-15
+"48","P1","Nacional","Moreirense",2024-12-15
+"49","P1","Arouca","Santa Clara",2024-12-15
+"50","P1","Sp Braga","Famalicao",2024-12-15
+"51","P1","Rio Ave","Vitoria",2024-12-15
+"52","P1","Sp Lisbon","Boavista",2024-12-15
+"53","P1","Farense","Gil Vicente",2024-12-15
+"54","P1","AVS Futebol","Benfica",2024-12-15
+"55","P1","Vitoria","Nacional",2024-12-22
+"56","P1","Benfica","Estoril",2024-12-22
+"57","P1","Moreirense","Porto",2024-12-22
+"58","P1","Casa Pia","Arouca",2024-12-22
+"59","P1","Famalicao","Farense",2024-12-22
+"60","P1","Santa Clara","Sp Braga",2024-12-22
+"61","P1","Estrela","Rio Ave",2024-12-22
+"62","P1","Gil Vicente","Sp Lisbon",2024-12-22
+"63","P1","Boavista","AVS Futebol",2024-12-22
+"64","P1","Estoril","Moreirense",2024-12-29
+"65","P1","Porto","Boavista",2024-12-29
+"66","P1","Sp Braga","Casa Pia",2024-12-29
+"67","P1","Sp Lisbon","Benfica",2024-12-29
+"68","P1","Arouca","Gil Vicente",2024-12-29
+"69","P1","Famalicao","Santa Clara",2024-12-29
+"70","P1","AVS Futebol","Estrela",2024-12-29
+"71","P1","Farense","Vitoria",2024-12-29
+"72","P1","Rio Ave","Nacional",2024-12-29
+"73","P1","Estrela","Estoril",2025-01-05
+"74","P1","Benfica","Sp Braga",2025-01-05
+"75","P1","Casa Pia","Famalicao",2025-01-05
+"76","P1","Nacional","Porto",2025-01-05
+"77","P1","Moreirense","AVS Futebol",2025-01-05
+"78","P1","Gil Vicente","Rio Ave",2025-01-05
+"79","P1","Vitoria","Sp Lisbon",2025-01-05
+"80","P1","Santa Clara","Farense",2025-01-05
+"81","P1","Boavista","Arouca",2025-01-05
+"82","P1","Gil Vicente","Porto",2025-01-19
+"83","P1","Rio Ave","Sp Lisbon",2025-01-19
+"84","P1","Nacional","AVS Futebol",2025-01-19
+"85","P1","Vitoria","Arouca",2025-01-19
+"86","P1","Estrela","Sp Braga",2025-01-19
+"87","P1","Santa Clara","Estoril",2025-01-19
+"88","P1","Moreirense","Farense",2025-01-19
+"89","P1","Boavista","Casa Pia",2025-01-19
+"90","P1","Benfica","Famalicao",2025-01-19
+"91","P1","AVS Futebol","Gil Vicente",2025-01-26
+"92","P1","Porto","Santa Clara",2025-01-26
+"93","P1","Famalicao","Estrela",2025-01-26
+"94","P1","Estoril","Vitoria",2025-01-26
+"95","P1","Arouca","Moreirense",2025-01-26
+"96","P1","Casa Pia","Benfica",2025-01-26
+"97","P1","Farense","Rio Ave",2025-01-26
+"98","P1","Sp Lisbon","Nacional",2025-01-26
+"99","P1","Sp Braga","Boavista",2025-01-26
+"100","P1","Santa Clara","Porto",2024-08-16
+"101","P1","Gil Vicente","AVS Futebol",2024-08-16
+"102","P1","Rio Ave","Farense",2024-08-17
+"103","P1","Nacional","Sp Lisbon",2024-08-17
+"104","P1","Benfica","Casa Pia",2024-08-17
+"105","P1","Vitoria","Estoril",2024-08-18
+"106","P1","Boavista","Sp Braga",2024-08-18
+"107","P1","Moreirense","Arouca",2024-08-18
+"108","P1","Estrela","Famalicao",2024-08-19
+"109","P1","Moreirense","Sp Braga",2025-02-02
+"110","P1","Boavista","Famalicao",2025-02-02
+"111","P1","Vitoria","AVS Futebol",2025-02-02
+"112","P1","Gil Vicente","Estoril",2025-02-02
+"113","P1","Nacional","Arouca",2025-02-02
+"114","P1","Rio Ave","Porto",2025-02-02
+"115","P1","Estrela","Benfica",2025-02-02
+"116","P1","Sp Lisbon","Farense",2025-02-02
+"117","P1","Santa Clara","Casa Pia",2025-02-02
+"118","P1","Benfica","Moreirense",2025-02-09
+"119","P1","Famalicao","Vitoria",2025-02-09
+"120","P1","Arouca","Rio Ave",2025-02-09
+"121","P1","AVS Futebol","Santa Clara",2025-02-09
+"122","P1","Farense","Nacional",2025-02-09
+"123","P1","Casa Pia","Estrela",2025-02-09
+"124","P1","Porto","Sp Lisbon",2025-02-09
+"125","P1","Estoril","Boavista",2025-02-09
+"126","P1","Sp Braga","Gil Vicente",2025-02-09
+"127","P1","Santa Clara","Benfica",2025-02-16
+"128","P1","Sp Lisbon","Arouca",2025-02-16
+"129","P1","Nacional","Estoril",2025-02-16
+"130","P1","Gil Vicente","Famalicao",2025-02-16
+"131","P1","Farense","Porto",2025-02-16
+"132","P1","Rio Ave","AVS Futebol",2025-02-16
+"133","P1","Moreirense","Casa Pia",2025-02-16
+"134","P1","Vitoria","Sp Braga",2025-02-16
+"135","P1","Boavista","Estrela",2025-02-16
+"136","P1","Famalicao","Moreirense",2025-02-23
+"137","P1","AVS Futebol","Sp Lisbon",2025-02-23
+"138","P1","Porto","Vitoria",2025-02-23
+"139","P1","Sp Braga","Nacional",2025-02-23
+"140","P1","Benfica","Boavista",2025-02-23
+"141","P1","Casa Pia","Gil Vicente",2025-02-23
+"142","P1","Arouca","Farense",2025-02-23
+"143","P1","Estrela","Santa Clara",2025-02-23
+"144","P1","Estoril","Rio Ave",2025-02-23
+"145","P1","Farense","AVS Futebol",2025-03-02
+"146","P1","Vitoria","Casa Pia",2025-03-02
+"147","P1","Moreirense","Estrela",2025-03-02
+"148","P1","Gil Vicente","Benfica",2025-03-02
+"149","P1","Nacional","Famalicao",2025-03-02
+"150","P1","Sp Lisbon","Estoril",2025-03-02
+"151","P1","Boavista","Santa Clara",2025-03-02
+"152","P1","Arouca","Porto",2025-03-02
+"153","P1","Rio Ave","Sp Braga",2025-03-02
+"154","P1","Sp Braga","Porto",2025-03-09
+"155","P1","Casa Pia","Sp Lisbon",2025-03-09
+"156","P1","Estrela","Gil Vicente",2025-03-09
+"157","P1","Boavista","Vitoria",2025-03-09
+"158","P1","Estoril","Farense",2025-03-09
+"159","P1","Benfica","Nacional",2025-03-09
+"160","P1","Famalicao","Rio Ave",2025-03-09
+"161","P1","Santa Clara","Moreirense",2025-03-09
+"162","P1","AVS Futebol","Arouca",2025-03-09
+"163","P1","Porto","AVS Futebol",2025-03-16
+"164","P1","Rio Ave","Benfica",2025-03-16
+"165","P1","Moreirense","Boavista",2025-03-16
+"166","P1","Farense","Sp Braga",2025-03-16
+"167","P1","Nacional","Casa Pia",2025-03-16
+"168","P1","Vitoria","Estrela",2025-03-16
+"169","P1","Gil Vicente","Santa Clara",2025-03-16
+"170","P1","Sp Lisbon","Famalicao",2025-03-16
+"171","P1","Arouca","Estoril",2025-03-16
+"172","P1","Casa Pia","Rio Ave",2025-03-30
+"173","P1","Boavista","Gil Vicente",2025-03-30
+"174","P1","Estoril","Porto",2025-03-30
+"175","P1","Benfica","Farense",2025-03-30
+"176","P1","Sp Braga","Arouca",2025-03-30
+"177","P1","Moreirense","Vitoria",2025-03-30
+"178","P1","Famalicao","AVS Futebol",2025-03-30
+"179","P1","Estrela","Sp Lisbon",2025-03-30
+"180","P1","Santa Clara","Nacional",2025-03-30
+"181","P1","Sp Lisbon","Sp Braga",2025-04-06
+"182","P1","Vitoria","Santa Clara",2025-04-06
+"183","P1","Porto","Benfica",2025-04-06
+"184","P1","Arouca","Famalicao",2025-04-06
+"185","P1","Rio Ave","Boavista",2025-04-06
+"186","P1","AVS Futebol","Estoril",2025-04-06
+"187","P1","Nacional","Estrela",2025-04-06
+"188","P1","Gil Vicente","Moreirense",2025-04-06
+"189","P1","Farense","Casa Pia",2025-04-06
+"190","P1","Estrela","Farense",2025-04-13
+"191","P1","Boavista","Nacional",2025-04-13
+"192","P1","Sp Braga","AVS Futebol",2025-04-13
+"193","P1","Famalicao","Estoril",2025-04-13
+"194","P1","Moreirense","Rio Ave",2025-04-13
+"195","P1","Benfica","Arouca",2025-04-13
+"196","P1","Casa Pia","Porto",2025-04-13
+"197","P1","Santa Clara","Sp Lisbon",2025-04-13
+"198","P1","Gil Vicente","Vitoria",2025-04-13
+"199","P1","Farense","Sp Lisbon",2024-08-23
+"200","P1","Porto","Rio Ave",2024-08-24
+"201","P1","Casa Pia","Santa Clara",2024-08-24
+"202","P1","Benfica","Estrela",2024-08-24
+"203","P1","Famalicao","Boavista",2024-08-24
+"204","P1","Estoril","Gil Vicente",2024-08-25
+"205","P1","AVS Futebol","Vitoria",2024-08-25
+"206","P1","Arouca","Nacional",2024-08-25
+"207","P1","Sp Braga","Moreirense",2024-08-25
+"208","P1","Nacional","Gil Vicente",2025-04-19
+"209","P1","Farense","Boavista",2025-04-19
+"210","P1","Arouca","Estrela",2025-04-19
+"211","P1","Estoril","Sp Braga",2025-04-19
+"212","P1","Rio Ave","Santa Clara",2025-04-19
+"213","P1","Porto","Famalicao",2025-04-19
+"214","P1","AVS Futebol","Casa Pia",2025-04-19
+"215","P1","Vitoria","Benfica",2025-04-19
+"216","P1","Sp Lisbon","Moreirense",2025-04-19
+"217","P1","Santa Clara","Arouca",2025-04-27
+"218","P1","Moreirense","Nacional",2025-04-27
+"219","P1","Estrela","Porto",2025-04-27
+"220","P1","Casa Pia","Estoril",2025-04-27
+"221","P1","Famalicao","Sp Braga",2025-04-27
+"222","P1","Vitoria","Rio Ave",2025-04-27
+"223","P1","Benfica","AVS Futebol",2025-04-27
+"224","P1","Boavista","Sp Lisbon",2025-04-27
+"225","P1","Gil Vicente","Farense",2025-04-27
+"226","P1","Sp Lisbon","Gil Vicente",2025-05-04
+"227","P1","Porto","Moreirense",2025-05-04
+"228","P1","AVS Futebol","Boavista",2025-05-04
+"229","P1","Estoril","Benfica",2025-05-04
+"230","P1","Rio Ave","Estrela",2025-05-04
+"231","P1","Arouca","Casa Pia",2025-05-04
+"232","P1","Nacional","Vitoria",2025-05-04
+"233","P1","Farense","Famalicao",2025-05-04
+"234","P1","Sp Braga","Santa Clara",2025-05-04
+"235","P1","Nacional","Rio Ave",2025-05-11
+"236","P1","Benfica","Sp Lisbon",2025-05-11
+"237","P1","Gil Vicente","Arouca",2025-05-11
+"238","P1","Casa Pia","Sp Braga",2025-05-11
+"239","P1","Santa Clara","Famalicao",2025-05-11
+"240","P1","Boavista","Porto",2025-05-11
+"241","P1","Estrela","AVS Futebol",2025-05-11
+"242","P1","Vitoria","Farense",2025-05-11
+"243","P1","Moreirense","Estoril",2025-05-11
+"244","P1","Estoril","Estrela",2025-05-17
+"245","P1","AVS Futebol","Moreirense",2025-05-17
+"246","P1","Rio Ave","Gil Vicente",2025-05-17
+"247","P1","Arouca","Boavista",2025-05-17
+"248","P1","Famalicao","Casa Pia",2025-05-17
+"249","P1","Sp Lisbon","Vitoria",2025-05-17
+"250","P1","Sp Braga","Benfica",2025-05-17
+"251","P1","Porto","Nacional",2025-05-17
+"252","P1","Farense","Santa Clara",2025-05-17
+"253","P1","Moreirense","Benfica",2024-08-30
+"254","P1","Boavista","Estoril",2024-08-31
+"255","P1","Santa Clara","AVS Futebol",2024-08-31
+"256","P1","Sp Lisbon","Porto",2024-08-31
+"257","P1","Estrela","Casa Pia",2024-08-31
+"258","P1","Vitoria","Famalicao",2024-09-01
+"259","P1","Gil Vicente","Sp Braga",2024-09-01
+"260","P1","Nacional","Farense",2024-09-01
+"261","P1","Rio Ave","Arouca",2024-09-01
+"262","P1","Benfica","Santa Clara",2024-09-15
+"263","P1","Porto","Farense",2024-09-15
+"264","P1","Estrela","Boavista",2024-09-15
+"265","P1","Sp Braga","Vitoria",2024-09-15
+"266","P1","Arouca","Sp Lisbon",2024-09-15
+"267","P1","Estoril","Nacional",2024-09-15
+"268","P1","Famalicao","Gil Vicente",2024-09-15
+"269","P1","AVS Futebol","Rio Ave",2024-09-15
+"270","P1","Casa Pia","Moreirense",2024-09-15
+"271","P1","Gil Vicente","Casa Pia",2024-09-22
+"272","P1","Sp Lisbon","AVS Futebol",2024-09-22
+"273","P1","Moreirense","Famalicao",2024-09-22
+"274","P1","Boavista","Benfica",2024-09-22
+"275","P1","Farense","Arouca",2024-09-22
+"276","P1","Nacional","Sp Braga",2024-09-22
+"277","P1","Vitoria","Porto",2024-09-22
+"278","P1","Rio Ave","Estoril",2024-09-22
+"279","P1","Santa Clara","Estrela",2024-09-22
+"280","P1","Famalicao","Nacional",2024-09-29
+"281","P1","Porto","Arouca",2024-09-29
+"282","P1","AVS Futebol","Farense",2024-09-29
+"283","P1","Estoril","Sp Lisbon",2024-09-29
+"284","P1","Benfica","Gil Vicente",2024-09-29
+"285","P1","Santa Clara","Boavista",2024-09-29
+"286","P1","Sp Braga","Rio Ave",2024-09-29
+"287","P1","Estrela","Moreirense",2024-09-29
+"288","P1","Casa Pia","Vitoria",2024-09-29
+"289","P1","Porto","Sp Braga",2024-10-06
+"290","P1","Vitoria","Boavista",2024-10-06
+"291","P1","Arouca","AVS Futebol",2024-10-06
+"292","P1","Moreirense","Santa Clara",2024-10-06
+"293","P1","Farense","Estoril",2024-10-06
+"294","P1","Nacional","Benfica",2024-10-06
+"295","P1","Sp Lisbon","Casa Pia",2024-10-06
+"296","P1","Rio Ave","Famalicao",2024-10-06
+"297","P1","Gil Vicente","Estrela",2024-10-06
+"298","P1","Casa Pia","Nacional",2024-10-27
+"299","P1","AVS Futebol","Porto",2024-10-27
+"300","P1","Santa Clara","Gil Vicente",2024-10-27
+"301","P1","Sp Braga","Farense",2024-10-27
+"302","P1","Estoril","Arouca",2024-10-27
+"303","P1","Benfica","Rio Ave",2024-10-27
+"304","P1","Boavista","Moreirense",2024-10-27
+"305","P1","Estrela","Vitoria",2024-10-27
+"306","P1","Famalicao","Sp Lisbon",2024-10-27

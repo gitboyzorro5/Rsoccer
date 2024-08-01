@@ -1,0 +1,463 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","SP2","Granada","Albacete",2024-08-15
+"2","SP2","Mirandes","Cordoba",2024-08-16
+"3","SP2","Cadiz","Zaragoza",2024-08-16
+"4","SP2","Ferrol","Malaga",2024-08-17
+"5","SP2","Eibar","Castellón",2024-08-17
+"6","SP2",",La Coruna","Oviedo",2024-08-17
+"7","SP2","Sp Gijon","Levante",2024-08-18
+"8","SP2","Santander","Almeria",2024-08-18
+"9","SP2","Burgos","Cartagena",2024-08-18
+"10","SP2","Elche","Huesca",2024-08-18
+"11","SP2","Eldense","Tenerife",2024-08-19
+"12","SP2","Zaragoza","Almeria",2024-10-20
+"13","SP2","Elche","Sp Gijon",2024-10-20
+"14","SP2","Cordoba","Cartagena",2024-10-20
+"15","SP2","Mirandes","Eibar",2024-10-20
+"16","SP2","Albacete","Burgos",2024-10-20
+"17","SP2","Castellón","Levante",2024-10-20
+"18","SP2","Granada","Tenerife",2024-10-20
+"19","SP2","Ferrol","Huesca",2024-10-20
+"20","SP2","Cadiz","Santander",2024-10-20
+"21","SP2",",La Coruna","Eldense",2024-10-20
+"22","SP2","Malaga","Oviedo",2024-10-20
+"23","SP2","Castellón","Granada",2024-10-23
+"24","SP2","Eldense","Zaragoza",2024-10-23
+"25","SP2","Sp Gijon","Huesca",2024-10-23
+"26","SP2","Cartagena","Elche",2024-10-23
+"27","SP2","Santander","Cordoba",2024-10-23
+"28","SP2","Oviedo","Mirandes",2024-10-23
+"29","SP2","Eibar","Cadiz",2024-10-23
+"30","SP2","Burgos","Ferrol",2024-10-23
+"31","SP2","Levante",",La Coruna",2024-10-23
+"32","SP2","Tenerife","Malaga",2024-10-23
+"33","SP2","Almeria","Albacete",2024-10-23
+"34","SP2","Malaga","Eibar",2024-10-27
+"35","SP2","Mirandes","Cartagena",2024-10-27
+"36","SP2","Ferrol","Tenerife",2024-10-27
+"37","SP2",",La Coruna","Santander",2024-10-27
+"38","SP2","Huesca","Almeria",2024-10-27
+"39","SP2","Cordoba","Eldense",2024-10-27
+"40","SP2","Cadiz","Oviedo",2024-10-27
+"41","SP2","Albacete","Sp Gijon",2024-10-27
+"42","SP2","Elche","Burgos",2024-10-27
+"43","SP2","Zaragoza","Castellón",2024-10-27
+"44","SP2","Granada","Levante",2024-10-27
+"45","SP2","Oviedo","Burgos",2024-11-03
+"46","SP2","Eldense","Huesca",2024-11-03
+"47","SP2","Santander","Albacete",2024-11-03
+"48","SP2","Castellón","Ferrol",2024-11-03
+"49","SP2","Levante","Malaga",2024-11-03
+"50","SP2","Cartagena",",La Coruna",2024-11-03
+"51","SP2","Sp Gijon","Cadiz",2024-11-03
+"52","SP2","Zaragoza","Granada",2024-11-03
+"53","SP2","Tenerife","Mirandes",2024-11-03
+"54","SP2","Almeria","Cordoba",2024-11-03
+"55","SP2","Eibar","Elche",2024-11-03
+"56","SP2","Tenerife","Levante",2024-11-10
+"57","SP2","Burgos","Sp Gijon",2024-11-10
+"58","SP2","Cordoba","Castellón",2024-11-10
+"59","SP2","Malaga","Cartagena",2024-11-10
+"60","SP2","Elche","Almeria",2024-11-10
+"61","SP2","Ferrol","Santander",2024-11-10
+"62","SP2",",La Coruna","Eibar",2024-11-10
+"63","SP2","Huesca","Zaragoza",2024-11-10
+"64","SP2","Mirandes","Cadiz",2024-11-10
+"65","SP2","Granada","Eldense",2024-11-10
+"66","SP2","Albacete","Oviedo",2024-11-10
+"67","SP2","Eibar","Ferrol",2024-11-17
+"68","SP2","Oviedo","Tenerife",2024-11-17
+"69","SP2","Almeria",",La Coruna",2024-11-17
+"70","SP2","Zaragoza","Malaga",2024-11-17
+"71","SP2","Eldense","Albacete",2024-11-17
+"72","SP2","Levante","Elche",2024-11-17
+"73","SP2","Castellón","Mirandes",2024-11-17
+"74","SP2","Santander","Burgos",2024-11-17
+"75","SP2","Cadiz","Cordoba",2024-11-17
+"76","SP2","Cartagena","Huesca",2024-11-17
+"77","SP2","Sp Gijon","Granada",2024-11-17
+"78","SP2","Mirandes","Eldense",2024-11-24
+"79","SP2","Malaga","Santander",2024-11-24
+"80","SP2",",La Coruna","Sp Gijon",2024-11-24
+"81","SP2","Ferrol","Levante",2024-11-24
+"82","SP2","Elche","Oviedo",2024-11-24
+"83","SP2","Huesca","Castellón",2024-11-24
+"84","SP2","Granada","Cadiz",2024-11-24
+"85","SP2","Albacete","Tenerife",2024-11-24
+"86","SP2","Burgos","Eibar",2024-11-24
+"87","SP2","Cordoba","Zaragoza",2024-11-24
+"88","SP2","Cartagena","Almeria",2024-11-24
+"89","SP2","Tenerife","Elche",2024-12-01
+"90","SP2","Almeria","Granada",2024-12-01
+"91","SP2","Eldense","Ferrol",2024-12-01
+"92","SP2","Zaragoza","Albacete",2024-12-01
+"93","SP2","Levante","Burgos",2024-12-01
+"94","SP2","Eibar","Cartagena",2024-12-01
+"95","SP2","Oviedo","Huesca",2024-12-01
+"96","SP2","Santander","Mirandes",2024-12-01
+"97","SP2","Castellón","Malaga",2024-12-01
+"98","SP2","Sp Gijon","Cordoba",2024-12-01
+"99","SP2","Cadiz",",La Coruna",2024-12-01
+"100","SP2","Ferrol","Oviedo",2024-12-08
+"101","SP2","Cartagena","Sp Gijon",2024-12-08
+"102","SP2","Mirandes","Levante",2024-12-08
+"103","SP2","Malaga","Almeria",2024-12-08
+"104","SP2",",La Coruna","Zaragoza",2024-12-08
+"105","SP2","Elche","Cadiz",2024-12-08
+"106","SP2","Cordoba","Tenerife",2024-12-08
+"107","SP2","Granada","Santander",2024-12-08
+"108","SP2","Huesca","Eibar",2024-12-08
+"109","SP2","Albacete","Castellón",2024-12-08
+"110","SP2","Burgos","Eldense",2024-12-08
+"111","SP2","Levante","Cordoba",2024-12-15
+"112","SP2","Castellón","Cartagena",2024-12-15
+"113","SP2","Eibar","Zaragoza",2024-12-15
+"114","SP2","Almeria","Mirandes",2024-12-15
+"115","SP2","Tenerife",",La Coruna",2024-12-15
+"116","SP2","Burgos","Malaga",2024-12-15
+"117","SP2","Oviedo","Granada",2024-12-15
+"118","SP2","Eldense","Elche",2024-12-15
+"119","SP2","Santander","Huesca",2024-12-15
+"120","SP2","Sp Gijon","Ferrol",2024-12-15
+"121","SP2","Cadiz","Albacete",2024-12-15
+"122","SP2","Santander","Eibar",2024-08-23
+"123","SP2","Huesca",",La Coruna",2024-08-23
+"124","SP2","Ferrol","Granada",2024-08-24
+"125","SP2","Sp Gijon","Eldense",2024-08-24
+"126","SP2","Levante","Cadiz",2024-08-24
+"127","SP2","Tenerife","Almeria",2024-08-24
+"128","SP2","Malaga","Mirandes",2024-08-24
+"129","SP2","Albacete","Elche",2024-08-25
+"130","SP2","Castellón","Oviedo",2024-08-25
+"131","SP2","Cartagena","Zaragoza",2024-08-26
+"132","SP2","Cordoba","Burgos",2024-08-26
+"133","SP2","Ferrol","Almeria",2024-12-18
+"134","SP2","Malaga","Eldense",2024-12-18
+"135","SP2","Granada","Cartagena",2024-12-18
+"136","SP2","Cordoba","Eibar",2024-12-18
+"137","SP2","Albacete","Levante",2024-12-18
+"138","SP2","Mirandes","Sp Gijon",2024-12-18
+"139","SP2","Zaragoza","Oviedo",2024-12-18
+"140","SP2","Cadiz","Burgos",2024-12-18
+"141","SP2","Elche","Santander",2024-12-18
+"142","SP2","Huesca","Tenerife",2024-12-18
+"143","SP2",",La Coruna","Castellón",2024-12-18
+"144","SP2","Cartagena","Albacete",2024-12-22
+"145","SP2",",La Coruna","Mirandes",2024-12-22
+"146","SP2","Burgos","Tenerife",2024-12-22
+"147","SP2","Eibar","Granada",2024-12-22
+"148","SP2","Santander","Eldense",2024-12-22
+"149","SP2","Sp Gijon","Malaga",2024-12-22
+"150","SP2","Levante","Huesca",2024-12-22
+"151","SP2","Castellón","Elche",2024-12-22
+"152","SP2","Oviedo","Cordoba",2024-12-22
+"153","SP2","Almeria","Cadiz",2024-12-22
+"154","SP2","Zaragoza","Ferrol",2024-12-22
+"155","SP2","Granada","Burgos",2025-01-11
+"156","SP2","Cadiz","Levante",2025-01-11
+"157","SP2","Elche","Zaragoza",2025-01-11
+"158","SP2","Ferrol","Cartagena",2025-01-11
+"159","SP2","Oviedo","Sp Gijon",2025-01-11
+"160","SP2","Huesca","Mirandes",2025-01-11
+"161","SP2","Malaga",",La Coruna",2025-01-11
+"162","SP2","Cordoba","Almeria",2025-01-11
+"163","SP2","Tenerife","Castellón",2025-01-11
+"164","SP2","Albacete","Santander",2025-01-11
+"165","SP2","Eldense","Eibar",2025-01-11
+"166","SP2","Levante","Granada",2025-01-19
+"167","SP2","Eldense","Cadiz",2025-01-19
+"168","SP2","Almeria","Huesca",2025-01-19
+"169","SP2","Mirandes","Malaga",2025-01-19
+"170","SP2","Burgos",",La Coruna",2025-01-19
+"171","SP2","Zaragoza","Tenerife",2025-01-19
+"172","SP2","Santander","Ferrol",2025-01-19
+"173","SP2","Castellón","Cordoba",2025-01-19
+"174","SP2","Cartagena","Oviedo",2025-01-19
+"175","SP2","Sp Gijon","Elche",2025-01-19
+"176","SP2","Eibar","Albacete",2025-01-19
+"177","SP2","Cordoba","Santander",2025-01-26
+"178","SP2","Cadiz","Mirandes",2025-01-26
+"179","SP2","Oviedo","Castellón",2025-01-26
+"180","SP2","Granada","Sp Gijon",2025-01-26
+"181","SP2","Tenerife","Eldense",2025-01-26
+"182","SP2",",La Coruna","Levante",2025-01-26
+"183","SP2","Ferrol","Burgos",2025-01-26
+"184","SP2","Elche","Eibar",2025-01-26
+"185","SP2","Malaga","Zaragoza",2025-01-26
+"186","SP2","Albacete","Almeria",2025-01-26
+"187","SP2","Huesca","Cartagena",2025-01-26
+"188","SP2","Cartagena","Cordoba",2025-02-02
+"189","SP2","Castellón","Huesca",2025-02-02
+"190","SP2","Santander","Malaga",2025-02-02
+"191","SP2","Levante","Ferrol",2025-02-02
+"192","SP2","Eldense","Granada",2025-02-02
+"193","SP2","Zaragoza","Cadiz",2025-02-02
+"194","SP2","Sp Gijon","Burgos",2025-02-02
+"195","SP2","Almeria","Oviedo",2025-02-02
+"196","SP2","Tenerife","Albacete",2025-02-02
+"197","SP2","Eibar",",La Coruna",2025-02-02
+"198","SP2","Mirandes","Elche",2025-02-02
+"199","SP2","Elche","Tenerife",2025-02-09
+"200","SP2","Granada","Mirandes",2025-02-09
+"201","SP2","Cordoba","Huesca",2025-02-09
+"202","SP2","Malaga","Levante",2025-02-09
+"203","SP2",",La Coruna","Almeria",2025-02-09
+"204","SP2","Burgos","Santander",2025-02-09
+"205","SP2","Sp Gijon","Eibar",2025-02-09
+"206","SP2","Albacete","Zaragoza",2025-02-09
+"207","SP2","Ferrol","Castellón",2025-02-09
+"208","SP2","Cadiz","Cartagena",2025-02-09
+"209","SP2","Oviedo","Eldense",2025-02-09
+"210","SP2","Tenerife","Cordoba",2025-02-16
+"211","SP2","Huesca","Granada",2025-02-16
+"212","SP2","Cartagena","Malaga",2025-02-16
+"213","SP2","Castellón","Eibar",2025-02-16
+"214","SP2","Oviedo","Albacete",2025-02-16
+"215","SP2","Eldense",",La Coruna",2025-02-16
+"216","SP2","Levante","Sp Gijon",2025-02-16
+"217","SP2","Santander","Cadiz",2025-02-16
+"218","SP2","Mirandes","Ferrol",2025-02-16
+"219","SP2","Zaragoza","Burgos",2025-02-16
+"220","SP2","Almeria","Elche",2025-02-16
+"221","SP2",",La Coruna","Huesca",2025-02-23
+"222","SP2","Elche","Cartagena",2025-02-23
+"223","SP2","Malaga","Tenerife",2025-02-23
+"224","SP2","Sp Gijon","Almeria",2025-02-23
+"225","SP2","Ferrol","Cordoba",2025-02-23
+"226","SP2","Burgos","Oviedo",2025-02-23
+"227","SP2","Cadiz","Castellón",2025-02-23
+"228","SP2","Eibar","Santander",2025-02-23
+"229","SP2","Albacete","Eldense",2025-02-23
+"230","SP2","Levante","Mirandes",2025-02-23
+"231","SP2","Granada","Zaragoza",2025-02-23
+"232","SP2","Albacete","Cadiz",2025-03-02
+"233","SP2","Huesca","Ferrol",2025-03-02
+"234","SP2","Oviedo",",La Coruna",2025-03-02
+"235","SP2","Almeria","Malaga",2025-03-02
+"236","SP2","Mirandes","Tenerife",2025-03-02
+"237","SP2","Eldense","Levante",2025-03-02
+"238","SP2","Castellón","Burgos",2025-03-02
+"239","SP2","Zaragoza","Sp Gijon",2025-03-02
+"240","SP2","Cordoba","Granada",2025-03-02
+"241","SP2","Santander","Elche",2025-03-02
+"242","SP2","Cartagena","Eibar",2025-03-02
+"243","SP2","Granada","Huesca",2024-08-30
+"244","SP2","Oviedo","Santander",2024-08-30
+"245","SP2","Cadiz","Tenerife",2024-08-31
+"246","SP2","Malaga","Albacete",2024-08-31
+"247","SP2","Almeria","Sp Gijon",2024-08-31
+"248","SP2",",La Coruna","Ferrol",2024-09-01
+"249","SP2","Burgos","Castellón",2024-09-01
+"250","SP2","Eldense","Cartagena",2024-09-01
+"251","SP2","Mirandes","Zaragoza",2024-09-01
+"252","SP2","Eibar","Levante",2024-09-02
+"253","SP2","Elche","Cordoba",2024-09-02
+"254","SP2","Malaga","Cadiz",2025-03-09
+"255","SP2","Elche","Castellón",2025-03-09
+"256","SP2","Sp Gijon","Santander",2025-03-09
+"257","SP2","Tenerife","Huesca",2025-03-09
+"258","SP2","Eibar","Almeria",2025-03-09
+"259","SP2",",La Coruna","Cordoba",2025-03-09
+"260","SP2","Zaragoza","Eldense",2025-03-09
+"261","SP2","Granada","Ferrol",2025-03-09
+"262","SP2","Levante","Cartagena",2025-03-09
+"263","SP2","Burgos","Albacete",2025-03-09
+"264","SP2","Mirandes","Oviedo",2025-03-09
+"265","SP2","Cadiz","Granada",2025-03-16
+"266","SP2","Cartagena","Burgos",2025-03-16
+"267","SP2","Cordoba","Sp Gijon",2025-03-16
+"268","SP2","Oviedo","Elche",2025-03-16
+"269","SP2","Albacete","Malaga",2025-03-16
+"270","SP2","Castellón",",La Coruna",2025-03-16
+"271","SP2","Ferrol","Eibar",2025-03-16
+"272","SP2","Santander","Tenerife",2025-03-16
+"273","SP2","Almeria","Zaragoza",2025-03-16
+"274","SP2","Eldense","Mirandes",2025-03-16
+"275","SP2","Huesca","Levante",2025-03-16
+"276","SP2","Eibar","Huesca",2025-03-23
+"277","SP2","Levante","Castellón",2025-03-23
+"278","SP2","Malaga","Ferrol",2025-03-23
+"279","SP2","Zaragoza","Cordoba",2025-03-23
+"280","SP2","Mirandes","Santander",2025-03-23
+"281","SP2","Sp Gijon","Albacete",2025-03-23
+"282","SP2",",La Coruna","Cartagena",2025-03-23
+"283","SP2","Elche","Eldense",2025-03-23
+"284","SP2","Tenerife","Cadiz",2025-03-23
+"285","SP2","Granada","Oviedo",2025-03-23
+"286","SP2","Burgos","Almeria",2025-03-23
+"287","SP2","Cartagena","Castellón",2025-03-30
+"288","SP2","Ferrol",",La Coruna",2025-03-30
+"289","SP2","Huesca","Sp Gijon",2025-03-30
+"290","SP2","Albacete","Mirandes",2025-03-30
+"291","SP2","Oviedo","Malaga",2025-03-30
+"292","SP2","Almeria","Levante",2025-03-30
+"293","SP2","Cordoba","Elche",2025-03-30
+"294","SP2","Tenerife","Granada",2025-03-30
+"295","SP2","Cadiz","Eibar",2025-03-30
+"296","SP2","Eldense","Burgos",2025-03-30
+"297","SP2","Santander","Zaragoza",2025-03-30
+"298","SP2","Sp Gijon","Tenerife",2025-04-06
+"299","SP2","Malaga","Cordoba",2025-04-06
+"300","SP2","Granada","Almeria",2025-04-06
+"301","SP2","Cartagena","Eldense",2025-04-06
+"302","SP2","Elche","Ferrol",2025-04-06
+"303","SP2","Castellón","Albacete",2025-04-06
+"304","SP2","Burgos","Huesca",2025-04-06
+"305","SP2","Zaragoza","Mirandes",2025-04-06
+"306","SP2","Eibar","Oviedo",2025-04-06
+"307","SP2",",La Coruna","Cadiz",2025-04-06
+"308","SP2","Levante","Santander",2025-04-06
+"309","SP2","Huesca","Malaga",2025-04-13
+"310","SP2","Cordoba","Levante",2025-04-13
+"311","SP2","Oviedo","Ferrol",2025-04-13
+"312","SP2","Zaragoza","Eibar",2025-04-13
+"313","SP2","Tenerife","Burgos",2025-04-13
+"314","SP2","Eldense","Sp Gijon",2025-04-13
+"315","SP2","Almeria","Cartagena",2025-04-13
+"316","SP2","Santander","Castellón",2025-04-13
+"317","SP2","Albacete","Granada",2025-04-13
+"318","SP2","Cadiz","Elche",2025-04-13
+"319","SP2","Mirandes",",La Coruna",2025-04-13
+"320","SP2","Burgos","Cadiz",2025-04-20
+"321","SP2","Elche","Albacete",2025-04-20
+"322","SP2","Sp Gijon","Mirandes",2025-04-20
+"323","SP2","Castellón","Almeria",2025-04-20
+"324","SP2",",La Coruna","Tenerife",2025-04-20
+"325","SP2","Cartagena","Granada",2025-04-20
+"326","SP2","Eibar","Malaga",2025-04-20
+"327","SP2","Cordoba","Oviedo",2025-04-20
+"328","SP2","Ferrol","Eldense",2025-04-20
+"329","SP2","Huesca","Santander",2025-04-20
+"330","SP2","Levante","Zaragoza",2025-04-20
+"331","SP2","Eldense","Cordoba",2025-04-27
+"332","SP2","Almeria","Ferrol",2025-04-27
+"333","SP2","Santander",",La Coruna",2025-04-27
+"334","SP2","Oviedo","Levante",2025-04-27
+"335","SP2","Mirandes","Burgos",2025-04-27
+"336","SP2","Albacete","Cartagena",2025-04-27
+"337","SP2","Zaragoza","Huesca",2025-04-27
+"338","SP2","Cadiz","Sp Gijon",2025-04-27
+"339","SP2","Tenerife","Eibar",2025-04-27
+"340","SP2","Malaga","Castellón",2025-04-27
+"341","SP2","Granada","Elche",2025-04-27
+"342","SP2",",La Coruna","Albacete",2025-05-04
+"343","SP2","Castellón","Sp Gijon",2025-05-04
+"344","SP2","Huesca","Oviedo",2025-05-04
+"345","SP2","Eibar","Mirandes",2025-05-04
+"346","SP2","Cartagena","Santander",2025-05-04
+"347","SP2","Levante","Tenerife",2025-05-04
+"348","SP2","Malaga","Granada",2025-05-04
+"349","SP2","Cordoba","Cadiz",2025-05-04
+"350","SP2","Ferrol","Zaragoza",2025-05-04
+"351","SP2","Almeria","Eldense",2025-05-04
+"352","SP2","Burgos","Elche",2025-05-04
+"353","SP2","Cadiz","Almeria",2025-05-11
+"354","SP2","Albacete","Huesca",2025-05-11
+"355","SP2","Sp Gijon",",La Coruna",2025-05-11
+"356","SP2","Santander","Oviedo",2025-05-11
+"357","SP2","Burgos","Cordoba",2025-05-11
+"358","SP2","Zaragoza","Cartagena",2025-05-11
+"359","SP2","Tenerife","Ferrol",2025-05-11
+"360","SP2","Eldense","Malaga",2025-05-11
+"361","SP2","Granada","Eibar",2025-05-11
+"362","SP2","Mirandes","Castellón",2025-05-11
+"363","SP2","Elche","Levante",2025-05-11
+"364","SP2","Castellón","Cadiz",2024-09-08
+"365","SP2","Sp Gijon","Oviedo",2024-09-08
+"366","SP2","Zaragoza","Elche",2024-09-08
+"367","SP2","Eldense","Almeria",2024-09-08
+"368","SP2","Cordoba","Malaga",2024-09-08
+"369","SP2","Tenerife","Santander",2024-09-08
+"370","SP2","Granada",",La Coruna",2024-09-08
+"371","SP2","Cartagena","Levante",2024-09-08
+"372","SP2","Albacete","Eibar",2024-09-08
+"373","SP2","Ferrol","Mirandes",2024-09-08
+"374","SP2","Huesca","Burgos",2024-09-08
+"375","SP2","Oviedo","Zaragoza",2025-05-18
+"376","SP2",",La Coruna","Granada",2025-05-18
+"377","SP2","Almeria","Santander",2025-05-18
+"378","SP2","Cordoba","Mirandes",2025-05-18
+"379","SP2","Huesca","Elche",2025-05-18
+"380","SP2","Eibar","Burgos",2025-05-18
+"381","SP2","Levante","Albacete",2025-05-18
+"382","SP2","Castellón","Eldense",2025-05-18
+"383","SP2","Malaga","Sp Gijon",2025-05-18
+"384","SP2","Cartagena","Tenerife",2025-05-18
+"385","SP2","Ferrol","Cadiz",2025-05-18
+"386","SP2","Cadiz","Huesca",2025-05-25
+"387","SP2","Eldense","Santander",2025-05-25
+"388","SP2","Zaragoza",",La Coruna",2025-05-25
+"389","SP2","Albacete","Ferrol",2025-05-25
+"390","SP2","Elche","Malaga",2025-05-25
+"391","SP2","Tenerife","Oviedo",2025-05-25
+"392","SP2","Granada","Castellón",2025-05-25
+"393","SP2","Burgos","Levante",2025-05-25
+"394","SP2","Eibar","Cordoba",2025-05-25
+"395","SP2","Sp Gijon","Cartagena",2025-05-25
+"396","SP2","Mirandes","Almeria",2025-05-25
+"397","SP2","Santander","Granada",2025-06-01
+"398","SP2","Ferrol","Sp Gijon",2025-06-01
+"399","SP2","Cordoba","Albacete",2025-06-01
+"400","SP2","Cartagena","Mirandes",2025-06-01
+"401","SP2","Levante","Eibar",2025-06-01
+"402","SP2","Malaga","Burgos",2025-06-01
+"403","SP2","Oviedo","Cadiz",2025-06-01
+"404","SP2","Castellón","Zaragoza",2025-06-01
+"405","SP2","Almeria","Tenerife",2025-06-01
+"406","SP2","Huesca","Eldense",2025-06-01
+"407","SP2",",La Coruna","Elche",2025-06-01
+"408","SP2","Elche","Granada",2024-09-15
+"409","SP2","Burgos","Zaragoza",2024-09-15
+"410","SP2","Levante","Eldense",2024-09-15
+"411","SP2","Cadiz","Ferrol",2024-09-15
+"412","SP2","Malaga","Huesca",2024-09-15
+"413","SP2","Santander","Sp Gijon",2024-09-15
+"414","SP2","Oviedo","Cartagena",2024-09-15
+"415","SP2","Almeria","Castellón",2024-09-15
+"416","SP2","Eibar","Tenerife",2024-09-15
+"417","SP2","Mirandes","Albacete",2024-09-15
+"418","SP2","Cordoba",",La Coruna",2024-09-15
+"419","SP2","Cartagena","Cadiz",2024-09-22
+"420","SP2","Elche","Mirandes",2024-09-22
+"421","SP2","Tenerife","Sp Gijon",2024-09-22
+"422","SP2","Ferrol","Albacete",2024-09-22
+"423","SP2",",La Coruna","Burgos",2024-09-22
+"424","SP2","Zaragoza","Levante",2024-09-22
+"425","SP2","Almeria","Eibar",2024-09-22
+"426","SP2","Castellón","Santander",2024-09-22
+"427","SP2","Granada","Malaga",2024-09-22
+"428","SP2","Eldense","Oviedo",2024-09-22
+"429","SP2","Huesca","Cordoba",2024-09-22
+"430","SP2","Cordoba","Ferrol",2024-09-29
+"431","SP2","Oviedo","Eibar",2024-09-29
+"432","SP2","Cadiz","Eldense",2024-09-29
+"433","SP2","Albacete",",La Coruna",2024-09-29
+"434","SP2","Mirandes","Huesca",2024-09-29
+"435","SP2","Santander","Cartagena",2024-09-29
+"436","SP2","Burgos","Granada",2024-09-29
+"437","SP2","Malaga","Elche",2024-09-29
+"438","SP2","Sp Gijon","Zaragoza",2024-09-29
+"439","SP2","Castellón","Tenerife",2024-09-29
+"440","SP2","Levante","Almeria",2024-09-29
+"441","SP2","Almeria","Burgos",2024-10-06
+"442","SP2","Albacete","Cordoba",2024-10-06
+"443","SP2","Eldense","Castellón",2024-10-06
+"444","SP2",",La Coruna","Malaga",2024-10-06
+"445","SP2","Tenerife","Cartagena",2024-10-06
+"446","SP2","Ferrol","Elche",2024-10-06
+"447","SP2","Mirandes","Granada",2024-10-06
+"448","SP2","Eibar","Sp Gijon",2024-10-06
+"449","SP2","Huesca","Cadiz",2024-10-06
+"450","SP2","Zaragoza","Santander",2024-10-06
+"451","SP2","Levante","Oviedo",2024-10-06
+"452","SP2","Cartagena","Ferrol",2024-10-13
+"453","SP2","Oviedo","Almeria",2024-10-13
+"454","SP2","Santander","Levante",2024-10-13
+"455","SP2","Huesca","Albacete",2024-10-13
+"456","SP2","Burgos","Mirandes",2024-10-13
+"457","SP2","Elche",",La Coruna",2024-10-13
+"458","SP2","Sp Gijon","Castellón",2024-10-13
+"459","SP2","Granada","Cordoba",2024-10-13
+"460","SP2","Tenerife","Zaragoza",2024-10-13
+"461","SP2","Eibar","Eldense",2024-10-13
+"462","SP2","Cadiz","Malaga",2024-10-13

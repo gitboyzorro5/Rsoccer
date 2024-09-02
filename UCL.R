@@ -32,13 +32,13 @@ F1_ucl <- F1_spreaducl
 colnames(F1_ucl)[38] <- "goalmins"
 colnames(F1_ucl)[40] <- "shirts"
 ##################################
-UCL20232024 <- rbind(E0_ucl,D1_ucl,SP1_ucl,I1_ucl,F1_ucl)
+UCL20242025 <- rbind(E0_ucl,D1_ucl,SP1_ucl,I1_ucl,F1_ucl)
 #UCL <- read.csv('UCL.csv')
-unlink('UCL20232024.xlsx')
-write.xlsx(UCL20232024,'UCL20232024.xlsx')
+unlink('UCL20242025.xlsx')
+write.xlsx(UCL20242025,'UCL20242025.xlsx')
 ###############################################################################
-df <- tail(UCL20232024[UCL20232024$HomeTeam =="Man United" | UCL20232024$AwayTeam =="Man united",],6)
-df2 <- tail(UCL20232024[UCL20232024$HomeTeam == "Man City" | UCL20232024$AwayTeam == "Man City",],6)
+df <- tail(UCL20242025[UCL20242025$HomeTeam =="Man United" | UCL20242025$AwayTeam =="Man united",],6)
+df2 <- tail(UCL20242025[UCL20242025$HomeTeam == "Man City" | UCL20242025$AwayTeam == "Man City",],6)
 temp_analysis <- rbind(df,df2)
 
 temp_analysis <- as.data.frame(temp_analysis)
@@ -49,5 +49,5 @@ temp_analyis_combined <- c(temp_sliced,temp_colmeans)
 temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 write.xlsx(temp_analysis,'Temp/unitedVcity.xlsx')
 
-#write.xlsx(UCL20232024[UCL20232024$Div == "D1",],"D1_spread.xlsx")
-e0_teams
+#write.xlsx(UCL20242025[UCL20242025$Div == "D1",],"D1_spread.xlsx")
+

@@ -171,7 +171,7 @@ Away_first_YCTime <- sqldf("SELECT b1_summary.matchid,MIN(b1_summary.Event_Time)
 B1_spread <- dplyr::left_join(B1_spread,Away_first_YCTime)
 B1_spread <- B1_spread %>% replace(is.na(.),0)
 
-B1_spread$match_First_YCTime <- pmin(B1_spread$Home_first_YCTime,B1_spread$Away_first_YCTime)
+B1_spread$match_First_YCTime <- ifelse(B1_spread$Home_first_YCTime == '0' | B1_spread$Away_first_YCTime == '0',pmax(B1_spread$Home_first_YCTime,B1_spread$Away_first_YCTime),pmin(B1_spread$Home_first_YCTime,B1_spread$Away_first_YCTime))
 
 #count number of penalties in a match
 Penalty <- c()
@@ -353,7 +353,7 @@ Away_first_YCTime <- sqldf("SELECT d2_summary.matchid,MIN(d2_summary.Event_Time)
 D2_spread <- dplyr::left_join(D2_spread,Away_first_YCTime)
 D2_spread <- D2_spread %>% replace(is.na(.),0)
 
-D2_spread$match_First_YCTime <- pmin(D2_spread$Home_first_YCTime,D2_spread$Away_first_YCTime)
+D2_spread$match_First_YCTime <- ifelse(D2_spread$Home_first_YCTime == '0' | D2_spread$Away_first_YCTime == '0',pmax(D2_spread$Home_first_YCTime,D2_spread$Away_first_YCTime),pmin(D2_spread$Home_first_YCTime,D2_spread$Away_first_YCTime))
 
 #count number of penalties in a match
 Penalty <- c()
@@ -390,8 +390,7 @@ e1_teams
 e1_summary$Home_Team <- mgsub(e1_summary$Home_Team,c("Cardiff City","Coventry City","Derby County","Hull City","Leeds United","Luton Town","Norwich City","Oxford United","Plymouth Argyle","Sheffield Utd","Stoke City","Swansea City","Birmingham City","Blackburn Rovers","Huddersfield Town","Ipswich Town","Leicester City","Preston North End","Queens Park Rangers","Rotherham United","Sheffield Wednesday","West Bromwich Albion"),c("Cardiff","Coventry","Derby","Hull","Leeds","Luton","Norwich","Oxford","Plymouth","Sheffield United","Stoke","Swansea","Birmingham","Blackburn","Huddersfield","Ipswich","Leicester","Preston","QPR","Rotherham","Sheffield Weds","West Brom"))
 e1_summary$Away_Team <- mgsub(e1_summary$Away_Team,c("Cardiff City","Coventry City","Derby County","Hull City","Leeds United","Luton Town","Norwich City","Oxford United","Plymouth Argyle","Sheffield Utd","Stoke City","Swansea City","Birmingham City","Blackburn Rovers","Huddersfield Town","Ipswich Town","Leicester City","Preston North End","Queens Park Rangers","Rotherham United","Sheffield Wednesday","West Bromwich Albion"),c("Cardiff","Coventry","Derby","Hull","Leeds","Luton","Norwich","Oxford","Plymouth","Sheffield United","Stoke","Swansea","Birmingham","Blackburn","Huddersfield","Ipswich","Leicester","Preston","QPR","Rotherham","Sheffield Weds","West Brom"))
 
-sort(unique(e1_summary$Home_Team))
-e1_teams
+
 
 e1_summary$matchid <- paste(e1_summary$Match_Date,e1_summary$Home_Team,e1_summary$Away_Team,sep = "-")
 E1_spread <- subset(allteams20232024,Div =="E1")
@@ -536,7 +535,7 @@ Away_first_YCTime <- sqldf("SELECT e1_summary.matchid,MIN(e1_summary.Event_Time)
 E1_spread <- dplyr::left_join(E1_spread,Away_first_YCTime)
 E1_spread <- E1_spread %>% replace(is.na(.),0)
 
-E1_spread$match_First_YCTime <- pmin(E1_spread$Home_first_YCTime,E1_spread$Away_first_YCTime)
+E1_spread$match_First_YCTime <- ifelse(E1_spread$Home_first_YCTime == '0' | E1_spread$Away_first_YCTime == '0',pmax(E1_spread$Home_first_YCTime,E1_spread$Away_first_YCTime),pmin(E1_spread$Home_first_YCTime,E1_spread$Away_first_YCTime))
 
 #count number of penalties in a match
 Penalty <- c()
@@ -901,7 +900,7 @@ Away_first_YCTime <- sqldf("SELECT sc0_summary.matchid,MIN(sc0_summary.Event_Tim
 SC0_spread <- dplyr::left_join(SC0_spread,Away_first_YCTime)
 SC0_spread <- SC0_spread %>% replace(is.na(.),0)
 
-SC0_spread$match_First_YCTime <- pmin(SC0_spread$Home_first_YCTime,SC0_spread$Away_first_YCTime)
+SC0_spread$match_First_YCTime <- ifelse(SC0_spread$Home_first_YCTime == '0' | SC0_spread$Away_first_YCTime == '0',pmax(SC0_spread$Home_first_YCTime,SC0_spread$Away_first_YCTime),pmin(SC0_spread$Home_first_YCTime,SC0_spread$Away_first_YCTime))
 
 #count number of penalties in a match
 Penalty <- c()

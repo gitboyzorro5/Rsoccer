@@ -6,25 +6,24 @@ library('lubridate')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 options(java.parameters = "-Xmx4g")
 
-primera_match_results <- fb_match_results(country = "POR", gender = "M", season_end_year = 2025, tier="1st")
-write.xlsx(primera_match_results,"primera_match_results.xlsx")
-primera_match_fixtures <- readxl::read_excel("primera_match_results.xlsx")
-primera_match_fixtures <- primera_match_fixtures[,c(-1)]
+superleague_match_results <- fb_match_results(country = "GRE", gender = "M", season_end_year = 2025, tier="1st")
+View(superleague_match_fixtures)
+write.xlsx(superleague_match_results,"superleague_match_results.xlsx")
+superleague_match_fixtures <- readxl::read_excel("superleague_match_results.xlsx")
+superleague_match_fixtures <- superleague_match_fixtures[,c(-1)]
 
-primera_match_fixtures <- primera_match_fixtures[,c(1,10,13,8)]
+superleague_match_fixtures <- superleague_match_fixtures[,c(1,10,12,8)]
 
-colnames(primera_match_fixtures)[1] <- "Div"
-colnames(primera_match_fixtures)[2] <- "HomeTeam"
-colnames(primera_match_fixtures)[3] <- "AwayTeam"
-primera_match_fixtures$Div <- "P1"
-primera_match_fixtures$Date <- ymd(primera_match_fixtures$Date)
-sort(unique(primera_match_fixtures$HomeTeam))
-p1_teams
-primera_match_fixtures$HomeTeam <- mgsub(primera_match_fixtures$HomeTeam,c("Braga","Famalicão","Gil Vicente FC","Sporting CP","Vitória"),c("Sp Braga","Famalicao","Gil Vicente","Sp Lisbon","Vitoria"))
-primera_match_fixtures$AwayTeam <- mgsub(primera_match_fixtures$AwayTeam,c("Braga","Famalicão","Gil Vicente FC","Sporting CP","Vitória"),c("Sp Braga","Famalicao","Gil Vicente","Sp Lisbon","Vitoria"))
-write.csv(primera_match_fixtures,'PRIMERAFIXTURES.csv')
+colnames(superleague_match_fixtures)[1] <- "Div"
+colnames(superleague_match_fixtures)[2] <- "HomeTeam"
+colnames(superleague_match_fixtures)[3] <- "AwayTeam"
+superleague_match_fixtures$Div <- "G1"
+superleague_match_fixtures$Date <- ymd(superleague_match_fixtures$Date)
+sort(unique(superleague_match_fixtures$HomeTeam))
 
-sp2_teams
-sp1_teams
-View(laligatwo_match_results)
+superleague_match_fixtures$HomeTeam <- mgsub(superleague_match_fixtures$HomeTeam,c("AEK Athens","Asteras Tripoli","Levadiakos","Kallithea","Olympiacos","PAS Lamia"),c("AEK","Asteras Tripolis","Levadeiakos","Athens Kallithea","Olympiakos","Lamia"))
+superleague_match_fixtures$AwayTeam <- mgsub(superleague_match_fixtures$AwayTeam,c("AEK Athens","Asteras Tripoli","Levadiakos","Kallithea","Olympiacos","PAS Lamia"),c("AEK","Asteras Tripolis","Levadeiakos","Athens Kallithea","Olympiakos","Lamia"))
+write.csv(superleague_match_fixtures,'SUPERLEAGUEFIXTURES.csv')
+
+
 

@@ -5,7 +5,7 @@ library('dplyr')
 library('mgsub')
 library('xlsx')
 
-#E0_spread <- subset(readxl::read_excel('UCL20232024.xlsx'), Div == "E0")
+#E0_spread <- subset(readxl::read_excel('UCL20242025.xlsx'), Div == "E0")
 #write.xlsx(E0_spread,'E0_spread.xlsx')
 #packageVersion('worldfootballR')
 
@@ -56,7 +56,7 @@ library('xlsx')
 # E0_spread <- left_join(E0_spread,epl_shirtnumbers)
 # E0_spread <- E0_spread %>% replace(is.na(.),0)
 
-E0_spread <- subset(allteams20232024,Div =="E0")
+E0_spread <- subset(allteams20242025,Div =="E0")
 E0_spread$matchid <- paste(E0$HomeTeam,E0$AwayTeam,sep = "-")
 eplnrows <- nrow(E0_spread) - nrow(readxl::read_excel('E0_spread.xlsx'))
 E0_spread <- tail(E0_spread,eplnrows)
@@ -78,7 +78,7 @@ E0_spread_final <- rbind(E0_spread_prev,E0_spread)
 
 unlink('E0_spread.xlsx')
 write.xlsx(E0_spread_final,'E0_spread.xlsx')
-
+View(E0_spread)
 #############################################################################################################
 # #D1
 # bundesliga_match_details <- load_fotmob_match_details(
@@ -101,7 +101,7 @@ write.xlsx(E0_spread_final,'E0_spread.xlsx')
 #             n = n()
 #   )
 #
-# D1_spread <- subset(allteams20232024,Div =="D1")
+# D1_spread <- subset(allteams20242025,Div =="D1")
 # D1_spread$matchid <- paste(D1$HomeTeam,D1$AwayTeam,sep = "-")
 # D1_spread <- left_join(D1_spread,bundesliga_goal_mins)
 # D1_spread <- D1_spread %>% replace(is.na(.),0)
@@ -128,7 +128,7 @@ write.xlsx(E0_spread_final,'E0_spread.xlsx')
 # D1_spread <- D1_spread %>% replace(is.na(.),0)
 
 
-D1_spread <- subset(allteams20232024,Div =="D1")
+D1_spread <- subset(allteams20242025,Div =="D1")
 D1_spread$matchid <- paste(D1$HomeTeam,D1$AwayTeam,sep = "-")
 bundesliganrows <- nrow(D1_spread) - nrow(readxl::read_excel('D1_spread.xlsx'))
 D1_spread <- tail(D1_spread,bundesliganrows)
@@ -174,7 +174,7 @@ write.xlsx(D1_spread_final,'D1_spread.xlsx')
 #             n = n()
 #   )
 #
-# I1_spread <- subset(allteams20232024,Div =="I1")
+# I1_spread <- subset(allteams20242025,Div =="I1")
 # I1_spread$matchid <- paste(I1$HomeTeam,I1$AwayTeam,sep = "-")
 # I1_spread <- left_join(I1_spread,seriea_goal_mins)
 # I1_spread <- I1_spread %>% replace(is.na(.),0)
@@ -200,7 +200,7 @@ write.xlsx(D1_spread_final,'D1_spread.xlsx')
 # I1_spread <- left_join(I1_spread,seriea_shirtnumbers)
 # I1_spread <- I1_spread %>% replace(is.na(.),0)
 
-I1_spread <- subset(allteams20232024,Div =="I1")
+I1_spread <- subset(allteams20242025,Div =="I1")
 I1_spread$matchid <- paste(I1$HomeTeam,I1$AwayTeam,sep = "-")
 serieanrows <- nrow(I1_spread) - nrow(readxl::read_excel('I1_spread.xlsx'))
 I1_spread <- tail(I1_spread,serieanrows)
@@ -247,7 +247,7 @@ write.xlsx(I1_spread_final,'I1_spread.xlsx')
 #             n = n()
 #   )
 #
-# SP1_spread <- subset(allteams20232024,Div =="SP1")
+# SP1_spread <- subset(allteams20242025,Div =="SP1")
 # SP1_spread$matchid <- paste(SP1$HomeTeam,SP1$AwayTeam,sep = "-")
 # SP1_spread <- left_join(SP1_spread,laliga_goal_mins)
 # SP1_spread <- SP1_spread %>% replace(is.na(.),0)
@@ -273,7 +273,7 @@ write.xlsx(I1_spread_final,'I1_spread.xlsx')
 # SP1_spread <- left_join(SP1_spread,laliga_shirtnumbers)
 # SP1_spread <- SP1_spread %>% replace(is.na(.),0)
 
-SP1_spread <- subset(allteams20232024,Div =="SP1")
+SP1_spread <- subset(allteams20242025,Div =="SP1")
 SP1_spread$matchid <- paste(SP1$HomeTeam,SP1$AwayTeam,sep = "-")
 laliganrows <- nrow(SP1_spread) - nrow(readxl::read_excel('SP1_spread.xlsx'))
 SP1_spread <- tail(SP1_spread,laliganrows)
@@ -294,7 +294,7 @@ SP1_spread_prev <- readxl::read_excel('SP1_spread.xlsx')
 SP1_spread_final <- rbind(SP1_spread_prev,SP1_spread)
 
 unlink('SP1_spread.xlsx')
-write.xlsx(SP1_spread_final,'SP1_spread.xlsx')
+write.xlsx(SP1_spread,'SP1_spread.xlsx')
 
 ################################################################################################################
 # #F1
@@ -320,7 +320,7 @@ write.xlsx(SP1_spread_final,'SP1_spread.xlsx')
 #                    n = n()
 #   )
 #
-# F1_spread <- subset(allteams20232024,Div =="F1")
+# F1_spread <- subset(allteams20242025,Div =="F1")
 # F1_spread$matchid <- paste(F1$HomeTeam,F1$AwayTeam,sep = "-")
 # F1_spread <- left_join(F1_spread,ligueone_goal_mins)
 # F1_spread <- F1_spread %>% replace(is.na(.),0)
@@ -346,7 +346,7 @@ write.xlsx(SP1_spread_final,'SP1_spread.xlsx')
 # F1_spread <- left_join(F1_spread,ligueone_shirtnumbers)
 # F1_spread <- F1_spread %>% replace(is.na(.),0)
 
-F1_spread <- subset(allteams20232024,Div =="F1")
+F1_spread <- subset(allteams20242025,Div =="F1")
 F1_spread$matchid <- paste(F1$HomeTeam,F1$AwayTeam,sep = "-")
 ligueonerows <- nrow(F1_spread) - nrow(readxl::read_excel('F1_spread.xlsx'))
 F1_spread <- tail(F1_spread,ligueonerows)

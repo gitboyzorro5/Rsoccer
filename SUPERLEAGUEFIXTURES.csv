@@ -1,0 +1,183 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","G1","PAOK","Panserraikos",2024-08-17
+"2","G1","Volos NFC","Olympiakos",2024-08-17
+"3","G1","Levadeiakos","Athens Kallithea",2024-08-18
+"4","G1","Panathinaikos","Asteras Tripolis",2024-08-18
+"5","G1","Atromitos","Aris",2024-08-18
+"6","G1","AEK","OFI Crete",2024-08-18
+"7","G1","Panetolikos","Lamia",2024-08-19
+"8","G1","Lamia","PAOK",2024-11-02
+"9","G1","Athens Kallithea","Panetolikos",2024-11-02
+"10","G1","Aris","Levadeiakos",2024-11-02
+"11","G1","Asteras Tripolis","OFI Crete",2024-11-02
+"12","G1","Olympiakos","Panserraikos",2024-11-02
+"13","G1","Volos NFC","Panathinaikos",2024-11-02
+"14","G1","Atromitos","AEK",2024-11-02
+"15","G1","AEK","Asteras Tripolis",2024-11-09
+"16","G1","Panetolikos","Aris",2024-11-09
+"17","G1","OFI Crete","Athens Kallithea",2024-11-09
+"18","G1","Levadeiakos","Volos NFC",2024-11-09
+"19","G1","PAOK","Olympiakos",2024-11-09
+"20","G1","Panserraikos","Atromitos",2024-11-09
+"21","G1","Panathinaikos","Lamia",2024-11-09
+"22","G1","Panetolikos","Panathinaikos",2024-11-23
+"23","G1","Athens Kallithea","Panserraikos",2024-11-23
+"24","G1","Aris","Volos NFC",2024-11-23
+"25","G1","Atromitos","Levadeiakos",2024-11-23
+"26","G1","Asteras Tripolis","PAOK",2024-11-23
+"27","G1","Lamia","OFI Crete",2024-11-23
+"28","G1","Olympiakos","AEK",2024-11-23
+"29","G1","PAOK","Athens Kallithea",2024-11-30
+"30","G1","Levadeiakos","Panetolikos",2024-11-30
+"31","G1","OFI Crete","Olympiakos",2024-11-30
+"32","G1","Panserraikos","Asteras Tripolis",2024-11-30
+"33","G1","Volos NFC","Lamia",2024-11-30
+"34","G1","AEK","Aris",2024-11-30
+"35","G1","Panathinaikos","Atromitos",2024-11-30
+"36","G1","Panserraikos","PAOK",2024-12-07
+"37","G1","Lamia","Panetolikos",2024-12-07
+"38","G1","Aris","Atromitos",2024-12-07
+"39","G1","Olympiakos","Volos NFC",2024-12-07
+"40","G1","Athens Kallithea","Levadeiakos",2024-12-07
+"41","G1","OFI Crete","AEK",2024-12-07
+"42","G1","Asteras Tripolis","Panathinaikos",2024-12-07
+"43","G1","Athens Kallithea","Olympiakos",2024-12-14
+"44","G1","Aris","Panserraikos",2024-12-14
+"45","G1","Volos NFC","Asteras Tripolis",2024-12-14
+"46","G1","Levadeiakos","Panathinaikos",2024-12-14
+"47","G1","Lamia","AEK",2024-12-14
+"48","G1","Panetolikos","PAOK",2024-12-14
+"49","G1","Atromitos","OFI Crete",2024-12-14
+"50","G1","PAOK","Atromitos",2024-12-21
+"51","G1","Panathinaikos","Athens Kallithea",2024-12-21
+"52","G1","AEK","Levadeiakos",2024-12-21
+"53","G1","Olympiakos","Lamia",2024-12-21
+"54","G1","OFI Crete","Volos NFC",2024-12-21
+"55","G1","Asteras Tripolis","Aris",2024-12-21
+"56","G1","Panserraikos","Panetolikos",2024-12-21
+"57","G1","Panetolikos","Olympiakos",2025-01-04
+"58","G1","Volos NFC","AEK",2025-01-04
+"59","G1","Athens Kallithea","Lamia",2025-01-04
+"60","G1","Aris","OFI Crete",2025-01-04
+"61","G1","Atromitos","Asteras Tripolis",2025-01-04
+"62","G1","Panathinaikos","PAOK",2025-01-04
+"63","G1","Levadeiakos","Panserraikos",2025-01-04
+"64","G1","Panserraikos","Panathinaikos",2025-01-11
+"65","G1","PAOK","Volos NFC",2025-01-11
+"66","G1","OFI Crete","Levadeiakos",2025-01-11
+"67","G1","AEK","Athens Kallithea",2025-01-11
+"68","G1","Olympiakos","Aris",2025-01-11
+"69","G1","Asteras Tripolis","Panetolikos",2025-01-11
+"70","G1","Lamia","Atromitos",2025-01-11
+"71","G1","Panserraikos","Lamia",2025-01-18
+"72","G1","Panathinaikos","AEK",2025-01-18
+"73","G1","Levadeiakos","Asteras Tripolis",2025-01-18
+"74","G1","Athens Kallithea","Volos NFC",2025-01-18
+"75","G1","Panetolikos","OFI Crete",2025-01-18
+"76","G1","Atromitos","Olympiakos",2025-01-18
+"77","G1","Aris","PAOK",2025-01-18
+"78","G1","OFI Crete","Atromitos",2024-08-24
+"79","G1","Panserraikos","Aris",2024-08-24
+"80","G1","AEK","Lamia",2024-08-24
+"81","G1","Asteras Tripolis","Volos NFC",2024-08-25
+"82","G1","PAOK","Panetolikos",2024-08-25
+"83","G1","Panathinaikos","Levadeiakos",2024-08-25
+"84","G1","Olympiakos","Athens Kallithea",2024-08-26
+"85","G1","Volos NFC","Atromitos",2025-01-25
+"86","G1","Asteras Tripolis","Athens Kallithea",2025-01-25
+"87","G1","PAOK","Levadeiakos",2025-01-25
+"88","G1","Lamia","Aris",2025-01-25
+"89","G1","AEK","Panetolikos",2025-01-25
+"90","G1","OFI Crete","Panserraikos",2025-01-25
+"91","G1","Olympiakos","Panathinaikos",2025-01-25
+"92","G1","Levadeiakos","Olympiakos",2025-02-01
+"93","G1","Panserraikos","Volos NFC",2025-02-01
+"94","G1","Asteras Tripolis","Lamia",2025-02-01
+"95","G1","PAOK","AEK",2025-02-01
+"96","G1","Athens Kallithea","Aris",2025-02-01
+"97","G1","Panathinaikos","OFI Crete",2025-02-01
+"98","G1","Panetolikos","Atromitos",2025-02-01
+"99","G1","Volos NFC","Panetolikos",2025-02-08
+"100","G1","AEK","Panserraikos",2025-02-08
+"101","G1","Aris","Panathinaikos",2025-02-08
+"102","G1","Olympiakos","Asteras Tripolis",2025-02-08
+"103","G1","Atromitos","Athens Kallithea",2025-02-08
+"104","G1","Lamia","Levadeiakos",2025-02-08
+"105","G1","OFI Crete","PAOK",2025-02-08
+"106","G1","AEK","Atromitos",2025-02-15
+"107","G1","Panserraikos","Olympiakos",2025-02-15
+"108","G1","OFI Crete","Asteras Tripolis",2025-02-15
+"109","G1","Levadeiakos","Aris",2025-02-15
+"110","G1","PAOK","Lamia",2025-02-15
+"111","G1","Panetolikos","Athens Kallithea",2025-02-15
+"112","G1","Panathinaikos","Volos NFC",2025-02-15
+"113","G1","Olympiakos","PAOK",2025-02-22
+"114","G1","Volos NFC","Levadeiakos",2025-02-22
+"115","G1","Aris","Panetolikos",2025-02-22
+"116","G1","Lamia","Panathinaikos",2025-02-22
+"117","G1","Atromitos","Panserraikos",2025-02-22
+"118","G1","Asteras Tripolis","AEK",2025-02-22
+"119","G1","Athens Kallithea","OFI Crete",2025-02-22
+"120","G1","AEK","Olympiakos",2025-03-01
+"121","G1","OFI Crete","Lamia",2025-03-01
+"122","G1","Panathinaikos","Panetolikos",2025-03-01
+"123","G1","Panserraikos","Athens Kallithea",2025-03-01
+"124","G1","Levadeiakos","Atromitos",2025-03-01
+"125","G1","PAOK","Asteras Tripolis",2025-03-01
+"126","G1","Volos NFC","Aris",2025-03-01
+"127","G1","Atromitos","Panathinaikos",2025-03-09
+"128","G1","Asteras Tripolis","Panserraikos",2025-03-09
+"129","G1","Aris","AEK",2025-03-09
+"130","G1","Athens Kallithea","PAOK",2025-03-09
+"131","G1","Olympiakos","OFI Crete",2025-03-09
+"132","G1","Lamia","Volos NFC",2025-03-09
+"133","G1","Panetolikos","Levadeiakos",2025-03-09
+"134","G1","Lamia","Olympiakos",2024-08-31
+"135","G1","Aris","Asteras Tripolis",2024-08-31
+"136","G1","Panetolikos","Panserraikos",2024-08-31
+"137","G1","Levadeiakos","AEK",2024-09-01
+"138","G1","Volos NFC","OFI Crete",2024-09-01
+"139","G1","Atromitos","PAOK",2024-09-01
+"140","G1","Athens Kallithea","Panathinaikos",2024-09-01
+"141","G1","Lamia","Athens Kallithea",2024-09-14
+"142","G1","PAOK","Panathinaikos",2024-09-14
+"143","G1","Olympiakos","Panetolikos",2024-09-14
+"144","G1","Panserraikos","Levadeiakos",2024-09-14
+"145","G1","Asteras Tripolis","Atromitos",2024-09-14
+"146","G1","OFI Crete","Aris",2024-09-14
+"147","G1","AEK","Volos NFC",2024-09-14
+"148","G1","Panetolikos","Asteras Tripolis",2024-09-21
+"149","G1","Levadeiakos","OFI Crete",2024-09-21
+"150","G1","Panathinaikos","Panserraikos",2024-09-21
+"151","G1","Volos NFC","PAOK",2024-09-21
+"152","G1","Atromitos","Lamia",2024-09-21
+"153","G1","Aris","Olympiakos",2024-09-21
+"154","G1","Athens Kallithea","AEK",2024-09-21
+"155","G1","Asteras Tripolis","Levadeiakos",2024-09-28
+"156","G1","AEK","Panathinaikos",2024-09-28
+"157","G1","PAOK","Aris",2024-09-28
+"158","G1","Volos NFC","Athens Kallithea",2024-09-28
+"159","G1","Lamia","Panserraikos",2024-09-28
+"160","G1","OFI Crete","Panetolikos",2024-09-28
+"161","G1","Olympiakos","Atromitos",2024-09-28
+"162","G1","Levadeiakos","PAOK",2024-10-05
+"163","G1","Aris","Lamia",2024-10-05
+"164","G1","Panserraikos","OFI Crete",2024-10-05
+"165","G1","Athens Kallithea","Asteras Tripolis",2024-10-05
+"166","G1","Panathinaikos","Olympiakos",2024-10-05
+"167","G1","Panetolikos","AEK",2024-10-05
+"168","G1","Atromitos","Volos NFC",2024-10-05
+"169","G1","Aris","Athens Kallithea",2024-10-19
+"170","G1","AEK","PAOK",2024-10-19
+"171","G1","Olympiakos","Levadeiakos",2024-10-19
+"172","G1","Lamia","Asteras Tripolis",2024-10-19
+"173","G1","Atromitos","Panetolikos",2024-10-19
+"174","G1","OFI Crete","Panathinaikos",2024-10-19
+"175","G1","Volos NFC","Panserraikos",2024-10-19
+"176","G1","PAOK","OFI Crete",2024-10-26
+"177","G1","Panserraikos","AEK",2024-10-26
+"178","G1","Levadeiakos","Lamia",2024-10-26
+"179","G1","Panetolikos","Volos NFC",2024-10-26
+"180","G1","Asteras Tripolis","Olympiakos",2024-10-26
+"181","G1","Panathinaikos","Aris",2024-10-26
+"182","G1","Athens Kallithea","Atromitos",2024-10-26

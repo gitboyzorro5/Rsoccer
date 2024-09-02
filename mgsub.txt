@@ -26,7 +26,10 @@ E3
 leaguetwo_match_fixtures$HomeTeam <- mgsub(leaguetwo_match_fixtures$HomeTeam,c("Acc'ton Stanley","Bradford City","Carlisle United","Colchester Utd","Crewe Alexandra","Grimsby Town","MK Dons","Salford City","Swindon Town","Tranmere Rovers"),c("Accrington","Bradford","Carlisle","Colchester","Crewe","Grimsby","Milton Keynes Dons","Salford","Swindon","Tranmere"))
 leaguetwo_match_fixtures$AwayTeam <- mgsub(leaguetwo_match_fixtures$AwayTeam,c("Acc'ton Stanley","Bradford City","Carlisle United","Colchester Utd","Crewe Alexandra","Grimsby Town","MK Dons","Salford City","Swindon Town","Tranmere Rovers"),c("Accrington","Bradford","Carlisle","Colchester","Crewe","Grimsby","Milton Keynes Dons","Salford","Swindon","Tranmere"))
 
-EC(data not availabe yet)
+EC
+
+national_match_fixtures$HomeTeam <- mgsub(national_match_fixtures$HomeTeam,c("Aldershot Town","Boston United","Dag & Red","Ebbsfleet Utd","FC Halifax Town","FG Rovers","Hartlepool Utd","Maidenhead Utd","Oldham Athletic","Solihull Moors","Southend United","Sutton United","Yeovil Town","York City"),c("Aldershot","Boston Utd","Dag and Red","Ebbsfleet","Halifax","Forest Green","Hartlepool","Maidenhead","Oldham","Solihull","Southend","Sutton","Yeovil","York"))
+national_match_fixtures$AwayTeam <- mgsub(national_match_fixtures$AwayTeam,c("Aldershot Town","Boston United","Dag & Red","Ebbsfleet Utd","FC Halifax Town","FG Rovers","Hartlepool Utd","Maidenhead Utd","Oldham Athletic","Solihull Moors","Southend United","Sutton United","Yeovil Town","York City"),c("Aldershot","Boston Utd","Dag and Red","Ebbsfleet","Halifax","Forest Green","Hartlepool","Maidenhead","Oldham","Solihull","Southend","Sutton","Yeovil","York"))
 G1 ( data not availabe yet)
 
 N1

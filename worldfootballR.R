@@ -78,7 +78,7 @@ E0_spread_final <- rbind(E0_spread_prev,E0_spread)
 
 unlink('E0_spread.xlsx')
 write.xlsx(E0_spread_final,'E0_spread.xlsx')
-View(E0_spread)
+
 #############################################################################################################
 # #D1
 # bundesliga_match_details <- load_fotmob_match_details(
@@ -294,7 +294,7 @@ SP1_spread_prev <- readxl::read_excel('SP1_spread.xlsx')
 SP1_spread_final <- rbind(SP1_spread_prev,SP1_spread)
 
 unlink('SP1_spread.xlsx')
-write.xlsx(SP1_spread,'SP1_spread.xlsx')
+write.xlsx(SP1_spread_final,'SP1_spread.xlsx')
 
 ################################################################################################################
 # #F1

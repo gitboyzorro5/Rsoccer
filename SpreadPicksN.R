@@ -1,7 +1,7 @@
 spreadn <- 6
 library('xlsx')
 #D1
-D1_spread <- subset(readxl::read_excel('UCL20232024.xlsx'), Div == "D1")
+D1_spread <- subset(readxl::read_excel('UCL20242025.xlsx'), Div == "D1")
 D1_spread <- D1_spread[,-1]
 unlink('SpreadsN/D1/*')
 for(d1_sn in 1:17){
@@ -23,7 +23,7 @@ for(d1_sn in 1:17){
 }
 
 #E0
-E0_spread <- subset(readxl::read_excel('UCL20232024.xlsx'), Div == "E0")
+E0_spread <- subset(readxl::read_excel('UCL20242025.xlsx'), Div == "E0")
 E0_spread <- E0_spread[,-1]
 unlink('SpreadsN/E0/*')
 for(e0_sn in 1:19){
@@ -47,7 +47,7 @@ for(e0_sn in 1:19){
 }
 
 #I1
-I1_spread <- subset(readxl::read_excel('UCL20232024.xlsx'), Div == "I1")
+I1_spread <- subset(readxl::read_excel('UCL20242025.xlsx'), Div == "I1")
 I1_spread <- I1_spread[,-1]
 unlink('SpreadsN/I1/*')
 for(i1_sn in 1:19){
@@ -70,7 +70,7 @@ for(i1_sn in 1:19){
 
 
 #SP1
-SP1_spread <- subset(readxl::read_excel('UCL20232024.xlsx'), Div == "SP1")
+SP1_spread <- subset(readxl::read_excel('UCL20242025.xlsx'), Div == "SP1")
 SP1_spread <- SP1_spread[,-1]
 unlink('SpreadsN/SP1/*')
 for(sp1_sn in 1:19){
@@ -92,7 +92,7 @@ for(sp1_sn in 1:19){
 }
 
 #F1
-F1_spread <- subset(readxl::read_excel('UCL20232024.xlsx'), Div == "F1")
+F1_spread <- subset(readxl::read_excel('UCL20242025.xlsx'), Div == "F1")
 F1_spread <- F1_spread[,-1]
 unlink('SpreadsN/F1/*')
 for(f1_sn in 1:17){
@@ -117,7 +117,7 @@ for(f1_sn in 1:17){
 ####################################################################################################################################################
 ####Other Leagues #############################################################################Other leagues########################################
 #B1
-B1_spread <- subset(allteams20232024,Div =="B1")
+B1_spread <- subset(allteams20242025,Div =="B1")
 B1_spread$n <- B1_spread$TG * 1
 B1_spread$Bookings <- (B1_spread$HY *10 + B1_spread$HR *25) + (B1_spread$AY*10 + B1_spread$AR*25)
 B1_spread$Crossbookings <- (B1_spread$HY *10 + B1_spread$HR *25)*(B1_spread$AY*10 + B1_spread$AR*25)
@@ -149,7 +149,7 @@ for(b1_sn in 1:17){
 
 ###############################################################################################################
 #D2
-D2_spread <- subset(allteams20232024,Div =="D2")
+D2_spread <- subset(allteams20242025,Div =="D2")
 D2_spread$n <- D2_spread$TG * 1
 D2_spread$Bookings <- (D2_spread$HY *10 + D2_spread$HR *25) + (D2_spread$AY*10 + D2_spread$AR*25)
 D2_spread$Crossbookings <- (D2_spread$HY *10 + D2_spread$HR *25)*(D2_spread$AY*10 + D2_spread$AR*25)
@@ -180,7 +180,7 @@ for(d2_sn in 1:17){
 }
 
 ###############################################################################################################
-E1_spread <- subset(allteams20232024,Div =="E1")
+E1_spread <- subset(allteams20242025,Div =="E1")
 E1_spread$n <- E1_spread$TG * 1
 E1_spread$Bookings <- (E1_spread$HY *10 + E1_spread$HR *25) + (E1_spread$AY*10 + E1_spread$AR*25)
 E1_spread$Crossbookings <- (E1_spread$HY *10 + E1_spread$HR *25)*(E1_spread$AY*10 + E1_spread$AR*25)
@@ -211,7 +211,7 @@ for(e1_sn in 1:23){
 }
 
 #############################################################################################################################################
-E2_spread <- subset(allteams20232024,Div =="E2")
+E2_spread <- subset(allteams20242025,Div =="E2")
 E2_spread$n <- E2_spread$TG * 1
 E2_spread$Bookings <- (E2_spread$HY *10 + E2_spread$HR *25) + (E2_spread$AY*10 + E2_spread$AR*25)
 E2_spread$Crossbookings <- (E2_spread$HY *10 + E2_spread$HR *25)*(E2_spread$AY*10 + E2_spread$AR*25)
@@ -241,7 +241,7 @@ for(e2_sn in 1:23){
 
 }
 #############################################################################################################################################
-E3_spread <- subset(allteams20232024,Div =="E3")
+E3_spread <- subset(allteams20242025,Div =="E3")
 E3_spread$n <- E3_spread$TG * 1
 E3_spread$Bookings <- (E3_spread$HY *10 + E3_spread$HR *25) + (E3_spread$AY*10 + E3_spread$AR*25)
 E3_spread$Crossbookings <- (E3_spread$HY *10 + E3_spread$HR *25)*(E3_spread$AY*10 + E3_spread$AR*25)
@@ -271,7 +271,7 @@ for(e3_sn in 1:23){
 
 }
 ########################################################################################################################################
-EC_spread <- subset(allteams20232024,Div =="EC")
+EC_spread <- subset(allteams20242025,Div =="EC")
 EC_spread$n <- EC_spread$TG * 1
 EC_spread$Bookings <- (EC_spread$HY *10 + EC_spread$HR *25) + (EC_spread$AY*10 + EC_spread$AR*25)
 EC_spread$Crossbookings <- (EC_spread$HY *10 + EC_spread$HR *25)*(EC_spread$AY*10 + EC_spread$AR*25)
@@ -301,7 +301,7 @@ for(ec_sn in 1:23){
 
 }
 ########################################################################################################################################
-F2_spread <- subset(allteams20232024,Div =="F2")
+F2_spread <- subset(allteams20242025,Div =="F2")
 F2_spread$n <- F2_spread$TG * 1
 F2_spread$Bookings <- (F2_spread$HY *10 + F2_spread$HR *25) + (F2_spread$AY*10 + F2_spread$AR*25)
 F2_spread$Crossbookings <- (F2_spread$HY *10 + F2_spread$HR *25)*(F2_spread$AY*10 + F2_spread$AR*25)
@@ -332,7 +332,7 @@ for(f2_sn in 1:19){
 }
 ################################################################################################################################################
 #G1
-G1_spread <- subset(allteams20232024,Div =="G1")
+G1_spread <- subset(allteams20242025,Div =="G1")
 G1_spread$n <- G1_spread$TG * 1
 G1_spread$Bookings <- (G1_spread$HY *10 + G1_spread$HR *25) + (G1_spread$AY*10 + G1_spread$AR*25)
 G1_spread$Crossbookings <- (G1_spread$HY *10 + G1_spread$HR *25)*(G1_spread$AY*10 + G1_spread$AR*25)
@@ -363,7 +363,7 @@ for(g1_sn in 1:19){
 }
 ############################################################################################################################################
 #I2
-I2_spread <- subset(allteams20232024,Div =="I2")
+I2_spread <- subset(allteams20242025,Div =="I2")
 I2_spread$n <- I2_spread$TG * 1
 I2_spread$Bookings <- (I2_spread$HY *10 + I2_spread$HR *25) + (I2_spread$AY*10 + I2_spread$AR*25)
 I2_spread$Crossbookings <- (I2_spread$HY *10 + I2_spread$HR *25)*(I2_spread$AY*10 + I2_spread$AR*25)
@@ -394,7 +394,7 @@ for(i2_sn in 1:19){
 }
 
 ############################################################################################################################################
-N1_spread <- subset(allteams20232024,Div =="N1")
+N1_spread <- subset(allteams20242025,Div =="N1")
 N1_spread$n <- N1_spread$TG * 1
 N1_spread$Bookings <- (N1_spread$HY *10 + N1_spread$HR *25) + (N1_spread$AY*10 + N1_spread$AR*25)
 N1_spread$Crossbookings <- (N1_spread$HY *10 + N1_spread$HR *25)*(N1_spread$AY*10 + N1_spread$AR*25)
@@ -424,7 +424,7 @@ for(n1_sn in 1:17){
 
 }
 ###########################################################################################################################################
-P1_spread <- subset(allteams20232024,Div =="P1")
+P1_spread <- subset(allteams20242025,Div =="P1")
 P1_spread$n <- P1_spread$TG * 1
 P1_spread$Bookings <- (P1_spread$HY *10 + P1_spread$HR *25) + (P1_spread$AY*10 + P1_spread$AR*25)
 P1_spread$Crossbookings <- (P1_spread$HY *10 + P1_spread$HR *25)*(P1_spread$AY*10 + P1_spread$AR*25)
@@ -455,7 +455,7 @@ for(p1_sn in 1:17){
 }
 ########################################################################################################################################
 #SC0
-SC0_spread <- subset(allteams20232024,Div =="SC0")
+SC0_spread <- subset(allteams20242025,Div =="SC0")
 SC0_spread$n <- SC0_spread$TG * 1
 SC0_spread$Bookings <- (SC0_spread$HY *10 + SC0_spread$HR *25) + (SC0_spread$AY*10 + SC0_spread$AR*25)
 SC0_spread$Crossbookings <- (SC0_spread$HY *10 + SC0_spread$HR *25)*(SC0_spread$AY*10 + SC0_spread$AR*25)
@@ -485,7 +485,7 @@ for(sc0_sn in 1:11){
 
 }
 ########################################################################################################################################
-SC1_spread <- subset(allteams20232024,Div =="SC1")
+SC1_spread <- subset(allteams20242025,Div =="SC1")
 SC1_spread$n <- SC1_spread$TG * 1
 SC1_spread$Bookings <- (SC1_spread$HY *10 + SC1_spread$HR *25) + (SC1_spread$AY*10 + SC1_spread$AR*25)
 SC1_spread$Crossbookings <- (SC1_spread$HY *10 + SC1_spread$HR *25)*(SC1_spread$AY*10 + SC1_spread$AR*25)
@@ -516,7 +516,7 @@ for(sc1_sn in 1:9){
 }
 ###################################################################################################################################################
 #SC2
-SC2_spread <- subset(allteams20232024,Div =="SC2")
+SC2_spread <- subset(allteams20242025,Div =="SC2")
 SC2_spread$n <- SC2_spread$TG * 1
 SC2_spread$Bookings <- (SC2_spread$HY *10 + SC2_spread$HR *25) + (SC2_spread$AY*10 + SC2_spread$AR*25)
 SC2_spread$Crossbookings <- (SC2_spread$HY *10 + SC2_spread$HR *25)*(SC2_spread$AY*10 + SC2_spread$AR*25)
@@ -548,7 +548,7 @@ for(sc2_sn in 1:9){
 
 ##################################################################################################################################################
 #SC3
-SC3_spread <- subset(allteams20232024,Div =="SC3")
+SC3_spread <- subset(allteams20242025,Div =="SC3")
 SC3_spread$n <- SC3_spread$TG * 1
 SC3_spread$Bookings <- (SC3_spread$HY *10 + SC3_spread$HR *25) + (SC3_spread$AY*10 + SC3_spread$AR*25)
 SC3_spread$Crossbookings <- (SC3_spread$HY *10 + SC3_spread$HR *25)*(SC3_spread$AY*10 + SC3_spread$AR*25)
@@ -579,7 +579,7 @@ for(sc3_sn in 1:9){
 }
 ##################################################################################################################################################
 #SP2
-SP2_spread <- subset(allteams20232024,Div =="SP2")
+SP2_spread <- subset(allteams20242025,Div =="SP2")
 SP2_spread$n <- SP2_spread$TG * 1
 SP2_spread$Bookings <- (SP2_spread$HY *10 + SP2_spread$HR *25) + (SP2_spread$AY*10 + SP2_spread$AR*25)
 SP2_spread$Crossbookings <- (SP2_spread$HY *10 + SP2_spread$HR *25)*(SP2_spread$AY*10 + SP2_spread$AR*25)
@@ -609,7 +609,7 @@ for(sp2_sn in 1:21){
 
 }
 ##################################################################################################################################################
-T1_spread <- subset(allteams20232024,Div =="T1")
+T1_spread <- subset(allteams20242025,Div =="T1")
 T1_spread$n <- T1_spread$TG * 1
 T1_spread$Bookings <- (T1_spread$HY *10 + T1_spread$HR *25) + (T1_spread$AY*10 + T1_spread$AR*25)
 T1_spread$Crossbookings <- (T1_spread$HY *10 + T1_spread$HR *25)*(T1_spread$AY*10 + T1_spread$AR*25)

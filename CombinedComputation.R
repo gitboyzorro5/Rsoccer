@@ -1,69 +1,70 @@
-#load the new data frames
-Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
-library('xlsx')
-library('sqldf')
-library('scales')
-source('divisions.R')
-source('Matchday.R')
-sp1_currentround
-
-first_df <- E1_rounds[E1_rounds$e1_matchday > 40,]
-second_df <- E2_rounds[E2_rounds$e2_matchday > 40,]
-third_df <- E3_rounds[E3_rounds$e3_matchday > 40,]
-first_df <- first_df[,-37]
-second_df <- second_df[,-37]
-third_df <- third_df[,-37]
-EFL <- rbind(first_df,second_df,third_df)
-#EFL <- SP1_rounds[SP1_rounds$sp1_matchday > 27,]
-#EFL <- na.omit(EFL)
+# #load the new data frames
+# Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
+# library('xlsx')
+# library('sqldf')
+# library('scales')
+# source('divisions.R')
+# source('Matchday.R')
+# i1_currentround
+#
+# first_df <- E0_rounds[E0_rounds$e0_matchday > 0,]
+# second_df <- I1_rounds[I1_rounds$i1_matchday > 0,]
+# #third_df <- E0_rounds[E0_rounds$e0_matchday > 33,]
+# first_df <- first_df[,-37]
+# second_df <- second_df[,-37]
+# #third_df <- third_df[,-37]
+# UCL <- rbind(first_df,second_df)
+# View(UCL)
+#UCL <- SP1_rounds[SP1_rounds$sp1_matchday > 27,]
+#UCL <- na.omit(UCL)
 #goaltotals v2
-efl_goaltotalsv2 <- tapply(EFL$TG, EFL[c("HomeTeam", "AwayTeam")],mean)
-efl_hgtotals <- rowSums(efl_goaltotalsv2, na.rm = T)
-efl_agtotals <- colSums(efl_goaltotalsv2, na.rm = T)
-efl_goaltotalsv2 <- cbind(efl_goaltotalsv2,efl_hgtotals,efl_agtotals)
-efl_totalgoals <- efl_hgtotals + efl_agtotals
-efl_goaltotalsv2 <- cbind(efl_goaltotalsv2,efl_totalgoals)
-efl_teams <- sort(unique(EFL$HomeTeam))
-efl_home_games <- c()
-efl_away_games <-c()
-for (i_efl in 1:length(efl_teams))
+ucl_goaltotalsv2 <- tapply(UCL$TG, UCL[c("HomeTeam", "AwayTeam")],mean)
+ucl_hgtotals <- rowSums(ucl_goaltotalsv2, na.rm = T)
+ucl_agtotals <- colSums(ucl_goaltotalsv2, na.rm = T)
+ucl_goaltotalsv2 <- cbind(ucl_goaltotalsv2,ucl_hgtotals,ucl_agtotals)
+ucl_totalgoals <- ucl_hgtotals + ucl_agtotals
+ucl_goaltotalsv2 <- cbind(ucl_goaltotalsv2,ucl_totalgoals)
+ucl_teams <- sort(unique(UCL$HomeTeam))
+ucl_home_games <- c()
+ucl_away_games <-c()
+for (i_ucl in 1:length(ucl_teams))
 {
 
-  efl_home_games[i_efl] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl],])
-  efl_away_games[i_efl]  <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl],])
+  ucl_home_games[i_ucl] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl],])
+  ucl_away_games[i_ucl]  <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl],])
 
 }
-efl_games_played <- efl_home_games + efl_away_games
-efl_goaltotalsv2 <- cbind(efl_goaltotalsv2,efl_games_played)
-efl_avg_totalgoals <- round((efl_totalgoals/ efl_games_played), digits = 4)
-efl_goaltotalsv2[is.na(efl_goaltotalsv2)] <- ""
-efl_goaltotalsv2 <- cbind(efl_goaltotalsv2,efl_avg_totalgoals)
+ucl_games_played <- ucl_home_games + ucl_away_games
+ucl_goaltotalsv2 <- cbind(ucl_goaltotalsv2,ucl_games_played)
+ucl_avg_totalgoals <- round((ucl_totalgoals/ ucl_games_played), digits = 4)
+ucl_goaltotalsv2[is.na(ucl_goaltotalsv2)] <- ""
+ucl_goaltotalsv2 <- cbind(ucl_goaltotalsv2,ucl_avg_totalgoals)
 
 ############################################################################################################
 #Cornertotals v2
-efl_cornertotalsv2 <- tapply(EFL$TC, EFL[c("HomeTeam", "AwayTeam")],mean)
-efl_hcototals <- rowSums(efl_cornertotalsv2, na.rm = T)
-efl_acototals <- colSums(efl_cornertotalsv2, na.rm = T)
-efl_cornertotalsv2 <- cbind(efl_cornertotalsv2,efl_hcototals,efl_acototals)
-efl_totalcorners <- efl_hcototals + efl_acototals
-efl_cornertotalsv2 <- cbind(efl_cornertotalsv2,efl_totalcorners)
-efl_cornertotalsv2 <- cbind(efl_cornertotalsv2,efl_games_played)
-efl_avg_totalcorners <- round((efl_totalcorners/ efl_games_played), digits = 4)
-efl_cornertotalsv2[is.na(efl_cornertotalsv2)] <- ""
-efl_cornertotalsv2 <- cbind(efl_cornertotalsv2,efl_avg_totalcorners)
+ucl_cornertotalsv2 <- tapply(UCL$TC, UCL[c("HomeTeam", "AwayTeam")],mean)
+ucl_hcototals <- rowSums(ucl_cornertotalsv2, na.rm = T)
+ucl_acototals <- colSums(ucl_cornertotalsv2, na.rm = T)
+ucl_cornertotalsv2 <- cbind(ucl_cornertotalsv2,ucl_hcototals,ucl_acototals)
+ucl_totalcorners <- ucl_hcototals + ucl_acototals
+ucl_cornertotalsv2 <- cbind(ucl_cornertotalsv2,ucl_totalcorners)
+ucl_cornertotalsv2 <- cbind(ucl_cornertotalsv2,ucl_games_played)
+ucl_avg_totalcorners <- round((ucl_totalcorners/ ucl_games_played), digits = 4)
+ucl_cornertotalsv2[is.na(ucl_cornertotalsv2)] <- ""
+ucl_cornertotalsv2 <- cbind(ucl_cornertotalsv2,ucl_avg_totalcorners)
 ############################################################################################################
 #GS matrix
-efl_goalscored_h <- tapply(EFL$FTHG, EFL[c("HomeTeam", "Date")],mean)
-efl_goalscored_a <- tapply(EFL$FTAG, EFL[c("AwayTeam", "Date")],mean)
-efl_goalscored_h[is.na(efl_goalscored_h)] <- ""
-efl_goalscored_a[is.na(efl_goalscored_a)] <- ""
-for(efl_rowhgs in 1:nrow(efl_goalscored_h)) {
-  for(efl_colhgs in 1:ncol(efl_goalscored_h)) {
+ucl_goalscored_h <- tapply(UCL$FTHG, UCL[c("HomeTeam", "Date")],mean)
+ucl_goalscored_a <- tapply(UCL$FTAG, UCL[c("AwayTeam", "Date")],mean)
+ucl_goalscored_h[is.na(ucl_goalscored_h)] <- ""
+ucl_goalscored_a[is.na(ucl_goalscored_a)] <- ""
+for(ucl_rowhgs in 1:nrow(ucl_goalscored_h)) {
+  for(ucl_colhgs in 1:ncol(ucl_goalscored_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowags in 1:nrow(efl_goalscored_a)) {
-      for(efl_colags in 1:ncol(efl_goalscored_a)) {
-        ifelse(!efl_goalscored_a[efl_rowags,efl_colags]=="",efl_goalscored_h[efl_rowags,efl_colags] <- efl_goalscored_a[efl_rowags,efl_colags],next)
+    for(ucl_rowags in 1:nrow(ucl_goalscored_a)) {
+      for(ucl_colags in 1:ncol(ucl_goalscored_a)) {
+        ifelse(!ucl_goalscored_a[ucl_rowags,ucl_colags]=="",ucl_goalscored_h[ucl_rowags,ucl_colags] <- ucl_goalscored_a[ucl_rowags,ucl_colags],next)
         #print(my_matrix[row, col])
       }
     }
@@ -72,17 +73,17 @@ for(efl_rowhgs in 1:nrow(efl_goalscored_h)) {
 }
 #############################################################################################################
 #Goal conceded matrix
-efl_goalconceded_h <- tapply(EFL$FTAG, EFL[c("HomeTeam", "Date")],mean)
-efl_goalconceded_a <- tapply(EFL$FTHG, EFL[c("AwayTeam", "Date")],mean)
-efl_goalconceded_h[is.na(efl_goalconceded_h)] <- ""
-efl_goalconceded_a[is.na(efl_goalconceded_a)] <- ""
-for(efl_rowhgc in 1:nrow(efl_goalconceded_h)) {
-  for(efl_colhgc in 1:ncol(efl_goalconceded_h)) {
+ucl_goalconceded_h <- tapply(UCL$FTAG, UCL[c("HomeTeam", "Date")],mean)
+ucl_goalconceded_a <- tapply(UCL$FTHG, UCL[c("AwayTeam", "Date")],mean)
+ucl_goalconceded_h[is.na(ucl_goalconceded_h)] <- ""
+ucl_goalconceded_a[is.na(ucl_goalconceded_a)] <- ""
+for(ucl_rowhgc in 1:nrow(ucl_goalconceded_h)) {
+  for(ucl_colhgc in 1:ncol(ucl_goalconceded_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowagc in 1:nrow(efl_goalconceded_a)) {
-      for(efl_colagc in 1:ncol(efl_goalconceded_a)) {
-        ifelse(!efl_goalconceded_a[efl_rowagc,efl_colagc]=="",efl_goalconceded_h[efl_rowagc,efl_colagc] <- efl_goalconceded_a[efl_rowagc,efl_colagc],next)
+    for(ucl_rowagc in 1:nrow(ucl_goalconceded_a)) {
+      for(ucl_colagc in 1:ncol(ucl_goalconceded_a)) {
+        ifelse(!ucl_goalconceded_a[ucl_rowagc,ucl_colagc]=="",ucl_goalconceded_h[ucl_rowagc,ucl_colagc] <- ucl_goalconceded_a[ucl_rowagc,ucl_colagc],next)
         #print(my_matrix[row, col])
       }
     }
@@ -91,18 +92,18 @@ for(efl_rowhgc in 1:nrow(efl_goalconceded_h)) {
 }
 ###############################################################################################################
 #corner matrix
-efl_totalcorners_h <- tapply(EFL$TC, EFL[c("HomeTeam", "Date")],mean)
-efl_totalcorners_a <- tapply(EFL$TC, EFL[c("AwayTeam", "Date")],mean)
-efl_totalcorners_h[is.na(efl_totalcorners_h)] <- ""
-efl_totalcorners_a[is.na(efl_totalcorners_a)] <- ""
-#EFL
-for(efl_rowTC in 1:nrow(efl_totalcorners_h)) {
-  for(efl_colTC in 1:ncol(efl_totalcorners_h)) {
+ucl_totalcorners_h <- tapply(UCL$TC, UCL[c("HomeTeam", "Date")],mean)
+ucl_totalcorners_a <- tapply(UCL$TC, UCL[c("AwayTeam", "Date")],mean)
+ucl_totalcorners_h[is.na(ucl_totalcorners_h)] <- ""
+ucl_totalcorners_a[is.na(ucl_totalcorners_a)] <- ""
+#UCL
+for(ucl_rowTC in 1:nrow(ucl_totalcorners_h)) {
+  for(ucl_colTC in 1:ncol(ucl_totalcorners_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowTC in 1:nrow(efl_totalcorners_a)) {
-      for(efl_colTC in 1:ncol(efl_totalcorners_a)) {
-        ifelse(!efl_totalcorners_a[efl_rowTC,efl_colTC]=="",efl_totalcorners_h[efl_rowTC,efl_colTC] <- efl_totalcorners_a[efl_rowTC,efl_colTC],next)
+    for(ucl_rowTC in 1:nrow(ucl_totalcorners_a)) {
+      for(ucl_colTC in 1:ncol(ucl_totalcorners_a)) {
+        ifelse(!ucl_totalcorners_a[ucl_rowTC,ucl_colTC]=="",ucl_totalcorners_h[ucl_rowTC,ucl_colTC] <- ucl_totalcorners_a[ucl_rowTC,ucl_colTC],next)
         #print(my_matrix[row, col])
       }
     }
@@ -111,18 +112,18 @@ for(efl_rowTC in 1:nrow(efl_totalcorners_h)) {
 }
 ###################################################################################################################################
 #corners awarded
-efl_coawarded_h <- tapply(EFL$HCO, EFL[c("HomeTeam", "Date")],mean)
-efl_coawarded_a <- tapply(EFL$ACO, EFL[c("AwayTeam", "Date")],mean)
-efl_coawarded_h[is.na(efl_coawarded_h)] <- ""
-efl_coawarded_a[is.na(efl_coawarded_a)] <- ""
-#EFL
-for(efl_rowhco in 1:nrow(efl_coawarded_h)) {
-  for(efl_colhco in 1:ncol(efl_coawarded_h)) {
+ucl_coawarded_h <- tapply(UCL$HCO, UCL[c("HomeTeam", "Date")],mean)
+ucl_coawarded_a <- tapply(UCL$ACO, UCL[c("AwayTeam", "Date")],mean)
+ucl_coawarded_h[is.na(ucl_coawarded_h)] <- ""
+ucl_coawarded_a[is.na(ucl_coawarded_a)] <- ""
+#UCL
+for(ucl_rowhco in 1:nrow(ucl_coawarded_h)) {
+  for(ucl_colhco in 1:ncol(ucl_coawarded_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowaco in 1:nrow(efl_coawarded_a)) {
-      for(efl_colaco in 1:ncol(efl_coawarded_a)) {
-        ifelse(!efl_coawarded_a[efl_rowaco,efl_colaco]=="",efl_coawarded_h[efl_rowaco,efl_colaco] <- efl_coawarded_a[efl_rowaco,efl_colaco],next)
+    for(ucl_rowaco in 1:nrow(ucl_coawarded_a)) {
+      for(ucl_colaco in 1:ncol(ucl_coawarded_a)) {
+        ifelse(!ucl_coawarded_a[ucl_rowaco,ucl_colaco]=="",ucl_coawarded_h[ucl_rowaco,ucl_colaco] <- ucl_coawarded_a[ucl_rowaco,ucl_colaco],next)
         #print(my_matrix[row, col])
       }
     }
@@ -132,18 +133,18 @@ for(efl_rowhco in 1:nrow(efl_coawarded_h)) {
 
 #######################################################################################################################################
 #corners conceded
-efl_cornersconceded_h <- tapply(EFL$ACO, EFL[c("HomeTeam", "Date")],mean)
-efl_cornersconceded_a <- tapply(EFL$HCO, EFL[c("AwayTeam", "Date")],mean)
-efl_cornersconceded_h[is.na(efl_cornersconceded_h)] <- ""
-efl_cornersconceded_a[is.na(efl_cornersconceded_a)] <- ""
-#EFL
-for(efl_rowhcc in 1:nrow(efl_cornersconceded_h)) {
-  for(efl_colhcc in 1:ncol(efl_cornersconceded_h)) {
+ucl_cornersconceded_h <- tapply(UCL$ACO, UCL[c("HomeTeam", "Date")],mean)
+ucl_cornersconceded_a <- tapply(UCL$HCO, UCL[c("AwayTeam", "Date")],mean)
+ucl_cornersconceded_h[is.na(ucl_cornersconceded_h)] <- ""
+ucl_cornersconceded_a[is.na(ucl_cornersconceded_a)] <- ""
+#UCL
+for(ucl_rowhcc in 1:nrow(ucl_cornersconceded_h)) {
+  for(ucl_colhcc in 1:ncol(ucl_cornersconceded_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowacc in 1:nrow(efl_cornersconceded_a)) {
-      for(efl_colacc in 1:ncol(efl_cornersconceded_a)) {
-        ifelse(!efl_cornersconceded_a[efl_rowacc,efl_colacc]=="",efl_cornersconceded_h[efl_rowacc,efl_colacc] <- efl_cornersconceded_a[efl_rowacc,efl_colacc],next)
+    for(ucl_rowacc in 1:nrow(ucl_cornersconceded_a)) {
+      for(ucl_colacc in 1:ncol(ucl_cornersconceded_a)) {
+        ifelse(!ucl_cornersconceded_a[ucl_rowacc,ucl_colacc]=="",ucl_cornersconceded_h[ucl_rowacc,ucl_colacc] <- ucl_cornersconceded_a[ucl_rowacc,ucl_colacc],next)
         #print(my_matrix[row, col])
       }
     }
@@ -153,18 +154,18 @@ for(efl_rowhcc in 1:nrow(efl_cornersconceded_h)) {
 ############################################################################################################################################
 #corners form
 #create home and away coscform matrices
-efl_coscform_h <- tapply(EFL$COSC, EFL[c("HomeTeam", "Date")],median)
-efl_coscform_a <- tapply(EFL$COSC, EFL[c("AwayTeam", "Date")],median)
-efl_coscform_h[is.na(efl_coscform_h)] <- ""
-efl_coscform_a[is.na(efl_coscform_a)] <- ""
-#EFL
-for(efl_rowh_f_cosc in 1:nrow(efl_coscform_h)) {
-  for(efl_colh_f_cosc in 1:ncol(efl_coscform_h)) {
+ucl_coscform_h <- tapply(UCL$COSC, UCL[c("HomeTeam", "Date")],median)
+ucl_coscform_a <- tapply(UCL$COSC, UCL[c("AwayTeam", "Date")],median)
+ucl_coscform_h[is.na(ucl_coscform_h)] <- ""
+ucl_coscform_a[is.na(ucl_coscform_a)] <- ""
+#UCL
+for(ucl_rowh_f_cosc in 1:nrow(ucl_coscform_h)) {
+  for(ucl_colh_f_cosc in 1:ncol(ucl_coscform_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowa_f_cosc in 1:nrow(efl_coscform_a)) {
-      for(efl_cola_f_cosc in 1:ncol(efl_coscform_a)) {
-        ifelse(!efl_coscform_a[efl_rowa_f_cosc,efl_cola_f_cosc]=="",efl_coscform_h[efl_rowa_f_cosc,efl_cola_f_cosc] <- efl_coscform_a[efl_rowa_f_cosc,efl_cola_f_cosc],next)
+    for(ucl_rowa_f_cosc in 1:nrow(ucl_coscform_a)) {
+      for(ucl_cola_f_cosc in 1:ncol(ucl_coscform_a)) {
+        ifelse(!ucl_coscform_a[ucl_rowa_f_cosc,ucl_cola_f_cosc]=="",ucl_coscform_h[ucl_rowa_f_cosc,ucl_cola_f_cosc] <- ucl_coscform_a[ucl_rowa_f_cosc,ucl_cola_f_cosc],next)
         #print(my_matrix[row, col])
       }
     }
@@ -173,18 +174,18 @@ for(efl_rowh_f_cosc in 1:nrow(efl_coscform_h)) {
 }
 ################################################################################################################################################
 #winmargin
-efl_winmargin_h <- tapply(EFL$FTHG - EFL$FTAG, EFL[c("HomeTeam", "Date")],mean)
-efl_winmargin_a <- tapply(EFL$FTAG - EFL$FTHG, EFL[c("AwayTeam", "Date")],mean)
-efl_winmargin_h[is.na(efl_winmargin_h)] <- ""
-efl_winmargin_a[is.na(efl_winmargin_a)] <- ""
-#EFL
-for(efl_rowhwm in 1:nrow(efl_winmargin_h)) {
-  for(efl_colhwm in 1:ncol(efl_winmargin_h)) {
+ucl_winmargin_h <- tapply(UCL$FTHG - UCL$FTAG, UCL[c("HomeTeam", "Date")],mean)
+ucl_winmargin_a <- tapply(UCL$FTAG - UCL$FTHG, UCL[c("AwayTeam", "Date")],mean)
+ucl_winmargin_h[is.na(ucl_winmargin_h)] <- ""
+ucl_winmargin_a[is.na(ucl_winmargin_a)] <- ""
+#UCL
+for(ucl_rowhwm in 1:nrow(ucl_winmargin_h)) {
+  for(ucl_colhwm in 1:ncol(ucl_winmargin_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowawm in 1:nrow(efl_winmargin_a)) {
-      for(efl_colawm in 1:ncol(efl_winmargin_a)) {
-        ifelse(!efl_winmargin_a[efl_rowawm,efl_colawm]=="",efl_winmargin_h[efl_rowawm,efl_colawm] <- efl_winmargin_a[efl_rowawm,efl_colawm],next)
+    for(ucl_rowawm in 1:nrow(ucl_winmargin_a)) {
+      for(ucl_colawm in 1:ncol(ucl_winmargin_a)) {
+        ifelse(!ucl_winmargin_a[ucl_rowawm,ucl_colawm]=="",ucl_winmargin_h[ucl_rowawm,ucl_colawm] <- ucl_winmargin_a[ucl_rowawm,ucl_colawm],next)
         #print(my_matrix[row, col])
       }
     }
@@ -193,18 +194,18 @@ for(efl_rowhwm in 1:nrow(efl_winmargin_h)) {
 }
 #################################################################################################################################################
 #yellow card matrix
-efl_yellowscored_h <- tapply(EFL$HY, EFL[c("HomeTeam", "Date")],mean)
-efl_yellowscored_a <- tapply(EFL$AY, EFL[c("AwayTeam", "Date")],mean)
-efl_yellowscored_h[is.na(efl_yellowscored_h)] <- ""
-efl_yellowscored_a[is.na(efl_yellowscored_a)] <- ""
-#EFL
-for(efl_rowhys in 1:nrow(efl_yellowscored_h)) {
-  for(efl_colhys in 1:ncol(efl_yellowscored_h)) {
+ucl_yellowscored_h <- tapply(UCL$HY, UCL[c("HomeTeam", "Date")],mean)
+ucl_yellowscored_a <- tapply(UCL$AY, UCL[c("AwayTeam", "Date")],mean)
+ucl_yellowscored_h[is.na(ucl_yellowscored_h)] <- ""
+ucl_yellowscored_a[is.na(ucl_yellowscored_a)] <- ""
+#UCL
+for(ucl_rowhys in 1:nrow(ucl_yellowscored_h)) {
+  for(ucl_colhys in 1:ncol(ucl_yellowscored_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_roways in 1:nrow(efl_yellowscored_a)) {
-      for(efl_colays in 1:ncol(efl_yellowscored_a)) {
-        ifelse(!efl_yellowscored_a[efl_roways,efl_colays]=="",efl_yellowscored_h[efl_roways,efl_colays] <- efl_yellowscored_a[efl_roways,efl_colays],next)
+    for(ucl_roways in 1:nrow(ucl_yellowscored_a)) {
+      for(ucl_colays in 1:ncol(ucl_yellowscored_a)) {
+        ifelse(!ucl_yellowscored_a[ucl_roways,ucl_colays]=="",ucl_yellowscored_h[ucl_roways,ucl_colays] <- ucl_yellowscored_a[ucl_roways,ucl_colays],next)
         #print(my_matrix[row, col])
       }
     }
@@ -213,17 +214,17 @@ for(efl_rowhys in 1:nrow(efl_yellowscored_h)) {
 }
 ###############################################################################################################################################
 #red card matrix
-efl_redscored_h <- tapply(EFL$HR, EFL[c("HomeTeam", "Date")],mean)
-efl_redscored_a <- tapply(EFL$AR, EFL[c("AwayTeam", "Date")],mean)
-efl_redscored_h[is.na(efl_redscored_h)] <- ""
-efl_redscored_a[is.na(efl_redscored_a)] <- ""
-for(efl_rowhrs in 1:nrow(efl_redscored_h)) {
-  for(efl_colhrs in 1:ncol(efl_redscored_h)) {
+ucl_redscored_h <- tapply(UCL$HR, UCL[c("HomeTeam", "Date")],mean)
+ucl_redscored_a <- tapply(UCL$AR, UCL[c("AwayTeam", "Date")],mean)
+ucl_redscored_h[is.na(ucl_redscored_h)] <- ""
+ucl_redscored_a[is.na(ucl_redscored_a)] <- ""
+for(ucl_rowhrs in 1:nrow(ucl_redscored_h)) {
+  for(ucl_colhrs in 1:ncol(ucl_redscored_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowars in 1:nrow(efl_redscored_a)) {
-      for(efl_colars in 1:ncol(efl_redscored_a)) {
-        ifelse(!efl_redscored_a[efl_rowars,efl_colars]=="",efl_redscored_h[efl_rowars,efl_colars] <- efl_redscored_a[efl_rowars,efl_colars],next)
+    for(ucl_rowars in 1:nrow(ucl_redscored_a)) {
+      for(ucl_colars in 1:ncol(ucl_redscored_a)) {
+        ifelse(!ucl_redscored_a[ucl_rowars,ucl_colars]=="",ucl_redscored_h[ucl_rowars,ucl_colars] <- ucl_redscored_a[ucl_rowars,ucl_colars],next)
         #print(my_matrix[row, col])
       }
     }
@@ -232,45 +233,45 @@ for(efl_rowhrs in 1:nrow(efl_redscored_h)) {
 }
 ####################################################################################################################################################
 #red totals
-efl_redtotalsv2 <- tapply(EFL$TR, EFL[c("HomeTeam", "AwayTeam")],mean)
-efl_hrtotals <- rowSums(efl_redtotalsv2, na.rm = T)
-efl_artotals <- colSums(efl_redtotalsv2, na.rm = T)
-efl_redtotalsv2 <- cbind(efl_redtotalsv2,efl_hrtotals,efl_artotals)
-efl_totalreds <- efl_hrtotals + efl_artotals
-efl_redtotalsv2 <- cbind(efl_redtotalsv2,efl_totalreds)
-efl_redtotalsv2 <- cbind(efl_redtotalsv2,efl_games_played)
-efl_avg_totalreds <- round((efl_totalreds/ efl_games_played), digits = 4)
-efl_redtotalsv2[is.na(efl_redtotalsv2)] <- ""
-efl_redtotalsv2 <- cbind(efl_redtotalsv2,efl_avg_totalreds)
+ucl_redtotalsv2 <- tapply(UCL$TR, UCL[c("HomeTeam", "AwayTeam")],mean)
+ucl_hrtotals <- rowSums(ucl_redtotalsv2, na.rm = T)
+ucl_artotals <- colSums(ucl_redtotalsv2, na.rm = T)
+ucl_redtotalsv2 <- cbind(ucl_redtotalsv2,ucl_hrtotals,ucl_artotals)
+ucl_totalreds <- ucl_hrtotals + ucl_artotals
+ucl_redtotalsv2 <- cbind(ucl_redtotalsv2,ucl_totalreds)
+ucl_redtotalsv2 <- cbind(ucl_redtotalsv2,ucl_games_played)
+ucl_avg_totalreds <- round((ucl_totalreds/ ucl_games_played), digits = 4)
+ucl_redtotalsv2[is.na(ucl_redtotalsv2)] <- ""
+ucl_redtotalsv2 <- cbind(ucl_redtotalsv2,ucl_avg_totalreds)
 ############################################################################################################################################################
 #yellowtotals
-efl_yellowtotalsv2 <- tapply(EFL$TY, EFL[c("HomeTeam", "AwayTeam")],mean)
-efl_hytotals <- rowSums(efl_yellowtotalsv2, na.rm = T)
-efl_aytotals <- colSums(efl_yellowtotalsv2, na.rm = T)
-efl_yellowtotalsv2 <- cbind(efl_yellowtotalsv2,efl_hytotals,efl_aytotals)
-efl_totalyellows <- efl_hytotals + efl_aytotals
-efl_yellowtotalsv2 <- cbind(efl_yellowtotalsv2,efl_totalyellows)
-efl_yellowtotalsv2 <- cbind(efl_yellowtotalsv2,efl_games_played)
-efl_avg_totalyellows <- round((efl_totalyellows/ efl_games_played), digits = 4)
-efl_yellowtotalsv2[is.na(efl_yellowtotalsv2)] <- ""
-efl_yellowtotalsv2 <- cbind(efl_yellowtotalsv2,efl_avg_totalyellows)
+ucl_yellowtotalsv2 <- tapply(UCL$TY, UCL[c("HomeTeam", "AwayTeam")],mean)
+ucl_hytotals <- rowSums(ucl_yellowtotalsv2, na.rm = T)
+ucl_aytotals <- colSums(ucl_yellowtotalsv2, na.rm = T)
+ucl_yellowtotalsv2 <- cbind(ucl_yellowtotalsv2,ucl_hytotals,ucl_aytotals)
+ucl_totalyellows <- ucl_hytotals + ucl_aytotals
+ucl_yellowtotalsv2 <- cbind(ucl_yellowtotalsv2,ucl_totalyellows)
+ucl_yellowtotalsv2 <- cbind(ucl_yellowtotalsv2,ucl_games_played)
+ucl_avg_totalyellows <- round((ucl_totalyellows/ ucl_games_played), digits = 4)
+ucl_yellowtotalsv2[is.na(ucl_yellowtotalsv2)] <- ""
+ucl_yellowtotalsv2 <- cbind(ucl_yellowtotalsv2,ucl_avg_totalyellows)
 ##################################################################################################################################################
 #team form
-efl_form_h <- tapply(EFL$FTR, EFL[c("HomeTeam", "Date")],median)
-efl_form_a <- tapply(EFL$FTR, EFL[c("AwayTeam", "Date")],median)
-efl_form_h[is.na(efl_form_h)] <- ""
-efl_form_a[is.na(efl_form_a)] <- ""
-efl_form_h <- sub("A","L",efl_form_h)
-efl_form_h <- sub("H","W",efl_form_h)
-efl_form_a <- sub("A","W",efl_form_a)
-efl_form_a <- sub("H","L",efl_form_a)
-for(efl_rowh_f in 1:nrow(efl_form_h)) {
-  for(efl_colh_f in 1:ncol(efl_form_h)) {
+ucl_form_h <- tapply(UCL$FTR, UCL[c("HomeTeam", "Date")],median)
+ucl_form_a <- tapply(UCL$FTR, UCL[c("AwayTeam", "Date")],median)
+ucl_form_h[is.na(ucl_form_h)] <- ""
+ucl_form_a[is.na(ucl_form_a)] <- ""
+ucl_form_h <- sub("A","L",ucl_form_h)
+ucl_form_h <- sub("H","W",ucl_form_h)
+ucl_form_a <- sub("A","W",ucl_form_a)
+ucl_form_a <- sub("H","L",ucl_form_a)
+for(ucl_rowh_f in 1:nrow(ucl_form_h)) {
+  for(ucl_colh_f in 1:ncol(ucl_form_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowa_f in 1:nrow(efl_form_a)) {
-      for(efl_cola_f in 1:ncol(efl_form_a)) {
-        ifelse(!efl_form_a[efl_rowa_f,efl_cola_f]=="",efl_form_h[efl_rowa_f,efl_cola_f] <- efl_form_a[efl_rowa_f,efl_cola_f],next)
+    for(ucl_rowa_f in 1:nrow(ucl_form_a)) {
+      for(ucl_cola_f in 1:ncol(ucl_form_a)) {
+        ifelse(!ucl_form_a[ucl_rowa_f,ucl_cola_f]=="",ucl_form_h[ucl_rowa_f,ucl_cola_f] <- ucl_form_a[ucl_rowa_f,ucl_cola_f],next)
         #print(my_matrix[row, col])
       }
     }
@@ -279,18 +280,18 @@ for(efl_rowh_f in 1:nrow(efl_form_h)) {
 }
 ###########################################################################################################################################
 #CS form
-efl_csform_h <- tapply(EFL$CS, EFL[c("HomeTeam", "Date")],median)
-efl_csform_a <- tapply(EFL$CS, EFL[c("AwayTeam", "Date")],median)
-efl_csform_h[is.na(efl_csform_h)] <- ""
-efl_csform_a[is.na(efl_csform_a)] <- ""
-#EFL
-for(efl_rowh_f_cs in 1:nrow(efl_csform_h)) {
-  for(efl_colh_f_cs in 1:ncol(efl_csform_h)) {
+ucl_csform_h <- tapply(UCL$CS, UCL[c("HomeTeam", "Date")],median)
+ucl_csform_a <- tapply(UCL$CS, UCL[c("AwayTeam", "Date")],median)
+ucl_csform_h[is.na(ucl_csform_h)] <- ""
+ucl_csform_a[is.na(ucl_csform_a)] <- ""
+#UCL
+for(ucl_rowh_f_cs in 1:nrow(ucl_csform_h)) {
+  for(ucl_colh_f_cs in 1:ncol(ucl_csform_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowa_f_cs in 1:nrow(efl_csform_a)) {
-      for(efl_cola_f_cs in 1:ncol(efl_csform_a)) {
-        ifelse(!efl_csform_a[efl_rowa_f_cs,efl_cola_f_cs]=="",efl_csform_h[efl_rowa_f_cs,efl_cola_f_cs] <- efl_csform_a[efl_rowa_f_cs,efl_cola_f_cs],next)
+    for(ucl_rowa_f_cs in 1:nrow(ucl_csform_a)) {
+      for(ucl_cola_f_cs in 1:ncol(ucl_csform_a)) {
+        ifelse(!ucl_csform_a[ucl_rowa_f_cs,ucl_cola_f_cs]=="",ucl_csform_h[ucl_rowa_f_cs,ucl_cola_f_cs] <- ucl_csform_a[ucl_rowa_f_cs,ucl_cola_f_cs],next)
         #print(my_matrix[row, col])
       }
     }
@@ -299,17 +300,17 @@ for(efl_rowh_f_cs in 1:nrow(efl_csform_h)) {
 }
 ####################################################################################################################################
 #TG matrix
-efl_totalgoals_h <- tapply(EFL$TG, EFL[c("HomeTeam", "Date")],mean)
-efl_totalgoals_a <- tapply(EFL$TG, EFL[c("AwayTeam", "Date")],mean)
-efl_totalgoals_h[is.na(efl_totalgoals_h)] <- ""
-efl_totalgoals_a[is.na(efl_totalgoals_a)] <- ""
-for(efl_rowh in 1:nrow(efl_totalgoals_h)) {
-  for(efl_colh in 1:ncol(efl_totalgoals_h)) {
+ucl_totalgoals_h <- tapply(UCL$TG, UCL[c("HomeTeam", "Date")],mean)
+ucl_totalgoals_a <- tapply(UCL$TG, UCL[c("AwayTeam", "Date")],mean)
+ucl_totalgoals_h[is.na(ucl_totalgoals_h)] <- ""
+ucl_totalgoals_a[is.na(ucl_totalgoals_a)] <- ""
+for(ucl_rowh in 1:nrow(ucl_totalgoals_h)) {
+  for(ucl_colh in 1:ncol(ucl_totalgoals_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowa in 1:nrow(efl_totalgoals_a)) {
-      for(efl_cola in 1:ncol(efl_totalgoals_a)) {
-        ifelse(!efl_totalgoals_a[efl_rowa,efl_cola]=="",efl_totalgoals_h[efl_rowa,efl_cola] <- efl_totalgoals_a[efl_rowa,efl_cola],next)
+    for(ucl_rowa in 1:nrow(ucl_totalgoals_a)) {
+      for(ucl_cola in 1:ncol(ucl_totalgoals_a)) {
+        ifelse(!ucl_totalgoals_a[ucl_rowa,ucl_cola]=="",ucl_totalgoals_h[ucl_rowa,ucl_cola] <- ucl_totalgoals_a[ucl_rowa,ucl_cola],next)
         #print(my_matrix[row, col])
       }
     }
@@ -318,112 +319,112 @@ for(efl_rowh in 1:nrow(efl_totalgoals_h)) {
 }
 ##############################################################################################################
 #Totalgoals
-#EFL
-efl_un05_home <- c()
-efl_un05_away <- c()
-efl_ov05_home <- c()
-efl_ov05_away <- c()
+#UCL
+ucl_un05_home <- c()
+ucl_un05_away <- c()
+ucl_ov05_home <- c()
+ucl_ov05_away <- c()
 
-efl_un15_home <- c()
-efl_un15_away <- c()
-efl_ov15_home <- c()
-efl_ov15_away <- c()
+ucl_un15_home <- c()
+ucl_un15_away <- c()
+ucl_ov15_home <- c()
+ucl_ov15_away <- c()
 
-efl_un25_home <- c()
-efl_un25_away <- c()
-efl_ov25_home <- c()
-efl_ov25_away <- c()
+ucl_un25_home <- c()
+ucl_un25_away <- c()
+ucl_ov25_home <- c()
+ucl_ov25_away <- c()
 
-efl_un35_home <- c()
-efl_un35_away <- c()
-efl_ov35_home <- c()
-efl_ov35_away <- c()
+ucl_un35_home <- c()
+ucl_un35_away <- c()
+ucl_ov35_home <- c()
+ucl_ov35_away <- c()
 
-efl_un45_home <- c()
-efl_un45_away <- c()
-efl_ov45_home <- c()
-efl_ov45_away <- c()
+ucl_un45_home <- c()
+ucl_un45_away <- c()
+ucl_ov45_home <- c()
+ucl_ov45_away <- c()
 
-efl_un55_home <- c()
-efl_un55_away <- c()
-efl_ov55_home <- c()
-efl_ov55_away <- c()
+ucl_un55_home <- c()
+ucl_un55_away <- c()
+ucl_ov55_home <- c()
+ucl_ov55_away <- c()
 
-for (i_efl_tg in 1:length(efl_teams))
+for (i_ucl_tg in 1:length(ucl_teams))
 {
 
-  efl_un05_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG == 0,])
-  efl_un05_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG == 0,])
+  ucl_un05_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG == 0,])
+  ucl_un05_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG == 0,])
 
-  efl_ov05_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG > 0,])
-  efl_ov05_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG > 0,])
+  ucl_ov05_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG > 0,])
+  ucl_ov05_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG > 0,])
 
-  efl_un15_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG <= 1,])
-  efl_un15_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG <= 1,])
+  ucl_un15_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 1,])
+  ucl_un15_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 1,])
 
-  efl_ov15_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG >= 2,])
-  efl_ov15_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG >= 2,])
+  ucl_ov15_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG >= 2,])
+  ucl_ov15_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG >= 2,])
 
-  efl_un25_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG <= 2,])
-  efl_un25_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG <= 2,])
+  ucl_un25_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 2,])
+  ucl_un25_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 2,])
 
-  efl_ov25_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG >=3,])
-  efl_ov25_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG >=3,])
+  ucl_ov25_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG >=3,])
+  ucl_ov25_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG >=3,])
 
-  efl_un35_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG <= 3,])
-  efl_un35_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG <= 3,])
+  ucl_un35_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 3,])
+  ucl_un35_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 3,])
 
-  efl_ov35_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG >= 4,])
-  efl_ov35_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG >= 4,])
+  ucl_ov35_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG >= 4,])
+  ucl_ov35_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG >= 4,])
 
-  efl_un45_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG <= 4,])
-  efl_un45_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG <= 4,])
+  ucl_un45_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 4,])
+  ucl_un45_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 4,])
 
-  efl_ov45_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG >= 5,])
-  efl_ov45_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG >= 5,])
+  ucl_ov45_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG >= 5,])
+  ucl_ov45_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG >= 5,])
 
-  efl_un55_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG <= 5,])
-  efl_un55_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG <= 5,])
+  ucl_un55_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 5,])
+  ucl_un55_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG <= 5,])
 
-  efl_ov55_home[i_efl_tg] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_tg] & EFL$TG >= 6,])
-  efl_ov55_away[i_efl_tg] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_tg] & EFL$TG >= 6,])
+  ucl_ov55_home[i_ucl_tg] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_tg] & UCL$TG >= 6,])
+  ucl_ov55_away[i_ucl_tg] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_tg] & UCL$TG >= 6,])
 
 
 }
 
-efl_un05 <- efl_un05_home + efl_un05_away
-efl_ov05 <- efl_ov05_home + efl_ov05_away
+ucl_un05 <- ucl_un05_home + ucl_un05_away
+ucl_ov05 <- ucl_ov05_home + ucl_ov05_away
 
-efl_un15 <- efl_un15_home + efl_un15_away
-efl_ov15 <- efl_ov15_home + efl_ov15_away
+ucl_un15 <- ucl_un15_home + ucl_un15_away
+ucl_ov15 <- ucl_ov15_home + ucl_ov15_away
 
-efl_un25 <- efl_un25_home + efl_un25_away
-efl_ov25 <- efl_ov25_home + efl_ov25_away
+ucl_un25 <- ucl_un25_home + ucl_un25_away
+ucl_ov25 <- ucl_ov25_home + ucl_ov25_away
 
-efl_un35 <- efl_un35_home + efl_un35_away
-efl_ov35 <- efl_ov35_home + efl_ov35_away
+ucl_un35 <- ucl_un35_home + ucl_un35_away
+ucl_ov35 <- ucl_ov35_home + ucl_ov35_away
 
-efl_un45 <- efl_un45_home + efl_un45_away
-efl_ov45 <- efl_ov45_home + efl_ov45_away
+ucl_un45 <- ucl_un45_home + ucl_un45_away
+ucl_ov45 <- ucl_ov45_home + ucl_ov45_away
 
-efl_un55 <- efl_un55_home + efl_un55_away
-efl_ov55 <- efl_ov55_home + efl_ov55_away
+ucl_un55 <- ucl_un55_home + ucl_un55_away
+ucl_ov55 <- ucl_ov55_home + ucl_ov55_away
 
-efl_ovundata <- cbind(efl_teams,efl_un05,efl_ov05,efl_un15,efl_ov15,efl_un25,efl_ov25,efl_un35,efl_ov35,efl_un45,efl_ov45,efl_un55,efl_ov55)
+ucl_ovundata <- cbind(ucl_teams,ucl_un05,ucl_ov05,ucl_un15,ucl_ov15,ucl_un25,ucl_ov25,ucl_un35,ucl_ov35,ucl_un45,ucl_ov45,ucl_un55,ucl_ov55)
 #################################################################################################################################################################
 #team against
-efl_form_team_against_h <- tapply(EFL$AwayTeam, EFL[c("HomeTeam", "Date")],median)
-efl_form_team_against_a <- tapply(EFL$HomeTeam, EFL[c("AwayTeam", "Date")],median)
-efl_form_team_against_h[is.na(efl_form_team_against_h)] <- ""
-efl_form_team_against_a[is.na(efl_form_team_against_a)] <- ""
-#EFL
-for(efl_rowh_f_against in 1:nrow(efl_form_team_against_h)) {
-  for(efl_colh_f_against in 1:ncol(efl_form_team_against_h)) {
+ucl_form_team_against_h <- tapply(UCL$AwayTeam, UCL[c("HomeTeam", "Date")],median)
+ucl_form_team_against_a <- tapply(UCL$HomeTeam, UCL[c("AwayTeam", "Date")],median)
+ucl_form_team_against_h[is.na(ucl_form_team_against_h)] <- ""
+ucl_form_team_against_a[is.na(ucl_form_team_against_a)] <- ""
+#UCL
+for(ucl_rowh_f_against in 1:nrow(ucl_form_team_against_h)) {
+  for(ucl_colh_f_against in 1:ncol(ucl_form_team_against_h)) {
 
     # print(my_matrix[row, col])
-    for(efl_rowa_f_against in 1:nrow(efl_form_team_against_a)) {
-      for(efl_cola_f_against in 1:ncol(efl_form_team_against_a)) {
-        ifelse(!efl_form_team_against_a[efl_rowa_f_against,efl_cola_f_against]=="",efl_form_team_against_h[efl_rowa_f_against,efl_cola_f_against] <- efl_form_team_against_a[efl_rowa_f_against,efl_cola_f_against],next)
+    for(ucl_rowa_f_against in 1:nrow(ucl_form_team_against_a)) {
+      for(ucl_cola_f_against in 1:ncol(ucl_form_team_against_a)) {
+        ifelse(!ucl_form_team_against_a[ucl_rowa_f_against,ucl_cola_f_against]=="",ucl_form_team_against_h[ucl_rowa_f_against,ucl_cola_f_against] <- ucl_form_team_against_a[ucl_rowa_f_against,ucl_cola_f_against],next)
         #print(my_matrix[row, col])
       }
     }
@@ -432,968 +433,968 @@ for(efl_rowh_f_against in 1:nrow(efl_form_team_against_h)) {
 }
 ###############################################################################################################################################3
 #shotsanalysis
-#EFL
+#UCL
 #home goals scored
-efl_home_gs <- aggregate(EFL$FTHG, by = list(EFL$HomeTeam), FUN = sum)
-efl_home_gs_avg <- aggregate(EFL$FTHG, by = list(EFL$HomeTeam),mean)
-efl_home_scoring <- merge(efl_home_gs,efl_home_gs_avg, by='Group.1',all = T)
-names(efl_home_scoring)[names(efl_home_scoring) == "x.x"] <- "TFthg"
-names(efl_home_scoring)[names(efl_home_scoring) == "x.y"] <- "Avg_Fthg"
+ucl_home_gs <- aggregate(UCL$FTHG, by = list(UCL$HomeTeam), FUN = sum)
+ucl_home_gs_avg <- aggregate(UCL$FTHG, by = list(UCL$HomeTeam),mean)
+ucl_home_scoring <- merge(ucl_home_gs,ucl_home_gs_avg, by='Group.1',all = T)
+names(ucl_home_scoring)[names(ucl_home_scoring) == "x.x"] <- "TFthg"
+names(ucl_home_scoring)[names(ucl_home_scoring) == "x.y"] <- "Avg_Fthg"
 #away goals scored
-efl_away_gs <- aggregate(EFL$FTAG, by = list(EFL$AwayTeam), FUN = sum)
-efl_away_gs_avg <- aggregate(EFL$FTAG, by = list(EFL$AwayTeam),mean)
-efl_away_scoring <- merge(efl_away_gs,efl_away_gs_avg, by='Group.1',all = T)
-names(efl_away_scoring)[names(efl_away_scoring) == "x.x"] <- "TFtag"
-names(efl_away_scoring)[names(efl_away_scoring) == "x.y"] <- "Avg_Ftag"
+ucl_away_gs <- aggregate(UCL$FTAG, by = list(UCL$AwayTeam), FUN = sum)
+ucl_away_gs_avg <- aggregate(UCL$FTAG, by = list(UCL$AwayTeam),mean)
+ucl_away_scoring <- merge(ucl_away_gs,ucl_away_gs_avg, by='Group.1',all = T)
+names(ucl_away_scoring)[names(ucl_away_scoring) == "x.x"] <- "TFtag"
+names(ucl_away_scoring)[names(ucl_away_scoring) == "x.y"] <- "Avg_Ftag"
 #total goals scored
-efl_scoring <- merge(efl_home_scoring,efl_away_scoring,by='Group.1',all = T)
-efl_scoring$TGS <- efl_scoring$TFthg + efl_scoring$TFtag
+ucl_scoring <- merge(ucl_home_scoring,ucl_away_scoring,by='Group.1',all = T)
+ucl_scoring$TGS <- ucl_scoring$TFthg + ucl_scoring$TFtag
 
 #Home shots on target
-efl_home_hst <- aggregate(EFL$HST, by = list(EFL$HomeTeam), FUN = sum)
-efl_away_ast <- aggregate(EFL$AST, by = list(EFL$AwayTeam), FUN = sum)
-efl_tst <- merge(efl_home_hst,efl_away_ast, by='Group.1',all = T)
-names(efl_tst)[names(efl_tst) == "x.x"] <- "hst"
-names(efl_tst)[names(efl_tst) == "x.y"] <- "ast"
-efl_tst$TST <- efl_tst$hst + efl_tst$ast
+ucl_home_hst <- aggregate(UCL$HST, by = list(UCL$HomeTeam), FUN = sum)
+ucl_away_ast <- aggregate(UCL$AST, by = list(UCL$AwayTeam), FUN = sum)
+ucl_tst <- merge(ucl_home_hst,ucl_away_ast, by='Group.1',all = T)
+names(ucl_tst)[names(ucl_tst) == "x.x"] <- "hst"
+names(ucl_tst)[names(ucl_tst) == "x.y"] <- "ast"
+ucl_tst$TST <- ucl_tst$hst + ucl_tst$ast
 #merge goals scored and shots on target
-efl_scoring_conversion <- merge(efl_tst,efl_scoring,by='Group.1',all = T)
+ucl_scoring_conversion <- merge(ucl_tst,ucl_scoring,by='Group.1',all = T)
 #add HSC ASC TSC
-efl_scoring_conversion$HSTC <- percent(efl_scoring_conversion$TFthg/efl_scoring_conversion$hst, accuracy = 0.01)
-efl_scoring_conversion$ASTC <- percent(efl_scoring_conversion$TFtag/efl_scoring_conversion$ast, accuracy = 0.01)
-efl_scoring_conversion$TSTC <- percent(efl_scoring_conversion$TGS/efl_scoring_conversion$TST, accuracy = 0.01)
+ucl_scoring_conversion$HSTC <- percent(ucl_scoring_conversion$TFthg/ucl_scoring_conversion$hst, accuracy = 0.01)
+ucl_scoring_conversion$ASTC <- percent(ucl_scoring_conversion$TFtag/ucl_scoring_conversion$ast, accuracy = 0.01)
+ucl_scoring_conversion$TSTC <- percent(ucl_scoring_conversion$TGS/ucl_scoring_conversion$TST, accuracy = 0.01)
 #merge games played
-efl_scoring_conversion <- cbind(efl_scoring_conversion,efl_games_played)
+ucl_scoring_conversion <- cbind(ucl_scoring_conversion,ucl_games_played)
 #create the second part
 #home goals conceded
-efl_home_gc <- aggregate(EFL$FTAG, by = list(EFL$HomeTeam), FUN = sum)
-efl_home_gc_avg <- aggregate(EFL$FTAG, by = list(EFL$HomeTeam),mean)
-efl_home_conceding <- merge(efl_home_gc,efl_home_gc_avg, by='Group.1',all = T)
-names(efl_home_conceding)[names(efl_home_conceding) == "x.x"] <- "TFthc"
-names(efl_home_conceding)[names(efl_home_conceding) == "x.y"] <- "Avg_Fthc"
+ucl_home_gc <- aggregate(UCL$FTAG, by = list(UCL$HomeTeam), FUN = sum)
+ucl_home_gc_avg <- aggregate(UCL$FTAG, by = list(UCL$HomeTeam),mean)
+ucl_home_conceding <- merge(ucl_home_gc,ucl_home_gc_avg, by='Group.1',all = T)
+names(ucl_home_conceding)[names(ucl_home_conceding) == "x.x"] <- "TFthc"
+names(ucl_home_conceding)[names(ucl_home_conceding) == "x.y"] <- "Avg_Fthc"
 #away goals conceded
-efl_away_gc <- aggregate(EFL$FTHG, by = list(EFL$AwayTeam), FUN = sum)
-efl_away_gc_avg <- aggregate(EFL$FTHG, by = list(EFL$AwayTeam),mean)
-efl_away_conceding <- merge(efl_away_gc,efl_away_gc_avg, by='Group.1',all = T)
-names(efl_away_conceding)[names(efl_away_conceding) == "x.x"] <- "TFtac"
-names(efl_away_conceding)[names(efl_away_conceding) == "x.y"] <- "Avg_Ftac"
+ucl_away_gc <- aggregate(UCL$FTHG, by = list(UCL$AwayTeam), FUN = sum)
+ucl_away_gc_avg <- aggregate(UCL$FTHG, by = list(UCL$AwayTeam),mean)
+ucl_away_conceding <- merge(ucl_away_gc,ucl_away_gc_avg, by='Group.1',all = T)
+names(ucl_away_conceding)[names(ucl_away_conceding) == "x.x"] <- "TFtac"
+names(ucl_away_conceding)[names(ucl_away_conceding) == "x.y"] <- "Avg_Ftac"
 #total goals conceded
-efl_conceding <- merge(efl_home_conceding,efl_away_conceding,by='Group.1',all = T)
-efl_conceding$TGC <- efl_conceding$TFthc + efl_conceding$TFtac
-efl_home_hst
+ucl_conceding <- merge(ucl_home_conceding,ucl_away_conceding,by='Group.1',all = T)
+ucl_conceding$TGC <- ucl_conceding$TFthc + ucl_conceding$TFtac
+ucl_home_hst
 #Home shots conceded
-efl_home_hsc <- aggregate(EFL$AST, by = list(EFL$HomeTeam), FUN = sum)
-efl_away_asc <- aggregate(EFL$HST, by = list(EFL$AwayTeam), FUN = sum)
-efl_tsc <- merge(efl_home_hsc,efl_away_asc, by='Group.1',all = T)
-names(efl_tsc)[names(efl_tsc) == "x.x"] <- "hsc"
-names(efl_tsc)[names(efl_tsc) == "x.y"] <- "asc"
-efl_tsc$TSC <- efl_tsc$hsc + efl_tsc$asc
+ucl_home_hsc <- aggregate(UCL$AST, by = list(UCL$HomeTeam), FUN = sum)
+ucl_away_asc <- aggregate(UCL$HST, by = list(UCL$AwayTeam), FUN = sum)
+ucl_tsc <- merge(ucl_home_hsc,ucl_away_asc, by='Group.1',all = T)
+names(ucl_tsc)[names(ucl_tsc) == "x.x"] <- "hsc"
+names(ucl_tsc)[names(ucl_tsc) == "x.y"] <- "asc"
+ucl_tsc$TSC <- ucl_tsc$hsc + ucl_tsc$asc
 #merge goals conceded and shots conceded
-efl_conceding_conversion <- merge(efl_tsc,efl_conceding,by='Group.1',all = T)
+ucl_conceding_conversion <- merge(ucl_tsc,ucl_conceding,by='Group.1',all = T)
 
 #add HSC ASC TSC
-efl_conceding_conversion$HSCC <- percent(efl_conceding_conversion$TFthc/efl_conceding_conversion$hsc, accuracy = 0.01)
-efl_conceding_conversion$ASCC <- percent(efl_conceding_conversion$TFtac/efl_conceding_conversion$asc, accuracy = 0.01)
-efl_conceding_conversion$TSCC <- percent(efl_conceding_conversion$TGC/efl_conceding_conversion$TSC, accuracy = 0.01)
-efl_conceding_conversion$XSTC <- round(efl_scoring$TGS/(efl_tst$TST - efl_scoring$TGS), digits = 2)
+ucl_conceding_conversion$HSCC <- percent(ucl_conceding_conversion$TFthc/ucl_conceding_conversion$hsc, accuracy = 0.01)
+ucl_conceding_conversion$ASCC <- percent(ucl_conceding_conversion$TFtac/ucl_conceding_conversion$asc, accuracy = 0.01)
+ucl_conceding_conversion$TSCC <- percent(ucl_conceding_conversion$TGC/ucl_conceding_conversion$TSC, accuracy = 0.01)
+ucl_conceding_conversion$XSTC <- round(ucl_scoring$TGS/(ucl_tst$TST - ucl_scoring$TGS), digits = 2)
 
 #merge the two parts
-efl_shots_analysis <- merge(efl_scoring_conversion,efl_conceding_conversion,by='Group.1',all = T)
+ucl_shots_analysis <- merge(ucl_scoring_conversion,ucl_conceding_conversion,by='Group.1',all = T)
 #####################################################################################################################################
 #fouls analysis
-#EFL
+#UCL
 #home fouls for
-efl_home_fouls <- aggregate(EFL$HF, by = list(EFL$HomeTeam), FUN = sum)
-efl_home_fouls_avg <- aggregate(EFL$HF, by = list(EFL$HomeTeam),mean)
-efl_home_foulsdata <- merge(efl_home_fouls,efl_home_fouls_avg, by='Group.1',all = T)
-names(efl_home_foulsdata)[names(efl_home_foulsdata) == "x.x"] <- "THfouls"
-names(efl_home_foulsdata)[names(efl_home_foulsdata) == "x.y"] <- "Avg_FTHfouls"
+ucl_home_fouls <- aggregate(UCL$HF, by = list(UCL$HomeTeam), FUN = sum)
+ucl_home_fouls_avg <- aggregate(UCL$HF, by = list(UCL$HomeTeam),mean)
+ucl_home_foulsdata <- merge(ucl_home_fouls,ucl_home_fouls_avg, by='Group.1',all = T)
+names(ucl_home_foulsdata)[names(ucl_home_foulsdata) == "x.x"] <- "THfouls"
+names(ucl_home_foulsdata)[names(ucl_home_foulsdata) == "x.y"] <- "Avg_FTHfouls"
 #away fouls for
-efl_away_fouls <- aggregate(EFL$HF, by = list(EFL$AwayTeam), FUN = sum)
-efl_away_fouls_avg <- aggregate(EFL$HF, by = list(EFL$AwayTeam),mean)
-efl_away_foulsdata <- merge(efl_away_fouls,efl_away_fouls_avg, by='Group.1',all = T)
-names(efl_away_foulsdata)[names(efl_away_foulsdata) == "x.x"] <- "TAfouls"
-names(efl_away_foulsdata)[names(efl_away_foulsdata) == "x.y"] <- "Avg_FTAfouls"
+ucl_away_fouls <- aggregate(UCL$HF, by = list(UCL$AwayTeam), FUN = sum)
+ucl_away_fouls_avg <- aggregate(UCL$HF, by = list(UCL$AwayTeam),mean)
+ucl_away_foulsdata <- merge(ucl_away_fouls,ucl_away_fouls_avg, by='Group.1',all = T)
+names(ucl_away_foulsdata)[names(ucl_away_foulsdata) == "x.x"] <- "TAfouls"
+names(ucl_away_foulsdata)[names(ucl_away_foulsdata) == "x.y"] <- "Avg_FTAfouls"
 #total fouls for
-efl_fouls <- merge(efl_home_foulsdata,efl_away_foulsdata,by='Group.1',all = T)
-efl_fouls$TotalFouls <- efl_fouls$THfouls + efl_fouls$TAfouls
+ucl_fouls <- merge(ucl_home_foulsdata,ucl_away_foulsdata,by='Group.1',all = T)
+ucl_fouls$TotalFouls <- ucl_fouls$THfouls + ucl_fouls$TAfouls
 
 #yellow cards
-efl_home_hyc <- aggregate(EFL$HY, by = list(EFL$HomeTeam), FUN = sum)
-efl_away_ayc <- aggregate(EFL$AY, by = list(EFL$AwayTeam), FUN = sum)
-efl_tyc <- merge(efl_home_hyc,efl_away_ayc, by='Group.1',all = T)
-names(efl_tyc)[names(efl_tyc) == "x.x"] <- "hyc"
-names(efl_tyc)[names(efl_tyc) == "x.y"] <- "ayc"
-efl_tyc$TotalYellows <- efl_tyc$hyc + efl_tyc$ayc
+ucl_home_hyc <- aggregate(UCL$HY, by = list(UCL$HomeTeam), FUN = sum)
+ucl_away_ayc <- aggregate(UCL$AY, by = list(UCL$AwayTeam), FUN = sum)
+ucl_tyc <- merge(ucl_home_hyc,ucl_away_ayc, by='Group.1',all = T)
+names(ucl_tyc)[names(ucl_tyc) == "x.x"] <- "hyc"
+names(ucl_tyc)[names(ucl_tyc) == "x.y"] <- "ayc"
+ucl_tyc$TotalYellows <- ucl_tyc$hyc + ucl_tyc$ayc
 
 #merge fouls for and yellow cards
-efl_fouls_conversion <- merge(efl_tyc,efl_fouls,by='Group.1',all = T)
-efl_fouls_conversion$YcPerfoul <- round((efl_fouls_conversion$TotalYellows/efl_fouls_conversion$TotalFouls), digits = 2)
+ucl_fouls_conversion <- merge(ucl_tyc,ucl_fouls,by='Group.1',all = T)
+ucl_fouls_conversion$YcPerfoul <- round((ucl_fouls_conversion$TotalYellows/ucl_fouls_conversion$TotalFouls), digits = 2)
 ##################################################################################################################################################
 ##
 #make div form uniform in entire data frame
-EFL$Div <- "EFL"
+UCL$Div <- "UCL"
 ##
 ###################################################################################################################################################
 #poisson cards
-efl_GP <- nrow(EFL)
+ucl_GP <- nrow(UCL)
 #Calculate total home goals for each division
-efl_T_HY <- sum(efl_home_hyc$x)
+ucl_T_HY <- sum(ucl_home_hyc$x)
 #calculate average home goal
-efl_avg_HY <- round(efl_T_HY /efl_GP, digits = 4)
+ucl_avg_HY <- round(ucl_T_HY /ucl_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-efl_T_AY <- sum(efl_away_ayc$x)
+ucl_T_AY <- sum(ucl_away_ayc$x)
 #calculate average away goal
-efl_avg_AY <- round(efl_T_AY /efl_GP, digits = 4)
+ucl_avg_AY <- round(ucl_T_AY /ucl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-efl_home_yas <- round(((efl_home_hyc$x/efl_home_games))/efl_avg_HY, digits = 4)
+ucl_home_yas <- round(((ucl_home_hyc$x/ucl_home_games))/ucl_avg_HY, digits = 4)
 #calculate away attack strength
-efl_away_yas <- round(((efl_away_ayc$x/efl_away_games))/efl_avg_AY, digits = 4)
+ucl_away_yas <- round(((ucl_away_ayc$x/ucl_away_games))/ucl_avg_AY, digits = 4)
 ################################################################################
 #get average home concede and away concede
-efl_avg_HYC <- round(efl_T_AY /efl_GP, digits = 4)
+ucl_avg_HYC <- round(ucl_T_AY /ucl_GP, digits = 4)
 #avg away concede
-efl_avg_AYC <- round(efl_T_HY /efl_GP, digits = 4)
+ucl_avg_AYC <- round(ucl_T_HY /ucl_GP, digits = 4)
 #calculate home and away defense strength
 #home yellow cards conceded
-efl_home_ycc <- aggregate(EFL$AY, by = list(EFL$HomeTeam), FUN = sum)
-efl_away_ycc <- aggregate(EFL$HY, by = list(EFL$AwayTeam), FUN = sum)
+ucl_home_ycc <- aggregate(UCL$AY, by = list(UCL$HomeTeam), FUN = sum)
+ucl_away_ycc <- aggregate(UCL$HY, by = list(UCL$AwayTeam), FUN = sum)
 #home defense strength
-efl_home_yds <- round(((efl_home_ycc$x/efl_home_games))/efl_avg_HYC, digits = 4)
+ucl_home_yds <- round(((ucl_home_ycc$x/ucl_home_games))/ucl_avg_HYC, digits = 4)
 #away defense strength
-efl_away_yds <- round(((efl_away_ycc$x/efl_away_games))/efl_avg_AYC, digits = 4)
+ucl_away_yds <- round(((ucl_away_ycc$x/ucl_away_games))/ucl_avg_AYC, digits = 4)
 #############################################################################
 #home poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_home_poisson_yc <- cbind(efl_division,efl_teams,efl_avg_HY,efl_home_yas,efl_home_yds)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_home_poisson_yc <- cbind(ucl_division,ucl_teams,ucl_avg_HY,ucl_home_yas,ucl_home_yds)
 #away poisson data
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_away_poisson_yc <- cbind(efl_division,efl_teams,efl_avg_AY,efl_away_yas,efl_away_yds)
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_away_poisson_yc <- cbind(ucl_division,ucl_teams,ucl_avg_AY,ucl_away_yas,ucl_away_yds)
 ###
-HomeTeam_efl_yc <- rep(efl_teams, each = length(efl_teams))
-AwayTeam_efl_yc <- rep(efl_teams, length(efl_teams))
-EFL_fixtures_yc <- cbind(HomeTeam_efl_yc,AwayTeam_efl_yc)
-EFL_fixtures_yc <- as.data.frame(EFL_fixtures_yc)
-EFL_fixtures_yc <- EFL_fixtures_yc[!EFL_fixtures_yc$HomeTeam_efl_yc == EFL_fixtures_yc$AwayTeam_efl_yc,]
-rownames(EFL_fixtures_yc) <- NULL
-EFL_fixtures_yc$Div <- "EFL"
-EFL_fixtures_yc <- EFL_fixtures_yc[,c(3,1,2)]
+HomeTeam_ucl_yc <- rep(ucl_teams, each = length(ucl_teams))
+AwayTeam_ucl_yc <- rep(ucl_teams, length(ucl_teams))
+UCL_fixtures_yc <- cbind(HomeTeam_ucl_yc,AwayTeam_ucl_yc)
+UCL_fixtures_yc <- as.data.frame(UCL_fixtures_yc)
+UCL_fixtures_yc <- UCL_fixtures_yc[!UCL_fixtures_yc$HomeTeam_ucl_yc == UCL_fixtures_yc$AwayTeam_ucl_yc,]
+rownames(UCL_fixtures_yc) <- NULL
+UCL_fixtures_yc$Div <- "UCL"
+UCL_fixtures_yc <- UCL_fixtures_yc[,c(3,1,2)]
 
-EFL_fixtures_yc$avg_HY_efl <- efl_avg_HY
+UCL_fixtures_yc$avg_HY_ucl <- ucl_avg_HY
 
-EFL_fixtures_yc$efl_homeyas <- rep(efl_home_yas,each = length(efl_teams)-1)
+UCL_fixtures_yc$ucl_homeyas <- rep(ucl_home_yas,each = length(ucl_teams)-1)
 
-efl_awayyds_lookup <- cbind(efl_teams,efl_away_yds)
+ucl_awayyds_lookup <- cbind(ucl_teams,ucl_away_yds)
 
-efl_awayyds_lookup <- as.data.frame(efl_awayyds_lookup)
+ucl_awayyds_lookup <- as.data.frame(ucl_awayyds_lookup)
 
-colnames(efl_awayyds_lookup) <- c("AwayTeam_efl_yc","efl_awayyds")
+colnames(ucl_awayyds_lookup) <- c("AwayTeam_ucl_yc","ucl_awayyds")
 
 
 require('RH2')
-EFL_fixtures_yc$efl_awayyds <- sqldf("SELECT efl_awayyds_lookup.efl_awayyds FROM efl_awayyds_lookup INNER JOIN EFL_fixtures_yc ON efl_awayyds_lookup.AwayTeam_efl_yc = EFL_fixtures_yc.AwayTeam_efl_yc")
+UCL_fixtures_yc$ucl_awayyds <- sqldf("SELECT ucl_awayyds_lookup.ucl_awayyds FROM ucl_awayyds_lookup INNER JOIN UCL_fixtures_yc ON ucl_awayyds_lookup.AwayTeam_ucl_yc = UCL_fixtures_yc.AwayTeam_ucl_yc")
 
-EFL_fixtures_yc$avg_AY_efl <- efl_avg_AY
+UCL_fixtures_yc$avg_AY_ucl <- ucl_avg_AY
 
-efl_awayyas_lookup <- cbind(efl_teams,efl_away_yas)
+ucl_awayyas_lookup <- cbind(ucl_teams,ucl_away_yas)
 
-efl_awayyas_lookup <- as.data.frame(efl_awayyas_lookup)
+ucl_awayyas_lookup <- as.data.frame(ucl_awayyas_lookup)
 
-colnames(efl_awayyas_lookup) <- c("AwayTeam_efl_yc","efl_awayyas")
+colnames(ucl_awayyas_lookup) <- c("AwayTeam_ucl_yc","ucl_awayyas")
 
-EFL_fixtures_yc$efl_awayyas <- sqldf("SELECT efl_awayyas_lookup.efl_awayyas FROM efl_awayyas_lookup INNER JOIN EFL_fixtures_yc ON efl_awayyas_lookup.AwayTeam_efl_yc = EFL_fixtures_yc.AwayTeam_efl_yc")
+UCL_fixtures_yc$ucl_awayyas <- sqldf("SELECT ucl_awayyas_lookup.ucl_awayyas FROM ucl_awayyas_lookup INNER JOIN UCL_fixtures_yc ON ucl_awayyas_lookup.AwayTeam_ucl_yc = UCL_fixtures_yc.AwayTeam_ucl_yc")
 
-EFL_fixtures_yc$efl_homeyds <- rep(efl_home_yds,each = length(efl_teams)-1)
+UCL_fixtures_yc$ucl_homeyds <- rep(ucl_home_yds,each = length(ucl_teams)-1)
 
-EFL_fixtures_yc$efl_awayyds <- as.numeric(unlist(EFL_fixtures_yc$efl_awayyds))
+UCL_fixtures_yc$ucl_awayyds <- as.numeric(unlist(UCL_fixtures_yc$ucl_awayyds))
 #xGH
-EFL_fixtures_yc$efl_xHYC <- EFL_fixtures_yc$avg_HY_efl * EFL_fixtures_yc$efl_homeyas * EFL_fixtures_yc$efl_awayyds
+UCL_fixtures_yc$ucl_xHYC <- UCL_fixtures_yc$avg_HY_ucl * UCL_fixtures_yc$ucl_homeyas * UCL_fixtures_yc$ucl_awayyds
 #xGA
 
-EFL_fixtures_yc$efl_awayyas <- as.numeric(unlist(EFL_fixtures_yc$efl_awayyas))
+UCL_fixtures_yc$ucl_awayyas <- as.numeric(unlist(UCL_fixtures_yc$ucl_awayyas))
 
-EFL_fixtures_yc$efl_xAYC <- EFL_fixtures_yc$avg_AY_efl * EFL_fixtures_yc$efl_awayyas * EFL_fixtures_yc$efl_homeyds
+UCL_fixtures_yc$ucl_xAYC <- UCL_fixtures_yc$avg_AY_ucl * UCL_fixtures_yc$ucl_awayyas * UCL_fixtures_yc$ucl_homeyds
 
-EFL_fixtures_yc$efl_0_0 <- round(stats::dpois(0,EFL_fixtures_yc$efl_xHYC) * stats::dpois(0,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_1_0 <- round(stats::dpois(1,EFL_fixtures_yc$efl_xHYC) * stats::dpois(0,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_0_1 <- round(stats::dpois(0,EFL_fixtures_yc$efl_xHYC) * stats::dpois(1,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_1_1 <- round(stats::dpois(1,EFL_fixtures_yc$efl_xHYC) * stats::dpois(1,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_2_0 <- round(stats::dpois(2,EFL_fixtures_yc$efl_xHYC) * stats::dpois(0,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_0_2 <- round(stats::dpois(0,EFL_fixtures_yc$efl_xHYC) * stats::dpois(2,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_2_2 <- round(stats::dpois(2,EFL_fixtures_yc$efl_xHYC) * stats::dpois(2,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_2_1 <- round(stats::dpois(2,EFL_fixtures_yc$efl_xHYC) * stats::dpois(1,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_1_2 <- round(stats::dpois(1,EFL_fixtures_yc$efl_xHYC) * stats::dpois(2,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_3_3 <- round(stats::dpois(3,EFL_fixtures_yc$efl_xHYC) * stats::dpois(3,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_3_0 <- round(stats::dpois(3,EFL_fixtures_yc$efl_xHYC) * stats::dpois(0,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_3_1 <- round(stats::dpois(3,EFL_fixtures_yc$efl_xHYC) * stats::dpois(1,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_3_2 <- round(stats::dpois(3,EFL_fixtures_yc$efl_xHYC) * stats::dpois(2,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_0_3 <- round(stats::dpois(0,EFL_fixtures_yc$efl_xHYC) * stats::dpois(3,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_1_3 <- round(stats::dpois(1,EFL_fixtures_yc$efl_xHYC) * stats::dpois(3,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_2_3 <- round(stats::dpois(2,EFL_fixtures_yc$efl_xHYC) * stats::dpois(3,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_4_4 <- round(stats::dpois(4,EFL_fixtures_yc$efl_xHYC) * stats::dpois(4,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_4_0 <- round(stats::dpois(4,EFL_fixtures_yc$efl_xHYC) * stats::dpois(0,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_4_1 <- round(stats::dpois(4,EFL_fixtures_yc$efl_xHYC) * stats::dpois(1,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_4_2 <- round(stats::dpois(4,EFL_fixtures_yc$efl_xHYC) * stats::dpois(2,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_4_3 <- round(stats::dpois(4,EFL_fixtures_yc$efl_xHYC) * stats::dpois(3,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_0_4 <- round(stats::dpois(0,EFL_fixtures_yc$efl_xHYC) * stats::dpois(4,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_1_4 <- round(stats::dpois(1,EFL_fixtures_yc$efl_xHYC) * stats::dpois(4,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_2_4 <- round(stats::dpois(2,EFL_fixtures_yc$efl_xHYC) * stats::dpois(4,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_3_4 <- round(stats::dpois(3,EFL_fixtures_yc$efl_xHYC) * stats::dpois(4,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_5_5 <- round(stats::dpois(5,EFL_fixtures_yc$efl_xHYC) * stats::dpois(5,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_5_0 <- round(stats::dpois(5,EFL_fixtures_yc$efl_xHYC) * stats::dpois(0,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_5_1 <- round(stats::dpois(5,EFL_fixtures_yc$efl_xHYC) * stats::dpois(1,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_5_2 <- round(stats::dpois(5,EFL_fixtures_yc$efl_xHYC) * stats::dpois(2,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_5_3 <- round(stats::dpois(5,EFL_fixtures_yc$efl_xHYC) * stats::dpois(3,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_5_4 <- round(stats::dpois(5,EFL_fixtures_yc$efl_xHYC) * stats::dpois(4,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_0_5 <- round(stats::dpois(0,EFL_fixtures_yc$efl_xHYC) * stats::dpois(5,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_1_5 <- round(stats::dpois(1,EFL_fixtures_yc$efl_xHYC) * stats::dpois(5,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_2_5 <- round(stats::dpois(2,EFL_fixtures_yc$efl_xHYC) * stats::dpois(5,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_3_5 <- round(stats::dpois(3,EFL_fixtures_yc$efl_xHYC) * stats::dpois(5,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_4_5 <- round(stats::dpois(4,EFL_fixtures_yc$efl_xHYC) * stats::dpois(5,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_6_6 <- round(stats::dpois(6,EFL_fixtures_yc$efl_xHYC) * stats::dpois(6,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_6_0 <- round(stats::dpois(6,EFL_fixtures_yc$efl_xHYC) * stats::dpois(0,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_6_1 <- round(stats::dpois(6,EFL_fixtures_yc$efl_xHYC) * stats::dpois(1,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_6_2 <- round(stats::dpois(6,EFL_fixtures_yc$efl_xHYC) * stats::dpois(2,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_6_3 <- round(stats::dpois(6,EFL_fixtures_yc$efl_xHYC) * stats::dpois(3,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_6_4 <- round(stats::dpois(6,EFL_fixtures_yc$efl_xHYC) * stats::dpois(4,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_6_5 <- round(stats::dpois(6,EFL_fixtures_yc$efl_xHYC) * stats::dpois(5,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_0_6 <- round(stats::dpois(0,EFL_fixtures_yc$efl_xHYC) * stats::dpois(6,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_1_6 <- round(stats::dpois(1,EFL_fixtures_yc$efl_xHYC) * stats::dpois(6,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_2_6 <- round(stats::dpois(2,EFL_fixtures_yc$efl_xHYC) * stats::dpois(6,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_3_6 <- round(stats::dpois(3,EFL_fixtures_yc$efl_xHYC) * stats::dpois(6,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_4_6 <- round(stats::dpois(4,EFL_fixtures_yc$efl_xHYC) * stats::dpois(6,EFL_fixtures_yc$efl_xAYC), digits = 4)
-EFL_fixtures_yc$efl_5_6 <- round(stats::dpois(5,EFL_fixtures_yc$efl_xHYC) * stats::dpois(6,EFL_fixtures_yc$efl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_0_0 <- round(stats::dpois(0,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(0,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_1_0 <- round(stats::dpois(1,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(0,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_0_1 <- round(stats::dpois(0,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(1,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_1_1 <- round(stats::dpois(1,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(1,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_2_0 <- round(stats::dpois(2,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(0,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_0_2 <- round(stats::dpois(0,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(2,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_2_2 <- round(stats::dpois(2,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(2,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_2_1 <- round(stats::dpois(2,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(1,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_1_2 <- round(stats::dpois(1,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(2,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_3_3 <- round(stats::dpois(3,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(3,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_3_0 <- round(stats::dpois(3,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(0,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_3_1 <- round(stats::dpois(3,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(1,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_3_2 <- round(stats::dpois(3,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(2,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_0_3 <- round(stats::dpois(0,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(3,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_1_3 <- round(stats::dpois(1,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(3,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_2_3 <- round(stats::dpois(2,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(3,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_4_4 <- round(stats::dpois(4,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(4,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_4_0 <- round(stats::dpois(4,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(0,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_4_1 <- round(stats::dpois(4,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(1,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_4_2 <- round(stats::dpois(4,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(2,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_4_3 <- round(stats::dpois(4,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(3,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_0_4 <- round(stats::dpois(0,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(4,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_1_4 <- round(stats::dpois(1,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(4,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_2_4 <- round(stats::dpois(2,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(4,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_3_4 <- round(stats::dpois(3,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(4,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_5_5 <- round(stats::dpois(5,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(5,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_5_0 <- round(stats::dpois(5,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(0,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_5_1 <- round(stats::dpois(5,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(1,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_5_2 <- round(stats::dpois(5,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(2,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_5_3 <- round(stats::dpois(5,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(3,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_5_4 <- round(stats::dpois(5,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(4,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_0_5 <- round(stats::dpois(0,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(5,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_1_5 <- round(stats::dpois(1,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(5,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_2_5 <- round(stats::dpois(2,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(5,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_3_5 <- round(stats::dpois(3,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(5,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_4_5 <- round(stats::dpois(4,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(5,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_6_6 <- round(stats::dpois(6,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(6,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_6_0 <- round(stats::dpois(6,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(0,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_6_1 <- round(stats::dpois(6,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(1,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_6_2 <- round(stats::dpois(6,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(2,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_6_3 <- round(stats::dpois(6,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(3,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_6_4 <- round(stats::dpois(6,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(4,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_6_5 <- round(stats::dpois(6,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(5,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_0_6 <- round(stats::dpois(0,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(6,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_1_6 <- round(stats::dpois(1,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(6,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_2_6 <- round(stats::dpois(2,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(6,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_3_6 <- round(stats::dpois(3,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(6,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_4_6 <- round(stats::dpois(4,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(6,UCL_fixtures_yc$ucl_xAYC), digits = 4)
+UCL_fixtures_yc$ucl_5_6 <- round(stats::dpois(5,UCL_fixtures_yc$ucl_xHYC) * stats::dpois(6,UCL_fixtures_yc$ucl_xAYC), digits = 4)
 #Home win
-EFL_fixtures_yc$efl_H <- (
-  EFL_fixtures_yc$efl_1_0 + EFL_fixtures_yc$efl_2_0 + EFL_fixtures_yc$efl_2_1 + EFL_fixtures_yc$efl_3_0 + EFL_fixtures_yc$efl_3_1 +
-    EFL_fixtures_yc$efl_3_2 + EFL_fixtures_yc$efl_4_0 + EFL_fixtures_yc$efl_4_1 + EFL_fixtures_yc$efl_4_2 + EFL_fixtures_yc$efl_4_3 +
-    EFL_fixtures_yc$efl_5_0 + EFL_fixtures_yc$efl_5_1 + EFL_fixtures_yc$efl_5_2 + EFL_fixtures_yc$efl_5_3 + EFL_fixtures_yc$efl_5_4 +
-    EFL_fixtures_yc$efl_6_0 + EFL_fixtures_yc$efl_6_1 + EFL_fixtures_yc$efl_6_2 + EFL_fixtures_yc$efl_6_3 + EFL_fixtures_yc$efl_6_4 +
-    EFL_fixtures_yc$efl_6_5
+UCL_fixtures_yc$ucl_H <- (
+  UCL_fixtures_yc$ucl_1_0 + UCL_fixtures_yc$ucl_2_0 + UCL_fixtures_yc$ucl_2_1 + UCL_fixtures_yc$ucl_3_0 + UCL_fixtures_yc$ucl_3_1 +
+    UCL_fixtures_yc$ucl_3_2 + UCL_fixtures_yc$ucl_4_0 + UCL_fixtures_yc$ucl_4_1 + UCL_fixtures_yc$ucl_4_2 + UCL_fixtures_yc$ucl_4_3 +
+    UCL_fixtures_yc$ucl_5_0 + UCL_fixtures_yc$ucl_5_1 + UCL_fixtures_yc$ucl_5_2 + UCL_fixtures_yc$ucl_5_3 + UCL_fixtures_yc$ucl_5_4 +
+    UCL_fixtures_yc$ucl_6_0 + UCL_fixtures_yc$ucl_6_1 + UCL_fixtures_yc$ucl_6_2 + UCL_fixtures_yc$ucl_6_3 + UCL_fixtures_yc$ucl_6_4 +
+    UCL_fixtures_yc$ucl_6_5
 )
 
-EFL_fixtures_yc$efl_H <- percent(EFL_fixtures_yc$efl_H, accuracy = 0.1)
+UCL_fixtures_yc$ucl_H <- percent(UCL_fixtures_yc$ucl_H, accuracy = 0.1)
 
 #Draw
-EFL_fixtures_yc$efl_D <- (
+UCL_fixtures_yc$ucl_D <- (
 
-  EFL_fixtures_yc$efl_0_0 + EFL_fixtures_yc$efl_1_1 + EFL_fixtures_yc$efl_2_2 + EFL_fixtures_yc$efl_3_3 + EFL_fixtures_yc$efl_4_4 +
-    EFL_fixtures_yc$efl_5_5 + EFL_fixtures_yc$efl_6_6
+  UCL_fixtures_yc$ucl_0_0 + UCL_fixtures_yc$ucl_1_1 + UCL_fixtures_yc$ucl_2_2 + UCL_fixtures_yc$ucl_3_3 + UCL_fixtures_yc$ucl_4_4 +
+    UCL_fixtures_yc$ucl_5_5 + UCL_fixtures_yc$ucl_6_6
 )
 
-EFL_fixtures_yc$efl_D <- percent(EFL_fixtures_yc$efl_D, accuracy = 0.1)
+UCL_fixtures_yc$ucl_D <- percent(UCL_fixtures_yc$ucl_D, accuracy = 0.1)
 
 #Away
 
-EFL_fixtures_yc$efl_A <- (
-  EFL_fixtures_yc$efl_0_1 + EFL_fixtures_yc$efl_0_2 + EFL_fixtures_yc$efl_1_2 + EFL_fixtures_yc$efl_0_3 + EFL_fixtures_yc$efl_1_3 +
-    EFL_fixtures_yc$efl_2_3 + EFL_fixtures_yc$efl_0_4 + EFL_fixtures_yc$efl_1_4 + EFL_fixtures_yc$efl_2_4 + EFL_fixtures_yc$efl_3_4 +
-    EFL_fixtures_yc$efl_0_5 + EFL_fixtures_yc$efl_1_5 + EFL_fixtures_yc$efl_2_5 + EFL_fixtures_yc$efl_3_5 + EFL_fixtures_yc$efl_4_5 +
-    EFL_fixtures_yc$efl_0_6 + EFL_fixtures_yc$efl_1_6 + EFL_fixtures_yc$efl_2_6 + EFL_fixtures_yc$efl_3_6 + EFL_fixtures_yc$efl_4_6 +
-    EFL_fixtures_yc$efl_5_6
+UCL_fixtures_yc$ucl_A <- (
+  UCL_fixtures_yc$ucl_0_1 + UCL_fixtures_yc$ucl_0_2 + UCL_fixtures_yc$ucl_1_2 + UCL_fixtures_yc$ucl_0_3 + UCL_fixtures_yc$ucl_1_3 +
+    UCL_fixtures_yc$ucl_2_3 + UCL_fixtures_yc$ucl_0_4 + UCL_fixtures_yc$ucl_1_4 + UCL_fixtures_yc$ucl_2_4 + UCL_fixtures_yc$ucl_3_4 +
+    UCL_fixtures_yc$ucl_0_5 + UCL_fixtures_yc$ucl_1_5 + UCL_fixtures_yc$ucl_2_5 + UCL_fixtures_yc$ucl_3_5 + UCL_fixtures_yc$ucl_4_5 +
+    UCL_fixtures_yc$ucl_0_6 + UCL_fixtures_yc$ucl_1_6 + UCL_fixtures_yc$ucl_2_6 + UCL_fixtures_yc$ucl_3_6 + UCL_fixtures_yc$ucl_4_6 +
+    UCL_fixtures_yc$ucl_5_6
 )
 
-EFL_fixtures_yc$efl_A <- percent(EFL_fixtures_yc$efl_A, accuracy = 0.1)
+UCL_fixtures_yc$ucl_A <- percent(UCL_fixtures_yc$ucl_A, accuracy = 0.1)
 
 #ov25
-EFL_fixtures_yc$efl_ov25 <- (
-  EFL_fixtures_yc$efl_2_1 + EFL_fixtures_yc$efl_1_2 + EFL_fixtures_yc$efl_2_2 + EFL_fixtures_yc$efl_3_0 + EFL_fixtures_yc$efl_3_1 +
-    EFL_fixtures_yc$efl_3_2 + EFL_fixtures_yc$efl_0_3 + EFL_fixtures_yc$efl_1_3 + EFL_fixtures_yc$efl_2_3 + EFL_fixtures_yc$efl_3_3 +
-    EFL_fixtures_yc$efl_4_0 + EFL_fixtures_yc$efl_4_1 + EFL_fixtures_yc$efl_4_2 + EFL_fixtures_yc$efl_4_3 + EFL_fixtures_yc$efl_0_4 +
-    EFL_fixtures_yc$efl_1_4 + EFL_fixtures_yc$efl_2_4 + EFL_fixtures_yc$efl_3_4 + EFL_fixtures_yc$efl_4_4 + EFL_fixtures_yc$efl_5_0 +
-    EFL_fixtures_yc$efl_5_1 + EFL_fixtures_yc$efl_5_2 + EFL_fixtures_yc$efl_5_3 + EFL_fixtures_yc$efl_5_4 + EFL_fixtures_yc$efl_0_5 +
-    EFL_fixtures_yc$efl_1_5 + EFL_fixtures_yc$efl_2_5 + EFL_fixtures_yc$efl_3_5 + EFL_fixtures_yc$efl_4_5 + EFL_fixtures_yc$efl_5_5 +
-    EFL_fixtures_yc$efl_6_0 + EFL_fixtures_yc$efl_6_1 + EFL_fixtures_yc$efl_6_2 + EFL_fixtures_yc$efl_6_3 + EFL_fixtures_yc$efl_6_4 +
-    EFL_fixtures_yc$efl_6_5 + EFL_fixtures_yc$efl_0_6 + EFL_fixtures_yc$efl_1_6 + EFL_fixtures_yc$efl_2_6 + EFL_fixtures_yc$efl_3_6 +
-    EFL_fixtures_yc$efl_4_6 + EFL_fixtures_yc$efl_5_6 + EFL_fixtures_yc$efl_6_6
+UCL_fixtures_yc$ucl_ov25 <- (
+  UCL_fixtures_yc$ucl_2_1 + UCL_fixtures_yc$ucl_1_2 + UCL_fixtures_yc$ucl_2_2 + UCL_fixtures_yc$ucl_3_0 + UCL_fixtures_yc$ucl_3_1 +
+    UCL_fixtures_yc$ucl_3_2 + UCL_fixtures_yc$ucl_0_3 + UCL_fixtures_yc$ucl_1_3 + UCL_fixtures_yc$ucl_2_3 + UCL_fixtures_yc$ucl_3_3 +
+    UCL_fixtures_yc$ucl_4_0 + UCL_fixtures_yc$ucl_4_1 + UCL_fixtures_yc$ucl_4_2 + UCL_fixtures_yc$ucl_4_3 + UCL_fixtures_yc$ucl_0_4 +
+    UCL_fixtures_yc$ucl_1_4 + UCL_fixtures_yc$ucl_2_4 + UCL_fixtures_yc$ucl_3_4 + UCL_fixtures_yc$ucl_4_4 + UCL_fixtures_yc$ucl_5_0 +
+    UCL_fixtures_yc$ucl_5_1 + UCL_fixtures_yc$ucl_5_2 + UCL_fixtures_yc$ucl_5_3 + UCL_fixtures_yc$ucl_5_4 + UCL_fixtures_yc$ucl_0_5 +
+    UCL_fixtures_yc$ucl_1_5 + UCL_fixtures_yc$ucl_2_5 + UCL_fixtures_yc$ucl_3_5 + UCL_fixtures_yc$ucl_4_5 + UCL_fixtures_yc$ucl_5_5 +
+    UCL_fixtures_yc$ucl_6_0 + UCL_fixtures_yc$ucl_6_1 + UCL_fixtures_yc$ucl_6_2 + UCL_fixtures_yc$ucl_6_3 + UCL_fixtures_yc$ucl_6_4 +
+    UCL_fixtures_yc$ucl_6_5 + UCL_fixtures_yc$ucl_0_6 + UCL_fixtures_yc$ucl_1_6 + UCL_fixtures_yc$ucl_2_6 + UCL_fixtures_yc$ucl_3_6 +
+    UCL_fixtures_yc$ucl_4_6 + UCL_fixtures_yc$ucl_5_6 + UCL_fixtures_yc$ucl_6_6
 )
 #un25
-EFL_fixtures_yc$efl_un25 <- (
-  EFL_fixtures_yc$efl_0_0 + EFL_fixtures_yc$efl_1_0 + EFL_fixtures_yc$efl_0_1 + EFL_fixtures_yc$efl_1_1 + EFL_fixtures_yc$efl_2_0 + EFL_fixtures_yc$efl_0_2
+UCL_fixtures_yc$ucl_un25 <- (
+  UCL_fixtures_yc$ucl_0_0 + UCL_fixtures_yc$ucl_1_0 + UCL_fixtures_yc$ucl_0_1 + UCL_fixtures_yc$ucl_1_1 + UCL_fixtures_yc$ucl_2_0 + UCL_fixtures_yc$ucl_0_2
 )
 #odds
-EFL_fixtures_yc$efl_ov25_odds <- round((1/EFL_fixtures_yc$efl_ov25),digits = 2)
-EFL_fixtures_yc$efl_un25_odds <- round((1/EFL_fixtures_yc$efl_un25),digits = 2)
+UCL_fixtures_yc$ucl_ov25_odds <- round((1/UCL_fixtures_yc$ucl_ov25),digits = 2)
+UCL_fixtures_yc$ucl_un25_odds <- round((1/UCL_fixtures_yc$ucl_un25),digits = 2)
 
-EFL_fixtures_yc$efl_ov25_odds
-EFL_fixtures_yc$efl_un25_odds
+UCL_fixtures_yc$ucl_ov25_odds
+UCL_fixtures_yc$ucl_un25_odds
 ###############################################################################
 
 ########Asian Handicaps######################################################################################################
 #percentages
-EFL_fixtures_yc$efl_ov25 <- percent(EFL_fixtures_yc$efl_ov25, accuracy = 0.1)
+UCL_fixtures_yc$ucl_ov25 <- percent(UCL_fixtures_yc$ucl_ov25, accuracy = 0.1)
 
-EFL_fixtures_yc$efl_un25 <- percent(EFL_fixtures_yc$efl_un25, accuracy = 0.1)
-EFL_fixtures_yc$efl_pscore <- paste(round(EFL_fixtures_yc$efl_xHYC,digits = 0),round(EFL_fixtures_yc$efl_xAYC,digits = 0),sep = "-")
+UCL_fixtures_yc$ucl_un25 <- percent(UCL_fixtures_yc$ucl_un25, accuracy = 0.1)
+UCL_fixtures_yc$ucl_pscore <- paste(round(UCL_fixtures_yc$ucl_xHYC,digits = 0),round(UCL_fixtures_yc$ucl_xAYC,digits = 0),sep = "-")
 
 ################################################################################################################################################################################
 #poisson corners
-efl_GP <- nrow(EFL)
+ucl_GP <- nrow(UCL)
 #Calculate total home corners for each division
-efl_home_corners <- aggregate(EFL$HCO, by = list(EFL$HomeTeam), FUN = sum)
-efl_away_corners <- aggregate(EFL$ACO, by = list(EFL$AwayTeam), FUN = sum)
+ucl_home_corners <- aggregate(UCL$HCO, by = list(UCL$HomeTeam), FUN = sum)
+ucl_away_corners <- aggregate(UCL$ACO, by = list(UCL$AwayTeam), FUN = sum)
 ###############################################################################
-efl_T_HCO <- sum(efl_home_corners$x)
+ucl_T_HCO <- sum(ucl_home_corners$x)
 #calculate average home corners
-efl_avg_HCO <- round(efl_T_HCO /efl_GP, digits = 4)
+ucl_avg_HCO <- round(ucl_T_HCO /ucl_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-efl_T_ACO <- sum(efl_away_corners$x)
+ucl_T_ACO <- sum(ucl_away_corners$x)
 #calculate average away goal
-efl_avg_ACO <- round(efl_T_ACO /efl_GP, digits = 4)
+ucl_avg_ACO <- round(ucl_T_ACO /ucl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-efl_home_coas <- round(((efl_home_corners$x/efl_home_games))/efl_avg_HCO, digits = 4)
+ucl_home_coas <- round(((ucl_home_corners$x/ucl_home_games))/ucl_avg_HCO, digits = 4)
 #calculate away attack strength
-efl_away_coas <- round(((efl_away_corners$x/efl_away_games))/efl_avg_ACO, digits = 4)
+ucl_away_coas <- round(((ucl_away_corners$x/ucl_away_games))/ucl_avg_ACO, digits = 4)
 ################################################################################
 #get average home concede and away concede
-efl_avg_HCOC <- round(efl_T_ACO /efl_GP, digits = 4)
+ucl_avg_HCOC <- round(ucl_T_ACO /ucl_GP, digits = 4)
 #avg away concede
-efl_avg_ACOC <- round(efl_T_HCO /efl_GP, digits = 4)
+ucl_avg_ACOC <- round(ucl_T_HCO /ucl_GP, digits = 4)
 #calculate home and away defense strength
 #home corners conceded
-efl_home_coc <- aggregate(EFL$ACO, by = list(EFL$HomeTeam), FUN = sum)
-efl_away_coc <- aggregate(EFL$HCO, by = list(EFL$AwayTeam), FUN = sum)
+ucl_home_coc <- aggregate(UCL$ACO, by = list(UCL$HomeTeam), FUN = sum)
+ucl_away_coc <- aggregate(UCL$HCO, by = list(UCL$AwayTeam), FUN = sum)
 #home defense strength
-efl_home_cods <- round(((efl_home_coc$x/efl_home_games))/efl_avg_HCOC, digits = 4)
+ucl_home_cods <- round(((ucl_home_coc$x/ucl_home_games))/ucl_avg_HCOC, digits = 4)
 #away defense strength
-efl_away_cods <- round(((efl_away_coc$x/efl_away_games))/efl_avg_ACOC, digits = 4)
+ucl_away_cods <- round(((ucl_away_coc$x/ucl_away_games))/ucl_avg_ACOC, digits = 4)
 #############################################################################
 #home poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_home_poisson_corners <- cbind(efl_division,efl_teams,efl_avg_HCO,efl_home_coas,efl_home_cods)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_home_poisson_corners <- cbind(ucl_division,ucl_teams,ucl_avg_HCO,ucl_home_coas,ucl_home_cods)
 #################################################################################
 #away poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_away_poisson_corners <- cbind(efl_division,efl_teams,efl_avg_ACO,efl_away_coas,efl_away_cods)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_away_poisson_corners <- cbind(ucl_division,ucl_teams,ucl_avg_ACO,ucl_away_coas,ucl_away_cods)
 
-#EFL
-HomeTeam_efl_co <- rep(efl_teams, each = length(efl_teams))
-AwayTeam_efl_co <- rep(efl_teams, length(efl_teams))
-EFL_fixtures_co <- cbind(HomeTeam_efl_co,AwayTeam_efl_co)
-EFL_fixtures_co <- as.data.frame(EFL_fixtures_co)
-EFL_fixtures_co <- EFL_fixtures_co[!EFL_fixtures_co$HomeTeam_efl_co == EFL_fixtures_co$AwayTeam_efl_co,]
-rownames(EFL_fixtures_co) <- NULL
-EFL_fixtures_co$Div <- "EFL"
-EFL_fixtures_co <- EFL_fixtures_co[,c(3,1,2)]
+#UCL
+HomeTeam_ucl_co <- rep(ucl_teams, each = length(ucl_teams))
+AwayTeam_ucl_co <- rep(ucl_teams, length(ucl_teams))
+UCL_fixtures_co <- cbind(HomeTeam_ucl_co,AwayTeam_ucl_co)
+UCL_fixtures_co <- as.data.frame(UCL_fixtures_co)
+UCL_fixtures_co <- UCL_fixtures_co[!UCL_fixtures_co$HomeTeam_ucl_co == UCL_fixtures_co$AwayTeam_ucl_co,]
+rownames(UCL_fixtures_co) <- NULL
+UCL_fixtures_co$Div <- "UCL"
+UCL_fixtures_co <- UCL_fixtures_co[,c(3,1,2)]
 
-EFL_fixtures_co$avg_HCO_efl <- efl_avg_HCO
+UCL_fixtures_co$avg_HCO_ucl <- ucl_avg_HCO
 
-EFL_fixtures_co$efl_homecoas <- rep(efl_home_coas,each = length(efl_teams)-1)
+UCL_fixtures_co$ucl_homecoas <- rep(ucl_home_coas,each = length(ucl_teams)-1)
 
-efl_awaycods_lookup <- cbind(efl_teams,efl_away_cods)
+ucl_awaycods_lookup <- cbind(ucl_teams,ucl_away_cods)
 
-efl_awaycods_lookup <- as.data.frame(efl_awaycods_lookup)
+ucl_awaycods_lookup <- as.data.frame(ucl_awaycods_lookup)
 
-colnames(efl_awaycods_lookup) <- c("AwayTeam_efl_co","efl_awaycods")
+colnames(ucl_awaycods_lookup) <- c("AwayTeam_ucl_co","ucl_awaycods")
 
 
 require('RH2')
-EFL_fixtures_co$efl_awaycods <- sqldf("SELECT efl_awaycods_lookup.efl_awaycods FROM efl_awaycods_lookup INNER JOIN EFL_fixtures_co ON efl_awaycods_lookup.AwayTeam_efl_co = EFL_fixtures_co.AwayTeam_efl_co")
+UCL_fixtures_co$ucl_awaycods <- sqldf("SELECT ucl_awaycods_lookup.ucl_awaycods FROM ucl_awaycods_lookup INNER JOIN UCL_fixtures_co ON ucl_awaycods_lookup.AwayTeam_ucl_co = UCL_fixtures_co.AwayTeam_ucl_co")
 
-EFL_fixtures_co$avg_ACO_efl <- efl_avg_ACO
+UCL_fixtures_co$avg_ACO_ucl <- ucl_avg_ACO
 
-efl_awaycoas_lookup <- cbind(efl_teams,efl_away_coas)
+ucl_awaycoas_lookup <- cbind(ucl_teams,ucl_away_coas)
 
-efl_awaycoas_lookup <- as.data.frame(efl_awaycoas_lookup)
+ucl_awaycoas_lookup <- as.data.frame(ucl_awaycoas_lookup)
 
-colnames(efl_awaycoas_lookup) <- c("AwayTeam_efl_co","efl_awaycoas")
+colnames(ucl_awaycoas_lookup) <- c("AwayTeam_ucl_co","ucl_awaycoas")
 
-EFL_fixtures_co$efl_awaycoas <- sqldf("SELECT efl_awaycoas_lookup.efl_awaycoas FROM efl_awaycoas_lookup INNER JOIN EFL_fixtures_co ON efl_awaycoas_lookup.AwayTeam_efl_co = EFL_fixtures_co.AwayTeam_efl_co")
+UCL_fixtures_co$ucl_awaycoas <- sqldf("SELECT ucl_awaycoas_lookup.ucl_awaycoas FROM ucl_awaycoas_lookup INNER JOIN UCL_fixtures_co ON ucl_awaycoas_lookup.AwayTeam_ucl_co = UCL_fixtures_co.AwayTeam_ucl_co")
 
-EFL_fixtures_co$efl_homecods <- rep(efl_home_cods,each = length(efl_teams)-1)
+UCL_fixtures_co$ucl_homecods <- rep(ucl_home_cods,each = length(ucl_teams)-1)
 
-EFL_fixtures_co$efl_awaycods <- as.numeric(unlist(EFL_fixtures_co$efl_awaycods))
+UCL_fixtures_co$ucl_awaycods <- as.numeric(unlist(UCL_fixtures_co$ucl_awaycods))
 #xGH
-EFL_fixtures_co$efl_xHCOC <- EFL_fixtures_co$avg_HCO_efl * EFL_fixtures_co$efl_homecoas * EFL_fixtures_co$efl_awaycods
+UCL_fixtures_co$ucl_xHCOC <- UCL_fixtures_co$avg_HCO_ucl * UCL_fixtures_co$ucl_homecoas * UCL_fixtures_co$ucl_awaycods
 #xGA
 
-EFL_fixtures_co$efl_awaycoas <- as.numeric(unlist(EFL_fixtures_co$efl_awaycoas))
+UCL_fixtures_co$ucl_awaycoas <- as.numeric(unlist(UCL_fixtures_co$ucl_awaycoas))
 
-EFL_fixtures_co$efl_xACOC <- EFL_fixtures_co$avg_ACO_efl * EFL_fixtures_co$efl_awaycoas * EFL_fixtures_co$efl_homecods
+UCL_fixtures_co$ucl_xACOC <- UCL_fixtures_co$avg_ACO_ucl * UCL_fixtures_co$ucl_awaycoas * UCL_fixtures_co$ucl_homecods
 
-EFL_fixtures_co$efl_0_0 <- round(stats::dpois(0,EFL_fixtures_co$efl_xHCOC) * stats::dpois(0,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_1_0 <- round(stats::dpois(1,EFL_fixtures_co$efl_xHCOC) * stats::dpois(0,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_0_1 <- round(stats::dpois(0,EFL_fixtures_co$efl_xHCOC) * stats::dpois(1,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_1_1 <- round(stats::dpois(1,EFL_fixtures_co$efl_xHCOC) * stats::dpois(1,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_2_0 <- round(stats::dpois(2,EFL_fixtures_co$efl_xHCOC) * stats::dpois(0,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_0_2 <- round(stats::dpois(0,EFL_fixtures_co$efl_xHCOC) * stats::dpois(2,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_2_2 <- round(stats::dpois(2,EFL_fixtures_co$efl_xHCOC) * stats::dpois(2,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_2_1 <- round(stats::dpois(2,EFL_fixtures_co$efl_xHCOC) * stats::dpois(1,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_1_2 <- round(stats::dpois(1,EFL_fixtures_co$efl_xHCOC) * stats::dpois(2,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_3_3 <- round(stats::dpois(3,EFL_fixtures_co$efl_xHCOC) * stats::dpois(3,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_3_0 <- round(stats::dpois(3,EFL_fixtures_co$efl_xHCOC) * stats::dpois(0,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_3_1 <- round(stats::dpois(3,EFL_fixtures_co$efl_xHCOC) * stats::dpois(1,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_3_2 <- round(stats::dpois(3,EFL_fixtures_co$efl_xHCOC) * stats::dpois(2,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_0_3 <- round(stats::dpois(0,EFL_fixtures_co$efl_xHCOC) * stats::dpois(3,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_1_3 <- round(stats::dpois(1,EFL_fixtures_co$efl_xHCOC) * stats::dpois(3,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_2_3 <- round(stats::dpois(2,EFL_fixtures_co$efl_xHCOC) * stats::dpois(3,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_4_4 <- round(stats::dpois(4,EFL_fixtures_co$efl_xHCOC) * stats::dpois(4,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_4_0 <- round(stats::dpois(4,EFL_fixtures_co$efl_xHCOC) * stats::dpois(0,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_4_1 <- round(stats::dpois(4,EFL_fixtures_co$efl_xHCOC) * stats::dpois(1,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_4_2 <- round(stats::dpois(4,EFL_fixtures_co$efl_xHCOC) * stats::dpois(2,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_4_3 <- round(stats::dpois(4,EFL_fixtures_co$efl_xHCOC) * stats::dpois(3,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_0_4 <- round(stats::dpois(0,EFL_fixtures_co$efl_xHCOC) * stats::dpois(4,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_1_4 <- round(stats::dpois(1,EFL_fixtures_co$efl_xHCOC) * stats::dpois(4,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_2_4 <- round(stats::dpois(2,EFL_fixtures_co$efl_xHCOC) * stats::dpois(4,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_3_4 <- round(stats::dpois(3,EFL_fixtures_co$efl_xHCOC) * stats::dpois(4,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_5_5 <- round(stats::dpois(5,EFL_fixtures_co$efl_xHCOC) * stats::dpois(5,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_5_0 <- round(stats::dpois(5,EFL_fixtures_co$efl_xHCOC) * stats::dpois(0,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_5_1 <- round(stats::dpois(5,EFL_fixtures_co$efl_xHCOC) * stats::dpois(1,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_5_2 <- round(stats::dpois(5,EFL_fixtures_co$efl_xHCOC) * stats::dpois(2,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_5_3 <- round(stats::dpois(5,EFL_fixtures_co$efl_xHCOC) * stats::dpois(3,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_5_4 <- round(stats::dpois(5,EFL_fixtures_co$efl_xHCOC) * stats::dpois(4,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_0_5 <- round(stats::dpois(0,EFL_fixtures_co$efl_xHCOC) * stats::dpois(5,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_1_5 <- round(stats::dpois(1,EFL_fixtures_co$efl_xHCOC) * stats::dpois(5,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_2_5 <- round(stats::dpois(2,EFL_fixtures_co$efl_xHCOC) * stats::dpois(5,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_3_5 <- round(stats::dpois(3,EFL_fixtures_co$efl_xHCOC) * stats::dpois(5,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_4_5 <- round(stats::dpois(4,EFL_fixtures_co$efl_xHCOC) * stats::dpois(5,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_6_6 <- round(stats::dpois(6,EFL_fixtures_co$efl_xHCOC) * stats::dpois(6,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_6_0 <- round(stats::dpois(6,EFL_fixtures_co$efl_xHCOC) * stats::dpois(0,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_6_1 <- round(stats::dpois(6,EFL_fixtures_co$efl_xHCOC) * stats::dpois(1,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_6_2 <- round(stats::dpois(6,EFL_fixtures_co$efl_xHCOC) * stats::dpois(2,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_6_3 <- round(stats::dpois(6,EFL_fixtures_co$efl_xHCOC) * stats::dpois(3,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_6_4 <- round(stats::dpois(6,EFL_fixtures_co$efl_xHCOC) * stats::dpois(4,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_6_5 <- round(stats::dpois(6,EFL_fixtures_co$efl_xHCOC) * stats::dpois(5,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_0_6 <- round(stats::dpois(0,EFL_fixtures_co$efl_xHCOC) * stats::dpois(6,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_1_6 <- round(stats::dpois(1,EFL_fixtures_co$efl_xHCOC) * stats::dpois(6,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_2_6 <- round(stats::dpois(2,EFL_fixtures_co$efl_xHCOC) * stats::dpois(6,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_3_6 <- round(stats::dpois(3,EFL_fixtures_co$efl_xHCOC) * stats::dpois(6,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_4_6 <- round(stats::dpois(4,EFL_fixtures_co$efl_xHCOC) * stats::dpois(6,EFL_fixtures_co$efl_xACOC), digits = 4)
-EFL_fixtures_co$efl_5_6 <- round(stats::dpois(5,EFL_fixtures_co$efl_xHCOC) * stats::dpois(6,EFL_fixtures_co$efl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_0_0 <- round(stats::dpois(0,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(0,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_1_0 <- round(stats::dpois(1,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(0,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_0_1 <- round(stats::dpois(0,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(1,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_1_1 <- round(stats::dpois(1,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(1,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_2_0 <- round(stats::dpois(2,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(0,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_0_2 <- round(stats::dpois(0,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(2,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_2_2 <- round(stats::dpois(2,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(2,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_2_1 <- round(stats::dpois(2,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(1,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_1_2 <- round(stats::dpois(1,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(2,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_3_3 <- round(stats::dpois(3,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(3,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_3_0 <- round(stats::dpois(3,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(0,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_3_1 <- round(stats::dpois(3,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(1,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_3_2 <- round(stats::dpois(3,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(2,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_0_3 <- round(stats::dpois(0,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(3,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_1_3 <- round(stats::dpois(1,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(3,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_2_3 <- round(stats::dpois(2,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(3,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_4_4 <- round(stats::dpois(4,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(4,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_4_0 <- round(stats::dpois(4,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(0,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_4_1 <- round(stats::dpois(4,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(1,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_4_2 <- round(stats::dpois(4,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(2,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_4_3 <- round(stats::dpois(4,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(3,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_0_4 <- round(stats::dpois(0,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(4,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_1_4 <- round(stats::dpois(1,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(4,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_2_4 <- round(stats::dpois(2,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(4,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_3_4 <- round(stats::dpois(3,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(4,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_5_5 <- round(stats::dpois(5,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(5,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_5_0 <- round(stats::dpois(5,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(0,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_5_1 <- round(stats::dpois(5,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(1,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_5_2 <- round(stats::dpois(5,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(2,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_5_3 <- round(stats::dpois(5,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(3,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_5_4 <- round(stats::dpois(5,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(4,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_0_5 <- round(stats::dpois(0,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(5,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_1_5 <- round(stats::dpois(1,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(5,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_2_5 <- round(stats::dpois(2,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(5,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_3_5 <- round(stats::dpois(3,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(5,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_4_5 <- round(stats::dpois(4,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(5,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_6_6 <- round(stats::dpois(6,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(6,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_6_0 <- round(stats::dpois(6,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(0,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_6_1 <- round(stats::dpois(6,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(1,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_6_2 <- round(stats::dpois(6,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(2,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_6_3 <- round(stats::dpois(6,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(3,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_6_4 <- round(stats::dpois(6,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(4,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_6_5 <- round(stats::dpois(6,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(5,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_0_6 <- round(stats::dpois(0,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(6,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_1_6 <- round(stats::dpois(1,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(6,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_2_6 <- round(stats::dpois(2,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(6,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_3_6 <- round(stats::dpois(3,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(6,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_4_6 <- round(stats::dpois(4,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(6,UCL_fixtures_co$ucl_xACOC), digits = 4)
+UCL_fixtures_co$ucl_5_6 <- round(stats::dpois(5,UCL_fixtures_co$ucl_xHCOC) * stats::dpois(6,UCL_fixtures_co$ucl_xACOC), digits = 4)
 #Home win
-EFL_fixtures_co$efl_H <- (
-  EFL_fixtures_co$efl_1_0 + EFL_fixtures_co$efl_2_0 + EFL_fixtures_co$efl_2_1 + EFL_fixtures_co$efl_3_0 + EFL_fixtures_co$efl_3_1 +
-    EFL_fixtures_co$efl_3_2 + EFL_fixtures_co$efl_4_0 + EFL_fixtures_co$efl_4_1 + EFL_fixtures_co$efl_4_2 + EFL_fixtures_co$efl_4_3 +
-    EFL_fixtures_co$efl_5_0 + EFL_fixtures_co$efl_5_1 + EFL_fixtures_co$efl_5_2 + EFL_fixtures_co$efl_5_3 + EFL_fixtures_co$efl_5_4 +
-    EFL_fixtures_co$efl_6_0 + EFL_fixtures_co$efl_6_1 + EFL_fixtures_co$efl_6_2 + EFL_fixtures_co$efl_6_3 + EFL_fixtures_co$efl_6_4 +
-    EFL_fixtures_co$efl_6_5
+UCL_fixtures_co$ucl_H <- (
+  UCL_fixtures_co$ucl_1_0 + UCL_fixtures_co$ucl_2_0 + UCL_fixtures_co$ucl_2_1 + UCL_fixtures_co$ucl_3_0 + UCL_fixtures_co$ucl_3_1 +
+    UCL_fixtures_co$ucl_3_2 + UCL_fixtures_co$ucl_4_0 + UCL_fixtures_co$ucl_4_1 + UCL_fixtures_co$ucl_4_2 + UCL_fixtures_co$ucl_4_3 +
+    UCL_fixtures_co$ucl_5_0 + UCL_fixtures_co$ucl_5_1 + UCL_fixtures_co$ucl_5_2 + UCL_fixtures_co$ucl_5_3 + UCL_fixtures_co$ucl_5_4 +
+    UCL_fixtures_co$ucl_6_0 + UCL_fixtures_co$ucl_6_1 + UCL_fixtures_co$ucl_6_2 + UCL_fixtures_co$ucl_6_3 + UCL_fixtures_co$ucl_6_4 +
+    UCL_fixtures_co$ucl_6_5
 )
 
-EFL_fixtures_co$efl_H <- percent(EFL_fixtures_co$efl_H, accuracy = 0.1)
+UCL_fixtures_co$ucl_H <- percent(UCL_fixtures_co$ucl_H, accuracy = 0.1)
 
 #Draw
-EFL_fixtures_co$efl_D <- (
+UCL_fixtures_co$ucl_D <- (
 
-  EFL_fixtures_co$efl_0_0 + EFL_fixtures_co$efl_1_1 + EFL_fixtures_co$efl_2_2 + EFL_fixtures_co$efl_3_3 + EFL_fixtures_co$efl_4_4 +
-    EFL_fixtures_co$efl_5_5 + EFL_fixtures_co$efl_6_6
+  UCL_fixtures_co$ucl_0_0 + UCL_fixtures_co$ucl_1_1 + UCL_fixtures_co$ucl_2_2 + UCL_fixtures_co$ucl_3_3 + UCL_fixtures_co$ucl_4_4 +
+    UCL_fixtures_co$ucl_5_5 + UCL_fixtures_co$ucl_6_6
 )
 
-EFL_fixtures_co$efl_D <- percent(EFL_fixtures_co$efl_D, accuracy = 0.1)
+UCL_fixtures_co$ucl_D <- percent(UCL_fixtures_co$ucl_D, accuracy = 0.1)
 
 #Away
 
-EFL_fixtures_co$efl_A <- (
-  EFL_fixtures_co$efl_0_1 + EFL_fixtures_co$efl_0_2 + EFL_fixtures_co$efl_1_2 + EFL_fixtures_co$efl_0_3 + EFL_fixtures_co$efl_1_3 +
-    EFL_fixtures_co$efl_2_3 + EFL_fixtures_co$efl_0_4 + EFL_fixtures_co$efl_1_4 + EFL_fixtures_co$efl_2_4 + EFL_fixtures_co$efl_3_4 +
-    EFL_fixtures_co$efl_0_5 + EFL_fixtures_co$efl_1_5 + EFL_fixtures_co$efl_2_5 + EFL_fixtures_co$efl_3_5 + EFL_fixtures_co$efl_4_5 +
-    EFL_fixtures_co$efl_0_6 + EFL_fixtures_co$efl_1_6 + EFL_fixtures_co$efl_2_6 + EFL_fixtures_co$efl_3_6 + EFL_fixtures_co$efl_4_6 +
-    EFL_fixtures_co$efl_5_6
+UCL_fixtures_co$ucl_A <- (
+  UCL_fixtures_co$ucl_0_1 + UCL_fixtures_co$ucl_0_2 + UCL_fixtures_co$ucl_1_2 + UCL_fixtures_co$ucl_0_3 + UCL_fixtures_co$ucl_1_3 +
+    UCL_fixtures_co$ucl_2_3 + UCL_fixtures_co$ucl_0_4 + UCL_fixtures_co$ucl_1_4 + UCL_fixtures_co$ucl_2_4 + UCL_fixtures_co$ucl_3_4 +
+    UCL_fixtures_co$ucl_0_5 + UCL_fixtures_co$ucl_1_5 + UCL_fixtures_co$ucl_2_5 + UCL_fixtures_co$ucl_3_5 + UCL_fixtures_co$ucl_4_5 +
+    UCL_fixtures_co$ucl_0_6 + UCL_fixtures_co$ucl_1_6 + UCL_fixtures_co$ucl_2_6 + UCL_fixtures_co$ucl_3_6 + UCL_fixtures_co$ucl_4_6 +
+    UCL_fixtures_co$ucl_5_6
 )
 
-EFL_fixtures_co$efl_A <- percent(EFL_fixtures_co$efl_A, accuracy = 0.1)
+UCL_fixtures_co$ucl_A <- percent(UCL_fixtures_co$ucl_A, accuracy = 0.1)
 
 #ov25
-EFL_fixtures_co$efl_ov25 <- (
-  EFL_fixtures_co$efl_2_1 + EFL_fixtures_co$efl_1_2 + EFL_fixtures_co$efl_2_2 + EFL_fixtures_co$efl_3_0 + EFL_fixtures_co$efl_3_1 +
-    EFL_fixtures_co$efl_3_2 + EFL_fixtures_co$efl_0_3 + EFL_fixtures_co$efl_1_3 + EFL_fixtures_co$efl_2_3 + EFL_fixtures_co$efl_3_3 +
-    EFL_fixtures_co$efl_4_0 + EFL_fixtures_co$efl_4_1 + EFL_fixtures_co$efl_4_2 + EFL_fixtures_co$efl_4_3 + EFL_fixtures_co$efl_0_4 +
-    EFL_fixtures_co$efl_1_4 + EFL_fixtures_co$efl_2_4 + EFL_fixtures_co$efl_3_4 + EFL_fixtures_co$efl_4_4 + EFL_fixtures_co$efl_5_0 +
-    EFL_fixtures_co$efl_5_1 + EFL_fixtures_co$efl_5_2 + EFL_fixtures_co$efl_5_3 + EFL_fixtures_co$efl_5_4 + EFL_fixtures_co$efl_0_5 +
-    EFL_fixtures_co$efl_1_5 + EFL_fixtures_co$efl_2_5 + EFL_fixtures_co$efl_3_5 + EFL_fixtures_co$efl_4_5 + EFL_fixtures_co$efl_5_5 +
-    EFL_fixtures_co$efl_6_0 + EFL_fixtures_co$efl_6_1 + EFL_fixtures_co$efl_6_2 + EFL_fixtures_co$efl_6_3 + EFL_fixtures_co$efl_6_4 +
-    EFL_fixtures_co$efl_6_5 + EFL_fixtures_co$efl_0_6 + EFL_fixtures_co$efl_1_6 + EFL_fixtures_co$efl_2_6 + EFL_fixtures_co$efl_3_6 +
-    EFL_fixtures_co$efl_4_6 + EFL_fixtures_co$efl_5_6 + EFL_fixtures_co$efl_6_6
+UCL_fixtures_co$ucl_ov25 <- (
+  UCL_fixtures_co$ucl_2_1 + UCL_fixtures_co$ucl_1_2 + UCL_fixtures_co$ucl_2_2 + UCL_fixtures_co$ucl_3_0 + UCL_fixtures_co$ucl_3_1 +
+    UCL_fixtures_co$ucl_3_2 + UCL_fixtures_co$ucl_0_3 + UCL_fixtures_co$ucl_1_3 + UCL_fixtures_co$ucl_2_3 + UCL_fixtures_co$ucl_3_3 +
+    UCL_fixtures_co$ucl_4_0 + UCL_fixtures_co$ucl_4_1 + UCL_fixtures_co$ucl_4_2 + UCL_fixtures_co$ucl_4_3 + UCL_fixtures_co$ucl_0_4 +
+    UCL_fixtures_co$ucl_1_4 + UCL_fixtures_co$ucl_2_4 + UCL_fixtures_co$ucl_3_4 + UCL_fixtures_co$ucl_4_4 + UCL_fixtures_co$ucl_5_0 +
+    UCL_fixtures_co$ucl_5_1 + UCL_fixtures_co$ucl_5_2 + UCL_fixtures_co$ucl_5_3 + UCL_fixtures_co$ucl_5_4 + UCL_fixtures_co$ucl_0_5 +
+    UCL_fixtures_co$ucl_1_5 + UCL_fixtures_co$ucl_2_5 + UCL_fixtures_co$ucl_3_5 + UCL_fixtures_co$ucl_4_5 + UCL_fixtures_co$ucl_5_5 +
+    UCL_fixtures_co$ucl_6_0 + UCL_fixtures_co$ucl_6_1 + UCL_fixtures_co$ucl_6_2 + UCL_fixtures_co$ucl_6_3 + UCL_fixtures_co$ucl_6_4 +
+    UCL_fixtures_co$ucl_6_5 + UCL_fixtures_co$ucl_0_6 + UCL_fixtures_co$ucl_1_6 + UCL_fixtures_co$ucl_2_6 + UCL_fixtures_co$ucl_3_6 +
+    UCL_fixtures_co$ucl_4_6 + UCL_fixtures_co$ucl_5_6 + UCL_fixtures_co$ucl_6_6
 )
 #un25
-EFL_fixtures_co$efl_un25 <- (
-  EFL_fixtures_co$efl_0_0 + EFL_fixtures_co$efl_1_0 + EFL_fixtures_co$efl_0_1 + EFL_fixtures_co$efl_1_1 + EFL_fixtures_co$efl_2_0 + EFL_fixtures_co$efl_0_2
+UCL_fixtures_co$ucl_un25 <- (
+  UCL_fixtures_co$ucl_0_0 + UCL_fixtures_co$ucl_1_0 + UCL_fixtures_co$ucl_0_1 + UCL_fixtures_co$ucl_1_1 + UCL_fixtures_co$ucl_2_0 + UCL_fixtures_co$ucl_0_2
 )
 #odds
-EFL_fixtures_co$efl_ov25_odds <- round((1/EFL_fixtures_co$efl_ov25),digits = 2)
-EFL_fixtures_co$efl_un25_odds <- round((1/EFL_fixtures_co$efl_un25),digits = 2)
+UCL_fixtures_co$ucl_ov25_odds <- round((1/UCL_fixtures_co$ucl_ov25),digits = 2)
+UCL_fixtures_co$ucl_un25_odds <- round((1/UCL_fixtures_co$ucl_un25),digits = 2)
 
-EFL_fixtures_co$efl_ov25_odds
-EFL_fixtures_co$efl_un25_odds
+UCL_fixtures_co$ucl_ov25_odds
+UCL_fixtures_co$ucl_un25_odds
 ###############################################################################
 
 ########Asian Handicaps######################################################################################################
 #percentages
-EFL_fixtures_co$efl_ov25 <- percent(EFL_fixtures_co$efl_ov25, accuracy = 0.1)
+UCL_fixtures_co$ucl_ov25 <- percent(UCL_fixtures_co$ucl_ov25, accuracy = 0.1)
 
-EFL_fixtures_co$efl_un25 <- percent(EFL_fixtures_co$efl_un25, accuracy = 0.1)
-EFL_fixtures_co$efl_pscore <- paste(round(EFL_fixtures_co$efl_xHCOC,digits = 0),round(EFL_fixtures_co$efl_xACOC,digits = 0),sep = "-")
+UCL_fixtures_co$ucl_un25 <- percent(UCL_fixtures_co$ucl_un25, accuracy = 0.1)
+UCL_fixtures_co$ucl_pscore <- paste(round(UCL_fixtures_co$ucl_xHCOC,digits = 0),round(UCL_fixtures_co$ucl_xACOC,digits = 0),sep = "-")
 ######################################################################################################################################################################
 #poisson fouls
-efl_GP <- nrow(EFL)
+ucl_GP <- nrow(UCL)
 #Calculate total home goals for each division
-efl_T_HF <- sum(efl_home_fouls$x)
+ucl_T_HF <- sum(ucl_home_fouls$x)
 #calculate average home goal
-efl_avg_HF <- round(efl_T_HF /efl_GP, digits = 4)
+ucl_avg_HF <- round(ucl_T_HF /ucl_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-efl_T_AF <- sum(efl_away_fouls$x)
+ucl_T_AF <- sum(ucl_away_fouls$x)
 #calculate average away goal
-efl_avg_AF <- round(efl_T_AF /efl_GP, digits = 4)
+ucl_avg_AF <- round(ucl_T_AF /ucl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-efl_home_fas <- round(((efl_home_fouls$x/efl_home_games))/efl_avg_HF, digits = 4)
+ucl_home_fas <- round(((ucl_home_fouls$x/ucl_home_games))/ucl_avg_HF, digits = 4)
 #calculate away attack strength
-efl_away_fas <- round(((efl_away_fouls$x/efl_away_games))/efl_avg_AF, digits = 4)
+ucl_away_fas <- round(((ucl_away_fouls$x/ucl_away_games))/ucl_avg_AF, digits = 4)
 
 ################################################################################
 #get average home concede and away concede
-efl_avg_HFC <- round(efl_T_AF /efl_GP, digits = 4)
+ucl_avg_HFC <- round(ucl_T_AF /ucl_GP, digits = 4)
 #avg away concede
-efl_avg_AFC <- round(efl_T_HF /efl_GP, digits = 4)
+ucl_avg_AFC <- round(ucl_T_HF /ucl_GP, digits = 4)
 #calculate home and away defense strength
 #home yellow cards conceded
-efl_home_fcc <- aggregate(EFL$AF, by = list(EFL$HomeTeam), FUN = sum)
-efl_away_fcc <- aggregate(EFL$HF, by = list(EFL$AwayTeam), FUN = sum)
+ucl_home_fcc <- aggregate(UCL$AF, by = list(UCL$HomeTeam), FUN = sum)
+ucl_away_fcc <- aggregate(UCL$HF, by = list(UCL$AwayTeam), FUN = sum)
 
 #home defense strength
-efl_home_fds <- round(((efl_home_fcc$x/efl_home_games))/efl_avg_HFC, digits = 4)
+ucl_home_fds <- round(((ucl_home_fcc$x/ucl_home_games))/ucl_avg_HFC, digits = 4)
 
 #away defense strength
-efl_away_fds <- round(((efl_away_fcc$x/efl_away_games))/efl_avg_AFC, digits = 4)
+ucl_away_fds <- round(((ucl_away_fcc$x/ucl_away_games))/ucl_avg_AFC, digits = 4)
 
 #############################################################################
 #home poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_home_poisson_fo <- cbind(efl_division,efl_teams,efl_avg_HF,efl_home_fas,efl_home_fds)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_home_poisson_fo <- cbind(ucl_division,ucl_teams,ucl_avg_HF,ucl_home_fas,ucl_home_fds)
 
 #################################################################################
 #away poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_away_poisson_fo <- cbind(efl_division,efl_teams,efl_avg_AF,efl_away_fas,efl_away_fds)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_away_poisson_fo <- cbind(ucl_division,ucl_teams,ucl_avg_AF,ucl_away_fas,ucl_away_fds)
 
-#EFL
-HomeTeam_efl_fo <- rep(efl_teams, each = length(efl_teams))
-AwayTeam_efl_fo <- rep(efl_teams, length(efl_teams))
-EFL_fixtures_fo <- cbind(HomeTeam_efl_fo,AwayTeam_efl_fo)
-EFL_fixtures_fo <- as.data.frame(EFL_fixtures_fo)
-EFL_fixtures_fo <- EFL_fixtures_fo[!EFL_fixtures_fo$HomeTeam_efl_fo == EFL_fixtures_fo$AwayTeam_efl_fo,]
-rownames(EFL_fixtures_fo) <- NULL
-EFL_fixtures_fo$Div <- "EFL"
-EFL_fixtures_fo <- EFL_fixtures_fo[,c(3,1,2)]
+#UCL
+HomeTeam_ucl_fo <- rep(ucl_teams, each = length(ucl_teams))
+AwayTeam_ucl_fo <- rep(ucl_teams, length(ucl_teams))
+UCL_fixtures_fo <- cbind(HomeTeam_ucl_fo,AwayTeam_ucl_fo)
+UCL_fixtures_fo <- as.data.frame(UCL_fixtures_fo)
+UCL_fixtures_fo <- UCL_fixtures_fo[!UCL_fixtures_fo$HomeTeam_ucl_fo == UCL_fixtures_fo$AwayTeam_ucl_fo,]
+rownames(UCL_fixtures_fo) <- NULL
+UCL_fixtures_fo$Div <- "UCL"
+UCL_fixtures_fo <- UCL_fixtures_fo[,c(3,1,2)]
 
-EFL_fixtures_fo$avg_HF_efl <- efl_avg_HF
+UCL_fixtures_fo$avg_HF_ucl <- ucl_avg_HF
 
-EFL_fixtures_fo$efl_homefas <- rep(efl_home_fas,each = length(efl_teams)-1)
+UCL_fixtures_fo$ucl_homefas <- rep(ucl_home_fas,each = length(ucl_teams)-1)
 
-efl_awayfds_lookup <- cbind(efl_teams,efl_away_fds)
+ucl_awayfds_lookup <- cbind(ucl_teams,ucl_away_fds)
 
-efl_awayfds_lookup <- as.data.frame(efl_awayfds_lookup)
+ucl_awayfds_lookup <- as.data.frame(ucl_awayfds_lookup)
 
-colnames(efl_awayfds_lookup) <- c("AwayTeam_efl_fo","efl_awayfds")
+colnames(ucl_awayfds_lookup) <- c("AwayTeam_ucl_fo","ucl_awayfds")
 
 
 require('RH2')
-EFL_fixtures_fo$efl_awayfds <- sqldf("SELECT efl_awayfds_lookup.efl_awayfds FROM efl_awayfds_lookup INNER JOIN EFL_fixtures_fo ON efl_awayfds_lookup.AwayTeam_efl_fo = EFL_fixtures_fo.AwayTeam_efl_fo")
+UCL_fixtures_fo$ucl_awayfds <- sqldf("SELECT ucl_awayfds_lookup.ucl_awayfds FROM ucl_awayfds_lookup INNER JOIN UCL_fixtures_fo ON ucl_awayfds_lookup.AwayTeam_ucl_fo = UCL_fixtures_fo.AwayTeam_ucl_fo")
 
-EFL_fixtures_fo$avg_AF_efl <- efl_avg_AF
+UCL_fixtures_fo$avg_AF_ucl <- ucl_avg_AF
 
-efl_awayfas_lookup <- cbind(efl_teams,efl_away_fas)
+ucl_awayfas_lookup <- cbind(ucl_teams,ucl_away_fas)
 
-efl_awayfas_lookup <- as.data.frame(efl_awayfas_lookup)
+ucl_awayfas_lookup <- as.data.frame(ucl_awayfas_lookup)
 
-colnames(efl_awayfas_lookup) <- c("AwayTeam_efl_fo","efl_awayfas")
+colnames(ucl_awayfas_lookup) <- c("AwayTeam_ucl_fo","ucl_awayfas")
 
-EFL_fixtures_fo$efl_awayfas <- sqldf("SELECT efl_awayfas_lookup.efl_awayfas FROM efl_awayfas_lookup INNER JOIN EFL_fixtures_fo ON efl_awayfas_lookup.AwayTeam_efl_fo = EFL_fixtures_fo.AwayTeam_efl_fo")
+UCL_fixtures_fo$ucl_awayfas <- sqldf("SELECT ucl_awayfas_lookup.ucl_awayfas FROM ucl_awayfas_lookup INNER JOIN UCL_fixtures_fo ON ucl_awayfas_lookup.AwayTeam_ucl_fo = UCL_fixtures_fo.AwayTeam_ucl_fo")
 
-EFL_fixtures_fo$efl_homefds <- rep(efl_home_fds,each = length(efl_teams)-1)
+UCL_fixtures_fo$ucl_homefds <- rep(ucl_home_fds,each = length(ucl_teams)-1)
 
-EFL_fixtures_fo$efl_awayfds <- as.numeric(unlist(EFL_fixtures_fo$efl_awayfds))
+UCL_fixtures_fo$ucl_awayfds <- as.numeric(unlist(UCL_fixtures_fo$ucl_awayfds))
 #xGH
-EFL_fixtures_fo$efl_xHF <- EFL_fixtures_fo$avg_HF_efl * EFL_fixtures_fo$efl_homefas * EFL_fixtures_fo$efl_awayfds
+UCL_fixtures_fo$ucl_xHF <- UCL_fixtures_fo$avg_HF_ucl * UCL_fixtures_fo$ucl_homefas * UCL_fixtures_fo$ucl_awayfds
 #xGA
 
-EFL_fixtures_fo$efl_awayfas <- as.numeric(unlist(EFL_fixtures_fo$efl_awayfas))
+UCL_fixtures_fo$ucl_awayfas <- as.numeric(unlist(UCL_fixtures_fo$ucl_awayfas))
 
-EFL_fixtures_fo$efl_xAF <- EFL_fixtures_fo$avg_AF_efl * EFL_fixtures_fo$efl_awayfas * EFL_fixtures_fo$efl_homefds
+UCL_fixtures_fo$ucl_xAF <- UCL_fixtures_fo$avg_AF_ucl * UCL_fixtures_fo$ucl_awayfas * UCL_fixtures_fo$ucl_homefds
 
-EFL_fixtures_fo$efl_0_0 <- round(stats::dpois(0,EFL_fixtures_fo$efl_xHF) * stats::dpois(0,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_1_0 <- round(stats::dpois(1,EFL_fixtures_fo$efl_xHF) * stats::dpois(0,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_0_1 <- round(stats::dpois(0,EFL_fixtures_fo$efl_xHF) * stats::dpois(1,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_1_1 <- round(stats::dpois(1,EFL_fixtures_fo$efl_xHF) * stats::dpois(1,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_2_0 <- round(stats::dpois(2,EFL_fixtures_fo$efl_xHF) * stats::dpois(0,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_0_2 <- round(stats::dpois(0,EFL_fixtures_fo$efl_xHF) * stats::dpois(2,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_2_2 <- round(stats::dpois(2,EFL_fixtures_fo$efl_xHF) * stats::dpois(2,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_2_1 <- round(stats::dpois(2,EFL_fixtures_fo$efl_xHF) * stats::dpois(1,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_1_2 <- round(stats::dpois(1,EFL_fixtures_fo$efl_xHF) * stats::dpois(2,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_3_3 <- round(stats::dpois(3,EFL_fixtures_fo$efl_xHF) * stats::dpois(3,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_3_0 <- round(stats::dpois(3,EFL_fixtures_fo$efl_xHF) * stats::dpois(0,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_3_1 <- round(stats::dpois(3,EFL_fixtures_fo$efl_xHF) * stats::dpois(1,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_3_2 <- round(stats::dpois(3,EFL_fixtures_fo$efl_xHF) * stats::dpois(2,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_0_3 <- round(stats::dpois(0,EFL_fixtures_fo$efl_xHF) * stats::dpois(3,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_1_3 <- round(stats::dpois(1,EFL_fixtures_fo$efl_xHF) * stats::dpois(3,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_2_3 <- round(stats::dpois(2,EFL_fixtures_fo$efl_xHF) * stats::dpois(3,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_4_4 <- round(stats::dpois(4,EFL_fixtures_fo$efl_xHF) * stats::dpois(4,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_4_0 <- round(stats::dpois(4,EFL_fixtures_fo$efl_xHF) * stats::dpois(0,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_4_1 <- round(stats::dpois(4,EFL_fixtures_fo$efl_xHF) * stats::dpois(1,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_4_2 <- round(stats::dpois(4,EFL_fixtures_fo$efl_xHF) * stats::dpois(2,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_4_3 <- round(stats::dpois(4,EFL_fixtures_fo$efl_xHF) * stats::dpois(3,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_0_4 <- round(stats::dpois(0,EFL_fixtures_fo$efl_xHF) * stats::dpois(4,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_1_4 <- round(stats::dpois(1,EFL_fixtures_fo$efl_xHF) * stats::dpois(4,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_2_4 <- round(stats::dpois(2,EFL_fixtures_fo$efl_xHF) * stats::dpois(4,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_3_4 <- round(stats::dpois(3,EFL_fixtures_fo$efl_xHF) * stats::dpois(4,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_5_5 <- round(stats::dpois(5,EFL_fixtures_fo$efl_xHF) * stats::dpois(5,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_5_0 <- round(stats::dpois(5,EFL_fixtures_fo$efl_xHF) * stats::dpois(0,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_5_1 <- round(stats::dpois(5,EFL_fixtures_fo$efl_xHF) * stats::dpois(1,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_5_2 <- round(stats::dpois(5,EFL_fixtures_fo$efl_xHF) * stats::dpois(2,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_5_3 <- round(stats::dpois(5,EFL_fixtures_fo$efl_xHF) * stats::dpois(3,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_5_4 <- round(stats::dpois(5,EFL_fixtures_fo$efl_xHF) * stats::dpois(4,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_0_5 <- round(stats::dpois(0,EFL_fixtures_fo$efl_xHF) * stats::dpois(5,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_1_5 <- round(stats::dpois(1,EFL_fixtures_fo$efl_xHF) * stats::dpois(5,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_2_5 <- round(stats::dpois(2,EFL_fixtures_fo$efl_xHF) * stats::dpois(5,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_3_5 <- round(stats::dpois(3,EFL_fixtures_fo$efl_xHF) * stats::dpois(5,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_4_5 <- round(stats::dpois(4,EFL_fixtures_fo$efl_xHF) * stats::dpois(5,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_6_6 <- round(stats::dpois(6,EFL_fixtures_fo$efl_xHF) * stats::dpois(6,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_6_0 <- round(stats::dpois(6,EFL_fixtures_fo$efl_xHF) * stats::dpois(0,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_6_1 <- round(stats::dpois(6,EFL_fixtures_fo$efl_xHF) * stats::dpois(1,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_6_2 <- round(stats::dpois(6,EFL_fixtures_fo$efl_xHF) * stats::dpois(2,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_6_3 <- round(stats::dpois(6,EFL_fixtures_fo$efl_xHF) * stats::dpois(3,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_6_4 <- round(stats::dpois(6,EFL_fixtures_fo$efl_xHF) * stats::dpois(4,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_6_5 <- round(stats::dpois(6,EFL_fixtures_fo$efl_xHF) * stats::dpois(5,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_0_6 <- round(stats::dpois(0,EFL_fixtures_fo$efl_xHF) * stats::dpois(6,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_1_6 <- round(stats::dpois(1,EFL_fixtures_fo$efl_xHF) * stats::dpois(6,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_2_6 <- round(stats::dpois(2,EFL_fixtures_fo$efl_xHF) * stats::dpois(6,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_3_6 <- round(stats::dpois(3,EFL_fixtures_fo$efl_xHF) * stats::dpois(6,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_4_6 <- round(stats::dpois(4,EFL_fixtures_fo$efl_xHF) * stats::dpois(6,EFL_fixtures_fo$efl_xAF), digits = 4)
-EFL_fixtures_fo$efl_5_6 <- round(stats::dpois(5,EFL_fixtures_fo$efl_xHF) * stats::dpois(6,EFL_fixtures_fo$efl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_0_0 <- round(stats::dpois(0,UCL_fixtures_fo$ucl_xHF) * stats::dpois(0,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_1_0 <- round(stats::dpois(1,UCL_fixtures_fo$ucl_xHF) * stats::dpois(0,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_0_1 <- round(stats::dpois(0,UCL_fixtures_fo$ucl_xHF) * stats::dpois(1,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_1_1 <- round(stats::dpois(1,UCL_fixtures_fo$ucl_xHF) * stats::dpois(1,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_2_0 <- round(stats::dpois(2,UCL_fixtures_fo$ucl_xHF) * stats::dpois(0,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_0_2 <- round(stats::dpois(0,UCL_fixtures_fo$ucl_xHF) * stats::dpois(2,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_2_2 <- round(stats::dpois(2,UCL_fixtures_fo$ucl_xHF) * stats::dpois(2,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_2_1 <- round(stats::dpois(2,UCL_fixtures_fo$ucl_xHF) * stats::dpois(1,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_1_2 <- round(stats::dpois(1,UCL_fixtures_fo$ucl_xHF) * stats::dpois(2,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_3_3 <- round(stats::dpois(3,UCL_fixtures_fo$ucl_xHF) * stats::dpois(3,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_3_0 <- round(stats::dpois(3,UCL_fixtures_fo$ucl_xHF) * stats::dpois(0,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_3_1 <- round(stats::dpois(3,UCL_fixtures_fo$ucl_xHF) * stats::dpois(1,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_3_2 <- round(stats::dpois(3,UCL_fixtures_fo$ucl_xHF) * stats::dpois(2,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_0_3 <- round(stats::dpois(0,UCL_fixtures_fo$ucl_xHF) * stats::dpois(3,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_1_3 <- round(stats::dpois(1,UCL_fixtures_fo$ucl_xHF) * stats::dpois(3,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_2_3 <- round(stats::dpois(2,UCL_fixtures_fo$ucl_xHF) * stats::dpois(3,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_4_4 <- round(stats::dpois(4,UCL_fixtures_fo$ucl_xHF) * stats::dpois(4,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_4_0 <- round(stats::dpois(4,UCL_fixtures_fo$ucl_xHF) * stats::dpois(0,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_4_1 <- round(stats::dpois(4,UCL_fixtures_fo$ucl_xHF) * stats::dpois(1,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_4_2 <- round(stats::dpois(4,UCL_fixtures_fo$ucl_xHF) * stats::dpois(2,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_4_3 <- round(stats::dpois(4,UCL_fixtures_fo$ucl_xHF) * stats::dpois(3,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_0_4 <- round(stats::dpois(0,UCL_fixtures_fo$ucl_xHF) * stats::dpois(4,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_1_4 <- round(stats::dpois(1,UCL_fixtures_fo$ucl_xHF) * stats::dpois(4,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_2_4 <- round(stats::dpois(2,UCL_fixtures_fo$ucl_xHF) * stats::dpois(4,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_3_4 <- round(stats::dpois(3,UCL_fixtures_fo$ucl_xHF) * stats::dpois(4,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_5_5 <- round(stats::dpois(5,UCL_fixtures_fo$ucl_xHF) * stats::dpois(5,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_5_0 <- round(stats::dpois(5,UCL_fixtures_fo$ucl_xHF) * stats::dpois(0,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_5_1 <- round(stats::dpois(5,UCL_fixtures_fo$ucl_xHF) * stats::dpois(1,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_5_2 <- round(stats::dpois(5,UCL_fixtures_fo$ucl_xHF) * stats::dpois(2,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_5_3 <- round(stats::dpois(5,UCL_fixtures_fo$ucl_xHF) * stats::dpois(3,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_5_4 <- round(stats::dpois(5,UCL_fixtures_fo$ucl_xHF) * stats::dpois(4,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_0_5 <- round(stats::dpois(0,UCL_fixtures_fo$ucl_xHF) * stats::dpois(5,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_1_5 <- round(stats::dpois(1,UCL_fixtures_fo$ucl_xHF) * stats::dpois(5,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_2_5 <- round(stats::dpois(2,UCL_fixtures_fo$ucl_xHF) * stats::dpois(5,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_3_5 <- round(stats::dpois(3,UCL_fixtures_fo$ucl_xHF) * stats::dpois(5,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_4_5 <- round(stats::dpois(4,UCL_fixtures_fo$ucl_xHF) * stats::dpois(5,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_6_6 <- round(stats::dpois(6,UCL_fixtures_fo$ucl_xHF) * stats::dpois(6,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_6_0 <- round(stats::dpois(6,UCL_fixtures_fo$ucl_xHF) * stats::dpois(0,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_6_1 <- round(stats::dpois(6,UCL_fixtures_fo$ucl_xHF) * stats::dpois(1,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_6_2 <- round(stats::dpois(6,UCL_fixtures_fo$ucl_xHF) * stats::dpois(2,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_6_3 <- round(stats::dpois(6,UCL_fixtures_fo$ucl_xHF) * stats::dpois(3,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_6_4 <- round(stats::dpois(6,UCL_fixtures_fo$ucl_xHF) * stats::dpois(4,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_6_5 <- round(stats::dpois(6,UCL_fixtures_fo$ucl_xHF) * stats::dpois(5,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_0_6 <- round(stats::dpois(0,UCL_fixtures_fo$ucl_xHF) * stats::dpois(6,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_1_6 <- round(stats::dpois(1,UCL_fixtures_fo$ucl_xHF) * stats::dpois(6,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_2_6 <- round(stats::dpois(2,UCL_fixtures_fo$ucl_xHF) * stats::dpois(6,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_3_6 <- round(stats::dpois(3,UCL_fixtures_fo$ucl_xHF) * stats::dpois(6,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_4_6 <- round(stats::dpois(4,UCL_fixtures_fo$ucl_xHF) * stats::dpois(6,UCL_fixtures_fo$ucl_xAF), digits = 4)
+UCL_fixtures_fo$ucl_5_6 <- round(stats::dpois(5,UCL_fixtures_fo$ucl_xHF) * stats::dpois(6,UCL_fixtures_fo$ucl_xAF), digits = 4)
 #Home win
-EFL_fixtures_fo$efl_H <- (
-  EFL_fixtures_fo$efl_1_0 + EFL_fixtures_fo$efl_2_0 + EFL_fixtures_fo$efl_2_1 + EFL_fixtures_fo$efl_3_0 + EFL_fixtures_fo$efl_3_1 +
-    EFL_fixtures_fo$efl_3_2 + EFL_fixtures_fo$efl_4_0 + EFL_fixtures_fo$efl_4_1 + EFL_fixtures_fo$efl_4_2 + EFL_fixtures_fo$efl_4_3 +
-    EFL_fixtures_fo$efl_5_0 + EFL_fixtures_fo$efl_5_1 + EFL_fixtures_fo$efl_5_2 + EFL_fixtures_fo$efl_5_3 + EFL_fixtures_fo$efl_5_4 +
-    EFL_fixtures_fo$efl_6_0 + EFL_fixtures_fo$efl_6_1 + EFL_fixtures_fo$efl_6_2 + EFL_fixtures_fo$efl_6_3 + EFL_fixtures_fo$efl_6_4 +
-    EFL_fixtures_fo$efl_6_5
+UCL_fixtures_fo$ucl_H <- (
+  UCL_fixtures_fo$ucl_1_0 + UCL_fixtures_fo$ucl_2_0 + UCL_fixtures_fo$ucl_2_1 + UCL_fixtures_fo$ucl_3_0 + UCL_fixtures_fo$ucl_3_1 +
+    UCL_fixtures_fo$ucl_3_2 + UCL_fixtures_fo$ucl_4_0 + UCL_fixtures_fo$ucl_4_1 + UCL_fixtures_fo$ucl_4_2 + UCL_fixtures_fo$ucl_4_3 +
+    UCL_fixtures_fo$ucl_5_0 + UCL_fixtures_fo$ucl_5_1 + UCL_fixtures_fo$ucl_5_2 + UCL_fixtures_fo$ucl_5_3 + UCL_fixtures_fo$ucl_5_4 +
+    UCL_fixtures_fo$ucl_6_0 + UCL_fixtures_fo$ucl_6_1 + UCL_fixtures_fo$ucl_6_2 + UCL_fixtures_fo$ucl_6_3 + UCL_fixtures_fo$ucl_6_4 +
+    UCL_fixtures_fo$ucl_6_5
 )
 
-EFL_fixtures_fo$efl_H <- percent(EFL_fixtures_fo$efl_H, accuracy = 0.1)
+UCL_fixtures_fo$ucl_H <- percent(UCL_fixtures_fo$ucl_H, accuracy = 0.1)
 
 #Draw
-EFL_fixtures_fo$efl_D <- (
+UCL_fixtures_fo$ucl_D <- (
 
-  EFL_fixtures_fo$efl_0_0 + EFL_fixtures_fo$efl_1_1 + EFL_fixtures_fo$efl_2_2 + EFL_fixtures_fo$efl_3_3 + EFL_fixtures_fo$efl_4_4 +
-    EFL_fixtures_fo$efl_5_5 + EFL_fixtures_fo$efl_6_6
+  UCL_fixtures_fo$ucl_0_0 + UCL_fixtures_fo$ucl_1_1 + UCL_fixtures_fo$ucl_2_2 + UCL_fixtures_fo$ucl_3_3 + UCL_fixtures_fo$ucl_4_4 +
+    UCL_fixtures_fo$ucl_5_5 + UCL_fixtures_fo$ucl_6_6
 )
 
-EFL_fixtures_fo$efl_D <- percent(EFL_fixtures_fo$efl_D, accuracy = 0.1)
+UCL_fixtures_fo$ucl_D <- percent(UCL_fixtures_fo$ucl_D, accuracy = 0.1)
 
 #Away
 
-EFL_fixtures_fo$efl_A <- (
-  EFL_fixtures_fo$efl_0_1 + EFL_fixtures_fo$efl_0_2 + EFL_fixtures_fo$efl_1_2 + EFL_fixtures_fo$efl_0_3 + EFL_fixtures_fo$efl_1_3 +
-    EFL_fixtures_fo$efl_2_3 + EFL_fixtures_fo$efl_0_4 + EFL_fixtures_fo$efl_1_4 + EFL_fixtures_fo$efl_2_4 + EFL_fixtures_fo$efl_3_4 +
-    EFL_fixtures_fo$efl_0_5 + EFL_fixtures_fo$efl_1_5 + EFL_fixtures_fo$efl_2_5 + EFL_fixtures_fo$efl_3_5 + EFL_fixtures_fo$efl_4_5 +
-    EFL_fixtures_fo$efl_0_6 + EFL_fixtures_fo$efl_1_6 + EFL_fixtures_fo$efl_2_6 + EFL_fixtures_fo$efl_3_6 + EFL_fixtures_fo$efl_4_6 +
-    EFL_fixtures_fo$efl_5_6
+UCL_fixtures_fo$ucl_A <- (
+  UCL_fixtures_fo$ucl_0_1 + UCL_fixtures_fo$ucl_0_2 + UCL_fixtures_fo$ucl_1_2 + UCL_fixtures_fo$ucl_0_3 + UCL_fixtures_fo$ucl_1_3 +
+    UCL_fixtures_fo$ucl_2_3 + UCL_fixtures_fo$ucl_0_4 + UCL_fixtures_fo$ucl_1_4 + UCL_fixtures_fo$ucl_2_4 + UCL_fixtures_fo$ucl_3_4 +
+    UCL_fixtures_fo$ucl_0_5 + UCL_fixtures_fo$ucl_1_5 + UCL_fixtures_fo$ucl_2_5 + UCL_fixtures_fo$ucl_3_5 + UCL_fixtures_fo$ucl_4_5 +
+    UCL_fixtures_fo$ucl_0_6 + UCL_fixtures_fo$ucl_1_6 + UCL_fixtures_fo$ucl_2_6 + UCL_fixtures_fo$ucl_3_6 + UCL_fixtures_fo$ucl_4_6 +
+    UCL_fixtures_fo$ucl_5_6
 )
 
-EFL_fixtures_fo$efl_A <- percent(EFL_fixtures_fo$efl_A, accuracy = 0.1)
+UCL_fixtures_fo$ucl_A <- percent(UCL_fixtures_fo$ucl_A, accuracy = 0.1)
 
 #ov25
-EFL_fixtures_fo$efl_ov25 <- (
-  EFL_fixtures_fo$efl_2_1 + EFL_fixtures_fo$efl_1_2 + EFL_fixtures_fo$efl_2_2 + EFL_fixtures_fo$efl_3_0 + EFL_fixtures_fo$efl_3_1 +
-    EFL_fixtures_fo$efl_3_2 + EFL_fixtures_fo$efl_0_3 + EFL_fixtures_fo$efl_1_3 + EFL_fixtures_fo$efl_2_3 + EFL_fixtures_fo$efl_3_3 +
-    EFL_fixtures_fo$efl_4_0 + EFL_fixtures_fo$efl_4_1 + EFL_fixtures_fo$efl_4_2 + EFL_fixtures_fo$efl_4_3 + EFL_fixtures_fo$efl_0_4 +
-    EFL_fixtures_fo$efl_1_4 + EFL_fixtures_fo$efl_2_4 + EFL_fixtures_fo$efl_3_4 + EFL_fixtures_fo$efl_4_4 + EFL_fixtures_fo$efl_5_0 +
-    EFL_fixtures_fo$efl_5_1 + EFL_fixtures_fo$efl_5_2 + EFL_fixtures_fo$efl_5_3 + EFL_fixtures_fo$efl_5_4 + EFL_fixtures_fo$efl_0_5 +
-    EFL_fixtures_fo$efl_1_5 + EFL_fixtures_fo$efl_2_5 + EFL_fixtures_fo$efl_3_5 + EFL_fixtures_fo$efl_4_5 + EFL_fixtures_fo$efl_5_5 +
-    EFL_fixtures_fo$efl_6_0 + EFL_fixtures_fo$efl_6_1 + EFL_fixtures_fo$efl_6_2 + EFL_fixtures_fo$efl_6_3 + EFL_fixtures_fo$efl_6_4 +
-    EFL_fixtures_fo$efl_6_5 + EFL_fixtures_fo$efl_0_6 + EFL_fixtures_fo$efl_1_6 + EFL_fixtures_fo$efl_2_6 + EFL_fixtures_fo$efl_3_6 +
-    EFL_fixtures_fo$efl_4_6 + EFL_fixtures_fo$efl_5_6 + EFL_fixtures_fo$efl_6_6
+UCL_fixtures_fo$ucl_ov25 <- (
+  UCL_fixtures_fo$ucl_2_1 + UCL_fixtures_fo$ucl_1_2 + UCL_fixtures_fo$ucl_2_2 + UCL_fixtures_fo$ucl_3_0 + UCL_fixtures_fo$ucl_3_1 +
+    UCL_fixtures_fo$ucl_3_2 + UCL_fixtures_fo$ucl_0_3 + UCL_fixtures_fo$ucl_1_3 + UCL_fixtures_fo$ucl_2_3 + UCL_fixtures_fo$ucl_3_3 +
+    UCL_fixtures_fo$ucl_4_0 + UCL_fixtures_fo$ucl_4_1 + UCL_fixtures_fo$ucl_4_2 + UCL_fixtures_fo$ucl_4_3 + UCL_fixtures_fo$ucl_0_4 +
+    UCL_fixtures_fo$ucl_1_4 + UCL_fixtures_fo$ucl_2_4 + UCL_fixtures_fo$ucl_3_4 + UCL_fixtures_fo$ucl_4_4 + UCL_fixtures_fo$ucl_5_0 +
+    UCL_fixtures_fo$ucl_5_1 + UCL_fixtures_fo$ucl_5_2 + UCL_fixtures_fo$ucl_5_3 + UCL_fixtures_fo$ucl_5_4 + UCL_fixtures_fo$ucl_0_5 +
+    UCL_fixtures_fo$ucl_1_5 + UCL_fixtures_fo$ucl_2_5 + UCL_fixtures_fo$ucl_3_5 + UCL_fixtures_fo$ucl_4_5 + UCL_fixtures_fo$ucl_5_5 +
+    UCL_fixtures_fo$ucl_6_0 + UCL_fixtures_fo$ucl_6_1 + UCL_fixtures_fo$ucl_6_2 + UCL_fixtures_fo$ucl_6_3 + UCL_fixtures_fo$ucl_6_4 +
+    UCL_fixtures_fo$ucl_6_5 + UCL_fixtures_fo$ucl_0_6 + UCL_fixtures_fo$ucl_1_6 + UCL_fixtures_fo$ucl_2_6 + UCL_fixtures_fo$ucl_3_6 +
+    UCL_fixtures_fo$ucl_4_6 + UCL_fixtures_fo$ucl_5_6 + UCL_fixtures_fo$ucl_6_6
 )
 #un25
-EFL_fixtures_fo$efl_un25 <- (
-  EFL_fixtures_fo$efl_0_0 + EFL_fixtures_fo$efl_1_0 + EFL_fixtures_fo$efl_0_1 + EFL_fixtures_fo$efl_1_1 + EFL_fixtures_fo$efl_2_0 + EFL_fixtures_fo$efl_0_2
+UCL_fixtures_fo$ucl_un25 <- (
+  UCL_fixtures_fo$ucl_0_0 + UCL_fixtures_fo$ucl_1_0 + UCL_fixtures_fo$ucl_0_1 + UCL_fixtures_fo$ucl_1_1 + UCL_fixtures_fo$ucl_2_0 + UCL_fixtures_fo$ucl_0_2
 )
 #odds
-EFL_fixtures_fo$efl_ov25_odds <- round((1/EFL_fixtures_fo$efl_ov25),digits = 2)
-EFL_fixtures_fo$efl_un25_odds <- round((1/EFL_fixtures_fo$efl_un25),digits = 2)
+UCL_fixtures_fo$ucl_ov25_odds <- round((1/UCL_fixtures_fo$ucl_ov25),digits = 2)
+UCL_fixtures_fo$ucl_un25_odds <- round((1/UCL_fixtures_fo$ucl_un25),digits = 2)
 
-EFL_fixtures_fo$efl_ov25_odds
-EFL_fixtures_fo$efl_un25_odds
+UCL_fixtures_fo$ucl_ov25_odds
+UCL_fixtures_fo$ucl_un25_odds
 ###############################################################################
 
 ########Asian Handicaps######################################################################################################
 #percentages
-EFL_fixtures_fo$efl_ov25 <- percent(EFL_fixtures_fo$efl_ov25, accuracy = 0.1)
+UCL_fixtures_fo$ucl_ov25 <- percent(UCL_fixtures_fo$ucl_ov25, accuracy = 0.1)
 
-EFL_fixtures_fo$efl_un25 <- percent(EFL_fixtures_fo$efl_un25, accuracy = 0.1)
-EFL_fixtures_fo$efl_psfore <- paste(round(EFL_fixtures_fo$efl_xHF,digits = 0),round(EFL_fixtures_fo$efl_xAF,digits = 0),sep = "-")
+UCL_fixtures_fo$ucl_un25 <- percent(UCL_fixtures_fo$ucl_un25, accuracy = 0.1)
+UCL_fixtures_fo$ucl_psfore <- paste(round(UCL_fixtures_fo$ucl_xHF,digits = 0),round(UCL_fixtures_fo$ucl_xAF,digits = 0),sep = "-")
 ####################################################################################################################################################################
 #poisson shots
-efl_GP <- nrow(EFL)
+ucl_GP <- nrow(UCL)
 
 #Calculate total home goals for each division
-efl_T_HST <- sum(efl_home_hst$x)
+ucl_T_HST <- sum(ucl_home_hst$x)
 #calculate average home goal
 
-efl_avg_HST <- round(efl_T_HST /efl_GP, digits = 4)
+ucl_avg_HST <- round(ucl_T_HST /ucl_GP, digits = 4)
 
 ############################################################
 #Calculate total away goals for each division
-efl_T_AST <- sum(efl_away_ast$x)
+ucl_T_AST <- sum(ucl_away_ast$x)
 #calculate average away goal
-efl_avg_AST <- round(efl_T_AST /efl_GP, digits = 4)
+ucl_avg_AST <- round(ucl_T_AST /ucl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-efl_home_sotas <- round(((efl_home_hst$x/efl_home_games))/efl_avg_HST, digits = 4)
+ucl_home_sotas <- round(((ucl_home_hst$x/ucl_home_games))/ucl_avg_HST, digits = 4)
 #calculate away attack strength
-efl_away_sotas <- round(((efl_away_ast$x/efl_away_games))/efl_avg_AST, digits = 4)
+ucl_away_sotas <- round(((ucl_away_ast$x/ucl_away_games))/ucl_avg_AST, digits = 4)
 
 ################################################################################
 #get average home concede and away concede
-efl_avg_HSC <- round(efl_T_AST /efl_GP, digits = 4)
+ucl_avg_HSC <- round(ucl_T_AST /ucl_GP, digits = 4)
 
 #avg away concede
-efl_avg_ASC <- round(efl_T_HST /efl_GP, digits = 4)
+ucl_avg_ASC <- round(ucl_T_HST /ucl_GP, digits = 4)
 #home defense strength
-efl_home_sods <- round(((efl_home_hsc$x/efl_home_games))/efl_avg_HSC, digits = 4)
+ucl_home_sods <- round(((ucl_home_hsc$x/ucl_home_games))/ucl_avg_HSC, digits = 4)
 
 #away defense strength
-efl_away_sods <- round(((efl_away_ast$x/efl_away_games))/efl_avg_ASC, digits = 4)
+ucl_away_sods <- round(((ucl_away_ast$x/ucl_away_games))/ucl_avg_ASC, digits = 4)
 
 #############################################################################
 #home poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_home_poisson_sot <- cbind(efl_division,efl_teams,efl_avg_HST,efl_home_sotas,efl_home_sods)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_home_poisson_sot <- cbind(ucl_division,ucl_teams,ucl_avg_HST,ucl_home_sotas,ucl_home_sods)
 
 #################################################################################
 #away poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_away_poisson_sot <- cbind(efl_division,efl_teams,efl_avg_AST,efl_away_sotas,efl_away_sods)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_away_poisson_sot <- cbind(ucl_division,ucl_teams,ucl_avg_AST,ucl_away_sotas,ucl_away_sods)
 
-#EFL
-HomeTeam_efl_sot <- rep(efl_teams, each = length(efl_teams))
-AwayTeam_efl_sot <- rep(efl_teams, length(efl_teams))
-EFL_fixtures_sot <- cbind(HomeTeam_efl_sot,AwayTeam_efl_sot)
-EFL_fixtures_sot <- as.data.frame(EFL_fixtures_sot)
-EFL_fixtures_sot <- EFL_fixtures_sot[!EFL_fixtures_sot$HomeTeam_efl_sot == EFL_fixtures_sot$AwayTeam_efl_sot,]
-rownames(EFL_fixtures_sot) <- NULL
-EFL_fixtures_sot$Div <- "EFL"
-EFL_fixtures_sot <- EFL_fixtures_sot[,c(3,1,2)]
+#UCL
+HomeTeam_ucl_sot <- rep(ucl_teams, each = length(ucl_teams))
+AwayTeam_ucl_sot <- rep(ucl_teams, length(ucl_teams))
+UCL_fixtures_sot <- cbind(HomeTeam_ucl_sot,AwayTeam_ucl_sot)
+UCL_fixtures_sot <- as.data.frame(UCL_fixtures_sot)
+UCL_fixtures_sot <- UCL_fixtures_sot[!UCL_fixtures_sot$HomeTeam_ucl_sot == UCL_fixtures_sot$AwayTeam_ucl_sot,]
+rownames(UCL_fixtures_sot) <- NULL
+UCL_fixtures_sot$Div <- "UCL"
+UCL_fixtures_sot <- UCL_fixtures_sot[,c(3,1,2)]
 
-EFL_fixtures_sot$avg_HST_efl <- efl_avg_HST
+UCL_fixtures_sot$avg_HST_ucl <- ucl_avg_HST
 
-EFL_fixtures_sot$efl_homesotas <- rep(efl_home_sotas,each = length(efl_teams)-1)
+UCL_fixtures_sot$ucl_homesotas <- rep(ucl_home_sotas,each = length(ucl_teams)-1)
 
-efl_awaysods_lookup <- cbind(efl_teams,efl_away_sods)
+ucl_awaysods_lookup <- cbind(ucl_teams,ucl_away_sods)
 
-efl_awaysods_lookup <- as.data.frame(efl_awaysods_lookup)
+ucl_awaysods_lookup <- as.data.frame(ucl_awaysods_lookup)
 
-colnames(efl_awaysods_lookup) <- c("AwayTeam_efl_sot","efl_awaysods")
+colnames(ucl_awaysods_lookup) <- c("AwayTeam_ucl_sot","ucl_awaysods")
 
 
 require('RH2')
-EFL_fixtures_sot$efl_awaysods <- sqldf("SELECT efl_awaysods_lookup.efl_awaysods FROM efl_awaysods_lookup INNER JOIN EFL_fixtures_sot ON efl_awaysods_lookup.AwayTeam_efl_sot = EFL_fixtures_sot.AwayTeam_efl_sot")
+UCL_fixtures_sot$ucl_awaysods <- sqldf("SELECT ucl_awaysods_lookup.ucl_awaysods FROM ucl_awaysods_lookup INNER JOIN UCL_fixtures_sot ON ucl_awaysods_lookup.AwayTeam_ucl_sot = UCL_fixtures_sot.AwayTeam_ucl_sot")
 
-EFL_fixtures_sot$avg_AST_efl <- efl_avg_AST
+UCL_fixtures_sot$avg_AST_ucl <- ucl_avg_AST
 
-efl_awaysotas_lookup <- cbind(efl_teams,efl_away_sotas)
+ucl_awaysotas_lookup <- cbind(ucl_teams,ucl_away_sotas)
 
-efl_awaysotas_lookup <- as.data.frame(efl_awaysotas_lookup)
+ucl_awaysotas_lookup <- as.data.frame(ucl_awaysotas_lookup)
 
-colnames(efl_awaysotas_lookup) <- c("AwayTeam_efl_sot","efl_awaysotas")
+colnames(ucl_awaysotas_lookup) <- c("AwayTeam_ucl_sot","ucl_awaysotas")
 
-EFL_fixtures_sot$efl_awaysotas <- sqldf("SELECT efl_awaysotas_lookup.efl_awaysotas FROM efl_awaysotas_lookup INNER JOIN EFL_fixtures_sot ON efl_awaysotas_lookup.AwayTeam_efl_sot = EFL_fixtures_sot.AwayTeam_efl_sot")
+UCL_fixtures_sot$ucl_awaysotas <- sqldf("SELECT ucl_awaysotas_lookup.ucl_awaysotas FROM ucl_awaysotas_lookup INNER JOIN UCL_fixtures_sot ON ucl_awaysotas_lookup.AwayTeam_ucl_sot = UCL_fixtures_sot.AwayTeam_ucl_sot")
 
-EFL_fixtures_sot$efl_homesods <- rep(efl_home_sods,each = length(efl_teams)-1)
+UCL_fixtures_sot$ucl_homesods <- rep(ucl_home_sods,each = length(ucl_teams)-1)
 
-EFL_fixtures_sot$efl_awaysods <- as.numeric(unlist(EFL_fixtures_sot$efl_awaysods))
+UCL_fixtures_sot$ucl_awaysods <- as.numeric(unlist(UCL_fixtures_sot$ucl_awaysods))
 #xGH
-EFL_fixtures_sot$efl_xHST <- EFL_fixtures_sot$avg_HST_efl * EFL_fixtures_sot$efl_homesotas * EFL_fixtures_sot$efl_awaysods
+UCL_fixtures_sot$ucl_xHST <- UCL_fixtures_sot$avg_HST_ucl * UCL_fixtures_sot$ucl_homesotas * UCL_fixtures_sot$ucl_awaysods
 #xGA
 
-EFL_fixtures_sot$efl_awaysotas <- as.numeric(unlist(EFL_fixtures_sot$efl_awaysotas))
+UCL_fixtures_sot$ucl_awaysotas <- as.numeric(unlist(UCL_fixtures_sot$ucl_awaysotas))
 
-EFL_fixtures_sot$efl_xAST <- EFL_fixtures_sot$avg_AST_efl * EFL_fixtures_sot$efl_awaysotas * EFL_fixtures_sot$efl_homesods
+UCL_fixtures_sot$ucl_xAST <- UCL_fixtures_sot$avg_AST_ucl * UCL_fixtures_sot$ucl_awaysotas * UCL_fixtures_sot$ucl_homesods
 
-EFL_fixtures_sot$efl_0_0 <- round(stats::dpois(0,EFL_fixtures_sot$efl_xHST) * stats::dpois(0,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_1_0 <- round(stats::dpois(1,EFL_fixtures_sot$efl_xHST) * stats::dpois(0,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_0_1 <- round(stats::dpois(0,EFL_fixtures_sot$efl_xHST) * stats::dpois(1,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_1_1 <- round(stats::dpois(1,EFL_fixtures_sot$efl_xHST) * stats::dpois(1,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_2_0 <- round(stats::dpois(2,EFL_fixtures_sot$efl_xHST) * stats::dpois(0,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_0_2 <- round(stats::dpois(0,EFL_fixtures_sot$efl_xHST) * stats::dpois(2,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_2_2 <- round(stats::dpois(2,EFL_fixtures_sot$efl_xHST) * stats::dpois(2,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_2_1 <- round(stats::dpois(2,EFL_fixtures_sot$efl_xHST) * stats::dpois(1,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_1_2 <- round(stats::dpois(1,EFL_fixtures_sot$efl_xHST) * stats::dpois(2,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_3_3 <- round(stats::dpois(3,EFL_fixtures_sot$efl_xHST) * stats::dpois(3,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_3_0 <- round(stats::dpois(3,EFL_fixtures_sot$efl_xHST) * stats::dpois(0,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_3_1 <- round(stats::dpois(3,EFL_fixtures_sot$efl_xHST) * stats::dpois(1,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_3_2 <- round(stats::dpois(3,EFL_fixtures_sot$efl_xHST) * stats::dpois(2,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_0_3 <- round(stats::dpois(0,EFL_fixtures_sot$efl_xHST) * stats::dpois(3,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_1_3 <- round(stats::dpois(1,EFL_fixtures_sot$efl_xHST) * stats::dpois(3,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_2_3 <- round(stats::dpois(2,EFL_fixtures_sot$efl_xHST) * stats::dpois(3,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_4_4 <- round(stats::dpois(4,EFL_fixtures_sot$efl_xHST) * stats::dpois(4,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_4_0 <- round(stats::dpois(4,EFL_fixtures_sot$efl_xHST) * stats::dpois(0,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_4_1 <- round(stats::dpois(4,EFL_fixtures_sot$efl_xHST) * stats::dpois(1,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_4_2 <- round(stats::dpois(4,EFL_fixtures_sot$efl_xHST) * stats::dpois(2,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_4_3 <- round(stats::dpois(4,EFL_fixtures_sot$efl_xHST) * stats::dpois(3,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_0_4 <- round(stats::dpois(0,EFL_fixtures_sot$efl_xHST) * stats::dpois(4,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_1_4 <- round(stats::dpois(1,EFL_fixtures_sot$efl_xHST) * stats::dpois(4,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_2_4 <- round(stats::dpois(2,EFL_fixtures_sot$efl_xHST) * stats::dpois(4,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_3_4 <- round(stats::dpois(3,EFL_fixtures_sot$efl_xHST) * stats::dpois(4,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_5_5 <- round(stats::dpois(5,EFL_fixtures_sot$efl_xHST) * stats::dpois(5,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_5_0 <- round(stats::dpois(5,EFL_fixtures_sot$efl_xHST) * stats::dpois(0,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_5_1 <- round(stats::dpois(5,EFL_fixtures_sot$efl_xHST) * stats::dpois(1,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_5_2 <- round(stats::dpois(5,EFL_fixtures_sot$efl_xHST) * stats::dpois(2,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_5_3 <- round(stats::dpois(5,EFL_fixtures_sot$efl_xHST) * stats::dpois(3,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_5_4 <- round(stats::dpois(5,EFL_fixtures_sot$efl_xHST) * stats::dpois(4,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_0_5 <- round(stats::dpois(0,EFL_fixtures_sot$efl_xHST) * stats::dpois(5,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_1_5 <- round(stats::dpois(1,EFL_fixtures_sot$efl_xHST) * stats::dpois(5,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_2_5 <- round(stats::dpois(2,EFL_fixtures_sot$efl_xHST) * stats::dpois(5,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_3_5 <- round(stats::dpois(3,EFL_fixtures_sot$efl_xHST) * stats::dpois(5,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_4_5 <- round(stats::dpois(4,EFL_fixtures_sot$efl_xHST) * stats::dpois(5,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_6_6 <- round(stats::dpois(6,EFL_fixtures_sot$efl_xHST) * stats::dpois(6,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_6_0 <- round(stats::dpois(6,EFL_fixtures_sot$efl_xHST) * stats::dpois(0,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_6_1 <- round(stats::dpois(6,EFL_fixtures_sot$efl_xHST) * stats::dpois(1,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_6_2 <- round(stats::dpois(6,EFL_fixtures_sot$efl_xHST) * stats::dpois(2,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_6_3 <- round(stats::dpois(6,EFL_fixtures_sot$efl_xHST) * stats::dpois(3,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_6_4 <- round(stats::dpois(6,EFL_fixtures_sot$efl_xHST) * stats::dpois(4,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_6_5 <- round(stats::dpois(6,EFL_fixtures_sot$efl_xHST) * stats::dpois(5,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_0_6 <- round(stats::dpois(0,EFL_fixtures_sot$efl_xHST) * stats::dpois(6,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_1_6 <- round(stats::dpois(1,EFL_fixtures_sot$efl_xHST) * stats::dpois(6,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_2_6 <- round(stats::dpois(2,EFL_fixtures_sot$efl_xHST) * stats::dpois(6,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_3_6 <- round(stats::dpois(3,EFL_fixtures_sot$efl_xHST) * stats::dpois(6,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_4_6 <- round(stats::dpois(4,EFL_fixtures_sot$efl_xHST) * stats::dpois(6,EFL_fixtures_sot$efl_xAST), digits = 4)
-EFL_fixtures_sot$efl_5_6 <- round(stats::dpois(5,EFL_fixtures_sot$efl_xHST) * stats::dpois(6,EFL_fixtures_sot$efl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_0_0 <- round(stats::dpois(0,UCL_fixtures_sot$ucl_xHST) * stats::dpois(0,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_1_0 <- round(stats::dpois(1,UCL_fixtures_sot$ucl_xHST) * stats::dpois(0,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_0_1 <- round(stats::dpois(0,UCL_fixtures_sot$ucl_xHST) * stats::dpois(1,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_1_1 <- round(stats::dpois(1,UCL_fixtures_sot$ucl_xHST) * stats::dpois(1,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_2_0 <- round(stats::dpois(2,UCL_fixtures_sot$ucl_xHST) * stats::dpois(0,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_0_2 <- round(stats::dpois(0,UCL_fixtures_sot$ucl_xHST) * stats::dpois(2,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_2_2 <- round(stats::dpois(2,UCL_fixtures_sot$ucl_xHST) * stats::dpois(2,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_2_1 <- round(stats::dpois(2,UCL_fixtures_sot$ucl_xHST) * stats::dpois(1,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_1_2 <- round(stats::dpois(1,UCL_fixtures_sot$ucl_xHST) * stats::dpois(2,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_3_3 <- round(stats::dpois(3,UCL_fixtures_sot$ucl_xHST) * stats::dpois(3,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_3_0 <- round(stats::dpois(3,UCL_fixtures_sot$ucl_xHST) * stats::dpois(0,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_3_1 <- round(stats::dpois(3,UCL_fixtures_sot$ucl_xHST) * stats::dpois(1,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_3_2 <- round(stats::dpois(3,UCL_fixtures_sot$ucl_xHST) * stats::dpois(2,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_0_3 <- round(stats::dpois(0,UCL_fixtures_sot$ucl_xHST) * stats::dpois(3,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_1_3 <- round(stats::dpois(1,UCL_fixtures_sot$ucl_xHST) * stats::dpois(3,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_2_3 <- round(stats::dpois(2,UCL_fixtures_sot$ucl_xHST) * stats::dpois(3,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_4_4 <- round(stats::dpois(4,UCL_fixtures_sot$ucl_xHST) * stats::dpois(4,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_4_0 <- round(stats::dpois(4,UCL_fixtures_sot$ucl_xHST) * stats::dpois(0,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_4_1 <- round(stats::dpois(4,UCL_fixtures_sot$ucl_xHST) * stats::dpois(1,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_4_2 <- round(stats::dpois(4,UCL_fixtures_sot$ucl_xHST) * stats::dpois(2,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_4_3 <- round(stats::dpois(4,UCL_fixtures_sot$ucl_xHST) * stats::dpois(3,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_0_4 <- round(stats::dpois(0,UCL_fixtures_sot$ucl_xHST) * stats::dpois(4,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_1_4 <- round(stats::dpois(1,UCL_fixtures_sot$ucl_xHST) * stats::dpois(4,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_2_4 <- round(stats::dpois(2,UCL_fixtures_sot$ucl_xHST) * stats::dpois(4,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_3_4 <- round(stats::dpois(3,UCL_fixtures_sot$ucl_xHST) * stats::dpois(4,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_5_5 <- round(stats::dpois(5,UCL_fixtures_sot$ucl_xHST) * stats::dpois(5,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_5_0 <- round(stats::dpois(5,UCL_fixtures_sot$ucl_xHST) * stats::dpois(0,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_5_1 <- round(stats::dpois(5,UCL_fixtures_sot$ucl_xHST) * stats::dpois(1,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_5_2 <- round(stats::dpois(5,UCL_fixtures_sot$ucl_xHST) * stats::dpois(2,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_5_3 <- round(stats::dpois(5,UCL_fixtures_sot$ucl_xHST) * stats::dpois(3,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_5_4 <- round(stats::dpois(5,UCL_fixtures_sot$ucl_xHST) * stats::dpois(4,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_0_5 <- round(stats::dpois(0,UCL_fixtures_sot$ucl_xHST) * stats::dpois(5,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_1_5 <- round(stats::dpois(1,UCL_fixtures_sot$ucl_xHST) * stats::dpois(5,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_2_5 <- round(stats::dpois(2,UCL_fixtures_sot$ucl_xHST) * stats::dpois(5,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_3_5 <- round(stats::dpois(3,UCL_fixtures_sot$ucl_xHST) * stats::dpois(5,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_4_5 <- round(stats::dpois(4,UCL_fixtures_sot$ucl_xHST) * stats::dpois(5,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_6_6 <- round(stats::dpois(6,UCL_fixtures_sot$ucl_xHST) * stats::dpois(6,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_6_0 <- round(stats::dpois(6,UCL_fixtures_sot$ucl_xHST) * stats::dpois(0,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_6_1 <- round(stats::dpois(6,UCL_fixtures_sot$ucl_xHST) * stats::dpois(1,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_6_2 <- round(stats::dpois(6,UCL_fixtures_sot$ucl_xHST) * stats::dpois(2,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_6_3 <- round(stats::dpois(6,UCL_fixtures_sot$ucl_xHST) * stats::dpois(3,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_6_4 <- round(stats::dpois(6,UCL_fixtures_sot$ucl_xHST) * stats::dpois(4,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_6_5 <- round(stats::dpois(6,UCL_fixtures_sot$ucl_xHST) * stats::dpois(5,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_0_6 <- round(stats::dpois(0,UCL_fixtures_sot$ucl_xHST) * stats::dpois(6,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_1_6 <- round(stats::dpois(1,UCL_fixtures_sot$ucl_xHST) * stats::dpois(6,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_2_6 <- round(stats::dpois(2,UCL_fixtures_sot$ucl_xHST) * stats::dpois(6,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_3_6 <- round(stats::dpois(3,UCL_fixtures_sot$ucl_xHST) * stats::dpois(6,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_4_6 <- round(stats::dpois(4,UCL_fixtures_sot$ucl_xHST) * stats::dpois(6,UCL_fixtures_sot$ucl_xAST), digits = 4)
+UCL_fixtures_sot$ucl_5_6 <- round(stats::dpois(5,UCL_fixtures_sot$ucl_xHST) * stats::dpois(6,UCL_fixtures_sot$ucl_xAST), digits = 4)
 #Home win
-EFL_fixtures_sot$efl_H <- (
-  EFL_fixtures_sot$efl_1_0 + EFL_fixtures_sot$efl_2_0 + EFL_fixtures_sot$efl_2_1 + EFL_fixtures_sot$efl_3_0 + EFL_fixtures_sot$efl_3_1 +
-    EFL_fixtures_sot$efl_3_2 + EFL_fixtures_sot$efl_4_0 + EFL_fixtures_sot$efl_4_1 + EFL_fixtures_sot$efl_4_2 + EFL_fixtures_sot$efl_4_3 +
-    EFL_fixtures_sot$efl_5_0 + EFL_fixtures_sot$efl_5_1 + EFL_fixtures_sot$efl_5_2 + EFL_fixtures_sot$efl_5_3 + EFL_fixtures_sot$efl_5_4 +
-    EFL_fixtures_sot$efl_6_0 + EFL_fixtures_sot$efl_6_1 + EFL_fixtures_sot$efl_6_2 + EFL_fixtures_sot$efl_6_3 + EFL_fixtures_sot$efl_6_4 +
-    EFL_fixtures_sot$efl_6_5
+UCL_fixtures_sot$ucl_H <- (
+  UCL_fixtures_sot$ucl_1_0 + UCL_fixtures_sot$ucl_2_0 + UCL_fixtures_sot$ucl_2_1 + UCL_fixtures_sot$ucl_3_0 + UCL_fixtures_sot$ucl_3_1 +
+    UCL_fixtures_sot$ucl_3_2 + UCL_fixtures_sot$ucl_4_0 + UCL_fixtures_sot$ucl_4_1 + UCL_fixtures_sot$ucl_4_2 + UCL_fixtures_sot$ucl_4_3 +
+    UCL_fixtures_sot$ucl_5_0 + UCL_fixtures_sot$ucl_5_1 + UCL_fixtures_sot$ucl_5_2 + UCL_fixtures_sot$ucl_5_3 + UCL_fixtures_sot$ucl_5_4 +
+    UCL_fixtures_sot$ucl_6_0 + UCL_fixtures_sot$ucl_6_1 + UCL_fixtures_sot$ucl_6_2 + UCL_fixtures_sot$ucl_6_3 + UCL_fixtures_sot$ucl_6_4 +
+    UCL_fixtures_sot$ucl_6_5
 )
 
-EFL_fixtures_sot$efl_H <- percent(EFL_fixtures_sot$efl_H, accuracy = 0.1)
+UCL_fixtures_sot$ucl_H <- percent(UCL_fixtures_sot$ucl_H, accuracy = 0.1)
 
 #Draw
-EFL_fixtures_sot$efl_D <- (
+UCL_fixtures_sot$ucl_D <- (
 
-  EFL_fixtures_sot$efl_0_0 + EFL_fixtures_sot$efl_1_1 + EFL_fixtures_sot$efl_2_2 + EFL_fixtures_sot$efl_3_3 + EFL_fixtures_sot$efl_4_4 +
-    EFL_fixtures_sot$efl_5_5 + EFL_fixtures_sot$efl_6_6
+  UCL_fixtures_sot$ucl_0_0 + UCL_fixtures_sot$ucl_1_1 + UCL_fixtures_sot$ucl_2_2 + UCL_fixtures_sot$ucl_3_3 + UCL_fixtures_sot$ucl_4_4 +
+    UCL_fixtures_sot$ucl_5_5 + UCL_fixtures_sot$ucl_6_6
 )
 
-EFL_fixtures_sot$efl_D <- percent(EFL_fixtures_sot$efl_D, accuracy = 0.1)
+UCL_fixtures_sot$ucl_D <- percent(UCL_fixtures_sot$ucl_D, accuracy = 0.1)
 
 #Away
 
-EFL_fixtures_sot$efl_A <- (
-  EFL_fixtures_sot$efl_0_1 + EFL_fixtures_sot$efl_0_2 + EFL_fixtures_sot$efl_1_2 + EFL_fixtures_sot$efl_0_3 + EFL_fixtures_sot$efl_1_3 +
-    EFL_fixtures_sot$efl_2_3 + EFL_fixtures_sot$efl_0_4 + EFL_fixtures_sot$efl_1_4 + EFL_fixtures_sot$efl_2_4 + EFL_fixtures_sot$efl_3_4 +
-    EFL_fixtures_sot$efl_0_5 + EFL_fixtures_sot$efl_1_5 + EFL_fixtures_sot$efl_2_5 + EFL_fixtures_sot$efl_3_5 + EFL_fixtures_sot$efl_4_5 +
-    EFL_fixtures_sot$efl_0_6 + EFL_fixtures_sot$efl_1_6 + EFL_fixtures_sot$efl_2_6 + EFL_fixtures_sot$efl_3_6 + EFL_fixtures_sot$efl_4_6 +
-    EFL_fixtures_sot$efl_5_6
+UCL_fixtures_sot$ucl_A <- (
+  UCL_fixtures_sot$ucl_0_1 + UCL_fixtures_sot$ucl_0_2 + UCL_fixtures_sot$ucl_1_2 + UCL_fixtures_sot$ucl_0_3 + UCL_fixtures_sot$ucl_1_3 +
+    UCL_fixtures_sot$ucl_2_3 + UCL_fixtures_sot$ucl_0_4 + UCL_fixtures_sot$ucl_1_4 + UCL_fixtures_sot$ucl_2_4 + UCL_fixtures_sot$ucl_3_4 +
+    UCL_fixtures_sot$ucl_0_5 + UCL_fixtures_sot$ucl_1_5 + UCL_fixtures_sot$ucl_2_5 + UCL_fixtures_sot$ucl_3_5 + UCL_fixtures_sot$ucl_4_5 +
+    UCL_fixtures_sot$ucl_0_6 + UCL_fixtures_sot$ucl_1_6 + UCL_fixtures_sot$ucl_2_6 + UCL_fixtures_sot$ucl_3_6 + UCL_fixtures_sot$ucl_4_6 +
+    UCL_fixtures_sot$ucl_5_6
 )
 
-EFL_fixtures_sot$efl_A <- percent(EFL_fixtures_sot$efl_A, accuracy = 0.1)
+UCL_fixtures_sot$ucl_A <- percent(UCL_fixtures_sot$ucl_A, accuracy = 0.1)
 
 #ov25
-EFL_fixtures_sot$efl_ov25 <- (
-  EFL_fixtures_sot$efl_2_1 + EFL_fixtures_sot$efl_1_2 + EFL_fixtures_sot$efl_2_2 + EFL_fixtures_sot$efl_3_0 + EFL_fixtures_sot$efl_3_1 +
-    EFL_fixtures_sot$efl_3_2 + EFL_fixtures_sot$efl_0_3 + EFL_fixtures_sot$efl_1_3 + EFL_fixtures_sot$efl_2_3 + EFL_fixtures_sot$efl_3_3 +
-    EFL_fixtures_sot$efl_4_0 + EFL_fixtures_sot$efl_4_1 + EFL_fixtures_sot$efl_4_2 + EFL_fixtures_sot$efl_4_3 + EFL_fixtures_sot$efl_0_4 +
-    EFL_fixtures_sot$efl_1_4 + EFL_fixtures_sot$efl_2_4 + EFL_fixtures_sot$efl_3_4 + EFL_fixtures_sot$efl_4_4 + EFL_fixtures_sot$efl_5_0 +
-    EFL_fixtures_sot$efl_5_1 + EFL_fixtures_sot$efl_5_2 + EFL_fixtures_sot$efl_5_3 + EFL_fixtures_sot$efl_5_4 + EFL_fixtures_sot$efl_0_5 +
-    EFL_fixtures_sot$efl_1_5 + EFL_fixtures_sot$efl_2_5 + EFL_fixtures_sot$efl_3_5 + EFL_fixtures_sot$efl_4_5 + EFL_fixtures_sot$efl_5_5 +
-    EFL_fixtures_sot$efl_6_0 + EFL_fixtures_sot$efl_6_1 + EFL_fixtures_sot$efl_6_2 + EFL_fixtures_sot$efl_6_3 + EFL_fixtures_sot$efl_6_4 +
-    EFL_fixtures_sot$efl_6_5 + EFL_fixtures_sot$efl_0_6 + EFL_fixtures_sot$efl_1_6 + EFL_fixtures_sot$efl_2_6 + EFL_fixtures_sot$efl_3_6 +
-    EFL_fixtures_sot$efl_4_6 + EFL_fixtures_sot$efl_5_6 + EFL_fixtures_sot$efl_6_6
+UCL_fixtures_sot$ucl_ov25 <- (
+  UCL_fixtures_sot$ucl_2_1 + UCL_fixtures_sot$ucl_1_2 + UCL_fixtures_sot$ucl_2_2 + UCL_fixtures_sot$ucl_3_0 + UCL_fixtures_sot$ucl_3_1 +
+    UCL_fixtures_sot$ucl_3_2 + UCL_fixtures_sot$ucl_0_3 + UCL_fixtures_sot$ucl_1_3 + UCL_fixtures_sot$ucl_2_3 + UCL_fixtures_sot$ucl_3_3 +
+    UCL_fixtures_sot$ucl_4_0 + UCL_fixtures_sot$ucl_4_1 + UCL_fixtures_sot$ucl_4_2 + UCL_fixtures_sot$ucl_4_3 + UCL_fixtures_sot$ucl_0_4 +
+    UCL_fixtures_sot$ucl_1_4 + UCL_fixtures_sot$ucl_2_4 + UCL_fixtures_sot$ucl_3_4 + UCL_fixtures_sot$ucl_4_4 + UCL_fixtures_sot$ucl_5_0 +
+    UCL_fixtures_sot$ucl_5_1 + UCL_fixtures_sot$ucl_5_2 + UCL_fixtures_sot$ucl_5_3 + UCL_fixtures_sot$ucl_5_4 + UCL_fixtures_sot$ucl_0_5 +
+    UCL_fixtures_sot$ucl_1_5 + UCL_fixtures_sot$ucl_2_5 + UCL_fixtures_sot$ucl_3_5 + UCL_fixtures_sot$ucl_4_5 + UCL_fixtures_sot$ucl_5_5 +
+    UCL_fixtures_sot$ucl_6_0 + UCL_fixtures_sot$ucl_6_1 + UCL_fixtures_sot$ucl_6_2 + UCL_fixtures_sot$ucl_6_3 + UCL_fixtures_sot$ucl_6_4 +
+    UCL_fixtures_sot$ucl_6_5 + UCL_fixtures_sot$ucl_0_6 + UCL_fixtures_sot$ucl_1_6 + UCL_fixtures_sot$ucl_2_6 + UCL_fixtures_sot$ucl_3_6 +
+    UCL_fixtures_sot$ucl_4_6 + UCL_fixtures_sot$ucl_5_6 + UCL_fixtures_sot$ucl_6_6
 )
 #un25
-EFL_fixtures_sot$efl_un25 <- (
-  EFL_fixtures_sot$efl_0_0 + EFL_fixtures_sot$efl_1_0 + EFL_fixtures_sot$efl_0_1 + EFL_fixtures_sot$efl_1_1 + EFL_fixtures_sot$efl_2_0 + EFL_fixtures_sot$efl_0_2
+UCL_fixtures_sot$ucl_un25 <- (
+  UCL_fixtures_sot$ucl_0_0 + UCL_fixtures_sot$ucl_1_0 + UCL_fixtures_sot$ucl_0_1 + UCL_fixtures_sot$ucl_1_1 + UCL_fixtures_sot$ucl_2_0 + UCL_fixtures_sot$ucl_0_2
 )
 #odds
-EFL_fixtures_sot$efl_ov25_odds <- round((1/EFL_fixtures_sot$efl_ov25),digits = 2)
-EFL_fixtures_sot$efl_un25_odds <- round((1/EFL_fixtures_sot$efl_un25),digits = 2)
+UCL_fixtures_sot$ucl_ov25_odds <- round((1/UCL_fixtures_sot$ucl_ov25),digits = 2)
+UCL_fixtures_sot$ucl_un25_odds <- round((1/UCL_fixtures_sot$ucl_un25),digits = 2)
 
-EFL_fixtures_sot$efl_ov25_odds
-EFL_fixtures_sot$efl_un25_odds
+UCL_fixtures_sot$ucl_ov25_odds
+UCL_fixtures_sot$ucl_un25_odds
 ###############################################################################
 
 ########Asian Handicaps######################################################################################################
 #percentages
-EFL_fixtures_sot$efl_ov25 <- percent(EFL_fixtures_sot$efl_ov25, accuracy = 0.1)
+UCL_fixtures_sot$ucl_ov25 <- percent(UCL_fixtures_sot$ucl_ov25, accuracy = 0.1)
 
-EFL_fixtures_sot$efl_un25 <- percent(EFL_fixtures_sot$efl_un25, accuracy = 0.1)
-EFL_fixtures_sot$efl_pssotre <- paste(round(EFL_fixtures_sot$efl_xHST,digits = 0),round(EFL_fixtures_sot$efl_xAST,digits = 0),sep = "-")
+UCL_fixtures_sot$ucl_un25 <- percent(UCL_fixtures_sot$ucl_un25, accuracy = 0.1)
+UCL_fixtures_sot$ucl_pssotre <- paste(round(UCL_fixtures_sot$ucl_xHST,digits = 0),round(UCL_fixtures_sot$ucl_xAST,digits = 0),sep = "-")
 ######################################################################################################################################################
 #league table
 #B1
 #hwins and away wins
-efl_home_wins <- c()
-efl_away_wins <- c()
-efl_home_draws <- c()
-efl_away_draws <- c()
-efl_home_loss <- c()
-efl_away_loss <- c()
+ucl_home_wins <- c()
+ucl_away_wins <- c()
+ucl_home_draws <- c()
+ucl_away_draws <- c()
+ucl_home_loss <- c()
+ucl_away_loss <- c()
 
 
 
-for (i_efl_wins in 1:length(efl_teams))
+for (i_ucl_wins in 1:length(ucl_teams))
 {
 
-  efl_home_wins[i_efl_wins] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_wins] & EFL$FTR == "H",])
-  efl_away_wins[i_efl_wins] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_wins] & EFL$FTR == "A",])
-  efl_home_draws[i_efl_wins] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_wins] & EFL$FTR == "D",])
-  efl_away_draws[i_efl_wins] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_wins] & EFL$FTR == "D",])
-  efl_home_loss[i_efl_wins] <- nrow(EFL[EFL$HomeTeam == efl_teams[i_efl_wins] & EFL$FTR == "A",])
-  efl_away_loss[i_efl_wins] <- nrow(EFL[EFL$AwayTeam == efl_teams[i_efl_wins] & EFL$FTR == "H",])
+  ucl_home_wins[i_ucl_wins] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_wins] & UCL$FTR == "H",])
+  ucl_away_wins[i_ucl_wins] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_wins] & UCL$FTR == "A",])
+  ucl_home_draws[i_ucl_wins] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_wins] & UCL$FTR == "D",])
+  ucl_away_draws[i_ucl_wins] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_wins] & UCL$FTR == "D",])
+  ucl_home_loss[i_ucl_wins] <- nrow(UCL[UCL$HomeTeam == ucl_teams[i_ucl_wins] & UCL$FTR == "A",])
+  ucl_away_loss[i_ucl_wins] <- nrow(UCL[UCL$AwayTeam == ucl_teams[i_ucl_wins] & UCL$FTR == "H",])
 
 }
 
-efl_total_wins <- efl_home_wins + efl_away_wins
-efl_total_draws <- efl_home_draws + efl_away_draws
-efl_total_loss <- efl_home_loss + efl_away_loss
+ucl_total_wins <- ucl_home_wins + ucl_away_wins
+ucl_total_draws <- ucl_home_draws + ucl_away_draws
+ucl_total_loss <- ucl_home_loss + ucl_away_loss
 
-efl_league_table <- cbind(efl_teams,efl_games_played,efl_total_wins,efl_total_draws,efl_total_loss)
-efl_GS <- efl_scoring$TGS
-efl_GC <-efl_conceding$TGC
-efl_GD <- efl_scoring$TGS - efl_conceding$TGC
-efl_PTS <- (efl_total_wins*3) + (efl_total_draws*1)
-efl_league_table <- cbind(efl_league_table,efl_GS,efl_GC,efl_GD,efl_PTS)
-efl_league_table <- as.data.frame(efl_league_table)
+ucl_league_table <- cbind(ucl_teams,ucl_games_played,ucl_total_wins,ucl_total_draws,ucl_total_loss)
+ucl_GS <- ucl_scoring$TGS
+ucl_GC <-ucl_conceding$TGC
+ucl_GD <- ucl_scoring$TGS - ucl_conceding$TGC
+ucl_PTS <- (ucl_total_wins*3) + (ucl_total_draws*1)
+ucl_league_table <- cbind(ucl_league_table,ucl_GS,ucl_GC,ucl_GD,ucl_PTS)
+ucl_league_table <- as.data.frame(ucl_league_table)
 #rename the columns
-names(efl_league_table)[names(efl_league_table) == "efl_teams"] <- "Team"
-names(efl_league_table)[names(efl_league_table) == "efl_games_played"] <- "P"
-names(efl_league_table)[names(efl_league_table) == "efl_total_wins"] <- "W"
-names(efl_league_table)[names(efl_league_table) == "efl_total_draws"] <- "D"
-names(efl_league_table)[names(efl_league_table) == "efl_total_loss"] <- "L"
-names(efl_league_table)[names(efl_league_table) == "efl_GS"] <- "F"
-names(efl_league_table)[names(efl_league_table) == "efl_GC"] <- "A"
-points_efl <- efl_league_table[order(as.numeric(efl_league_table$efl_PTS), decreasing = TRUE),]
-points_efl$efl_rank <- 1:length(efl_teams)
-row.names(points_efl) <- points_efl$efl_rank
-#create final_efl_hf_against with team ranks in brackets
-for(efl_rowhrank in 1:nrow(efl_form_team_against_h)) {
-  for(efl_colhrank in 1:ncol(efl_form_team_against_h)) {
+names(ucl_league_table)[names(ucl_league_table) == "ucl_teams"] <- "Team"
+names(ucl_league_table)[names(ucl_league_table) == "ucl_games_played"] <- "P"
+names(ucl_league_table)[names(ucl_league_table) == "ucl_total_wins"] <- "W"
+names(ucl_league_table)[names(ucl_league_table) == "ucl_total_draws"] <- "D"
+names(ucl_league_table)[names(ucl_league_table) == "ucl_total_loss"] <- "L"
+names(ucl_league_table)[names(ucl_league_table) == "ucl_GS"] <- "F"
+names(ucl_league_table)[names(ucl_league_table) == "ucl_GC"] <- "A"
+points_ucl <- ucl_league_table[order(as.numeric(ucl_league_table$ucl_PTS), decreasing = TRUE),]
+points_ucl$ucl_rank <- 1:length(ucl_teams)
+row.names(points_ucl) <- points_ucl$ucl_rank
+#create final_ucl_hf_against with team ranks in brackets
+for(ucl_rowhrank in 1:nrow(ucl_form_team_against_h)) {
+  for(ucl_colhrank in 1:ncol(ucl_form_team_against_h)) {
 
     # print(my_matrix[row, col])
 
-    ifelse(!efl_form_team_against_h[efl_rowhrank,efl_colhrank]=="",efl_form_team_against_h[efl_rowhrank,efl_colhrank] <- paste(efl_form_team_against_h[efl_rowhrank,efl_colhrank],"(",points_efl$efl_rank[points_efl$Team ==efl_form_team_against_h[efl_rowhrank,efl_colhrank]],")",sep = ""),next)
+    ifelse(!ucl_form_team_against_h[ucl_rowhrank,ucl_colhrank]=="",ucl_form_team_against_h[ucl_rowhrank,ucl_colhrank] <- paste(ucl_form_team_against_h[ucl_rowhrank,ucl_colhrank],"(",points_ucl$ucl_rank[points_ucl$Team ==ucl_form_team_against_h[ucl_rowhrank,ucl_colhrank]],")",sep = ""),next)
     #print(my_matrix[row, col])
 
 
@@ -1403,1101 +1404,1101 @@ for(efl_rowhrank in 1:nrow(efl_form_team_against_h)) {
 #################################################################################################################################################
 #################################################################################################################################################
 #poisson model
-efl_GP <- nrow(EFL)
+ucl_GP <- nrow(UCL)
 
 #Calculate total home goals for each division
-efl_T_HG <- sum(efl_home_gs$x)
+ucl_T_HG <- sum(ucl_home_gs$x)
 
 #calculate average home goal
-efl_avg_HG <- round(efl_T_HG /efl_GP, digits = 4)
+ucl_avg_HG <- round(ucl_T_HG /ucl_GP, digits = 4)
 ############################################################
 #Calculate total away goals for each division
-efl_T_AG <- sum(efl_away_gs$x)
+ucl_T_AG <- sum(ucl_away_gs$x)
 #calculate average away goal
-efl_avg_AG <- round(efl_T_AG /efl_GP, digits = 4)
+ucl_avg_AG <- round(ucl_T_AG /ucl_GP, digits = 4)
 #get total home goals and total home games played for each division
 #calculate home attack strength
-efl_home_as <- round(((efl_home_gs$x/efl_home_games))/efl_avg_HG, digits = 4)
+ucl_home_as <- round(((ucl_home_gs$x/ucl_home_games))/ucl_avg_HG, digits = 4)
 #calculate away attack strength
-efl_away_as <- round(((efl_away_gs$x/efl_away_games))/efl_avg_AG, digits = 4)
+ucl_away_as <- round(((ucl_away_gs$x/ucl_away_games))/ucl_avg_AG, digits = 4)
 ################################################################################
 #get average home concede and away concede
-efl_avg_HC <- round(efl_T_AG /efl_GP, digits = 4)
+ucl_avg_HC <- round(ucl_T_AG /ucl_GP, digits = 4)
 #avg away concede
-efl_avg_AC <- round(efl_T_HG /efl_GP, digits = 4)
+ucl_avg_AC <- round(ucl_T_HG /ucl_GP, digits = 4)
 #calculate home and away defense strength
 #home defense strength
-efl_home_ds <- round(((efl_home_gc$x/efl_home_games))/efl_avg_HC, digits = 4)
+ucl_home_ds <- round(((ucl_home_gc$x/ucl_home_games))/ucl_avg_HC, digits = 4)
 #away defense strength
-efl_away_ds <- round(((efl_away_gc$x/efl_away_games))/efl_avg_AC, digits = 4)
+ucl_away_ds <- round(((ucl_away_gc$x/ucl_away_games))/ucl_avg_AC, digits = 4)
 #############################################################################
 #home poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_home_poisson <- cbind(efl_division,efl_teams,efl_avg_HG,efl_home_as,efl_home_ds)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_home_poisson <- cbind(ucl_division,ucl_teams,ucl_avg_HG,ucl_home_as,ucl_home_ds)
 #################################################################################
 #away poisson data
-#efl
-efl_division <- c()
-efl_division[1:length(efl_teams)] <- "EFL"
-efl_away_poisson <- cbind(efl_division,efl_teams,efl_avg_AG,efl_away_as,efl_away_ds)
+#ucl
+ucl_division <- c()
+ucl_division[1:length(ucl_teams)] <- "UCL"
+ucl_away_poisson <- cbind(ucl_division,ucl_teams,ucl_avg_AG,ucl_away_as,ucl_away_ds)
 
-#EFL
-HomeTeam_efl <- rep(efl_teams, each = length(efl_teams))
-AwayTeam_efl <- rep(efl_teams, length(efl_teams))
-EFL_fixtures <- cbind(HomeTeam_efl,AwayTeam_efl)
-EFL_fixtures <- as.data.frame(EFL_fixtures)
-EFL_fixtures <- EFL_fixtures[!EFL_fixtures$HomeTeam_efl == EFL_fixtures$AwayTeam_efl,]
-rownames(EFL_fixtures) <- NULL
-EFL_fixtures$Div <- "EFL"
-EFL_fixtures <- EFL_fixtures[,c(3,1,2)]
+#UCL
+HomeTeam_ucl <- rep(ucl_teams, each = length(ucl_teams))
+AwayTeam_ucl <- rep(ucl_teams, length(ucl_teams))
+UCL_fixtures <- cbind(HomeTeam_ucl,AwayTeam_ucl)
+UCL_fixtures <- as.data.frame(UCL_fixtures)
+UCL_fixtures <- UCL_fixtures[!UCL_fixtures$HomeTeam_ucl == UCL_fixtures$AwayTeam_ucl,]
+rownames(UCL_fixtures) <- NULL
+UCL_fixtures$Div <- "UCL"
+UCL_fixtures <- UCL_fixtures[,c(3,1,2)]
 
-EFL_fixtures$avg_HG_efl <- efl_avg_HG
+UCL_fixtures$avg_HG_ucl <- ucl_avg_HG
 
-EFL_fixtures$efl_homeas <- rep(efl_home_as,each = length(efl_teams)-1)
+UCL_fixtures$ucl_homeas <- rep(ucl_home_as,each = length(ucl_teams)-1)
 
-efl_awayds_lookup <- cbind(efl_teams,efl_away_ds)
+ucl_awayds_lookup <- cbind(ucl_teams,ucl_away_ds)
 
-efl_awayds_lookup <- as.data.frame(efl_awayds_lookup)
+ucl_awayds_lookup <- as.data.frame(ucl_awayds_lookup)
 
-colnames(efl_awayds_lookup) <- c("AwayTeam_efl","efl_awayds")
+colnames(ucl_awayds_lookup) <- c("AwayTeam_ucl","ucl_awayds")
 
 
 require('RH2')
-EFL_fixtures$efl_awayds <- sqldf("SELECT efl_awayds_lookup.efl_awayds FROM efl_awayds_lookup INNER JOIN EFL_fixtures ON efl_awayds_lookup.AwayTeam_efl = EFL_fixtures.AwayTeam_efl")
+UCL_fixtures$ucl_awayds <- sqldf("SELECT ucl_awayds_lookup.ucl_awayds FROM ucl_awayds_lookup INNER JOIN UCL_fixtures ON ucl_awayds_lookup.AwayTeam_ucl = UCL_fixtures.AwayTeam_ucl")
 
-EFL_fixtures$avg_AG_efl <- efl_avg_AG
+UCL_fixtures$avg_AG_ucl <- ucl_avg_AG
 
-efl_awayas_lookup <- cbind(efl_teams,efl_away_as)
+ucl_awayas_lookup <- cbind(ucl_teams,ucl_away_as)
 
-efl_awayas_lookup <- as.data.frame(efl_awayas_lookup)
+ucl_awayas_lookup <- as.data.frame(ucl_awayas_lookup)
 
-colnames(efl_awayas_lookup) <- c("AwayTeam_efl","efl_awayas")
+colnames(ucl_awayas_lookup) <- c("AwayTeam_ucl","ucl_awayas")
 
 
-EFL_fixtures$efl_awayas <- sqldf("SELECT efl_awayas_lookup.efl_awayas FROM efl_awayas_lookup INNER JOIN EFL_fixtures ON efl_awayas_lookup.AwayTeam_efl = EFL_fixtures.AwayTeam_efl")
+UCL_fixtures$ucl_awayas <- sqldf("SELECT ucl_awayas_lookup.ucl_awayas FROM ucl_awayas_lookup INNER JOIN UCL_fixtures ON ucl_awayas_lookup.AwayTeam_ucl = UCL_fixtures.AwayTeam_ucl")
 
-EFL_fixtures$efl_homeds <- rep(efl_home_ds,each = length(efl_teams)-1)
+UCL_fixtures$ucl_homeds <- rep(ucl_home_ds,each = length(ucl_teams)-1)
 
-EFL_fixtures$efl_awayds <- as.numeric(unlist(EFL_fixtures$efl_awayds))
+UCL_fixtures$ucl_awayds <- as.numeric(unlist(UCL_fixtures$ucl_awayds))
 #xGH
-EFL_fixtures$efl_xGH <- EFL_fixtures$avg_HG_efl * EFL_fixtures$efl_homeas * EFL_fixtures$efl_awayds
+UCL_fixtures$ucl_xGH <- UCL_fixtures$avg_HG_ucl * UCL_fixtures$ucl_homeas * UCL_fixtures$ucl_awayds
 
 #xGA
 
-EFL_fixtures$efl_awayas <- as.numeric(unlist(EFL_fixtures$efl_awayas))
+UCL_fixtures$ucl_awayas <- as.numeric(unlist(UCL_fixtures$ucl_awayas))
 
-EFL_fixtures$efl_xGA <- EFL_fixtures$avg_AG_efl * EFL_fixtures$efl_awayas * EFL_fixtures$efl_homeds
+UCL_fixtures$ucl_xGA <- UCL_fixtures$avg_AG_ucl * UCL_fixtures$ucl_awayas * UCL_fixtures$ucl_homeds
 
-EFL_fixtures$efl_0_0 <- round(stats::dpois(0,EFL_fixtures$efl_xGH) * stats::dpois(0,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_1_0 <- round(stats::dpois(1,EFL_fixtures$efl_xGH) * stats::dpois(0,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_0_1 <- round(stats::dpois(0,EFL_fixtures$efl_xGH) * stats::dpois(1,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_1_1 <- round(stats::dpois(1,EFL_fixtures$efl_xGH) * stats::dpois(1,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_2_0 <- round(stats::dpois(2,EFL_fixtures$efl_xGH) * stats::dpois(0,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_0_2 <- round(stats::dpois(0,EFL_fixtures$efl_xGH) * stats::dpois(2,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_2_2 <- round(stats::dpois(2,EFL_fixtures$efl_xGH) * stats::dpois(2,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_2_1 <- round(stats::dpois(2,EFL_fixtures$efl_xGH) * stats::dpois(1,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_1_2 <- round(stats::dpois(1,EFL_fixtures$efl_xGH) * stats::dpois(2,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_3_3 <- round(stats::dpois(3,EFL_fixtures$efl_xGH) * stats::dpois(3,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_3_0 <- round(stats::dpois(3,EFL_fixtures$efl_xGH) * stats::dpois(0,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_3_1 <- round(stats::dpois(3,EFL_fixtures$efl_xGH) * stats::dpois(1,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_3_2 <- round(stats::dpois(3,EFL_fixtures$efl_xGH) * stats::dpois(2,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_0_3 <- round(stats::dpois(0,EFL_fixtures$efl_xGH) * stats::dpois(3,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_1_3 <- round(stats::dpois(1,EFL_fixtures$efl_xGH) * stats::dpois(3,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_2_3 <- round(stats::dpois(2,EFL_fixtures$efl_xGH) * stats::dpois(3,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_4_4 <- round(stats::dpois(4,EFL_fixtures$efl_xGH) * stats::dpois(4,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_4_0 <- round(stats::dpois(4,EFL_fixtures$efl_xGH) * stats::dpois(0,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_4_1 <- round(stats::dpois(4,EFL_fixtures$efl_xGH) * stats::dpois(1,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_4_2 <- round(stats::dpois(4,EFL_fixtures$efl_xGH) * stats::dpois(2,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_4_3 <- round(stats::dpois(4,EFL_fixtures$efl_xGH) * stats::dpois(3,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_0_4 <- round(stats::dpois(0,EFL_fixtures$efl_xGH) * stats::dpois(4,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_1_4 <- round(stats::dpois(1,EFL_fixtures$efl_xGH) * stats::dpois(4,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_2_4 <- round(stats::dpois(2,EFL_fixtures$efl_xGH) * stats::dpois(4,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_3_4 <- round(stats::dpois(3,EFL_fixtures$efl_xGH) * stats::dpois(4,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_5_5 <- round(stats::dpois(5,EFL_fixtures$efl_xGH) * stats::dpois(5,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_5_0 <- round(stats::dpois(5,EFL_fixtures$efl_xGH) * stats::dpois(0,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_5_1 <- round(stats::dpois(5,EFL_fixtures$efl_xGH) * stats::dpois(1,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_5_2 <- round(stats::dpois(5,EFL_fixtures$efl_xGH) * stats::dpois(2,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_5_3 <- round(stats::dpois(5,EFL_fixtures$efl_xGH) * stats::dpois(3,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_5_4 <- round(stats::dpois(5,EFL_fixtures$efl_xGH) * stats::dpois(4,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_0_5 <- round(stats::dpois(0,EFL_fixtures$efl_xGH) * stats::dpois(5,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_1_5 <- round(stats::dpois(1,EFL_fixtures$efl_xGH) * stats::dpois(5,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_2_5 <- round(stats::dpois(2,EFL_fixtures$efl_xGH) * stats::dpois(5,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_3_5 <- round(stats::dpois(3,EFL_fixtures$efl_xGH) * stats::dpois(5,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_4_5 <- round(stats::dpois(4,EFL_fixtures$efl_xGH) * stats::dpois(5,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_6_6 <- round(stats::dpois(6,EFL_fixtures$efl_xGH) * stats::dpois(6,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_6_0 <- round(stats::dpois(6,EFL_fixtures$efl_xGH) * stats::dpois(0,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_6_1 <- round(stats::dpois(6,EFL_fixtures$efl_xGH) * stats::dpois(1,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_6_2 <- round(stats::dpois(6,EFL_fixtures$efl_xGH) * stats::dpois(2,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_6_3 <- round(stats::dpois(6,EFL_fixtures$efl_xGH) * stats::dpois(3,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_6_4 <- round(stats::dpois(6,EFL_fixtures$efl_xGH) * stats::dpois(4,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_6_5 <- round(stats::dpois(6,EFL_fixtures$efl_xGH) * stats::dpois(5,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_0_6 <- round(stats::dpois(0,EFL_fixtures$efl_xGH) * stats::dpois(6,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_1_6 <- round(stats::dpois(1,EFL_fixtures$efl_xGH) * stats::dpois(6,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_2_6 <- round(stats::dpois(2,EFL_fixtures$efl_xGH) * stats::dpois(6,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_3_6 <- round(stats::dpois(3,EFL_fixtures$efl_xGH) * stats::dpois(6,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_4_6 <- round(stats::dpois(4,EFL_fixtures$efl_xGH) * stats::dpois(6,EFL_fixtures$efl_xGA), digits = 4)
-EFL_fixtures$efl_5_6 <- round(stats::dpois(5,EFL_fixtures$efl_xGH) * stats::dpois(6,EFL_fixtures$efl_xGA), digits = 4)
+UCL_fixtures$ucl_0_0 <- round(stats::dpois(0,UCL_fixtures$ucl_xGH) * stats::dpois(0,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_1_0 <- round(stats::dpois(1,UCL_fixtures$ucl_xGH) * stats::dpois(0,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_0_1 <- round(stats::dpois(0,UCL_fixtures$ucl_xGH) * stats::dpois(1,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_1_1 <- round(stats::dpois(1,UCL_fixtures$ucl_xGH) * stats::dpois(1,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_2_0 <- round(stats::dpois(2,UCL_fixtures$ucl_xGH) * stats::dpois(0,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_0_2 <- round(stats::dpois(0,UCL_fixtures$ucl_xGH) * stats::dpois(2,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_2_2 <- round(stats::dpois(2,UCL_fixtures$ucl_xGH) * stats::dpois(2,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_2_1 <- round(stats::dpois(2,UCL_fixtures$ucl_xGH) * stats::dpois(1,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_1_2 <- round(stats::dpois(1,UCL_fixtures$ucl_xGH) * stats::dpois(2,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_3_3 <- round(stats::dpois(3,UCL_fixtures$ucl_xGH) * stats::dpois(3,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_3_0 <- round(stats::dpois(3,UCL_fixtures$ucl_xGH) * stats::dpois(0,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_3_1 <- round(stats::dpois(3,UCL_fixtures$ucl_xGH) * stats::dpois(1,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_3_2 <- round(stats::dpois(3,UCL_fixtures$ucl_xGH) * stats::dpois(2,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_0_3 <- round(stats::dpois(0,UCL_fixtures$ucl_xGH) * stats::dpois(3,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_1_3 <- round(stats::dpois(1,UCL_fixtures$ucl_xGH) * stats::dpois(3,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_2_3 <- round(stats::dpois(2,UCL_fixtures$ucl_xGH) * stats::dpois(3,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_4_4 <- round(stats::dpois(4,UCL_fixtures$ucl_xGH) * stats::dpois(4,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_4_0 <- round(stats::dpois(4,UCL_fixtures$ucl_xGH) * stats::dpois(0,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_4_1 <- round(stats::dpois(4,UCL_fixtures$ucl_xGH) * stats::dpois(1,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_4_2 <- round(stats::dpois(4,UCL_fixtures$ucl_xGH) * stats::dpois(2,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_4_3 <- round(stats::dpois(4,UCL_fixtures$ucl_xGH) * stats::dpois(3,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_0_4 <- round(stats::dpois(0,UCL_fixtures$ucl_xGH) * stats::dpois(4,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_1_4 <- round(stats::dpois(1,UCL_fixtures$ucl_xGH) * stats::dpois(4,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_2_4 <- round(stats::dpois(2,UCL_fixtures$ucl_xGH) * stats::dpois(4,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_3_4 <- round(stats::dpois(3,UCL_fixtures$ucl_xGH) * stats::dpois(4,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_5_5 <- round(stats::dpois(5,UCL_fixtures$ucl_xGH) * stats::dpois(5,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_5_0 <- round(stats::dpois(5,UCL_fixtures$ucl_xGH) * stats::dpois(0,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_5_1 <- round(stats::dpois(5,UCL_fixtures$ucl_xGH) * stats::dpois(1,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_5_2 <- round(stats::dpois(5,UCL_fixtures$ucl_xGH) * stats::dpois(2,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_5_3 <- round(stats::dpois(5,UCL_fixtures$ucl_xGH) * stats::dpois(3,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_5_4 <- round(stats::dpois(5,UCL_fixtures$ucl_xGH) * stats::dpois(4,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_0_5 <- round(stats::dpois(0,UCL_fixtures$ucl_xGH) * stats::dpois(5,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_1_5 <- round(stats::dpois(1,UCL_fixtures$ucl_xGH) * stats::dpois(5,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_2_5 <- round(stats::dpois(2,UCL_fixtures$ucl_xGH) * stats::dpois(5,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_3_5 <- round(stats::dpois(3,UCL_fixtures$ucl_xGH) * stats::dpois(5,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_4_5 <- round(stats::dpois(4,UCL_fixtures$ucl_xGH) * stats::dpois(5,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_6_6 <- round(stats::dpois(6,UCL_fixtures$ucl_xGH) * stats::dpois(6,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_6_0 <- round(stats::dpois(6,UCL_fixtures$ucl_xGH) * stats::dpois(0,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_6_1 <- round(stats::dpois(6,UCL_fixtures$ucl_xGH) * stats::dpois(1,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_6_2 <- round(stats::dpois(6,UCL_fixtures$ucl_xGH) * stats::dpois(2,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_6_3 <- round(stats::dpois(6,UCL_fixtures$ucl_xGH) * stats::dpois(3,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_6_4 <- round(stats::dpois(6,UCL_fixtures$ucl_xGH) * stats::dpois(4,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_6_5 <- round(stats::dpois(6,UCL_fixtures$ucl_xGH) * stats::dpois(5,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_0_6 <- round(stats::dpois(0,UCL_fixtures$ucl_xGH) * stats::dpois(6,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_1_6 <- round(stats::dpois(1,UCL_fixtures$ucl_xGH) * stats::dpois(6,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_2_6 <- round(stats::dpois(2,UCL_fixtures$ucl_xGH) * stats::dpois(6,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_3_6 <- round(stats::dpois(3,UCL_fixtures$ucl_xGH) * stats::dpois(6,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_4_6 <- round(stats::dpois(4,UCL_fixtures$ucl_xGH) * stats::dpois(6,UCL_fixtures$ucl_xGA), digits = 4)
+UCL_fixtures$ucl_5_6 <- round(stats::dpois(5,UCL_fixtures$ucl_xGH) * stats::dpois(6,UCL_fixtures$ucl_xGA), digits = 4)
 #Home win
-EFL_fixtures$efl_H <- (
-  EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_2_1 + EFL_fixtures$efl_3_0 + EFL_fixtures$efl_3_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_0 + EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_4_3 +
-    EFL_fixtures$efl_5_0 + EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 + EFL_fixtures$efl_5_4 +
-    EFL_fixtures$efl_6_0 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-    EFL_fixtures$efl_6_5
+UCL_fixtures$ucl_H <- (
+  UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_3_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_4_3 +
+    UCL_fixtures$ucl_5_0 + UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 + UCL_fixtures$ucl_5_4 +
+    UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+    UCL_fixtures$ucl_6_5
 )
 
-EFL_fixtures$efl_H <- percent(EFL_fixtures$efl_H, accuracy = 0.1)
+UCL_fixtures$ucl_H <- percent(UCL_fixtures$ucl_H, accuracy = 0.1)
 
 #Draw
-EFL_fixtures$efl_D <- (
+UCL_fixtures$ucl_D <- (
 
-  EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_3 + EFL_fixtures$efl_4_4 +
-    EFL_fixtures$efl_5_5 + EFL_fixtures$efl_6_6
+  UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_3 + UCL_fixtures$ucl_4_4 +
+    UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_6_6
 )
 
-EFL_fixtures$efl_D <- percent(EFL_fixtures$efl_D, accuracy = 0.1)
+UCL_fixtures$ucl_D <- percent(UCL_fixtures$ucl_D, accuracy = 0.1)
 
 #Away
 
-EFL_fixtures$efl_A <- (
-  EFL_fixtures$efl_0_1 + EFL_fixtures$efl_0_2 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_1_3 +
-    EFL_fixtures$efl_2_3 + EFL_fixtures$efl_0_4 + EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 + EFL_fixtures$efl_3_4 +
-    EFL_fixtures$efl_0_5 + EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 +
-    EFL_fixtures$efl_0_6 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 + EFL_fixtures$efl_4_6 +
-    EFL_fixtures$efl_5_6
+UCL_fixtures$ucl_A <- (
+  UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_0_2 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_1_3 +
+    UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_0_4 + UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 + UCL_fixtures$ucl_3_4 +
+    UCL_fixtures$ucl_0_5 + UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 +
+    UCL_fixtures$ucl_0_6 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 + UCL_fixtures$ucl_4_6 +
+    UCL_fixtures$ucl_5_6
 )
 
-EFL_fixtures$efl_A <- percent(EFL_fixtures$efl_A, accuracy = 0.1)
+UCL_fixtures$ucl_A <- percent(UCL_fixtures$ucl_A, accuracy = 0.1)
 
 #ov25
-EFL_fixtures$efl_ov25 <- (
-  EFL_fixtures$efl_2_1 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_0 + EFL_fixtures$efl_3_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_1_3 + EFL_fixtures$efl_2_3 + EFL_fixtures$efl_3_3 +
-    EFL_fixtures$efl_4_0 + EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_4_3 + EFL_fixtures$efl_0_4 +
-    EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 + EFL_fixtures$efl_3_4 + EFL_fixtures$efl_4_4 + EFL_fixtures$efl_5_0 +
-    EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 + EFL_fixtures$efl_5_4 + EFL_fixtures$efl_0_5 +
-    EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 + EFL_fixtures$efl_5_5 +
-    EFL_fixtures$efl_6_0 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-    EFL_fixtures$efl_6_5 + EFL_fixtures$efl_0_6 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 +
-    EFL_fixtures$efl_4_6 + EFL_fixtures$efl_5_6 + EFL_fixtures$efl_6_6
+UCL_fixtures$ucl_ov25 <- (
+  UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_3_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_1_3 + UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_3_3 +
+    UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_4_3 + UCL_fixtures$ucl_0_4 +
+    UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 + UCL_fixtures$ucl_3_4 + UCL_fixtures$ucl_4_4 + UCL_fixtures$ucl_5_0 +
+    UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 + UCL_fixtures$ucl_5_4 + UCL_fixtures$ucl_0_5 +
+    UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 + UCL_fixtures$ucl_5_5 +
+    UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+    UCL_fixtures$ucl_6_5 + UCL_fixtures$ucl_0_6 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 +
+    UCL_fixtures$ucl_4_6 + UCL_fixtures$ucl_5_6 + UCL_fixtures$ucl_6_6
 )
 #un25
-EFL_fixtures$efl_un25 <- (
-  EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_0 + EFL_fixtures$efl_0_1 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_0_2
+UCL_fixtures$ucl_un25 <- (
+  UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_0_2
 )
 #odds
-EFL_fixtures$efl_ov25_odds <- round((1/EFL_fixtures$efl_ov25),digits = 2)
-EFL_fixtures$efl_un25_odds <- round((1/EFL_fixtures$efl_un25),digits = 2)
+UCL_fixtures$ucl_ov25_odds <- round((1/UCL_fixtures$ucl_ov25),digits = 2)
+UCL_fixtures$ucl_un25_odds <- round((1/UCL_fixtures$ucl_un25),digits = 2)
 
-EFL_fixtures$efl_ov25_odds
-EFL_fixtures$efl_un25_odds
+UCL_fixtures$ucl_ov25_odds
+UCL_fixtures$ucl_un25_odds
 ###############################################################################
 ###BTTS########################################################################
 #BTTSY
-EFL_fixtures$efl_BTTSY <- (
-  EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_1 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_3_1 + EFL_fixtures$efl_3_2 +
-    EFL_fixtures$efl_2_2 + EFL_fixtures$efl_1_3 + EFL_fixtures$efl_2_3 + EFL_fixtures$efl_3_3 + EFL_fixtures$efl_4_4 +
-    EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_3 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 +
-    EFL_fixtures$efl_3_4 + EFL_fixtures$efl_5_5 + EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 +
-    EFL_fixtures$efl_5_4 + EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 +
-    EFL_fixtures$efl_6_6 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-    EFL_fixtures$efl_6_5 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 + EFL_fixtures$efl_4_6 +
-    EFL_fixtures$efl_5_6
+UCL_fixtures$ucl_BTTSY <- (
+  UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_3_1 + UCL_fixtures$ucl_3_2 +
+    UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_1_3 + UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_3_3 + UCL_fixtures$ucl_4_4 +
+    UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_3 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 +
+    UCL_fixtures$ucl_3_4 + UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 +
+    UCL_fixtures$ucl_5_4 + UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 +
+    UCL_fixtures$ucl_6_6 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+    UCL_fixtures$ucl_6_5 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 + UCL_fixtures$ucl_4_6 +
+    UCL_fixtures$ucl_5_6
 )
 #BTTSN
-EFL_fixtures$efl_BTTSN <- (
-  EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_0 + EFL_fixtures$efl_0_1 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_0_2 +
-    EFL_fixtures$efl_3_0 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_4_0 + EFL_fixtures$efl_0_4 + EFL_fixtures$efl_5_0 +
-    EFL_fixtures$efl_0_5 + EFL_fixtures$efl_6_0 + EFL_fixtures$efl_0_6
+UCL_fixtures$ucl_BTTSN <- (
+  UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_0_2 +
+    UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_0_4 + UCL_fixtures$ucl_5_0 +
+    UCL_fixtures$ucl_0_5 + UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_0_6
 )
 
-EFL_fixtures$efl_BTTSY_odds <- round((1/EFL_fixtures$efl_BTTSY),digits = 2)
-EFL_fixtures$efl_BTTSN_odds <- round((1/EFL_fixtures$efl_BTTSN),digits = 2)
+UCL_fixtures$ucl_BTTSY_odds <- round((1/UCL_fixtures$ucl_BTTSY),digits = 2)
+UCL_fixtures$ucl_BTTSN_odds <- round((1/UCL_fixtures$ucl_BTTSN),digits = 2)
 
-EFL_fixtures$efl_BTTSY <- percent(EFL_fixtures$efl_BTTSY, accuracy = 0.1)
-EFL_fixtures$efl_BTTSN <- percent(EFL_fixtures$efl_BTTSN, accuracy = 0.1)
+UCL_fixtures$ucl_BTTSY <- percent(UCL_fixtures$ucl_BTTSY, accuracy = 0.1)
+UCL_fixtures$ucl_BTTSN <- percent(UCL_fixtures$ucl_BTTSN, accuracy = 0.1)
 #odds
-EFL_fixtures$efl_BTTSY_odds
-EFL_fixtures$efl_BTTSN_odds
+UCL_fixtures$ucl_BTTSY_odds
+UCL_fixtures$ucl_BTTSN_odds
 ########Asian Handicaps##########################################################################################################
 ##########################################################################
 #AH(0)
 #AH_0_H
-EFL_fixtures$efl_AH_0_H <- (
-  EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_2_1 + EFL_fixtures$efl_3_0 + EFL_fixtures$efl_3_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_0 + EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_4_3 +
-    EFL_fixtures$efl_5_0 +EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 + EFL_fixtures$efl_5_4 +
-    EFL_fixtures$efl_6_0 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-    EFL_fixtures$efl_6_5 + EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_3 +
-    EFL_fixtures$efl_4_4 + EFL_fixtures$efl_5_5 + EFL_fixtures$efl_6_6
+UCL_fixtures$ucl_AH_0_H <- (
+  UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_3_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_4_3 +
+    UCL_fixtures$ucl_5_0 +UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 + UCL_fixtures$ucl_5_4 +
+    UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+    UCL_fixtures$ucl_6_5 + UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_3 +
+    UCL_fixtures$ucl_4_4 + UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_6_6
 )
 #AH_0_A
-EFL_fixtures$efl_AH_0_A <- (
-  EFL_fixtures$efl_0_1 + EFL_fixtures$efl_0_2 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_1_3 +
-    EFL_fixtures$efl_2_3 + EFL_fixtures$efl_0_4 + EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 + EFL_fixtures$efl_3_4 +
-    EFL_fixtures$efl_0_5 +EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 +
-    EFL_fixtures$efl_0_6 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 + EFL_fixtures$efl_4_6 +
-    EFL_fixtures$efl_5_6 + EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_3 +
-    EFL_fixtures$efl_4_4 + EFL_fixtures$efl_5_5 + EFL_fixtures$efl_6_6
+UCL_fixtures$ucl_AH_0_A <- (
+  UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_0_2 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_1_3 +
+    UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_0_4 + UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 + UCL_fixtures$ucl_3_4 +
+    UCL_fixtures$ucl_0_5 +UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 +
+    UCL_fixtures$ucl_0_6 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 + UCL_fixtures$ucl_4_6 +
+    UCL_fixtures$ucl_5_6 + UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_3 +
+    UCL_fixtures$ucl_4_4 + UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_6_6
 )
 
 #odds
-EFL_fixtures$efl_AH_0_H_odds <- round((1/EFL_fixtures$efl_AH_0_H),digits = 2)
-EFL_fixtures$efl_AH_0_A_odds <- round((1/EFL_fixtures$efl_AH_0_A),digits = 2)
+UCL_fixtures$ucl_AH_0_H_odds <- round((1/UCL_fixtures$ucl_AH_0_H),digits = 2)
+UCL_fixtures$ucl_AH_0_A_odds <- round((1/UCL_fixtures$ucl_AH_0_A),digits = 2)
 
-EFL_fixtures$efl_AH_0_H_odds
-EFL_fixtures$efl_AH_0_A_odds
+UCL_fixtures$ucl_AH_0_H_odds
+UCL_fixtures$ucl_AH_0_A_odds
 #percentages
-EFL_fixtures$efl_AH_0_H <- percent(EFL_fixtures$efl_AH_0_H, accuracy = 0.1)
-EFL_fixtures$efl_AH_0_A <- percent(EFL_fixtures$efl_AH_0_A, accuracy = 0.1)
+UCL_fixtures$ucl_AH_0_H <- percent(UCL_fixtures$ucl_AH_0_H, accuracy = 0.1)
+UCL_fixtures$ucl_AH_0_A <- percent(UCL_fixtures$ucl_AH_0_A, accuracy = 0.1)
 ####################################################################################
 ##########################################################################
 #AH(-0.75)
 #AH_n075_H
-EFL_fixtures$efl_AH_n075_H <- (
-  EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_2_1 + EFL_fixtures$efl_3_0 + EFL_fixtures$efl_3_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_0 + EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_4_3 +
-    EFL_fixtures$efl_5_0 +EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 + EFL_fixtures$efl_5_4 +
-    EFL_fixtures$efl_6_0 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-    EFL_fixtures$efl_6_5
+UCL_fixtures$ucl_AH_n075_H <- (
+  UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_3_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_4_3 +
+    UCL_fixtures$ucl_5_0 +UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 + UCL_fixtures$ucl_5_4 +
+    UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+    UCL_fixtures$ucl_6_5
 )
 #AH_n075_A
-EFL_fixtures$efl_AH_n075_A <- (
-  EFL_fixtures$efl_0_1 + EFL_fixtures$efl_0_2 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_1_3 +
-    EFL_fixtures$efl_2_3 + EFL_fixtures$efl_0_4 + EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 + EFL_fixtures$efl_3_4 +
-    EFL_fixtures$efl_0_5 +EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 +
-    EFL_fixtures$efl_0_6 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 + EFL_fixtures$efl_4_6 +
-    EFL_fixtures$efl_5_6
+UCL_fixtures$ucl_AH_n075_A <- (
+  UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_0_2 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_1_3 +
+    UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_0_4 + UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 + UCL_fixtures$ucl_3_4 +
+    UCL_fixtures$ucl_0_5 +UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 +
+    UCL_fixtures$ucl_0_6 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 + UCL_fixtures$ucl_4_6 +
+    UCL_fixtures$ucl_5_6
 )
 
 #odds
-EFL_fixtures$efl_AH_n075_H_odds <- round((1/EFL_fixtures$efl_AH_n075_H),digits = 2)
-EFL_fixtures$efl_AH_n075_A_odds <- round((1/EFL_fixtures$efl_AH_n075_A),digits = 2)
+UCL_fixtures$ucl_AH_n075_H_odds <- round((1/UCL_fixtures$ucl_AH_n075_H),digits = 2)
+UCL_fixtures$ucl_AH_n075_A_odds <- round((1/UCL_fixtures$ucl_AH_n075_A),digits = 2)
 
-EFL_fixtures$efl_AH_n075_H_odds
-EFL_fixtures$efl_AH_n075_A_odds
+UCL_fixtures$ucl_AH_n075_H_odds
+UCL_fixtures$ucl_AH_n075_A_odds
 #percentages
-EFL_fixtures$efl_AH_n075_H <- percent(EFL_fixtures$efl_AH_n075_H, accuracy = 0.1)
-EFL_fixtures$efl_AH_n075_A <- percent(EFL_fixtures$efl_AH_n075_A, accuracy = 0.1)
+UCL_fixtures$ucl_AH_n075_H <- percent(UCL_fixtures$ucl_AH_n075_H, accuracy = 0.1)
+UCL_fixtures$ucl_AH_n075_A <- percent(UCL_fixtures$ucl_AH_n075_A, accuracy = 0.1)
 ##########################################################################
 #AH(0.75)
 #AH_075_H
-EFL_fixtures$efl_AH_075_H <- (
-  EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_2_1 + EFL_fixtures$efl_3_0 + EFL_fixtures$efl_3_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_0 + EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_4_3 +
-    EFL_fixtures$efl_5_0 +EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 + EFL_fixtures$efl_5_4 +
-    EFL_fixtures$efl_6_0 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-    EFL_fixtures$efl_6_5 + EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_3 +
-    EFL_fixtures$efl_4_4 + EFL_fixtures$efl_5_5 + EFL_fixtures$efl_6_6 + EFL_fixtures$efl_0_1 + EFL_fixtures$efl_1_2 +
-    EFL_fixtures$efl_2_3 + EFL_fixtures$efl_3_4 + EFL_fixtures$efl_4_5 + EFL_fixtures$efl_5_6
+UCL_fixtures$ucl_AH_075_H <- (
+  UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_3_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_4_3 +
+    UCL_fixtures$ucl_5_0 +UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 + UCL_fixtures$ucl_5_4 +
+    UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+    UCL_fixtures$ucl_6_5 + UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_3 +
+    UCL_fixtures$ucl_4_4 + UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_6_6 + UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_1_2 +
+    UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_3_4 + UCL_fixtures$ucl_4_5 + UCL_fixtures$ucl_5_6
 )
 #AH_075_A
-EFL_fixtures$efl_AH_075_A <- (
-  EFL_fixtures$efl_0_1 + EFL_fixtures$efl_0_2 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_1_3 +
-    EFL_fixtures$efl_2_3 + EFL_fixtures$efl_0_4 + EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 + EFL_fixtures$efl_3_4 +
-    EFL_fixtures$efl_0_5 +EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 +
-    EFL_fixtures$efl_0_6 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 + EFL_fixtures$efl_4_6 +
-    EFL_fixtures$efl_5_6 + EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_3 +
-    EFL_fixtures$efl_4_4 + EFL_fixtures$efl_5_5 + EFL_fixtures$efl_6_6 + EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_3 + EFL_fixtures$efl_5_4 + EFL_fixtures$efl_6_5
+UCL_fixtures$ucl_AH_075_A <- (
+  UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_0_2 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_1_3 +
+    UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_0_4 + UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 + UCL_fixtures$ucl_3_4 +
+    UCL_fixtures$ucl_0_5 +UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 +
+    UCL_fixtures$ucl_0_6 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 + UCL_fixtures$ucl_4_6 +
+    UCL_fixtures$ucl_5_6 + UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_3 +
+    UCL_fixtures$ucl_4_4 + UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_6_6 + UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_3 + UCL_fixtures$ucl_5_4 + UCL_fixtures$ucl_6_5
 )
 
 #odds
-EFL_fixtures$efl_AH_075_H_odds <- round((1/EFL_fixtures$efl_AH_075_H),digits = 2)
-EFL_fixtures$efl_AH_075_A_odds <- round((1/EFL_fixtures$efl_AH_075_A),digits = 2)
+UCL_fixtures$ucl_AH_075_H_odds <- round((1/UCL_fixtures$ucl_AH_075_H),digits = 2)
+UCL_fixtures$ucl_AH_075_A_odds <- round((1/UCL_fixtures$ucl_AH_075_A),digits = 2)
 
-EFL_fixtures$efl_AH_075_H_odds
-EFL_fixtures$efl_AH_075_A_odds
+UCL_fixtures$ucl_AH_075_H_odds
+UCL_fixtures$ucl_AH_075_A_odds
 #percentages
-EFL_fixtures$efl_AH_075_H <- percent(EFL_fixtures$efl_AH_075_H, accuracy = 0.1)
-EFL_fixtures$efl_AH_075_A <- percent(EFL_fixtures$efl_AH_075_A, accuracy = 0.1)
+UCL_fixtures$ucl_AH_075_H <- percent(UCL_fixtures$ucl_AH_075_H, accuracy = 0.1)
+UCL_fixtures$ucl_AH_075_A <- percent(UCL_fixtures$ucl_AH_075_A, accuracy = 0.1)
 ####################################################################################
 #AH(-1.25)
 #AH_n125_H
-EFL_fixtures$efl_AH_n125_H <- (
-  EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_2_1 + EFL_fixtures$efl_3_0 + EFL_fixtures$efl_3_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_0 + EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_4_3 +
-    EFL_fixtures$efl_5_0 +EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 + EFL_fixtures$efl_5_4 +
-    EFL_fixtures$efl_6_0 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-    EFL_fixtures$efl_6_5
+UCL_fixtures$ucl_AH_n125_H <- (
+  UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_3_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_4_3 +
+    UCL_fixtures$ucl_5_0 +UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 + UCL_fixtures$ucl_5_4 +
+    UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+    UCL_fixtures$ucl_6_5
 )
 #AH_n125_A
-EFL_fixtures$efl_AH_n125_A <- (
-  EFL_fixtures$efl_0_1 + EFL_fixtures$efl_0_2 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_1_3 +
-    EFL_fixtures$efl_2_3 + EFL_fixtures$efl_0_4 + EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 + EFL_fixtures$efl_3_4 +
-    EFL_fixtures$efl_0_5 +EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 +
-    EFL_fixtures$efl_0_6 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 + EFL_fixtures$efl_4_6 +
-    EFL_fixtures$efl_5_6
+UCL_fixtures$ucl_AH_n125_A <- (
+  UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_0_2 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_1_3 +
+    UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_0_4 + UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 + UCL_fixtures$ucl_3_4 +
+    UCL_fixtures$ucl_0_5 +UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 +
+    UCL_fixtures$ucl_0_6 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 + UCL_fixtures$ucl_4_6 +
+    UCL_fixtures$ucl_5_6
 )
 
 #odds
-EFL_fixtures$efl_AH_n125_H_odds <- round((1/EFL_fixtures$efl_AH_n125_H),digits = 2)
-EFL_fixtures$efl_AH_n125_A_odds <- round((1/EFL_fixtures$efl_AH_n125_A),digits = 2)
+UCL_fixtures$ucl_AH_n125_H_odds <- round((1/UCL_fixtures$ucl_AH_n125_H),digits = 2)
+UCL_fixtures$ucl_AH_n125_A_odds <- round((1/UCL_fixtures$ucl_AH_n125_A),digits = 2)
 
-EFL_fixtures$efl_AH_n125_H_odds
-EFL_fixtures$efl_AH_n125_A_odds
+UCL_fixtures$ucl_AH_n125_H_odds
+UCL_fixtures$ucl_AH_n125_A_odds
 #percentages
-EFL_fixtures$efl_AH_n125_H <- percent(EFL_fixtures$efl_AH_n125_H, accuracy = 0.1)
-EFL_fixtures$efl_AH_n125_A <- percent(EFL_fixtures$efl_AH_n125_A, accuracy = 0.1)
+UCL_fixtures$ucl_AH_n125_H <- percent(UCL_fixtures$ucl_AH_n125_H, accuracy = 0.1)
+UCL_fixtures$ucl_AH_n125_A <- percent(UCL_fixtures$ucl_AH_n125_A, accuracy = 0.1)
 
 ####################################################################################
 ##########################################################################
 #AH(1.25)
 #AH_125_H
-EFL_fixtures$efl_AH_125_H <- (
-  EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_2_1 + EFL_fixtures$efl_3_0 + EFL_fixtures$efl_3_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_0 + EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_4_3 +
-    EFL_fixtures$efl_5_0 +EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 + EFL_fixtures$efl_5_4 +
-    EFL_fixtures$efl_6_0 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-    EFL_fixtures$efl_6_5 + EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_3 +
-    EFL_fixtures$efl_4_4 + EFL_fixtures$efl_5_5 + EFL_fixtures$efl_6_6 + EFL_fixtures$efl_0_1 + EFL_fixtures$efl_1_2 +
-    EFL_fixtures$efl_2_3 + EFL_fixtures$efl_3_4 + EFL_fixtures$efl_4_5 + EFL_fixtures$efl_5_6
+UCL_fixtures$ucl_AH_125_H <- (
+  UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_3_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_4_3 +
+    UCL_fixtures$ucl_5_0 +UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 + UCL_fixtures$ucl_5_4 +
+    UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+    UCL_fixtures$ucl_6_5 + UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_3 +
+    UCL_fixtures$ucl_4_4 + UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_6_6 + UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_1_2 +
+    UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_3_4 + UCL_fixtures$ucl_4_5 + UCL_fixtures$ucl_5_6
 )
 #AH_125_A
-EFL_fixtures$efl_AH_125_A <- (
-  EFL_fixtures$efl_0_1 + EFL_fixtures$efl_0_2 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_1_3 +
-    EFL_fixtures$efl_2_3 + EFL_fixtures$efl_0_4 + EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 + EFL_fixtures$efl_3_4 +
-    EFL_fixtures$efl_0_5 +EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 +
-    EFL_fixtures$efl_0_6 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 + EFL_fixtures$efl_4_6 +
-    EFL_fixtures$efl_5_6 + EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_3 +
-    EFL_fixtures$efl_4_4 + EFL_fixtures$efl_5_5 + EFL_fixtures$efl_6_6 + EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_1 +
-    EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_3 + EFL_fixtures$efl_5_4 + EFL_fixtures$efl_6_5
+UCL_fixtures$ucl_AH_125_A <- (
+  UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_0_2 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_1_3 +
+    UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_0_4 + UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 + UCL_fixtures$ucl_3_4 +
+    UCL_fixtures$ucl_0_5 +UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 +
+    UCL_fixtures$ucl_0_6 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 + UCL_fixtures$ucl_4_6 +
+    UCL_fixtures$ucl_5_6 + UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_3 +
+    UCL_fixtures$ucl_4_4 + UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_6_6 + UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_1 +
+    UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_3 + UCL_fixtures$ucl_5_4 + UCL_fixtures$ucl_6_5
 )
 
 #odds
-EFL_fixtures$efl_AH_125_H_odds <- round((1/EFL_fixtures$efl_AH_125_H),digits = 2)
-EFL_fixtures$efl_AH_125_A_odds <- round((1/EFL_fixtures$efl_AH_125_A),digits = 2)
+UCL_fixtures$ucl_AH_125_H_odds <- round((1/UCL_fixtures$ucl_AH_125_H),digits = 2)
+UCL_fixtures$ucl_AH_125_A_odds <- round((1/UCL_fixtures$ucl_AH_125_A),digits = 2)
 
-EFL_fixtures$efl_AH_125_H_odds
-EFL_fixtures$efl_AH_125_A_odds
+UCL_fixtures$ucl_AH_125_H_odds
+UCL_fixtures$ucl_AH_125_A_odds
 #percentages
-EFL_fixtures$efl_AH_125_H <- percent(EFL_fixtures$efl_AH_125_H, accuracy = 0.1)
-EFL_fixtures$efl_AH_125_A <- percent(EFL_fixtures$efl_AH_125_A, accuracy = 0.1)
+UCL_fixtures$ucl_AH_125_H <- percent(UCL_fixtures$ucl_AH_125_H, accuracy = 0.1)
+UCL_fixtures$ucl_AH_125_A <- percent(UCL_fixtures$ucl_AH_125_A, accuracy = 0.1)
 ####################################################################################
 ########Asian Handicaps######################################################################################################
 #percentages
-EFL_fixtures$efl_ov25 <- percent(EFL_fixtures$efl_ov25, accuracy = 0.1)
+UCL_fixtures$ucl_ov25 <- percent(UCL_fixtures$ucl_ov25, accuracy = 0.1)
 
-EFL_fixtures$efl_un25 <- percent(EFL_fixtures$efl_un25, accuracy = 0.1)
-EFL_fixtures$efl_pscore <- paste(round(EFL_fixtures$efl_xGH,digits = 0),round(EFL_fixtures$efl_xGA,digits = 0),sep = "-")
+UCL_fixtures$ucl_un25 <- percent(UCL_fixtures$ucl_un25, accuracy = 0.1)
+UCL_fixtures$ucl_pscore <- paste(round(UCL_fixtures$ucl_xGH,digits = 0),round(UCL_fixtures$ucl_xGA,digits = 0),sep = "-")
 ############################################################################################################################################################
 #Last six
-efl_last_n_games <- 6
+ucl_last_n_games <- 6
 
-#create final_efl_hf object
-final_efl_hf <- c()
-for(index_efl_hf in 1:length(efl_teams))
+#create final_ucl_hf object
+final_ucl_hf <- c()
+for(index_ucl_hf in 1:length(ucl_teams))
 {
-  index_efl_hf <- row.names(efl_form_h) == efl_teams[index_efl_hf]
-  form_efl_hf <- efl_form_h[index_efl_hf]
-  deleted_form_efl_hf <- form_efl_hf[!form_efl_hf[] == ""]
-  l6_form_efl_hf <- tail(deleted_form_efl_hf,efl_last_n_games)
-  l6_form_efl_hf <- paste(l6_form_efl_hf,collapse = " ")
-  final_efl_hf[index_efl_hf] <- rbind(paste(efl_teams[index_efl_hf],l6_form_efl_hf, sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_hf <- row.names(ucl_form_h) == ucl_teams[index_ucl_hf]
+  form_ucl_hf <- ucl_form_h[index_ucl_hf]
+  deleted_form_ucl_hf <- form_ucl_hf[!form_ucl_hf[] == ""]
+  l6_form_ucl_hf <- tail(deleted_form_ucl_hf,ucl_last_n_games)
+  l6_form_ucl_hf <- paste(l6_form_ucl_hf,collapse = " ")
+  final_ucl_hf[index_ucl_hf] <- rbind(paste(ucl_teams[index_ucl_hf],l6_form_ucl_hf, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
 
 #change column nam
-final_efl_hf <- as.data.frame(final_efl_hf)
-colnames(final_efl_hf) <- "Form"
+final_ucl_hf <- as.data.frame(final_ucl_hf)
+colnames(final_ucl_hf) <- "Form"
 #goals scored
-#create final_efl_gs object
-final_efl_gs <- c()
-suml6_efl_gs <- c()
-for(index_efl_gs in 1:length(efl_teams))
+#create final_ucl_gs object
+final_ucl_gs <- c()
+suml6_ucl_gs <- c()
+for(index_ucl_gs in 1:length(ucl_teams))
 {
-  index_efl_gs <- row.names(efl_goalscored_h) == efl_teams[index_efl_gs]
-  form_efl_gs <- efl_goalscored_h[index_efl_gs]
-  deleted_form_efl_gs <- form_efl_gs[!form_efl_gs[] == ""]
-  l6_form_efl_gs <- tail(deleted_form_efl_gs,efl_last_n_games)
-  l6_form_efl_gs <- as.numeric(l6_form_efl_gs)
-  suml6_efl_gs[index_efl_gs] <- sum(l6_form_efl_gs)
-  suml6_efl_gs[index_efl_gs] <- paste("(",suml6_efl_gs[index_efl_gs],")",sep = "")
-  l6_form_efl_gs <- paste(l6_form_efl_gs,collapse = " ")
-  final_efl_gs[index_efl_gs] <- rbind(paste(efl_teams[index_efl_gs],l6_form_efl_gs,suml6_efl_gs[index_efl_gs], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_gs <- row.names(ucl_goalscored_h) == ucl_teams[index_ucl_gs]
+  form_ucl_gs <- ucl_goalscored_h[index_ucl_gs]
+  deleted_form_ucl_gs <- form_ucl_gs[!form_ucl_gs[] == ""]
+  l6_form_ucl_gs <- tail(deleted_form_ucl_gs,ucl_last_n_games)
+  l6_form_ucl_gs <- as.numeric(l6_form_ucl_gs)
+  suml6_ucl_gs[index_ucl_gs] <- sum(l6_form_ucl_gs)
+  suml6_ucl_gs[index_ucl_gs] <- paste("(",suml6_ucl_gs[index_ucl_gs],")",sep = "")
+  l6_form_ucl_gs <- paste(l6_form_ucl_gs,collapse = " ")
+  final_ucl_gs[index_ucl_gs] <- rbind(paste(ucl_teams[index_ucl_gs],l6_form_ucl_gs,suml6_ucl_gs[index_ucl_gs], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
-final_efl_gs
+final_ucl_gs
 #change column names
-final_efl_gs <- as.data.frame(final_efl_gs)
-colnames(final_efl_gs) <- "Goals scored"
+final_ucl_gs <- as.data.frame(final_ucl_gs)
+colnames(final_ucl_gs) <- "Goals scored"
 #goal conceded
-#create final_efl_gc object
-final_efl_gc <- c()
-suml6_efl_gc <- c()
-for(index_efl_gc in 1:length(efl_teams))
+#create final_ucl_gc object
+final_ucl_gc <- c()
+suml6_ucl_gc <- c()
+for(index_ucl_gc in 1:length(ucl_teams))
 {
-  index_efl_gc <- row.names(efl_goalconceded_h) == efl_teams[index_efl_gc]
-  form_efl_gc <- efl_goalconceded_h[index_efl_gc]
-  deleted_form_efl_gc <- form_efl_gc[!form_efl_gc[] == ""]
-  l6_form_efl_gc <- tail(deleted_form_efl_gc,efl_last_n_games)
-  l6_form_efl_gc <- as.numeric(l6_form_efl_gc)
-  suml6_efl_gc[index_efl_gc] <- sum(l6_form_efl_gc)
-  suml6_efl_gc[index_efl_gc] <- paste("(",suml6_efl_gc[index_efl_gc],")",sep = "")
-  l6_form_efl_gc <- paste(l6_form_efl_gc,collapse = " ")
-  final_efl_gc[index_efl_gc] <- rbind(paste(efl_teams[index_efl_gc],l6_form_efl_gc,suml6_efl_gc[index_efl_gc], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_gc <- row.names(ucl_goalconceded_h) == ucl_teams[index_ucl_gc]
+  form_ucl_gc <- ucl_goalconceded_h[index_ucl_gc]
+  deleted_form_ucl_gc <- form_ucl_gc[!form_ucl_gc[] == ""]
+  l6_form_ucl_gc <- tail(deleted_form_ucl_gc,ucl_last_n_games)
+  l6_form_ucl_gc <- as.numeric(l6_form_ucl_gc)
+  suml6_ucl_gc[index_ucl_gc] <- sum(l6_form_ucl_gc)
+  suml6_ucl_gc[index_ucl_gc] <- paste("(",suml6_ucl_gc[index_ucl_gc],")",sep = "")
+  l6_form_ucl_gc <- paste(l6_form_ucl_gc,collapse = " ")
+  final_ucl_gc[index_ucl_gc] <- rbind(paste(ucl_teams[index_ucl_gc],l6_form_ucl_gc,suml6_ucl_gc[index_ucl_gc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
 #change column names
-final_efl_gc <- as.data.frame(final_efl_gc)
-colnames(final_efl_gc) <- "Goals conceded"
+final_ucl_gc <- as.data.frame(final_ucl_gc)
+colnames(final_ucl_gc) <- "Goals conceded"
 
 
-toString(l6_form_efl_gc)
+toString(l6_form_ucl_gc)
 #total goals
-#create final_efl_tg object
-final_efl_tg <- c()
-suml6_efl_tg <- c()
-for(index_efl_tg in 1:length(efl_teams))
+#create final_ucl_tg object
+final_ucl_tg <- c()
+suml6_ucl_tg <- c()
+for(index_ucl_tg in 1:length(ucl_teams))
 {
-  index_efl_tg <- row.names(efl_totalgoals_h) == efl_teams[index_efl_tg]
-  form_efl_tg <- efl_totalgoals_h[index_efl_tg]
-  deleted_form_efl_tg <- form_efl_tg[!form_efl_tg[] == ""]
-  l6_form_efl_tg <- tail(deleted_form_efl_tg,efl_last_n_games)
-  l6_form_efl_tg <- as.numeric(l6_form_efl_tg)
-  suml6_efl_tg[index_efl_tg] <- sum(l6_form_efl_tg)
-  suml6_efl_tg[index_efl_tg] <- paste("(",suml6_efl_tg[index_efl_tg],")",sep = "")
-  l6_form_efl_tg <- paste(l6_form_efl_tg,collapse = " ")
-  final_efl_tg[index_efl_tg] <- rbind(paste(efl_teams[index_efl_tg],l6_form_efl_tg,suml6_efl_tg[index_efl_tg], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_tg <- row.names(ucl_totalgoals_h) == ucl_teams[index_ucl_tg]
+  form_ucl_tg <- ucl_totalgoals_h[index_ucl_tg]
+  deleted_form_ucl_tg <- form_ucl_tg[!form_ucl_tg[] == ""]
+  l6_form_ucl_tg <- tail(deleted_form_ucl_tg,ucl_last_n_games)
+  l6_form_ucl_tg <- as.numeric(l6_form_ucl_tg)
+  suml6_ucl_tg[index_ucl_tg] <- sum(l6_form_ucl_tg)
+  suml6_ucl_tg[index_ucl_tg] <- paste("(",suml6_ucl_tg[index_ucl_tg],")",sep = "")
+  l6_form_ucl_tg <- paste(l6_form_ucl_tg,collapse = " ")
+  final_ucl_tg[index_ucl_tg] <- rbind(paste(ucl_teams[index_ucl_tg],l6_form_ucl_tg,suml6_ucl_tg[index_ucl_tg], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
 #change column names
-final_efl_tg <- as.data.frame(final_efl_tg)
-colnames(final_efl_tg) <- "Total Goals"
+final_ucl_tg <- as.data.frame(final_ucl_tg)
+colnames(final_ucl_tg) <- "Total Goals"
 ###############################################
 #Csfrom
-#create final_efl_hf object
-final_efl_cs <- c()
-for(index_efl_cs in 1:length(efl_teams))
+#create final_ucl_hf object
+final_ucl_cs <- c()
+for(index_ucl_cs in 1:length(ucl_teams))
 {
-  index_efl_cs <- row.names(efl_csform_h) == efl_teams[index_efl_cs]
-  csform_efl_cs <- efl_csform_h[index_efl_cs]
-  deleted_csform_efl_cs <- csform_efl_cs[!csform_efl_cs[] == ""]
-  l6_csform_efl_cs <- tail(deleted_csform_efl_cs,efl_last_n_games)
-  l6_csform_efl_cs <- paste(l6_csform_efl_cs,collapse = " ")
-  final_efl_cs[index_efl_cs] <- rbind(paste(efl_teams[index_efl_cs],l6_csform_efl_cs, sep = ",",collapse = ""))
-  #bundescsform[] <- printf("%s\t%s\n",efl_teams[index],l6_csform)
+  index_ucl_cs <- row.names(ucl_csform_h) == ucl_teams[index_ucl_cs]
+  csform_ucl_cs <- ucl_csform_h[index_ucl_cs]
+  deleted_csform_ucl_cs <- csform_ucl_cs[!csform_ucl_cs[] == ""]
+  l6_csform_ucl_cs <- tail(deleted_csform_ucl_cs,ucl_last_n_games)
+  l6_csform_ucl_cs <- paste(l6_csform_ucl_cs,collapse = " ")
+  final_ucl_cs[index_ucl_cs] <- rbind(paste(ucl_teams[index_ucl_cs],l6_csform_ucl_cs, sep = ",",collapse = ""))
+  #bundescsform[] <- printf("%s\t%s\n",ucl_teams[index],l6_csform)
 
 }
 
 #change column names
-final_efl_cs <- as.data.frame(final_efl_cs)
-colnames(final_efl_cs) <- "CSForm"
+final_ucl_cs <- as.data.frame(final_ucl_cs)
+colnames(final_ucl_cs) <- "CSForm"
 #################################################
 #Win Margin
 #goals scored
-#create final_efl_wm object
-final_efl_wm <- c()
-suml6_efl_wm <- c()
-for(index_efl_wm in 1:length(efl_teams))
+#create final_ucl_wm object
+final_ucl_wm <- c()
+suml6_ucl_wm <- c()
+for(index_ucl_wm in 1:length(ucl_teams))
 {
-  index_efl_wm <- row.names(efl_winmargin_h) == efl_teams[index_efl_wm]
-  form_efl_wm <- efl_winmargin_h[index_efl_wm]
-  deleted_form_efl_wm <- form_efl_wm[!form_efl_wm[] == ""]
-  l6_form_efl_wm <- tail(deleted_form_efl_wm,efl_last_n_games)
-  l6_form_efl_wm <- as.numeric(l6_form_efl_wm)
-  suml6_efl_wm[index_efl_wm] <- sum(l6_form_efl_wm)
-  suml6_efl_wm[index_efl_wm] <- paste("(",suml6_efl_wm[index_efl_wm],")",sep = "")
-  l6_form_efl_wm <- paste(l6_form_efl_wm,collapse = " ")
-  final_efl_wm[index_efl_wm] <- rbind(paste(efl_teams[index_efl_wm],l6_form_efl_wm,suml6_efl_wm[index_efl_wm], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_wm <- row.names(ucl_winmargin_h) == ucl_teams[index_ucl_wm]
+  form_ucl_wm <- ucl_winmargin_h[index_ucl_wm]
+  deleted_form_ucl_wm <- form_ucl_wm[!form_ucl_wm[] == ""]
+  l6_form_ucl_wm <- tail(deleted_form_ucl_wm,ucl_last_n_games)
+  l6_form_ucl_wm <- as.numeric(l6_form_ucl_wm)
+  suml6_ucl_wm[index_ucl_wm] <- sum(l6_form_ucl_wm)
+  suml6_ucl_wm[index_ucl_wm] <- paste("(",suml6_ucl_wm[index_ucl_wm],")",sep = "")
+  l6_form_ucl_wm <- paste(l6_form_ucl_wm,collapse = " ")
+  final_ucl_wm[index_ucl_wm] <- rbind(paste(ucl_teams[index_ucl_wm],l6_form_ucl_wm,suml6_ucl_wm[index_ucl_wm], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
-final_efl_wm
+final_ucl_wm
 #change column names
-final_efl_wm <- as.data.frame(final_efl_wm)
-colnames(final_efl_wm) <- "Win Margin"
+final_ucl_wm <- as.data.frame(final_ucl_wm)
+colnames(final_ucl_wm) <- "Win Margin"
 #################################################
 ##################################################
 #corners awarded
-#create final_efl_ca object
-final_efl_ca <- c()
-suml6_efl_ca <- c()
-for(index_efl_ca in 1:length(efl_teams))
+#create final_ucl_ca object
+final_ucl_ca <- c()
+suml6_ucl_ca <- c()
+for(index_ucl_ca in 1:length(ucl_teams))
 {
-  index_efl_ca <- row.names(efl_coawarded_h) == efl_teams[index_efl_ca]
-  form_efl_ca <- efl_coawarded_h[index_efl_ca]
-  deleted_form_efl_ca <- form_efl_ca[!form_efl_ca[] == ""]
-  l6_form_efl_ca <- tail(deleted_form_efl_ca,efl_last_n_games)
-  l6_form_efl_ca <- as.numeric(l6_form_efl_ca)
-  suml6_efl_ca[index_efl_ca] <- sum(l6_form_efl_ca)
-  suml6_efl_ca[index_efl_ca] <- paste("(",suml6_efl_ca[index_efl_ca],")",sep = "")
-  l6_form_efl_ca <- paste(l6_form_efl_ca,collapse = " ")
-  final_efl_ca[index_efl_ca] <- rbind(paste(efl_teams[index_efl_ca],l6_form_efl_ca,suml6_efl_ca[index_efl_ca], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_ca <- row.names(ucl_coawarded_h) == ucl_teams[index_ucl_ca]
+  form_ucl_ca <- ucl_coawarded_h[index_ucl_ca]
+  deleted_form_ucl_ca <- form_ucl_ca[!form_ucl_ca[] == ""]
+  l6_form_ucl_ca <- tail(deleted_form_ucl_ca,ucl_last_n_games)
+  l6_form_ucl_ca <- as.numeric(l6_form_ucl_ca)
+  suml6_ucl_ca[index_ucl_ca] <- sum(l6_form_ucl_ca)
+  suml6_ucl_ca[index_ucl_ca] <- paste("(",suml6_ucl_ca[index_ucl_ca],")",sep = "")
+  l6_form_ucl_ca <- paste(l6_form_ucl_ca,collapse = " ")
+  final_ucl_ca[index_ucl_ca] <- rbind(paste(ucl_teams[index_ucl_ca],l6_form_ucl_ca,suml6_ucl_ca[index_ucl_ca], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
-final_efl_ca
+final_ucl_ca
 #change column names
-final_efl_ca <- as.data.frame(final_efl_ca)
-colnames(final_efl_ca) <- "CornersAwarded"
+final_ucl_ca <- as.data.frame(final_ucl_ca)
+colnames(final_ucl_ca) <- "CornersAwarded"
 ##################################################
 ##################################################
 #corners awarded
-#create final_efl_ca object
-final_efl_cc <- c()
-suml6_efl_cc <- c()
-for(index_efl_cc in 1:length(efl_teams))
+#create final_ucl_ca object
+final_ucl_cc <- c()
+suml6_ucl_cc <- c()
+for(index_ucl_cc in 1:length(ucl_teams))
 {
-  index_efl_cc <- row.names(efl_cornersconceded_h) == efl_teams[index_efl_cc]
-  form_efl_cc <- efl_cornersconceded_h[index_efl_cc]
-  deleted_form_efl_cc <- form_efl_cc[!form_efl_cc[] == ""]
-  l6_form_efl_cc <- tail(deleted_form_efl_cc,efl_last_n_games)
-  l6_form_efl_cc <- as.numeric(l6_form_efl_cc)
-  suml6_efl_cc[index_efl_cc] <- sum(l6_form_efl_cc)
-  suml6_efl_cc[index_efl_cc] <- paste("(",suml6_efl_cc[index_efl_cc],")",sep = "")
-  l6_form_efl_cc <- paste(l6_form_efl_cc,collapse = " ")
-  final_efl_cc[index_efl_cc] <- rbind(paste(efl_teams[index_efl_cc],l6_form_efl_cc,suml6_efl_cc[index_efl_cc], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_cc <- row.names(ucl_cornersconceded_h) == ucl_teams[index_ucl_cc]
+  form_ucl_cc <- ucl_cornersconceded_h[index_ucl_cc]
+  deleted_form_ucl_cc <- form_ucl_cc[!form_ucl_cc[] == ""]
+  l6_form_ucl_cc <- tail(deleted_form_ucl_cc,ucl_last_n_games)
+  l6_form_ucl_cc <- as.numeric(l6_form_ucl_cc)
+  suml6_ucl_cc[index_ucl_cc] <- sum(l6_form_ucl_cc)
+  suml6_ucl_cc[index_ucl_cc] <- paste("(",suml6_ucl_cc[index_ucl_cc],")",sep = "")
+  l6_form_ucl_cc <- paste(l6_form_ucl_cc,collapse = " ")
+  final_ucl_cc[index_ucl_cc] <- rbind(paste(ucl_teams[index_ucl_cc],l6_form_ucl_cc,suml6_ucl_cc[index_ucl_cc], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
-final_efl_cc
+final_ucl_cc
 #change column names
-final_efl_cc <- as.data.frame(final_efl_cc)
-colnames(final_efl_cc) <- "CornersConceded"
+final_ucl_cc <- as.data.frame(final_ucl_cc)
+colnames(final_ucl_cc) <- "CornersConceded"
 ##################################################
 ##################################################
 #corners form
-final_efl_cosc <- c()
-for(index_efl_cosc in 1:length(efl_teams))
+final_ucl_cosc <- c()
+for(index_ucl_cosc in 1:length(ucl_teams))
 {
-  index_efl_cosc <- row.names(efl_coscform_h) == efl_teams[index_efl_cosc]
-  coscform_efl_cosc <- efl_coscform_h[index_efl_cosc]
-  deleted_coscform_efl_cosc <- coscform_efl_cosc[!coscform_efl_cosc[] == ""]
-  l6_coscform_efl_cosc <- tail(deleted_coscform_efl_cosc,efl_last_n_games)
-  l6_coscform_efl_cosc <- paste(l6_coscform_efl_cosc,collapse = " ")
-  final_efl_cosc[index_efl_cosc] <- rbind(paste(efl_teams[index_efl_cosc],l6_coscform_efl_cosc, sep = ",",collapse = ""))
-  #bundescoscform[] <- printf("%s\t%s\n",efl_teams[index],l6_coscform)
+  index_ucl_cosc <- row.names(ucl_coscform_h) == ucl_teams[index_ucl_cosc]
+  coscform_ucl_cosc <- ucl_coscform_h[index_ucl_cosc]
+  deleted_coscform_ucl_cosc <- coscform_ucl_cosc[!coscform_ucl_cosc[] == ""]
+  l6_coscform_ucl_cosc <- tail(deleted_coscform_ucl_cosc,ucl_last_n_games)
+  l6_coscform_ucl_cosc <- paste(l6_coscform_ucl_cosc,collapse = " ")
+  final_ucl_cosc[index_ucl_cosc] <- rbind(paste(ucl_teams[index_ucl_cosc],l6_coscform_ucl_cosc, sep = ",",collapse = ""))
+  #bundescoscform[] <- printf("%s\t%s\n",ucl_teams[index],l6_coscform)
 
 }
-final_efl_cosc
+final_ucl_cosc
 #change column names
-final_efl_cosc <- as.data.frame(final_efl_cosc)
-colnames(final_efl_cosc) <- "CornersForm"
+final_ucl_cosc <- as.data.frame(final_ucl_cosc)
+colnames(final_ucl_cosc) <- "CornersForm"
 ##################################################
 #total corners
-#create final_efl_tcorners object
-final_efl_tcorners <- c()
-suml6_efl_tcorners <- c()
-for(index_efl_tcorners in 1:length(efl_teams))
+#create final_ucl_tcorners object
+final_ucl_tcorners <- c()
+suml6_ucl_tcorners <- c()
+for(index_ucl_tcorners in 1:length(ucl_teams))
 {
-  index_efl_tcorners <- row.names(efl_totalcorners_h) == efl_teams[index_efl_tcorners]
-  form_efl_tcorners <- efl_totalcorners_h[index_efl_tcorners]
-  deleted_form_efl_tcorners <- form_efl_tcorners[!form_efl_tcorners[] == ""]
-  l6_form_efl_tcorners <- tail(deleted_form_efl_tcorners,efl_last_n_games)
-  l6_form_efl_tcorners <- as.numeric(l6_form_efl_tcorners)
-  suml6_efl_tcorners[index_efl_tcorners] <- sum(l6_form_efl_tcorners)
-  suml6_efl_tcorners[index_efl_tcorners] <- paste("(",suml6_efl_tcorners[index_efl_tcorners],")",sep = "")
-  l6_form_efl_tcorners <- paste(l6_form_efl_tcorners,collapse = " ")
-  final_efl_tcorners[index_efl_tcorners] <- rbind(paste(efl_teams[index_efl_tcorners],l6_form_efl_tcorners,suml6_efl_tcorners[index_efl_tcorners], sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_tcorners <- row.names(ucl_totalcorners_h) == ucl_teams[index_ucl_tcorners]
+  form_ucl_tcorners <- ucl_totalcorners_h[index_ucl_tcorners]
+  deleted_form_ucl_tcorners <- form_ucl_tcorners[!form_ucl_tcorners[] == ""]
+  l6_form_ucl_tcorners <- tail(deleted_form_ucl_tcorners,ucl_last_n_games)
+  l6_form_ucl_tcorners <- as.numeric(l6_form_ucl_tcorners)
+  suml6_ucl_tcorners[index_ucl_tcorners] <- sum(l6_form_ucl_tcorners)
+  suml6_ucl_tcorners[index_ucl_tcorners] <- paste("(",suml6_ucl_tcorners[index_ucl_tcorners],")",sep = "")
+  l6_form_ucl_tcorners <- paste(l6_form_ucl_tcorners,collapse = " ")
+  final_ucl_tcorners[index_ucl_tcorners] <- rbind(paste(ucl_teams[index_ucl_tcorners],l6_form_ucl_tcorners,suml6_ucl_tcorners[index_ucl_tcorners], sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
 #change column names
-final_efl_tcorners <- as.data.frame(final_efl_tcorners)
-colnames(final_efl_tcorners) <- "TotalCorners"
+final_ucl_tcorners <- as.data.frame(final_ucl_tcorners)
+colnames(final_ucl_tcorners) <- "TotalCorners"
 ###################################################
 #Team against
-#create final_efl_hf_against
-final_efl_hf_against <- c()
-for(index_efl_hf_against in 1:length(efl_teams))
+#create final_ucl_hf_against
+final_ucl_hf_against <- c()
+for(index_ucl_hf_against in 1:length(ucl_teams))
 {
-  index_efl_hf_against <- row.names(efl_form_team_against_h) == efl_teams[index_efl_hf_against]
-  form_efl_hf_against <- efl_form_team_against_h[index_efl_hf_against]
-  deleted_form_efl_hf_against <- form_efl_hf_against[!form_efl_hf_against[] == ""]
-  l6_form_efl_hf_against <- tail(deleted_form_efl_hf_against,efl_last_n_games)
-  l6_form_efl_hf_against <- paste(l6_form_efl_hf_against,collapse = " ")
-  final_efl_hf_against[index_efl_hf_against] <- rbind(paste(efl_teams[index_efl_hf_against],l6_form_efl_hf_against, sep = ",",collapse = ""))
-  #bundesform[] <- printf("%s\t%s\n",efl_teams[index],l6_form)
+  index_ucl_hf_against <- row.names(ucl_form_team_against_h) == ucl_teams[index_ucl_hf_against]
+  form_ucl_hf_against <- ucl_form_team_against_h[index_ucl_hf_against]
+  deleted_form_ucl_hf_against <- form_ucl_hf_against[!form_ucl_hf_against[] == ""]
+  l6_form_ucl_hf_against <- tail(deleted_form_ucl_hf_against,ucl_last_n_games)
+  l6_form_ucl_hf_against <- paste(l6_form_ucl_hf_against,collapse = " ")
+  final_ucl_hf_against[index_ucl_hf_against] <- rbind(paste(ucl_teams[index_ucl_hf_against],l6_form_ucl_hf_against, sep = ",",collapse = ""))
+  #bundesform[] <- printf("%s\t%s\n",ucl_teams[index],l6_form)
 
 }
-final_efl_hf_against <- as.data.frame(final_efl_hf_against)
-colnames(final_efl_hf_against) <- "Team against"
+final_ucl_hf_against <- as.data.frame(final_ucl_hf_against)
+colnames(final_ucl_hf_against) <- "Team against"
 #combine the columns
-final_efl_all <- cbind(final_efl_hf,final_efl_gs,final_efl_gc,final_efl_tg,final_efl_ca,final_efl_cc,final_efl_tcorners,final_efl_cosc,final_efl_hf_against)
+final_ucl_all <- cbind(final_ucl_hf,final_ucl_gs,final_ucl_gc,final_ucl_tg,final_ucl_ca,final_ucl_cc,final_ucl_tcorners,final_ucl_cosc,final_ucl_hf_against)
 ###################################################################################################################################################################################
 #TABLE SIMULATION
-#EFL
-EFL_sim <- EFL
-EFL_sim$matchid <- paste(EFL_sim$HomeTeam,EFL_sim$AwayTeam,sep = "-")
-EFL_fixtures$matchid <- paste(EFL_fixtures$HomeTeam_efl,EFL_fixtures$AwayTeam_efl,sep = "-")
-EFL_fixtures$efl_FTR <- sapply(EFL_fixtures$efl_pscore,switch,
+#UCL
+UCL_sim <- UCL
+UCL_sim$matchid <- paste(UCL_sim$HomeTeam,UCL_sim$AwayTeam,sep = "-")
+UCL_fixtures$matchid <- paste(UCL_fixtures$HomeTeam_ucl,UCL_fixtures$AwayTeam_ucl,sep = "-")
+UCL_fixtures$ucl_FTR <- sapply(UCL_fixtures$ucl_pscore,switch,
                              '1-0' = 'H','2-0'='H','2-1'= 'H','3-0'= 'H','3-1'= 'H','3-2'= 'H','4-0'= 'H','4-1'= 'H','4-2'= 'H','4-3'= 'H','5-0'= 'H','5-1'= 'H','5-2'= 'H','5-3'= 'H','5-4'= 'H','6-0'= 'H','6-1'= 'H','6-2'= 'H','6-3'= 'H','6-4'= 'H','6-5'= 'H','7-0'= 'H','7-2'= 'H','9-0'= 'H',
                              '0-0' = 'D','1-1' = 'D','2-2' = 'D','3-3' = 'D','4-4' = 'D','5-5' = 'D',
                              '0-1'= 'A','0-2' = 'A','1-2'= 'A','0-3'= 'A','1-3'= 'A','2-3'= 'A','0-4'= 'A','1-4'= 'A','2-4'= 'A','3-4'= 'A','0-5'= 'A','1-5'= 'A','2-5'= 'A','3-5'= 'A','4-5'= 'A','0-6'= 'A','1-6'= 'A','2-6'= 'A','3-6'= 'A','4-6'= 'A','3-8'= 'A','5-6'= 'A')
 
-EFL_fixtures$efl_gamestatus <- ifelse(EFL_fixtures$matchid %in% EFL_sim$matchid,"played","notplayed")
+UCL_fixtures$ucl_gamestatus <- ifelse(UCL_fixtures$matchid %in% UCL_sim$matchid,"played","notplayed")
 
-efl_home_wins_sim <- c()
-efl_away_wins_sim <- c()
-efl_home_draws_sim <- c()
-efl_away_draws_sim <- c()
-efl_home_loss_sim <- c()
-efl_away_loss_sim <- c()
+ucl_home_wins_sim <- c()
+ucl_away_wins_sim <- c()
+ucl_home_draws_sim <- c()
+ucl_away_draws_sim <- c()
+ucl_home_loss_sim <- c()
+ucl_away_loss_sim <- c()
 
 
 
-for (i_efl_wins_sim in 1:length(efl_teams))
+for (i_ucl_wins_sim in 1:length(ucl_teams))
 {
 
-  efl_home_wins_sim[i_efl_wins_sim] <- nrow(EFL_fixtures[EFL_fixtures$HomeTeam_efl == efl_teams[i_efl_wins_sim] & EFL_fixtures$efl_FTR == "H" & EFL_fixtures$efl_gamestatus =="notplayed",])
-  efl_away_wins_sim[i_efl_wins_sim] <- nrow(EFL_fixtures[EFL_fixtures$AwayTeam_efl == efl_teams[i_efl_wins_sim] & EFL_fixtures$efl_FTR == "A" & EFL_fixtures$efl_gamestatus == "notplayed",])
-  efl_home_draws_sim[i_efl_wins_sim] <- nrow(EFL_fixtures[EFL_fixtures$HomeTeam_efl == efl_teams[i_efl_wins_sim] & EFL_fixtures$efl_FTR == "D" & EFL_fixtures$efl_gamestatus == "notplayed",])
-  efl_away_draws_sim[i_efl_wins_sim] <- nrow(EFL_fixtures[EFL_fixtures$AwayTeam_efl == efl_teams[i_efl_wins_sim] & EFL_fixtures$efl_FTR == "D" & EFL_fixtures$efl_gamestatus == "notplayed",])
-  efl_home_loss_sim[i_efl_wins_sim] <- nrow(EFL_fixtures[EFL_fixtures$HomeTeam_efl == efl_teams[i_efl_wins_sim] & EFL_fixtures$efl_FTR == "A" & EFL_fixtures$efl_gamestatus == "notplayed",])
-  efl_away_loss_sim[i_efl_wins_sim] <- nrow(EFL_fixtures[EFL_fixtures$AwayTeam_efl == efl_teams[i_efl_wins_sim] & EFL_fixtures$efl_FTR == "H" & EFL_fixtures$efl_gamestatus == "notplayed", ])
+  ucl_home_wins_sim[i_ucl_wins_sim] <- nrow(UCL_fixtures[UCL_fixtures$HomeTeam_ucl == ucl_teams[i_ucl_wins_sim] & UCL_fixtures$ucl_FTR == "H" & UCL_fixtures$ucl_gamestatus =="notplayed",])
+  ucl_away_wins_sim[i_ucl_wins_sim] <- nrow(UCL_fixtures[UCL_fixtures$AwayTeam_ucl == ucl_teams[i_ucl_wins_sim] & UCL_fixtures$ucl_FTR == "A" & UCL_fixtures$ucl_gamestatus == "notplayed",])
+  ucl_home_draws_sim[i_ucl_wins_sim] <- nrow(UCL_fixtures[UCL_fixtures$HomeTeam_ucl == ucl_teams[i_ucl_wins_sim] & UCL_fixtures$ucl_FTR == "D" & UCL_fixtures$ucl_gamestatus == "notplayed",])
+  ucl_away_draws_sim[i_ucl_wins_sim] <- nrow(UCL_fixtures[UCL_fixtures$AwayTeam_ucl == ucl_teams[i_ucl_wins_sim] & UCL_fixtures$ucl_FTR == "D" & UCL_fixtures$ucl_gamestatus == "notplayed",])
+  ucl_home_loss_sim[i_ucl_wins_sim] <- nrow(UCL_fixtures[UCL_fixtures$HomeTeam_ucl == ucl_teams[i_ucl_wins_sim] & UCL_fixtures$ucl_FTR == "A" & UCL_fixtures$ucl_gamestatus == "notplayed",])
+  ucl_away_loss_sim[i_ucl_wins_sim] <- nrow(UCL_fixtures[UCL_fixtures$AwayTeam_ucl == ucl_teams[i_ucl_wins_sim] & UCL_fixtures$ucl_FTR == "H" & UCL_fixtures$ucl_gamestatus == "notplayed", ])
 
 }
 
-efl_total_wins_sim <- efl_home_wins_sim + efl_away_wins_sim
-efl_total_draws_sim <- efl_home_draws_sim + efl_away_draws_sim
-efl_total_loss_sim <- efl_home_loss_sim + efl_away_loss_sim
+ucl_total_wins_sim <- ucl_home_wins_sim + ucl_away_wins_sim
+ucl_total_draws_sim <- ucl_home_draws_sim + ucl_away_draws_sim
+ucl_total_loss_sim <- ucl_home_loss_sim + ucl_away_loss_sim
 
-efl_home_games_sim <- c()
-efl_away_games_sim <-c()
+ucl_home_games_sim <- c()
+ucl_away_games_sim <-c()
 
-for (i_efl_sim in 1:length(efl_teams))
+for (i_ucl_sim in 1:length(ucl_teams))
 {
 
-  efl_home_games_sim[i_efl_sim] <- nrow(EFL_fixtures[EFL_fixtures$HomeTeam_efl == efl_teams[i_efl_sim] & EFL_fixtures$efl_gamestatus == "notplayed",])
-  efl_away_games_sim[i_efl_sim]  <- nrow(EFL_fixtures[EFL_fixtures$AwayTeam_efl == efl_teams[i_efl_sim] & EFL_fixtures$efl_gamestatus == "notplayed",])
+  ucl_home_games_sim[i_ucl_sim] <- nrow(UCL_fixtures[UCL_fixtures$HomeTeam_ucl == ucl_teams[i_ucl_sim] & UCL_fixtures$ucl_gamestatus == "notplayed",])
+  ucl_away_games_sim[i_ucl_sim]  <- nrow(UCL_fixtures[UCL_fixtures$AwayTeam_ucl == ucl_teams[i_ucl_sim] & UCL_fixtures$ucl_gamestatus == "notplayed",])
 
 }
 
-efl_games_played_sim <- efl_home_games_sim + efl_away_games_sim
+ucl_games_played_sim <- ucl_home_games_sim + ucl_away_games_sim
 
-efl_league_table_sim <- cbind(efl_teams,efl_games_played_sim,efl_total_wins_sim,efl_total_draws_sim,efl_total_loss_sim)
-efl_PTS_sim <- (efl_total_wins_sim*3) + (efl_total_draws_sim*1)
-efl_league_table_sim <- cbind(efl_league_table_sim,efl_PTS_sim)
+ucl_league_table_sim <- cbind(ucl_teams,ucl_games_played_sim,ucl_total_wins_sim,ucl_total_draws_sim,ucl_total_loss_sim)
+ucl_PTS_sim <- (ucl_total_wins_sim*3) + (ucl_total_draws_sim*1)
+ucl_league_table_sim <- cbind(ucl_league_table_sim,ucl_PTS_sim)
 
-efl_games_played_simfinal <- efl_games_played + efl_games_played_sim
-efl_total_wins_simfinal <- efl_total_wins + efl_total_wins_sim
-efl_total_draws_simfinal <- efl_total_draws + efl_total_draws_sim
-efl_total_loss_simfinal <- efl_total_loss + efl_total_loss_sim
-efl_PTS_simfinal <- efl_PTS + efl_PTS_sim
+ucl_games_played_simfinal <- ucl_games_played + ucl_games_played_sim
+ucl_total_wins_simfinal <- ucl_total_wins + ucl_total_wins_sim
+ucl_total_draws_simfinal <- ucl_total_draws + ucl_total_draws_sim
+ucl_total_loss_simfinal <- ucl_total_loss + ucl_total_loss_sim
+ucl_PTS_simfinal <- ucl_PTS + ucl_PTS_sim
 
-efl_league_table_simfinal <- cbind(efl_teams,efl_games_played_simfinal,efl_total_wins_simfinal,efl_total_draws_simfinal,efl_total_loss_simfinal,efl_PTS_simfinal)
-efl_league_table_simfinal <- as.data.frame(efl_league_table_simfinal)
-names(efl_league_table_simfinal)[names(efl_league_table_simfinal) == "efl_teams"] <- "Team_f"
-names(efl_league_table_simfinal)[names(efl_league_table_simfinal) == "efl_games_played_simfinal"] <- "P_f"
-names(efl_league_table_simfinal)[names(efl_league_table_simfinal) == "efl_total_wins_simfinal"] <- "W_f"
-names(efl_league_table_simfinal)[names(efl_league_table_simfinal) == "efl_total_draws_simfinal"] <- "D_f"
-names(efl_league_table_simfinal)[names(efl_league_table_simfinal) == "efl_total_loss_simfinal"] <- "L_f"
-names(efl_league_table_simfinal)[names(efl_league_table_simfinal) == "efl_PTS_simfinal"] <- "PTS_f"
-points_efl_sim <-  efl_league_table_simfinal[order(as.numeric(efl_league_table_simfinal$PTS_f), decreasing = TRUE),]
+ucl_league_table_simfinal <- cbind(ucl_teams,ucl_games_played_simfinal,ucl_total_wins_simfinal,ucl_total_draws_simfinal,ucl_total_loss_simfinal,ucl_PTS_simfinal)
+ucl_league_table_simfinal <- as.data.frame(ucl_league_table_simfinal)
+names(ucl_league_table_simfinal)[names(ucl_league_table_simfinal) == "ucl_teams"] <- "Team_f"
+names(ucl_league_table_simfinal)[names(ucl_league_table_simfinal) == "ucl_games_played_simfinal"] <- "P_f"
+names(ucl_league_table_simfinal)[names(ucl_league_table_simfinal) == "ucl_total_wins_simfinal"] <- "W_f"
+names(ucl_league_table_simfinal)[names(ucl_league_table_simfinal) == "ucl_total_draws_simfinal"] <- "D_f"
+names(ucl_league_table_simfinal)[names(ucl_league_table_simfinal) == "ucl_total_loss_simfinal"] <- "L_f"
+names(ucl_league_table_simfinal)[names(ucl_league_table_simfinal) == "ucl_PTS_simfinal"] <- "PTS_f"
+points_ucl_sim <-  ucl_league_table_simfinal[order(as.numeric(ucl_league_table_simfinal$PTS_f), decreasing = TRUE),]
 
-EFL_notplayed <- EFL_fixtures[EFL_fixtures$efl_gamestatus == "notplayed",]
+UCL_notplayed <- UCL_fixtures[UCL_fixtures$ucl_gamestatus == "notplayed",]
 ###########################################################################################################################################################
 #decision model
-#EFL
-EFL_fixtures$Hometeam_efl_index <- match(EFL_fixtures$HomeTeam_efl,efl_teams)
-EFL_fixtures$Awayteam_efl_index <- match(EFL_fixtures$AwayTeam_efl,efl_teams)
-efl_prediction <- c()
-efl_HWM <- c()
-efl_AWM <- c()
-efl_HWMLM <- c()
-efl_AWMLM <- c()
-efl_HY <- c()
-efl_AY <- c()
-efl_HCO <- c()
-efl_ACO <- c()
-efl_HXSC <- c()
-efl_AXSC <- c()
-efl_HYCPF <- c()
-efl_AYCPF <- c()
-for(efl_row in 1:nrow(EFL_fixtures))
+#UCL
+UCL_fixtures$Hometeam_ucl_index <- match(UCL_fixtures$HomeTeam_ucl,ucl_teams)
+UCL_fixtures$Awayteam_ucl_index <- match(UCL_fixtures$AwayTeam_ucl,ucl_teams)
+ucl_prediction <- c()
+ucl_HWM <- c()
+ucl_AWM <- c()
+ucl_HWMLM <- c()
+ucl_AWMLM <- c()
+ucl_HY <- c()
+ucl_AY <- c()
+ucl_HCO <- c()
+ucl_ACO <- c()
+ucl_HXSC <- c()
+ucl_AXSC <- c()
+ucl_HYCPF <- c()
+ucl_AYCPF <- c()
+for(ucl_row in 1:nrow(UCL_fixtures))
 {
 
-  efl_hometeamindex <- EFL_fixtures[efl_row,"Hometeam_efl_index"]
-  efl_awayteamindex <- EFL_fixtures[efl_row,"Awayteam_efl_index"]
+  ucl_hometeamindex <- UCL_fixtures[ucl_row,"Hometeam_ucl_index"]
+  ucl_awayteamindex <- UCL_fixtures[ucl_row,"Awayteam_ucl_index"]
   #analyse team form
   #home team
-  efl_form_vec_ht <- as.vector(efl_form_h[efl_hometeamindex,])
-  efl_form_vec_ht[is.na(efl_form_vec_ht)] <- ""
-  efl_form_vec_ht <- efl_form_vec_ht[efl_form_vec_ht != ""]
-  efl_form_vec_ht  <-tail(efl_form_vec_ht,6)
-  efl_ht_numberof_wins <- length(which(efl_form_vec_ht == "W"))
-  efl_ht_numberof_draws <- length(which(efl_form_vec_ht == "D"))
-  efl_ht_numberof_loss <- length(which(efl_form_vec_ht == "L"))
+  ucl_form_vec_ht <- as.vector(ucl_form_h[ucl_hometeamindex,])
+  ucl_form_vec_ht[is.na(ucl_form_vec_ht)] <- ""
+  ucl_form_vec_ht <- ucl_form_vec_ht[ucl_form_vec_ht != ""]
+  ucl_form_vec_ht  <-tail(ucl_form_vec_ht,6)
+  ucl_ht_numberof_wins <- length(which(ucl_form_vec_ht == "W"))
+  ucl_ht_numberof_draws <- length(which(ucl_form_vec_ht == "D"))
+  ucl_ht_numberof_loss <- length(which(ucl_form_vec_ht == "L"))
   #awayteam
-  efl_form_vec_at <- as.vector(efl_form_h[efl_awayteamindex,])
-  efl_form_vec_at[is.na(efl_form_vec_at)] <- ""
-  efl_form_vec_at <- efl_form_vec_at[efl_form_vec_at != ""]
-  efl_form_vec_at  <-tail(efl_form_vec_at,6)
-  efl_at_numberof_wins <- length(which(efl_form_vec_at == "W"))
-  efl_at_numberof_draws <- length(which(efl_form_vec_at == "D"))
-  efl_at_numberof_loss <- length(which(efl_form_vec_at == "L"))
+  ucl_form_vec_at <- as.vector(ucl_form_h[ucl_awayteamindex,])
+  ucl_form_vec_at[is.na(ucl_form_vec_at)] <- ""
+  ucl_form_vec_at <- ucl_form_vec_at[ucl_form_vec_at != ""]
+  ucl_form_vec_at  <-tail(ucl_form_vec_at,6)
+  ucl_at_numberof_wins <- length(which(ucl_form_vec_at == "W"))
+  ucl_at_numberof_draws <- length(which(ucl_form_vec_at == "D"))
+  ucl_at_numberof_loss <- length(which(ucl_form_vec_at == "L"))
 
   ######################################################################
   #analyse goals scored
   #hometeam
-  efl_goalscored_vec_ht <- as.vector(efl_goalscored_h[efl_hometeamindex,])
-  efl_goalscored_vec_ht[is.na(efl_goalscored_vec_ht)] <- ""
-  efl_goalscored_vec_ht <- efl_goalscored_vec_ht[efl_goalscored_vec_ht != ""]
-  efl_goalscored_vec_ht  <-tail(efl_goalscored_vec_ht,6)
-  efl_goalscored_vec_ht  <- as.numeric(efl_goalscored_vec_ht)
-  efl_ht_totalgoalscored <- sum(efl_goalscored_vec_ht)
-  efl_ht_matches_scoring <- length(which(efl_goalscored_vec_ht > 0))
-  efl_ht_matches_without_scoring <- length(which(efl_goalscored_vec_ht == "0"))
+  ucl_goalscored_vec_ht <- as.vector(ucl_goalscored_h[ucl_hometeamindex,])
+  ucl_goalscored_vec_ht[is.na(ucl_goalscored_vec_ht)] <- ""
+  ucl_goalscored_vec_ht <- ucl_goalscored_vec_ht[ucl_goalscored_vec_ht != ""]
+  ucl_goalscored_vec_ht  <-tail(ucl_goalscored_vec_ht,6)
+  ucl_goalscored_vec_ht  <- as.numeric(ucl_goalscored_vec_ht)
+  ucl_ht_totalgoalscored <- sum(ucl_goalscored_vec_ht)
+  ucl_ht_matches_scoring <- length(which(ucl_goalscored_vec_ht > 0))
+  ucl_ht_matches_without_scoring <- length(which(ucl_goalscored_vec_ht == "0"))
   #awayteam
-  efl_goalscored_vec_at <- as.vector(efl_goalscored_h[efl_awayteamindex,])
-  efl_goalscored_vec_at[is.na(efl_goalscored_vec_at)] <- ""
-  efl_goalscored_vec_at <- efl_goalscored_vec_at[efl_goalscored_vec_at != ""]
-  efl_goalscored_vec_at  <-tail(efl_goalscored_vec_at,6)
-  efl_goalscored_vec_at  <- as.numeric(efl_goalscored_vec_at)
-  efl_at_totalgoalscored <- sum(efl_goalscored_vec_at)
-  efl_at_matches_scoring <- length(which(efl_goalscored_vec_at > 0))
-  efl_at_matches_without_scoring <- length(which(efl_goalscored_vec_at == "0"))
+  ucl_goalscored_vec_at <- as.vector(ucl_goalscored_h[ucl_awayteamindex,])
+  ucl_goalscored_vec_at[is.na(ucl_goalscored_vec_at)] <- ""
+  ucl_goalscored_vec_at <- ucl_goalscored_vec_at[ucl_goalscored_vec_at != ""]
+  ucl_goalscored_vec_at  <-tail(ucl_goalscored_vec_at,6)
+  ucl_goalscored_vec_at  <- as.numeric(ucl_goalscored_vec_at)
+  ucl_at_totalgoalscored <- sum(ucl_goalscored_vec_at)
+  ucl_at_matches_scoring <- length(which(ucl_goalscored_vec_at > 0))
+  ucl_at_matches_without_scoring <- length(which(ucl_goalscored_vec_at == "0"))
   #####################################################################################
   #analyse goals conceded
   #hometeam
-  efl_goalconceded_vec_ht <- as.vector(efl_goalconceded_h[efl_hometeamindex,])
-  efl_goalconceded_vec_ht[is.na(efl_goalconceded_vec_ht)] <- ""
-  efl_goalconceded_vec_ht <- efl_goalconceded_vec_ht[efl_goalconceded_vec_ht != ""]
-  efl_goalconceded_vec_ht  <-tail(efl_goalconceded_vec_ht,6)
-  efl_goalconceded_vec_ht  <- as.numeric(efl_goalconceded_vec_ht)
-  efl_goalconceded_vec_ht
-  efl_ht_totalgoalconceded <- sum(efl_goalconceded_vec_ht)
-  efl_ht_matches_concede <- length(which(efl_goalconceded_vec_ht > 0))
-  efl_ht_matches_without_concede <- length(which(efl_goalconceded_vec_ht == "0"))
+  ucl_goalconceded_vec_ht <- as.vector(ucl_goalconceded_h[ucl_hometeamindex,])
+  ucl_goalconceded_vec_ht[is.na(ucl_goalconceded_vec_ht)] <- ""
+  ucl_goalconceded_vec_ht <- ucl_goalconceded_vec_ht[ucl_goalconceded_vec_ht != ""]
+  ucl_goalconceded_vec_ht  <-tail(ucl_goalconceded_vec_ht,6)
+  ucl_goalconceded_vec_ht  <- as.numeric(ucl_goalconceded_vec_ht)
+  ucl_goalconceded_vec_ht
+  ucl_ht_totalgoalconceded <- sum(ucl_goalconceded_vec_ht)
+  ucl_ht_matches_concede <- length(which(ucl_goalconceded_vec_ht > 0))
+  ucl_ht_matches_without_concede <- length(which(ucl_goalconceded_vec_ht == "0"))
   #awayteam
-  efl_goalconceded_vec_at <- as.vector(efl_goalconceded_h[efl_awayteamindex,])
-  efl_goalconceded_vec_at[is.na(efl_goalconceded_vec_at)] <- ""
-  efl_goalconceded_vec_at <- efl_goalconceded_vec_at[efl_goalconceded_vec_at != ""]
-  efl_goalconceded_vec_at  <-tail(efl_goalconceded_vec_at,6)
-  efl_goalconceded_vec_at  <- as.numeric(efl_goalconceded_vec_at)
-  efl_at_totalgoalconceded <- sum(efl_goalconceded_vec_at)
-  efl_at_matches_concede <- length(which(efl_goalconceded_vec_at > 0))
-  efl_at_matches_without_concede <- length(which(efl_goalconceded_vec_at == "0"))
+  ucl_goalconceded_vec_at <- as.vector(ucl_goalconceded_h[ucl_awayteamindex,])
+  ucl_goalconceded_vec_at[is.na(ucl_goalconceded_vec_at)] <- ""
+  ucl_goalconceded_vec_at <- ucl_goalconceded_vec_at[ucl_goalconceded_vec_at != ""]
+  ucl_goalconceded_vec_at  <-tail(ucl_goalconceded_vec_at,6)
+  ucl_goalconceded_vec_at  <- as.numeric(ucl_goalconceded_vec_at)
+  ucl_at_totalgoalconceded <- sum(ucl_goalconceded_vec_at)
+  ucl_at_matches_concede <- length(which(ucl_goalconceded_vec_at > 0))
+  ucl_at_matches_without_concede <- length(which(ucl_goalconceded_vec_at == "0"))
 
   ####################################################################################
   #analyse total combined goals
   #hometeam
-  efl_totalgoals_vec_ht <- as.vector(efl_totalgoals_h[efl_hometeamindex,])
-  efl_totalgoals_vec_ht[is.na(efl_totalgoals_vec_ht)] <- ""
-  efl_totalgoals_vec_ht <- efl_totalgoals_vec_ht[efl_totalgoals_vec_ht != ""]
-  efl_totalgoals_vec_ht  <-tail(efl_totalgoals_vec_ht,6)
-  efl_totalgoals_vec_ht  <- as.numeric(efl_totalgoals_vec_ht)
-  efl_totalgoals_vec_ht
-  efl_ht_totalgoals <- sum(efl_totalgoals_vec_ht)
-  efl_ht_avgtotalgoals <- (efl_ht_totalgoals/6)
-  efl_ht_no_of_ov25 <- length(which(efl_totalgoals_vec_ht >= 3))
-  efl_ht_no_of_un25 <- length(which(efl_totalgoals_vec_ht <= 2))
+  ucl_totalgoals_vec_ht <- as.vector(ucl_totalgoals_h[ucl_hometeamindex,])
+  ucl_totalgoals_vec_ht[is.na(ucl_totalgoals_vec_ht)] <- ""
+  ucl_totalgoals_vec_ht <- ucl_totalgoals_vec_ht[ucl_totalgoals_vec_ht != ""]
+  ucl_totalgoals_vec_ht  <-tail(ucl_totalgoals_vec_ht,6)
+  ucl_totalgoals_vec_ht  <- as.numeric(ucl_totalgoals_vec_ht)
+  ucl_totalgoals_vec_ht
+  ucl_ht_totalgoals <- sum(ucl_totalgoals_vec_ht)
+  ucl_ht_avgtotalgoals <- (ucl_ht_totalgoals/6)
+  ucl_ht_no_of_ov25 <- length(which(ucl_totalgoals_vec_ht >= 3))
+  ucl_ht_no_of_un25 <- length(which(ucl_totalgoals_vec_ht <= 2))
   #awayteam
-  efl_totalgoals_vec_at <- as.vector(efl_totalgoals_h[efl_awayteamindex,])
-  efl_totalgoals_vec_at[is.na(efl_totalgoals_vec_at)] <- ""
-  efl_totalgoals_vec_at <- efl_totalgoals_vec_at[efl_totalgoals_vec_at != ""]
-  efl_totalgoals_vec_at  <-tail(efl_totalgoals_vec_at,6)
-  efl_totalgoals_vec_at  <- as.numeric(efl_totalgoals_vec_at)
-  efl_totalgoals_vec_at
-  efl_at_totalgoals <- sum(efl_totalgoals_vec_at)
-  efl_at_avgtotalgoals <- (efl_at_totalgoals/6)
-  efl_at_no_of_ov25 <- length(which(efl_totalgoals_vec_at >= 3))
-  efl_at_no_of_un25 <- length(which(efl_totalgoals_vec_at <= 2))
+  ucl_totalgoals_vec_at <- as.vector(ucl_totalgoals_h[ucl_awayteamindex,])
+  ucl_totalgoals_vec_at[is.na(ucl_totalgoals_vec_at)] <- ""
+  ucl_totalgoals_vec_at <- ucl_totalgoals_vec_at[ucl_totalgoals_vec_at != ""]
+  ucl_totalgoals_vec_at  <-tail(ucl_totalgoals_vec_at,6)
+  ucl_totalgoals_vec_at  <- as.numeric(ucl_totalgoals_vec_at)
+  ucl_totalgoals_vec_at
+  ucl_at_totalgoals <- sum(ucl_totalgoals_vec_at)
+  ucl_at_avgtotalgoals <- (ucl_at_totalgoals/6)
+  ucl_at_no_of_ov25 <- length(which(ucl_totalgoals_vec_at >= 3))
+  ucl_at_no_of_un25 <- length(which(ucl_totalgoals_vec_at <= 2))
   ################################################################################
   #analyse win margin
   #hometeam
-  efl_winmargin_vec_ht <- as.vector(efl_winmargin_h[efl_hometeamindex,])
-  efl_winmargin_vec_ht[is.na(efl_winmargin_vec_ht)] <- ""
-  efl_winmargin_vec_ht <- efl_winmargin_vec_ht[efl_winmargin_vec_ht != ""]
-  efl_winmargin_vec_ht  <-tail(efl_winmargin_vec_ht,6)
-  efl_winmargin_vec_ht  <- as.numeric(efl_winmargin_vec_ht)
+  ucl_winmargin_vec_ht <- as.vector(ucl_winmargin_h[ucl_hometeamindex,])
+  ucl_winmargin_vec_ht[is.na(ucl_winmargin_vec_ht)] <- ""
+  ucl_winmargin_vec_ht <- ucl_winmargin_vec_ht[ucl_winmargin_vec_ht != ""]
+  ucl_winmargin_vec_ht  <-tail(ucl_winmargin_vec_ht,6)
+  ucl_winmargin_vec_ht  <- as.numeric(ucl_winmargin_vec_ht)
 
-  efl_ht_totalwinmargin <- sum(efl_winmargin_vec_ht)
-  efl_ht_no_of_winmargin_ov0 <- length(which(efl_winmargin_vec_ht >= 0))
-  efl_ht_no_of_winmargin_ov1 <- length(which(efl_winmargin_vec_ht >= 1))
-  efl_ht_no_of_winmargin_un0 <- length(which(efl_winmargin_vec_ht <= 0))
-  efl_ht_no_of_winmargin_un1 <- length(which(efl_winmargin_vec_ht <= 1))
+  ucl_ht_totalwinmargin <- sum(ucl_winmargin_vec_ht)
+  ucl_ht_no_of_winmargin_ov0 <- length(which(ucl_winmargin_vec_ht >= 0))
+  ucl_ht_no_of_winmargin_ov1 <- length(which(ucl_winmargin_vec_ht >= 1))
+  ucl_ht_no_of_winmargin_un0 <- length(which(ucl_winmargin_vec_ht <= 0))
+  ucl_ht_no_of_winmargin_un1 <- length(which(ucl_winmargin_vec_ht <= 1))
   #awayteam
-  efl_winmargin_vec_at <- as.vector(efl_winmargin_h[efl_awayteamindex,])
-  efl_winmargin_vec_at[is.na(efl_winmargin_vec_at)] <- ""
-  efl_winmargin_vec_at <- efl_winmargin_vec_at[efl_winmargin_vec_at != ""]
-  efl_winmargin_vec_at  <-tail(efl_winmargin_vec_at,6)
-  efl_winmargin_vec_at  <- as.numeric(efl_winmargin_vec_at)
+  ucl_winmargin_vec_at <- as.vector(ucl_winmargin_h[ucl_awayteamindex,])
+  ucl_winmargin_vec_at[is.na(ucl_winmargin_vec_at)] <- ""
+  ucl_winmargin_vec_at <- ucl_winmargin_vec_at[ucl_winmargin_vec_at != ""]
+  ucl_winmargin_vec_at  <-tail(ucl_winmargin_vec_at,6)
+  ucl_winmargin_vec_at  <- as.numeric(ucl_winmargin_vec_at)
 
-  efl_at_totalwinmargin <- sum(efl_winmargin_vec_at)
-  efl_at_no_of_winmargin_ov0 <- length(which(efl_winmargin_vec_at >= 0))
-  efl_at_no_of_winmargin_ov1 <- length(which(efl_winmargin_vec_at >= 1))
-  efl_at_no_of_winmargin_un0 <- length(which(efl_winmargin_vec_at <= 0))
-  efl_at_no_of_winmargin_un1 <- length(which(efl_winmargin_vec_at <= 1))
+  ucl_at_totalwinmargin <- sum(ucl_winmargin_vec_at)
+  ucl_at_no_of_winmargin_ov0 <- length(which(ucl_winmargin_vec_at >= 0))
+  ucl_at_no_of_winmargin_ov1 <- length(which(ucl_winmargin_vec_at >= 1))
+  ucl_at_no_of_winmargin_un0 <- length(which(ucl_winmargin_vec_at <= 0))
+  ucl_at_no_of_winmargin_un1 <- length(which(ucl_winmargin_vec_at <= 1))
   ##################################################################################
   #very last win margin
   #hometeam
-  efl_winmargin_vec_ht_lm <- as.vector(efl_winmargin_h[efl_hometeamindex,])
-  efl_winmargin_vec_ht_lm[is.na(efl_winmargin_vec_ht_lm)] <- ""
-  efl_winmargin_vec_ht_lm <- efl_winmargin_vec_ht_lm[efl_winmargin_vec_ht_lm != ""]
-  efl_winmargin_vec_ht_lm  <-tail(efl_winmargin_vec_ht_lm,1)
+  ucl_winmargin_vec_ht_lm <- as.vector(ucl_winmargin_h[ucl_hometeamindex,])
+  ucl_winmargin_vec_ht_lm[is.na(ucl_winmargin_vec_ht_lm)] <- ""
+  ucl_winmargin_vec_ht_lm <- ucl_winmargin_vec_ht_lm[ucl_winmargin_vec_ht_lm != ""]
+  ucl_winmargin_vec_ht_lm  <-tail(ucl_winmargin_vec_ht_lm,1)
   #awayteam
-  efl_winmargin_vec_at_lm <- as.vector(efl_winmargin_h[efl_awayteamindex,])
-  efl_winmargin_vec_at_lm[is.na(efl_winmargin_vec_at_lm)] <- ""
-  efl_winmargin_vec_at_lm <- efl_winmargin_vec_at_lm[efl_winmargin_vec_at_lm != ""]
-  efl_winmargin_vec_at_lm  <-tail(efl_winmargin_vec_at_lm,1)
+  ucl_winmargin_vec_at_lm <- as.vector(ucl_winmargin_h[ucl_awayteamindex,])
+  ucl_winmargin_vec_at_lm[is.na(ucl_winmargin_vec_at_lm)] <- ""
+  ucl_winmargin_vec_at_lm <- ucl_winmargin_vec_at_lm[ucl_winmargin_vec_at_lm != ""]
+  ucl_winmargin_vec_at_lm  <-tail(ucl_winmargin_vec_at_lm,1)
   #################################################################################
   #pick average yellow cards
   #hometeam
-  efl_yellowtotals_vec_ht <- as.vector(efl_yellowtotalsv2[efl_hometeamindex,])
-  efl_yellowtotals_vec_ht[is.na(efl_yellowtotals_vec_ht)] <- ""
-  efl_yellowtotals_vec_ht <- efl_yellowtotals_vec_ht[efl_yellowtotals_vec_ht != ""]
-  efl_yellowtotals_vec_ht  <-tail(efl_yellowtotals_vec_ht,1)
+  ucl_yellowtotals_vec_ht <- as.vector(ucl_yellowtotalsv2[ucl_hometeamindex,])
+  ucl_yellowtotals_vec_ht[is.na(ucl_yellowtotals_vec_ht)] <- ""
+  ucl_yellowtotals_vec_ht <- ucl_yellowtotals_vec_ht[ucl_yellowtotals_vec_ht != ""]
+  ucl_yellowtotals_vec_ht  <-tail(ucl_yellowtotals_vec_ht,1)
   #awayteam
-  efl_yellowtotals_vec_at <- as.vector(efl_yellowtotalsv2[efl_awayteamindex,])
-  efl_yellowtotals_vec_at[is.na(efl_yellowtotals_vec_at)] <- ""
-  efl_yellowtotals_vec_at <- efl_yellowtotals_vec_at[efl_yellowtotals_vec_at != ""]
-  efl_yellowtotals_vec_at  <-tail(efl_yellowtotals_vec_at,1)
+  ucl_yellowtotals_vec_at <- as.vector(ucl_yellowtotalsv2[ucl_awayteamindex,])
+  ucl_yellowtotals_vec_at[is.na(ucl_yellowtotals_vec_at)] <- ""
+  ucl_yellowtotals_vec_at <- ucl_yellowtotals_vec_at[ucl_yellowtotals_vec_at != ""]
+  ucl_yellowtotals_vec_at  <-tail(ucl_yellowtotals_vec_at,1)
 
   #################################################################################
   #pick average corners
   #hometeam
-  efl_cornertotals_vec_ht <- as.vector(efl_cornertotalsv2[efl_hometeamindex,])
-  efl_cornertotals_vec_ht[is.na(efl_cornertotals_vec_ht)] <- ""
-  efl_cornertotals_vec_ht <- efl_cornertotals_vec_ht[efl_cornertotals_vec_ht != ""]
-  efl_cornertotals_vec_ht  <-tail(efl_cornertotals_vec_ht,1)
+  ucl_cornertotals_vec_ht <- as.vector(ucl_cornertotalsv2[ucl_hometeamindex,])
+  ucl_cornertotals_vec_ht[is.na(ucl_cornertotals_vec_ht)] <- ""
+  ucl_cornertotals_vec_ht <- ucl_cornertotals_vec_ht[ucl_cornertotals_vec_ht != ""]
+  ucl_cornertotals_vec_ht  <-tail(ucl_cornertotals_vec_ht,1)
   #awayteam
-  efl_cornertotals_vec_at <- as.vector(efl_cornertotalsv2[efl_awayteamindex,])
-  efl_cornertotals_vec_at[is.na(efl_cornertotals_vec_at)] <- ""
-  efl_cornertotals_vec_at <- efl_cornertotals_vec_at[efl_cornertotals_vec_at != ""]
-  efl_cornertotals_vec_at  <-tail(efl_cornertotals_vec_at,1)
+  ucl_cornertotals_vec_at <- as.vector(ucl_cornertotalsv2[ucl_awayteamindex,])
+  ucl_cornertotals_vec_at[is.na(ucl_cornertotals_vec_at)] <- ""
+  ucl_cornertotals_vec_at <- ucl_cornertotals_vec_at[ucl_cornertotals_vec_at != ""]
+  ucl_cornertotals_vec_at  <-tail(ucl_cornertotals_vec_at,1)
   #################################################################################
   #pick xpected shots conversion
   #hometeam
-  efl_xshotsconversion_vec_ht <- as.vector(efl_shots_analysis[efl_hometeamindex,])
-  efl_xshotsconversion_vec_ht[is.na(efl_xshotsconversion_vec_ht)] <- ""
-  efl_xshotsconversion_vec_ht <- efl_xshotsconversion_vec_ht[efl_xshotsconversion_vec_ht != ""]
-  efl_xshotsconversion_vec_ht  <-tail(efl_xshotsconversion_vec_ht,1)
+  ucl_xshotsconversion_vec_ht <- as.vector(ucl_shots_analysis[ucl_hometeamindex,])
+  ucl_xshotsconversion_vec_ht[is.na(ucl_xshotsconversion_vec_ht)] <- ""
+  ucl_xshotsconversion_vec_ht <- ucl_xshotsconversion_vec_ht[ucl_xshotsconversion_vec_ht != ""]
+  ucl_xshotsconversion_vec_ht  <-tail(ucl_xshotsconversion_vec_ht,1)
   #awayteam
-  efl_xshotsconversion_vec_at <- as.vector(efl_shots_analysis[efl_awayteamindex,])
-  efl_xshotsconversion_vec_at[is.na(efl_xshotsconversion_vec_at)] <- ""
-  efl_xshotsconversion_vec_at <- efl_xshotsconversion_vec_at[efl_xshotsconversion_vec_at != ""]
-  efl_xshotsconversion_vec_at  <-tail(efl_xshotsconversion_vec_at,1)
+  ucl_xshotsconversion_vec_at <- as.vector(ucl_shots_analysis[ucl_awayteamindex,])
+  ucl_xshotsconversion_vec_at[is.na(ucl_xshotsconversion_vec_at)] <- ""
+  ucl_xshotsconversion_vec_at <- ucl_xshotsconversion_vec_at[ucl_xshotsconversion_vec_at != ""]
+  ucl_xshotsconversion_vec_at  <-tail(ucl_xshotsconversion_vec_at,1)
   #################################################################################
   #pick yellow cards per foul
   #hometeam
-  efl_fouls_conversion_vec_ht <- as.vector(efl_fouls_conversion[efl_hometeamindex,])
-  efl_fouls_conversion_vec_ht[is.na(efl_fouls_conversion_vec_ht)] <- ""
-  efl_fouls_conversion_vec_ht <- efl_fouls_conversion_vec_ht[efl_fouls_conversion_vec_ht != ""]
-  efl_fouls_conversion_vec_ht  <-tail(efl_fouls_conversion_vec_ht,1)
+  ucl_fouls_conversion_vec_ht <- as.vector(ucl_fouls_conversion[ucl_hometeamindex,])
+  ucl_fouls_conversion_vec_ht[is.na(ucl_fouls_conversion_vec_ht)] <- ""
+  ucl_fouls_conversion_vec_ht <- ucl_fouls_conversion_vec_ht[ucl_fouls_conversion_vec_ht != ""]
+  ucl_fouls_conversion_vec_ht  <-tail(ucl_fouls_conversion_vec_ht,1)
   #awayteam
-  efl_fouls_conversion_vec_at <- as.vector(efl_fouls_conversion[efl_awayteamindex,])
-  efl_fouls_conversion_vec_at[is.na(efl_fouls_conversion_vec_at)] <- ""
-  efl_fouls_conversion_vec_at <- efl_fouls_conversion_vec_at[efl_fouls_conversion_vec_at != ""]
-  efl_fouls_conversion_vec_at  <-tail(efl_fouls_conversion_vec_at,1)
+  ucl_fouls_conversion_vec_at <- as.vector(ucl_fouls_conversion[ucl_awayteamindex,])
+  ucl_fouls_conversion_vec_at[is.na(ucl_fouls_conversion_vec_at)] <- ""
+  ucl_fouls_conversion_vec_at <- ucl_fouls_conversion_vec_at[ucl_fouls_conversion_vec_at != ""]
+  ucl_fouls_conversion_vec_at  <-tail(ucl_fouls_conversion_vec_at,1)
   #################################################################################
 
   ####we need to decide ############
   #winner goals
-  efl_ht_last6points <- efl_ht_numberof_wins*3 + efl_ht_numberof_draws*1
-  efl_at_last6points <- efl_at_numberof_wins*3 + efl_at_numberof_draws*1
+  ucl_ht_last6points <- ucl_ht_numberof_wins*3 + ucl_ht_numberof_draws*1
+  ucl_at_last6points <- ucl_at_numberof_wins*3 + ucl_at_numberof_draws*1
 
-  if(efl_ht_last6points > efl_at_last6points) {efl_3waypick <- "1"}  else {efl_3waypick <- "X2"}
+  if(ucl_ht_last6points > ucl_at_last6points) {ucl_3waypick <- "1"}  else {ucl_3waypick <- "X2"}
 
-  if(efl_at_last6points > efl_ht_last6points ) {efl_3waypick <- "2"} else {efl_3waypick <- "1X"}
+  if(ucl_at_last6points > ucl_ht_last6points ) {ucl_3waypick <- "2"} else {ucl_3waypick <- "1X"}
 
-  if(efl_ht_no_of_ov25 + efl_at_no_of_ov25 >= 6) {efl_goalspick <- "ov25"} else {efl_goalspick <- "un25"}
+  if(ucl_ht_no_of_ov25 + ucl_at_no_of_ov25 >= 6) {ucl_goalspick <- "ov25"} else {ucl_goalspick <- "un25"}
 
-  if(efl_ht_no_of_un25 + efl_at_no_of_un25 >= 6) {efl_goalspick <- "un25"} else {efl_goalspick <- "ov25"}
+  if(ucl_ht_no_of_un25 + ucl_at_no_of_un25 >= 6) {ucl_goalspick <- "un25"} else {ucl_goalspick <- "ov25"}
 
-  if(efl_ht_matches_scoring >= 4 && efl_at_matches_scoring >=4) {efl_btts <- "BTTS-Y"} else {efl_btts <- "BTTS-N"}
+  if(ucl_ht_matches_scoring >= 4 && ucl_at_matches_scoring >=4) {ucl_btts <- "BTTS-Y"} else {ucl_btts <- "BTTS-N"}
 
 
-  efl_prediction[efl_row] <- rbind(paste(efl_3waypick,efl_goalspick,efl_btts,sep = ","))
-  efl_HWM[efl_row] <- efl_ht_totalwinmargin
-  efl_AWM[efl_row] <- efl_at_totalwinmargin
+  ucl_prediction[ucl_row] <- rbind(paste(ucl_3waypick,ucl_goalspick,ucl_btts,sep = ","))
+  ucl_HWM[ucl_row] <- ucl_ht_totalwinmargin
+  ucl_AWM[ucl_row] <- ucl_at_totalwinmargin
 
-  efl_HWMLM[efl_row] <- efl_winmargin_vec_ht_lm
-  efl_AWMLM[efl_row] <- efl_winmargin_vec_at_lm
+  ucl_HWMLM[ucl_row] <- ucl_winmargin_vec_ht_lm
+  ucl_AWMLM[ucl_row] <- ucl_winmargin_vec_at_lm
 
-  efl_HY[efl_row] <- efl_yellowtotals_vec_ht
-  efl_AY[efl_row] <- efl_yellowtotals_vec_at
+  ucl_HY[ucl_row] <- ucl_yellowtotals_vec_ht
+  ucl_AY[ucl_row] <- ucl_yellowtotals_vec_at
 
-  efl_HCO[efl_row] <- efl_cornertotals_vec_ht
-  efl_ACO[efl_row] <- efl_cornertotals_vec_at
+  ucl_HCO[ucl_row] <- ucl_cornertotals_vec_ht
+  ucl_ACO[ucl_row] <- ucl_cornertotals_vec_at
 
-  efl_HXSC[efl_row] <- efl_xshotsconversion_vec_ht
-  efl_AXSC[efl_row] <- efl_xshotsconversion_vec_at
+  ucl_HXSC[ucl_row] <- ucl_xshotsconversion_vec_ht
+  ucl_AXSC[ucl_row] <- ucl_xshotsconversion_vec_at
 
-  efl_HYCPF[efl_row] <- efl_fouls_conversion_vec_ht
-  efl_AYCPF[efl_row] <- efl_fouls_conversion_vec_at
+  ucl_HYCPF[ucl_row] <- ucl_fouls_conversion_vec_ht
+  ucl_AYCPF[ucl_row] <- ucl_fouls_conversion_vec_at
 }
 
-efl_prediction <- as.data.frame(efl_prediction)
-colnames(efl_prediction) <- "prediction"
+ucl_prediction <- as.data.frame(ucl_prediction)
+colnames(ucl_prediction) <- "prediction"
 
-efl_HWM <- as.data.frame(efl_HWM)
-colnames(efl_HWM) <- "HWM"
+ucl_HWM <- as.data.frame(ucl_HWM)
+colnames(ucl_HWM) <- "HWM"
 
-efl_AWM <- as.data.frame(efl_AWM)
-colnames(efl_AWM) <- "AWM"
+ucl_AWM <- as.data.frame(ucl_AWM)
+colnames(ucl_AWM) <- "AWM"
 
-efl_HWMLM <- as.data.frame(efl_HWMLM)
-colnames(efl_HWMLM) <- "HWMLM"
+ucl_HWMLM <- as.data.frame(ucl_HWMLM)
+colnames(ucl_HWMLM) <- "HWMLM"
 
-efl_AWMLM <- as.data.frame(efl_AWMLM)
-colnames(efl_AWMLM) <- "AWMLM"
+ucl_AWMLM <- as.data.frame(ucl_AWMLM)
+colnames(ucl_AWMLM) <- "AWMLM"
 
-efl_HY <- as.data.frame(efl_HY)
-colnames(efl_HY) <- "AVGHY"
+ucl_HY <- as.data.frame(ucl_HY)
+colnames(ucl_HY) <- "AVGHY"
 
-efl_AY <- as.data.frame(efl_AY)
-colnames(efl_AY) <- "AVGAY"
+ucl_AY <- as.data.frame(ucl_AY)
+colnames(ucl_AY) <- "AVGAY"
 
-efl_HCO <- as.data.frame(efl_HCO)
-colnames(efl_HCO) <- "AVGHCO"
+ucl_HCO <- as.data.frame(ucl_HCO)
+colnames(ucl_HCO) <- "AVGHCO"
 
-efl_ACO <- as.data.frame(efl_ACO)
-colnames(efl_ACO) <- "AVGACO"
+ucl_ACO <- as.data.frame(ucl_ACO)
+colnames(ucl_ACO) <- "AVGACO"
 
-efl_HXSC <- as.data.frame(efl_HXSC)
-colnames(efl_HXSC) <- "HXSC"
+ucl_HXSC <- as.data.frame(ucl_HXSC)
+colnames(ucl_HXSC) <- "HXSC"
 
-efl_AXSC <- as.data.frame(efl_AXSC)
-colnames(efl_AXSC) <- "AXSC"
+ucl_AXSC <- as.data.frame(ucl_AXSC)
+colnames(ucl_AXSC) <- "AXSC"
 
-efl_HYCPF <- as.data.frame(efl_HYCPF)
-colnames(efl_HYCPF) <- "HYCPF"
+ucl_HYCPF <- as.data.frame(ucl_HYCPF)
+colnames(ucl_HYCPF) <- "HYCPF"
 
-efl_AYCPF <- as.data.frame(efl_AYCPF)
-colnames(efl_AYCPF) <- "AYCPF"
+ucl_AYCPF <- as.data.frame(ucl_AYCPF)
+colnames(ucl_AYCPF) <- "AYCPF"
 
-efl_picks <- cbind(EFL_fixtures$Div,EFL_fixtures$HomeTeam_efl,EFL_fixtures$AwayTeam_efl,efl_prediction,efl_HWM,efl_AWM,efl_HWMLM,efl_AWMLM,efl_HY,efl_AY,efl_HCO,efl_ACO,efl_HXSC,efl_AXSC,efl_HYCPF,efl_AYCPF)
+ucl_picks <- cbind(UCL_fixtures$Div,UCL_fixtures$HomeTeam_ucl,UCL_fixtures$AwayTeam_ucl,ucl_prediction,ucl_HWM,ucl_AWM,ucl_HWMLM,ucl_AWMLM,ucl_HY,ucl_AY,ucl_HCO,ucl_ACO,ucl_HXSC,ucl_AXSC,ucl_HYCPF,ucl_AYCPF)
 
-colnames(efl_picks)[1] <- "picks_Div"
-colnames(efl_picks)[2] <- "picks_HomeTeam"
-colnames(efl_picks)[3] <- "picks_AwayTeam"
-efl_picks$matchid <- paste(efl_picks$picks_HomeTeam,efl_picks$picks_AwayTeam,sep = "-")
+colnames(ucl_picks)[1] <- "picks_Div"
+colnames(ucl_picks)[2] <- "picks_HomeTeam"
+colnames(ucl_picks)[3] <- "picks_AwayTeam"
+ucl_picks$matchid <- paste(ucl_picks$picks_HomeTeam,ucl_picks$picks_AwayTeam,sep = "-")
 ############################################################################################
-#end of EFL
-efl_picks
+#end of UCL
+ucl_picks
 #############################################################################################################################################################################
 #clone fixtures
-EFL_fixtures_clone <- EFL_fixtures
-colnames(EFL_fixtures_clone)[61] <- "Hwin"
-colnames(EFL_fixtures_clone)[62] <- "Draw"
-colnames(EFL_fixtures_clone)[63] <- "Awin"
+UCL_fixtures_clone <- UCL_fixtures
+colnames(UCL_fixtures_clone)[61] <- "Hwin"
+colnames(UCL_fixtures_clone)[62] <- "Draw"
+colnames(UCL_fixtures_clone)[63] <- "Awin"
 
-EFL_fixtures_clone$Hwinodds <-   EFL_fixtures$efl_1_0 + EFL_fixtures$efl_2_0 + EFL_fixtures$efl_2_1 + EFL_fixtures$efl_3_0 + EFL_fixtures$efl_3_1 +
-  EFL_fixtures$efl_3_2 + EFL_fixtures$efl_4_0 + EFL_fixtures$efl_4_1 + EFL_fixtures$efl_4_2 + EFL_fixtures$efl_4_3 +
-  EFL_fixtures$efl_5_0 + EFL_fixtures$efl_5_1 + EFL_fixtures$efl_5_2 + EFL_fixtures$efl_5_3 + EFL_fixtures$efl_5_4 +
-  EFL_fixtures$efl_6_0 + EFL_fixtures$efl_6_1 + EFL_fixtures$efl_6_2 + EFL_fixtures$efl_6_3 + EFL_fixtures$efl_6_4 +
-  EFL_fixtures$efl_6_5
-EFL_fixtures_clone$Hwinodds <- round(1/EFL_fixtures_clone$Hwinodds, digits = 3)
+UCL_fixtures_clone$Hwinodds <-   UCL_fixtures$ucl_1_0 + UCL_fixtures$ucl_2_0 + UCL_fixtures$ucl_2_1 + UCL_fixtures$ucl_3_0 + UCL_fixtures$ucl_3_1 +
+  UCL_fixtures$ucl_3_2 + UCL_fixtures$ucl_4_0 + UCL_fixtures$ucl_4_1 + UCL_fixtures$ucl_4_2 + UCL_fixtures$ucl_4_3 +
+  UCL_fixtures$ucl_5_0 + UCL_fixtures$ucl_5_1 + UCL_fixtures$ucl_5_2 + UCL_fixtures$ucl_5_3 + UCL_fixtures$ucl_5_4 +
+  UCL_fixtures$ucl_6_0 + UCL_fixtures$ucl_6_1 + UCL_fixtures$ucl_6_2 + UCL_fixtures$ucl_6_3 + UCL_fixtures$ucl_6_4 +
+  UCL_fixtures$ucl_6_5
+UCL_fixtures_clone$Hwinodds <- round(1/UCL_fixtures_clone$Hwinodds, digits = 3)
 
-EFL_fixtures_clone$Drawodds <-  EFL_fixtures$efl_0_0 + EFL_fixtures$efl_1_1 + EFL_fixtures$efl_2_2 + EFL_fixtures$efl_3_3 + EFL_fixtures$efl_4_4 +
-  EFL_fixtures$efl_5_5 + EFL_fixtures$efl_6_6
+UCL_fixtures_clone$Drawodds <-  UCL_fixtures$ucl_0_0 + UCL_fixtures$ucl_1_1 + UCL_fixtures$ucl_2_2 + UCL_fixtures$ucl_3_3 + UCL_fixtures$ucl_4_4 +
+  UCL_fixtures$ucl_5_5 + UCL_fixtures$ucl_6_6
 
-EFL_fixtures_clone$Drawodds <- round(1/EFL_fixtures_clone$Drawodds, digits = 3)
+UCL_fixtures_clone$Drawodds <- round(1/UCL_fixtures_clone$Drawodds, digits = 3)
 
-EFL_fixtures_clone$Awinodds <-   EFL_fixtures$efl_0_1 + EFL_fixtures$efl_0_2 + EFL_fixtures$efl_1_2 + EFL_fixtures$efl_0_3 + EFL_fixtures$efl_1_3 +
-  EFL_fixtures$efl_2_3 + EFL_fixtures$efl_0_4 + EFL_fixtures$efl_1_4 + EFL_fixtures$efl_2_4 + EFL_fixtures$efl_3_4 +
-  EFL_fixtures$efl_0_5 + EFL_fixtures$efl_1_5 + EFL_fixtures$efl_2_5 + EFL_fixtures$efl_3_5 + EFL_fixtures$efl_4_5 +
-  EFL_fixtures$efl_0_6 + EFL_fixtures$efl_1_6 + EFL_fixtures$efl_2_6 + EFL_fixtures$efl_3_6 + EFL_fixtures$efl_4_6 +
-  EFL_fixtures$efl_5_6
+UCL_fixtures_clone$Awinodds <-   UCL_fixtures$ucl_0_1 + UCL_fixtures$ucl_0_2 + UCL_fixtures$ucl_1_2 + UCL_fixtures$ucl_0_3 + UCL_fixtures$ucl_1_3 +
+  UCL_fixtures$ucl_2_3 + UCL_fixtures$ucl_0_4 + UCL_fixtures$ucl_1_4 + UCL_fixtures$ucl_2_4 + UCL_fixtures$ucl_3_4 +
+  UCL_fixtures$ucl_0_5 + UCL_fixtures$ucl_1_5 + UCL_fixtures$ucl_2_5 + UCL_fixtures$ucl_3_5 + UCL_fixtures$ucl_4_5 +
+  UCL_fixtures$ucl_0_6 + UCL_fixtures$ucl_1_6 + UCL_fixtures$ucl_2_6 + UCL_fixtures$ucl_3_6 + UCL_fixtures$ucl_4_6 +
+  UCL_fixtures$ucl_5_6
 
-EFL_fixtures_clone$Awinodds <- round(1/EFL_fixtures_clone$Awinodds, digits = 3)
+UCL_fixtures_clone$Awinodds <- round(1/UCL_fixtures_clone$Awinodds, digits = 3)
 
-colnames(EFL_fixtures_clone)[15] <- "CS_1-1"
-colnames(EFL_fixtures_clone)[13] <- "CS_1-0"
-colnames(EFL_fixtures_clone)[14] <- "CS_0-1"
-colnames(EFL_fixtures_clone)[16] <- "CS_2-0"
-colnames(EFL_fixtures_clone)[17] <- "CS_0-2"
-colnames(EFL_fixtures_clone)[19] <- "CS_2-1"
-colnames(EFL_fixtures_clone)[20] <- "CS_1-2"
+colnames(UCL_fixtures_clone)[15] <- "CS_1-1"
+colnames(UCL_fixtures_clone)[13] <- "CS_1-0"
+colnames(UCL_fixtures_clone)[14] <- "CS_0-1"
+colnames(UCL_fixtures_clone)[16] <- "CS_2-0"
+colnames(UCL_fixtures_clone)[17] <- "CS_0-2"
+colnames(UCL_fixtures_clone)[19] <- "CS_2-1"
+colnames(UCL_fixtures_clone)[20] <- "CS_1-2"
 
-EFL_fixtures_clone$`CS_1-1` <- round(1/EFL_fixtures_clone$`CS_1-1`, digits = 3)
-EFL_fixtures_clone$`CS_1-0` <- round(1/EFL_fixtures_clone$`CS_1-0`, digits = 3)
-EFL_fixtures_clone$`CS_0-1` <- round(1/EFL_fixtures_clone$`CS_0-1`, digits = 3)
-EFL_fixtures_clone$`CS_2-0` <- round(1/EFL_fixtures_clone$`CS_2-0`, digits = 3)
-EFL_fixtures_clone$`CS_0-2` <- round(1/EFL_fixtures_clone$`CS_0-2`, digits = 3)
-EFL_fixtures_clone$`CS_2-1` <- round(1/EFL_fixtures_clone$`CS_2-1`, digits = 3)
-EFL_fixtures_clone$`CS_1-2` <- round(1/EFL_fixtures_clone$`CS_1-2`, digits = 3)
+UCL_fixtures_clone$`CS_1-1` <- round(1/UCL_fixtures_clone$`CS_1-1`, digits = 3)
+UCL_fixtures_clone$`CS_1-0` <- round(1/UCL_fixtures_clone$`CS_1-0`, digits = 3)
+UCL_fixtures_clone$`CS_0-1` <- round(1/UCL_fixtures_clone$`CS_0-1`, digits = 3)
+UCL_fixtures_clone$`CS_2-0` <- round(1/UCL_fixtures_clone$`CS_2-0`, digits = 3)
+UCL_fixtures_clone$`CS_0-2` <- round(1/UCL_fixtures_clone$`CS_0-2`, digits = 3)
+UCL_fixtures_clone$`CS_2-1` <- round(1/UCL_fixtures_clone$`CS_2-1`, digits = 3)
+UCL_fixtures_clone$`CS_1-2` <- round(1/UCL_fixtures_clone$`CS_1-2`, digits = 3)
 
-colnames(EFL_fixtures_clone)[1] <- "league"
-colnames(EFL_fixtures_clone)[2] <- "Hometeam"
-colnames(EFL_fixtures_clone)[3] <- "Awayteam"
-colnames(EFL_fixtures_clone)[92] <- "predscore"
-colnames(EFL_fixtures_clone)[64] <- "ov25"
-colnames(EFL_fixtures_clone)[66] <- "ov25odds"
-colnames(EFL_fixtures_clone)[65] <- "un25"
-colnames(EFL_fixtures_clone)[67] <- "un25odds"
-colnames(EFL_fixtures_clone)[68] <- "BTTSY"
-colnames(EFL_fixtures_clone)[69] <- "BTTSN"
-colnames(EFL_fixtures_clone)[70] <- "BTTSYodds"
-colnames(EFL_fixtures_clone)[71] <- "BTTSNodds"
+colnames(UCL_fixtures_clone)[1] <- "league"
+colnames(UCL_fixtures_clone)[2] <- "Hometeam"
+colnames(UCL_fixtures_clone)[3] <- "Awayteam"
+colnames(UCL_fixtures_clone)[92] <- "predscore"
+colnames(UCL_fixtures_clone)[64] <- "ov25"
+colnames(UCL_fixtures_clone)[66] <- "ov25odds"
+colnames(UCL_fixtures_clone)[65] <- "un25"
+colnames(UCL_fixtures_clone)[67] <- "un25odds"
+colnames(UCL_fixtures_clone)[68] <- "BTTSY"
+colnames(UCL_fixtures_clone)[69] <- "BTTSN"
+colnames(UCL_fixtures_clone)[70] <- "BTTSYodds"
+colnames(UCL_fixtures_clone)[71] <- "BTTSNodds"
 
-EFL_fixtures_clone <- EFL_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
-EFL_fixtures_clone$matchid <- paste(EFL_fixtures_clone$Hometeam,EFL_fixtures_clone$Awayteam,sep = '-')
+UCL_fixtures_clone <- UCL_fixtures_clone[,c(1,2,3,98,61,62,63,95,96,97,64,66,65,67,68,70,69,71,13,14,15,16,17,19,20,92)]
+UCL_fixtures_clone$matchid <- paste(UCL_fixtures_clone$Hometeam,UCL_fixtures_clone$Awayteam,sep = '-')
 ####################################################################################################################################################
 #all events
-EFL_fixtures_clone_final <- EFL_fixtures_clone[,-c(8,9,10,27)]
-EFL_fixtures_clone_final[,'sep'] <- ''
+UCL_fixtures_clone_final <- UCL_fixtures_clone[,-c(8,9,10,27)]
+UCL_fixtures_clone_final[,'sep'] <- ''
 
-efl_dmprediction <-  efl_picks[,c(4,5,6,7,8)]
-efl_dmprediction[,'sep2'] <- ''
+ucl_dmprediction <-  ucl_picks[,c(4,5,6,7,8)]
+ucl_dmprediction[,'sep2'] <- ''
 
-efl_avgyellow <- efl_picks[,c(9,10)]
-efl_avgyellow[,'sep3'] <- ''
+ucl_avgyellow <- ucl_picks[,c(9,10)]
+ucl_avgyellow[,'sep3'] <- ''
 
-efl_avgcorners <- efl_picks[,c(11,12)]
-efl_avgcorners[,'sep4'] <- ''
+ucl_avgcorners <- ucl_picks[,c(11,12)]
+ucl_avgcorners[,'sep4'] <- ''
 
-efl_goals <- EFL_fixtures[,c(10,11)]
-efl_goals$efl_xGH <- round(efl_goals$efl_xGH, digits = 2)
-efl_goals$efl_xGA <- round(efl_goals$efl_xGA, digits = 2)
-efl_goals$efl_TxG <- efl_goals$efl_xGH + efl_goals$efl_xGA
-efl_goals[,'sep5'] <- ''
+ucl_goals <- UCL_fixtures[,c(10,11)]
+ucl_goals$ucl_xGH <- round(ucl_goals$ucl_xGH, digits = 2)
+ucl_goals$ucl_xGA <- round(ucl_goals$ucl_xGA, digits = 2)
+ucl_goals$ucl_TxG <- ucl_goals$ucl_xGH + ucl_goals$ucl_xGA
+ucl_goals[,'sep5'] <- ''
 
-efl_shots <- EFL_fixtures_sot[,c(10,11)]
-efl_shots$efl_xHST <- round(efl_shots$efl_xHST, digits = 2)
-efl_shots$efl_xAST <- round(efl_shots$efl_xAST, digits = 2)
-efl_shots$TxSOT <- efl_shots$efl_xHST + efl_shots$efl_xAST
-efl_shots[,'sep6'] <- ''
+ucl_shots <- UCL_fixtures_sot[,c(10,11)]
+ucl_shots$ucl_xHST <- round(ucl_shots$ucl_xHST, digits = 2)
+ucl_shots$ucl_xAST <- round(ucl_shots$ucl_xAST, digits = 2)
+ucl_shots$TxSOT <- ucl_shots$ucl_xHST + ucl_shots$ucl_xAST
+ucl_shots[,'sep6'] <- ''
 
-efl_fouls <- EFL_fixtures_fo[,c(10,11)]
-efl_fouls$efl_xHF <- round(efl_fouls$efl_xHF, digits = 2)
-efl_fouls$efl_xAF <- round(efl_fouls$efl_xAF, digits = 2)
-efl_fouls$efl_TxF <- efl_fouls$efl_xHF + efl_fouls$efl_xAF
+ucl_fouls <- UCL_fixtures_fo[,c(10,11)]
+ucl_fouls$ucl_xHF <- round(ucl_fouls$ucl_xHF, digits = 2)
+ucl_fouls$ucl_xAF <- round(ucl_fouls$ucl_xAF, digits = 2)
+ucl_fouls$ucl_TxF <- ucl_fouls$ucl_xHF + ucl_fouls$ucl_xAF
 
-efl_ycpf <- efl_picks[,c(15,16)]
-efl_fouls <- cbind(efl_fouls,efl_ycpf)
-efl_fouls$HYCPF <- as.numeric(efl_fouls$HYCPF)
-efl_fouls$AYCPF <- as.numeric(efl_fouls$AYCPF)
-efl_fouls$x_hyc <- (efl_fouls$efl_xHF) * (efl_fouls$HYCPF)
-efl_fouls$x_ayc <- (efl_fouls$efl_xAF) * (efl_fouls$AYCPF)
-efl_fouls$x_TYC <- round((efl_fouls$x_hyc + efl_fouls$x_ayc),digits = 2)
-efl_fouls[,'sep7'] <- ''
+ucl_ycpf <- ucl_picks[,c(15,16)]
+ucl_fouls <- cbind(ucl_fouls,ucl_ycpf)
+ucl_fouls$HYCPF <- as.numeric(ucl_fouls$HYCPF)
+ucl_fouls$AYCPF <- as.numeric(ucl_fouls$AYCPF)
+ucl_fouls$x_hyc <- (ucl_fouls$ucl_xHF) * (ucl_fouls$HYCPF)
+ucl_fouls$x_ayc <- (ucl_fouls$ucl_xAF) * (ucl_fouls$AYCPF)
+ucl_fouls$x_TYC <- round((ucl_fouls$x_hyc + ucl_fouls$x_ayc),digits = 2)
+ucl_fouls[,'sep7'] <- ''
 
-efl_bookings <- EFL_fixtures_yc[,c(10,11)]
-efl_bookings$efl_xHYC <- round(efl_bookings$efl_xHYC, digits = 2)
-efl_bookings$efl_xAYC <- round(efl_bookings$efl_xAYC, digits = 2)
-efl_bookings$efl_TYcards <- efl_bookings$efl_xHYC + efl_bookings$efl_xAYC
-efl_bookings[,'sep8'] <- ''
+ucl_bookings <- UCL_fixtures_yc[,c(10,11)]
+ucl_bookings$ucl_xHYC <- round(ucl_bookings$ucl_xHYC, digits = 2)
+ucl_bookings$ucl_xAYC <- round(ucl_bookings$ucl_xAYC, digits = 2)
+ucl_bookings$ucl_TYcards <- ucl_bookings$ucl_xHYC + ucl_bookings$ucl_xAYC
+ucl_bookings[,'sep8'] <- ''
 
-efl_corners <- EFL_fixtures_co[,c(10,11)]
-efl_corners$efl_xHCOC <- round(efl_corners$efl_xHCOC, digits = 2)
-efl_corners$efl_xACOC <- round(efl_corners$efl_xACOC, digits = 2)
-efl_corners$efl_TCOs <- efl_corners$efl_xHCOC + efl_corners$efl_xACOC
-efl_corners[,'sep9'] <- ''
+ucl_corners <- UCL_fixtures_co[,c(10,11)]
+ucl_corners$ucl_xHCOC <- round(ucl_corners$ucl_xHCOC, digits = 2)
+ucl_corners$ucl_xACOC <- round(ucl_corners$ucl_xACOC, digits = 2)
+ucl_corners$ucl_TCOs <- ucl_corners$ucl_xHCOC + ucl_corners$ucl_xACOC
+ucl_corners[,'sep9'] <- ''
 
-efl_shotsconversion <- efl_picks[,c(13,14)]
-efl_shotsconversion <- cbind(efl_shotsconversion,efl_shots)
-efl_shotsconversion$HXSC <- as.numeric(efl_shotsconversion$HXSC)
-efl_shotsconversion$AXSC <- as.numeric(efl_shotsconversion$AXSC)
-efl_shotsconversion$efl_hXgoals <- round((efl_shotsconversion$HXSC * efl_shotsconversion$efl_xHST), digits = 2)
-efl_shotsconversion$efl_aXgoals <- round((efl_shotsconversion$AXSC * efl_shotsconversion$efl_xAST), digits = 2)
-efl_shotsconversion$Xgoals <- efl_shotsconversion$efl_hXgoals + efl_shotsconversion$efl_aXgoals
+ucl_shotsconversion <- ucl_picks[,c(13,14)]
+ucl_shotsconversion <- cbind(ucl_shotsconversion,ucl_shots)
+ucl_shotsconversion$HXSC <- as.numeric(ucl_shotsconversion$HXSC)
+ucl_shotsconversion$AXSC <- as.numeric(ucl_shotsconversion$AXSC)
+ucl_shotsconversion$ucl_hXgoals <- round((ucl_shotsconversion$HXSC * ucl_shotsconversion$ucl_xHST), digits = 2)
+ucl_shotsconversion$ucl_aXgoals <- round((ucl_shotsconversion$AXSC * ucl_shotsconversion$ucl_xAST), digits = 2)
+ucl_shotsconversion$Xgoals <- ucl_shotsconversion$ucl_hXgoals + ucl_shotsconversion$ucl_aXgoals
 options(java.parameters = "-Xmx4g")
-EFL_all <- cbind(EFL_fixtures_clone_final,efl_dmprediction,efl_avgyellow,efl_avgcorners,efl_goals,efl_shots,efl_fouls,efl_bookings,efl_corners,efl_shotsconversion)
-unlink('Divisions/EFL.xlsx')
-write.xlsx(EFL_all,'Divisions/EFL.xlsx', sheetName = "EFL_all", append = TRUE)
-write.xlsx(points_efl,'Divisions/EFL.xlsx', sheetName = "Table", append = TRUE)
-write.xlsx(efl_cornertotalsv2,'Divisions/EFL.xlsx', sheetName = "Cornertotals", append = TRUE)
-write.xlsx(efl_goaltotalsv2,'Divisions/EFL.xlsx', sheetName = "Goaltotals", append = TRUE)
-write.xlsx(efl_yellowtotalsv2,'Divisions/EFL.xlsx', sheetName = "Yellowtotals", append = TRUE)
+UCL_all <- cbind(UCL_fixtures_clone_final,ucl_dmprediction,ucl_avgyellow,ucl_avgcorners,ucl_goals,ucl_shots,ucl_fouls,ucl_bookings,ucl_corners,ucl_shotsconversion)
+unlink('Divisions/UCL.xlsx')
+write.xlsx(UCL_all,'Divisions/UCL.xlsx', sheetName = "UCL_all", append = TRUE)
+write.xlsx(points_ucl,'Divisions/UCL.xlsx', sheetName = "Table", append = TRUE)
+write.xlsx(ucl_cornertotalsv2,'Divisions/UCL.xlsx', sheetName = "Cornertotals", append = TRUE)
+write.xlsx(ucl_goaltotalsv2,'Divisions/UCL.xlsx', sheetName = "Goaltotals", append = TRUE)
+write.xlsx(ucl_yellowtotalsv2,'Divisions/UCL.xlsx', sheetName = "Yellowtotals", append = TRUE)
 
 
-##write.csv(EFL_fixtures[,c(1,2,3,4,5,6)],'SP2_schedule20232024.csv')
+##write.csv(UCL_fixtures[,c(1,2,3,4,5,6)],'SP2_schedule20232024.csv')

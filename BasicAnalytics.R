@@ -1419,11 +1419,51 @@ t1_teams
 superlig_match_fixtures$HomeTeam <- mgsub(superlig_match_fixtures$HomeTeam,c("Ã‡aykur Rizespor","Adana Demirspor","EyÃ¼pspo","FenerbahÃ§e","GÃ¶ztepe","Istanbul Basaksehir"),c("Rizespor","Ad. Demirspor","Eyupspor","Fenerbahce","Goztep","Buyuksehyr"))
 superlig_match_fixtures$AwayTeam <- mgsub(superlig_match_fixtures$AwayTeam,c("Ã‡aykur Rizespor","Adana Demirspor","EyÃ¼pspo","FenerbahÃ§e","GÃ¶ztepe","Istanbul Basaksehir"),c("Rizespor","Ad. Demirspor","Eyupspor","Fenerbahce","Goztep","Buyuksehyr"))
 write.csv(superlig_match_fixtures,'SUPERLIGFIXTURES.csv')
+#####################################################################################################################################################################################
+#####################################################################################################################################################################################
+#collect 20232024 summary data
 
+sc0_match_urls <- fb_match_urls(country = "SCO", gender = "M", season_end_year = 2024, tier="1st")
+length(sc0_match_urls)
+write.xlsx(sc0_match_urls,"sc0_match_urls20232024.xlsx")
+sc0_summary <- fb_match_summary(match_url = sc0_match_urls)
 
-View(superlig_match_fixtures)
+sc0_summary$Home_Team <- mgsub(sc0_summary$Home_Team,c("Heart of Midlothian"),c("Hearts"))
+sc0_summary$Away_Team <- mgsub(sc0_summary$Away_Team,c("Heart of Midlothian"),c("Hearts"))
 
+sc0_summary$matchid <- paste(sc0_summary$Match_Date,sc0_summary$Home_Team,sc0_summary$Away_Team,sep = "-")
 
+SC0_spread <- subset(allteams20232024,Div =="SC0")
+SC0_spread$matchid <- paste(SC0_spread$Date,SC0_spread$HomeTeam,SC0_spread$AwayTeam,sep = "-")
 
+options(java.parameters = "-Xmx4g")
+write.xlsx(sc0_summary,'sc0_summary20232024.xlsx')
 
+library('sqldf')
+require('RH2')
+
+Home_first_GoalTime <- c()
+Home_first_GoalTime <- sqldf("SELECT sc0_summary.matchid,MIN(sc0_summary.Event_Time) AS Home_first_GoalTime FROM sc0_summary WHERE sc0_summary.Event_Type = 'Goal' AND sc0_summary.Home_Away = 'Home' GROUP BY sc0_summary.matchid")
+SC0_spread <- dplyr::left_join(SC0_spread,Home_first_GoalTime)
+SC0_spread <- SC0_spread %>% replace(is.na(.),0)
+
+Away_first_GoalTime <- c()
+Away_first_GoalTime <- sqldf("SELECT sc0_summary.matchid,MIN(sc0_summary.Event_Time) AS Away_first_GoalTime FROM sc0_summary WHERE sc0_summary.Event_Type = 'Goal' AND sc0_summary.Home_Away = 'Away' GROUP BY sc0_summary.matchid ")
+SC0_spread <- dplyr::left_join(SC0_spread,Away_first_GoalTime)
+SC0_spread <- SC0_spread %>% replace(is.na(.),0)
+
+SC0_spread$match_First_GoalTime <- ifelse(SC0_spread$Home_first_GoalTime == '0' | SC0_spread$Away_first_GoalTime == '0',pmax(SC0_spread$Home_first_GoalTime,SC0_spread$Away_first_GoalTime),pmin(SC0_spread$Home_first_GoalTime,SC0_spread$Away_first_GoalTime))
+
+View(SC0_spread)
+sc0_first_matchgoal <- SC0_spread[,c(37,38,39,40)]
+write.xlsx(sc0_first_matchgoal,'sc0_first_matchgoal.xlsx')
+#######################################################################################
+#######################################################################################
+other_first_matchgoal <- rbind(b1_first_matchgoal,d2_first_matchgoal,e1_first_matchgoal,sc0_first_matchgoal)
+OTHER_analytics <- readxl::read_excel('../Advancedmetrics/OTHERLEAGUES20232024.xlsx')
+OTHER_analytics <- OTHER_analytics[,-1]
+OTHER_analytics <- dplyr::left_join(OTHER_analytics,other_first_matchgoal)
+write.xlsx(OTHER_analytics,"OTHERLEAGUES20232024.xlsx")
+
+View(OTHER_analytics)
 

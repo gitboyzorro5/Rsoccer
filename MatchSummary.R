@@ -9,10 +9,10 @@ Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 options(java.parameters = "-Xmx4g")
 
 ###B1
-b1_match_results <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2024, tier="1st")
+b1_match_results <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2025, tier="1st")
 unlink('b1_match_results.xlsx')
 write.xlsx(b1_match_results,"b1_match_results.xlsx")
-b1_urls <- fb_match_urls(country = "BEL", gender = "M", season_end_year = 2024, tier="1st")
+b1_urls <- fb_match_urls(country = "BEL", gender = "M", season_end_year = 2025, tier="1st")
 unlink('b1_urls.xlsx')
 write.xlsx(b1_urls,"b1_urls.xlsx")
 
@@ -23,29 +23,29 @@ write.xlsx(b1_match_sumary,"b1_match_summary.xlsx")
 b1_summary <- readxl::read_excel('b1_match_summary.xlsx')
 b1_summary <- b1_summary[,c(-1)]
 
-b1_summary$Home_Team <- mgsub(b1_summary$Home_Team,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise"))
-b1_summary$Away_Team <- mgsub(b1_summary$Away_Team,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise"))
+b1_summary$Home_Team <- mgsub(b1_summary$Home_Team,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG","Beerschot Wilrijk"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise","Beerschot VA"))
+b1_summary$Away_Team <- mgsub(b1_summary$Away_Team,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG","Beerschot Wilrijk"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise","Beerschot VA"))
 
 
 
 b1_summary$matchid <- paste(b1_summary$Match_Date,b1_summary$Home_Team,b1_summary$Away_Team,sep = "-")
-B1_spread <- subset(allteams20232024,Div =="B1")
+B1_spread <- subset(allteams20242025,Div =="B1")
 B1_spread$matchid <- paste(B1_spread$Date,B1_spread$HomeTeam,B1_spread$AwayTeam,sep = "-")
 #referees
-B1_referees <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2024, tier="1st")
+B1_referees <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2025, tier="1st")
 B1_referees <- B1_referees[,c(8,10,13,18)]
 
 #rename column names
 names(B1_referees)[2] <- paste("HomeTeam")
 names(B1_referees)[3] <- paste("AwayTeam")
 
-B1_referees$HomeTeam <- mgsub(B1_referees$HomeTeam,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise"))
-B1_referees$AwayTeam <- mgsub(B1_referees$AwayTeam,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise"))
+B1_referees$HomeTeam <- mgsub(B1_referees$HomeTeam,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG","Beerschot Wilrijk"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise","Beerschot VA"))
+B1_referees$AwayTeam <- mgsub(B1_referees$AwayTeam,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG","Beerschot Wilrijk"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise","Beerschot VA"))
 B1_referees$matchid <- paste(B1_referees$Date,B1_referees$HomeTeam,B1_referees$AwayTeam,sep = "-")
 B1_spread <- dplyr::left_join(B1_spread,B1_referees)
 
 B1_spread$n <- B1_spread$TG
-View(B1_spread)
+
 library('sqldf')
 require('RH2')
 
@@ -61,6 +61,19 @@ Total_Goalmins <- c()
 Total_Goalmins <- sqldf("SELECT b1_summary.matchid,SUM(Event_Time) AS Total_Goalmins FROM b1_summary INNER JOIN B1_spread ON b1_summary.matchid = B1_spread.matchid WHERE b1_summary.Event_Type = 'Goal' OR b1_summary.Event_Type = 'Penalty' GROUP BY b1_summary.matchid")
 B1_spread <- dplyr::left_join(B1_spread,Total_Goalmins)
 B1_spread <- B1_spread %>% replace(is.na(.),0)
+
+Home_first_GoalTime <- c()
+Home_first_GoalTime <- sqldf("SELECT b1_summary.matchid,MIN(b1_summary.Event_Time) AS Home_first_GoalTime FROM b1_summary WHERE b1_summary.Event_Type = 'Goal' AND b1_summary.Home_Away = 'Home' GROUP BY b1_summary.matchid")
+B1_spread <- dplyr::left_join(B1_spread,Home_first_GoalTime)
+B1_spread <- B1_spread %>% replace(is.na(.),0)
+
+Away_first_GoalTime <- c()
+Away_first_GoalTime <- sqldf("SELECT b1_summary.matchid,MIN(b1_summary.Event_Time) AS Away_first_GoalTime FROM b1_summary WHERE b1_summary.Event_Type = 'Goal' AND b1_summary.Home_Away = 'Away' GROUP BY b1_summary.matchid ")
+B1_spread <- dplyr::left_join(B1_spread,Away_first_GoalTime)
+B1_spread <- B1_spread %>% replace(is.na(.),0)
+
+B1_spread$match_First_GoalTime <- ifelse(B1_spread$Home_first_GoalTime == '0' | B1_spread$Away_first_GoalTime == '0',pmax(B1_spread$Home_first_GoalTime,B1_spread$Away_first_GoalTime),pmin(B1_spread$Home_first_GoalTime,B1_spread$Away_first_GoalTime))
+
 #Bookings
 B1_spread$Bookings <- (B1_spread$HY *10 + B1_spread$HR *25) + (B1_spread$AY*10 + B1_spread$AR*25)
 #CrossBookings
@@ -184,16 +197,16 @@ B1_spread$MatchPerfomance <- B1_spread$TG *15 + B1_spread$TY *5 + B1_spread$TR *
 unlink('B1_SPREAD.xlsx')
 write.xlsx(B1_spread,'B1_SPREAD.xlsx')
 #Referee
-B1_refereestats <- sqldf("SELECT Referee,COUNT(*),SUM(Bookings),AVG(Bookings),SUM(CrossBookings),AVG(CrossBookings),SUM(MultiBookings),AVG(MultiBookings),AVG(Home_first_YCTime),AVG(Away_first_YCTime),AVG(Match_first_YCTime) FROM B1_spread GROUP BY Referee ORDER BY COUNT(*) DESC")
+B1_refereestats <- sqldf("SELECT Referee,COUNT(*),SUM(Bookings),AVG(Bookings),SUM(CrossBookings),AVG(CrossBookings),SUM(MultiBookings),AVG(MultiBookings),AVG(Home_first_YCTime),AVG(Away_first_YCTime),AVG(Match_first_YCTime),AVG(TF),SUM(Bookings)/SUM(TF) FROM B1_spread GROUP BY Referee ORDER BY COUNT(*) DESC")
 unlink('B1_refereestats.xlsx')
 write.xlsx(B1_refereestats,'B1_refereestats.xlsx')
 ####################################################################################################################################################################################
 ####################################################################################################################################################################################
 ###D2
-d2_match_results <- fb_match_results(country = "GER", gender = "M", season_end_year = 2024, tier="2nd")
+d2_match_results <- fb_match_results(country = "GER", gender = "M", season_end_year = 2025, tier="2nd")
 unlink('d2_match_results.xlsx')
 write.xlsx(d2_match_results,"d2_match_results.xlsx")
-d2_urls <- fb_match_urls(country = "GER", gender = "M", season_end_year = 2024, tier="2nd")
+d2_urls <- fb_match_urls(country = "GER", gender = "M", season_end_year = 2025, tier="2nd")
 unlink('d2_urls.xlsx')
 write.xlsx(d2_urls,"d2_urls.xlsx")
 
@@ -203,26 +216,25 @@ write.xlsx(d2_match_sumary,"d2_match_summary.xlsx")
 
 d2_summary <- readxl::read_excel('d2_match_summary.xlsx')
 d2_summary <- d2_summary[,c(-1)]
-d2_teams
-sort(unique(d2_summary$Home_Team))
-d2_summary$Home_Team <- mgsub(d2_summary$Home_Team,c("Düsseldorf","Eintracht Braunschweig","Hamburger SV","Hannover 96","Hertha BSC","Karlsruher","Nürnberg","Osnabrück","Paderborn 07","St. Pauli","Wehen Wiesbaden","Greuther Fürth"),c("Fortuna Dusseldorf","Braunschweig","Hamburg","Hannover","Hertha","Karlsruhe","Nurnberg","Osnabruck","Paderborn","St Pauli","Wehen","Greuther Furth"))
-d2_summary$Away_Team <- mgsub(d2_summary$Away_Team,c("Düsseldorf","Eintracht Braunschweig","Hamburger SV","Hannover 96","Hertha BSC","Karlsruher","Nürnberg","Osnabrück","Paderborn 07","St. Pauli","Wehen Wiesbaden","Greuther Fürth"),c("Fortuna Dusseldorf","Braunschweig","Hamburg","Hannover","Hertha","Karlsruhe","Nurnberg","Osnabruck","Paderborn","St Pauli","Wehen","Greuther Furth"))
+
+d2_summary$Home_Team <- mgsub(d2_summary$Home_Team,c("Düsseldorf","Eintracht Braunschweig","Hamburger SV","Hannover 96","Hertha BSC","Karlsruher","Nürnberg","Köln","Paderborn 07","Jahn Regensburg","Preußen Münster","Greuther Fürth","Darmstadt 98"),c("Fortuna Dusseldorf","Braunschweig","Hamburg","Hannover","Hertha","Karlsruhe","Nurnberg","FC Koln","Paderborn","Regensburg","PreuÃŸen MÃ¼nster","Greuther Furth","Darmstadt"))
+d2_summary$Away_Team <- mgsub(d2_summary$Away_Team,c("Düsseldorf","Eintracht Braunschweig","Hamburger SV","Hannover 96","Hertha BSC","Karlsruher","Nürnberg","Köln","Paderborn 07","Jahn Regensburg","Preußen Münster","Greuther Fürth","Darmstadt 98"),c("Fortuna Dusseldorf","Braunschweig","Hamburg","Hannover","Hertha","Karlsruhe","Nurnberg","FC Koln","Paderborn","Regensburg","PreuÃŸen MÃ¼nster","Greuther Furth","Darmstadt"))
 
 
 
 d2_summary$matchid <- paste(d2_summary$Match_Date,d2_summary$Home_Team,d2_summary$Away_Team,sep = "-")
-D2_spread <- subset(allteams20232024,Div =="D2")
+D2_spread <- subset(allteams20242025,Div =="D2")
 D2_spread$matchid <- paste(D2_spread$Date,D2_spread$HomeTeam,D2_spread$AwayTeam,sep = "-")
 #referees
-D2_referees <- fb_match_results(country = "GER", gender = "M", season_end_year = 2024, tier="2nd")
+D2_referees <- fb_match_results(country = "GER", gender = "M", season_end_year = 2025, tier="2nd")
 D2_referees <- D2_referees[,c(8,10,13,18)]
 
 #rename column names
 names(D2_referees)[2] <- paste("HomeTeam")
 names(D2_referees)[3] <- paste("AwayTeam")
 
-D2_referees$HomeTeam <- mgsub(D2_referees$HomeTeam,c("Düsseldorf","Eintracht Braunschweig","Hamburger SV","Hannover 96","Hertha BSC","Karlsruher","Nürnberg","Osnabrück","Paderborn 07","St. Pauli","Wehen Wiesbaden","Greuther Fürth"),c("Fortuna Dusseldorf","Braunschweig","Hamburg","Hannover","Hertha","Karlsruhe","Nurnberg","Osnabruck","Paderborn","St Pauli","Wehen","Greuther Furth"))
-D2_referees$AwayTeam <- mgsub(D2_referees$AwayTeam,c("Düsseldorf","Eintracht Braunschweig","Hamburger SV","Hannover 96","Hertha BSC","Karlsruher","Nürnberg","Osnabrück","Paderborn 07","St. Pauli","Wehen Wiesbaden","Greuther Fürth"),c("Fortuna Dusseldorf","Braunschweig","Hamburg","Hannover","Hertha","Karlsruhe","Nurnberg","Osnabruck","Paderborn","St Pauli","Wehen","Greuther Furth"))
+D2_referees$HomeTeam <- mgsub(D2_referees$HomeTeam,c("Düsseldorf","Eintracht Braunschweig","Hamburger SV","Hannover 96","Hertha BSC","Karlsruher","Nürnberg","Köln","Paderborn 07","Jahn Regensburg","Preußen Münster","Greuther Fürth","Darmstadt 98"),c("Fortuna Dusseldorf","Braunschweig","Hamburg","Hannover","Hertha","Karlsruhe","Nurnberg","FC Koln","Paderborn","Regensburg","PreuÃŸen MÃ¼nster","Greuther Furth","Darmstadt"))
+D2_referees$AwayTeam <- mgsub(D2_referees$AwayTeam,c("Düsseldorf","Eintracht Braunschweig","Hamburger SV","Hannover 96","Hertha BSC","Karlsruher","Nürnberg","Köln","Paderborn 07","Jahn Regensburg","Preußen Münster","Greuther Fürth","Darmstadt 98"),c("Fortuna Dusseldorf","Braunschweig","Hamburg","Hannover","Hertha","Karlsruhe","Nurnberg","FC Koln","Paderborn","Regensburg","PreuÃŸen MÃ¼nster","Greuther Furth","Darmstadt"))
 D2_referees$matchid <- paste(D2_referees$Date,D2_referees$HomeTeam,D2_referees$AwayTeam,sep = "-")
 D2_spread <- dplyr::left_join(D2_spread,D2_referees)
 
@@ -243,6 +255,19 @@ Total_Goalmins <- c()
 Total_Goalmins <- sqldf("SELECT d2_summary.matchid,SUM(Event_Time) AS Total_Goalmins FROM d2_summary INNER JOIN D2_spread ON d2_summary.matchid = D2_spread.matchid WHERE d2_summary.Event_Type = 'Goal' OR d2_summary.Event_Type = 'Penalty' GROUP BY d2_summary.matchid")
 D2_spread <- dplyr::left_join(D2_spread,Total_Goalmins)
 D2_spread <- D2_spread %>% replace(is.na(.),0)
+
+Home_first_GoalTime <- c()
+Home_first_GoalTime <- sqldf("SELECT d2_summary.matchid,MIN(d2_summary.Event_Time) AS Home_first_GoalTime FROM d2_summary WHERE d2_summary.Event_Type = 'Goal' AND d2_summary.Home_Away = 'Home' GROUP BY d2_summary.matchid")
+D2_spread <- dplyr::left_join(D2_spread,Home_first_GoalTime)
+D2_spread <- D2_spread %>% replace(is.na(.),0)
+
+Away_first_GoalTime <- c()
+Away_first_GoalTime <- sqldf("SELECT d2_summary.matchid,MIN(d2_summary.Event_Time) AS Away_first_GoalTime FROM d2_summary WHERE d2_summary.Event_Type = 'Goal' AND d2_summary.Home_Away = 'Away' GROUP BY d2_summary.matchid ")
+D2_spread <- dplyr::left_join(D2_spread,Away_first_GoalTime)
+D2_spread <- D2_spread %>% replace(is.na(.),0)
+
+D2_spread$match_First_GoalTime <- ifelse(D2_spread$Home_first_GoalTime == '0' | D2_spread$Away_first_GoalTime == '0',pmax(D2_spread$Home_first_GoalTime,D2_spread$Away_first_GoalTime),pmin(D2_spread$Home_first_GoalTime,D2_spread$Away_first_GoalTime))
+
 #Bookings
 D2_spread$Bookings <- (D2_spread$HY *10 + D2_spread$HR *25) + (D2_spread$AY*10 + D2_spread$AR*25)
 #CrossBookings
@@ -366,16 +391,16 @@ D2_spread$MatchPerfomance <- D2_spread$TG *15 + D2_spread$TY *5 + D2_spread$TR *
 unlink('D2_SPREAD.xlsx')
 write.xlsx(D2_spread,'D2_SPREAD.xlsx')
 #Referee
-D2_refereestats <- sqldf("SELECT Referee,COUNT(*),SUM(Bookings),AVG(Bookings),SUM(CrossBookings),AVG(CrossBookings),SUM(MultiBookings),AVG(MultiBookings),AVG(Home_first_YCTime),AVG(Away_first_YCTime),AVG(Match_first_YCTime) FROM D2_spread GROUP BY Referee ORDER BY COUNT(*) DESC")
+D2_refereestats <- sqldf("SELECT Referee,COUNT(*),SUM(Bookings),AVG(Bookings),SUM(CrossBookings),AVG(CrossBookings),SUM(MultiBookings),AVG(MultiBookings),AVG(Home_first_YCTime),AVG(Away_first_YCTime),AVG(Match_first_YCTime),AVG(TF),SUM(Bookings)/SUM(TF) FROM D2_spread GROUP BY Referee ORDER BY COUNT(*) DESC")
 unlink('D2_refereestats.xlsx')
 write.xlsx(D2_refereestats,'D2_refereestats.xlsx')
 ###########################################################################################################################################################
 ###########################################################################################################################################################
 ###E1
-e1_match_results <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2024, tier="2nd")
+e1_match_results <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2025, tier="2nd")
 unlink('e1_match_results.xlsx')
 write.xlsx(e1_match_results,"e1_match_results.xlsx")
-e1_urls <- fb_match_urls(country = "ENG", gender = "M", season_end_year = 2024, tier="2nd")
+e1_urls <- fb_match_urls(country = "ENG", gender = "M", season_end_year = 2025, tier="2nd")
 unlink('e1_urls.xlsx')
 write.xlsx(e1_urls,"e1_urls.xlsx")
 
@@ -385,18 +410,17 @@ write.xlsx(e1_match_sumary,"e1_match_summary.xlsx")
 
 e1_summary <- readxl::read_excel('e1_match_summary.xlsx')
 e1_summary <- e1_summary[,c(-1)]
-sort(unique(e1_summary$Home_Team))
-e1_teams
+
 e1_summary$Home_Team <- mgsub(e1_summary$Home_Team,c("Cardiff City","Coventry City","Derby County","Hull City","Leeds United","Luton Town","Norwich City","Oxford United","Plymouth Argyle","Sheffield Utd","Stoke City","Swansea City","Birmingham City","Blackburn Rovers","Huddersfield Town","Ipswich Town","Leicester City","Preston North End","Queens Park Rangers","Rotherham United","Sheffield Wednesday","West Bromwich Albion"),c("Cardiff","Coventry","Derby","Hull","Leeds","Luton","Norwich","Oxford","Plymouth","Sheffield United","Stoke","Swansea","Birmingham","Blackburn","Huddersfield","Ipswich","Leicester","Preston","QPR","Rotherham","Sheffield Weds","West Brom"))
 e1_summary$Away_Team <- mgsub(e1_summary$Away_Team,c("Cardiff City","Coventry City","Derby County","Hull City","Leeds United","Luton Town","Norwich City","Oxford United","Plymouth Argyle","Sheffield Utd","Stoke City","Swansea City","Birmingham City","Blackburn Rovers","Huddersfield Town","Ipswich Town","Leicester City","Preston North End","Queens Park Rangers","Rotherham United","Sheffield Wednesday","West Bromwich Albion"),c("Cardiff","Coventry","Derby","Hull","Leeds","Luton","Norwich","Oxford","Plymouth","Sheffield United","Stoke","Swansea","Birmingham","Blackburn","Huddersfield","Ipswich","Leicester","Preston","QPR","Rotherham","Sheffield Weds","West Brom"))
 
 
 
 e1_summary$matchid <- paste(e1_summary$Match_Date,e1_summary$Home_Team,e1_summary$Away_Team,sep = "-")
-E1_spread <- subset(allteams20232024,Div =="E1")
+E1_spread <- subset(allteams20242025,Div =="E1")
 E1_spread$matchid <- paste(E1_spread$Date,E1_spread$HomeTeam,E1_spread$AwayTeam,sep = "-")
 #referees
-E1_referees <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2024, tier="2nd")
+E1_referees <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2025, tier="2nd")
 E1_referees <- E1_referees[,c(8,10,13,18)]
 View(E1_referees)
 #rename column names
@@ -425,6 +449,19 @@ Total_Goalmins <- c()
 Total_Goalmins <- sqldf("SELECT e1_summary.matchid,SUM(Event_Time) AS Total_Goalmins FROM e1_summary INNER JOIN E1_spread ON e1_summary.matchid = E1_spread.matchid WHERE e1_summary.Event_Type = 'Goal' OR e1_summary.Event_Type = 'Penalty' GROUP BY e1_summary.matchid")
 E1_spread <- dplyr::left_join(E1_spread,Total_Goalmins)
 E1_spread <- E1_spread %>% replace(is.na(.),0)
+
+Home_first_GoalTime <- c()
+Home_first_GoalTime <- sqldf("SELECT e1_summary.matchid,MIN(e1_summary.Event_Time) AS Home_first_GoalTime FROM e1_summary WHERE e1_summary.Event_Type = 'Goal' AND e1_summary.Home_Away = 'Home' GROUP BY e1_summary.matchid")
+E1_spread <- dplyr::left_join(E1_spread,Home_first_GoalTime)
+E1_spread <- E1_spread %>% replace(is.na(.),0)
+
+Away_first_GoalTime <- c()
+Away_first_GoalTime <- sqldf("SELECT e1_summary.matchid,MIN(e1_summary.Event_Time) AS Away_first_GoalTime FROM e1_summary WHERE e1_summary.Event_Type = 'Goal' AND e1_summary.Home_Away = 'Away' GROUP BY e1_summary.matchid ")
+E1_spread <- dplyr::left_join(E1_spread,Away_first_GoalTime)
+E1_spread <- E1_spread %>% replace(is.na(.),0)
+
+E1_spread$match_First_GoalTime <- ifelse(E1_spread$Home_first_GoalTime == '0' | E1_spread$Away_first_GoalTime == '0',pmax(E1_spread$Home_first_GoalTime,E1_spread$Away_first_GoalTime),pmin(E1_spread$Home_first_GoalTime,E1_spread$Away_first_GoalTime))
+
 #Bookings
 E1_spread$Bookings <- (E1_spread$HY *10 + E1_spread$HR *25) + (E1_spread$AY*10 + E1_spread$AR*25)
 #CrossBookings
@@ -548,7 +585,7 @@ E1_spread$MatchPerfomance <- E1_spread$TG *15 + E1_spread$TY *5 + E1_spread$TR *
 unlink('E1_SPREAD.xlsx')
 write.xlsx(E1_spread,'E1_SPREAD.xlsx')
 #Referee
-E1_refereestats <- sqldf("SELECT Referee,COUNT(*),SUM(Bookings),AVG(Bookings),SUM(CrossBookings),AVG(CrossBookings),SUM(MultiBookings),AVG(MultiBookings),AVG(Home_first_YCTime),AVG(Away_first_YCTime),AVG(Match_first_YCTime) FROM E1_spread GROUP BY Referee ORDER BY COUNT(*) DESC")
+E1_refereestats <- sqldf("SELECT Referee,COUNT(*),SUM(Bookings),AVG(Bookings),SUM(CrossBookings),AVG(CrossBookings),SUM(MultiBookings),AVG(MultiBookings),AVG(Home_first_YCTime),AVG(Away_first_YCTime),AVG(Match_first_YCTime),AVG(TF),SUM(Bookings)/SUM(TF) FROM E1_spread GROUP BY Referee ORDER BY COUNT(*) DESC")
 unlink('E1_refereestats.xlsx')
 write.xlsx(E1_refereestats,'E1_refereestats.xlsx')
 ###############################################################################################################################################################################
@@ -575,7 +612,7 @@ write.xlsx(E1_refereestats,'E1_refereestats.xlsx')
 #
 #
 # p1_summary$matchid <- paste(p1_summary$Match_Date,p1_summary$Home_Team,p1_summary$Away_Team,sep = "-")
-# P1_spread <- subset(allteams20232024,Div =="P1")
+# P1_spread <- subset(allteams20242025,Div =="P1")
 # P1_spread$matchid <- paste(P1_spread$Date,P1_spread$HomeTeam,P1_spread$AwayTeam,sep = "-")
 # #referees
 # P1_referees <- fb_match_results(country = "POR", gender = "M", season_end_year = 2024, tier="1st")
@@ -737,10 +774,10 @@ write.xlsx(E1_refereestats,'E1_refereestats.xlsx')
 #######
 #SC0  #
 #######
-sc0_match_results <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2024, tier="1st")
+sc0_match_results <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2025, tier="1st")
 unlink('sc0_match_results.xlsx')
 write.xlsx(sc0_match_results,"sc0_match_results.xlsx")
-sc0_urls <- fb_match_urls(country = "SCO", gender = "M", season_end_year = 2024, tier="1st")
+sc0_urls <- fb_match_urls(country = "SCO", gender = "M", season_end_year = 2025, tier="1st")
 unlink('sc0_urls.xlsx')
 write.xlsx(sc0_urls,"sc0_urls.xlsx")
 
@@ -751,17 +788,14 @@ write.xlsx(sc0_match_sumary,"sc0_match_summary.xlsx")
 sc0_summary <- readxl::read_excel('sc0_match_summary.xlsx')
 sc0_summary <- sc0_summary[,c(-1)]
 
-
 sc0_summary$Home_Team <- mgsub(sc0_summary$Home_Team,c("Heart of Midlothian"),c("Hearts"))
 sc0_summary$Away_Team <- mgsub(sc0_summary$Away_Team,c("Heart of Midlothian"),c("Hearts"))
 
-
-
 sc0_summary$matchid <- paste(sc0_summary$Match_Date,sc0_summary$Home_Team,sc0_summary$Away_Team,sep = "-")
-SC0_spread <- subset(allteams20232024,Div =="SC0")
+SC0_spread <- subset(allteams20242025,Div =="SC0")
 SC0_spread$matchid <- paste(SC0_spread$Date,SC0_spread$HomeTeam,SC0_spread$AwayTeam,sep = "-")
 #referees
-SC0_referees <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2024, tier="1st")
+SC0_referees <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2025, tier="1st")
 SC0_referees <- SC0_referees[,c(8,10,12,16)]
 
 #rename column names
@@ -774,7 +808,7 @@ SC0_referees$matchid <- paste(SC0_referees$Date,SC0_referees$HomeTeam,SC0_refere
 SC0_spread <- dplyr::left_join(SC0_spread,SC0_referees)
 
 SC0_spread$n <- SC0_spread$TG
-View(SC0_spread)
+
 library('sqldf')
 require('RH2')
 
@@ -790,6 +824,19 @@ Total_Goalmins <- c()
 Total_Goalmins <- sqldf("SELECT sc0_summary.matchid,SUM(Event_Time) AS Total_Goalmins FROM sc0_summary INNER JOIN SC0_spread ON sc0_summary.matchid = SC0_spread.matchid WHERE sc0_summary.Event_Type = 'Goal' OR sc0_summary.Event_Type = 'Penalty' GROUP BY sc0_summary.matchid")
 SC0_spread <- dplyr::left_join(SC0_spread,Total_Goalmins)
 SC0_spread <- SC0_spread %>% replace(is.na(.),0)
+
+Home_first_GoalTime <- c()
+Home_first_GoalTime <- sqldf("SELECT sc0_summary.matchid,MIN(sc0_summary.Event_Time) AS Home_first_GoalTime FROM sc0_summary WHERE sc0_summary.Event_Type = 'Goal' AND sc0_summary.Home_Away = 'Home' GROUP BY sc0_summary.matchid")
+SC0_spread <- dplyr::left_join(SC0_spread,Home_first_GoalTime)
+SC0_spread <- SC0_spread %>% replace(is.na(.),0)
+
+Away_first_GoalTime <- c()
+Away_first_GoalTime <- sqldf("SELECT sc0_summary.matchid,MIN(sc0_summary.Event_Time) AS Away_first_GoalTime FROM sc0_summary WHERE sc0_summary.Event_Type = 'Goal' AND sc0_summary.Home_Away = 'Away' GROUP BY sc0_summary.matchid ")
+SC0_spread <- dplyr::left_join(SC0_spread,Away_first_GoalTime)
+SC0_spread <- SC0_spread %>% replace(is.na(.),0)
+
+SC0_spread$match_First_GoalTime <- ifelse(SC0_spread$Home_first_GoalTime == '0' | SC0_spread$Away_first_GoalTime == '0',pmax(SC0_spread$Home_first_GoalTime,SC0_spread$Away_first_GoalTime),pmin(SC0_spread$Home_first_GoalTime,SC0_spread$Away_first_GoalTime))
+
 #Bookings
 SC0_spread$Bookings <- (SC0_spread$HY *10 + SC0_spread$HR *25) + (SC0_spread$AY*10 + SC0_spread$AR*25)
 #CrossBookings
@@ -913,7 +960,7 @@ SC0_spread$MatchPerfomance <- SC0_spread$TG *15 + SC0_spread$TY *5 + SC0_spread$
 unlink('SC0_SPREAD.xlsx')
 write.xlsx(SC0_spread,'SC0_SPREAD.xlsx')
 #Referee
-SC0_refereestats <- sqldf("SELECT Referee,COUNT(*),SUM(Bookings),AVG(Bookings),SUM(CrossBookings),AVG(CrossBookings),SUM(MultiBookings),AVG(MultiBookings),AVG(Home_first_YCTime),AVG(Away_first_YCTime),AVG(Match_first_YCTime) FROM SC0_spread GROUP BY Referee ORDER BY COUNT(*) DESC")
+SC0_refereestats <- sqldf("SELECT Referee,COUNT(*),SUM(Bookings),AVG(Bookings),SUM(CrossBookings),AVG(CrossBookings),SUM(MultiBookings),AVG(MultiBookings),AVG(Home_first_YCTime),AVG(Away_first_YCTime),AVG(Match_first_YCTime),AVG(TF),SUM(Bookings)/SUM(TF) FROM SC0_spread GROUP BY Referee ORDER BY COUNT(*) DESC")
 unlink('SC0_refereestats.xlsx')
 write.xlsx(SC0_refereestats,'SC0_refereestats.xlsx')
 ################################################################################################################################################################################
@@ -940,7 +987,7 @@ write.xlsx(SC0_refereestats,'SC0_refereestats.xlsx')
 #
 #
 # t1_summary$matchid <- paste(t1_summary$Match_Date,t1_summary$Home_Team,t1_summary$Away_Team,sep = "-")
-# T1_spread <- subset(allteams20232024,Div =="T1")
+# T1_spread <- subset(allteams20242025,Div =="T1")
 # T1_spread$matchid <- paste(T1_spread$Date,T1_spread$HomeTeam,T1_spread$AwayTeam,sep = "-")
 # #referees
 # T1_referees <- fb_match_results(country = "TUR", gender = "M", season_end_year = 2024, tier="1st")

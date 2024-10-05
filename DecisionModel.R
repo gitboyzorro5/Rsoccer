@@ -6139,7 +6139,7 @@ t1_picks
 #end of T1
 ############################################################################################
 #combine picks from divisions
-allteams20232024picks <- rbind(b1_picks,d1_picks,d2_picks,e0_picks,e1_picks,e2_picks,e3_picks,ec_picks,f1_picks,f2_picks,g1_picks,i1_picks,i2_picks,n1_picks,p1_picks,sp1_picks,sp2_picks,sc0_picks,sc1_picks,sc2_picks,sc3_picks,t1_picks)
+allteams20242025picks <- rbind(b1_picks,d1_picks,d2_picks,e0_picks,e1_picks,e2_picks,e3_picks,ec_picks,f1_picks,f2_picks,g1_picks,i1_picks,i2_picks,n1_picks,p1_picks,sp1_picks,sp2_picks,sc0_picks,sc1_picks,sc2_picks,sc3_picks,t1_picks)
 #join the data
 #######myodds file##########
 #myodds_fixtures <- readxl::read_excel('../FDAS/myodds_20222023.xlsx', sheet = '3way')

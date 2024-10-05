@@ -687,11 +687,11 @@ colnames(SP2_roundsclone)[37] <- "all_matchday"
 T1_roundsclone <- T1_rounds
 colnames(T1_roundsclone)[37] <- "all_matchday"
 
-allteams20232024SOTMatchday <- rbind(B1_roundsclone,D1_roundsclone,D2_roundsclone,E0_roundsclone,E1_roundsclone,E2_roundsclone,E3_roundsclone,EC_roundsclone,F1_roundsclone,F2_roundsclone,
+allteams20242025SOTMatchday <- rbind(B1_roundsclone,D1_roundsclone,D2_roundsclone,E0_roundsclone,E1_roundsclone,E2_roundsclone,E3_roundsclone,EC_roundsclone,F1_roundsclone,F2_roundsclone,
       G1_roundsclone,I1_roundsclone,I2_roundsclone,N1_roundsclone,P1_roundsclone,SC0_roundsclone,SC1_roundsclone,SC2_roundsclone,SC3_roundsclone,SP1_roundsclone,
       SP2_roundsclone,T1_roundsclone)
-unlink("allteams20232024SOTMatchday.csv")
-write.csv(allteams20232024SOTMatchday,"allteams20232024SOTMatchday.csv")
+unlink("allteams20242025SOTMatchday.csv")
+write.csv(allteams20242025SOTMatchday,"allteams20242025SOTMatchday.csv")
 
 
 

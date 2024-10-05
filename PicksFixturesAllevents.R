@@ -1860,7 +1860,7 @@ alldivisions_clonedevents <- rbind(B1_allclone,D1_allclone,D2_allclone,E0_allclo
                                    SP2_allclone,T1_allclone)
 
 picks_fixtures_cloned <- read.csv('myfixtures.csv')
-picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$Home_Team,picks_fixtures_cloned$Away_Team, sep = "-")
+picks_fixtures_cloned$matchid <- paste(picks_fixtures_cloned$HomeTeam,picks_fixtures_cloned$AwayTeam, sep = "-")
 picks_fixtures_prediction_cloned_events <- dplyr::left_join(picks_fixtures_cloned,alldivisions_clonedevents)
 unlink('picks_fixtures_prediction_cloned_events.xlsx')
 write.xlsx(picks_fixtures_prediction_cloned_events,'picks_fixtures_prediction_cloned_events.xlsx')
@@ -1872,15 +1872,6 @@ write.xlsx(picks_fixtures_prediction_cloned_events,'picks_fixtures_prediction_cl
 #myodds_fixtures <- myodds_fixtures[myodds_fixtures$Date >= '2023-10-06',]
 #mycloned_prediction_events <- dplyr::left_join(myodds_fixtures,alldivisions_clonedevents)
 #write.xlsx(mycloned_prediction_events,'clonedprediction_events.xlsx')
-
-
-
-
-
-
-
-
-
 
 
 

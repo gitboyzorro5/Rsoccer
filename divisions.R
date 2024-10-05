@@ -306,3 +306,5 @@ for (i_t1 in 1:length(t1_teams))
   t1_away_games[i_t1]  <- nrow(T1[T1$AwayTeam == t1_teams[i_t1],])
 
 }
+
+

@@ -1446,7 +1446,7 @@ colnames(T1_fixtures_clone)[10] <- "awayteamcloned"
 ###################################################
 
 
- allteams20232024_clonefixtures <- rbind(B1_fixtures_clone,D1_fixtures_clone,D2_fixtures_clone,E0_fixtures_clone,E1_fixtures_clone,E2_fixtures_clone,
+ allteams20242025_clonefixtures <- rbind(B1_fixtures_clone,D1_fixtures_clone,D2_fixtures_clone,E0_fixtures_clone,E1_fixtures_clone,E2_fixtures_clone,
                                          E3_fixtures_clone,EC_fixtures_clone,F1_fixtures_clone,F2_fixtures_clone,G1_fixtures_clone,I1_fixtures_clone,I2_fixtures_clone,
                                          N1_fixtures_clone,P1_fixtures_clone,SP1_fixtures_clone,SP2_fixtures_clone,SC0_fixtures_clone,SC1_fixtures_clone,
                                          SC2_fixtures_clone,SC3_fixtures_clone,T1_fixtures_clone)

@@ -82,7 +82,7 @@ for(e1_sn in 1:23){
 advstatsn <- 4
 SC0_advstats <- readxl::read_excel('SC0_SPREAD.xlsx')
 SC0_advstats <- SC0_advstats[,-1]
-View(SC0_advstats)
+
 unlink('Summaries/SC0/*')
 for(sc0_sn in 1:11){
   df <- tail(SC0_advstats[SC0_advstats$HomeTeam == final_doublefixture_sc0[sc0_sn,1] | SC0_advstats$AwayTeam == final_doublefixture_sc0[sc0_sn,1] ,],advstatsn)

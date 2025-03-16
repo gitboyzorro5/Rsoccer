@@ -14,7 +14,7 @@ e0_currentround
 #second_df <- second_df[,-37]
 #third_df <- third_df[,-37]
 #EPL <- rbind(first_df,second_df)
-EPL <- E0_rounds[E0_rounds$e0_matchday >= 10,]
+EPL <- E0_rounds[E0_rounds$e0_matchday > 22,]
 #EPL <- na.omit(EPL)
 #goaltotals v2
 epl_goaltotalsv2 <- tapply(EPL$TG, EPL[c("HomeTeam", "AwayTeam")],mean)

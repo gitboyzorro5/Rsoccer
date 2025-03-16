@@ -33,7 +33,7 @@ B1_spread <- subset(allteams20242025,Div =="B1")
 B1_spread$matchid <- paste(B1_spread$Date,B1_spread$HomeTeam,B1_spread$AwayTeam,sep = "-")
 #referees
 B1_referees <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2025, tier="1st")
-B1_referees <- B1_referees[,c(8,10,13,18)]
+B1_referees <- B1_referees[,c(8,10,12,16)]
 
 #rename column names
 names(B1_referees)[2] <- paste("HomeTeam")
@@ -227,7 +227,7 @@ D2_spread <- subset(allteams20242025,Div =="D2")
 D2_spread$matchid <- paste(D2_spread$Date,D2_spread$HomeTeam,D2_spread$AwayTeam,sep = "-")
 #referees
 D2_referees <- fb_match_results(country = "GER", gender = "M", season_end_year = 2025, tier="2nd")
-D2_referees <- D2_referees[,c(8,10,13,18)]
+D2_referees <- D2_referees[,c(8,10,12,16)]
 
 #rename column names
 names(D2_referees)[2] <- paste("HomeTeam")
@@ -422,7 +422,7 @@ E1_spread$matchid <- paste(E1_spread$Date,E1_spread$HomeTeam,E1_spread$AwayTeam,
 #referees
 E1_referees <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2025, tier="2nd")
 E1_referees <- E1_referees[,c(8,10,13,18)]
-View(E1_referees)
+
 #rename column names
 names(E1_referees)[2] <- paste("HomeTeam")
 names(E1_referees)[3] <- paste("AwayTeam")

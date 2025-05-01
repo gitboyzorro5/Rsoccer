@@ -18,7 +18,7 @@ RUS$Date <- dmy(RUS$Date)
 RUS <- RUS[order(as.Date(RUS$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 RUS$CS <- paste(RUS$HG,RUS$AG, sep = "-")
 #RUS_qualificaton <- subset(RUS,tournament == "UEFA Euro qualification")
-RUS <- subset(RUS,Season == "2022/2023")
+RUS <- subset(RUS,Season == "2024/2025")
 # RUS <- RUS[!RUS$Home =="Orenburg",]
 # RUS <- RUS[!RUS$Home =="SKA Khabarovsk",]
 # RUS <- RUS[!RUS$Away =="Orenburg",]
@@ -60,7 +60,7 @@ rus_goaltotalsv2[is.na(rus_goaltotalsv2)] <- ""
 rus_goaltotalsv2 <- cbind(rus_goaltotalsv2,rus_avg_totalgoals)
 write.xlsx(rus_goaltotalsv2,'NL/RUS.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-RUS <- subset(RUS,Season == "2022/2023")
+RUS <- subset(RUS,Season == "2024/2025")
 rus_totalrounds <-  (length(rus_teams) - 1 )*2
 rus_totalmatches <- (length(rus_teams)*(length(rus_teams) - 1))
 rus_eachround <- ceiling(rus_totalmatches / rus_totalrounds)
@@ -1163,4 +1163,4 @@ write.xlsx(rus_ftr_summary,'NL/RUS.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(rus_ov25_summary,'NL/RUS.xlsx',sheetName = "OVUN25", append = TRUE)
 
 
-RUS <- subset(RUS,Season == "2022/2023")
+RUS <- subset(RUS,Season == "2024/2025")

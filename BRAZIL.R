@@ -10,7 +10,7 @@ library(stringr)
 library(stringi)
 #delete current file
 unlink('NL/BRA.xlsx')
-sort(unique(BRA$Home))
+
 ######################BRA START#######################################
 #####################################################################
 BRA <- read.csv('../FDAS/BRA.csv')
@@ -19,7 +19,7 @@ BRA$Date <- dmy(BRA$Date)
 BRA <- BRA[order(as.Date(BRA$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 BRA$CS <- paste(BRA$HG,BRA$AG, sep = "-")
 #BRA_qualificaton <- subset(BRA,tournament == "UEFA Euro qualification")
-BRA <- subset(BRA,Season == "2023")
+BRA <- subset(BRA,Season == "2025")
 # BRA <- BRA[!BRA$Home =="Coritiba",]
 # BRA <- BRA[!BRA$Away == "Coritiba",]
 # BRA <- BRA[!BRA$Home =="Vasco",]
@@ -1168,6 +1168,6 @@ bra_ov25_summary <- tabyl(BRA,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(bra_ftr_summary,'NL/BRA.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(bra_ov25_summary,'NL/BRA.xlsx',sheetName = "OVUN25", append = TRUE)
-BRA <- subset(BRA,Season == "2023")
+BRA <- subset(BRA,Season == "2025")
 
 

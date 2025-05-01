@@ -19,7 +19,7 @@ IRL$Date <- dmy(IRL$Date)
 IRL <- IRL[order(as.Date(IRL$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 IRL$CS <- paste(IRL$HG,IRL$AG, sep = "-")
 #IRL_qualificaton <- subset(IRL,tournament == "UEFA Euro qualification")
-IRL <- subset(IRL,Season == "2022")
+IRL <- subset(IRL,Season == "2025")
 #IRL <- IRL[IRL$Date > '2008-01-01',])
 IRL$TG <- IRL$HG + IRL$AG
 IRL$OV25 <- ifelse(IRL$TG >= 3,"Y","N")
@@ -56,7 +56,7 @@ irl_goaltotalsv2[is.na(irl_goaltotalsv2)] <- ""
 irl_goaltotalsv2 <- cbind(irl_goaltotalsv2,irl_avg_totalgoals)
 write.xlsx(irl_goaltotalsv2,'NL/IRL.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
-IRL <- subset(IRL,Season == "2022")
+IRL <- subset(IRL,Season == "2025")
 irl_totalrounds <-  (length(irl_teams) - 1 )*2
 irl_totalmatches <- (length(irl_teams)*(length(irl_teams) - 1))
 irl_eachround <- irl_totalmatches / irl_totalrounds
@@ -1156,6 +1156,6 @@ irl_ov25_summary <- tabyl(IRL,Season,OV25) %>% adorn_percentages("row") %>% ador
 ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(irl_ftr_summary,'NL/IRL.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(irl_ov25_summary,'NL/IRL.xlsx',sheetName = "OVUN25", append = TRUE)
-IRL <- subset(IRL,Season == "2022")
+IRL <- subset(IRL,Season == "2025")
 
 

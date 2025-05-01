@@ -19,7 +19,7 @@ ROU$Date <- dmy(ROU$Date)
 ROU <- ROU[order(as.Date(ROU$Date, format = "%d/%m%Y"), decreasing = FALSE),]
 ROU$CS <- paste(ROU$HG,ROU$AG, sep = "-")
 #ROU_qualificaton <- subset(ROU,tournament == "UEFA Euro qualification")
-ROU <- subset(ROU,Season == "2022/2023")
+ROU <- subset(ROU,Season == "2024/2025")
 ROU <- ROU[!ROU$Home =="U. Cluj",]
 ROU <- ROU[!ROU$Home =="Concordia",]
 ROU <- ROU[!ROU$Away =="U. Cluj",]
@@ -57,7 +57,7 @@ rou_goaltotalsv2 <- cbind(rou_goaltotalsv2,rou_avg_totalgoals)
 write.xlsx(rou_goaltotalsv2,'NL/ROU.xlsx',sheetName = "totalgoalsv2")
 #####################################################################
 ##############################################################################################
-ROU <- subset(ROU,Season == "2022/2023")
+ROU <- subset(ROU,Season == "2024/2025")
 rou_totalrounds <-  (length(rou_teams) - 1 )*2
 rou_totalmatches <- (length(rou_teams)*(length(rou_teams) - 1))
 rou_eachround <- ceiling(rou_totalmatches / rou_totalrounds)
@@ -1161,7 +1161,7 @@ ftr_summary <- ftr_summary[,c(1,3,2)]
 write.xlsx(rou_ftr_summary,'NL/ROU.xlsx',sheetName = "FTR", append = TRUE)
 write.xlsx(rou_ov25_summary,'NL/ROU.xlsx',sheetName = "OVUN25", append = TRUE)
 
-ROU <- subset(ROU,Season == "2022/2023")
+ROU <- subset(ROU,Season == "2024/2025")
 
 
 

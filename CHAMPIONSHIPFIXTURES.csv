@@ -1,0 +1,181 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","SC1","Arbroath","Ayr",2025-08-01
+"2","SC1","Raith Rvs","Queens Park",2025-08-02
+"3","SC1","St Johnstone","Partick",2025-08-02
+"4","SC1","Morton","Dunfermline",2025-08-02
+"5","SC1","Airdrie Utd","Ross County",2025-08-02
+"6","SC1","Morton","Partick",2025-10-11
+"7","SC1","Arbroath","Queens Park",2025-10-11
+"8","SC1","St Johnstone","Ross County",2025-10-11
+"9","SC1","Airdrie Utd","Dunfermline",2025-10-11
+"10","SC1","Raith Rvs","Ayr",2025-10-11
+"11","SC1","Dunfermline","Raith Rvs",2025-10-17
+"12","SC1","Queens Park","Airdrie Utd",2025-10-18
+"13","SC1","Ayr","Morton",2025-10-18
+"14","SC1","Arbroath","St Johnstone",2025-10-18
+"15","SC1","Partick","Ross County",2025-10-18
+"16","SC1","Ross County","Dunfermline",2025-10-25
+"17","SC1","Airdrie Utd","Arbroath",2025-10-25
+"18","SC1","Raith Rvs","Partick",2025-10-25
+"19","SC1","Queens Park","Ayr",2025-10-25
+"20","SC1","Morton","St Johnstone",2025-10-25
+"21","SC1","Arbroath","Ross County",2025-11-01
+"22","SC1","Raith Rvs","Morton",2025-11-01
+"23","SC1","Partick","Queens Park",2025-11-01
+"24","SC1","St Johnstone","Airdrie Utd",2025-11-01
+"25","SC1","Ayr","Dunfermline",2025-11-01
+"26","SC1","Dunfermline","St Johnstone",2025-11-08
+"27","SC1","Morton","Arbroath",2025-11-08
+"28","SC1","Ross County","Ayr",2025-11-08
+"29","SC1","Queens Park","Raith Rvs",2025-11-08
+"30","SC1","Airdrie Utd","Partick",2025-11-08
+"31","SC1","Ross County","Morton",2025-11-15
+"32","SC1","St Johnstone","Queens Park",2025-11-15
+"33","SC1","Raith Rvs","Airdrie Utd",2025-11-15
+"34","SC1","Partick","Dunfermline",2025-11-15
+"35","SC1","Ayr","Arbroath",2025-11-15
+"36","SC1","Arbroath","Raith Rvs",2025-11-22
+"37","SC1","Queens Park","Ross County",2025-11-22
+"38","SC1","Partick","St Johnstone",2025-11-22
+"39","SC1","Dunfermline","Morton",2025-11-22
+"40","SC1","Airdrie Utd","Ayr",2025-11-22
+"41","SC1","Dunfermline","Arbroath",2025-12-06
+"42","SC1","St Johnstone","Raith Rvs",2025-12-06
+"43","SC1","Ross County","Airdrie Utd",2025-12-06
+"44","SC1","Ayr","Partick",2025-12-06
+"45","SC1","Morton","Queens Park",2025-12-06
+"46","SC1","Morton","Airdrie Utd",2025-12-13
+"47","SC1","Arbroath","Partick",2025-12-13
+"48","SC1","Raith Rvs","Ross County",2025-12-13
+"49","SC1","Ayr","St Johnstone",2025-12-13
+"50","SC1","Queens Park","Dunfermline",2025-12-13
+"51","SC1","Partick","Raith Rvs",2025-12-20
+"52","SC1","St Johnstone","Morton",2025-12-20
+"53","SC1","Dunfermline","Ayr",2025-12-20
+"54","SC1","Airdrie Utd","Queens Park",2025-12-20
+"55","SC1","Ross County","Arbroath",2025-12-20
+"56","SC1","Ross County","St Johnstone",2025-08-08
+"57","SC1","Dunfermline","Airdrie Utd",2025-08-09
+"58","SC1","Partick","Morton",2025-08-09
+"59","SC1","Ayr","Raith Rvs",2025-08-09
+"60","SC1","Queens Park","Arbroath",2025-08-09
+"61","SC1","Morton","Ayr",2025-12-27
+"62","SC1","Arbroath","Airdrie Utd",2025-12-27
+"63","SC1","Queens Park","Partick",2025-12-27
+"64","SC1","Ross County","St Johnstone",2025-12-27
+"65","SC1","Raith Rvs","Dunfermline",2025-12-27
+"66","SC1","St Johnstone","Arbroath",2026-01-03
+"67","SC1","Partick","Morton",2026-01-03
+"68","SC1","Dunfermline","Ross County",2026-01-03
+"69","SC1","Airdrie Utd","Raith Rvs",2026-01-03
+"70","SC1","Ayr","Queens Park",2026-01-03
+"71","SC1","Ayr","Airdrie Utd",2026-01-10
+"72","SC1","Morton","Dunfermline",2026-01-10
+"73","SC1","Ross County","Partick",2026-01-10
+"74","SC1","Queens Park","St Johnstone",2026-01-10
+"75","SC1","Raith Rvs","Arbroath",2026-01-10
+"76","SC1","Airdrie Utd","Ross County",2026-01-24
+"77","SC1","Arbroath","Morton",2026-01-24
+"78","SC1","St Johnstone","Dunfermline",2026-01-24
+"79","SC1","Partick","Ayr",2026-01-24
+"80","SC1","Raith Rvs","Queens Park",2026-01-24
+"81","SC1","Morton","Ross County",2026-01-31
+"82","SC1","Ayr","Raith Rvs",2026-01-31
+"83","SC1","Queens Park","Arbroath",2026-01-31
+"84","SC1","St Johnstone","Partick",2026-01-31
+"85","SC1","Dunfermline","Airdrie Utd",2026-01-31
+"86","SC1","Ross County","Queens Park",2026-02-14
+"87","SC1","Airdrie Utd","St Johnstone",2026-02-14
+"88","SC1","Dunfermline","Partick",2026-02-14
+"89","SC1","Arbroath","Ayr",2026-02-14
+"90","SC1","Morton","Raith Rvs",2026-02-14
+"91","SC1","Raith Rvs","St Johnstone",2026-02-21
+"92","SC1","Queens Park","Morton",2026-02-21
+"93","SC1","Arbroath","Dunfermline",2026-02-21
+"94","SC1","Partick","Airdrie Utd",2026-02-21
+"95","SC1","Ayr","Ross County",2026-02-21
+"96","SC1","Airdrie Utd","Morton",2026-02-28
+"97","SC1","Partick","Arbroath",2026-02-28
+"98","SC1","Ross County","Raith Rvs",2026-02-28
+"99","SC1","St Johnstone","Ayr",2026-02-28
+"100","SC1","Dunfermline","Queens Park",2026-02-28
+"101","SC1","Arbroath","Ross County",2026-03-07
+"102","SC1","Raith Rvs","Partick",2026-03-07
+"103","SC1","Queens Park","Airdrie Utd",2026-03-07
+"104","SC1","Morton","St Johnstone",2026-03-07
+"105","SC1","Ayr","Dunfermline",2026-03-07
+"106","SC1","St Johnstone","Ross County",2026-03-14
+"107","SC1","Queens Park","Ayr",2026-03-14
+"108","SC1","Dunfermline","Raith Rvs",2026-03-14
+"109","SC1","Morton","Partick",2026-03-14
+"110","SC1","Airdrie Utd","Arbroath",2026-03-14
+"111","SC1","Raith Rvs","Dunfermline",2025-08-22
+"112","SC1","Ross County","Partick",2025-08-23
+"113","SC1","St Johnstone","Arbroath",2025-08-23
+"114","SC1","Morton","Ayr",2025-08-23
+"115","SC1","Airdrie Utd","Queens Park",2025-08-23
+"116","SC1","Partick","St Johnstone",2026-03-21
+"117","SC1","Ross County","Dunfermline",2026-03-21
+"118","SC1","Ayr","Morton",2026-03-21
+"119","SC1","Arbroath","Queens Park",2026-03-21
+"120","SC1","Raith Rvs","Airdrie Utd",2026-03-21
+"121","SC1","Partick","Ross County",2026-03-28
+"122","SC1","St Johnstone","Queens Park",2026-03-28
+"123","SC1","Raith Rvs","Ayr",2026-03-28
+"124","SC1","Airdrie Utd","Dunfermline",2026-03-28
+"125","SC1","Morton","Arbroath",2026-03-28
+"126","SC1","Ayr","Partick",2026-04-04
+"127","SC1","Dunfermline","Morton",2026-04-04
+"128","SC1","Arbroath","St Johnstone",2026-04-04
+"129","SC1","Ross County","Airdrie Utd",2026-04-04
+"130","SC1","Queens Park","Raith Rvs",2026-04-04
+"131","SC1","Ayr","Arbroath",2026-04-11
+"132","SC1","St Johnstone","Airdrie Utd",2026-04-11
+"133","SC1","Partick","Dunfermline",2026-04-11
+"134","SC1","Raith Rvs","Morton",2026-04-11
+"135","SC1","Queens Park","Ross County",2026-04-11
+"136","SC1","Arbroath","Raith Rvs",2026-04-18
+"137","SC1","Morton","Queens Park",2026-04-18
+"138","SC1","Ross County","Ayr",2026-04-18
+"139","SC1","Airdrie Utd","Partick",2026-04-18
+"140","SC1","Dunfermline","St Johnstone",2026-04-18
+"141","SC1","Queens Park","Dunfermline",2026-04-25
+"142","SC1","St Johnstone","Raith Rvs",2026-04-25
+"143","SC1","Arbroath","Partick",2026-04-25
+"144","SC1","Airdrie Utd","Ayr",2026-04-25
+"145","SC1","Ross County","Morton",2026-04-25
+"146","SC1","Dunfermline","Arbroath",2026-05-01
+"147","SC1","Raith Rvs","Ross County",2026-05-01
+"148","SC1","Morton","Airdrie Utd",2026-05-01
+"149","SC1","Ayr","St Johnstone",2026-05-01
+"150","SC1","Partick","Queens Park",2026-05-01
+"151","SC1","Ayr","Queens Park",2025-08-30
+"152","SC1","Dunfermline","Ross County",2025-08-30
+"153","SC1","Partick","Raith Rvs",2025-08-30
+"154","SC1","St Johnstone","Morton",2025-08-30
+"155","SC1","Arbroath","Airdrie Utd",2025-08-30
+"156","SC1","Ross County","Arbroath",2025-09-06
+"157","SC1","Morton","Raith Rvs",2025-09-06
+"158","SC1","Airdrie Utd","St Johnstone",2025-09-23
+"159","SC1","Dunfermline","Ayr",2025-09-23
+"160","SC1","Queens Park","Partick",2025-09-30
+"161","SC1","Partick","Airdrie Utd",2025-09-12
+"162","SC1","Raith Rvs","St Johnstone",2025-09-13
+"163","SC1","Ayr","Ross County",2025-09-13
+"164","SC1","Queens Park","Morton",2025-09-13
+"165","SC1","Arbroath","Dunfermline",2025-09-13
+"166","SC1","St Johnstone","Dunfermline",2025-09-19
+"167","SC1","Arbroath","Morton",2025-09-20
+"168","SC1","Ross County","Queens Park",2025-09-20
+"169","SC1","Airdrie Utd","Raith Rvs",2025-09-20
+"170","SC1","Partick","Ayr",2025-10-21
+"171","SC1","Dunfermline","Partick",2025-09-27
+"172","SC1","Raith Rvs","Arbroath",2025-09-27
+"173","SC1","Morton","Ross County",2025-09-27
+"174","SC1","Queens Park","St Johnstone",2025-09-27
+"175","SC1","Ayr","Airdrie Utd",2025-09-27
+"176","SC1","St Johnstone","Ayr",2025-10-04
+"177","SC1","Ross County","Raith Rvs",2025-10-04
+"178","SC1","Dunfermline","Queens Park",2025-10-04
+"179","SC1","Airdrie Utd","Morton",2025-10-04
+"180","SC1","Partick","Arbroath",2025-10-04

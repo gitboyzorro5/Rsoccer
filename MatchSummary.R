@@ -9,10 +9,10 @@ Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 options(java.parameters = "-Xmx4g")
 
 ###B1
-b1_match_results <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2025, tier="1st")
+b1_match_results <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2026, tier="1st")
 unlink('b1_match_results.xlsx')
 write.xlsx(b1_match_results,"b1_match_results.xlsx")
-b1_urls <- fb_match_urls(country = "BEL", gender = "M", season_end_year = 2025, tier="1st")
+b1_urls <- fb_match_urls(country = "BEL", gender = "M", season_end_year = 2026, tier="1st")
 unlink('b1_urls.xlsx')
 write.xlsx(b1_urls,"b1_urls.xlsx")
 
@@ -29,10 +29,10 @@ b1_summary$Away_Team <- mgsub(b1_summary$Away_Team,c("OH Leuven","Sint-Truiden",
 
 
 b1_summary$matchid <- paste(b1_summary$Match_Date,b1_summary$Home_Team,b1_summary$Away_Team,sep = "-")
-B1_spread <- subset(allteams20242025,Div =="B1")
+B1_spread <- subset(allteams20242026,Div =="B1")
 B1_spread$matchid <- paste(B1_spread$Date,B1_spread$HomeTeam,B1_spread$AwayTeam,sep = "-")
 #referees
-B1_referees <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2025, tier="1st")
+B1_referees <- fb_match_results(country = "BEL", gender = "M", season_end_year = 2026, tier="1st")
 B1_referees <- B1_referees[,c(8,10,12,16)]
 
 #rename column names
@@ -203,10 +203,10 @@ write.xlsx(B1_refereestats,'B1_refereestats.xlsx')
 ####################################################################################################################################################################################
 ####################################################################################################################################################################################
 ###D2
-d2_match_results <- fb_match_results(country = "GER", gender = "M", season_end_year = 2025, tier="2nd")
+d2_match_results <- fb_match_results(country = "GER", gender = "M", season_end_year = 2026, tier="2nd")
 unlink('d2_match_results.xlsx')
 write.xlsx(d2_match_results,"d2_match_results.xlsx")
-d2_urls <- fb_match_urls(country = "GER", gender = "M", season_end_year = 2025, tier="2nd")
+d2_urls <- fb_match_urls(country = "GER", gender = "M", season_end_year = 2026, tier="2nd")
 unlink('d2_urls.xlsx')
 write.xlsx(d2_urls,"d2_urls.xlsx")
 
@@ -223,10 +223,10 @@ d2_summary$Away_Team <- mgsub(d2_summary$Away_Team,c("Düsseldorf","Eintracht Br
 
 
 d2_summary$matchid <- paste(d2_summary$Match_Date,d2_summary$Home_Team,d2_summary$Away_Team,sep = "-")
-D2_spread <- subset(allteams20242025,Div =="D2")
+D2_spread <- subset(allteams20242026,Div =="D2")
 D2_spread$matchid <- paste(D2_spread$Date,D2_spread$HomeTeam,D2_spread$AwayTeam,sep = "-")
 #referees
-D2_referees <- fb_match_results(country = "GER", gender = "M", season_end_year = 2025, tier="2nd")
+D2_referees <- fb_match_results(country = "GER", gender = "M", season_end_year = 2026, tier="2nd")
 D2_referees <- D2_referees[,c(8,10,12,16)]
 
 #rename column names
@@ -397,10 +397,10 @@ write.xlsx(D2_refereestats,'D2_refereestats.xlsx')
 ###########################################################################################################################################################
 ###########################################################################################################################################################
 ###E1
-e1_match_results <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2025, tier="2nd")
+e1_match_results <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2026, tier="2nd")
 unlink('e1_match_results.xlsx')
 write.xlsx(e1_match_results,"e1_match_results.xlsx")
-e1_urls <- fb_match_urls(country = "ENG", gender = "M", season_end_year = 2025, tier="2nd")
+e1_urls <- fb_match_urls(country = "ENG", gender = "M", season_end_year = 2026, tier="2nd")
 unlink('e1_urls.xlsx')
 write.xlsx(e1_urls,"e1_urls.xlsx")
 
@@ -417,10 +417,10 @@ e1_summary$Away_Team <- mgsub(e1_summary$Away_Team,c("Cardiff City","Coventry Ci
 
 
 e1_summary$matchid <- paste(e1_summary$Match_Date,e1_summary$Home_Team,e1_summary$Away_Team,sep = "-")
-E1_spread <- subset(allteams20242025,Div =="E1")
+E1_spread <- subset(allteams20242026,Div =="E1")
 E1_spread$matchid <- paste(E1_spread$Date,E1_spread$HomeTeam,E1_spread$AwayTeam,sep = "-")
 #referees
-E1_referees <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2025, tier="2nd")
+E1_referees <- fb_match_results(country = "ENG", gender = "M", season_end_year = 2026, tier="2nd")
 E1_referees <- E1_referees[,c(8,10,13,18)]
 
 #rename column names
@@ -612,7 +612,7 @@ write.xlsx(E1_refereestats,'E1_refereestats.xlsx')
 #
 #
 # p1_summary$matchid <- paste(p1_summary$Match_Date,p1_summary$Home_Team,p1_summary$Away_Team,sep = "-")
-# P1_spread <- subset(allteams20242025,Div =="P1")
+# P1_spread <- subset(allteams20242026,Div =="P1")
 # P1_spread$matchid <- paste(P1_spread$Date,P1_spread$HomeTeam,P1_spread$AwayTeam,sep = "-")
 # #referees
 # P1_referees <- fb_match_results(country = "POR", gender = "M", season_end_year = 2024, tier="1st")
@@ -774,10 +774,10 @@ write.xlsx(E1_refereestats,'E1_refereestats.xlsx')
 #######
 #SC0  #
 #######
-sc0_match_results <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2025, tier="1st")
+sc0_match_results <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2026, tier="1st")
 unlink('sc0_match_results.xlsx')
 write.xlsx(sc0_match_results,"sc0_match_results.xlsx")
-sc0_urls <- fb_match_urls(country = "SCO", gender = "M", season_end_year = 2025, tier="1st")
+sc0_urls <- fb_match_urls(country = "SCO", gender = "M", season_end_year = 2026, tier="1st")
 unlink('sc0_urls.xlsx')
 write.xlsx(sc0_urls,"sc0_urls.xlsx")
 
@@ -792,10 +792,10 @@ sc0_summary$Home_Team <- mgsub(sc0_summary$Home_Team,c("Heart of Midlothian"),c(
 sc0_summary$Away_Team <- mgsub(sc0_summary$Away_Team,c("Heart of Midlothian"),c("Hearts"))
 
 sc0_summary$matchid <- paste(sc0_summary$Match_Date,sc0_summary$Home_Team,sc0_summary$Away_Team,sep = "-")
-SC0_spread <- subset(allteams20242025,Div =="SC0")
+SC0_spread <- subset(allteams20242026,Div =="SC0")
 SC0_spread$matchid <- paste(SC0_spread$Date,SC0_spread$HomeTeam,SC0_spread$AwayTeam,sep = "-")
 #referees
-SC0_referees <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2025, tier="1st")
+SC0_referees <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2026, tier="1st")
 SC0_referees <- SC0_referees[,c(8,10,12,16)]
 
 #rename column names
@@ -987,7 +987,7 @@ write.xlsx(SC0_refereestats,'SC0_refereestats.xlsx')
 #
 #
 # t1_summary$matchid <- paste(t1_summary$Match_Date,t1_summary$Home_Team,t1_summary$Away_Team,sep = "-")
-# T1_spread <- subset(allteams20242025,Div =="T1")
+# T1_spread <- subset(allteams20242026,Div =="T1")
 # T1_spread$matchid <- paste(T1_spread$Date,T1_spread$HomeTeam,T1_spread$AwayTeam,sep = "-")
 # #referees
 # T1_referees <- fb_match_results(country = "TUR", gender = "M", season_end_year = 2024, tier="1st")

@@ -1,307 +1,307 @@
 "","Div","HomeTeam","AwayTeam","Date"
-"1","F2","Grenoble","Laval",2024-08-17
-"2","F2","Clermont","Pau FC",2024-08-17
-"3","F2","Guingamp","Bordeaux",2024-08-17
-"4","F2","Dunkerque","Annecy",2024-08-17
-"5","F2","Amiens","Red Star",2024-08-17
-"6","F2","Caen","Paris FC",2024-08-17
-"7","F2","Ajaccio","Rodez",2024-08-17
-"8","F2","Metz","Bastia",2024-08-17
-"9","F2","Martigues","Lorient",2024-08-17
-"10","F2","Dunkerque","Red Star",2024-10-26
-"11","F2","Annecy","Laval",2024-10-26
-"12","F2","Paris FC","Grenoble",2024-10-26
-"13","F2","Caen","Bordeaux",2024-10-26
-"14","F2","Ajaccio","Bastia",2024-10-26
-"15","F2","Metz","Guingamp",2024-10-26
-"16","F2","Pau FC","Amiens",2024-10-26
-"17","F2","Rodez","Lorient",2024-10-26
-"18","F2","Clermont","Martigues",2024-10-26
-"19","F2","Red Star","Metz",2024-10-29
-"20","F2","Grenoble","Annecy",2024-10-29
-"21","F2","Amiens","Paris FC",2024-10-29
-"22","F2","Lorient","Dunkerque",2024-10-29
-"23","F2","Guingamp","Ajaccio",2024-10-29
-"24","F2","Bordeaux","Pau FC",2024-10-29
-"25","F2","Martigues","Caen",2024-10-29
-"26","F2","Laval","Clermont",2024-10-29
-"27","F2","Bastia","Rodez",2024-10-29
-"28","F2","Clermont","Lorient",2024-11-02
-"29","F2","Dunkerque","Amiens",2024-11-02
-"30","F2","Paris FC","Rodez",2024-11-02
-"31","F2","Martigues","Red Star",2024-11-02
-"32","F2","Guingamp","Grenoble",2024-11-02
-"33","F2","Ajaccio","Metz",2024-11-02
-"34","F2","Bordeaux","Laval",2024-11-02
-"35","F2","Caen","Bastia",2024-11-02
-"36","F2","Annecy","Pau FC",2024-11-02
-"37","F2","Rodez","Annecy",2024-11-09
-"38","F2","Red Star","Bordeaux",2024-11-09
-"39","F2","Pau FC","Paris FC",2024-11-09
-"40","F2","Ajaccio","Clermont",2024-11-09
-"41","F2","Lorient","Guingamp",2024-11-09
-"42","F2","Grenoble","Dunkerque",2024-11-09
-"43","F2","Amiens","Martigues",2024-11-09
-"44","F2","Laval","Bastia",2024-11-09
-"45","F2","Metz","Caen",2024-11-09
-"46","F2","Bastia","Lorient",2024-11-23
-"47","F2","Pau FC","Red Star",2024-11-23
-"48","F2","Guingamp","Amiens",2024-11-23
-"49","F2","Clermont","Metz",2024-11-23
-"50","F2","Martigues","Laval",2024-11-23
-"51","F2","Paris FC","Annecy",2024-11-23
-"52","F2","Bordeaux","Grenoble",2024-11-23
-"53","F2","Dunkerque","Ajaccio",2024-11-23
-"54","F2","Caen","Rodez",2024-11-23
-"55","F2","Ajaccio","Paris FC",2024-12-07
-"56","F2","Laval","Caen",2024-12-07
-"57","F2","Martigues","Guingamp",2024-12-07
-"58","F2","Grenoble","Amiens",2024-12-07
-"59","F2","Metz","Dunkerque",2024-12-07
-"60","F2","Rodez","Pau FC",2024-12-07
-"61","F2","Red Star","Bastia",2024-12-07
-"62","F2","Lorient","Bordeaux",2024-12-07
-"63","F2","Annecy","Clermont",2024-12-07
-"64","F2","Clermont","Rodez",2024-12-14
-"65","F2","Dunkerque","Caen",2024-12-14
-"66","F2","Amiens","Laval",2024-12-14
-"67","F2","Bordeaux","Martigues",2024-12-14
-"68","F2","Bastia","Guingamp",2024-12-14
-"69","F2","Lorient","Paris FC",2024-12-14
-"70","F2","Red Star","Grenoble",2024-12-14
-"71","F2","Annecy","Metz",2024-12-14
-"72","F2","Pau FC","Ajaccio",2024-12-14
-"73","F2","Rodez","Red Star",2025-01-04
-"74","F2","Caen","Clermont",2025-01-04
-"75","F2","Grenoble","Bastia",2025-01-04
-"76","F2","Laval","Lorient",2025-01-04
-"77","F2","Amiens","Bordeaux",2025-01-04
-"78","F2","Ajaccio","Annecy",2025-01-04
-"79","F2","Guingamp","Dunkerque",2025-01-04
-"80","F2","Paris FC","Martigues",2025-01-04
-"81","F2","Metz","Pau FC",2025-01-04
-"82","F2","Caen","Grenoble",2025-01-11
-"83","F2","Rodez","Bordeaux",2025-01-11
-"84","F2","Martigues","Clermont",2025-01-11
-"85","F2","Annecy","Guingamp",2025-01-11
-"86","F2","Paris FC","Amiens",2025-01-11
-"87","F2","Bastia","Ajaccio",2025-01-11
-"88","F2","Pau FC","Dunkerque",2025-01-11
-"89","F2","Lorient","Metz",2025-01-11
-"90","F2","Laval","Red Star",2025-01-11
-"91","F2","Bordeaux","Annecy",2025-01-18
-"92","F2","Grenoble","Martigues",2025-01-18
-"93","F2","Ajaccio","Caen",2025-01-18
-"94","F2","Clermont","Laval",2025-01-18
-"95","F2","Amiens","Bastia",2025-01-18
-"96","F2","Guingamp","Rodez",2025-01-18
-"97","F2","Dunkerque","Lorient",2025-01-18
-"98","F2","Red Star","Pau FC",2025-01-18
-"99","F2","Metz","Paris FC",2025-01-18
-"100","F2","Laval","Guingamp",2024-08-24
-"101","F2","Pau FC","Caen",2024-08-24
-"102","F2","Rodez","Metz",2024-08-24
-"103","F2","Lorient","Grenoble",2024-08-24
-"104","F2","Bordeaux","Clermont",2024-08-24
-"105","F2","Paris FC","Dunkerque",2024-08-24
-"106","F2","Bastia","Amiens",2024-08-24
-"107","F2","Red Star","Ajaccio",2024-08-24
-"108","F2","Annecy","Martigues",2024-08-24
-"109","F2","Annecy","Dunkerque",2025-01-25
-"110","F2","Metz","Grenoble",2025-01-25
-"111","F2","Rodez","Ajaccio",2025-01-25
-"112","F2","Bastia","Pau FC",2025-01-25
-"113","F2","Caen","Guingamp",2025-01-25
-"114","F2","Lorient","Clermont",2025-01-25
-"115","F2","Martigues","Amiens",2025-01-25
-"116","F2","Paris FC","Red Star",2025-01-25
-"117","F2","Laval","Bordeaux",2025-01-25
-"118","F2","Bordeaux","Caen",2025-02-01
-"119","F2","Red Star","Lorient",2025-02-01
-"120","F2","Bastia","Metz",2025-02-01
-"121","F2","Guingamp","Paris FC",2025-02-01
-"122","F2","Grenoble","Rodez",2025-02-01
-"123","F2","Pau FC","Laval",2025-02-01
-"124","F2","Dunkerque","Martigues",2025-02-01
-"125","F2","Amiens","Annecy",2025-02-01
-"126","F2","Clermont","Ajaccio",2025-02-01
-"127","F2","Martigues","Bordeaux",2025-02-08
-"128","F2","Ajaccio","Guingamp",2025-02-08
-"129","F2","Laval","Annecy",2025-02-08
-"130","F2","Paris FC","Pau FC",2025-02-08
-"131","F2","Lorient","Amiens",2025-02-08
-"132","F2","Rodez","Bastia",2025-02-08
-"133","F2","Metz","Clermont",2025-02-08
-"134","F2","Grenoble","Red Star",2025-02-08
-"135","F2","Caen","Dunkerque",2025-02-08
-"136","F2","Ajaccio","Laval",2025-02-15
-"137","F2","Bordeaux","Lorient",2025-02-15
-"138","F2","Dunkerque","Paris FC",2025-02-15
-"139","F2","Red Star","Martigues",2025-02-15
-"140","F2","Guingamp","Metz",2025-02-15
-"141","F2","Pau FC","Rodez",2025-02-15
-"142","F2","Annecy","Caen",2025-02-15
-"143","F2","Amiens","Grenoble",2025-02-15
-"144","F2","Clermont","Bastia",2025-02-15
-"145","F2","Grenoble","Guingamp",2025-02-22
-"146","F2","Paris FC","Bordeaux",2025-02-22
-"147","F2","Metz","Ajaccio",2025-02-22
-"148","F2","Rodez","Amiens",2025-02-22
-"149","F2","Bastia","Red Star",2025-02-22
-"150","F2","Caen","Pau FC",2025-02-22
-"151","F2","Dunkerque","Clermont",2025-02-22
-"152","F2","Lorient","Laval",2025-02-22
-"153","F2","Martigues","Annecy",2025-02-22
-"154","F2","Clermont","Caen",2025-03-01
-"155","F2","Annecy","Paris FC",2025-03-01
-"156","F2","Pau FC","Grenoble",2025-03-01
-"157","F2","Bordeaux","Bastia",2025-03-01
-"158","F2","Ajaccio","Dunkerque",2025-03-01
-"159","F2","Red Star","Guingamp",2025-03-01
-"160","F2","Amiens","Metz",2025-03-01
-"161","F2","Laval","Martigues",2025-03-01
-"162","F2","Lorient","Rodez",2025-03-01
-"163","F2","Red Star","Amiens",2025-03-08
-"164","F2","Grenoble","Ajaccio",2025-03-08
-"165","F2","Pau FC","Bordeaux",2025-03-08
-"166","F2","Guingamp","Clermont",2025-03-08
-"167","F2","Paris FC","Lorient",2025-03-08
-"168","F2","Caen","Laval",2025-03-08
-"169","F2","Bastia","Martigues",2025-03-08
-"170","F2","Rodez","Dunkerque",2025-03-08
-"171","F2","Metz","Annecy",2025-03-08
-"172","F2","Dunkerque","Metz",2025-03-15
-"173","F2","Martigues","Pau FC",2025-03-15
-"174","F2","Annecy","Rodez",2025-03-15
-"175","F2","Lorient","Bastia",2025-03-15
-"176","F2","Clermont","Grenoble",2025-03-15
-"177","F2","Amiens","Caen",2025-03-15
-"178","F2","Ajaccio","Red Star",2025-03-15
-"179","F2","Bordeaux","Guingamp",2025-03-15
-"180","F2","Laval","Paris FC",2025-03-15
-"181","F2","Martigues","Ajaccio",2025-03-29
-"182","F2","Red Star","Rodez",2025-03-29
-"183","F2","Grenoble","Lorient",2025-03-29
-"184","F2","Clermont","Amiens",2025-03-29
-"185","F2","Guingamp","Laval",2025-03-29
-"186","F2","Metz","Bordeaux",2025-03-29
-"187","F2","Bastia","Dunkerque",2025-03-29
-"188","F2","Paris FC","Caen",2025-03-29
-"189","F2","Pau FC","Annecy",2025-03-29
-"190","F2","Lorient","Pau FC",2025-04-05
-"191","F2","Laval","Grenoble",2025-04-05
-"192","F2","Rodez","Martigues",2025-04-05
-"193","F2","Ajaccio","Amiens",2025-04-05
-"194","F2","Caen","Metz",2025-04-05
-"195","F2","Annecy","Bastia",2025-04-05
-"196","F2","Dunkerque","Guingamp",2025-04-05
-"197","F2","Paris FC","Clermont",2025-04-05
-"198","F2","Bordeaux","Red Star",2025-04-05
-"199","F2","Dunkerque","Rodez",2024-08-31
-"200","F2","Grenoble","Pau FC",2024-08-31
-"201","F2","Amiens","Lorient",2024-08-31
-"202","F2","Ajaccio","Bordeaux",2024-08-31
-"203","F2","Metz","Laval",2024-08-31
-"204","F2","Clermont","Paris FC",2024-08-31
-"205","F2","Guingamp","Red Star",2024-08-31
-"206","F2","Caen","Annecy",2024-08-31
-"207","F2","Martigues","Bastia",2024-08-31
-"208","F2","Bordeaux","Ajaccio",2025-04-12
-"209","F2","Guingamp","Lorient",2025-04-12
-"210","F2","Rodez","Caen",2025-04-12
-"211","F2","Bastia","Laval",2025-04-12
-"212","F2","Grenoble","Paris FC",2025-04-12
-"213","F2","Amiens","Dunkerque",2025-04-12
-"214","F2","Martigues","Metz",2025-04-12
-"215","F2","Red Star","Annecy",2025-04-12
-"216","F2","Pau FC","Clermont",2025-04-12
-"217","F2","Dunkerque","Grenoble",2025-04-19
-"218","F2","Clermont","Bordeaux",2025-04-19
-"219","F2","Paris FC","Bastia",2025-04-19
-"220","F2","Amiens","Guingamp",2025-04-19
-"221","F2","Metz","Red Star",2025-04-19
-"222","F2","Caen","Martigues",2025-04-19
-"223","F2","Annecy","Lorient",2025-04-19
-"224","F2","Laval","Rodez",2025-04-19
-"225","F2","Ajaccio","Pau FC",2025-04-19
-"226","F2","Guingamp","Martigues",2025-04-26
-"227","F2","Bordeaux","Dunkerque",2025-04-26
-"228","F2","Lorient","Caen",2025-04-26
-"229","F2","Annecy","Ajaccio",2025-04-26
-"230","F2","Red Star","Clermont",2025-04-26
-"231","F2","Bastia","Grenoble",2025-04-26
-"232","F2","Rodez","Paris FC",2025-04-26
-"233","F2","Laval","Amiens",2025-04-26
-"234","F2","Pau FC","Metz",2025-04-26
-"235","F2","Martigues","Paris FC",2025-05-03
-"236","F2","Grenoble","Bordeaux",2025-05-03
-"237","F2","Ajaccio","Lorient",2025-05-03
-"238","F2","Guingamp","Bastia",2025-05-03
-"239","F2","Clermont","Annecy",2025-05-03
-"240","F2","Caen","Red Star",2025-05-03
-"241","F2","Amiens","Pau FC",2025-05-03
-"242","F2","Dunkerque","Laval",2025-05-03
-"243","F2","Metz","Rodez",2025-05-03
-"244","F2","Rodez","Clermont",2025-05-10
-"245","F2","Red Star","Dunkerque",2025-05-10
-"246","F2","Lorient","Martigues",2025-05-10
-"247","F2","Pau FC","Guingamp",2025-05-10
-"248","F2","Annecy","Grenoble",2025-05-10
-"249","F2","Bastia","Caen",2025-05-10
-"250","F2","Laval","Metz",2025-05-10
-"251","F2","Bordeaux","Amiens",2025-05-10
-"252","F2","Paris FC","Ajaccio",2025-05-10
-"253","F2","Pau FC","Martigues",2024-09-14
-"254","F2","Bastia","Bordeaux",2024-09-14
-"255","F2","Grenoble","Caen",2024-09-14
-"256","F2","Laval","Ajaccio",2024-09-14
-"257","F2","Rodez","Guingamp",2024-09-14
-"258","F2","Clermont","Dunkerque",2024-09-14
-"259","F2","Lorient","Red Star",2024-09-14
-"260","F2","Annecy","Amiens",2024-09-14
-"261","F2","Paris FC","Metz",2024-09-14
-"262","F2","Dunkerque","Pau FC",2024-09-21
-"263","F2","Bordeaux","Rodez",2024-09-21
-"264","F2","Martigues","Grenoble",2024-09-21
-"265","F2","Red Star","Laval",2024-09-21
-"266","F2","Metz","Lorient",2024-09-21
-"267","F2","Guingamp","Annecy",2024-09-21
-"268","F2","Bastia","Paris FC",2024-09-21
-"269","F2","Amiens","Clermont",2024-09-21
-"270","F2","Caen","Ajaccio",2024-09-21
-"271","F2","Rodez","Laval",2024-09-24
-"272","F2","Annecy","Bordeaux",2024-09-24
-"273","F2","Metz","Martigues",2024-09-24
-"274","F2","Caen","Amiens",2024-09-24
-"275","F2","Ajaccio","Grenoble",2024-09-24
-"276","F2","Pau FC","Lorient",2024-09-24
-"277","F2","Clermont","Red Star",2024-09-24
-"278","F2","Paris FC","Guingamp",2024-09-24
-"279","F2","Dunkerque","Bastia",2024-09-24
-"280","F2","Martigues","Dunkerque",2024-09-28
-"281","F2","Bordeaux","Metz",2024-09-28
-"282","F2","Laval","Pau FC",2024-09-28
-"283","F2","Red Star","Paris FC",2024-09-28
-"284","F2","Grenoble","Clermont",2024-09-28
-"285","F2","Bastia","Annecy",2024-09-28
-"286","F2","Lorient","Ajaccio",2024-09-28
-"287","F2","Guingamp","Caen",2024-09-28
-"288","F2","Amiens","Rodez",2024-09-28
-"289","F2","Dunkerque","Bordeaux",2024-10-05
-"290","F2","Paris FC","Laval",2024-10-05
-"291","F2","Pau FC","Bastia",2024-10-05
-"292","F2","Annecy","Red Star",2024-10-05
-"293","F2","Metz","Amiens",2024-10-05
-"294","F2","Clermont","Guingamp",2024-10-05
-"295","F2","Ajaccio","Martigues",2024-10-05
-"296","F2","Rodez","Grenoble",2024-10-05
-"297","F2","Caen","Lorient",2024-10-05
-"298","F2","Martigues","Rodez",2024-10-19
-"299","F2","Laval","Dunkerque",2024-10-19
-"300","F2","Bastia","Clermont",2024-10-19
-"301","F2","Bordeaux","Paris FC",2024-10-19
-"302","F2","Lorient","Annecy",2024-10-19
-"303","F2","Amiens","Ajaccio",2024-10-19
-"304","F2","Guingamp","Pau FC",2024-10-19
-"305","F2","Red Star","Caen",2024-10-19
-"306","F2","Grenoble","Metz",2024-10-19
+"1","F2","Guingamp","Le Mans",2025-08-09
+"2","F2","Dunkerque","Clermont",2025-08-09
+"3","F2","Rodez","Nancy",2025-08-09
+"4","F2","Laval","St Etienne",2025-08-09
+"5","F2","Troyes","Grenoble",2025-08-09
+"6","F2","Montpellier","Red Star",2025-08-09
+"7","F2","Pau FC","Annecy",2025-08-09
+"8","F2","Amiens","Reims",2025-08-11
+"9","F2","Boulogne","Bastia",2025-09-16
+"10","F2","Troyes","Bastia",2025-10-17
+"11","F2","Rodez","Reims",2025-10-17
+"12","F2","Grenoble","Pau FC",2025-10-17
+"13","F2","Clermont","Annecy",2025-10-17
+"14","F2","Boulogne","Guingamp",2025-10-17
+"15","F2","Dunkerque","Montpellier",2025-10-18
+"16","F2","Laval","Red Star",2025-10-18
+"17","F2","St Etienne","Le Mans",2025-10-18
+"18","F2","Nancy","Amiens",2025-10-20
+"19","F2","Bastia","Laval",2025-10-24
+"20","F2","Red Star","Grenoble",2025-10-24
+"21","F2","Guingamp","Clermont",2025-10-24
+"22","F2","Le Mans","Boulogne",2025-10-24
+"23","F2","Reims","Troyes",2025-10-24
+"24","F2","Pau FC","Dunkerque",2025-10-24
+"25","F2","Amiens","Rodez",2025-10-25
+"26","F2","Montpellier","Nancy",2025-10-25
+"27","F2","Annecy","St Etienne",2025-10-25
+"28","F2","Rodez","Annecy",2025-10-28
+"29","F2","Boulogne","Reims",2025-10-28
+"30","F2","St Etienne","Pau FC",2025-10-28
+"31","F2","Nancy","Bastia",2025-10-28
+"32","F2","Clermont","Montpellier",2025-10-28
+"33","F2","Laval","Le Mans",2025-10-28
+"34","F2","Dunkerque","Red Star",2025-10-28
+"35","F2","Grenoble","Guingamp",2025-10-28
+"36","F2","Troyes","Amiens",2025-10-28
+"37","F2","Montpellier","Rodez",2025-10-31
+"38","F2","Guingamp","Laval",2025-10-31
+"39","F2","Annecy","Boulogne",2025-10-31
+"40","F2","Le Mans","Nancy",2025-10-31
+"41","F2","Bastia","Clermont",2025-10-31
+"42","F2","Reims","Dunkerque",2025-11-01
+"43","F2","Amiens","Grenoble",2025-11-01
+"44","F2","Red Star","St Etienne",2025-11-01
+"45","F2","Pau FC","Troyes",2025-11-03
+"46","F2","Clermont","Amiens",2025-11-07
+"47","F2","Grenoble","Rodez",2025-11-07
+"48","F2","Nancy","Laval",2025-11-07
+"49","F2","Montpellier","Annecy",2025-11-07
+"50","F2","Dunkerque","Boulogne",2025-11-07
+"51","F2","Bastia","Reims",2025-11-07
+"52","F2","Guingamp","Pau FC",2025-11-08
+"53","F2","Le Mans","Red Star",2025-11-08
+"54","F2","Troyes","St Etienne",2025-11-08
+"55","F2","Boulogne","Grenoble",2025-11-21
+"56","F2","Amiens","Guingamp",2025-11-21
+"57","F2","Rodez","Dunkerque",2025-11-21
+"58","F2","Red Star","Clermont",2025-11-21
+"59","F2","Annecy","Bastia",2025-11-21
+"60","F2","Pau FC","Le Mans",2025-11-21
+"61","F2","Laval","Troyes",2025-11-21
+"62","F2","Reims","Montpellier",2025-11-21
+"63","F2","St Etienne","Nancy",2025-11-21
+"64","F2","Troyes","Rodez",2025-12-05
+"65","F2","Clermont","Boulogne",2025-12-05
+"66","F2","Le Mans","Amiens",2025-12-05
+"67","F2","Bastia","Red Star",2025-12-05
+"68","F2","Montpellier","Pau FC",2025-12-05
+"69","F2","Reims","Laval",2025-12-05
+"70","F2","Grenoble","Nancy",2025-12-05
+"71","F2","Dunkerque","St Etienne",2025-12-05
+"72","F2","Guingamp","Annecy",2025-12-05
+"73","F2","St Etienne","Bastia",2025-12-12
+"74","F2","Nancy","Clermont",2025-12-12
+"75","F2","Pau FC","Amiens",2025-12-12
+"76","F2","Boulogne","Troyes",2025-12-12
+"77","F2","Laval","Dunkerque",2025-12-12
+"78","F2","Red Star","Reims",2025-12-12
+"79","F2","Grenoble","Montpellier",2025-12-12
+"80","F2","Rodez","Guingamp",2025-12-12
+"81","F2","Annecy","Le Mans",2025-12-12
+"82","F2","Amiens","Nancy",2026-01-02
+"83","F2","Bastia","Grenoble",2026-01-02
+"84","F2","Pau FC","Rodez",2026-01-02
+"85","F2","Clermont","Laval",2026-01-02
+"86","F2","Guingamp","Boulogne",2026-01-02
+"87","F2","Montpellier","Dunkerque",2026-01-02
+"88","F2","Le Mans","St Etienne",2026-01-02
+"89","F2","Troyes","Red Star",2026-01-02
+"90","F2","Reims","Annecy",2026-01-02
+"91","F2","St Etienne","Clermont",2026-01-16
+"92","F2","Dunkerque","Pau FC",2026-01-16
+"93","F2","Boulogne","Montpellier",2026-01-16
+"94","F2","Troyes","Reims",2026-01-16
+"95","F2","Rodez","Le Mans",2026-01-16
+"96","F2","Grenoble","Red Star",2026-01-16
+"97","F2","Nancy","Guingamp",2026-01-16
+"98","F2","Annecy","Amiens",2026-01-16
+"99","F2","Laval","Bastia",2026-01-16
+"100","F2","Clermont","Troyes",2025-08-15
+"101","F2","Nancy","Boulogne",2025-08-15
+"102","F2","Bastia","Pau FC",2025-08-15
+"103","F2","Grenoble","Laval",2025-08-15
+"104","F2","Red Star","Amiens",2025-08-15
+"105","F2","Reims","Guingamp",2025-08-16
+"106","F2","Annecy","Dunkerque",2025-08-16
+"107","F2","St Etienne","Rodez",2025-08-16
+"108","F2","Le Mans","Montpellier",2025-08-18
+"109","F2","Le Mans","Dunkerque",2026-01-23
+"110","F2","Guingamp","Troyes",2026-01-23
+"111","F2","Annecy","Clermont",2026-01-23
+"112","F2","Red Star","Boulogne",2026-01-23
+"113","F2","Bastia","Montpellier",2026-01-23
+"114","F2","Pau FC","Grenoble",2026-01-23
+"115","F2","Nancy","Rodez",2026-01-23
+"116","F2","Reims","St Etienne",2026-01-23
+"117","F2","Amiens","Laval",2026-01-23
+"118","F2","St Etienne","Boulogne",2026-01-30
+"119","F2","Grenoble","Amiens",2026-01-30
+"120","F2","Rodez","Red Star",2026-01-30
+"121","F2","Bastia","Nancy",2026-01-30
+"122","F2","Dunkerque","Annecy",2026-01-30
+"123","F2","Troyes","Le Mans",2026-01-30
+"124","F2","Montpellier","Guingamp",2026-01-30
+"125","F2","Laval","Pau FC",2026-01-30
+"126","F2","Clermont","Reims",2026-01-30
+"127","F2","Red Star","Pau FC",2026-02-06
+"128","F2","Boulogne","Rodez",2026-02-06
+"129","F2","Le Mans","Laval",2026-02-06
+"130","F2","Amiens","Clermont",2026-02-06
+"131","F2","Reims","Bastia",2026-02-06
+"132","F2","Nancy","Troyes",2026-02-06
+"133","F2","St Etienne","Montpellier",2026-02-06
+"134","F2","Annecy","Grenoble",2026-02-06
+"135","F2","Dunkerque","Guingamp",2026-02-06
+"136","F2","Pau FC","Boulogne",2026-02-13
+"137","F2","Amiens","Dunkerque",2026-02-13
+"138","F2","Clermont","Rodez",2026-02-13
+"139","F2","Bastia","Troyes",2026-02-13
+"140","F2","Red Star","Nancy",2026-02-13
+"141","F2","Grenoble","Reims",2026-02-13
+"142","F2","Laval","Annecy",2026-02-13
+"143","F2","Guingamp","St Etienne",2026-02-13
+"144","F2","Montpellier","Le Mans",2026-02-13
+"145","F2","St Etienne","Laval",2026-02-20
+"146","F2","Le Mans","Guingamp",2026-02-20
+"147","F2","Dunkerque","Bastia",2026-02-20
+"148","F2","Boulogne","Clermont",2026-02-20
+"149","F2","Nancy","Grenoble",2026-02-20
+"150","F2","Rodez","Montpellier",2026-02-20
+"151","F2","Troyes","Pau FC",2026-02-20
+"152","F2","Annecy","Red Star",2026-02-20
+"153","F2","Reims","Amiens",2026-02-20
+"154","F2","Clermont","Dunkerque",2026-02-27
+"155","F2","Montpellier","Reims",2026-02-27
+"156","F2","Amiens","Troyes",2026-02-27
+"157","F2","Bastia","Annecy",2026-02-27
+"158","F2","Laval","Nancy",2026-02-27
+"159","F2","Grenoble","Boulogne",2026-02-27
+"160","F2","Pau FC","St Etienne",2026-02-27
+"161","F2","Guingamp","Rodez",2026-02-27
+"162","F2","Red Star","Le Mans",2026-02-27
+"163","F2","Le Mans","Annecy",2026-03-06
+"164","F2","Laval","Guingamp",2026-03-06
+"165","F2","Pau FC","Bastia",2026-03-06
+"166","F2","Dunkerque","Reims",2026-03-06
+"167","F2","Boulogne","Amiens",2026-03-06
+"168","F2","St Etienne","Red Star",2026-03-06
+"169","F2","Rodez","Grenoble",2026-03-06
+"170","F2","Nancy","Montpellier",2026-03-06
+"171","F2","Troyes","Clermont",2026-03-06
+"172","F2","Reims","Rodez",2026-03-13
+"173","F2","Guingamp","Amiens",2026-03-13
+"174","F2","Red Star","Dunkerque",2026-03-13
+"175","F2","Bastia","Boulogne",2026-03-13
+"176","F2","Clermont","Pau FC",2026-03-13
+"177","F2","Annecy","Troyes",2026-03-13
+"178","F2","Nancy","Le Mans",2026-03-13
+"179","F2","Grenoble","St Etienne",2026-03-13
+"180","F2","Montpellier","Laval",2026-03-13
+"181","F2","Troyes","Dunkerque",2026-03-20
+"182","F2","St Etienne","Annecy",2026-03-20
+"183","F2","Amiens","Le Mans",2026-03-20
+"184","F2","Guingamp","Reims",2026-03-20
+"185","F2","Rodez","Bastia",2026-03-20
+"186","F2","Boulogne","Nancy",2026-03-20
+"187","F2","Pau FC","Montpellier",2026-03-20
+"188","F2","Laval","Grenoble",2026-03-20
+"189","F2","Clermont","Red Star",2026-03-20
+"190","F2","Reims","Boulogne",2026-04-03
+"191","F2","Annecy","Guingamp",2026-04-03
+"192","F2","Nancy","St Etienne",2026-04-03
+"193","F2","Dunkerque","Rodez",2026-04-03
+"194","F2","Grenoble","Clermont",2026-04-03
+"195","F2","Red Star","Laval",2026-04-03
+"196","F2","Bastia","Amiens",2026-04-03
+"197","F2","Le Mans","Pau FC",2026-04-03
+"198","F2","Montpellier","Troyes",2026-04-03
+"199","F2","Dunkerque","Nancy",2025-08-22
+"200","F2","Rodez","Laval",2025-08-22
+"201","F2","Amiens","Annecy",2025-08-22
+"202","F2","Le Mans","Bastia",2025-08-22
+"203","F2","Clermont","Grenoble",2025-08-22
+"204","F2","Guingamp","Red Star",2025-08-23
+"205","F2","Troyes","Montpellier",2025-08-23
+"206","F2","Boulogne","St Etienne",2025-08-23
+"207","F2","Pau FC","Reims",2025-08-25
+"208","F2","Red Star","Bastia",2026-04-10
+"209","F2","Clermont","Nancy",2026-04-10
+"210","F2","Annecy","Montpellier",2026-04-10
+"211","F2","Boulogne","Le Mans",2026-04-10
+"212","F2","Amiens","Pau FC",2026-04-10
+"213","F2","Laval","Reims",2026-04-10
+"214","F2","St Etienne","Dunkerque",2026-04-10
+"215","F2","Guingamp","Grenoble",2026-04-10
+"216","F2","Rodez","Troyes",2026-04-10
+"217","F2","Pau FC","Guingamp",2026-04-17
+"218","F2","Rodez","Amiens",2026-04-17
+"219","F2","Troyes","Boulogne",2026-04-17
+"220","F2","Bastia","St Etienne",2026-04-17
+"221","F2","Montpellier","Grenoble",2026-04-17
+"222","F2","Reims","Red Star",2026-04-17
+"223","F2","Nancy","Annecy",2026-04-17
+"224","F2","Le Mans","Clermont",2026-04-17
+"225","F2","Dunkerque","Laval",2026-04-17
+"226","F2","Annecy","Pau FC",2026-04-24
+"227","F2","Red Star","Guingamp",2026-04-24
+"228","F2","St Etienne","Troyes",2026-04-24
+"229","F2","Reims","Nancy",2026-04-24
+"230","F2","Clermont","Bastia",2026-04-24
+"231","F2","Grenoble","Le Mans",2026-04-24
+"232","F2","Laval","Rodez",2026-04-24
+"233","F2","Boulogne","Dunkerque",2026-04-24
+"234","F2","Amiens","Montpellier",2026-04-24
+"235","F2","Guingamp","Bastia",2026-05-01
+"236","F2","Rodez","St Etienne",2026-05-01
+"237","F2","Troyes","Laval",2026-05-01
+"238","F2","Pau FC","Nancy",2026-05-01
+"239","F2","Amiens","Red Star",2026-05-01
+"240","F2","Le Mans","Reims",2026-05-01
+"241","F2","Dunkerque","Grenoble",2026-05-01
+"242","F2","Boulogne","Annecy",2026-05-01
+"243","F2","Montpellier","Clermont",2026-05-01
+"244","F2","St Etienne","Amiens",2026-05-08
+"245","F2","Red Star","Montpellier",2026-05-08
+"246","F2","Annecy","Rodez",2026-05-08
+"247","F2","Grenoble","Troyes",2026-05-08
+"248","F2","Bastia","Le Mans",2026-05-08
+"249","F2","Laval","Boulogne",2026-05-08
+"250","F2","Reims","Pau FC",2026-05-08
+"251","F2","Nancy","Dunkerque",2026-05-08
+"252","F2","Clermont","Guingamp",2026-05-08
+"253","F2","Montpellier","Amiens",2025-08-29
+"254","F2","Laval","Clermont",2025-08-29
+"255","F2","Nancy","Pau FC",2025-08-29
+"256","F2","Red Star","Annecy",2025-08-29
+"257","F2","Rodez","Boulogne",2025-08-29
+"258","F2","Dunkerque","Troyes",2025-08-29
+"259","F2","Reims","Le Mans",2025-08-30
+"260","F2","Bastia","Guingamp",2025-08-30
+"261","F2","St Etienne","Grenoble",2025-08-30
+"262","F2","Pau FC","Red Star",2025-09-12
+"263","F2","Troyes","Nancy",2025-09-12
+"264","F2","Boulogne","Laval",2025-09-12
+"265","F2","Le Mans","Rodez",2025-09-12
+"266","F2","Amiens","Bastia",2025-09-12
+"267","F2","Grenoble","Dunkerque",2025-09-13
+"268","F2","Annecy","Reims",2025-09-13
+"269","F2","Clermont","St Etienne",2025-09-13
+"270","F2","Guingamp","Montpellier",2025-09-15
+"271","F2","Nancy","Red Star",2025-09-19
+"272","F2","Grenoble","Annecy",2025-09-19
+"273","F2","Laval","Amiens",2025-09-19
+"274","F2","Rodez","Clermont",2025-09-19
+"275","F2","Dunkerque","Le Mans",2025-09-19
+"276","F2","Boulogne","Pau FC",2025-09-19
+"277","F2","Troyes","Guingamp",2025-09-20
+"278","F2","Montpellier","Bastia",2025-09-20
+"279","F2","St Etienne","Reims",2025-09-20
+"280","F2","Annecy","Nancy",2025-09-23
+"281","F2","Montpellier","Boulogne",2025-09-23
+"282","F2","Le Mans","Grenoble",2025-09-23
+"283","F2","Pau FC","Laval",2025-09-23
+"284","F2","Bastia","Rodez",2025-09-23
+"285","F2","Red Star","Troyes",2025-09-23
+"286","F2","Reims","Clermont",2025-09-23
+"287","F2","Amiens","St Etienne",2025-09-23
+"288","F2","Guingamp","Dunkerque",2025-09-23
+"289","F2","Troyes","Annecy",2025-09-26
+"290","F2","Clermont","Le Mans",2025-09-26
+"291","F2","Nancy","Reims",2025-09-26
+"292","F2","Rodez","Pau FC",2025-09-26
+"293","F2","Grenoble","Bastia",2025-09-26
+"294","F2","Dunkerque","Amiens",2025-09-27
+"295","F2","Laval","Montpellier",2025-09-27
+"296","F2","St Etienne","Guingamp",2025-09-27
+"297","F2","Boulogne","Red Star",2025-09-29
+"298","F2","Bastia","Dunkerque",2025-10-03
+"299","F2","Amiens","Boulogne",2025-10-03
+"300","F2","Guingamp","Nancy",2025-10-03
+"301","F2","Le Mans","Troyes",2025-10-03
+"302","F2","Annecy","Laval",2025-10-03
+"303","F2","Pau FC","Clermont",2025-10-03
+"304","F2","Reims","Grenoble",2025-10-04
+"305","F2","Red Star","Rodez",2025-10-04
+"306","F2","Montpellier","St Etienne",2025-10-04

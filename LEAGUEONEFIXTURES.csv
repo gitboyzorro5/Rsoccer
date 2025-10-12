@@ -1,553 +1,553 @@
 "","Div","HomeTeam","AwayTeam","Date"
-"1","E2","Barnsley","Mansfield",2024-08-09
-"2","E2","Peterboro","Huddersfield",2024-08-10
-"3","E2","Stockport","Cambridge",2024-08-10
-"4","E2","Leyton Orient","Bolton",2024-08-10
-"5","E2","Wrexham","Wycombe",2024-08-10
-"6","E2","Birmingham","Reading",2024-08-10
-"7","E2","Wigan","Charlton",2024-08-10
-"8","E2","Bristol Rvs","Northampton",2024-08-10
-"9","E2","Exeter","Rotherham",2024-08-10
-"10","E2","Stevenage","Shrewsbury",2024-08-10
-"11","E2","Crawley Town","Blackpool",2024-08-10
-"12","E2","Burton","Lincoln",2024-08-10
-"13","E2","Huddersfield","Barnsley",2024-10-05
-"14","E2","Mansfield","Blackpool",2024-10-05
-"15","E2","Lincoln","Leyton Orient",2024-10-05
-"16","E2","Rotherham","Reading",2024-10-05
-"17","E2","Burton","Bristol Rvs",2024-10-05
-"18","E2","Peterboro","Stevenage",2024-10-05
-"19","E2","Bolton","Shrewsbury",2024-10-05
-"20","E2","Charlton","Birmingham",2024-10-05
-"21","E2","Wycombe","Crawley Town",2024-10-05
-"22","E2","Exeter","Cambridge",2024-10-05
-"23","E2","Wrexham","Northampton",2024-10-05
-"24","E2","Stockport","Wigan",2024-10-05
-"25","E2","Exeter","Mansfield",2024-10-12
-"26","E2","Bristol Rvs","Blackpool",2024-10-12
-"27","E2","Wigan","Northampton",2024-10-12
-"28","E2","Stockport","Wycombe",2024-10-12
-"29","E2","Peterboro","Rotherham",2024-10-12
-"30","E2","Burton","Charlton",2024-10-12
-"31","E2","Birmingham","Cambridge",2024-10-12
-"32","E2","Wrexham","Lincoln",2024-10-12
-"33","E2","Barnsley","Reading",2024-10-12
-"34","E2","Crawley Town","Shrewsbury",2024-10-12
-"35","E2","Leyton Orient","Huddersfield",2024-10-12
-"36","E2","Stevenage","Bolton",2024-10-12
-"37","E2","Mansfield","Stevenage",2024-10-19
-"38","E2","Northampton","Leyton Orient",2024-10-19
-"39","E2","Blackpool","Barnsley",2024-10-19
-"40","E2","Rotherham","Wrexham",2024-10-19
-"41","E2","Charlton","Stockport",2024-10-19
-"42","E2","Bolton","Burton",2024-10-19
-"43","E2","Reading","Crawley Town",2024-10-19
-"44","E2","Shrewsbury","Exeter",2024-10-19
-"45","E2","Wycombe","Peterboro",2024-10-19
-"46","E2","Lincoln","Birmingham",2024-10-19
-"47","E2","Cambridge","Wigan",2024-10-19
-"48","E2","Huddersfield","Bristol Rvs",2024-10-19
-"49","E2","Wrexham","Huddersfield",2024-10-22
-"50","E2","Stockport","Northampton",2024-10-22
-"51","E2","Crawley Town","Lincoln",2024-10-22
-"52","E2","Barnsley","Charlton",2024-10-22
-"53","E2","Leyton Orient","Rotherham",2024-10-22
-"54","E2","Burton","Wycombe",2024-10-22
-"55","E2","Peterboro","Blackpool",2024-10-22
-"56","E2","Stevenage","Cambridge",2024-10-22
-"57","E2","Bristol Rvs","Shrewsbury",2024-10-22
-"58","E2","Exeter","Reading",2024-10-22
-"59","E2","Wigan","Mansfield",2024-10-22
-"60","E2","Birmingham","Bolton",2024-10-22
-"61","E2","Rotherham","Stevenage",2024-10-26
-"62","E2","Reading","Bristol Rvs",2024-10-26
-"63","E2","Bolton","Peterboro",2024-10-26
-"64","E2","Lincoln","Stockport",2024-10-26
-"65","E2","Cambridge","Burton",2024-10-26
-"66","E2","Northampton","Crawley Town",2024-10-26
-"67","E2","Blackpool","Wigan",2024-10-26
-"68","E2","Mansfield","Birmingham",2024-10-26
-"69","E2","Wycombe","Leyton Orient",2024-10-26
-"70","E2","Charlton","Wrexham",2024-10-26
-"71","E2","Huddersfield","Exeter",2024-10-26
-"72","E2","Shrewsbury","Barnsley",2024-10-26
-"73","E2","Peterboro","Cambridge",2024-11-09
-"74","E2","Bristol Rvs","Lincoln",2024-11-09
-"75","E2","Crawley Town","Huddersfield",2024-11-09
-"76","E2","Exeter","Charlton",2024-11-09
-"77","E2","Stevenage","Reading",2024-11-09
-"78","E2","Wrexham","Mansfield",2024-11-09
-"79","E2","Leyton Orient","Blackpool",2024-11-09
-"80","E2","Stockport","Bolton",2024-11-09
-"81","E2","Burton","Shrewsbury",2024-11-09
-"82","E2","Wigan","Wycombe",2024-11-09
-"83","E2","Barnsley","Rotherham",2024-11-09
-"84","E2","Birmingham","Northampton",2024-11-09
-"85","E2","Exeter","Lincoln",2024-11-16
-"86","E2","Blackpool","Northampton",2024-11-16
-"87","E2","Cambridge","Barnsley",2024-11-16
-"88","E2","Rotherham","Bolton",2024-11-16
-"89","E2","Birmingham","Stevenage",2024-11-16
-"90","E2","Wigan","Burton",2024-11-16
-"91","E2","Reading","Shrewsbury",2024-11-16
-"92","E2","Leyton Orient","Mansfield",2024-11-16
-"93","E2","Bristol Rvs","Crawley Town",2024-11-16
-"94","E2","Wycombe","Huddersfield",2024-11-16
-"95","E2","Charlton","Peterboro",2024-11-16
-"96","E2","Stockport","Wrexham",2024-11-16
-"97","E2","Lincoln","Wycombe",2024-11-23
-"98","E2","Burton","Stockport",2024-11-23
-"99","E2","Barnsley","Wigan",2024-11-23
-"100","E2","Mansfield","Bristol Rvs",2024-11-23
-"101","E2","Wrexham","Exeter",2024-11-23
-"102","E2","Stevenage","Leyton Orient",2024-11-23
-"103","E2","Huddersfield","Charlton",2024-11-23
-"104","E2","Crawley Town","Rotherham",2024-11-23
-"105","E2","Peterboro","Reading",2024-11-23
-"106","E2","Northampton","Cambridge",2024-11-23
-"107","E2","Bolton","Blackpool",2024-11-23
-"108","E2","Shrewsbury","Birmingham",2024-11-23
-"109","E2","Wrexham","Barnsley",2024-12-03
-"110","E2","Peterboro","Burton",2024-12-03
-"111","E2","Bolton","Mansfield",2024-12-03
-"112","E2","Birmingham","Stockport",2024-12-03
-"113","E2","Stevenage","Northampton",2024-12-03
-"114","E2","Rotherham","Lincoln",2024-12-03
-"115","E2","Leyton Orient","Bristol Rvs",2024-12-03
-"116","E2","Charlton","Crawley Town",2024-12-03
-"117","E2","Exeter","Wycombe",2024-12-03
-"118","E2","Shrewsbury","Blackpool",2024-12-03
-"119","E2","Huddersfield","Wigan",2024-12-03
-"120","E2","Reading","Cambridge",2024-12-03
-"121","E2","Stockport","Exeter",2024-12-07
-"122","E2","Blackpool","Rotherham",2024-12-07
-"123","E2","Wigan","Leyton Orient",2024-12-07
-"124","E2","Barnsley","Birmingham",2024-12-07
-"125","E2","Lincoln","Charlton",2024-12-07
-"126","E2","Mansfield","Huddersfield",2024-12-07
-"127","E2","Crawley Town","Stevenage",2024-12-07
-"128","E2","Burton","Wrexham",2024-12-07
-"129","E2","Cambridge","Shrewsbury",2024-12-07
-"130","E2","Northampton","Peterboro",2024-12-07
-"131","E2","Bristol Rvs","Bolton",2024-12-07
-"132","E2","Wycombe","Reading",2024-12-07
-"133","E2","Shrewsbury","Peterboro",2024-08-17
-"134","E2","Charlton","Leyton Orient",2024-08-17
-"135","E2","Lincoln","Barnsley",2024-08-17
-"136","E2","Wycombe","Birmingham",2024-08-17
-"137","E2","Reading","Wigan",2024-08-17
-"138","E2","Northampton","Exeter",2024-08-17
-"139","E2","Huddersfield","Stevenage",2024-08-17
-"140","E2","Mansfield","Burton",2024-08-17
-"141","E2","Rotherham","Bristol Rvs",2024-08-17
-"142","E2","Cambridge","Crawley Town",2024-08-17
-"143","E2","Blackpool","Stockport",2024-08-17
-"144","E2","Bolton","Wrexham",2024-08-18
-"145","E2","Leyton Orient","Burton",2024-12-14
-"146","E2","Peterboro","Crawley Town",2024-12-14
-"147","E2","Reading","Blackpool",2024-12-14
-"148","E2","Shrewsbury","Wycombe",2024-12-14
-"149","E2","Exeter","Barnsley",2024-12-14
-"150","E2","Bolton","Wigan",2024-12-14
-"151","E2","Stevenage","Stockport",2024-12-14
-"152","E2","Huddersfield","Lincoln",2024-12-14
-"153","E2","Rotherham","Northampton",2024-12-14
-"154","E2","Wrexham","Cambridge",2024-12-14
-"155","E2","Charlton","Mansfield",2024-12-14
-"156","E2","Birmingham","Bristol Rvs",2024-12-14
-"157","E2","Wigan","Shrewsbury",2024-12-21
-"158","E2","Burton","Exeter",2024-12-21
-"159","E2","Bristol Rvs","Wrexham",2024-12-21
-"160","E2","Cambridge","Huddersfield",2024-12-21
-"161","E2","Blackpool","Stevenage",2024-12-21
-"162","E2","Crawley Town","Birmingham",2024-12-21
-"163","E2","Barnsley","Leyton Orient",2024-12-21
-"164","E2","Northampton","Charlton",2024-12-21
-"165","E2","Lincoln","Reading",2024-12-21
-"166","E2","Wycombe","Bolton",2024-12-21
-"167","E2","Stockport","Peterboro",2024-12-21
-"168","E2","Mansfield","Rotherham",2024-12-21
-"169","E2","Huddersfield","Stockport",2024-12-26
-"170","E2","Reading","Northampton",2024-12-26
-"171","E2","Bolton","Barnsley",2024-12-26
-"172","E2","Wrexham","Blackpool",2024-12-26
-"173","E2","Leyton Orient","Crawley Town",2024-12-26
-"174","E2","Stevenage","Wycombe",2024-12-26
-"175","E2","Peterboro","Mansfield",2024-12-26
-"176","E2","Rotherham","Wigan",2024-12-26
-"177","E2","Exeter","Bristol Rvs",2024-12-26
-"178","E2","Birmingham","Burton",2024-12-26
-"179","E2","Shrewsbury","Lincoln",2024-12-26
-"180","E2","Charlton","Cambridge",2024-12-26
-"181","E2","Huddersfield","Burton",2024-12-29
-"182","E2","Stevenage","Bristol Rvs",2024-12-29
-"183","E2","Leyton Orient","Cambridge",2024-12-29
-"184","E2","Birmingham","Blackpool",2024-12-29
-"185","E2","Charlton","Wycombe",2024-12-29
-"186","E2","Peterboro","Barnsley",2024-12-29
-"187","E2","Wrexham","Wigan",2024-12-29
-"188","E2","Shrewsbury","Northampton",2024-12-29
-"189","E2","Exeter","Crawley Town",2024-12-29
-"190","E2","Rotherham","Stockport",2024-12-29
-"191","E2","Reading","Mansfield",2024-12-29
-"192","E2","Bolton","Lincoln",2024-12-29
-"193","E2","Bristol Rvs","Leyton Orient",2025-01-01
-"194","E2","Wycombe","Exeter",2025-01-01
-"195","E2","Crawley Town","Charlton",2025-01-01
-"196","E2","Northampton","Stevenage",2025-01-01
-"197","E2","Cambridge","Reading",2025-01-01
-"198","E2","Mansfield","Bolton",2025-01-01
-"199","E2","Burton","Peterboro",2025-01-01
-"200","E2","Wigan","Huddersfield",2025-01-01
-"201","E2","Stockport","Birmingham",2025-01-01
-"202","E2","Lincoln","Rotherham",2025-01-01
-"203","E2","Barnsley","Wrexham",2025-01-01
-"204","E2","Blackpool","Shrewsbury",2025-01-01
-"205","E2","Charlton","Reading",2025-01-04
-"206","E2","Leyton Orient","Shrewsbury",2025-01-04
-"207","E2","Burton","Northampton",2025-01-04
-"208","E2","Huddersfield","Rotherham",2025-01-04
-"209","E2","Barnsley","Crawley Town",2025-01-04
-"210","E2","Exeter","Bolton",2025-01-04
-"211","E2","Stockport","Mansfield",2025-01-04
-"212","E2","Wrexham","Peterboro",2025-01-04
-"213","E2","Lincoln","Stevenage",2025-01-04
-"214","E2","Cambridge","Bristol Rvs",2025-01-04
-"215","E2","Wycombe","Blackpool",2025-01-04
-"216","E2","Wigan","Birmingham",2025-01-04
-"217","E2","Reading","Wrexham",2025-01-11
-"218","E2","Rotherham","Wycombe",2025-01-11
-"219","E2","Mansfield","Lincoln",2025-01-11
-"220","E2","Bolton","Charlton",2025-01-11
-"221","E2","Peterboro","Exeter",2025-01-11
-"222","E2","Stevenage","Burton",2025-01-11
-"223","E2","Northampton","Barnsley",2025-01-11
-"224","E2","Birmingham","Leyton Orient",2025-01-11
-"225","E2","Blackpool","Cambridge",2025-01-11
-"226","E2","Crawley Town","Wigan",2025-01-11
-"227","E2","Bristol Rvs","Stockport",2025-01-11
-"228","E2","Shrewsbury","Huddersfield",2025-01-11
-"229","E2","Rotherham","Charlton",2025-01-18
-"230","E2","Shrewsbury","Wrexham",2025-01-18
-"231","E2","Mansfield","Wycombe",2025-01-18
-"232","E2","Blackpool","Huddersfield",2025-01-18
-"233","E2","Crawley Town","Burton",2025-01-18
-"234","E2","Birmingham","Exeter",2025-01-18
-"235","E2","Bolton","Cambridge",2025-01-18
-"236","E2","Bristol Rvs","Barnsley",2025-01-18
-"237","E2","Reading","Stockport",2025-01-18
-"238","E2","Peterboro","Leyton Orient",2025-01-18
-"239","E2","Northampton","Lincoln",2025-01-18
-"240","E2","Stevenage","Wigan",2025-01-18
-"241","E2","Lincoln","Peterboro",2025-01-25
-"242","E2","Barnsley","Stevenage",2025-01-25
-"243","E2","Wrexham","Birmingham",2025-01-25
-"244","E2","Leyton Orient","Reading",2025-01-25
-"245","E2","Stockport","Crawley Town",2025-01-25
-"246","E2","Charlton","Shrewsbury",2025-01-25
-"247","E2","Burton","Rotherham",2025-01-25
-"248","E2","Exeter","Blackpool",2025-01-25
-"249","E2","Huddersfield","Bolton",2025-01-25
-"250","E2","Wigan","Bristol Rvs",2025-01-25
-"251","E2","Wycombe","Northampton",2025-01-25
-"252","E2","Cambridge","Mansfield",2025-01-25
-"253","E2","Peterboro","Wigan",2025-01-28
-"254","E2","Charlton","Bristol Rvs",2025-01-28
-"255","E2","Huddersfield","Birmingham",2025-01-28
-"256","E2","Lincoln","Blackpool",2025-01-28
-"257","E2","Wrexham","Stevenage",2025-01-28
-"258","E2","Exeter","Leyton Orient",2025-01-28
-"259","E2","Stockport","Shrewsbury",2025-01-28
-"260","E2","Rotherham","Cambridge",2025-01-28
-"261","E2","Wycombe","Barnsley",2025-01-28
-"262","E2","Mansfield","Crawley Town",2025-01-28
-"263","E2","Burton","Reading",2025-01-28
-"264","E2","Bolton","Northampton",2025-01-28
-"265","E2","Stockport","Bristol Rvs",2024-08-24
-"266","E2","Burton","Stevenage",2024-08-24
-"267","E2","Wycombe","Rotherham",2024-08-24
-"268","E2","Wrexham","Reading",2024-08-24
-"269","E2","Huddersfield","Shrewsbury",2024-08-24
-"270","E2","Exeter","Peterboro",2024-08-24
-"271","E2","Charlton","Bolton",2024-08-24
-"272","E2","Lincoln","Mansfield",2024-08-24
-"273","E2","Barnsley","Northampton",2024-08-24
-"274","E2","Leyton Orient","Birmingham",2024-08-24
-"275","E2","Cambridge","Blackpool",2024-08-24
-"276","E2","Wigan","Crawley Town",2024-08-24
-"277","E2","Leyton Orient","Stockport",2025-02-01
-"278","E2","Northampton","Huddersfield",2025-02-01
-"279","E2","Stevenage","Exeter",2025-02-01
-"280","E2","Barnsley","Burton",2025-02-01
-"281","E2","Crawley Town","Wrexham",2025-02-01
-"282","E2","Bristol Rvs","Peterboro",2025-02-01
-"283","E2","Birmingham","Rotherham",2025-02-01
-"284","E2","Reading","Bolton",2025-02-01
-"285","E2","Shrewsbury","Mansfield",2025-02-01
-"286","E2","Wigan","Lincoln",2025-02-01
-"287","E2","Blackpool","Charlton",2025-02-01
-"288","E2","Cambridge","Wycombe",2025-02-01
-"289","E2","Wrexham","Leyton Orient",2025-02-08
-"290","E2","Stockport","Barnsley",2025-02-08
-"291","E2","Exeter","Wigan",2025-02-08
-"292","E2","Lincoln","Cambridge",2025-02-08
-"293","E2","Rotherham","Shrewsbury",2025-02-08
-"294","E2","Peterboro","Birmingham",2025-02-08
-"295","E2","Wycombe","Bristol Rvs",2025-02-08
-"296","E2","Huddersfield","Reading",2025-02-08
-"297","E2","Burton","Blackpool",2025-02-08
-"298","E2","Charlton","Stevenage",2025-02-08
-"299","E2","Mansfield","Northampton",2025-02-08
-"300","E2","Bolton","Crawley Town",2025-02-08
-"301","E2","Reading","Rotherham",2025-02-15
-"302","E2","Wigan","Stockport",2025-02-15
-"303","E2","Shrewsbury","Bolton",2025-02-15
-"304","E2","Cambridge","Exeter",2025-02-15
-"305","E2","Blackpool","Mansfield",2025-02-15
-"306","E2","Barnsley","Huddersfield",2025-02-15
-"307","E2","Crawley Town","Wycombe",2025-02-15
-"308","E2","Bristol Rvs","Burton",2025-02-15
-"309","E2","Birmingham","Charlton",2025-02-15
-"310","E2","Stevenage","Peterboro",2025-02-15
-"311","E2","Leyton Orient","Lincoln",2025-02-15
-"312","E2","Northampton","Wrexham",2025-02-15
-"313","E2","Huddersfield","Peterboro",2025-02-22
-"314","E2","Charlton","Exeter",2025-02-22
-"315","E2","Mansfield","Wrexham",2025-02-22
-"316","E2","Shrewsbury","Stevenage",2025-02-22
-"317","E2","Blackpool","Crawley Town",2025-02-22
-"318","E2","Northampton","Bristol Rvs",2025-02-22
-"319","E2","Reading","Birmingham",2025-02-22
-"320","E2","Bolton","Leyton Orient",2025-02-22
-"321","E2","Rotherham","Barnsley",2025-02-22
-"322","E2","Cambridge","Stockport",2025-02-22
-"323","E2","Lincoln","Burton",2025-02-22
-"324","E2","Wycombe","Wigan",2025-02-22
-"325","E2","Exeter","Northampton",2025-03-01
-"326","E2","Stockport","Blackpool",2025-03-01
-"327","E2","Leyton Orient","Charlton",2025-03-01
-"328","E2","Peterboro","Shrewsbury",2025-03-01
-"329","E2","Birmingham","Wycombe",2025-03-01
-"330","E2","Burton","Mansfield",2025-03-01
-"331","E2","Wrexham","Bolton",2025-03-01
-"332","E2","Bristol Rvs","Rotherham",2025-03-01
-"333","E2","Barnsley","Lincoln",2025-03-01
-"334","E2","Wigan","Reading",2025-03-01
-"335","E2","Crawley Town","Cambridge",2025-03-01
-"336","E2","Stevenage","Huddersfield",2025-03-01
-"337","E2","Mansfield","Wigan",2025-03-04
-"338","E2","Rotherham","Leyton Orient",2025-03-04
-"339","E2","Charlton","Barnsley",2025-03-04
-"340","E2","Northampton","Stockport",2025-03-04
-"341","E2","Blackpool","Peterboro",2025-03-04
-"342","E2","Cambridge","Stevenage",2025-03-04
-"343","E2","Huddersfield","Wrexham",2025-03-04
-"344","E2","Bolton","Birmingham",2025-03-04
-"345","E2","Shrewsbury","Bristol Rvs",2025-03-04
-"346","E2","Wycombe","Burton",2025-03-04
-"347","E2","Lincoln","Crawley Town",2025-03-04
-"348","E2","Reading","Exeter",2025-03-04
-"349","E2","Wigan","Cambridge",2025-03-08
-"350","E2","Birmingham","Lincoln",2025-03-08
-"351","E2","Bristol Rvs","Huddersfield",2025-03-08
-"352","E2","Stockport","Charlton",2025-03-08
-"353","E2","Wrexham","Rotherham",2025-03-08
-"354","E2","Crawley Town","Reading",2025-03-08
-"355","E2","Peterboro","Wycombe",2025-03-08
-"356","E2","Stevenage","Mansfield",2025-03-08
-"357","E2","Barnsley","Blackpool",2025-03-08
-"358","E2","Leyton Orient","Northampton",2025-03-08
-"359","E2","Exeter","Shrewsbury",2025-03-08
-"360","E2","Burton","Bolton",2025-03-08
-"361","E2","Huddersfield","Crawley Town",2025-03-15
-"362","E2","Mansfield","Barnsley",2025-03-15
-"363","E2","Northampton","Birmingham",2025-03-15
-"364","E2","Wycombe","Wrexham",2025-03-15
-"365","E2","Reading","Stevenage",2025-03-15
-"366","E2","Bolton","Stockport",2025-03-15
-"367","E2","Rotherham","Exeter",2025-03-15
-"368","E2","Charlton","Wigan",2025-03-15
-"369","E2","Blackpool","Leyton Orient",2025-03-15
-"370","E2","Lincoln","Bristol Rvs",2025-03-15
-"371","E2","Shrewsbury","Burton",2025-03-15
-"372","E2","Cambridge","Peterboro",2025-03-15
-"373","E2","Crawley Town","Bristol Rvs",2025-03-22
-"374","E2","Shrewsbury","Reading",2025-03-22
-"375","E2","Northampton","Blackpool",2025-03-22
-"376","E2","Wrexham","Stockport",2025-03-22
-"377","E2","Lincoln","Exeter",2025-03-22
-"378","E2","Barnsley","Cambridge",2025-03-22
-"379","E2","Bolton","Rotherham",2025-03-22
-"380","E2","Huddersfield","Wycombe",2025-03-22
-"381","E2","Burton","Wigan",2025-03-22
-"382","E2","Stevenage","Birmingham",2025-03-22
-"383","E2","Mansfield","Leyton Orient",2025-03-22
-"384","E2","Peterboro","Charlton",2025-03-22
-"385","E2","Stockport","Burton",2025-03-29
-"386","E2","Reading","Peterboro",2025-03-29
-"387","E2","Rotherham","Crawley Town",2025-03-29
-"388","E2","Blackpool","Bolton",2025-03-29
-"389","E2","Bristol Rvs","Mansfield",2025-03-29
-"390","E2","Leyton Orient","Stevenage",2025-03-29
-"391","E2","Wigan","Barnsley",2025-03-29
-"392","E2","Birmingham","Shrewsbury",2025-03-29
-"393","E2","Wycombe","Lincoln",2025-03-29
-"394","E2","Charlton","Huddersfield",2025-03-29
-"395","E2","Cambridge","Northampton",2025-03-29
-"396","E2","Exeter","Wrexham",2025-03-29
-"397","E2","Rotherham","Huddersfield",2024-08-31
-"398","E2","Blackpool","Wycombe",2024-08-31
-"399","E2","Peterboro","Wrexham",2024-08-31
-"400","E2","Crawley Town","Barnsley",2024-08-31
-"401","E2","Mansfield","Stockport",2024-08-31
-"402","E2","Northampton","Burton",2024-08-31
-"403","E2","Shrewsbury","Leyton Orient",2024-08-31
-"404","E2","Stevenage","Lincoln",2024-08-31
-"405","E2","Reading","Charlton",2024-08-31
-"406","E2","Bolton","Exeter",2024-08-31
-"407","E2","Birmingham","Wigan",2024-08-31
-"408","E2","Bristol Rvs","Cambridge",2024-08-31
-"409","E2","Mansfield","Charlton",2025-04-01
-"410","E2","Burton","Leyton Orient",2025-04-01
-"411","E2","Barnsley","Exeter",2025-04-01
-"412","E2","Wigan","Bolton",2025-04-01
-"413","E2","Northampton","Rotherham",2025-04-01
-"414","E2","Cambridge","Wrexham",2025-04-01
-"415","E2","Lincoln","Huddersfield",2025-04-01
-"416","E2","Bristol Rvs","Birmingham",2025-04-01
-"417","E2","Crawley Town","Peterboro",2025-04-01
-"418","E2","Wycombe","Shrewsbury",2025-04-01
-"419","E2","Blackpool","Reading",2025-04-01
-"420","E2","Stockport","Stevenage",2025-04-01
-"421","E2","Reading","Wycombe",2025-04-05
-"422","E2","Charlton","Lincoln",2025-04-05
-"423","E2","Bolton","Bristol Rvs",2025-04-05
-"424","E2","Rotherham","Blackpool",2025-04-05
-"425","E2","Birmingham","Barnsley",2025-04-05
-"426","E2","Peterboro","Northampton",2025-04-05
-"427","E2","Leyton Orient","Wigan",2025-04-05
-"428","E2","Exeter","Stockport",2025-04-05
-"429","E2","Stevenage","Crawley Town",2025-04-05
-"430","E2","Shrewsbury","Cambridge",2025-04-05
-"431","E2","Huddersfield","Mansfield",2025-04-05
-"432","E2","Wrexham","Burton",2025-04-05
-"433","E2","Burton","Huddersfield",2025-04-12
-"434","E2","Bristol Rvs","Exeter",2025-04-12
-"435","E2","Blackpool","Birmingham",2025-04-12
-"436","E2","Barnsley","Bolton",2025-04-12
-"437","E2","Mansfield","Peterboro",2025-04-12
-"438","E2","Wycombe","Stevenage",2025-04-12
-"439","E2","Lincoln","Shrewsbury",2025-04-12
-"440","E2","Crawley Town","Leyton Orient",2025-04-12
-"441","E2","Stockport","Rotherham",2025-04-12
-"442","E2","Cambridge","Charlton",2025-04-12
-"443","E2","Northampton","Reading",2025-04-12
-"444","E2","Wigan","Wrexham",2025-04-12
-"445","E2","Reading","Lincoln",2025-04-18
-"446","E2","Bolton","Wycombe",2025-04-18
-"447","E2","Peterboro","Stockport",2025-04-18
-"448","E2","Huddersfield","Cambridge",2025-04-18
-"449","E2","Leyton Orient","Barnsley",2025-04-18
-"450","E2","Stevenage","Blackpool",2025-04-18
-"451","E2","Charlton","Northampton",2025-04-18
-"452","E2","Wrexham","Bristol Rvs",2025-04-18
-"453","E2","Shrewsbury","Wigan",2025-04-18
-"454","E2","Birmingham","Crawley Town",2025-04-18
-"455","E2","Exeter","Burton",2025-04-18
-"456","E2","Rotherham","Mansfield",2025-04-18
-"457","E2","Stockport","Huddersfield",2025-04-21
-"458","E2","Mansfield","Reading",2025-04-21
-"459","E2","Northampton","Shrewsbury",2025-04-21
-"460","E2","Barnsley","Peterboro",2025-04-21
-"461","E2","Wycombe","Charlton",2025-04-21
-"462","E2","Blackpool","Wrexham",2025-04-21
-"463","E2","Burton","Birmingham",2025-04-21
-"464","E2","Cambridge","Leyton Orient",2025-04-21
-"465","E2","Crawley Town","Exeter",2025-04-21
-"466","E2","Lincoln","Bolton",2025-04-21
-"467","E2","Bristol Rvs","Stevenage",2025-04-21
-"468","E2","Wigan","Rotherham",2025-04-21
-"469","E2","Crawley Town","Northampton",2025-04-26
-"470","E2","Exeter","Huddersfield",2025-04-26
-"471","E2","Stevenage","Rotherham",2025-04-26
-"472","E2","Wrexham","Charlton",2025-04-26
-"473","E2","Leyton Orient","Wycombe",2025-04-26
-"474","E2","Barnsley","Shrewsbury",2025-04-26
-"475","E2","Stockport","Lincoln",2025-04-26
-"476","E2","Wigan","Blackpool",2025-04-26
-"477","E2","Birmingham","Mansfield",2025-04-26
-"478","E2","Peterboro","Bolton",2025-04-26
-"479","E2","Bristol Rvs","Reading",2025-04-26
-"480","E2","Burton","Cambridge",2025-04-26
-"481","E2","Mansfield","Exeter",2025-05-03
-"482","E2","Cambridge","Birmingham",2025-05-03
-"483","E2","Bolton","Stevenage",2025-05-03
-"484","E2","Blackpool","Bristol Rvs",2025-05-03
-"485","E2","Shrewsbury","Crawley Town",2025-05-03
-"486","E2","Reading","Barnsley",2025-05-03
-"487","E2","Lincoln","Wrexham",2025-05-03
-"488","E2","Rotherham","Peterboro",2025-05-03
-"489","E2","Charlton","Burton",2025-05-03
-"490","E2","Huddersfield","Leyton Orient",2025-05-03
-"491","E2","Wycombe","Stockport",2025-05-03
-"492","E2","Northampton","Wigan",2025-05-03
-"493","E2","Burton","Crawley Town",2024-09-07
-"494","E2","Barnsley","Bristol Rvs",2024-09-07
-"495","E2","Charlton","Rotherham",2024-09-07
-"496","E2","Wycombe","Mansfield",2024-09-07
-"497","E2","Exeter","Birmingham",2024-09-07
-"498","E2","Lincoln","Northampton",2024-09-07
-"499","E2","Wigan","Stevenage",2024-09-07
-"500","E2","Wrexham","Shrewsbury",2024-09-07
-"501","E2","Huddersfield","Blackpool",2024-09-07
-"502","E2","Leyton Orient","Peterboro",2024-09-07
-"503","E2","Stockport","Reading",2024-09-07
-"504","E2","Cambridge","Bolton",2024-09-07
-"505","E2","Mansfield","Cambridge",2024-09-14
-"506","E2","Northampton","Wycombe",2024-09-14
-"507","E2","Bristol Rvs","Wigan",2024-09-14
-"508","E2","Stevenage","Barnsley",2024-09-14
-"509","E2","Blackpool","Exeter",2024-09-14
-"510","E2","Shrewsbury","Charlton",2024-09-14
-"511","E2","Peterboro","Lincoln",2024-09-14
-"512","E2","Reading","Leyton Orient",2024-09-14
-"513","E2","Bolton","Huddersfield",2024-09-14
-"514","E2","Rotherham","Burton",2024-09-14
-"515","E2","Crawley Town","Stockport",2024-09-14
-"516","E2","Birmingham","Wrexham",2024-09-16
-"517","E2","Lincoln","Wigan",2024-09-21
-"518","E2","Exeter","Stevenage",2024-09-21
-"519","E2","Rotherham","Birmingham",2024-09-21
-"520","E2","Burton","Barnsley",2024-09-21
-"521","E2","Bolton","Reading",2024-09-21
-"522","E2","Wycombe","Cambridge",2024-09-21
-"523","E2","Peterboro","Bristol Rvs",2024-09-21
-"524","E2","Wrexham","Crawley Town",2024-09-21
-"525","E2","Charlton","Blackpool",2024-09-21
-"526","E2","Stockport","Leyton Orient",2024-09-21
-"527","E2","Huddersfield","Northampton",2024-09-21
-"528","E2","Mansfield","Shrewsbury",2024-09-21
-"529","E2","Crawley Town","Bolton",2024-09-28
-"530","E2","Reading","Huddersfield",2024-09-28
-"531","E2","Shrewsbury","Rotherham",2024-09-28
-"532","E2","Leyton Orient","Wrexham",2024-09-28
-"533","E2","Stevenage","Charlton",2024-09-28
-"534","E2","Wigan","Exeter",2024-09-28
-"535","E2","Northampton","Mansfield",2024-09-28
-"536","E2","Birmingham","Peterboro",2024-09-28
-"537","E2","Cambridge","Lincoln",2024-09-28
-"538","E2","Blackpool","Burton",2024-09-28
-"539","E2","Bristol Rvs","Wycombe",2024-09-28
-"540","E2","Barnsley","Stockport",2024-09-28
-"541","E2","Blackpool","Lincoln",2024-10-01
-"542","E2","Cambridge","Rotherham",2024-10-01
-"543","E2","Shrewsbury","Stockport",2024-10-01
-"544","E2","Northampton","Bolton",2024-10-01
-"545","E2","Bristol Rvs","Charlton",2024-10-01
-"546","E2","Crawley Town","Mansfield",2024-10-01
-"547","E2","Leyton Orient","Exeter",2024-10-01
-"548","E2","Barnsley","Wycombe",2024-10-01
-"549","E2","Wigan","Peterboro",2024-10-01
-"550","E2","Stevenage","Wrexham",2024-10-01
-"551","E2","Birmingham","Huddersfield",2024-10-01
-"552","E2","Reading","Burton",2024-10-01
+"1","E2","Luton","AFC Wimbledon",2025-08-01
+"2","E2","Cardiff","Peterboro",2025-08-02
+"3","E2","Plymouth","Barnsley",2025-08-02
+"4","E2","Huddersfield","Leyton Orient",2025-08-02
+"5","E2","Bradford","Wycombe",2025-08-02
+"6","E2","Blackpool","Stevenage",2025-08-02
+"7","E2","Lincoln City","Reading",2025-08-02
+"8","E2","Burton","Mansfield",2025-08-02
+"9","E2","Wigan","Northampton",2025-08-02
+"10","E2","Rotherham","Port Vale",2025-08-02
+"11","E2","Doncaster","Exeter",2025-08-02
+"12","E2","Stockport","Bolton",2025-08-03
+"13","E2","AFC Wimbledon","Wycombe",2025-09-27
+"14","E2","Leyton Orient","Stevenage",2025-09-27
+"15","E2","Peterboro","Lincoln City",2025-09-27
+"16","E2","Luton","Doncaster",2025-09-27
+"17","E2","Barnsley","Port Vale",2025-09-27
+"18","E2","Bradford","Blackpool",2025-09-27
+"19","E2","Exeter","Huddersfield",2025-09-27
+"20","E2","Northampton","Bolton",2025-09-27
+"21","E2","Burton","Plymouth",2025-09-27
+"22","E2","Mansfield","Rotherham",2025-09-27
+"23","E2","Wigan","Cardiff",2025-09-27
+"24","E2","Stockport","Reading",2025-09-27
+"25","E2","Rotherham","Bradford",2025-10-02
+"26","E2","Wycombe","Barnsley",2025-10-04
+"27","E2","Doncaster","Burton",2025-10-04
+"28","E2","Plymouth","Wigan",2025-10-04
+"29","E2","Bolton","Peterboro",2025-10-04
+"30","E2","Reading","Mansfield",2025-10-04
+"31","E2","Lincoln City","Exeter",2025-10-04
+"32","E2","Huddersfield","Stockport",2025-10-04
+"33","E2","Blackpool","AFC Wimbledon",2025-10-04
+"34","E2","Port Vale","Northampton",2025-10-04
+"35","E2","Stevenage","Luton",2025-10-04
+"36","E2","Cardiff","Leyton Orient",2025-10-04
+"37","E2","Northampton","Rotherham",2025-10-11
+"38","E2","Peterboro","Stevenage",2025-10-11
+"39","E2","Burton","Bolton",2025-10-11
+"40","E2","Wigan","Wycombe",2025-10-11
+"41","E2","Barnsley","Cardiff",2025-10-11
+"42","E2","Exeter","Reading",2025-10-11
+"43","E2","Luton","Huddersfield",2025-10-11
+"44","E2","Leyton Orient","Doncaster",2025-10-11
+"45","E2","Bradford","Lincoln City",2025-10-11
+"46","E2","AFC Wimbledon","Port Vale",2025-10-11
+"47","E2","Mansfield","Plymouth",2025-10-11
+"48","E2","Stockport","Blackpool",2025-10-11
+"49","E2","Huddersfield","Bolton",2025-10-16
+"50","E2","Lincoln City","Stevenage",2025-10-18
+"51","E2","Burton","Peterboro",2025-10-18
+"52","E2","Cardiff","Reading",2025-10-18
+"53","E2","Plymouth","AFC Wimbledon",2025-10-18
+"54","E2","Rotherham","Leyton Orient",2025-10-18
+"55","E2","Doncaster","Northampton",2025-10-18
+"56","E2","Luton","Mansfield",2025-10-18
+"57","E2","Bradford","Barnsley",2025-10-18
+"58","E2","Blackpool","Wycombe",2025-10-18
+"59","E2","Wigan","Port Vale",2025-10-18
+"60","E2","Stockport","Exeter",2025-10-18
+"61","E2","Exeter","Plymouth",2025-10-23
+"62","E2","Mansfield","Wigan",2025-10-25
+"63","E2","Bolton","Cardiff",2025-10-25
+"64","E2","Wycombe","Huddersfield",2025-10-25
+"65","E2","Leyton Orient","Lincoln City",2025-10-25
+"66","E2","AFC Wimbledon","Burton",2025-10-25
+"67","E2","Stevenage","Bradford",2025-10-25
+"68","E2","Northampton","Luton",2025-10-25
+"69","E2","Peterboro","Blackpool",2025-10-25
+"70","E2","Barnsley","Rotherham",2025-10-25
+"71","E2","Reading","Doncaster",2025-10-25
+"72","E2","Port Vale","Stockport",2025-10-27
+"73","E2","Reading","Stevenage",2025-11-06
+"74","E2","Wycombe","Leyton Orient",2025-11-08
+"75","E2","Northampton","Mansfield",2025-11-08
+"76","E2","Doncaster","Barnsley",2025-11-08
+"77","E2","Rotherham","Lincoln City",2025-11-08
+"78","E2","Stockport","Luton",2025-11-08
+"79","E2","Blackpool","Cardiff",2025-11-08
+"80","E2","Bolton","Port Vale",2025-11-08
+"81","E2","Exeter","Wigan",2025-11-08
+"82","E2","Bradford","Burton",2025-11-08
+"83","E2","Huddersfield","Plymouth",2025-11-08
+"84","E2","Peterboro","AFC Wimbledon",2025-11-08
+"85","E2","Cardiff","Huddersfield",2025-11-15
+"86","E2","Burton","Blackpool",2025-11-15
+"87","E2","Luton","Rotherham",2025-11-15
+"88","E2","Port Vale","Wycombe",2025-11-15
+"89","E2","Lincoln City","Doncaster",2025-11-15
+"90","E2","Mansfield","Peterboro",2025-11-15
+"91","E2","Leyton Orient","Exeter",2025-11-15
+"92","E2","Plymouth","Bradford",2025-11-15
+"93","E2","Barnsley","Northampton",2025-11-15
+"94","E2","Stevenage","Bolton",2025-11-15
+"95","E2","Wigan","Reading",2025-11-15
+"96","E2","AFC Wimbledon","Stockport",2025-11-15
+"97","E2","Peterboro","Stockport",2025-11-20
+"98","E2","Exeter","Burton",2025-11-22
+"99","E2","Port Vale","Plymouth",2025-11-22
+"100","E2","Stevenage","Doncaster",2025-11-22
+"101","E2","Bolton","Bradford",2025-11-22
+"102","E2","Wycombe","Lincoln City",2025-11-22
+"103","E2","Northampton","Cardiff",2025-11-22
+"104","E2","Barnsley","Luton",2025-11-22
+"105","E2","Mansfield","Huddersfield",2025-11-22
+"106","E2","Reading","Rotherham",2025-11-22
+"107","E2","AFC Wimbledon","Wigan",2025-11-22
+"108","E2","Leyton Orient","Blackpool",2025-11-22
+"109","E2","Stockport","Barnsley",2025-11-29
+"110","E2","Blackpool","Reading",2025-11-29
+"111","E2","Bradford","Exeter",2025-11-29
+"112","E2","Cardiff","Mansfield",2025-11-29
+"113","E2","Plymouth","Northampton",2025-11-29
+"114","E2","Doncaster","Peterboro",2025-11-29
+"115","E2","Luton","Bolton",2025-11-29
+"116","E2","Wigan","Stevenage",2025-11-29
+"117","E2","Huddersfield","AFC Wimbledon",2025-11-29
+"118","E2","Rotherham","Wycombe",2025-11-29
+"119","E2","Lincoln City","Port Vale",2025-11-29
+"120","E2","Burton","Leyton Orient",2025-11-29
+"121","E2","Wycombe","Plymouth",2025-12-09
+"122","E2","Doncaster","Stockport",2025-12-09
+"123","E2","Stevenage","Cardiff",2025-12-09
+"124","E2","Lincoln City","Barnsley",2025-12-09
+"125","E2","Exeter","AFC Wimbledon",2025-12-09
+"126","E2","Mansfield","Bolton",2025-12-09
+"127","E2","Wigan","Burton",2025-12-09
+"128","E2","Northampton","Huddersfield",2025-12-09
+"129","E2","Rotherham","Blackpool",2025-12-09
+"130","E2","Port Vale","Bradford",2025-12-09
+"131","E2","Leyton Orient","Luton",2025-12-09
+"132","E2","Reading","Peterboro",2025-12-09
+"133","E2","Port Vale","Cardiff",2025-08-07
+"134","E2","Reading","Huddersfield",2025-08-09
+"135","E2","Peterboro","Luton",2025-08-09
+"136","E2","AFC Wimbledon","Lincoln City",2025-08-09
+"137","E2","Stevenage","Rotherham",2025-08-09
+"138","E2","Mansfield","Doncaster",2025-08-09
+"139","E2","Wycombe","Stockport",2025-08-09
+"140","E2","Bolton","Plymouth",2025-08-09
+"141","E2","Barnsley","Burton",2025-08-09
+"142","E2","Exeter","Blackpool",2025-08-09
+"143","E2","Northampton","Bradford",2025-08-09
+"144","E2","Leyton Orient","Wigan",2025-08-09
+"145","E2","Huddersfield","Wigan",2025-12-13
+"146","E2","AFC Wimbledon","Mansfield",2025-12-13
+"147","E2","Bradford","Reading",2025-12-13
+"148","E2","Burton","Wycombe",2025-12-13
+"149","E2","Luton","Port Vale",2025-12-13
+"150","E2","Barnsley","Leyton Orient",2025-12-13
+"151","E2","Blackpool","Lincoln City",2025-12-13
+"152","E2","Stockport","Stevenage",2025-12-13
+"153","E2","Peterboro","Northampton",2025-12-13
+"154","E2","Plymouth","Rotherham",2025-12-13
+"155","E2","Cardiff","Doncaster",2025-12-13
+"156","E2","Bolton","Exeter",2025-12-13
+"157","E2","Reading","Luton",2025-12-18
+"158","E2","Northampton","AFC Wimbledon",2025-12-19
+"159","E2","Wigan","Blackpool",2025-12-20
+"160","E2","Stevenage","Burton",2025-12-20
+"161","E2","Port Vale","Peterboro",2025-12-20
+"162","E2","Exeter","Barnsley",2025-12-20
+"163","E2","Lincoln City","Cardiff",2025-12-20
+"164","E2","Rotherham","Huddersfield",2025-12-20
+"165","E2","Doncaster","Plymouth",2025-12-20
+"166","E2","Wycombe","Bolton",2025-12-20
+"167","E2","Mansfield","Stockport",2025-12-20
+"168","E2","Leyton Orient","Bradford",2025-12-20
+"169","E2","Bradford","Wigan",2025-12-26
+"170","E2","Stockport","Lincoln City",2025-12-26
+"171","E2","Burton","Northampton",2025-12-26
+"172","E2","Luton","Wycombe",2025-12-26
+"173","E2","Barnsley","Mansfield",2025-12-26
+"174","E2","Peterboro","Leyton Orient",2025-12-26
+"175","E2","AFC Wimbledon","Stevenage",2025-12-26
+"176","E2","Cardiff","Exeter",2025-12-26
+"177","E2","Huddersfield","Port Vale",2025-12-26
+"178","E2","Plymouth","Reading",2025-12-26
+"179","E2","Blackpool","Doncaster",2025-12-26
+"180","E2","Bolton","Rotherham",2025-12-26
+"181","E2","Peterboro","Reading",2025-12-29
+"182","E2","AFC Wimbledon","Exeter",2025-12-29
+"183","E2","Bolton","Mansfield",2025-12-29
+"184","E2","Blackpool","Rotherham",2025-12-29
+"185","E2","Luton","Leyton Orient",2025-12-29
+"186","E2","Bradford","Port Vale",2025-12-29
+"187","E2","Plymouth","Wycombe",2025-12-29
+"188","E2","Cardiff","Stevenage",2025-12-29
+"189","E2","Burton","Wigan",2025-12-29
+"190","E2","Stockport","Doncaster",2025-12-29
+"191","E2","Huddersfield","Northampton",2025-12-29
+"192","E2","Barnsley","Lincoln City",2025-12-29
+"193","E2","Leyton Orient","AFC Wimbledon",2026-01-01
+"194","E2","Port Vale","Blackpool",2026-01-01
+"195","E2","Rotherham","Peterboro",2026-01-01
+"196","E2","Stevenage","Plymouth",2026-01-01
+"197","E2","Reading","Burton",2026-01-01
+"198","E2","Doncaster","Bolton",2026-01-01
+"199","E2","Lincoln City","Huddersfield",2026-01-01
+"200","E2","Wycombe","Cardiff",2026-01-01
+"201","E2","Northampton","Stockport",2026-01-01
+"202","E2","Wigan","Barnsley",2026-01-01
+"203","E2","Exeter","Luton",2026-01-01
+"204","E2","Mansfield","Bradford",2026-01-01
+"205","E2","Lincoln City","Peterboro",2026-01-04
+"206","E2","Bolton","Northampton",2026-01-04
+"207","E2","Huddersfield","Exeter",2026-01-04
+"208","E2","Wycombe","AFC Wimbledon",2026-01-04
+"209","E2","Cardiff","Wigan",2026-01-04
+"210","E2","Rotherham","Mansfield",2026-01-04
+"211","E2","Port Vale","Barnsley",2026-01-04
+"212","E2","Reading","Stockport",2026-01-04
+"213","E2","Doncaster","Luton",2026-01-04
+"214","E2","Plymouth","Burton",2026-01-04
+"215","E2","Blackpool","Bradford",2026-01-04
+"216","E2","Stevenage","Leyton Orient",2026-01-04
+"217","E2","Luton","Stevenage",2026-01-10
+"218","E2","AFC Wimbledon","Blackpool",2026-01-10
+"219","E2","Stockport","Huddersfield",2026-01-10
+"220","E2","Peterboro","Bolton",2026-01-10
+"221","E2","Leyton Orient","Cardiff",2026-01-10
+"222","E2","Burton","Doncaster",2026-01-10
+"223","E2","Exeter","Lincoln City",2026-01-10
+"224","E2","Bradford","Rotherham",2026-01-10
+"225","E2","Wigan","Plymouth",2026-01-10
+"226","E2","Barnsley","Wycombe",2026-01-10
+"227","E2","Northampton","Port Vale",2026-01-10
+"228","E2","Mansfield","Reading",2026-01-10
+"229","E2","Wigan","Bolton",2026-01-17
+"230","E2","Northampton","Wycombe",2026-01-17
+"231","E2","Bradford","Cardiff",2026-01-17
+"232","E2","Stockport","Rotherham",2026-01-17
+"233","E2","AFC Wimbledon","Doncaster",2026-01-17
+"234","E2","Barnsley","Blackpool",2026-01-17
+"235","E2","Mansfield","Port Vale",2026-01-17
+"236","E2","Leyton Orient","Reading",2026-01-17
+"237","E2","Burton","Huddersfield",2026-01-17
+"238","E2","Exeter","Stevenage",2026-01-17
+"239","E2","Luton","Lincoln City",2026-01-17
+"240","E2","Peterboro","Plymouth",2026-01-17
+"241","E2","Doncaster","Wigan",2026-01-24
+"242","E2","Reading","Barnsley",2026-01-24
+"243","E2","Stevenage","Mansfield",2026-01-24
+"244","E2","Plymouth","Luton",2026-01-24
+"245","E2","Cardiff","Stockport",2026-01-24
+"246","E2","Port Vale","Exeter",2026-01-24
+"247","E2","Rotherham","AFC Wimbledon",2026-01-24
+"248","E2","Huddersfield","Bradford",2026-01-24
+"249","E2","Lincoln City","Burton",2026-01-24
+"250","E2","Bolton","Leyton Orient",2026-01-24
+"251","E2","Wycombe","Peterboro",2026-01-24
+"252","E2","Blackpool","Northampton",2026-01-24
+"253","E2","Plymouth","Mansfield",2026-01-27
+"254","E2","Bolton","Burton",2026-01-27
+"255","E2","Huddersfield","Luton",2026-01-27
+"256","E2","Stevenage","Peterboro",2026-01-27
+"257","E2","Blackpool","Stockport",2026-01-27
+"258","E2","Rotherham","Northampton",2026-01-27
+"259","E2","Port Vale","AFC Wimbledon",2026-01-27
+"260","E2","Wycombe","Wigan",2026-01-27
+"261","E2","Doncaster","Leyton Orient",2026-01-27
+"262","E2","Lincoln City","Bradford",2026-01-27
+"263","E2","Cardiff","Barnsley",2026-01-27
+"264","E2","Reading","Exeter",2026-01-27
+"265","E2","Burton","Port Vale",2025-08-16
+"266","E2","Exeter","Mansfield",2025-08-16
+"267","E2","Bradford","Luton",2025-08-16
+"268","E2","Barnsley","Bolton",2025-08-16
+"269","E2","Stevenage","Northampton",2025-08-16
+"270","E2","Cardiff","Rotherham",2025-08-16
+"271","E2","Reading","AFC Wimbledon",2025-08-16
+"272","E2","Doncaster","Wycombe",2025-08-16
+"273","E2","Lincoln City","Plymouth",2025-08-16
+"274","E2","Blackpool","Huddersfield",2025-08-16
+"275","E2","Leyton Orient","Stockport",2025-08-16
+"276","E2","Wigan","Peterboro",2025-08-16
+"277","E2","AFC Wimbledon","Bolton",2026-01-31
+"278","E2","Peterboro","Huddersfield",2026-01-31
+"279","E2","Mansfield","Wycombe",2026-01-31
+"280","E2","Luton","Blackpool",2026-01-31
+"281","E2","Barnsley","Stevenage",2026-01-31
+"282","E2","Northampton","Reading",2026-01-31
+"283","E2","Burton","Cardiff",2026-01-31
+"284","E2","Bradford","Doncaster",2026-01-31
+"285","E2","Stockport","Plymouth",2026-01-31
+"286","E2","Exeter","Rotherham",2026-01-31
+"287","E2","Wigan","Lincoln City",2026-01-31
+"288","E2","Leyton Orient","Port Vale",2026-01-31
+"289","E2","Mansfield","Exeter",2026-02-07
+"290","E2","Northampton","Stevenage",2026-02-07
+"291","E2","Rotherham","Cardiff",2026-02-07
+"292","E2","Bolton","Barnsley",2026-02-07
+"293","E2","Port Vale","Burton",2026-02-07
+"294","E2","Huddersfield","Blackpool",2026-02-07
+"295","E2","AFC Wimbledon","Reading",2026-02-07
+"296","E2","Plymouth","Lincoln City",2026-02-07
+"297","E2","Stockport","Leyton Orient",2026-02-07
+"298","E2","Luton","Bradford",2026-02-07
+"299","E2","Peterboro","Wigan",2026-02-07
+"300","E2","Wycombe","Doncaster",2026-02-07
+"301","E2","Barnsley","AFC Wimbledon",2026-02-14
+"302","E2","Wigan","Rotherham",2026-02-14
+"303","E2","Stevenage","Huddersfield",2026-02-14
+"304","E2","Bradford","Peterboro",2026-02-14
+"305","E2","Cardiff","Luton",2026-02-14
+"306","E2","Doncaster","Port Vale",2026-02-14
+"307","E2","Exeter","Northampton",2026-02-14
+"308","E2","Blackpool","Plymouth",2026-02-14
+"309","E2","Burton","Stockport",2026-02-14
+"310","E2","Leyton Orient","Mansfield",2026-02-14
+"311","E2","Reading","Wycombe",2026-02-14
+"312","E2","Lincoln City","Bolton",2026-02-14
+"313","E2","Leyton Orient","Plymouth",2026-02-17
+"314","E2","Doncaster","Huddersfield",2026-02-17
+"315","E2","Cardiff","AFC Wimbledon",2026-02-17
+"316","E2","Barnsley","Peterboro",2026-02-17
+"317","E2","Exeter","Wycombe",2026-02-17
+"318","E2","Lincoln City","Northampton",2026-02-17
+"319","E2","Burton","Rotherham",2026-02-17
+"320","E2","Stevenage","Port Vale",2026-02-17
+"321","E2","Wigan","Luton",2026-02-17
+"322","E2","Blackpool","Mansfield",2026-02-17
+"323","E2","Bradford","Stockport",2026-02-17
+"324","E2","Reading","Bolton",2026-02-17
+"325","E2","Rotherham","Doncaster",2026-02-21
+"326","E2","Plymouth","Cardiff",2026-02-21
+"327","E2","Peterboro","Exeter",2026-02-21
+"328","E2","Mansfield","Lincoln City",2026-02-21
+"329","E2","AFC Wimbledon","Bradford",2026-02-21
+"330","E2","Port Vale","Reading",2026-02-21
+"331","E2","Huddersfield","Barnsley",2026-02-21
+"332","E2","Bolton","Blackpool",2026-02-21
+"333","E2","Luton","Burton",2026-02-21
+"334","E2","Wycombe","Stevenage",2026-02-21
+"335","E2","Stockport","Wigan",2026-02-21
+"336","E2","Northampton","Leyton Orient",2026-02-21
+"337","E2","Rotherham","Plymouth",2026-02-28
+"338","E2","Lincoln City","Blackpool",2026-02-28
+"339","E2","Mansfield","AFC Wimbledon",2026-02-28
+"340","E2","Northampton","Peterboro",2026-02-28
+"341","E2","Doncaster","Cardiff",2026-02-28
+"342","E2","Stevenage","Stockport",2026-02-28
+"343","E2","Reading","Bradford",2026-02-28
+"344","E2","Port Vale","Luton",2026-02-28
+"345","E2","Leyton Orient","Barnsley",2026-02-28
+"346","E2","Wigan","Huddersfield",2026-02-28
+"347","E2","Wycombe","Burton",2026-02-28
+"348","E2","Exeter","Bolton",2026-02-28
+"349","E2","Huddersfield","Rotherham",2026-03-07
+"350","E2","Stockport","Mansfield",2026-03-07
+"351","E2","Luton","Reading",2026-03-07
+"352","E2","Burton","Stevenage",2026-03-07
+"353","E2","Barnsley","Exeter",2026-03-07
+"354","E2","AFC Wimbledon","Northampton",2026-03-07
+"355","E2","Peterboro","Port Vale",2026-03-07
+"356","E2","Bradford","Leyton Orient",2026-03-07
+"357","E2","Bolton","Wycombe",2026-03-07
+"358","E2","Blackpool","Wigan",2026-03-07
+"359","E2","Cardiff","Lincoln City",2026-03-07
+"360","E2","Plymouth","Doncaster",2026-03-07
+"361","E2","Leyton Orient","Peterboro",2026-03-14
+"362","E2","Mansfield","Barnsley",2026-03-14
+"363","E2","Wycombe","Luton",2026-03-14
+"364","E2","Stevenage","AFC Wimbledon",2026-03-14
+"365","E2","Port Vale","Huddersfield",2026-03-14
+"366","E2","Rotherham","Bolton",2026-03-14
+"367","E2","Wigan","Bradford",2026-03-14
+"368","E2","Doncaster","Blackpool",2026-03-14
+"369","E2","Lincoln City","Stockport",2026-03-14
+"370","E2","Reading","Plymouth",2026-03-14
+"371","E2","Exeter","Cardiff",2026-03-14
+"372","E2","Northampton","Burton",2026-03-14
+"373","E2","Plymouth","Stevenage",2026-03-17
+"374","E2","Bradford","Mansfield",2026-03-17
+"375","E2","Barnsley","Wigan",2026-03-17
+"376","E2","Peterboro","Rotherham",2026-03-17
+"377","E2","Huddersfield","Lincoln City",2026-03-17
+"378","E2","Blackpool","Port Vale",2026-03-17
+"379","E2","AFC Wimbledon","Leyton Orient",2026-03-17
+"380","E2","Bolton","Doncaster",2026-03-17
+"381","E2","Stockport","Northampton",2026-03-17
+"382","E2","Cardiff","Wycombe",2026-03-17
+"383","E2","Luton","Exeter",2026-03-17
+"384","E2","Burton","Reading",2026-03-17
+"385","E2","Plymouth","Huddersfield",2026-03-21
+"386","E2","Mansfield","Northampton",2026-03-21
+"387","E2","AFC Wimbledon","Peterboro",2026-03-21
+"388","E2","Leyton Orient","Wycombe",2026-03-21
+"389","E2","Luton","Stockport",2026-03-21
+"390","E2","Wigan","Exeter",2026-03-21
+"391","E2","Cardiff","Blackpool",2026-03-21
+"392","E2","Barnsley","Doncaster",2026-03-21
+"393","E2","Lincoln City","Rotherham",2026-03-21
+"394","E2","Port Vale","Bolton",2026-03-21
+"395","E2","Burton","Bradford",2026-03-21
+"396","E2","Stevenage","Reading",2026-03-21
+"397","E2","Peterboro","Barnsley",2025-08-19
+"398","E2","Stockport","Bradford",2025-08-19
+"399","E2","Mansfield","Blackpool",2025-08-19
+"400","E2","AFC Wimbledon","Cardiff",2025-08-19
+"401","E2","Northampton","Lincoln City",2025-08-19
+"402","E2","Plymouth","Leyton Orient",2025-08-19
+"403","E2","Wycombe","Exeter",2025-08-19
+"404","E2","Port Vale","Stevenage",2025-08-19
+"405","E2","Luton","Wigan",2025-08-19
+"406","E2","Huddersfield","Doncaster",2025-08-19
+"407","E2","Bolton","Reading",2025-08-20
+"408","E2","Rotherham","Burton",2025-11-04
+"409","E2","Peterboro","Mansfield",2026-03-28
+"410","E2","Reading","Wigan",2026-03-28
+"411","E2","Bolton","Stevenage",2026-03-28
+"412","E2","Northampton","Barnsley",2026-03-28
+"413","E2","Wycombe","Port Vale",2026-03-28
+"414","E2","Bradford","Plymouth",2026-03-28
+"415","E2","Huddersfield","Cardiff",2026-03-28
+"416","E2","Blackpool","Burton",2026-03-28
+"417","E2","Stockport","AFC Wimbledon",2026-03-28
+"418","E2","Doncaster","Lincoln City",2026-03-28
+"419","E2","Rotherham","Luton",2026-03-28
+"420","E2","Exeter","Leyton Orient",2026-03-28
+"421","E2","Luton","Peterboro",2026-04-03
+"422","E2","Plymouth","Bolton",2026-04-03
+"423","E2","Bradford","Northampton",2026-04-03
+"424","E2","Blackpool","Exeter",2026-04-03
+"425","E2","Wigan","Leyton Orient",2026-04-03
+"426","E2","Rotherham","Stevenage",2026-04-03
+"427","E2","Doncaster","Mansfield",2026-04-03
+"428","E2","Cardiff","Port Vale",2026-04-03
+"429","E2","Burton","Barnsley",2026-04-03
+"430","E2","Stockport","Wycombe",2026-04-03
+"431","E2","Lincoln City","AFC Wimbledon",2026-04-03
+"432","E2","Huddersfield","Reading",2026-04-03
+"433","E2","Exeter","Doncaster",2026-04-06
+"434","E2","Reading","Lincoln City",2026-04-06
+"435","E2","Barnsley","Plymouth",2026-04-06
+"436","E2","Stevenage","Blackpool",2026-04-06
+"437","E2","Northampton","Wigan",2026-04-06
+"438","E2","Mansfield","Burton",2026-04-06
+"439","E2","AFC Wimbledon","Luton",2026-04-06
+"440","E2","Peterboro","Cardiff",2026-04-06
+"441","E2","Wycombe","Bradford",2026-04-06
+"442","E2","Leyton Orient","Huddersfield",2026-04-06
+"443","E2","Bolton","Stockport",2026-04-06
+"444","E2","Port Vale","Rotherham",2026-04-06
+"445","E2","Cardiff","Bolton",2026-04-11
+"446","E2","Burton","AFC Wimbledon",2026-04-11
+"447","E2","Lincoln City","Leyton Orient",2026-04-11
+"448","E2","Wigan","Mansfield",2026-04-11
+"449","E2","Doncaster","Reading",2026-04-11
+"450","E2","Bradford","Stevenage",2026-04-11
+"451","E2","Stockport","Port Vale",2026-04-11
+"452","E2","Blackpool","Peterboro",2026-04-11
+"453","E2","Plymouth","Exeter",2026-04-11
+"454","E2","Luton","Northampton",2026-04-11
+"455","E2","Rotherham","Barnsley",2026-04-11
+"456","E2","Huddersfield","Wycombe",2026-04-11
+"457","E2","Leyton Orient","Rotherham",2026-04-18
+"458","E2","Reading","Cardiff",2026-04-18
+"459","E2","Bolton","Huddersfield",2026-04-18
+"460","E2","Exeter","Stockport",2026-04-18
+"461","E2","Peterboro","Burton",2026-04-18
+"462","E2","Port Vale","Wigan",2026-04-18
+"463","E2","Mansfield","Luton",2026-04-18
+"464","E2","Northampton","Doncaster",2026-04-18
+"465","E2","AFC Wimbledon","Plymouth",2026-04-18
+"466","E2","Barnsley","Bradford",2026-04-18
+"467","E2","Stevenage","Lincoln City",2026-04-18
+"468","E2","Wycombe","Blackpool",2026-04-18
+"469","E2","Stockport","Peterboro",2026-04-25
+"470","E2","Lincoln City","Wycombe",2026-04-25
+"471","E2","Blackpool","Leyton Orient",2026-04-25
+"472","E2","Luton","Barnsley",2026-04-25
+"473","E2","Bradford","Bolton",2026-04-25
+"474","E2","Cardiff","Northampton",2026-04-25
+"475","E2","Rotherham","Reading",2026-04-25
+"476","E2","Doncaster","Stevenage",2026-04-25
+"477","E2","Wigan","AFC Wimbledon",2026-04-25
+"478","E2","Huddersfield","Mansfield",2026-04-25
+"479","E2","Plymouth","Port Vale",2026-04-25
+"480","E2","Burton","Exeter",2026-04-25
+"481","E2","Barnsley","Stockport",2026-05-02
+"482","E2","Reading","Blackpool",2026-05-02
+"483","E2","Wycombe","Rotherham",2026-05-02
+"484","E2","Port Vale","Lincoln City",2026-05-02
+"485","E2","Peterboro","Doncaster",2026-05-02
+"486","E2","Bolton","Luton",2026-05-02
+"487","E2","Leyton Orient","Burton",2026-05-02
+"488","E2","AFC Wimbledon","Huddersfield",2026-05-02
+"489","E2","Northampton","Plymouth",2026-05-02
+"490","E2","Mansfield","Cardiff",2026-05-02
+"491","E2","Stevenage","Wigan",2026-05-02
+"492","E2","Exeter","Bradford",2026-05-02
+"493","E2","Luton","Cardiff",2025-08-23
+"494","E2","Rotherham","Wigan",2025-08-23
+"495","E2","Port Vale","Doncaster",2025-08-23
+"496","E2","Peterboro","Bradford",2025-08-23
+"497","E2","Huddersfield","Stevenage",2025-08-23
+"498","E2","AFC Wimbledon","Barnsley",2025-08-23
+"499","E2","Plymouth","Blackpool",2025-08-23
+"500","E2","Stockport","Burton",2025-08-23
+"501","E2","Mansfield","Leyton Orient",2025-08-23
+"502","E2","Wycombe","Reading",2025-08-23
+"503","E2","Northampton","Exeter",2025-08-23
+"504","E2","Bolton","Lincoln City",2025-08-23
+"505","E2","Cardiff","Plymouth",2025-08-30
+"506","E2","Doncaster","Rotherham",2025-08-30
+"507","E2","Burton","Luton",2025-08-30
+"508","E2","Leyton Orient","Northampton",2025-08-30
+"509","E2","Wigan","Stockport",2025-08-30
+"510","E2","Reading","Port Vale",2025-08-30
+"511","E2","Bradford","AFC Wimbledon",2025-08-30
+"512","E2","Barnsley","Huddersfield",2025-08-30
+"513","E2","Exeter","Peterboro",2025-08-30
+"514","E2","Blackpool","Bolton",2025-08-30
+"515","E2","Stevenage","Wycombe",2025-08-30
+"516","E2","Lincoln City","Mansfield",2025-08-30
+"517","E2","Huddersfield","Peterboro",2025-09-06
+"518","E2","Lincoln City","Wigan",2025-09-06
+"519","E2","Port Vale","Leyton Orient",2025-09-06
+"520","E2","Rotherham","Exeter",2025-09-06
+"521","E2","Doncaster","Bradford",2025-09-06
+"522","E2","Plymouth","Stockport",2025-09-06
+"523","E2","Stevenage","Barnsley",2025-09-06
+"524","E2","Bolton","AFC Wimbledon",2025-09-06
+"525","E2","Wycombe","Mansfield",2025-09-06
+"526","E2","Blackpool","Luton",2025-09-30
+"527","E2","Cardiff","Burton",2025-09-30
+"528","E2","Reading","Northampton",2025-10-21
+"529","E2","Northampton","Blackpool",2025-09-13
+"530","E2","Bradford","Huddersfield",2025-09-13
+"531","E2","Burton","Lincoln City",2025-09-13
+"532","E2","Barnsley","Reading",2025-09-13
+"533","E2","AFC Wimbledon","Rotherham",2025-09-13
+"534","E2","Wigan","Doncaster",2025-09-13
+"535","E2","Luton","Plymouth",2025-09-13
+"536","E2","Mansfield","Stevenage",2025-09-13
+"537","E2","Peterboro","Wycombe",2025-09-13
+"538","E2","Exeter","Port Vale",2025-09-13
+"539","E2","Leyton Orient","Bolton",2025-09-13
+"540","E2","Stockport","Cardiff",2025-09-13
+"541","E2","Lincoln City","Luton",2025-09-20
+"542","E2","Blackpool","Barnsley",2025-09-20
+"543","E2","Bolton","Wigan",2025-09-20
+"544","E2","Reading","Leyton Orient",2025-09-20
+"545","E2","Cardiff","Bradford",2025-09-20
+"546","E2","Port Vale","Mansfield",2025-09-20
+"547","E2","Huddersfield","Burton",2025-09-20
+"548","E2","Wycombe","Northampton",2025-09-20
+"549","E2","Doncaster","AFC Wimbledon",2025-09-20
+"550","E2","Rotherham","Stockport",2025-09-20
+"551","E2","Plymouth","Peterboro",2025-09-20
+"552","E2","Stevenage","Exeter",2025-09-20

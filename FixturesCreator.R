@@ -6,24 +6,26 @@ library('lubridate')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 options(java.parameters = "-Xmx4g")
 
-superleague_match_results <- fb_match_results(country = "GRE", gender = "M", season_end_year = 2025, tier="1st")
-View(superleague_match_fixtures)
-write.xlsx(superleague_match_results,"superleague_match_results.xlsx")
-superleague_match_fixtures <- readxl::read_excel("superleague_match_results.xlsx")
-superleague_match_fixtures <- superleague_match_fixtures[,c(-1)]
+scoleagueone_match_results <- fb_match_results(country = "SCO", gender = "M", season_end_year = 2026, tier="3rd")
 
-superleague_match_fixtures <- superleague_match_fixtures[,c(1,10,12,8)]
+write.xlsx(scoleagueone_match_results,"scoleagueone_match_results.xlsx")
+scoleagueone_match_fixtures <- readxl::read_excel("scoleagueone_match_results.xlsx")
+scoleagueone_match_fixtures <- scoleagueone_match_fixtures[,c(-1)]
+scoleagueone_match_fixtures <- scoleagueone_match_fixtures[,c(1,10,12,8)]
+View(scoleagueone_match_fixtures)
 
-colnames(superleague_match_fixtures)[1] <- "Div"
-colnames(superleague_match_fixtures)[2] <- "HomeTeam"
-colnames(superleague_match_fixtures)[3] <- "AwayTeam"
-superleague_match_fixtures$Div <- "G1"
-superleague_match_fixtures$Date <- ymd(superleague_match_fixtures$Date)
-sort(unique(superleague_match_fixtures$HomeTeam))
+colnames(scoleagueone_match_fixtures)[1] <- "Div"
+colnames(scoleagueone_match_fixtures)[2] <- "HomeTeam"
+colnames(scoleagueone_match_fixtures)[3] <- "AwayTeam"
+scoleagueone_match_fixtures$Div <- "T1"
+scoleagueone_match_fixtures$Date <- ymd(scoleagueone_match_fixtures$Date)
+sort(unique(scoleagueone_match_fixtures$HomeTeam))
+t1_teams
 
-superleague_match_fixtures$HomeTeam <- mgsub(superleague_match_fixtures$HomeTeam,c("AEK Athens","Asteras Tripoli","Levadiakos","Kallithea","Olympiacos","PAS Lamia"),c("AEK","Asteras Tripolis","Levadeiakos","Athens Kallithea","Olympiakos","Lamia"))
-superleague_match_fixtures$AwayTeam <- mgsub(superleague_match_fixtures$AwayTeam,c("AEK Athens","Asteras Tripoli","Levadiakos","Kallithea","Olympiacos","PAS Lamia"),c("AEK","Asteras Tripolis","Levadeiakos","Athens Kallithea","Olympiakos","Lamia"))
-write.csv(superleague_match_fixtures,'SUPERLEAGUEFIXTURES.csv')
+scoleagueone_match_fixtures$HomeTeam <- mgsub(scoleagueone_match_fixtures$HomeTeam,c("Başakşehir","Beşiktaş","Eyüpspor","Fatih Karagümrük","Gaziantep FK","Gençlerbirliği","Göztepe","Kasımpaşa"),c("Buyuksehyr","Besiktas","Eyupspor","Karagumruk","Gaziantep","Genclerbirligi","Goztep","Kasimpasa"))
+scoleagueone_match_fixtures$AwayTeam <- mgsub(scoleagueone_match_fixtures$AwayTeam,c("Başakşehir","Beşiktaş","Eyüpspor","Fatih Karagümrük","Gaziantep FK","Gençlerbirliği","Göztepe","Kasımpaşa"),c("Buyuksehyr","Besiktas","Eyupspor","Karagumruk","Gaziantep","Genclerbirligi","Goztep","Kasimpasa"))
+
+write.csv(scoleagueone_match_fixtures,'SUPERLIGFIXTURES.csv')
 
 
 

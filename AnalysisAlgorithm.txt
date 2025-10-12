@@ -1,0 +1,2 @@
+1. open the E0_all file and read its contents
+2. 

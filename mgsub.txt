@@ -1,17 +1,19 @@
 B1
 
-bel_match_fixtures$HomeTeam <- mgsub(bel_match_fixtures$HomeTeam,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG","Beerschot"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise","Beerschot VA"))
-bel_match_fixtures$AwayTeam <- mgsub(bel_match_fixtures$AwayTeam,c("OH Leuven","Sint-Truiden","Standard Liège","Union SG","Beerschot"),c("Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise","Beerschot VA"))
-*Dender ( to check new name)
+jupiler_match_fixtures$HomeTeam <- mgsub(jupiler_match_fixtures$HomeTeam,c("La Louvière","OH Leuven","Sint-Truiden","Standard Liège","Union SG","Zulte Waregem"),c("RAAL La Louviere","Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise","Waregem"))
+jupiler_match_fixtures$AwayTeam <- mgsub(jupiler_match_fixtures$AwayTeam,c("La Louvière","OH Leuven","Sint-Truiden","Standard Liège","Union SG","Zulte Waregem"),c("RAAL La Louviere","Oud-Heverlee Leuven","St Truiden","Standard","St. Gilloise","Waregem"))
 
 D1
-bundes_match_fixtures$HomeTeam <- mgsub(bundes_match_fixtures$HomeTeam,c("Eint Frankfurt","Gladbach","Mainz 05","St. Pauli"),c("Ein Frankfurt","Mgladbach","Mainz","St Pauli"))
-bundes_match_fixtures$AwayTeam <- mgsub(bundes_match_fixtures$AwayTeam,c("Eint Frankfurt","Gladbach","Mainz 05","St. Pauli"),c("Ein Frankfurt","Mgladbach","Mainz","St Pauli"))
+bundes_match_fixtures$HomeTeam <- mgsub(bundes_match_fixtures$HomeTeam,c("Eint Frankfurt","Gladbach","Hamburger SV","Köln","Mainz 05","St. Pauli"),c("Ein Frankfurt","Mgladbach","Hamburg","FC Koln","Mainz","St Pauli"))
+bundes_match_fixtures$AwayTeam <- mgsub(bundes_match_fixtures$AwayTeam,c("Eint Frankfurt","Gladbach","Hamburger SV","Köln","Mainz 05","St. Pauli"),c("Ein Frankfurt","Mgladbach","Hamburg","FC Koln","Mainz","St Pauli"))
 
 D2
 bundestwo_match_fixtures$HomeTeam <- mgsub(bundestwo_match_fixtures$HomeTeam,c("Darmstadt 98","Düsseldorf","Greuther Fürth","Hamburger SV","Hannover 96","Hertha BSC","Jahn R'burg","Köln","Nürnberg","Paderborn 07"),c("Darmstadt","Fortuna Dusseldorf","Greuther Furth","Hamburg","Hannover","Hertha","Regensburg","FC Koln","Nurnberg","Paderborn"))
 bundestwo_match_fixtures$AwayTeam <- mgsub(bundestwo_match_fixtures$AwayTeam,c("Darmstadt 98","Düsseldorf","Greuther Fürth","Hamburger SV","Hannover 96","Hertha BSC","Jahn R'burg","Köln","Nürnberg","Paderborn 07"),c("Darmstadt","Fortuna Dusseldorf","Greuther Furth","Hamburg","Hannover","Hertha","Regensburg","FC Koln","Nurnberg","Paderborn"))
-*Preubem monster and ulm(to check new name)
+
+E0
+epl_match_fixtures$HomeTeam <- mgsub(epl_match_fixtures$HomeTeam,c("Leeds United","Manchester City","Manchester Utd","Newcastle Utd","Nott'ham Forest"),c("Leeds","Man City","Man United","Newcastle","Nottm Forest"))
+epl_match_fixtures$AwayTeam <- mgsub(epl_match_fixtures$AwayTeam,c("Leeds United","Manchester City","Manchester Utd","Newcastle Utd","Nott'ham Forest"),c("Leeds","Man City","Man United","Newcastle","Nottm Forest"))
 
 E1
 efl_match_fixtures$HomeTeam <- mgsub(efl_match_fixtures$HomeTeam,c("Cardiff City","Coventry City","Derby County","Hull City","Leeds United","Luton Town","Norwich City","Oxford United","Plymouth Argyle","Sheffield Utd","Stoke City","Swansea City"),c("Cardiff","Coventry","Derby","Hull","Leeds","Luton","Norwich","Oxford","Plymouth","Sheffield United","Stoke","Swansea"))
@@ -19,40 +21,51 @@ efl_match_fixtures$AwayTeam <- mgsub(efl_match_fixtures$AwayTeam,c("Cardiff City
 
 
 E2 - Away is on column 12, there is no xG data for this league
-leagueone_match_fixtures$HomeTeam <- mgsub(leagueone_match_fixtures$HomeTeam,c("Birmingham City","Bristol Rovers","Burton Albion","Cambridge Utd","Charlton Ath","Exeter City","Lincoln City","Mansfield Town","P'borough Utd","Rotherham Utd","Wigan Athletic"),c("Birmingham","Bristol Rvs","Burton","Cambridge","Charlton","Exeter","Lincoln","Mansfield","Peterboro","Rotherham","Wigan"))
-leagueone_match_fixtures$AwayTeam <- mgsub(leagueone_match_fixtures$AwayTeam,c("Birmingham City","Bristol Rovers","Burton Albion","Cambridge Utd","Charlton Ath","Exeter City","Lincoln City","Mansfield Town","P'borough Utd","Rotherham Utd","Wigan Athletic"),c("Birmingham","Bristol Rvs","Burton","Cambridge","Charlton","Exeter","Lincoln","Mansfield","Peterboro","Rotherham","Wigan"))
+leagueone_match_fixtures$HomeTeam <- mgsub(leagueone_match_fixtures$HomeTeam,c("Bradford City","Burton Albion","Cardiff City","Exeter City","Lincoln City","Luton Town","Mansfield Town","P'borough Utd","Plymouth Argyle","Rotherham Utd","Wigan Athletic"),c("Bradford","Burton","Cardiff","Exeter","Lincoln City","Luton","Mansfield","Peterboro","Plymouth","Rotherham","Wigan"))
+leagueone_match_fixtures$AwayTeam <- mgsub(leagueone_match_fixtures$AwayTeam,c("Bradford City","Burton Albion","Cardiff City","Exeter City","Lincoln City","Luton Town","Mansfield Town","P'borough Utd","Plymouth Argyle","Rotherham Utd","Wigan Athletic"),c("Bradford","Burton","Cardiff","Exeter","Lincoln City","Luton","Mansfield","Peterboro","Plymouth","Rotherham","Wigan"))
+write.csv(leagueone_match_fixtures,'LEAGUEONEFIXTURES.csv')
 
 E3
-leaguetwo_match_fixtures$HomeTeam <- mgsub(leaguetwo_match_fixtures$HomeTeam,c("Acc'ton Stanley","Bradford City","Carlisle United","Colchester Utd","Crewe Alexandra","Grimsby Town","MK Dons","Salford City","Swindon Town","Tranmere Rovers"),c("Accrington","Bradford","Carlisle","Colchester","Crewe","Grimsby","Milton Keynes Dons","Salford","Swindon","Tranmere"))
-leaguetwo_match_fixtures$AwayTeam <- mgsub(leaguetwo_match_fixtures$AwayTeam,c("Acc'ton Stanley","Bradford City","Carlisle United","Colchester Utd","Crewe Alexandra","Grimsby Town","MK Dons","Salford City","Swindon Town","Tranmere Rovers"),c("Accrington","Bradford","Carlisle","Colchester","Crewe","Grimsby","Milton Keynes Dons","Salford","Swindon","Tranmere"))
+
+leaguetwo_match_fixtures$HomeTeam <- mgsub(leaguetwo_match_fixtures$HomeTeam,c("Acc'ton Stanley","Bristol Rovers","Cambridge Utd","Colchester Utd","Crewe Alexandra","Grimsby Town","MK Dons","Oldham Athletic","Salford City","Swindon Town","Tranmere Rovers"),c("Accrington","Bristol Rvs","Cambridge","Colchester","Crewe","Grimsby","Milton Keynes Dons","Oldham","Salford","Swindon","Tranmere"))
+leaguetwo_match_fixtures$AwayTeam <- mgsub(leaguetwo_match_fixtures$AwayTeam,c("Acc'ton Stanley","Bristol Rovers","Cambridge Utd","Colchester Utd","Crewe Alexandra","Grimsby Town","MK Dons","Oldham Athletic","Salford City","Swindon Town","Tranmere Rovers"),c("Accrington","Bristol Rvs","Cambridge","Colchester","Crewe","Grimsby","Milton Keynes Dons","Oldham","Salford","Swindon","Tranmere"))
 
 EC
 
-national_match_fixtures$HomeTeam <- mgsub(national_match_fixtures$HomeTeam,c("Aldershot Town","Boston United","Dag & Red","Ebbsfleet Utd","FC Halifax Town","FG Rovers","Hartlepool Utd","Maidenhead Utd","Oldham Athletic","Solihull Moors","Southend United","Sutton United","Yeovil Town","York City"),c("Aldershot","Boston Utd","Dag and Red","Ebbsfleet","Halifax","Forest Green","Hartlepool","Maidenhead","Oldham","Solihull","Southend","Sutton","Yeovil","York"))
-national_match_fixtures$AwayTeam <- mgsub(national_match_fixtures$AwayTeam,c("Aldershot Town","Boston United","Dag & Red","Ebbsfleet Utd","FC Halifax Town","FG Rovers","Hartlepool Utd","Maidenhead Utd","Oldham Athletic","Solihull Moors","Southend United","Sutton United","Yeovil Town","York City"),c("Aldershot","Boston Utd","Dag and Red","Ebbsfleet","Halifax","Forest Green","Hartlepool","Maidenhead","Oldham","Solihull","Southend","Sutton","Yeovil","York"))
-G1 ( data not availabe yet)
+national_match_fixtures$HomeTeam <- mgsub(national_match_fixtures$HomeTeam,c("Aldershot Town","Boston United","Carlisle United","FC Halifax Town","FG Rovers","Hartlepool Utd","Scunthorpe Utd","Solihull Moors","Southend United","Sutton United","Truro City","Yeovil Town","York City"),c("Aldershot","Boston Utd","Carlisle","Halifax","Forest Green","Hartlepool","Scunthorpe","Solihull","Southend","Sutton","Truro","Yeovil","York"))
+national_match_fixtures$AwayTeam <- mgsub(national_match_fixtures$AwayTeam,c("Aldershot Town","Boston United","Carlisle United","FC Halifax Town","FG Rovers","Hartlepool Utd","Scunthorpe Utd","Solihull Moors","Southend United","Sutton United","Truro City","Yeovil Town","York City"),c("Aldershot","Boston Utd","Carlisle","Halifax","Forest Green","Hartlepool","Scunthorpe","Solihull","Southend","Sutton","Truro","Yeovil","York"))
+
+G1
+superleague_match_fixtures$HomeTeam <- mgsub(superleague_match_fixtures$HomeTeam,c("AEK Athens","AO Kifisia","Asteras Tripoli","Larissa","Levadiakos","OFI Crete","Olympiacos"),c("AEK","Kifisia","Asteras Tripolis","Larisa","Levadeiakos","OFI","Olympiakos"))
+superleague_match_fixtures$AwayTeam <- mgsub(superleague_match_fixtures$AwayTeam,c("AEK Athens","AO Kifisia","Asteras Tripoli","Larissa","Levadiakos","OFI Crete","Olympiacos"),c("AEK","Kifisia","Asteras Tripolis","Larisa","Levadeiakos","OFI","Olympiakos"))
+
 
 N1
-eredivisie_match_fixtures$HomeTeam <- mgsub(eredivisie_match_fixtures$HomeTeam,c("Fortuna Sittard","Go Ahead Eag","Heracles Almelo","NEC Nijmegen","RKC Waalwijk","Sparta R'dam"),c("For Sittard","Go Ahead Eagles","Heracles","Nijmegen","Waalwijk","Sparta Rotterdam"))
-eredivisie_match_fixtures$AwayTeam <- mgsub(eredivisie_match_fixtures$AwayTeam,c("Fortuna Sittard","Go Ahead Eag","Heracles Almelo","NEC Nijmegen","RKC Waalwijk","Sparta R'dam"),c("For Sittard","Go Ahead Eagles","Heracles","Nijmegen","Waalwijk","Sparta Rotterdam"))
+eredivisie_match_fixtures$HomeTeam <- mgsub(eredivisie_match_fixtures$HomeTeam,c("Fortuna Sittard","Go Ahead Eag","Heracles Almelo","NEC Nijmegen","Sparta R'dam"),c("For Sittard","Go Ahead Eagles","Heracles","Nijmegen","Sparta Rotterdam"))
+eredivisie_match_fixtures$AwayTeam <- mgsub(eredivisie_match_fixtures$AwayTeam,c("Fortuna Sittard","Go Ahead Eag","Heracles Almelo","NEC Nijmegen","Sparta R'dam"),c("For Sittard","Go Ahead Eagles","Heracles","Nijmegen","Sparta Rotterdam"))
 
 P1
-primera_match_fixtures$HomeTeam <- mgsub(primera_match_fixtures$HomeTeam,c("Braga","Famalicão","Gil Vicente FC","Sporting CP","Vitória"),c("Sp Braga","Famalicao","Gil Vicente","Sp Lisbon","Vitoria"))
-primera_match_fixtures$AwayTeam <- mgsub(primera_match_fixtures$AwayTeam,c("Braga","Famalicão","Gil Vicente FC","Sporting CP","Vitória"),c("Sp Braga","Famalicao","Gil Vicente","Sp Lisbon","Vitoria"))
-*AVS futebol (check new name)
+primera_match_fixtures$HomeTeam <- mgsub(primera_match_fixtures$HomeTeam,c("AVS Futebol","Braga","Gil Vicente FC","Sporting CP","Vitória","Famalicão","Sp Sp Braga"),c("AVS","Sp Braga","Gil Vicente","Sp Lisbon","Guimaraes","Famalicao","Sp Braga"))
+primera_match_fixtures$AwayTeam <- mgsub(primera_match_fixtures$AwayTeam,c("AVS Futebol","Braga","Gil Vicente FC","Sporting CP","Vitória","Famalicão","Sp Sp Braga"),c("AVS","Sp Braga","Gil Vicente","Sp Lisbon","Guimaraes","Famalicao","Sp Braga"))
+
 
 SP1
-laliga_match_fixtures$HomeTeam <- mgsub(laliga_match_fixtures$HomeTeam,c("Alavés","Athletic Club","Atlético Madrid","Celta Vigo","Espanyol","Leganés","Rayo Vallecano","Real Sociedad"),c("Alaves","Ath Bilbao","Ath Madrid","Celta","Espanol","Leganes","Vallecano","Sociedad"))
-laliga_match_fixtures$AwayTeam <- mgsub(laliga_match_fixtures$AwayTeam,c("Alavés","Athletic Club","Atlético Madrid","Celta Vigo","Espanyol","Leganés","Rayo Vallecano","Real Sociedad"),c("Alaves","Ath Bilbao","Ath Madrid","Celta","Espanol","Leganes","Vallecano","Sociedad"))
+laliga_match_fixtures$HomeTeam <- mgsub(laliga_match_fixtures$HomeTeam,c("Alavés","Athletic Club","Atlético Madrid","Celta Vigo","Espanyol","Rayo Vallecano","Real Sociedad"),c("Alaves","Ath Bilbao","Ath Madrid","Celta","Espanol","Vallecano","Sociedad"))
+laliga_match_fixtures$AwayTeam <- mgsub(laliga_match_fixtures$AwayTeam,c("Alavés","Athletic Club","Atlético Madrid","Celta Vigo","Espanyol","Rayo Vallecano","Real Sociedad"),c("Alaves","Ath Bilbao","Ath Madrid","Celta","Espanol","Vallecano","Sociedad"))
 
 
 SP2
-laligatwo_match_fixtures$HomeTeam <- mgsub(laligatwo_match_fixtures$HomeTeam,c("Almería","Cádiz","Castellón","CD Mirandés","Córdoba","La Coruña","Málaga","Racing Ferrol","Racing Sant","Sporting Gijón"),c("Almeria","Cadiz","Castellón","Mirandes","Cordoba",",La Coruna","Malaga","Ferrol","Santander","Sp Gijon"))
-laligatwo_match_fixtures$AwayTeam <- mgsub(laligatwo_match_fixtures$AwayTeam,c("Almería","Cádiz","Castellón","CD Mirandés","Córdoba","La Coruña","Málaga","Racing Ferrol","Racing Sant","Sporting Gijón"),c("Almeria","Cadiz","Castellón","Mirandes","Cordoba",",La Coruna","Malaga","Ferrol","Santander","Sp Gijon"))
+laligatwo_match_fixtures$HomeTeam <- mgsub(laligatwo_match_fixtures$HomeTeam,c("Almerías","Cádiz","Castellón","CD Mirandés","Córdoba","FC Andorra","La Coruña","Leganés","Leonesa","Málaga","Racing Sant","Real Sociedad B","Sporting Gijón"),c("Almeria","Cadiz","Castellon","Mirandes","Cordoba","Andorra","La Coruna","Leganes","Cultural Leonesa","Malaga","Santander","Sociedad B","Sp Gijon"))
+laligatwo_match_fixtures$AwayTeam <- mgsub(laligatwo_match_fixtures$AwayTeam,c("Almerías","Cádiz","Castellón","CD Mirandés","Córdoba","FC Andorra","La Coruña","Leganés","Leonesa","Málaga","Racing Sant","Real Sociedad B","Sporting Gijón"),c("Almeria","Cadiz","Castellon","Mirandes","Cordoba","Andorra","La Coruna","Leganes","Cultural Leonesa","Malaga","Santander","Sociedad B","Sp Gijon"))
+
+SC1
+championship_match_fixtures$HomeTeam <- mgsub(championship_match_fixtures$HomeTeam,c("Airdrieonians","Arbroath FC","Ayr United","Dunfermline Ath.","Partick Thistle","Queen's Park FC","Raith Rovers"),c("Airdrie Utd","Arbroath","Ayr","Dunfermline","Partick","Queens Park","Raith Rvs"))
+championship_match_fixtures$AwayTeam <- mgsub(championship_match_fixtures$AwayTeam,c("Airdrieonians","Arbroath FC","Ayr United","Dunfermline Ath.","Partick Thistle","Queen's Park FC","Raith Rovers"),c("Airdrie Utd","Arbroath","Ayr","Dunfermline","Partick","Queens Park","Raith Rvs"))
+
 
 T1
-superlig_match_fixtures$HomeTeam <- mgsub(superlig_match_fixtures$HomeTeam,c("Ã‡aykur Rizespor","Adana Demirspor","EyÃ¼pspo","FenerbahÃ§e","GÃ¶ztepe","Istanbul Basaksehir"),c("Rizespor","Ad. Demirspor","Eyupspor","Fenerbahce","Goztep","Buyuksehyr"))
-superlig_match_fixtures$AwayTeam <- mgsub(superlig_match_fixtures$AwayTeam,c("Ã‡aykur Rizespor","Adana Demirspor","EyÃ¼pspo","FenerbahÃ§e","GÃ¶ztepe","Istanbul Basaksehir"),c("Rizespor","Ad. Demirspor","Eyupspor","Fenerbahce","Goztep","Buyuksehyr"))
+superlig_match_fixtures$HomeTeam <- mgsub(superlig_match_fixtures$HomeTeam,c("Başakşehir","Beşiktaş","Eyüpspor","Fatih Karagümrük","Gaziantep FK","Gençlerbirliği","Göztepe","Kasımpaşa"),c("Buyuksehyr","Besiktas","Eyupspor","Karagumruk","Gaziantep","Genclerbirligi","Goztep","Kasimpasa"))
+superlig_match_fixtures$AwayTeam <- mgsub(superlig_match_fixtures$AwayTeam,c("Başakşehir","Beşiktaş","Eyüpspor","Fatih Karagümrük","Gaziantep FK","Gençlerbirliği","Göztepe","Kasımpaşa"),c("Buyuksehyr","Besiktas","Eyupspor","Karagumruk","Gaziantep","Genclerbirligi","Goztep","Kasimpasa"))
 
 
 

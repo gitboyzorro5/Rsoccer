@@ -104,5 +104,27 @@ for(sc0_sn in 1:11){
 
 }
 
+##########################################################################################################################################################
+library('xlsx')
+advstatsn <- 4
+B1_advstats <- readxl::read_excel('B1_SPREAD.xlsx')
+B1_advstats <- B1_advstats[,-1]
+
+df <- tail(B1_advstats[B1_advstats$HomeTeam == "Antwerp" | B1_advstats$AwayTeam == "Antwerp",],advstatsn)
+df2 <- tail(B1_advstats[B1_advstats$HomeTeam == "St. Gilloise" | B1_advstats$AwayTeam == "St. Gilloise",],advstatsn)
+
+temp_analysis <- rbind(df,df2)
+
+temp_analysis <- as.data.frame(temp_analysis)
+temp_colmeans <- colMeans(temp_analysis[,c(39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78)])
+temp_sliced <- tail(temp_analysis,1)
+temp_sliced <- temp_sliced[1:38]
+
+temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+
+write.xlsx(temp_analysis,"Temp/AntwerpGilloise.xlsx")
+
+
 
 

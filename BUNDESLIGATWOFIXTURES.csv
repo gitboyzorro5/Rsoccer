@@ -1,0 +1,307 @@
+"","Div","HomeTeam","AwayTeam","Date"
+"1","D2","Schalke 04","Hertha",2025-08-01
+"2","D2","Elversberg","Nurnberg",2025-08-02
+"3","D2","Darmstadt","Bochum",2025-08-02
+"4","D2","Paderborn","Holstein Kiel",2025-08-02
+"5","D2","Karlsruher","Preußen Münsterr",2025-08-02
+"6","D2","Bielefeld","Fortuna Dusseldorf",2025-08-02
+"7","D2","Greuther Furth","Dresden",2025-08-03
+"8","D2","Hannover","Kaiserslautern",2025-08-03
+"9","D2","Magdeburg","Braunschweig",2025-08-03
+"10","D2","Schalke 04","Darmstadt",2025-10-24
+"11","D2","Greuther Furth","Karlsruher",2025-10-24
+"12","D2","Bielefeld","Elversberg",2025-10-25
+"13","D2","Dresden","Paderborn",2025-10-25
+"14","D2","Holstein Kiel","Bochum",2025-10-25
+"15","D2","Hertha","Fortuna Dusseldorf",2025-10-25
+"16","D2","Magdeburg","Preußen Münsterr",2025-10-26
+"17","D2","Braunschweig","Hannover",2025-10-26
+"18","D2","Kaiserslautern","Nurnberg",2025-10-26
+"19","D2","Preußen Münsterr","Holstein Kiel",2025-10-31
+"20","D2","Elversberg","Hannover",2025-10-31
+"21","D2","Karlsruher","Schalke 04",2025-11-01
+"22","D2","Hertha","Dresden",2025-11-01
+"23","D2","Nurnberg","Braunschweig",2025-11-01
+"24","D2","Darmstadt","Bielefeld",2025-11-01
+"25","D2","Paderborn","Greuther Furth",2025-11-02
+"26","D2","Fortuna Dusseldorf","Kaiserslautern",2025-11-02
+"27","D2","Bochum","Magdeburg",2025-11-02
+"28","D2","Dresden","Nurnberg",2025-11-07
+"29","D2","Greuther Furth","Preußen Münsterr",2025-11-07
+"30","D2","Bielefeld","Karlsruher",2025-11-08
+"31","D2","Hannover","Darmstadt",2025-11-08
+"32","D2","Schalke 04","Elversberg",2025-11-08
+"33","D2","Kaiserslautern","Hertha",2025-11-08
+"34","D2","Holstein Kiel","Fortuna Dusseldorf",2025-11-09
+"35","D2","Braunschweig","Bochum",2025-11-09
+"36","D2","Magdeburg","Paderborn",2025-11-09
+"37","D2","Hertha","Braunschweig",2025-11-21
+"38","D2","Bochum","Dresden",2025-11-21
+"39","D2","Fortuna Dusseldorf","Magdeburg",2025-11-22
+"40","D2","Preußen Münsterr","Schalke 04",2025-11-22
+"41","D2","Paderborn","Hannover",2025-11-22
+"42","D2","Darmstadt","Greuther Furth",2025-11-22
+"43","D2","Karlsruher","Elversberg",2025-11-23
+"44","D2","Nurnberg","Bielefeld",2025-11-23
+"45","D2","Kaiserslautern","Holstein Kiel",2025-11-23
+"46","D2","Hannover","Karlsruher",2025-11-28
+"47","D2","Schalke 04","Paderborn",2025-11-28
+"48","D2","Braunschweig","Kaiserslautern",2025-11-29
+"49","D2","Holstein Kiel","Hertha",2025-11-29
+"50","D2","Greuther Furth","Bochum",2025-11-29
+"51","D2","Magdeburg","Nurnberg",2025-11-29
+"52","D2","Bielefeld","Preußen Münsterr",2025-11-30
+"53","D2","Elversberg","Darmstadt",2025-11-30
+"54","D2","Dresden","Fortuna Dusseldorf",2025-11-30
+"55","D2","Kaiserslautern","Dresden",2025-12-06
+"56","D2","Preußen Münsterr","Hannover",2025-12-06
+"57","D2","Paderborn","Elversberg",2025-12-06
+"58","D2","Fortuna Dusseldorf","Schalke 04",2025-12-06
+"59","D2","Braunschweig","Holstein Kiel",2025-12-06
+"60","D2","Nurnberg","Greuther Furth",2025-12-06
+"61","D2","Bochum","Bielefeld",2025-12-06
+"62","D2","Hertha","Magdeburg",2025-12-06
+"63","D2","Darmstadt","Karlsruher",2025-12-06
+"64","D2","Hannover","Bochum",2025-12-13
+"65","D2","Greuther Furth","Hertha",2025-12-13
+"66","D2","Darmstadt","Preußen Münsterr",2025-12-13
+"67","D2","Schalke 04","Nurnberg",2025-12-13
+"68","D2","Karlsruher","Paderborn",2025-12-13
+"69","D2","Elversberg","Fortuna Dusseldorf",2025-12-13
+"70","D2","Bielefeld","Kaiserslautern",2025-12-13
+"71","D2","Magdeburg","Holstein Kiel",2025-12-13
+"72","D2","Dresden","Braunschweig",2025-12-13
+"73","D2","Fortuna Dusseldorf","Greuther Furth",2025-12-20
+"74","D2","Bochum","Karlsruher",2025-12-20
+"75","D2","Paderborn","Darmstadt",2025-12-20
+"76","D2","Kaiserslautern","Magdeburg",2025-12-20
+"77","D2","Holstein Kiel","Dresden",2025-12-20
+"78","D2","Braunschweig","Schalke 04",2025-12-20
+"79","D2","Hertha","Bielefeld",2025-12-20
+"80","D2","Nurnberg","Hannover",2025-12-20
+"81","D2","Preußen Münsterr","Elversberg",2025-12-20
+"82","D2","Preußen Münsterr","Karlsruher",2026-01-17
+"83","D2","Dresden","Greuther Furth",2026-01-17
+"84","D2","Braunschweig","Magdeburg",2026-01-17
+"85","D2","Fortuna Dusseldorf","Bielefeld",2026-01-17
+"86","D2","Bochum","Darmstadt",2026-01-17
+"87","D2","Holstein Kiel","Paderborn",2026-01-17
+"88","D2","Hertha","Schalke 04",2026-01-17
+"89","D2","Nurnberg","Elversberg",2026-01-17
+"90","D2","Kaiserslautern","Hannover",2026-01-17
+"91","D2","Schalke 04","Kaiserslautern",2026-01-24
+"92","D2","Bielefeld","Holstein Kiel",2026-01-24
+"93","D2","Paderborn","Preußen Münsterr",2026-01-24
+"94","D2","Magdeburg","Dresden",2026-01-24
+"95","D2","Karlsruher","Hertha",2026-01-24
+"96","D2","Greuther Furth","Braunschweig",2026-01-24
+"97","D2","Darmstadt","Nurnberg",2026-01-24
+"98","D2","Hannover","Fortuna Dusseldorf",2026-01-24
+"99","D2","Elversberg","Bochum",2026-01-24
+"100","D2","Nurnberg","Darmstadt",2025-08-08
+"101","D2","Preußen Münsterr","Paderborn",2025-08-08
+"102","D2","Dresden","Magdeburg",2025-08-09
+"103","D2","Fortuna Dusseldorf","Hannover",2025-08-09
+"104","D2","Braunschweig","Greuther Furth",2025-08-09
+"105","D2","Kaiserslautern","Schalke 04",2025-08-09
+"106","D2","Holstein Kiel","Bielefeld",2025-08-10
+"107","D2","Bochum","Elversberg",2025-08-10
+"108","D2","Hertha","Karlsruher",2025-08-10
+"109","D2","Magdeburg","Hannover",2026-01-31
+"110","D2","Dresden","Bielefeld",2026-01-31
+"111","D2","Hertha","Darmstadt",2026-01-31
+"112","D2","Bochum","Schalke 04",2026-01-31
+"113","D2","Kaiserslautern","Elversberg",2026-01-31
+"114","D2","Holstein Kiel","Greuther Furth",2026-01-31
+"115","D2","Nurnberg","Preußen Münsterr",2026-01-31
+"116","D2","Braunschweig","Karlsruher",2026-01-31
+"117","D2","Fortuna Dusseldorf","Paderborn",2026-01-31
+"118","D2","Schalke 04","Dresden",2026-02-07
+"119","D2","Elversberg","Hertha",2026-02-07
+"120","D2","Karlsruher","Fortuna Dusseldorf",2026-02-07
+"121","D2","Paderborn","Nurnberg",2026-02-07
+"122","D2","Greuther Furth","Magdeburg",2026-02-07
+"123","D2","Bielefeld","Braunschweig",2026-02-07
+"124","D2","Preußen Münsterr","Bochum",2026-02-07
+"125","D2","Darmstadt","Kaiserslautern",2026-02-07
+"126","D2","Hannover","Holstein Kiel",2026-02-07
+"127","D2","Bochum","Paderborn",2026-02-14
+"128","D2","Nurnberg","Karlsruher",2026-02-14
+"129","D2","Dresden","Elversberg",2026-02-14
+"130","D2","Braunschweig","Darmstadt",2026-02-14
+"131","D2","Hertha","Hannover",2026-02-14
+"132","D2","Holstein Kiel","Schalke 04",2026-02-14
+"133","D2","Fortuna Dusseldorf","Preußen Münsterr",2026-02-14
+"134","D2","Magdeburg","Bielefeld",2026-02-14
+"135","D2","Kaiserslautern","Greuther Furth",2026-02-14
+"136","D2","Hannover","Dresden",2026-02-21
+"137","D2","Bochum","Nurnberg",2026-02-21
+"138","D2","Schalke 04","Magdeburg",2026-02-21
+"139","D2","Elversberg","Braunschweig",2026-02-21
+"140","D2","Karlsruher","Holstein Kiel",2026-02-21
+"141","D2","Greuther Furth","Bielefeld",2026-02-21
+"142","D2","Preußen Münsterr","Kaiserslautern",2026-02-21
+"143","D2","Darmstadt","Fortuna Dusseldorf",2026-02-21
+"144","D2","Paderborn","Hertha",2026-02-21
+"145","D2","Magdeburg","Karlsruher",2026-02-28
+"146","D2","Fortuna Dusseldorf","Bochum",2026-02-28
+"147","D2","Dresden","Darmstadt",2026-02-28
+"148","D2","Braunschweig","Preußen Münsterr",2026-02-28
+"149","D2","Bielefeld","Hannover",2026-02-28
+"150","D2","Hertha","Nurnberg",2026-02-28
+"151","D2","Holstein Kiel","Elversberg",2026-02-28
+"152","D2","Greuther Furth","Schalke 04",2026-02-28
+"153","D2","Kaiserslautern","Paderborn",2026-02-28
+"154","D2","Paderborn","Braunschweig",2026-03-07
+"155","D2","Schalke 04","Bielefeld",2026-03-07
+"156","D2","Hannover","Greuther Furth",2026-03-07
+"157","D2","Preußen Münsterr","Hertha",2026-03-07
+"158","D2","Nurnberg","Fortuna Dusseldorf",2026-03-07
+"159","D2","Elversberg","Magdeburg",2026-03-07
+"160","D2","Darmstadt","Holstein Kiel",2026-03-07
+"161","D2","Karlsruher","Dresden",2026-03-07
+"162","D2","Bochum","Kaiserslautern",2026-03-07
+"163","D2","Magdeburg","Darmstadt",2026-03-14
+"164","D2","Dresden","Preußen Münsterr",2026-03-14
+"165","D2","Hertha","Bochum",2026-03-14
+"166","D2","Braunschweig","Fortuna Dusseldorf",2026-03-14
+"167","D2","Kaiserslautern","Karlsruher",2026-03-14
+"168","D2","Holstein Kiel","Nurnberg",2026-03-14
+"169","D2","Schalke 04","Hannover",2026-03-14
+"170","D2","Greuther Furth","Elversberg",2026-03-14
+"171","D2","Bielefeld","Paderborn",2026-03-14
+"172","D2","Bochum","Holstein Kiel",2026-03-21
+"173","D2","Hannover","Braunschweig",2026-03-21
+"174","D2","Elversberg","Bielefeld",2026-03-21
+"175","D2","Preußen Münsterr","Magdeburg",2026-03-21
+"176","D2","Karlsruher","Greuther Furth",2026-03-21
+"177","D2","Fortuna Dusseldorf","Hertha",2026-03-21
+"178","D2","Nurnberg","Kaiserslautern",2026-03-21
+"179","D2","Paderborn","Dresden",2026-03-21
+"180","D2","Darmstadt","Schalke 04",2026-03-21
+"181","D2","Holstein Kiel","Preußen Münsterr",2026-04-04
+"182","D2","Magdeburg","Bochum",2026-04-04
+"183","D2","Greuther Furth","Paderborn",2026-04-04
+"184","D2","Schalke 04","Karlsruher",2026-04-04
+"185","D2","Hannover","Elversberg",2026-04-04
+"186","D2","Bielefeld","Darmstadt",2026-04-04
+"187","D2","Dresden","Hertha",2026-04-04
+"188","D2","Kaiserslautern","Fortuna Dusseldorf",2026-04-04
+"189","D2","Braunschweig","Nurnberg",2026-04-04
+"190","D2","Paderborn","Magdeburg",2026-04-11
+"191","D2","Fortuna Dusseldorf","Holstein Kiel",2026-04-11
+"192","D2","Darmstadt","Hannover",2026-04-11
+"193","D2","Hertha","Kaiserslautern",2026-04-11
+"194","D2","Preußen Münsterr","Greuther Furth",2026-04-11
+"195","D2","Karlsruher","Bielefeld",2026-04-11
+"196","D2","Nurnberg","Dresden",2026-04-11
+"197","D2","Elversberg","Schalke 04",2026-04-11
+"198","D2","Bochum","Braunschweig",2026-04-11
+"199","D2","Preußen Münsterr","Nurnberg",2025-08-22
+"200","D2","Elversberg","Kaiserslautern",2025-08-22
+"201","D2","Paderborn","Fortuna Dusseldorf",2025-08-23
+"202","D2","Hannover","Magdeburg",2025-08-23
+"203","D2","Karlsruher","Braunschweig",2025-08-23
+"204","D2","Schalke 04","Bochum",2025-08-23
+"205","D2","Greuther Furth","Holstein Kiel",2025-08-24
+"206","D2","Bielefeld","Dresden",2025-08-24
+"207","D2","Darmstadt","Hertha",2025-08-24
+"208","D2","Holstein Kiel","Kaiserslautern",2026-04-18
+"209","D2","Hannover","Paderborn",2026-04-18
+"210","D2","Braunschweig","Hertha",2026-04-18
+"211","D2","Greuther Furth","Darmstadt",2026-04-18
+"212","D2","Schalke 04","Preußen Münsterr",2026-04-18
+"213","D2","Dresden","Bochum",2026-04-18
+"214","D2","Magdeburg","Fortuna Dusseldorf",2026-04-18
+"215","D2","Bielefeld","Nurnberg",2026-04-18
+"216","D2","Elversberg","Karlsruher",2026-04-18
+"217","D2","Karlsruher","Hannover",2026-04-25
+"218","D2","Bochum","Greuther Furth",2026-04-25
+"219","D2","Paderborn","Schalke 04",2026-04-25
+"220","D2","Fortuna Dusseldorf","Dresden",2026-04-25
+"221","D2","Preußen Münsterr","Bielefeld",2026-04-25
+"222","D2","Nurnberg","Magdeburg",2026-04-25
+"223","D2","Hertha","Holstein Kiel",2026-04-25
+"224","D2","Darmstadt","Elversberg",2026-04-25
+"225","D2","Kaiserslautern","Braunschweig",2026-04-25
+"226","D2","Bielefeld","Bochum",2026-05-02
+"227","D2","Karlsruher","Darmstadt",2026-05-02
+"228","D2","Magdeburg","Hertha",2026-05-02
+"229","D2","Greuther Furth","Nurnberg",2026-05-02
+"230","D2","Elversberg","Paderborn",2026-05-02
+"231","D2","Schalke 04","Fortuna Dusseldorf",2026-05-02
+"232","D2","Holstein Kiel","Braunschweig",2026-05-02
+"233","D2","Dresden","Kaiserslautern",2026-05-02
+"234","D2","Hannover","Preußen Münsterr",2026-05-02
+"235","D2","Holstein Kiel","Magdeburg",2026-05-09
+"236","D2","Paderborn","Karlsruher",2026-05-09
+"237","D2","Fortuna Dusseldorf","Elversberg",2026-05-09
+"238","D2","Nurnberg","Schalke 04",2026-05-09
+"239","D2","Hertha","Greuther Furth",2026-05-09
+"240","D2","Braunschweig","Dresden",2026-05-09
+"241","D2","Preußen Münsterr","Darmstadt",2026-05-09
+"242","D2","Bochum","Hannover",2026-05-09
+"243","D2","Kaiserslautern","Bielefeld",2026-05-09
+"244","D2","Darmstadt","Paderborn",2026-05-17
+"245","D2","Greuther Furth","Fortuna Dusseldorf",2026-05-17
+"246","D2","Bielefeld","Hertha",2026-05-17
+"247","D2","Elversberg","Preußen Münsterr",2026-05-17
+"248","D2","Magdeburg","Kaiserslautern",2026-05-17
+"249","D2","Dresden","Holstein Kiel",2026-05-17
+"250","D2","Hannover","Nurnberg",2026-05-17
+"251","D2","Schalke 04","Braunschweig",2026-05-17
+"252","D2","Karlsruher","Bochum",2026-05-17
+"253","D2","Hertha","Elversberg",2025-08-29
+"254","D2","Nurnberg","Paderborn",2025-08-29
+"255","D2","Holstein Kiel","Hannover",2025-08-30
+"256","D2","Bochum","Preußen Münsterr",2025-08-30
+"257","D2","Braunschweig","Bielefeld",2025-08-30
+"258","D2","Fortuna Dusseldorf","Karlsruher",2025-08-30
+"259","D2","Magdeburg","Greuther Furth",2025-08-31
+"260","D2","Kaiserslautern","Darmstadt",2025-08-31
+"261","D2","Dresden","Schalke 04",2025-08-31
+"262","D2","Paderborn","Bochum",2025-09-12
+"263","D2","Bielefeld","Magdeburg",2025-09-12
+"264","D2","Schalke 04","Holstein Kiel",2025-09-13
+"265","D2","Darmstadt","Braunschweig",2025-09-13
+"266","D2","Karlsruher","Nurnberg",2025-09-13
+"267","D2","Hannover","Hertha",2025-09-13
+"268","D2","Elversberg","Dresden",2025-09-14
+"269","D2","Preußen Münsterr","Fortuna Dusseldorf",2025-09-14
+"270","D2","Greuther Furth","Kaiserslautern",2025-09-14
+"271","D2","Bielefeld","Greuther Furth",2025-09-19
+"272","D2","Kaiserslautern","Preußen Münsterr",2025-09-19
+"273","D2","Hertha","Paderborn",2025-09-20
+"274","D2","Braunschweig","Elversberg",2025-09-20
+"275","D2","Magdeburg","Schalke 04",2025-09-20
+"276","D2","Nurnberg","Bochum",2025-09-20
+"277","D2","Dresden","Hannover",2025-09-21
+"278","D2","Holstein Kiel","Karlsruher",2025-09-21
+"279","D2","Fortuna Dusseldorf","Darmstadt",2025-09-21
+"280","D2","Darmstadt","Dresden",2025-09-26
+"281","D2","Schalke 04","Greuther Furth",2025-09-26
+"282","D2","Elversberg","Holstein Kiel",2025-09-27
+"283","D2","Karlsruher","Magdeburg",2025-09-27
+"284","D2","Paderborn","Kaiserslautern",2025-09-27
+"285","D2","Bochum","Fortuna Dusseldorf",2025-09-27
+"286","D2","Hannover","Bielefeld",2025-09-28
+"287","D2","Nurnberg","Hertha",2025-09-28
+"288","D2","Preußen Münsterr","Braunschweig",2025-09-28
+"289","D2","Braunschweig","Paderborn",2025-10-03
+"290","D2","Fortuna Dusseldorf","Nurnberg",2025-10-03
+"291","D2","Holstein Kiel","Darmstadt",2025-10-04
+"292","D2","Kaiserslautern","Bochum",2025-10-04
+"293","D2","Hertha","Preußen Münsterr",2025-10-04
+"294","D2","Dresden","Karlsruher",2025-10-04
+"295","D2","Bielefeld","Schalke 04",2025-10-05
+"296","D2","Magdeburg","Elversberg",2025-10-05
+"297","D2","Greuther Furth","Hannover",2025-10-05
+"298","D2","Hannover","Schalke 04",2025-10-17
+"299","D2","Fortuna Dusseldorf","Braunschweig",2025-10-17
+"300","D2","Preußen Münsterr","Dresden",2025-10-18
+"301","D2","Paderborn","Bielefeld",2025-10-18
+"302","D2","Karlsruher","Kaiserslautern",2025-10-18
+"303","D2","Bochum","Hertha",2025-10-18
+"304","D2","Elversberg","Greuther Furth",2025-10-19
+"305","D2","Darmstadt","Magdeburg",2025-10-19
+"306","D2","Nurnberg","Holstein Kiel",2025-10-19

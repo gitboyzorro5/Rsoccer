@@ -6,16 +6,16 @@ library('sqldf')
 library('scales')
 source('divisions.R')
 source('Matchday.R')
-sp1_currentround
+f1_currentround
 
-#first_df <- E0_rounds[E0_rounds$e0_matchday > 27,]
-#second_df <- SP1_rounds[SP1_rounds$sp1_matchday > 27,]
+first_df <- F1_rounds[F1_rounds$f1_matchday > 0,]
+second_df <- SP1_rounds[SP1_rounds$sp1_matchday > 0,]
 #third_df <- E0_rounds[E0_rounds$e0_matchday > 33,]
-#first_df <- first_df[,-37]
-#second_df <- second_df[,-37]
+first_df <- first_df[,-37]
+second_df <- second_df[,-37]
 #third_df <- third_df[,-37]
-#UCL <- rbind(first_df,second_df)
-UCL <- E0_rounds[E0_rounds$e0_matchday > 27,]
+UCL <- rbind(first_df,second_df)
+#UCL <- D2_rounds[D2_rounds$d2_matchday > 0,]
 #UCL <- na.omit(UCL
 #goaltotals v2
 ucl_goaltotalsv2 <- tapply(UCL$TG, UCL[c("HomeTeam", "AwayTeam")],mean)

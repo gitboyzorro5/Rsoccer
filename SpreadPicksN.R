@@ -1,4 +1,4 @@
-spreadn <- 6
+spreadn <- 4
 library('xlsx')
 #D1
 D1_spread <- subset(readxl::read_excel('UCL20252026.xlsx'), Div == "D1")
@@ -17,7 +17,7 @@ for(d1_sn in 1:17){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\D1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\D1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_d1[d1_sn,1],final_doublefixture_d1[d1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -41,7 +41,7 @@ for(e0_sn in 1:19){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\E0"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\E0"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e0[e0_sn,1],final_doublefixture_e0[e0_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -63,7 +63,7 @@ for(i1_sn in 1:19){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\I1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\I1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_i1[i1_sn,1],final_doublefixture_i1[i1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -86,7 +86,7 @@ for(sp1_sn in 1:19){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SP1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\SP1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sp1[sp1_sn,1],final_doublefixture_sp1[sp1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -108,7 +108,7 @@ for(f1_sn in 1:17){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\F1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\F1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_f1[f1_sn,1],final_doublefixture_f1[f1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -142,7 +142,7 @@ for(b1_sn in 1:17){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\B1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\B1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_b1[b1_sn,1],final_doublefixture_b1[b1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -174,7 +174,7 @@ for(d2_sn in 1:17){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\D2"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\D2"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_d2[d2_sn,1],final_doublefixture_d2[d2_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -205,7 +205,7 @@ for(e1_sn in 1:23){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\E1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\E1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e1[e1_sn,1],final_doublefixture_e1[e1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -236,7 +236,7 @@ for(e2_sn in 1:23){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\E2"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\E2"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e2[e2_sn,1],final_doublefixture_e2[e2_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -266,7 +266,7 @@ for(e3_sn in 1:23){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\E3"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\E3"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_e3[e3_sn,1],final_doublefixture_e3[e3_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -296,7 +296,7 @@ for(ec_sn in 1:23){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\EC"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\EC"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_ec[ec_sn,1],final_doublefixture_ec[ec_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -326,7 +326,7 @@ for(f2_sn in 1:19){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\F2"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\F2"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_f2[f2_sn,1],final_doublefixture_f2[f2_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -357,7 +357,7 @@ for(g1_sn in 1:19){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\G1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\G1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_g1[g1_sn,1],final_doublefixture_g1[g1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -388,7 +388,7 @@ for(i2_sn in 1:19){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\I2"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\I2"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_i2[i2_sn,1],final_doublefixture_i2[i2_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -419,7 +419,7 @@ for(n1_sn in 1:17){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\N1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\N1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_n1[n1_sn,1],final_doublefixture_n1[n1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -449,7 +449,7 @@ for(p1_sn in 1:17){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\P1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\P1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_p1[p1_sn,1],final_doublefixture_p1[p1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -480,7 +480,7 @@ for(sc0_sn in 1:11){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SC0"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\SC0"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sc0[sc0_sn,1],final_doublefixture_sc0[sc0_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -510,7 +510,7 @@ for(sc1_sn in 1:9){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SC1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\SC1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sc1[sc1_sn,1],final_doublefixture_sc1[sc1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -541,7 +541,7 @@ for(sc2_sn in 1:9){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SC2"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\SC2"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sc2[sc2_sn,1],final_doublefixture_sc2[sc2_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -573,7 +573,7 @@ for(sc3_sn in 1:9){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SC3"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\SC3"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sc3[sc3_sn,1],final_doublefixture_sc3[sc3_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -604,7 +604,7 @@ for(sp2_sn in 1:21){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\SP2"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\SP2"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_sp2[sp2_sn,1],final_doublefixture_sp2[sp2_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -634,7 +634,7 @@ for(t1_sn in 1:19){
   temp_analyis_combined <- c(temp_sliced,temp_colmeans)
   temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
 
-  path = "C:\\Users\\Kovan\\Rsoccer\\SpreadsN\\T1"
+  path = "C:\\Users\\Kovan\\gitboyzorro5\\Rsoccer\\SpreadsN\\T1"
   write.csv(temp_analysis,file.path(path,paste(final_doublefixture_t1[t1_sn,1],final_doublefixture_t1[t1_sn + 1,1],".csv",sep = "_")))
 
 }
@@ -643,20 +643,20 @@ Europe_spread <- rbind(B1_spread,D2_spread,E1_spread,E2_spread,E3_spread,EC_spre
 
 write.csv(Europe_spread,'Europespread.csv')
 # ##################################################################################################
-df <- tail(D2_spread[D2_spread$HomeTeam == "Hertha" | D2_spread$AwayTeam == "Hertha" ,],spreadn)
-
-df2 <- tail(D2_spread[D2_spread$HomeTeam == "Holstein Kiel" | D2_spread$AwayTeam == "Holstein Kiel",],spreadn)
-
-temp_analysis <- rbind(df,df2)
-
-temp_analysis <- as.data.frame(temp_analysis)
-temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
-temp_sliced <- tail(temp_analysis,1)
-temp_sliced <- temp_sliced[1:36]
-
-temp_analyis_combined <- c(temp_sliced,temp_colmeans)
-temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
-write.csv(temp_analysis,'Temp/herthakiel.csv')
+# df <- tail(D2_spread[D2_spread$HomeTeam == "Hertha" | D2_spread$AwayTeam == "Hertha" ,],spreadn)
+#
+# df2 <- tail(D2_spread[D2_spread$HomeTeam == "Holstein Kiel" | D2_spread$AwayTeam == "Holstein Kiel",],spreadn)
+#
+# temp_analysis <- rbind(df,df2)
+#
+# temp_analysis <- as.data.frame(temp_analysis)
+# temp_colmeans <- colMeans(temp_analysis[,c(37,38,39,40,41,42,43)])
+# temp_sliced <- tail(temp_analysis,1)
+# temp_sliced <- temp_sliced[1:36]
+#
+# temp_analyis_combined <- c(temp_sliced,temp_colmeans)
+# temp_analysis <- rbind(temp_analysis,temp_analyis_combined)
+# write.csv(temp_analysis,'Temp/herthakiel.csv')
 #####################################################################################################
 
 

@@ -3,6 +3,7 @@ library('janitor')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 library('xlsx')
 library('scales')
+
 #Total goals scored
 #B1
 #home goals scored

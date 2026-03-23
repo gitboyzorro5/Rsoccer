@@ -2,6 +2,8 @@
 library('dplyr')
 Sys.setenv(JAVA_HOME ="C:\\Program Files\\Java\\jre1.8.0_221")
 library('xlsx')
+
+#install.packages("rJava", type = "binary")
 #Create the home and awag team matrix
 b1_goaltotalsv2 <- tapply(B1$TG, B1[c("HomeTeam", "AwayTeam")],mean)
 d1_goaltotalsv2 <- tapply(D1$TG, D1[c("HomeTeam", "AwayTeam")],mean)
@@ -571,5 +573,4 @@ t1_goaltotalsv2 <- cbind(t1_goaltotalsv2,t1_avg_totalgoals)
 # write.xlsx(sp2_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "SP2", append = TRUE)
 # write.xlsx(t1_goaltotalsv2,'GoalTotalsV2.xlsx',sheetName = "T1", append = TRUE)
 
-sort(unique(E1$HomeTeam))
 

@@ -74,6 +74,7 @@ E0_spread$ShirtsXcorners <- (E0_spread$epl_shirts)*(E0_spread$TC)
 E0_spread$TGMXcorners <- (E0_spread$epl_goalmins)*(E0_spread$TC)
 E0_spread$GoalsXcornerXbookings <- (E0_spread$TG)*(E0_spread$TC)*(E0_spread$Bookings)
 E0_spread_prev <- readxl::read_excel('E0_spread.xlsx')
+#E0_spread_prev <- E0_spread_prev[,c(-1)]
 E0_spread_final <- rbind(E0_spread_prev,E0_spread)
 
 unlink('E0_spread.xlsx')
@@ -130,8 +131,8 @@ write.xlsx(E0_spread_final,'E0_spread.xlsx')
 
 D1_spread <- subset(allteams20252026,Div =="D1")
 D1_spread$matchid <- paste(D1$HomeTeam,D1$AwayTeam,sep = "-")
-#bundesliganrows <- nrow(D1_spread) - nrow(readxl::read_excel('D1_spread.xlsx'))
-#D1_spread <- tail(D1_spread,bundesliganrows)
+bundesliganrows <- nrow(D1_spread) - nrow(readxl::read_excel('D1_spread.xlsx'))
+D1_spread <- tail(D1_spread,bundesliganrows)
 D1_spread$bundesliga_goalmins <- 0
 D1_spread$n <- D1_spread$TG
 D1_spread$bundesliga_shirts <- 0
@@ -145,7 +146,8 @@ D1_spread$GoalsXshirts <- (D1_spread$TG)*(D1_spread$bundesliga_shirts)
 D1_spread$ShirtsXcorners <- (D1_spread$bundesliga_shirts)*(D1_spread$TC)
 D1_spread$TGMXcorners <- (D1_spread$bundesliga_goalmins)*(D1_spread$TC)
 D1_spread$GoalsXcornerXbookings <- (D1_spread$TG)*(D1_spread$TC)*(D1_spread$Bookings)
-#D1_spread_prev <- readxl::read_excel('D1_spread.xlsx')
+D1_spread_prev <- readxl::read_excel('D1_spread.xlsx')
+#D1_spread_prev <- D1_spread_prev[,c(-1)]
 D1_spread_final <- rbind(D1_spread_prev,D1_spread)
 
 unlink('D1_spread.xlsx')
@@ -218,6 +220,7 @@ I1_spread$ShirtsXcorners <- (I1_spread$seriea_shirts)*(I1_spread$TC)
 I1_spread$TGMXcorners <- (I1_spread$seriea_goalmins)*(I1_spread$TC)
 I1_spread$GoalsXcornerXbookings <- (I1_spread$TG)*(I1_spread$TC)*(I1_spread$Bookings)
 I1_spread_prev <- readxl::read_excel('I1_spread.xlsx')
+#I1_spread_prev <- I1_spread_prev[,c(-1)]
 I1_spread_final <- rbind(I1_spread_prev,I1_spread)
 
 unlink('I1_spread.xlsx')
@@ -291,6 +294,7 @@ SP1_spread$ShirtsXcorners <- (SP1_spread$laliga_shirts)*(SP1_spread$TC)
 SP1_spread$TGMXcorners <- (SP1_spread$laliga_goalmins)*(SP1_spread$TC)
 SP1_spread$GoalsXcornerXbookings <- (SP1_spread$TG)*(SP1_spread$TC)*(SP1_spread$Bookings)
 SP1_spread_prev <- readxl::read_excel('SP1_spread.xlsx')
+#SP1_spread_prev <- SP1_spread_prev[,c(-1)]
 SP1_spread_final <- rbind(SP1_spread_prev,SP1_spread)
 
 unlink('SP1_spread.xlsx')
@@ -364,6 +368,7 @@ F1_spread$ShirtsXcorners <- (F1_spread$ligueone_shirts)*(F1_spread$TC)
 F1_spread$TGMXcorners <- (F1_spread$ligueone_goalmins)*(F1_spread$TC)
 F1_spread$GoalsXcornerXbookings <- (F1_spread$TG)*(F1_spread$TC)*(F1_spread$Bookings)
 F1_spread_prev <- readxl::read_excel('F1_spread.xlsx')
+#F1_spread_prev <- F1_spread_prev[,c(-1)]
 F1_spread_final <- rbind(F1_spread_prev,F1_spread)
 
 unlink('F1_spread.xlsx')

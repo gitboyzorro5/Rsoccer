@@ -5,6 +5,7 @@ library('xlsx')
 library('scales')
 library('lubridate')
 library('sqldf')
+
 b1_GP <- nrow(B1)
 d1_GP <- nrow(D1)
 d2_GP <- nrow(D2)
@@ -265,6 +266,7 @@ sp2_away_ycc <- aggregate(SP2$HY, by = list(SP2$AwayTeam), FUN = sum)
 t1_home_ycc <- aggregate(T1$AY, by = list(T1$HomeTeam), FUN = sum)
 t1_away_ycc <- aggregate(T1$HY, by = list(T1$AwayTeam), FUN = sum)
 #home defense strength
+
 b1_home_yds <- round(((b1_home_ycc$x/b1_home_games))/b1_avg_HYC, digits = 4)
 d1_home_yds <- round(((d1_home_ycc$x/d1_home_games))/d1_avg_HYC, digits = 4)
 d2_home_yds <- round(((d2_home_ycc$x/d2_home_games))/d2_avg_HYC, digits = 4)
@@ -316,6 +318,7 @@ t1_away_yds <- round(((t1_away_ycc$x/t1_away_games))/t1_avg_AYC, digits = 4)
 b1_division <- c()
 b1_division[1:length(b1_teams)] <- "B1"
 b1_home_poisson_yc <- cbind(b1_division,b1_teams,b1_avg_HY,b1_home_yas,b1_home_yds)
+
 #d1
 d1_division <- c()
 d1_division[1:length(d1_teams)] <- "D1"
@@ -500,6 +503,7 @@ away_poisson_yc <- rbind(b1_away_poisson_yc,d1_away_poisson_yc,d2_away_poisson_y
 # write.csv(home_poisson,'R_home.csv')
 # write.csv(away_poisson,'R_away.csv')
 #B1
+
 HomeTeam_b1_yc <- rep(b1_teams, each = length(b1_teams))
 AwayTeam_b1_yc <- rep(b1_teams, length(b1_teams))
 B1_fixtures_yc <- cbind(HomeTeam_b1_yc,AwayTeam_b1_yc)
@@ -530,6 +534,7 @@ b1_awayyas_lookup <- cbind(b1_teams,b1_away_yas)
 b1_awayyas_lookup <- as.data.frame(b1_awayyas_lookup)
 
 colnames(b1_awayyas_lookup) <- c("AwayTeam_b1_yc","b1_awayyas")
+
 
 B1_fixtures_yc$b1_awayyas <- sqldf("SELECT b1_awayyas_lookup.b1_awayyas FROM b1_awayyas_lookup INNER JOIN B1_fixtures_yc ON b1_awayyas_lookup.AwayTeam_b1_yc = B1_fixtures_yc.AwayTeam_b1_yc")
 

@@ -1,0 +1,10 @@
+,Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,PSH,PSD,PSA,HTCS,CS,HS,HST,AS,AST,HY,AY,HR,AR,HCO,ACO,HF,AF,TG,TC,TF,COSC,OV15,OV25,OV35,TY,TR,matchid,goalmins,n,shirts,Bookings,Crossbookings,GoalsXbookings,CornersXbookings,ShirtsXbookings,GoalsXcorners,GoalsXshirts,ShirtsXcorners,TGMXcorners,GoalsXcornerXbookings
+1,E0,10/25/2025,Chelsea,Sunderland,1,2,A,1,1,D,1.36,5,8.5,1-Jan,2-Jan,16,7,10,4,1,1,0,0,9,1,15,13,3,10,28,1-Sep,Y,Y,N,2,0,Chelsea-Sunderland,116,3,74,20,100,60,200,1480,30,222,740,1160,600
+2,E0,11/1/2025,Tottenham,Chelsea,0,1,A,0,1,A,2.63,3.6,2.5,0-1,0-1,3,1,15,9,4,2,0,0,6,5,14,12,1,11,26,5-Jun,N,N,N,6,0,Tottenham-Chelsea,34,1,20,60,800,60,660,1200,11,20,220,374,660
+3,E0,11/8/2025,Chelsea,Wolves,3,0,H,0,0,D,1.36,5,8.5,0-0,Mar-00,20,8,3,0,1,2,0,0,10,1,12,14,3,11,26,1-Oct,Y,Y,N,3,0,Chelsea-Wolves,189,3,54,30,200,90,330,1620,33,162,594,2079,990
+4,E0,11/22/2025,Burnley,Chelsea,0,2,A,0,1,A,6.5,4.2,1.5,0-1,0-2,8,2,15,5,2,3,0,0,1,9,13,8,2,10,21,9-Jan,Y,N,N,5,0,Burnley-Chelsea,125,2,15,50,600,100,500,750,20,30,150,1250,1000
+5,E0,10/26/2025,Arsenal,Crystal Palace,1,0,H,1,0,H,1.4,4.4,7.5,Jan-00,Jan-00,10,3,7,1,0,0,0,0,4,3,6,11,1,7,17,3-Apr,N,N,N,0,0,Arsenal-Crystal Palace,39,1,10,0,0,0,0,0,7,10,70,273,0
+6,E0,11/1/2025,Burnley,Arsenal,0,2,A,0,2,A,12,5.75,1.25,0-2,0-2,3,0,12,8,2,1,0,0,1,6,10,13,2,7,23,6-Jan,Y,N,N,3,0,Burnley-Arsenal,49,2,55,30,200,60,210,1650,14,110,385,343,420
+7,E0,11/8/2025,Sunderland,Arsenal,2,2,D,1,0,H,8,4.6,1.4,Jan-00,2-Feb,6,2,17,7,2,1,0,0,2,2,13,13,4,4,26,2-Feb,Y,Y,Y,3,0,Sunderland-Arsenal,254,4,40,30,200,120,120,1200,16,160,160,1016,480
+8,E0,11/23/2025,Arsenal,Tottenham,4,1,H,2,0,H,1.36,4.5,8,Feb-00,1-Apr,17,8,3,2,1,3,0,0,4,1,11,15,5,5,26,1-Apr,Y,Y,Y,4,0,Arsenal-Tottenham,254,5,58,40,300,200,200,2320,25,290,290,1270,1000
+9,E0,11/23/2025,Arsenal,Tottenham,4,1,H,2,0,H,1.36,4.5,8,Feb-00,1-Apr,17,8,3,2,1,3,0,0,4,1,11,15,5,5,26,1-Apr,Y,Y,Y,4,0,Arsenal-Tottenham,132.5,2.625,40.75,32.5,300,86.25,277.5,1277.5,19.5,125.5,326.125,970.625,643.75

@@ -1466,4 +1466,10 @@ OTHER_analytics <- dplyr::left_join(OTHER_analytics,other_first_matchgoal)
 write.xlsx(OTHER_analytics,"OTHERLEAGUES20232024.xlsx")
 
 View(OTHER_analytics)
+##################################################################################################
+install.packages("devtools")
+install.packages("devtools", type = "win.binary")
+library(devtools)
+
+devtools::install_github("statsbomb/StatsBombR")
 

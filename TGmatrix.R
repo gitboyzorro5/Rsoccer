@@ -407,30 +407,30 @@ for(t1_rowh in 1:nrow(t1_totalgoals_h)) {
   }
 }
 
-
-#write out the data to excel
-write.xlsx(b1_totalgoals_h,'TGform.xlsx',sheetName = "B1")
-write.xlsx(d1_totalgoals_h,'TGform.xlsx',sheetName = "D1", append = TRUE)
-write.xlsx(d2_totalgoals_h,'TGform.xlsx',sheetName = "D2", append = TRUE)
-write.xlsx(e0_totalgoals_h,'TGform.xlsx',sheetName = "E0", append = TRUE)
-write.xlsx(e1_totalgoals_h,'TGform.xlsx',sheetName = "E1", append = TRUE)
-write.xlsx(e2_totalgoals_h,'TGform.xlsx',sheetName = "E2", append = TRUE)
-write.xlsx(e3_totalgoals_h,'TGform.xlsx',sheetName = "E3", append = TRUE)
-write.xlsx(ec_totalgoals_h,'TGform.xlsx',sheetName = "EC", append = TRUE)
-write.xlsx(f1_totalgoals_h,'TGform.xlsx',sheetName = "F1", append = TRUE)
-write.xlsx(f2_totalgoals_h,'TGform.xlsx',sheetName = "F2", append = TRUE)
-write.xlsx(g1_totalgoals_h,'TGform.xlsx',sheetName = "G1", append = TRUE)
-write.xlsx(i1_totalgoals_h,'TGform.xlsx',sheetName = "I1", append = TRUE)
-write.xlsx(i2_totalgoals_h,'TGform.xlsx',sheetName = "I2", append = TRUE)
-write.xlsx(n1_totalgoals_h,'TGform.xlsx',sheetName = "N1", append = TRUE)
-write.xlsx(p1_totalgoals_h,'TGform.xlsx',sheetName = "P1", append = TRUE)
-write.xlsx(sc0_totalgoals_h,'TGform.xlsx',sheetName = "SC0", append = TRUE)
-write.xlsx(sc1_totalgoals_h,'TGform.xlsx',sheetName = "SC1", append = TRUE)
-write.xlsx(sc2_totalgoals_h,'TGform.xlsx',sheetName = "SC2", append = TRUE)
-write.xlsx(sc3_totalgoals_h,'TGform.xlsx',sheetName = "SC3", append = TRUE)
-write.xlsx(sp1_totalgoals_h,'TGform.xlsx',sheetName = "SP1", append = TRUE)
-write.xlsx(sp2_totalgoals_h,'TGform.xlsx',sheetName = "SP2", append = TRUE)
-write.xlsx(t1_totalgoals_h,'TGform.xlsx',sheetName = "T1", append = TRUE)
+#
+# #write out the data to excel
+# write.xlsx(b1_totalgoals_h,'TGform.xlsx',sheetName = "B1")
+# write.xlsx(d1_totalgoals_h,'TGform.xlsx',sheetName = "D1", append = TRUE)
+# write.xlsx(d2_totalgoals_h,'TGform.xlsx',sheetName = "D2", append = TRUE)
+# write.xlsx(e0_totalgoals_h,'TGform.xlsx',sheetName = "E0", append = TRUE)
+# write.xlsx(e1_totalgoals_h,'TGform.xlsx',sheetName = "E1", append = TRUE)
+# write.xlsx(e2_totalgoals_h,'TGform.xlsx',sheetName = "E2", append = TRUE)
+# write.xlsx(e3_totalgoals_h,'TGform.xlsx',sheetName = "E3", append = TRUE)
+# write.xlsx(ec_totalgoals_h,'TGform.xlsx',sheetName = "EC", append = TRUE)
+# write.xlsx(f1_totalgoals_h,'TGform.xlsx',sheetName = "F1", append = TRUE)
+# write.xlsx(f2_totalgoals_h,'TGform.xlsx',sheetName = "F2", append = TRUE)
+# write.xlsx(g1_totalgoals_h,'TGform.xlsx',sheetName = "G1", append = TRUE)
+# write.xlsx(i1_totalgoals_h,'TGform.xlsx',sheetName = "I1", append = TRUE)
+# write.xlsx(i2_totalgoals_h,'TGform.xlsx',sheetName = "I2", append = TRUE)
+# write.xlsx(n1_totalgoals_h,'TGform.xlsx',sheetName = "N1", append = TRUE)
+# write.xlsx(p1_totalgoals_h,'TGform.xlsx',sheetName = "P1", append = TRUE)
+# write.xlsx(sc0_totalgoals_h,'TGform.xlsx',sheetName = "SC0", append = TRUE)
+# write.xlsx(sc1_totalgoals_h,'TGform.xlsx',sheetName = "SC1", append = TRUE)
+# write.xlsx(sc2_totalgoals_h,'TGform.xlsx',sheetName = "SC2", append = TRUE)
+# write.xlsx(sc3_totalgoals_h,'TGform.xlsx',sheetName = "SC3", append = TRUE)
+# write.xlsx(sp1_totalgoals_h,'TGform.xlsx',sheetName = "SP1", append = TRUE)
+# write.xlsx(sp2_totalgoals_h,'TGform.xlsx',sheetName = "SP2", append = TRUE)
+# write.xlsx(t1_totalgoals_h,'TGform.xlsx',sheetName = "T1", append = TRUE)
 
 
 

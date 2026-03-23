@@ -1,0 +1,10 @@
+,Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,PSH,PSD,PSA,HTCS,CS,HS,HST,AS,AST,HY,AY,HR,AR,HCO,ACO,HF,AF,TG,TC,TF,COSC,OV15,OV25,OV35,TY,TR,matchid,goalmins,n,shirts,Bookings,Crossbookings,GoalsXbookings,CornersXbookings,ShirtsXbookings,GoalsXcorners,GoalsXshirts,ShirtsXcorners,TGMXcorners,GoalsXcornerXbookings
+1,D1,10/25/2025,Mgladbach,Bayern Munich,0,3,A,0,0,D,10,6.5,1.18,0-0,0-3,1,0,27,11,0,3,1,0,1,8,6,9,3,9,15,8-Jan,Y,Y,N,3,1,Mgladbach-Bayern Munich,214,3,70,55,750,165,495,3850,27,210,630,1926,1485
+2,D1,11/1/2025,Bayern Munich,Leverkusen,3,0,H,3,0,H,1.18,6.5,10,Mar-00,Mar-00,18,4,7,1,1,1,0,0,10,4,11,3,3,14,14,4-Oct,Y,Y,N,2,0,Bayern Munich-Leverkusen,100,3,23,20,100,60,280,460,42,69,322,1400,840
+3,D1,11/8/2025,Union Berlin,Bayern Munich,2,2,D,1,1,D,11,6,1.18,1-Jan,2-Feb,12,4,12,4,2,4,0,0,6,5,8,8,4,11,16,5-Jun,Y,Y,Y,6,0,Union Berlin-Bayern Munich,238,4,33,60,800,240,660,1980,44,132,363,2618,2640
+4,D1,11/22/2025,Bayern Munich,Freiburg,6,2,H,2,2,D,1.15,6.5,12,2-Feb,2-Jun,22,8,8,2,1,0,0,0,3,5,9,7,8,8,16,5-Mar,Y,Y,Y,1,0,Bayern Munich-Freiburg,373,8,156,10,0,80,80,1560,64,1248,1248,2984,640
+5,D1,10/25/2025,Ein Frankfurt,St Pauli,2,0,H,1,0,H,1.65,3.8,4.33,Jan-00,Feb-00,10,6,9,1,0,1,0,0,1,3,11,6,2,4,17,3-Jan,Y,N,N,1,0,Ein Frankfurt-St Pauli,92,2,18,10,0,20,40,180,8,36,72,368,80
+6,D1,11/1/2025,St Pauli,Mgladbach,0,4,A,0,2,A,2.1,3.3,3.13,0-2,0-4,16,4,15,11,4,0,0,0,8,1,11,8,4,9,19,1-Aug,Y,Y,Y,4,0,St Pauli-Mgladbach,210,4,70,40,0,160,360,2800,36,280,630,1890,1440
+7,D1,11/9/2025,Freiburg,St Pauli,2,1,H,1,0,H,1.8,3.4,4.1,Jan-00,1-Feb,8,4,7,2,2,2,0,0,9,3,8,12,3,12,20,3-Sep,Y,Y,N,4,0,Freiburg-St Pauli,159,3,45,40,400,120,480,1800,36,135,540,1908,1440
+8,D1,11/23/2025,St Pauli,Union Berlin,0,1,A,0,1,A,2.4,3.13,2.75,0-1,0-1,12,3,8,3,1,1,0,0,8,2,10,8,1,10,18,2-Aug,N,N,N,2,0,St Pauli-Union Berlin,44,1,8,20,100,20,200,160,10,8,80,440,200
+9,D1,11/23/2025,St Pauli,Union Berlin,0,1,A,0,1,A,2.4,3.13,2.75,0-1,0-1,12,3,8,3,1,1,0,0,8,2,10,8,1,10,18,2-Aug,N,N,N,2,0,St Pauli-Union Berlin,178.75,3.5,52.875,31.875,268.75,108.125,324.375,1598.75,33.375,264.75,485.625,1691.75,1095.625

@@ -107,7 +107,7 @@ T1_schedule20252026$Date <- ymd(T1_schedule20252026$Date)
 
 all_schedule20252026 <- rbind(B1_schedule20252026,E0_schedule20252026,D1_schedule20252026,D2_schedule20252026,E1_schedule20252026,E2_schedule20252026,E3_schedule20252026,EC_schedule20252026,F1_schedule20252026,F2_schedule20252026,I1_schedule20252026,I2_schedule20252026,N1_schedule20252026,SP1_schedule20252026,SC0_schedule20252026,SC1_schedule20252026,SP2_schedule20252026,T1_schedule20252026,P1_schedule20252026)
 
-myfixtures <- all_schedule20252026[all_schedule20252026$Date >= '2026-04-03' & all_schedule20252026$Date <= '2026-04-06',]
+myfixtures <- all_schedule20252026[all_schedule20252026$Date >= '2026-04-17' & all_schedule20252026$Date <= '2026-04-20',]
 
 write.csv(myfixtures,'myfixtures.csv')
 View(myfixtures)
